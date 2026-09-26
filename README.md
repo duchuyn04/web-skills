@@ -54,6 +54,9 @@ Thư mục skills của từng agent (theo bảng của CLI `skills`):
 | Kiro | `.kiro/skills/` |
 | Continue | `.continue/skills/` |
 | Windsurf | `.windsurf/skills/` |
+| Oh My Pi | `.agents/skills/` (đọc được ngay, xem ghi chú bên dưới) |
+
+Oh My Pi không có trong danh sách agent của CLI `skills`, nên lệnh `npx` không tạo thư mục `.omp/skills`. Điều này không ảnh hưởng gì: Oh My Pi tự đọc cả `.agents/skills` và `.claude/skills`, ở cấp project lẫn cấp người dùng. Chỉ cần skill nằm trong một trong hai thư mục đó là Oh My Pi thấy, nên cài cho Codex (dùng `.agents/skills`) hoặc Claude Code (dùng `.claude/skills`) đều được. Thư mục file của Oh My Pi hoặc IDE có thể ẩn các thư mục bắt đầu bằng dấu chấm, nên nếu không thấy `.agents` thì dùng `dir /a` (Windows) hoặc `ls -a` để kiểm tra. Muốn dùng đúng thư mục riêng của Oh My Pi thì chép skill vào `.omp/skills/` trong project, hoặc `~/.omp/agent/skills/` để dùng cho mọi project.
 
 Agent không tự nạp skill thì bảo nó đọc `SKILL.md` trong thư mục vừa chép và làm theo từng bước. Nếu project có `AGENTS.md`, thêm một dòng trỏ tới đường dẫn đó là đủ.
 
