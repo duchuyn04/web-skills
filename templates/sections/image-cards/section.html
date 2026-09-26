@@ -1,4 +1,4 @@
-<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}{{#slider}} bl-icards-sec--slider{{/slider}}"{{#slider}} data-slider{{/slider}}>
   <div class="bl-container">
     {{#head}}
     <div class="bl-head bl-head--split" data-reveal>
@@ -8,23 +8,22 @@
       </div>
       <div class="bl-head__aside">
         {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
-        {{#view_all}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/view_all}}
+        <div class="bl-icards__tools">
+          {{#view_all}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/view_all}}
+          {{#slider}}<div class="bl-slider-nav"><button class="bl-round-btn" type="button" data-slider-prev>{{icon:chevron-left}}<span class="bl-sr-only">{{prev_label}}</span></button><button class="bl-round-btn" type="button" data-slider-next>{{icon:chevron-right}}<span class="bl-sr-only">{{next_label}}</span></button></div>{{/slider}}
+        </div>
       </div>
     </div>
     {{/head}}
+    {{^slider}}
     <div class="bl-icards bl-icards--{{ratio}}" data-reveal-group>
-      {{#cards}}
-      <a class="bl-icard" href="{{href}}" data-reveal>
-        <span class="bl-frame bl-icard__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="480" height="320" loading="lazy"></span>
-        <span class="bl-icard__body">
-          {{#tag}}<span class="bl-icard__top"><span class="bl-chip bl-chip--accent">{{tag}}</span>{{#meta}}<span class="bl-icard__meta">{{meta}}</span>{{/meta}}</span>{{/tag}}
-          {{^tag}}{{#meta}}<span class="bl-icard__top"><span class="bl-icard__meta">{{meta}}</span></span>{{/meta}}{{/tag}}
-          <span class="bl-icard__title">{{title}}</span>
-          {{#text}}<span class="bl-icard__text">{{text}}</span>{{/text}}
-          <span class="bl-link bl-icard__more">{{link_label}}{{arrow}}</span>
-        </span>
-      </a>
-      {{/cards}}
+      {{#cards}}{{> image-card}}{{/cards}}
     </div>
+    {{/slider}}
   </div>
+  {{#slider}}
+  <div class="bl-slider-track bl-icards bl-icards--{{ratio}} bl-icards--slider" data-slider-track tabindex="0" aria-label="{{head.title_plain}}">
+    {{#cards}}{{> image-card}}{{/cards}}
+  </div>
+  {{/slider}}
 </section>

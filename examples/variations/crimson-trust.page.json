@@ -1,0 +1,524 @@
+{
+ "_note": "Variation for preset crimson-trust (angled image masks, underline highlights). Keystone Staffing is fictional; all figures are sample data.",
+ "archetype": "offshore-staffing",
+ "preset": "crimson-trust",
+ "lang": "en",
+ "site": {
+  "brand": "Keystone Staffing",
+  "brand_mark": "KS",
+  "title": "Keystone Staffing | Dedicated offshore accountants and admin teams",
+  "description": "Keystone Staffing hires and manages dedicated accounting, admin and support staff in Ho Chi Minh City for small and mid-size firms."
+ },
+ "sections": [
+  {
+   "type": "header-simple",
+   "data": {
+    "links": [
+     {
+      "label": "Savings",
+      "href": "#services"
+     },
+     {
+      "label": "Roles",
+      "href": "#services"
+     },
+     {
+      "label": "Process",
+      "href": "#process"
+     },
+     {
+      "label": "Pricing",
+      "href": "#contact"
+     },
+     {
+      "label": "FAQ",
+      "href": "#faq"
+     }
+    ],
+    "secondary": {
+     "label": "Client stories",
+     "href": "#client-voice"
+    },
+    "cta": {
+     "label": "Build my team",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "hero-collage",
+   "data": {
+    "eyebrow": "Offshore staffing",
+    "title": "Your own offshore team, *hired for you* and managed on site",
+    "lead": "Keystone recruits accountants, admin staff and support agents who work only for you. We handle payroll, office space, equipment and HR in Ho Chi Minh City.",
+    "primary_cta": {
+     "label": "Get a team quote",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "How it works",
+     "href": "#process"
+    },
+    "proof": [
+     "Hire in 3-5 weeks",
+     "No setup fee"
+    ],
+    "photos": [
+     {
+      "src": "portrait-woman-office",
+      "alt": "Keystone accountant at her desk"
+     },
+     {
+      "src": "avatar-man-2",
+      "alt": "Keystone support team lead"
+     },
+     {
+      "src": "avatar-woman-2",
+      "alt": "Keystone payroll specialist"
+     }
+    ]
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Teams we run for growing companies in the US, UK and Australia",
+    "logos": [
+     {
+      "name": "Brightpath"
+     },
+     {
+      "name": "Northwind Labs"
+     },
+     {
+      "name": "Parcel Co"
+     },
+     {
+      "name": "Tidewater"
+     },
+     {
+      "name": "Quill Finance"
+     },
+     {
+      "name": "Everfresh"
+     },
+     {
+      "name": "Juniper HR"
+     }
+    ]
+   }
+  },
+  {
+   "type": "statement-band",
+   "data": {
+    "eyebrow": "Why firms choose us",
+    "title": "Most of our clients started with *one hire* and kept growing the team",
+    "text": "Keystone places full-time staff who sit in our office, use your tools and report to your managers. We cover the local paperwork so you only manage the work.",
+    "points": [
+     "Full-time dedicated staff",
+     "Your tools and processes"
+    ]
+   }
+  },
+  {
+   "type": "services-bento",
+   "data": {
+    "head": {
+     "eyebrow": "Roles we staff",
+     "title": "Full-time people for the work *you do every day*",
+     "lead": "Every hire works only for you, joins your chat channels and follows your processes from week one."
+    },
+    "cards": [
+     {
+      "icon": "headset",
+      "title": "Customer support",
+      "text": "Email, chat and phone agents with C1 English who learn your product and answer in your brand voice.",
+      "bullets": [
+       "Zendesk, Intercom, Gorgias",
+       "Day, evening and night shifts",
+       "Weekly QA scoring"
+      ],
+      "link": {
+       "label": "Hire support staff",
+       "href": "#contact"
+      }
+     },
+     {
+      "icon": "receipt",
+      "title": "Bookkeeping",
+      "text": "Accountants who reconcile, invoice and close the month in Xero or QuickBooks."
+     },
+     {
+      "icon": "bug",
+      "title": "Software QA",
+      "text": "Manual and automation testers who join your sprints and file clean bug reports."
+     },
+     {
+      "icon": "database",
+      "title": "Data operations",
+      "text": "Operators for data entry, catalog updates and CRM clean-up with double-check rules."
+     },
+     {
+      "icon": "briefcase",
+      "title": "Sales support",
+      "text": "Assistants who research leads, update pipelines and book meetings for your reps."
+     }
+    ]
+   }
+  },
+  {
+   "type": "feature-rows",
+   "data": {
+    "head": {
+     "eyebrow": "How we work",
+     "title": "Built around *your* customers and your scripts",
+     "lead": "Three habits every Keystone program keeps, from the first hiring call to the monthly business review."
+    },
+    "rows": [
+     {
+      "eyebrow": "Hiring",
+      "title": "Agents who already speak your customers' language",
+      "text": "Recruiters screen for language level, product fit and tone of voice. Your team approves the shortlist before training starts, so nobody joins the floor as a stranger to your brand.",
+      "bullets": [
+       "Language and tone assessments",
+       "Client sign-off on every hire"
+      ],
+      "photo": {
+       "src": "portrait-woman-office",
+       "alt": "Keystone team lead smiling in the Manila office"
+      },
+      "badge": {
+       "value": "15 days",
+       "label": "Average time to hire"
+      }
+     },
+     {
+      "eyebrow": "Quality",
+      "title": "Every contact scored against your rubric",
+      "text": "Quality analysts review calls, chats and emails each day with your own scorecard. Coaching happens the same week, and trends go into the Monday report.",
+      "bullets": [
+       "Daily QA sampling",
+       "Calibration with your team each week",
+       "Coaching logged per agent"
+      ],
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Quality analysts reviewing a support ticket together"
+      },
+      "link": {
+       "label": "See our QA process",
+       "href": "#faq"
+      }
+     },
+     {
+      "eyebrow": "Reporting",
+      "title": "One dashboard your leadership can read",
+      "text": "Handle time, CSAT, backlog and QA scores sit on one shared dashboard, refreshed every morning, with notes on anything that moved outside target.",
+      "photo": {
+       "src": "office-interior",
+       "alt": "Quiet operations floor with wall screens"
+      },
+      "badge": {
+       "value": "07:00",
+       "label": "Daily report in your inbox"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "banner-image",
+   "data": {
+    "title": "Visit the office where *your team* will work",
+    "text": "Every client can tour the floor, meet the managers and interview candidates in person.",
+    "cta": {
+     "label": "Plan a visit",
+     "href": "#contact"
+    },
+    "image": "city-hcmc-skyline",
+    "full_width": false,
+    "align": "center"
+   }
+  },
+  {
+   "type": "process-sticky",
+   "data": {
+    "head": {
+     "eyebrow": "How it works",
+     "title": "From first call to a working team in *four weeks*",
+     "lead": "A dedicated account manager runs each step and reports to you every Friday."
+    },
+    "cta": {
+     "label": "Start with a call",
+     "href": "#contact"
+    },
+    "steps": [
+     {
+      "label": "Week 1",
+      "title": "Define the roles",
+      "text": "We map tasks, tools, hours and language level with you, then agree on salary bands for each role."
+     },
+     {
+      "label": "Week 2",
+      "title": "Interview a shortlist",
+      "text": "Recruiters send three screened candidates per role. You interview and pick the people you want."
+     },
+     {
+      "label": "Week 3",
+      "title": "Set up and train",
+      "text": "We prepare laptops, secure access and office seats while your team trains the new hires on your process."
+     },
+     {
+      "label": "Week 4",
+      "title": "Go live and review",
+      "text": "Your team starts on live work. The account manager tracks output and runs a 30 day review with you."
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-panel",
+   "data": {
+    "eyebrow": "Why choose us",
+    "title": "Trust built on *audits and track record*",
+    "text": "Our delivery centers follow ISO 27001 and ISO 9001 processes, with yearly external audits and access controls your security team can review.",
+    "items": [
+     {
+      "value": 14,
+      "suffix": "+",
+      "label": "Years in operation"
+     },
+     {
+      "value": 180,
+      "suffix": "+",
+      "label": "Specialists on staff"
+     },
+     {
+      "value": 260,
+      "suffix": "+",
+      "label": "Projects delivered"
+     },
+     {
+      "value": 97,
+      "suffix": "%",
+      "label": "Client retention"
+     }
+    ]
+   }
+  },
+  {
+   "type": "quote-spotlight",
+   "data": {
+    "quotes": [
+     {
+      "quote": "We hired two accountants through Keystone in 2023 and now have nine. Month-end close takes four days instead of eleven, and the team feels like part of our office.",
+      "name": "Priya Raman",
+      "role": "Finance Director",
+      "company": "Accounting firm",
+      "avatar": "avatar-woman-1"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image-cards",
+   "data": {
+    "head": {
+     "eyebrow": "Guides",
+     "title": "Before you hire offshore",
+     "lead": "Plain answers to the questions finance teams ask us most."
+    },
+    "view_all": {
+     "label": "All guides",
+     "href": "#contact"
+    },
+    "cards": [
+     {
+      "tag": "Guide",
+      "meta": "5 min read",
+      "title": "Which accounting tasks move offshore first",
+      "photo": {
+       "src": "team-coworking-laptops",
+       "alt": "Accountants working on laptops"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Checklist",
+      "meta": "4 min read",
+      "title": "Data security questions to ask any staffing vendor",
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Team checking a security dashboard"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Story",
+      "meta": "Client story",
+      "title": "From one bookkeeper to a nine person finance team",
+      "photo": {
+       "src": "meeting-handshake",
+       "alt": "Client and team lead shaking hands"
+      },
+      "href": "#contact"
+     }
+    ]
+   }
+  },
+  {
+   "type": "faq-accordion",
+   "data": {
+    "head": {
+     "eyebrow": "FAQ",
+     "title": "Common questions about offshore teams"
+    },
+    "aside": {
+     "title": "Want a salary guide?",
+     "text": "Get current Vietnam salary ranges for 20 common roles, updated every quarter.",
+     "cta": {
+      "label": "Request the guide",
+      "href": "#contact"
+     }
+    },
+    "items": [
+     {
+      "q": "Who is the legal employer of my team?",
+      "a": "Keystone is the employer of record in Vietnam. We handle contracts, payroll, social insurance and local tax, while your managers direct the daily work."
+     },
+     {
+      "q": "Can my team work US hours?",
+      "a": "Yes. Night shifts carry a shift allowance that is included in your quote. Most support teams cover US morning and afternoon hours."
+     },
+     {
+      "q": "How do you protect our data?",
+      "a": "Staff work on company laptops with disk encryption, managed antivirus and no USB storage. Access to your systems runs through your own SSO."
+     },
+     {
+      "q": "What if a hire does not work out?",
+      "a": "We replace any hire who leaves or is not a fit in the first 90 days at no extra cost."
+     },
+     {
+      "q": "Is there a minimum contract?",
+      "a": "Dedicated plans need 30 days notice after a three month first term. Shared plans run month to month."
+     }
+    ]
+   }
+  },
+  {
+   "type": "contact-split",
+   "data": {
+    "head": {
+     "eyebrow": "Contact us",
+     "title": "Start your project and watch your *business grow*"
+    },
+    "form": {
+     "title": "Tell us about your project",
+     "text": "A solutions lead will reply within one business day.",
+     "phone_label": "Phone (optional)",
+     "submit_label": "Send message",
+     "success_title": "Thanks, we have your message",
+     "success_text": "A solutions lead will reply within one business day to set up a call.",
+     "note": "We only use your details to reply to this request."
+    },
+    "aside": {
+     "title": "Why teams choose us",
+     "points": [
+      "14 years of software and back-office delivery",
+      "180+ specialists in two delivery centers",
+      "Monthly reporting on every engagement",
+      "Month-to-month terms after the first quarter"
+     ],
+     "offices": [
+      {
+       "flag": "vn",
+       "name": "Vietnam",
+       "address": "8th Floor, 120 Nguyen Thi Minh Khai Street, District 3, Ho Chi Minh City",
+       "phone": "(+84) 28 5555 0120"
+      },
+      {
+       "flag": "us",
+       "name": "United States",
+       "address": "1201 Third Avenue, Suite 400, Seattle, WA 98101",
+       "phone": "(+1) 206 555 0142"
+      }
+     ],
+     "email_label": "Project inquiries",
+     "email": "hello@harborpoint.example"
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Dedicated offshore teams in Ho Chi Minh City and Da Nang for companies in the US, UK and Australia.",
+    "contacts": [
+     {
+      "icon": "mail",
+      "label": "hello@lotus-staffing.example",
+      "href": "mailto:hello@lotus-staffing.example"
+     },
+     {
+      "icon": "map-pin",
+      "label": "District 1, Ho Chi Minh City"
+     }
+    ],
+    "socials": [
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Roles",
+      "links": [
+       {
+        "label": "Customer support",
+        "href": "#services"
+       },
+       {
+        "label": "Bookkeeping",
+        "href": "#services"
+       },
+       {
+        "label": "Software QA",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "How it works",
+        "href": "#process"
+       },
+       {
+        "label": "Pricing",
+        "href": "#contact"
+       },
+       {
+        "label": "Client stories",
+        "href": "#client-voice"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [
+     {
+      "label": "Privacy",
+      "href": "#top"
+     }
+    ]
+   }
+  }
+ ]
+}

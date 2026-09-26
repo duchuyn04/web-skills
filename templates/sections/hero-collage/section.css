@@ -1,0 +1,17 @@
+/* hero-collage: round photos and flat shapes in a 3x3 grid */
+.bl-hero-col { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.bl-collage { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.5rem, 1.2vw, .9rem); width: min(100%, 480px); margin-left: auto; }
+.bl-collage__cell { aspect-ratio: 1; display: block; overflow: hidden; }
+.bl-collage__photo { border-radius: 50%; background: var(--surface-2); box-shadow: var(--shadow-lg); }
+.bl-collage__photo img { width: 100%; height: 100%; object-fit: cover; }
+.bl-collage__shape { animation: bl-collage-float 7s ease-in-out infinite alternate; }
+.bl-collage__shape--q1 { background: var(--c-accent); border-radius: 100% 0 0 0; }
+.bl-collage__shape--half { background: radial-gradient(circle at 50% 100%, var(--c-accent-2) 44.5%, transparent 45%); animation-delay: -2s; }
+.bl-collage__shape--dots { background-image: radial-gradient(var(--accent-ink) 22%, transparent 24%); background-size: 22% 22%; opacity: .55; animation-delay: -4s; }
+.bl-collage__shape--q2 { background: var(--c-primary); border-radius: 0 100% 0 0; animation-delay: -1s; }
+.bl-collage__shape--q3 { background: color-mix(in srgb, var(--c-accent-2) 70%, var(--surface)); border-radius: 0 0 100% 0; animation-delay: -3s; }
+@keyframes bl-collage-float { from { translate: 0 -4px; } to { translate: 0 4px; } }
+.bl-collage__shape--ring { border-radius: 50%; border: clamp(10px, 1.6vw, 18px) dashed var(--c-accent); background: transparent; transform: scale(.82); animation: bl-collage-spin 24s linear infinite; }
+@keyframes bl-collage-spin { to { rotate: 360deg; } }
+@media (max-width: 1024px) { .bl-hero-col { grid-template-columns: 1fr; } .bl-collage { margin: 0 auto; width: min(100%, 420px); } }
+@media (prefers-reduced-motion: reduce) { .bl-collage__shape { animation: none !important; } }

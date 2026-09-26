@@ -24,6 +24,10 @@ These sit at the top of page.json, next to `sections`.
   - `accent`: hex color (optional)
   - `accent_2`: hex color (optional)
   - `eyebrow`: one of line, pill (optional)
+  - `edges`: one of none, angle, curve (optional)
+  - `image_mask`: one of rounded, angle, arch (optional)
+  - `highlight`: one of color, gradient, underline (optional)
+  - `media_reveal`: one of fade, clip (optional)
 - `features`: object (optional)
   - `magnetic_cta`: true/false (optional, default false)
 - `override_order`: object (optional)
@@ -74,6 +78,27 @@ Fields:
   - `link`: object (optional)
     - `label`: text 2-30 chars
     - `href`: link
+
+## banner-image
+
+Mid-page photo band with a brand-colour shade, a strong line, one sentence and a button. Boxed inside the page margins (default) or full width. Use between long content sections to reset attention.
+
+- Group: `banner`. Default anchor: `#highlight`. Tone: auto.
+- Built-in motion: reveal, slow-photo-zoom.
+- Allowed in: enterprise-cx/banner?, offshore-staffing/banner?, ai-data-ops/banner?, cx-voice-sales/banner?, it-bpo-partner/banner?.
+- Preview: `previews/banner-image.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `text`: text 30-220 chars (optional)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `image`: image key or path
+- `full_width`: true/false (optional, default false)
+- `align`: one of left, center (optional, default "left")
 
 ## case-slider
 
@@ -449,6 +474,31 @@ Fields:
 - `menu_label`: text 2-16 chars (optional, default "Menu")
 - `close_label`: text 2-16 chars (optional, default "Close menu")
 
+## hero-collage
+
+Split hero whose right side is a 3x3 collage of three round team photos and six flat geometric shapes (quarter circles, half circles, dots) in the brand colours. Friendly and distinctive without needing a big stock photo.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: reveal, collage-pop-in, shape-float.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-collage.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 20-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `photos`: list of 3-3, each item:
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+
 ## hero-cycler-centered
 
 Centered headline whose last words rotate through 3-6 service names, lead, CTAs, proof ticks and an optional wide photo stage with floating KPI badges.
@@ -565,6 +615,32 @@ Fields:
   - `alt`: text 5-140 chars
 - `proof`: list of 0-3 (optional) (each text 3-36 chars)
 
+## hero-qualifier
+
+Hero with a quick-pick card on the right: a short question (for example 'What do you need first?') and 3-5 answers that jump straight to the right section. Copy and one button on the left. Good when visitors come for very different services.
+
+- Group: `hero`. Default anchor: `#top`. Tone: dark.
+- Built-in motion: reveal, staggered-badge-pop-in.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-qualifier.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 20-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `card`: object
+  - `title`: text 8-60 chars
+  - `text`: text 20-140 chars (optional)
+  - `options`: list of 3-5, each item:
+    - `label`: text 3-40 chars
+    - `href`: link
+    - `icon`: icon name (optional)
+
 ## hero-split-image
 
 Headline, lead and two CTAs on the left; large photo on the right with up to 3 floating glass KPI badges.
@@ -596,10 +672,10 @@ Fields:
 
 ## image-cards
 
-Grid of 3, 4 or 6 clickable photo cards with tag, meta line, title and short text. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.
+Clickable photo cards with tag, meta line, title and short text. Grid of 3, 4 or 6 cards, or a draggable slider of 3 to 8 cards when "slider" is true. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.
 
 - Group: `cards`. Default anchor: `#insights`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, fluid-case-study-slider (slider mode).
 - Allowed in: enterprise-cx/industries?, enterprise-cx/news?, offshore-staffing/news?, ai-data-ops/news?, cx-voice-sales/news?, it-bpo-partner/news?.
 - Preview: `previews/image-cards.jpg`
 
@@ -613,7 +689,10 @@ Fields:
   - `label`: text 2-30 chars
   - `href`: link
 - `ratio`: one of wide, tall (optional, default "wide")
-- `cards`: list of 3 or 4 or 6, each item:
+- `slider`: true/false (optional, default false)
+- `prev_label`: text 2-20 chars (optional, default "Previous")
+- `next_label`: text 2-20 chars (optional, default "Next")
+- `cards`: list of 3-8, each item:
   - `tag`: text 2-20 chars (optional)
   - `meta`: text 2-28 chars (optional)
   - `title`: text 10-90 chars
@@ -796,6 +875,28 @@ Fields:
   - `title`: text 3-60 chars
   - `text`: text 40-220 chars
 
+## quote-spotlight
+
+One large client quote on a dark band with a big quote mark, the person and an optional client logo or wordmark. With 2-5 quotes it becomes a crossfading slider with previous/next buttons and dots. Only use real, approved quotes.
+
+- Group: `proof`. Default anchor: `#client-voice`. Tone: dark.
+- Built-in motion: reveal, quote-crossfade.
+- Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
+- Preview: `previews/quote-spotlight.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `quotes`: list of 1-5, each item:
+  - `quote`: text 40-320 chars
+  - `name`: text 3-40 chars
+  - `role`: text 3-60 chars
+  - `company`: text 2-40 chars
+  - `avatar`: image key or path (optional)
+  - `logo`: image key or path (optional)
+- `prev_label`: text 2-20 chars (optional, default "Previous quote")
+- `next_label`: text 2-20 chars (optional, default "Next quote")
+
 ## service-links
 
 One to three service groups stacked (for example IT outsourcing, then BPO). Each group: pill label, title, one line, then a two-column grid of link rows with an arrow. Good when there are many services with their own pages.
@@ -893,6 +994,25 @@ Fields:
     - `title`: text 3-48 chars
     - `text`: text 30-170 chars
 
+## statement-band
+
+A single centered statement: small label, a large two-line headline and one paragraph, with an optional link and up to three proof ticks. Use right after the hero or logos to say who you are in one breath.
+
+- Group: `intro`. Default anchor: `#who-we-are`. Tone: auto.
+- Built-in motion: reveal, word-by-word-reveal.
+- Allowed in: enterprise-cx/intro?, offshore-staffing/intro?, ai-data-ops/intro?, cx-voice-sales/intro?, it-bpo-partner/intro?.
+- Preview: `previews/statement-band.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 20-140 chars
+- `text`: text 40-320 chars (optional)
+- `points`: list of 0-3 (optional) (each text 3-40 chars)
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
 ## testimonials
 
 Three client quote cards with name, role, company and photo (or initials). The middle card is raised.
@@ -914,6 +1034,23 @@ Fields:
   - `role`: text 3-60 chars
   - `company`: text 2-40 chars
   - `avatar`: image key or path (optional)
+
+## ticker-band
+
+A slim band of large words (services, languages, industries) that scrolls sideways without end, separated by small icons. Painted in the brand colour by default. Pauses on hover and stops for reduced motion.
+
+- Group: `ticker`. Default anchor: `#capabilities`. Tone: accent.
+- Built-in motion: text-marquee.
+- Allowed in: enterprise-cx/ticker?, offshore-staffing/ticker?, ai-data-ops/ticker?, cx-voice-sales/ticker?, it-bpo-partner/ticker?.
+- Preview: `previews/ticker-band.jpg`
+
+Fields:
+
+- `label`: text 3-60 chars
+- `items`: list of 4-12 (each text 2-32 chars)
+- `separator`: icon name (optional, default "star")
+- `speed`: one of slow, normal (optional, default "slow")
+- `dark`: true/false (optional, default false)
 
 ## video-block
 

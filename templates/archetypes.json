@@ -30,9 +30,17 @@
           "hero-split-image",
           "hero-cycler-centered",
           "hero-fullbleed",
-          "hero-gradient"
+          "hero-gradient",
+          "hero-qualifier",
+          "hero-collage"
         ],
         "required": true
+      },
+      {
+        "slot": "ticker",
+        "variants": [
+          "ticker-band"
+        ]
       },
       {
         "slot": "logos",
@@ -40,6 +48,12 @@
           "logo-marquee"
         ],
         "recommended": true
+      },
+      {
+        "slot": "intro",
+        "variants": [
+          "statement-band"
+        ]
       },
       {
         "slot": "about",
@@ -62,6 +76,12 @@
         "variants": [
           "feature-rows",
           "solution-panels"
+        ]
+      },
+      {
+        "slot": "banner",
+        "variants": [
+          "banner-image"
         ]
       },
       {
@@ -90,14 +110,16 @@
         "slot": "proof",
         "variants": [
           "case-slider",
-          "testimonials"
+          "testimonials",
+          "quote-spotlight"
         ],
         "recommended": true
       },
       {
         "slot": "proof-extra",
         "variants": [
-          "testimonials"
+          "testimonials",
+          "quote-spotlight"
         ]
       },
       {
@@ -192,9 +214,17 @@
           "hero-cycler-centered",
           "hero-split-image",
           "hero-fullbleed",
-          "hero-gradient"
+          "hero-gradient",
+          "hero-qualifier",
+          "hero-collage"
         ],
         "required": true
+      },
+      {
+        "slot": "ticker",
+        "variants": [
+          "ticker-band"
+        ]
       },
       {
         "slot": "logos",
@@ -202,6 +232,12 @@
           "logo-marquee"
         ],
         "recommended": true
+      },
+      {
+        "slot": "intro",
+        "variants": [
+          "statement-band"
+        ]
       },
       {
         "slot": "calculator",
@@ -224,6 +260,12 @@
         "variants": [
           "feature-rows",
           "solution-panels"
+        ]
+      },
+      {
+        "slot": "banner",
+        "variants": [
+          "banner-image"
         ]
       },
       {
@@ -262,7 +304,8 @@
         "slot": "proof",
         "variants": [
           "testimonials",
-          "case-slider"
+          "case-slider",
+          "quote-spotlight"
         ],
         "recommended": true
       },
@@ -349,9 +392,17 @@
         "variants": [
           "hero-dark-network",
           "hero-fullbleed",
-          "hero-gradient"
+          "hero-gradient",
+          "hero-qualifier",
+          "hero-collage"
         ],
         "required": true
+      },
+      {
+        "slot": "ticker",
+        "variants": [
+          "ticker-band"
+        ]
       },
       {
         "slot": "logos",
@@ -359,6 +410,12 @@
           "logo-marquee"
         ],
         "recommended": true
+      },
+      {
+        "slot": "intro",
+        "variants": [
+          "statement-band"
+        ]
       },
       {
         "slot": "services",
@@ -373,6 +430,12 @@
         "variants": [
           "feature-rows",
           "solution-panels"
+        ]
+      },
+      {
+        "slot": "banner",
+        "variants": [
+          "banner-image"
         ]
       },
       {
@@ -400,7 +463,8 @@
         "slot": "proof",
         "variants": [
           "case-slider",
-          "testimonials"
+          "testimonials",
+          "quote-spotlight"
         ],
         "recommended": true
       },
@@ -495,9 +559,17 @@
           "hero-split-image",
           "hero-cycler-centered",
           "hero-fullbleed",
-          "hero-gradient"
+          "hero-gradient",
+          "hero-qualifier",
+          "hero-collage"
         ],
         "required": true
+      },
+      {
+        "slot": "ticker",
+        "variants": [
+          "ticker-band"
+        ]
       },
       {
         "slot": "logos",
@@ -505,6 +577,12 @@
           "logo-marquee"
         ],
         "recommended": true
+      },
+      {
+        "slot": "intro",
+        "variants": [
+          "statement-band"
+        ]
       },
       {
         "slot": "voice",
@@ -527,6 +605,12 @@
         "variants": [
           "feature-rows",
           "solution-panels"
+        ]
+      },
+      {
+        "slot": "banner",
+        "variants": [
+          "banner-image"
         ]
       },
       {
@@ -553,7 +637,8 @@
         "slot": "proof",
         "variants": [
           "testimonials",
-          "case-slider"
+          "case-slider",
+          "quote-spotlight"
         ],
         "recommended": true
       },
@@ -648,9 +733,17 @@
         "variants": [
           "hero-gradient",
           "hero-split-image",
-          "hero-fullbleed"
+          "hero-fullbleed",
+          "hero-qualifier",
+          "hero-collage"
         ],
         "required": true
+      },
+      {
+        "slot": "ticker",
+        "variants": [
+          "ticker-band"
+        ]
       },
       {
         "slot": "about",
@@ -675,6 +768,12 @@
         "recommended": true
       },
       {
+        "slot": "intro",
+        "variants": [
+          "statement-band"
+        ]
+      },
+      {
         "slot": "services",
         "variants": [
           "service-links",
@@ -691,6 +790,12 @@
         ]
       },
       {
+        "slot": "banner",
+        "variants": [
+          "banner-image"
+        ]
+      },
+      {
         "slot": "audience",
         "variants": [
           "audience-cards",
@@ -701,14 +806,16 @@
         "slot": "proof",
         "variants": [
           "case-slider",
-          "testimonials"
+          "testimonials",
+          "quote-spotlight"
         ],
         "recommended": true
       },
       {
         "slot": "proof-extra",
         "variants": [
-          "testimonials"
+          "testimonials",
+          "quote-spotlight"
         ]
       },
       {

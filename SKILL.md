@@ -47,6 +47,7 @@ Tie-breakers:
 - A client with two service lines (for example voice support plus accounting) and a savings pitch is `offshore-staffing`; both lines go into the services section.
 - Choose `cx-voice-sales` only when the client can supply call recordings or sells outbound sales meetings. Voice support alone, without recordings, fits `offshore-staffing` or `enterprise-cx`.
 - Preset: use the archetype's default. Switch only when the client names brand colors or a style, or clearly matches another preset's "Pick it when" line in `references/style-presets.md`. Brand colors alone go in `theme` and do not change the preset.
+- Brand hue presets: when the client's logo is clearly blue, red or teal, `corporate-blue`, `crimson-trust` or `teal-fresh` may replace the default. Each also sets page-wide design options (angled or curved section edges, photo masks, heading highlight style, photo wipe-in); see "Design options" in `references/style-presets.md`.
 
 ## Step 3: Start from the example
 
@@ -60,6 +61,7 @@ Then edit values only:
 
 - Replace every string and number with the client's content. Delete `_note`.
 - Keep the same section order. Delete "no" and "recommended" sections you have no real content for (see page-anatomy.md), and swap a section for another variant allowed in the same slot when it fits the content better.
+- Optional slots `ticker`, `intro` and `banner` (ticker-band, statement-band, banner-image) and the heroes `hero-qualifier` and `hero-collage` are not in the archetype examples. Copy their data from `examples/variations/*.page.json`, which also shows `image-cards` with `"slider": true` and `quote-spotlight`.
 - For each section, check field names, item counts and length limits in `references/section-catalog.md`. Look at `previews/<variant>.jpg` to see what the section looks like.
 - Images and video: pick keys from `references/assets.md`, or use the client's files by relative path. Icons, flags and cities must come from `python SKILL/scripts/build.py --list`.
 - Every `href` that starts with `#` must match a section id (the default ids are listed in the catalog as "Default anchor").
@@ -104,7 +106,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 
 - `references/page-anatomy.md`: archetypes and exact slot order (generated)
 - `references/section-catalog.md`: every variant, its fields, limits and preview (generated)
-- `references/style-presets.md`: presets, brand color overrides, tones
+- `references/style-presets.md`: presets, design options, brand color overrides, tones
 - `references/content-rules.md`: copy rules and how to handle missing facts
 - `references/assets.md`: image library, icons, flags, cities
 - `references/animation-map.md`: which section carries which of the 24 researched animations (generated)
@@ -112,4 +114,4 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 
 ## Maintaining the library
 
-After changing a template or schema, rebuild all four examples, run lint and QA on each, then run `python SKILL/scripts/make_catalog.py` to regenerate the catalog, anatomy and animation map (add `--previews <dist> ...` to refresh preview images).
+After changing a template or schema, rebuild every page in `examples/` and `examples/variations/`, run lint and QA on each, then run `python SKILL/scripts/make_catalog.py` to regenerate the catalog, anatomy and animation map (add `--previews <dist> ...` to refresh preview images).

@@ -1,0 +1,9 @@
+<section id="{{section.id}}" class="bl-ticker bl-ticker--{{speed}} {{#dark}}bl-tone-dark{{/dark}}{{^dark}}bl-tone-{{section.tone}}{{/dark}}" aria-label="{{label}}">
+  <p class="bl-sr-only">{{label}}: {{#items}}{{.}}{{^@last}}, {{/@last}}{{/items}}</p>
+  <div class="bl-ticker__viewport" aria-hidden="true">
+    <div class="bl-ticker__track">
+      <ul class="bl-ticker__set">{{#items}}<li><span>{{.}}</span><span class="bl-ticker__sep bl-ticker__sep--{{separator}}">{{icon:$separator}}</span></li>{{/items}}</ul>
+      <ul class="bl-ticker__set">{{#items}}<li><span>{{.}}</span><span class="bl-ticker__sep bl-ticker__sep--{{separator}}">{{icon:$separator}}</span></li>{{/items}}</ul>
+    </div>
+  </div>
+</section>

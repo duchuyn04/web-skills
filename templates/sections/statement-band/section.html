@@ -1,0 +1,9 @@
+<section id="{{section.id}}" class="bl-section bl-statement-sec bl-tone-{{section.tone}}">
+  <div class="bl-container bl-statement" data-reveal-group>
+    {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+    <h2 class="bl-statement__title" data-reveal data-split-words>{{title}}</h2>
+    {{#text}}<p class="bl-lead" data-reveal>{{text}}</p>{{/text}}
+    {{#points.0}}<ul class="bl-statement__points" data-reveal>{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+    {{#link}}<a class="bl-link" href="{{href}}" data-reveal>{{label}}{{arrow}}</a>{{/link}}
+  </div>
+</section>

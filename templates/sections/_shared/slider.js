@@ -1,4 +1,4 @@
-/* fluid-case-study-slider: native scroll-snap, mouse drag with momentum, prev/next buttons */
+/* Shared slider (case-slider, image-cards layout "slider"): native scroll-snap, mouse drag with momentum, prev/next buttons */
 (function () {
   document.querySelectorAll('[data-slider]').forEach(function (root) {
     var track = root.querySelector('[data-slider-track]');

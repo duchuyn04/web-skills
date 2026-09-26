@@ -1,0 +1,585 @@
+{
+ "_note": "Variation for preset teal-fresh (curved section edges, arch image masks, gradient highlights). Brightwave Voice is fictional; all figures are sample data.",
+ "archetype": "cx-voice-sales",
+ "preset": "teal-fresh",
+ "lang": "en",
+ "site": {
+  "brand": "Brightwave Voice",
+  "brand_mark": "BV",
+  "title": "Brightwave Voice | Inbound sales and appointment setting teams",
+  "description": "Brightwave Voice answers inbound calls, books appointments and qualifies leads for clinics, home services and SaaS companies."
+ },
+ "sections": [
+  {
+   "type": "header-simple",
+   "data": {
+    "links": [
+     {
+      "label": "Call samples",
+      "href": "#call-samples"
+     },
+     {
+      "label": "Services",
+      "href": "#services"
+     },
+     {
+      "label": "Results",
+      "href": "#results"
+     },
+     {
+      "label": "Pricing",
+      "href": "#pricing"
+     }
+    ],
+    "cta": {
+     "label": "Book a call",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "hero-split-image",
+   "data": {
+    "eyebrow": "Outbound and inbound calling",
+    "title": "Callers who book *qualified meetings* for your sales team",
+    "lead": "Our SDRs and call agents work your target list with your script, log every call in your CRM and hand over meetings your reps want to take.",
+    "primary_cta": {
+     "label": "Book a strategy call",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Hear our callers",
+     "href": "#call-samples"
+    },
+    "proof": [
+     "Calls recorded and scored",
+     "Native English and Spanish",
+     "No long-term contract"
+    ],
+    "photo": {
+     "src": "portrait-woman-office",
+     "alt": "Brightwave sales development lead in the office"
+    },
+    "badges": [
+     {
+      "icon": "calendar",
+      "value": "14 / mo",
+      "label": "Meetings per SDR"
+     },
+     {
+      "icon": "phone",
+      "value": "1,200",
+      "label": "Dials per week"
+     }
+    ]
+   }
+  },
+  {
+   "type": "ticker-band",
+   "data": {
+    "label": "Languages our agents speak",
+    "items": [
+     "English",
+     "Spanish",
+     "Tagalog",
+     "Vietnamese",
+     "Japanese",
+     "Portuguese"
+    ],
+    "separator": "zap",
+    "speed": "normal",
+    "dark": true
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Pipeline partner for B2B software and services companies",
+    "logos": [
+     {
+      "name": "Stackwise"
+     },
+     {
+      "name": "Ledgerly"
+     },
+     {
+      "name": "Brightline HR"
+     },
+     {
+      "name": "Fieldnote"
+     },
+     {
+      "name": "Arcadia Cloud"
+     },
+     {
+      "name": "Pinpoint"
+     }
+    ]
+   }
+  },
+  {
+   "type": "statement-band",
+   "data": {
+    "eyebrow": "What we do",
+    "title": "Every call answered by a trained person, *booked straight* into your calendar",
+    "text": "Brightwave agents follow your script, qualify the caller and book the slot while the customer is still on the line."
+   }
+  },
+  {
+   "type": "voice-sample",
+   "data": {
+    "head": {
+     "eyebrow": "Call samples",
+     "title": "Hear how our callers *sound on the phone*",
+     "lead": "Recorded with permission on live campaigns. Names of prospects are removed."
+    },
+    "points": [
+     "Every caller passes a recorded role-play test",
+     "Weekly call reviews with your sales lead",
+     "Scripts updated from real objections"
+    ],
+    "samples": [
+     {
+      "name": "Jordan",
+      "role": "Senior SDR, SaaS campaign",
+      "language": "English (US)",
+      "flag": "us",
+      "duration": "0:42"
+     },
+     {
+      "name": "Camila",
+      "role": "Bilingual SDR, fintech",
+      "language": "Spanish",
+      "flag": "mx",
+      "duration": "0:38"
+     },
+     {
+      "name": "Aiden",
+      "role": "Inbound agent, IT services",
+      "language": "English (UK)",
+      "flag": "gb",
+      "duration": "0:51"
+     }
+    ]
+   }
+  },
+  {
+   "type": "services-bento",
+   "data": {
+    "head": {
+     "eyebrow": "Services",
+     "title": "Pipeline work *from list to meeting*",
+     "lead": "Pick one service or run the full outbound cycle with one team."
+    },
+    "cards": [
+     {
+      "icon": "phone",
+      "title": "Outbound SDR teams",
+      "text": "Dedicated callers who prospect, qualify and book meetings on your reps' calendars.",
+      "bullets": [
+       "Cold calling and follow-up",
+       "BANT or MEDDIC qualification",
+       "CRM logging on every call"
+      ],
+      "link": {
+       "label": "Plan an SDR team",
+       "href": "#contact"
+      }
+     },
+     {
+      "icon": "headset",
+      "title": "Inbound call handling",
+      "text": "Answer sales and support lines within three rings, day and night."
+     },
+     {
+      "icon": "target",
+      "title": "Lead research",
+      "text": "Build and verify target lists with direct dials and job titles."
+     },
+     {
+      "icon": "mail",
+      "title": "Email sequences",
+      "text": "Write and send follow-up sequences that match each call outcome."
+     }
+    ]
+   }
+  },
+  {
+   "type": "feature-rows",
+   "data": {
+    "head": {
+     "eyebrow": "How we work",
+     "title": "Built around *your* customers and your scripts",
+     "lead": "Three habits every Brightwave program keeps, from the first hiring call to the monthly business review."
+    },
+    "rows": [
+     {
+      "eyebrow": "Hiring",
+      "title": "Agents who already speak your customers' language",
+      "text": "Recruiters screen for language level, product fit and tone of voice. Your team approves the shortlist before training starts, so nobody joins the floor as a stranger to your brand.",
+      "bullets": [
+       "Language and tone assessments",
+       "Client sign-off on every hire"
+      ],
+      "photo": {
+       "src": "portrait-woman-office",
+       "alt": "Brightwave team lead smiling in the Manila office"
+      },
+      "badge": {
+       "value": "15 days",
+       "label": "Average time to hire"
+      }
+     },
+     {
+      "eyebrow": "Quality",
+      "title": "Every contact scored against your rubric",
+      "text": "Quality analysts review calls, chats and emails each day with your own scorecard. Coaching happens the same week, and trends go into the Monday report.",
+      "bullets": [
+       "Daily QA sampling",
+       "Calibration with your team each week",
+       "Coaching logged per agent"
+      ],
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Quality analysts reviewing a support ticket together"
+      },
+      "link": {
+       "label": "See our QA process",
+       "href": "#faq"
+      }
+     },
+     {
+      "eyebrow": "Reporting",
+      "title": "One dashboard your leadership can read",
+      "text": "Handle time, CSAT, backlog and QA scores sit on one shared dashboard, refreshed every morning, with notes on anything that moved outside target.",
+      "photo": {
+       "src": "office-interior",
+       "alt": "Quiet operations floor with wall screens"
+      },
+      "badge": {
+       "value": "07:00",
+       "label": "Daily report in your inbox"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "banner-image",
+   "data": {
+    "eyebrow": "After-hours coverage",
+    "title": "Half of booked calls come in *after 6 pm*",
+    "cta": {
+     "label": "See coverage plans",
+     "href": "#pricing"
+    },
+    "image": "team-coworking-laptops",
+    "full_width": false,
+    "align": "left"
+   }
+  },
+  {
+   "type": "metrics-counter",
+   "data": {
+    "eyebrow": "Results",
+    "title": "What a typical campaign *delivers*",
+    "items": [
+     {
+      "value": 14,
+      "label": "Meetings per SDR per month",
+      "note": "Median across B2B campaigns"
+     },
+     {
+      "value": 68,
+      "suffix": "%",
+      "label": "Meetings held",
+      "note": "Show rate after confirmation calls"
+     },
+     {
+      "value": 3,
+      "label": "Weeks to first meetings",
+      "note": "Including list build and training"
+     }
+    ]
+   },
+   "tone": "muted"
+  },
+  {
+   "type": "quote-spotlight",
+   "data": {
+    "eyebrow": "Clients",
+    "quotes": [
+     {
+      "quote": "Missed calls were costing us new patients every week. Brightwave picks up every one, and bookings went from 40 to 65 a week within two months.",
+      "name": "Jorge Salinas",
+      "role": "Practice Manager",
+      "company": "Dental group",
+      "avatar": "avatar-man-3"
+     },
+     {
+      "quote": "Their agents qualify better than our old in-house team did. My sales reps now only talk to buyers who already have a budget and a date.",
+      "name": "Hannah Cole",
+      "role": "Head of Sales",
+      "company": "SaaS company",
+      "avatar": "avatar-woman-2"
+     }
+    ]
+   }
+  },
+  {
+   "type": "pricing-toggle",
+   "data": {
+    "head": {
+     "eyebrow": "Pricing",
+     "title": "Pay per caller or per meeting"
+    },
+    "models": [
+     {
+      "label": "Per caller",
+      "plans": [
+       {
+        "name": "One SDR",
+        "price": "$3,900",
+        "unit": "per month",
+        "text": "A full-time caller on your campaign with a shared team lead.",
+        "features": [
+         "160 calling hours",
+         "Weekly call review",
+         "CRM logging"
+        ],
+        "cta": {
+         "label": "Start with one SDR",
+         "href": "#contact"
+        }
+       },
+       {
+        "name": "SDR pod",
+        "price": "$10,500",
+        "unit": "per month",
+        "text": "Three callers and a dedicated team lead.",
+        "features": [
+         "Everything in One SDR",
+         "Dedicated team lead",
+         "A/B script testing",
+         "Daily reporting"
+        ],
+        "cta": {
+         "label": "Build a pod",
+         "href": "#contact"
+        },
+        "featured": true,
+        "badge": "Most booked"
+       }
+      ]
+     },
+     {
+      "label": "Per meeting",
+      "plans": [
+       {
+        "name": "Pay per meeting",
+        "price": "$390",
+        "unit": "per held meeting",
+        "text": "You pay only for meetings that take place with qualified prospects.",
+        "features": [
+         "Qualification criteria agreed upfront",
+         "Monthly minimum of 10 meetings",
+         "Rebooking of no-shows"
+        ],
+        "cta": {
+         "label": "Ask about fit",
+         "href": "#contact"
+        }
+       },
+       {
+        "name": "Hybrid",
+        "price": "Custom quote",
+        "text": "Lower base fee plus a reduced rate per held meeting.",
+        "features": [
+         "Shared risk model",
+         "Quarterly target review",
+         "Dedicated callers"
+        ],
+        "cta": {
+         "label": "Talk to us",
+         "href": "#contact"
+        }
+       }
+      ]
+     }
+    ],
+    "note": "Sample prices in USD. Final pricing depends on market, language and list quality."
+   }
+  },
+  {
+   "type": "image-cards",
+   "data": {
+    "head": {
+     "eyebrow": "Playbooks",
+     "title": "Scripts and tips from our call floor"
+    },
+    "slider": true,
+    "ratio": "tall",
+    "cards": [
+     {
+      "tag": "Script",
+      "title": "The three questions that qualify a home services lead",
+      "photo": {
+       "src": "portrait-woman-studio",
+       "alt": "Agent on a call with a headset"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Guide",
+      "title": "How clinics cut no-shows with a reminder call",
+      "photo": {
+       "src": "portrait-woman-office",
+       "alt": "Receptionist checking a schedule"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Report",
+      "title": "When after-hours callers are most likely to book",
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Analysts reviewing call data"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Story",
+      "title": "A roofing company that doubled booked inspections",
+      "photo": {
+       "src": "meeting-handshake",
+       "alt": "Contractor meeting a homeowner"
+      },
+      "href": "#contact"
+     }
+    ]
+   }
+  },
+  {
+   "type": "faq-accordion",
+   "data": {
+    "head": {
+     "eyebrow": "FAQ",
+     "title": "Before you book a call"
+    },
+    "items": [
+     {
+      "q": "Who writes the call script?",
+      "a": "We draft it from your best sales calls and your ideal customer profile, then refine it every week from real objections."
+     },
+     {
+      "q": "Can we listen to every call?",
+      "a": "Yes. All calls are recorded and linked to the contact record in your CRM."
+     },
+     {
+      "q": "Which CRMs do you work in?",
+      "a": "HubSpot, Salesforce, Pipedrive and Close. Other tools are possible after a short setup."
+     },
+     {
+      "q": "How fast can a campaign start?",
+      "a": "Most campaigns place their first calls within two weeks and book first meetings in week three."
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta-multistep",
+   "data": {
+    "eyebrow": "Book a call",
+    "title": "Get a campaign plan for *your market*",
+    "lead": "Tell us who you sell to. We reply with a target list sample, call plan and price.",
+    "points": [
+     "Free list sample of 50 contacts",
+     "Script draft before you sign",
+     "Cancel any month"
+    ],
+    "contacts": [
+     {
+      "icon": "phone",
+      "label": "+1 (555) 010 7788",
+      "href": "tel:+15550107788"
+     }
+    ],
+    "form": {
+     "step1_title": "What do you need help with?",
+     "services": [
+      "Outbound SDR team",
+      "Inbound call handling",
+      "Lead research",
+      "Email sequences"
+     ],
+     "step2_title": "How many callers do you expect?",
+     "sizes": [
+      "1 caller",
+      "2-3 callers",
+      "4-10 callers",
+      "Not sure yet"
+     ],
+     "step3_title": "Where should we send the plan?",
+     "submit_label": "Send my campaign plan",
+     "success_title": "Thanks, request received",
+     "success_text": "A campaign manager will contact you within one business day.",
+     "note": "We never add you to a calling list."
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Outbound SDR and inbound calling teams for B2B companies in North America and Europe.",
+    "contacts": [
+     {
+      "icon": "phone",
+      "label": "+1 (555) 010 7788",
+      "href": "tel:+15550107788"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Services",
+      "links": [
+       {
+        "label": "Outbound SDR",
+        "href": "#services"
+       },
+       {
+        "label": "Inbound calls",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "Call samples",
+        "href": "#call-samples"
+       },
+       {
+        "label": "Pricing",
+        "href": "#pricing"
+       },
+       {
+        "label": "FAQ",
+        "href": "#faq"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved."
+   }
+  },
+  {
+   "type": "floating-chat",
+   "data": {
+    "label": "Talk to a campaign lead",
+    "href": "#contact",
+    "icon": "phone"
+   }
+  }
+ ]
+}

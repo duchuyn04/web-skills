@@ -1,13 +1,5 @@
 /* case-slider: fluid-case-study-slider (scroll-snap, drag with momentum, buttons) */
 .bl-cases__nav { display: flex; gap: .6rem; }
-.bl-round-btn {
-  width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%;
-  border: 1px solid var(--border-strong); color: var(--text-strong); background: var(--surface);
-  transition: background-color var(--dur-fast) var(--ease-std), transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast);
-}
-.bl-round-btn:hover { background: var(--surface-2); transform: translateY(-2px); }
-.bl-round-btn:disabled { opacity: .35; cursor: default; transform: none; }
-.bl-round-btn .bl-icon { width: 20px; height: 20px; }
 .bl-cases__track {
   display: flex; gap: clamp(1rem, 2vw, 1.5rem); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
   padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));

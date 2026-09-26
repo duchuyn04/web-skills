@@ -1,0 +1,21 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--qualifier bl-tone-{{section.tone}}">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-glow bl-glow--a"></span><span class="bl-glow bl-glow--b"></span><span class="bl-hero__grid"></span></div>
+  <div class="bl-container bl-hero-q">
+    <div class="bl-hero-q__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      {{#primary_cta}}<div class="bl-btn-row" data-reveal><a class="bl-btn bl-btn--primary bl-btn--lg bl-btn--shimmer" href="{{href}}">{{label}}{{arrow}}</a></div>{{/primary_cta}}
+      {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    {{#card}}
+    <nav class="bl-qcard bl-glass" aria-label="{{title}}" data-reveal>
+      <p class="bl-qcard__title">{{title}}</p>
+      {{#text}}<p class="bl-qcard__text">{{text}}</p>{{/text}}
+      <ul class="bl-qcard__options" data-reveal-group>
+        {{#options}}<li data-reveal="pop"><a class="bl-qcard__opt" href="{{href}}">{{#icon}}<span class="bl-qcard__icon">{{icon:$icon}}</span>{{/icon}}<span class="bl-qcard__label">{{label}}</span>{{arrow}}</a></li>{{/options}}
+      </ul>
+    </nav>
+    {{/card}}
+  </div>
+</section>

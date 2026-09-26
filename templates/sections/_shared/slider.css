@@ -1,0 +1,20 @@
+/* Shared slider controls (case-slider, image-cards slider) */
+.bl-round-btn {
+  width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%;
+  border: 1px solid var(--border-strong); color: var(--text-strong); background: var(--surface);
+  transition: background-color var(--dur-fast) var(--ease-std), transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast);
+}
+.bl-round-btn:hover { background: var(--surface-2); transform: translateY(-2px); }
+.bl-round-btn:disabled { opacity: .35; cursor: default; transform: none; }
+.bl-round-btn .bl-icon { width: 20px; height: 20px; }
+.bl-slider-track {
+  display: flex; gap: clamp(1rem, 2vw, 1.5rem); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+  scroll-padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+  padding-bottom: .75rem; cursor: grab; overscroll-behavior-x: contain;
+}
+.bl-slider-track::-webkit-scrollbar { display: none; }
+.bl-slider-track.is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.bl-slider-track > * { scroll-snap-align: start; transition: opacity var(--dur) var(--ease-std); }
+.bl-slider-track > .is-dim { opacity: .55; }
+.bl-slider-nav { display: flex; gap: .6rem; }

@@ -219,6 +219,31 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 .bl-brand__mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--c-accent); color: var(--c-on-accent); font-size: .9rem; font-weight: 800; letter-spacing: 0; }
 .bl-brand__logo { height: 32px; width: auto; }
 
+/* ---------- Design options (root classes set by build.py from theme or preset) ---------- */
+:root { --edge: clamp(28px, 4.5vw, 72px); }
+/* Edges: heroes and full-bleed dark bands get an angled or curved bottom; the next block tucks under it */
+.bl-edges-angle .bl-hero, .bl-edges-curve .bl-hero,
+.bl-edges-angle main > .bl-tone-dark:not(:last-child, .bl-ticker), .bl-edges-curve main > .bl-tone-dark:not(:last-child, .bl-ticker) { position: relative; z-index: 2; overflow: hidden; }
+.bl-edges-angle .bl-hero, .bl-edges-curve .bl-hero { z-index: 3; }
+.bl-edges-angle .bl-hero, .bl-edges-angle main > .bl-tone-dark:not(:last-child, .bl-ticker) { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--edge)), 0 100%); }
+.bl-edges-curve .bl-hero, .bl-edges-curve main > .bl-tone-dark:not(:last-child, .bl-ticker) { border-bottom-left-radius: 50% var(--edge); border-bottom-right-radius: 50% var(--edge); }
+.bl-edges-angle .bl-hero, .bl-edges-curve .bl-hero { padding-bottom: calc(clamp(4rem, 7vw, 6.5rem) + var(--edge) * .6); }
+.bl-edges-angle main > .bl-tone-dark:not(:last-child, .bl-ticker), .bl-edges-curve main > .bl-tone-dark:not(:last-child, .bl-ticker) { padding-bottom: calc(var(--section-y) + var(--edge) * .6); }
+.bl-edges-angle main > .bl-hero + *, .bl-edges-curve main > .bl-hero + *,
+.bl-edges-angle main > .bl-tone-dark:not(:last-child, .bl-ticker) + *, .bl-edges-curve main > .bl-tone-dark:not(:last-child, .bl-ticker) + * { margin-top: calc(var(--edge) * -1); border-top: var(--edge) solid transparent; }
+
+/* Image masks on photo frames */
+.bl-mask-angle :is(.bl-row__frame, .bl-hero-split__frame, .bl-tabs__media, .bl-hero-grad__photo, .bl-banner-sec:not(.bl-banner-sec--full) .bl-banner) { clip-path: polygon(0 0, calc(100% - 72px) 0, 100% 72px, 100% 100%, 0 100%); }
+.bl-mask-arch :is(.bl-row__frame, .bl-hero-split__frame, .bl-tabs__media, .bl-hero-grad__photo) { border-radius: 999px 999px var(--radius-lg) var(--radius-lg); }
+
+/* Title highlight styles */
+.bl-hl-gradient .bl-hl { background: linear-gradient(100deg, var(--accent-ink) 10%, var(--accent-2-ink) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.bl-hl-underline .bl-hl { color: inherit; text-decoration: underline; text-decoration-color: var(--c-accent); text-decoration-thickness: .1em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
+
+/* Media reveal: photos wipe in from the bottom inside their frame */
+.js.bl-media-clip [data-reveal] :is(.bl-frame, .bl-mosaic__tile) img { clip-path: inset(100% 0 0 0); transition: clip-path 1s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 80ms + 120ms); }
+.js.bl-media-clip [data-reveal].is-in :is(.bl-frame, .bl-mosaic__tile) img { clip-path: inset(0 0 0 0); }
+
 /* Responsive */
 @media (max-width: 1024px) {
   .bl-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }

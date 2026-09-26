@@ -1,0 +1,24 @@
+{
+  "name": "crimson-trust",
+  "label": "Crimson trust",
+  "use_for": "Finance, accounting, tax, legal and insurance BPO, where red leads the category. Serif headings, square-ish corners and underlined highlights read as established and precise.",
+  "references": ["Escalon Services", "QX Global Group", "Integreon", "Invensis", "Entigrity"],
+  "fonts": {
+    "heading": "Source Serif 4",
+    "body": "Source Sans 3",
+    "mono": "JetBrains Mono",
+    "google": "family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
+  "type": {"heading_weight": 600, "heading_tracking": "-0.015em"},
+  "colors": {"primary": "#1c1d26", "accent": "#de1b35", "accent_2": "#f59e0b"},
+  "shape": {"radius_sm": "4px", "radius": "6px", "radius_lg": "10px", "radius_btn": "6px"},
+  "hero_tone": "light",
+  "eyebrow": "line",
+  "design": {"edges": "none", "image_mask": "angle", "highlight": "underline", "media_reveal": "fade"},
+  "tone_cycle": ["light", "muted"],
+  "tones": {
+    "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#f7f5f3", "text": "#4a4b55", "text_strong": "$primary", "text_muted": "#676873", "border": "#e7e3df", "is_dark": false},
+    "muted": {"bg": "#faf8f6", "surface": "#ffffff", "surface_2": "#f1ede9", "text": "#4a4b55", "text_strong": "$primary", "text_muted": "#676873", "border": "#e4ded8", "is_dark": false},
+    "dark": {"bg": "$primary", "surface": "mix($primary,#ffffff,0.06)", "surface_2": "mix($primary,#ffffff,0.10)", "text": "#c9c9d2", "text_strong": "#ffffff", "text_muted": "#9d9dab", "border": "rgba(255,255,255,0.12)", "is_dark": true}
+  }
+}

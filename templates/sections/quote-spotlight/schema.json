@@ -1,0 +1,24 @@
+{
+  "variant": "quote-spotlight",
+  "group": "proof",
+  "summary": "One large client quote on a dark band with a big quote mark, the person and an optional client logo or wordmark. With 2-5 quotes it becomes a crossfading slider with previous/next buttons and dots. Only use real, approved quotes.",
+  "tone": "dark",
+  "anchor": "client-voice",
+  "animations": ["reveal", "quote-crossfade"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "quotes": {
+      "type": "list", "min": 1, "max": 5,
+      "item": {"type": "object", "fields": {
+        "quote": {"type": "text", "min": 40, "max": 320},
+        "name": {"type": "text", "min": 3, "max": 40},
+        "role": {"type": "text", "min": 3, "max": 60},
+        "company": {"type": "text", "min": 2, "max": 40},
+        "avatar": {"type": "image", "required": false},
+        "logo": {"type": "image", "required": false}
+      }}
+    },
+    "prev_label": {"type": "text", "min": 2, "max": 20, "default": "Previous quote"},
+    "next_label": {"type": "text", "min": 2, "max": 20, "default": "Next quote"}
+  }
+}

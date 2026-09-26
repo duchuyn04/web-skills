@@ -1,0 +1,14 @@
+/* statement-band: one large centered statement */
+.bl-statement { max-width: 980px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.bl-statement .bl-eyebrow { justify-content: center; }
+.bl-statement__title {
+  font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking);
+  font-size: clamp(1.9rem, 3vw + 1rem, 3.3rem); line-height: 1.15; color: var(--text-strong); text-wrap: balance; margin-bottom: 1.4rem;
+}
+.bl-statement .bl-lead { max-width: 720px; margin-bottom: 1.5rem; }
+.bl-statement__points { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 1.5rem; margin-bottom: 1.5rem; font-weight: 600; font-size: var(--fs-sm); color: var(--text-strong); }
+.bl-statement__points li { display: inline-flex; align-items: center; gap: .45rem; }
+.bl-statement__points .bl-icon { width: 1.1rem; height: 1.1rem; color: var(--accent-ink); }
+/* word-by-word reveal: words are wrapped by section.js */
+.bl-sw { opacity: .18; transition: opacity .5s var(--ease-out); transition-delay: calc(var(--w, 0) * 45ms); }
+.is-in .bl-sw, html:not(.js) .bl-sw { opacity: 1; }

@@ -1,0 +1,15 @@
+{
+  "variant": "ticker-band",
+  "group": "ticker",
+  "summary": "A slim band of large words (services, languages, industries) that scrolls sideways without end, separated by small icons. Painted in the brand colour by default. Pauses on hover and stops for reduced motion.",
+  "tone": "accent",
+  "anchor": "capabilities",
+  "animations": ["text-marquee"],
+  "fields": {
+    "label": {"type": "text", "min": 3, "max": 60},
+    "items": {"type": "list", "min": 4, "max": 12, "item": {"type": "text", "min": 2, "max": 32}},
+    "separator": {"type": "icon", "default": "star"},
+    "speed": {"type": "enum", "values": ["slow", "normal"], "default": "slow"},
+    "dark": {"type": "bool", "default": false}
+  }
+}

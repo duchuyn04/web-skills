@@ -15,7 +15,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `hero-ambient-video-mask` | `hero-fullbleed` | muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen |
 | `infinite-logo-marquee` | `logo-marquee` | 40s linear loop, pauses on hover |
 | `odometer-number-counter` | `metrics-counter`, `metrics-panel` | 2000ms ease-out, once, threshold 0.3 |
-| `staggered-badge-pop-in` | `about-mosaic`, `compliance-badges` | 350ms ease-back, 80ms stagger |
+| `staggered-badge-pop-in` | `about-mosaic`, `compliance-badges`, `hero-qualifier` | 350ms ease-back, 80ms stagger |
 | `bento-spotlight-hover` | `services-bento` | radial glow follows pointer, rAF throttled |
 | `card-tilt-3d-perspective` | `industries-tiles` | max 6deg, perspective 1000px, glare |
 | `sliding-pill-tab-switcher` | `services-tabs` | 300ms standard ease |
@@ -26,11 +26,29 @@ All motion follows the performance rules gathered in the research: only transfor
 | `sticky-sidebar-process-scroll` | `process-sticky` | CSS sticky plus scroll-linked progress line |
 | `toggle-model-flip` | `pricing-toggle` | 380ms ease-out-expo, 60ms stagger |
 | `interactive-map-pin-pulse` | `locations-map` | 2.2s radar rings, 150ms tooltip with 100ms delay |
-| `fluid-case-study-slider` | `case-slider` | scroll-snap, mouse drag with momentum |
+| `fluid-case-study-slider` | `case-slider`, `image-cards` | scroll-snap, mouse drag with momentum |
 | `shimmer-button-glow` | `cta-band`, `cta-multistep`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-split-image` | one sweep every 5.5s |
 | `floating-whatsapp-chat-bounce` | `floating-chat` | appears after the hero, 1.8s ping dot |
 | `exit-intent-spring-modal` | `exit-intent-modal` | 520ms ease-back, after 8s, once per 7 days |
 | `globe-spin` | `hero-gradient` | dotted world map scrolling behind a sphere mask, 60s linear loop |
-| `reveal` | `about-mosaic`, `audience-cards`, `case-slider`, `contact-split`, `cost-calculator`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `metrics-panel`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `service-links`, `services-bento`, `services-tabs`, `solution-panels`, `testimonials`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
+| `reveal` | `about-mosaic`, `audience-cards`, `banner-image`, `case-slider`, `contact-split`, `cost-calculator`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `metrics-panel`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `quote-spotlight`, `service-links`, `services-bento`, `services-tabs`, `solution-panels`, `statement-band`, `testimonials`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
+| `text-marquee` | `ticker-band` | 60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion |
+| `quote-crossfade` | `quote-spotlight` | 600ms fade plus 10px rise, prev/next buttons, dots and arrow keys, no autoplay |
+| `word-by-word-reveal` | `statement-band` | each word fades from 18% to full opacity over 500ms, 45ms stagger, once |
+| `slow-photo-zoom` | `banner-image` | photo scales 1.08 to 1 over 2.4s when the band enters |
+| `collage-pop-in` | `hero-collage` | tiles scale from 0.9 with 80ms stagger |
+| `shape-float` | `hero-collage` | flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s |
+
+## Design options (page-wide)
+
+These are not tied to one section. The preset sets them and `theme` in page.json can override them.
+
+| Option | Values | Effect |
+|:---|:---|:---|
+| `edges` | none, angle, curve | Bottom edge of the hero and of dark sections is cut at an angle or curved; the next section slides under it. |
+| `image_mask` | rounded, angle, arch | Photo frames (feature rows, split heroes, tabs, boxed banners) get a cut corner or an arched top. |
+| `highlight` | color, gradient, underline | How `*accent*` words in headings look. |
+| `media_reveal` | fade, clip | `clip` wipes photos up from the bottom (1s) as they enter. |
+
 
 `magnetic-cta-button` is off by default. Turn it on with `"features": {"magnetic_cta": true}` in page.json.

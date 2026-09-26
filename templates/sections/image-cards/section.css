@@ -21,3 +21,7 @@
 .bl-icard:hover .bl-icard__more .arrow-icon { transform: translateX(3px); }
 @media (max-width: 1024px) { .bl-icards, .bl-icards:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .bl-icards, .bl-icards:has(> :nth-child(4):last-child) { grid-template-columns: 1fr; } }
+.bl-icards__tools { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.bl-icards--slider { display: flex; grid-template-columns: none; }
+.bl-icards--slider .bl-icard { flex: 0 0 min(360px, 82vw); }
+.bl-icards--slider.bl-icards--tall .bl-icard { flex-basis: min(300px, 76vw); }

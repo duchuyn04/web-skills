@@ -1,0 +1,25 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--collage bl-tone-{{section.tone}}">
+  <div class="bl-container bl-hero-col">
+    <div class="bl-hero-col__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg bl-btn--shimmer" href="{{primary_cta.href}}">{{primary_cta.label}}{{arrow}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    <div class="bl-collage" data-reveal-group>
+      <span class="bl-collage__cell bl-collage__shape bl-collage__shape--q1" data-reveal="pop" aria-hidden="true"></span>
+      <span class="bl-collage__cell bl-collage__photo" data-reveal="pop"><img src="{{photos.0.src}}" alt="{{photos.0.alt}}" width="200" height="200"></span>
+      <span class="bl-collage__cell bl-collage__shape bl-collage__shape--half" data-reveal="pop" aria-hidden="true"></span>
+      <span class="bl-collage__cell bl-collage__shape bl-collage__shape--dots" data-reveal="pop" aria-hidden="true"></span>
+      <span class="bl-collage__cell bl-collage__shape bl-collage__shape--q2" data-reveal="pop" aria-hidden="true"></span>
+      <span class="bl-collage__cell bl-collage__photo" data-reveal="pop"><img src="{{photos.1.src}}" alt="{{photos.1.alt}}" width="200" height="200"></span>
+      <span class="bl-collage__cell bl-collage__photo" data-reveal="pop"><img src="{{photos.2.src}}" alt="{{photos.2.alt}}" width="200" height="200"></span>
+      <span class="bl-collage__cell bl-collage__shape bl-collage__shape--q3" data-reveal="pop" aria-hidden="true"></span>
+      <span class="bl-collage__cell bl-collage__shape bl-collage__shape--ring" data-reveal="pop" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>

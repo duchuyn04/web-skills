@@ -1,16 +1,20 @@
 {
   "variant": "image-cards",
   "group": "cards",
-  "summary": "Grid of 3, 4 or 6 clickable photo cards with tag, meta line, title and short text. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.",
+  "summary": "Clickable photo cards with tag, meta line, title and short text. Grid of 3, 4 or 6 cards, or a draggable slider of 3 to 8 cards when \"slider\" is true. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.",
   "tone": "auto",
   "anchor": "insights",
-  "animations": ["reveal"],
+  "shared": ["slider"],
+  "animations": ["reveal", "fluid-case-study-slider (slider mode)"],
   "fields": {
     "head": {"$ref": "head"},
     "view_all": {"$ref": "cta", "required": false},
     "ratio": {"type": "enum", "values": ["wide", "tall"], "default": "wide"},
+    "slider": {"type": "bool", "default": false},
+    "prev_label": {"type": "text", "min": 2, "max": 20, "default": "Previous"},
+    "next_label": {"type": "text", "min": 2, "max": 20, "default": "Next"},
     "cards": {
-      "type": "list", "min": 3, "max": 6, "counts": [3, 4, 6],
+      "type": "list", "min": 3, "max": 8,
       "item": {"type": "object", "fields": {
         "tag": {"type": "text", "min": 2, "max": 20, "required": false},
         "meta": {"type": "text", "min": 2, "max": 28, "required": false},

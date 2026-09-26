@@ -598,6 +598,7 @@ def theme_css(preset, overrides, ctx):
         strong = parse_hex(vals["text_strong"])
         dark = vals["is_dark"]
         accent_ink = ink_for(accent, bg)
+        accent2_ink = ink_for(parse_hex(colors["accent_2"]), bg, 3.0)
         for key in ("text", "text_muted"):
             c = parse_hex(vals[key])
             if c and contrast(c, bg) < 4.5:
@@ -615,6 +616,7 @@ def theme_css(preset, overrides, ctx):
                   "  --border: %s;" % vals["border"],
                   "  --border-strong: %s;" % border_strong,
                   "  --accent-ink: %s;" % to_hex(accent_ink),
+                  "  --accent-2-ink: %s;" % to_hex(accent2_ink),
                   "  --glass: %s;" % ("rgba(%d, %d, %d, 0.62)" % surf if dark else "rgba(255, 255, 255, 0.74)"),
                   "  --glass-border: %s;" % ("rgba(255, 255, 255, 0.12)" if dark else "rgba(255, 255, 255, 0.9)"),
                   "  --shadow-lg: %s;" % ("0 24px 48px -20px rgba(0, 0, 0, 0.65)" if dark else "0 24px 48px -24px rgba(15, 23, 42, 0.24)"),
@@ -639,6 +641,7 @@ def theme_css(preset, overrides, ctx):
               "  --border: rgba(%d, %d, %d, 0.28);" % tuple(int(c) for c in on),
               "  --border-strong: rgba(%d, %d, %d, 0.55);" % tuple(int(c) for c in on),
               "  --accent-ink: %s;" % to_hex(on),
+              "  --accent-2-ink: %s;" % to_hex(on),
               "  --glass: rgba(%d, %d, %d, 0.16);" % tuple(int(c) for c in on),
               "  --glass-border: rgba(%d, %d, %d, 0.3);" % tuple(int(c) for c in on),
               "  --shadow-lg: 0 24px 48px -24px rgba(0, 0, 0, 0.35);",
@@ -696,6 +699,10 @@ PAGE_SPEC = {
             "accent": {"type": "color", "required": False},
             "accent_2": {"type": "color", "required": False},
             "eyebrow": {"type": "enum", "values": ["line", "pill"], "required": False},
+            "edges": {"type": "enum", "values": ["none", "angle", "curve"], "required": False},
+            "image_mask": {"type": "enum", "values": ["rounded", "angle", "arch"], "required": False},
+            "highlight": {"type": "enum", "values": ["color", "gradient", "underline"], "required": False},
+            "media_reveal": {"type": "enum", "values": ["fade", "clip"], "required": False},
         }},
         "features": {"type": "object", "required": False, "fields": {
             "magnetic_cta": {"type": "bool", "default": False},
@@ -771,6 +778,8 @@ def main():
         enrich_stats(data)
         if t == "services-bento" and data.get("cards") and len(data["cards"][0].get("bullets") or []) < 3:
             ctx.err(p + ".data.cards[0].bullets", "the first card is the large feature card; give it 3-4 bullets so it does not look empty")
+        if t == "image-cards" and not data.get("slider") and len(data.get("cards") or []) not in (3, 4, 6):
+            ctx.err(p + ".data.cards", "a grid needs 3, 4 or 6 cards (got %d). Use that count, or set \"slider\": true for 3 to 8 cards." % len(data.get("cards") or []))
         if t == "video-block":
             vid = data.get("video") or {}
             if bool(vid.get("src")) == bool(vid.get("embed")):
@@ -874,8 +883,15 @@ def main():
         if (v["_dir"] / "section.js").is_file():
             js.append((v["_dir"] / "section.js").read_text(encoding="utf-8"))
 
-    eyebrow = (top.get("theme") or {}).get("eyebrow") or preset.get("eyebrow", "line")
-    shell = {"root_class": "bl-eyebrow-%s" % eyebrow, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
+    theme = top.get("theme") or {}
+    design = dict({"edges": "none", "image_mask": "rounded", "highlight": "color", "media_reveal": "fade"}, **preset.get("design", {}))
+    for k in design:
+        if theme.get(k):
+            design[k] = theme[k]
+    eyebrow = theme.get("eyebrow") or preset.get("eyebrow", "line")
+    root_class = " ".join(["bl-eyebrow-%s" % eyebrow, "bl-edges-%s" % design["edges"], "bl-mask-%s" % design["image_mask"],
+                           "bl-hl-%s" % design["highlight"], "bl-media-%s" % design["media_reveal"]])
+    shell = {"root_class": root_class, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
              "body": Safe(assemble_body(body)), "hero_tone": hero_tone}
     page_html = renderer.render_file(TPL / "page.html", [shell])
     page_html = re.sub(r"<!--.*?-->", "", page_html, flags=re.S)

@@ -1,0 +1,679 @@
+{
+ "_note": "Variation for preset corporate-blue (angled section edges, clip image reveal). Meridian Contact is fictional; all figures are sample data.",
+ "archetype": "enterprise-cx",
+ "preset": "corporate-blue",
+ "lang": "en",
+ "site": {
+  "brand": "Meridian Contact",
+  "brand_mark": "MC",
+  "title": "Meridian Contact | Customer care and back-office teams for enterprises",
+  "description": "Meridian Contact runs voice, chat and back-office programs for banks, insurers and retailers from Manila, Da Nang and Bogota."
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "topbar": {
+     "note": "ISO 27001 and PCI DSS certified delivery in 4 countries",
+     "links": [
+      {
+       "label": "Careers",
+       "href": "#contact"
+      },
+      {
+       "label": "Security",
+       "href": "#faq"
+      }
+     ]
+    },
+    "languages": [
+     {
+      "flag": "us",
+      "label": "English",
+      "href": "#top",
+      "current": true
+     },
+     {
+      "flag": "vn",
+      "label": "Tieng Viet",
+      "href": "#top"
+     },
+     {
+      "flag": "jp",
+      "label": "Japanese",
+      "href": "#top"
+     }
+    ],
+    "links": [
+     {
+      "label": "Solutions",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Customer care",
+         "links": [
+          {
+           "label": "Omnichannel support",
+           "href": "#services"
+          },
+          {
+           "label": "Technical support",
+           "href": "#services"
+          },
+          {
+           "label": "Multilingual desks",
+           "href": "#services"
+          }
+         ]
+        },
+        {
+         "heading": "Operations",
+         "links": [
+          {
+           "label": "Back-office processing",
+           "href": "#services"
+          },
+          {
+           "label": "Trust and safety",
+           "href": "#services"
+          },
+          {
+           "label": "Data labeling",
+           "href": "#services"
+          }
+         ]
+        }
+       ],
+       "featured": {
+        "tag": "Case study",
+        "title": "How a regional bank cut average handle time by 31 percent",
+        "text": "A 180-seat voice and chat program moved from three vendors to one in 11 weeks.",
+        "link_label": "Read the case",
+        "href": "#client-voice"
+       }
+      }
+     },
+     {
+      "label": "Industries",
+      "href": "#industries"
+     },
+     {
+      "label": "Results",
+      "href": "#results"
+     },
+     {
+      "label": "Locations",
+      "href": "#contact"
+     },
+     {
+      "label": "FAQ",
+      "href": "#faq"
+     }
+    ],
+    "cta": {
+     "label": "Talk to sales",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "hero-qualifier",
+   "data": {
+    "eyebrow": "Enterprise customer care",
+    "title": "Support teams that *learn your product* in weeks",
+    "lead": "Meridian staffs, trains and runs voice, chat and back-office programs for regulated brands. Tell us where you want to start and we will send the right plan.",
+    "primary_cta": {
+     "label": "Talk to an expert",
+     "href": "#contact"
+    },
+    "proof": [
+     "ISO 27001 certified",
+     "PCI DSS level 1",
+     "38 languages"
+    ],
+    "card": {
+     "title": "What do you need first?",
+     "text": "Pick one. Each option opens the part of the page that covers it.",
+     "options": [
+      {
+       "label": "Voice and chat support",
+       "href": "#services",
+       "icon": "headset"
+      },
+      {
+       "label": "Back-office processing",
+       "href": "#how-we-work",
+       "icon": "file-text"
+      },
+      {
+       "label": "Industry programs",
+       "href": "#industries",
+       "icon": "building"
+      },
+      {
+       "label": "Pricing and pilots",
+       "href": "#contact",
+       "icon": "calculator"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "type": "ticker-band",
+   "data": {
+    "label": "Programs we run today",
+    "items": [
+     "Inbound voice",
+     "Live chat",
+     "Email desks",
+     "Claims intake",
+     "KYC checks",
+     "Collections",
+     "Trust and safety",
+     "Order support"
+    ],
+    "separator": "star",
+    "speed": "slow"
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Operations partner for banks, telcos and retail brands in 14 countries",
+    "logos": [
+     {
+      "name": "Kestrel Bank"
+     },
+     {
+      "name": "Orbital Telecom"
+     },
+     {
+      "name": "Maple Retail"
+     },
+     {
+      "name": "Lumen Health"
+     },
+     {
+      "name": "Harbor Air"
+     },
+     {
+      "name": "Vantage Pay"
+     },
+     {
+      "name": "Cobalt Energy"
+     },
+     {
+      "name": "Summit Insure"
+     }
+    ]
+   }
+  },
+  {
+   "type": "statement-band",
+   "data": {
+    "eyebrow": "Who we are",
+    "title": "We run the queues your customers *actually call* about, with agents who stay",
+    "text": "Meridian has 2,400 agents across four delivery centers. Average agent tenure is 31 months, so the people who learn your product during onboarding are still answering your customers next year.",
+    "points": [
+     "31 month agent tenure",
+     "4 delivery centers",
+     "24/7 coverage"
+    ],
+    "link": {
+     "label": "Meet the leadership team",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "services-tabs",
+   "data": {
+    "head": {
+     "eyebrow": "Services",
+     "title": "Pick the programs you need *and add more later*",
+     "lead": "Each program runs with its own playbook, QA form and reporting cadence. Most clients start with one channel and expand in the second quarter."
+    },
+    "tabs": [
+     {
+      "tab": "Customer care",
+      "icon": "headset",
+      "title": "Voice, chat and email support in 12 languages",
+      "text": "Dedicated agents answer in your brand voice across phone, chat, email and social, with follow-the-sun coverage from Manila, Bogota and Krakow.",
+      "bullets": [
+       "Tier 1 and tier 2 support",
+       "Live chat and messaging apps",
+       "Weekend and holiday coverage"
+      ],
+      "photo": {
+       "src": "portrait-woman-office",
+       "alt": "Customer care team lead smiling in the office"
+      },
+      "link": {
+       "label": "Plan a care program",
+       "href": "#contact"
+      }
+     },
+     {
+      "tab": "Back office",
+      "icon": "file-text",
+      "title": "Document, claims and order processing",
+      "text": "Trained processors handle KYC checks, claims intake, refunds and order updates inside your systems, with dual review on high-risk items.",
+      "bullets": [
+       "KYC and onboarding checks",
+       "Claims and refund processing",
+       "Catalog and order updates"
+      ],
+      "photo": {
+       "src": "office-interior",
+       "alt": "Quiet production floor in the Ho Chi Minh City office"
+      }
+     },
+     {
+      "tab": "Trust and safety",
+      "icon": "shield-check",
+      "title": "Content review with wellness support built in",
+      "text": "Moderators review user content against your policy, escalate edge cases and work fixed rotations with on-site counselors.",
+      "bullets": [
+       "Policy-based content review",
+       "Fraud and abuse queues",
+       "Weekly calibration sessions"
+      ],
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Reviewers discussing a flagged case on a laptop screen"
+      }
+     },
+     {
+      "tab": "Tech support",
+      "icon": "cpu",
+      "title": "Technical help desks for software and devices",
+      "text": "Certified technicians troubleshoot accounts, devices and integrations, and hand bugs to your engineers with full reproduction notes.",
+      "bullets": [
+       "Remote troubleshooting",
+       "Bug triage and reproduction",
+       "Knowledge base upkeep"
+      ],
+      "photo": {
+       "src": "team-coworking-laptops",
+       "alt": "Technical support agents testing software on laptops"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "feature-rows",
+   "data": {
+    "head": {
+     "eyebrow": "How we work",
+     "title": "Built around *your* customers and your scripts",
+     "lead": "Three habits every Meridian program keeps, from the first hiring call to the monthly business review."
+    },
+    "rows": [
+     {
+      "eyebrow": "Hiring",
+      "title": "Agents who already speak your customers' language",
+      "text": "Recruiters screen for language level, product fit and tone of voice. Your team approves the shortlist before training starts, so nobody joins the floor as a stranger to your brand.",
+      "bullets": [
+       "Language and tone assessments",
+       "Client sign-off on every hire"
+      ],
+      "photo": {
+       "src": "portrait-woman-office",
+       "alt": "Meridian team lead smiling in the Manila office"
+      },
+      "badge": {
+       "value": "15 days",
+       "label": "Average time to hire"
+      }
+     },
+     {
+      "eyebrow": "Quality",
+      "title": "Every contact scored against your rubric",
+      "text": "Quality analysts review calls, chats and emails each day with your own scorecard. Coaching happens the same week, and trends go into the Monday report.",
+      "bullets": [
+       "Daily QA sampling",
+       "Calibration with your team each week",
+       "Coaching logged per agent"
+      ],
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Quality analysts reviewing a support ticket together"
+      },
+      "link": {
+       "label": "See our QA process",
+       "href": "#faq"
+      }
+     },
+     {
+      "eyebrow": "Reporting",
+      "title": "One dashboard your leadership can read",
+      "text": "Handle time, CSAT, backlog and QA scores sit on one shared dashboard, refreshed every morning, with notes on anything that moved outside target.",
+      "photo": {
+       "src": "office-interior",
+       "alt": "Quiet operations floor with wall screens"
+      },
+      "badge": {
+       "value": "07:00",
+       "label": "Daily report in your inbox"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "banner-image",
+   "data": {
+    "eyebrow": "Da Nang delivery hub",
+    "title": "A *1,400 seat* floor built for regulated work",
+    "text": "Clean-desk zones, badge-controlled pods and on-site quality coaches for every 12 agents.",
+    "cta": {
+     "label": "Book a site visit",
+     "href": "#contact"
+    },
+    "image": "office-interior",
+    "full_width": true,
+    "align": "left"
+   }
+  },
+  {
+   "type": "metrics-counter",
+   "data": {
+    "eyebrow": "Results",
+    "title": "Numbers our clients check *every week*",
+    "lead": "Averages across active programs in 2025, audited by client QA teams.",
+    "items": [
+     {
+      "value": 2400,
+      "suffix": "+",
+      "label": "Agents in production",
+      "note": "Across four delivery centers"
+     },
+     {
+      "value": 94.6,
+      "suffix": "%",
+      "label": "Average CSAT",
+      "note": "Voice, chat and email combined"
+     },
+     {
+      "value": 31,
+      "suffix": "%",
+      "label": "Lower handle time",
+      "note": "Median change after six months"
+     },
+     {
+      "value": 30,
+      "label": "Days to go live",
+      "note": "For a 25-seat program"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image-cards",
+   "data": {
+    "head": {
+     "eyebrow": "Industries",
+     "title": "Programs shaped around *your rules*",
+     "lead": "Each industry team has its own training track, QA form and compliance lead."
+    },
+    "slider": true,
+    "ratio": "wide",
+    "cards": [
+     {
+      "tag": "Banking",
+      "title": "Card disputes and fraud alerts handled in one call",
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Banking support team reviewing a dispute queue"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Insurance",
+      "title": "First notice of loss intake with same-day triage",
+      "photo": {
+       "src": "meeting-handshake",
+       "alt": "Claims lead meeting a policy holder"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Retail",
+      "title": "Peak season order support without new hiring rounds",
+      "photo": {
+       "src": "team-coworking-laptops",
+       "alt": "Retail support agents working on laptops"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Healthcare",
+      "title": "Patient scheduling and billing questions under HIPAA",
+      "photo": {
+       "src": "portrait-woman-studio",
+       "alt": "Patient support specialist with a headset"
+      },
+      "href": "#contact"
+     },
+     {
+      "tag": "Travel",
+      "title": "Rebooking desks that scale during weather disruptions",
+      "photo": {
+       "src": "coast-philippines-island",
+       "alt": "Island coastline seen from the air"
+      },
+      "href": "#contact"
+     }
+    ]
+   },
+   "id": "industries"
+  },
+  {
+   "type": "quote-spotlight",
+   "data": {
+    "eyebrow": "Client voice",
+    "quotes": [
+     {
+      "quote": "They took over our dispute queue in nine weeks and first contact resolution went up in the second month. Our own team now visits Da Nang to learn from their coaches.",
+      "name": "Dana Whitfield",
+      "role": "VP Customer Operations",
+      "company": "Regional bank",
+      "avatar": "avatar-woman-1"
+     },
+     {
+      "quote": "We moved claims intake from three vendors to one. Reporting is simpler, and the weekly calibration calls are the most useful meeting on my calendar.",
+      "name": "Marcus Oyelaran",
+      "role": "Director of Claims",
+      "company": "Mutual insurer",
+      "avatar": "avatar-man-1"
+     },
+     {
+      "quote": "Peak season used to mean hiring 200 temps. Meridian flexed the team up and back down again with no drop in satisfaction scores.",
+      "name": "Lena Park",
+      "role": "Head of Customer Care",
+      "company": "Online retailer",
+      "avatar": "avatar-woman-2"
+     }
+    ]
+   }
+  },
+  {
+   "type": "faq-accordion",
+   "data": {
+    "head": {
+     "eyebrow": "FAQ",
+     "title": "Questions buyers ask us first"
+    },
+    "aside": {
+     "title": "Need a detailed answer?",
+     "text": "Our solutions team replies within one business day with a written proposal outline.",
+     "cta": {
+      "label": "Contact the team",
+      "href": "#contact"
+     }
+    },
+    "items": [
+     {
+      "q": "How long does it take to launch a new program?",
+      "a": "A 25-seat program usually goes live in 30 days: one week for hiring, two weeks for training and one week of supervised live traffic."
+     },
+     {
+      "q": "Can we interview agents before they join our program?",
+      "a": "Yes. You approve the final shortlist, and your trainers can join the second week of onboarding."
+     },
+     {
+      "q": "Which tools do your agents work in?",
+      "a": "Agents log in to your CRM, ticketing and telephony through a secure virtual desktop. We also support Zendesk, Salesforce, Genesys and Freshdesk out of the box."
+     },
+     {
+      "q": "How is pricing structured?",
+      "a": "Most programs are priced per full-time agent per month. Transactional work such as claims processing can be priced per item."
+     },
+     {
+      "q": "What happens if quality drops below target?",
+      "a": "The account lead opens a corrective plan within 48 hours and service credits apply as set in the contract."
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta-multistep",
+   "data": {
+    "eyebrow": "Start here",
+    "title": "Get a staffing plan in *two business days*",
+    "lead": "Tell us what you need to outsource. A solutions lead will send a team design, timeline and monthly price range.",
+    "points": [
+     "No cost for the proposal",
+     "Pilot programs from 10 seats",
+     "Month-to-month terms after the pilot"
+    ],
+    "contacts": [
+     {
+      "icon": "mail",
+      "label": "sales@northbridge-cx.example",
+      "href": "mailto:sales@northbridge-cx.example"
+     },
+     {
+      "icon": "phone",
+      "label": "+1 (555) 010 2400",
+      "href": "tel:+15550102400"
+     }
+    ],
+    "form": {
+     "step1_title": "What do you want to outsource?",
+     "services": [
+      "Customer care",
+      "Back-office processing",
+      "Trust and safety",
+      "Technical support"
+     ],
+     "step2_title": "How large a team do you expect?",
+     "sizes": [
+      "10-25 agents",
+      "26-75 agents",
+      "76-200 agents",
+      "200+ agents"
+     ],
+     "step3_title": "Where should we send the plan?",
+     "submit_label": "Send my request",
+     "success_title": "Request received",
+     "success_text": "A solutions lead will email you within one business day to schedule a 30 minute call.",
+     "note": "We use your details only to prepare this proposal. No newsletters."
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Customer care, back-office and trust and safety teams for regulated brands, run from four delivery centers.",
+    "contacts": [
+     {
+      "icon": "mail",
+      "label": "sales@northbridge-cx.example",
+      "href": "mailto:sales@northbridge-cx.example"
+     },
+     {
+      "icon": "map-pin",
+      "label": "Makati City, Metro Manila"
+     }
+    ],
+    "socials": [
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "youtube",
+      "label": "YouTube",
+      "href": "https://www.youtube.com"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Solutions",
+      "links": [
+       {
+        "label": "Customer care",
+        "href": "#services"
+       },
+       {
+        "label": "Back office",
+        "href": "#services"
+       },
+       {
+        "label": "Trust and safety",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "Locations",
+        "href": "#contact"
+       },
+       {
+        "label": "Security",
+        "href": "#faq"
+       },
+       {
+        "label": "Client results",
+        "href": "#client-voice"
+       }
+      ]
+     },
+     {
+      "heading": "Contact",
+      "links": [
+       {
+        "label": "Request a proposal",
+        "href": "#contact"
+       },
+       {
+        "label": "FAQ",
+        "href": "#faq"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [
+     {
+      "label": "Privacy",
+      "href": "#top"
+     },
+     {
+      "label": "Terms",
+      "href": "#top"
+     }
+    ],
+    "certifications": "ISO 27001 | SOC 2 Type II | PCI DSS"
+   }
+  }
+ ]
+}

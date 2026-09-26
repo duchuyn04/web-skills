@@ -1,0 +1,24 @@
+{
+  "name": "corporate-blue",
+  "label": "Corporate blue",
+  "use_for": "The most common look among the 113 BPO sites studied: white pages, a clear royal blue accent and a deep navy for dark bands. Safe for any buyer who expects a large, established vendor.",
+  "references": ["Cognizant Business Operations", "Firstsource", "Innovature BPO", "Sutherland", "Outsource2India"],
+  "fonts": {
+    "heading": "Poppins",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
+  "type": {"heading_weight": 600, "heading_tracking": "-0.02em"},
+  "colors": {"primary": "#0b1f44", "accent": "#1d69ed", "accent_2": "#0ea5e9"},
+  "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "18px", "radius_btn": "999px"},
+  "hero_tone": "light",
+  "eyebrow": "line",
+  "design": {"edges": "angle", "image_mask": "rounded", "highlight": "color", "media_reveal": "clip"},
+  "tone_cycle": ["light", "muted"],
+  "tones": {
+    "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#f2f6fd", "text": "#44506a", "text_strong": "$primary", "text_muted": "#61708c", "border": "#e2e8f3", "is_dark": false},
+    "muted": {"bg": "#f4f7fc", "surface": "#ffffff", "surface_2": "#e9f0fb", "text": "#44506a", "text_strong": "$primary", "text_muted": "#61708c", "border": "#dce4f1", "is_dark": false},
+    "dark": {"bg": "$primary", "surface": "mix($primary,#ffffff,0.06)", "surface_2": "mix($primary,#ffffff,0.10)", "text": "#bccae3", "text_strong": "#ffffff", "text_muted": "#93a3c2", "border": "rgba(255,255,255,0.12)", "is_dark": true}
+  }
+}

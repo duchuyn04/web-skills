@@ -1,0 +1,25 @@
+{
+  "variant": "hero-qualifier",
+  "group": "hero",
+  "summary": "Hero with a quick-pick card on the right: a short question (for example 'What do you need first?') and 3-5 answers that jump straight to the right section. Copy and one button on the left. Good when visitors come for very different services.",
+  "tone": "dark",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["reveal", "staggered-badge-pop-in"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 20, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "card": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 8, "max": 60},
+      "text": {"type": "text", "min": 20, "max": 140, "required": false},
+      "options": {"type": "list", "min": 3, "max": 5, "item": {"type": "object", "fields": {
+        "label": {"type": "text", "min": 3, "max": 40},
+        "href": {"type": "href"},
+        "icon": {"type": "icon", "required": false}
+      }}}
+    }}
+  }
+}

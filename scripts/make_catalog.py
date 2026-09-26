@@ -164,6 +164,12 @@ TIMING = {
     "exit-intent-spring-modal": "520ms ease-back, after 8s, once per 7 days",
     "globe-spin": "dotted world map scrolling behind a sphere mask, 60s linear loop",
     "reveal": "fade up 18px, 700ms ease-out-expo, 80ms stagger in groups",
+    "text-marquee": "60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion",
+    "quote-crossfade": "600ms fade plus 10px rise, prev/next buttons, dots and arrow keys, no autoplay",
+    "word-by-word-reveal": "each word fades from 18% to full opacity over 500ms, 45ms stagger, once",
+    "slow-photo-zoom": "photo scales 1.08 to 1 over 2.4s when the band enters",
+    "collage-pop-in": "tiles scale from 0.9 with 80ms stagger",
+    "shape-float": "flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s",
 }
 
 
@@ -178,6 +184,13 @@ def write_animation_map(lib):
            "| Animation id | Built into | Timing |", "|:---|:---|:---|"]
     for a, t in TIMING.items():
         out.append("| `%s` | %s | %s |" % (a, ", ".join("`%s`" % v for v in where.get(a, [])) or "none", t))
+    out += ["", "## Design options (page-wide)", "",
+            "These are not tied to one section. The preset sets them and `theme` in page.json can override them.", "",
+            "| Option | Values | Effect |", "|:---|:---|:---|",
+            "| `edges` | none, angle, curve | Bottom edge of the hero and of dark sections is cut at an angle or curved; the next section slides under it. |",
+            "| `image_mask` | rounded, angle, arch | Photo frames (feature rows, split heroes, tabs, boxed banners) get a cut corner or an arched top. |",
+            "| `highlight` | color, gradient, underline | How `*accent*` words in headings look. |",
+            "| `media_reveal` | fade, clip | `clip` wipes photos up from the bottom (1s) as they enter. |", ""]
     out += ["", "`magnetic-cta-button` is off by default. Turn it on with `\"features\": {\"magnetic_cta\": true}` in page.json.", ""]
     (SKILL / "references" / "animation-map.md").write_text("\n".join(out), encoding="utf-8")
     print("wrote references/animation-map.md")
