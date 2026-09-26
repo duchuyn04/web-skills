@@ -1,0 +1,24 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container" data-models>
+    {{> head-center}}
+    <div class="bl-switch" role="tablist" aria-label="{{head.title_plain}}" data-reveal>
+      <span class="bl-switch__knob" aria-hidden="true"></span>
+      {{#models}}<button class="bl-switch__opt" type="button" role="tab" id="{{section.id}}-m{{@n}}" aria-controls="{{section.id}}-p{{@n}}" aria-selected="{{#@first}}true{{/@first}}{{^@first}}false{{/@first}}">{{label}}</button>{{/models}}
+    </div>
+    {{#models}}
+    <div class="bl-plans" role="tabpanel" id="{{section.id}}-p{{@n}}" aria-labelledby="{{section.id}}-m{{@n}}"{{^@first}} hidden{{/@first}}>
+      {{#plans}}
+      <article class="bl-plan{{#featured}} bl-plan--featured{{/featured}}">
+        {{#badge}}<span class="bl-chip bl-chip--accent bl-plan__badge">{{badge}}</span>{{/badge}}
+        <h3 class="bl-plan__name">{{name}}</h3>
+        <p class="bl-plan__price"><strong>{{price}}</strong>{{#unit}}<span>{{unit}}</span>{{/unit}}</p>
+        <p class="bl-plan__text">{{text}}</p>
+        <ul class="bl-checks">{{#features}}<li>{{icon:check}}<span>{{.}}</span></li>{{/features}}</ul>
+        <a class="bl-btn {{#featured}}bl-btn--primary bl-btn--shimmer{{/featured}}{{^featured}}bl-btn--ghost{{/featured}} bl-btn--block" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+      </article>
+      {{/plans}}
+    </div>
+    {{/models}}
+    {{#note}}<p class="bl-plans__note">{{note}}</p>{{/note}}
+  </div>
+</section>

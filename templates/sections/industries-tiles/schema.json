@@ -1,0 +1,19 @@
+{
+  "variant": "industries-tiles",
+  "group": "industries",
+  "summary": "Grid of 4 or 8 industry tiles (icon, title, one line). Tiles tilt up to 6 degrees toward the mouse with a light glare.",
+  "tone": "auto",
+  "anchor": "industries",
+  "animations": ["card-tilt-3d-perspective", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "tiles": {
+      "type": "list", "min": 4, "max": 8, "counts": [4, 6, 8],
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "title": {"type": "text", "min": 3, "max": 32},
+        "text": {"type": "text", "min": 30, "max": 140}
+      }}
+    }
+  }
+}

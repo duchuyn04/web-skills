@@ -1,0 +1,35 @@
+{
+  "variant": "cost-calculator",
+  "group": "calculator",
+  "summary": "Savings calculator: pick a role and drag the team-size slider; onshore vs offshore cost bars and the yearly saving update live. Pitch and reassurance points on the left.",
+  "tone": "auto",
+  "anchor": "savings",
+  "animations": ["reactive-cost-calculator", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "points": {"$ref": "points"},
+    "card_title": {"type": "text", "min": 10, "max": 60},
+    "currency": {"type": "text", "min": 1, "max": 4, "default": "$"},
+    "period": {"type": "text", "min": 2, "max": 16, "default": "/ year"},
+    "roles": {
+      "type": "list", "min": 2, "max": 4,
+      "item": {"type": "object", "fields": {
+        "label": {"type": "text", "min": 3, "max": 24},
+        "onshore": {"type": "number", "min": 1000, "max": 1000000},
+        "offshore": {"type": "number", "min": 500, "max": 1000000}
+      }}
+    },
+    "team": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 3, "max": 24, "default": "Team size"},
+      "unit": {"type": "text", "min": 2, "max": 16, "default": "people"},
+      "min": {"type": "number", "min": 1, "max": 50, "default": 1},
+      "max": {"type": "number", "min": 5, "max": 500, "default": 50},
+      "start": {"type": "number", "min": 1, "max": 500, "default": 10}
+    }},
+    "onshore_label": {"type": "text", "min": 3, "max": 40},
+    "offshore_label": {"type": "text", "min": 3, "max": 40},
+    "savings_label": {"type": "text", "min": 3, "max": 40},
+    "cta": {"$ref": "cta"},
+    "disclaimer": {"type": "text", "min": 30, "max": 220}
+  }
+}

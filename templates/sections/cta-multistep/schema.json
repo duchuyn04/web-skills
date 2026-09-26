@@ -1,0 +1,41 @@
+{
+  "variant": "cta-multistep",
+  "group": "cta",
+  "summary": "Closing conversion block: pitch, reassurance points and direct contacts on the left; a 3-step quote form (service, team size, contact details) on the right.",
+  "tone": "dark",
+  "anchor": "contact",
+  "animations": ["multi-step-form-slide", "shimmer-button-glow", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 15, "max": 80},
+    "lead": {"type": "text", "min": 50, "max": 240},
+    "points": {"$ref": "points"},
+    "contacts": {
+      "type": "list", "min": 0, "max": 3, "default": [],
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "label": {"type": "text", "min": 3, "max": 44},
+        "href": {"type": "href"}
+      }}
+    },
+    "form": {"type": "object", "fields": {
+      "step1_title": {"type": "text", "min": 8, "max": 60},
+      "services": {"type": "list", "min": 3, "max": 6, "item": {"type": "text", "min": 3, "max": 40}},
+      "step2_title": {"type": "text", "min": 8, "max": 60},
+      "sizes": {"type": "list", "min": 3, "max": 4, "item": {"type": "text", "min": 2, "max": 24}},
+      "step3_title": {"type": "text", "min": 8, "max": 60},
+      "name_label": {"type": "text", "min": 2, "max": 28, "default": "Full name"},
+      "email_label": {"type": "text", "min": 2, "max": 28, "default": "Work email"},
+      "company_label": {"type": "text", "min": 2, "max": 28, "default": "Company"},
+      "message_label": {"type": "text", "min": 2, "max": 40, "required": false},
+      "next_label": {"type": "text", "min": 2, "max": 24, "default": "Continue"},
+      "back_label": {"type": "text", "min": 2, "max": 16, "default": "Back"},
+      "submit_label": {"type": "text", "min": 3, "max": 30},
+      "error_label": {"type": "text", "min": 8, "max": 80, "default": "Choose an option to continue."},
+      "success_title": {"type": "text", "min": 5, "max": 60},
+      "success_text": {"type": "text", "min": 20, "max": 200},
+      "note": {"type": "text", "min": 20, "max": 160},
+      "action": {"type": "href", "required": false}
+    }}
+  }
+}

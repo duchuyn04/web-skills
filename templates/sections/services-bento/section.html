@@ -1,0 +1,16 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-bento" data-spotlight data-reveal-group>
+      {{#cards}}
+      <article class="bl-bento__card" data-reveal>
+        <span class="bl-icon-box">{{icon:$icon}}</span>
+        <h3 class="bl-h3">{{title}}</h3>
+        <p>{{text}}</p>
+        {{#bullets.0}}<ul class="bl-checks">{{#bullets}}<li>{{icon:check}}<span>{{.}}</span></li>{{/bullets}}</ul>{{/bullets.0}}
+        {{#link}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+      </article>
+      {{/cards}}
+    </div>
+  </div>
+</section>

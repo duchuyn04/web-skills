@@ -1,0 +1,23 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-split bl-voice">
+    <div>
+      {{> head}}
+      <ul class="bl-checks" data-reveal>{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>
+    </div>
+    <ul class="bl-voice__list" data-reveal-group>
+      {{#samples}}
+      <li class="bl-sample" data-sample data-reveal>
+        <button class="bl-sample__play" type="button" aria-pressed="false" data-play-label="{{play_label}}: {{name}}" data-pause-label="{{pause_label}}: {{name}}" aria-label="{{play_label}}: {{name}}">
+          <span class="bl-sample__icon-play">{{icon:play}}</span><span class="bl-sample__icon-pause">{{icon:pause}}</span>
+        </button>
+        <div class="bl-sample__body">
+          <div class="bl-sample__meta"><strong>{{name}}</strong><span>{{role}}</span></div>
+          <div class="bl-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="bl-sample__side"><span class="bl-sample__lang">{{flag:$flag}}{{language}}</span><span class="bl-mono bl-sample__time">{{duration}}</span></div>
+        {{#audio}}<audio preload="none" src="{{audio}}"></audio>{{/audio}}
+      </li>
+      {{/samples}}
+    </ul>
+  </div>
+</section>

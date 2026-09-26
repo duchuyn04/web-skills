@@ -1,0 +1,17 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-quotes" data-reveal-group>
+      {{#items}}
+      <figure class="bl-quote" data-reveal>
+        <span class="bl-quote__mark" aria-hidden="true">{{icon:quote}}</span>
+        <blockquote><p>{{quote}}</p></blockquote>
+        <figcaption class="bl-quote__who">
+          {{#avatar}}<img class="bl-quote__avatar" src="{{avatar}}" alt="{{name}}" width="48" height="48" loading="lazy">{{/avatar}}{{^avatar}}<span class="bl-quote__avatar bl-quote__initials" aria-hidden="true">{{initials}}</span>{{/avatar}}
+          <span><strong>{{name}}</strong><small>{{role}}, {{company}}</small></span>
+        </figcaption>
+      </figure>
+      {{/items}}
+    </div>
+  </div>
+</section>

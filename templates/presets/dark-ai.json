@@ -1,0 +1,22 @@
+{
+  "name": "dark-ai",
+  "label": "Dark AI electric blue",
+  "use_for": "AI data annotation, trust and safety, data operations and tech-heavy BPO. Dark canvas, technical.",
+  "references": ["Scale AI", "Invisible Technologies", "EXL", "Sutherland", "Toloka"],
+  "fonts": {
+    "heading": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
+  "type": {"heading_weight": 600, "heading_tracking": "-0.03em"},
+  "colors": {"primary": "#05070c", "accent": "#3563f5", "accent_2": "#5ef2c2"},
+  "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "18px", "radius_btn": "10px"},
+  "hero_tone": "dark",
+  "tone_cycle": ["light", "muted"],
+  "tones": {
+    "light": {"bg": "#080b12", "surface": "#0e131e", "surface_2": "#141b29", "text": "#a3aec2", "text_strong": "#f4f7fb", "text_muted": "#7d889c", "border": "rgba(255,255,255,0.09)", "is_dark": true},
+    "muted": {"bg": "#0c111b", "surface": "#121926", "surface_2": "#182131", "text": "#a3aec2", "text_strong": "#f4f7fb", "text_muted": "#7d889c", "border": "rgba(255,255,255,0.10)", "is_dark": true},
+    "dark": {"bg": "$primary", "surface": "#0c111b", "surface_2": "#131a27", "text": "#a3aec2", "text_strong": "#ffffff", "text_muted": "#7d889c", "border": "rgba(255,255,255,0.10)", "is_dark": true}
+  }
+}

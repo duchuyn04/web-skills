@@ -1,0 +1,27 @@
+{
+  "variant": "case-slider",
+  "group": "proof",
+  "summary": "Horizontal case-study carousel with drag, swipe, snap and prev/next buttons. Each card: photo, client, industry, result headline, 2-3 result figures.",
+  "tone": "auto",
+  "anchor": "case-studies",
+  "animations": ["fluid-case-study-slider", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "prev_label": {"type": "text", "min": 2, "max": 20, "default": "Previous case"},
+    "next_label": {"type": "text", "min": 2, "max": 20, "default": "Next case"},
+    "cases": {
+      "type": "list", "min": 3, "max": 6,
+      "item": {"type": "object", "fields": {
+        "client": {"type": "text", "min": 2, "max": 32},
+        "industry": {"type": "text", "min": 3, "max": 28},
+        "photo": {"$ref": "photo"},
+        "title": {"type": "text", "min": 20, "max": 110},
+        "results": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+          "value": {"type": "text", "min": 1, "max": 10},
+          "label": {"type": "text", "min": 3, "max": 28}
+        }}},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    }
+  }
+}

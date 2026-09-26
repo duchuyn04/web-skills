@@ -1,0 +1,23 @@
+/* hero-split-image */
+.bl-hero-split .bl-h1 { font-size: clamp(2.2rem, 2.6vw + 1rem, 3.5rem); }
+.bl-hero-split { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+.bl-hero-split__visual { position: relative; padding: 1.5rem 1.75rem; }
+.bl-hero-split__frame { aspect-ratio: 4 / 4.4; border-radius: calc(var(--radius-lg) + 8px); box-shadow: var(--shadow-lg); }
+.bl-hero-split__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, color-mix(in srgb, var(--c-primary) 35%, transparent)); }
+.bl-hero-split .bl-float-badge--1 { top: 10%; left: -.5rem; }
+.bl-hero-split .bl-float-badge--2 { top: 46%; right: -.75rem; }
+.bl-hero-split .bl-float-badge--3 { bottom: 0; left: 12%; }
+@media (max-width: 1024px) {
+  .bl-hero-split { grid-template-columns: 1fr; }
+  .bl-hero-split__visual { max-width: 560px; width: 100%; margin-inline: auto; }
+}
+@media (max-width: 768px) {
+  .bl-hero-split__visual { padding: 1rem .5rem 2rem; }
+  .bl-hero-split__frame { aspect-ratio: 4 / 3.6; }
+  .bl-float-badge { min-width: 0; padding: .5rem .75rem .5rem .5rem; }
+  .bl-float-badge .bl-icon-box { width: 32px; height: 32px; }
+  .bl-float-badge strong { font-size: 1rem; }
+  .bl-hero-split .bl-float-badge--1 { top: .25rem; left: 0; }
+  .bl-hero-split .bl-float-badge--2 { top: auto; bottom: .25rem; right: 0; }
+  .bl-hero-split .bl-float-badge--3 { display: none; }
+}

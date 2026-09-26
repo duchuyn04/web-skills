@@ -1,0 +1,20 @@
+/* process-sticky: sticky-sidebar-process-scroll (CSS sticky + scaleY progress line) */
+.bl-process { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.bl-process__side { position: sticky; top: calc(var(--header-h) + 2.5rem); }
+.bl-process__side .bl-head { margin-bottom: 2rem; }
+.bl-process__steps { position: relative; display: grid; gap: clamp(2.5rem, 5vw, 4rem); padding-left: 4rem; }
+.bl-process__line { position: absolute; left: 19px; top: 20px; bottom: 20px; width: 2px; background: var(--border); list-style: none; }
+.bl-process__fill { position: absolute; inset: 0; background: var(--c-accent); transform-origin: top; transform: scaleY(var(--progress, 0)); }
+.bl-step { position: relative; }
+.bl-step__node {
+  position: absolute; left: -4rem; top: 0; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--surface); border: 2px solid var(--border-strong); color: transparent;
+  transition: background-color var(--dur) var(--ease-std), border-color var(--dur) var(--ease-std), color var(--dur), transform var(--dur-slow) var(--ease-back);
+}
+.bl-step__node .bl-icon { width: 18px; height: 18px; }
+.bl-step.is-passed .bl-step__node { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); transform: scale(1.06); }
+.bl-step__label { display: inline-block; margin-bottom: .6rem; font-size: var(--fs-xs); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); }
+.bl-step .bl-h3 { font-size: clamp(1.2rem, .6vw + 1rem, 1.45rem); margin-bottom: .6rem; }
+.bl-step p { max-width: 34rem; }
+@media (max-width: 1024px) { .bl-process { grid-template-columns: 1fr; } .bl-process__side { position: static; } }
+@media (max-width: 480px) { .bl-process__steps { padding-left: 3.25rem; } .bl-step__node { left: -3.25rem; width: 34px; height: 34px; } .bl-process__line { left: 16px; } }

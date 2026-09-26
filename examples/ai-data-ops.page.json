@@ -1,0 +1,180 @@
+{
+  "_note": "Starter for archetype ai-data-ops. Tensorline is a fictional company; every figure below is sample data. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders.",
+  "archetype": "ai-data-ops",
+  "preset": "dark-ai",
+  "lang": "en",
+  "site": {
+    "brand": "Tensorline",
+    "title": "Tensorline | Human data for AI training and evaluation",
+    "description": "Tensorline supplies expert annotators, RLHF raters and trust and safety reviewers for AI labs, with audited quality and secure delivery from Asia."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Process", "href": "#process"},
+          {"label": "Results", "href": "#results"},
+          {"label": "Security", "href": "#security"}
+        ],
+        "secondary": {"label": "Case studies", "href": "#case-studies"},
+        "cta": {"label": "Start a pilot", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-dark-network",
+      "data": {
+        "eyebrow": "Human data for AI",
+        "title": "Training data your *model evals* can trust",
+        "lead": "Domain experts label, rank and red-team your data with calibrated guidelines, gold-set checks and full audit trails. Pilots start in 10 days.",
+        "primary_cta": {"label": "Start a pilot", "href": "#contact"},
+        "secondary_cta": {"label": "See how we work", "href": "#process"},
+        "panel": {
+          "title": "RLHF batch 2291",
+          "status": "Live",
+          "rows": [
+            {"label": "Tasks completed today", "value": "18,420"},
+            {"label": "Inter-rater agreement", "value": "0.91"},
+            {"label": "Gold-set accuracy", "value": "98.3%"},
+            {"label": "Median task time", "value": "2m 14s"}
+          ]
+        },
+        "chips": [
+          {"value": "1,800+", "label": "Vetted annotators"},
+          {"value": "40", "label": "Languages"},
+          {"value": "24h", "label": "Pilot turnaround"},
+          {"value": "SOC 2", "label": "Type II audited"}
+        ]
+      }
+    },
+    {
+      "type": "logo-marquee",
+      "data": {
+        "label": "Data partner for AI labs and enterprise ML teams",
+        "logos": [{"name": "Heliograph AI"}, {"name": "Parallax"}, {"name": "Meridian ML"}, {"name": "Cortex Labs"}, {"name": "Sable Robotics"}, {"name": "Lattice"}]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Human judgment at *every stage* of the model",
+          "lead": "Each workflow runs with written guidelines, calibration rounds and a reviewer layer before data ships."
+        },
+        "cards": [
+          {"icon": "sliders", "title": "RLHF and preference ranking", "text": "Raters with subject-matter backgrounds compare model outputs, write rationales and flag unsafe answers.", "bullets": ["Pairwise and Likert ranking", "Rationale writing", "Coding, math and law specialists"], "link": {"label": "Plan an RLHF pilot", "href": "#contact"}},
+          {"icon": "eye", "title": "Image and video labeling", "text": "Boxes, polygons, keypoints and tracking with pixel-level QA on every batch."},
+          {"icon": "languages", "title": "Multilingual text data", "text": "Transcription, translation review and intent labeling in 40 languages."},
+          {"icon": "shield-check", "title": "Red-teaming", "text": "Adversarial prompting to find jailbreaks, bias and harmful outputs before launch."},
+          {"icon": "activity", "title": "Model evaluation", "text": "Blind side-by-side evals with statistical reporting your research team can reuse."}
+        ]
+      }
+    },
+    {
+      "type": "process-sticky",
+      "data": {
+        "head": {
+          "eyebrow": "Process",
+          "title": "From guideline draft to *production volume*",
+          "lead": "A dedicated project lead and QA analyst own your program from the first pilot batch."
+        },
+        "cta": {"label": "Book a scoping call", "href": "#contact"},
+        "steps": [
+          {"label": "Days 1-3", "title": "Scope and guidelines", "text": "We turn your task spec into written guidelines with edge-case examples and a gold set of 200 items."},
+          {"label": "Days 4-10", "title": "Pilot batch", "text": "A calibrated team labels 1,000 to 5,000 items. You review agreement scores and error samples."},
+          {"label": "Week 3", "title": "Scale the team", "text": "We add vetted annotators in groups of 25, each passing a qualification test on your gold set."},
+          {"label": "Ongoing", "title": "Measure and improve", "text": "Weekly reports cover throughput, accuracy and guideline changes, with raw audit logs on request."}
+        ]
+      }
+    },
+    {
+      "type": "metrics-counter",
+      "data": {
+        "eyebrow": "Results",
+        "title": "Quality you can *check line by line*",
+        "items": [
+          {"value": 98.3, "suffix": "%", "label": "Gold-set accuracy", "note": "Median across 2025 programs"},
+          {"value": 0.91, "label": "Inter-rater agreement", "note": "Krippendorff alpha, text tasks"},
+          {"value": 42, "suffix": "M", "label": "Labels delivered", "note": "Since 2021"},
+          {"value": 10, "label": "Days to first batch", "note": "Standard pilot"}
+        ]
+      }
+    },
+    {
+      "type": "case-slider",
+      "data": {
+        "head": {"eyebrow": "Case studies", "title": "Programs running today"},
+        "cases": [
+          {"client": "Heliograph AI", "industry": "Foundation models", "photo": {"src": "team-engineers-screen", "alt": "Annotators reviewing model responses on a laptop"}, "title": "Built a 300-person coding RLHF team in six weeks", "results": [{"value": "300", "label": "Specialist raters"}, {"value": "0.89", "label": "Agreement score"}]},
+          {"client": "Sable Robotics", "industry": "Robotics", "photo": {"src": "office-interior", "alt": "Secure labeling floor with badge access"}, "title": "Labeled 2.4 million frames of warehouse video with keypoints", "results": [{"value": "2.4M", "label": "Frames"}, {"value": "99.1%", "label": "QA pass rate"}]},
+          {"client": "Meridian ML", "industry": "Enterprise AI", "photo": {"src": "team-coworking-laptops", "alt": "Evaluation team comparing model outputs"}, "title": "Ran blind evals across 12 languages for a support chatbot", "results": [{"value": "12", "label": "Languages"}, {"value": "-38%", "label": "Harmful answers"}]}
+        ]
+      }
+    },
+    {
+      "type": "compliance-badges",
+      "data": {
+        "head": {
+          "eyebrow": "Security",
+          "title": "Your data never leaves *controlled rooms*",
+          "lead": "Annotators work in locked-down facilities or managed desktops with no download, copy or screenshot rights."
+        },
+        "badges": [
+          {"code": "SOC 2 Type II", "label": "Audited controls"},
+          {"code": "ISO 27001", "label": "Information security"},
+          {"code": "GDPR", "label": "EU data protection", "icon": "globe"},
+          {"code": "HIPAA", "label": "Health data programs", "icon": "heart-pulse"}
+        ]
+      }
+    },
+    {
+      "type": "faq-accordion",
+      "data": {
+        "head": {"eyebrow": "FAQ", "title": "Questions from ML teams"},
+        "items": [
+          {"q": "Can we bring our own labeling tool?", "a": "Yes. Teams work in your platform, in Label Studio or CVAT hosted by us, or in a custom tool we build to your spec."},
+          {"q": "How do you vet annotators for expert tasks?", "a": "Each candidate passes a domain test and a paid trial on your gold set. For coding and math we require a relevant degree or verified work history."},
+          {"q": "How is pricing set?", "a": "Most programs are priced per task or per labeled hour after the pilot sets a baseline. Pilots are billed at cost."},
+          {"q": "What turnaround can we expect?", "a": "Pilot batches return in 10 days. Production batches follow the service levels agreed in your statement of work."}
+        ]
+      }
+    },
+    {
+      "type": "cta-multistep",
+      "data": {
+        "eyebrow": "Start a pilot",
+        "title": "Get a pilot plan for *your dataset*",
+        "lead": "Share the task type and volume. Our solutions engineer sends a pilot scope, timeline and price within two business days.",
+        "points": ["Pilot billed at cost", "Guidelines drafted with your team", "NDA before any data transfer"],
+        "contacts": [{"icon": "mail", "label": "pilots@tensorline.example", "href": "mailto:pilots@tensorline.example"}],
+        "form": {
+          "step1_title": "What kind of data work do you need?",
+          "services": ["RLHF and ranking", "Image or video labeling", "Text and speech data", "Red-teaming", "Model evaluation"],
+          "step2_title": "Expected monthly volume?",
+          "sizes": ["Under 10k tasks", "10k-100k tasks", "100k-1M tasks", "Over 1M tasks"],
+          "step3_title": "Where should we send the pilot plan?",
+          "submit_label": "Request a pilot plan",
+          "success_title": "Request received",
+          "success_text": "A solutions engineer will reply within two business days with a pilot scope.",
+          "note": "We sign an NDA before you share any data."
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Human data, evaluation and red-teaming for AI labs and enterprise ML teams.",
+        "contacts": [{"icon": "mail", "label": "pilots@tensorline.example", "href": "mailto:pilots@tensorline.example"}],
+        "socials": [{"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"}],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "RLHF", "href": "#services"}, {"label": "Labeling", "href": "#services"}, {"label": "Red-teaming", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "Process", "href": "#process"}, {"label": "Security", "href": "#security"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved.",
+        "certifications": "SOC 2 Type II | ISO 27001"
+      }
+    }
+  ]
+}

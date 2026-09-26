@@ -1,0 +1,19 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-process">
+    <div class="bl-process__side">
+      {{> head}}
+      {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}" data-reveal>{{label}}{{arrow}}</a>{{/cta}}
+    </div>
+    <ol class="bl-process__steps" data-process>
+      <li class="bl-process__line" aria-hidden="true"><span class="bl-process__fill"></span></li>
+      {{#steps}}
+      <li class="bl-step" data-reveal>
+        <span class="bl-step__node" aria-hidden="true">{{icon:check}}</span>
+        <span class="bl-step__label bl-mono">{{label}}</span>
+        <h3 class="bl-h3">{{title}}</h3>
+        <p>{{text}}</p>
+      </li>
+      {{/steps}}
+    </ol>
+  </div>
+</section>

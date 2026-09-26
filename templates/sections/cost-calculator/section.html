@@ -1,0 +1,27 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-calc-wrap">
+    <div class="bl-calc-wrap__copy">
+      {{> head}}
+      <ul class="bl-checks" data-reveal>{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>
+    </div>
+    <div class="bl-calc" data-calc data-currency="{{currency}}" data-reveal>
+      <div class="bl-calc__head"><span class="bl-icon-box">{{icon:calculator}}</span><h3 class="bl-h3">{{card_title}}</h3></div>
+      <div class="bl-calc__roles" role="radiogroup" aria-label="{{card_title}}">
+        {{#roles}}<button type="button" class="bl-calc__role" role="radio" aria-checked="{{#@first}}true{{/@first}}{{^@first}}false{{/@first}}" data-onshore="{{onshore}}" data-offshore="{{offshore}}">{{label}}</button>{{/roles}}
+      </div>
+      <div class="bl-calc__slider">
+        <div class="bl-calc__row"><label for="{{section.id}}-team">{{team.label}}</label><output class="bl-calc__team bl-mono" for="{{section.id}}-team"><span data-calc-team>{{team.start}}</span> {{team.unit}}</output></div>
+        <input class="bl-range" id="{{section.id}}-team" type="range" min="{{team.min}}" max="{{team.max}}" value="{{team.start}}" step="1" data-calc-range>
+        <div class="bl-calc__ticks bl-mono" aria-hidden="true"><span>{{team.min}}</span><span>{{team.max}}</span></div>
+      </div>
+      <div class="bl-calc__result">
+        <div class="bl-calc__row"><span class="bl-calc__label">{{savings_label}}</span><span class="bl-chip bl-chip--accent bl-calc__pct" data-calc-pct></span></div>
+        <p class="bl-calc__big"><span data-calc-save>{{currency}}0</span> <small>{{period}}</small></p>
+        <div class="bl-calc__bar"><div class="bl-calc__row bl-small"><span>{{onshore_label}}</span><span class="bl-mono" data-calc-on></span></div><span class="bl-calc__track"><span class="bl-calc__fill bl-calc__fill--on"></span></span></div>
+        <div class="bl-calc__bar"><div class="bl-calc__row bl-small"><span>{{offshore_label}}</span><strong class="bl-mono" data-calc-off></strong></div><span class="bl-calc__track"><span class="bl-calc__fill bl-calc__fill--off" data-calc-offbar></span></span></div>
+      </div>
+      <a class="bl-btn bl-btn--primary bl-btn--block bl-btn--shimmer" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+      <p class="bl-calc__note">{{disclaimer}}</p>
+    </div>
+  </div>
+</section>

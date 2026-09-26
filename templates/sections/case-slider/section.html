@@ -1,0 +1,32 @@
+<section id="{{section.id}}" class="bl-section bl-cases bl-tone-{{section.tone}}" data-slider>
+  <div class="bl-container">
+    {{#head}}
+    <div class="bl-head bl-head--split bl-cases__head" data-reveal>
+      <div>
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2">{{title}}</h2>
+      </div>
+      <div class="bl-head__aside">
+        {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+        <div class="bl-cases__nav">
+          <button class="bl-round-btn" type="button" data-slider-prev>{{icon:chevron-left}}<span class="bl-sr-only">{{prev_label}}</span></button>
+          <button class="bl-round-btn" type="button" data-slider-next>{{icon:chevron-right}}<span class="bl-sr-only">{{next_label}}</span></button>
+        </div>
+      </div>
+    </div>
+    {{/head}}
+  </div>
+  <div class="bl-cases__track" data-slider-track tabindex="0" aria-label="{{head.title_plain}}">
+    {{#cases}}
+    <article class="bl-case" data-reveal>
+      <div class="bl-frame bl-case__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="560" height="340" loading="lazy" draggable="false"></div>
+      <div class="bl-case__body">
+        <div class="bl-case__meta"><strong>{{client}}</strong><span class="bl-chip">{{industry}}</span></div>
+        <h3 class="bl-case__title">{{title}}</h3>
+        <dl class="bl-case__results">{{#results}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/results}}</dl>
+        {{#link}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+      </div>
+    </article>
+    {{/cases}}
+  </div>
+</section>

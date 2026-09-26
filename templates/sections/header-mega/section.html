@@ -1,0 +1,81 @@
+<header id="{{section.id}}" class="bl-header bl-header--mega bl-tone-{{section.tone}}" data-bl-header>
+  {{#topbar}}
+  <div class="bl-topbar">
+    <div class="bl-topbar__clip">
+      <div class="bl-container bl-topbar__inner">
+        <p class="bl-topbar__note">{{note}}</p>
+        <div class="bl-topbar__right">
+          {{#links}}<a class="bl-topbar__link" href="{{href}}">{{label}}</a>{{/links}}
+          {{#languages.0}}
+          <div class="bl-lang" data-mega>
+            <button class="bl-lang__btn" type="button" data-mega-trigger aria-expanded="false" aria-haspopup="true">
+              {{icon:globe}}{{#languages}}{{#current}}<span>{{label}}</span>{{/current}}{{/languages}}{{icon:chevron-down}}
+            </button>
+            <ul class="bl-lang__menu bl-tone-light">
+              {{#languages}}<li><a class="bl-lang__item" href="{{href}}"{{#current}} aria-current="true"{{/current}}>{{flag:$flag}}<span>{{label}}</span></a></li>{{/languages}}
+            </ul>
+          </div>
+          {{/languages.0}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/topbar}}
+  <div class="bl-container bl-header__bar">
+    <a class="bl-brand" href="#top" aria-label="{{site.brand}} home">{{> brand}}</a>
+    <nav class="bl-nav" aria-label="Main">
+      <ul class="bl-nav__list">
+        {{#links}}
+        {{#mega}}
+        <li class="bl-nav__item" data-mega>
+          <button class="bl-nav__link" type="button" data-mega-trigger aria-expanded="false">{{label}}{{icon:chevron-down}}</button>
+          <div class="bl-mega bl-tone-light">
+            <div class="bl-container bl-mega__grid">
+              {{#columns}}
+              <div class="bl-mega__col">
+                <p class="bl-mega__heading">{{heading}}</p>
+                <ul class="bl-mega__links">{{#links}}<li><a href="{{href}}">{{label}}</a></li>{{/links}}</ul>
+              </div>
+              {{/columns}}
+              {{#featured}}
+              <a class="bl-mega__featured" href="{{href}}">
+                <span class="bl-chip bl-chip--accent">{{tag}}</span>
+                <span class="bl-mega__ftitle">{{title}}</span>
+                <span class="bl-mega__ftext">{{text}}</span>
+                <span class="bl-link">{{link_label}}{{arrow}}</span>
+              </a>
+              {{/featured}}
+            </div>
+          </div>
+        </li>
+        {{/mega}}
+        {{^mega}}<li class="bl-nav__item"><a class="bl-nav__link" href="{{href}}">{{label}}</a></li>{{/mega}}
+        {{/links}}
+      </ul>
+    </nav>
+    <div class="bl-header__actions">
+      <a class="bl-btn bl-btn--primary bl-btn--sm" href="{{cta.href}}"{{#features.magnetic_cta}} data-magnetic{{/features.magnetic_cta}}>{{cta.label}}{{arrow}}</a>
+      <button class="bl-burger" type="button" data-nav-toggle aria-expanded="false" aria-controls="bl-drawer">{{icon:menu}}<span class="bl-sr-only">{{menu_label}}</span></button>
+    </div>
+  </div>
+  <div class="bl-drawer bl-tone-{{section.tone}}" id="bl-drawer" data-nav-drawer>
+    <div class="bl-drawer__head">
+      <a class="bl-brand" href="#top" aria-label="{{site.brand}} home">{{> brand}}</a>
+      <button class="bl-drawer__close" type="button" data-nav-close>{{icon:x}}<span class="bl-sr-only">{{close_label}}</span></button>
+    </div>
+    <ul class="bl-drawer__nav">
+      {{#links}}
+      {{#mega}}
+      <li><details><summary>{{label}}{{icon:chevron-down}}</summary>
+        <div class="bl-drawer__sub">{{#columns}}{{#links}}<a href="{{href}}">{{label}}</a>{{/links}}{{/columns}}</div>
+      </details></li>
+      {{/mega}}
+      {{^mega}}<li><a href="{{href}}">{{label}}</a></li>{{/mega}}
+      {{/links}}
+    </ul>
+    <div class="bl-drawer__foot">
+      <a class="bl-btn bl-btn--primary bl-btn--block" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+      {{#languages.0}}<div class="bl-drawer__langs">{{#languages}}<a class="bl-chip" href="{{href}}">{{flag:$flag}}{{label}}</a>{{/languages}}</div>{{/languages.0}}
+    </div>
+  </div>
+</header>

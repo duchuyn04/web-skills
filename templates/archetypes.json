@@ -1,0 +1,494 @@
+{
+  "_note": "Fixed page anatomies. Sections in page.json must follow the slot order. Slots without \"required\": true may be left out. Derived from the 8 categories of a review of 120 BPO and outsourcing websites and the animations those sites use. Slots marked recommended need real client facts (logos, testimonials, salary rates, call recordings). Leave them out when the client has none; build.py then prints a warning instead of forcing invented content.",
+  "enterprise-cx": {
+    "label": "Enterprise CX and BPO group",
+    "use_for": "Multi-service CX or BPO companies with several delivery hubs, selling to enterprise buyers (banking, telco, healthcare, retail).",
+    "categories": [
+      "Global CX & Enterprise BPO",
+      "Vietnam & Southeast Asia Leaders"
+    ],
+    "references": [
+      "Teleperformance",
+      "Concentrix",
+      "Foundever",
+      "TDCX",
+      "Conduent"
+    ],
+    "default_preset": "enterprise-navy",
+    "slots": [
+      {
+        "slot": "header",
+        "variants": [
+          "header-mega",
+          "header-simple"
+        ],
+        "required": true
+      },
+      {
+        "slot": "hero",
+        "variants": [
+          "hero-split-image",
+          "hero-cycler-centered"
+        ],
+        "required": true
+      },
+      {
+        "slot": "logos",
+        "variants": [
+          "logo-marquee"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "about",
+        "variants": [
+          "pillars-numbered"
+        ]
+      },
+      {
+        "slot": "services",
+        "variants": [
+          "services-tabs",
+          "services-bento"
+        ],
+        "required": true
+      },
+      {
+        "slot": "metrics",
+        "variants": [
+          "metrics-counter"
+        ],
+        "required": true
+      },
+      {
+        "slot": "industries",
+        "variants": [
+          "industries-tiles"
+        ]
+      },
+      {
+        "slot": "proof",
+        "variants": [
+          "case-slider",
+          "testimonials"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "proof-extra",
+        "variants": [
+          "testimonials"
+        ]
+      },
+      {
+        "slot": "locations",
+        "variants": [
+          "locations-map"
+        ]
+      },
+      {
+        "slot": "compliance",
+        "variants": [
+          "compliance-badges"
+        ]
+      },
+      {
+        "slot": "faq",
+        "variants": [
+          "faq-accordion"
+        ]
+      },
+      {
+        "slot": "cta",
+        "variants": [
+          "cta-multistep"
+        ],
+        "required": true
+      },
+      {
+        "slot": "footer",
+        "variants": [
+          "footer-columns"
+        ],
+        "required": true
+      },
+      {
+        "slot": "floating",
+        "variants": [
+          "floating-chat"
+        ]
+      },
+      {
+        "slot": "exit",
+        "variants": [
+          "exit-intent-modal"
+        ]
+      }
+    ]
+  },
+  "offshore-staffing": {
+    "label": "Offshore staffing and dedicated teams",
+    "use_for": "Staff augmentation and dedicated-team providers (Philippines, Vietnam, LATAM) whose main pitch is cost savings and fast ramp-up.",
+    "categories": [
+      "Philippines Offshore BPO & Staffing",
+      "Next-Gen Tech BPO & CX Startups",
+      "Finance, Accounting & Legal BPO",
+      "Nearshore & Global Software Outsourcing"
+    ],
+    "references": [
+      "MicroSourcing",
+      "Emapta",
+      "Sourcefit",
+      "SupportNinja",
+      "Wing Assistant"
+    ],
+    "default_preset": "human-warm",
+    "slots": [
+      {
+        "slot": "header",
+        "variants": [
+          "header-simple",
+          "header-mega"
+        ],
+        "required": true
+      },
+      {
+        "slot": "hero",
+        "variants": [
+          "hero-cycler-centered",
+          "hero-split-image"
+        ],
+        "required": true
+      },
+      {
+        "slot": "logos",
+        "variants": [
+          "logo-marquee"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "calculator",
+        "variants": [
+          "cost-calculator"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "services",
+        "variants": [
+          "services-bento",
+          "services-tabs"
+        ],
+        "required": true
+      },
+      {
+        "slot": "process",
+        "variants": [
+          "process-sticky"
+        ],
+        "required": true
+      },
+      {
+        "slot": "metrics",
+        "variants": [
+          "metrics-counter"
+        ]
+      },
+      {
+        "slot": "pricing",
+        "variants": [
+          "pricing-toggle"
+        ]
+      },
+      {
+        "slot": "locations",
+        "variants": [
+          "locations-map"
+        ]
+      },
+      {
+        "slot": "proof",
+        "variants": [
+          "testimonials",
+          "case-slider"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "compliance",
+        "variants": [
+          "compliance-badges"
+        ]
+      },
+      {
+        "slot": "faq",
+        "variants": [
+          "faq-accordion"
+        ],
+        "required": true
+      },
+      {
+        "slot": "cta",
+        "variants": [
+          "cta-multistep"
+        ],
+        "required": true
+      },
+      {
+        "slot": "footer",
+        "variants": [
+          "footer-columns"
+        ],
+        "required": true
+      },
+      {
+        "slot": "floating",
+        "variants": [
+          "floating-chat"
+        ]
+      },
+      {
+        "slot": "exit",
+        "variants": [
+          "exit-intent-modal"
+        ]
+      }
+    ]
+  },
+  "ai-data-ops": {
+    "label": "AI data operations",
+    "use_for": "Data annotation, RLHF, trust and safety, content moderation and data-heavy back-office operations.",
+    "categories": [
+      "AI Data Annotation & Operations BPO"
+    ],
+    "references": [
+      "Scale AI",
+      "Invisible Technologies",
+      "TaskUs",
+      "Toloka",
+      "Shaip"
+    ],
+    "default_preset": "dark-ai",
+    "slots": [
+      {
+        "slot": "header",
+        "variants": [
+          "header-simple",
+          "header-mega"
+        ],
+        "required": true
+      },
+      {
+        "slot": "hero",
+        "variants": [
+          "hero-dark-network"
+        ],
+        "required": true
+      },
+      {
+        "slot": "logos",
+        "variants": [
+          "logo-marquee"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "services",
+        "variants": [
+          "services-bento"
+        ],
+        "required": true
+      },
+      {
+        "slot": "process",
+        "variants": [
+          "process-sticky"
+        ],
+        "required": true
+      },
+      {
+        "slot": "metrics",
+        "variants": [
+          "metrics-counter"
+        ],
+        "required": true
+      },
+      {
+        "slot": "proof",
+        "variants": [
+          "case-slider",
+          "testimonials"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "compliance",
+        "variants": [
+          "compliance-badges"
+        ],
+        "required": true
+      },
+      {
+        "slot": "locations",
+        "variants": [
+          "locations-map"
+        ]
+      },
+      {
+        "slot": "faq",
+        "variants": [
+          "faq-accordion"
+        ]
+      },
+      {
+        "slot": "cta",
+        "variants": [
+          "cta-multistep"
+        ],
+        "required": true
+      },
+      {
+        "slot": "footer",
+        "variants": [
+          "footer-columns"
+        ],
+        "required": true
+      },
+      {
+        "slot": "floating",
+        "variants": [
+          "floating-chat"
+        ]
+      },
+      {
+        "slot": "exit",
+        "variants": [
+          "exit-intent-modal"
+        ]
+      }
+    ]
+  },
+  "cx-voice-sales": {
+    "label": "Voice CX and outbound sales",
+    "use_for": "Contact centers, virtual receptionists, telesales and SDR / lead generation teams where call quality is the proof point.",
+    "categories": [
+      "B2B Sales Development & Lead Gen BPO",
+      "Next-Gen Tech BPO & CX Startups"
+    ],
+    "references": [
+      "SquadStack",
+      "Smith.ai",
+      "Belkins",
+      "SalesRoads",
+      "CIENCE"
+    ],
+    "default_preset": "clean-minimal",
+    "slots": [
+      {
+        "slot": "header",
+        "variants": [
+          "header-simple",
+          "header-mega"
+        ],
+        "required": true
+      },
+      {
+        "slot": "hero",
+        "variants": [
+          "hero-split-image",
+          "hero-cycler-centered"
+        ],
+        "required": true
+      },
+      {
+        "slot": "logos",
+        "variants": [
+          "logo-marquee"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "voice",
+        "variants": [
+          "voice-sample"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "services",
+        "variants": [
+          "services-bento",
+          "services-tabs"
+        ],
+        "required": true
+      },
+      {
+        "slot": "metrics",
+        "variants": [
+          "metrics-counter"
+        ],
+        "required": true
+      },
+      {
+        "slot": "process",
+        "variants": [
+          "process-sticky"
+        ]
+      },
+      {
+        "slot": "proof",
+        "variants": [
+          "testimonials",
+          "case-slider"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "pricing",
+        "variants": [
+          "pricing-toggle"
+        ]
+      },
+      {
+        "slot": "compliance",
+        "variants": [
+          "compliance-badges"
+        ]
+      },
+      {
+        "slot": "faq",
+        "variants": [
+          "faq-accordion"
+        ],
+        "required": true
+      },
+      {
+        "slot": "cta",
+        "variants": [
+          "cta-multistep"
+        ],
+        "required": true
+      },
+      {
+        "slot": "footer",
+        "variants": [
+          "footer-columns"
+        ],
+        "required": true
+      },
+      {
+        "slot": "floating",
+        "variants": [
+          "floating-chat"
+        ]
+      },
+      {
+        "slot": "exit",
+        "variants": [
+          "exit-intent-modal"
+        ]
+      }
+    ]
+  }
+}

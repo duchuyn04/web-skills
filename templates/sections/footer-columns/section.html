@@ -1,0 +1,25 @@
+<footer id="{{section.id}}" class="bl-footer bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-footer__top">
+      <div class="bl-footer__brand">
+        <a class="bl-brand" href="#top" aria-label="{{site.brand}} home">{{> brand}}</a>
+        <p>{{blurb}}</p>
+        {{#contacts.0}}<ul class="bl-footer__contacts">{{#contacts}}<li>{{icon:$icon}}{{#href}}<a href="{{href}}">{{label}}</a>{{/href}}{{^href}}<span>{{label}}</span>{{/href}}</li>{{/contacts}}</ul>{{/contacts.0}}
+        {{#socials.0}}<ul class="bl-footer__socials">{{#socials}}<li><a href="{{href}}" aria-label="{{label}}">{{icon:$icon}}</a></li>{{/socials}}</ul>{{/socials.0}}
+      </div>
+      <nav class="bl-footer__cols" aria-label="Footer">
+        {{#columns}}
+        <div class="bl-footer__col">
+          <p class="bl-footer__heading">{{heading}}</p>
+          <ul>{{#links}}<li><a href="{{href}}">{{label}}</a></li>{{/links}}</ul>
+        </div>
+        {{/columns}}
+      </nav>
+    </div>
+    <div class="bl-footer__bottom">
+      <p>&copy; {{site.year}} {{site.brand}}. {{legal}}</p>
+      {{#certifications}}<p class="bl-footer__certs">{{icon:shield-check}}<span>{{certifications}}</span></p>{{/certifications}}
+      {{#legal_links.0}}<ul class="bl-footer__legal">{{#legal_links}}<li><a href="{{href}}">{{label}}</a></li>{{/legal_links}}</ul>{{/legal_links.0}}
+    </div>
+  </div>
+</footer>

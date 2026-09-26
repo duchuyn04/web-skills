@@ -1,0 +1,4 @@
+interface:
+  display_name: "BPO Landing Builder"
+  short_description: "Build a BPO or outsourcing landing page from a brief"
+  default_prompt: "Use $bpo-landing-builder to build a landing page for this company brief."

@@ -1,0 +1,25 @@
+{
+  "variant": "voice-sample",
+  "group": "voice",
+  "summary": "Call-quality proof: 2-4 agent sample players with play/pause, language flag and a 24-bar soundwave that moves while audio plays. Pitch and points on the left.",
+  "tone": "auto",
+  "anchor": "call-samples",
+  "animations": ["soundwave-audio-bars", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "points": {"$ref": "points"},
+    "play_label": {"type": "text", "min": 2, "max": 20, "default": "Play sample"},
+    "pause_label": {"type": "text", "min": 2, "max": 20, "default": "Pause sample"},
+    "samples": {
+      "type": "list", "min": 2, "max": 4,
+      "item": {"type": "object", "fields": {
+        "name": {"type": "text", "min": 2, "max": 28},
+        "role": {"type": "text", "min": 3, "max": 40},
+        "language": {"type": "text", "min": 3, "max": 28},
+        "flag": {"type": "flag"},
+        "duration": {"type": "text", "min": 3, "max": 6},
+        "audio": {"type": "audio", "required": false}
+      }}
+    }
+  }
+}

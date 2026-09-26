@@ -1,0 +1,25 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-map" data-reveal="fade">
+      {{> world-dots}}
+      {{#hubs}}
+      <button class="bl-pin bl-pin--tip-{{city.tip}}" type="button" style="--x: {{city.x}}%; --y: {{city.y}}%" aria-describedby="{{section.id}}-hub-{{@n}}">
+        <span class="bl-pin__ring" aria-hidden="true"></span><span class="bl-pin__ring bl-pin__ring--2" aria-hidden="true"></span><span class="bl-pin__dot" aria-hidden="true"></span>
+        <span class="bl-sr-only">{{city.name}}</span>
+        <span class="bl-pin__tip" role="tooltip" id="{{section.id}}-hub-{{@n}}"><strong>{{city.name}}</strong><span>{{headcount}}</span><span>{{detail}}</span></span>
+      </button>
+      {{/hubs}}
+    </div>
+    <ul class="bl-hubs" data-reveal-group>
+      {{#hubs}}
+      <li class="bl-hub" data-reveal>
+        <div class="bl-hub__top">{{flag:$city.flag_code}}<span>{{city.country_name}}</span></div>
+        <strong class="bl-hub__city">{{city.name}}</strong>
+        <span class="bl-hub__role">{{role}}</span>
+        <span class="bl-hub__count bl-mono">{{headcount}}</span>
+      </li>
+      {{/hubs}}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{
+  "name": "enterprise-navy",
+  "label": "Enterprise navy and coral",
+  "use_for": "Large CX and enterprise BPO groups that sell to banks, telcos and healthcare. Serious, high contrast.",
+  "references": ["Concentrix", "Conduent", "Teleperformance", "Startek", "TDCX"],
+  "fonts": {
+    "heading": "Montserrat",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
+  "type": {"heading_weight": 600, "heading_tracking": "-0.025em"},
+  "colors": {"primary": "#0a1128", "accent": "#d4401d", "accent_2": "#2ed8c3"},
+  "shape": {"radius_sm": "8px", "radius": "14px", "radius_lg": "20px", "radius_btn": "999px"},
+  "hero_tone": "dark",
+  "tone_cycle": ["light", "muted"],
+  "tones": {
+    "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#f3f6fb", "text": "#475569", "text_strong": "$primary", "text_muted": "#64748b", "border": "#e2e8f0", "is_dark": false},
+    "muted": {"bg": "#f5f7fb", "surface": "#ffffff", "surface_2": "#eaeff7", "text": "#475569", "text_strong": "$primary", "text_muted": "#64748b", "border": "#dfe5ee", "is_dark": false},
+    "dark": {"bg": "$primary", "surface": "mix($primary,#ffffff,0.05)", "surface_2": "mix($primary,#ffffff,0.09)", "text": "#b4c0d4", "text_strong": "#ffffff", "text_muted": "#8796b0", "border": "rgba(255,255,255,0.11)", "is_dark": true}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "variant": "process-sticky",
+  "group": "process",
+  "summary": "Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scroll on the right; a progress line fills and each checkpoint lights up as it passes.",
+  "tone": "auto",
+  "anchor": "process",
+  "animations": ["sticky-sidebar-process-scroll", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cta": {"$ref": "cta", "required": false},
+    "steps": {
+      "type": "list", "min": 3, "max": 6,
+      "item": {"type": "object", "fields": {
+        "label": {"type": "text", "min": 2, "max": 20},
+        "title": {"type": "text", "min": 3, "max": 60},
+        "text": {"type": "text", "min": 40, "max": 220}
+      }}
+    }
+  }
+}

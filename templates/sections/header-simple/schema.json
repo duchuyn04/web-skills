@@ -1,0 +1,22 @@
+{
+  "variant": "header-simple",
+  "group": "header",
+  "summary": "Fixed header with brand, 3-6 anchor links and one CTA. Shrinks and blurs on scroll. Default for single-offer pages.",
+  "tone": "header",
+  "anchor": "site-header",
+  "shared": ["header"],
+  "animations": ["header-shrink-blur", "magnetic-cta-button (features.magnetic_cta)"],
+  "fields": {
+    "links": {
+      "type": "list", "min": 3, "max": 6,
+      "item": {"type": "object", "fields": {
+        "label": {"type": "text", "min": 2, "max": 18},
+        "href": {"type": "href"}
+      }}
+    },
+    "secondary": {"$ref": "cta", "required": false},
+    "cta": {"$ref": "cta"},
+    "menu_label": {"type": "text", "min": 2, "max": 16, "default": "Menu"},
+    "close_label": {"type": "text", "min": 2, "max": 16, "default": "Close menu"}
+  }
+}

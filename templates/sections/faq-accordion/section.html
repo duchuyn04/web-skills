@@ -1,0 +1,23 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-faq">
+    <div class="bl-faq__side">
+      {{> head}}
+      {{#aside}}
+      <div class="bl-faq__card" data-reveal>
+        <span class="bl-icon-box">{{icon:message-square}}</span>
+        <strong>{{title}}</strong>
+        <p>{{text}}</p>
+        <a class="bl-link" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+      </div>
+      {{/aside}}
+    </div>
+    <div class="bl-faq__list" data-accordion data-reveal-group>
+      {{#items}}
+      <div class="bl-acc" data-reveal>
+        <h3 class="bl-acc__h"><button class="bl-acc__btn" type="button" id="{{section.id}}-q{{@n}}" aria-expanded="false" aria-controls="{{section.id}}-a{{@n}}"><span>{{q}}</span><span class="bl-acc__icon" aria-hidden="true">{{icon:plus}}</span></button></h3>
+        <div class="bl-acc__panel" id="{{section.id}}-a{{@n}}" role="region" aria-labelledby="{{section.id}}-q{{@n}}"><div class="bl-acc__inner"><p>{{a}}</p></div></div>
+      </div>
+      {{/items}}
+    </div>
+  </div>
+</section>

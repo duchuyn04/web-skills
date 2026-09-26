@@ -1,0 +1,18 @@
+{
+  "variant": "logo-marquee",
+  "group": "logos",
+  "summary": "Thin band of client logos (or text wordmarks) scrolling right to left, faded edges, pauses on hover.",
+  "tone": "auto",
+  "anchor": "clients",
+  "animations": ["infinite-logo-marquee"],
+  "fields": {
+    "label": {"type": "text", "min": 10, "max": 80},
+    "logos": {
+      "type": "list", "min": 5, "max": 16,
+      "item": {"type": "object", "fields": {
+        "name": {"type": "text", "min": 2, "max": 28},
+        "src": {"type": "image", "required": false}
+      }}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "variant": "compliance-badges",
+  "group": "compliance",
+  "summary": "Heading and short security statement on the left; 1-6 certification badges that pop in one after another. List only certifications the client actually holds.",
+  "tone": "auto",
+  "anchor": "security",
+  "animations": ["staggered-badge-pop-in"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "points": {"$ref": "points", "required": false, "default": []},
+    "badges": {
+      "type": "list", "min": 1, "max": 6, "counts": [1, 2, 3, 4, 6],
+      "item": {"type": "object", "fields": {
+        "code": {"type": "text", "min": 2, "max": 18},
+        "label": {"type": "text", "min": 3, "max": 44},
+        "icon": {"type": "icon", "default": "shield-check"}
+      }}
+    }
+  }
+}

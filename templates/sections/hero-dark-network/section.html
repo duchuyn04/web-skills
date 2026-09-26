@@ -1,0 +1,28 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--network bl-tone-{{section.tone}}">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-glow bl-glow--a"></span><span class="bl-glow bl-glow--b"></span><canvas class="bl-network" data-network></canvas></div>
+  <div class="bl-container bl-hero-net">
+    <div class="bl-hero-net__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg bl-btn--shimmer" href="{{primary_cta.href}}">{{primary_cta.label}}{{arrow}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+    </div>
+    <div class="bl-ops bl-glass" data-reveal>
+      <div class="bl-ops__head">
+        <span class="bl-ops__dot" aria-hidden="true"></span>
+        <span class="bl-ops__title">{{panel.title}}</span>
+        <span class="bl-chip bl-chip--accent">{{panel.status}}</span>
+      </div>
+      <div class="bl-ops__bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <ul class="bl-ops__rows">{{#panel.rows}}<li><span>{{label}}</span><strong class="bl-mono">{{value}}</strong></li>{{/panel.rows}}</ul>
+    </div>
+  </div>
+  {{#chips.0}}
+  <div class="bl-container">
+    <ul class="bl-hero-net__chips" data-reveal-group>{{#chips}}<li data-reveal><strong>{{value}}</strong><span>{{label}}</span></li>{{/chips}}</ul>
+  </div>
+  {{/chips.0}}
+</section>

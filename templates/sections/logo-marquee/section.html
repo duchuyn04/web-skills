@@ -1,0 +1,11 @@
+<section id="{{section.id}}" class="bl-section bl-section--tight bl-marquee bl-tone-{{section.tone}}" aria-label="{{label}}">
+  <div class="bl-container">
+    <p class="bl-marquee__label" data-reveal>{{label}}</p>
+  </div>
+  <div class="bl-marquee__viewport" data-reveal="fade">
+    <div class="bl-marquee__track">
+      <ul class="bl-marquee__set">{{#logos}}<li class="bl-marquee__item">{{#src}}<img src="{{src}}" alt="{{name}}" height="32" width="120" loading="lazy">{{/src}}{{^src}}<span class="bl-wordmark">{{name}}</span>{{/src}}</li>{{/logos}}</ul>
+      <ul class="bl-marquee__set" aria-hidden="true">{{#logos}}<li class="bl-marquee__item">{{#src}}<img src="{{src}}" alt="" height="32" width="120" loading="lazy">{{/src}}{{^src}}<span class="bl-wordmark">{{name}}</span>{{/src}}</li>{{/logos}}</ul>
+    </div>
+  </div>
+</section>

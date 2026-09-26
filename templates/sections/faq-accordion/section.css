@@ -1,0 +1,24 @@
+/* faq-accordion: smooth-accordion-expansion via grid-template-rows 0fr to 1fr, 320ms */
+.bl-faq { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.bl-faq__side { position: sticky; top: calc(var(--header-h) + 2rem); }
+.bl-faq__side .bl-head { margin-bottom: 2rem; }
+.bl-faq__card { display: grid; gap: .7rem; justify-items: start; padding: 1.5rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
+.bl-faq__card strong { font-family: var(--font-heading); font-size: 1.1rem; color: var(--text-strong); }
+.bl-faq__card p { font-size: var(--fs-sm); }
+.bl-acc { border-bottom: 1px solid var(--border); }
+.bl-acc:first-child { border-top: 1px solid var(--border); }
+.bl-acc__btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: left;
+  padding: 1.35rem 0; font-family: var(--font-heading); font-size: clamp(1rem, .4vw + .92rem, 1.12rem); font-weight: 600; line-height: 1.45; color: var(--text-strong);
+}
+.bl-acc__btn:hover { color: var(--accent-ink); }
+.bl-acc__icon { width: 34px; height: 34px; flex-shrink: 0; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border-strong); transition: transform 320ms var(--ease-out), background-color var(--dur-fast), color var(--dur-fast); }
+.bl-acc__icon .bl-icon { width: 16px; height: 16px; }
+.bl-acc__btn[aria-expanded="true"] .bl-acc__icon { transform: rotate(45deg); background: var(--c-accent); color: var(--c-on-accent); border-color: transparent; }
+.bl-acc__panel { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 320ms var(--ease-out); }
+.js .bl-acc__panel { grid-template-rows: 0fr; }
+.js .bl-acc__btn[aria-expanded="true"] + .bl-acc__panel, .js .bl-acc__h:has(> [aria-expanded="true"]) + .bl-acc__panel { grid-template-rows: 1fr; }
+.bl-acc__inner { min-height: 0; overflow: hidden; }
+.bl-acc__inner p { padding: 0 3.5rem 1.5rem 0; color: var(--text); }
+@media (max-width: 1024px) { .bl-faq { grid-template-columns: 1fr; } .bl-faq__side { position: static; } }
+@media (max-width: 560px) { .bl-acc__inner p { padding-right: 0; } }

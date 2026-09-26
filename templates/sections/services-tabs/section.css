@@ -1,0 +1,32 @@
+/* services-tabs: sliding-pill-tab-switcher, 300ms cubic-bezier(0.4, 0, 0.2, 1) */
+.bl-tabs__scroll { display: flex; justify-content: center; margin-bottom: clamp(2rem, 4vw, 3rem); overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.bl-tabs__scroll::-webkit-scrollbar { display: none; }
+.bl-tabs__list { position: relative; display: inline-flex; gap: .25rem; padding: .35rem; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
+.bl-tabs__pill {
+  position: absolute; top: .35rem; bottom: .35rem; left: 0; width: var(--pill-w, 0px); border-radius: 999px;
+  background: var(--surface); box-shadow: 0 6px 18px -8px rgba(15, 23, 42, .35), inset 0 0 0 1px var(--border);
+  transform: translateX(var(--pill-x, 0px));
+  transition: transform 300ms var(--ease-std), width 300ms var(--ease-std);
+}
+.bl-tabs__tab {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .5rem; white-space: nowrap;
+  padding: .7rem 1.15rem; border-radius: 999px; font-size: .92rem; font-weight: 600; color: var(--text-muted);
+  transition: color var(--dur) var(--ease-std);
+}
+.bl-tabs__tab .bl-icon { width: 1.1rem; height: 1.1rem; }
+.bl-tabs__tab[aria-selected="true"] { color: var(--text-strong); }
+.bl-tabs__tab[aria-selected="true"] .bl-icon { color: var(--accent-ink); }
+.no-pill .bl-tabs__tab[aria-selected="true"], html:not(.js) .bl-tabs__tab[aria-selected="true"] { background: var(--surface); }
+.bl-tabs__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.bl-tabs__panel[hidden] { display: none; }
+.bl-tabs__panel.is-entering { animation: bl-tab-in 320ms var(--ease-out); }
+@keyframes bl-tab-in { from { opacity: 0; transform: translateX(10px); } }
+.bl-tabs__title { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.45rem, 1.2vw + 1rem, 1.9rem); line-height: 1.2; color: var(--text-strong); margin-bottom: 1rem; }
+.bl-tabs__copy .bl-lead { margin-bottom: 1.5rem; }
+.bl-tabs__copy .bl-checks { margin-bottom: 1.75rem; }
+.bl-tabs__media { aspect-ratio: 4 / 3; border-radius: calc(var(--radius-lg) + 4px); }
+@media (max-width: 1024px) {
+  .bl-tabs__scroll { justify-content: flex-start; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+  .bl-tabs__panel { grid-template-columns: 1fr; }
+  .bl-tabs__media { order: -1; }
+}

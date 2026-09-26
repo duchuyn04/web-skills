@@ -1,0 +1,23 @@
+{
+  "variant": "faq-accordion",
+  "group": "faq",
+  "summary": "Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation.",
+  "tone": "auto",
+  "anchor": "faq",
+  "animations": ["smooth-accordion-expansion"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "aside": {"type": "object", "required": false, "fields": {
+      "title": {"type": "text", "min": 8, "max": 60},
+      "text": {"type": "text", "min": 30, "max": 160},
+      "cta": {"$ref": "cta"}
+    }},
+    "items": {
+      "type": "list", "min": 4, "max": 8,
+      "item": {"type": "object", "fields": {
+        "q": {"type": "text", "min": 10, "max": 120},
+        "a": {"type": "text", "min": 30, "max": 520}
+      }}
+    }
+  }
+}

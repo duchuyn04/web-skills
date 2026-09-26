@@ -1,0 +1,28 @@
+{
+  "variant": "pricing-toggle",
+  "group": "pricing",
+  "summary": "Engagement models: a two-way switch (for example Dedicated team / Shared service) swaps between two sets of 2-3 plan cards. Use \"Custom quote\" as the price when the client has no public price.",
+  "tone": "auto",
+  "anchor": "pricing",
+  "animations": ["toggle-model-flip", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "models": {
+      "type": "list", "min": 2, "max": 2,
+      "item": {"type": "object", "fields": {
+        "label": {"type": "text", "min": 3, "max": 22},
+        "plans": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+          "name": {"type": "text", "min": 3, "max": 28},
+          "price": {"type": "text", "min": 1, "max": 14},
+          "unit": {"type": "text", "min": 2, "max": 28, "required": false},
+          "text": {"type": "text", "min": 20, "max": 140},
+          "features": {"type": "list", "min": 3, "max": 6, "item": {"type": "text", "min": 3, "max": 60}},
+          "cta": {"$ref": "cta"},
+          "featured": {"type": "bool", "default": false},
+          "badge": {"type": "text", "min": 3, "max": 20, "required": false}
+        }}}
+      }}
+    },
+    "note": {"type": "text", "min": 20, "max": 180, "required": false}
+  }
+}

@@ -1,0 +1,24 @@
+/* footer-columns */
+.bl-footer { background: color-mix(in srgb, var(--bg) 80%, #000); padding-top: clamp(3.5rem, 6vw, 5rem); padding-bottom: 2rem; border-top: 1px solid var(--border); font-size: var(--fs-sm); }
+.bl-footer__top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: clamp(2rem, 6vw, 6rem); padding-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.bl-footer__brand { display: grid; gap: 1.25rem; align-content: start; }
+.bl-footer__brand > p { max-width: 24rem; }
+.bl-footer__contacts { display: grid; gap: .6rem; }
+.bl-footer__contacts li { display: flex; align-items: center; gap: .6rem; color: var(--text-strong); }
+.bl-footer__contacts .bl-icon { width: 1rem; height: 1rem; color: var(--accent-ink); }
+.bl-footer__contacts a:hover { color: var(--accent-ink); }
+.bl-footer__socials { display: flex; gap: .5rem; }
+.bl-footer__socials a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border-strong); color: var(--text-strong); transition: background-color var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast); }
+.bl-footer__socials a:hover { background: var(--c-accent); border-color: transparent; color: var(--c-on-accent); }
+.bl-footer__socials .bl-icon { width: 18px; height: 18px; }
+.bl-footer__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; }
+.bl-footer__heading { font-size: var(--fs-xs); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--text-strong); margin-bottom: 1.1rem; }
+.bl-footer__col ul { display: grid; gap: .7rem; }
+.bl-footer__col a { color: var(--text); transition: color var(--dur-fast) var(--ease-std); }
+.bl-footer__col a:hover { color: var(--text-strong); }
+.bl-footer__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: var(--fs-xs); color: var(--text-muted); }
+.bl-footer__certs { display: inline-flex; align-items: center; gap: .45rem; }
+.bl-footer__certs .bl-icon { width: .95rem; height: .95rem; color: var(--accent-ink); }
+.bl-footer__legal { display: flex; gap: 1.25rem; }
+.bl-footer__legal a:hover { color: var(--text-strong); }
+@media (max-width: 1024px) { .bl-footer__top { grid-template-columns: 1fr; } }

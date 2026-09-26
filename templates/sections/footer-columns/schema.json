@@ -1,0 +1,37 @@
+{
+  "variant": "footer-columns",
+  "group": "footer",
+  "summary": "Dark footer: brand blurb, contacts and social icons, 2-4 link columns, legal bar with optional certification line.",
+  "tone": "dark",
+  "anchor": "site-footer",
+  "animations": [],
+  "fields": {
+    "blurb": {"type": "text", "min": 40, "max": 200},
+    "contacts": {
+      "type": "list", "min": 0, "max": 3, "default": [],
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "label": {"type": "text", "min": 3, "max": 60},
+        "href": {"type": "href", "required": false}
+      }}
+    },
+    "socials": {
+      "type": "list", "min": 0, "max": 4, "default": [],
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "enum", "values": ["linkedin", "facebook", "youtube", "twitter"]},
+        "label": {"type": "text", "min": 3, "max": 24},
+        "href": {"type": "href"}
+      }}
+    },
+    "columns": {
+      "type": "list", "min": 2, "max": 4,
+      "item": {"type": "object", "fields": {
+        "heading": {"type": "text", "min": 3, "max": 24},
+        "links": {"type": "list", "min": 2, "max": 6, "item": {"$ref": "cta"}}
+      }}
+    },
+    "legal": {"type": "text", "min": 5, "max": 90},
+    "legal_links": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"$ref": "cta"}},
+    "certifications": {"type": "text", "min": 5, "max": 90, "required": false}
+  }
+}

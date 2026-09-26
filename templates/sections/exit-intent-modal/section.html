@@ -1,0 +1,11 @@
+<dialog id="{{section.id}}" class="bl-exit bl-tone-light" data-exit aria-labelledby="{{section.id}}-title">
+  <button class="bl-exit__close" type="button" data-exit-close>{{icon:x}}<span class="bl-sr-only">{{close_label}}</span></button>
+  <span class="bl-icon-box">{{icon:file-text}}</span>
+  {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+  <h2 class="bl-exit__title" id="{{section.id}}-title">{{title}}</h2>
+  <p>{{text}}</p>
+  <div class="bl-btn-row">
+    <a class="bl-btn bl-btn--primary" href="{{cta.href}}" data-exit-close>{{cta.label}}{{arrow}}</a>
+    <button class="bl-btn bl-btn--ghost" type="button" data-exit-close>{{dismiss_label}}</button>
+  </div>
+</dialog>

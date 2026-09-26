@@ -1,0 +1,4 @@
+/* header-simple */
+.bl-header__secondary { font-size: .92rem; font-weight: 600; color: var(--text-strong); padding: .5rem .25rem; }
+.bl-header__secondary:hover { color: var(--accent-ink); }
+@media (max-width: 1024px) { .bl-header__secondary { display: none; } }

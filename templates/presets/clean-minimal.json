@@ -1,0 +1,22 @@
+{
+  "name": "clean-minimal",
+  "label": "Clean minimal white and violet",
+  "use_for": "Finance, accounting, legal and consulting-style BPO, and Nordic or Japanese markets that prefer calm layouts.",
+  "references": ["Genpact", "Transcom", "Firstsource", "Arvato", "Capita"],
+  "fonts": {
+    "heading": "Manrope",
+    "body": "DM Sans",
+    "mono": "JetBrains Mono",
+    "google": "family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
+  "type": {"heading_weight": 700, "heading_tracking": "-0.03em"},
+  "colors": {"primary": "#1a1f36", "accent": "#5b3df5", "accent_2": "#0ea5e9"},
+  "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "16px", "radius_btn": "10px"},
+  "hero_tone": "light",
+  "tone_cycle": ["light", "muted"],
+  "tones": {
+    "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#f5f6fb", "text": "#4b5165", "text_strong": "$primary", "text_muted": "#6b7185", "border": "#e6e8f0", "is_dark": false},
+    "muted": {"bg": "#f6f7fb", "surface": "#ffffff", "surface_2": "#eceef6", "text": "#4b5165", "text_strong": "$primary", "text_muted": "#6b7185", "border": "#e1e4ee", "is_dark": false},
+    "dark": {"bg": "$primary", "surface": "mix($primary,#ffffff,0.05)", "surface_2": "mix($primary,#ffffff,0.10)", "text": "#bcc1d6", "text_strong": "#ffffff", "text_muted": "#8f95ad", "border": "rgba(255,255,255,0.11)", "is_dark": true}
+  }
+}

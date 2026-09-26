@@ -1,0 +1,17 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-split bl-comply">
+    <div>
+      {{> head}}
+      {{#points.0}}<ul class="bl-checks" data-reveal>{{#points}}<li>{{icon:check}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+    </div>
+    <ul class="bl-comply__grid" data-reveal-group>
+      {{#badges}}
+      <li class="bl-seal" data-reveal="pop">
+        <span class="bl-seal__icon">{{icon:$icon}}</span>
+        <strong class="bl-seal__code">{{code}}</strong>
+        <span class="bl-seal__label">{{label}}</span>
+      </li>
+      {{/badges}}
+    </ul>
+  </div>
+</section>

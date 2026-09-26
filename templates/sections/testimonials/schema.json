@@ -1,0 +1,21 @@
+{
+  "variant": "testimonials",
+  "group": "proof",
+  "summary": "Three client quote cards with name, role, company and photo (or initials). The middle card is raised.",
+  "tone": "auto",
+  "anchor": "testimonials",
+  "animations": ["reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "items": {
+      "type": "list", "min": 3, "max": 3,
+      "item": {"type": "object", "fields": {
+        "quote": {"type": "text", "min": 60, "max": 280},
+        "name": {"type": "text", "min": 3, "max": 40},
+        "role": {"type": "text", "min": 3, "max": 60},
+        "company": {"type": "text", "min": 2, "max": 40},
+        "avatar": {"type": "image", "required": false}
+      }}
+    }
+  }
+}

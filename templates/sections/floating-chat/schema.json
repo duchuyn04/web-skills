@@ -1,0 +1,14 @@
+{
+  "variant": "floating-chat",
+  "group": "floating",
+  "summary": "Round contact button fixed bottom-right with a pulsing online dot and a label bubble. Appears after the hero scrolls away.",
+  "tone": "none",
+  "anchor": "quick-contact",
+  "animations": ["floating-whatsapp-chat-bounce"],
+  "fields": {
+    "label": {"type": "text", "min": 3, "max": 28},
+    "status": {"type": "text", "min": 3, "max": 24, "required": false},
+    "href": {"type": "href"},
+    "icon": {"type": "icon", "default": "message-circle"}
+  }
+}

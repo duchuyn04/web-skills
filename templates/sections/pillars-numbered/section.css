@@ -1,0 +1,6 @@
+/* pillars-numbered */
+.bl-pillar { background: var(--surface-2); border-color: transparent; }
+.bl-pillar:hover { background: var(--surface); }
+.bl-pillar__num { display: block; font-size: 1.6rem; font-weight: 600; color: var(--accent-ink); margin-bottom: 1.5rem; }
+.bl-pillar .bl-h3 { margin-bottom: .6rem; }
+.bl-pillar p { font-size: var(--fs-sm); color: var(--text); }

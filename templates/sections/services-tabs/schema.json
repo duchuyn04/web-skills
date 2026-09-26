@@ -1,0 +1,23 @@
+{
+  "variant": "services-tabs",
+  "group": "services",
+  "summary": "Centered heading, a pill tab switcher (3-5 service lines) and one panel per tab: copy with check list on the left, photo on the right.",
+  "tone": "auto",
+  "anchor": "services",
+  "animations": ["sliding-pill-tab-switcher", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "tabs": {
+      "type": "list", "min": 3, "max": 5,
+      "item": {"type": "object", "fields": {
+        "tab": {"type": "text", "min": 3, "max": 22},
+        "icon": {"type": "icon"},
+        "title": {"type": "text", "min": 8, "max": 70},
+        "text": {"type": "text", "min": 60, "max": 260},
+        "bullets": {"type": "list", "min": 3, "max": 4, "item": {"type": "text", "min": 3, "max": 64}},
+        "photo": {"$ref": "photo"},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    }
+  }
+}
