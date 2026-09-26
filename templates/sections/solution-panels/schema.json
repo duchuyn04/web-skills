@@ -1,0 +1,26 @@
+{
+  "variant": "solution-panels",
+  "group": "solutions",
+  "summary": "Dark band with fine wave lines: heading with an accent phrase and one button, then 2 or 3 light cards. Each card has a dark title bar (optionally linked) and a list of offerings with icon, name and one line.",
+  "tone": "dark",
+  "anchor": "solutions",
+  "animations": ["reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 15, "max": 110},
+    "lead": {"type": "text", "min": 40, "max": 220, "required": false},
+    "cta": {"$ref": "cta", "required": false},
+    "panels": {
+      "type": "list", "min": 2, "max": 3,
+      "item": {"type": "object", "fields": {
+        "title": {"type": "text", "min": 3, "max": 36},
+        "href": {"type": "href", "required": false},
+        "items": {"type": "list", "min": 2, "max": 5, "item": {"type": "object", "fields": {
+          "icon": {"type": "icon"},
+          "title": {"type": "text", "min": 3, "max": 48},
+          "text": {"type": "text", "min": 30, "max": 170}
+        }}}
+      }}
+    }
+  }
+}

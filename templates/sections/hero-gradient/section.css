@@ -1,0 +1,38 @@
+/* hero-gradient: brand-colour hero with wave lines and a turning dotted globe */
+.bl-hero--gradient {
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 20%, color-mix(in srgb, var(--c-accent-2) 70%, transparent), transparent 70%),
+    linear-gradient(120deg, color-mix(in srgb, var(--c-accent) 88%, #000) 0%, var(--c-accent) 45%, color-mix(in srgb, var(--c-accent) 55%, var(--c-accent-2)) 100%);
+  min-height: clamp(560px, 82vh, 860px); display: flex; flex-direction: column; justify-content: center;
+}
+.bl-hero-grad__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.bl-waves { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; color: var(--text-strong); opacity: .16; animation: bl-wave-drift 18s ease-in-out infinite alternate; }
+@keyframes bl-wave-drift { to { transform: translateX(-3%) translateY(8px); } }
+.bl-hero-grad { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.bl-hero--gradient .bl-h1 { color: var(--text-strong); }
+.bl-hero--gradient .bl-hl { color: var(--text-strong); text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .14em; text-decoration-color: color-mix(in srgb, var(--text-strong) 45%, transparent); }
+.bl-hero-grad__visual { display: grid; place-items: center; }
+.bl-hero-grad__photo { width: min(100%, 520px); aspect-ratio: 1; border-radius: calc(var(--radius-lg) + 10px); box-shadow: var(--shadow-lg); }
+
+.bl-globe { position: relative; width: min(100%, 440px); aspect-ratio: 1; color: var(--text-strong); }
+.bl-globe__sphere {
+  position: absolute; inset: 0; border-radius: 50%; overflow: hidden;
+  background: radial-gradient(circle at 34% 30%, color-mix(in srgb, var(--text-strong) 26%, transparent), transparent 62%);
+  box-shadow: inset -24px -30px 60px rgba(0, 0, 0, .18), 0 0 0 1px color-mix(in srgb, var(--text-strong) 35%, transparent);
+}
+.bl-globe__sphere::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 50% 50%, transparent 58%, rgba(0, 0, 0, .22) 100%); }
+.bl-globe__track { position: absolute; top: 12%; left: 0; height: 76%; width: 400%; animation: bl-globe-spin 60s linear infinite; }
+.bl-globe__map { width: 100%; height: 100%; color: var(--text-strong); opacity: .8; }
+@keyframes bl-globe-spin { to { transform: translateX(-50%); } }
+.bl-globe__net { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bl-globe__node { transform-box: fill-box; transform-origin: center; animation: bl-node 2.6s ease-in-out infinite; }
+.bl-globe__node:nth-child(2) { animation-delay: -.6s; }
+.bl-globe__node:nth-child(3) { animation-delay: -1.2s; }
+.bl-globe__node:nth-child(4) { animation-delay: -1.8s; }
+@keyframes bl-node { 50% { transform: scale(1.6); opacity: .6; } }
+@media (max-width: 1024px) {
+  .bl-hero-grad { grid-template-columns: 1fr; }
+  .bl-globe { width: min(80%, 340px); }
+  .bl-hero-grad__photo { width: min(100%, 440px); }
+}
+@media (max-width: 640px) { .bl-hero-grad__visual { display: none; } }

@@ -1,0 +1,37 @@
+{
+  "variant": "contact-split",
+  "group": "cta",
+  "summary": "Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email.",
+  "tone": "auto",
+  "anchor": "contact",
+  "animations": ["reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "form": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 5, "max": 60},
+      "text": {"type": "text", "min": 20, "max": 160, "required": false},
+      "name_label": {"type": "text", "min": 2, "max": 28, "default": "Full name"},
+      "email_label": {"type": "text", "min": 2, "max": 28, "default": "Work email"},
+      "company_label": {"type": "text", "min": 2, "max": 28, "default": "Company"},
+      "phone_label": {"type": "text", "min": 2, "max": 28, "required": false},
+      "message_label": {"type": "text", "min": 2, "max": 40, "default": "How can we help?"},
+      "submit_label": {"type": "text", "min": 3, "max": 30},
+      "success_title": {"type": "text", "min": 5, "max": 60},
+      "success_text": {"type": "text", "min": 20, "max": 200},
+      "note": {"type": "text", "min": 20, "max": 160, "required": false},
+      "action": {"type": "href", "required": false}
+    }},
+    "aside": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 5, "max": 40},
+      "points": {"type": "list", "min": 2, "max": 6, "item": {"type": "text", "min": 6, "max": 90}},
+      "offices": {"type": "list", "min": 1, "max": 4, "item": {"type": "object", "fields": {
+        "flag": {"type": "flag"},
+        "name": {"type": "text", "min": 2, "max": 30},
+        "address": {"type": "text", "min": 10, "max": 160},
+        "phone": {"type": "text", "min": 5, "max": 24, "required": false}
+      }}},
+      "email_label": {"type": "text", "min": 3, "max": 30, "required": false},
+      "email": {"type": "email", "required": false}
+    }}
+  }
+}

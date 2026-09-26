@@ -1,0 +1,23 @@
+{
+  "name": "orange-charcoal",
+  "label": "Orange and charcoal",
+  "use_for": "IT outsourcing and BPO partners that sell both software teams and back-office services, often from Vietnam or Asia to US, EU and Japan. Confident, warm, businesslike; pill labels above every heading.",
+  "references": ["Bestarion", "Saigon Technology", "SmartOSC", "Orient Software", "KMS Technology"],
+  "fonts": {
+    "heading": "Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600"
+  },
+  "type": {"heading_weight": 700, "heading_tracking": "-0.025em"},
+  "colors": {"primary": "#1b1e23", "accent": "#c94f08", "accent_2": "#f7931e"},
+  "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "16px", "radius_btn": "999px"},
+  "hero_tone": "light",
+  "eyebrow": "pill",
+  "tone_cycle": ["light", "muted"],
+  "tones": {
+    "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#f3f6fb", "text": "#434a55", "text_strong": "$primary", "text_muted": "#646b77", "border": "#e4e8ef", "is_dark": false},
+    "muted": {"bg": "#f6f8fb", "surface": "#ffffff", "surface_2": "#edf1f7", "text": "#434a55", "text_strong": "$primary", "text_muted": "#646b77", "border": "#e0e5ed", "is_dark": false},
+    "dark": {"bg": "$primary", "surface": "mix($primary,#ffffff,0.05)", "surface_2": "mix($primary,#ffffff,0.09)", "text": "#c3c8d0", "text_strong": "#ffffff", "text_muted": "#9aa1ac", "border": "rgba(255,255,255,0.12)", "is_dark": true}
+  }
+}

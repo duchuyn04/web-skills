@@ -1,0 +1,23 @@
+{
+  "variant": "service-links",
+  "group": "services",
+  "summary": "One to three service groups stacked (for example IT outsourcing, then BPO). Each group: pill label, title, one line, then a two-column grid of link rows with an arrow. Good when there are many services with their own pages.",
+  "tone": "auto",
+  "anchor": "services",
+  "animations": ["reveal"],
+  "fields": {
+    "groups": {
+      "type": "list", "min": 1, "max": 3,
+      "item": {"type": "object", "fields": {
+        "eyebrow": {"type": "text", "min": 3, "max": 32, "required": false},
+        "title": {"type": "markup", "min": 8, "max": 70},
+        "text": {"type": "text", "min": 40, "max": 240, "required": false},
+        "links": {"type": "list", "min": 2, "max": 10, "item": {"type": "object", "fields": {
+          "label": {"type": "text", "min": 3, "max": 44},
+          "href": {"type": "href"},
+          "icon": {"type": "icon", "required": false}
+        }}}
+      }}
+    }
+  }
+}

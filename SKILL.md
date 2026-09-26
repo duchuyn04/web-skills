@@ -40,6 +40,7 @@ Read `references/page-anatomy.md`. Pick the archetype from the client's headline
 | Cost savings, dedicated offshore staff, "hire a team in Vietnam or the Philippines" | `offshore-staffing` | `human-warm` |
 | Data labeling, RLHF, trust and safety, content moderation | `ai-data-ops` | `dark-ai` |
 | Call quality as the product: SDR, telesales, receptionists, and the client has call recordings | `cx-voice-sales` | `clean-minimal` |
+| Software teams (ITO) plus back-office services (BPO), many services each with its own page, often a Vietnam or Asia delivery base | `it-bpo-partner` | `orange-charcoal` |
 
 Tie-breakers:
 

@@ -12,6 +12,7 @@ Match the client's main offer, not its size. If two fit, pick the one whose firs
 | `offshore-staffing` | Staff augmentation and dedicated-team providers (Philippines, Vietnam, LATAM) whose main pitch is cost savings and fast ramp-up. | Philippines Offshore BPO & Staffing, Next-Gen Tech BPO & CX Startups, Finance, Accounting & Legal BPO, Nearshore & Global Software Outsourcing | MicroSourcing, Emapta, Sourcefit, SupportNinja, Wing Assistant | `human-warm` |
 | `ai-data-ops` | Data annotation, RLHF, trust and safety, content moderation and data-heavy back-office operations. | AI Data Annotation & Operations BPO | Scale AI, Invisible Technologies, TaskUs, Toloka, Shaip | `dark-ai` |
 | `cx-voice-sales` | Contact centers, virtual receptionists, telesales and SDR / lead generation teams where call quality is the proof point. | B2B Sales Development & Lead Gen BPO, Next-Gen Tech BPO & CX Startups | SquadStack, Smith.ai, Belkins, SalesRoads, CIENCE | `clean-minimal` |
+| `it-bpo-partner` | Companies that sell both software teams (ITO) and back-office services (BPO), usually from Vietnam or elsewhere in Asia to clients in the US, EU, Japan or Australia. Many services, each with its own page; trust built on years in business, certifications and client stories. | Vietnam & Southeast Asia Leaders, Nearshore & Global Software Outsourcing, Finance, Accounting & Legal BPO | Bestarion, Saigon Technology, SmartOSC, Orient Software, KMS Technology | `orange-charcoal` |
 
 ## Slot order
 
@@ -26,14 +27,14 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed` |
+| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient` |
 | 3 | logos | recommended | `logo-marquee` |
-| 4 | about | no | `pillars-numbered` |
-| 5 | services | yes | `services-tabs`, `services-bento` |
-| 6 | features | no | `feature-rows` |
-| 7 | metrics | yes | `metrics-counter` |
+| 4 | about | no | `pillars-numbered`, `about-mosaic` |
+| 5 | services | yes | `services-tabs`, `services-bento`, `service-links` |
+| 6 | features | no | `feature-rows`, `solution-panels` |
+| 7 | metrics | yes | `metrics-counter`, `metrics-panel` |
 | 8 | video | no | `video-block` |
-| 9 | industries | no | `industries-tiles`, `image-cards` |
+| 9 | industries | no | `industries-tiles`, `image-cards`, `audience-cards` |
 | 10 | proof | recommended | `case-slider`, `testimonials` |
 | 11 | proof-extra | no | `testimonials` |
 | 12 | mid-cta | no | `cta-band` |
@@ -41,7 +42,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 14 | compliance | no | `compliance-badges` |
 | 15 | news | no | `image-cards` |
 | 16 | faq | no | `faq-accordion` |
-| 17 | cta | yes | `cta-multistep`, `cta-band` |
+| 17 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
 | 18 | footer | yes | `footer-columns` |
 | 19 | floating | no | `floating-chat` |
 | 20 | exit | no | `exit-intent-modal` |
@@ -51,14 +52,14 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed` |
+| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient` |
 | 3 | logos | recommended | `logo-marquee` |
 | 4 | calculator | recommended | `cost-calculator` |
-| 5 | services | yes | `services-bento`, `services-tabs` |
-| 6 | features | no | `feature-rows` |
+| 5 | services | yes | `services-bento`, `services-tabs`, `service-links` |
+| 6 | features | no | `feature-rows`, `solution-panels` |
 | 7 | process | yes | `process-sticky` |
 | 8 | video | no | `video-block` |
-| 9 | metrics | no | `metrics-counter` |
+| 9 | metrics | no | `metrics-counter`, `metrics-panel` |
 | 10 | pricing | no | `pricing-toggle` |
 | 11 | locations | no | `locations-map` |
 | 12 | proof | recommended | `testimonials`, `case-slider` |
@@ -66,7 +67,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 14 | compliance | no | `compliance-badges` |
 | 15 | news | no | `image-cards` |
 | 16 | faq | yes | `faq-accordion` |
-| 17 | cta | yes | `cta-multistep`, `cta-band` |
+| 17 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
 | 18 | footer | yes | `footer-columns` |
 | 19 | floating | no | `floating-chat` |
 | 20 | exit | no | `exit-intent-modal` |
@@ -76,12 +77,12 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-dark-network`, `hero-fullbleed` |
+| 2 | hero | yes | `hero-dark-network`, `hero-fullbleed`, `hero-gradient` |
 | 3 | logos | recommended | `logo-marquee` |
-| 4 | services | yes | `services-bento` |
-| 5 | features | no | `feature-rows` |
+| 4 | services | yes | `services-bento`, `service-links` |
+| 5 | features | no | `feature-rows`, `solution-panels` |
 | 6 | process | yes | `process-sticky` |
-| 7 | metrics | yes | `metrics-counter` |
+| 7 | metrics | yes | `metrics-counter`, `metrics-panel` |
 | 8 | video | no | `video-block` |
 | 9 | proof | recommended | `case-slider`, `testimonials` |
 | 10 | mid-cta | no | `cta-band` |
@@ -89,7 +90,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 12 | locations | no | `locations-map` |
 | 13 | news | no | `image-cards` |
 | 14 | faq | no | `faq-accordion` |
-| 15 | cta | yes | `cta-multistep`, `cta-band` |
+| 15 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
 | 16 | footer | yes | `footer-columns` |
 | 17 | floating | no | `floating-chat` |
 | 18 | exit | no | `exit-intent-modal` |
@@ -99,13 +100,13 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed` |
+| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient` |
 | 3 | logos | recommended | `logo-marquee` |
 | 4 | voice | recommended | `voice-sample` |
-| 5 | services | yes | `services-bento`, `services-tabs` |
-| 6 | features | no | `feature-rows` |
+| 5 | services | yes | `services-bento`, `services-tabs`, `service-links` |
+| 6 | features | no | `feature-rows`, `solution-panels` |
 | 7 | video | no | `video-block` |
-| 8 | metrics | yes | `metrics-counter` |
+| 8 | metrics | yes | `metrics-counter`, `metrics-panel` |
 | 9 | process | no | `process-sticky` |
 | 10 | proof | recommended | `testimonials`, `case-slider` |
 | 11 | mid-cta | no | `cta-band` |
@@ -113,7 +114,30 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 13 | compliance | no | `compliance-badges` |
 | 14 | news | no | `image-cards` |
 | 15 | faq | yes | `faq-accordion` |
-| 16 | cta | yes | `cta-multistep`, `cta-band` |
+| 16 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
 | 17 | footer | yes | `footer-columns` |
 | 18 | floating | no | `floating-chat` |
 | 19 | exit | no | `exit-intent-modal` |
+
+### it-bpo-partner
+
+| # | Slot | Required | Allowed types |
+|:---|:---|:---|:---|
+| 1 | header | yes | `header-mega`, `header-simple` |
+| 2 | hero | yes | `hero-gradient`, `hero-split-image`, `hero-fullbleed` |
+| 3 | about | no | `about-mosaic`, `pillars-numbered` |
+| 4 | trust | recommended | `metrics-panel`, `metrics-counter` |
+| 5 | logos | recommended | `logo-marquee` |
+| 6 | services | yes | `service-links`, `services-bento`, `services-tabs` |
+| 7 | solutions | no | `solution-panels`, `feature-rows` |
+| 8 | audience | no | `audience-cards`, `industries-tiles` |
+| 9 | proof | recommended | `case-slider`, `testimonials` |
+| 10 | proof-extra | no | `testimonials` |
+| 11 | compliance | no | `compliance-badges` |
+| 12 | locations | no | `locations-map` |
+| 13 | news | no | `image-cards` |
+| 14 | faq | no | `faq-accordion` |
+| 15 | cta | yes | `contact-split`, `cta-multistep`, `cta-band` |
+| 16 | footer | yes | `footer-columns` |
+| 17 | floating | no | `floating-chat` |
+| 18 | exit | no | `exit-intent-modal` |

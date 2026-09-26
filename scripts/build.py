@@ -244,6 +244,7 @@ class Ctx:
 
 PLACEHOLDER_RE = re.compile(r"^\[[^\]]{1,40}\]$")
 MARKUP_RE = re.compile(r"\*([^*]+)\*")
+BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
 HREF_RE = re.compile(r"^(#[A-Za-z][\w-]*|#|https?://\S+|mailto:\S+|tel:[+\d][\d\s-]*|[\w./-]+\.(html|pdf))$")
 HEX_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
 
@@ -256,7 +257,11 @@ def check_copy(ctx, path, text):
 
 
 def text_len(s):
-    return len(MARKUP_RE.sub(r"\1", s))
+    return len(MARKUP_RE.sub(r"\1", BOLD_RE.sub(r"\1", s)))
+
+
+def plain(s):
+    return MARKUP_RE.sub(r"\1", BOLD_RE.sub(r"\1", s))
 
 
 def validate(ctx, value, spec, path):
@@ -280,7 +285,8 @@ def validate(ctx, value, spec, path):
         if t == "markup":
             if value.count("*") % 2:
                 ctx.err(path, "odd number of '*'. Wrap accent words as *like this*.")
-            return Safe(MARKUP_RE.sub(r'<span class="bl-hl">\1</span>', html.escape(value, quote=False)))
+            esc = BOLD_RE.sub(r"<strong>\1</strong>", html.escape(value, quote=False))
+            return Safe(MARKUP_RE.sub(r'<span class="bl-hl">\1</span>', esc))
         return value
     if t == "number":
         if isinstance(value, bool) or not isinstance(value, (int, float)):
@@ -374,7 +380,7 @@ def validate_object(ctx, value, spec, path):
         if k in value and value[k] is not None:
             out[k] = validate(ctx, value[k], fs, p)
             if fs.get("type") == "markup" and isinstance(value[k], str):
-                out[k + "_plain"] = MARKUP_RE.sub(r"", value[k].strip())
+                out[k + "_plain"] = plain(value[k].strip())
         elif "default" in fs:
             out[k] = fs["default"]
         elif fs.get("required", True):
@@ -474,7 +480,9 @@ def resolve_city(ctx, value, path):
 
 
 def enrich_stats(obj):
-    """Turn stat fields into display strings plus counter attributes; add initials for people."""
+    """Turn stat fields into display strings plus counter attributes; add initials and tel: links."""
+    if isinstance(obj, dict) and isinstance(obj.get("phone"), str):
+        obj["phone_href"] = "tel:" + re.sub(r"[^\d+]", "", obj["phone"])
     if isinstance(obj, dict) and isinstance(obj.get("name"), str) and "avatar" in obj:
         words = re.findall(r"[^\W\d_]+", obj["name"])
         obj["initials"] = "".join(w[0] for w in words[:2]).upper() or "?"
@@ -611,6 +619,30 @@ def theme_css(preset, overrides, ctx):
                   "  --glass-border: %s;" % ("rgba(255, 255, 255, 0.12)" if dark else "rgba(255, 255, 255, 0.9)"),
                   "  --shadow-lg: %s;" % ("0 24px 48px -20px rgba(0, 0, 0, 0.65)" if dark else "0 24px 48px -24px rgba(15, 23, 42, 0.24)"),
                   "}"]
+    # Accent tone: sections painted in the brand colour (hero-gradient). Text uses the button text colour.
+    on = on_accent
+    txt = mix(on, accent, 0.10)
+    if contrast(txt, accent) < 4.5:
+        txt = on
+    muted = mix(on, accent, 0.22)
+    if contrast(muted, accent) < 4.5:
+        muted = txt
+    a_dark = luminance(accent) < 0.4
+    lines += [".bl-tone-accent {",
+              "  color-scheme: %s;" % ("dark" if a_dark else "light"),
+              "  --bg: %s;" % to_hex(accent),
+              "  --surface: %s;" % to_hex(mix(accent, on, 0.10)),
+              "  --surface-2: %s;" % to_hex(mix(accent, on, 0.16)),
+              "  --text: %s;" % to_hex(txt),
+              "  --text-strong: %s;" % to_hex(on),
+              "  --text-muted: %s;" % to_hex(muted),
+              "  --border: rgba(%d, %d, %d, 0.28);" % tuple(int(c) for c in on),
+              "  --border-strong: rgba(%d, %d, %d, 0.55);" % tuple(int(c) for c in on),
+              "  --accent-ink: %s;" % to_hex(on),
+              "  --glass: rgba(%d, %d, %d, 0.16);" % tuple(int(c) for c in on),
+              "  --glass-border: rgba(%d, %d, %d, 0.3);" % tuple(int(c) for c in on),
+              "  --shadow-lg: 0 24px 48px -24px rgba(0, 0, 0, 0.35);",
+              "}"]
     return "\n".join(lines) + "\n"
 
 
@@ -663,6 +695,7 @@ PAGE_SPEC = {
             "primary": {"type": "color", "required": False},
             "accent": {"type": "color", "required": False},
             "accent_2": {"type": "color", "required": False},
+            "eyebrow": {"type": "enum", "values": ["line", "pill"], "required": False},
         }},
         "features": {"type": "object", "required": False, "fields": {
             "magnetic_cta": {"type": "bool", "default": False},
@@ -744,7 +777,7 @@ def main():
                 ctx.err(p + ".data.video", "set exactly one of src (a video file) or embed (a YouTube or Vimeo URL)")
         if t == "voice-sample" and any(not x.get("audio") for x in data.get("samples") or []):
             ctx.warn(p + ".data.samples", "some samples have no audio file; their players animate without sound. Add real recordings before launch.")
-        if t == "cta-multistep" and not (data.get("form") or {}).get("action"):
+        if t in ("cta-multistep", "contact-split") and not (data.get("form") or {}).get("action"):
             ctx.warn(p + ".data.form.action", "no form action set; the form shows a thank-you message but sends nothing. Add a form endpoint URL before launch.")
         sid = sec.get("id") or variant.get("anchor") or t
         if not re.fullmatch(r"[a-z][a-z0-9-]*", sid):
@@ -782,7 +815,7 @@ def main():
             tone = s["tone_override"]
         elif mode == "hero" or mode == "header":
             tone = hero_tone
-        elif mode in ("light", "muted", "dark"):
+        elif mode in ("light", "muted", "dark", "accent"):
             tone = mode
         elif mode == "none":
             s["tone"] = "light"
@@ -841,7 +874,8 @@ def main():
         if (v["_dir"] / "section.js").is_file():
             js.append((v["_dir"] / "section.js").read_text(encoding="utf-8"))
 
-    shell = {"lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
+    eyebrow = (top.get("theme") or {}).get("eyebrow") or preset.get("eyebrow", "line")
+    shell = {"root_class": "bl-eyebrow-%s" % eyebrow, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
              "body": Safe(assemble_body(body)), "hero_tone": hero_tone}
     page_html = renderer.render_file(TPL / "page.html", [shell])
     page_html = re.sub(r"<!--.*?-->", "", page_html, flags=re.S)

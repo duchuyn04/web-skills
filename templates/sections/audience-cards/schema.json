@@ -1,0 +1,21 @@
+{
+  "variant": "audience-cards",
+  "group": "audience",
+  "summary": "Who we serve: centered heading and 2 or 3 tinted cards, each with an accent title, a short paragraph and a check list of what that audience gets.",
+  "tone": "auto",
+  "anchor": "who-we-serve",
+  "animations": ["reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cards": {
+      "type": "list", "min": 2, "max": 3,
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon", "required": false},
+        "title": {"type": "text", "min": 3, "max": 60},
+        "text": {"type": "text", "min": 40, "max": 260},
+        "points": {"type": "list", "min": 2, "max": 6, "item": {"type": "text", "min": 3, "max": 64}},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    }
+  }
+}

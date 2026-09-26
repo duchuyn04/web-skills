@@ -29,7 +29,8 @@
         "variants": [
           "hero-split-image",
           "hero-cycler-centered",
-          "hero-fullbleed"
+          "hero-fullbleed",
+          "hero-gradient"
         ],
         "required": true
       },
@@ -43,27 +44,31 @@
       {
         "slot": "about",
         "variants": [
-          "pillars-numbered"
+          "pillars-numbered",
+          "about-mosaic"
         ]
       },
       {
         "slot": "services",
         "variants": [
           "services-tabs",
-          "services-bento"
+          "services-bento",
+          "service-links"
         ],
         "required": true
       },
       {
         "slot": "features",
         "variants": [
-          "feature-rows"
+          "feature-rows",
+          "solution-panels"
         ]
       },
       {
         "slot": "metrics",
         "variants": [
-          "metrics-counter"
+          "metrics-counter",
+          "metrics-panel"
         ],
         "required": true
       },
@@ -77,7 +82,8 @@
         "slot": "industries",
         "variants": [
           "industries-tiles",
-          "image-cards"
+          "image-cards",
+          "audience-cards"
         ]
       },
       {
@@ -128,7 +134,8 @@
         "slot": "cta",
         "variants": [
           "cta-multistep",
-          "cta-band"
+          "cta-band",
+          "contact-split"
         ],
         "required": true
       },
@@ -184,7 +191,8 @@
         "variants": [
           "hero-cycler-centered",
           "hero-split-image",
-          "hero-fullbleed"
+          "hero-fullbleed",
+          "hero-gradient"
         ],
         "required": true
       },
@@ -206,14 +214,16 @@
         "slot": "services",
         "variants": [
           "services-bento",
-          "services-tabs"
+          "services-tabs",
+          "service-links"
         ],
         "required": true
       },
       {
         "slot": "features",
         "variants": [
-          "feature-rows"
+          "feature-rows",
+          "solution-panels"
         ]
       },
       {
@@ -232,7 +242,8 @@
       {
         "slot": "metrics",
         "variants": [
-          "metrics-counter"
+          "metrics-counter",
+          "metrics-panel"
         ]
       },
       {
@@ -284,7 +295,8 @@
         "slot": "cta",
         "variants": [
           "cta-multistep",
-          "cta-band"
+          "cta-band",
+          "contact-split"
         ],
         "required": true
       },
@@ -336,7 +348,8 @@
         "slot": "hero",
         "variants": [
           "hero-dark-network",
-          "hero-fullbleed"
+          "hero-fullbleed",
+          "hero-gradient"
         ],
         "required": true
       },
@@ -350,14 +363,16 @@
       {
         "slot": "services",
         "variants": [
-          "services-bento"
+          "services-bento",
+          "service-links"
         ],
         "required": true
       },
       {
         "slot": "features",
         "variants": [
-          "feature-rows"
+          "feature-rows",
+          "solution-panels"
         ]
       },
       {
@@ -370,7 +385,8 @@
       {
         "slot": "metrics",
         "variants": [
-          "metrics-counter"
+          "metrics-counter",
+          "metrics-panel"
         ],
         "required": true
       },
@@ -423,7 +439,8 @@
         "slot": "cta",
         "variants": [
           "cta-multistep",
-          "cta-band"
+          "cta-band",
+          "contact-split"
         ],
         "required": true
       },
@@ -477,7 +494,8 @@
         "variants": [
           "hero-split-image",
           "hero-cycler-centered",
-          "hero-fullbleed"
+          "hero-fullbleed",
+          "hero-gradient"
         ],
         "required": true
       },
@@ -499,14 +517,16 @@
         "slot": "services",
         "variants": [
           "services-bento",
-          "services-tabs"
+          "services-tabs",
+          "service-links"
         ],
         "required": true
       },
       {
         "slot": "features",
         "variants": [
-          "feature-rows"
+          "feature-rows",
+          "solution-panels"
         ]
       },
       {
@@ -518,7 +538,8 @@
       {
         "slot": "metrics",
         "variants": [
-          "metrics-counter"
+          "metrics-counter",
+          "metrics-panel"
         ],
         "required": true
       },
@@ -570,6 +591,154 @@
       {
         "slot": "cta",
         "variants": [
+          "cta-multistep",
+          "cta-band",
+          "contact-split"
+        ],
+        "required": true
+      },
+      {
+        "slot": "footer",
+        "variants": [
+          "footer-columns"
+        ],
+        "required": true
+      },
+      {
+        "slot": "floating",
+        "variants": [
+          "floating-chat"
+        ]
+      },
+      {
+        "slot": "exit",
+        "variants": [
+          "exit-intent-modal"
+        ]
+      }
+    ]
+  },
+  "it-bpo-partner": {
+    "label": "IT outsourcing and BPO partner",
+    "use_for": "Companies that sell both software teams (ITO) and back-office services (BPO), usually from Vietnam or elsewhere in Asia to clients in the US, EU, Japan or Australia. Many services, each with its own page; trust built on years in business, certifications and client stories.",
+    "categories": [
+      "Vietnam & Southeast Asia Leaders",
+      "Nearshore & Global Software Outsourcing",
+      "Finance, Accounting & Legal BPO"
+    ],
+    "references": [
+      "Bestarion",
+      "Saigon Technology",
+      "SmartOSC",
+      "Orient Software",
+      "KMS Technology"
+    ],
+    "default_preset": "orange-charcoal",
+    "slots": [
+      {
+        "slot": "header",
+        "variants": [
+          "header-mega",
+          "header-simple"
+        ],
+        "required": true
+      },
+      {
+        "slot": "hero",
+        "variants": [
+          "hero-gradient",
+          "hero-split-image",
+          "hero-fullbleed"
+        ],
+        "required": true
+      },
+      {
+        "slot": "about",
+        "variants": [
+          "about-mosaic",
+          "pillars-numbered"
+        ]
+      },
+      {
+        "slot": "trust",
+        "variants": [
+          "metrics-panel",
+          "metrics-counter"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "logos",
+        "variants": [
+          "logo-marquee"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "services",
+        "variants": [
+          "service-links",
+          "services-bento",
+          "services-tabs"
+        ],
+        "required": true
+      },
+      {
+        "slot": "solutions",
+        "variants": [
+          "solution-panels",
+          "feature-rows"
+        ]
+      },
+      {
+        "slot": "audience",
+        "variants": [
+          "audience-cards",
+          "industries-tiles"
+        ]
+      },
+      {
+        "slot": "proof",
+        "variants": [
+          "case-slider",
+          "testimonials"
+        ],
+        "recommended": true
+      },
+      {
+        "slot": "proof-extra",
+        "variants": [
+          "testimonials"
+        ]
+      },
+      {
+        "slot": "compliance",
+        "variants": [
+          "compliance-badges"
+        ]
+      },
+      {
+        "slot": "locations",
+        "variants": [
+          "locations-map"
+        ]
+      },
+      {
+        "slot": "news",
+        "variants": [
+          "image-cards"
+        ]
+      },
+      {
+        "slot": "faq",
+        "variants": [
+          "faq-accordion"
+        ]
+      },
+      {
+        "slot": "cta",
+        "variants": [
+          "contact-split",
           "cta-multistep",
           "cta-band"
         ],

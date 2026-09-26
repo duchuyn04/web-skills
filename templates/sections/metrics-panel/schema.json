@@ -1,0 +1,23 @@
+{
+  "variant": "metrics-panel",
+  "group": "metrics",
+  "summary": "Rounded dark panel inside the page margins: short trust statement on the left, four numbers in a 2x2 grid with cross dividers on the right. Numbers count up once when scrolled into view.",
+  "tone": "auto",
+  "anchor": "why-us",
+  "animations": ["odometer-number-counter", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "text": {"type": "text", "min": 40, "max": 280, "required": false},
+    "items": {
+      "type": "list", "min": 4, "max": 4,
+      "item": {"type": "object", "fields": {
+        "value": {"type": "stat"},
+        "prefix": {"type": "text", "min": 1, "max": 3, "required": false},
+        "suffix": {"type": "text", "min": 1, "max": 6, "required": false},
+        "decimals": {"type": "number", "min": 0, "max": 2, "required": false},
+        "label": {"type": "text", "min": 3, "max": 32}
+      }}
+    }
+  }
+}

@@ -21,6 +21,7 @@ build.py and lint_output.py enforce the copy rules below (they come from a stric
 - Eyebrows: 1-4 plain words: "Services", "Delivery centers".
 - Card text: one sentence that says what the team does, in which tools or for which customers.
 - Headings are sentence case. Do not capitalize every word.
+- Paragraph fields that accept markup (for example `about-mosaic` paragraphs) take `**bold**` for two or three key terms, such as the service names. Do not bold whole sentences.
 
 ## Numbers and claims
 

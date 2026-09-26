@@ -1,0 +1,16 @@
+{
+  "variant": "about-mosaic",
+  "group": "about",
+  "summary": "Company introduction: heading and one or two paragraphs (with **bold** key terms) on the left, a mosaic of 3, 4, 6 or 9 team photos on the right that pop in one by one.",
+  "tone": "auto",
+  "anchor": "about",
+  "animations": ["reveal", "staggered-badge-pop-in"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "paragraphs": {"type": "list", "min": 1, "max": 2, "item": {"type": "markup", "min": 60, "max": 420}},
+    "points": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 6, "max": 80}},
+    "cta": {"$ref": "cta", "required": false},
+    "photos": {"type": "list", "min": 3, "max": 9, "counts": [3, 4, 6, 9], "item": {"$ref": "photo"}}
+  }
+}

@@ -1,0 +1,22 @@
+<section id="{{section.id}}" class="bl-section bl-spanels-sec bl-tone-{{section.tone}}">
+  <div class="bl-spanels-sec__bg" aria-hidden="true">{{> waves}}</div>
+  <div class="bl-container">
+    <div class="bl-spanels__head" data-reveal>
+      {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+      <h2 class="bl-h2">{{title}}</h2>
+      {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+      {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}{{arrow}}</a>{{/cta}}
+    </div>
+    <div class="bl-spanels" data-reveal-group>
+      {{#panels}}
+      <article class="bl-spanel bl-tone-light" data-reveal>
+        {{#href}}<a class="bl-spanel__bar" href="{{href}}"><span>{{title}}</span>{{arrow}}</a>{{/href}}
+        {{^href}}<p class="bl-spanel__bar"><span>{{title}}</span></p>{{/href}}
+        <ul class="bl-spanel__list">
+          {{#items}}<li class="bl-spanel__item"><span class="bl-spanel__icon">{{icon:$icon}}</span><span><strong>{{title}}</strong><span>{{text}}</span></span></li>{{/items}}
+        </ul>
+      </article>
+      {{/panels}}
+    </div>
+  </div>
+</section>

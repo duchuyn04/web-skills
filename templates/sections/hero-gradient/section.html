@@ -1,0 +1,29 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--gradient bl-tone-{{section.tone}}">
+  <div class="bl-hero-grad__bg" aria-hidden="true">{{> waves}}</div>
+  <div class="bl-container bl-hero-grad">
+    <div class="bl-hero-grad__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}{{arrow}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    <div class="bl-hero-grad__visual" data-reveal="fade">
+      {{#photo}}<div class="bl-frame bl-hero-grad__photo"><img src="{{src}}" alt="{{alt}}" width="560" height="560" fetchpriority="high"></div>{{/photo}}
+      {{^photo}}
+      <div class="bl-globe" aria-hidden="true">
+        <div class="bl-globe__sphere"><div class="bl-globe__track">{{> globe-map}}</div></div>
+        <svg class="bl-globe__net" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="1" opacity=".55">
+            <path d="M92 150 Q 170 80 262 120"/><path d="M262 120 Q 320 170 300 250"/><path d="M130 260 Q 200 300 300 250"/><path d="M92 150 Q 100 210 130 260"/><path d="M180 190 Q 230 170 262 120"/><path d="M180 190 Q 150 230 130 260"/>
+          </g>
+          <g fill="currentColor"><circle class="bl-globe__node" cx="92" cy="150" r="5"/><circle class="bl-globe__node" cx="262" cy="120" r="5"/><circle class="bl-globe__node" cx="300" cy="250" r="5"/><circle class="bl-globe__node" cx="130" cy="260" r="5"/><circle class="bl-globe__node" cx="180" cy="190" r="6"/></g>
+        </svg>
+      </div>
+      {{/photo}}
+    </div>
+  </div>
+</section>

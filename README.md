@@ -2,7 +2,7 @@
 
 Skill giúp coding agent dựng landing page cho công ty BPO, outsourcing, contact center, offshore staffing, xử lý dữ liệu AI hoặc bán hàng outbound.
 
-Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 29 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
+Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 36 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
 
 ## Cài đặt
 
@@ -74,7 +74,7 @@ Mở agent trong project rồi đưa brief của khách, ví dụ:
 
 Claude Code gọi bằng `/bpo-landing-builder`, Codex gọi bằng `$bpo-landing-builder`. Các agent khác chỉ cần nhắc tên skill.
 
-Agent sẽ chọn một trong 4 kiểu trang, chọn bộ màu, copy file `page.json` mẫu rồi sửa nội dung, sau đó chạy build, lint và chụp ảnh kiểm tra. Trang xong nằm ở `sites/<tên-công-ty>/dist/index.html`, mở thẳng bằng trình duyệt là xem được.
+Agent sẽ chọn một trong 5 kiểu trang, chọn bộ màu, copy file `page.json` mẫu rồi sửa nội dung, sau đó chạy build, lint và chụp ảnh kiểm tra. Trang xong nằm ở `sites/<tên-công-ty>/dist/index.html`, mở thẳng bằng trình duyệt là xem được.
 
 Thiếu thông tin thì skill không bịa. Một con số thiếu sẽ thành `[KPI]`. Cả một khối bằng chứng thiếu (logo khách hàng, lời chứng thực, file ghi âm cuộc gọi, bảng lương để tính tiết kiệm) thì section đó bị bỏ, và agent báo lại cho bạn những gì còn thiếu.
 
@@ -88,11 +88,11 @@ python scripts/lint_output.py dist
 python scripts/qa_screenshot.py dist --sections
 ```
 
-Bốn file mẫu trong `examples/` build được ngay. Bạn có thể copy một file ra ngoài, đổi chữ và build lại để xem nó hoạt động thế nào.
+Năm file mẫu trong `examples/` build được ngay. Bạn có thể copy một file ra ngoài, đổi chữ và build lại để xem nó hoạt động thế nào.
 
 ## Bên trong có gì
 
-Bốn kiểu trang, mỗi kiểu có thứ tự section cố định:
+Năm kiểu trang, mỗi kiểu có thứ tự section cố định:
 
 | Kiểu | Dùng cho | Bộ màu mặc định |
 |:---|:---|:---|
@@ -100,8 +100,9 @@ Bốn kiểu trang, mỗi kiểu có thứ tự section cố định:
 | `offshore-staffing` | Thuê đội ngũ riêng ở Việt Nam hoặc Philippines, điểm bán hàng là tiết kiệm chi phí | `human-warm` |
 | `ai-data-ops` | Gán nhãn dữ liệu, RLHF, kiểm duyệt nội dung | `dark-ai` |
 | `cx-voice-sales` | Đội gọi điện, telesales, tổng đài, chất lượng cuộc gọi là bằng chứng chính | `clean-minimal` |
+| `it-bpo-partner` | Công ty vừa làm phần mềm (ITO) vừa làm back-office (BPO), nhiều dịch vụ, thường giao hàng từ Việt Nam | `orange-charcoal` |
 
-29 section gồm header có megamenu, bốn kiểu hero (ảnh chia đôi, chữ đổi từ, mạng lưới điểm 3D, nền ảnh hoặc video toàn khung), băng chuyền logo, bộ đếm số, bento có đèn rọi theo chuột, tab dịch vụ, hàng ảnh và chữ xen kẽ, thẻ ảnh cho tin tức hoặc ngành, khối video mở trong modal, dải kêu gọi hành động, máy tính tiết kiệm chi phí, trình phát cuộc gọi mẫu, timeline quy trình, bảng giá có công tắc, bản đồ hub có ghim radar, slider case study, FAQ, form báo giá 3 bước, footer và các nút nổi. Toàn bộ chạy bằng HTML, CSS và JavaScript thuần, không cần build frontend.
+36 section gồm header có megamenu, năm kiểu hero (ảnh chia đôi, chữ đổi từ, mạng lưới điểm 3D, nền ảnh hoặc video toàn khung, nền gradient màu thương hiệu có quả cầu chấm xoay), phần giới thiệu kèm lưới ảnh đội ngũ, khung số liệu 2x2, danh sách dịch vụ dạng hàng link, khối giải pháp hai thẻ trên nền tối, thẻ đối tượng khách hàng, khối liên hệ chia đôi có địa chỉ từng văn phòng, băng chuyền logo, bộ đếm số, bento có đèn rọi theo chuột, tab dịch vụ, hàng ảnh và chữ xen kẽ, thẻ ảnh cho tin tức hoặc ngành, khối video mở trong modal, dải kêu gọi hành động, máy tính tiết kiệm chi phí, trình phát cuộc gọi mẫu, timeline quy trình, bảng giá có công tắc, bản đồ hub có ghim radar, slider case study, FAQ, form báo giá 3 bước, footer và các nút nổi. Toàn bộ chạy bằng HTML, CSS và JavaScript thuần, không cần build frontend.
 
 Ba lớp kiểm tra chạy trước khi giao:
 
@@ -114,8 +115,8 @@ Ba lớp kiểm tra chạy trước khi giao:
 ```
 SKILL.md          quy trình cho agent, đọc file này trước
 references/       tài liệu tra cứu (một số file do script sinh ra)
-templates/        base.css, base.js, 29 section, bộ màu, icon, cờ, ảnh và video mẫu
-examples/         4 file page.json mẫu
+templates/        base.css, base.js, 36 section, 5 bộ màu, icon, cờ, ảnh và video mẫu
+examples/         5 file page.json mẫu, mỗi kiểu trang một file
 previews/         ảnh chụp từng section
 scripts/          build, lint, QA, sinh tài liệu
 agents/           metadata cho Codex
