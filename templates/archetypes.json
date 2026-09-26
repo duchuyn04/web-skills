@@ -28,7 +28,8 @@
         "slot": "hero",
         "variants": [
           "hero-split-image",
-          "hero-cycler-centered"
+          "hero-cycler-centered",
+          "hero-fullbleed"
         ],
         "required": true
       },
@@ -54,6 +55,12 @@
         "required": true
       },
       {
+        "slot": "features",
+        "variants": [
+          "feature-rows"
+        ]
+      },
+      {
         "slot": "metrics",
         "variants": [
           "metrics-counter"
@@ -61,9 +68,16 @@
         "required": true
       },
       {
+        "slot": "video",
+        "variants": [
+          "video-block"
+        ]
+      },
+      {
         "slot": "industries",
         "variants": [
-          "industries-tiles"
+          "industries-tiles",
+          "image-cards"
         ]
       },
       {
@@ -81,6 +95,12 @@
         ]
       },
       {
+        "slot": "mid-cta",
+        "variants": [
+          "cta-band"
+        ]
+      },
+      {
         "slot": "locations",
         "variants": [
           "locations-map"
@@ -93,6 +113,12 @@
         ]
       },
       {
+        "slot": "news",
+        "variants": [
+          "image-cards"
+        ]
+      },
+      {
         "slot": "faq",
         "variants": [
           "faq-accordion"
@@ -101,7 +127,8 @@
       {
         "slot": "cta",
         "variants": [
-          "cta-multistep"
+          "cta-multistep",
+          "cta-band"
         ],
         "required": true
       },
@@ -156,7 +183,8 @@
         "slot": "hero",
         "variants": [
           "hero-cycler-centered",
-          "hero-split-image"
+          "hero-split-image",
+          "hero-fullbleed"
         ],
         "required": true
       },
@@ -183,11 +211,23 @@
         "required": true
       },
       {
+        "slot": "features",
+        "variants": [
+          "feature-rows"
+        ]
+      },
+      {
         "slot": "process",
         "variants": [
           "process-sticky"
         ],
         "required": true
+      },
+      {
+        "slot": "video",
+        "variants": [
+          "video-block"
+        ]
       },
       {
         "slot": "metrics",
@@ -216,9 +256,21 @@
         "recommended": true
       },
       {
+        "slot": "mid-cta",
+        "variants": [
+          "cta-band"
+        ]
+      },
+      {
         "slot": "compliance",
         "variants": [
           "compliance-badges"
+        ]
+      },
+      {
+        "slot": "news",
+        "variants": [
+          "image-cards"
         ]
       },
       {
@@ -231,7 +283,8 @@
       {
         "slot": "cta",
         "variants": [
-          "cta-multistep"
+          "cta-multistep",
+          "cta-band"
         ],
         "required": true
       },
@@ -282,7 +335,8 @@
       {
         "slot": "hero",
         "variants": [
-          "hero-dark-network"
+          "hero-dark-network",
+          "hero-fullbleed"
         ],
         "required": true
       },
@@ -301,6 +355,12 @@
         "required": true
       },
       {
+        "slot": "features",
+        "variants": [
+          "feature-rows"
+        ]
+      },
+      {
         "slot": "process",
         "variants": [
           "process-sticky"
@@ -315,12 +375,24 @@
         "required": true
       },
       {
+        "slot": "video",
+        "variants": [
+          "video-block"
+        ]
+      },
+      {
         "slot": "proof",
         "variants": [
           "case-slider",
           "testimonials"
         ],
         "recommended": true
+      },
+      {
+        "slot": "mid-cta",
+        "variants": [
+          "cta-band"
+        ]
       },
       {
         "slot": "compliance",
@@ -336,6 +408,12 @@
         ]
       },
       {
+        "slot": "news",
+        "variants": [
+          "image-cards"
+        ]
+      },
+      {
         "slot": "faq",
         "variants": [
           "faq-accordion"
@@ -344,7 +422,8 @@
       {
         "slot": "cta",
         "variants": [
-          "cta-multistep"
+          "cta-multistep",
+          "cta-band"
         ],
         "required": true
       },
@@ -397,7 +476,8 @@
         "slot": "hero",
         "variants": [
           "hero-split-image",
-          "hero-cycler-centered"
+          "hero-cycler-centered",
+          "hero-fullbleed"
         ],
         "required": true
       },
@@ -424,6 +504,18 @@
         "required": true
       },
       {
+        "slot": "features",
+        "variants": [
+          "feature-rows"
+        ]
+      },
+      {
+        "slot": "video",
+        "variants": [
+          "video-block"
+        ]
+      },
+      {
         "slot": "metrics",
         "variants": [
           "metrics-counter"
@@ -445,6 +537,12 @@
         "recommended": true
       },
       {
+        "slot": "mid-cta",
+        "variants": [
+          "cta-band"
+        ]
+      },
+      {
         "slot": "pricing",
         "variants": [
           "pricing-toggle"
@@ -457,6 +555,12 @@
         ]
       },
       {
+        "slot": "news",
+        "variants": [
+          "image-cards"
+        ]
+      },
+      {
         "slot": "faq",
         "variants": [
           "faq-accordion"
@@ -466,7 +570,8 @@
       {
         "slot": "cta",
         "variants": [
-          "cta-multistep"
+          "cta-multistep",
+          "cta-band"
         ],
         "required": true
       },

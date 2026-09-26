@@ -12,7 +12,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `kinetic-typography-cycler` | `hero-cycler-centered` | 520ms ease-back entrance, 2800ms hold |
 | `floating-glass-badges` | `hero-cycler-centered`, `hero-split-image` | 4.4s alternate loop, +-6px, staggered |
 | `hero-3d-point-cloud-nodes` | `hero-dark-network` | canvas, 36-110 points, lerp 0.05, pauses off-screen |
-| `hero-ambient-video-mask` | none | not built in (needs a client video); use hero-split-image with a photo |
+| `hero-ambient-video-mask` | `hero-fullbleed` | muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen |
 | `infinite-logo-marquee` | `logo-marquee` | 40s linear loop, pauses on hover |
 | `odometer-number-counter` | `metrics-counter` | 2000ms ease-out, once, threshold 0.3 |
 | `staggered-badge-pop-in` | `compliance-badges` | 350ms ease-back, 80ms stagger |
@@ -27,9 +27,9 @@ All motion follows the performance rules gathered in the research: only transfor
 | `toggle-model-flip` | `pricing-toggle` | 380ms ease-out-expo, 60ms stagger |
 | `interactive-map-pin-pulse` | `locations-map` | 2.2s radar rings, 150ms tooltip with 100ms delay |
 | `fluid-case-study-slider` | `case-slider` | scroll-snap, mouse drag with momentum |
-| `shimmer-button-glow` | `cta-multistep`, `hero-cycler-centered`, `hero-dark-network`, `hero-split-image` | one sweep every 5.5s |
+| `shimmer-button-glow` | `cta-band`, `cta-multistep`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-split-image` | one sweep every 5.5s |
 | `floating-whatsapp-chat-bounce` | `floating-chat` | appears after the hero, 1.8s ping dot |
 | `exit-intent-spring-modal` | `exit-intent-modal` | 520ms ease-back, after 8s, once per 7 days |
-| `reveal` | `case-slider`, `cost-calculator`, `cta-multistep`, `hero-cycler-centered`, `hero-dark-network`, `hero-split-image`, `industries-tiles`, `locations-map`, `metrics-counter`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `services-bento`, `services-tabs`, `testimonials`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
+| `reveal` | `case-slider`, `cost-calculator`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `services-bento`, `services-tabs`, `testimonials`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
 
 `magnetic-cta-button` is off by default. Turn it on with `"features": {"magnetic_cta": true}` in page.json.

@@ -117,6 +117,29 @@ Fields:
   - `href`: link
 - `disclaimer`: text 30-220 chars
 
+## cta-band
+
+Short call-to-action panel in the brand's dark color with soft glows: title, one line, one or two buttons, optional ticks and a photo on the right. Use mid-page to break up long pages, or as the closing CTA when the client has no quote form.
+
+- Group: `cta`. Default anchor: `#get-started`. Tone: auto.
+- Built-in motion: shimmer-button-glow, reveal.
+- Allowed in: enterprise-cx/mid-cta?, enterprise-cx/cta, offshore-staffing/mid-cta?, offshore-staffing/cta, ai-data-ops/mid-cta?, ai-data-ops/cta, cx-voice-sales/mid-cta?, cx-voice-sales/cta.
+- Preview: `previews/cta-band.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 12-80 chars
+- `text`: text 30-200 chars (optional)
+- `points`: list of 0-3 (optional) (each text 3-40 chars)
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `image`: image key or path (optional)
+
 ## cta-multistep
 
 Closing conversion block: pitch, reassurance points and direct contacts on the left; a 3-step quote form (service, team size, contact details) on the right.
@@ -198,6 +221,37 @@ Fields:
 - `items`: list of 4-8, each item:
   - `q`: text 10-120 chars
   - `a`: text 30-520 chars
+
+## feature-rows
+
+2-4 rows that alternate photo and copy sides. Each row: eyebrow, title, text, optional check list, link and a small glass stat on the photo. Use for how you work, what makes the team different, or one row per service.
+
+- Group: `features`. Default anchor: `#how-we-work`. Tone: auto.
+- Built-in motion: reveal.
+- Allowed in: enterprise-cx/features?, offshore-staffing/features?, ai-data-ops/features?, cx-voice-sales/features?.
+- Preview: `previews/feature-rows.jpg`
+
+Fields:
+
+- `head`: object (optional)
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 12-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `start`: one of image-right, image-left (optional, default "image-right")
+- `rows`: list of 2-4, each item:
+  - `eyebrow`: text 3-32 chars (optional)
+  - `title`: text 8-70 chars
+  - `text`: text 60-280 chars
+  - `bullets`: list of 0-4 (optional) (each text 3-64 chars)
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `badge`: object (optional)
+    - `value`: text 1-12 chars
+    - `label`: text 3-30 chars
+  - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
 
 ## floating-chat
 
@@ -370,6 +424,36 @@ Fields:
   - `value`: text 1-12 chars
   - `label`: text 3-28 chars
 
+## hero-fullbleed
+
+Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button.
+
+- Group: `hero`. Default anchor: `#top`. Tone: dark.
+- Built-in motion: hero-ambient-video-mask, shimmer-button-glow, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero.
+- Preview: `previews/hero-fullbleed.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 20-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `image`: image key or path
+- `video`: video (optional)
+- `align`: one of left, center (optional, default "left")
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `stats`: list of 0-4 (optional), each item:
+  - `value`: text 1-12 chars
+  - `label`: text 3-32 chars
+- `pause_label`: text 3-32 chars (optional, default "Pause background video")
+- `play_label`: text 3-32 chars (optional, default "Play background video")
+
 ## hero-split-image
 
 Headline, lead and two CTAs on the left; large photo on the right with up to 3 floating glass KPI badges.
@@ -398,6 +482,36 @@ Fields:
   - `icon`: icon name
   - `value`: text 1-14 chars
   - `label`: text 3-30 chars
+
+## image-cards
+
+Grid of 3, 4 or 6 clickable photo cards with tag, meta line, title and short text. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.
+
+- Group: `cards`. Default anchor: `#insights`. Tone: auto.
+- Built-in motion: reveal.
+- Allowed in: enterprise-cx/industries?, enterprise-cx/news?, offshore-staffing/news?, ai-data-ops/news?, cx-voice-sales/news?.
+- Preview: `previews/image-cards.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 12-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `view_all`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `ratio`: one of wide, tall (optional, default "wide")
+- `cards`: list of 3 or 4 or 6, each item:
+  - `tag`: text 2-20 chars (optional)
+  - `meta`: text 2-28 chars (optional)
+  - `title`: text 10-90 chars
+  - `text`: text 20-160 chars (optional)
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `href`: link
+  - `link_label`: text 2-24 chars (optional, default "Read more")
 
 ## industries-tiles
 
@@ -623,6 +737,31 @@ Fields:
   - `role`: text 3-60 chars
   - `company`: text 2-40 chars
   - `avatar`: image key or path (optional)
+
+## video-block
+
+Large 16:9 poster with a pulsing play button. Clicking opens the video in a modal: a local file, or a YouTube or Vimeo embed that only loads after the click. Needs a real client video; leave the section out if there is none.
+
+- Group: `video`. Default anchor: `#video`. Tone: auto.
+- Built-in motion: reveal.
+- Allowed in: enterprise-cx/video?, offshore-staffing/video?, ai-data-ops/video?, cx-voice-sales/video?.
+- Preview: `previews/video-block.jpg`
+
+Fields:
+
+- `head`: object (optional)
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 12-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `video`: object
+  - `title`: text 5-80 chars
+  - `poster`: image key or path
+  - `src`: video (optional)
+  - `embed`: embed (optional)
+  - `duration`: text 3-8 chars (optional)
+- `caption`: text 10-160 chars (optional)
+- `play_label`: text 3-24 chars (optional, default "Play video")
+- `close_label`: text 3-24 chars (optional, default "Close video")
 
 ## voice-sample
 

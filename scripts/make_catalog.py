@@ -144,7 +144,7 @@ TIMING = {
     "kinetic-typography-cycler": "520ms ease-back entrance, 2800ms hold",
     "floating-glass-badges": "4.4s alternate loop, +-6px, staggered",
     "hero-3d-point-cloud-nodes": "canvas, 36-110 points, lerp 0.05, pauses off-screen",
-    "hero-ambient-video-mask": "not built in (needs a client video); use hero-split-image with a photo",
+    "hero-ambient-video-mask": "muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen",
     "infinite-logo-marquee": "40s linear loop, pauses on hover",
     "odometer-number-counter": "2000ms ease-out, once, threshold 0.3",
     "staggered-badge-pop-in": "350ms ease-back, 80ms stagger",

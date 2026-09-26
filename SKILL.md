@@ -60,7 +60,7 @@ Then edit values only:
 - Replace every string and number with the client's content. Delete `_note`.
 - Keep the same section order. Delete "no" and "recommended" sections you have no real content for (see page-anatomy.md), and swap a section for another variant allowed in the same slot when it fits the content better.
 - For each section, check field names, item counts and length limits in `references/section-catalog.md`. Look at `previews/<variant>.jpg` to see what the section looks like.
-- Images: pick keys from `references/assets.md`, or use the client's photos by relative path. Icons, flags and cities must come from `python SKILL/scripts/build.py --list`.
+- Images and video: pick keys from `references/assets.md`, or use the client's files by relative path. Icons, flags and cities must come from `python SKILL/scripts/build.py --list`.
 - Every `href` that starts with `#` must match a section id (the default ids are listed in the catalog as "Default anchor").
 
 ## Step 4: Build until clean
@@ -93,7 +93,7 @@ Tell the user, briefly:
 
 - where the page is (`sites/<slug>/dist/index.html`) and how to view it (open the file, or `python -m http.server` in `dist`)
 - archetype, preset and the sections used
-- every placeholder and warning still open (fake KPIs, missing audio, form endpoint, stock photos to replace)
+- every placeholder and warning still open (fake KPIs, missing audio, form endpoint, stock photos or the sample video to replace)
 
 ## When the library does not fit
 

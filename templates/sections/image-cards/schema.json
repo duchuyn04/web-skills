@@ -1,0 +1,25 @@
+{
+  "variant": "image-cards",
+  "group": "cards",
+  "summary": "Grid of 3, 4 or 6 clickable photo cards with tag, meta line, title and short text. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.",
+  "tone": "auto",
+  "anchor": "insights",
+  "animations": ["reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "view_all": {"$ref": "cta", "required": false},
+    "ratio": {"type": "enum", "values": ["wide", "tall"], "default": "wide"},
+    "cards": {
+      "type": "list", "min": 3, "max": 6, "counts": [3, 4, 6],
+      "item": {"type": "object", "fields": {
+        "tag": {"type": "text", "min": 2, "max": 20, "required": false},
+        "meta": {"type": "text", "min": 2, "max": 28, "required": false},
+        "title": {"type": "text", "min": 10, "max": 90},
+        "text": {"type": "text", "min": 20, "max": 160, "required": false},
+        "photo": {"$ref": "photo"},
+        "href": {"type": "href"},
+        "link_label": {"type": "text", "min": 2, "max": 24, "default": "Read more"}
+      }}
+    }
+  }
+}

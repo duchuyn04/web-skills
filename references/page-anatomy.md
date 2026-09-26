@@ -26,78 +26,94 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered` |
+| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed` |
 | 3 | logos | recommended | `logo-marquee` |
 | 4 | about | no | `pillars-numbered` |
 | 5 | services | yes | `services-tabs`, `services-bento` |
-| 6 | metrics | yes | `metrics-counter` |
-| 7 | industries | no | `industries-tiles` |
-| 8 | proof | recommended | `case-slider`, `testimonials` |
-| 9 | proof-extra | no | `testimonials` |
-| 10 | locations | no | `locations-map` |
-| 11 | compliance | no | `compliance-badges` |
-| 12 | faq | no | `faq-accordion` |
-| 13 | cta | yes | `cta-multistep` |
-| 14 | footer | yes | `footer-columns` |
-| 15 | floating | no | `floating-chat` |
-| 16 | exit | no | `exit-intent-modal` |
+| 6 | features | no | `feature-rows` |
+| 7 | metrics | yes | `metrics-counter` |
+| 8 | video | no | `video-block` |
+| 9 | industries | no | `industries-tiles`, `image-cards` |
+| 10 | proof | recommended | `case-slider`, `testimonials` |
+| 11 | proof-extra | no | `testimonials` |
+| 12 | mid-cta | no | `cta-band` |
+| 13 | locations | no | `locations-map` |
+| 14 | compliance | no | `compliance-badges` |
+| 15 | news | no | `image-cards` |
+| 16 | faq | no | `faq-accordion` |
+| 17 | cta | yes | `cta-multistep`, `cta-band` |
+| 18 | footer | yes | `footer-columns` |
+| 19 | floating | no | `floating-chat` |
+| 20 | exit | no | `exit-intent-modal` |
 
 ### offshore-staffing
 
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image` |
+| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed` |
 | 3 | logos | recommended | `logo-marquee` |
 | 4 | calculator | recommended | `cost-calculator` |
 | 5 | services | yes | `services-bento`, `services-tabs` |
-| 6 | process | yes | `process-sticky` |
-| 7 | metrics | no | `metrics-counter` |
-| 8 | pricing | no | `pricing-toggle` |
-| 9 | locations | no | `locations-map` |
-| 10 | proof | recommended | `testimonials`, `case-slider` |
-| 11 | compliance | no | `compliance-badges` |
-| 12 | faq | yes | `faq-accordion` |
-| 13 | cta | yes | `cta-multistep` |
-| 14 | footer | yes | `footer-columns` |
-| 15 | floating | no | `floating-chat` |
-| 16 | exit | no | `exit-intent-modal` |
+| 6 | features | no | `feature-rows` |
+| 7 | process | yes | `process-sticky` |
+| 8 | video | no | `video-block` |
+| 9 | metrics | no | `metrics-counter` |
+| 10 | pricing | no | `pricing-toggle` |
+| 11 | locations | no | `locations-map` |
+| 12 | proof | recommended | `testimonials`, `case-slider` |
+| 13 | mid-cta | no | `cta-band` |
+| 14 | compliance | no | `compliance-badges` |
+| 15 | news | no | `image-cards` |
+| 16 | faq | yes | `faq-accordion` |
+| 17 | cta | yes | `cta-multistep`, `cta-band` |
+| 18 | footer | yes | `footer-columns` |
+| 19 | floating | no | `floating-chat` |
+| 20 | exit | no | `exit-intent-modal` |
 
 ### ai-data-ops
 
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-dark-network` |
+| 2 | hero | yes | `hero-dark-network`, `hero-fullbleed` |
 | 3 | logos | recommended | `logo-marquee` |
 | 4 | services | yes | `services-bento` |
-| 5 | process | yes | `process-sticky` |
-| 6 | metrics | yes | `metrics-counter` |
-| 7 | proof | recommended | `case-slider`, `testimonials` |
-| 8 | compliance | yes | `compliance-badges` |
-| 9 | locations | no | `locations-map` |
-| 10 | faq | no | `faq-accordion` |
-| 11 | cta | yes | `cta-multistep` |
-| 12 | footer | yes | `footer-columns` |
-| 13 | floating | no | `floating-chat` |
-| 14 | exit | no | `exit-intent-modal` |
+| 5 | features | no | `feature-rows` |
+| 6 | process | yes | `process-sticky` |
+| 7 | metrics | yes | `metrics-counter` |
+| 8 | video | no | `video-block` |
+| 9 | proof | recommended | `case-slider`, `testimonials` |
+| 10 | mid-cta | no | `cta-band` |
+| 11 | compliance | yes | `compliance-badges` |
+| 12 | locations | no | `locations-map` |
+| 13 | news | no | `image-cards` |
+| 14 | faq | no | `faq-accordion` |
+| 15 | cta | yes | `cta-multistep`, `cta-band` |
+| 16 | footer | yes | `footer-columns` |
+| 17 | floating | no | `floating-chat` |
+| 18 | exit | no | `exit-intent-modal` |
 
 ### cx-voice-sales
 
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered` |
+| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed` |
 | 3 | logos | recommended | `logo-marquee` |
 | 4 | voice | recommended | `voice-sample` |
 | 5 | services | yes | `services-bento`, `services-tabs` |
-| 6 | metrics | yes | `metrics-counter` |
-| 7 | process | no | `process-sticky` |
-| 8 | proof | recommended | `testimonials`, `case-slider` |
-| 9 | pricing | no | `pricing-toggle` |
-| 10 | compliance | no | `compliance-badges` |
-| 11 | faq | yes | `faq-accordion` |
-| 12 | cta | yes | `cta-multistep` |
-| 13 | footer | yes | `footer-columns` |
-| 14 | floating | no | `floating-chat` |
-| 15 | exit | no | `exit-intent-modal` |
+| 6 | features | no | `feature-rows` |
+| 7 | video | no | `video-block` |
+| 8 | metrics | yes | `metrics-counter` |
+| 9 | process | no | `process-sticky` |
+| 10 | proof | recommended | `testimonials`, `case-slider` |
+| 11 | mid-cta | no | `cta-band` |
+| 12 | pricing | no | `pricing-toggle` |
+| 13 | compliance | no | `compliance-badges` |
+| 14 | news | no | `image-cards` |
+| 15 | faq | yes | `faq-accordion` |
+| 16 | cta | yes | `cta-multistep`, `cta-band` |
+| 17 | footer | yes | `footer-columns` |
+| 18 | floating | no | `floating-chat` |
+| 19 | exit | no | `exit-intent-modal` |

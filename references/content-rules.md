@@ -31,6 +31,7 @@ build.py and lint_output.py enforce the copy rules below (they come from a stric
   - No testimonials or case results: drop `testimonials` and `case-slider`.
   - No salary or rate data: drop `cost-calculator` (put the savings claim in the hero or metrics instead).
   - No call recordings: drop `voice-sample`.
+  - No client video: drop `video-block`. The bundled `sample-ambient-loop` is for previews only; if you use it, list it in your report as something to replace.
 - Prices: if the client has no public price, use `"Custom quote"`, or drop `pricing-toggle`.
 - Certifications: list only ones the client actually holds, even if that is one badge.
 - Split figures (headcount per office, share per service) only when the client gave the split. Otherwise use `"[KPI]"` or describe the office without a number.

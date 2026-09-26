@@ -1,0 +1,21 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <figure class="bl-vblock" data-vblock data-reveal>
+      {{#video}}
+      <button class="bl-vblock__trigger" type="button" aria-haspopup="dialog" data-src="{{src}}" data-embed="{{embed}}" data-title="{{title}}">
+        <img class="bl-vblock__poster" src="{{poster}}" alt="" width="1280" height="720" loading="lazy">
+        <span class="bl-vblock__shade" aria-hidden="true"></span>
+        <span class="bl-vblock__play" aria-hidden="true"><span class="bl-vblock__ring"></span><span class="bl-vblock__ring bl-vblock__ring--2"></span>{{icon:play}}</span>
+        <span class="bl-vblock__meta"><strong>{{title}}</strong>{{#duration}}<span class="bl-vblock__time bl-mono">{{duration}}</span>{{/duration}}</span>
+        <span class="bl-sr-only">{{play_label}}</span>
+      </button>
+      {{/video}}
+      {{#caption}}<figcaption class="bl-vblock__caption">{{caption}}</figcaption>{{/caption}}
+    </figure>
+  </div>
+  <dialog class="bl-vmodal" data-vmodal aria-label="{{video.title}}">
+    <button class="bl-vmodal__close" type="button" data-vmodal-close>{{icon:x}}<span class="bl-sr-only">{{close_label}}</span></button>
+    <div class="bl-vmodal__frame" data-vmodal-frame></div>
+  </dialog>
+</section>

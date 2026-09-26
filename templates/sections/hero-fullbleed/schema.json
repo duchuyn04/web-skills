@@ -1,0 +1,26 @@
+{
+  "variant": "hero-fullbleed",
+  "group": "hero",
+  "summary": "Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button.",
+  "tone": "dark",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["hero-ambient-video-mask", "shimmer-button-glow", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 20, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "image": {"type": "image"},
+    "video": {"type": "video", "required": false},
+    "align": {"type": "enum", "values": ["left", "center"], "default": "left"},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "stats": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}},
+    "pause_label": {"type": "text", "min": 3, "max": 32, "default": "Pause background video"},
+    "play_label": {"type": "text", "min": 3, "max": 32, "default": "Play background video"}
+  }
+}

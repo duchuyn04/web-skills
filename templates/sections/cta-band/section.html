@@ -1,0 +1,18 @@
+<section id="{{section.id}}" class="bl-section bl-section--tight bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-ctaband bl-tone-dark{{#image}} bl-ctaband--image{{/image}}" data-reveal>
+      <span class="bl-glow bl-glow--a" aria-hidden="true"></span><span class="bl-glow bl-glow--b" aria-hidden="true"></span>
+      <div class="bl-ctaband__copy">
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2">{{title}}</h2>
+        {{#text}}<p class="bl-lead">{{text}}</p>{{/text}}
+        {{#points.0}}<ul class="bl-ctaband__points">{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+        <div class="bl-btn-row">
+          <a class="bl-btn bl-btn--primary bl-btn--lg bl-btn--shimmer" href="{{primary_cta.href}}">{{primary_cta.label}}{{arrow}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+      </div>
+      {{#image}}<div class="bl-ctaband__media" aria-hidden="true"><img src="{{image}}" alt="" width="560" height="420" loading="lazy"></div>{{/image}}
+    </div>
+  </div>
+</section>

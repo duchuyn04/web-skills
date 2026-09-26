@@ -1,0 +1,21 @@
+{
+  "variant": "video-block",
+  "group": "video",
+  "summary": "Large 16:9 poster with a pulsing play button. Clicking opens the video in a modal: a local file, or a YouTube or Vimeo embed that only loads after the click. Needs a real client video; leave the section out if there is none.",
+  "tone": "auto",
+  "anchor": "video",
+  "animations": ["reveal"],
+  "fields": {
+    "head": {"$ref": "head", "required": false},
+    "video": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 5, "max": 80},
+      "poster": {"type": "image"},
+      "src": {"type": "video", "required": false},
+      "embed": {"type": "embed", "required": false},
+      "duration": {"type": "text", "min": 3, "max": 8, "required": false}
+    }},
+    "caption": {"type": "text", "min": 10, "max": 160, "required": false},
+    "play_label": {"type": "text", "min": 3, "max": 24, "default": "Play video"},
+    "close_label": {"type": "text", "min": 3, "max": 24, "default": "Close video"}
+  }
+}

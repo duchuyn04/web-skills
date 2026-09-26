@@ -2,7 +2,7 @@
 
 Skill giúp coding agent dựng landing page cho công ty BPO, outsourcing, contact center, offshore staffing, xử lý dữ liệu AI hoặc bán hàng outbound.
 
-Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 24 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
+Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 29 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
 
 ## Cài đặt
 
@@ -101,7 +101,7 @@ Bốn kiểu trang, mỗi kiểu có thứ tự section cố định:
 | `ai-data-ops` | Gán nhãn dữ liệu, RLHF, kiểm duyệt nội dung | `dark-ai` |
 | `cx-voice-sales` | Đội gọi điện, telesales, tổng đài, chất lượng cuộc gọi là bằng chứng chính | `clean-minimal` |
 
-24 section gồm header có megamenu, ba kiểu hero (ảnh chia đôi, chữ đổi từ, mạng lưới điểm 3D), băng chuyền logo, bộ đếm số, bento có đèn rọi theo chuột, tab dịch vụ, máy tính tiết kiệm chi phí, trình phát cuộc gọi mẫu, timeline quy trình, bảng giá có công tắc, bản đồ hub có ghim radar, slider case study, FAQ, form báo giá 3 bước, footer và các nút nổi. Toàn bộ chạy bằng HTML, CSS và JavaScript thuần, không cần build frontend.
+29 section gồm header có megamenu, bốn kiểu hero (ảnh chia đôi, chữ đổi từ, mạng lưới điểm 3D, nền ảnh hoặc video toàn khung), băng chuyền logo, bộ đếm số, bento có đèn rọi theo chuột, tab dịch vụ, hàng ảnh và chữ xen kẽ, thẻ ảnh cho tin tức hoặc ngành, khối video mở trong modal, dải kêu gọi hành động, máy tính tiết kiệm chi phí, trình phát cuộc gọi mẫu, timeline quy trình, bảng giá có công tắc, bản đồ hub có ghim radar, slider case study, FAQ, form báo giá 3 bước, footer và các nút nổi. Toàn bộ chạy bằng HTML, CSS và JavaScript thuần, không cần build frontend.
 
 Ba lớp kiểm tra chạy trước khi giao:
 
@@ -114,7 +114,7 @@ Ba lớp kiểm tra chạy trước khi giao:
 ```
 SKILL.md          quy trình cho agent, đọc file này trước
 references/       tài liệu tra cứu (một số file do script sinh ra)
-templates/        base.css, base.js, 24 section, bộ màu, icon, cờ, ảnh mẫu
+templates/        base.css, base.js, 29 section, bộ màu, icon, cờ, ảnh và video mẫu
 examples/         4 file page.json mẫu
 previews/         ảnh chụp từng section
 scripts/          build, lint, QA, sinh tài liệu
@@ -134,6 +134,6 @@ Khách cần một khối mà thư viện chưa có thì xem `references/custom-
 
 - Form báo giá chưa gửi dữ liệu đi đâu. Điền URL endpoint vào `form.action` trong `page.json` khi có.
 - Ảnh trong `templates/assets/images` là ảnh stock để xem thử. Trang thật nên dùng ảnh của khách. Kiểm tra giấy phép của các ảnh này trước khi dùng cho dự án thương mại.
-- Hero video nền chưa có, vì cần video thật của khách.
+- Video mẫu `sample-ambient-loop` là một đoạn nền trừu tượng do `scripts/make_sample_video.py` tự vẽ, chỉ để xem thử. Hero nền video và khối video nên dùng video thật của khách; khối video còn nhận link YouTube hoặc Vimeo và chỉ tải trình phát khi người xem bấm play.
 - Skill chặn được lỗi bố cục và lỗi câu chữ, nhưng vẫn không ngăn hẳn model yếu thêm chi tiết nhỏ không có trong brief, ví dụ chia số nhân sự cho từng văn phòng. Nên đọc lại nội dung trước khi giao cho khách.
 - Bản đồ và cờ vẽ bằng SVG, phủ 44 quốc gia và 73 thành phố hub phổ biến. Thành phố chưa có thì truyền tọa độ trực tiếp trong `page.json`.

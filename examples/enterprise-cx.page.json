@@ -1,5 +1,5 @@
 {
-  "_note": "Starter for archetype enterprise-cx. Northbridge CX is a fictional company; every figure below is sample data. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders.",
+  "_note": "Starter for archetype enterprise-cx. Northbridge CX is a fictional company; every figure below is sample data. The hero uses the bundled abstract sample video; replace it with the client's own footage or remove the video key to show the photo only. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders.",
   "archetype": "enterprise-cx",
   "preset": "enterprise-navy",
   "lang": "en",
@@ -9,19 +9,43 @@
     "title": "Northbridge CX | Customer experience operations at scale",
     "description": "Northbridge CX runs omnichannel customer care, back-office and trust and safety teams from Manila, Ho Chi Minh City, Bogota and Krakow."
   },
-  "features": {"magnetic_cta": true},
+  "features": {
+    "magnetic_cta": true
+  },
   "sections": [
     {
       "type": "header-mega",
       "data": {
         "topbar": {
           "note": "ISO 27001 and PCI DSS certified delivery in 4 countries",
-          "links": [{"label": "Careers", "href": "#locations"}, {"label": "Security", "href": "#security"}]
+          "links": [
+            {
+              "label": "Careers",
+              "href": "#locations"
+            },
+            {
+              "label": "Security",
+              "href": "#security"
+            }
+          ]
         },
         "languages": [
-          {"flag": "us", "label": "English", "href": "#top", "current": true},
-          {"flag": "vn", "label": "Tieng Viet", "href": "#top"},
-          {"flag": "jp", "label": "Japanese", "href": "#top"}
+          {
+            "flag": "us",
+            "label": "English",
+            "href": "#top",
+            "current": true
+          },
+          {
+            "flag": "vn",
+            "label": "Tieng Viet",
+            "href": "#top"
+          },
+          {
+            "flag": "jp",
+            "label": "Japanese",
+            "href": "#top"
+          }
         ],
         "links": [
           {
@@ -29,16 +53,40 @@
             "href": "#services",
             "mega": {
               "columns": [
-                {"heading": "Customer care", "links": [
-                  {"label": "Omnichannel support", "href": "#services"},
-                  {"label": "Technical support", "href": "#services"},
-                  {"label": "Multilingual desks", "href": "#services"}
-                ]},
-                {"heading": "Operations", "links": [
-                  {"label": "Back-office processing", "href": "#services"},
-                  {"label": "Trust and safety", "href": "#services"},
-                  {"label": "Data labeling", "href": "#services"}
-                ]}
+                {
+                  "heading": "Customer care",
+                  "links": [
+                    {
+                      "label": "Omnichannel support",
+                      "href": "#services"
+                    },
+                    {
+                      "label": "Technical support",
+                      "href": "#services"
+                    },
+                    {
+                      "label": "Multilingual desks",
+                      "href": "#services"
+                    }
+                  ]
+                },
+                {
+                  "heading": "Operations",
+                  "links": [
+                    {
+                      "label": "Back-office processing",
+                      "href": "#services"
+                    },
+                    {
+                      "label": "Trust and safety",
+                      "href": "#services"
+                    },
+                    {
+                      "label": "Data labeling",
+                      "href": "#services"
+                    }
+                  ]
+                }
               ],
               "featured": {
                 "tag": "Case study",
@@ -49,28 +97,67 @@
               }
             }
           },
-          {"label": "Industries", "href": "#industries"},
-          {"label": "Results", "href": "#results"},
-          {"label": "Locations", "href": "#locations"},
-          {"label": "FAQ", "href": "#faq"}
+          {
+            "label": "Industries",
+            "href": "#industries"
+          },
+          {
+            "label": "Results",
+            "href": "#results"
+          },
+          {
+            "label": "Locations",
+            "href": "#locations"
+          },
+          {
+            "label": "FAQ",
+            "href": "#faq"
+          }
         ],
-        "cta": {"label": "Talk to sales", "href": "#contact"}
+        "cta": {
+          "label": "Talk to sales",
+          "href": "#contact"
+        }
       }
     },
     {
-      "type": "hero-split-image",
+      "type": "hero-fullbleed",
       "data": {
         "eyebrow": "Customer experience operations",
         "title": "Support teams that *protect your CSAT* while you scale",
         "lead": "We recruit, train and run dedicated customer care and back-office teams for banks, telcos and retailers, with live reporting from day one.",
-        "primary_cta": {"label": "Get a staffing plan", "href": "#contact"},
-        "secondary_cta": {"label": "See client results", "href": "#case-studies"},
-        "proof": ["ISO 27001 certified", "24/7 coverage", "Go live in 30 days"],
-        "photo": {"src": "team-coworking-laptops", "alt": "Northbridge agents working together at a shared desk"},
-        "badges": [
-          {"icon": "smile", "value": "94.6%", "label": "Average CSAT, 2025"},
-          {"icon": "clock", "value": "18 sec", "label": "Median chat reply"},
-          {"icon": "users", "value": "2,400+", "label": "Trained agents"}
+        "primary_cta": {
+          "label": "Get a staffing plan",
+          "href": "#contact"
+        },
+        "secondary_cta": {
+          "label": "See client results",
+          "href": "#case-studies"
+        },
+        "image": "team-coworking-laptops",
+        "video": "sample-ambient-loop",
+        "proof": [
+          "ISO 27001 certified",
+          "24/7 coverage",
+          "Go live in 30 days"
+        ],
+        "stats": [
+          {
+            "value": "2,400+",
+            "label": "Trained agents"
+          },
+          {
+            "value": "94.6%",
+            "label": "Average CSAT, 2025"
+          },
+          {
+            "value": "12",
+            "label": "Languages supported"
+          },
+          {
+            "value": "4",
+            "label": "Delivery centers"
+          }
         ]
       }
     },
@@ -79,9 +166,30 @@
       "data": {
         "label": "Operations partner for banks, telcos and retail brands in 14 countries",
         "logos": [
-          {"name": "Kestrel Bank"}, {"name": "Orbital Telecom"}, {"name": "Maple Retail"},
-          {"name": "Lumen Health"}, {"name": "Harbor Air"}, {"name": "Vantage Pay"},
-          {"name": "Cobalt Energy"}, {"name": "Summit Insure"}
+          {
+            "name": "Kestrel Bank"
+          },
+          {
+            "name": "Orbital Telecom"
+          },
+          {
+            "name": "Maple Retail"
+          },
+          {
+            "name": "Lumen Health"
+          },
+          {
+            "name": "Harbor Air"
+          },
+          {
+            "name": "Vantage Pay"
+          },
+          {
+            "name": "Cobalt Energy"
+          },
+          {
+            "name": "Summit Insure"
+          }
         ]
       }
     },
@@ -94,9 +202,18 @@
           "lead": "Clients get a single operations lead, a shared dashboard and quality scoring on every channel. We fix issues before they reach your weekly review."
         },
         "items": [
-          {"title": "Hire for your customers", "text": "Recruiters screen for language level, product fit and tone. Your team approves the final shortlist before training starts."},
-          {"title": "Train on real cases", "text": "New agents shadow live queues and handle simulated tickets until they pass your quality rubric, usually within 15 working days."},
-          {"title": "Report every day", "text": "Supervisors publish AHT, CSAT, backlog and QA scores each morning, with root-cause notes on anything outside target."}
+          {
+            "title": "Hire for your customers",
+            "text": "Recruiters screen for language level, product fit and tone. Your team approves the final shortlist before training starts."
+          },
+          {
+            "title": "Train on real cases",
+            "text": "New agents shadow live queues and handle simulated tickets until they pass your quality rubric, usually within 15 working days."
+          },
+          {
+            "title": "Report every day",
+            "text": "Supervisors publish AHT, CSAT, backlog and QA scores each morning, with root-cause notes on anything outside target."
+          }
         ]
       }
     },
@@ -114,33 +231,124 @@
             "icon": "headset",
             "title": "Voice, chat and email support in 12 languages",
             "text": "Dedicated agents answer in your brand voice across phone, chat, email and social, with follow-the-sun coverage from Manila, Bogota and Krakow.",
-            "bullets": ["Tier 1 and tier 2 support", "Live chat and messaging apps", "Weekend and holiday coverage"],
-            "photo": {"src": "portrait-woman-office", "alt": "Customer care team lead smiling in the office"},
-            "link": {"label": "Plan a care program", "href": "#contact"}
+            "bullets": [
+              "Tier 1 and tier 2 support",
+              "Live chat and messaging apps",
+              "Weekend and holiday coverage"
+            ],
+            "photo": {
+              "src": "portrait-woman-office",
+              "alt": "Customer care team lead smiling in the office"
+            },
+            "link": {
+              "label": "Plan a care program",
+              "href": "#contact"
+            }
           },
           {
             "tab": "Back office",
             "icon": "file-text",
             "title": "Document, claims and order processing",
             "text": "Trained processors handle KYC checks, claims intake, refunds and order updates inside your systems, with dual review on high-risk items.",
-            "bullets": ["KYC and onboarding checks", "Claims and refund processing", "Catalog and order updates"],
-            "photo": {"src": "office-interior", "alt": "Quiet production floor in the Ho Chi Minh City office"}
+            "bullets": [
+              "KYC and onboarding checks",
+              "Claims and refund processing",
+              "Catalog and order updates"
+            ],
+            "photo": {
+              "src": "office-interior",
+              "alt": "Quiet production floor in the Ho Chi Minh City office"
+            }
           },
           {
             "tab": "Trust and safety",
             "icon": "shield-check",
             "title": "Content review with wellness support built in",
             "text": "Moderators review user content against your policy, escalate edge cases and work fixed rotations with on-site counselors.",
-            "bullets": ["Policy-based content review", "Fraud and abuse queues", "Weekly calibration sessions"],
-            "photo": {"src": "team-engineers-screen", "alt": "Reviewers discussing a flagged case on a laptop screen"}
+            "bullets": [
+              "Policy-based content review",
+              "Fraud and abuse queues",
+              "Weekly calibration sessions"
+            ],
+            "photo": {
+              "src": "team-engineers-screen",
+              "alt": "Reviewers discussing a flagged case on a laptop screen"
+            }
           },
           {
             "tab": "Tech support",
             "icon": "cpu",
             "title": "Technical help desks for software and devices",
             "text": "Certified technicians troubleshoot accounts, devices and integrations, and hand bugs to your engineers with full reproduction notes.",
-            "bullets": ["Remote troubleshooting", "Bug triage and reproduction", "Knowledge base upkeep"],
-            "photo": {"src": "team-coworking-laptops", "alt": "Technical support agents testing software on laptops"}
+            "bullets": [
+              "Remote troubleshooting",
+              "Bug triage and reproduction",
+              "Knowledge base upkeep"
+            ],
+            "photo": {
+              "src": "team-coworking-laptops",
+              "alt": "Technical support agents testing software on laptops"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "feature-rows",
+      "data": {
+        "head": {
+          "eyebrow": "How we work",
+          "title": "Built around *your* customers, not our script",
+          "lead": "Three habits every Northbridge program keeps, from the first hiring call to the monthly business review."
+        },
+        "rows": [
+          {
+            "eyebrow": "Hiring",
+            "title": "Agents who already speak your customers' language",
+            "text": "Recruiters screen for language level, product fit and tone of voice. Your team approves the shortlist before training starts, so nobody joins the floor as a stranger to your brand.",
+            "bullets": [
+              "Language and tone assessments",
+              "Client sign-off on every hire"
+            ],
+            "photo": {
+              "src": "portrait-woman-office",
+              "alt": "Northbridge team lead smiling in the Manila office"
+            },
+            "badge": {
+              "value": "15 days",
+              "label": "Average time to hire"
+            }
+          },
+          {
+            "eyebrow": "Quality",
+            "title": "Every contact scored against your rubric",
+            "text": "Quality analysts review calls, chats and emails each day with your own scorecard. Coaching happens the same week, and trends go into the Monday report.",
+            "bullets": [
+              "Daily QA sampling",
+              "Calibration with your team each week",
+              "Coaching logged per agent"
+            ],
+            "photo": {
+              "src": "team-engineers-screen",
+              "alt": "Quality analysts reviewing a support ticket together"
+            },
+            "link": {
+              "label": "See our QA process",
+              "href": "#faq"
+            }
+          },
+          {
+            "eyebrow": "Reporting",
+            "title": "One dashboard your leadership can read",
+            "text": "Handle time, CSAT, backlog and QA scores sit on one shared dashboard, refreshed every morning, with notes on anything that moved outside target.",
+            "photo": {
+              "src": "office-interior",
+              "alt": "Quiet operations floor with wall screens"
+            },
+            "badge": {
+              "value": "07:00",
+              "label": "Daily report in your inbox"
+            }
           }
         ]
       }
@@ -152,10 +360,29 @@
         "title": "Numbers our clients check *every week*",
         "lead": "Averages across active programs in 2025, audited by client QA teams.",
         "items": [
-          {"value": 2400, "suffix": "+", "label": "Agents in production", "note": "Across four delivery centers"},
-          {"value": 94.6, "suffix": "%", "label": "Average CSAT", "note": "Voice, chat and email combined"},
-          {"value": 31, "suffix": "%", "label": "Lower handle time", "note": "Median change after six months"},
-          {"value": 30, "label": "Days to go live", "note": "For a 25-seat program"}
+          {
+            "value": 2400,
+            "suffix": "+",
+            "label": "Agents in production",
+            "note": "Across four delivery centers"
+          },
+          {
+            "value": 94.6,
+            "suffix": "%",
+            "label": "Average CSAT",
+            "note": "Voice, chat and email combined"
+          },
+          {
+            "value": 31,
+            "suffix": "%",
+            "label": "Lower handle time",
+            "note": "Median change after six months"
+          },
+          {
+            "value": 30,
+            "label": "Days to go live",
+            "note": "For a 25-seat program"
+          }
         ]
       }
     },
@@ -168,14 +395,46 @@
           "lead": "Agents train on the rules, systems and vocabulary of your sector before they take a single live contact."
         },
         "tiles": [
-          {"icon": "landmark", "title": "Banking and fintech", "text": "Card disputes, onboarding checks and collections with PCI DSS controls."},
-          {"icon": "globe", "title": "Telecom", "text": "Billing questions, plan changes and device setup for prepaid and postpaid users."},
-          {"icon": "shopping-cart", "title": "Retail and ecommerce", "text": "Order tracking, returns and marketplace seller support during peak seasons."},
-          {"icon": "heart-pulse", "title": "Healthcare", "text": "Appointment scheduling, benefits questions and claims intake under HIPAA rules."},
-          {"icon": "plane", "title": "Travel", "text": "Booking changes, refunds and disruption handling across time zones."},
-          {"icon": "zap", "title": "Energy and utilities", "text": "Meter reads, outage calls and payment plans for residential customers."},
-          {"icon": "shield-check", "title": "Insurance", "text": "First notice of loss, policy servicing and renewal outreach."},
-          {"icon": "code", "title": "Software and SaaS", "text": "Account support, onboarding sessions and tier 2 technical help."}
+          {
+            "icon": "landmark",
+            "title": "Banking and fintech",
+            "text": "Card disputes, onboarding checks and collections with PCI DSS controls."
+          },
+          {
+            "icon": "globe",
+            "title": "Telecom",
+            "text": "Billing questions, plan changes and device setup for prepaid and postpaid users."
+          },
+          {
+            "icon": "shopping-cart",
+            "title": "Retail and ecommerce",
+            "text": "Order tracking, returns and marketplace seller support during peak seasons."
+          },
+          {
+            "icon": "heart-pulse",
+            "title": "Healthcare",
+            "text": "Appointment scheduling, benefits questions and claims intake under HIPAA rules."
+          },
+          {
+            "icon": "plane",
+            "title": "Travel",
+            "text": "Booking changes, refunds and disruption handling across time zones."
+          },
+          {
+            "icon": "zap",
+            "title": "Energy and utilities",
+            "text": "Meter reads, outage calls and payment plans for residential customers."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Insurance",
+            "text": "First notice of loss, policy servicing and renewal outreach."
+          },
+          {
+            "icon": "code",
+            "title": "Software and SaaS",
+            "text": "Account support, onboarding sessions and tier 2 technical help."
+          }
         ]
       }
     },
@@ -191,33 +450,105 @@
           {
             "client": "Kestrel Bank",
             "industry": "Banking",
-            "photo": {"src": "meeting-handshake", "alt": "Kestrel Bank and Northbridge leads at a contract meeting"},
+            "photo": {
+              "src": "meeting-handshake",
+              "alt": "Kestrel Bank and Northbridge leads at a contract meeting"
+            },
             "title": "Consolidated three card-support vendors into one 180-seat program",
-            "results": [{"value": "-31%", "label": "Average handle time"}, {"value": "11 wk", "label": "Full transition"}],
-            "link": {"label": "Read the case", "href": "#contact"}
+            "results": [
+              {
+                "value": "-31%",
+                "label": "Average handle time"
+              },
+              {
+                "value": "11 wk",
+                "label": "Full transition"
+              }
+            ],
+            "link": {
+              "label": "Read the case",
+              "href": "#contact"
+            }
           },
           {
             "client": "Orbital Telecom",
             "industry": "Telecom",
-            "photo": {"src": "team-coworking-laptops", "alt": "Orbital support pod during a morning huddle"},
+            "photo": {
+              "src": "team-coworking-laptops",
+              "alt": "Orbital support pod during a morning huddle"
+            },
             "title": "Added Vietnamese and Tagalog chat support ahead of a regional launch",
-            "results": [{"value": "92%", "label": "First-contact resolution"}, {"value": "2", "label": "New languages"}]
+            "results": [
+              {
+                "value": "92%",
+                "label": "First-contact resolution"
+              },
+              {
+                "value": "2",
+                "label": "New languages"
+              }
+            ]
           },
           {
             "client": "Maple Retail",
             "industry": "Ecommerce",
-            "photo": {"src": "office-interior", "alt": "Seasonal support floor prepared for peak demand"},
+            "photo": {
+              "src": "office-interior",
+              "alt": "Seasonal support floor prepared for peak demand"
+            },
             "title": "Scaled from 40 to 140 agents for the holiday peak without missing SLA",
-            "results": [{"value": "3.5x", "label": "Seasonal ramp"}, {"value": "99.2%", "label": "SLA met"}]
+            "results": [
+              {
+                "value": "3.5x",
+                "label": "Seasonal ramp"
+              },
+              {
+                "value": "99.2%",
+                "label": "SLA met"
+              }
+            ]
           },
           {
             "client": "Lumen Health",
             "industry": "Healthcare",
-            "photo": {"src": "portrait-woman-studio", "alt": "Lumen Health patient support specialist"},
+            "photo": {
+              "src": "portrait-woman-studio",
+              "alt": "Lumen Health patient support specialist"
+            },
             "title": "Took over patient scheduling and benefits calls under HIPAA controls",
-            "results": [{"value": "-42%", "label": "Abandoned calls"}, {"value": "4.7/5", "label": "Patient rating"}]
+            "results": [
+              {
+                "value": "-42%",
+                "label": "Abandoned calls"
+              },
+              {
+                "value": "4.7/5",
+                "label": "Patient rating"
+              }
+            ]
           }
         ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "eyebrow": "Pilot program",
+        "title": "Test us on *one queue* before you commit",
+        "text": "Start with a 10-seat pilot on a single channel. If the numbers do not beat your current setup in 60 days, you walk away.",
+        "points": [
+          "No setup fee",
+          "60 day exit clause"
+        ],
+        "primary_cta": {
+          "label": "Plan a pilot",
+          "href": "#contact"
+        },
+        "secondary_cta": {
+          "label": "Read the FAQ",
+          "href": "#faq"
+        },
+        "image": "meeting-handshake"
       }
     },
     {
@@ -229,10 +560,30 @@
           "lead": "Each site runs the same QA process and security controls, so a program can span two time zones without a change in quality."
         },
         "hubs": [
-          {"city": "manila", "role": "Voice and chat hub", "headcount": "1,100 agents", "detail": "English voice, chat, 24/7"},
-          {"city": "ho-chi-minh-city", "role": "Back office and tech", "headcount": "650 agents", "detail": "KYC, claims, tier 2 support"},
-          {"city": "bogota", "role": "Nearshore Americas", "headcount": "420 agents", "detail": "Spanish and English, US hours"},
-          {"city": "krakow", "role": "European languages", "headcount": "230 agents", "detail": "German, French, Polish desks"}
+          {
+            "city": "manila",
+            "role": "Voice and chat hub",
+            "headcount": "1,100 agents",
+            "detail": "English voice, chat, 24/7"
+          },
+          {
+            "city": "ho-chi-minh-city",
+            "role": "Back office and tech",
+            "headcount": "650 agents",
+            "detail": "KYC, claims, tier 2 support"
+          },
+          {
+            "city": "bogota",
+            "role": "Nearshore Americas",
+            "headcount": "420 agents",
+            "detail": "Spanish and English, US hours"
+          },
+          {
+            "city": "krakow",
+            "role": "European languages",
+            "headcount": "230 agents",
+            "detail": "German, French, Polish desks"
+          }
         ]
       }
     },
@@ -244,14 +595,88 @@
           "title": "Controls your *risk team* can audit",
           "lead": "Every delivery center runs the same access controls, clean-desk policy and annual external audits."
         },
-        "points": ["Clean-desk production floors with badge access", "Client data stays in your systems through VDI", "Quarterly access reviews shared with your team"],
+        "points": [
+          "Clean-desk production floors with badge access",
+          "Client data stays in your systems through VDI",
+          "Quarterly access reviews shared with your team"
+        ],
         "badges": [
-          {"code": "ISO 27001", "label": "Information security"},
-          {"code": "SOC 2 Type II", "label": "Audited controls"},
-          {"code": "PCI DSS", "label": "Card data handling", "icon": "lock"},
-          {"code": "HIPAA", "label": "Health information", "icon": "heart-pulse"},
-          {"code": "GDPR", "label": "EU data protection", "icon": "globe"},
-          {"code": "ISO 9001", "label": "Quality management", "icon": "award"}
+          {
+            "code": "ISO 27001",
+            "label": "Information security"
+          },
+          {
+            "code": "SOC 2 Type II",
+            "label": "Audited controls"
+          },
+          {
+            "code": "PCI DSS",
+            "label": "Card data handling",
+            "icon": "lock"
+          },
+          {
+            "code": "HIPAA",
+            "label": "Health information",
+            "icon": "heart-pulse"
+          },
+          {
+            "code": "GDPR",
+            "label": "EU data protection",
+            "icon": "globe"
+          },
+          {
+            "code": "ISO 9001",
+            "label": "Quality management",
+            "icon": "award"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image-cards",
+      "data": {
+        "head": {
+          "eyebrow": "Insights",
+          "title": "Notes from the operations floor",
+          "lead": "Short reads from our quality, workforce and training leads."
+        },
+        "view_all": {
+          "label": "All insights",
+          "href": "#contact"
+        },
+        "cards": [
+          {
+            "tag": "Guide",
+            "meta": "6 min read",
+            "title": "How to plan a vendor transition without losing CSAT",
+            "text": "The week-by-week checklist we use to move programs between vendors.",
+            "photo": {
+              "src": "meeting-handshake",
+              "alt": "Two managers signing a transition plan"
+            },
+            "href": "#contact"
+          },
+          {
+            "tag": "Report",
+            "meta": "Survey of 40 programs",
+            "title": "What actually lowers handle time in banking support",
+            "text": "Knowledge base fixes beat new tools in 7 of 10 programs we reviewed.",
+            "photo": {
+              "src": "team-engineers-screen",
+              "alt": "Analysts reviewing handle time data"
+            },
+            "href": "#contact"
+          },
+          {
+            "tag": "Case study",
+            "meta": "Healthcare",
+            "title": "Patient scheduling at scale under HIPAA rules",
+            "photo": {
+              "src": "portrait-woman-studio",
+              "alt": "Patient support specialist at her desk"
+            },
+            "href": "#case-studies"
+          }
         ]
       }
     },
@@ -265,14 +690,32 @@
         "aside": {
           "title": "Need a detailed answer?",
           "text": "Our solutions team replies within one business day with a written proposal outline.",
-          "cta": {"label": "Contact the team", "href": "#contact"}
+          "cta": {
+            "label": "Contact the team",
+            "href": "#contact"
+          }
         },
         "items": [
-          {"q": "How long does it take to launch a new program?", "a": "A 25-seat program usually goes live in 30 days: one week for hiring, two weeks for training and one week of supervised live traffic."},
-          {"q": "Can we interview agents before they join our program?", "a": "Yes. You approve the final shortlist, and your trainers can join the second week of onboarding."},
-          {"q": "Which tools do your agents work in?", "a": "Agents log in to your CRM, ticketing and telephony through a secure virtual desktop. We also support Zendesk, Salesforce, Genesys and Freshdesk out of the box."},
-          {"q": "How is pricing structured?", "a": "Most programs are priced per full-time agent per month. Transactional work such as claims processing can be priced per item."},
-          {"q": "What happens if quality drops below target?", "a": "The account lead opens a corrective plan within 48 hours and service credits apply as set in the contract."}
+          {
+            "q": "How long does it take to launch a new program?",
+            "a": "A 25-seat program usually goes live in 30 days: one week for hiring, two weeks for training and one week of supervised live traffic."
+          },
+          {
+            "q": "Can we interview agents before they join our program?",
+            "a": "Yes. You approve the final shortlist, and your trainers can join the second week of onboarding."
+          },
+          {
+            "q": "Which tools do your agents work in?",
+            "a": "Agents log in to your CRM, ticketing and telephony through a secure virtual desktop. We also support Zendesk, Salesforce, Genesys and Freshdesk out of the box."
+          },
+          {
+            "q": "How is pricing structured?",
+            "a": "Most programs are priced per full-time agent per month. Transactional work such as claims processing can be priced per item."
+          },
+          {
+            "q": "What happens if quality drops below target?",
+            "a": "The account lead opens a corrective plan within 48 hours and service credits apply as set in the contract."
+          }
         ]
       }
     },
@@ -282,16 +725,38 @@
         "eyebrow": "Start here",
         "title": "Get a staffing plan in *two business days*",
         "lead": "Tell us what you need to outsource. A solutions lead will send a team design, timeline and monthly price range.",
-        "points": ["No cost for the proposal", "Pilot programs from 10 seats", "Month-to-month terms after the pilot"],
+        "points": [
+          "No cost for the proposal",
+          "Pilot programs from 10 seats",
+          "Month-to-month terms after the pilot"
+        ],
         "contacts": [
-          {"icon": "mail", "label": "sales@northbridge-cx.example", "href": "mailto:sales@northbridge-cx.example"},
-          {"icon": "phone", "label": "+1 (555) 010 2400", "href": "tel:+15550102400"}
+          {
+            "icon": "mail",
+            "label": "sales@northbridge-cx.example",
+            "href": "mailto:sales@northbridge-cx.example"
+          },
+          {
+            "icon": "phone",
+            "label": "+1 (555) 010 2400",
+            "href": "tel:+15550102400"
+          }
         ],
         "form": {
           "step1_title": "What do you want to outsource?",
-          "services": ["Customer care", "Back-office processing", "Trust and safety", "Technical support"],
+          "services": [
+            "Customer care",
+            "Back-office processing",
+            "Trust and safety",
+            "Technical support"
+          ],
           "step2_title": "How large a team do you expect?",
-          "sizes": ["10-25 agents", "26-75 agents", "76-200 agents", "200+ agents"],
+          "sizes": [
+            "10-25 agents",
+            "26-75 agents",
+            "76-200 agents",
+            "200+ agents"
+          ],
           "step3_title": "Where should we send the plan?",
           "submit_label": "Send my request",
           "success_title": "Request received",
@@ -305,26 +770,98 @@
       "data": {
         "blurb": "Customer care, back-office and trust and safety teams for regulated brands, run from four delivery centers.",
         "contacts": [
-          {"icon": "mail", "label": "sales@northbridge-cx.example", "href": "mailto:sales@northbridge-cx.example"},
-          {"icon": "map-pin", "label": "Makati City, Metro Manila"}
+          {
+            "icon": "mail",
+            "label": "sales@northbridge-cx.example",
+            "href": "mailto:sales@northbridge-cx.example"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Makati City, Metro Manila"
+          }
         ],
         "socials": [
-          {"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"},
-          {"icon": "youtube", "label": "YouTube", "href": "https://www.youtube.com"}
+          {
+            "icon": "linkedin",
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com"
+          },
+          {
+            "icon": "youtube",
+            "label": "YouTube",
+            "href": "https://www.youtube.com"
+          }
         ],
         "columns": [
-          {"heading": "Solutions", "links": [{"label": "Customer care", "href": "#services"}, {"label": "Back office", "href": "#services"}, {"label": "Trust and safety", "href": "#services"}]},
-          {"heading": "Company", "links": [{"label": "Locations", "href": "#locations"}, {"label": "Security", "href": "#security"}, {"label": "Client results", "href": "#case-studies"}]},
-          {"heading": "Contact", "links": [{"label": "Request a proposal", "href": "#contact"}, {"label": "FAQ", "href": "#faq"}]}
+          {
+            "heading": "Solutions",
+            "links": [
+              {
+                "label": "Customer care",
+                "href": "#services"
+              },
+              {
+                "label": "Back office",
+                "href": "#services"
+              },
+              {
+                "label": "Trust and safety",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Locations",
+                "href": "#locations"
+              },
+              {
+                "label": "Security",
+                "href": "#security"
+              },
+              {
+                "label": "Client results",
+                "href": "#case-studies"
+              }
+            ]
+          },
+          {
+            "heading": "Contact",
+            "links": [
+              {
+                "label": "Request a proposal",
+                "href": "#contact"
+              },
+              {
+                "label": "FAQ",
+                "href": "#faq"
+              }
+            ]
+          }
         ],
         "legal": "All rights reserved.",
-        "legal_links": [{"label": "Privacy", "href": "#top"}, {"label": "Terms", "href": "#top"}],
+        "legal_links": [
+          {
+            "label": "Privacy",
+            "href": "#top"
+          },
+          {
+            "label": "Terms",
+            "href": "#top"
+          }
+        ],
         "certifications": "ISO 27001 | SOC 2 Type II | PCI DSS"
       }
     },
     {
       "type": "floating-chat",
-      "data": {"label": "Talk to a solutions lead", "status": "Replies within a day", "href": "#contact"}
+      "data": {
+        "label": "Talk to a solutions lead",
+        "status": "Replies within a day",
+        "href": "#contact"
+      }
     }
   ]
 }

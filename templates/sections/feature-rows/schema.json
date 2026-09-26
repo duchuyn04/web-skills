@@ -1,0 +1,27 @@
+{
+  "variant": "feature-rows",
+  "group": "features",
+  "summary": "2-4 rows that alternate photo and copy sides. Each row: eyebrow, title, text, optional check list, link and a small glass stat on the photo. Use for how you work, what makes the team different, or one row per service.",
+  "tone": "auto",
+  "anchor": "how-we-work",
+  "animations": ["reveal"],
+  "fields": {
+    "head": {"$ref": "head", "required": false},
+    "start": {"type": "enum", "values": ["image-right", "image-left"], "default": "image-right"},
+    "rows": {
+      "type": "list", "min": 2, "max": 4,
+      "item": {"type": "object", "fields": {
+        "eyebrow": {"type": "text", "min": 3, "max": 32, "required": false},
+        "title": {"type": "text", "min": 8, "max": 70},
+        "text": {"type": "text", "min": 60, "max": 280},
+        "bullets": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 3, "max": 64}},
+        "photo": {"$ref": "photo"},
+        "badge": {"type": "object", "required": false, "fields": {
+          "value": {"type": "text", "min": 1, "max": 12},
+          "label": {"type": "text", "min": 3, "max": 30}
+        }},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    }
+  }
+}

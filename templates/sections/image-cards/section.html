@@ -1,0 +1,30 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{#head}}
+    <div class="bl-head bl-head--split" data-reveal>
+      <div>
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2">{{title}}</h2>
+      </div>
+      <div class="bl-head__aside">
+        {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+        {{#view_all}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/view_all}}
+      </div>
+    </div>
+    {{/head}}
+    <div class="bl-icards bl-icards--{{ratio}}" data-reveal-group>
+      {{#cards}}
+      <a class="bl-icard" href="{{href}}" data-reveal>
+        <span class="bl-frame bl-icard__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="480" height="320" loading="lazy"></span>
+        <span class="bl-icard__body">
+          {{#tag}}<span class="bl-icard__top"><span class="bl-chip bl-chip--accent">{{tag}}</span>{{#meta}}<span class="bl-icard__meta">{{meta}}</span>{{/meta}}</span>{{/tag}}
+          {{^tag}}{{#meta}}<span class="bl-icard__top"><span class="bl-icard__meta">{{meta}}</span></span>{{/meta}}{{/tag}}
+          <span class="bl-icard__title">{{title}}</span>
+          {{#text}}<span class="bl-icard__text">{{text}}</span>{{/text}}
+          <span class="bl-link bl-icard__more">{{link_label}}{{arrow}}</span>
+        </span>
+      </a>
+      {{/cards}}
+    </div>
+  </div>
+</section>

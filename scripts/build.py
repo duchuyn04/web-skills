@@ -333,6 +333,10 @@ def validate(ctx, value, spec, path):
         return value.strip()
     if t == "image":
         return resolve_image(ctx, value, path)
+    if t == "video":
+        return resolve_video(ctx, value, path)
+    if t == "embed":
+        return resolve_embed(ctx, value, path)
     if t == "audio":
         return resolve_file(ctx, value, path, "assets/audio/", (".mp3", ".m4a", ".ogg", ".wav", ".webm"))
     if t == "city":
@@ -411,6 +415,32 @@ def resolve_image(ctx, value, path):
     return rel
 
 
+def resolve_video(ctx, value, path):
+    lib = ctx.lib["videos"]
+    if isinstance(value, str) and value in lib:
+        rel = "assets/video/" + lib[value].name
+        ctx.images[rel] = lib[value]
+        return rel
+    return resolve_file(ctx, value, path, "assets/video/", (".mp4", ".webm"))
+
+
+YOUTUBE_RE = re.compile(r"^https?://(?:www\.)?(?:youtube\.com/watch\?(?:.*&)?v=|youtu\.be/|youtube\.com/embed/)([\w-]{11})")
+VIMEO_RE = re.compile(r"^https?://(?:www\.)?(?:vimeo\.com/|player\.vimeo\.com/video/)(\d+)")
+
+
+def resolve_embed(ctx, value, path):
+    """Turn a YouTube or Vimeo page URL into a privacy-friendly embed URL. The iframe is only created on click."""
+    v = str(value).strip()
+    m = YOUTUBE_RE.match(v)
+    if m:
+        return "https://www.youtube-nocookie.com/embed/%s?autoplay=1&rel=0" % m.group(1)
+    m = VIMEO_RE.match(v)
+    if m:
+        return "https://player.vimeo.com/video/%s?autoplay=1&dnt=1" % m.group(1)
+    ctx.err(path, "embed must be a YouTube or Vimeo video URL, got %r" % value)
+    return ""
+
+
 def resolve_file(ctx, value, path, folder, exts):
     src = (ctx.page_dir / str(value)).resolve()
     if not src.is_file() or src.suffix.lower() not in exts:
@@ -483,9 +513,10 @@ def load_library():
         if (d / "schema.json").is_file():
             variants[d.name] = dict(resolve_refs(load_json(d / "schema.json"), defs), _dir=d)
     images = {p.stem: p for p in sorted(IMAGES_DIR.glob("*")) if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp", ".svg")}
+    videos = {p.stem: p for p in sorted((TPL / "assets" / "video").glob("*")) if p.suffix.lower() in (".mp4", ".webm")}
     return {"icons": icons, "flags": flags, "cities": cities, "presets": presets,
             "archetypes": {k: v for k, v in archetypes.items() if not k.startswith("_")},
-            "variants": variants, "images": images}
+            "variants": variants, "images": images, "videos": videos}
 
 
 def resolve_refs(node, defs):
@@ -514,6 +545,7 @@ def print_library(lib):
     print("\nICONS\n  " + ", ".join(sorted(lib["icons"])))
     print("\nFLAGS\n  " + ", ".join(sorted(lib["flags"])))
     print("\nIMAGES\n  " + ", ".join(sorted(lib["images"])))
+    print("\nVIDEOS\n  " + (", ".join(sorted(lib["videos"])) or "(none)"))
     print("\nCITIES\n  " + ", ".join(sorted(k for k in lib["cities"] if not k.startswith("_"))))
 
 
@@ -706,6 +738,10 @@ def main():
         enrich_stats(data)
         if t == "services-bento" and data.get("cards") and len(data["cards"][0].get("bullets") or []) < 3:
             ctx.err(p + ".data.cards[0].bullets", "the first card is the large feature card; give it 3-4 bullets so it does not look empty")
+        if t == "video-block":
+            vid = data.get("video") or {}
+            if bool(vid.get("src")) == bool(vid.get("embed")):
+                ctx.err(p + ".data.video", "set exactly one of src (a video file) or embed (a YouTube or Vimeo URL)")
         if t == "voice-sample" and any(not x.get("audio") for x in data.get("samples") or []):
             ctx.warn(p + ".data.samples", "some samples have no audio file; their players animate without sound. Add real recordings before launch.")
         if t == "cta-multistep" and not (data.get("form") or {}).get("action"):
@@ -758,6 +794,13 @@ def main():
             if tone == "dark" and prev == "dark" and s["variant"].get("group") not in ("footer",):
                 ctx.warn(s["path"], "two dark sections in a row; consider reordering or setting tone")
             prev = tone
+    # The header sits on top of the hero, so it takes the tone the hero really got.
+    hero_sec = next((s for s in sections if s["variant"].get("group") == "hero"), None)
+    if hero_sec:
+        hero_tone = hero_sec["tone"]
+        for s in sections:
+            if s["variant"].get("tone") == "header" and not s["tone_override"]:
+                s["tone"] = hero_tone
 
     # Render.
     renderer = Renderer(lib["icons"], lib["flags"])
@@ -824,6 +867,7 @@ def main():
     (out_dir / "assets" / "css" / "style.css").write_text(re.sub(r"\n\s*\n+", "\n", css_text), encoding="utf-8")
     (out_dir / "assets" / "js" / "main.js").write_text("\n".join(js), encoding="utf-8")
     for rel, src in ctx.images.items():
+        (out_dir / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, out_dir / rel)
     rep = {"archetype": arch_key, "preset": top["preset"], "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections],
            "warnings": ctx.warnings, "placeholders": ctx.placeholders}

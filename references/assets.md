@@ -21,6 +21,14 @@ Use the key (file name without extension) in any `image` field. Always write a r
 
 There is no photo of agents on headsets. For a contact center hero, prefer the client's own photos: put them next to page.json and use the relative path (`"src": "photos/floor.jpg"`). Real photos of the client's floor beat stock images.
 
+## Video library (`templates/assets/video`)
+
+| Key | What it shows | Good for |
+|:---|:---|:---|
+| `sample-ambient-loop` | 8 second abstract loop: soft moving light on a dark grid, drawn by `scripts/make_sample_video.py` | Previewing `hero-fullbleed` (`video` field) or `video-block` (`src`) before the client sends footage |
+
+The sample clip is a placeholder, not content. In `video-block` it has no story to tell, so replace it with the client's real video or drop the section. In `hero-fullbleed` it works as a neutral ambient background until real office footage arrives. Client videos go next to page.json as `.mp4` or `.webm`; YouTube and Vimeo links go in `video-block`'s `embed` field.
+
 ## Icons
 
 Lucide-style SVG icons, by name, for example `headset`, `shield-check`, `users`, `landmark`, `heart-pulse`. Use `--list` for all names. Unknown names fail the build and print the full list.

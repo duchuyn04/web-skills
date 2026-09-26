@@ -1,0 +1,22 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-rows bl-rows--{{start}}">
+      {{#rows}}
+      <article class="bl-row">
+        <div class="bl-row__media" data-reveal="fade">
+          <div class="bl-frame bl-row__frame"><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="512" loading="lazy"></div>
+          {{#badge}}<div class="bl-glass bl-row__badge"><strong>{{value}}</strong><span>{{label}}</span></div>{{/badge}}
+        </div>
+        <div class="bl-row__copy" data-reveal>
+          {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+          <h3 class="bl-row__title">{{title}}</h3>
+          <p class="bl-lead">{{text}}</p>
+          {{#bullets.0}}<ul class="bl-checks">{{#bullets}}<li>{{icon:check}}<span>{{.}}</span></li>{{/bullets}}</ul>{{/bullets.0}}
+          {{#link}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+        </div>
+      </article>
+      {{/rows}}
+    </div>
+  </div>
+</section>

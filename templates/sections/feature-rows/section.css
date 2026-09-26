@@ -1,0 +1,28 @@
+/* feature-rows: alternating photo and copy */
+.bl-rows { display: grid; gap: clamp(4rem, 8vw, 7rem); }
+.bl-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.bl-rows--image-right .bl-row:nth-child(odd) .bl-row__media,
+.bl-rows--image-left .bl-row:nth-child(even) .bl-row__media { order: 2; }
+.bl-row__media { position: relative; isolation: isolate; padding: 0 0 18px; }
+.bl-row__media::before {
+  content: ""; position: absolute; z-index: -1; width: 62%; height: 62%; right: -18px; bottom: 0;
+  border-radius: calc(var(--radius-lg) + 4px); background: var(--c-accent-soft);
+}
+.bl-rows--image-right .bl-row:nth-child(even) .bl-row__media::before,
+.bl-rows--image-left .bl-row:nth-child(odd) .bl-row__media::before { right: auto; left: -18px; }
+.bl-row__frame { aspect-ratio: 5 / 4; border-radius: calc(var(--radius-lg) + 4px); box-shadow: var(--shadow-lg); }
+.bl-row__frame img { transition: transform 700ms var(--ease-out); }
+.bl-row:hover .bl-row__frame img { transform: scale(1.03); }
+.bl-row__badge { position: absolute; left: -12px; bottom: 36px; display: grid; gap: .1rem; padding: .8rem 1.1rem; min-width: 150px; }
+.bl-rows--image-right .bl-row:nth-child(odd) .bl-row__badge,
+.bl-rows--image-left .bl-row:nth-child(even) .bl-row__badge { left: auto; right: -12px; }
+.bl-row__badge strong { font-family: var(--font-heading); font-size: 1.45rem; line-height: 1.1; color: var(--text-strong); font-weight: var(--heading-weight); }
+.bl-row__badge span { font-size: var(--fs-xs); font-weight: 600; color: var(--text-muted); }
+.bl-row__title { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.5rem, 1.3vw + 1rem, 2.1rem); line-height: 1.18; color: var(--text-strong); margin-bottom: 1rem; text-wrap: balance; }
+.bl-row__copy .bl-lead { margin-bottom: 1.5rem; }
+.bl-row__copy .bl-checks { margin-bottom: 1.75rem; }
+@media (max-width: 900px) {
+  .bl-row { grid-template-columns: 1fr; }
+  .bl-row .bl-row__media { order: 0 !important; max-width: 560px; }
+  .bl-row__badge { left: 12px !important; right: auto !important; }
+}
