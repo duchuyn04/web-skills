@@ -1,0 +1,19 @@
+/* metrics-rings: sla-ring-gauges. The arc length is --p (0-100); it draws once when the ring is seen. */
+.bl-rings__head { max-width: 720px; margin: 0 auto clamp(2.5rem, 5vw, 3.75rem); text-align: center; }
+.bl-rings__head .bl-eyebrow { justify-content: center; }
+.bl-rings__head .bl-lead { margin-top: 1rem; }
+.bl-rings__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.bl-ring { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.bl-ring__dial { order: -1; position: relative; width: 148px; height: 148px; display: grid; place-items: center; margin-bottom: 1.1rem; }
+.bl-ring__svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.bl-ring__track, .bl-ring__arc { fill: none; stroke-width: 7; }
+.bl-ring__track { stroke: var(--border); }
+.bl-ring__arc { stroke: var(--c-accent); stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: calc(100 - min(100, var(--p, 0))); }
+.js .bl-ring:not(.is-drawn) .bl-ring__arc { stroke-dashoffset: 100; }
+.bl-ring.is-drawn .bl-ring__arc { transition: stroke-dashoffset 1.4s var(--ease-out); }
+.bl-ring__value { position: relative; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 2rem; line-height: 1; letter-spacing: -0.02em; color: var(--text-strong); }
+.bl-ring__label { font-weight: 700; color: var(--text-strong); line-height: 1.35; max-width: 16rem; }
+.bl-ring__note { margin-top: .35rem; font-size: var(--fs-sm); color: var(--text-muted); max-width: 16rem; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-ring:not(.is-drawn) .bl-ring__arc { stroke-dashoffset: calc(100 - min(100, var(--p, 0))); }
+}

@@ -1,0 +1,120 @@
+{
+  "variant": "hero-chat",
+  "group": "hero",
+  "summary": "Headline, lead and buttons on the left; on the right a chat window plays a short sample support conversation: customer bubble, typing dots, agent reply, then a result tag. It plays once when the hero is seen and ends on a Replay button. Label it as a sample; screen readers get the full transcript as a list.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": [
+    "hero"
+  ],
+  "animations": [
+    "agent-chat-playback",
+    "reveal"
+  ],
+  "fields": {
+    "eyebrow": {
+      "type": "text",
+      "min": 3,
+      "max": 44,
+      "required": false
+    },
+    "title": {
+      "type": "markup",
+      "min": 12,
+      "max": 90
+    },
+    "lead": {
+      "type": "text",
+      "min": 60,
+      "max": 230
+    },
+    "primary_cta": {
+      "$ref": "cta"
+    },
+    "secondary_cta": {
+      "$ref": "cta",
+      "required": false
+    },
+    "proof": {
+      "type": "list",
+      "min": 0,
+      "max": 3,
+      "default": [],
+      "item": {
+        "type": "text",
+        "min": 3,
+        "max": 36
+      }
+    },
+    "chat": {
+      "type": "object",
+      "fields": {
+        "title": {
+          "type": "text",
+          "min": 3,
+          "max": 40
+        },
+        "status": {
+          "type": "text",
+          "min": 2,
+          "max": 24,
+          "default": "Online"
+        },
+        "sample_label": {
+          "type": "text",
+          "min": 3,
+          "max": 30,
+          "default": "Sample conversation"
+        },
+        "agent_name": {
+          "type": "text",
+          "min": 2,
+          "max": 24
+        },
+        "customer_name": {
+          "type": "text",
+          "min": 2,
+          "max": 24,
+          "default": "Customer"
+        },
+        "messages": {
+          "type": "list",
+          "min": 3,
+          "max": 7,
+          "item": {
+            "type": "object",
+            "fields": {
+              "agent": {
+                "type": "bool",
+                "default": false
+              },
+              "text": {
+                "type": "text",
+                "min": 4,
+                "max": 140
+              }
+            }
+          }
+        },
+        "result": {
+          "type": "text",
+          "min": 4,
+          "max": 40,
+          "required": false
+        }
+      }
+    },
+    "pause_label": {
+      "type": "text",
+      "min": 3,
+      "max": 24,
+      "default": "Pause"
+    },
+    "replay_label": {
+      "type": "text",
+      "min": 3,
+      "max": 24,
+      "default": "Replay"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "variant": "models-board",
+  "group": "compare",
+  "summary": "Engagement model switcher with a responsibility board: pick a model on the left and a token on each task row slides to Your team, Shared or the vendor column, with live counters in the column heads.",
+  "tone": "auto",
+  "anchor": "how-we-work",
+  "animations": [
+    "token-slide-board",
+    "odometer-column-counters",
+    "reveal"
+  ],
+  "fields": {
+    "head": {
+      "$ref": "head"
+    },
+    "tabs_label": {
+      "type": "text",
+      "min": 3,
+      "max": 40,
+      "default": "Engagement models"
+    },
+    "board_label": {
+      "type": "text",
+      "min": 2,
+      "max": 30,
+      "default": "Task"
+    },
+    "columns": {
+      "type": "object",
+      "fields": {
+        "you": {
+          "type": "text",
+          "min": 2,
+          "max": 18
+        },
+        "shared": {
+          "type": "text",
+          "min": 2,
+          "max": 18
+        },
+        "us": {
+          "type": "text",
+          "min": 2,
+          "max": 18
+        }
+      }
+    },
+    "tasks": {
+      "type": "list",
+      "min": 4,
+      "max": 7,
+      "item": {
+        "type": "text",
+        "min": 4,
+        "max": 40
+      }
+    },
+    "models": {
+      "type": "list",
+      "min": 2,
+      "max": 4,
+      "item": {
+        "type": "object",
+        "fields": {
+          "name": {
+            "type": "text",
+            "min": 3,
+            "max": 28
+          },
+          "fit": {
+            "type": "text",
+            "min": 10,
+            "max": 60
+          },
+          "title": {
+            "type": "text",
+            "min": 8,
+            "max": 70
+          },
+          "text": {
+            "type": "text",
+            "min": 60,
+            "max": 240
+          },
+          "bullets": {
+            "type": "list",
+            "min": 2,
+            "max": 4,
+            "item": {
+              "type": "text",
+              "min": 3,
+              "max": 56
+            }
+          },
+          "badge": {
+            "type": "object",
+            "required": false,
+            "fields": {
+              "value": {
+                "type": "text",
+                "min": 1,
+                "max": 12
+              },
+              "label": {
+                "type": "text",
+                "min": 3,
+                "max": 30
+              }
+            }
+          },
+          "owners": {
+            "type": "list",
+            "min": 4,
+            "max": 7,
+            "item": {
+              "type": "enum",
+              "values": [
+                "you",
+                "shared",
+                "us"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "$ref": "cta",
+      "required": false
+    },
+    "note": {
+      "type": "text",
+      "min": 20,
+      "max": 160,
+      "required": false
+    }
+  }
+}

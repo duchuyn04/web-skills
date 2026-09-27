@@ -14,7 +14,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `hero-3d-point-cloud-nodes` | `hero-dark-network` | canvas, 36-110 points, lerp 0.05, pauses off-screen |
 | `hero-ambient-video-mask` | `hero-fullbleed` | muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen |
 | `infinite-logo-marquee` | `logo-marquee` | 40s linear loop, pauses on hover |
-| `odometer-number-counter` | `metrics-counter`, `metrics-panel` | 2000ms ease-out, once, threshold 0.3 |
+| `odometer-number-counter` | `metrics-counter`, `metrics-panel`, `metrics-rings` | 2000ms ease-out, once, threshold 0.3 |
 | `staggered-badge-pop-in` | `about-mosaic`, `awards-strip`, `compliance-badges`, `hero-qualifier`, `tool-stack` | 350ms ease-back, 80ms stagger |
 | `bento-spotlight-hover` | `services-bento` | radial glow follows pointer, rAF throttled |
 | `card-tilt-3d-perspective` | `industries-tiles` | max 6deg, perspective 1000px, glare |
@@ -31,7 +31,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `floating-whatsapp-chat-bounce` | `floating-chat` | appears after the hero, 1.8s ping dot |
 | `exit-intent-spring-modal` | `exit-intent-modal` | 520ms ease-back, after 8s, once per 7 days |
 | `globe-spin` | `hero-gradient` | dotted world map scrolling behind a sphere mask, 60s linear loop |
-| `reveal` | `about-mosaic`, `audience-cards`, `awards-strip`, `banner-image`, `careers-band`, `case-slider`, `comparison-table`, `contact-split`, `cost-calculator`, `country-cards`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `metrics-panel`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `quote-spotlight`, `service-links`, `services-bento`, `services-tabs`, `solution-panels`, `statement-band`, `steps-row`, `team-grid`, `testimonials`, `tool-stack`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
+| `reveal` | `about-mosaic`, `audience-cards`, `awards-strip`, `banner-image`, `careers-band`, `case-filter`, `case-slider`, `comparison-table`, `contact-split`, `cost-calculator`, `country-cards`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-chat`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-ribbons`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `metrics-panel`, `metrics-rings`, `models-board`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `quote-spotlight`, `service-links`, `services-bento`, `services-stack`, `services-tabs`, `solution-panels`, `statement-band`, `steps-row`, `team-grid`, `testimonials`, `tool-stack`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
 | `text-marquee` | `ticker-band` | 60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion |
 | `quote-crossfade` | `quote-spotlight` | 600ms fade plus 10px rise, prev/next buttons, dots and arrow keys, no autoplay |
 | `word-by-word-reveal` | `statement-band` | each word fades from 18% to full opacity over 500ms, 45ms stagger, once |
@@ -41,6 +41,24 @@ All motion follows the performance rules gathered in the research: only transfor
 | `tile-rise` | `team-grid` | portrait tiles fade up with 80ms stagger; photo zooms 4% on hover |
 | `photo-drift-in` | `careers-band` | office photos rise 24px into place as the band enters |
 | `connector-line-draw` | `steps-row` | the line between step cards scales from 0 to full width over 1.2s (top to bottom on phones) |
+| `flowing-line-ribbons` | `hero-ribbons`, `services-stack` | canvas line ribbons drift and twist, lines bend away from the pointer, 2.2s draw-in from the left; one pause button stops them |
+| `word-rise-headline` | `hero-ribbons` | each headline word rises out of a mask, 900ms, 55ms stagger, once |
+| `marker-sweep-accent` | `hero-ribbons` | a marker bar sweeps under the accent words, 900ms, starts after the words land |
+| `dotted-globe-network` | `hero-ribbons` | canvas dotted globe turns 3.4 deg/s, drag to turn, flight arcs with travelling dots from the home city |
+| `carousel-progress-dots` | `hero-ribbons` | 6s per slide, the active dot fills as a progress bar, pauses on hover, focus and the pause button |
+| `sticky-card-stack` | `services-stack` | cards pin under the header and stack; covered cards scale down 4.5% and dim, scroll-linked, off on phones |
+| `row-fill-sweep` | `industries-rows` | brand colour fills the hovered row from the bottom, 500ms, other rows dim |
+| `cursor-follow-card` | `industries-rows` | detail card follows the pointer with lerp and up to 12 deg tilt from pointer speed, mouse only |
+| `line-draw-reveal` | `industries-rows` | row divider lines draw from left to right as rows enter, 1s, 80ms stagger |
+| `token-slide-board` | `models-board` | one token per task row slides between three columns with a spring, 70ms row stagger |
+| `odometer-column-counters` | `models-board` | column totals bump (scale 1.18) when a model changes them |
+| `agent-chat-playback` | `hero-chat` | sample chat plays once when seen: bubbles 320ms rise, typing dots 1.2s, stops on Replay; focus or Pause stops it |
+| `logo-wall-cycle` | `logo-wall` | cells flip once in an 80ms cascade when seen (600ms slide); cycle mode flips one random cell every 2.5s |
+| `sla-ring-gauges` | `metrics-rings` | SVG ring arc draws to its percentage over 1.4s while the number counts up, once |
+| `testimonial-columns-drift` | `testimonials-drift` | columns drift up at 52s, 64s and 58s per loop with faded edges; Pause button, stops off screen |
+| `view-transition-filter-grid` | `case-filter` | filter pills; cards move to new places with a 380ms View Transition, instant where unsupported |
+| `footer-wordmark-rise` | `footer-columns` | brand name fitted to the footer width, letters rise 900ms with 40ms stagger, once |
+| `page-motion-switch` | `footer-columns` | one Pause animations button (footer) freezes every CSS animation, video, canvas loop and carousel |
 | `shape-float` | `hero-collage` | flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s |
 
 ## Design options (page-wide)

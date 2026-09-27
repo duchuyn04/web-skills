@@ -1,0 +1,17 @@
+{
+  "variant": "logo-wall",
+  "group": "logos",
+  "summary": "Client logos in a fixed grid of 8 or 12 cells instead of a moving strip. Each cell holds up to three logos; when the wall is seen the cells flip once in a cascade, the current logo sliding up and the next sliding in. mode \"cycle\" keeps flipping one random cell every 2.5s (the footer Pause animations button stops it). Screen readers get one plain list of every client.",
+  "tone": "auto",
+  "anchor": "clients",
+  "animations": ["logo-wall-cycle"],
+  "fields": {
+    "label": {"type": "text", "min": 10, "max": 80},
+    "cells": {"type": "enum", "values": ["8", "12"], "default": "8"},
+    "mode": {"type": "enum", "values": ["once", "cycle"], "default": "once"},
+    "logos": {"type": "list", "min": 8, "max": 36, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 2, "max": 28},
+      "src": {"type": "image", "required": false}
+    }}}
+  }
+}

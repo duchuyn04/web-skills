@@ -1,0 +1,20 @@
+<section id="{{section.id}}" class="bl-section bl-cfilter bl-tone-{{section.tone}}" data-cfilter data-all="{{all_label}}" data-count-label="{{count_label}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-cfilter__pills" role="group" aria-label="{{filter_label}}" data-cfilter-pills hidden></div>
+    <p class="bl-sr-only" aria-live="polite" data-cfilter-status></p>
+    <ul class="bl-cfilter__grid" data-reveal-group>
+      {{#cases}}
+      <li class="bl-cfilter__card" data-reveal data-industry="{{industry}}">
+        <div class="bl-cfilter__photo"><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="400" loading="lazy" decoding="async"></div>
+        <div class="bl-cfilter__body">
+          <p class="bl-cfilter__meta"><strong>{{client}}</strong><span class="bl-chip">{{industry}}</span></p>
+          <h3 class="bl-cfilter__title">{{title}}</h3>
+          {{#results.0}}<dl class="bl-cfilter__results">{{#results}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/results}}</dl>{{/results.0}}
+          {{#link}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+        </div>
+      </li>
+      {{/cases}}
+    </ul>
+  </div>
+</section>

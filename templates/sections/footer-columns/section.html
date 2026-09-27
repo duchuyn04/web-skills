@@ -20,6 +20,8 @@
       <p>&copy; {{site.year}} {{site.brand}}. {{legal}}</p>
       {{#certifications}}<p class="bl-footer__certs">{{icon:shield-check}}<span>{{certifications}}</span></p>{{/certifications}}
       {{#legal_links.0}}<ul class="bl-footer__legal">{{#legal_links}}<li><a href="{{href}}">{{label}}</a></li>{{/legal_links}}</ul>{{/legal_links.0}}
+      {{#motion_toggle}}<button class="bl-motion-toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}"><span class="bl-motion-toggle__pause">{{icon:pause}}</span><span class="bl-motion-toggle__play">{{icon:play}}</span><span data-motion-label>{{pause_label}}</span></button>{{/motion_toggle}}
     </div>
   </div>
+  {{#wordmark}}<div class="bl-footer__wordmark" aria-hidden="true" data-wordmark>{{site.brand}}</div>{{/wordmark}}
 </footer>

@@ -1,0 +1,57 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-models-board" data-mboard>
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-models-board__grid">
+      <div class="bl-models-board__side" data-reveal>
+        <div class="bl-models-board__tabs" role="tablist" aria-label="{{tabs_label}}" aria-orientation="vertical">
+          {{#models}}
+          <button class="bl-models-board__tab" type="button" role="tab" id="{{section.id}}-tab-{{@n}}" aria-controls="{{section.id}}-panel-{{@n}}" aria-selected="{{#@first}}true{{/@first}}{{^@first}}false{{/@first}}" tabindex="{{#@first}}0{{/@first}}{{^@first}}-1{{/@first}}" data-owners="{{#owners}}{{.}} {{/owners}}">
+            <span class="bl-models-board__tab-num bl-mono" aria-hidden="true">{{@num}}</span>
+            <span class="bl-models-board__tab-copy"><strong>{{name}}</strong><small>{{fit}}</small></span>
+            <span class="bl-models-board__tab-go" aria-hidden="true">{{arrow}}</span>
+          </button>
+          {{/models}}
+        </div>
+        {{#models}}
+        <div class="bl-models-board__panel" role="tabpanel" id="{{section.id}}-panel-{{@n}}" aria-labelledby="{{section.id}}-tab-{{@n}}" {{^@first}}hidden{{/@first}}>
+          <h3 class="bl-models-board__title">{{title}}</h3>
+          <p class="bl-models-board__text">{{text}}</p>
+          <ul class="bl-checks bl-models-board__checks">{{#bullets}}<li>{{icon:check}}<span>{{.}}</span></li>{{/bullets}}</ul>
+          {{#badge}}<p class="bl-models-board__badge"><strong>{{value}}</strong><span>{{label}}</span></p>{{/badge}}
+        </div>
+        {{/models}}
+      </div>
+
+      <div class="bl-models-board__board" data-reveal>
+        <div class="bl-models-board__row bl-models-board__row--head">
+          <span class="bl-models-board__label bl-models-board__label--head">{{board_label}}</span>
+          <div class="bl-models-board__cols">
+            <span class="bl-models-board__col"><b data-count-col="you">0</b>{{columns.you}}</span>
+            <span class="bl-models-board__col"><b data-count-col="shared">0</b>{{columns.shared}}</span>
+            <span class="bl-models-board__col bl-models-board__col--us"><b data-count-col="us">0</b>{{columns.us}}</span>
+          </div>
+        </div>
+        <ul class="bl-models-board__rows" aria-live="polite">
+          {{#tasks}}
+          <li class="bl-models-board__row" data-task style="--row: {{@index}}">
+            <span class="bl-models-board__label">{{.}}</span>
+            <div class="bl-models-board__track" aria-hidden="true">
+              <span class="bl-models-board__slot"></span><span class="bl-models-board__slot"></span><span class="bl-models-board__slot"></span>
+              <span class="bl-models-board__token" data-token>
+                <i class="bl-models-board__fill bl-models-board__fill--you"></i>
+                <i class="bl-models-board__fill bl-models-board__fill--shared"></i>
+                <i class="bl-models-board__fill bl-models-board__fill--us"></i>
+              </span>
+            </div>
+            <span class="bl-sr-only" data-owner-text></span>
+          </li>
+          {{/tasks}}
+        </ul>
+        <div class="bl-models-board__foot">
+          {{#note}}<p class="bl-models-board__note">{{note}}</p>{{/note}}
+          {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}{{arrow}}</a>{{/cta}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

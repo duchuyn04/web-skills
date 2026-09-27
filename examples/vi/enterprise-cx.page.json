@@ -464,6 +464,8 @@
      }
     ],
     "legal": "Bảo lưu mọi quyền.",
+    "pause_label": "Tạm dừng hiệu ứng",
+    "play_label": "Chạy hiệu ứng",
     "legal_links": [
      {
       "label": "Chính sách bảo mật",

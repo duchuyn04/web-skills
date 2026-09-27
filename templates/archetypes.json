@@ -32,7 +32,9 @@
           "hero-fullbleed",
           "hero-gradient",
           "hero-qualifier",
-          "hero-collage"
+          "hero-collage",
+          "hero-ribbons",
+          "hero-chat"
         ],
         "required": true
       },
@@ -45,7 +47,8 @@
       {
         "slot": "logos",
         "variants": [
-          "logo-marquee"
+          "logo-marquee",
+          "logo-wall"
         ],
         "recommended": true
       },
@@ -67,7 +70,8 @@
         "variants": [
           "services-tabs",
           "services-bento",
-          "service-links"
+          "service-links",
+          "services-stack"
         ],
         "required": true
       },
@@ -93,7 +97,8 @@
       {
         "slot": "compare",
         "variants": [
-          "comparison-table"
+          "comparison-table",
+          "models-board"
         ]
       },
       {
@@ -107,7 +112,8 @@
         "slot": "metrics",
         "variants": [
           "metrics-counter",
-          "metrics-panel"
+          "metrics-panel",
+          "metrics-rings"
         ],
         "required": true
       },
@@ -122,7 +128,8 @@
         "variants": [
           "industries-tiles",
           "image-cards",
-          "audience-cards"
+          "audience-cards",
+          "industries-rows"
         ]
       },
       {
@@ -130,7 +137,9 @@
         "variants": [
           "case-slider",
           "testimonials",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ],
         "recommended": true
       },
@@ -138,7 +147,9 @@
         "slot": "proof-extra",
         "variants": [
           "testimonials",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ]
       },
       {
@@ -254,7 +265,9 @@
           "hero-fullbleed",
           "hero-gradient",
           "hero-qualifier",
-          "hero-collage"
+          "hero-collage",
+          "hero-ribbons",
+          "hero-chat"
         ],
         "required": true
       },
@@ -267,7 +280,8 @@
       {
         "slot": "logos",
         "variants": [
-          "logo-marquee"
+          "logo-marquee",
+          "logo-wall"
         ],
         "recommended": true
       },
@@ -289,7 +303,8 @@
         "variants": [
           "services-bento",
           "services-tabs",
-          "service-links"
+          "service-links",
+          "services-stack"
         ],
         "required": true
       },
@@ -315,7 +330,8 @@
       {
         "slot": "compare",
         "variants": [
-          "comparison-table"
+          "comparison-table",
+          "models-board"
         ]
       },
       {
@@ -336,7 +352,8 @@
         "slot": "metrics",
         "variants": [
           "metrics-counter",
-          "metrics-panel"
+          "metrics-panel",
+          "metrics-rings"
         ]
       },
       {
@@ -357,7 +374,9 @@
         "variants": [
           "testimonials",
           "case-slider",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ],
         "recommended": true
       },
@@ -464,7 +483,8 @@
           "hero-fullbleed",
           "hero-gradient",
           "hero-qualifier",
-          "hero-collage"
+          "hero-collage",
+          "hero-ribbons"
         ],
         "required": true
       },
@@ -477,7 +497,8 @@
       {
         "slot": "logos",
         "variants": [
-          "logo-marquee"
+          "logo-marquee",
+          "logo-wall"
         ],
         "recommended": true
       },
@@ -491,7 +512,8 @@
         "slot": "services",
         "variants": [
           "services-bento",
-          "service-links"
+          "service-links",
+          "services-stack"
         ],
         "required": true
       },
@@ -517,7 +539,8 @@
       {
         "slot": "compare",
         "variants": [
-          "comparison-table"
+          "comparison-table",
+          "models-board"
         ]
       },
       {
@@ -532,7 +555,8 @@
         "slot": "metrics",
         "variants": [
           "metrics-counter",
-          "metrics-panel"
+          "metrics-panel",
+          "metrics-rings"
         ],
         "required": true
       },
@@ -547,7 +571,9 @@
         "variants": [
           "case-slider",
           "testimonials",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ],
         "recommended": true
       },
@@ -663,7 +689,9 @@
           "hero-fullbleed",
           "hero-gradient",
           "hero-qualifier",
-          "hero-collage"
+          "hero-collage",
+          "hero-ribbons",
+          "hero-chat"
         ],
         "required": true
       },
@@ -676,7 +704,8 @@
       {
         "slot": "logos",
         "variants": [
-          "logo-marquee"
+          "logo-marquee",
+          "logo-wall"
         ],
         "recommended": true
       },
@@ -698,7 +727,8 @@
         "variants": [
           "services-bento",
           "services-tabs",
-          "service-links"
+          "service-links",
+          "services-stack"
         ],
         "required": true
       },
@@ -724,7 +754,8 @@
       {
         "slot": "compare",
         "variants": [
-          "comparison-table"
+          "comparison-table",
+          "models-board"
         ]
       },
       {
@@ -737,7 +768,8 @@
         "slot": "metrics",
         "variants": [
           "metrics-counter",
-          "metrics-panel"
+          "metrics-panel",
+          "metrics-rings"
         ],
         "required": true
       },
@@ -753,7 +785,9 @@
         "variants": [
           "testimonials",
           "case-slider",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ],
         "recommended": true
       },
@@ -868,7 +902,8 @@
           "hero-split-image",
           "hero-fullbleed",
           "hero-qualifier",
-          "hero-collage"
+          "hero-collage",
+          "hero-ribbons"
         ],
         "required": true
       },
@@ -889,14 +924,16 @@
         "slot": "trust",
         "variants": [
           "metrics-panel",
-          "metrics-counter"
+          "metrics-counter",
+          "metrics-rings"
         ],
         "recommended": true
       },
       {
         "slot": "logos",
         "variants": [
-          "logo-marquee"
+          "logo-marquee",
+          "logo-wall"
         ],
         "recommended": true
       },
@@ -911,7 +948,8 @@
         "variants": [
           "service-links",
           "services-bento",
-          "services-tabs"
+          "services-tabs",
+          "services-stack"
         ],
         "required": true
       },
@@ -937,7 +975,8 @@
       {
         "slot": "compare",
         "variants": [
-          "comparison-table"
+          "comparison-table",
+          "models-board"
         ]
       },
       {
@@ -951,7 +990,8 @@
         "slot": "audience",
         "variants": [
           "audience-cards",
-          "industries-tiles"
+          "industries-tiles",
+          "industries-rows"
         ]
       },
       {
@@ -959,7 +999,9 @@
         "variants": [
           "case-slider",
           "testimonials",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ],
         "recommended": true
       },
@@ -967,7 +1009,9 @@
         "slot": "proof-extra",
         "variants": [
           "testimonials",
-          "quote-spotlight"
+          "quote-spotlight",
+          "testimonials-drift",
+          "case-filter"
         ]
       },
       {

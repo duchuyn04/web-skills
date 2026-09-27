@@ -1,0 +1,61 @@
+{
+  "variant": "testimonials-drift",
+  "group": "proof",
+  "summary": "A wall of short client quotes in three columns that drift upward at different speeds, faded at the top and bottom, with a visible Pause button (hover alone does not count as a pause). Phones show one column. Reduced motion shows a still grid. Best with 9 or more quotes; the wall is never taller than its shortest column, so fewer quotes give a shorter wall. Real, approved quotes only.",
+  "tone": "auto",
+  "anchor": "testimonials",
+  "animations": [
+    "testimonial-columns-drift"
+  ],
+  "fields": {
+    "head": {
+      "$ref": "head"
+    },
+    "items": {
+      "type": "list",
+      "min": 6,
+      "max": 15,
+      "item": {
+        "type": "object",
+        "fields": {
+          "quote": {
+            "type": "text",
+            "min": 40,
+            "max": 220
+          },
+          "name": {
+            "type": "text",
+            "min": 3,
+            "max": 40
+          },
+          "role": {
+            "type": "text",
+            "min": 3,
+            "max": 60
+          },
+          "company": {
+            "type": "text",
+            "min": 2,
+            "max": 40
+          },
+          "avatar": {
+            "type": "image",
+            "required": false
+          }
+        }
+      }
+    },
+    "pause_label": {
+      "type": "text",
+      "min": 3,
+      "max": 24,
+      "default": "Pause reviews"
+    },
+    "play_label": {
+      "type": "text",
+      "min": 3,
+      "max": 24,
+      "default": "Play reviews"
+    }
+  }
+}

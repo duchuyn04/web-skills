@@ -1,0 +1,24 @@
+<section id="{{section.id}}" class="bl-section bl-rings bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-rings__head" data-reveal>
+      {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+      <h2 class="bl-h2">{{title}}</h2>
+      {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+    </div>
+    <dl class="bl-rings__grid" data-reveal-group>
+      {{#items}}
+      <div class="bl-ring" data-reveal data-ring style="--p: {{#value.count}}{{value.count}}{{/value.count}}{{^value.count}}0{{/value.count}}">
+        <dt class="bl-ring__label">{{label}}</dt>
+        <dd class="bl-ring__dial">
+          <svg class="bl-ring__svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle class="bl-ring__track" cx="60" cy="60" r="52" pathLength="100"/>
+            <circle class="bl-ring__arc" cx="60" cy="60" r="52" pathLength="100"/>
+          </svg>
+          <span class="bl-ring__value"{{#value.count}} data-count="{{value.count}}" data-decimals="{{value.decimals}}" data-prefix="{{value.prefix}}" data-suffix="{{value.suffix}}"{{/value.count}}>{{value.display}}</span>
+        </dd>
+        {{#note}}<dd class="bl-ring__note">{{note}}</dd>{{/note}}
+      </div>
+      {{/items}}
+    </dl>
+  </div>
+</section>

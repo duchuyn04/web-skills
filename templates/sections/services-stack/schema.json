@@ -1,0 +1,65 @@
+{
+  "variant": "services-stack",
+  "group": "services",
+  "summary": "Service cards that pin under the header and stack on top of each other while scrolling; earlier cards scale back and dim. Cards cycle light, navy and brand color, the brand card carries the hero line ribbons. Mobile shows a plain list.",
+  "tone": "auto",
+  "anchor": "services",
+  "animations": [
+    "sticky-card-stack",
+    "flowing-line-ribbons",
+    "reveal"
+  ],
+  "fields": {
+    "head": {
+      "$ref": "head"
+    },
+    "cards": {
+      "type": "list",
+      "min": 3,
+      "max": 6,
+      "item": {
+        "type": "object",
+        "fields": {
+          "tag": {
+            "type": "text",
+            "min": 3,
+            "max": 24
+          },
+          "icon": {
+            "type": "icon"
+          },
+          "title": {
+            "type": "text",
+            "min": 8,
+            "max": 70
+          },
+          "text": {
+            "type": "text",
+            "min": 60,
+            "max": 260
+          },
+          "bullets": {
+            "type": "list",
+            "min": 2,
+            "max": 4,
+            "item": {
+              "type": "text",
+              "min": 3,
+              "max": 64
+            }
+          },
+          "photo": {
+            "$ref": "photo"
+          },
+          "link": {
+            "$ref": "cta",
+            "required": false
+          }
+        }
+      }
+    }
+  },
+  "shared": [
+    "ribbons"
+  ]
+}

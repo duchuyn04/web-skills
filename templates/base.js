@@ -35,6 +35,25 @@
 
   window.BL = { RM: RM, FINE: FINE, onVisible: onVisible, formatNumber: formatNumber, tween: tween };
 
+  /* Page-wide motion switch (WCAG 2.2.2: one control pauses every moving element).
+     Sets data-motion="paused" on <html>, which freezes CSS animations, and fires "bl:motion" for JS loops and videos. */
+  BL.paused = false;
+  BL.setPaused = function (state) {
+    BL.paused = !!state;
+    root.setAttribute('data-motion', BL.paused ? 'paused' : 'on');
+    doc.querySelectorAll('video[autoplay]').forEach(function (v) { if (BL.paused) v.pause(); });
+    doc.querySelectorAll('[data-motion-toggle]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(BL.paused));
+      var label = b.querySelector('[data-motion-label]');
+      if (label) label.textContent = b.getAttribute(BL.paused ? 'data-label-play' : 'data-label-pause');
+    });
+    doc.dispatchEvent(new CustomEvent('bl:motion', { detail: { paused: BL.paused } }));
+  };
+  doc.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-motion-toggle]');
+    if (b) BL.setPaused(!BL.paused);
+  });
+
   /* header-shrink-blur */
   var header = doc.querySelector('[data-bl-header]');
   if (header) {

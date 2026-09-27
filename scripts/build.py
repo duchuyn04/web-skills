@@ -886,6 +886,17 @@ def check_voice(ctx, sections, lang):
         ctx.warn("sections", "'every/each call, contact, agent...' appears %d times (%s). AI copy leans on it; keep one." % (len(every), ", ".join(dict.fromkeys(e.lower() for e in every))))
 
 
+def check_variety(ctx, page, page_path):
+    """Warn when a sibling site (sites/*/page.json) uses nearly the same preset and variants."""
+    import variety
+    arch = variety.archetypes()
+    others = variety.find_pages(page_path.parent.parent, skip=page_path)
+    for path, score, shared in variety.compare(page, others, arch)[:3]:
+        tips = "; ".join("%s: %s" % (slot, ", ".join(opts)) for slot, opts in variety.swaps(page, shared, others, arch).items() if opts)
+        ctx.warn("sections", "this page shares %d%% of its look with %s (%s). Pages built from the same library should not look alike: swap some of these for less-used variants (%s), or pick another preset. python scripts/variety.py --archetype %s lists every slot, least used first." %
+                 (score * 100, path.parent.name, ", ".join(shared), tips or "no other variant in these slots", page.get("archetype")))
+
+
 def check_order(ctx, archetype, sections, lib):
     slots = archetype["slots"]
     pointer = 0
@@ -1075,6 +1086,7 @@ def main():
             check_numbers(ctx, sections, brief)
         if not brief:
             ctx.warn("page.brief", "add the client's brief as \"brief\": \"...\" at the top of page.json. The build then accepts figures that come from it and flags figures copied from the examples.")
+        check_variety(ctx, page, page_path)
 
     for path, anchor in ctx.anchors:
         if anchor not in ids and anchor != "top":

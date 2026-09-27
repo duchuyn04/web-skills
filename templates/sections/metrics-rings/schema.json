@@ -1,0 +1,20 @@
+{
+  "variant": "metrics-rings",
+  "group": "metrics",
+  "summary": "Service levels as thin rings: each ring's arc draws to its percentage while the number counts up in the middle, label and note underneath. For pages that sell on SLAs (answer rate, QA accuracy, retention) rather than headcount. Values are percentages 0-100; \"[KPI]\" leaves the ring empty.",
+  "tone": "auto",
+  "anchor": "results",
+  "animations": ["sla-ring-gauges", "odometer-number-counter", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "lead": {"type": "text", "min": 40, "max": 200, "required": false},
+    "items": {"type": "list", "min": 3, "max": 4, "item": {"type": "object", "fields": {
+      "value": {"type": "stat"},
+      "decimals": {"type": "number", "min": 0, "max": 2, "required": false},
+      "suffix": {"type": "text", "min": 1, "max": 3, "default": "%"},
+      "label": {"type": "text", "min": 3, "max": 44},
+      "note": {"type": "text", "min": 5, "max": 80, "required": false}
+    }}}
+  }
+}

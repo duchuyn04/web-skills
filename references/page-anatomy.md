@@ -27,22 +27,22 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage` |
+| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat` |
 | 3 | ticker | no | `ticker-band` |
-| 4 | logos | recommended | `logo-marquee` |
+| 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
 | 6 | about | no | `pillars-numbered`, `about-mosaic` |
-| 7 | services | yes | `services-tabs`, `services-bento`, `service-links` |
+| 7 | services | yes | `services-tabs`, `services-bento`, `service-links`, `services-stack` |
 | 8 | tools | no | `tool-stack` |
 | 9 | features | no | `feature-rows`, `solution-panels` |
 | 10 | banner | no | `banner-image` |
-| 11 | compare | no | `comparison-table` |
+| 11 | compare | no | `comparison-table`, `models-board` |
 | 12 | process | no | `steps-row`, `process-sticky` |
-| 13 | metrics | yes | `metrics-counter`, `metrics-panel` |
+| 13 | metrics | yes | `metrics-counter`, `metrics-panel`, `metrics-rings` |
 | 14 | video | no | `video-block` |
-| 15 | industries | no | `industries-tiles`, `image-cards`, `audience-cards` |
-| 16 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
-| 17 | proof-extra | no | `testimonials`, `quote-spotlight` |
+| 15 | industries | no | `industries-tiles`, `image-cards`, `audience-cards`, `industries-rows` |
+| 16 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
+| 17 | proof-extra | no | `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
 | 18 | awards | no | `awards-strip` |
 | 19 | mid-cta | no | `cta-band` |
 | 20 | locations | no | `locations-map`, `country-cards` |
@@ -61,22 +61,22 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage` |
+| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat` |
 | 3 | ticker | no | `ticker-band` |
-| 4 | logos | recommended | `logo-marquee` |
+| 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
 | 6 | calculator | recommended | `cost-calculator` |
-| 7 | services | yes | `services-bento`, `services-tabs`, `service-links` |
+| 7 | services | yes | `services-bento`, `services-tabs`, `service-links`, `services-stack` |
 | 8 | tools | no | `tool-stack` |
 | 9 | features | no | `feature-rows`, `solution-panels` |
 | 10 | banner | no | `banner-image` |
-| 11 | compare | no | `comparison-table` |
+| 11 | compare | no | `comparison-table`, `models-board` |
 | 12 | process | yes | `process-sticky`, `steps-row` |
 | 13 | video | no | `video-block` |
-| 14 | metrics | no | `metrics-counter`, `metrics-panel` |
+| 14 | metrics | no | `metrics-counter`, `metrics-panel`, `metrics-rings` |
 | 15 | pricing | no | `pricing-toggle` |
 | 16 | locations | no | `locations-map`, `country-cards` |
-| 17 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight` |
+| 17 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
 | 18 | awards | no | `awards-strip` |
 | 19 | mid-cta | no | `cta-band` |
 | 20 | compliance | no | `compliance-badges` |
@@ -94,19 +94,19 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage` |
+| 2 | hero | yes | `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons` |
 | 3 | ticker | no | `ticker-band` |
-| 4 | logos | recommended | `logo-marquee` |
+| 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
-| 6 | services | yes | `services-bento`, `service-links` |
+| 6 | services | yes | `services-bento`, `service-links`, `services-stack` |
 | 7 | tools | no | `tool-stack` |
 | 8 | features | no | `feature-rows`, `solution-panels` |
 | 9 | banner | no | `banner-image` |
-| 10 | compare | no | `comparison-table` |
+| 10 | compare | no | `comparison-table`, `models-board` |
 | 11 | process | yes | `process-sticky`, `steps-row` |
-| 12 | metrics | yes | `metrics-counter`, `metrics-panel` |
+| 12 | metrics | yes | `metrics-counter`, `metrics-panel`, `metrics-rings` |
 | 13 | video | no | `video-block` |
-| 14 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
+| 14 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
 | 15 | awards | no | `awards-strip` |
 | 16 | mid-cta | no | `cta-band` |
 | 17 | compliance | yes | `compliance-badges` |
@@ -125,20 +125,20 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage` |
+| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat` |
 | 3 | ticker | no | `ticker-band` |
-| 4 | logos | recommended | `logo-marquee` |
+| 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
 | 6 | voice | recommended | `voice-sample` |
-| 7 | services | yes | `services-bento`, `services-tabs`, `service-links` |
+| 7 | services | yes | `services-bento`, `services-tabs`, `service-links`, `services-stack` |
 | 8 | tools | no | `tool-stack` |
 | 9 | features | no | `feature-rows`, `solution-panels` |
 | 10 | banner | no | `banner-image` |
-| 11 | compare | no | `comparison-table` |
+| 11 | compare | no | `comparison-table`, `models-board` |
 | 12 | video | no | `video-block` |
-| 13 | metrics | yes | `metrics-counter`, `metrics-panel` |
+| 13 | metrics | yes | `metrics-counter`, `metrics-panel`, `metrics-rings` |
 | 14 | process | no | `process-sticky`, `steps-row` |
-| 15 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight` |
+| 15 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
 | 16 | awards | no | `awards-strip` |
 | 17 | mid-cta | no | `cta-band` |
 | 18 | pricing | no | `pricing-toggle` |
@@ -157,21 +157,21 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage` |
+| 2 | hero | yes | `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage`, `hero-ribbons` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | about | no | `about-mosaic`, `pillars-numbered` |
-| 5 | trust | recommended | `metrics-panel`, `metrics-counter` |
-| 6 | logos | recommended | `logo-marquee` |
+| 5 | trust | recommended | `metrics-panel`, `metrics-counter`, `metrics-rings` |
+| 6 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 7 | intro | no | `statement-band` |
-| 8 | services | yes | `service-links`, `services-bento`, `services-tabs` |
+| 8 | services | yes | `service-links`, `services-bento`, `services-tabs`, `services-stack` |
 | 9 | tools | no | `tool-stack` |
 | 10 | solutions | no | `solution-panels`, `feature-rows` |
 | 11 | banner | no | `banner-image` |
-| 12 | compare | no | `comparison-table` |
+| 12 | compare | no | `comparison-table`, `models-board` |
 | 13 | process | no | `steps-row`, `process-sticky` |
-| 14 | audience | no | `audience-cards`, `industries-tiles` |
-| 15 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
-| 16 | proof-extra | no | `testimonials`, `quote-spotlight` |
+| 14 | audience | no | `audience-cards`, `industries-tiles`, `industries-rows` |
+| 15 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
+| 16 | proof-extra | no | `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter` |
 | 17 | awards | no | `awards-strip` |
 | 18 | compliance | no | `compliance-badges` |
 | 19 | locations | no | `locations-map`, `country-cards` |

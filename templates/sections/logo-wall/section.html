@@ -1,0 +1,9 @@
+<section id="{{section.id}}" class="bl-section bl-section--tight bl-logowall bl-tone-{{section.tone}}" aria-label="{{label}}">
+  <div class="bl-container">
+    <p class="bl-logowall__label" data-reveal>{{label}}</p>
+    <ul class="bl-sr-only">{{#logos}}<li>{{name}}</li>{{/logos}}</ul>
+    <div class="bl-logowall__grid bl-logowall__grid--{{cells}}" aria-hidden="true" data-logowall data-cells="{{cells}}" data-mode="{{mode}}">
+      {{#logos}}<span class="bl-logowall__logo" data-logo>{{#src}}<img src="{{src}}" alt="" height="36" width="140" loading="lazy">{{/src}}{{^src}}<span class="bl-wordmark">{{name}}</span>{{/src}}</span>{{/logos}}
+    </div>
+  </div>
+</section>

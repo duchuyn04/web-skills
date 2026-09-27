@@ -49,6 +49,20 @@ Tie-breakers:
 - Preset: use the archetype's default. Switch only when the client names brand colors or a style, or clearly matches another preset's "Pick it when" line in `references/style-presets.md`. Brand colors alone go in `theme` and do not change the preset.
 - Brand hue presets: when the client's logo is clearly blue, red or teal, `corporate-blue`, `crimson-trust` or `teal-fresh` may replace the default. Each also sets page-wide design options (angled or curved section edges, photo masks, heading highlight style, photo wipe-in); see "Design options" in `references/style-presets.md`.
 
+## Step 2b: Do not repeat a look
+
+Every page is built from the same library, so two clients can end up with the same page in different words. Before you pick variants, run:
+
+```
+python SKILL/scripts/variety.py --archetype <archetype> --sites sites
+```
+
+It lists every slot with its variants ordered from least to most used across `sites/*/page.json`, and the presets the same way. For each slot, take the first variant in the line that fits the client's content (a variant still has to suit the facts: do not pick `models-board` without engagement models or `industries-rows` without industries). Prefer a preset nobody has used when the client has no brand colours. `build.py` warns when the finished page shares 70% or more of its look (preset plus variant per slot, hero and services count double) with another site, and names the slots to swap; treat that warning like a copy warning and fix it.
+
+Motion-signature variants, added to widen the library: `hero-ribbons` (canvas line ribbons, word-rise headline, globe and photo carousel, optional `echo` of the ribbons behind later dark sections), `services-stack` (sticky stacking cards), `models-board` (compare slot: engagement models with a who-does-what board) and `industries-rows` (industries or audience slot: large rows, cursor-follow card). `examples/variations/motion-signature.page.json` shows all four.
+
+Effects from `bpo-landing-animations/05-new-effects-research.md`: `hero-chat` (a sample support chat plays in the hero; label it as a sample), `logo-wall` (logo grid whose cells flip, instead of the marquee), `metrics-rings` (SLA percentages as drawing rings), `testimonials-drift` (drifting quote columns with a Pause button, 9 or more real quotes), `case-filter` (case studies filtered by industry with a View Transition) and `"wordmark": true` on `footer-columns` (brand name edge to edge). `examples/variations/proof-motion.page.json` shows them. Every footer carries a Pause animations button that stops all motion on the page (WCAG 2.2.2); keep `motion_toggle` on whenever the page has a loop, a carousel, a video or `testimonials-drift`.
+
 ## Step 3: Start from the example
 
 Create a project folder, for example `sites/<company-slug>/`, and copy the matching example:
@@ -115,9 +129,12 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/mobbin-references.md`: where the tool, compare, awards, team, careers, steps and country sections come from, and how to research new sections on Mobbin
 - `references/industry-voice.md`: how real BPO sites write (hero patterns, heading labels, proof, button labels, Vietnamese), measured on 120 homepages
 - `references/assets.md`: image library, icons, flags, cities
-- `references/animation-map.md`: which section carries which of the 24 researched animations (generated)
+- `references/animation-map.md`: which section carries which animation, with timings (generated)
 - `references/custom-section-spec.md`: fallback for blocks outside the library
+- `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
 
 ## Maintaining the library
 
 After changing a template or schema, rebuild every page in `examples/` and `examples/variations/`, run lint and QA on each, then run `python SKILL/scripts/make_catalog.py` to regenerate the catalog, anatomy and animation map (add `--previews <dist> ...` to refresh preview images).
+
+New variants widen the library only if agents can reach them: add each one to the matching slots in `templates/archetypes.json`, give every new animation id a timing line in `TIMING` in `make_catalog.py`, and put the variant in at least one page under `examples/variations/` so it is built and checked with the rest. Canvas motion shares one renderer and one pause state in `templates/sections/_shared/ribbons.js` (`window.BLRibbons`); reuse it rather than starting a second animation loop. `qa_screenshot.py` adds the class `bl-shot` to the page before element screenshots, so scroll-linked layouts can lay out flat for previews.

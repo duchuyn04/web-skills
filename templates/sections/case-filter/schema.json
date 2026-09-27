@@ -1,0 +1,25 @@
+{
+  "variant": "case-filter",
+  "group": "proof",
+  "summary": "Case-study grid with filter pills built from each case's industry (All plus one pill per industry). Choosing a pill moves the cards that stay to their new places with a View Transition, fades the others out and announces the count. Browsers without View Transitions switch instantly. Needs 4 or more real cases in at least two industries.",
+  "tone": "auto",
+  "anchor": "case-studies",
+  "animations": ["view-transition-filter-grid", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "all_label": {"type": "text", "min": 2, "max": 20, "default": "All"},
+    "filter_label": {"type": "text", "min": 3, "max": 40, "default": "Filter by industry"},
+    "count_label": {"type": "text", "min": 3, "max": 30, "default": "case studies shown"},
+    "cases": {"type": "list", "min": 4, "max": 12, "item": {"type": "object", "fields": {
+      "client": {"type": "text", "min": 2, "max": 32},
+      "industry": {"type": "text", "min": 3, "max": 24},
+      "photo": {"$ref": "photo"},
+      "title": {"type": "text", "min": 20, "max": 110},
+      "results": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "object", "fields": {
+        "value": {"type": "text", "min": 1, "max": 10},
+        "label": {"type": "text", "min": 3, "max": 28}
+      }}},
+      "link": {"$ref": "cta", "required": false}
+    }}}
+  }
+}

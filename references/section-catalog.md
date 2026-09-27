@@ -153,6 +153,38 @@ Fields:
   - `src`: image key or path
   - `alt`: text 5-140 chars
 
+## case-filter
+
+Case-study grid with filter pills built from each case's industry (All plus one pill per industry). Choosing a pill moves the cards that stay to their new places with a View Transition, fades the others out and announces the count. Browsers without View Transitions switch instantly. Needs 4 or more real cases in at least two industries.
+
+- Group: `proof`. Default anchor: `#case-studies`. Tone: auto.
+- Built-in motion: view-transition-filter-grid, reveal.
+- Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
+- Preview: `previews/case-filter.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `all_label`: text 2-20 chars (optional, default "All")
+- `filter_label`: text 3-40 chars (optional, default "Filter by industry")
+- `count_label`: text 3-30 chars (optional, default "case studies shown")
+- `cases`: list of 4-12, each item:
+  - `client`: text 2-32 chars
+  - `industry`: text 3-24 chars
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `title`: text 20-110 chars
+  - `results`: list of 0-3 (optional), each item:
+    - `value`: text 1-10 chars
+    - `label`: text 3-28 chars
+  - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+
 ## case-slider
 
 Horizontal case-study carousel with drag, swipe, snap and prev/next buttons. Each card: photo, client, industry, result headline, 2-3 result figures.
@@ -494,9 +526,10 @@ Fields:
 
 ## footer-columns
 
-Dark footer: brand blurb, contacts and social icons, 2-4 link columns, legal bar with optional certification line.
+Dark footer: brand blurb, contacts and social icons, 2-4 link columns, legal bar with optional certification line and a page-wide Pause animations button. Optional wordmark: the brand name set edge to edge in very large type, letters rising in as the footer enters.
 
 - Group: `footer`. Default anchor: `#site-footer`. Tone: dark.
+- Built-in motion: footer-wordmark-rise, page-motion-switch.
 - Allowed in: enterprise-cx/footer, offshore-staffing/footer, ai-data-ops/footer, cx-voice-sales/footer, it-bpo-partner/footer.
 - Preview: `previews/footer-columns.jpg`
 
@@ -521,6 +554,10 @@ Fields:
   - `label`: text 2-30 chars
   - `href`: link
 - `certifications`: text 5-90 chars (optional)
+- `motion_toggle`: true/false (optional, default true)
+- `pause_label`: text 3-30 chars (optional, default "Pause animations")
+- `play_label`: text 3-30 chars (optional, default "Play animations")
+- `wordmark`: true/false (optional, default false)
 
 ## header-mega
 
@@ -586,6 +623,40 @@ Fields:
   - `href`: link
 - `menu_label`: text 2-16 chars (optional, default "Menu")
 - `close_label`: text 2-16 chars (optional, default "Close menu")
+
+## hero-chat
+
+Headline, lead and buttons on the left; on the right a chat window plays a short sample support conversation: customer bubble, typing dots, agent reply, then a result tag. It plays once when the hero is seen and ends on a Replay button. Label it as a sample; screen readers get the full transcript as a list.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: agent-chat-playback, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, cx-voice-sales/hero.
+- Preview: `previews/hero-chat.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `chat`: object
+  - `title`: text 3-40 chars
+  - `status`: text 2-24 chars (optional, default "Online")
+  - `sample_label`: text 3-30 chars (optional, default "Sample conversation")
+  - `agent_name`: text 2-24 chars
+  - `customer_name`: text 2-24 chars (optional, default "Customer")
+  - `messages`: list of 3-7, each item:
+    - `agent`: true/false (optional, default false)
+    - `text`: text 4-140 chars
+  - `result`: text 4-40 chars (optional)
+- `pause_label`: text 3-24 chars (optional, default "Pause")
+- `replay_label`: text 3-24 chars (optional, default "Replay")
 
 ## hero-collage
 
@@ -754,6 +825,45 @@ Fields:
     - `href`: link
     - `icon`: icon name (optional)
 
+## hero-ribbons
+
+Brand-colour hero with animated line ribbons that bend away from the pointer, a headline that rises word by word with a marker sweep on the accent words, and a carousel on the right that alternates a rotating dotted globe (drag to turn, flight arcs from the home city) with arched photo slides. One button pauses every motion. Optional echo: the same ribbons behind chosen dark sections further down.
+
+- Group: `hero`. Default anchor: `#top`. Tone: accent.
+- Built-in motion: flowing-line-ribbons, word-rise-headline, marker-sweep-accent, dotted-globe-network, carousel-progress-dots, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-ribbons.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `home_city`: city key (optional)
+- `arc_cities`: list of 0-8 (optional) (each city 1-400 chars)
+- `carousel_label`: text 3-60 chars (optional, default "Highlights")
+- `slides`: list of 2-4, each item:
+  - `globe`: true/false (optional, default false)
+  - `tag`: text 2-24 chars
+  - `label`: text 3-48 chars
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+- `stats`: list of 0-4 (optional), each item:
+  - `value`: text 1-12 chars
+  - `label`: text 3-32 chars
+- `echo`: list of 0-4 (optional) (each text 2-32 chars)
+- `pause_label`: text 3-32 chars (optional, default "Pause animation")
+- `play_label`: text 3-32 chars (optional, default "Play animation")
+- `slide_label`: text 3-24 chars (optional, default "Show slide")
+
 ## hero-split-image
 
 Headline, lead and two CTAs on the left; large photo on the right with up to 3 floating glass KPI badges.
@@ -816,6 +926,31 @@ Fields:
   - `href`: link
   - `link_label`: text 2-24 chars (optional, default "Read more")
 
+## industries-rows
+
+Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none.
+
+- Group: `industries`. Default anchor: `#industries`. Tone: auto.
+- Built-in motion: row-fill-sweep, cursor-follow-card, line-draw-reveal.
+- Allowed in: enterprise-cx/industries?, it-bpo-partner/audience?.
+- Preview: `previews/industries-rows.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `link_label`: text 3-30 chars (optional, default "Discuss a project")
+- `items`: list of 4-8, each item:
+  - `icon`: icon name
+  - `title`: text 3-32 chars
+  - `text`: text 30-140 chars
+  - `href`: link (optional)
+
 ## industries-tiles
 
 Grid of 4 or 8 industry tiles (icon, title, one line). Tiles tilt up to 6 degrees toward the mouse with a light glare.
@@ -873,6 +1008,24 @@ Fields:
   - `name`: text 2-28 chars
   - `src`: image key or path (optional)
 
+## logo-wall
+
+Client logos in a fixed grid of 8 or 12 cells instead of a moving strip. Each cell holds up to three logos; when the wall is seen the cells flip once in a cascade, the current logo sliding up and the next sliding in. mode "cycle" keeps flipping one random cell every 2.5s (the footer Pause animations button stops it). Screen readers get one plain list of every client.
+
+- Group: `logos`. Default anchor: `#clients`. Tone: auto.
+- Built-in motion: logo-wall-cycle.
+- Allowed in: enterprise-cx/logos?, offshore-staffing/logos?, ai-data-ops/logos?, cx-voice-sales/logos?, it-bpo-partner/logos?.
+- Preview: `previews/logo-wall.jpg`
+
+Fields:
+
+- `label`: text 10-80 chars
+- `cells`: one of 8, 12 (optional, default "8")
+- `mode`: one of once, cycle (optional, default "once")
+- `logos`: list of 8-36, each item:
+  - `name`: text 2-28 chars
+  - `src`: image key or path (optional)
+
 ## metrics-counter
 
 Dark band with a short heading and 3-4 large numbers that count up once when scrolled into view.
@@ -915,6 +1068,64 @@ Fields:
   - `suffix`: text 1-6 chars (optional)
   - `decimals`: number 0-2 (optional)
   - `label`: text 3-32 chars
+
+## metrics-rings
+
+Service levels as thin rings: each ring's arc draws to its percentage while the number counts up in the middle, label and note underneath. For pages that sell on SLAs (answer rate, QA accuracy, retention) rather than headcount. Values are percentages 0-100; "[KPI]" leaves the ring empty.
+
+- Group: `metrics`. Default anchor: `#results`. Tone: auto.
+- Built-in motion: sla-ring-gauges, odometer-number-counter, reveal.
+- Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
+- Preview: `previews/metrics-rings.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 12-80 chars
+- `lead`: text 40-200 chars (optional)
+- `items`: list of 3-4, each item:
+  - `value`: number (or "[KPI]" placeholder)
+  - `decimals`: number 0-2 (optional)
+  - `suffix`: text 1-3 chars (optional, default "%")
+  - `label`: text 3-44 chars
+  - `note`: text 5-80 chars (optional)
+
+## models-board
+
+Engagement model switcher with a responsibility board: pick a model on the left and a token on each task row slides to Your team, Shared or the vendor column, with live counters in the column heads.
+
+- Group: `compare`. Default anchor: `#how-we-work`. Tone: auto.
+- Built-in motion: token-slide-board, odometer-column-counters, reveal.
+- Allowed in: enterprise-cx/compare?, offshore-staffing/compare?, ai-data-ops/compare?, cx-voice-sales/compare?, it-bpo-partner/compare?.
+- Preview: `previews/models-board.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `tabs_label`: text 3-40 chars (optional, default "Engagement models")
+- `board_label`: text 2-30 chars (optional, default "Task")
+- `columns`: object
+  - `you`: text 2-18 chars
+  - `shared`: text 2-18 chars
+  - `us`: text 2-18 chars
+- `tasks`: list of 4-7 (each text 4-40 chars)
+- `models`: list of 2-4, each item:
+  - `name`: text 3-28 chars
+  - `fit`: text 10-60 chars
+  - `title`: text 8-70 chars
+  - `text`: text 60-240 chars
+  - `bullets`: list of 2-4 (each text 3-56 chars)
+  - `badge`: object (optional)
+    - `value`: text 1-12 chars
+    - `label`: text 3-30 chars
+  - `owners`: list of 4-7 (each enum 1-400 chars)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `note`: text 20-160 chars (optional)
 
 ## pillars-numbered
 
@@ -1050,6 +1261,34 @@ Fields:
   - `title`: text 4-44 chars
   - `text`: text 40-190 chars
   - `bullets`: list of 0-4 (optional) (each text 3-56 chars)
+  - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+
+## services-stack
+
+Service cards that pin under the header and stack on top of each other while scrolling; earlier cards scale back and dim. Cards cycle light, navy and brand color, the brand card carries the hero line ribbons. Mobile shows a plain list.
+
+- Group: `services`. Default anchor: `#services`. Tone: auto.
+- Built-in motion: sticky-card-stack, flowing-line-ribbons, reveal.
+- Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
+- Preview: `previews/services-stack.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cards`: list of 3-6, each item:
+  - `tag`: text 3-24 chars
+  - `icon`: icon name
+  - `title`: text 8-70 chars
+  - `text`: text 60-260 chars
+  - `bullets`: list of 2-4 (each text 3-64 chars)
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
   - `link`: object (optional)
     - `label`: text 2-30 chars
     - `href`: link
@@ -1192,6 +1431,30 @@ Fields:
   - `role`: text 3-60 chars
   - `company`: text 2-40 chars
   - `avatar`: image key or path (optional)
+
+## testimonials-drift
+
+A wall of short client quotes in three columns that drift upward at different speeds, faded at the top and bottom, with a visible Pause button (hover alone does not count as a pause). Phones show one column. Reduced motion shows a still grid. Best with 9 or more quotes; the wall is never taller than its shortest column, so fewer quotes give a shorter wall. Real, approved quotes only.
+
+- Group: `proof`. Default anchor: `#testimonials`. Tone: auto.
+- Built-in motion: testimonial-columns-drift.
+- Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
+- Preview: `previews/testimonials-drift.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `items`: list of 6-15, each item:
+  - `quote`: text 40-220 chars
+  - `name`: text 3-40 chars
+  - `role`: text 3-60 chars
+  - `company`: text 2-40 chars
+  - `avatar`: image key or path (optional)
+- `pause_label`: text 3-24 chars (optional, default "Pause reviews")
+- `play_label`: text 3-24 chars (optional, default "Play reviews")
 
 ## ticker-band
 

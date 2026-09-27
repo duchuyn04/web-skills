@@ -1,0 +1,180 @@
+{
+  "_note": "Shows the motion-signature variants: hero-ribbons, services-stack, models-board (compare slot) and industries-rows (audience slot). Kestrel Loop is a fictional company; every figure is sample data. The same ribbons echo behind the cta-band because its id is listed in hero echo.",
+  "archetype": "it-bpo-partner",
+  "preset": "clean-minimal",
+  "lang": "en",
+  "site": {
+    "brand": "Kestrel Loop",
+    "brand_mark": "KL",
+    "title": "Kestrel Loop | Software and back-office teams in Da Nang",
+    "description": "Kestrel Loop runs software, QA and accounting teams in Da Nang for product companies and accounting firms in the US, the UK and Australia."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          { "label": "Services", "href": "#services" },
+          { "label": "How we work", "href": "#how-we-work" },
+          { "label": "Industries", "href": "#industries" },
+          { "label": "Contact", "href": "#get-started" }
+        ],
+        "cta": { "label": "Contact us", "href": "#get-started" }
+      }
+    },
+    {
+      "type": "hero-ribbons",
+      "data": {
+        "eyebrow": "Software and back-office outsourcing",
+        "title": "Software and accounting teams in *Da Nang*",
+        "lead": "Kestrel Loop builds web products, tests releases and keeps the books for companies in the US, the UK and Australia, with 140 staff in one Da Nang office.",
+        "primary_cta": { "label": "Get a quote", "href": "#get-started" },
+        "secondary_cta": { "label": "Our services", "href": "#services" },
+        "proof": ["ISO 27001 certified", "Founded 2014", "UK and US hours covered"],
+        "home_city": "da-nang",
+        "arc_cities": ["new-york", "london", "sydney", "san-francisco"],
+        "carousel_label": "Kestrel Loop at a glance",
+        "slides": [
+          { "globe": true, "tag": "Delivery", "label": "One Da Nang office, clients on three continents" },
+          { "tag": "Engineering", "label": "Web, mobile and QA squads", "photo": { "src": "code-review-pair", "alt": "Two engineers reviewing a pull request together" } },
+          { "tag": "Back office", "label": "Bookkeeping and payroll desks", "photo": { "src": "bookkeeping-calculator-laptop", "alt": "Accountant reconciling a ledger on a laptop" } }
+        ],
+        "stats": [
+          { "value": "140", "label": "Staff in Da Nang" },
+          { "value": "12", "label": "Years in business" },
+          { "value": "60+", "label": "Active clients" },
+          { "value": "3", "label": "Continents served" }
+        ],
+        "echo": ["get-started"]
+      }
+    },
+    {
+      "type": "services-stack",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services",
+          "lead": "Four service lines run from the same office, so one account manager can staff a product squad and a bookkeeping desk under one contract."
+        },
+        "cards": [
+          {
+            "tag": "Web and mobile", "icon": "code",
+            "title": "Product squads for web and mobile apps",
+            "text": "Squads of four to eight engineers build React, Node and Flutter products, join your sprint rituals and hand over code in your own repositories.",
+            "bullets": ["React, Node and Flutter", "Sprint demos every two weeks", "Code stays in your repositories", "Design and QA inside the squad"],
+            "photo": { "src": "developer-headphones-monitors", "alt": "Developer working across two monitors" },
+            "link": { "label": "Staff a squad", "href": "#get-started" }
+          },
+          {
+            "tag": "QA and testing", "icon": "bug",
+            "title": "Release testing for weekly deploys",
+            "text": "Testers write the regression suite with your team, automate it in Playwright and run it on every release candidate before it reaches users.",
+            "bullets": ["Playwright and Cypress suites", "Manual checks on real devices", "Bug reports in your tracker"],
+            "photo": { "src": "team-engineers-screen", "alt": "QA engineers going through a test run on a large screen" },
+            "link": { "label": "Plan a QA team", "href": "#get-started" }
+          },
+          {
+            "tag": "Accounting", "icon": "calculator",
+            "title": "Bookkeeping and payroll for accounting firms",
+            "text": "Accountants close the books in QuickBooks and Xero for your clients, prepare payroll runs and send every file through a reviewer before it leaves the desk.",
+            "bullets": ["Monthly close in QuickBooks and Xero", "Payroll preparation", "Second-person review on every file"],
+            "photo": { "src": "accounting-documents-calculator", "alt": "Accounting documents and a calculator on a desk" },
+            "link": { "label": "Add a bookkeeping desk", "href": "#get-started" }
+          },
+          {
+            "tag": "Data services", "icon": "database",
+            "title": "Data entry, cleanup and document processing",
+            "text": "Operators extract, check and load invoice, order and claim data into your systems, with daily counts and error rates in a shared sheet.",
+            "bullets": ["Invoice and order extraction", "Daily output and error counts", "Work inside your systems"],
+            "photo": { "src": "office-worker-laptop", "alt": "Operator processing documents on a laptop" },
+            "link": { "label": "Talk to our team", "href": "#get-started" }
+          }
+        ]
+      }
+    },
+    {
+      "type": "models-board",
+      "data": {
+        "head": {
+          "eyebrow": "How we work",
+          "title": "Who does what in each model",
+          "lead": "Pick an engagement model to see which tasks stay with your team and which ones Kestrel Loop runs."
+        },
+        "tabs_label": "Engagement models",
+        "board_label": "Task",
+        "columns": { "you": "Your team", "shared": "Shared", "us": "Kestrel Loop" },
+        "tasks": ["Product roadmap", "Hiring", "Sprint planning", "Testing and release", "Payroll and HR", "Office and equipment"],
+        "models": [
+          {
+            "name": "Dedicated squad", "fit": "Products with a long backlog",
+            "title": "A squad that works only on your product",
+            "text": "We hire the squad to your stack and manage its people matters. You set the roadmap and priorities, and the squad lead plans sprints with your product owner.",
+            "bullets": ["Monthly fee per squad member", "Squad lead included", "Scale by one person at a time"],
+            "badge": { "value": "22", "label": "Squads running today" },
+            "owners": ["you", "us", "shared", "shared", "us", "us"]
+          },
+          {
+            "name": "Fixed-scope project", "fit": "A defined build with a deadline",
+            "title": "One price for an agreed scope",
+            "text": "After a paid discovery week we agree the scope, milestones and price. Kestrel Loop plans, builds and tests the release and hands it over with documentation.",
+            "bullets": ["Discovery week before the quote", "Milestone payments", "Handover with documentation"],
+            "owners": ["shared", "us", "us", "us", "us", "us"]
+          },
+          {
+            "name": "Team extension", "fit": "One or two missing skills",
+            "title": "Specialists who join your own team",
+            "text": "Engineers or accountants work inside your team and tools and report to your managers. Kestrel Loop employs them and handles payroll, equipment and the office.",
+            "bullets": ["You interview every candidate", "Your tools and your managers", "We run payroll and HR"],
+            "owners": ["you", "shared", "you", "you", "us", "us"]
+          }
+        ],
+        "note": "Sample split. The contract lists the final responsibilities for each engagement.",
+        "cta": { "label": "Get a quote", "href": "#get-started" }
+      }
+    },
+    {
+      "type": "industries-rows",
+      "id": "industries",
+      "data": {
+        "head": {
+          "eyebrow": "Industries",
+          "title": "Who we work with",
+          "lead": "Most clients are software companies and accounting firms; the rest come from logistics, health and retail."
+        },
+        "cta": { "label": "Contact us", "href": "#get-started" },
+        "items": [
+          { "icon": "code", "title": "Software companies", "text": "Product squads and QA for SaaS teams that ship every week." },
+          { "icon": "receipt", "title": "Accounting firms", "text": "Bookkeeping and payroll desks for CPA and chartered firms in busy season." },
+          { "icon": "truck", "title": "Logistics", "text": "Order data processing and dispatch tools for freight and delivery companies." },
+          { "icon": "heart-pulse", "title": "Healthcare", "text": "Claims data entry and patient portal work with access limited to named staff." },
+          { "icon": "shopping-cart", "title": "Retail and e-commerce", "text": "Store builds, catalog updates and order cleanup for online sellers." }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "eyebrow": "Contact",
+        "title": "Tell us what you need to *build or hand off*",
+        "text": "Send a short brief and a solutions lead replies with a team plan and a price range.",
+        "primary_cta": { "label": "Get a quote", "href": "mailto:hello@kestrelloop.example" },
+        "secondary_cta": { "label": "Our services", "href": "#services" }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Software, QA, accounting and data teams in Da Nang for clients in the US, the UK and Australia.",
+        "contacts": [
+          { "icon": "mail", "label": "hello@kestrelloop.example", "href": "mailto:hello@kestrelloop.example" },
+          { "icon": "map-pin", "label": "Hai Chau District, Da Nang" }
+        ],
+        "columns": [
+          { "heading": "Services", "links": [ { "label": "Web and mobile", "href": "#services" }, { "label": "QA and testing", "href": "#services" }, { "label": "Accounting", "href": "#services" } ] },
+          { "heading": "Company", "links": [ { "label": "How we work", "href": "#how-we-work" }, { "label": "Industries", "href": "#industries" }, { "label": "Contact", "href": "#get-started" } ] }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

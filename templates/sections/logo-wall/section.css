@@ -1,0 +1,18 @@
+/* logo-wall: logo-wall-cycle */
+.bl-logowall__label { text-align: center; font-size: var(--fs-sm); font-weight: 600; color: var(--text-muted); margin-bottom: 1.75rem; }
+.bl-logowall__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.bl-logowall__grid--12 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+/* before JS runs, every logo is its own cell; JS regroups them into cells of up to three */
+.bl-logowall__logo, .bl-logowall__cell { display: grid; place-items: center; aspect-ratio: 16 / 9; padding: 1rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.bl-logowall__cell { position: relative; overflow: hidden; padding: 0; }
+.bl-logowall__cell .bl-logowall__logo { grid-area: 1 / 1; width: 100%; height: 100%; border: 0; padding: 1rem; opacity: 0; transform: translateY(100%); transition: transform .6s var(--ease-out), opacity .6s var(--ease-out); }
+.bl-logowall__cell .bl-logowall__logo.is-on { opacity: 1; transform: none; }
+.bl-logowall__cell .bl-logowall__logo.is-off { opacity: 0; transform: translateY(-100%); }
+.bl-logowall__logo img { max-width: 100%; max-height: 36px; object-fit: contain; filter: grayscale(1); opacity: .75; }
+.bl-logowall__logo .bl-wordmark { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--text-muted); text-align: center; }
+@media (max-width: 760px) {
+  .bl-logowall__grid, .bl-logowall__grid--12 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-logowall__cell .bl-logowall__logo { transition: none; }
+}

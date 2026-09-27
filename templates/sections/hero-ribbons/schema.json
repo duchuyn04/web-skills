@@ -1,0 +1,152 @@
+{
+  "variant": "hero-ribbons",
+  "group": "hero",
+  "summary": "Brand-colour hero with animated line ribbons that bend away from the pointer, a headline that rises word by word with a marker sweep on the accent words, and a carousel on the right that alternates a rotating dotted globe (drag to turn, flight arcs from the home city) with arched photo slides. One button pauses every motion. Optional echo: the same ribbons behind chosen dark sections further down.",
+  "tone": "accent",
+  "anchor": "top",
+  "shared": [
+    "hero",
+    "ribbons"
+  ],
+  "animations": [
+    "flowing-line-ribbons",
+    "word-rise-headline",
+    "marker-sweep-accent",
+    "dotted-globe-network",
+    "carousel-progress-dots",
+    "reveal"
+  ],
+  "fields": {
+    "eyebrow": {
+      "type": "text",
+      "min": 3,
+      "max": 44,
+      "required": false
+    },
+    "title": {
+      "type": "markup",
+      "min": 12,
+      "max": 90
+    },
+    "lead": {
+      "type": "text",
+      "min": 60,
+      "max": 230
+    },
+    "primary_cta": {
+      "$ref": "cta"
+    },
+    "secondary_cta": {
+      "$ref": "cta",
+      "required": false
+    },
+    "proof": {
+      "type": "list",
+      "min": 0,
+      "max": 3,
+      "default": [],
+      "item": {
+        "type": "text",
+        "min": 3,
+        "max": 36
+      }
+    },
+    "home_city": {
+      "type": "city",
+      "required": false
+    },
+    "arc_cities": {
+      "type": "list",
+      "min": 0,
+      "max": 8,
+      "default": [],
+      "item": {
+        "type": "city"
+      }
+    },
+    "carousel_label": {
+      "type": "text",
+      "min": 3,
+      "max": 60,
+      "default": "Highlights"
+    },
+    "slides": {
+      "type": "list",
+      "min": 2,
+      "max": 4,
+      "item": {
+        "type": "object",
+        "fields": {
+          "globe": {
+            "type": "bool",
+            "default": false
+          },
+          "tag": {
+            "type": "text",
+            "min": 2,
+            "max": 24
+          },
+          "label": {
+            "type": "text",
+            "min": 3,
+            "max": 48
+          },
+          "photo": {
+            "$ref": "photo",
+            "required": false
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "list",
+      "min": 0,
+      "max": 4,
+      "default": [],
+      "item": {
+        "type": "object",
+        "fields": {
+          "value": {
+            "type": "text",
+            "min": 1,
+            "max": 12
+          },
+          "label": {
+            "type": "text",
+            "min": 3,
+            "max": 32
+          }
+        }
+      }
+    },
+    "echo": {
+      "type": "list",
+      "min": 0,
+      "max": 4,
+      "default": [],
+      "item": {
+        "type": "text",
+        "min": 2,
+        "max": 32
+      }
+    },
+    "pause_label": {
+      "type": "text",
+      "min": 3,
+      "max": 32,
+      "default": "Pause animation"
+    },
+    "play_label": {
+      "type": "text",
+      "min": 3,
+      "max": 32,
+      "default": "Play animation"
+    },
+    "slide_label": {
+      "type": "text",
+      "min": 3,
+      "max": 24,
+      "default": "Show slide"
+    }
+  }
+}

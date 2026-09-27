@@ -22,3 +22,14 @@
 .bl-footer__legal { display: flex; gap: 1.25rem; }
 .bl-footer__legal a:hover { color: var(--text-strong); }
 @media (max-width: 1024px) { .bl-footer__top { grid-template-columns: 1fr; } }
+
+/* footer-wordmark-rise: brand name edge to edge; section.js fits the size and splits letters */
+.bl-footer__wordmark {
+  margin-top: clamp(1.5rem, 4vw, 3rem); padding-inline: var(--gutter); overflow: hidden; white-space: nowrap; text-align: center;
+  font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.04em; line-height: .82; font-size: 18vw;
+  color: color-mix(in srgb, var(--text-strong) 12%, transparent);
+}
+.bl-wm-inner { display: inline-block; }
+.bl-footer__wordmark .bl-wm-l { display: inline-block; transform: translateY(0); }
+.js .bl-footer__wordmark.is-ready .bl-wm-l { transform: translateY(105%); transition: transform .9s var(--ease-out); transition-delay: calc(var(--l, 0) * 40ms); }
+.js .bl-footer__wordmark.is-in .bl-wm-l { transform: none; }

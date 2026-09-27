@@ -1,0 +1,417 @@
+{
+  "_note": "Shows the research-05 variants: hero-chat, logo-wall, metrics-rings, case-filter (proof slot), testimonials-drift (proof-extra slot) and the footer wordmark. Tidewell Support is a fictional company; every figure, client, quote and case below is sample data.",
+  "archetype": "enterprise-cx",
+  "preset": "human-warm",
+  "lang": "en",
+  "site": {
+    "brand": "Tidewell",
+    "brand_mark": "TW",
+    "title": "Tidewell | Customer support teams in Cebu",
+    "description": "Tidewell runs chat, email and voice support teams in Cebu for subscription apps, online retailers and travel companies in the US and Australia."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Results",
+            "href": "#results"
+          },
+          {
+            "label": "Case studies",
+            "href": "#case-studies"
+          },
+          {
+            "label": "Reviews",
+            "href": "#testimonials"
+          }
+        ],
+        "cta": {
+          "label": "Get a quote",
+          "href": "#contact"
+        }
+      }
+    },
+    {
+      "type": "hero-chat",
+      "data": {
+        "eyebrow": "Customer support outsourcing",
+        "title": "Chat and voice support teams in *Cebu*",
+        "lead": "Tidewell answers chat, email and phone for subscription apps and online stores, with 320 agents on US and Australian hours.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#contact"
+        },
+        "secondary_cta": {
+          "label": "See case studies",
+          "href": "#case-studies"
+        },
+        "proof": [
+          "320 agents",
+          "Zendesk and Gorgias certified",
+          "Weekend coverage"
+        ],
+        "chat": {
+          "title": "Help center chat",
+          "status": "Online",
+          "sample_label": "Sample conversation",
+          "agent_name": "Tidewell agent",
+          "customer_name": "Customer",
+          "messages": [
+            {
+              "text": "Hi, I was charged twice for my March plan."
+            },
+            {
+              "agent": true,
+              "text": "Sorry about that. I can see both charges on your account, so I am refunding the second one now."
+            },
+            {
+              "text": "Thanks. How long will it take?"
+            },
+            {
+              "agent": true,
+              "text": "The refund is sent. Your bank usually shows it within 3 to 5 business days, and I have emailed you the receipt."
+            }
+          ],
+          "result": "Resolved in one reply"
+        }
+      }
+    },
+    {
+      "type": "logo-wall",
+      "data": {
+        "label": "Support partner for subscription apps, retailers and travel brands",
+        "cells": "8",
+        "mode": "once",
+        "logos": [
+          {
+            "name": "Brightcart"
+          },
+          {
+            "name": "Nimbus Fit"
+          },
+          {
+            "name": "Orbit Travel"
+          },
+          {
+            "name": "Pillowy"
+          },
+          {
+            "name": "Quill Books"
+          },
+          {
+            "name": "Rivermint"
+          },
+          {
+            "name": "Solace Pet"
+          },
+          {
+            "name": "Tandem Bikes"
+          },
+          {
+            "name": "Uplift Learn"
+          },
+          {
+            "name": "Verde Home"
+          },
+          {
+            "name": "Wayfare"
+          },
+          {
+            "name": "Yonder Stays"
+          },
+          {
+            "name": "Zestly"
+          },
+          {
+            "name": "Acorn Pay"
+          },
+          {
+            "name": "Beacon Tax"
+          },
+          {
+            "name": "Cobalt Mobile"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services",
+          "lead": "Every team works inside your help desk, follows your macros and reports in your own dashboards."
+        },
+        "cards": [
+          {
+            "icon": "message-circle",
+            "title": "Chat and email support",
+            "text": "Agents handle chat and email queues in Zendesk, Gorgias or Intercom, with a team lead reviewing tone and accuracy every week.",
+            "bullets": [
+              "Zendesk, Gorgias and Intercom",
+              "Weekly QA scoring",
+              "Macros kept up to date"
+            ]
+          },
+          {
+            "icon": "headset",
+            "title": "Voice support",
+            "text": "Phone agents take inbound calls for billing, orders and account questions on US and Australian business hours."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Refunds and disputes",
+            "text": "A trained desk handles refunds, chargebacks and fraud checks under your approval limits."
+          },
+          {
+            "icon": "languages",
+            "title": "Spanish and Tagalog",
+            "text": "Bilingual agents cover Spanish and Tagalog queues from the same Cebu floor."
+          }
+        ]
+      }
+    },
+    {
+      "type": "metrics-rings",
+      "data": {
+        "eyebrow": "Service levels",
+        "title": "Last quarter across all teams",
+        "items": [
+          {
+            "value": 94,
+            "label": "Chats answered within 60 seconds"
+          },
+          {
+            "value": 91,
+            "label": "Customer satisfaction score"
+          },
+          {
+            "value": 97.5,
+            "decimals": 1,
+            "label": "QA accuracy on reviewed tickets"
+          },
+          {
+            "value": 88,
+            "label": "Agent retention after 12 months"
+          }
+        ]
+      }
+    },
+    {
+      "type": "case-filter",
+      "data": {
+        "head": {
+          "eyebrow": "Case studies",
+          "title": "Case studies",
+          "lead": "Four programs, filtered by industry. Each started as a pilot of 10 agents or fewer."
+        },
+        "cases": [
+          {
+            "client": "Nimbus Fit",
+            "industry": "Subscription apps",
+            "photo": {
+              "src": "desk-phone-monitors",
+              "alt": "Support desk with a phone and two monitors"
+            },
+            "title": "Cancellation queue cut in half with a retention desk",
+            "results": [
+              {
+                "value": "52%",
+                "label": "fewer cancel tickets"
+              },
+              {
+                "value": "24",
+                "label": "agents"
+              }
+            ]
+          },
+          {
+            "client": "Brightcart",
+            "industry": "Retail",
+            "photo": {
+              "src": "ecommerce-packing",
+              "alt": "Online orders being packed for shipping"
+            },
+            "title": "Holiday peak covered with 40 extra chat agents in three weeks",
+            "results": [
+              {
+                "value": "40",
+                "label": "extra agents"
+              },
+              {
+                "value": "58s",
+                "label": "first reply"
+              }
+            ]
+          },
+          {
+            "client": "Orbit Travel",
+            "industry": "Travel",
+            "photo": {
+              "src": "laptop-conference-room",
+              "alt": "Travel support lead reviewing bookings on a laptop"
+            },
+            "title": "Weekend rebooking line for flight changes and refunds",
+            "results": [
+              {
+                "value": "7",
+                "label": "days a week"
+              },
+              {
+                "value": "89%",
+                "label": "resolved on first call"
+              }
+            ]
+          },
+          {
+            "client": "Solace Pet",
+            "industry": "Retail",
+            "photo": {
+              "src": "warehouse-aisle-boxes",
+              "alt": "Warehouse aisle with boxed orders"
+            },
+            "title": "Order tracking and returns moved from email to chat",
+            "results": [
+              {
+                "value": "3x",
+                "label": "faster replies"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "testimonials-drift",
+      "data": {
+        "head": {
+          "eyebrow": "Reviews",
+          "title": "What clients say"
+        },
+        "items": [
+          {
+            "quote": "The Cebu team picked up our macros in a week and our weekend backlog is gone.",
+            "name": "Dana Whitfield",
+            "role": "Head of Support",
+            "company": "Nimbus Fit"
+          },
+          {
+            "quote": "They added forty agents for the holidays and our first reply time went down, not up.",
+            "name": "Marco Delgado",
+            "role": "VP Customer Experience",
+            "company": "Brightcart"
+          },
+          {
+            "quote": "Weekend rebookings used to wait until Monday. Now they are done the same day.",
+            "name": "Priya Raman",
+            "role": "Operations Manager",
+            "company": "Orbit Travel"
+          },
+          {
+            "quote": "QA reports arrive every Friday and match what we see in Zendesk.",
+            "name": "Tom Hale",
+            "role": "Support Lead",
+            "company": "Quill Books"
+          },
+          {
+            "quote": "Refund decisions follow our limits exactly, which was our biggest worry.",
+            "name": "Ana Souza",
+            "role": "Finance Director",
+            "company": "Acorn Pay"
+          },
+          {
+            "quote": "Our Spanish queue finally has the same service level as English.",
+            "name": "Luis Ortega",
+            "role": "Support Manager",
+            "company": "Wayfare"
+          }
+        ]
+      }
+    },
+    {
+      "type": "contact-split",
+      "data": {
+        "head": {
+          "eyebrow": "Contact",
+          "title": "Start with a pilot of *ten agents*"
+        },
+        "form": {
+          "title": "Tell us about your queues",
+          "text": "Send your ticket volumes and hours; we reply with a team plan and a monthly price.",
+          "phone_label": "Phone (optional)",
+          "submit_label": "Send message",
+          "success_title": "Thanks, we have your message",
+          "success_text": "A Tidewell program lead will email you to set up a call.",
+          "note": "We only use your details to reply to this request."
+        },
+        "aside": {
+          "title": "What a pilot includes",
+          "points": [
+            "Ten agents trained on your macros",
+            "Weekly QA scoring from week one",
+            "Reports in your own help desk"
+          ],
+          "offices": [
+            {
+              "flag": "ph",
+              "name": "Philippines",
+              "address": "IT Park, Lahug, Cebu City",
+              "phone": "(+63) 32 555 0188"
+            }
+          ],
+          "email_label": "New programs",
+          "email": "hello@tidewell.example"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Chat, email and voice support teams in Cebu for subscription apps, retailers and travel companies.",
+        "contacts": [
+          {
+            "icon": "mail",
+            "label": "hello@tidewell.example",
+            "href": "mailto:hello@tidewell.example"
+          }
+        ],
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Chat and email",
+                "href": "#services"
+              },
+              {
+                "label": "Voice support",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Case studies",
+                "href": "#case-studies"
+              },
+              {
+                "label": "Reviews",
+                "href": "#testimonials"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved.",
+        "wordmark": true
+      }
+    }
+  ]
+}

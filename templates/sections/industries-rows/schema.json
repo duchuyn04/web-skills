@@ -1,0 +1,53 @@
+{
+  "variant": "industries-rows",
+  "group": "industries",
+  "summary": "Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none.",
+  "tone": "auto",
+  "anchor": "industries",
+  "animations": [
+    "row-fill-sweep",
+    "cursor-follow-card",
+    "line-draw-reveal"
+  ],
+  "fields": {
+    "head": {
+      "$ref": "head"
+    },
+    "cta": {
+      "$ref": "cta"
+    },
+    "link_label": {
+      "type": "text",
+      "min": 3,
+      "max": 30,
+      "default": "Discuss a project"
+    },
+    "items": {
+      "type": "list",
+      "min": 4,
+      "max": 8,
+      "item": {
+        "type": "object",
+        "fields": {
+          "icon": {
+            "type": "icon"
+          },
+          "title": {
+            "type": "text",
+            "min": 3,
+            "max": 32
+          },
+          "text": {
+            "type": "text",
+            "min": 30,
+            "max": 140
+          },
+          "href": {
+            "type": "href",
+            "required": false
+          }
+        }
+      }
+    }
+  }
+}

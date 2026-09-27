@@ -1,0 +1,27 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-services-stack" data-sstack>
+  <div class="bl-container">
+    {{> head-split}}
+    <ol class="bl-services-stack__list">
+      {{#cards}}
+      <li class="bl-services-stack__item" style="--i: {{@index}}">
+        <article class="bl-services-stack__card" data-scard>
+          <span class="bl-services-stack__shade" aria-hidden="true"></span>
+          <div class="bl-services-stack__copy">
+            <div class="bl-services-stack__meta">
+              <span class="bl-services-stack__num bl-mono">{{@num}}</span>
+              <span class="bl-services-stack__tag">{{icon:$icon}}{{tag}}</span>
+            </div>
+            <h3 class="bl-services-stack__title">{{title}}</h3>
+            <p class="bl-services-stack__text">{{text}}</p>
+            <ul class="bl-checks bl-services-stack__checks">{{#bullets}}<li>{{icon:check}}<span>{{.}}</span></li>{{/bullets}}</ul>
+            {{#link}}<a class="bl-services-stack__link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+          </div>
+          <div class="bl-services-stack__media">
+            <img src="{{photo.src}}" alt="{{photo.alt}}" width="720" height="560" loading="lazy" decoding="async">
+          </div>
+        </article>
+      </li>
+      {{/cards}}
+    </ol>
+  </div>
+</section>

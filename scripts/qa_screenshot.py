@@ -141,6 +141,8 @@ def main():
             if args.sections:
                 sdir = out / ("sections-%d" % w)
                 sdir.mkdir(exist_ok=True)
+                # Scroll-linked layouts (sticky stacks) lay out flat for element shots.
+                page.evaluate("document.documentElement.classList.add('bl-shot'); window.dispatchEvent(new Event('resize'))")
                 els = page.query_selector_all("body > header, main > *, body > footer")
                 for i, el in enumerate(els):
                     sid = el.get_attribute("id") or "section"

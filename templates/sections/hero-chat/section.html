@@ -1,0 +1,31 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero-chat bl-tone-{{section.tone}}">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-glow bl-glow--a"></span><span class="bl-glow bl-glow--b"></span><span class="bl-hero__grid"></span></div>
+  <div class="bl-container bl-hero-chat__grid">
+    <div class="bl-hero-chat__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}{{arrow}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    <div class="bl-hero-chat__visual" data-reveal="fade">
+      <div class="bl-chatwin" data-chat>
+        <div class="bl-chatwin__bar">
+          <span class="bl-chatwin__avatar" aria-hidden="true">{{icon:headset}}</span>
+          <span class="bl-chatwin__who"><strong>{{chat.title}}</strong><small><i class="bl-chatwin__dot" aria-hidden="true"></i>{{chat.status}}</small></span>
+          <span class="bl-chatwin__sample">{{chat.sample_label}}</span>
+          <button class="bl-chatwin__ctl" type="button" data-chat-ctl data-label-pause="{{pause_label}}" data-label-replay="{{replay_label}}">{{pause_label}}</button>
+        </div>
+        <ol class="bl-sr-only">{{#chat.messages}}<li>{{#agent}}{{chat.agent_name}}{{/agent}}{{^agent}}{{chat.customer_name}}{{/agent}}: {{text}}</li>{{/chat.messages}}{{#chat.result}}<li>{{chat.result}}</li>{{/chat.result}}</ol>
+        <div class="bl-chatwin__log" aria-hidden="true">
+          {{#chat.messages}}<div class="bl-chatwin__msg bl-chatwin__msg--{{#agent}}agent{{/agent}}{{^agent}}customer{{/agent}}" data-msg><span class="bl-chatwin__name">{{#agent}}{{chat.agent_name}}{{/agent}}{{^agent}}{{chat.customer_name}}{{/agent}}</span><p>{{text}}</p></div>{{/chat.messages}}
+          <div class="bl-chatwin__typing" data-typing><i></i><i></i><i></i></div>
+          {{#chat.result}}<p class="bl-chatwin__result" data-msg>{{icon:check-circle}}<span>{{chat.result}}</span></p>{{/chat.result}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

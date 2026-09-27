@@ -262,3 +262,13 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   .js [data-reveal] { opacity: 1; translate: none; scale: none; }
 }
+
+/* Page-wide motion switch: base.js sets data-motion="paused" on <html> */
+html[data-motion="paused"] *, html[data-motion="paused"] *::before, html[data-motion="paused"] *::after { animation-play-state: paused !important; }
+.bl-motion-toggle { display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .75rem; border-radius: var(--radius-btn); border: 1px solid var(--border); background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.bl-motion-toggle:hover { color: var(--text-strong); border-color: var(--border-strong); }
+.bl-motion-toggle:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+.bl-motion-toggle .bl-icon { width: 14px; height: 14px; fill: currentColor; }
+.bl-motion-toggle__play, html[data-motion="paused"] .bl-motion-toggle__pause { display: none; }
+html[data-motion="paused"] .bl-motion-toggle__play { display: inline; }
+@media (prefers-reduced-motion: reduce) { .bl-motion-toggle { display: none; } }

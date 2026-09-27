@@ -1,10 +1,10 @@
 {
   "variant": "footer-columns",
   "group": "footer",
-  "summary": "Dark footer: brand blurb, contacts and social icons, 2-4 link columns, legal bar with optional certification line.",
+  "summary": "Dark footer: brand blurb, contacts and social icons, 2-4 link columns, legal bar with optional certification line and a page-wide Pause animations button. Optional wordmark: the brand name set edge to edge in very large type, letters rising in as the footer enters.",
   "tone": "dark",
   "anchor": "site-footer",
-  "animations": [],
+  "animations": ["footer-wordmark-rise", "page-motion-switch"],
   "fields": {
     "blurb": {"type": "text", "min": 40, "max": 200},
     "contacts": {
@@ -32,6 +32,10 @@
     },
     "legal": {"type": "text", "min": 5, "max": 90},
     "legal_links": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"$ref": "cta"}},
-    "certifications": {"type": "text", "min": 5, "max": 90, "required": false}
+    "certifications": {"type": "text", "min": 5, "max": 90, "required": false},
+    "motion_toggle": {"type": "bool", "default": true},
+    "pause_label": {"type": "text", "min": 3, "max": 30, "default": "Pause animations"},
+    "play_label": {"type": "text", "min": 3, "max": 30, "default": "Play animations"},
+    "wordmark": {"type": "bool", "default": false}
   }
 }
