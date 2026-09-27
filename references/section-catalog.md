@@ -45,7 +45,7 @@ Company introduction: heading and one or two paragraphs (with **bold** key terms
 Fields:
 
 - `eyebrow`: text 3-40 chars (optional)
-- `title`: text with *accent* 12-80 chars
+- `title`: text with *accent* 6-80 chars
 - `paragraphs`: list of 1-2 (each markup 60-420 chars)
 - `points`: list of 0-4 (optional) (each text 6-80 chars)
 - `cta`: object (optional)
@@ -68,7 +68,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `cards`: list of 2-3, each item:
   - `icon`: icon name (optional)
@@ -113,7 +113,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `prev_label`: text 2-20 chars (optional, default "Previous case")
 - `next_label`: text 2-20 chars (optional, default "Next case")
@@ -144,7 +144,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `points`: list of 2-4 (optional) (each text 6-90 chars)
 - `badges`: list of 1 or 2 or 3 or 4 or 6, each item:
@@ -165,7 +165,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `form`: object
   - `title`: text 5-60 chars
@@ -204,7 +204,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `points`: list of 2-4 (each text 6-90 chars)
 - `card_title`: text 10-60 chars
@@ -263,7 +263,7 @@ Closing conversion block: pitch, reassurance points and direct contacts on the l
 Fields:
 
 - `eyebrow`: text 3-40 chars (optional)
-- `title`: text with *accent* 15-80 chars
+- `title`: text with *accent* 8-80 chars
 - `lead`: text 50-240 chars
 - `points`: list of 2-4 (each text 6-90 chars)
 - `contacts`: list of 0-3 (optional), each item:
@@ -321,7 +321,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `aside`: object (optional)
   - `title`: text 8-60 chars
@@ -346,7 +346,7 @@ Fields:
 
 - `head`: object (optional)
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `start`: one of image-right, image-left (optional, default "image-right")
 - `rows`: list of 2-4, each item:
@@ -486,7 +486,7 @@ Split hero whose right side is a 3x3 collage of three round team photos and six 
 Fields:
 
 - `eyebrow`: text 3-44 chars (optional)
-- `title`: text with *accent* 20-90 chars
+- `title`: text with *accent* 12-90 chars
 - `lead`: text 60-230 chars
 - `primary_cta`: object
   - `label`: text 2-30 chars
@@ -542,7 +542,7 @@ Dark hero over an animated canvas node network that tilts with the mouse; copy o
 Fields:
 
 - `eyebrow`: text 3-44 chars (optional)
-- `title`: text with *accent* 20-90 chars
+- `title`: text with *accent* 12-90 chars
 - `lead`: text 60-230 chars
 - `primary_cta`: object
   - `label`: text 2-30 chars
@@ -572,7 +572,7 @@ Full-width hero over a background photo or looping video with a brand-colored sh
 Fields:
 
 - `eyebrow`: text 3-44 chars (optional)
-- `title`: text with *accent* 20-90 chars
+- `title`: text with *accent* 12-90 chars
 - `lead`: text 60-230 chars
 - `primary_cta`: object
   - `label`: text 2-30 chars
@@ -602,7 +602,7 @@ Hero painted in the brand colour with a soft gradient and fine wave lines; copy 
 Fields:
 
 - `eyebrow`: text 3-44 chars (optional)
-- `title`: text with *accent* 20-90 chars
+- `title`: text with *accent* 12-90 chars
 - `lead`: text 60-230 chars
 - `primary_cta`: object
   - `label`: text 2-30 chars
@@ -627,7 +627,7 @@ Hero with a quick-pick card on the right: a short question (for example 'What do
 Fields:
 
 - `eyebrow`: text 3-44 chars (optional)
-- `title`: text with *accent* 20-90 chars
+- `title`: text with *accent* 12-90 chars
 - `lead`: text 60-230 chars
 - `primary_cta`: object (optional)
   - `label`: text 2-30 chars
@@ -653,7 +653,7 @@ Headline, lead and two CTAs on the left; large photo on the right with up to 3 f
 Fields:
 
 - `eyebrow`: text 3-44 chars (optional)
-- `title`: text with *accent* 20-90 chars
+- `title`: text with *accent* 12-90 chars
 - `lead`: text 60-230 chars
 - `primary_cta`: object
   - `label`: text 2-30 chars
@@ -683,7 +683,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `view_all`: object (optional)
   - `label`: text 2-30 chars
@@ -716,7 +716,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `tiles`: list of 4 or 6 or 8, each item:
   - `icon`: icon name
@@ -736,7 +736,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `hubs`: list of 2-8, each item:
   - `city`: city key
@@ -772,7 +772,7 @@ Dark band with a short heading and 3-4 large numbers that count up once when scr
 Fields:
 
 - `eyebrow`: text 3-40 chars (optional)
-- `title`: text with *accent* 12-80 chars
+- `title`: text with *accent* 6-80 chars
 - `lead`: text 40-200 chars (optional)
 - `items`: list of 3-4, each item:
   - `value`: number (or "[KPI]" placeholder)
@@ -794,7 +794,7 @@ Rounded dark panel inside the page margins: short trust statement on the left, f
 Fields:
 
 - `eyebrow`: text 3-40 chars (optional)
-- `title`: text with *accent* 12-80 chars
+- `title`: text with *accent* 6-80 chars
 - `text`: text 40-280 chars (optional)
 - `items`: list of 4-4, each item:
   - `value`: number (or "[KPI]" placeholder)
@@ -816,7 +816,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `items`: list of 3-3, each item:
   - `title`: text 3-40 chars
@@ -835,7 +835,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `models`: list of 2-2, each item:
   - `label`: text 3-22 chars
@@ -865,7 +865,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `cta`: object (optional)
   - `label`: text 2-30 chars
@@ -930,7 +930,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `cards`: list of 4-5, each item:
   - `icon`: icon name
@@ -954,7 +954,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `tabs`: list of 3-5, each item:
   - `tab`: text 3-22 chars
@@ -1026,7 +1026,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `items`: list of 3-3, each item:
   - `quote`: text 60-280 chars
@@ -1065,7 +1065,7 @@ Fields:
 
 - `head`: object (optional)
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `video`: object
   - `title`: text 5-80 chars
@@ -1090,7 +1090,7 @@ Fields:
 
 - `head`: object
   - `eyebrow`: text 3-40 chars (optional)
-  - `title`: text with *accent* 12-80 chars
+  - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
 - `points`: list of 2-4 (each text 6-90 chars)
 - `play_label`: text 2-20 chars (optional, default "Play sample")

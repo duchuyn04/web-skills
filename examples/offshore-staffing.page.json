@@ -1,568 +1,568 @@
 {
-  "_note": "Starter for archetype offshore-staffing. Lotus Staffing is a fictional company; every figure and price below is sample data. The video block plays the bundled abstract sample clip; use the client's real video (file or YouTube/Vimeo URL) or remove the section. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders.",
-  "archetype": "offshore-staffing",
-  "preset": "human-warm",
-  "lang": "en",
-  "site": {
-    "brand": "Lotus Staffing",
-    "title": "Lotus Staffing | Dedicated offshore teams in Vietnam",
-    "description": "Lotus Staffing hires and manages dedicated support, accounting and QA teams in Ho Chi Minh City and Da Nang for companies in the US, UK and Australia."
-  },
-  "sections": [
-    {
-      "type": "header-simple",
-      "data": {
-        "links": [
-          {
-            "label": "Savings",
-            "href": "#savings"
-          },
-          {
-            "label": "Roles",
-            "href": "#services"
-          },
-          {
-            "label": "Process",
-            "href": "#process"
-          },
-          {
-            "label": "Pricing",
-            "href": "#pricing"
-          },
-          {
-            "label": "FAQ",
-            "href": "#faq"
-          }
-        ],
-        "secondary": {
-          "label": "Client stories",
-          "href": "#testimonials"
-        },
-        "cta": {
-          "label": "Build my team",
-          "href": "#contact"
-        }
-      }
+ "_note": "Starter for archetype offshore-staffing. Lotus Staffing is a fictional company; every figure and price below is sample data. The video block plays the bundled abstract sample clip; use the client's real video (file or YouTube/Vimeo URL) or remove the section. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders.",
+ "archetype": "offshore-staffing",
+ "preset": "human-warm",
+ "lang": "en",
+ "site": {
+  "brand": "Lotus Staffing",
+  "title": "Lotus Staffing | Dedicated offshore teams in Vietnam",
+  "description": "Lotus Staffing hires and manages dedicated support, accounting and QA teams in Ho Chi Minh City and Da Nang for companies in the US, UK and Australia."
+ },
+ "sections": [
+  {
+   "type": "header-simple",
+   "data": {
+    "links": [
+     {
+      "label": "Savings",
+      "href": "#savings"
+     },
+     {
+      "label": "Roles",
+      "href": "#services"
+     },
+     {
+      "label": "Process",
+      "href": "#process"
+     },
+     {
+      "label": "Pricing",
+      "href": "#pricing"
+     },
+     {
+      "label": "FAQ",
+      "href": "#faq"
+     }
+    ],
+    "secondary": {
+     "label": "Client stories",
+     "href": "#testimonials"
     },
-    {
-      "type": "hero-cycler-centered",
-      "data": {
-        "eyebrow": "Dedicated teams in Vietnam",
-        "title_before": "Hire full-time *offshore staff* for",
-        "words": [
-          "customer support",
-          "bookkeeping",
-          "software QA",
-          "sales support",
-          "data entry"
-        ],
-        "lead": "We recruit, employ and manage people who work only on your account, in your tools and your hours. You pay one monthly fee per person and keep full control of the work.",
-        "primary_cta": {
-          "label": "Get a salary guide",
-          "href": "#contact"
-        },
-        "secondary_cta": {
-          "label": "Estimate my savings",
-          "href": "#savings"
-        },
-        "proof": [
-          "Shortlist in 10 days",
-          "No setup fee",
-          "Cancel with 30 days notice"
-        ],
-        "photo": {
-          "src": "team-coworking-laptops",
-          "alt": "Lotus team members working together at a shared table"
-        },
-        "badges": [
-          {
-            "icon": "trending-up",
-            "value": "62%",
-            "label": "Average cost saving"
-          },
-          {
-            "icon": "user-check",
-            "value": "96%",
-            "label": "12-month retention"
-          }
-        ]
-      }
-    },
-    {
-      "type": "logo-marquee",
-      "data": {
-        "label": "Teams we run for growing companies in the US, UK and Australia",
-        "logos": [
-          {
-            "name": "Brightpath"
-          },
-          {
-            "name": "Northwind Labs"
-          },
-          {
-            "name": "Parcel Co"
-          },
-          {
-            "name": "Tidewater"
-          },
-          {
-            "name": "Quill Finance"
-          },
-          {
-            "name": "Everfresh"
-          },
-          {
-            "name": "Juniper HR"
-          }
-        ]
-      }
-    },
-    {
-      "type": "cost-calculator",
-      "data": {
-        "head": {
-          "eyebrow": "Savings calculator",
-          "title": "See what a Vietnam team *costs you per year*",
-          "lead": "Pick a role and team size. Figures include salary, benefits, equipment, office seat and our management fee."
-        },
-        "points": [
-          "One all-in monthly fee per person",
-          "Staff work your hours, including US time zones",
-          "You interview and approve every hire"
-        ],
-        "card_title": "Estimate your annual savings",
-        "roles": [
-          {
-            "label": "Customer support",
-            "onshore": 52000,
-            "offshore": 17400
-          },
-          {
-            "label": "Bookkeeping",
-            "onshore": 61000,
-            "offshore": 21600
-          },
-          {
-            "label": "Software QA",
-            "onshore": 88000,
-            "offshore": 30000
-          }
-        ],
-        "team": {
-          "label": "Team size",
-          "unit": "people",
-          "min": 1,
-          "max": 40,
-          "start": 8
-        },
-        "onshore_label": "Hiring locally (US)",
-        "offshore_label": "Lotus team in Vietnam",
-        "savings_label": "Estimated saving",
-        "cta": {
-          "label": "Get an exact quote",
-          "href": "#contact"
-        },
-        "disclaimer": "Sample figures based on 2025 US median salaries and Lotus standard rates. Your quote depends on seniority, shift and language needs."
-      }
-    },
-    {
-      "type": "services-bento",
-      "data": {
-        "head": {
-          "eyebrow": "Roles we staff",
-          "title": "Full-time people for the work *you do every day*",
-          "lead": "Every hire works only for you, joins your chat channels and follows your processes from week one."
-        },
-        "cards": [
-          {
-            "icon": "headset",
-            "title": "Customer support",
-            "text": "Email, chat and phone agents with C1 English who learn your product and answer in your brand voice.",
-            "bullets": [
-              "Zendesk, Intercom, Gorgias",
-              "Day, evening and night shifts",
-              "Weekly QA scoring"
-            ],
-            "link": {
-              "label": "Hire support staff",
-              "href": "#contact"
-            }
-          },
-          {
-            "icon": "receipt",
-            "title": "Bookkeeping",
-            "text": "Accountants who reconcile, invoice and close the month in Xero or QuickBooks."
-          },
-          {
-            "icon": "bug",
-            "title": "Software QA",
-            "text": "Manual and automation testers who join your sprints and file clean bug reports."
-          },
-          {
-            "icon": "database",
-            "title": "Data operations",
-            "text": "Operators for data entry, catalog updates and CRM clean-up with double-check rules."
-          },
-          {
-            "icon": "briefcase",
-            "title": "Sales support",
-            "text": "Assistants who research leads, update pipelines and book meetings for your reps."
-          }
-        ]
-      }
-    },
-    {
-      "type": "process-sticky",
-      "data": {
-        "head": {
-          "eyebrow": "How it works",
-          "title": "From first call to a working team in *four weeks*",
-          "lead": "A dedicated account manager runs each step and reports to you every Friday."
-        },
-        "cta": {
-          "label": "Start with a call",
-          "href": "#contact"
-        },
-        "steps": [
-          {
-            "label": "Week 1",
-            "title": "Define the roles",
-            "text": "We map tasks, tools, hours and language level with you, then agree on salary bands for each role."
-          },
-          {
-            "label": "Week 2",
-            "title": "Interview a shortlist",
-            "text": "Recruiters send three screened candidates per role. You interview and pick the people you want."
-          },
-          {
-            "label": "Week 3",
-            "title": "Set up and train",
-            "text": "We prepare laptops, secure access and office seats while your team trains the new hires on your process."
-          },
-          {
-            "label": "Week 4",
-            "title": "Go live and review",
-            "text": "Your team starts on live work. The account manager tracks output and runs a 30 day review with you."
-          }
-        ]
-      }
-    },
-    {
-      "type": "video-block",
-      "data": {
-        "head": {
-          "eyebrow": "Inside the office",
-          "title": "Meet the team *before you hire*",
-          "lead": "A two minute walk through our Ho Chi Minh City office, the desks your team would use and the people who manage them."
-        },
-        "video": {
-          "title": "A day at Lotus Staffing, Ho Chi Minh City",
-          "poster": "team-coworking-laptops",
-          "src": "sample-ambient-loop",
-          "duration": "2:10"
-        },
-        "caption": "Filmed on a normal working day. Faces shown with permission."
-      }
-    },
-    {
-      "type": "pricing-toggle",
-      "data": {
-        "head": {
-          "eyebrow": "Pricing",
-          "title": "Two ways to work with us",
-          "lead": "Choose a full-time dedicated team or pay for a shared pool of hours each month."
-        },
-        "models": [
-          {
-            "label": "Dedicated team",
-            "plans": [
-              {
-                "name": "Starter",
-                "price": "$1,450",
-                "unit": "per person / month",
-                "text": "For one to three full-time hires in a single role.",
-                "features": [
-                  "Recruitment and payroll",
-                  "Office seat and equipment",
-                  "Monthly performance review"
-                ],
-                "cta": {
-                  "label": "Choose Starter",
-                  "href": "#contact"
-                }
-              },
-              {
-                "name": "Growth",
-                "price": "$1,350",
-                "unit": "per person / month",
-                "text": "For teams of four or more with a team lead.",
-                "features": [
-                  "Everything in Starter",
-                  "Dedicated team lead",
-                  "Weekly KPI reports",
-                  "Backup staff for leave"
-                ],
-                "cta": {
-                  "label": "Choose Growth",
-                  "href": "#contact"
-                },
-                "featured": true,
-                "badge": "Most chosen"
-              },
-              {
-                "name": "Enterprise",
-                "price": "Custom quote",
-                "text": "For 25 or more staff, several roles or 24/7 shifts.",
-                "features": [
-                  "Everything in Growth",
-                  "Private team room",
-                  "Security audit support"
-                ],
-                "cta": {
-                  "label": "Talk to sales",
-                  "href": "#contact"
-                }
-              }
-            ]
-          },
-          {
-            "label": "Shared service",
-            "plans": [
-              {
-                "name": "Flex 80",
-                "price": "$1,190",
-                "unit": "per month",
-                "text": "80 hours of support or admin work from a shared pool.",
-                "features": [
-                  "Business hours coverage",
-                  "Shared inbox handling",
-                  "Monthly usage report"
-                ],
-                "cta": {
-                  "label": "Choose Flex 80",
-                  "href": "#contact"
-                }
-              },
-              {
-                "name": "Flex 160",
-                "price": "$2,190",
-                "unit": "per month",
-                "text": "160 hours with priority response and a named lead.",
-                "features": [
-                  "Extended hours",
-                  "Named team lead",
-                  "Weekly usage report"
-                ],
-                "cta": {
-                  "label": "Choose Flex 160",
-                  "href": "#contact"
-                },
-                "featured": true,
-                "badge": "Best value"
-              }
-            ]
-          }
-        ],
-        "note": "Prices are sample figures in USD and exclude local taxes."
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "head": {
-          "eyebrow": "Client stories",
-          "title": "Teams that stay *year after year*"
-        },
-        "items": [
-          {
-            "quote": "We started with two support agents and now run a team of fourteen. Response times dropped from six hours to under one, and our US staff now handle enterprise accounts.",
-            "name": "Dana Whitfield",
-            "role": "Head of Customer Success",
-            "company": "Brightpath",
-            "avatar": "avatar-woman-1"
-          },
-          {
-            "quote": "Our month-end close moved from twelve days to six after the Lotus bookkeepers took over reconciliations. They ask good questions and document everything.",
-            "name": "Marcus Lee",
-            "role": "Finance Director",
-            "company": "Quill Finance",
-            "avatar": "avatar-man-2"
-          },
-          {
-            "quote": "The QA engineers joined our sprint rituals in the first week. Release bugs reported by customers fell by half in one quarter.",
-            "name": "Priya Nair",
-            "role": "VP Engineering",
-            "company": "Northwind Labs"
-          }
-        ]
-      }
-    },
-    {
-      "type": "faq-accordion",
-      "data": {
-        "head": {
-          "eyebrow": "FAQ",
-          "title": "Common questions about offshore teams"
-        },
-        "aside": {
-          "title": "Want a salary guide?",
-          "text": "Get current Vietnam salary ranges for 20 common roles, updated every quarter.",
-          "cta": {
-            "label": "Request the guide",
-            "href": "#contact"
-          }
-        },
-        "items": [
-          {
-            "q": "Who is the legal employer of my team?",
-            "a": "Lotus is the employer of record in Vietnam. We handle contracts, payroll, social insurance and local tax, while your managers direct the daily work."
-          },
-          {
-            "q": "Can my team work US hours?",
-            "a": "Yes. Night shifts carry a shift allowance that is included in your quote. Most support teams cover US morning and afternoon hours."
-          },
-          {
-            "q": "How do you protect our data?",
-            "a": "Staff work on company laptops with disk encryption, managed antivirus and no USB storage. Access to your systems runs through your own SSO."
-          },
-          {
-            "q": "What if a hire does not work out?",
-            "a": "We replace any hire who leaves or is not a fit in the first 90 days at no extra cost."
-          },
-          {
-            "q": "Is there a minimum contract?",
-            "a": "Dedicated plans need 30 days notice after a three month first term. Shared plans run month to month."
-          }
-        ]
-      }
-    },
-    {
-      "type": "cta-multistep",
-      "data": {
-        "eyebrow": "Build your team",
-        "title": "Get a team plan and quote in *48 hours*",
-        "lead": "Answer three questions. We reply with candidate availability, salary bands and a monthly price.",
-        "points": [
-          "Free shortlist before you commit",
-          "Interview every candidate yourself",
-          "Start with one person if you like"
-        ],
-        "contacts": [
-          {
-            "icon": "mail",
-            "label": "hello@lotus-staffing.example",
-            "href": "mailto:hello@lotus-staffing.example"
-          },
-          {
-            "icon": "message-circle",
-            "label": "Chat on WhatsApp",
-            "href": "https://wa.me/84000000000"
-          }
-        ],
-        "form": {
-          "step1_title": "Which role do you need first?",
-          "services": [
-            "Customer support",
-            "Bookkeeping",
-            "Software QA",
-            "Data operations",
-            "Sales support"
-          ],
-          "step2_title": "How many people to start?",
-          "sizes": [
-            "1-2 people",
-            "3-5 people",
-            "6-15 people",
-            "16+ people"
-          ],
-          "step3_title": "Where should we send your plan?",
-          "message_label": "Anything we should know? (optional)",
-          "submit_label": "Get my team plan",
-          "success_title": "Thanks, we have your request",
-          "success_text": "Your account manager will email a team plan and quote within 48 hours.",
-          "note": "We only use your details to prepare your plan."
-        }
-      }
-    },
-    {
-      "type": "footer-columns",
-      "data": {
-        "blurb": "Dedicated offshore teams in Ho Chi Minh City and Da Nang for companies in the US, UK and Australia.",
-        "contacts": [
-          {
-            "icon": "mail",
-            "label": "hello@lotus-staffing.example",
-            "href": "mailto:hello@lotus-staffing.example"
-          },
-          {
-            "icon": "map-pin",
-            "label": "District 1, Ho Chi Minh City"
-          }
-        ],
-        "socials": [
-          {
-            "icon": "linkedin",
-            "label": "LinkedIn",
-            "href": "https://www.linkedin.com"
-          },
-          {
-            "icon": "facebook",
-            "label": "Facebook",
-            "href": "https://www.facebook.com"
-          }
-        ],
-        "columns": [
-          {
-            "heading": "Roles",
-            "links": [
-              {
-                "label": "Customer support",
-                "href": "#services"
-              },
-              {
-                "label": "Bookkeeping",
-                "href": "#services"
-              },
-              {
-                "label": "Software QA",
-                "href": "#services"
-              }
-            ]
-          },
-          {
-            "heading": "Company",
-            "links": [
-              {
-                "label": "How it works",
-                "href": "#process"
-              },
-              {
-                "label": "Pricing",
-                "href": "#pricing"
-              },
-              {
-                "label": "Client stories",
-                "href": "#testimonials"
-              }
-            ]
-          }
-        ],
-        "legal": "All rights reserved.",
-        "legal_links": [
-          {
-            "label": "Privacy",
-            "href": "#top"
-          }
-        ]
-      }
-    },
-    {
-      "type": "floating-chat",
-      "data": {
-        "label": "Chat with our team",
-        "status": "Online, Mon to Fri",
-        "href": "https://wa.me/84000000000"
-      }
+    "cta": {
+     "label": "Build my team",
+     "href": "#contact"
     }
-  ]
+   }
+  },
+  {
+   "type": "hero-cycler-centered",
+   "data": {
+    "eyebrow": "Offshore staffing in Vietnam since 2014",
+    "title_before": "Hire full-time *offshore staff* for",
+    "words": [
+     "customer support",
+     "bookkeeping",
+     "software QA",
+     "sales support",
+     "data entry"
+    ],
+    "lead": "Lotus Staffing recruits, employs and manages full-time staff who work only on your account, in your tools and your hours. One monthly fee per person covers salary, benefits, office and equipment.",
+    "primary_cta": {
+     "label": "Get a quote",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Calculate savings",
+     "href": "#savings"
+    },
+    "proof": [
+     "Shortlist in 10 days",
+     "No setup fee",
+     "Cancel with 30 days notice"
+    ],
+    "photo": {
+     "src": "team-coworking-laptops",
+     "alt": "Lotus team members working together at a shared table"
+    },
+    "badges": [
+     {
+      "icon": "trending-up",
+      "value": "62%",
+      "label": "Average cost saving"
+     },
+     {
+      "icon": "user-check",
+      "value": "96%",
+      "label": "12-month retention"
+     }
+    ]
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Teams we run for growing companies in the US, UK and Australia",
+    "logos": [
+     {
+      "name": "Brightpath"
+     },
+     {
+      "name": "Northwind Labs"
+     },
+     {
+      "name": "Parcel Co"
+     },
+     {
+      "name": "Tidewater"
+     },
+     {
+      "name": "Quill Finance"
+     },
+     {
+      "name": "Everfresh"
+     },
+     {
+      "name": "Juniper HR"
+     }
+    ]
+   }
+  },
+  {
+   "type": "cost-calculator",
+   "data": {
+    "head": {
+     "eyebrow": "Savings calculator",
+     "title": "Compare the cost of *hiring in Vietnam*",
+     "lead": "Pick a role and team size. Figures include salary, benefits, equipment, office seat and our management fee."
+    },
+    "points": [
+     "One all-in monthly fee per person",
+     "Staff work your hours, including US time zones",
+     "You interview and approve every hire"
+    ],
+    "card_title": "Estimate your annual savings",
+    "roles": [
+     {
+      "label": "Customer support",
+      "onshore": 52000,
+      "offshore": 17400
+     },
+     {
+      "label": "Bookkeeping",
+      "onshore": 61000,
+      "offshore": 21600
+     },
+     {
+      "label": "Software QA",
+      "onshore": 88000,
+      "offshore": 30000
+     }
+    ],
+    "team": {
+     "label": "Team size",
+     "unit": "people",
+     "min": 1,
+     "max": 40,
+     "start": 8
+    },
+    "onshore_label": "Hiring locally (US)",
+    "offshore_label": "Lotus team in Vietnam",
+    "savings_label": "Estimated saving",
+    "cta": {
+     "label": "Get a quote",
+     "href": "#contact"
+    },
+    "disclaimer": "Sample figures based on 2025 US median salaries and Lotus standard rates. Your quote depends on seniority, shift and language needs."
+   }
+  },
+  {
+   "type": "services-bento",
+   "data": {
+    "head": {
+     "eyebrow": "Services",
+     "title": "Roles we fill",
+     "lead": "Each hire works only for your company, joins your chat channels and follows your processes."
+    },
+    "cards": [
+     {
+      "icon": "headset",
+      "title": "Customer support",
+      "text": "Email, chat and phone agents with C1 English who learn your product and answer in your brand voice.",
+      "bullets": [
+       "Zendesk, Intercom, Gorgias",
+       "Day, evening and night shifts",
+       "Weekly QA scoring"
+      ],
+      "link": {
+       "label": "Learn more",
+       "href": "#contact"
+      }
+     },
+     {
+      "icon": "receipt",
+      "title": "Bookkeeping",
+      "text": "Accountants who reconcile, invoice and close the month in Xero or QuickBooks."
+     },
+     {
+      "icon": "bug",
+      "title": "Software QA",
+      "text": "Manual and automation testers who join your sprints and file clean bug reports."
+     },
+     {
+      "icon": "database",
+      "title": "Data operations",
+      "text": "Operators for data entry, catalog updates and CRM clean-up with double-check rules."
+     },
+     {
+      "icon": "briefcase",
+      "title": "Sales support",
+      "text": "Assistants who research leads, update pipelines and book meetings for your reps."
+     }
+    ]
+   }
+  },
+  {
+   "type": "process-sticky",
+   "data": {
+    "head": {
+     "eyebrow": "Process",
+     "title": "How it works",
+     "lead": "Most teams start work four weeks after the first call. An account manager runs each step and reports to you on Fridays."
+    },
+    "cta": {
+     "label": "Book a call",
+     "href": "#contact"
+    },
+    "steps": [
+     {
+      "label": "Week 1",
+      "title": "Define the roles",
+      "text": "We map tasks, tools, hours and language level with you, then agree on salary bands for each role."
+     },
+     {
+      "label": "Week 2",
+      "title": "Interview a shortlist",
+      "text": "Recruiters send three screened candidates per role. You interview and pick the people you want."
+     },
+     {
+      "label": "Week 3",
+      "title": "Set up and train",
+      "text": "We prepare laptops, secure access and office seats while your team trains the new hires on your process."
+     },
+     {
+      "label": "Week 4",
+      "title": "Go live and review",
+      "text": "Your team starts on live work. The account manager tracks output and runs a 30 day review with you."
+     }
+    ]
+   }
+  },
+  {
+   "type": "video-block",
+   "data": {
+    "head": {
+     "eyebrow": "Our office",
+     "title": "Inside our Ho Chi Minh City office",
+     "lead": "A two minute walk through the floor, the desks your team would use and the managers who run it."
+    },
+    "video": {
+     "title": "A day at Lotus Staffing, Ho Chi Minh City",
+     "poster": "team-coworking-laptops",
+     "src": "sample-ambient-loop",
+     "duration": "2:10"
+    },
+    "caption": "Filmed on a normal working day. Faces shown with permission."
+   }
+  },
+  {
+   "type": "pricing-toggle",
+   "data": {
+    "head": {
+     "eyebrow": "Pricing",
+     "title": "Pricing",
+     "lead": "Choose a full-time dedicated team or pay for a shared pool of hours each month."
+    },
+    "models": [
+     {
+      "label": "Dedicated team",
+      "plans": [
+       {
+        "name": "Starter",
+        "price": "$1,450",
+        "unit": "per person / month",
+        "text": "For one to three full-time hires in a single role.",
+        "features": [
+         "Recruitment and payroll",
+         "Office seat and equipment",
+         "Monthly performance review"
+        ],
+        "cta": {
+         "label": "Choose Starter",
+         "href": "#contact"
+        }
+       },
+       {
+        "name": "Growth",
+        "price": "$1,350",
+        "unit": "per person / month",
+        "text": "For teams of four or more with a team lead.",
+        "features": [
+         "Everything in Starter",
+         "Dedicated team lead",
+         "Weekly KPI reports",
+         "Backup staff for leave"
+        ],
+        "cta": {
+         "label": "Choose Growth",
+         "href": "#contact"
+        },
+        "featured": true,
+        "badge": "Most chosen"
+       },
+       {
+        "name": "Enterprise",
+        "price": "Custom quote",
+        "text": "For 25 or more staff, several roles or 24/7 shifts.",
+        "features": [
+         "Everything in Growth",
+         "Private team room",
+         "Security audit support"
+        ],
+        "cta": {
+         "label": "Talk to sales",
+         "href": "#contact"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Shared service",
+      "plans": [
+       {
+        "name": "Flex 80",
+        "price": "$1,190",
+        "unit": "per month",
+        "text": "80 hours of support or admin work from a shared pool.",
+        "features": [
+         "Business hours coverage",
+         "Shared inbox handling",
+         "Monthly usage report"
+        ],
+        "cta": {
+         "label": "Choose Flex 80",
+         "href": "#contact"
+        }
+       },
+       {
+        "name": "Flex 160",
+        "price": "$2,190",
+        "unit": "per month",
+        "text": "160 hours with priority response and a named lead.",
+        "features": [
+         "Extended hours",
+         "Named team lead",
+         "Weekly usage report"
+        ],
+        "cta": {
+         "label": "Choose Flex 160",
+         "href": "#contact"
+        },
+        "featured": true,
+        "badge": "Best value"
+       }
+      ]
+     }
+    ],
+    "note": "Prices are sample figures in USD and exclude local taxes."
+   }
+  },
+  {
+   "type": "testimonials",
+   "data": {
+    "head": {
+     "eyebrow": "Client stories",
+     "title": "What our clients say"
+    },
+    "items": [
+     {
+      "quote": "We started with two support agents and now run a team of fourteen. Response times dropped from six hours to under one, and our US staff now handle enterprise accounts.",
+      "name": "Dana Whitfield",
+      "role": "Head of Customer Success",
+      "company": "Brightpath",
+      "avatar": "avatar-woman-1"
+     },
+     {
+      "quote": "Our month-end close moved from twelve days to six after the Lotus bookkeepers took over reconciliations. They ask good questions and document everything.",
+      "name": "Marcus Lee",
+      "role": "Finance Director",
+      "company": "Quill Finance",
+      "avatar": "avatar-man-2"
+     },
+     {
+      "quote": "The QA engineers joined our sprint rituals in the first week. Release bugs reported by customers fell by half in one quarter.",
+      "name": "Priya Nair",
+      "role": "VP Engineering",
+      "company": "Northwind Labs"
+     }
+    ]
+   }
+  },
+  {
+   "type": "faq-accordion",
+   "data": {
+    "head": {
+     "eyebrow": "FAQ",
+     "title": "Frequently asked questions"
+    },
+    "aside": {
+     "title": "Want a salary guide?",
+     "text": "Get current Vietnam salary ranges for 20 common roles, updated every quarter.",
+     "cta": {
+      "label": "Request the guide",
+      "href": "#contact"
+     }
+    },
+    "items": [
+     {
+      "q": "Who is the legal employer of my team?",
+      "a": "Lotus is the employer of record in Vietnam. We handle contracts, payroll, social insurance and local tax, while your managers direct the daily work."
+     },
+     {
+      "q": "Can my team work US hours?",
+      "a": "Yes. Night shifts carry a shift allowance that is included in your quote. Most support teams cover US morning and afternoon hours."
+     },
+     {
+      "q": "How do you protect our data?",
+      "a": "Staff work on company laptops with disk encryption, managed antivirus and no USB storage. Access to your systems runs through your own SSO."
+     },
+     {
+      "q": "What if a hire does not work out?",
+      "a": "We replace any hire who leaves or is not a fit in the first 90 days at no extra cost."
+     },
+     {
+      "q": "Is there a minimum contract?",
+      "a": "Dedicated plans need 30 days notice after a three month first term. Shared plans run month to month."
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta-multistep",
+   "data": {
+    "eyebrow": "Contact us",
+    "title": "Get a quote in *48 hours*",
+    "lead": "Answer three questions. We reply with candidate availability, salary bands and a monthly price.",
+    "points": [
+     "Free shortlist before you commit",
+     "Interview every candidate yourself",
+     "Start with one person if you like"
+    ],
+    "contacts": [
+     {
+      "icon": "mail",
+      "label": "hello@lotus-staffing.example",
+      "href": "mailto:hello@lotus-staffing.example"
+     },
+     {
+      "icon": "message-circle",
+      "label": "Chat on WhatsApp",
+      "href": "https://wa.me/84000000000"
+     }
+    ],
+    "form": {
+     "step1_title": "Which role do you need first?",
+     "services": [
+      "Customer support",
+      "Bookkeeping",
+      "Software QA",
+      "Data operations",
+      "Sales support"
+     ],
+     "step2_title": "How many people to start?",
+     "sizes": [
+      "1-2 people",
+      "3-5 people",
+      "6-15 people",
+      "16+ people"
+     ],
+     "step3_title": "Where should we send your plan?",
+     "message_label": "Anything we should know? (optional)",
+     "submit_label": "Get my team plan",
+     "success_title": "Thanks, we have your request",
+     "success_text": "Your account manager will email a team plan and quote within 48 hours.",
+     "note": "We only use your details to prepare your plan."
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Dedicated offshore teams in Ho Chi Minh City and Da Nang for companies in the US, UK and Australia.",
+    "contacts": [
+     {
+      "icon": "mail",
+      "label": "hello@lotus-staffing.example",
+      "href": "mailto:hello@lotus-staffing.example"
+     },
+     {
+      "icon": "map-pin",
+      "label": "District 1, Ho Chi Minh City"
+     }
+    ],
+    "socials": [
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Roles",
+      "links": [
+       {
+        "label": "Customer support",
+        "href": "#services"
+       },
+       {
+        "label": "Bookkeeping",
+        "href": "#services"
+       },
+       {
+        "label": "Software QA",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "How it works",
+        "href": "#process"
+       },
+       {
+        "label": "Pricing",
+        "href": "#pricing"
+       },
+       {
+        "label": "Client stories",
+        "href": "#testimonials"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [
+     {
+      "label": "Privacy",
+      "href": "#top"
+     }
+    ]
+   }
+  },
+  {
+   "type": "floating-chat",
+   "data": {
+    "label": "Chat with our team",
+    "status": "Online, Mon to Fri",
+    "href": "https://wa.me/84000000000"
+   }
+  }
+ ]
 }

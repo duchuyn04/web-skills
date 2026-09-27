@@ -48,11 +48,11 @@
   {
    "type": "hero-collage",
    "data": {
-    "eyebrow": "Offshore staffing",
-    "title": "Your own offshore team, *hired for you* and managed on site",
-    "lead": "Keystone recruits accountants, admin staff and support agents who work only for you. We handle payroll, office space, equipment and HR in Ho Chi Minh City.",
+    "eyebrow": "Offshore staffing in Vietnam",
+    "title": "Offshore accounting and admin *staff in Vietnam*",
+    "lead": "Keystone Staffing recruits, employs and manages full-time accountants, admin staff and support agents for firms in the US, UK and Australia. They work from our Ho Chi Minh City office.",
     "primary_cta": {
-     "label": "Get a team quote",
+     "label": "Get a quote",
      "href": "#contact"
     },
     "secondary_cta": {
@@ -111,9 +111,9 @@
   {
    "type": "statement-band",
    "data": {
-    "eyebrow": "Why firms choose us",
-    "title": "Most of our clients started with *one hire* and kept growing the team",
-    "text": "Keystone places full-time staff who sit in our office, use your tools and report to your managers. We cover the local paperwork so you only manage the work.",
+    "eyebrow": "About Keystone",
+    "title": "Keystone places *full-time staff* who work for one client only",
+    "text": "Staff sit in our office, use the client's tools and report to the client's managers. Keystone handles payroll, benefits, equipment and local compliance.",
     "points": [
      "Full-time dedicated staff",
      "Your tools and processes"
@@ -124,9 +124,9 @@
    "type": "services-bento",
    "data": {
     "head": {
-     "eyebrow": "Roles we staff",
-     "title": "Full-time people for the work *you do every day*",
-     "lead": "Every hire works only for you, joins your chat channels and follows your processes from week one."
+     "eyebrow": "Services",
+     "title": "Roles we fill",
+     "lead": "Each hire works only for your company, joins your chat channels and follows your processes."
     },
     "cards": [
      {
@@ -139,7 +139,7 @@
        "Weekly QA scoring"
       ],
       "link": {
-       "label": "Hire support staff",
+       "label": "Learn more",
        "href": "#contact"
       }
      },
@@ -170,15 +170,15 @@
    "type": "feature-rows",
    "data": {
     "head": {
-     "eyebrow": "How we work",
-     "title": "Built around *your* customers and your scripts",
-     "lead": "Three habits every Keystone program keeps, from the first hiring call to the monthly business review."
+     "eyebrow": "Why Keystone",
+     "title": "Why clients choose Keystone",
+     "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
     },
     "rows": [
      {
       "eyebrow": "Hiring",
-      "title": "Agents who already speak your customers' language",
-      "text": "Recruiters screen for language level, product fit and tone of voice. Your team approves the shortlist before training starts, so nobody joins the floor as a stranger to your brand.",
+      "title": "Hiring with client sign-off",
+      "text": "Recruiters screen for language level, product knowledge and tone. Your team interviews the shortlist and approves each hire before training starts.",
       "bullets": [
        "Language and tone assessments",
        "Client sign-off on every hire"
@@ -194,8 +194,8 @@
      },
      {
       "eyebrow": "Quality",
-      "title": "Every contact scored against your rubric",
-      "text": "Quality analysts review calls, chats and emails each day with your own scorecard. Coaching happens the same week, and trends go into the Monday report.",
+      "title": "Daily quality scoring",
+      "text": "Quality analysts score a daily sample of calls, chats and emails against your scorecard. Coaching follows within the week.",
       "bullets": [
        "Daily QA sampling",
        "Calibration with your team each week",
@@ -206,14 +206,14 @@
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
-       "label": "See our QA process",
+       "label": "Learn more",
        "href": "#faq"
       }
      },
      {
       "eyebrow": "Reporting",
-      "title": "One dashboard your leadership can read",
-      "text": "Handle time, CSAT, backlog and QA scores sit on one shared dashboard, refreshed every morning, with notes on anything that moved outside target.",
+      "title": "Shared reporting dashboard",
+      "text": "Handle time, CSAT, backlog and QA scores sit on one dashboard that refreshes each morning.",
       "photo": {
        "src": "office-interior",
        "alt": "Quiet operations floor with wall screens"
@@ -229,10 +229,10 @@
   {
    "type": "banner-image",
    "data": {
-    "title": "Visit the office where *your team* will work",
+    "title": "Visit our *Ho Chi Minh City* office",
     "text": "Every client can tour the floor, meet the managers and interview candidates in person.",
     "cta": {
-     "label": "Plan a visit",
+     "label": "Book a visit",
      "href": "#contact"
     },
     "image": "city-hcmc-skyline",
@@ -244,12 +244,12 @@
    "type": "process-sticky",
    "data": {
     "head": {
-     "eyebrow": "How it works",
-     "title": "From first call to a working team in *four weeks*",
-     "lead": "A dedicated account manager runs each step and reports to you every Friday."
+     "eyebrow": "Process",
+     "title": "How it works",
+     "lead": "Most teams start work four weeks after the first call. An account manager runs each step and reports to you on Fridays."
     },
     "cta": {
-     "label": "Start with a call",
+     "label": "Book a call",
      "href": "#contact"
     },
     "steps": [
@@ -280,8 +280,8 @@
    "type": "metrics-panel",
    "data": {
     "eyebrow": "Why choose us",
-    "title": "Trust built on *audits and track record*",
-    "text": "Our delivery centers follow ISO 27001 and ISO 9001 processes, with yearly external audits and access controls your security team can review.",
+    "title": "Keystone Staffing *in numbers*",
+    "text": "Our delivery centers follow ISO 27001 and ISO 9001 processes and pass external audits every year.",
     "items": [
      {
       "value": 14,
@@ -325,7 +325,7 @@
    "data": {
     "head": {
      "eyebrow": "Guides",
-     "title": "Before you hire offshore",
+     "title": "Resources",
      "lead": "Plain answers to the questions finance teams ask us most."
     },
     "view_all": {
@@ -371,7 +371,7 @@
    "data": {
     "head": {
      "eyebrow": "FAQ",
-     "title": "Common questions about offshore teams"
+     "title": "Frequently asked questions"
     },
     "aside": {
      "title": "Want a salary guide?",
@@ -409,8 +409,8 @@
    "type": "contact-split",
    "data": {
     "head": {
-     "eyebrow": "Contact us",
-     "title": "Start your project and watch your *business grow*"
+     "eyebrow": "Get in touch",
+     "title": "Contact *Keystone Staffing*"
     },
     "form": {
      "title": "Tell us about your project",
@@ -418,7 +418,7 @@
      "phone_label": "Phone (optional)",
      "submit_label": "Send message",
      "success_title": "Thanks, we have your message",
-     "success_text": "A solutions lead will reply within one business day to set up a call.",
+     "success_text": "A solutions lead will reply to set up a call.",
      "note": "We only use your details to reply to this request."
     },
     "aside": {

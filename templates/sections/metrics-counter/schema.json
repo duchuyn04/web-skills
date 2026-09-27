@@ -7,7 +7,7 @@
   "animations": ["odometer-number-counter", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
-    "title": {"type": "markup", "min": 12, "max": 80},
+    "title": {"type": "markup", "min": 6, "max": 80},
     "lead": {"type": "text", "min": 40, "max": 200, "required": false},
     "items": {
       "type": "list", "min": 3, "max": 4,

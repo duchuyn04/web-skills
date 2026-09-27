@@ -15,11 +15,15 @@ build.py and lint_output.py enforce the copy rules below (they come from a stric
 
 ## Writing each field
 
-- Hero title: one concrete promise, 5-10 words, with 2-4 accent words in `*asterisks*`. Good: `"Support teams that *protect your CSAT* while you scale"`. Bad: `"Transforming the future of customer experience"`.
-- Lead: who you serve, what you do for them, one proof. Two sentences at most.
-- Button labels: verb first, 2-4 words: "Get a staffing plan", "See client results", "Book a call".
-- Eyebrows: 1-4 plain words: "Services", "Delivery centers".
-- Card text: one sentence that says what the team does, in which tools or for which customers.
+Read `industry-voice.md` first. It shows, with numbers from 120 real BPO homepages, what makes copy look AI-written to people in the industry. The short version:
+
+- Hero title: 3-8 words about the company or its category, not about the reader. Good: `"Customer operations for *banks, telcos and retail*"`, `"Software outsourcing *in Vietnam*"`, `"Outbound SDR teams for *B2B sales*"`. Bad: `"Support teams that protect your CSAT while you scale"` (addresses the reader, "[people] that [verb] your [thing]" formula) and `"Transforming the future of customer experience"` (says nothing). Accent 1-3 words.
+- Lead: the company name is the subject of the first sentence. Say what it does, for whom and since when, then scale or place: `"Northbridge CX has run voice, chat and back-office programs since 2009. Our 2,400 agents work from Manila, Bogota and Krakow in 12 languages."` Two sentences at most.
+- Section headings: about a third are plain labels ("Our services", "Industries we serve", "How it works", "Case studies", "Frequently asked questions"). At most one in four addresses the reader. Accent markup on two or three headings, not all.
+- Button labels: the labels real sites use: "Contact us", "Talk to an expert", "Get a quote", "Book a call", "Learn more", "See case studies". Do not invent labels such as "Ask about fit".
+- Eyebrows: 1-4 plain words that add information ("Since 2009", "Delivery centers"). Do not repeat the heading.
+- Card text: one sentence that says what the team does, in which tools or for which customers. At most one operational detail per card (a time, a tool, a count); do not scatter timetables ("every Friday", "by 07:00") across the page.
+- Use the category words buyers search for (outsourcing, BPO, offshore, customer support, back office, delivery center, dedicated team). Repeating them is normal.
 - Headings are sentence case. Do not capitalize every word.
 - Paragraph fields that accept markup (for example `about-mosaic` paragraphs) take `**bold**` for two or three key terms, such as the service names. Do not bold whole sentences.
 

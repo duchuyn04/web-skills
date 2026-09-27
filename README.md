@@ -78,6 +78,21 @@ Agent sẽ chọn một trong 5 kiểu trang, chọn bộ màu, copy file `page.
 
 Thiếu thông tin thì skill không bịa. Một con số thiếu sẽ thành `[KPI]`. Cả một khối bằng chứng thiếu (logo khách hàng, lời chứng thực, file ghi âm cuộc gọi, bảng lương để tính tiết kiệm) thì section đó bị bỏ, và agent báo lại cho bạn những gì còn thiếu.
 
+Nên dán nguyên brief của khách vào trường `"brief"` trong `page.json`. Build dựa vào đó để phân biệt số liệu thật với số liệu mẫu: một câu chép gần nguyên văn từ trang mẫu, hoặc mang con số của công ty mẫu (kiểu "báo trước 30 ngày", "phản hồi trong 48 giờ") mà brief không có, sẽ làm build dừng.
+
+## Giọng văn ngành
+
+Văn phong được đo trên trang chủ của 106 công ty BPO viết bằng tiếng Anh và 14 trang tiếng Việt. Người trong ngành nhận ra copy do AI viết qua cấu trúc nhiều hơn qua từ ngữ, và bảng dưới là các khác biệt đo được:
+
+| Dấu hiệu | Copy AI cũ của skill | Site thật |
+|:---|---:|---:|
+| Tiêu đề hero nói với người đọc ("your") | 100% | 14% |
+| Tiêu đề hero theo công thức "[người] who/that [làm gì] your [cái gì]" | 67% | 8% |
+| Tiêu đề section là nhãn ngắn ("Case studies", "Dịch vụ") | 6% | 34% |
+| Mệnh đề nối đuôi ", with ..." trên 100 câu | 4,9 | 0,7 |
+
+Skill xử lý bằng ba cách. `references/industry-voice.md` hướng dẫn cách viết theo từng kiểu trang, kèm nhãn tiêu đề và nút bấm mà site thật dùng. Build chặn các cụm mà gần như không site BPO nào dùng ("while you scale", "peace of mind", "hãy để chúng tôi", "nâng tầm"...) và cảnh báo khi quá nhiều tiêu đề nói với người đọc. Trang mẫu tiếng Việt `examples/vi/enterprise-cx.page.json` được viết thẳng bằng tiếng Việt, nên model không phải dịch từ tiếng Anh.
+
 ## Chạy tay, không cần agent
 
 Trong thư mục của skill:
@@ -108,7 +123,7 @@ Có 8 bộ màu. Ngoài 5 bộ mặc định theo kiểu trang còn có `corpora
 
 Ba lớp kiểm tra chạy trước khi giao:
 
-1. `build.py` kiểm tra `page.json` theo schema từng section: giới hạn độ dài chữ, số item, tên icon, link nội bộ, thứ tự section. Mỗi lỗi ghi rõ đường dẫn JSON và cách sửa.
+1. `build.py` kiểm tra `page.json` theo schema từng section: giới hạn độ dài chữ, số item, tên icon, link nội bộ, thứ tự section, giọng văn và câu chép từ trang mẫu. Mỗi lỗi ghi rõ đường dẫn JSON và cách sửa.
 2. `lint_output.py` quét trang đã dựng: emoji, mũi tên bằng chữ, gạch ngang dài, dấu ngoặc cong, từ ngữ kiểu AI, thiếu `alt`, nhiều hơn một `h1`, inline style.
 3. `qa_screenshot.py` chụp ở 1440, 768 và 390 px, tìm phần tử tràn ngang, chữ bị cắt, ảnh hỏng và lỗi JavaScript.
 
@@ -118,7 +133,7 @@ Ba lớp kiểm tra chạy trước khi giao:
 SKILL.md          quy trình cho agent, đọc file này trước
 references/       tài liệu tra cứu (một số file do script sinh ra)
 templates/        base.css, base.js, 42 section, 8 bộ màu, icon, cờ, ảnh và video mẫu
-examples/         5 file page.json mẫu, mỗi kiểu trang một file; variations/ có 3 trang, mỗi bộ màu mới một trang
+examples/         5 file page.json mẫu, mỗi kiểu trang một file; variations/ có 3 trang, mỗi bộ màu mới một trang; vi/ có trang mẫu tiếng Việt
 previews/         ảnh chụp từng section
 scripts/          build, lint, QA, sinh tài liệu
 agents/           metadata cho Codex

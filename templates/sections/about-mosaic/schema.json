@@ -7,7 +7,7 @@
   "animations": ["reveal", "staggered-badge-pop-in"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
-    "title": {"type": "markup", "min": 12, "max": 80},
+    "title": {"type": "markup", "min": 6, "max": 80},
     "paragraphs": {"type": "list", "min": 1, "max": 2, "item": {"type": "markup", "min": 60, "max": 420}},
     "points": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 6, "max": 80}},
     "cta": {"$ref": "cta", "required": false},

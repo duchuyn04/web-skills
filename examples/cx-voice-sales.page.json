@@ -1,169 +1,445 @@
 {
-  "_note": "Starter for archetype cx-voice-sales. ClearLine Voice is a fictional company; every figure and price below is sample data. The voice samples have no audio files, so the players animate without sound until you add \"audio\": \"audio/file.mp3\" next to page.json.",
-  "archetype": "cx-voice-sales",
-  "preset": "clean-minimal",
-  "lang": "en",
-  "site": {
-    "brand": "ClearLine Voice",
-    "title": "ClearLine Voice | Outbound sales and inbound call teams",
-    "description": "ClearLine Voice runs trained SDR and inbound call teams for B2B companies, with recorded calls, daily reporting and native-level English and Spanish."
-  },
-  "sections": [
-    {
-      "type": "header-simple",
-      "data": {
-        "links": [
-          {"label": "Call samples", "href": "#call-samples"},
-          {"label": "Services", "href": "#services"},
-          {"label": "Results", "href": "#results"},
-          {"label": "Pricing", "href": "#pricing"}
-        ],
-        "cta": {"label": "Book a call", "href": "#contact"}
-      }
-    },
-    {
-      "type": "hero-split-image",
-      "data": {
-        "eyebrow": "Outbound and inbound calling",
-        "title": "Callers who book *qualified meetings* for your sales team",
-        "lead": "Our SDRs and call agents work your target list with your script, log every call in your CRM and hand over meetings your reps want to take.",
-        "primary_cta": {"label": "Book a strategy call", "href": "#contact"},
-        "secondary_cta": {"label": "Hear our callers", "href": "#call-samples"},
-        "proof": ["Calls recorded and scored", "Native English and Spanish", "No long-term contract"],
-        "photo": {"src": "portrait-woman-office", "alt": "ClearLine sales development lead in the office"},
-        "badges": [
-          {"icon": "calendar", "value": "14 / mo", "label": "Meetings per SDR"},
-          {"icon": "phone", "value": "1,200", "label": "Dials per week"}
-        ]
-      }
-    },
-    {
-      "type": "logo-marquee",
-      "data": {
-        "label": "Pipeline partner for B2B software and services companies",
-        "logos": [{"name": "Stackwise"}, {"name": "Ledgerly"}, {"name": "Brightline HR"}, {"name": "Fieldnote"}, {"name": "Arcadia Cloud"}, {"name": "Pinpoint"}]
-      }
-    },
-    {
-      "type": "voice-sample",
-      "data": {
-        "head": {
-          "eyebrow": "Call samples",
-          "title": "Hear how our callers *sound on the phone*",
-          "lead": "Recorded with permission on live campaigns. Names of prospects are removed."
-        },
-        "points": ["Every caller passes a recorded role-play test", "Weekly call reviews with your sales lead", "Scripts updated from real objections"],
-        "samples": [
-          {"name": "Jordan", "role": "Senior SDR, SaaS campaign", "language": "English (US)", "flag": "us", "duration": "0:42"},
-          {"name": "Camila", "role": "Bilingual SDR, fintech", "language": "Spanish", "flag": "mx", "duration": "0:38"},
-          {"name": "Aiden", "role": "Inbound agent, IT services", "language": "English (UK)", "flag": "gb", "duration": "0:51"}
-        ]
-      }
-    },
-    {
-      "type": "services-bento",
-      "data": {
-        "head": {
-          "eyebrow": "Services",
-          "title": "Pipeline work *from list to meeting*",
-          "lead": "Pick one service or run the full outbound cycle with one team."
-        },
-        "cards": [
-          {"icon": "phone", "title": "Outbound SDR teams", "text": "Dedicated callers who prospect, qualify and book meetings on your reps' calendars.", "bullets": ["Cold calling and follow-up", "BANT or MEDDIC qualification", "CRM logging on every call"], "link": {"label": "Plan an SDR team", "href": "#contact"}},
-          {"icon": "headset", "title": "Inbound call handling", "text": "Answer sales and support lines within three rings, day and night."},
-          {"icon": "target", "title": "Lead research", "text": "Build and verify target lists with direct dials and job titles."},
-          {"icon": "mail", "title": "Email sequences", "text": "Write and send follow-up sequences that match each call outcome."}
-        ]
-      }
-    },
-    {
-      "type": "metrics-counter",
-      "data": {
-        "eyebrow": "Results",
-        "title": "What a typical campaign *delivers*",
-        "items": [
-          {"value": 14, "label": "Meetings per SDR per month", "note": "Median across B2B campaigns"},
-          {"value": 68, "suffix": "%", "label": "Meetings held", "note": "Show rate after confirmation calls"},
-          {"value": 3, "label": "Weeks to first meetings", "note": "Including list build and training"}
-        ]
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "head": {"eyebrow": "Clients", "title": "Sales leaders on working with us"},
-        "items": [
-          {"quote": "Two ClearLine SDRs now book more first meetings than our in-house team of four did last year, and the notes in HubSpot are better.", "name": "Rachel Ortiz", "role": "VP Sales", "company": "Stackwise", "avatar": "avatar-woman-2"},
-          {"quote": "They listened to our call recordings, rewrote the opener and our connect-to-meeting rate doubled in a month.", "name": "Tom Becker", "role": "Head of Growth", "company": "Ledgerly", "avatar": "avatar-man-1"},
-          {"quote": "Our Spanish-speaking market finally gets called back the same day. Inbound leads no longer wait until Monday.", "name": "Luis Moreno", "role": "Sales Director", "company": "Fieldnote", "avatar": "avatar-man-3"}
-        ]
-      }
-    },
-    {
-      "type": "pricing-toggle",
-      "data": {
-        "head": {"eyebrow": "Pricing", "title": "Pay per caller or per meeting"},
-        "models": [
-          {"label": "Per caller", "plans": [
-            {"name": "One SDR", "price": "$3,900", "unit": "per month", "text": "A full-time caller on your campaign with a shared team lead.", "features": ["160 calling hours", "Weekly call review", "CRM logging"], "cta": {"label": "Start with one SDR", "href": "#contact"}},
-            {"name": "SDR pod", "price": "$10,500", "unit": "per month", "text": "Three callers and a dedicated team lead.", "features": ["Everything in One SDR", "Dedicated team lead", "A/B script testing", "Daily reporting"], "cta": {"label": "Build a pod", "href": "#contact"}, "featured": true, "badge": "Most booked"}
-          ]},
-          {"label": "Per meeting", "plans": [
-            {"name": "Pay per meeting", "price": "$390", "unit": "per held meeting", "text": "You pay only for meetings that take place with qualified prospects.", "features": ["Qualification criteria agreed upfront", "Monthly minimum of 10 meetings", "Rebooking of no-shows"], "cta": {"label": "Ask about fit", "href": "#contact"}},
-            {"name": "Hybrid", "price": "Custom quote", "text": "Lower base fee plus a reduced rate per held meeting.", "features": ["Shared risk model", "Quarterly target review", "Dedicated callers"], "cta": {"label": "Talk to us", "href": "#contact"}}
-          ]}
-        ],
-        "note": "Sample prices in USD. Final pricing depends on market, language and list quality."
-      }
-    },
-    {
-      "type": "faq-accordion",
-      "data": {
-        "head": {"eyebrow": "FAQ", "title": "Before you book a call"},
-        "items": [
-          {"q": "Who writes the call script?", "a": "We draft it from your best sales calls and your ideal customer profile, then refine it every week from real objections."},
-          {"q": "Can we listen to every call?", "a": "Yes. All calls are recorded and linked to the contact record in your CRM."},
-          {"q": "Which CRMs do you work in?", "a": "HubSpot, Salesforce, Pipedrive and Close. Other tools are possible after a short setup."},
-          {"q": "How fast can a campaign start?", "a": "Most campaigns place their first calls within two weeks and book first meetings in week three."}
-        ]
-      }
-    },
-    {
-      "type": "cta-multistep",
-      "data": {
-        "eyebrow": "Book a call",
-        "title": "Get a campaign plan for *your market*",
-        "lead": "Tell us who you sell to. We reply with a target list sample, call plan and price.",
-        "points": ["Free list sample of 50 contacts", "Script draft before you sign", "Cancel any month"],
-        "contacts": [{"icon": "phone", "label": "+1 (555) 010 7788", "href": "tel:+15550107788"}],
-        "form": {
-          "step1_title": "What do you need help with?",
-          "services": ["Outbound SDR team", "Inbound call handling", "Lead research", "Email sequences"],
-          "step2_title": "How many callers do you expect?",
-          "sizes": ["1 caller", "2-3 callers", "4-10 callers", "Not sure yet"],
-          "step3_title": "Where should we send the plan?",
-          "submit_label": "Send my campaign plan",
-          "success_title": "Thanks, request received",
-          "success_text": "A campaign manager will contact you within one business day.",
-          "note": "We never add you to a calling list."
-        }
-      }
-    },
-    {
-      "type": "footer-columns",
-      "data": {
-        "blurb": "Outbound SDR and inbound calling teams for B2B companies in North America and Europe.",
-        "contacts": [{"icon": "phone", "label": "+1 (555) 010 7788", "href": "tel:+15550107788"}],
-        "columns": [
-          {"heading": "Services", "links": [{"label": "Outbound SDR", "href": "#services"}, {"label": "Inbound calls", "href": "#services"}]},
-          {"heading": "Company", "links": [{"label": "Call samples", "href": "#call-samples"}, {"label": "Pricing", "href": "#pricing"}, {"label": "FAQ", "href": "#faq"}]}
-        ],
-        "legal": "All rights reserved."
-      }
-    },
-    {
-      "type": "floating-chat",
-      "data": {"label": "Talk to a campaign lead", "href": "#contact", "icon": "phone"}
+ "_note": "Starter for archetype cx-voice-sales. ClearLine Voice is a fictional company; every figure and price below is sample data. The voice samples have no audio files, so the players animate without sound until you add \"audio\": \"audio/file.mp3\" next to page.json.",
+ "archetype": "cx-voice-sales",
+ "preset": "clean-minimal",
+ "lang": "en",
+ "site": {
+  "brand": "ClearLine Voice",
+  "title": "ClearLine Voice | Outbound sales and inbound call teams",
+  "description": "ClearLine Voice runs trained SDR and inbound call teams for B2B companies, with recorded calls, daily reporting and native-level English and Spanish."
+ },
+ "sections": [
+  {
+   "type": "header-simple",
+   "data": {
+    "links": [
+     {
+      "label": "Call samples",
+      "href": "#call-samples"
+     },
+     {
+      "label": "Services",
+      "href": "#services"
+     },
+     {
+      "label": "Results",
+      "href": "#results"
+     },
+     {
+      "label": "Pricing",
+      "href": "#pricing"
+     }
+    ],
+    "cta": {
+     "label": "Book a call",
+     "href": "#contact"
     }
-  ]
+   }
+  },
+  {
+   "type": "hero-split-image",
+   "data": {
+    "eyebrow": "B2B appointment setting since 2016",
+    "title": "Outbound SDR teams for *B2B sales*",
+    "lead": "ClearLine Voice runs cold calling, lead qualification and inbound sales lines for software and services companies in North America and Europe. Calls are recorded and logged in your CRM.",
+    "primary_cta": {
+     "label": "Book a call",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Hear call samples",
+     "href": "#call-samples"
+    },
+    "proof": [
+     "Calls recorded and scored",
+     "Native English and Spanish",
+     "No long-term contract"
+    ],
+    "photo": {
+     "src": "portrait-woman-office",
+     "alt": "ClearLine sales development lead in the office"
+    },
+    "badges": [
+     {
+      "icon": "calendar",
+      "value": "14 / mo",
+      "label": "Meetings per SDR"
+     },
+     {
+      "icon": "phone",
+      "value": "1,200",
+      "label": "Dials per week"
+     }
+    ]
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Pipeline partner for B2B software and services companies",
+    "logos": [
+     {
+      "name": "Stackwise"
+     },
+     {
+      "name": "Ledgerly"
+     },
+     {
+      "name": "Brightline HR"
+     },
+     {
+      "name": "Fieldnote"
+     },
+     {
+      "name": "Arcadia Cloud"
+     },
+     {
+      "name": "Pinpoint"
+     }
+    ]
+   }
+  },
+  {
+   "type": "voice-sample",
+   "data": {
+    "head": {
+     "eyebrow": "Call samples",
+     "title": "Recordings from live campaigns",
+     "lead": "Recorded with permission on live campaigns. Names of prospects are removed."
+    },
+    "points": [
+     "Every caller passes a recorded role-play test",
+     "Weekly call reviews with your sales lead",
+     "Scripts updated from real objections"
+    ],
+    "samples": [
+     {
+      "name": "Jordan",
+      "role": "Senior SDR, SaaS campaign",
+      "language": "English (US)",
+      "flag": "us",
+      "duration": "0:42"
+     },
+     {
+      "name": "Camila",
+      "role": "Bilingual SDR, fintech",
+      "language": "Spanish",
+      "flag": "mx",
+      "duration": "0:38"
+     },
+     {
+      "name": "Aiden",
+      "role": "Inbound agent, IT services",
+      "language": "English (UK)",
+      "flag": "gb",
+      "duration": "0:51"
+     }
+    ]
+   }
+  },
+  {
+   "type": "services-bento",
+   "data": {
+    "head": {
+     "eyebrow": "Services",
+     "title": "Our services",
+     "lead": "Hire one service or the full outbound cycle with one team."
+    },
+    "cards": [
+     {
+      "icon": "phone",
+      "title": "Outbound SDR teams",
+      "text": "Dedicated callers who prospect, qualify and book meetings on your reps' calendars.",
+      "bullets": [
+       "Cold calling and follow-up",
+       "BANT or MEDDIC qualification",
+       "CRM logging on every call"
+      ],
+      "link": {
+       "label": "Learn more",
+       "href": "#contact"
+      }
+     },
+     {
+      "icon": "headset",
+      "title": "Inbound call handling",
+      "text": "Answer sales and support lines within three rings, day and night."
+     },
+     {
+      "icon": "target",
+      "title": "Lead research",
+      "text": "Build and verify target lists with direct dials and job titles."
+     },
+     {
+      "icon": "mail",
+      "title": "Email sequences",
+      "text": "Write and send follow-up sequences that match each call outcome."
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-counter",
+   "data": {
+    "eyebrow": "Results",
+    "title": "Results from B2B campaigns",
+    "items": [
+     {
+      "value": 14,
+      "label": "Meetings per SDR per month",
+      "note": "Median across B2B campaigns"
+     },
+     {
+      "value": 68,
+      "suffix": "%",
+      "label": "Meetings held",
+      "note": "Show rate after confirmation calls"
+     },
+     {
+      "value": 3,
+      "label": "Weeks to first meetings",
+      "note": "Including list build and training"
+     }
+    ]
+   }
+  },
+  {
+   "type": "testimonials",
+   "data": {
+    "head": {
+     "eyebrow": "Clients",
+     "title": "What our clients say"
+    },
+    "items": [
+     {
+      "quote": "Two ClearLine SDRs now book more first meetings than our in-house team of four did last year, and the notes in HubSpot are better.",
+      "name": "Rachel Ortiz",
+      "role": "VP Sales",
+      "company": "Stackwise",
+      "avatar": "avatar-woman-2"
+     },
+     {
+      "quote": "They listened to our call recordings, rewrote the opener and our connect-to-meeting rate doubled in a month.",
+      "name": "Tom Becker",
+      "role": "Head of Growth",
+      "company": "Ledgerly",
+      "avatar": "avatar-man-1"
+     },
+     {
+      "quote": "Our Spanish-speaking market finally gets called back the same day. Inbound leads no longer wait until Monday.",
+      "name": "Luis Moreno",
+      "role": "Sales Director",
+      "company": "Fieldnote",
+      "avatar": "avatar-man-3"
+     }
+    ]
+   }
+  },
+  {
+   "type": "pricing-toggle",
+   "data": {
+    "head": {
+     "eyebrow": "Pricing",
+     "title": "Pay per caller or per meeting"
+    },
+    "models": [
+     {
+      "label": "Per caller",
+      "plans": [
+       {
+        "name": "One SDR",
+        "price": "$3,900",
+        "unit": "per month",
+        "text": "A full-time caller on your campaign with a shared team lead.",
+        "features": [
+         "160 calling hours",
+         "Weekly call review",
+         "CRM logging"
+        ],
+        "cta": {
+         "label": "Start with one SDR",
+         "href": "#contact"
+        }
+       },
+       {
+        "name": "SDR pod",
+        "price": "$10,500",
+        "unit": "per month",
+        "text": "Three callers and a dedicated team lead.",
+        "features": [
+         "Everything in One SDR",
+         "Dedicated team lead",
+         "A/B script testing",
+         "Daily reporting"
+        ],
+        "cta": {
+         "label": "Build a pod",
+         "href": "#contact"
+        },
+        "featured": true,
+        "badge": "Most booked"
+       }
+      ]
+     },
+     {
+      "label": "Per meeting",
+      "plans": [
+       {
+        "name": "Pay per meeting",
+        "price": "$390",
+        "unit": "per held meeting",
+        "text": "You pay only for meetings that take place with qualified prospects.",
+        "features": [
+         "Qualification criteria agreed upfront",
+         "Monthly minimum of 10 meetings",
+         "Rebooking of no-shows"
+        ],
+        "cta": {
+         "label": "Ask about fit",
+         "href": "#contact"
+        }
+       },
+       {
+        "name": "Hybrid",
+        "price": "Custom quote",
+        "text": "Lower base fee plus a reduced rate per held meeting.",
+        "features": [
+         "Shared risk model",
+         "Quarterly target review",
+         "Dedicated callers"
+        ],
+        "cta": {
+         "label": "Talk to us",
+         "href": "#contact"
+        }
+       }
+      ]
+     }
+    ],
+    "note": "Sample prices in USD. Final pricing depends on market, language and list quality."
+   }
+  },
+  {
+   "type": "faq-accordion",
+   "data": {
+    "head": {
+     "eyebrow": "FAQ",
+     "title": "Frequently asked questions"
+    },
+    "items": [
+     {
+      "q": "Who writes the call script?",
+      "a": "We draft it from your best sales calls and your ideal customer profile, then refine it every week from real objections."
+     },
+     {
+      "q": "Can we listen to every call?",
+      "a": "Yes. All calls are recorded and linked to the contact record in your CRM."
+     },
+     {
+      "q": "Which CRMs do you work in?",
+      "a": "HubSpot, Salesforce, Pipedrive and Close. Other tools are possible after a short setup."
+     },
+     {
+      "q": "How fast can a campaign start?",
+      "a": "Most campaigns place their first calls within two weeks and book first meetings in week three."
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta-multistep",
+   "data": {
+    "eyebrow": "Contact us",
+    "title": "Get a *campaign plan*",
+    "lead": "Tell us who you sell to. We reply with a target list sample, call plan and price.",
+    "points": [
+     "Free list sample of 50 contacts",
+     "Script draft before you sign",
+     "Cancel any month"
+    ],
+    "contacts": [
+     {
+      "icon": "phone",
+      "label": "+1 (555) 010 7788",
+      "href": "tel:+15550107788"
+     }
+    ],
+    "form": {
+     "step1_title": "What do you need help with?",
+     "services": [
+      "Outbound SDR team",
+      "Inbound call handling",
+      "Lead research",
+      "Email sequences"
+     ],
+     "step2_title": "How many callers do you expect?",
+     "sizes": [
+      "1 caller",
+      "2-3 callers",
+      "4-10 callers",
+      "Not sure yet"
+     ],
+     "step3_title": "Where should we send the plan?",
+     "submit_label": "Send my campaign plan",
+     "success_title": "Thanks, request received",
+     "success_text": "A campaign manager will contact you to set up a call.",
+     "note": "We never add you to a calling list."
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Outbound SDR and inbound calling teams for B2B companies in North America and Europe.",
+    "contacts": [
+     {
+      "icon": "phone",
+      "label": "+1 (555) 010 7788",
+      "href": "tel:+15550107788"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Services",
+      "links": [
+       {
+        "label": "Outbound SDR",
+        "href": "#services"
+       },
+       {
+        "label": "Inbound calls",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "Call samples",
+        "href": "#call-samples"
+       },
+       {
+        "label": "Pricing",
+        "href": "#pricing"
+       },
+       {
+        "label": "FAQ",
+        "href": "#faq"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved."
+   }
+  },
+  {
+   "type": "floating-chat",
+   "data": {
+    "label": "Talk to a campaign lead",
+    "href": "#contact",
+    "icon": "phone"
+   }
+  }
+ ]
 }

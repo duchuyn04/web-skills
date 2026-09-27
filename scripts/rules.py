@@ -37,6 +37,29 @@ BANNED = [
 BANNED_RE = re.compile(r"\b(" + "|".join(BANNED) + r")\b", re.I)
 WARN_WORDS_RE = re.compile(r"\b(key|highlight|seamless(?:ly)?|world-class|cutting-edge|unlock|elevate|empower(?:s|ing)?)\b", re.I)
 
+# Phrases that LLM-written marketing copy uses and that BPO sites almost never use (measured on the
+# homepages of 113 BPO and outsourcing companies; each appears on 0-1% of them). Industry readers spot
+# them at once. See references/industry-voice.md.
+LLM_TELLS = [
+    r"while you (?:scale|grow|focus)", r"so you can focus on", r"focus on what matters",
+    r"so (?:nobody|no one) ", r"peace of mind", r"without the (?:\w+ )?(?:headaches?|hassles?|stress)",
+    r"(?:we've|we have) got you covered", r"in today's", r"fast-paced", r"ever-(?:evolving|changing)",
+    r"look no further", r"game[- ]changer", r"unleash(?:es|ed|ing)?", r"harness(?:es|ing)? the power",
+    r"navigat(?:e|es|ing) the complexit(?:y|ies)", r"rest assured", r"every step of the way",
+    r"(?:do|does|handle|handles) the heavy lifting", r"best of both worlds", r"line by line",
+    r"a stranger to", r"(?:the|your) secret weapon", r"supercharg(?:e|es|ed|ing)",
+    r"take (?:it|your \w+) to the next level", r"like clockwork", r"one-stop[- ]shop",
+    r"(?:it's|it is) (?:that|this) simple", r"the (?:right|best) people for the (?:right )?job",
+]
+LLM_TELLS_RE = re.compile(r"\b(" + "|".join(LLM_TELLS) + r")", re.I)
+# Vietnamese: translated-from-English phrasing that none of the Vietnamese BPO and IT outsourcing
+# homepages in the study use.
+LLM_TELLS_VI = [
+    "hãy để chúng tôi", "trong khi bạn", r"để bạn (?:có thể )?tập trung", "nâng tầm", r"(?:giải phóng|khai phá|mở khóa|mở khoá) tiềm năng",
+    "trong bối cảnh", "hơn bao giờ hết", "kiến tạo tương lai", "bứt phá", "chinh phục mọi", r"không chỉ\b[^.!?]{0,60}\bmà còn",
+]
+LLM_TELLS_VI_RE = re.compile("(" + "|".join(LLM_TELLS_VI) + ")", re.I)
+
 CHATBOT_RE = re.compile(
     r"(certainly!|great question|i hope this helps|let me know if you need|would you like me to|sure, here is|sure, here's|honestly\?)",
     re.I,
@@ -77,6 +100,10 @@ def check_text(text, check_arrow_text=True):
         out.append(Finding("error", "curly-quote", "Curly quote found. Use straight quotes ' and \".", _excerpt(text, m)))
     for m in BANNED_RE.finditer(text):
         out.append(Finding("error", "banned-word", "Banned AI-style word '%s'. Rewrite with a plain verb or a concrete fact." % m.group(), _excerpt(text, m)))
+    for m in LLM_TELLS_RE.finditer(text):
+        out.append(Finding("error", "llm-tell", "'%s' reads as AI-written to industry buyers (real BPO sites almost never say it). Rewrite as a plain fact; see references/industry-voice.md." % m.group().strip(), _excerpt(text, m)))
+    for m in LLM_TELLS_VI_RE.finditer(text):
+        out.append(Finding("error", "llm-tell", "'%s' là cách viết dịch từ tiếng Anh, trang BPO Việt Nam thật không dùng. Viết lại thành câu nêu sự việc; xem references/industry-voice.md." % m.group().strip(), _excerpt(text, m)))
     for m in CHATBOT_RE.finditer(text):
         out.append(Finding("error", "chatbot", "Chatbot phrase '%s'. Delete it." % m.group(), _excerpt(text, m)))
     for rx in NOT_X_BUT_Y:

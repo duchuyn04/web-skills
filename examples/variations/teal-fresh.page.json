@@ -40,15 +40,15 @@
   {
    "type": "hero-split-image",
    "data": {
-    "eyebrow": "Outbound and inbound calling",
-    "title": "Callers who book *qualified meetings* for your sales team",
-    "lead": "Our SDRs and call agents work your target list with your script, log every call in your CRM and hand over meetings your reps want to take.",
+    "eyebrow": "B2B appointment setting since 2016",
+    "title": "Outbound SDR teams for *B2B sales*",
+    "lead": "Brightwave Voice runs cold calling, lead qualification and inbound sales lines for software and services companies in North America and Europe. Calls are recorded and logged in your CRM.",
     "primary_cta": {
-     "label": "Book a strategy call",
+     "label": "Book a call",
      "href": "#contact"
     },
     "secondary_cta": {
-     "label": "Hear our callers",
+     "label": "Hear call samples",
      "href": "#call-samples"
     },
     "proof": [
@@ -121,8 +121,8 @@
    "type": "statement-band",
    "data": {
     "eyebrow": "What we do",
-    "title": "Every call answered by a trained person, *booked straight* into your calendar",
-    "text": "Brightwave agents follow your script, qualify the caller and book the slot while the customer is still on the line."
+    "title": "Brightwave answers inbound calls and *books appointments* for clinics and home services",
+    "text": "Our agents follow the client's script, qualify the caller and book the slot during the call. Lines are covered 24/7 in English and Spanish."
    }
   },
   {
@@ -130,7 +130,7 @@
    "data": {
     "head": {
      "eyebrow": "Call samples",
-     "title": "Hear how our callers *sound on the phone*",
+     "title": "Recordings from live campaigns",
      "lead": "Recorded with permission on live campaigns. Names of prospects are removed."
     },
     "points": [
@@ -168,8 +168,8 @@
    "data": {
     "head": {
      "eyebrow": "Services",
-     "title": "Pipeline work *from list to meeting*",
-     "lead": "Pick one service or run the full outbound cycle with one team."
+     "title": "Our services",
+     "lead": "Hire one service or the full outbound cycle with one team."
     },
     "cards": [
      {
@@ -182,7 +182,7 @@
        "CRM logging on every call"
       ],
       "link": {
-       "label": "Plan an SDR team",
+       "label": "Learn more",
        "href": "#contact"
       }
      },
@@ -208,15 +208,15 @@
    "type": "feature-rows",
    "data": {
     "head": {
-     "eyebrow": "How we work",
-     "title": "Built around *your* customers and your scripts",
-     "lead": "Three habits every Brightwave program keeps, from the first hiring call to the monthly business review."
+     "eyebrow": "Why Brightwave",
+     "title": "Why clients choose Brightwave",
+     "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
     },
     "rows": [
      {
       "eyebrow": "Hiring",
-      "title": "Agents who already speak your customers' language",
-      "text": "Recruiters screen for language level, product fit and tone of voice. Your team approves the shortlist before training starts, so nobody joins the floor as a stranger to your brand.",
+      "title": "Hiring with client sign-off",
+      "text": "Recruiters screen for language level, product knowledge and tone. Your team interviews the shortlist and approves each hire before training starts.",
       "bullets": [
        "Language and tone assessments",
        "Client sign-off on every hire"
@@ -232,8 +232,8 @@
      },
      {
       "eyebrow": "Quality",
-      "title": "Every contact scored against your rubric",
-      "text": "Quality analysts review calls, chats and emails each day with your own scorecard. Coaching happens the same week, and trends go into the Monday report.",
+      "title": "Daily quality scoring",
+      "text": "Quality analysts score a daily sample of calls, chats and emails against your scorecard. Coaching follows within the week.",
       "bullets": [
        "Daily QA sampling",
        "Calibration with your team each week",
@@ -244,14 +244,14 @@
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
-       "label": "See our QA process",
+       "label": "Learn more",
        "href": "#faq"
       }
      },
      {
       "eyebrow": "Reporting",
-      "title": "One dashboard your leadership can read",
-      "text": "Handle time, CSAT, backlog and QA scores sit on one shared dashboard, refreshed every morning, with notes on anything that moved outside target.",
+      "title": "Shared reporting dashboard",
+      "text": "Handle time, CSAT, backlog and QA scores sit on one dashboard that refreshes each morning.",
       "photo": {
        "src": "office-interior",
        "alt": "Quiet operations floor with wall screens"
@@ -282,7 +282,7 @@
    "type": "metrics-counter",
    "data": {
     "eyebrow": "Results",
-    "title": "What a typical campaign *delivers*",
+    "title": "Results from B2B campaigns",
     "items": [
      {
       "value": 14,
@@ -415,7 +415,7 @@
    "data": {
     "head": {
      "eyebrow": "Playbooks",
-     "title": "Scripts and tips from our call floor"
+     "title": "Resources"
     },
     "slider": true,
     "ratio": "tall",
@@ -464,7 +464,7 @@
    "data": {
     "head": {
      "eyebrow": "FAQ",
-     "title": "Before you book a call"
+     "title": "Frequently asked questions"
     },
     "items": [
      {
@@ -489,8 +489,8 @@
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Book a call",
-    "title": "Get a campaign plan for *your market*",
+    "eyebrow": "Contact us",
+    "title": "Get a *campaign plan*",
     "lead": "Tell us who you sell to. We reply with a target list sample, call plan and price.",
     "points": [
      "Free list sample of 50 contacts",
@@ -522,7 +522,7 @@
      "step3_title": "Where should we send the plan?",
      "submit_label": "Send my campaign plan",
      "success_title": "Thanks, request received",
-     "success_text": "A campaign manager will contact you within one business day.",
+     "success_text": "A campaign manager will contact you to set up a call.",
      "note": "We never add you to a calling list."
     }
    }

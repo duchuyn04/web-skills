@@ -8,7 +8,7 @@
   "animations": ["hero-ambient-video-mask", "shimmer-button-glow", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
-    "title": {"type": "markup", "min": 20, "max": 90},
+    "title": {"type": "markup", "min": 12, "max": 90},
     "lead": {"type": "text", "min": 60, "max": 230},
     "primary_cta": {"$ref": "cta"},
     "secondary_cta": {"$ref": "cta", "required": false},

@@ -7,7 +7,7 @@
   "animations": ["multi-step-form-slide", "shimmer-button-glow", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
-    "title": {"type": "markup", "min": 15, "max": 80},
+    "title": {"type": "markup", "min": 8, "max": 80},
     "lead": {"type": "text", "min": 50, "max": 240},
     "points": {"$ref": "points"},
     "contacts": {

@@ -9,6 +9,7 @@ The model writes page.json. This script owns layout, spacing, colors, animation 
 Every error names the JSON path and says how to fix it.
 """
 import argparse
+import datetime
 import html
 import json
 import re
@@ -353,7 +354,7 @@ def validate(ctx, value, spec, path):
             return []
         lo, hi = spec.get("min", 0), spec.get("max", 99)
         if spec.get("counts") and len(value) not in spec["counts"]:
-            ctx.err(path, "needs %s items, got %d. Other counts leave gaps in the grid." %
+            ctx.err(path, "needs %s items, got %d. Other counts leave gaps in the grid. Do not pad the list with items the brief does not support; if the client has fewer, use another variant for this slot or drop the section." %
                     (" or ".join(str(c) for c in spec["counts"]), len(value)))
         elif not lo <= len(value) <= hi:
             ctx.err(path, "needs %s items, got %d. The grid is designed for this count; add or remove items." %
@@ -650,6 +651,212 @@ def theme_css(preset, overrides, ctx):
 
 
 # --------------------------------------------------------------------------- page structure
+YOU_RE = {"en": re.compile(r"\byou(?:r|rs)?\b", re.I), "vi": re.compile(r"\bbạn\b", re.I)}
+EVERY_RE = re.compile(r"\b(?:every|each) (?:call|contact|ticket|agent|hire|batch|program|interaction|step)\b", re.I)
+
+
+def all_strings(sections):
+    def walk(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k not in ("href", "src", "image", "icon", "flag", "city"):
+                    yield from walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                yield from walk(v)
+        elif isinstance(o, str):
+            yield o
+    for s in sections:
+        yield from walk(s["data"])
+
+
+_EXAMPLE_TEXT = None
+NUMBER_WORDS = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8",
+                "nine": "9", "ten": "10", "twelve": "12", "fifteen": "15", "twenty": "20", "thirty": "30"}
+NUMBER_TERM_RE = re.compile(r"\b(\d[\d,.]*|%s)[\s-]+(minutes?|hours?|days?|business days?|working days?|weeks?|months?|years?|seats?|agents?|people|items?|contacts?|rings?)\b" % "|".join(NUMBER_WORDS), re.I)
+
+
+def number_terms(text):
+    """'30 days notice' and 'thirty-day' both give {'30 day'}: numbers with units, normalised."""
+    out = set()
+    for n, unit in NUMBER_TERM_RE.findall(text):
+        n = NUMBER_WORDS.get(n.lower(), n.replace(",", ""))
+        out.add("%s %s" % (n, unit.lower().rstrip("s").replace("business day", "day").replace("working day", "day")))
+    return out
+
+
+def _example_sentences():
+    """Word sets of every long string in the example pages, loaded once."""
+    global _EXAMPLE_TEXT
+    if _EXAMPLE_TEXT is None:
+        _EXAMPLE_TEXT = []
+        for f in sorted((SKILL / "examples").rglob("*.page.json")):
+            try:
+                d = json.loads(f.read_text(encoding="utf-8"))
+            except ValueError:
+                continue
+            for t in all_strings([{"data": s.get("data", {})} for s in d.get("sections", [])]):
+                w = set(re.findall(r"\w+", plain(t).lower()))
+                if len(t) >= 45 and len(w) >= 7:
+                    _EXAMPLE_TEXT.append((w, f.name, t))
+    return _EXAMPLE_TEXT
+
+
+NUM_RE = re.compile(r"\d[\d,.:]*\d|\d")
+NUM_SKIP_KEYS = {"href", "src", "image", "icon", "flag", "city", "sizes", "label_min", "decimals", "min", "max", "start", "display"}
+
+
+def page_numbers(o, path, out, key=""):
+    """(path, number) for every number in visible copy and stat values."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            if k not in NUM_SKIP_KEYS and not k.startswith("_"):
+                page_numbers(v, "%s.%s" % (path, k), out, k)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            page_numbers(v, "%s[%d]" % (path, i), out, key)
+    elif isinstance(o, bool):
+        return
+    elif isinstance(o, (int, float)):
+        out.append((path, ("%g" % o)))
+    elif isinstance(o, str) and not o.startswith(("mailto:", "tel:", "http")):
+        for m in NUM_RE.findall(o):
+            out.append((path, m))
+
+
+def norm_num(n):
+    n = n.replace(",", "")
+    if ":" not in n and "." in n and n.replace(".", "").isdigit() and len(n.split(".")[-1]) == 3:
+        n = n.replace(".", "")  # 1.200 written Vietnamese style
+    return n.rstrip(".")
+
+
+def check_numbers(ctx, sections, brief):
+    """Every figure must come from the brief. Figures that also appear in the examples are sample data."""
+    allowed = {norm_num(n) for n in NUM_RE.findall(brief)}
+    for part in re.findall(r"\d+\s*-\s*\d+", brief):
+        allowed.update(x.strip() for x in part.split("-"))
+    # Years in business follow from a founding year; the current and last year may date the figures.
+    this_year = datetime.date.today().year
+    allowed.update({str(this_year), str(this_year - 1)})
+    for y in re.findall(r"\b(?:19|20)\d\d\b", brief):
+        if int(y) < this_year:
+            allowed.update({str(this_year - int(y)), str(this_year - 1 - int(y))})
+    example_nums = set()
+    for _, _, et in _example_sentences():
+        example_nums.update(norm_num(n) for n in NUM_RE.findall(et))
+    for f in sorted((SKILL / "examples").rglob("*.page.json")):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+        except ValueError:
+            continue
+        found = []
+        page_numbers([s.get("data", {}) for s in d.get("sections", [])], "", found)
+        example_nums.update(norm_num(n) for _, n in found)
+    unknown = []
+    for s in sections:
+        found = []
+        page_numbers(s["data"], s["path"] + ".data", found)
+        for path, n in found:
+            v = norm_num(n)
+            if v in allowed or len(v.replace(".", "")) < 2 or re.fullmatch(r"(19|20)\d\d", v) and v in brief:
+                continue
+            if v in ("24", "7") and "24/7" in brief:
+                continue
+            if v in example_nums:
+                ctx.err(path, "the figure %s is not in the brief but appears in the example pages, where it is sample data. Use the client's figure, write \"[KPI]\", or remove it." % n)
+            else:
+                unknown.append("%s (%s)" % (n, path))
+    if unknown:
+        ctx.warn("sections", "figures not found in the brief: %s. Check each one is a real client fact; otherwise use \"[KPI]\" or remove it." % ", ".join(unknown[:12]))
+
+
+def check_copied(ctx, sections, brief=""):
+    """Fail when a sentence is (almost) the same as one in an example page.
+
+    The examples describe fictional companies. Their numbers, time frames, guarantees and contract
+    terms are sample data; kept on a client page they become invented facts, and repeated example
+    wording is what makes generated pages look alike.
+    """
+    ex = _example_sentences()
+    for s in sections:
+        def walk(o, path):
+            if isinstance(o, dict):
+                for k, v in o.items():
+                    if k not in ("href", "src", "image", "icon", "flag", "city", "alt"):
+                        walk(v, "%s.%s" % (path, k))
+            elif isinstance(o, list):
+                for i, v in enumerate(o):
+                    walk(v, "%s[%d]" % (path, i))
+            elif isinstance(o, str) and len(o) >= 45:
+                w = set(re.findall(r"\w+", plain(o).lower()))
+                if len(w) < 7:
+                    return
+                terms = number_terms(o) - number_terms(brief)
+                for ew, fname, et in ex:
+                    j = len(w & ew) / len(w | ew)
+                    if j >= 0.6:
+                        ctx.err(path, "this sentence is copied from examples/%s (\"%s\"). Example facts, times and terms are made up for a fictional company. Rewrite it from the client's brief, or drop it if the brief does not cover it." % (fname, et[:70]))
+                        return
+                    shared = terms & number_terms(et)
+                    if shared and j >= 0.2:
+                        ctx.err(path, "'%s' comes from examples/%s, where it is sample data for a fictional company. Keep a number, time frame or contract term only if the client's brief states it; otherwise write the sentence without it." % ("', '".join(sorted(shared)), fname))
+                        return
+        walk(s["data"], s["path"] + ".data")
+
+
+def check_voice(ctx, sections, lang):
+    """Page-level voice checks measured against 113 real BPO homepages (references/industry-voice.md).
+
+    Real sites: hero titles have a median of 5 words and 15% address the reader; 12% of section headings
+    say you/your and 35% are short labels such as "How we help" or "Industries we serve".
+    """
+    you = YOU_RE.get(lang)
+    heads = []
+    body = []
+    for s in sections:
+        d = s["data"] if isinstance(s["data"], dict) else {}
+        g = s["variant"].get("group")
+        title = d.get("title") if isinstance(d.get("title"), str) else (d.get("head") or {}).get("title")
+        if g == "hero" and title:
+            t = plain(title)
+            n = len(t.split())
+            if lang == "en" and n > 10:
+                ctx.warn(s["path"] + ".data.title", "hero title has %d words. Real BPO hero titles are 3-8 words (median 5): name what the company is or does, for example \"Customer support teams in Manila and Bogota\"." % n)
+            if you and you.search(t) and re.search(r"\b(that|who)\b", t, re.I):
+                ctx.warn(s["path"] + ".data.title", "hero title follows the '[people] who/that [verb] your [thing]' formula that AI copy overuses (half of AI-written heroes, 11% of real ones). Say what the company is: \"Offshore accounting teams for US CPA firms\".")
+        elif g not in ("header", "footer", "floating", "exit", None) and title:
+            heads.append((s["path"], plain(title)))
+        for k in ("lead", "text"):
+            v = d.get(k) or (d.get("head") or {}).get(k)
+            if isinstance(v, str):
+                body.append(v)
+    if you and len(heads) >= 4:
+        n_you = [p for p, t in heads if you.search(t)]
+        share = len(n_you) / len(heads)
+        msg = ("%d of %d section headings address the reader (%s). On real BPO sites about 1 in 8 do. Turn most of them into plain labels "
+               "(\"Services\", \"Industries we serve\", \"How it works\", \"Why %s\") or statements about the company." % (len(n_you), len(heads), ", ".join(p for p in n_you[:4]), "<brand>"))
+        if share > 0.4:
+            ctx.err("sections", msg)
+        elif share > 0.25:
+            ctx.warn("sections", msg)
+    if lang in ("en", "vi") and len(heads) >= 5:
+        pron = r"\b(you|your|we|our)\b" if lang == "en" else r"\bbạn\b"
+        limit = 4 if lang == "en" else 6
+        labels = [t for p, t in heads if len(t.split()) <= limit and not re.search(pron, t, re.I)]
+        if not labels:
+            ctx.warn("sections", "no section heading is a short label. A third of real BPO headings are 1-4 word labels (\"Our services\", \"Case studies\", \"Awards and certifications\"); a page where every heading is a crafted sentence reads as AI-written.")
+    types = {s["type"] for s in sections}
+    if not types & {"metrics-counter", "metrics-panel", "compliance-badges"}:
+        ctx.warn("sections", "the page has no metrics or certification section. 58% of real BPO homepages show big numbers (staff, clients, years) and many show certifications; if the brief has such figures, add metrics-counter or compliance-badges.")
+    riders = sum(t.count(", with ") for t in all_strings(sections))
+    if lang == "en" and riders > 3:
+        ctx.warn("sections", "%d sentences hang an extra clause on with ', with ...'. Real BPO sites do this about once per 150 sentences; split them into two sentences." % riders)
+    every = [m.group() for t in [t for _, t in heads] + body for m in EVERY_RE.finditer(t)]
+    if len(every) > 2:
+        ctx.warn("sections", "'every/each call, contact, agent...' appears %d times (%s). AI copy leans on it; keep one." % (len(every), ", ".join(dict.fromkeys(e.lower() for e in every))))
+
+
 def check_order(ctx, archetype, sections, lib):
     slots = archetype["slots"]
     pointer = 0
@@ -738,7 +945,9 @@ def main():
 
     # Top level (sections are validated one by one below).
     raw_sections = page.get("sections", [])
-    top = validate_object(ctx, {k: v for k, v in page.items() if k != "sections"}, {"fields": {k: v for k, v in PAGE_SPEC["fields"].items() if k != "sections"}}, "page")
+    # "brief" holds the client's brief as given (any wording, not checked); it tells check_copied which figures are real.
+    brief = page.get("brief") if isinstance(page.get("brief"), str) else ""
+    top = validate_object(ctx, {k: v for k, v in page.items() if k not in ("sections", "brief")}, {"fields": {k: v for k, v in PAGE_SPEC["fields"].items() if k != "sections"}}, "page")
     if not isinstance(raw_sections, list) or not raw_sections:
         ctx.err("page.sections", "must be a non-empty list of sections")
         raw_sections = []
@@ -780,6 +989,12 @@ def main():
             ctx.err(p + ".data.cards[0].bullets", "the first card is the large feature card; give it 3-4 bullets so it does not look empty")
         if t == "image-cards" and not data.get("slider") and len(data.get("cards") or []) not in (3, 4, 6):
             ctx.err(p + ".data.cards", "a grid needs 3, 4 or 6 cards (got %d). Use that count, or set \"slider\": true for 3 to 8 cards." % len(data.get("cards") or []))
+        if t == "hero-cycler-centered" and data.get("title_before") and data.get("words"):
+            last = plain(data["title_before"]).split()[-1].lower()
+            preps = ("in", "for", "to", "with", "at", "of", "on", "from", "by")
+            bad = [w for w in data["words"] if last in preps and w.split()[0].lower() in preps]
+            if bad:
+                ctx.err(p + ".data.words", "the title reads \"%s %s\". Each word is shown right after title_before, so every one must finish that sentence; do not start a word with another preposition." % (plain(data["title_before"]), bad[0]))
         if t == "video-block":
             vid = data.get("video") or {}
             if bool(vid.get("src")) == bool(vid.get("embed")):
@@ -806,6 +1021,14 @@ def main():
         check_order(ctx, archetype, raw_sections if isinstance(raw_sections, list) else [], lib)
     elif top.get("override_order"):
         ctx.warn("page.override_order", "archetype order check skipped: %s" % top["override_order"]["reason"])
+
+    check_voice(ctx, sections, top.get("lang", "en"))
+    if SKILL / "examples" not in page_path.parents:
+        check_copied(ctx, sections, brief)
+        if brief:
+            check_numbers(ctx, sections, brief)
+        if not brief:
+            ctx.warn("page.brief", "add the client's brief as \"brief\": \"...\" at the top of page.json. The build then accepts figures that come from it and flags figures copied from the examples.")
 
     for path, anchor in ctx.anchors:
         if anchor not in ids and anchor != "top":

@@ -15,8 +15,8 @@ You do not write HTML, CSS or JavaScript. You write one JSON file (`page.json`) 
 ## Rules that are never negotiable
 
 1. Never edit files in `dist/`. Change `page.json` (or a template, if the user asked you to change the library) and rebuild.
-2. Never invent facts: no made-up client names, quotes, agent names, CSAT, headcount, prices, salary rates, certifications or promises (such as "same-day onboarding"). A missing single figure becomes `"[KPI]"` (number fields) or `"[figure]"` (text). A missing whole block of proof (logos, testimonials, case studies, call recordings, salary rates) means you leave that section out; its slot is "recommended", so the build only warns. If a section's minimum item count is higher than the facts you have, drop the section or pick another variant; never pad a list to reach the minimum. List everything missing in your report.
-3. Copy follows `references/content-rules.md`. The build fails on emoji, arrows, em or en dashes, curly quotes and banned AI words, so fix the wording, do not work around the checker.
+2. Never invent facts: no made-up client names, quotes, agent names, CSAT, headcount, prices, salary rates, certifications or promises (such as "same-day onboarding"). A missing single figure becomes `"[KPI]"` (number fields) or `"[figure]"` (text). A missing whole block of proof (logos, testimonials, case studies, call recordings, salary rates) means you leave that section out; its slot is "recommended", so the build only warns. If a section's minimum item count is higher than the facts you have, drop the section or pick another variant; never pad a list to reach the minimum. List everything missing in your report. The reverse also holds: when the brief gives figures (headcount, years in business, savings, retention, certifications), put them on the page in `metrics-counter` or `metrics-panel` and `compliance-badges`. Real BPO homepages lead with this proof, and a page without it reads as generic.
+3. Copy follows `references/content-rules.md` and `references/industry-voice.md`. Write the way real BPO vendors write: hero titles name the company's category ("Software outsourcing in Vietnam"), about a third of section headings are plain labels ("Our services", "Case studies"), the lead starts with the company name, and buttons use standard labels ("Contact us", "Get a quote"). The build fails on emoji, arrows, em or en dashes, curly quotes, banned AI words and phrases that mark copy as AI-written ("while you scale", "peace of mind", "hãy để chúng tôi"), so fix the wording, do not work around the checker. Treat its voice warnings as things to fix.
 4. Keep the archetype's section order. Do not add keys that the schema does not list.
 
 ## Step 1: Collect the brief
@@ -57,9 +57,12 @@ Create a project folder, for example `sites/<company-slug>/`, and copy the match
 SKILL/examples/<archetype>.page.json  to  sites/<company-slug>/page.json
 ```
 
+For a Vietnamese page (`"lang": "vi"`), copy `SKILL/examples/vi/enterprise-cx.page.json` instead, or use it as the model for wording with another archetype. Write Vietnamese directly in that voice; do not translate the English examples sentence by sentence.
+
 Then edit values only:
 
-- Replace every string and number with the client's content. Delete `_note`.
+- Paste the client's brief, as given, into a top-level `"brief": "..."` field. The build accepts figures that appear in it.
+- Replace every string and number with the client's content. Delete `_note`. The examples describe fictional companies: their figures, time frames, guarantees and contract terms ("30 days notice", "replies within 48 hours", "90-day replacement") are sample data. Keep such a detail only when the brief states it; otherwise write the sentence without it or drop the FAQ question. The build fails on sentences copied from an example and on example figures that are not in the brief.
 - Keep the same section order. Delete "no" and "recommended" sections you have no real content for (see page-anatomy.md), and swap a section for another variant allowed in the same slot when it fits the content better.
 - Optional slots `ticker`, `intro` and `banner` (ticker-band, statement-band, banner-image) and the heroes `hero-qualifier` and `hero-collage` are not in the archetype examples. Copy their data from `examples/variations/*.page.json`, which also shows `image-cards` with `"slider": true` and `quote-spotlight`.
 - For each section, check field names, item counts and length limits in `references/section-catalog.md`. Look at `previews/<variant>.jpg` to see what the section looks like.
@@ -108,6 +111,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/section-catalog.md`: every variant, its fields, limits and preview (generated)
 - `references/style-presets.md`: presets, design options, brand color overrides, tones
 - `references/content-rules.md`: copy rules and how to handle missing facts
+- `references/industry-voice.md`: how real BPO sites write (hero patterns, heading labels, proof, button labels, Vietnamese), measured on 120 homepages
 - `references/assets.md`: image library, icons, flags, cities
 - `references/animation-map.md`: which section carries which of the 24 researched animations (generated)
 - `references/custom-section-spec.md`: fallback for blocks outside the library

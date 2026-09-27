@@ -1,259 +1,626 @@
 {
-  "_note": "Starter for archetype it-bpo-partner. Harbor Point is a fictional company; every figure below is sample data. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders. Service rows link to #contact until the client has a page per service.",
-  "archetype": "it-bpo-partner",
-  "preset": "orange-charcoal",
-  "lang": "en",
-  "site": {
-    "brand": "Harbor Point",
-    "brand_mark": "HP",
-    "title": "Harbor Point | Software teams and back-office services from Vietnam",
-    "description": "Harbor Point builds software and runs accounting and data operations for companies in the US, Japan and Australia from Ho Chi Minh City and Da Nang."
-  },
-  "sections": [
-    {
-      "type": "header-mega",
-      "data": {
-        "links": [
+ "_note": "Starter for archetype it-bpo-partner. Harbor Point is a fictional company; every figure below is sample data. Replace all copy and numbers with the client's real facts, or use \"[KPI]\" placeholders. Service rows link to #contact until the client has a page per service.",
+ "archetype": "it-bpo-partner",
+ "preset": "orange-charcoal",
+ "lang": "en",
+ "site": {
+  "brand": "Harbor Point",
+  "brand_mark": "HP",
+  "title": "Harbor Point | Software teams and back-office services from Vietnam",
+  "description": "Harbor Point builds software and runs accounting and data operations for companies in the US, Japan and Australia from Ho Chi Minh City and Da Nang."
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "links": [
+     {
+      "label": "Services",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Software",
+         "links": [
           {
-            "label": "Services",
-            "href": "#services",
-            "mega": {
-              "columns": [
-                {"heading": "Software", "links": [
-                  {"label": "Custom development", "href": "#services"},
-                  {"label": "QA and testing", "href": "#services"},
-                  {"label": "DevOps and cloud", "href": "#services"},
-                  {"label": "Dedicated teams", "href": "#services"}
-                ]},
-                {"heading": "Back office", "links": [
-                  {"label": "Bookkeeping", "href": "#services"},
-                  {"label": "Payroll processing", "href": "#services"},
-                  {"label": "Data entry and cleanup", "href": "#services"}
-                ]}
-              ],
-              "featured": {
-                "tag": "Case study",
-                "title": "A logistics platform rebuilt in nine months",
-                "text": "Fourteen engineers moved a legacy dispatch system to the cloud without downtime.",
-                "link_label": "Read the story",
-                "href": "#case-studies"
-              }
-            }
-          },
-          {"label": "AI solutions", "href": "#solutions"},
-          {"label": "Who we serve", "href": "#who-we-serve"},
-          {"label": "Case studies", "href": "#case-studies"},
-          {"label": "About", "href": "#about"}
-        ],
-        "cta": {"label": "Contact us", "href": "#contact"}
-      }
-    },
-    {
-      "type": "hero-gradient",
-      "data": {
-        "title": "Software and back-office teams *that scale with you*",
-        "lead": "We build products and run finance and data operations for growing companies in the US, Japan and Australia, from two delivery centers in Vietnam.",
-        "primary_cta": {"label": "Get a proposal", "href": "#contact"},
-        "secondary_cta": {"label": "See our services", "href": "#services"},
-        "proof": ["14 years in operation", "ISO 27001 certified"]
-      }
-    },
-    {
-      "type": "about-mosaic",
-      "data": {
-        "eyebrow": "About us",
-        "title": "Harbor Point, your *long-term* delivery partner",
-        "paragraphs": [
-          "Harbor Point is an **IT outsourcing** and **business process outsourcing** company founded in Ho Chi Minh City in 2012. We run dedicated engineering squads and back-office teams that work inside our clients' own tools and hours.",
-          "Most clients start with one small team and stay for years. Our longest partnership, with a US accounting firm, is now in its ninth year and covers **payroll for 1,200 employees** every month."
-        ],
-        "cta": {"label": "Meet the team", "href": "#contact"},
-        "photos": [
-          {"src": "avatar-man-1", "alt": "Harbor Point engineering lead"},
-          {"src": "avatar-woman-1", "alt": "Harbor Point accounting manager"},
-          {"src": "avatar-man-2", "alt": "Harbor Point QA lead"},
-          {"src": "portrait-woman-studio", "alt": "Harbor Point data operations analyst"},
-          {"src": "avatar-man-3", "alt": "Harbor Point delivery director"},
-          {"src": "avatar-woman-2", "alt": "Harbor Point client success manager"}
-        ]
-      }
-    },
-    {
-      "type": "metrics-panel",
-      "data": {
-        "eyebrow": "Why choose us",
-        "title": "Trust built on *audits and track record*",
-        "text": "Our delivery centers follow ISO 27001 and ISO 9001 processes, with yearly external audits and access controls your security team can review.",
-        "items": [
-          {"value": 14, "suffix": "+", "label": "Years in operation"},
-          {"value": 180, "suffix": "+", "label": "Specialists on staff"},
-          {"value": 260, "suffix": "+", "label": "Projects delivered"},
-          {"value": 97, "suffix": "%", "label": "Client retention"}
-        ]
-      }
-    },
-    {
-      "type": "service-links",
-      "data": {
-        "groups": [
-          {
-            "eyebrow": "Software services",
-            "title": "Full-cycle *software development*",
-            "text": "From first prototype to long-term maintenance, with teams that join your sprints and your code reviews.",
-            "links": [
-              {"label": "Custom software development", "href": "#contact", "icon": "code"},
-              {"label": "Web and mobile apps", "href": "#contact", "icon": "layers"},
-              {"label": "QA and test automation", "href": "#contact", "icon": "bug"},
-              {"label": "DevOps and cloud migration", "href": "#contact", "icon": "server"},
-              {"label": "Data engineering and analytics", "href": "#contact", "icon": "database"},
-              {"label": "Legacy system maintenance", "href": "#contact", "icon": "sliders"},
-              {"label": "AI chatbot development", "href": "#contact", "icon": "bot"},
-              {"label": "Dedicated development teams", "href": "#contact", "icon": "users"}
-            ]
+           "label": "Custom development",
+           "href": "#services"
           },
           {
-            "eyebrow": "Back-office services",
-            "title": "Finance and data operations, *handled*",
-            "text": "Trained accountants and data specialists who follow your checklists and close on your calendar.",
-            "links": [
-              {"label": "Bookkeeping and reconciliation", "href": "#contact", "icon": "receipt"},
-              {"label": "Payroll processing", "href": "#contact", "icon": "wallet"},
-              {"label": "Tax preparation support", "href": "#contact", "icon": "file-text"},
-              {"label": "Data entry and cleanup", "href": "#contact", "icon": "clipboard-check"}
-            ]
+           "label": "QA and testing",
+           "href": "#services"
+          },
+          {
+           "label": "DevOps and cloud",
+           "href": "#services"
+          },
+          {
+           "label": "Dedicated teams",
+           "href": "#services"
           }
-        ]
-      }
-    },
-    {
-      "type": "solution-panels",
-      "data": {
-        "title": "*AI and automation* for support, sales and operations",
-        "lead": "Pilot a focused AI workflow in four weeks, then scale it with the same team that built it.",
-        "cta": {"label": "Book an AI workshop", "href": "#contact"},
-        "panels": [
-          {
-            "title": "AI assistants",
-            "href": "#contact",
-            "items": [
-              {"icon": "message-square", "title": "Customer support assistant", "text": "Answers common questions from your help center and hands complex cases to a person."},
-              {"icon": "mic", "title": "Voice assistant", "text": "Takes bookings and order status calls in English and Japanese, day and night."},
-              {"icon": "file-text", "title": "Document reader", "text": "Pulls totals, dates and vendor names from invoices into your accounting system."}
-            ]
-          },
-          {
-            "title": "Automation services",
-            "href": "#contact",
-            "items": [
-              {"icon": "target", "title": "Discovery workshop", "text": "We map one process with your team and estimate the hours automation can save."},
-              {"icon": "workflow", "title": "Workflow build", "text": "Connectors between your CRM, ticketing and finance tools, tested on real data."},
-              {"icon": "activity", "title": "Run and improve", "text": "Monthly reports on accuracy and hours saved, with fixes shipped every sprint."}
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "audience-cards",
-      "data": {
-        "head": {"eyebrow": "Who we serve", "title": "Two kinds of clients, *one standard*"},
-        "cards": [
-          {
-            "title": "Product companies and enterprises",
-            "text": "Software and SaaS companies, retailers and healthcare providers that need engineering capacity without a long hiring cycle.",
-            "points": ["Full-cycle product development", "Dedicated engineering squads", "QA and release support", "Data and AI projects"]
-          },
-          {
-            "title": "Accounting and CPA firms",
-            "text": "US and Australian firms that want reliable month-end capacity during busy season and all year round.",
-            "points": ["White-label bookkeeping", "Payroll and tax preparation support", "Full-time equivalent staff"]
-          }
-        ]
-      }
-    },
-    {
-      "type": "case-slider",
-      "data": {
-        "head": {"eyebrow": "Success stories", "title": "Projects our teams *delivered*"},
-        "cases": [
-          {"client": "Northgate Logistics", "industry": "Logistics", "photo": {"src": "team-engineers-screen", "alt": "Engineers reviewing a dispatch dashboard"}, "title": "Rebuilt a legacy dispatch platform on the cloud in nine months", "results": [{"value": "0 min", "label": "Downtime at cutover"}, {"value": "-38%", "label": "Hosting cost"}]},
-          {"client": "Fairview CPA", "industry": "Accounting", "photo": {"src": "meeting-handshake", "alt": "Accounting partners closing a service agreement"}, "title": "Took over monthly bookkeeping for 140 small business clients", "results": [{"value": "5 days", "label": "Month-end close"}, {"value": "99.6%", "label": "Reconciliation accuracy"}]},
-          {"client": "Kaede Retail", "industry": "Ecommerce", "photo": {"src": "team-coworking-laptops", "alt": "Developers testing a shopping app"}, "title": "Launched a bilingual shopping app for the Japanese market", "results": [{"value": "4.7", "label": "App store rating"}, {"value": "+31%", "label": "Repeat orders"}]}
-        ]
-      }
-    },
-    {
-      "type": "testimonials",
-      "data": {
-        "head": {"eyebrow": "Client stories", "title": "What our clients say"},
-        "items": [
-          {"quote": "Harbor Point's engineers work like part of our own team. Releases are on time and the code reviews are thorough.", "name": "Laura Mitchell", "role": "VP Engineering", "company": "Northgate Logistics", "avatar": "avatar-woman-2"},
-          {"quote": "Busy season used to mean overtime for everyone. Now our Harbor Point team handles the volume and our staff focus on advisory work.", "name": "Daniel Reyes", "role": "Managing Partner", "company": "Fairview CPA", "avatar": "avatar-man-2"},
-          {"quote": "They understood our Japanese customers and our English-speaking product team equally well. That is rare.", "name": "Kenji Watanabe", "role": "Head of Digital", "company": "Kaede Retail", "avatar": "avatar-man-1"}
-        ]
-      }
-    },
-    {
-      "type": "compliance-badges",
-      "data": {
-        "head": {"eyebrow": "Certifications", "title": "Audited *every year*", "lead": "External auditors review our security and quality systems each year."},
-        "badges": [
-          {"code": "ISO 27001", "label": "Information security management"},
-          {"code": "ISO 9001", "label": "Quality management", "icon": "award"}
-        ]
-      }
-    },
-    {
-      "type": "contact-split",
-      "data": {
-        "head": {"eyebrow": "Contact us", "title": "Start your project and watch your *business grow*"},
-        "form": {
-          "title": "Tell us about your project",
-          "text": "A solutions lead will reply within one business day.",
-          "phone_label": "Phone (optional)",
-          "submit_label": "Send message",
-          "success_title": "Thanks, we have your message",
-          "success_text": "A solutions lead will reply within one business day to set up a call.",
-          "note": "We only use your details to reply to this request."
+         ]
         },
-        "aside": {
-          "title": "Why teams choose us",
-          "points": ["14 years of software and back-office delivery", "180+ specialists in two delivery centers", "Monthly reporting on every engagement", "Month-to-month terms after the first quarter"],
-          "offices": [
-            {"flag": "vn", "name": "Vietnam", "address": "8th Floor, 120 Nguyen Thi Minh Khai Street, District 3, Ho Chi Minh City", "phone": "(+84) 28 5555 0120"},
-            {"flag": "us", "name": "United States", "address": "1201 Third Avenue, Suite 400, Seattle, WA 98101", "phone": "(+1) 206 555 0142"}
-          ],
-          "email_label": "Project inquiries",
-          "email": "hello@harborpoint.example"
+        {
+         "heading": "Back office",
+         "links": [
+          {
+           "label": "Bookkeeping",
+           "href": "#services"
+          },
+          {
+           "label": "Payroll processing",
+           "href": "#services"
+          },
+          {
+           "label": "Data entry and cleanup",
+           "href": "#services"
+          }
+         ]
         }
+       ],
+       "featured": {
+        "tag": "Case study",
+        "title": "A logistics platform rebuilt in nine months",
+        "text": "Fourteen engineers moved a legacy dispatch system to the cloud without downtime.",
+        "link_label": "Read the story",
+        "href": "#case-studies"
+       }
       }
-    },
-    {
-      "type": "footer-columns",
-      "data": {
-        "blurb": "Software teams and back-office services from Ho Chi Minh City and Da Nang for clients in the US, Japan and Australia.",
-        "contacts": [
-          {"icon": "phone", "label": "(+84) 28 5555 0120", "href": "tel:+842855550120"},
-          {"icon": "mail", "label": "hello@harborpoint.example", "href": "mailto:hello@harborpoint.example"}
-        ],
-        "socials": [
-          {"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"},
-          {"icon": "facebook", "label": "Facebook", "href": "https://www.facebook.com"},
-          {"icon": "youtube", "label": "YouTube", "href": "https://www.youtube.com"}
-        ],
-        "columns": [
-          {"heading": "Software", "links": [{"label": "Custom development", "href": "#services"}, {"label": "QA and testing", "href": "#services"}, {"label": "DevOps and cloud", "href": "#services"}, {"label": "AI solutions", "href": "#solutions"}]},
-          {"heading": "Back office", "links": [{"label": "Bookkeeping", "href": "#services"}, {"label": "Payroll processing", "href": "#services"}, {"label": "Data services", "href": "#services"}]},
-          {"heading": "Company", "links": [{"label": "About us", "href": "#about"}, {"label": "Case studies", "href": "#case-studies"}, {"label": "Contact", "href": "#contact"}]}
-        ],
-        "legal": "All rights reserved.",
-        "legal_links": [{"label": "Privacy policy", "href": "#top"}, {"label": "Security policy", "href": "#security"}],
-        "certifications": "ISO 27001 | ISO 9001"
-      }
-    },
-    {
-      "type": "floating-chat",
-      "data": {"label": "Chat with our team", "status": "Replies within a day", "href": "#contact"}
+     },
+     {
+      "label": "AI solutions",
+      "href": "#solutions"
+     },
+     {
+      "label": "Who we serve",
+      "href": "#who-we-serve"
+     },
+     {
+      "label": "Case studies",
+      "href": "#case-studies"
+     },
+     {
+      "label": "About",
+      "href": "#about"
+     }
+    ],
+    "cta": {
+     "label": "Contact us",
+     "href": "#contact"
     }
-  ]
+   }
+  },
+  {
+   "type": "hero-gradient",
+   "data": {
+    "title": "IT and business process outsourcing *in Vietnam*",
+    "lead": "Harbor Point builds software and runs finance and data operations for companies in the US, Japan and Australia. 180 engineers and specialists work from Ho Chi Minh City and Da Nang.",
+    "primary_cta": {
+     "label": "Contact us",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Our services",
+     "href": "#services"
+    },
+    "proof": [
+     "14 years in operation",
+     "ISO 27001 certified"
+    ]
+   }
+  },
+  {
+   "type": "about-mosaic",
+   "data": {
+    "eyebrow": "About us",
+    "title": "About *Harbor Point*",
+    "paragraphs": [
+     "Harbor Point is an **IT outsourcing** and **business process outsourcing** company founded in Ho Chi Minh City in 2012. We run dedicated engineering squads and back-office teams that work inside our clients' own tools and hours.",
+     "Most clients start with one small team and stay for years. Our longest partnership, with a US accounting firm, is now in its ninth year and covers **payroll for 1,200 employees** every month."
+    ],
+    "cta": {
+     "label": "Meet the team",
+     "href": "#contact"
+    },
+    "photos": [
+     {
+      "src": "avatar-man-1",
+      "alt": "Harbor Point engineering lead"
+     },
+     {
+      "src": "avatar-woman-1",
+      "alt": "Harbor Point accounting manager"
+     },
+     {
+      "src": "avatar-man-2",
+      "alt": "Harbor Point QA lead"
+     },
+     {
+      "src": "portrait-woman-studio",
+      "alt": "Harbor Point data operations analyst"
+     },
+     {
+      "src": "avatar-man-3",
+      "alt": "Harbor Point delivery director"
+     },
+     {
+      "src": "avatar-woman-2",
+      "alt": "Harbor Point client success manager"
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-panel",
+   "data": {
+    "eyebrow": "Why choose us",
+    "title": "Harbor Point *in numbers*",
+    "text": "Our delivery centers follow ISO 27001 and ISO 9001 processes and pass external audits every year.",
+    "items": [
+     {
+      "value": 14,
+      "suffix": "+",
+      "label": "Years in operation"
+     },
+     {
+      "value": 180,
+      "suffix": "+",
+      "label": "Specialists on staff"
+     },
+     {
+      "value": 260,
+      "suffix": "+",
+      "label": "Projects delivered"
+     },
+     {
+      "value": 97,
+      "suffix": "%",
+      "label": "Client retention"
+     }
+    ]
+   }
+  },
+  {
+   "type": "service-links",
+   "data": {
+    "groups": [
+     {
+      "eyebrow": "Software services",
+      "title": "Full-cycle *software development*",
+      "text": "From first prototype to long-term maintenance. Our teams join your sprints and code reviews.",
+      "links": [
+       {
+        "label": "Custom software development",
+        "href": "#contact",
+        "icon": "code"
+       },
+       {
+        "label": "Web and mobile apps",
+        "href": "#contact",
+        "icon": "layers"
+       },
+       {
+        "label": "QA and test automation",
+        "href": "#contact",
+        "icon": "bug"
+       },
+       {
+        "label": "DevOps and cloud migration",
+        "href": "#contact",
+        "icon": "server"
+       },
+       {
+        "label": "Data engineering and analytics",
+        "href": "#contact",
+        "icon": "database"
+       },
+       {
+        "label": "Legacy system maintenance",
+        "href": "#contact",
+        "icon": "sliders"
+       },
+       {
+        "label": "AI chatbot development",
+        "href": "#contact",
+        "icon": "bot"
+       },
+       {
+        "label": "Dedicated development teams",
+        "href": "#contact",
+        "icon": "users"
+       }
+      ]
+     },
+     {
+      "eyebrow": "Back-office services",
+      "title": "Finance and *data operations*",
+      "text": "Trained accountants and data specialists who follow your checklists and close on your calendar.",
+      "links": [
+       {
+        "label": "Bookkeeping and reconciliation",
+        "href": "#contact",
+        "icon": "receipt"
+       },
+       {
+        "label": "Payroll processing",
+        "href": "#contact",
+        "icon": "wallet"
+       },
+       {
+        "label": "Tax preparation support",
+        "href": "#contact",
+        "icon": "file-text"
+       },
+       {
+        "label": "Data entry and cleanup",
+        "href": "#contact",
+        "icon": "clipboard-check"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "solution-panels",
+   "data": {
+    "title": "*AI and automation* for support, sales and operations",
+    "lead": "Pilot a focused AI workflow in four weeks, then scale it with the same team that built it.",
+    "cta": {
+     "label": "Book an AI workshop",
+     "href": "#contact"
+    },
+    "panels": [
+     {
+      "title": "AI assistants",
+      "href": "#contact",
+      "items": [
+       {
+        "icon": "message-square",
+        "title": "Customer support assistant",
+        "text": "Answers common questions from your help center and hands complex cases to a person."
+       },
+       {
+        "icon": "mic",
+        "title": "Voice assistant",
+        "text": "Takes bookings and order status calls in English and Japanese, day and night."
+       },
+       {
+        "icon": "file-text",
+        "title": "Document reader",
+        "text": "Pulls totals, dates and vendor names from invoices into your accounting system."
+       }
+      ]
+     },
+     {
+      "title": "Automation services",
+      "href": "#contact",
+      "items": [
+       {
+        "icon": "target",
+        "title": "Discovery workshop",
+        "text": "We map one process with your team and estimate the hours automation can save."
+       },
+       {
+        "icon": "workflow",
+        "title": "Workflow build",
+        "text": "Connectors between your CRM, ticketing and finance tools, tested on real data."
+       },
+       {
+        "icon": "activity",
+        "title": "Run and improve",
+        "text": "Monthly reports on accuracy and hours saved. Fixes ship every sprint."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "audience-cards",
+   "data": {
+    "head": {
+     "eyebrow": "Who we serve",
+     "title": "Who we work with"
+    },
+    "cards": [
+     {
+      "title": "Product companies and enterprises",
+      "text": "Software and SaaS companies, retailers and healthcare providers that need engineering capacity without a long hiring cycle.",
+      "points": [
+       "Full-cycle product development",
+       "Dedicated engineering squads",
+       "QA and release support",
+       "Data and AI projects"
+      ]
+     },
+     {
+      "title": "Accounting and CPA firms",
+      "text": "US and Australian firms that want reliable month-end capacity during busy season and all year round.",
+      "points": [
+       "White-label bookkeeping",
+       "Payroll and tax preparation support",
+       "Full-time equivalent staff"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "case-slider",
+   "data": {
+    "head": {
+     "eyebrow": "Our work",
+     "title": "Case studies"
+    },
+    "cases": [
+     {
+      "client": "Northgate Logistics",
+      "industry": "Logistics",
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Engineers reviewing a dispatch dashboard"
+      },
+      "title": "Rebuilt a legacy dispatch platform on the cloud in nine months",
+      "results": [
+       {
+        "value": "0 min",
+        "label": "Downtime at cutover"
+       },
+       {
+        "value": "-38%",
+        "label": "Hosting cost"
+       }
+      ]
+     },
+     {
+      "client": "Fairview CPA",
+      "industry": "Accounting",
+      "photo": {
+       "src": "meeting-handshake",
+       "alt": "Accounting partners closing a service agreement"
+      },
+      "title": "Took over monthly bookkeeping for 140 small business clients",
+      "results": [
+       {
+        "value": "5 days",
+        "label": "Month-end close"
+       },
+       {
+        "value": "99.6%",
+        "label": "Reconciliation accuracy"
+       }
+      ]
+     },
+     {
+      "client": "Kaede Retail",
+      "industry": "Ecommerce",
+      "photo": {
+       "src": "team-coworking-laptops",
+       "alt": "Developers testing a shopping app"
+      },
+      "title": "Launched a bilingual shopping app for the Japanese market",
+      "results": [
+       {
+        "value": "4.7",
+        "label": "App store rating"
+       },
+       {
+        "value": "+31%",
+        "label": "Repeat orders"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "testimonials",
+   "data": {
+    "head": {
+     "eyebrow": "Client stories",
+     "title": "What our clients say"
+    },
+    "items": [
+     {
+      "quote": "Harbor Point's engineers work like part of our own team. Releases are on time and the code reviews are thorough.",
+      "name": "Laura Mitchell",
+      "role": "VP Engineering",
+      "company": "Northgate Logistics",
+      "avatar": "avatar-woman-2"
+     },
+     {
+      "quote": "Busy season used to mean overtime for everyone. Now our Harbor Point team handles the volume and our staff focus on advisory work.",
+      "name": "Daniel Reyes",
+      "role": "Managing Partner",
+      "company": "Fairview CPA",
+      "avatar": "avatar-man-2"
+     },
+     {
+      "quote": "They understood our Japanese customers and our English-speaking product team equally well. That is rare.",
+      "name": "Kenji Watanabe",
+      "role": "Head of Digital",
+      "company": "Kaede Retail",
+      "avatar": "avatar-man-1"
+     }
+    ]
+   }
+  },
+  {
+   "type": "compliance-badges",
+   "data": {
+    "head": {
+     "eyebrow": "Quality and security",
+     "title": "Certifications",
+     "lead": "External auditors review our security and quality systems each year."
+    },
+    "badges": [
+     {
+      "code": "ISO 27001",
+      "label": "Information security management"
+     },
+     {
+      "code": "ISO 9001",
+      "label": "Quality management",
+      "icon": "award"
+     }
+    ]
+   }
+  },
+  {
+   "type": "contact-split",
+   "data": {
+    "head": {
+     "eyebrow": "Get in touch",
+     "title": "Contact *Harbor Point*"
+    },
+    "form": {
+     "title": "Tell us about your project",
+     "text": "A solutions lead will reply within one business day.",
+     "phone_label": "Phone (optional)",
+     "submit_label": "Send message",
+     "success_title": "Thanks, we have your message",
+     "success_text": "A solutions lead will reply to set up a call.",
+     "note": "We only use your details to reply to this request."
+    },
+    "aside": {
+     "title": "Why teams choose us",
+     "points": [
+      "14 years of software and back-office delivery",
+      "180+ specialists in two delivery centers",
+      "Monthly reporting on every engagement",
+      "Month-to-month terms after the first quarter"
+     ],
+     "offices": [
+      {
+       "flag": "vn",
+       "name": "Vietnam",
+       "address": "8th Floor, 120 Nguyen Thi Minh Khai Street, District 3, Ho Chi Minh City",
+       "phone": "(+84) 28 5555 0120"
+      },
+      {
+       "flag": "us",
+       "name": "United States",
+       "address": "1201 Third Avenue, Suite 400, Seattle, WA 98101",
+       "phone": "(+1) 206 555 0142"
+      }
+     ],
+     "email_label": "Project inquiries",
+     "email": "hello@harborpoint.example"
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Software teams and back-office services from Ho Chi Minh City and Da Nang for clients in the US, Japan and Australia.",
+    "contacts": [
+     {
+      "icon": "phone",
+      "label": "(+84) 28 5555 0120",
+      "href": "tel:+842855550120"
+     },
+     {
+      "icon": "mail",
+      "label": "hello@harborpoint.example",
+      "href": "mailto:hello@harborpoint.example"
+     }
+    ],
+    "socials": [
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+     },
+     {
+      "icon": "youtube",
+      "label": "YouTube",
+      "href": "https://www.youtube.com"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Software",
+      "links": [
+       {
+        "label": "Custom development",
+        "href": "#services"
+       },
+       {
+        "label": "QA and testing",
+        "href": "#services"
+       },
+       {
+        "label": "DevOps and cloud",
+        "href": "#services"
+       },
+       {
+        "label": "AI solutions",
+        "href": "#solutions"
+       }
+      ]
+     },
+     {
+      "heading": "Back office",
+      "links": [
+       {
+        "label": "Bookkeeping",
+        "href": "#services"
+       },
+       {
+        "label": "Payroll processing",
+        "href": "#services"
+       },
+       {
+        "label": "Data services",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "About us",
+        "href": "#about"
+       },
+       {
+        "label": "Case studies",
+        "href": "#case-studies"
+       },
+       {
+        "label": "Contact",
+        "href": "#contact"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [
+     {
+      "label": "Privacy policy",
+      "href": "#top"
+     },
+     {
+      "label": "Security policy",
+      "href": "#security"
+     }
+    ],
+    "certifications": "ISO 27001 | ISO 9001"
+   }
+  },
+  {
+   "type": "floating-chat",
+   "data": {
+    "label": "Chat with our team",
+    "status": "Replies within a day",
+    "href": "#contact"
+   }
+  }
+ ]
 }
