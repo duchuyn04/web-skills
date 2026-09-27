@@ -2,7 +2,7 @@
 
 Skill giúp coding agent dựng landing page cho công ty BPO, outsourcing, contact center, offshore staffing, xử lý dữ liệu AI hoặc bán hàng outbound.
 
-Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 42 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
+Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 49 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
 
 ## Cài đặt
 
@@ -117,7 +117,7 @@ Năm kiểu trang, mỗi kiểu có thứ tự section cố định:
 | `cx-voice-sales` | Đội gọi điện, telesales, tổng đài, chất lượng cuộc gọi là bằng chứng chính | `clean-minimal` |
 | `it-bpo-partner` | Công ty vừa làm phần mềm (ITO) vừa làm back-office (BPO), nhiều dịch vụ, thường giao hàng từ Việt Nam | `orange-charcoal` |
 
-42 section gồm header có megamenu, bảy kiểu hero (ảnh chia đôi, chữ đổi từ, mạng lưới điểm 3D, nền ảnh hoặc video toàn khung, nền gradient màu thương hiệu có quả cầu chấm xoay, hero có thẻ chọn nhanh nhu cầu, hero ghép ảnh tròn với hình khối màu), dải chữ chạy ngang, câu tuyên bố lớn hiện dần từng chữ, dải ảnh giữa trang, trích dẫn khách hàng cỡ lớn có chuyển qua lại, phần giới thiệu kèm lưới ảnh đội ngũ, khung số liệu 2x2, danh sách dịch vụ dạng hàng link, khối giải pháp hai thẻ trên nền tối, thẻ đối tượng khách hàng, khối liên hệ chia đôi có địa chỉ từng văn phòng, băng chuyền logo, bộ đếm số, bento có đèn rọi theo chuột, tab dịch vụ, hàng ảnh và chữ xen kẽ, thẻ ảnh cho tin tức hoặc ngành (dạng lưới hoặc slider kéo được), khối video mở trong modal, dải kêu gọi hành động, máy tính tiết kiệm chi phí, trình phát cuộc gọi mẫu, timeline quy trình, bảng giá có công tắc, bản đồ hub có ghim radar, slider case study, FAQ, form báo giá 3 bước, footer và các nút nổi. Toàn bộ chạy bằng HTML, CSS và JavaScript thuần, không cần build frontend.
+49 section gồm header có megamenu, bảy kiểu hero (ảnh chia đôi, chữ đổi từ, mạng lưới điểm 3D, nền ảnh hoặc video toàn khung, nền gradient màu thương hiệu có quả cầu chấm xoay, hero có thẻ chọn nhanh nhu cầu, hero ghép ảnh tròn với hình khối màu), dải chữ chạy ngang, câu tuyên bố lớn hiện dần từng chữ, dải ảnh giữa trang, trích dẫn khách hàng cỡ lớn có chuyển qua lại, phần giới thiệu kèm lưới ảnh đội ngũ, khung số liệu 2x2, danh sách dịch vụ dạng hàng link, khối giải pháp hai thẻ trên nền tối, thẻ đối tượng khách hàng, khối liên hệ chia đôi có địa chỉ từng văn phòng, băng chuyền logo, bộ đếm số, bento có đèn rọi theo chuột, tab dịch vụ, hàng ảnh và chữ xen kẽ, thẻ ảnh cho tin tức hoặc ngành (dạng lưới hoặc slider kéo được), khối video mở trong modal, dải kêu gọi hành động, máy tính tiết kiệm chi phí, trình phát cuộc gọi mẫu, timeline quy trình, bảng giá có công tắc, bản đồ hub có ghim radar, slider case study, FAQ, form báo giá 3 bước, footer và các nút nổi. Thêm bảy section lấy bố cục từ các sản phẩm sát ngành trên Mobbin (Deel, Upwork, Intercom, Airtable...): bảng so sánh với tự tuyển, dải giải thưởng và điểm đánh giá, lưới ban lãnh đạo, khối tuyển dụng, lưới công cụ đang dùng, quy trình dạng hàng ngang và thẻ quốc gia có cờ. Toàn bộ chạy bằng HTML, CSS và JavaScript thuần, không cần build frontend.
 
 Có 8 bộ màu. Ngoài 5 bộ mặc định theo kiểu trang còn có `corporate-blue`, `crimson-trust` và `teal-fresh`, dành cho thương hiệu có logo xanh dương, đỏ hoặc xanh ngọc (ba nhóm màu này chiếm khoảng 55% trong 113 site đã phân tích). Ba bộ này bật thêm các tùy chọn thiết kế: mép section cắt chéo hoặc cong, khung ảnh cắt góc hoặc hình vòm, chữ nhấn dạng gradient hoặc gạch chân, ảnh hiện ra bằng hiệu ứng quét từ dưới lên. Bộ màu nào cũng dùng được các tùy chọn này qua khóa `theme` trong `page.json`, chi tiết ở `references/style-presets.md`.
 
@@ -132,7 +132,7 @@ Ba lớp kiểm tra chạy trước khi giao:
 ```
 SKILL.md          quy trình cho agent, đọc file này trước
 references/       tài liệu tra cứu (một số file do script sinh ra)
-templates/        base.css, base.js, 42 section, 8 bộ màu, icon, cờ, ảnh và video mẫu
+templates/        base.css, base.js, 49 section, 8 bộ màu, icon, cờ, ảnh và video mẫu
 examples/         5 file page.json mẫu, mỗi kiểu trang một file; variations/ có 3 trang, mỗi bộ màu mới một trang; vi/ có trang mẫu tiếng Việt
 previews/         ảnh chụp từng section
 scripts/          build, lint, QA, sinh tài liệu
@@ -140,6 +140,8 @@ agents/           metadata cho Codex
 ```
 
 ## Thêm section mới
+
+Mobbin không có trang của công ty BPO, nhưng có nhiều sản phẩm sát ngành với thiết kế tốt. Nếu máy bạn đã kết nối Mobbin MCP, agent có thể tra mẫu tham khảo trước khi làm section mới; quy trình và danh sách tham chiếu nằm trong `references/mobbin-references.md`. Việc tạo trang không cần Mobbin.
 
 1. Tạo `templates/sections/<tên>/` gồm `schema.json`, `section.html`, `section.css` và `section.js` nếu cần. Copy một section có sẵn để làm mẫu.
 2. Thêm tên vào slot phù hợp trong `templates/archetypes.json`.

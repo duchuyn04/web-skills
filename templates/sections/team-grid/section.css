@@ -1,0 +1,18 @@
+/* team-grid: tinted portrait tiles, staggered rise */
+.bl-team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); }
+.bl-team:has(> :nth-child(4):last-child), .bl-team:has(> :nth-child(8):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bl-member { display: flex; flex-direction: column; gap: .8rem; }
+.bl-member__photo { display: block; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-lg); background: var(--c-accent-soft); }
+.bl-member:nth-child(3n+2) .bl-member__photo { background: color-mix(in srgb, var(--c-accent-2) 22%, var(--surface)); }
+.bl-member:nth-child(3n+3) .bl-member__photo { background: color-mix(in srgb, var(--c-primary) 14%, var(--surface)); }
+.bl-member__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
+.bl-member:hover .bl-member__photo img { transform: scale(1.04); }
+.bl-member__row { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.bl-member__name { display: block; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.08rem; color: var(--text-strong); line-height: 1.25; }
+.bl-member__role { display: block; margin-top: .2rem; font-size: var(--fs-sm); color: var(--text-muted); }
+.bl-member__in { flex-shrink: 0; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 8px; border: 1px solid var(--border-strong); color: var(--text-strong); transition: background-color var(--dur-fast), color var(--dur-fast); }
+.bl-member__in:hover, .bl-member__in:focus-visible { background: var(--c-accent); color: var(--c-on-accent); border-color: transparent; }
+.bl-member__in .bl-icon { width: 16px; height: 16px; }
+.bl-member__bio { font-size: var(--fs-sm); color: var(--text); line-height: 1.55; }
+@media (max-width: 1024px) { .bl-team, .bl-team:has(> :nth-child(4):last-child), .bl-team:has(> :nth-child(8):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .bl-member__name { font-size: 1rem; } }

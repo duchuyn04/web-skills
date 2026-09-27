@@ -1,0 +1,28 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-compare" data-reveal>
+      <table class="bl-compare__table">
+        <thead>
+          <tr><td class="bl-compare__corner"></td>{{#columns}}<th scope="col" class="bl-compare__col{{#@first}} is-hl{{/@first}}">{{name}}</th>{{/columns}}</tr>
+        </thead>
+        <tbody data-reveal-group>
+          {{#rows}}
+          <tr class="bl-compare__row" data-reveal>
+            <th scope="row" class="bl-compare__label">{{label}}</th>
+            {{#values}}
+            <td class="bl-compare__cell bl-compare__cell--{{mark}}{{#first}} is-hl{{/first}}" data-col="{{col}}">
+              <span class="bl-compare__mark" aria-hidden="true">{{icon:$mark_icon}}</span>
+              <span class="bl-sr-only">{{mark_label}}</span>
+              {{#text}}<span class="bl-compare__text">{{text}}</span>{{/text}}
+            </td>
+            {{/values}}
+          </tr>
+          {{/rows}}
+        </tbody>
+      </table>
+    </div>
+    {{#note}}<p class="bl-compare__note">{{note}}</p>{{/note}}
+    {{#cta}}<div class="bl-compare__cta"><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}{{arrow}}</a></div>{{/cta}}
+  </div>
+</section>

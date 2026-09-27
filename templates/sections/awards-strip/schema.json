@@ -1,0 +1,25 @@
+{
+  "variant": "awards-strip",
+  "group": "awards",
+  "summary": "A centered row of shield-shaped award badges (issuer, award, year) drawn in the brand colours, with an optional review score such as '4.9 / 5 on Clutch'. Set dark for a boxed dark card. List only awards, rankings and review scores the client really holds; no third-party logos are used.",
+  "tone": "auto",
+  "anchor": "awards",
+  "animations": ["reveal", "staggered-badge-pop-in"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 6, "max": 80},
+    "awards": {"type": "list", "min": 2, "max": 7, "item": {"type": "object", "fields": {
+      "issuer": {"type": "text", "min": 2, "max": 24},
+      "title": {"type": "text", "min": 2, "max": 30},
+      "year": {"type": "text", "min": 4, "max": 12, "required": false}
+    }}},
+    "rating": {"type": "object", "required": false, "fields": {
+      "score": {"type": "text", "min": 1, "max": 4},
+      "out_of": {"type": "text", "min": 1, "max": 3, "default": "5"},
+      "source": {"type": "text", "min": 2, "max": 30},
+      "count": {"type": "text", "min": 3, "max": 30, "required": false}
+    }},
+    "link": {"$ref": "cta", "required": false},
+    "dark": {"type": "bool", "default": false}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variant": "team-grid",
+  "group": "team",
+  "summary": "Leadership or key people: square portraits on softly tinted tiles with name, role and an optional LinkedIn link and short bio. 3, 4, 6 or 8 people. Use only real people who agreed to be shown, with their own photos.",
+  "tone": "auto",
+  "anchor": "leadership",
+  "animations": ["reveal", "tile-rise"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "members": {"type": "list", "min": 3, "max": 8, "counts": [3, 4, 6, 8], "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 3, "max": 40},
+      "role": {"type": "text", "min": 2, "max": 60},
+      "photo": {"type": "image"},
+      "bio": {"type": "text", "min": 20, "max": 200, "required": false},
+      "linkedin": {"type": "href", "required": false}
+    }}},
+    "linkedin_label": {"type": "text", "min": 3, "max": 30, "default": "LinkedIn profile"}
+  }
+}

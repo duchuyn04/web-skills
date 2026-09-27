@@ -1,0 +1,16 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <ol class="bl-steps" data-reveal-group>
+      <li class="bl-steps__line" aria-hidden="true" data-reveal></li>
+      {{#steps}}
+      <li class="bl-step" data-reveal>
+        <span class="bl-step__num" aria-hidden="true">{{@num}}</span>
+        <h3 class="bl-step__title">{{title}}</h3>
+        <p class="bl-step__text">{{text}}</p>
+      </li>
+      {{/steps}}
+    </ol>
+    {{#cta}}<div class="bl-steps__cta" data-reveal><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}{{arrow}}</a></div>{{/cta}}
+  </div>
+</section>

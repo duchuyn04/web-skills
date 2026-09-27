@@ -15,7 +15,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `hero-ambient-video-mask` | `hero-fullbleed` | muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen |
 | `infinite-logo-marquee` | `logo-marquee` | 40s linear loop, pauses on hover |
 | `odometer-number-counter` | `metrics-counter`, `metrics-panel` | 2000ms ease-out, once, threshold 0.3 |
-| `staggered-badge-pop-in` | `about-mosaic`, `compliance-badges`, `hero-qualifier` | 350ms ease-back, 80ms stagger |
+| `staggered-badge-pop-in` | `about-mosaic`, `awards-strip`, `compliance-badges`, `hero-qualifier`, `tool-stack` | 350ms ease-back, 80ms stagger |
 | `bento-spotlight-hover` | `services-bento` | radial glow follows pointer, rAF throttled |
 | `card-tilt-3d-perspective` | `industries-tiles` | max 6deg, perspective 1000px, glare |
 | `sliding-pill-tab-switcher` | `services-tabs` | 300ms standard ease |
@@ -26,17 +26,21 @@ All motion follows the performance rules gathered in the research: only transfor
 | `sticky-sidebar-process-scroll` | `process-sticky` | CSS sticky plus scroll-linked progress line |
 | `toggle-model-flip` | `pricing-toggle` | 380ms ease-out-expo, 60ms stagger |
 | `interactive-map-pin-pulse` | `locations-map` | 2.2s radar rings, 150ms tooltip with 100ms delay |
-| `fluid-case-study-slider` | `case-slider`, `image-cards` | scroll-snap, mouse drag with momentum |
+| `fluid-case-study-slider` | `case-slider`, `country-cards`, `image-cards` | scroll-snap, mouse drag with momentum |
 | `shimmer-button-glow` | `cta-band`, `cta-multistep`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-split-image` | one sweep every 5.5s |
 | `floating-whatsapp-chat-bounce` | `floating-chat` | appears after the hero, 1.8s ping dot |
 | `exit-intent-spring-modal` | `exit-intent-modal` | 520ms ease-back, after 8s, once per 7 days |
 | `globe-spin` | `hero-gradient` | dotted world map scrolling behind a sphere mask, 60s linear loop |
-| `reveal` | `about-mosaic`, `audience-cards`, `banner-image`, `case-slider`, `contact-split`, `cost-calculator`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `metrics-panel`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `quote-spotlight`, `service-links`, `services-bento`, `services-tabs`, `solution-panels`, `statement-band`, `testimonials`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
+| `reveal` | `about-mosaic`, `audience-cards`, `awards-strip`, `banner-image`, `careers-band`, `case-slider`, `comparison-table`, `contact-split`, `cost-calculator`, `country-cards`, `cta-band`, `cta-multistep`, `feature-rows`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-split-image`, `image-cards`, `industries-tiles`, `locations-map`, `metrics-counter`, `metrics-panel`, `pillars-numbered`, `pricing-toggle`, `process-sticky`, `quote-spotlight`, `service-links`, `services-bento`, `services-tabs`, `solution-panels`, `statement-band`, `steps-row`, `team-grid`, `testimonials`, `tool-stack`, `video-block`, `voice-sample` | fade up 18px, 700ms ease-out-expo, 80ms stagger in groups |
 | `text-marquee` | `ticker-band` | 60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion |
 | `quote-crossfade` | `quote-spotlight` | 600ms fade plus 10px rise, prev/next buttons, dots and arrow keys, no autoplay |
 | `word-by-word-reveal` | `statement-band` | each word fades from 18% to full opacity over 500ms, 45ms stagger, once |
 | `slow-photo-zoom` | `banner-image` | photo scales 1.08 to 1 over 2.4s when the band enters |
 | `collage-pop-in` | `hero-collage` | tiles scale from 0.9 with 80ms stagger |
+| `row-stagger` | `comparison-table` | table rows fade up one after another, 80ms stagger |
+| `tile-rise` | `team-grid` | portrait tiles fade up with 80ms stagger; photo zooms 4% on hover |
+| `photo-drift-in` | `careers-band` | office photos rise 24px into place as the band enters |
+| `connector-line-draw` | `steps-row` | the line between step cards scales from 0 to full width over 1.2s (top to bottom on phones) |
 | `shape-float` | `hero-collage` | flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s |
 
 ## Design options (page-wide)

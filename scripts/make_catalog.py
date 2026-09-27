@@ -169,7 +169,11 @@ TIMING = {
     "word-by-word-reveal": "each word fades from 18% to full opacity over 500ms, 45ms stagger, once",
     "slow-photo-zoom": "photo scales 1.08 to 1 over 2.4s when the band enters",
     "collage-pop-in": "tiles scale from 0.9 with 80ms stagger",
-    "shape-float": "flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s",
+    "row-stagger": "table rows fade up one after another, 80ms stagger",
+    "tile-rise": "portrait tiles fade up with 80ms stagger; photo zooms 4% on hover",
+    "photo-drift-in": "office photos rise 24px into place as the band enters",
+    "connector-line-draw": "the line between step cards scales from 0 to full width over 1.2s (top to bottom on phones)",
+    "shape-float":"flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s",
 }
 
 

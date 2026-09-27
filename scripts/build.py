@@ -503,6 +503,10 @@ def enrich_stats(obj):
                 if dec is None:
                     dec = len(str(num).split(".")[1]) if isinstance(num, float) and "." in str(num) else 0
                 pre, suf = obj.get("prefix") or "", obj.get("suffix") or ""
+                if isinstance(num, int) and 1900 <= num <= 2099 and not pre and not suf:
+                    # A year: no thousands separator and no count-up from zero.
+                    obj[k] = {"display": str(num), "count": None}
+                    continue
                 shown = format(num, ",.%df" % dec)
                 obj[k] = {"display": "%s%s%s" % (pre, shown, suf), "count": num, "decimals": dec, "prefix": pre, "suffix": suf}
         else:
@@ -783,7 +787,7 @@ def check_copied(ctx, sections, brief=""):
         def walk(o, path):
             if isinstance(o, dict):
                 for k, v in o.items():
-                    if k not in ("href", "src", "image", "icon", "flag", "city", "alt"):
+                    if k not in ("href", "src", "image", "icon", "flag", "city", "alt") and not k.endswith("_plain"):
                         walk(v, "%s.%s" % (path, k))
             elif isinstance(o, list):
                 for i, v in enumerate(o):
@@ -987,6 +991,22 @@ def main():
         enrich_stats(data)
         if t == "services-bento" and data.get("cards") and len(data["cards"][0].get("bullets") or []) < 3:
             ctx.err(p + ".data.cards[0].bullets", "the first card is the large feature card; give it 3-4 bullets so it does not look empty")
+        if t == "comparison-table":
+            cols = data.get("columns") or []
+            icons = {"yes": "check", "no": "x", "partial": "minus"}
+            for ri, row in enumerate(data.get("rows") or []):
+                vals = row.get("values") or []
+                if len(vals) != len(cols):
+                    ctx.err("%s.data.rows[%d].values" % (p, ri), "has %d values but the table has %d columns. Give one value per column, in column order." % (len(vals), len(cols)))
+                for ci, v in enumerate(vals):
+                    v["col"] = cols[ci]["name"] if ci < len(cols) else ""
+                    v["first"] = ci == 0
+                    v["mark_icon"] = icons.get(v.get("mark"), "minus")
+                    v["mark_label"] = data.get("%s_label" % v.get("mark"), "")
+        if t == "tool-stack":
+            for tool in data.get("tools") or []:
+                m = re.search(r"\w", tool.get("name", ""))
+                tool["initial"] = m.group().upper() if m else "?"
         if t == "image-cards" and not data.get("slider") and len(data.get("cards") or []) not in (3, 4, 6):
             ctx.err(p + ".data.cards", "a grid needs 3, 4 or 6 cards (got %d). Use that count, or set \"slider\": true for 3 to 8 cards." % len(data.get("cards") or []))
         if t == "hero-cycler-centered" and data.get("title_before") and data.get("words"):

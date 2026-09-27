@@ -1,0 +1,20 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head}}
+    <ul class="bl-team" data-reveal-group>
+      {{#members}}
+      <li class="bl-member" data-reveal>
+        <span class="bl-member__photo"><img src="{{photo}}" alt="{{name}}, {{role}}" width="360" height="360" loading="lazy"></span>
+        <span class="bl-member__row">
+          <span>
+            <strong class="bl-member__name">{{name}}</strong>
+            <span class="bl-member__role">{{role}}</span>
+          </span>
+          {{#linkedin}}<a class="bl-member__in" href="{{linkedin}}" rel="noopener" target="_blank">{{icon:linkedin}}<span class="bl-sr-only">{{linkedin_label}}: {{name}}</span></a>{{/linkedin}}
+        </span>
+        {{#bio}}<span class="bl-member__bio">{{bio}}</span>{{/bio}}
+      </li>
+      {{/members}}
+    </ul>
+  </div>
+</section>

@@ -65,6 +65,7 @@ Then edit values only:
 - Replace every string and number with the client's content. Delete `_note`. The examples describe fictional companies: their figures, time frames, guarantees and contract terms ("30 days notice", "replies within 48 hours", "90-day replacement") are sample data. Keep such a detail only when the brief states it; otherwise write the sentence without it or drop the FAQ question. The build fails on sentences copied from an example and on example figures that are not in the brief.
 - Keep the same section order. Delete "no" and "recommended" sections you have no real content for (see page-anatomy.md), and swap a section for another variant allowed in the same slot when it fits the content better.
 - Optional slots `ticker`, `intro` and `banner` (ticker-band, statement-band, banner-image) and the heroes `hero-qualifier` and `hero-collage` are not in the archetype examples. Copy their data from `examples/variations/*.page.json`, which also shows `image-cards` with `"slider": true` and `quote-spotlight`.
+- `examples/variations/staffing-extended.page.json` shows the optional slots `tools` (tool-stack), `compare` (comparison-table), `awards` (awards-strip), `team` (team-grid) and `careers` (careers-band), plus `steps-row` for the process slot and `country-cards` for locations. Use awards, team and review scores only when the brief supplies them.
 - For each section, check field names, item counts and length limits in `references/section-catalog.md`. Look at `previews/<variant>.jpg` to see what the section looks like.
 - Images and video: pick keys from `references/assets.md`, or use the client's files by relative path. Icons, flags and cities must come from `python SKILL/scripts/build.py --list`.
 - Every `href` that starts with `#` must match a section id (the default ids are listed in the catalog as "Default anchor").
@@ -111,6 +112,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/section-catalog.md`: every variant, its fields, limits and preview (generated)
 - `references/style-presets.md`: presets, design options, brand color overrides, tones
 - `references/content-rules.md`: copy rules and how to handle missing facts
+- `references/mobbin-references.md`: where the tool, compare, awards, team, careers, steps and country sections come from, and how to research new sections on Mobbin
 - `references/industry-voice.md`: how real BPO sites write (hero patterns, heading labels, proof, button labels, Vietnamese), measured on 120 homepages
 - `references/assets.md`: image library, icons, flags, cities
 - `references/animation-map.md`: which section carries which of the 24 researched animations (generated)

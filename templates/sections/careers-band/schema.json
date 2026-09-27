@@ -1,0 +1,18 @@
+{
+  "variant": "careers-band",
+  "group": "careers",
+  "summary": "Careers invitation: centered heading, one paragraph, an optional open-positions count and perks, and a button to the jobs page, with 2-4 office photos placed around it (a row under the text on phones). BPO sites are also recruiting sites: most link to careers from the home page.",
+  "tone": "auto",
+  "anchor": "careers",
+  "animations": ["reveal", "photo-drift-in"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 8, "max": 80},
+    "text": {"type": "text", "min": 30, "max": 240},
+    "openings": {"type": "text", "min": 3, "max": 40, "required": false},
+    "perks": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "photos": {"type": "list", "min": 2, "max": 4, "item": {"$ref": "photo"}}
+  }
+}

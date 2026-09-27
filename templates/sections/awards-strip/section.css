@@ -1,0 +1,25 @@
+/* awards-strip: shield badges drawn with CSS, staggered pop-in */
+.bl-awards { text-align: center; }
+.bl-awards--boxed { max-width: 1040px; margin-inline: auto; padding: clamp(2rem, 4vw, 3.25rem) clamp(1.25rem, 3vw, 2.5rem); border-radius: calc(var(--radius-lg) + 8px); background: var(--c-primary); }
+.bl-awards__head { margin-bottom: 1.75rem; }
+.bl-awards__head .bl-eyebrow { justify-content: center; }
+.bl-awards__title { margin-inline: auto; max-width: 34rem; }
+.bl-awards__row { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(.75rem, 1.6vw, 1.25rem); }
+.bl-award { --shield: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%); width: 132px; min-height: 152px; padding: 2px; display: flex; background: var(--border-strong); clip-path: var(--shield); }
+.bl-award__in { flex: 1; display: flex; flex-direction: column; align-items: center; gap: .35rem; padding: 0 .75rem 2rem; background: var(--surface); clip-path: var(--shield); }
+.bl-award__issuer { align-self: stretch; min-height: 2.9em; display: grid; place-items: center; margin: 0 -.75rem .55rem; padding: .35rem .5rem; line-height: 1.2; background: var(--c-accent); color: var(--c-on-accent); font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.bl-award__title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: .98rem; line-height: 1.2; color: var(--text-strong); }
+.bl-award__year { font-size: var(--fs-xs); font-weight: 600; color: var(--text-muted); }
+.bl-award:nth-child(3n+2) .bl-award__issuer { background: var(--c-primary); color: #fff; }
+.bl-tone-dark .bl-award:nth-child(3n+2) .bl-award__issuer, .bl-awards--boxed .bl-award:nth-child(3n+2) .bl-award__issuer { background: var(--accent-2-ink); color: var(--c-primary); }
+.bl-awards--boxed .bl-award { background: transparent; }
+.bl-awards--boxed .bl-award__in { background: #fff; }
+.bl-awards--boxed .bl-award__title { color: #111827; }
+.bl-awards--boxed .bl-award__year { color: #4b5563; }
+.bl-awards__rating { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .6rem; margin-top: 1.75rem; font-size: var(--fs-sm); color: var(--text); }
+.bl-awards__rating strong { color: var(--text-strong); }
+.bl-awards__stars { display: inline-flex; gap: 2px; color: var(--accent-2-ink); }
+.bl-awards__stars .bl-icon { width: 18px; height: 18px; fill: currentColor; }
+.bl-awards__count { color: var(--text-muted); }
+.bl-awards__link { margin-top: 1.25rem; }
+@media (max-width: 560px) { .bl-award { width: calc(50% - .5rem); max-width: 150px; } }

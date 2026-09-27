@@ -1,0 +1,16 @@
+{
+  "variant": "steps-row",
+  "group": "process",
+  "summary": "A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step.",
+  "tone": "auto",
+  "anchor": "how-it-works",
+  "animations": ["reveal", "connector-line-draw"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "steps": {"type": "list", "min": 3, "max": 4, "item": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 3, "max": 40},
+      "text": {"type": "text", "min": 20, "max": 160}
+    }}},
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "variant": "country-cards",
+  "group": "locations",
+  "summary": "Delivery locations as tall photo cards in a draggable slider: country or city name on the photo, service tags, a round SVG flag and an optional short note. Cards sit at staggered heights. Use for offshore and nearshore hubs (Vietnam, Philippines, Colombia...); locations-map suits a world overview instead.",
+  "tone": "auto",
+  "anchor": "locations",
+  "shared": ["slider"],
+  "animations": ["reveal", "fluid-case-study-slider"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cards": {"type": "list", "min": 3, "max": 8, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 2, "max": 28},
+      "flag": {"type": "flag", "required": false},
+      "photo": {"$ref": "photo"},
+      "tags": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 2, "max": 20}},
+      "text": {"type": "text", "min": 20, "max": 120, "required": false},
+      "href": {"type": "href", "required": false}
+    }}},
+    "link": {"$ref": "cta", "required": false},
+    "prev_label": {"type": "text", "min": 2, "max": 20, "default": "Previous"},
+    "next_label": {"type": "text", "min": 2, "max": 20, "default": "Next"}
+  }
+}

@@ -1,0 +1,26 @@
+<section id="{{section.id}}" class="bl-section bl-section--tight bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-awards{{#dark}} bl-awards--boxed bl-tone-dark{{/dark}}">
+      <div class="bl-awards__head" data-reveal>
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h3 bl-awards__title">{{title}}</h2>
+      </div>
+      <ul class="bl-awards__row" data-reveal-group>
+        {{#awards}}
+        <li class="bl-award" data-reveal="pop"><span class="bl-award__in">
+          <span class="bl-award__issuer">{{issuer}}</span>
+          <strong class="bl-award__title">{{title}}</strong>
+          {{#year}}<span class="bl-award__year">{{year}}</span>{{/year}}
+        </span></li>
+        {{/awards}}
+      </ul>
+      {{#rating}}
+      <p class="bl-awards__rating" data-reveal>
+        <span class="bl-awards__stars" aria-hidden="true">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span>
+        <span><strong>{{score}} / {{out_of}}</strong> {{source}}{{#count}} <span class="bl-awards__count">({{count}})</span>{{/count}}</span>
+      </p>
+      {{/rating}}
+      {{#link}}<p class="bl-awards__link" data-reveal><a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a></p>{{/link}}
+    </div>
+  </div>
+</section>

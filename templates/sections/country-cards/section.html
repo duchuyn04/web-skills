@@ -1,0 +1,32 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}" data-slider>
+  <div class="bl-container">
+    {{#head}}
+    <div class="bl-head bl-head--split" data-reveal>
+      <div>
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2">{{title}}</h2>
+      </div>
+      <div class="bl-head__aside">
+        {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+        <div class="bl-ccards__tools">
+          {{#link}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+          <div class="bl-slider-nav"><button class="bl-round-btn" type="button" data-slider-prev>{{icon:chevron-left}}<span class="bl-sr-only">{{prev_label}}</span></button><button class="bl-round-btn" type="button" data-slider-next>{{icon:chevron-right}}<span class="bl-sr-only">{{next_label}}</span></button></div>
+        </div>
+      </div>
+    </div>
+    {{/head}}
+  </div>
+  <ul class="bl-slider-track bl-ccards" data-slider-track tabindex="0" aria-label="{{head.title_plain}}">
+    {{#cards}}
+    <li class="bl-ccard" data-reveal>
+      <span class="bl-ccard__photo">
+        <span class="bl-ccard__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="300" height="400" loading="lazy" draggable="false"></span>
+        <span class="bl-ccard__name">{{#href}}<a href="{{href}}">{{name}}</a>{{/href}}{{^href}}{{name}}{{/href}}</span>
+        {{#tags.0}}<span class="bl-ccard__tags">{{#tags}}<span>{{.}}</span>{{/tags}}</span>{{/tags.0}}
+        {{#flag}}<span class="bl-ccard__flag">{{flag:$flag}}</span>{{/flag}}
+      </span>
+      {{#text}}<span class="bl-ccard__text">{{text}}</span>{{/text}}
+    </li>
+    {{/cards}}
+  </ul>
+</section>

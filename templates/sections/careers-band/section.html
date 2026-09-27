@@ -1,0 +1,18 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-careers">
+    <ul class="bl-careers__photos">
+      {{#photos}}<li class="bl-careers__photo bl-careers__photo--{{@n}}" data-reveal><img src="{{src}}" alt="{{alt}}" width="320" height="240" loading="lazy"></li>{{/photos}}
+    </ul>
+    <div class="bl-careers__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h2 class="bl-h2" data-reveal>{{title}}</h2>
+      <p class="bl-lead" data-reveal>{{text}}</p>
+      {{#openings}}<p class="bl-careers__openings" data-reveal><span class="bl-careers__dot" aria-hidden="true"></span>{{openings}}</p>{{/openings}}
+      {{#perks.0}}<ul class="bl-careers__perks" data-reveal>{{#perks}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/perks}}</ul>{{/perks.0}}
+      <div class="bl-btn-row bl-careers__btns" data-reveal>
+        <a class="bl-btn bl-btn--primary" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+    </div>
+  </div>
+</section>

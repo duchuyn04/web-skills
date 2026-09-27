@@ -33,22 +33,28 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 5 | intro | no | `statement-band` |
 | 6 | about | no | `pillars-numbered`, `about-mosaic` |
 | 7 | services | yes | `services-tabs`, `services-bento`, `service-links` |
-| 8 | features | no | `feature-rows`, `solution-panels` |
-| 9 | banner | no | `banner-image` |
-| 10 | metrics | yes | `metrics-counter`, `metrics-panel` |
-| 11 | video | no | `video-block` |
-| 12 | industries | no | `industries-tiles`, `image-cards`, `audience-cards` |
-| 13 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
-| 14 | proof-extra | no | `testimonials`, `quote-spotlight` |
-| 15 | mid-cta | no | `cta-band` |
-| 16 | locations | no | `locations-map` |
-| 17 | compliance | no | `compliance-badges` |
-| 18 | news | no | `image-cards` |
-| 19 | faq | no | `faq-accordion` |
-| 20 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
-| 21 | footer | yes | `footer-columns` |
-| 22 | floating | no | `floating-chat` |
-| 23 | exit | no | `exit-intent-modal` |
+| 8 | tools | no | `tool-stack` |
+| 9 | features | no | `feature-rows`, `solution-panels` |
+| 10 | banner | no | `banner-image` |
+| 11 | compare | no | `comparison-table` |
+| 12 | process | no | `steps-row`, `process-sticky` |
+| 13 | metrics | yes | `metrics-counter`, `metrics-panel` |
+| 14 | video | no | `video-block` |
+| 15 | industries | no | `industries-tiles`, `image-cards`, `audience-cards` |
+| 16 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
+| 17 | proof-extra | no | `testimonials`, `quote-spotlight` |
+| 18 | awards | no | `awards-strip` |
+| 19 | mid-cta | no | `cta-band` |
+| 20 | locations | no | `locations-map`, `country-cards` |
+| 21 | compliance | no | `compliance-badges` |
+| 22 | news | no | `image-cards` |
+| 23 | team | no | `team-grid` |
+| 24 | careers | no | `careers-band` |
+| 25 | faq | no | `faq-accordion` |
+| 26 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
+| 27 | footer | yes | `footer-columns` |
+| 28 | floating | no | `floating-chat` |
+| 29 | exit | no | `exit-intent-modal` |
 
 ### offshore-staffing
 
@@ -61,22 +67,27 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 5 | intro | no | `statement-band` |
 | 6 | calculator | recommended | `cost-calculator` |
 | 7 | services | yes | `services-bento`, `services-tabs`, `service-links` |
-| 8 | features | no | `feature-rows`, `solution-panels` |
-| 9 | banner | no | `banner-image` |
-| 10 | process | yes | `process-sticky` |
-| 11 | video | no | `video-block` |
-| 12 | metrics | no | `metrics-counter`, `metrics-panel` |
-| 13 | pricing | no | `pricing-toggle` |
-| 14 | locations | no | `locations-map` |
-| 15 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight` |
-| 16 | mid-cta | no | `cta-band` |
-| 17 | compliance | no | `compliance-badges` |
-| 18 | news | no | `image-cards` |
-| 19 | faq | yes | `faq-accordion` |
-| 20 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
-| 21 | footer | yes | `footer-columns` |
-| 22 | floating | no | `floating-chat` |
-| 23 | exit | no | `exit-intent-modal` |
+| 8 | tools | no | `tool-stack` |
+| 9 | features | no | `feature-rows`, `solution-panels` |
+| 10 | banner | no | `banner-image` |
+| 11 | compare | no | `comparison-table` |
+| 12 | process | yes | `process-sticky`, `steps-row` |
+| 13 | video | no | `video-block` |
+| 14 | metrics | no | `metrics-counter`, `metrics-panel` |
+| 15 | pricing | no | `pricing-toggle` |
+| 16 | locations | no | `locations-map`, `country-cards` |
+| 17 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight` |
+| 18 | awards | no | `awards-strip` |
+| 19 | mid-cta | no | `cta-band` |
+| 20 | compliance | no | `compliance-badges` |
+| 21 | news | no | `image-cards` |
+| 22 | team | no | `team-grid` |
+| 23 | careers | no | `careers-band` |
+| 24 | faq | yes | `faq-accordion` |
+| 25 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
+| 26 | footer | yes | `footer-columns` |
+| 27 | floating | no | `floating-chat` |
+| 28 | exit | no | `exit-intent-modal` |
 
 ### ai-data-ops
 
@@ -88,21 +99,26 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 4 | logos | recommended | `logo-marquee` |
 | 5 | intro | no | `statement-band` |
 | 6 | services | yes | `services-bento`, `service-links` |
-| 7 | features | no | `feature-rows`, `solution-panels` |
-| 8 | banner | no | `banner-image` |
-| 9 | process | yes | `process-sticky` |
-| 10 | metrics | yes | `metrics-counter`, `metrics-panel` |
-| 11 | video | no | `video-block` |
-| 12 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
-| 13 | mid-cta | no | `cta-band` |
-| 14 | compliance | yes | `compliance-badges` |
-| 15 | locations | no | `locations-map` |
-| 16 | news | no | `image-cards` |
-| 17 | faq | no | `faq-accordion` |
-| 18 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
-| 19 | footer | yes | `footer-columns` |
-| 20 | floating | no | `floating-chat` |
-| 21 | exit | no | `exit-intent-modal` |
+| 7 | tools | no | `tool-stack` |
+| 8 | features | no | `feature-rows`, `solution-panels` |
+| 9 | banner | no | `banner-image` |
+| 10 | compare | no | `comparison-table` |
+| 11 | process | yes | `process-sticky`, `steps-row` |
+| 12 | metrics | yes | `metrics-counter`, `metrics-panel` |
+| 13 | video | no | `video-block` |
+| 14 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
+| 15 | awards | no | `awards-strip` |
+| 16 | mid-cta | no | `cta-band` |
+| 17 | compliance | yes | `compliance-badges` |
+| 18 | locations | no | `locations-map`, `country-cards` |
+| 19 | news | no | `image-cards` |
+| 20 | team | no | `team-grid` |
+| 21 | careers | no | `careers-band` |
+| 22 | faq | no | `faq-accordion` |
+| 23 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
+| 24 | footer | yes | `footer-columns` |
+| 25 | floating | no | `floating-chat` |
+| 26 | exit | no | `exit-intent-modal` |
 
 ### cx-voice-sales
 
@@ -115,21 +131,26 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 5 | intro | no | `statement-band` |
 | 6 | voice | recommended | `voice-sample` |
 | 7 | services | yes | `services-bento`, `services-tabs`, `service-links` |
-| 8 | features | no | `feature-rows`, `solution-panels` |
-| 9 | banner | no | `banner-image` |
-| 10 | video | no | `video-block` |
-| 11 | metrics | yes | `metrics-counter`, `metrics-panel` |
-| 12 | process | no | `process-sticky` |
-| 13 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight` |
-| 14 | mid-cta | no | `cta-band` |
-| 15 | pricing | no | `pricing-toggle` |
-| 16 | compliance | no | `compliance-badges` |
-| 17 | news | no | `image-cards` |
-| 18 | faq | yes | `faq-accordion` |
-| 19 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
-| 20 | footer | yes | `footer-columns` |
-| 21 | floating | no | `floating-chat` |
-| 22 | exit | no | `exit-intent-modal` |
+| 8 | tools | no | `tool-stack` |
+| 9 | features | no | `feature-rows`, `solution-panels` |
+| 10 | banner | no | `banner-image` |
+| 11 | compare | no | `comparison-table` |
+| 12 | video | no | `video-block` |
+| 13 | metrics | yes | `metrics-counter`, `metrics-panel` |
+| 14 | process | no | `process-sticky`, `steps-row` |
+| 15 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight` |
+| 16 | awards | no | `awards-strip` |
+| 17 | mid-cta | no | `cta-band` |
+| 18 | pricing | no | `pricing-toggle` |
+| 19 | compliance | no | `compliance-badges` |
+| 20 | news | no | `image-cards` |
+| 21 | team | no | `team-grid` |
+| 22 | careers | no | `careers-band` |
+| 23 | faq | yes | `faq-accordion` |
+| 24 | cta | yes | `cta-multistep`, `cta-band`, `contact-split` |
+| 25 | footer | yes | `footer-columns` |
+| 26 | floating | no | `floating-chat` |
+| 27 | exit | no | `exit-intent-modal` |
 
 ### it-bpo-partner
 
@@ -143,16 +164,22 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 6 | logos | recommended | `logo-marquee` |
 | 7 | intro | no | `statement-band` |
 | 8 | services | yes | `service-links`, `services-bento`, `services-tabs` |
-| 9 | solutions | no | `solution-panels`, `feature-rows` |
-| 10 | banner | no | `banner-image` |
-| 11 | audience | no | `audience-cards`, `industries-tiles` |
-| 12 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
-| 13 | proof-extra | no | `testimonials`, `quote-spotlight` |
-| 14 | compliance | no | `compliance-badges` |
-| 15 | locations | no | `locations-map` |
-| 16 | news | no | `image-cards` |
-| 17 | faq | no | `faq-accordion` |
-| 18 | cta | yes | `contact-split`, `cta-multistep`, `cta-band` |
-| 19 | footer | yes | `footer-columns` |
-| 20 | floating | no | `floating-chat` |
-| 21 | exit | no | `exit-intent-modal` |
+| 9 | tools | no | `tool-stack` |
+| 10 | solutions | no | `solution-panels`, `feature-rows` |
+| 11 | banner | no | `banner-image` |
+| 12 | compare | no | `comparison-table` |
+| 13 | process | no | `steps-row`, `process-sticky` |
+| 14 | audience | no | `audience-cards`, `industries-tiles` |
+| 15 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight` |
+| 16 | proof-extra | no | `testimonials`, `quote-spotlight` |
+| 17 | awards | no | `awards-strip` |
+| 18 | compliance | no | `compliance-badges` |
+| 19 | locations | no | `locations-map`, `country-cards` |
+| 20 | news | no | `image-cards` |
+| 21 | team | no | `team-grid` |
+| 22 | careers | no | `careers-band` |
+| 23 | faq | no | `faq-accordion` |
+| 24 | cta | yes | `contact-split`, `cta-multistep`, `cta-band` |
+| 25 | footer | yes | `footer-columns` |
+| 26 | floating | no | `floating-chat` |
+| 27 | exit | no | `exit-intent-modal` |

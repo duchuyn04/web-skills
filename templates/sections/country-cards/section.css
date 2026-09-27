@@ -1,0 +1,17 @@
+/* country-cards: staggered photo cards in the shared slider */
+.bl-ccards__tools { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+.bl-ccards { align-items: flex-start; padding-top: .5rem; padding-bottom: 2.5rem; }
+.bl-ccard { position: relative; flex: 0 0 min(280px, 74vw); display: flex; flex-direction: column; }
+.bl-ccard:nth-child(even) { margin-top: 2.25rem; }
+.bl-ccard__photo { position: relative; display: block; }
+.bl-ccard__media { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius-lg); background: var(--surface-2); }
+.bl-ccard__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, transparent 32%, transparent 62%, rgba(0, 0, 0, .55) 100%); }
+.bl-ccard__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); pointer-events: none; }
+.bl-ccard:hover .bl-ccard__media img { transform: scale(1.05); }
+.bl-ccard__name { position: absolute; top: 1rem; left: 1.1rem; right: 1.1rem; z-index: 1; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.25rem; color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, .35); }
+.bl-ccard__name a { color: inherit; }
+.bl-ccard__tags { position: absolute; left: 1rem; bottom: 1rem; right: 4.8rem; z-index: 1; display: flex; flex-wrap: wrap; gap: .35rem; }
+.bl-ccard__tags span { padding: .22rem .6rem; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .55); background: rgba(0, 0, 0, .28); color: #fff; font-size: var(--fs-xs); font-weight: 600; backdrop-filter: blur(4px); }
+.bl-ccard__flag { position: absolute; z-index: 1; right: .9rem; bottom: -26px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); box-shadow: var(--shadow-lg); }
+.bl-ccard__flag .bl-flag { width: 30px; height: 21px; }
+.bl-ccard__text { margin-top: 1.4rem; padding-right: 3.5rem; font-size: var(--fs-sm); color: var(--text); line-height: 1.55; }

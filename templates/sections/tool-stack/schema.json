@@ -1,0 +1,17 @@
+{
+  "variant": "tool-stack",
+  "group": "tools",
+  "summary": "The platforms the team works in (helpdesk, CRM, telephony, accounting, tech stack), as tidy chips with a letter mark or the client's own logo file, name and category, next to a heading and short text. Use it to show buyers their current tools are covered. Name only tools the client's teams actually use.",
+  "tone": "auto",
+  "anchor": "tools",
+  "animations": ["reveal", "staggered-badge-pop-in"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "link": {"$ref": "cta", "required": false},
+    "tools": {"type": "list", "min": 6, "max": 18, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 2, "max": 24},
+      "category": {"type": "text", "min": 2, "max": 24, "required": false},
+      "logo": {"type": "image", "required": false}
+    }}}
+  }
+}

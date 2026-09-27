@@ -1,0 +1,26 @@
+{
+  "variant": "comparison-table",
+  "group": "compare",
+  "summary": "Side-by-side table: the company in the first, tinted column against one or two alternatives (hiring in-house, freelancers, other vendors). Each row is one buying criterion with a tick, cross or partial mark and an optional short note. Turns into stacked cards on phones. Only compare on facts the client can back up.",
+  "tone": "auto",
+  "anchor": "compare",
+  "animations": ["reveal", "row-stagger"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "columns": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 2, "max": 28}
+    }}},
+    "rows": {"type": "list", "min": 3, "max": 8, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 3, "max": 60},
+      "values": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+        "mark": {"type": "enum", "values": ["yes", "no", "partial"]},
+        "text": {"type": "text", "min": 3, "max": 90, "required": false}
+      }}}
+    }}},
+    "yes_label": {"type": "text", "min": 2, "max": 20, "default": "Included"},
+    "no_label": {"type": "text", "min": 2, "max": 20, "default": "Not included"},
+    "partial_label": {"type": "text", "min": 2, "max": 20, "default": "Partly"},
+    "cta": {"$ref": "cta", "required": false},
+    "note": {"type": "text", "min": 10, "max": 160, "required": false}
+  }
+}

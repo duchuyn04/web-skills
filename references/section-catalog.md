@@ -79,6 +79,33 @@ Fields:
     - `label`: text 2-30 chars
     - `href`: link
 
+## awards-strip
+
+A centered row of shield-shaped award badges (issuer, award, year) drawn in the brand colours, with an optional review score such as '4.9 / 5 on Clutch'. Set dark for a boxed dark card. List only awards, rankings and review scores the client really holds; no third-party logos are used.
+
+- Group: `awards`. Default anchor: `#awards`. Tone: auto.
+- Built-in motion: reveal, staggered-badge-pop-in.
+- Allowed in: enterprise-cx/awards?, offshore-staffing/awards?, ai-data-ops/awards?, cx-voice-sales/awards?, it-bpo-partner/awards?.
+- Preview: `previews/awards-strip.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 6-80 chars
+- `awards`: list of 2-7, each item:
+  - `issuer`: text 2-24 chars
+  - `title`: text 2-30 chars
+  - `year`: text 4-12 chars (optional)
+- `rating`: object (optional)
+  - `score`: text 1-4 chars
+  - `out_of`: text 1-3 chars (optional, default "5")
+  - `source`: text 2-30 chars
+  - `count`: text 3-30 chars (optional)
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `dark`: true/false (optional, default false)
+
 ## banner-image
 
 Mid-page photo band with a brand-colour shade, a strong line, one sentence and a button. Boxed inside the page margins (default) or full width. Use between long content sections to reset attention.
@@ -99,6 +126,32 @@ Fields:
 - `image`: image key or path
 - `full_width`: true/false (optional, default false)
 - `align`: one of left, center (optional, default "left")
+
+## careers-band
+
+Careers invitation: centered heading, one paragraph, an optional open-positions count and perks, and a button to the jobs page, with 2-4 office photos placed around it (a row under the text on phones). BPO sites are also recruiting sites: most link to careers from the home page.
+
+- Group: `careers`. Default anchor: `#careers`. Tone: auto.
+- Built-in motion: reveal, photo-drift-in.
+- Allowed in: enterprise-cx/careers?, offshore-staffing/careers?, ai-data-ops/careers?, cx-voice-sales/careers?, it-bpo-partner/careers?.
+- Preview: `previews/careers-band.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 8-80 chars
+- `text`: text 30-240 chars
+- `openings`: text 3-40 chars (optional)
+- `perks`: list of 0-4 (optional) (each text 3-36 chars)
+- `cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photos`: list of 2-4, each item:
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
 
 ## case-slider
 
@@ -130,6 +183,36 @@ Fields:
   - `link`: object (optional)
     - `label`: text 2-30 chars
     - `href`: link
+
+## comparison-table
+
+Side-by-side table: the company in the first, tinted column against one or two alternatives (hiring in-house, freelancers, other vendors). Each row is one buying criterion with a tick, cross or partial mark and an optional short note. Turns into stacked cards on phones. Only compare on facts the client can back up.
+
+- Group: `compare`. Default anchor: `#compare`. Tone: auto.
+- Built-in motion: reveal, row-stagger.
+- Allowed in: enterprise-cx/compare?, offshore-staffing/compare?, ai-data-ops/compare?, cx-voice-sales/compare?, it-bpo-partner/compare?.
+- Preview: `previews/comparison-table.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `columns`: list of 2-3, each item:
+  - `name`: text 2-28 chars
+- `rows`: list of 3-8, each item:
+  - `label`: text 3-60 chars
+  - `values`: list of 2-3, each item:
+    - `mark`: one of yes, no, partial
+    - `text`: text 3-90 chars (optional)
+- `yes_label`: text 2-20 chars (optional, default "Included")
+- `no_label`: text 2-20 chars (optional, default "Not included")
+- `partial_label`: text 2-20 chars (optional, default "Partly")
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `note`: text 10-160 chars (optional)
 
 ## compliance-badges
 
@@ -227,6 +310,36 @@ Fields:
   - `label`: text 2-30 chars
   - `href`: link
 - `disclaimer`: text 30-220 chars
+
+## country-cards
+
+Delivery locations as tall photo cards in a draggable slider: country or city name on the photo, service tags, a round SVG flag and an optional short note. Cards sit at staggered heights. Use for offshore and nearshore hubs (Vietnam, Philippines, Colombia...); locations-map suits a world overview instead.
+
+- Group: `locations`. Default anchor: `#locations`. Tone: auto.
+- Built-in motion: reveal, fluid-case-study-slider.
+- Allowed in: enterprise-cx/locations?, offshore-staffing/locations?, ai-data-ops/locations?, it-bpo-partner/locations?.
+- Preview: `previews/country-cards.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cards`: list of 3-8, each item:
+  - `name`: text 2-28 chars
+  - `flag`: country code (optional)
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `tags`: list of 0-3 (optional) (each text 2-20 chars)
+  - `text`: text 20-120 chars (optional)
+  - `href`: link (optional)
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `prev_label`: text 2-20 chars (optional, default "Previous")
+- `next_label`: text 2-20 chars (optional, default "Next")
 
 ## cta-band
 
@@ -858,7 +971,7 @@ Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scro
 
 - Group: `process`. Default anchor: `#process`. Tone: auto.
 - Built-in motion: sticky-sidebar-process-scroll, reveal.
-- Allowed in: offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?.
+- Allowed in: enterprise-cx/process?, offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?, it-bpo-partner/process?.
 - Preview: `previews/process-sticky.jpg`
 
 Fields:
@@ -1013,6 +1126,51 @@ Fields:
   - `label`: text 2-30 chars
   - `href`: link
 
+## steps-row
+
+A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step.
+
+- Group: `process`. Default anchor: `#how-it-works`. Tone: auto.
+- Built-in motion: reveal, connector-line-draw.
+- Allowed in: enterprise-cx/process?, offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?, it-bpo-partner/process?.
+- Preview: `previews/steps-row.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `steps`: list of 3-4, each item:
+  - `title`: text 3-40 chars
+  - `text`: text 20-160 chars
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
+## team-grid
+
+Leadership or key people: square portraits on softly tinted tiles with name, role and an optional LinkedIn link and short bio. 3, 4, 6 or 8 people. Use only real people who agreed to be shown, with their own photos.
+
+- Group: `team`. Default anchor: `#leadership`. Tone: auto.
+- Built-in motion: reveal, tile-rise.
+- Allowed in: enterprise-cx/team?, offshore-staffing/team?, ai-data-ops/team?, cx-voice-sales/team?, it-bpo-partner/team?.
+- Preview: `previews/team-grid.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `members`: list of 3 or 4 or 6 or 8, each item:
+  - `name`: text 3-40 chars
+  - `role`: text 2-60 chars
+  - `photo`: image key or path
+  - `bio`: text 20-200 chars (optional)
+  - `linkedin`: link (optional)
+- `linkedin_label`: text 3-30 chars (optional, default "LinkedIn profile")
+
 ## testimonials
 
 Three client quote cards with name, role, company and photo (or initials). The middle card is raised.
@@ -1051,6 +1209,29 @@ Fields:
 - `separator`: icon name (optional, default "star")
 - `speed`: one of slow, normal (optional, default "slow")
 - `dark`: true/false (optional, default false)
+
+## tool-stack
+
+The platforms the team works in (helpdesk, CRM, telephony, accounting, tech stack), as tidy chips with a letter mark or the client's own logo file, name and category, next to a heading and short text. Use it to show buyers their current tools are covered. Name only tools the client's teams actually use.
+
+- Group: `tools`. Default anchor: `#tools`. Tone: auto.
+- Built-in motion: reveal, staggered-badge-pop-in.
+- Allowed in: enterprise-cx/tools?, offshore-staffing/tools?, ai-data-ops/tools?, cx-voice-sales/tools?, it-bpo-partner/tools?.
+- Preview: `previews/tool-stack.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `tools`: list of 6-18, each item:
+  - `name`: text 2-24 chars
+  - `category`: text 2-24 chars (optional)
+  - `logo`: image key or path (optional)
 
 ## video-block
 
