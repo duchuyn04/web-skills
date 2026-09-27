@@ -809,6 +809,31 @@ def check_copied(ctx, sections, brief=""):
         walk(s["data"], s["path"] + ".data")
 
 
+# Library photos that show the same person; one page must not use two of them.
+SAME_PERSON = [{"portrait-man-desk", "portrait-man-desk-wood"}]
+
+
+def check_images(ctx, sections):
+    used = set()
+
+    def walk(o):
+        if isinstance(o, dict):
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+        elif isinstance(o, str):
+            used.add(o)
+            used.add(o.replace("\\", "/").rsplit("/", 1)[-1].rsplit(".", 1)[0])
+    for sec in sections:
+        walk(sec["data"])
+    for group in SAME_PERSON:
+        both = sorted(group & used)
+        if len(both) > 1:
+            ctx.warn("sections", "%s show the same person; readers will notice. Keep one." % " and ".join(both))
+
+
 def check_voice(ctx, sections, lang):
     """Page-level voice checks measured against 113 real BPO homepages (references/industry-voice.md).
 
@@ -1043,6 +1068,7 @@ def main():
         ctx.warn("page.override_order", "archetype order check skipped: %s" % top["override_order"]["reason"])
 
     check_voice(ctx, sections, top.get("lang", "en"))
+    check_images(ctx, sections)
     if SKILL / "examples" not in page_path.parents:
         check_copied(ctx, sections, brief)
         if brief:

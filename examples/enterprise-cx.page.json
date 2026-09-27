@@ -237,8 +237,8 @@
        "Weekend and holiday coverage"
       ],
       "photo": {
-       "src": "portrait-woman-office",
-       "alt": "Customer care team lead smiling in the office"
+       "src": "desk-phone-monitors",
+       "alt": "Customer care agent working a ticket queue at her desk"
       },
       "link": {
        "label": "Learn more",
@@ -256,8 +256,8 @@
        "Catalog and order updates"
       ],
       "photo": {
-       "src": "office-interior",
-       "alt": "Quiet production floor in the Ho Chi Minh City office"
+       "src": "paperwork-signing-laptop",
+       "alt": "Back-office processor checking a signed claim form"
       }
      },
      {
@@ -329,7 +329,7 @@
        "Coaching logged per agent"
       ],
       "photo": {
-       "src": "team-engineers-screen",
+       "src": "code-review-pair",
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
@@ -493,8 +493,8 @@
       "client": "Maple Retail",
       "industry": "Ecommerce",
       "photo": {
-       "src": "office-interior",
-       "alt": "Seasonal support floor prepared for peak demand"
+       "src": "ecommerce-packing",
+       "alt": "Order being packed for a holiday shipment"
       },
       "title": "Scaled from 40 to 140 agents for the holiday peak without missing SLA",
       "results": [
@@ -512,8 +512,8 @@
       "client": "Lumen Health",
       "industry": "Healthcare",
       "photo": {
-       "src": "portrait-woman-studio",
-       "alt": "Lumen Health patient support specialist"
+       "src": "healthcare-consultation",
+       "alt": "Doctor and nurse meeting a patient at a clinic desk"
       },
       "title": "Took over patient scheduling and benefits calls under HIPAA controls",
       "results": [
@@ -662,8 +662,8 @@
       "title": "What actually lowers handle time in banking support",
       "text": "Knowledge base fixes beat new tools in 7 of 10 programs we reviewed.",
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Analysts reviewing handle time data"
+       "src": "finance-chart-screen",
+       "alt": "Screen with handle time and queue charts"
       },
       "href": "#contact"
      },
@@ -672,8 +672,8 @@
       "meta": "Healthcare",
       "title": "Patient scheduling at scale under HIPAA rules",
       "photo": {
-       "src": "portrait-woman-studio",
-       "alt": "Patient support specialist at her desk"
+       "src": "doctor-tablet",
+       "alt": "Doctor reviewing patient schedules on a tablet"
       },
       "href": "#case-studies"
      }

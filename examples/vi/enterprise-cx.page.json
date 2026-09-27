@@ -15,14 +15,35 @@
    "type": "header-simple",
    "data": {
     "links": [
-     {"label": "Dịch vụ", "href": "#services"},
-     {"label": "Quy trình", "href": "#about"},
-     {"label": "Lĩnh vực", "href": "#industries"},
-     {"label": "Văn phòng", "href": "#locations"},
-     {"label": "Hỏi đáp", "href": "#faq"}
+     {
+      "label": "Dịch vụ",
+      "href": "#services"
+     },
+     {
+      "label": "Quy trình",
+      "href": "#about"
+     },
+     {
+      "label": "Lĩnh vực",
+      "href": "#industries"
+     },
+     {
+      "label": "Văn phòng",
+      "href": "#locations"
+     },
+     {
+      "label": "Hỏi đáp",
+      "href": "#faq"
+     }
     ],
-    "secondary": {"label": "Về chúng tôi", "href": "#who-we-are"},
-    "cta": {"label": "Nhận báo giá", "href": "#contact"},
+    "secondary": {
+     "label": "Về chúng tôi",
+     "href": "#who-we-are"
+    },
+    "cta": {
+     "label": "Nhận báo giá",
+     "href": "#contact"
+    },
     "menu_label": "Menu",
     "close_label": "Đóng menu"
    }
@@ -33,15 +54,37 @@
     "eyebrow": "Dịch vụ thuê ngoài từ năm 2012",
     "title": "Dịch vụ BPO cho *doanh nghiệp tại Việt Nam*",
     "lead": "Mộc Lan BPO vận hành tổng đài chăm sóc khách hàng, kế toán và nhập liệu cho doanh nghiệp trong nước và Nhật Bản. 540 nhân sự làm việc tại TP.HCM và Cần Thơ.",
-    "primary_cta": {"label": "Nhận báo giá", "href": "#contact"},
-    "secondary_cta": {"label": "Xem dịch vụ", "href": "#services"},
+    "primary_cta": {
+     "label": "Nhận báo giá",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Xem dịch vụ",
+     "href": "#services"
+    },
     "image": "office-interior",
-    "proof": ["Chứng nhận ISO 27001", "Hoạt động từ năm 2012", "Hỗ trợ tiếng Nhật"],
+    "proof": [
+     "Chứng nhận ISO 27001",
+     "Hoạt động từ năm 2012",
+     "Hỗ trợ tiếng Nhật"
+    ],
     "stats": [
-     {"value": "540", "label": "Nhân sự"},
-     {"value": "60+", "label": "Khách hàng doanh nghiệp"},
-     {"value": "2", "label": "Trung tâm vận hành"},
-     {"value": "3", "label": "Ngôn ngữ hỗ trợ"}
+     {
+      "value": "540",
+      "label": "Nhân sự"
+     },
+     {
+      "value": "60+",
+      "label": "Khách hàng doanh nghiệp"
+     },
+     {
+      "value": "2",
+      "label": "Trung tâm vận hành"
+     },
+     {
+      "value": "3",
+      "label": "Ngôn ngữ hỗ trợ"
+     }
     ]
    }
   },
@@ -51,7 +94,10 @@
     "eyebrow": "Về chúng tôi",
     "title": "Mộc Lan BPO nhận vận hành *các quy trình lặp lại* cho doanh nghiệp vừa và lớn",
     "text": "Nghe gọi tổng đài, hạch toán chứng từ, nhập liệu và đối soát là những việc cần nhiều nhân sự nhưng ít thay đổi. Khách hàng giữ quyền quyết định quy trình, còn tuyển dụng, đào tạo và giám sát do Mộc Lan BPO đảm nhiệm.",
-    "points": ["Đội ngũ riêng cho từng khách hàng", "Báo cáo KPI hàng tháng"]
+    "points": [
+     "Đội ngũ riêng cho từng khách hàng",
+     "Báo cáo KPI hàng tháng"
+    ]
    }
   },
   {
@@ -63,9 +109,18 @@
      "lead": "Mỗi dự án có một quản lý vận hành phụ trách, từ khâu tuyển dụng đến báo cáo định kỳ."
     },
     "items": [
-     {"title": "Khảo sát và báo giá", "text": "Chúng tôi làm việc với đội ngũ của khách hàng để nắm quy trình, khối lượng công việc và chỉ số cần đạt, sau đó gửi phương án nhân sự và báo giá."},
-     {"title": "Tuyển dụng và đào tạo", "text": "Nhân sự được tuyển theo yêu cầu về ngôn ngữ và nghiệp vụ, rồi đào tạo trên quy trình và phần mềm của khách hàng trước khi làm việc chính thức."},
-     {"title": "Vận hành và báo cáo", "text": "Quản lý vận hành theo dõi năng suất và chất lượng, gửi báo cáo KPI cho khách hàng mỗi tháng."}
+     {
+      "title": "Khảo sát và báo giá",
+      "text": "Chúng tôi làm việc với đội ngũ của khách hàng để nắm quy trình, khối lượng công việc và chỉ số cần đạt, sau đó gửi phương án nhân sự và báo giá."
+     },
+     {
+      "title": "Tuyển dụng và đào tạo",
+      "text": "Nhân sự được tuyển theo yêu cầu về ngôn ngữ và nghiệp vụ, rồi đào tạo trên quy trình và phần mềm của khách hàng trước khi làm việc chính thức."
+     },
+     {
+      "title": "Vận hành và báo cáo",
+      "text": "Quản lý vận hành theo dõi năng suất và chất lượng, gửi báo cáo KPI cho khách hàng mỗi tháng."
+     }
     ]
    }
   },
@@ -83,33 +138,64 @@
       "icon": "headset",
       "title": "Tổng đài chăm sóc khách hàng",
       "text": "Điện thoại viên tiếp nhận cuộc gọi, trả lời email và tin nhắn trên fanpage, Zalo của doanh nghiệp. Hỗ trợ tiếng Việt, tiếng Anh và tiếng Nhật.",
-      "bullets": ["Tổng đài inbound và outbound", "Chăm sóc qua Zalo, Facebook, email", "Ca làm việc 24/7"],
-      "photo": {"src": "portrait-woman-office", "alt": "Điện thoại viên của Mộc Lan BPO tại văn phòng TP.HCM"},
-      "link": {"label": "Xem chi tiết", "href": "#contact"}
+      "bullets": [
+       "Tổng đài inbound và outbound",
+       "Chăm sóc qua Zalo, Facebook, email",
+       "Ca làm việc 24/7"
+      ],
+      "photo": {
+       "src": "desk-phone-monitors",
+       "alt": "Nhân viên tổng đài xử lý yêu cầu của khách hàng tại bàn làm việc"
+      },
+      "link": {
+       "label": "Xem chi tiết",
+       "href": "#contact"
+      }
      },
      {
       "tab": "Kế toán",
       "icon": "receipt",
       "title": "Kế toán thuê ngoài",
       "text": "Kế toán viên hạch toán chứng từ, đối soát công nợ, lập báo cáo thuế và báo cáo tài chính theo chuẩn mực kế toán Việt Nam.",
-      "bullets": ["Hạch toán và ghi sổ", "Báo cáo thuế tháng, quý", "Đối soát công nợ"],
-      "photo": {"src": "team-engineers-screen", "alt": "Bộ phận kế toán đang đối soát chứng từ"}
+      "bullets": [
+       "Hạch toán và ghi sổ",
+       "Báo cáo thuế tháng, quý",
+       "Đối soát công nợ"
+      ],
+      "photo": {
+       "src": "accounting-documents-calculator",
+       "alt": "Kế toán viên đối soát chứng từ bằng máy tính"
+      }
      },
      {
       "tab": "Nhập liệu",
       "icon": "database",
       "title": "Nhập liệu và số hóa tài liệu",
       "text": "Nhân viên nhập dữ liệu từ hồ sơ giấy, hóa đơn và biểu mẫu vào hệ thống của khách hàng, kiểm tra chéo trước khi bàn giao.",
-      "bullets": ["Số hóa hồ sơ, hợp đồng", "Nhập liệu đơn hàng, hóa đơn", "Kiểm tra chéo hai lớp"],
-      "photo": {"src": "team-coworking-laptops", "alt": "Nhân viên nhập liệu tại trung tâm Cần Thơ"}
+      "bullets": [
+       "Số hóa hồ sơ, hợp đồng",
+       "Nhập liệu đơn hàng, hóa đơn",
+       "Kiểm tra chéo hai lớp"
+      ],
+      "photo": {
+       "src": "paperwork-signing-laptop",
+       "alt": "Nhân viên nhập liệu kiểm tra hồ sơ giấy"
+      }
      },
      {
       "tab": "Telesales",
       "icon": "phone",
       "title": "Telesales và chăm sóc sau bán",
       "text": "Đội telesales gọi cho khách hàng tiềm năng, xác nhận đơn hàng và nhắc gia hạn hợp đồng theo kịch bản do doanh nghiệp duyệt.",
-      "bullets": ["Gọi xác nhận đơn hàng", "Nhắc gia hạn, tái tục", "Khảo sát mức độ hài lòng"],
-      "photo": {"src": "portrait-woman-studio", "alt": "Nhân viên telesales đang gọi cho khách hàng"}
+      "bullets": [
+       "Gọi xác nhận đơn hàng",
+       "Nhắc gia hạn, tái tục",
+       "Khảo sát mức độ hài lòng"
+      ],
+      "photo": {
+       "src": "portrait-woman-studio",
+       "alt": "Nhân viên telesales đang gọi cho khách hàng"
+      }
      }
     ]
    }
@@ -121,10 +207,27 @@
     "title": "Mộc Lan BPO *qua những con số*",
     "lead": "Số liệu tổng hợp đến hết năm 2025, theo báo cáo nội bộ.",
     "items": [
-     {"value": 540, "label": "Nhân sự", "note": "Tại TP.HCM và Cần Thơ"},
-     {"value": 13, "label": "Năm hoạt động", "note": "Thành lập năm 2012"},
-     {"value": 60, "suffix": "+", "label": "Khách hàng doanh nghiệp", "note": "Trong nước và Nhật Bản"},
-     {"value": 3, "label": "Ngôn ngữ hỗ trợ", "note": "Tiếng Việt, Anh, Nhật"}
+     {
+      "value": 540,
+      "label": "Nhân sự",
+      "note": "Tại TP.HCM và Cần Thơ"
+     },
+     {
+      "value": 13,
+      "label": "Năm hoạt động",
+      "note": "Thành lập năm 2012"
+     },
+     {
+      "value": 60,
+      "suffix": "+",
+      "label": "Khách hàng doanh nghiệp",
+      "note": "Trong nước và Nhật Bản"
+     },
+     {
+      "value": 3,
+      "label": "Ngôn ngữ hỗ trợ",
+      "note": "Tiếng Việt, Anh, Nhật"
+     }
     ]
    }
   },
@@ -137,10 +240,26 @@
      "lead": "Mỗi lĩnh vực có tài liệu đào tạo và kịch bản riêng, cập nhật theo quy định của ngành."
     },
     "tiles": [
-     {"icon": "landmark", "title": "Ngân hàng và tài chính", "text": "Tổng đài thẻ, nhắc nợ, xác minh hồ sơ vay và mở tài khoản."},
-     {"icon": "shopping-cart", "title": "Bán lẻ và thương mại điện tử", "text": "Xác nhận đơn hàng, đổi trả và chăm sóc khách hàng trên sàn thương mại điện tử."},
-     {"icon": "shield-check", "title": "Bảo hiểm", "text": "Tiếp nhận yêu cầu bồi thường, nhắc tái tục và nhập liệu hồ sơ bảo hiểm."},
-     {"icon": "truck", "title": "Logistics", "text": "Tra cứu vận đơn, xử lý khiếu nại giao hàng và đối soát tiền thu hộ."}
+     {
+      "icon": "landmark",
+      "title": "Ngân hàng và tài chính",
+      "text": "Tổng đài thẻ, nhắc nợ, xác minh hồ sơ vay và mở tài khoản."
+     },
+     {
+      "icon": "shopping-cart",
+      "title": "Bán lẻ và thương mại điện tử",
+      "text": "Xác nhận đơn hàng, đổi trả và chăm sóc khách hàng trên sàn thương mại điện tử."
+     },
+     {
+      "icon": "shield-check",
+      "title": "Bảo hiểm",
+      "text": "Tiếp nhận yêu cầu bồi thường, nhắc tái tục và nhập liệu hồ sơ bảo hiểm."
+     },
+     {
+      "icon": "truck",
+      "title": "Logistics",
+      "text": "Tra cứu vận đơn, xử lý khiếu nại giao hàng và đối soát tiền thu hộ."
+     }
     ]
    }
   },
@@ -153,8 +272,18 @@
      "lead": "Hai trung tâm dùng chung quy trình kiểm soát chất lượng và quy định bảo mật."
     },
     "hubs": [
-     {"city": "ho-chi-minh-city", "role": "Trụ sở chính", "headcount": "360 nhân sự", "detail": "Tổng đài, telesales, kế toán"},
-     {"city": "can-tho", "role": "Trung tâm vận hành", "headcount": "180 nhân sự", "detail": "Nhập liệu, số hóa tài liệu"}
+     {
+      "city": "ho-chi-minh-city",
+      "role": "Trụ sở chính",
+      "headcount": "360 nhân sự",
+      "detail": "Tổng đài, telesales, kế toán"
+     },
+     {
+      "city": "can-tho",
+      "role": "Trung tâm vận hành",
+      "headcount": "180 nhân sự",
+      "detail": "Nhập liệu, số hóa tài liệu"
+     }
     ]
    }
   },
@@ -166,27 +295,56 @@
      "title": "Chứng nhận và bảo mật",
      "lead": "Dữ liệu khách hàng được xử lý trên hệ thống của khách hàng hoặc trên máy trạm có kiểm soát truy cập."
     },
-    "points": ["Khu vận hành kiểm soát ra vào bằng thẻ", "Không dùng thiết bị lưu trữ cá nhân trong khu vận hành", "Mỗi nhân sự ký cam kết bảo mật thông tin"],
+    "points": [
+     "Khu vận hành kiểm soát ra vào bằng thẻ",
+     "Không dùng thiết bị lưu trữ cá nhân trong khu vận hành",
+     "Mỗi nhân sự ký cam kết bảo mật thông tin"
+    ],
     "badges": [
-     {"code": "ISO 27001", "label": "Quản lý an toàn thông tin"},
-     {"code": "ISO 9001", "label": "Quản lý chất lượng", "icon": "award"}
+     {
+      "code": "ISO 27001",
+      "label": "Quản lý an toàn thông tin"
+     },
+     {
+      "code": "ISO 9001",
+      "label": "Quản lý chất lượng",
+      "icon": "award"
+     }
     ]
    }
   },
   {
    "type": "faq-accordion",
    "data": {
-    "head": {"eyebrow": "Hỏi đáp", "title": "Câu hỏi thường gặp"},
+    "head": {
+     "eyebrow": "Hỏi đáp",
+     "title": "Câu hỏi thường gặp"
+    },
     "aside": {
      "title": "Cần tư vấn thêm?",
      "text": "Để lại thông tin, bộ phận kinh doanh sẽ liên hệ để trao đổi về nhu cầu của doanh nghiệp.",
-     "cta": {"label": "Liên hệ tư vấn", "href": "#contact"}
+     "cta": {
+      "label": "Liên hệ tư vấn",
+      "href": "#contact"
+     }
     },
     "items": [
-     {"q": "Doanh nghiệp cần tối thiểu bao nhiêu nhân sự để thuê ngoài?", "a": "Không có mức tối thiểu cố định. Phần lớn khách hàng bắt đầu với một nhóm nhỏ cho một dịch vụ, sau đó mở rộng khi quy trình đã ổn định."},
-     {"q": "Nhân sự làm việc trên phần mềm của ai?", "a": "Nhân sự làm việc trên phần mềm tổng đài, CRM và phần mềm kế toán của khách hàng. Nếu khách hàng chưa có, Mộc Lan BPO có thể cung cấp hệ thống tổng đài."},
-     {"q": "Chi phí được tính như thế nào?", "a": "Tổng đài và kế toán thường tính theo số nhân sự mỗi tháng. Nhập liệu có thể tính theo số lượng hồ sơ. Báo giá cụ thể phụ thuộc vào khối lượng và yêu cầu ngôn ngữ."},
-     {"q": "Dữ liệu của doanh nghiệp được bảo mật ra sao?", "a": "Mộc Lan BPO áp dụng hệ thống quản lý an toàn thông tin theo ISO 27001. Quyền truy cập được cấp theo từng vị trí và thu hồi ngay khi nhân sự nghỉ việc."}
+     {
+      "q": "Doanh nghiệp cần tối thiểu bao nhiêu nhân sự để thuê ngoài?",
+      "a": "Không có mức tối thiểu cố định. Phần lớn khách hàng bắt đầu với một nhóm nhỏ cho một dịch vụ, sau đó mở rộng khi quy trình đã ổn định."
+     },
+     {
+      "q": "Nhân sự làm việc trên phần mềm của ai?",
+      "a": "Nhân sự làm việc trên phần mềm tổng đài, CRM và phần mềm kế toán của khách hàng. Nếu khách hàng chưa có, Mộc Lan BPO có thể cung cấp hệ thống tổng đài."
+     },
+     {
+      "q": "Chi phí được tính như thế nào?",
+      "a": "Tổng đài và kế toán thường tính theo số nhân sự mỗi tháng. Nhập liệu có thể tính theo số lượng hồ sơ. Báo giá cụ thể phụ thuộc vào khối lượng và yêu cầu ngôn ngữ."
+     },
+     {
+      "q": "Dữ liệu của doanh nghiệp được bảo mật ra sao?",
+      "a": "Mộc Lan BPO áp dụng hệ thống quản lý an toàn thông tin theo ISO 27001. Quyền truy cập được cấp theo từng vị trí và thu hồi ngay khi nhân sự nghỉ việc."
+     }
     ]
    }
   },
@@ -196,16 +354,37 @@
     "eyebrow": "Liên hệ",
     "title": "Nhận *báo giá* dịch vụ",
     "lead": "Cho chúng tôi biết dịch vụ doanh nghiệp cần và quy mô dự kiến. Bộ phận kinh doanh sẽ liên hệ để khảo sát và gửi báo giá.",
-    "points": ["Khảo sát và báo giá miễn phí", "Hợp đồng theo từng dịch vụ"],
+    "points": [
+     "Khảo sát và báo giá miễn phí",
+     "Hợp đồng theo từng dịch vụ"
+    ],
     "contacts": [
-     {"icon": "mail", "label": "kinhdoanh@moclan-bpo.example", "href": "mailto:kinhdoanh@moclan-bpo.example"},
-     {"icon": "phone", "label": "028 3555 0188", "href": "tel:+842835550188"}
+     {
+      "icon": "mail",
+      "label": "kinhdoanh@moclan-bpo.example",
+      "href": "mailto:kinhdoanh@moclan-bpo.example"
+     },
+     {
+      "icon": "phone",
+      "label": "028 3555 0188",
+      "href": "tel:+842835550188"
+     }
     ],
     "form": {
      "step1_title": "Doanh nghiệp cần dịch vụ nào?",
-     "services": ["Tổng đài chăm sóc khách hàng", "Kế toán thuê ngoài", "Nhập liệu và số hóa", "Telesales"],
+     "services": [
+      "Tổng đài chăm sóc khách hàng",
+      "Kế toán thuê ngoài",
+      "Nhập liệu và số hóa",
+      "Telesales"
+     ],
      "step2_title": "Quy mô nhân sự dự kiến?",
-     "sizes": ["Dưới 5 người", "5-20 người", "21-50 người", "Trên 50 người"],
+     "sizes": [
+      "Dưới 5 người",
+      "5-20 người",
+      "21-50 người",
+      "Trên 50 người"
+     ],
      "step3_title": "Thông tin liên hệ",
      "name_label": "Họ và tên",
      "email_label": "Email công việc",
@@ -226,27 +405,71 @@
    "data": {
     "blurb": "Mộc Lan BPO cung cấp dịch vụ tổng đài, kế toán và nhập liệu thuê ngoài cho doanh nghiệp từ năm 2012.",
     "contacts": [
-     {"icon": "mail", "label": "kinhdoanh@moclan-bpo.example", "href": "mailto:kinhdoanh@moclan-bpo.example"},
-     {"icon": "map-pin", "label": "Quận 3, TP. Hồ Chí Minh"}
+     {
+      "icon": "mail",
+      "label": "kinhdoanh@moclan-bpo.example",
+      "href": "mailto:kinhdoanh@moclan-bpo.example"
+     },
+     {
+      "icon": "map-pin",
+      "label": "Quận 3, TP. Hồ Chí Minh"
+     }
     ],
     "socials": [
-     {"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"},
-     {"icon": "facebook", "label": "Facebook", "href": "https://www.facebook.com"}
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+     }
     ],
     "columns": [
-     {"heading": "Dịch vụ", "links": [
-      {"label": "Tổng đài", "href": "#services"},
-      {"label": "Kế toán thuê ngoài", "href": "#services"},
-      {"label": "Nhập liệu", "href": "#services"}
-     ]},
-     {"heading": "Công ty", "links": [
-      {"label": "Về chúng tôi", "href": "#who-we-are"},
-      {"label": "Tuyển dụng", "href": "#contact"},
-      {"label": "Liên hệ", "href": "#contact"}
-     ]}
+     {
+      "heading": "Dịch vụ",
+      "links": [
+       {
+        "label": "Tổng đài",
+        "href": "#services"
+       },
+       {
+        "label": "Kế toán thuê ngoài",
+        "href": "#services"
+       },
+       {
+        "label": "Nhập liệu",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Công ty",
+      "links": [
+       {
+        "label": "Về chúng tôi",
+        "href": "#who-we-are"
+       },
+       {
+        "label": "Tuyển dụng",
+        "href": "#contact"
+       },
+       {
+        "label": "Liên hệ",
+        "href": "#contact"
+       }
+      ]
+     }
     ],
     "legal": "Bảo lưu mọi quyền.",
-    "legal_links": [{"label": "Chính sách bảo mật", "href": "#top"}],
+    "legal_links": [
+     {
+      "label": "Chính sách bảo mật",
+      "href": "#top"
+     }
+    ],
     "certifications": "ISO 27001 | ISO 9001"
    }
   },

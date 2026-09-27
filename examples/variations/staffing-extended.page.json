@@ -1,6 +1,6 @@
 {
  "_note": "Variation showing the sections added from the Mobbin study (tool-stack, comparison-table, steps-row, country-cards, awards-strip, team-grid, careers-band). Lantern Staffing is fictional; every figure, award and person is sample data. Awards and review scores must come from the client.",
- "brief": "Lantern Staffing (fictional sample): offshore staffing for US and UK companies since 2016. 1,100 staff in Ho Chi Minh City, Da Nang, Manila and Cebu. Roles: customer support, bookkeeping, sales support, software QA. Clients save up to 60% against local hiring. Teams start in 3-4 weeks. Staff work in Zendesk, Intercom, Freshdesk, Salesforce, HubSpot, Aircall, Xero, QuickBooks, Jira, Slack, Microsoft Teams and Google Workspace. Awards: Clutch Top BPO Company 2025, Great Place to Work certified 2025, IAOP Global Outsourcing 100 in 2024. Clutch rating 4.9 out of 5 from 86 reviews. ISO 27001 certified offices. Phones: Vietnam (+84) 28 5555 0110, Philippines (+63) 2 5555 0110. Leadership: Anna Tran (CEO), Mark Delaney (COO), Liza Santos (Head of People), Duc Pham (Head of Delivery). 45 open positions.",
+ "brief": "Lantern Staffing (fictional sample): offshore staffing for US and UK companies since 2016. 1,100 staff in Ho Chi Minh City, Da Nang, Manila and Cebu. Roles: customer support, bookkeeping, sales support, software QA. Clients save up to 60% against local hiring. Teams start in 3-4 weeks. Staff work in Zendesk, Intercom, Freshdesk, Salesforce, HubSpot, Aircall, Xero, QuickBooks, Jira, Slack, Microsoft Teams and Google Workspace. Awards: Clutch Top BPO Company 2025, Great Place to Work certified 2025, IAOP Global Outsourcing 100 in 2024. Clutch rating 4.9 out of 5 from 86 reviews. ISO 27001 certified offices. Phones: Vietnam (+84) 28 5555 0110, Philippines (+63) 2 5555 0110. Leadership: Margaret Hale (CEO), Andre Wallace (COO), Liza Santos (Head of People), Richard Lowe (Head of Delivery). 45 open positions.",
  "archetype": "offshore-staffing",
  "preset": "human-warm",
  "lang": "en",
@@ -15,14 +15,35 @@
    "type": "header-simple",
    "data": {
     "links": [
-     {"label": "Services", "href": "#services"},
-     {"label": "Tools", "href": "#tools"},
-     {"label": "Locations", "href": "#locations"},
-     {"label": "About", "href": "#leadership"},
-     {"label": "Careers", "href": "#careers"}
+     {
+      "label": "Services",
+      "href": "#services"
+     },
+     {
+      "label": "Tools",
+      "href": "#tools"
+     },
+     {
+      "label": "Locations",
+      "href": "#locations"
+     },
+     {
+      "label": "About",
+      "href": "#leadership"
+     },
+     {
+      "label": "Careers",
+      "href": "#careers"
+     }
     ],
-    "secondary": {"label": "FAQ", "href": "#faq"},
-    "cta": {"label": "Get a quote", "href": "#contact"}
+    "secondary": {
+     "label": "FAQ",
+     "href": "#faq"
+    },
+    "cta": {
+     "label": "Get a quote",
+     "href": "#contact"
+    }
    }
   },
   {
@@ -31,74 +52,274 @@
     "eyebrow": "Offshore staffing since 2016",
     "title": "Offshore teams in *Vietnam and the Philippines*",
     "lead": "Lantern Staffing hires and manages full-time support, finance and QA staff for US and UK companies. Our 1,100 people work from four offices in Ho Chi Minh City, Da Nang, Manila and Cebu.",
-    "primary_cta": {"label": "Get a quote", "href": "#contact"},
-    "secondary_cta": {"label": "How it works", "href": "#how-it-works"},
-    "proof": ["Save up to 60%", "Teams start in 3-4 weeks", "Clutch 4.9 / 5"],
-    "photo": {"src": "team-coworking-laptops", "alt": "Lantern Staffing support team at work in Ho Chi Minh City"},
+    "primary_cta": {
+     "label": "Get a quote",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "How it works",
+     "href": "#how-it-works"
+    },
+    "proof": [
+     "Save up to 60%",
+     "Teams start in 3-4 weeks",
+     "Clutch 4.9 / 5"
+    ],
+    "photo": {
+     "src": "team-coworking-laptops",
+     "alt": "Lantern Staffing support team at work in Ho Chi Minh City"
+    },
     "badges": [
-     {"icon": "users", "value": "1,100", "label": "Staff in four offices"},
-     {"icon": "trending-up", "value": "60%", "label": "Savings against local hiring"}
+     {
+      "icon": "users",
+      "value": "1,100",
+      "label": "Staff in four offices"
+     },
+     {
+      "icon": "trending-up",
+      "value": "60%",
+      "label": "Savings against local hiring"
+     }
     ]
    }
   },
   {
    "type": "services-bento",
    "data": {
-    "head": {"eyebrow": "Services", "title": "Roles we fill", "lead": "Every hire works only for your company, in your tools and your hours."},
+    "head": {
+     "eyebrow": "Services",
+     "title": "Roles we fill",
+     "lead": "Every hire works only for your company, in your tools and your hours."
+    },
     "cards": [
-     {"icon": "headset", "title": "Customer support", "text": "Email, chat and phone agents for ecommerce and SaaS brands.", "bullets": ["Day and night shifts", "English and Spanish", "Weekly QA scoring"], "link": {"label": "Learn more", "href": "#contact"}},
-     {"icon": "receipt", "title": "Bookkeeping", "text": "Accountants who reconcile, invoice and close the month in Xero or QuickBooks."},
-     {"icon": "briefcase", "title": "Sales support", "text": "Assistants who research leads and keep the CRM up to date."},
-     {"icon": "bug", "title": "Software QA", "text": "Manual and automation testers who join your sprints."}
+     {
+      "icon": "headset",
+      "title": "Customer support",
+      "text": "Email, chat and phone agents for ecommerce and SaaS brands.",
+      "bullets": [
+       "Day and night shifts",
+       "English and Spanish",
+       "Weekly QA scoring"
+      ],
+      "link": {
+       "label": "Learn more",
+       "href": "#contact"
+      }
+     },
+     {
+      "icon": "receipt",
+      "title": "Bookkeeping",
+      "text": "Accountants who reconcile, invoice and close the month in Xero or QuickBooks."
+     },
+     {
+      "icon": "briefcase",
+      "title": "Sales support",
+      "text": "Assistants who research leads and keep the CRM up to date."
+     },
+     {
+      "icon": "bug",
+      "title": "Software QA",
+      "text": "Manual and automation testers who join your sprints."
+     }
     ]
    }
   },
   {
    "type": "tool-stack",
    "data": {
-    "head": {"eyebrow": "Tools", "title": "Platforms our teams *already use*", "lead": "New hires are trained on the tools you run today, so there is nothing to migrate."},
-    "link": {"label": "Ask about your stack", "href": "#contact"},
+    "head": {
+     "eyebrow": "Tools",
+     "title": "Platforms our teams *already use*",
+     "lead": "New hires are trained on the tools you run today, so there is nothing to migrate."
+    },
+    "link": {
+     "label": "Ask about your stack",
+     "href": "#contact"
+    },
     "tools": [
-     {"name": "Zendesk", "category": "Helpdesk"},
-     {"name": "Intercom", "category": "Helpdesk"},
-     {"name": "Freshdesk", "category": "Helpdesk"},
-     {"name": "Salesforce", "category": "CRM"},
-     {"name": "HubSpot", "category": "CRM"},
-     {"name": "Aircall", "category": "Telephony"},
-     {"name": "Xero", "category": "Accounting"},
-     {"name": "QuickBooks", "category": "Accounting"},
-     {"name": "Jira", "category": "QA and projects"},
-     {"name": "Slack", "category": "Chat"},
-     {"name": "Microsoft Teams", "category": "Chat"},
-     {"name": "Google Workspace", "category": "Office"}
+     {
+      "name": "Zendesk",
+      "category": "Helpdesk"
+     },
+     {
+      "name": "Intercom",
+      "category": "Helpdesk"
+     },
+     {
+      "name": "Freshdesk",
+      "category": "Helpdesk"
+     },
+     {
+      "name": "Salesforce",
+      "category": "CRM"
+     },
+     {
+      "name": "HubSpot",
+      "category": "CRM"
+     },
+     {
+      "name": "Aircall",
+      "category": "Telephony"
+     },
+     {
+      "name": "Xero",
+      "category": "Accounting"
+     },
+     {
+      "name": "QuickBooks",
+      "category": "Accounting"
+     },
+     {
+      "name": "Jira",
+      "category": "QA and projects"
+     },
+     {
+      "name": "Slack",
+      "category": "Chat"
+     },
+     {
+      "name": "Microsoft Teams",
+      "category": "Chat"
+     },
+     {
+      "name": "Google Workspace",
+      "category": "Office"
+     }
     ]
    }
   },
   {
    "type": "comparison-table",
    "data": {
-    "head": {"eyebrow": "Compare", "title": "Lantern Staffing or local hiring", "lead": "What a dedicated offshore team includes, next to hiring in the US or through freelance platforms."},
-    "columns": [{"name": "Lantern Staffing"}, {"name": "Hiring locally"}, {"name": "Freelance platforms"}],
-    "rows": [
-     {"label": "Cost per full-time person", "values": [{"mark": "yes", "text": "Up to 60% lower"}, {"mark": "no", "text": "Full local salary and benefits"}, {"mark": "partial", "text": "Low hourly rate, no commitment"}]},
-     {"label": "Recruiting and screening", "values": [{"mark": "yes", "text": "Done by our recruiters"}, {"mark": "no", "text": "Your HR team"}, {"mark": "no", "text": "You screen profiles"}]},
-     {"label": "Payroll, benefits and local law", "values": [{"mark": "yes"}, {"mark": "yes"}, {"mark": "no"}]},
-     {"label": "Office, equipment and security", "values": [{"mark": "yes", "text": "ISO 27001 offices"}, {"mark": "yes"}, {"mark": "no", "text": "Home setups"}]},
-     {"label": "Works only for your company", "values": [{"mark": "yes"}, {"mark": "yes"}, {"mark": "partial", "text": "Often shared across clients"}]}
+    "head": {
+     "eyebrow": "Compare",
+     "title": "Lantern Staffing or local hiring",
+     "lead": "What a dedicated offshore team includes, next to hiring in the US or through freelance platforms."
+    },
+    "columns": [
+     {
+      "name": "Lantern Staffing"
+     },
+     {
+      "name": "Hiring locally"
+     },
+     {
+      "name": "Freelance platforms"
+     }
     ],
-    "cta": {"label": "Get a quote", "href": "#contact"}
+    "rows": [
+     {
+      "label": "Cost per full-time person",
+      "values": [
+       {
+        "mark": "yes",
+        "text": "Up to 60% lower"
+       },
+       {
+        "mark": "no",
+        "text": "Full local salary and benefits"
+       },
+       {
+        "mark": "partial",
+        "text": "Low hourly rate, no commitment"
+       }
+      ]
+     },
+     {
+      "label": "Recruiting and screening",
+      "values": [
+       {
+        "mark": "yes",
+        "text": "Done by our recruiters"
+       },
+       {
+        "mark": "no",
+        "text": "Your HR team"
+       },
+       {
+        "mark": "no",
+        "text": "You screen profiles"
+       }
+      ]
+     },
+     {
+      "label": "Payroll, benefits and local law",
+      "values": [
+       {
+        "mark": "yes"
+       },
+       {
+        "mark": "yes"
+       },
+       {
+        "mark": "no"
+       }
+      ]
+     },
+     {
+      "label": "Office, equipment and security",
+      "values": [
+       {
+        "mark": "yes",
+        "text": "ISO 27001 offices"
+       },
+       {
+        "mark": "yes"
+       },
+       {
+        "mark": "no",
+        "text": "Home setups"
+       }
+      ]
+     },
+     {
+      "label": "Works only for your company",
+      "values": [
+       {
+        "mark": "yes"
+       },
+       {
+        "mark": "yes"
+       },
+       {
+        "mark": "partial",
+        "text": "Often shared across clients"
+       }
+      ]
+     }
+    ],
+    "cta": {
+     "label": "Get a quote",
+     "href": "#contact"
+    }
    }
   },
   {
    "type": "steps-row",
    "data": {
-    "head": {"eyebrow": "Process", "title": "How it works", "lead": "Most teams start work three to four weeks after the first call."},
+    "head": {
+     "eyebrow": "Process",
+     "title": "How it works",
+     "lead": "Most teams start work three to four weeks after the first call."
+    },
     "steps": [
-     {"title": "Define the roles", "text": "We agree tasks, tools, hours and language level with you, then send a quote."},
-     {"title": "Interview candidates", "text": "Our recruiters shortlist screened candidates. You interview and choose."},
-     {"title": "Start work", "text": "We set up equipment and access. Your managers train the team and direct the work."}
+     {
+      "title": "Define the roles",
+      "text": "We agree tasks, tools, hours and language level with you, then send a quote."
+     },
+     {
+      "title": "Interview candidates",
+      "text": "Our recruiters shortlist screened candidates. You interview and choose."
+     },
+     {
+      "title": "Start work",
+      "text": "We set up equipment and access. Your managers train the team and direct the work."
+     }
     ],
-    "cta": {"label": "Book a call", "href": "#contact"}
+    "cta": {
+     "label": "Book a call",
+     "href": "#contact"
+    }
    }
   },
   {
@@ -107,22 +328,90 @@
     "eyebrow": "Results",
     "title": "Lantern Staffing at a glance",
     "items": [
-     {"value": 1100, "suffix": "+", "label": "Staff", "note": "In four offices"},
-     {"value": 60, "suffix": "%", "label": "Savings", "note": "Against local hiring, up to"},
-     {"value": 4, "label": "Weeks to start", "note": "For most teams"},
-     {"value": 2016, "label": "Founded", "note": "Ho Chi Minh City"}
+     {
+      "value": 1100,
+      "suffix": "+",
+      "label": "Staff",
+      "note": "In four offices"
+     },
+     {
+      "value": 60,
+      "suffix": "%",
+      "label": "Savings",
+      "note": "Against local hiring, up to"
+     },
+     {
+      "value": 4,
+      "label": "Weeks to start",
+      "note": "For most teams"
+     },
+     {
+      "value": 2016,
+      "label": "Founded",
+      "note": "Ho Chi Minh City"
+     }
     ]
    }
   },
   {
    "type": "country-cards",
    "data": {
-    "head": {"eyebrow": "Locations", "title": "Our offices", "lead": "Two countries, four offices, one set of security and HR policies."},
+    "head": {
+     "eyebrow": "Locations",
+     "title": "Our offices",
+     "lead": "Two countries, four offices, one set of security and HR policies."
+    },
     "cards": [
-     {"name": "Ho Chi Minh City", "flag": "vn", "photo": {"src": "city-hcmc-skyline", "alt": "Ho Chi Minh City skyline at dusk"}, "tags": ["Support", "Finance"], "text": "Head office and our largest support floor."},
-     {"name": "Da Nang", "flag": "vn", "photo": {"src": "city-danang-golden-bridge", "alt": "Golden Bridge in the hills near Da Nang"}, "tags": ["Software QA"], "text": "Test engineers and automation teams."},
-     {"name": "Manila", "flag": "ph", "photo": {"src": "office-interior", "alt": "Lantern Staffing office floor in Manila"}, "tags": ["Voice", "Sales support"], "text": "Voice support for US hours."},
-     {"name": "Cebu", "flag": "ph", "photo": {"src": "coast-philippines-island", "alt": "Coastline near Cebu"}, "tags": ["Support"], "text": "Chat and email support, day and night shifts."}
+     {
+      "name": "Ho Chi Minh City",
+      "flag": "vn",
+      "photo": {
+       "src": "city-hcmc-skyline",
+       "alt": "Ho Chi Minh City skyline at dusk"
+      },
+      "tags": [
+       "Support",
+       "Finance"
+      ],
+      "text": "Head office and our largest support floor."
+     },
+     {
+      "name": "Da Nang",
+      "flag": "vn",
+      "photo": {
+       "src": "city-danang-golden-bridge",
+       "alt": "Golden Bridge in the hills near Da Nang"
+      },
+      "tags": [
+       "Software QA"
+      ],
+      "text": "Test engineers and automation teams."
+     },
+     {
+      "name": "Manila",
+      "flag": "ph",
+      "photo": {
+       "src": "office-building-entrance",
+       "alt": "Entrance of the Manila office building at dusk"
+      },
+      "tags": [
+       "Voice",
+       "Sales support"
+      ],
+      "text": "Voice support for US hours."
+     },
+     {
+      "name": "Cebu",
+      "flag": "ph",
+      "photo": {
+       "src": "coast-philippines-island",
+       "alt": "Coastline near Cebu"
+      },
+      "tags": [
+       "Support"
+      ],
+      "text": "Chat and email support, day and night shifts."
+     }
     ]
    }
   },
@@ -132,23 +421,63 @@
     "eyebrow": "Recognition",
     "title": "Awards and reviews",
     "awards": [
-     {"issuer": "Clutch", "title": "Top BPO Company", "year": "2025"},
-     {"issuer": "Great Place to Work", "title": "Certified employer", "year": "2025"},
-     {"issuer": "IAOP", "title": "Global Outsourcing 100", "year": "2024"}
+     {
+      "issuer": "Clutch",
+      "title": "Top BPO Company",
+      "year": "2025"
+     },
+     {
+      "issuer": "Great Place to Work",
+      "title": "Certified employer",
+      "year": "2025"
+     },
+     {
+      "issuer": "IAOP",
+      "title": "Global Outsourcing 100",
+      "year": "2024"
+     }
     ],
-    "rating": {"score": "4.9", "out_of": "5", "source": "on Clutch", "count": "86 reviews"},
+    "rating": {
+     "score": "4.9",
+     "out_of": "5",
+     "source": "on Clutch",
+     "count": "86 reviews"
+    },
     "dark": true
    }
   },
   {
    "type": "team-grid",
    "data": {
-    "head": {"eyebrow": "Leadership", "title": "The people who run Lantern Staffing"},
+    "head": {
+     "eyebrow": "Leadership",
+     "title": "The people who run Lantern Staffing"
+    },
     "members": [
-     {"name": "Anna Tran", "role": "Chief Executive Officer", "photo": "portrait-woman-office", "linkedin": "https://www.linkedin.com"},
-     {"name": "Mark Delaney", "role": "Chief Operating Officer", "photo": "avatar-man-1", "linkedin": "https://www.linkedin.com"},
-     {"name": "Liza Santos", "role": "Head of People", "photo": "avatar-woman-2", "linkedin": "https://www.linkedin.com"},
-     {"name": "Duc Pham", "role": "Head of Delivery", "photo": "avatar-man-2", "linkedin": "https://www.linkedin.com"}
+     {
+      "name": "Margaret Hale",
+      "role": "Chief Executive Officer",
+      "photo": "portrait-exec-woman-senior",
+      "linkedin": "https://www.linkedin.com"
+     },
+     {
+      "name": "Andre Wallace",
+      "role": "Chief Operating Officer",
+      "photo": "portrait-man-desk",
+      "linkedin": "https://www.linkedin.com"
+     },
+     {
+      "name": "Liza Santos",
+      "role": "Head of People",
+      "photo": "portrait-woman-team-lead",
+      "linkedin": "https://www.linkedin.com"
+     },
+     {
+      "name": "Richard Lowe",
+      "role": "Head of Delivery",
+      "photo": "portrait-exec-man-senior",
+      "linkedin": "https://www.linkedin.com"
+     }
     ]
    }
   },
@@ -159,32 +488,68 @@
     "title": "Join our team",
     "text": "We hire support agents, accountants and QA engineers in Ho Chi Minh City, Da Nang, Manila and Cebu.",
     "openings": "45 open positions",
-    "perks": ["Great Place to Work certified", "Paid training"],
-    "cta": {"label": "View open roles", "href": "#contact"},
+    "perks": [
+     "Great Place to Work certified",
+     "Paid training"
+    ],
+    "cta": {
+     "label": "View open roles",
+     "href": "#contact"
+    },
     "photos": [
-     {"src": "team-engineers-screen", "alt": "QA engineers reviewing a test run"},
-     {"src": "portrait-woman-studio", "alt": "Support agent on a call"},
-     {"src": "meeting-handshake", "alt": "New hire welcomed by a team lead"},
-     {"src": "team-coworking-laptops", "alt": "Team working together in the office"}
+     {
+      "src": "training-workshop-board",
+      "alt": "New hires in a training session"
+     },
+     {
+      "src": "desk-phone-monitors",
+      "alt": "Support agent working a ticket queue"
+     },
+     {
+      "src": "team-meeting-bright-office",
+      "alt": "Team meeting in the Ho Chi Minh City office"
+     },
+     {
+      "src": "code-review-pair",
+      "alt": "QA engineers reviewing a test run"
+     }
     ]
    }
   },
   {
    "type": "faq-accordion",
    "data": {
-    "head": {"eyebrow": "FAQ", "title": "Frequently asked questions"},
+    "head": {
+     "eyebrow": "FAQ",
+     "title": "Frequently asked questions"
+    },
     "items": [
-     {"q": "Who employs the staff?", "a": "Lantern Staffing is the legal employer in Vietnam and the Philippines. We run payroll, benefits and local compliance. Your managers direct the daily work."},
-     {"q": "Can the team work US or UK hours?", "a": "Yes. Our Manila and Cebu offices run night shifts for US hours, and the Vietnam offices overlap with UK mornings."},
-     {"q": "Which tools can the team use?", "a": "Any tool you already use. Staff are trained on your helpdesk, CRM and accounting software during onboarding."},
-     {"q": "How is pricing set?", "a": "One monthly fee per full-time person covers salary, benefits, equipment, office and management. We quote per role."}
+     {
+      "q": "Who employs the staff?",
+      "a": "Lantern Staffing is the legal employer in Vietnam and the Philippines. We run payroll, benefits and local compliance. Your managers direct the daily work."
+     },
+     {
+      "q": "Can the team work US or UK hours?",
+      "a": "Yes. Our Manila and Cebu offices run night shifts for US hours, and the Vietnam offices overlap with UK mornings."
+     },
+     {
+      "q": "Which tools can the team use?",
+      "a": "Any tool you already use. Staff are trained on your helpdesk, CRM and accounting software during onboarding."
+     },
+     {
+      "q": "How is pricing set?",
+      "a": "One monthly fee per full-time person covers salary, benefits, equipment, office and management. We quote per role."
+     }
     ]
    }
   },
   {
    "type": "contact-split",
    "data": {
-    "head": {"eyebrow": "Contact us", "title": "Get a *quote*"},
+    "head": {
+     "eyebrow": "Contact us",
+     "title": "Get a *quote*"
+    },
     "form": {
      "title": "Tell us about the roles",
      "text": "A staffing consultant will reply by email.",
@@ -196,10 +561,24 @@
     },
     "aside": {
      "title": "Why companies choose us",
-     "points": ["Founded in 2016", "1,100 staff in four offices", "Clutch rating 4.9 out of 5"],
+     "points": [
+      "Founded in 2016",
+      "1,100 staff in four offices",
+      "Clutch rating 4.9 out of 5"
+     ],
      "offices": [
-      {"flag": "vn", "name": "Vietnam", "address": "District 1, Ho Chi Minh City", "phone": "(+84) 28 5555 0110"},
-      {"flag": "ph", "name": "Philippines", "address": "Ortigas Center, Pasig City, Metro Manila", "phone": "(+63) 2 5555 0110"}
+      {
+       "flag": "vn",
+       "name": "Vietnam",
+       "address": "District 1, Ho Chi Minh City",
+       "phone": "(+84) 28 5555 0110"
+      },
+      {
+       "flag": "ph",
+       "name": "Philippines",
+       "address": "Ortigas Center, Pasig City, Metro Manila",
+       "phone": "(+63) 2 5555 0110"
+      }
      ],
      "email_label": "Sales",
      "email": "sales@lantern-staffing.example"
@@ -211,19 +590,71 @@
    "data": {
     "blurb": "Lantern Staffing hires and manages offshore teams in Vietnam and the Philippines for US and UK companies.",
     "contacts": [
-     {"icon": "mail", "label": "sales@lantern-staffing.example", "href": "mailto:sales@lantern-staffing.example"},
-     {"icon": "map-pin", "label": "District 1, Ho Chi Minh City"}
+     {
+      "icon": "mail",
+      "label": "sales@lantern-staffing.example",
+      "href": "mailto:sales@lantern-staffing.example"
+     },
+     {
+      "icon": "map-pin",
+      "label": "District 1, Ho Chi Minh City"
+     }
     ],
     "socials": [
-     {"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"},
-     {"icon": "facebook", "label": "Facebook", "href": "https://www.facebook.com"}
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+     }
     ],
     "columns": [
-     {"heading": "Services", "links": [{"label": "Customer support", "href": "#services"}, {"label": "Bookkeeping", "href": "#services"}, {"label": "Software QA", "href": "#services"}]},
-     {"heading": "Company", "links": [{"label": "Leadership", "href": "#leadership"}, {"label": "Careers", "href": "#careers"}, {"label": "Contact", "href": "#contact"}]}
+     {
+      "heading": "Services",
+      "links": [
+       {
+        "label": "Customer support",
+        "href": "#services"
+       },
+       {
+        "label": "Bookkeeping",
+        "href": "#services"
+       },
+       {
+        "label": "Software QA",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "Leadership",
+        "href": "#leadership"
+       },
+       {
+        "label": "Careers",
+        "href": "#careers"
+       },
+       {
+        "label": "Contact",
+        "href": "#contact"
+       }
+      ]
+     }
     ],
     "legal": "All rights reserved.",
-    "legal_links": [{"label": "Privacy", "href": "#top"}],
+    "legal_links": [
+     {
+      "label": "Privacy",
+      "href": "#top"
+     }
+    ],
     "certifications": "ISO 27001"
    }
   }
