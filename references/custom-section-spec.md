@@ -40,6 +40,18 @@ Reference it in page.json as `{"type": "custom:<name>", "data": {...}}`. Custom 
 - Add `data-reveal` to blocks that should fade in; put `data-reveal-group` on a parent to stagger children.
 - Animate only transform and opacity. Add nothing that ignores `prefers-reduced-motion`.
 
-## 4. Verify
+## 4. Motion and performance
 
-Run build, lint and QA like any page, and look at the section at 1440, 768 and 390 px. If it looks weaker than its neighbours, simplify it.
+Continuous motion costs raster time, not script time. A full-width canvas that looked smooth on a 1x office monitor ran at 6 frames per second on a 2x laptop screen: its script took under 1 ms per frame, but repainting about 50 long anti-aliased paths over 2880 x 1800 pixels did not fit in the frame. Canvas and paint cost grows with the square of the device pixel ratio, so test at 2x. `qa_screenshot.py` does this and fails any moving section below 30 frames per second.
+
+- Canvas: reuse `window.BLRibbons` from `templates/sections/_shared/ribbons.js` (`waves` for line ribbons, `loop` and `fit` for anything else). Its loop stops when the canvas is off screen, when the tab is hidden, under reduced motion and when the page-wide Pause animations switch is on. Never start a second `requestAnimationFrame` loop of your own.
+- Decorative lines, dots and glows: back the canvas at 1x, not at `devicePixelRatio`. Thin, soft, semi-transparent strokes look the same, and the pixel count drops by a factor of 4 on a 2x screen. Keep the device ratio (capped at 2) only for sharp shapes the eye follows, such as the globe.
+- Build fewer, longer paths. Put every line that shares a colour and opacity into one `Path2D` and stroke it once (group opacities into 3-5 steps). Use `quadraticCurveTo` through about one point per 24 CSS px instead of `lineTo` every few pixels.
+- Cap slow ambient motion at 30 fps (skip a frame when less than 32 ms passed). Keep full rate only while something follows the pointer or a one-off draw-in runs.
+- No `shadowBlur`, no `filter` on a canvas, and no `backdrop-filter` layer on top of one; each forces a full repaint of the layer every frame.
+- CSS: animate `transform` and `opacity` only. `stroke-dashoffset`, `clip-path`, `width`, `height` and colours repaint every frame; use them only for one-off transitions on small elements.
+- Anything that moves for more than 5 seconds on its own must stop with the page-wide switch (listen for the `bl:motion` event or rely on `html[data-motion="paused"]`, which pauses CSS animations).
+
+## 5. Verify
+
+Run build, lint and QA like any page, and look at the section at 1440, 768 and 390 px. If it looks weaker than its neighbours, simplify it. If QA reports `slow animation`, apply the rules above before anything else; do not raise the threshold.

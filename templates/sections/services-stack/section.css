@@ -24,7 +24,7 @@
   --card-text: color-mix(in srgb, white 76%, var(--c-primary));
   --card-strong: white;
   --card-line: color-mix(in srgb, white 14%, transparent);
-  --card-tick: var(--c-accent);
+  --card-tick: var(--c-accent-on-dark, var(--c-accent));
   background: var(--c-primary); border-color: transparent;
 }
 .bl-services-stack__item:nth-child(3n + 3) .bl-services-stack__card {

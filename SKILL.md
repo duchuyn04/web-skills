@@ -27,7 +27,7 @@ Get these from the user or their files. Ask one short message for anything missi
 - Delivery locations (cities), headcount, languages
 - Proof: real KPIs, client names or logos, certifications, testimonials
 - Contact: email, phone, WhatsApp or Zalo link, form endpoint if they have one
-- Brand colors (hex) and page language (default English)
+- Brand colors (hex, exactly as in the logo; build.py derives every shade) and page language (default English)
 - Photos of their own office or team, if any (put them next to page.json)
 
 ## Step 2: Choose archetype and preset
@@ -106,7 +106,7 @@ It must print `LINT PASSED`. Copy errors are fixed in page.json; structural erro
 python SKILL/scripts/qa_screenshot.py sites/<slug>/dist --sections
 ```
 
-Needs Python Playwright and Edge or Chrome. If `python` cannot import playwright, try `py -3.11` or `python3`. The script checks sideways overflow, clipped text, broken images and JS errors at 1440, 768 and 390 px and must print `QA PASSED`. Then open `dist/qa/page-1440.png` and a few files in `dist/qa/sections-390/` and look at them. Typical fixes: shorter titles, fewer items, a better photo.
+Needs Python Playwright and Edge or Chrome. If `python` cannot import playwright, try `py -3.11` or `python3`. The script checks sideways overflow, clipped text, broken images and JS errors at 1440, 768 and 390 px, then measures the frame rate of the hero and every moving section at 1440 px on a 2x screen (minimum 30 fps; 1x screens hide canvas lag that laptops with scaled displays show). At the first width it also checks the contrast of every visible text run against the color behind it, the focus outline of every Tab stop and the underline or contrast of links in running text (see `references/color-system.md`). Add `--cvd` to save color-blindness screenshots for review. It must print `QA PASSED`. Then open `dist/qa/page-1440.png` and a few files in `dist/qa/sections-390/` and look at them. Typical fixes: shorter titles, fewer items, a better photo.
 
 ## Step 7: Report
 
@@ -125,6 +125,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/page-anatomy.md`: archetypes and exact slot order (generated)
 - `references/section-catalog.md`: every variant, its fields, limits and preview (generated)
 - `references/style-presets.md`: presets, design options, brand color overrides, tones
+- `references/color-system.md`: how brand colors become tokens (OKLCH, contrast, harmony rules) and the contrast, focus and link checks in QA
 - `references/content-rules.md`: copy rules and how to handle missing facts
 - `references/mobbin-references.md`: where the tool, compare, awards, team, careers, steps and country sections come from, and how to research new sections on Mobbin
 - `references/industry-voice.md`: how real BPO sites write (hero patterns, heading labels, proof, button labels, Vietnamese), measured on 120 homepages
@@ -137,4 +138,4 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 
 After changing a template or schema, rebuild every page in `examples/` and `examples/variations/`, run lint and QA on each, then run `python SKILL/scripts/make_catalog.py` to regenerate the catalog, anatomy and animation map (add `--previews <dist> ...` to refresh preview images).
 
-New variants widen the library only if agents can reach them: add each one to the matching slots in `templates/archetypes.json`, give every new animation id a timing line in `TIMING` in `make_catalog.py`, and put the variant in at least one page under `examples/variations/` so it is built and checked with the rest. Canvas motion shares one renderer and one pause state in `templates/sections/_shared/ribbons.js` (`window.BLRibbons`); reuse it rather than starting a second animation loop. `qa_screenshot.py` adds the class `bl-shot` to the page before element screenshots, so scroll-linked layouts can lay out flat for previews.
+New variants widen the library only if agents can reach them: add each one to the matching slots in `templates/archetypes.json`, give every new animation id a timing line in `TIMING` in `make_catalog.py`, and put the variant in at least one page under `examples/variations/` so it is built and checked with the rest. Canvas motion shares one renderer and one pause state in `templates/sections/_shared/ribbons.js` (`window.BLRibbons`); reuse it rather than starting a second animation loop. Any new moving section follows "Motion and performance" in `references/custom-section-spec.md` and must pass the QA frame-rate check at 2x. `qa_screenshot.py` adds the class `bl-shot` to the page before element screenshots, so scroll-linked layouts can lay out flat for previews.

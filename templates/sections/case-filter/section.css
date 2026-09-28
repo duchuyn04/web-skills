@@ -7,7 +7,7 @@
 }
 .bl-cfilter__pill:hover { border-color: var(--text-muted); }
 .bl-cfilter__pill[aria-pressed="true"] { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
-.bl-cfilter__pill:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+.bl-cfilter__pill:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .bl-cfilter__pill small { margin-left: .35rem; opacity: .7; font-weight: 500; }
 
 .bl-cfilter__grid { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }

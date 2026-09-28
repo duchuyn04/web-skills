@@ -12,6 +12,7 @@ import argparse
 import datetime
 import html
 import json
+import math
 import re
 import shutil
 import sys
@@ -63,7 +64,7 @@ def mix(a, b, t):
 def luminance(rgb):
     def ch(c):
         c = c / 255
-        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+        return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
     r, g, b = (ch(c) for c in rgb)
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
@@ -84,6 +85,79 @@ def ink_for(color, bg, target=4.5):
         if contrast(c, bg) >= target:
             return c
     return goal
+
+
+# --------------------------------------------------------------------------- perceptual colour (OKLab / OKLCH)
+# Conversion matrices from Bjorn Ottosson's OKLab definition, the same ones CSS Color 4 uses for oklab()/oklch().
+def _lin(c):
+    c = c / 255.0
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def _gam(c):
+    c = 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+    return c * 255.0
+
+
+def to_oklch(rgb):
+    r, g, b = (_lin(c) for c in rgb)
+    l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ** (1 / 3)
+    m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ** (1 / 3)
+    s = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ** (1 / 3)
+    L = 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s
+    a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s
+    bb = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s
+    return L, math.hypot(a, bb), math.degrees(math.atan2(bb, a)) % 360
+
+
+def _oklch_raw(L, C, h):
+    a, b = C * math.cos(math.radians(h)), C * math.sin(math.radians(h))
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    return (4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+            -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+            -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s)
+
+
+def from_oklch(L, C, h):
+    """OKLCH to sRGB 0-255. Out-of-gamut colours keep L and h and lose chroma until they fit (CSS Color 4 gamut mapping idea)."""
+    L = min(max(L, 0.0), 1.0)
+    lo, hi = 0.0, C
+    rgb = _oklch_raw(L, C, h)
+    if min(rgb) < -1e-4 or max(rgb) > 1 + 1e-4:
+        for _ in range(24):
+            mid = (lo + hi) / 2
+            t = _oklch_raw(L, mid, h)
+            if min(t) < -1e-4 or max(t) > 1 + 1e-4:
+                hi = mid
+            else:
+                lo = mid
+        rgb = _oklch_raw(L, lo, h)
+    return tuple(min(max(_gam(min(max(c, 0.0), 1.0)), 0.0), 255.0) for c in rgb)
+
+
+def hue_distance(a, b):
+    d = abs(a - b) % 360
+    return min(d, 360 - d)
+
+
+def ensure_contrast(color, bgs, target=4.5):
+    """Move colour lightness in OKLCH (hue kept) until it reaches target contrast on every background in bgs.
+    Goes darker on light backgrounds and lighter on dark ones; returns the original colour when it already passes."""
+    if all(contrast(color, bg) >= target for bg in bgs):
+        return color
+    L, C, h = to_oklch(color)
+    darker = sum(luminance(bg) for bg in bgs) / len(bgs) >= 0.18
+    step = -0.01 if darker else 0.01
+    for _ in range(100):
+        L += step
+        if L <= 0 or L >= 1:
+            break
+        c = from_oklch(L, C, h)
+        if all(contrast(c, bg) >= target for bg in bgs):
+            return c
+    return (0, 0, 0) if darker else (255, 255, 255)
 
 
 # --------------------------------------------------------------------------- template engine
@@ -573,17 +647,86 @@ def resolve_color(expr, colors):
     return expr
 
 
+def fill_for_white_text(color, target=4.5, margin=0.05):
+    """Darken at constant OKLCH hue until white text passes (research note ui-color-system.md, 3.6)."""
+    white = (255, 255, 255)
+    if contrast(color, white) >= target + margin:
+        return color
+    L0, C0, H0 = to_oklch(color)
+    lo, hi = 0.0, L0
+    for _ in range(40):
+        mid = (lo + hi) / 2
+        if contrast(from_oklch(mid, C0, H0), white) >= target + margin:
+            lo = mid
+        else:
+            hi = mid
+    out = parse_hex(to_hex(from_oklch(lo, C0, H0)))
+    return out if contrast(out, white) >= target else ensure_contrast(out, [white], target)
+
+
+def tint_neutral(rgb, hue, cap):
+    """Keep a neutral's lightness, move its hue to the brand hue and cap its chroma (rules 14-15).
+    Neutrals under 0.01 chroma have no readable hue and stay as they are."""
+    L, C, h = to_oklch(rgb)
+    if C < 0.01 or hue_distance(h, hue) <= 45 and C <= cap:
+        return rgb
+    return from_oklch(L, min(C, cap), hue)
+
+
 def theme_css(preset, overrides, ctx):
+    """Colour tokens. Rules come from docs/research/ui-color-system.md (see references/color-system.md):
+    white button labels at 4.5:1 by darkening the accent at constant hue, accent_2 kept analogous,
+    neutrals tinted toward the accent hue, every text token checked on bg, surface and surface_2,
+    input borders and focus rings at 3:1, no glows or gradients between clashing hues."""
     colors = dict(preset["colors"])
+    given = set()
     for k in ("primary", "accent", "accent_2"):
         if overrides.get(k):
             colors[k] = overrides[k]
-    accent = parse_hex(colors["accent"])
+            given.add(k)
     white, ink = (255, 255, 255), (11, 15, 25)
-    cw, cd = contrast(accent, white), contrast(accent, ink)
-    on_accent = white if cw >= 4.5 or cw >= cd else ink
-    if max(cw, cd) < 4.5:
-        ctx.warn("theme.accent", "button text contrast is %.2f:1 (target 4.5). Pick a darker or lighter accent." % max(cw, cd))
+
+    # Accent: the button fill. White label at 4.5:1 (rules 2-4).
+    brand = parse_hex(colors["accent"])
+    L0, C0, H0 = to_oklch(brand)
+    accent = brand
+    if contrast(brand, white) >= 4.5:
+        on_accent = white
+    elif L0 >= 0.80:
+        on_accent = ensure_contrast(from_oklch(0.22, min(C0 * 0.2, 0.03), H0), [brand], 4.5)
+    else:
+        accent = fill_for_white_text(brand)
+        on_accent = white
+        L1, _, H1 = to_oklch(accent)
+        ctx.warn("theme.accent", "accent %s gives white button text only %.2f:1, so buttons use %s (same hue, white text %.2f:1). %s"
+                 % (to_hex(brand), contrast(brand, white), to_hex(accent), contrast(accent, white),
+                    "The original stays as accent_2 for glows and highlights." if "accent_2" not in given else "Set a darker accent yourself to choose the shade."))
+        if L0 - L1 > 0.20:
+            ctx.warn("theme.accent", "the accent had to lose %.2f of its lightness to carry white text; check that %s still reads as the brand." % (L0 - L1, to_hex(accent)))
+        if "accent_2" not in given:
+            colors["accent_2"] = to_hex(brand)
+    colors["accent"] = to_hex(accent)
+
+    # Primary: a warm brand given without a dark colour gets a brand-tinted dark, not the preset navy (rule 16).
+    if "accent" in given and "primary" not in given and C0 >= 0.03 and 20 <= H0 <= 100 and hue_distance(to_oklch(parse_hex(colors["primary"]))[2], H0) > 90:
+        colors["primary"] = to_hex(from_oklch(0.24, min(0.03, 0.2 * C0), H0))
+        ctx.warn("theme.primary", "warm accent with the preset's cool dark colour: dark sections now use %s, a dark tint of the accent hue. Set theme.primary to keep another colour." % colors["primary"])
+
+    # accent_2: analogous (within 60 degrees) unless the client supplied it (rules 9-10).
+    a2 = parse_hex(colors["accent_2"])
+    La2, Ca2, Ha2 = to_oklch(a2)
+    spread = hue_distance(H0, Ha2) if Ca2 >= 0.03 and C0 >= 0.03 else 0
+    if spread > 60 and "accent_2" not in given:
+        a2 = from_oklch(min(L0 + 0.15, 0.85), 0.8 * C0, (H0 + 25) % 360)
+        colors["accent_2"] = to_hex(a2)
+        spread = 25
+    elif spread > 90:
+        ctx.warn("theme.accent_2", "accent and accent_2 are %d degrees apart; glows and gradients use shades of the accent only, so the two never mix into grey." % spread)
+    # Colour that may be blended with the accent in glows and gradients.
+    blend = a2 if spread <= 90 else from_oklch(min(L0 + 0.15, 0.85), C0, H0)
+    # Gradient end behind on-accent text must still carry that text (rule 13).
+    blend_deep = ensure_contrast(blend, [on_accent], 4.5)
+
     lines = [":root {",
              "  --font-heading: '%s', system-ui, sans-serif;" % preset["fonts"]["heading"],
              "  --font-body: '%s', system-ui, sans-serif;" % preset["fonts"]["body"],
@@ -593,23 +736,42 @@ def theme_css(preset, overrides, ctx):
              "  --c-primary: %s;" % colors["primary"],
              "  --c-accent: %s;" % colors["accent"],
              "  --c-accent-2: %s;" % colors["accent_2"],
-             "  --c-on-accent: %s;" % to_hex(on_accent)]
+             "  --c-accent-blend: %s;" % to_hex(blend),
+             "  --c-accent-blend-deep: %s;" % to_hex(blend_deep),
+             "  --c-on-accent: %s;" % to_hex(on_accent),
+             # Accent text or marks placed on a --c-primary block inside a light section.
+             "  --c-accent-on-dark: %s;" % to_hex(ensure_contrast(accent, [parse_hex(colors["primary"]), mix(parse_hex(colors["primary"]), white, 0.06)]))]
     for k, v in preset["shape"].items():
         lines.append("  --%s: %s;" % (k.replace("_", "-"), v))
     lines.append("}")
+
+    primary = parse_hex(colors["primary"])
     for tone, spec in preset["tones"].items():
         vals = {k: resolve_color(v, colors) if isinstance(v, str) else v for k, v in spec.items()}
-        bg = parse_hex(vals["bg"])
-        strong = parse_hex(vals["text_strong"])
         dark = vals["is_dark"]
-        accent_ink = ink_for(accent, bg)
-        accent2_ink = ink_for(parse_hex(colors["accent_2"]), bg, 3.0)
-        for key in ("text", "text_muted"):
-            c = parse_hex(vals[key])
-            if c and contrast(c, bg) < 4.5:
-                vals[key] = to_hex(ink_for(c, bg))
-        border_strong = to_hex(mix(bg, strong, 0.22 if not dark else 0.28))
+        # Neutrals follow the accent hue at low chroma (rules 14-15); values tied to the brand ($primary) stay.
+        for key, cap in (("bg", 0.012), ("surface", 0.012), ("surface_2", 0.015), ("text", 0.02), ("text_muted", 0.02)):
+            raw = spec.get(key)
+            c = parse_hex(vals[key]) if isinstance(vals[key], str) else None
+            if c and not (isinstance(raw, str) and "$" in raw):
+                vals[key] = to_hex(tint_neutral(c, H0, cap))
+        bg = parse_hex(vals["bg"])
         surf = parse_hex(vals["surface"]) or bg
+        surf2 = parse_hex(vals["surface_2"]) or surf
+        grounds = [bg, surf, surf2]
+        strong = parse_hex(vals["text_strong"])
+        # Text on every ground it sits on (rule 6).
+        for key in ("text_strong", "text", "text_muted"):
+            c = parse_hex(vals[key])
+            if c:
+                vals[key] = to_hex(ensure_contrast(c, grounds))
+        # Accent text: also on the accent-tinted chip ground (rule 5).
+        soft = [mix(g, accent, 0.14) for g in grounds]
+        accent_ink = ensure_contrast(accent, grounds + soft)
+        accent2_ink = ensure_contrast(a2, grounds, 3.0)
+        border_strong = to_hex(mix(bg, strong, 0.22 if not dark else 0.28))
+        border_input = ensure_contrast(parse_hex(border_strong), [bg, surf], 3.0)
+        focus = ensure_contrast(accent, [bg, surf], 3.0)
         lines += [".bl-tone-%s {" % tone,
                   "  color-scheme: %s;" % ("dark" if dark else "light"),
                   "  --bg: %s;" % vals["bg"],
@@ -620,12 +782,22 @@ def theme_css(preset, overrides, ctx):
                   "  --text-muted: %s;" % vals["text_muted"],
                   "  --border: %s;" % vals["border"],
                   "  --border-strong: %s;" % border_strong,
+                  "  --border-input: %s;" % to_hex(border_input),
+                  "  --focus-ring: %s;" % to_hex(focus),
                   "  --accent-ink: %s;" % to_hex(accent_ink),
                   "  --accent-2-ink: %s;" % to_hex(accent2_ink),
-                  "  --glass: %s;" % ("rgba(%d, %d, %d, 0.62)" % surf if dark else "rgba(255, 255, 255, 0.74)"),
+                  "  --glass: %s;" % ("rgba(%d, %d, %d, 0.62)" % tuple(int(c) for c in surf) if dark else "rgba(255, 255, 255, 0.74)"),
                   "  --glass-border: %s;" % ("rgba(255, 255, 255, 0.12)" if dark else "rgba(255, 255, 255, 0.9)"),
                   "  --shadow-lg: %s;" % ("0 24px 48px -20px rgba(0, 0, 0, 0.65)" if dark else "0 24px 48px -24px rgba(15, 23, 42, 0.24)"),
                   "}"]
+        # A glow whose hue is far from a coloured ground averages into grey or brown (rule 12).
+        Lb, Cb, Hb = to_oklch(bg)
+        if Cb >= 0.03:
+            if hue_distance(H0, Hb) > 90:
+                lines.append(".bl-tone-%s .bl-glow--a { display: none; }" % tone)
+            if hue_distance(to_oklch(blend)[2], Hb) > 90:
+                lines.append(".bl-tone-%s .bl-glow--b { display: none; }" % tone)
+
     # Accent tone: sections painted in the brand colour (hero-gradient). Text uses the button text colour.
     on = on_accent
     txt = mix(on, accent, 0.10)
@@ -645,6 +817,8 @@ def theme_css(preset, overrides, ctx):
               "  --text-muted: %s;" % to_hex(muted),
               "  --border: rgba(%d, %d, %d, 0.28);" % tuple(int(c) for c in on),
               "  --border-strong: rgba(%d, %d, %d, 0.55);" % tuple(int(c) for c in on),
+              "  --border-input: rgba(%d, %d, %d, 0.75);" % tuple(int(c) for c in on),
+              "  --focus-ring: %s;" % to_hex(on),
               "  --accent-ink: %s;" % to_hex(on),
               "  --accent-2-ink: %s;" % to_hex(on),
               "  --glass: rgba(%d, %d, %d, 0.16);" % tuple(int(c) for c in on),

@@ -1,6 +1,6 @@
 {
   "name": "human-warm",
-  "label": "Human warm cream and teal",
+  "label": "Human warm cream and amber",
   "use_for": "People-first CX startups, staffing firms and outsourcing brands that lead with team culture. Friendly, rounded.",
   "references": ["Foundever", "TaskUs", "SupportNinja", "Boldr", "PartnerHero"],
   "fonts": {
@@ -10,7 +10,7 @@
     "google": "family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600"
   },
   "type": {"heading_weight": 800, "heading_tracking": "-0.03em"},
-  "colors": {"primary": "#10302c", "accent": "#c2410c", "accent_2": "#14b8a6"},
+  "colors": {"primary": "#10302c", "accent": "#c2410c", "accent_2": "#db8a33"},
   "shape": {"radius_sm": "10px", "radius": "18px", "radius_lg": "26px", "radius_btn": "999px"},
   "hero_tone": "light",
   "tone_cycle": ["light", "muted"],

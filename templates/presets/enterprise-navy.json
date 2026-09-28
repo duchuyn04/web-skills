@@ -10,7 +10,7 @@
     "google": "family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
   "type": {"heading_weight": 600, "heading_tracking": "-0.025em"},
-  "colors": {"primary": "#0a1128", "accent": "#d4401d", "accent_2": "#2ed8c3"},
+  "colors": {"primary": "#0a1128", "accent": "#d4401d", "accent_2": "#ee8e34"},
   "shape": {"radius_sm": "8px", "radius": "14px", "radius_lg": "20px", "radius_btn": "999px"},
   "hero_tone": "dark",
   "tone_cycle": ["light", "muted"],

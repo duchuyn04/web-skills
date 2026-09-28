@@ -51,7 +51,7 @@ button { cursor: pointer; background: none; border: 0; }
 ul, ol { list-style: none; }
 h1, h2, h3, h4 { font-weight: inherit; }
 [hidden] { display: none !important; }
-:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--focus-ring, var(--accent-ink)); outline-offset: 3px; border-radius: 4px; }
 .bl-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .bl-skip { position: absolute; left: 1rem; top: -4rem; z-index: 200; padding: .6rem 1rem; border-radius: var(--radius-sm); background: var(--c-accent); color: var(--c-on-accent); font-weight: 700; }
 .bl-skip:focus { top: 1rem; }
@@ -190,7 +190,7 @@ h1, h2, h3, h4 { font-weight: inherit; }
 /* Ambient glow decoration used by heroes and CTA bands */
 .bl-glow { position: absolute; z-index: -1; pointer-events: none; border-radius: 50%; filter: blur(60px); opacity: .55; }
 .bl-glow--a { width: 520px; height: 520px; background: color-mix(in srgb, var(--c-accent) 45%, transparent); }
-.bl-glow--b { width: 460px; height: 460px; background: color-mix(in srgb, var(--c-accent-2) 40%, transparent); }
+.bl-glow--b { width: 460px; height: 460px; background: color-mix(in srgb, var(--c-accent-blend, var(--c-accent-2)) 40%, transparent); }
 
 /* Reveal on scroll. Only hidden when JS is running. Uses the individual
    translate / scale properties so it never fights a component's own transform. */
@@ -206,12 +206,12 @@ h1, h2, h3, h4 { font-weight: inherit; }
 .bl-label { font-size: var(--fs-sm); font-weight: 600; color: var(--text-strong); }
 .bl-input {
   width: 100%; min-height: 48px; padding: .7rem .95rem;
-  border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  border: 1px solid var(--border-input, var(--border-strong)); border-radius: var(--radius-sm);
   background: var(--surface); color: var(--text-strong);
   transition: border-color var(--dur-fast) var(--ease-std), box-shadow var(--dur-fast) var(--ease-std);
 }
 .bl-input::placeholder { color: var(--text-muted); }
-.bl-input:focus { outline: none; border-color: var(--accent-ink); box-shadow: 0 0 0 3px var(--c-accent-soft); }
+.bl-input:focus { outline: 2px solid var(--focus-ring, var(--accent-ink)); outline-offset: 1px; border-color: var(--accent-ink); box-shadow: 0 0 0 4px var(--c-accent-soft); }
 textarea.bl-input { min-height: 110px; resize: vertical; }
 
 /* Brand mark */
@@ -237,7 +237,7 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 .bl-mask-arch :is(.bl-row__frame, .bl-hero-split__frame, .bl-tabs__media, .bl-hero-grad__photo) { border-radius: 999px 999px var(--radius-lg) var(--radius-lg); }
 
 /* Title highlight styles */
-.bl-hl-gradient .bl-hl { background: linear-gradient(100deg, var(--accent-ink) 10%, var(--accent-2-ink) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.bl-hl-gradient .bl-hl { background: linear-gradient(in oklab 100deg, var(--accent-ink) 10%, var(--accent-ink) 30%, color-mix(in oklab, var(--accent-ink) 55%, var(--accent-2-ink)) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .bl-hl-underline .bl-hl { color: inherit; text-decoration: underline; text-decoration-color: var(--c-accent); text-decoration-thickness: .1em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
 
 /* Media reveal: photos wipe in from the bottom inside their frame */
@@ -267,7 +267,7 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 html[data-motion="paused"] *, html[data-motion="paused"] *::before, html[data-motion="paused"] *::after { animation-play-state: paused !important; }
 .bl-motion-toggle { display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .75rem; border-radius: var(--radius-btn); border: 1px solid var(--border); background: transparent; color: inherit; font: inherit; cursor: pointer; }
 .bl-motion-toggle:hover { color: var(--text-strong); border-color: var(--border-strong); }
-.bl-motion-toggle:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+.bl-motion-toggle:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 .bl-motion-toggle .bl-icon { width: 14px; height: 14px; fill: currentColor; }
 .bl-motion-toggle__play, html[data-motion="paused"] .bl-motion-toggle__pause { display: none; }
 html[data-motion="paused"] .bl-motion-toggle__play { display: inline; }
