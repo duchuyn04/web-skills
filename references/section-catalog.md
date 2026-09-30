@@ -20,6 +20,18 @@ These sit at the top of page.json, next to `sections`.
   - `logo`: image key or path (optional)
   - `title`: text 20-70 chars
   - `description`: text 70-170 chars
+- `seo`: object (optional)
+  - `url`: text 12-200 chars (optional)
+  - `image`: image key or path (optional)
+  - `image_alt`: text 10-120 chars (optional)
+  - `icon`: image key or path (optional)
+  - `locale`: text 5-5 chars (optional)
+  - `index`: true/false (optional, default true)
+  - `google_verification`: text 10-100 chars (optional)
+  - `bing_verification`: text 10-100 chars (optional)
+  - `alternates`: list of 2-10 (optional), each item:
+    - `lang`: text 2-9 chars
+    - `url`: text 12-200 chars
 - `theme`: object (optional)
   - `primary`: hex color (optional)
   - `accent`: hex color (optional)

@@ -2,6 +2,19 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.1.0 (2026-10-01)
+
+Search and share tags. Rules stay at 5: every new finding on existing fields is a warning, and only the new `seo` fields fail when malformed.
+
+- New `scripts/seo.py`, called by build.py. It writes the robots meta, canonical link, hreflang alternates, Open Graph (type, site name, locale, title without the brand, description, url, image with width, height and alt), `twitter:card`, verification meta tags for Search Console and Bing, a favicon (monogram SVG plus a 192 px PNG, because Google Search does not show SVG favicons) and one JSON-LD graph: Organization, WebSite, WebPage and FAQPage, from facts shown on the page only. It also writes `sitemap.xml` and, at the root of a host, `robots.txt`.
+- New optional page field `seo`: `url`, `image`, `image_alt`, `icon`, `locale`, `index`, `alternates`, `google_verification`, `bing_verification`.
+- A page with placeholders is built with `noindex, nofollow` and without a sitemap, so demos stay out of search.
+- The sitemap `lastmod` changes only when the page content changes: build-report.json keeps a content hash.
+- Warnings: title over 60 characters or without the brand, description over 160 characters or starting with the title, no `seo.url` outside examples, a share image under 600 px wide, no photo to share, an SVG or non-square `seo.icon`, a logo under 112 px, a page in a subfolder (no robots.txt there).
+- Lint: `<html lang>`, one title, a meta description, og:title, og:description and og:type, a favicon link, at most one absolute canonical, full https hreflang links and valid JSON-LD are errors; a sitemap next to a noindex page or with another URL than the canonical fails. Missing og:image, an SVG-only favicon and skipped heading levels warn.
+- `references/seo.md`: what 85 real BPO homepages put in their head (measured with the new `scripts/research/seo_probe.py`), what the build writes, the fields, and the steps after launch (Search Console, Bing Webmaster Tools, Google Business Profile, consistent name, address and phone). Sources: Google Search Central, Bing, IndexNow, schema.org, ogp.me, Meta and web.dev.
+- Tests: 11 new cases in `tests/cases.json`.
+
 ## 5.0.0 (2026-09-30)
 
 Rules 5, from a user review of six sites built with 4.2.0 (SoGlobal: accounting, IT and marketing outsourcing). Pages built under rules 4 keep building with `"rules": "4"`; the new checks then print as warnings.

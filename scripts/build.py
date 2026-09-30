@@ -27,6 +27,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import rules  # noqa: E402
+import seo  # noqa: E402
 
 SKILL = HERE.parent
 # Version of the content rules. Bump it when a new check can fail a page that built before, and add a CHANGELOG.md
@@ -1900,6 +1901,7 @@ PAGE_SPEC = {
             "title": {"type": "text", "min": 20, "max": 70},
             "description": {"type": "text", "min": 70, "max": 170},
         }},
+        "seo": seo.SPEC,
         "theme": {"type": "object", "required": False, "fields": {
             "primary": {"type": "color", "required": False},
             "accent": {"type": "color", "required": False},
@@ -2107,6 +2109,7 @@ def main():
         check_unique_hero(ctx, page, page_path, sections, archetype, lib, top.get("motion", "calm"))
         check_unique_blueprint(ctx, page, page_path, arch_key, lib)
     ctx.soft = False
+    seo.check(ctx, top, sections, SKILL / "examples" in page_path.parents)
 
     for path, anchor in ctx.anchors:
         if anchor not in ids and anchor != "top":
@@ -2204,8 +2207,13 @@ def main():
     root_class = " ".join(["bl-eyebrow-%s" % eyebrow, "bl-edges-%s" % design["edges"], "bl-mask-%s" % design["image_mask"],
                            "bl-hl-%s" % design["highlight"], "bl-media-%s" % design["media_reveal"],
                            "bl-motion-%s" % motion_style(theme, preset, site["seed"])])
+    try:
+        prev_report = json.loads((out_dir / "build-report.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        prev_report = None
+    seo_head, seo_files, seo_record = seo.build(ctx, top, site, sections, body, preset, ctx.placeholders, prev_report)
     shell = {"root_class": root_class, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
-             "body": Safe(assemble_body(body)), "hero_tone": hero_tone}
+             "body": Safe(assemble_body(body)), "hero_tone": hero_tone, "seo_head": Safe(seo_head)}
     page_html = renderer.render_file(TPL / "page.html", [shell])
     page_html = re.sub(r"<!--.*?-->", "", page_html, flags=re.S)
     page_html = re.sub(r"\n\s*\n+", "\n", page_html)
@@ -2225,7 +2233,7 @@ def main():
 
     # Write.
     if out_dir.exists():
-        for sub in ("assets", "index.html", "build-report.json"):
+        for sub in ("assets", "index.html", "build-report.json", "robots.txt", "sitemap.xml"):
             target = out_dir / sub
             if target.is_dir():
                 shutil.rmtree(target)
@@ -2241,8 +2249,10 @@ def main():
     for rel, src in ctx.images.items():
         (out_dir / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, out_dir / rel)
+    for rel, text in seo_files.items():
+        (out_dir / rel).write_bytes(text if isinstance(text, bytes) else text.encode("utf-8"))
     rep = {"rules": int(legacy) if legacy else RULES_VERSION, "archetype": arch_key, "preset": top["preset"], "motion_style": re.search(r"bl-motion-(\w+)", root_class).group(1), "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections],
-           "warnings": ctx.warnings, "placeholders": ctx.placeholders}
+           "seo": seo_record, "warnings": ctx.warnings, "placeholders": ctx.placeholders}
     (out_dir / "build-report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
     report(ctx, failed=False)
     print("OK built %d sections into %s" % (len(sections), out_dir / "index.html"))

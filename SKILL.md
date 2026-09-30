@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "5.0.0"
+  version: "5.1.0"
 ---
 
 # BPO landing builder
@@ -137,6 +137,22 @@ Then edit values only:
 - Images and video: pick keys from `references/assets.md`, or use the client's files by relative path. Icons, flags and cities must come from `python SKILL/scripts/build.py --list`.
 - Every `href` that starts with `#` must match a section id (the default ids are listed in the catalog as "Default anchor").
 
+## Step 3a: Search and share tags
+
+build.py writes the SEO head for you: title, description, robots, canonical, Open Graph and Twitter tags, a favicon (SVG plus the PNG that Google Search shows), JSON-LD (Organization, WebSite, WebPage, and FAQPage when the page has an FAQ section), `sitemap.xml` and `robots.txt`. You only supply facts:
+
+- `site.title`: the service first, then the brand, within 60 characters ("Offshore accounting teams in Da Nang | So Sang"). 71 of 85 real BPO homepages end the title with the brand. Google cuts long titles to the screen width, and build.py warns above 60.
+- `site.description`: one or two plain sentences, 120-160 characters, that say what the company does, where and for whom. Write it for the searcher, not as a keyword list.
+- `seo.url`: the page's live https address, ending in `/` or `.html`. With it the build adds the canonical link, `og:url`, absolute share image URLs, `sitemap.xml`, and `robots.txt` when the page sits at the root of the host. Leave it out until the client gives the domain; never invent one.
+- `seo.image` and `seo.image_alt`: the share picture, a 1200 x 630 JPG or PNG photo (not the logo). Left out, the hero photo is used.
+- `seo.icon`: the client's square PNG icon. Left out, build.py draws a monogram from `site.brand_mark`.
+- `seo.alternates`: when the client has the same page in English and Vietnamese, list both versions and `x-default` with full addresses, the same list on each page (hreflang).
+- `seo.google_verification`, `seo.bing_verification`: the content value of the verification meta tag, when the client gives it.
+- `seo.locale`: only when the country differs from the language default (`en_US`, `vi_VN`), for example `"en_AU"`.
+- `seo.index`: `false` keeps a published page out of search. A page that still has placeholders is built with `noindex` automatically, so a demo never gets indexed.
+
+Structured data only carries facts shown on the page: footer phone and email, social profile links, office addresses from `locations-gmap`, FAQ answers. Placeholders and example.com addresses are left out. Reviews are never marked up as ratings, because Google does not show reviews a company publishes about itself. `references/seo.md` has the rules, their sources and the measurements behind them.
+
 ## Step 4: Build until clean
 
 ```
@@ -168,6 +184,7 @@ Tell the user, briefly:
 - where the page is (`sites/<slug>/dist/index.html`) and how to view it (open the file, or `python -m http.server` in `dist`)
 - archetype, preset and the sections used
 - every placeholder and warning still open (fake KPIs, missing audio, form endpoint, stock photos or the sample video to replace)
+- SEO: whether the page is indexable (`noindex` while placeholders remain), whether `seo.url` is set, and the launch steps from "After launch" in `references/seo.md` (Search Console, Bing Webmaster Tools, Google Business Profile)
 
 ## When the library does not fit
 
@@ -188,6 +205,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/animation-map.md`: which section carries which animation, with timings (generated)
 - `references/motion-research.md`: how 89 real BPO homepages animate (scroll entrances, hovers, carousels, sticky and scroll-linked pieces) and the four motion styles built from it
 - `references/custom-section-spec.md`: fallback for blocks outside the library
+- `references/seo.md`: the search and share tags build.py writes, the fields that feed them, what 85 real BPO homepages do, and the launch steps outside the page
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
 
 ## Maintaining the library

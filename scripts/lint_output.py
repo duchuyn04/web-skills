@@ -65,6 +65,65 @@ class Page(HTMLParser):
             self.texts.append((self.getpos()[0], data.strip()))
 
 
+def check_seo_head(src, tags, dist, add):
+    """The head tags build.py writes (see references/seo.md). A page linted from an old dist fails until rebuilt."""
+    head = src.split("</head>", 1)[0]
+    metas = [a for _, t, a in tags if t == "meta"]
+
+    def meta(attr, key):
+        return [a.get("content", "") for a in metas if a.get(attr, "").lower() == key]
+    html_tag = next((a for _, t, a in tags if t == "html"), {})
+    if not html_tag.get("lang"):
+        add("error", "index.html", "seo-lang", "<html> has no lang attribute; search engines and screen readers read the language from it.")
+    titles = re.findall(r"<title>(.*?)</title>", head, re.S)
+    if len(titles) != 1 or not titles[0].strip():
+        add("error", "index.html", "seo-title", "expected one non-empty <title> in the head, found %d" % len(titles))
+    if len([d for d in meta("name", "description") if d.strip()]) != 1:
+        add("error", "index.html", "seo-description", "expected one non-empty <meta name=\"description\">")
+    for key in ("og:title", "og:description", "og:type"):
+        if not meta("property", key):
+            add("error", "index.html", "seo-og", "missing <meta property=\"%s\">; shared links fall back to guesses without it" % key)
+    if not meta("property", "og:image"):
+        add("warn", "index.html", "seo-og", "no og:image, so links shared on social sites show no picture")
+    canon = [a.get("href", "") for _, t, a in tags if t == "link" and a.get("rel", "").lower() == "canonical"]
+    if len(canon) > 1:
+        add("error", "index.html", "seo-canonical", "%d canonical links; a page carries at most one" % len(canon))
+    if canon and not re.match(r"^https://[^/\s]+", canon[0]):
+        add("error", "index.html", "seo-canonical", "canonical %r must be an absolute https URL" % canon[0])
+    icons = [a for _, t, a in tags if t == "link" and "icon" in a.get("rel", "").lower().split()]
+    if not icons:
+        add("error", "index.html", "seo-favicon", "no <link rel=\"icon\">")
+    elif all(a.get("href", "").lower().endswith(".svg") for a in icons):
+        add("warn", "index.html", "seo-favicon", "only an SVG favicon; Google Search shows BMP, GIF, ICO, PNG, JPEG, PPM or TIFF favicons only")
+    for _, t, a in tags:
+        if t == "link" and a.get("hreflang") and not re.match(r"^https://", a.get("href", "")):
+            add("error", "index.html", "seo-hreflang", "hreflang %s points to %r; alternates need full https addresses" % (a["hreflang"], a.get("href")))
+    for blob in re.findall(r'<script type="application/ld\+json">(.*?)</script>', src, re.S):
+        try:
+            data = json.loads(blob)
+        except ValueError as e:
+            add("error", "index.html", "json-ld", "structured data is not valid JSON: %s" % e)
+            continue
+        if not isinstance(data, dict) or "@context" not in data:
+            add("error", "index.html", "json-ld", "structured data has no @context")
+    robots = " ".join(meta("name", "robots")).lower()
+    sitemap = dist / "sitemap.xml"
+    if sitemap.is_file():
+        if "noindex" in robots:
+            add("error", "sitemap.xml", "seo-sitemap", "the page is noindex but a sitemap lists it; search consoles report the conflict")
+        locs = re.findall(r"<loc>(.*?)</loc>", sitemap.read_text(encoding="utf-8"))
+        if canon and locs and locs[0] != canon[0]:
+            add("error", "sitemap.xml", "seo-sitemap", "lists %s but the canonical link is %s" % (locs[0], canon[0]))
+    # Headings that skip a level (h2 then h4) break the outline search engines and screen readers read.
+    last = 0
+    for line, t, _ in tags:
+        if re.match(r"^h[1-6]$", t):
+            level = int(t[1])
+            if last and level > last + 1:
+                add("warn", "index.html:%d" % line, "heading-skip", "<%s> follows <h%d>; use <h%d> or restyle it with CSS" % (t, last, last + 1))
+            last = level
+
+
 def main():
     if len(sys.argv) != 2:
         print(__doc__)
@@ -112,6 +171,9 @@ def main():
             add("error", "%s:%d" % (f.relative_to(dist), line), fnd.code, "%s (near: \"%s\")" % (fnd.message, fnd.excerpt))
     if "<!--" in src:
         add("error", "index.html", "comment", "HTML comments left in output (their '-->' reads as a text arrow). Rebuild with build.py.")
+
+    # 2b. Search and share metadata (scripts/seo.py writes it; references/seo.md).
+    check_seo_head(src, page.tags, dist, add)
 
     # 3. Structure.
     tags = page.tags
