@@ -18,3 +18,18 @@
 .bl-step p { max-width: 34rem; }
 @media (max-width: 1024px) { .bl-process { grid-template-columns: 1fr; } .bl-process__side { position: static; } }
 @media (max-width: 480px) { .bl-process__steps { padding-left: 3.25rem; } .bl-step__node { left: -3.25rem; width: 34px; height: 34px; } .bl-process__line { left: 16px; } }
+/* Optional step photos: the pinned column shows the photo of the step being read (step-photo-crossfade) */
+.bl-process__frame { position: relative; margin-top: 2rem; width: min(100%, 440px); aspect-ratio: 4 / 3; }
+.bl-process__shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); transition: opacity .4s var(--ease-std), transform .45s var(--ease-out); }
+.bl-process__shot.is-active, .bl-process__frame:not(:has(.is-active)) .bl-process__shot:first-child { opacity: 1; transform: none; }
+.bl-step__photo { display: none; margin-top: 1.25rem; max-width: 34rem; aspect-ratio: 16 / 10; }
+.bl-process__shot, .bl-process .bl-step__photo img { object-position: 50% 25%; }
+@media (max-width: 1024px) {
+  .bl-process__frame { display: none; }
+  .bl-step__photo { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-process--photos .bl-process__side { position: static; }
+  .bl-process--photos .bl-process__frame { display: none; }
+  .bl-process--photos .bl-step__photo { display: block; }
+}

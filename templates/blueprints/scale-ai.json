@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-mosaic"],
       "note": "centered heading over full-width imagery with a small link low right"
     },
     {

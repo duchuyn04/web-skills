@@ -18,6 +18,7 @@
       "role": "hero",
       "tone": "dark",
       "media": "right",
+      "compose": ["hero-tabs", "hero-portrait"],
       "note": "blue gradient with slide dots, heading, text and two buttons left, portrait poster right, curved bottom edge"
     },
     {

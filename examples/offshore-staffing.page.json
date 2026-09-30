@@ -185,6 +185,10 @@
       "link": {
        "label": "Talk to an expert",
        "href": "#contact"
+      },
+      "photo": {
+       "src": "desk-phone-monitors",
+       "alt": "Support agent working a ticket queue at a desk phone"
       }
      },
      {
@@ -226,22 +230,38 @@
      {
       "label": "Week 1",
       "title": "Define the roles",
-      "text": "We map tasks, tools, hours and language level with you, then agree on salary bands for each role."
+      "text": "We map tasks, tools, hours and language level with you, then agree on salary bands for each role.",
+      "photo": {
+       "src": "presenter-planning-board",
+       "alt": "Client and Lotus leads mapping roles on a sticky-note board"
+      }
      },
      {
       "label": "Week 2",
       "title": "Interview a shortlist",
-      "text": "Recruiters send three screened candidates per role. You interview and pick the people you want."
+      "text": "Recruiters send three screened candidates per role. You interview and pick the people you want.",
+      "photo": {
+       "src": "portrait-man-desk",
+       "alt": "Recruiter at his desk before a candidate interview"
+      }
      },
      {
       "label": "Week 3",
       "title": "Set up and train",
-      "text": "We prepare laptops, secure access and office seats while your team trains the new hires on your process."
+      "text": "We prepare laptops, secure access and office seats while your team trains the new hires on your process.",
+      "photo": {
+       "src": "training-workshop-board",
+       "alt": "Trainer running an onboarding session at a flip chart"
+      }
      },
      {
       "label": "Week 4",
       "title": "Go live and review",
-      "text": "Your team starts on live work. The account manager tracks output and runs a 30 day review with you."
+      "text": "Your team starts on live work. The account manager tracks output and runs a 30 day review with you.",
+      "photo": {
+       "src": "office-worker-laptop",
+       "alt": "Account manager reviewing the first month of results on a laptop"
+      }
      }
     ]
    }
@@ -255,7 +275,7 @@
     },
     "video": {
      "title": "A day at Lotus Staffing, Ho Chi Minh City",
-     "poster": "team-coworking-laptops",
+     "poster": "team-meeting-table",
      "src": "sample-ambient-loop",
      "duration": "2:10"
     },
@@ -397,7 +417,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "aside": {
@@ -429,13 +448,16 @@
       "q": "Is there a minimum contract?",
       "a": "Dedicated plans need 30 days notice after a three month first term. Shared plans run month to month."
      }
-    ]
+    ],
+    "photo": {
+     "src": "portrait-woman-team-lead",
+     "alt": "Lotus Staffing team lead in the Ho Chi Minh City office"
+    }
    }
   },
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Get a quote in *48 hours*",
     "lead": "Answer three questions. We reply with candidate availability, salary bands and a monthly price.",
     "points": [

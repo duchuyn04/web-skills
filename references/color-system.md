@@ -37,6 +37,7 @@ All shade changes move OKLCH lightness at a fixed hue (chroma only drops when th
 11. Gradients follow the section "Gradients" below; lint_output.py enforces it.
 12. Neutrals (backgrounds, surfaces, gray text) with visible chroma are moved to the accent hue and capped at chroma 0.012-0.015 for surfaces and 0.02 for text. A warm brand gets warm grays, a blue brand cool grays.
 13. A warm accent (hue 20-100) set in `theme` without `primary` gets a brand-tinted dark `primary` (OKLCH L 0.24) instead of the preset's navy. A light, colored `primary` given without an `accent` is the logo color in the wrong key and becomes the accent; any other `primary` lighter than OKLCH L 0.40 is darkened to L 0.24 at the same hue.
+15. The accent comes from the client. With `site.logo` set, build.py (`check_brand_colors`, `scripts/logo_colors.py`) reads the logo's chromatic colours and fails a `theme.accent` more than 25 degrees of OKLCH hue from all of them, and a coloured logo with no `theme.accent`. Framework default colours (Bootstrap and Tailwind palette values) fail in any `theme` key unless the brief or logo contains them: they are what a model picks when it has no brand colour, and a Bootstrap danger red on navy is a typical generated look.
 14. Pass or fail uses the WCAG 2 ratio only. APCA is not normative yet, and CSS `contrast-color()` is not used for button text.
 
 ## Gradients

@@ -98,7 +98,7 @@ def main():
     out.append("")
     for key, v in lib["variants"].items():
         out += ["## %s" % key, "", v["summary"], ""]
-        out.append("- Group: `%s`. Default anchor: `#%s`. Tone: %s.%s" % (v.get("group"), v.get("anchor"), v.get("tone", "auto"), " Signature motion (counts toward the 3 a page needs)." if v.get("signature") else ""))
+        out.append("- Group: `%s`. Default anchor: `#%s`. Tone: %s.%s" % (v.get("group"), v.get("anchor"), v.get("tone", "auto"), " Expressive tier: only on pages with `\"motion\": \"expressive\"` (a brief that asks for a 3D or animation-led page)." if v.get("tier") == "expressive" else ""))
         if v.get("animations"):
             out.append("- Built-in motion: %s." % ", ".join(v["animations"]))
         out.append("- Allowed in: %s." % (", ".join(uses.get(key, [])) or "custom order only"))
@@ -205,6 +205,13 @@ TIMING = {
     "magnetic-dot-plane": "WebGL dot plane seen from above dips under the pointer and tints the pulled dots; idle ripple every 7-11s",
     "dot-wave-field-3d": "WebGL field of about 20 000 dots under three crossing swells, crests in the accent colour, a soft mound under the pointer; seeded by brand",
     "particle-flow-lanes-3d": "WebGL particle streams, scattered where they enter and sorted into 4-7 calm lanes where they leave, 10-30 s per crossing; the pointer parts the stream; seeded by brand",
+    "multilingual-greeting-card": "call card answers in each language in turn every 3.6s: greeting fades up 8px over 400ms expo.out, its language chip lights",
+    "voice-level-meter": "28 bars move in a speech-like envelope for 2.1s per greeting, 140ms steps, then rest; ambient, stops with Pause",
+    "report-sheets-fan-in": "report sheets rise 60px into a fan, 900ms expo.out, 120ms stagger, once when seen; lean up to 6px with a fine pointer",
+    "ledger-rows-tick": "row bars fill left to right (500ms, 50ms stagger), then each row gets a tick (350ms back.out, 70ms stagger), once",
+    "trend-line-draw": "small trend line draws itself over 1.1s power2.inOut, once",
+    "review-carousel": "scroll-snap review track with drag momentum, buttons and arrow keys; off-screen cards dim to 50%",
+    "map-office-switch": "picking an office moves the embedded Google Map and the Open in Google Maps link to it; active card gets an accent edge",
     "dotted-globe-arcs-3d": "WebGL dotted globe that sways 20 degrees around the delivery hubs; a light pulse runs along each hub-to-market arc every 4.5s, hub rings pulse every 2s",
     "liquid-merge-contours": "two brand shapes drawn as contour rings merge over 4.2-6s, then breathe on a 5.2s cycle; 30 fps cap",
     "cylinder-turn-3d": "service cards on a drum turn to the chosen card in 1s; turns in once when seen; tabs, buttons and arrow keys",

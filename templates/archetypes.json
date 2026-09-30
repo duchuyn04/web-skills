@@ -27,6 +27,13 @@
       {
         "slot": "hero",
         "variants": [
+          "hero-overlap",
+          "hero-mosaic",
+          "hero-portrait",
+          "hero-promo",
+          "hero-tabs",
+          "hero-news",
+          "hero-panels",
           "hero-split-image",
           "hero-cycler-centered",
           "hero-fullbleed",
@@ -49,6 +56,8 @@
           "hero-wavefield",
           "hero-flow",
           "hero-globe",
+          "hero-voice",
+          "hero-ledger",
           "hero-liquid"
         ],
         "required": true
@@ -159,6 +168,7 @@
         "variants": [
           "case-slider",
           "testimonials",
+          "testimonials-rated",
           "quote-spotlight",
           "testimonials-drift",
           "case-filter",
@@ -170,6 +180,7 @@
         "slot": "proof-extra",
         "variants": [
           "testimonials",
+          "testimonials-rated",
           "quote-spotlight",
           "testimonials-drift",
           "case-filter",
@@ -192,6 +203,7 @@
         "slot": "locations",
         "variants": [
           "locations-map",
+          "locations-gmap",
           "country-cards",
           "locations-relief"
         ]
@@ -288,6 +300,13 @@
       {
         "slot": "hero",
         "variants": [
+          "hero-overlap",
+          "hero-mosaic",
+          "hero-portrait",
+          "hero-promo",
+          "hero-tabs",
+          "hero-news",
+          "hero-panels",
           "hero-cycler-centered",
           "hero-split-image",
           "hero-fullbleed",
@@ -310,6 +329,8 @@
           "hero-wavefield",
           "hero-flow",
           "hero-globe",
+          "hero-voice",
+          "hero-ledger",
           "hero-liquid"
         ],
         "required": true
@@ -414,6 +435,7 @@
         "slot": "locations",
         "variants": [
           "locations-map",
+          "locations-gmap",
           "country-cards",
           "locations-relief"
         ]
@@ -422,6 +444,7 @@
         "slot": "proof",
         "variants": [
           "testimonials",
+          "testimonials-rated",
           "case-slider",
           "quote-spotlight",
           "testimonials-drift",
@@ -532,6 +555,13 @@
       {
         "slot": "hero",
         "variants": [
+          "hero-overlap",
+          "hero-mosaic",
+          "hero-portrait",
+          "hero-promo",
+          "hero-tabs",
+          "hero-news",
+          "hero-panels",
           "hero-dark-network",
           "hero-fullbleed",
           "hero-gradient",
@@ -552,6 +582,8 @@
           "hero-wavefield",
           "hero-flow",
           "hero-globe",
+          "hero-voice",
+          "hero-ledger",
           "hero-liquid"
         ],
         "required": true
@@ -644,6 +676,7 @@
         "variants": [
           "case-slider",
           "testimonials",
+          "testimonials-rated",
           "quote-spotlight",
           "testimonials-drift",
           "case-filter",
@@ -674,6 +707,7 @@
         "slot": "locations",
         "variants": [
           "locations-map",
+          "locations-gmap",
           "country-cards",
           "locations-relief"
         ]
@@ -762,6 +796,13 @@
       {
         "slot": "hero",
         "variants": [
+          "hero-overlap",
+          "hero-mosaic",
+          "hero-portrait",
+          "hero-promo",
+          "hero-tabs",
+          "hero-news",
+          "hero-panels",
           "hero-split-image",
           "hero-cycler-centered",
           "hero-fullbleed",
@@ -784,6 +825,8 @@
           "hero-wavefield",
           "hero-flow",
           "hero-globe",
+          "hero-voice",
+          "hero-ledger",
           "hero-liquid"
         ],
         "required": true
@@ -882,6 +925,7 @@
         "slot": "proof",
         "variants": [
           "testimonials",
+          "testimonials-rated",
           "case-slider",
           "quote-spotlight",
           "testimonials-drift",
@@ -1000,6 +1044,13 @@
       {
         "slot": "hero",
         "variants": [
+          "hero-overlap",
+          "hero-mosaic",
+          "hero-portrait",
+          "hero-promo",
+          "hero-tabs",
+          "hero-news",
+          "hero-panels",
           "hero-gradient",
           "hero-split-image",
           "hero-fullbleed",
@@ -1020,6 +1071,8 @@
           "hero-wavefield",
           "hero-flow",
           "hero-globe",
+          "hero-voice",
+          "hero-ledger",
           "hero-liquid"
         ],
         "required": true
@@ -1123,6 +1176,7 @@
         "variants": [
           "case-slider",
           "testimonials",
+          "testimonials-rated",
           "quote-spotlight",
           "testimonials-drift",
           "case-filter",
@@ -1134,6 +1188,7 @@
         "slot": "proof-extra",
         "variants": [
           "testimonials",
+          "testimonials-rated",
           "quote-spotlight",
           "testimonials-drift",
           "case-filter",
@@ -1156,6 +1211,7 @@
         "slot": "locations",
         "variants": [
           "locations-map",
+          "locations-gmap",
           "country-cards",
           "locations-relief"
         ]

@@ -19,6 +19,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-tabs"],
       "note": "slider with large left-aligned headline, short line and one button over a photo; arrows at the sides and dots below"
     },
     {

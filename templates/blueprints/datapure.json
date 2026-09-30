@@ -5,7 +5,7 @@
   "summary": "Light hero with a picture collage, a wide product photo, four large white solution panels on a strong brand-colour ground, two rows of image tiles in sliders, a testimonial slider and a very short footer.",
   "header": "simple",
   "sections": [
-    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "note": "two-line heading, email field and button left, a collage of four product pictures right"},
+    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "compose": ["hero-collage"], "note": "two-line heading, email field and button left, a collage of four product pictures right"},
     {"form": "image-band", "role": "intro", "tone": "light", "media": "full", "optional": true, "note": "one wide photo strip under the hero, no text"},
     {"form": "feature-split", "role": "services", "tone": "dark", "cols": 2, "count": 4, "media": "right", "note": "centered heading on a brand-colour ground, four large white panels stacked, each with text and a button, picture alternating right and left"},
     {"form": "carousel-cards", "role": "industries", "tone": "muted", "cols": 6, "count": 7, "optional": true, "note": "centered heading, a slider of tall rounded image tiles with a label at the bottom"},

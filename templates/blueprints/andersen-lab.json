@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "right",
+      "compose": ["hero-promo"],
       "note": "large headline and button left, portrait art right, three news items in a row below"
     },
     {

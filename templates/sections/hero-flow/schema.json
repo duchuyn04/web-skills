@@ -1,6 +1,6 @@
 {
   "variant": "hero-flow",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-fullbleed", "hero-left-text"],
   "summary": "Full-width hero with particle streams running behind the copy: scattered and wandering where they enter on the left, sorted into calm parallel lanes by the time they leave on the right, a picture of incoming work being put in order. Faster particles take the brand colour; the pointer parts the stream. Lane count, speeds and wander are seeded from the brand name. Needs only the usual hero copy; fits back office, finance and accounting, data processing and IT operations outsourcing.",
   "tone": "hero",

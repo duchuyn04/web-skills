@@ -27,7 +27,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -41,11 +41,11 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 13 | metrics | yes | `metrics-counter`, `metrics-panel`, `metrics-rings`, `metrics-bars3d` |
 | 14 | video | no | `video-block` |
 | 15 | industries | no | `industries-tiles`, `image-cards`, `audience-cards`, `industries-rows`, `industries-slats` |
-| 16 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
-| 17 | proof-extra | no | `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 16 | proof | recommended | `case-slider`, `testimonials`, `testimonials-rated`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 17 | proof-extra | no | `testimonials`, `testimonials-rated`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
 | 18 | awards | no | `awards-strip` |
 | 19 | mid-cta | no | `cta-band` |
-| 20 | locations | no | `locations-map`, `country-cards`, `locations-relief` |
+| 20 | locations | no | `locations-map`, `locations-gmap`, `country-cards`, `locations-relief` |
 | 21 | compliance | no | `compliance-badges` |
 | 22 | news | no | `image-cards` |
 | 23 | team | no | `team-grid`, `team-coverflow` |
@@ -61,7 +61,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -75,8 +75,8 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 13 | video | no | `video-block` |
 | 14 | metrics | no | `metrics-counter`, `metrics-panel`, `metrics-rings`, `metrics-bars3d` |
 | 15 | pricing | no | `pricing-toggle` |
-| 16 | locations | no | `locations-map`, `country-cards`, `locations-relief` |
-| 17 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 16 | locations | no | `locations-map`, `locations-gmap`, `country-cards`, `locations-relief` |
+| 17 | proof | recommended | `testimonials`, `testimonials-rated`, `case-slider`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
 | 18 | awards | no | `awards-strip` |
 | 19 | mid-cta | no | `cta-band` |
 | 20 | compliance | no | `compliance-badges` |
@@ -94,7 +94,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -106,11 +106,11 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 11 | process | yes | `process-sticky`, `steps-row`, `process-layers`, `process-pipeline` |
 | 12 | metrics | yes | `metrics-counter`, `metrics-panel`, `metrics-rings`, `metrics-bars3d` |
 | 13 | video | no | `video-block` |
-| 14 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 14 | proof | recommended | `case-slider`, `testimonials`, `testimonials-rated`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
 | 15 | awards | no | `awards-strip` |
 | 16 | mid-cta | no | `cta-band` |
 | 17 | compliance | yes | `compliance-badges` |
-| 18 | locations | no | `locations-map`, `country-cards`, `locations-relief` |
+| 18 | locations | no | `locations-map`, `locations-gmap`, `country-cards`, `locations-relief` |
 | 19 | news | no | `image-cards` |
 | 20 | team | no | `team-grid`, `team-coverflow` |
 | 21 | careers | no | `careers-band` |
@@ -125,7 +125,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -138,7 +138,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 12 | video | no | `video-block` |
 | 13 | metrics | yes | `metrics-counter`, `metrics-panel`, `metrics-rings`, `metrics-bars3d` |
 | 14 | process | no | `process-sticky`, `steps-row`, `process-layers`, `process-pipeline` |
-| 15 | proof | recommended | `testimonials`, `case-slider`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 15 | proof | recommended | `testimonials`, `testimonials-rated`, `case-slider`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
 | 16 | awards | no | `awards-strip` |
 | 17 | mid-cta | no | `cta-band` |
 | 18 | pricing | no | `pricing-toggle` |
@@ -157,7 +157,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | about | no | `about-mosaic`, `pillars-numbered`, `about-helix` |
 | 5 | trust | recommended | `metrics-panel`, `metrics-counter`, `metrics-rings`, `metrics-bars3d` |
@@ -170,11 +170,11 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 12 | compare | no | `comparison-table`, `models-board` |
 | 13 | process | no | `steps-row`, `process-sticky`, `process-layers`, `process-pipeline` |
 | 14 | audience | no | `audience-cards`, `industries-tiles`, `industries-rows`, `industries-slats` |
-| 15 | proof | recommended | `case-slider`, `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
-| 16 | proof-extra | no | `testimonials`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 15 | proof | recommended | `case-slider`, `testimonials`, `testimonials-rated`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
+| 16 | proof-extra | no | `testimonials`, `testimonials-rated`, `quote-spotlight`, `testimonials-drift`, `case-filter`, `proof-book` |
 | 17 | awards | no | `awards-strip` |
 | 18 | compliance | no | `compliance-badges` |
-| 19 | locations | no | `locations-map`, `country-cards`, `locations-relief` |
+| 19 | locations | no | `locations-map`, `locations-gmap`, `country-cards`, `locations-relief` |
 | 20 | news | no | `image-cards` |
 | 21 | team | no | `team-grid`, `team-coverflow` |
 | 22 | careers | no | `careers-band` |

@@ -5,7 +5,7 @@
   "summary": "Orange hero with right-aligned copy and a four-figure row, a logo strip, a centered statement, a phase block with a quote slider and stat cards, an orange report banner with partner badges, a service grid, an orange industry split, article cards, a news row, an offices map and a contact form.",
   "header": "mega",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "brand-colour ground, heading and two buttons right, dot-pattern art left, four figures in a row along the bottom"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-overlap"], "note": "brand-colour ground, heading and two buttons right, dot-pattern art left, four figures in a row along the bottom"},
     {"form": "logo-strip", "role": "clients", "tone": "light", "count": 8, "optional": true, "note": "single row of client logos"},
     {"form": "statement", "role": "intro", "tone": "light", "media": "none", "note": "large centered sentence, a two-column pair of short paragraphs and a closing line"},
     {"form": "tabs", "role": "process", "tone": "light", "count": 4, "note": "large centered heading and intro, then a quote slider with arrows, then three small stat cards"},

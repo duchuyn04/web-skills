@@ -24,14 +24,15 @@ These sit at the top of page.json, next to `sections`.
   - `primary`: hex color (optional)
   - `accent`: hex color (optional)
   - `accent_2`: hex color (optional)
-  - `eyebrow`: one of line, pill, caps (optional)
+  - `eyebrow`: one of plain, pill, caps, line (optional)
   - `edges`: one of none, angle, curve (optional)
   - `image_mask`: one of rounded, angle, arch (optional)
   - `highlight`: one of color, gradient, underline (optional)
   - `media_reveal`: one of fade, clip (optional)
 - `features`: object (optional)
   - `magnetic_cta`: true/false (optional, default false)
-- `motion`: one of signature, calm (optional, default "signature")
+- `motion`: one of calm, expressive, signature (optional, default "calm")
+- `rules`: one of 1, 2 (optional)
 - `override_order`: object (optional)
   - `reason`: text 20-300 chars
 
@@ -39,7 +40,7 @@ These sit at the top of page.json, next to `sections`.
 
 Company history as cards wound around a vertical helix with a thin central spine. The section pins while the visitor scrolls; each step of scroll turns and lifts the helix so the next milestone faces the reader, earlier and later years curving away behind. A year rail beside the heading shows where the reader is. Phones and reduced motion get a plain vertical timeline. Handedness, step angle, rise and spine style are seeded from the brand name. Needs 4-10 real milestones (year, what happened, one line) from the brief; company history is never invented, so leave the section out without them.
 
-- Group: `about`. Default anchor: `#history`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `about`. Default anchor: `#history`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: helix-turn-scroll-3d, reveal.
 - Allowed in: enterprise-cx/about?, it-bpo-partner/about?.
 - Preview: `previews/about-helix.jpg`
@@ -180,7 +181,7 @@ Fields:
 
 Case-study grid with filter pills built from each case's industry (All plus one pill per industry). Choosing a pill moves the cards that stay to their new places with a View Transition, fades the others out and announces the count. Browsers without View Transitions switch instantly. Needs 4 or more real cases in at least two industries.
 
-- Group: `proof`. Default anchor: `#case-studies`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `proof`. Default anchor: `#case-studies`. Tone: auto.
 - Built-in motion: view-transition-filter-grid, reveal.
 - Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
 - Preview: `previews/case-filter.jpg`
@@ -292,7 +293,7 @@ Fields:
 
 ## contact-split
 
-Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email.
+Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email. Optional aside.photo: a real photo of the office or the team at the top of the brand-colour panel, above the reasons and offices. Optional map: an embedded Google Map of the main office under the card, with an Open in Google Maps link. With both, the photo shows the place inside the card and the map sits under the card.
 
 - Group: `cta`. Default anchor: `#contact`. Tone: auto.
 - Built-in motion: reveal.
@@ -319,6 +320,9 @@ Fields:
   - `note`: text 20-160 chars (optional)
   - `action`: link (optional)
 - `aside`: object
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
   - `title`: text 5-40 chars
   - `points`: list of 2-6 (each text 6-90 chars)
   - `offices`: list of 1-4, each item:
@@ -328,12 +332,16 @@ Fields:
     - `phone`: text 5-24 chars (optional)
   - `email_label`: text 3-30 chars (optional)
   - `email`: email 1-400 chars (optional)
+- `map`: object (optional)
+  - `query`: text 3-160 chars
+  - `title`: text 3-60 chars (optional, default "Office map")
+  - `open_label`: text 2-36 chars (optional, default "Open in Google Maps")
 
 ## cost-calculator
 
 Savings calculator: pick a role and drag the team-size slider; onshore vs offshore cost bars and the yearly saving update live. Pitch and reassurance points on the left.
 
-- Group: `calculator`. Default anchor: `#savings`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `calculator`. Default anchor: `#savings`. Tone: auto.
 - Built-in motion: reactive-cost-calculator, reveal.
 - Allowed in: offshore-staffing/calculator?.
 - Preview: `previews/cost-calculator.jpg`
@@ -424,7 +432,7 @@ Fields:
 
 Closing call to action set as a tri-fold letter (CSS 3D). When it scrolls into view the outer third unfolds, then the other, revealing a letterhead with the brand seal and title, a short note with ticks, and the buttons (or a one-line email form) with an optional sign-off. It unfolds once, then stays a flat paper card with faint fold lines. Fold order, paper tint and seal side are seeded from the brand name. Needs primary_cta or form. Suits accounting, tax, legal and insurance BPO.
 
-- Group: `cta`. Default anchor: `#get-started`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `cta`. Default anchor: `#get-started`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: letter-unfold-3d, reveal.
 - Allowed in: enterprise-cx/cta, offshore-staffing/cta, ai-data-ops/cta, cx-voice-sales/cta, it-bpo-partner/cta.
 - Preview: `previews/cta-letter.jpg`
@@ -507,7 +515,7 @@ Fields:
 
 ## faq-accordion
 
-Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation.
+Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation. Optional photo (a real support or team photo) under the contact card in the left column, so the answers sit next to the people who give them.
 
 - Group: `faq`. Default anchor: `#faq`. Tone: auto.
 - Built-in motion: smooth-accordion-expansion.
@@ -520,6 +528,9 @@ Fields:
   - `eyebrow`: text 3-40 chars (optional)
   - `title`: text with *accent* 6-80 chars
   - `lead`: text 40-240 chars (optional)
+- `photo`: object (optional)
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
 - `aside`: object (optional)
   - `title`: text 8-60 chars
   - `text`: text 30-160 chars
@@ -534,7 +545,7 @@ Fields:
 
 Centered FAQ list with numbered questions (APG accordion). Opening a question unfolds its answer like a folded sheet (CSS 3D): two or three panels swing down from the fold lines with crease shading, then lie flat as a normal paper card that keeps faint fold marks. The first answer unfolds once when the list is first seen. Fold count and crease depth are seeded from the brand name. Optional closing bar with a contact link. Suits accounting, tax, payroll, legal and insurance BPO.
 
-- Group: `faq`. Default anchor: `#faq`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `faq`. Default anchor: `#faq`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: paper-fold-open-3d, reveal.
 - Allowed in: enterprise-cx/faq?, offshore-staffing/faq, ai-data-ops/faq?, cx-voice-sales/faq, it-bpo-partner/faq?.
 - Preview: `previews/faq-fold.jpg`
@@ -706,7 +717,7 @@ Fields:
 
 Headline, lead and buttons on the left; on the right a chat window plays a short sample support conversation: customer bubble, typing dots, agent reply, then a result tag. It plays once when the hero is seen and ends on a Replay button. Label it as a sample; screen readers get the full transcript as a list.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
 - Built-in motion: agent-chat-playback, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, cx-voice-sales/hero.
 - Preview: `previews/hero-chat.jpg`
@@ -796,7 +807,7 @@ Fields:
 
 Dark hero over an animated canvas node network that tilts with the mouse; copy on the left, a live operations panel on the right, optional KPI chips.
 
-- Group: `hero`. Default anchor: `#top`. Tone: dark. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: dark. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: hero-3d-point-cloud-nodes, reveal.
 - Allowed in: ai-data-ops/hero.
 - Preview: `previews/hero-dark-network.jpg`
@@ -826,7 +837,7 @@ Fields:
 
 Hero with an operations dashboard on the right, built from real HTML panels: a service-line panel and one figure panel per stat. As the hero enters, the panels lift off the base plate into an exploded stack while the unit swings to a three-quarter view, then it holds still; fine pointers orbit the camera a few degrees. The dashboard is labelled as illustrative and only shows the page's own services and stats. Pitch, swing direction, layer order and gap are seeded from the brand name. Needs 3-6 service names and 2-4 real figures from the brief; fits managed service desks, IT-BPO partners and data operations teams that sell on reporting.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
 - Built-in motion: dashboard-explode-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-dashboard.jpg`
@@ -857,7 +868,7 @@ Fields:
 
 Hero with a deck of role cards on the right (role title, icon, 2-3 skills, optional seniority or language note). The cards fan out in 3D as the hero appears; every 2.8 s the front card slides out and goes to the back until the deck returns to the first role, then it stops. A Next role button steps the deck by hand, the page-wide Pause switch stops it, and hovering spreads the fan. Fan angle, lean, direction and card tints are seeded from the brand name. Needs 4-7 real roles the company staffs; fits staff augmentation, dedicated teams and offshore staffing. Cards show roles only, never names or photos of people.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: role-deck-fan-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-deck.jpg`
@@ -891,7 +902,7 @@ Fields:
 
 Full-width hero with particle streams running behind the copy: scattered and wandering where they enter on the left, sorted into calm parallel lanes by the time they leave on the right, a picture of incoming work being put in order. Faster particles take the brand colour; the pointer parts the stream. Lane count, speeds and wander are seeded from the brand name. Needs only the usual hero copy; fits back office, finance and accounting, data processing and IT operations outsourcing.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: particle-flow-lanes-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-flow.jpg`
@@ -949,7 +960,7 @@ Fields:
 
 Hero with a dotted 3D globe on the right: land drawn in evenly spaced dots, the company's delivery hubs pinned in the brand colour with their city names, and arcs to the client markets with a light pulse running along each one. The globe sways around the hubs and leans toward the pointer. Rotation and pulse timing are seeded from the brand name. Needs 1-4 delivery cities from the brief (keys from templates/data/cities.json or {name, country, lat, lon}) and optionally up to 6 client market cities; fits offshore staffing, nearshore and multi-site contact centers.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: dotted-globe-arcs-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-globe.jpg`
@@ -1006,7 +1017,7 @@ Fields:
 
 Light hero with an isometric operations floor on the right: blocks rise one after another, brand-coloured roofs mark the busy desks, small packets travel the aisles between them, and the block nearest the pointer lifts. Layout of tall blocks, coloured roofs and packet routes is seeded from the brand name. Fits back-office, finance and operations companies.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: isometric-floor-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-isometric.jpg`
@@ -1029,11 +1040,43 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 
+## hero-ledger
+
+Split hero for accounting, payroll and back-office work: copy left, a photo of paperwork right with two or three report sheets fanned over its lower corner. On arrival the sheets slide in, their ruled lines fill and are ticked off one by one and a small trend line draws itself; afterwards the sheets lean slightly with the pointer. No numbers are shown on the sheets, only row names. Needs a desk or document photo, 2-3 report names with 3-4 row names each, and the usual hero copy.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: report-sheets-fan-in, ledger-rows-tick, trend-line-draw, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-ledger.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `sheets`: list of 2-3, each item:
+  - `tag`: text 2-24 chars
+  - `title`: text 4-40 chars
+  - `rows`: list of 3-4 (each text 3-28 chars)
+- `stats`: list of 0-4 (optional), each item:
+  - `value`: text 1-12 chars
+  - `label`: text 3-36 chars
+
 ## hero-liquid
 
 Hero with two soft brand-colour shapes on the right that drift together and merge into one, drawn like a contour map: a solid core with two thin outline rings. A few small droplets circle slowly and join the shape now and then, and on desktop the pointer adds one more droplet that the shape reaches for. Optional labels ride on the two shapes until they merge (for example Your team and Our team), then one merged label shows. Metaphor: two teams become one. Blob sizes, orbits, speeds and colour split are seeded from the brand name. Fits people-first CX, staffing and dedicated-team companies.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: liquid-merge-contours, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-liquid.jpg`
@@ -1062,7 +1105,7 @@ Fields:
 
 Hero over a calm plane of evenly spaced dots seen slightly from above. Where the pointer moves, the plane dips like fabric under a weight, the dots slide aside and the ones under the most pull turn the brand colour, then spring back. With no pointer, one slow ripple crosses the plane every few seconds. Dots under the copy are dimmed so text stays readable. Spacing, tilt, ripple origin and period, dot shape and colour mix are seeded from the brand name. Needs only the usual hero copy; fits AI data annotation, data operations, trust and safety and analytics outsourcing.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: magnetic-dot-plane, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-magnetic.jpg`
@@ -1090,7 +1133,7 @@ Fields:
 
 Calm, signage-like hero: the company monogram (site.brand_mark, 1-3 characters) stands on the right as a solid extruded block with real depth, like a sign cut from stone or brushed metal. It turns slowly left and right by about 20-28 degrees, leans toward a fine pointer, a sheen crosses its face as it turns and its side faces darken with the light. The brand name sits under it as a plaque. Extrusion depth, turn amplitude, light side, face treatment and period are seeded from the brand name. Fits finance and accounting BPO, banks' outsourcing partners and large enterprise groups. Copy on the left, optional stats strip.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: monolith-extrude-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-monolith.jpg`
@@ -1114,11 +1157,70 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 
+## hero-mosaic
+
+Full-width hero over a tilted wall of 6-10 real photos (team, office, the work itself) tinted in the brand colour, with a very large bold centered heading, a short centered lead and centered buttons (Kyanon Digital's hero). The photos fade in on load and alternate rows drift sideways a little as the page scrolls. Needs 6 or more photos: the client's own team and office photos are best, library photos are allowed. Suits companies with a people or culture story, or with many service lines that one picture cannot show. Keep the title short: it is set very large and should break into two lines.
+
+- Group: `hero`. Default anchor: `#top`. Tone: dark.
+- Built-in motion: tinted-photo-mosaic, mosaic-row-drift, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-mosaic.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-70 chars
+- `lead`: text 60-200 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photos`: list of 6-10 (each image 1-400 chars)
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+
+## hero-news
+
+Full-width dark hero in the style of large CX groups: a photo under a strong brand-colour shade (or a plain dark ground), the headline, lead and buttons on the left, and on the right a column of two solid cards that slide in one after the other. The first card lists 2-3 recent items (meta line and title, each a link, for example a case study, a report or a new delivery center); the second features one item with a small photo, a line of text and a button. Every item and the feature must be real and come from the brief (published case studies, reports, announcements, certifications); never invent news. Suits enterprise BPOs that have case studies, reports or announcements to point to; without them use hero-fullbleed.
+
+- Group: `hero`. Default anchor: `#top`. Tone: dark.
+- Built-in motion: news-cards-slide-in, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-news.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `image`: image key or path (optional)
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `list_label`: text 3-30 chars
+- `items`: list of 2-3, each item:
+  - `meta`: text 3-24 chars
+  - `title`: text 10-90 chars
+  - `href`: link
+- `feature`: object (optional)
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `text`: text 20-140 chars
+  - `cta`: object
+    - `label`: text 2-30 chars
+    - `href`: link
+
 ## hero-orbits
 
 Hero with a 3D gyroscope on the right: a core carrying the brand monogram and three tilted orbit rings that carry the company's real service lines as chips. Chips in front grow and sharpen, chips behind fade and pass behind the core; the whole system leans toward the pointer and a chip under the pointer stops its ring. Ring tilts, speeds and directions are seeded from the brand name. Needs 3-9 service names from the brief.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: orbit-gyroscope-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-orbits.jpg`
@@ -1145,11 +1247,78 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 
+## hero-overlap
+
+Photo-led hero after Foundever: an edge-to-edge people photo with a very large two-line heading over its top-left corner, and a solid white card that overlaps the lower-left edge of the photo and runs below it, holding the lead, the buttons and up to three proof ticks. Up to three figures sit in a quiet row beside the card. The photo settles from a slight zoom on load and moves a little slower than the page on scroll; the heading words rise once. Needs one wide photo of real people at work (client photo first, library photo otherwise) with the subject away from the top-left corner, a short heading (about 2-6 words per line), and the usual hero copy. Suits contact centers, CX and staffing companies whose people are the product.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: photo-settle-zoom, overlap-card-rise, heading-word-rise, photo-scroll-drift, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-overlap.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `focus`: one of top, center, bottom (optional, default "center")
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `stats`: list of 0-3 (optional), each item:
+  - `value`: text 1-12 chars
+  - `label`: text 3-32 chars
+
+## hero-panels
+
+Panel hero after ELEKS: a large rounded photo panel with the headline, lead and buttons over a dark shade, then 3-4 tall narrow photo panels side by side, each labelled vertically with one of the client's real service lines or industries and linking to its section. Hovering or focusing a narrow panel widens it and shows one line about it. An optional small white card across the joint offers a consultation. On tablets and phones the narrow panels become rows under the main panel. Needs one wide photo and one photo per panel; suits software, IT and IT-BPO companies with a few clear sectors or service lines.
+
+- Group: `hero`. Default anchor: `#top`. Tone: light.
+- Built-in motion: panel-rail-widen, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-panels.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-80 chars
+- `lead`: text 60-200 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `consult`: object (optional)
+  - `title`: text 10-60 chars
+  - `cta`: object
+    - `label`: text 2-30 chars
+    - `href`: link
+- `panels_label`: text 3-40 chars (optional, default "Service lines")
+- `panels`: list of 3-4, each item:
+  - `label`: text 2-20 chars
+  - `text`: text 10-90 chars
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `href`: link
+
 ## hero-particles
 
 Dark hero with a 3D particle cloud on the right that morphs between a sphere, the company's own monogram (brand_mark, extruded in depth), a torus and a lattice cube, turning slowly and tilting toward the pointer. Shape order, spin and palette mix are seeded from the brand name, so no two sites match. Copy on the left, optional stats strip.
 
-- Group: `hero`. Default anchor: `#top`. Tone: dark. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: dark. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: particle-morph-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-particles.jpg`
@@ -1172,11 +1341,45 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 
+## hero-portrait
+
+Split hero after MicroSourcing and Horatio. Left: the headline, lead and a short question (for example 'What can we help you with?') above 3-6 service chips that link to the page's sections, then a full-width button; by default all of it sits in a large dark rounded card ("card": false puts it plain on the page). Right: one real person photo cropped into a large circle on a brand-colour disc, with a thick accent arc that draws once on load and 2-3 small stat stickers around the edge that pop in one after another. No loops. Needs one real photo of a person (a smiling team member works best); suits staffing, contact center and multi-service companies.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: portrait-arc-draw, stat-sticker-pop, chip-stagger, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-portrait.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `card`: true/false (optional, default true)
+- `chips_label`: text 3-40 chars (optional)
+- `chips`: list of 0-6 (optional), each item:
+  - `label`: text 2-26 chars
+  - `href`: link
+  - `icon`: icon name
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `stats`: list of 0-3 (optional), each item:
+  - `value`: text 1-10 chars
+  - `label`: text 3-32 chars
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+
 ## hero-prism
 
 Type-led hero: the last line of the headline sits on a solid three-sided prism in the brand colour that turns about its horizontal axis every 2.4-3.2 s to show the next service line, with shaded side faces. An index of the same service lines on the right marks the one in front. Two full passes, then it rests on the first phrase; the page-wide Pause switch stops it and reduced motion shows the phrases as plain text. Turn direction, dwell time and face colour are seeded from the brand name. The title is the start of one sentence and each cycle phrase must finish it: 'Full-stack services from Da Nang' followed by 'mobile apps' is wrong, 'We run your' followed by 'support desk', 'payroll' or 'QA testing' is right. Read title plus every phrase aloud before building. Needs 3-6 service phrases of up to 24 characters; fits multi-service BPO and IT-BPO partners. Do not use it on a page with hero-cycler-centered.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: prism-headline-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-prism.jpg`
@@ -1201,6 +1404,34 @@ Fields:
   - `label`: text 3-32 chars
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
+
+## hero-promo
+
+Centered hero after Firstsource: a large headline whose *accent* part sits on a solid brand-colour block, a short centered lead and one or two buttons, then a row of 3 or 4 tall photo cards that link into the page (a service line, a case study, careers, a report). Each card has a real photo, a small tag and a title on a dark shade, and a round arrow. Suits enterprise and multi-service BPOs with several things worth a click; every card href must point at a real section or page, never at a placeholder.
+
+- Group: `hero`. Default anchor: `#top`. Tone: light.
+- Built-in motion: accent-block-wipe, promo-cards-rise, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-promo.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-80 chars
+- `lead`: text 60-200 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `cards`: list of 3-4, each item:
+  - `tag`: text 2-24 chars (optional)
+  - `title`: text 6-60 chars
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `href`: link
 
 ## hero-qualifier
 
@@ -1232,7 +1463,7 @@ Fields:
 
 Brand-colour hero with animated line ribbons that bend away from the pointer, a headline that rises word by word with a marker sweep on the accent words, and a carousel on the right that alternates a rotating dotted globe (drag to turn, flight arcs from the home city) with arched photo slides. One button pauses every motion. Echo: the same ribbons run behind the dark sections further down (up to three); list section ids in echo to choose them, or set echo to ["none"] to turn it off.
 
-- Group: `hero`. Default anchor: `#top`. Tone: accent. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: accent. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: flowing-line-ribbons, word-rise-headline, marker-sweep-accent, dotted-globe-network, carousel-progress-dots, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-ribbons.jpg`
@@ -1271,7 +1502,7 @@ Fields:
 
 Photo-led hero: the wide team photo on the right arrives in pieces. 24 tiles (12 on phones) fly in from different depths and angles and lock together into the full picture in about 1.4 s, then the tiles are swapped for the single photo. On fine pointers the tiles near the cursor lift a few pixels toward the viewer. Assembly order (diagonal sweep, centre-out, column wave or scattered), scatter depth, rotation mix and lift height are seeded from the brand name. Needs a real team or office photo (the client's own or a library key) and its alt text; fits staffing brands and CX centers with good photography.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: shatter-assemble-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-shatter.jpg`
@@ -1328,7 +1559,7 @@ Fields:
 
 Follow-the-sun hero: a 24-hour dial lies tilted like a clock face on a table, with 00:00 at the front and noon at the back. Each delivery hub sits on the ring at its current local hour and carries an upright label with the city and its live local time; a soft band marks daylight (06:00-18:00 local) and hubs inside their shift glow in the brand colour. On entry the dial swings into place and a pulse runs once around the ring, flashing each hub it passes. Tilt, turn, tick style and pulse direction are seeded from the brand name. Needs 2-6 real hubs from the brief (city keys with a time zone), optional role and shift hours per hub.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: sundial-swing-in, sundial-handoff-pulse, sundial-live-clock, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-sundial.jpg`
@@ -1360,11 +1591,48 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 
+## hero-tabs
+
+Hero on a large rounded stage with a row of 3 or 4 thumbnail tabs under it (small photo, short label, a thin progress bar on the active tab). The first tab carries the page headline, lead and buttons; the other tabs are real service lines or offers from the brief, each with its own title, text, photo and link. It replaces the photo sliders many BPO homepages open with (TDCX, CMC Global, Genpact), as accessible tabs: the stage advances every 7 seconds until the visitor picks a tab, holds on hover and focus, and stays still with reduced motion or Pause animations. style "photo" (default) puts the copy over the slide photo with a dark shade on the left; style "card" sets the copy on a light card with the photo in a rounded frame on the right. Never invent service lines to fill the extra tabs.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: tab-stage-crossfade, tab-progress-autoadvance, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-tabs.jpg`
+
+Fields:
+
+- `style`: one of photo, card (optional, default "photo")
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-80 chars
+- `lead`: text 60-200 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `tab_label`: text 2-24 chars
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `slides`: list of 2-3, each item:
+  - `label`: text 2-24 chars
+  - `title`: text 10-70 chars
+  - `text`: text 30-160 chars
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `cta`: object
+    - `label`: text 2-30 chars
+    - `href`: link
+- `tabs_label`: text 3-40 chars (optional, default "Our services")
+
 ## hero-terrain
 
 Full-width dark hero over a 3D wireframe terrain that rolls toward the viewer like a sea of data; the camera leans with the pointer and the first stats float as beacons over the peaks. Wave frequencies, heights and beacon positions are seeded from the brand name. Copy sits over the calm upper area; stats strip below.
 
-- Group: `hero`. Default anchor: `#top`. Tone: dark. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: dark. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: wireframe-terrain-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-terrain.jpg`
@@ -1388,11 +1656,46 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 
+## hero-voice
+
+Split hero for multilingual contact centers: copy left, a large photo of the team right with the languages the center answers in as chips, and a call card over the photo that answers in each language in turn (the greeting changes, a voice level meter moves while it speaks). Stats strip below. Needs a team or agent photo, 2-6 greetings in the languages the brief names, and the usual hero copy.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: multilingual-greeting-card, voice-level-meter, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-voice.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `call_label`: text 3-30 chars (optional, default "Answering now")
+- `languages_label`: text 3-40 chars (optional, default "Languages we answer in")
+- `greetings`: list of 2-6, each item:
+  - `language`: text 2-20 chars
+  - `text`: text 6-70 chars
+- `stats`: list of 0-4 (optional), each item:
+  - `value`: text 1-12 chars
+  - `label`: text 3-36 chars
+- `pause_label`: text 3-30 chars (optional, default "Pause animations")
+- `play_label`: text 3-30 chars (optional, default "Play animations")
+
 ## hero-wavefield
 
 Full-width hero over a wide field of dots seen from a low angle, lifted by three slow crossing swells; the crests catch the brand colour and the pointer raises a soft mound under it. The copy sits in the calm space above the field, stats at the foot. Swell directions, lengths and speeds are seeded from the brand name. Needs only the usual hero copy; fits contact centers, CX and voice programs.
 
-- Group: `hero`. Default anchor: `#top`. Tone: hero. Signature motion (counts toward the 3 a page needs).
+- Group: `hero`. Default anchor: `#top`. Tone: hero. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: dot-wave-field-3d, reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-wavefield.jpg`
@@ -1451,9 +1754,9 @@ Fields:
 
 ## industries-rows
 
-Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none.
+Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none. Optional photo per row (give one to every row or to none): the card then shows the photo of the row being hovered or focused and cross-fades as the reader moves down the list, so the picture follows the industry; touch screens and reduced motion show a small thumbnail in each row instead.
 
-- Group: `industries`. Default anchor: `#industries`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `industries`. Default anchor: `#industries`. Tone: auto.
 - Built-in motion: row-fill-sweep, cursor-follow-card, line-draw-reveal.
 - Allowed in: enterprise-cx/industries?, it-bpo-partner/audience?.
 - Preview: `previews/industries-rows.jpg`
@@ -1473,12 +1776,15 @@ Fields:
   - `title`: text 3-32 chars
   - `text`: text 30-140 chars
   - `href`: link (optional)
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
 
 ## industries-slats
 
 4-8 tall industry slats stand side by side like the louvres of a shutter (CSS 3D): each turned slat shows a sliver of its photo (or a brand-tinted panel with a large icon) and a vertical title. Hovering, focusing or tapping a slat turns it to face the visitor with its short text; its neighbours fan away on both sides. One slat is always open; which one opens first, the width of the open slat and the fan angle are seeded from the brand name. Tablets and phones get a plain card list. Needs 4 or more industries from the brief; with fewer use industries-tiles.
 
-- Group: `industries`. Default anchor: `#industries`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `industries`. Default anchor: `#industries`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: slat-louvre-turn-3d, reveal.
 - Allowed in: enterprise-cx/industries?, it-bpo-partner/audience?.
 - Preview: `previews/industries-slats.jpg`
@@ -1517,11 +1823,38 @@ Fields:
   - `title`: text 3-32 chars
   - `text`: text 30-140 chars
 
+## locations-gmap
+
+Offices with a live Google Map: office cards on the left (city, name, address, phone, email, hours) and an embedded map on the right that switches to the office you pick, with an Open in Google Maps link. No API key; the map loads lazily. Use it wherever the brief gives real office addresses; a placeholder address still centres the map on its city.
+
+- Group: `locations`. Default anchor: `#locations`. Tone: auto.
+- Built-in motion: reveal, map-office-switch.
+- Allowed in: enterprise-cx/locations?, offshore-staffing/locations?, ai-data-ops/locations?, it-bpo-partner/locations?.
+- Preview: `previews/locations-gmap.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `offices`: list of 1-4, each item:
+  - `city`: text 2-30 chars
+  - `name`: text 2-48 chars
+  - `address`: text 10-160 chars
+  - `map_query`: text 3-160 chars (optional)
+  - `phone`: text 5-32 chars (optional)
+  - `email`: text 5-60 chars (optional)
+  - `hours`: text 5-60 chars (optional)
+- `show_label`: text 2-30 chars (optional, default "Show on map")
+- `open_label`: text 2-36 chars (optional, default "Open in Google Maps")
+- `map_title`: text 3-60 chars (optional, default "Office map")
+
 ## locations-map
 
 Dotted world map with radar-pulse pins for each delivery hub (hover or focus shows headcount and detail), plus a row of hub cards with SVG flags.
 
-- Group: `locations`. Default anchor: `#locations`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `locations`. Default anchor: `#locations`. Tone: auto.
 - Built-in motion: interactive-map-pin-pulse, reveal.
 - Allowed in: enterprise-cx/locations?, offshore-staffing/locations?, ai-data-ops/locations?, it-bpo-partner/locations?.
 - Preview: `previews/locations-map.jpg`
@@ -1542,7 +1875,7 @@ Fields:
 
 The dotted world map cropped to the region around the delivery hubs lies tilted like a tabletop model, with a solid column rising at each hub and an upright label (city, role, headcount). Column height follows headcount on a log scale only when every hub has a headcount from the brief; otherwise all columns are equal. Hovering or focusing a hub card below lifts its column and draws a thin arc to the head office (the hub marked hq). Tilt, turn and column colours are seeded from the brand name. Needs 2-8 real hubs (city keys), a role each, optional headcount and detail.
 
-- Group: `locations`. Default anchor: `#locations`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `locations`. Default anchor: `#locations`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: relief-map-tilt-in, relief-column-rise, relief-hub-arc, reveal.
 - Allowed in: enterprise-cx/locations?, offshore-staffing/locations?, ai-data-ops/locations?, it-bpo-partner/locations?.
 - Preview: `previews/locations-relief.jpg`
@@ -1581,7 +1914,7 @@ Fields:
 
 Client logos in a fixed grid of 8 or 12 cells instead of a moving strip. Each cell holds up to three logos; when the wall is seen the cells flip once in a cascade, the current logo sliding up and the next sliding in. mode "cycle" keeps flipping one random cell every 2.5s (the footer Pause animations button stops it). Screen readers get one plain list of every client.
 
-- Group: `logos`. Default anchor: `#clients`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `logos`. Default anchor: `#clients`. Tone: auto.
 - Built-in motion: logo-wall-cycle.
 - Allowed in: enterprise-cx/logos?, offshore-staffing/logos?, ai-data-ops/logos?, cx-voice-sales/logos?, it-bpo-partner/logos?.
 - Preview: `previews/logo-wall.jpg`
@@ -1599,7 +1932,7 @@ Fields:
 
 Before and after results as pairs of solid 3D columns on small gridded plinths: a muted Before column and a brand-colour After column per measure. Columns grow from the plinth in turn while the numbers on top count up, and each pair says whether lower or higher is better. Heights are scaled per measure, so minutes and percentages never share one axis. Without a before value a measure draws one column scaled against 100, so use percentages there. A "[KPI]" placeholder draws an empty dashed column. Plinth yaw, grid density and the Before tint are seeded from the brand name. Needs 2-4 of the client's real before and after figures; for plain totals use metrics-counter.
 
-- Group: `metrics`. Default anchor: `#results`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `metrics`. Default anchor: `#results`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: column-grow-3d, odometer-number-counter, reveal.
 - Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
 - Preview: `previews/metrics-bars3d.jpg`
@@ -1627,16 +1960,17 @@ Fields:
 
 ## metrics-counter
 
-Dark band with a short heading and 3-4 large numbers that count up once when scrolled into view.
+Dark band with a short heading and 3-4 large numbers that count up once when scrolled into view. Optional "image": a real photo (team, floor, office) fills the band behind the numbers under a solid scrim in the section colour and drifts slightly slower than the page while scrolling. When "visual" is also set, "visual" wins and the photo is not shown.
 
 - Group: `metrics`. Default anchor: `#results`. Tone: dark.
-- Built-in motion: odometer-number-counter, reveal.
+- Built-in motion: odometer-number-counter, photo-band-parallax, reveal.
 - Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
 - Preview: `previews/metrics-counter.jpg`
 
 Fields:
 
 - `visual`: one of dots, terrain, wave, globe, flow (optional)
+- `image`: image key or path (optional)
 - `eyebrow`: text 3-40 chars (optional)
 - `title`: text with *accent* 6-80 chars
 - `lead`: text 40-200 chars (optional)
@@ -1673,7 +2007,7 @@ Fields:
 
 Service levels as thin rings: each ring's arc draws to its percentage while the number counts up in the middle, label and note underneath. For pages that sell on SLAs (answer rate, QA accuracy, retention) rather than headcount. Values are percentages 0-100; "[KPI]" leaves the ring empty.
 
-- Group: `metrics`. Default anchor: `#results`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `metrics`. Default anchor: `#results`. Tone: auto.
 - Built-in motion: sla-ring-gauges, odometer-number-counter, reveal.
 - Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
 - Preview: `previews/metrics-rings.jpg`
@@ -1694,7 +2028,7 @@ Fields:
 
 Engagement model switcher with a responsibility board: pick a model on the left and a token on each task row slides to Your team, Shared or the vendor column, with live counters in the column heads.
 
-- Group: `compare`. Default anchor: `#how-we-work`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `compare`. Default anchor: `#how-we-work`. Tone: auto.
 - Built-in motion: token-slide-board, odometer-column-counters, reveal.
 - Allowed in: enterprise-cx/compare?, offshore-staffing/compare?, ai-data-ops/compare?, cx-voice-sales/compare?, it-bpo-partner/compare?.
 - Preview: `previews/models-board.jpg`
@@ -1780,7 +2114,7 @@ Fields:
 
 The process as a stack of thin isometric plates, one per step, beside the step list. As the visitor scrolls, the plates lift apart one after another and the plate for the step in view slides out toward its text, lit in the brand colour, with a short leader line to the step. Scroll-driven CSS where the browser supports it, an IntersectionObserver fallback elsewhere. Phones and reduced motion show the stack already open and still. Iso angle, plate spacing, corner radius and the side the stack sits on are seeded from the brand name. Needs 3-6 real steps of how the company takes work over; with fewer use steps-row.
 
-- Group: `process`. Default anchor: `#process`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `process`. Default anchor: `#process`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: iso-stack-explode-scroll, reveal.
 - Allowed in: enterprise-cx/process?, offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?, it-bpo-partner/process?.
 - Preview: `previews/process-layers.jpg`
@@ -1804,7 +2138,7 @@ Fields:
 
 Isometric flow diagram with one station per real process step, joined by pipes. Small packets (documents, tickets or data rows) travel the pipes: grey on the way in, brand colour once processed, with a tick after the checking step, and they leave on the right. The lit station moves along the line; hovering a step below lights its station. Station heights, pipe height and packet speed are seeded from the brand name. Needs 3-6 real steps from the brief (title, one sentence, icon, packet type); the step whose icon is shield-check, clipboard-check, check-circle, check, search or eye marks the checking step, otherwise the last step does. Fits document, claims, invoice and data processing.
 
-- Group: `process`. Default anchor: `#how-it-works`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `process`. Default anchor: `#how-it-works`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: pipeline-packet-flow, pipeline-station-light, reveal.
 - Allowed in: enterprise-cx/process?, offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?, it-bpo-partner/process?.
 - Preview: `previews/process-pipeline.jpg`
@@ -1826,10 +2160,10 @@ Fields:
 
 ## process-sticky
 
-Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scroll on the right; a progress line fills and each checkpoint lights up as it passes.
+Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scroll on the right; a progress line fills and each checkpoint lights up as it passes. Optional photo per step (use one on every step or none): the pinned column then shows a rounded frame under the heading that cross-fades to the photo of the step being read. On tablets, phones and with reduced motion each photo sits under its own step instead.
 
-- Group: `process`. Default anchor: `#process`. Tone: auto. Signature motion (counts toward the 3 a page needs).
-- Built-in motion: sticky-sidebar-process-scroll, reveal.
+- Group: `process`. Default anchor: `#process`. Tone: auto.
+- Built-in motion: sticky-sidebar-process-scroll, step-photo-crossfade, reveal.
 - Allowed in: enterprise-cx/process?, offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?, it-bpo-partner/process?.
 - Preview: `previews/process-sticky.jpg`
 
@@ -1846,12 +2180,15 @@ Fields:
   - `label`: text 2-20 chars
   - `title`: text 3-60 chars
   - `text`: text 40-220 chars
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
 
 ## proof-book
 
 Case studies laid out as an open book: the left page names the client, industry and challenge with a photo, the right page gives the result headline and 2-3 figures. Next case turns the right-hand leaf over the spine in 3D, with shading running across the paper as it bends; Previous case turns it back. Buttons, arrow keys and a click on the page corner all turn; no dragging needed. Phones show one page per case and turn it about its left edge. Paper tone, corner radius, spine shadow and turn speed are seeded from the brand name. Needs 3-6 real case studies with a challenge line each; with fewer, use case-slider or quote-spotlight.
 
-- Group: `proof`. Default anchor: `#case-studies`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `proof`. Default anchor: `#case-studies`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: book-page-turn-3d, reveal.
 - Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
 - Preview: `previews/proof-book.jpg`
@@ -1928,10 +2265,10 @@ Fields:
 
 ## services-bento
 
-Bento grid of 4 or 5 service cards; the first card is large with a check list. On hover a card rises 3px and its border turns the brand colour.
+Bento grid of 4 or 5 service cards; the first card is large with a check list. On hover a card with a link rises 3px and its border turns the brand colour. Optional "photo" on the first card: a real photo of the work (team at desks, a support floor, paperwork) fills the top of the large card above its title, text and check list, and the icon is dropped there; the photo zooms slightly on hover when the card has a link. A photo on any other card is ignored.
 
 - Group: `services`. Default anchor: `#services`. Tone: auto.
-- Built-in motion: card-hover-lift, reveal.
+- Built-in motion: card-hover-lift, bento-photo-zoom, reveal.
 - Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
 - Preview: `previews/services-bento.jpg`
 
@@ -1943,6 +2280,9 @@ Fields:
   - `lead`: text 40-240 chars (optional)
 - `cards`: list of 4-5, each item:
   - `icon`: icon name
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
   - `title`: text 4-44 chars
   - `text`: text 40-190 chars
   - `bullets`: list of 0-4 (optional) (each text 3-56 chars)
@@ -1954,7 +2294,7 @@ Fields:
 
 Grid of 3-6 service blocks built as square columns (CSS 3D). Each block rests as a flat card (icon, title, text); a row of side names under it (Overview, Scope, SLA, Tools) or a click on the card turns the column a quarter turn to the next side: scope as a check list, service levels as large figures on a dark side, tools as chips. Sides appear only for the fields a card has. With a mouse the column leans a few degrees on hover to show its next side; when the grid is first seen the blocks turn once in a wave and back. Turn axis, wave direction and wave side are seeded from the brand name. Figures must come from the brief.
 
-- Group: `services`. Default anchor: `#services`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `services`. Default anchor: `#services`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: block-quarter-turn-3d, block-entry-wave, reveal.
 - Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
 - Preview: `previews/services-cube.jpg`
@@ -1987,7 +2327,7 @@ Fields:
 
 5-8 service cards stand on a slowly tilted 3D drum (CSS 3D). The front card faces the visitor; the cards beside it curve away and fade. A numbered scale of service names above the drum (APG tabs) and previous/next buttons below it turn the drum to the chosen card. When the section is first seen the drum turns in from a brand-seeded offset; tilt, turn direction and card spacing are seeded from the brand name. Phones get a plain list. Needs 5-8 real service lines; with 3-4 use services-tabs or services-bento.
 
-- Group: `services`. Default anchor: `#services`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `services`. Default anchor: `#services`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: cylinder-turn-3d, reveal.
 - Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
 - Preview: `previews/services-cylinder.jpg`
@@ -2015,7 +2355,7 @@ Fields:
 
 Service cards that pin under the header and stack on top of each other while scrolling; earlier cards scale back and dim. Cards cycle light, navy and brand color, the brand card carries the hero line ribbons. Mobile shows a plain list.
 
-- Group: `services`. Default anchor: `#services`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `services`. Default anchor: `#services`. Tone: auto.
 - Built-in motion: sticky-card-stack, flowing-line-ribbons, reveal.
 - Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
 - Preview: `previews/services-stack.jpg`
@@ -2114,7 +2454,7 @@ Fields:
 
 ## steps-row
 
-A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step.
+A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step. Optional photo per step, shown as a rounded picture at the top of each card with the numeral sitting on its lower edge (the connector line is left out then); use a photo on every step or none.
 
 - Group: `process`. Default anchor: `#how-it-works`. Tone: auto.
 - Built-in motion: reveal, connector-line-draw.
@@ -2130,6 +2470,9 @@ Fields:
 - `steps`: list of 3-4, each item:
   - `title`: text 3-40 chars
   - `text`: text 20-160 chars
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
 - `cta`: object (optional)
   - `label`: text 2-30 chars
   - `href`: link
@@ -2138,7 +2481,7 @@ Fields:
 
 Leadership portraits in a 3D coverflow: the person in the middle faces the reader, up to two on each side turn away in perspective. Previous and next buttons, the arrow keys or a click on a side portrait bring that person to the middle, and the name, role, short bio and LinkedIn link under the row crossfade to them. No auto-rotation. Turn angle, spacing and corner radius are seeded from the brand name. Needs 3-8 real people who agreed to be shown, each with their own photo; without photos use team-grid.
 
-- Group: `team`. Default anchor: `#leadership`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `team`. Default anchor: `#leadership`. Tone: auto. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: coverflow-3d, reveal.
 - Allowed in: enterprise-cx/team?, offshore-staffing/team?, ai-data-ops/team?, cx-voice-sales/team?, it-bpo-partner/team?.
 - Preview: `previews/team-coverflow.jpg`
@@ -2210,7 +2553,7 @@ Fields:
 
 A wall of short client quotes in three columns that drift upward at different speeds, faded at the top and bottom, with a visible Pause button (hover alone does not count as a pause). Phones show one column. Reduced motion shows a still grid. Best with 9 or more quotes; the wall is never taller than its shortest column, so fewer quotes give a shorter wall. Real, approved quotes only.
 
-- Group: `proof`. Default anchor: `#testimonials`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `proof`. Default anchor: `#testimonials`. Tone: auto.
 - Built-in motion: testimonial-columns-drift.
 - Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
 - Preview: `previews/testimonials-drift.jpg`
@@ -2229,6 +2572,35 @@ Fields:
   - `avatar`: image key or path (optional)
 - `pause_label`: text 3-24 chars (optional, default "Pause reviews")
 - `play_label`: text 3-24 chars (optional, default "Play reviews")
+
+## testimonials-rated
+
+Client reviews as a rated carousel: heading and an optional overall score on the left with previous and next buttons, and wide review cards on the right, each with its star rating, the quote, a photo or initials, the reviewer's name, role and company. Drag, swipe, arrow keys and the buttons all move it. Needs 3-8 real reviews from the brief, word for word.
+
+- Group: `proof`. Default anchor: `#reviews`. Tone: auto.
+- Built-in motion: reveal, review-carousel.
+- Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
+- Preview: `previews/testimonials-rated.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `rating`: object (optional)
+  - `score`: text 1-8 chars
+  - `label`: text 6-70 chars
+- `items`: list of 3-8, each item:
+  - `stars`: one of 5, 4, 3 (optional, default "5")
+  - `quote`: text 60-320 chars
+  - `name`: text 3-40 chars
+  - `role`: text 3-60 chars
+  - `company`: text 2-48 chars
+  - `avatar`: image key or path (optional)
+- `rating_label`: text 3-30 chars (optional, default "Rating")
+- `prev_label`: text 2-24 chars (optional, default "Previous review")
+- `next_label`: text 2-24 chars (optional, default "Next review")
 
 ## ticker-band
 
@@ -2299,7 +2671,7 @@ Fields:
 
 Call-quality proof: 2-4 agent sample players with play/pause, language flag and a 24-bar soundwave that moves while audio plays. Pitch and points on the left.
 
-- Group: `voice`. Default anchor: `#call-samples`. Tone: auto. Signature motion (counts toward the 3 a page needs).
+- Group: `voice`. Default anchor: `#call-samples`. Tone: auto.
 - Built-in motion: soundwave-audio-bars, reveal.
 - Allowed in: cx-voice-sales/voice?.
 - Preview: `previews/voice-sample.jpg`

@@ -5,7 +5,7 @@
   "summary": "A long page that opens dark over a photo (hero, logos, white intro and industry panel, team and map block), then switches to light with a lead form, card grids for services, team structure and tiers, a process list, a funnel chart, review score cards, a testimonial slider and a numbered FAQ.",
   "header": "mega",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "cols": 3, "count": 3, "media": "full", "note": "left copy with a huge word and a pill button, three small icon stats beside it, all over a dark office photo"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "cols": 3, "count": 3, "media": "full", "compose": ["hero-news", "hero-overlap"], "note": "left copy with a huge word and a pill button, three small icon stats beside it, all over a dark office photo"},
     {"form": "logo-strip", "role": "clients", "tone": "dark", "cols": 6, "count": 6, "optional": true, "media": "none", "note": "small caption left, one row of six grey logos, text link below"},
     {"form": "text-block", "role": "intro", "tone": "light", "cols": 3, "count": null, "media": "none", "note": "white rounded panel over the dark photo, big split-weight heading left and two text columns right"},
     {"form": "tabs", "role": "industries", "tone": "light", "cols": 3, "count": 24, "media": "none", "note": "inside the same white panel: heading, then a 3-column list of 24 small icon links acting as tabs, with a logo group and text links for the chosen tab beneath"},

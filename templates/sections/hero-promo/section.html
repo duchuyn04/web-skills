@@ -1,0 +1,25 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--promo bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-hero-promo__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hero-promo__title" data-reveal data-promo-title>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead bl-hero-promo__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row bl-hero-promo__ctas" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+    </div>
+    <ul class="bl-hero-promo__cards" data-reveal-group>
+      {{#cards}}<li class="bl-hero-promo__item" data-reveal>
+        <a class="bl-hero-promo__card" href="{{href}}">
+          <img class="bl-hero-promo__img" src="{{photo.src}}" alt="{{photo.alt}}" width="480" height="640" loading="lazy">
+          <span class="bl-hero-promo__go" aria-hidden="true">{{arrow}}</span>
+          <span class="bl-hero-promo__text">
+            {{#tag}}<span class="bl-hero-promo__tag">{{tag}}</span>{{/tag}}
+            <span class="bl-hero-promo__name">{{title}}</span>
+          </span>
+        </a>
+      </li>{{/cards}}
+    </ul>
+  </div>
+</section>

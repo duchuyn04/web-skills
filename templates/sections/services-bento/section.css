@@ -14,6 +14,15 @@
 .bl-bento__card:first-child .bl-h3 { font-size: clamp(1.35rem, 1vw + 1rem, 1.7rem); font-family: var(--font-heading); }
 .bl-bento__card:first-child p { font-size: var(--fs-body); }
 .bl-bento__card:first-child .bl-icon-box { width: 56px; height: 56px; }
+/* bento-photo-zoom: optional photo across the top of the large first card; the icon gives way to it */
+.bl-bento__card--photo { padding-top: 0; }
+.bl-bento__photo {
+  flex: 1 1 13rem; min-height: 13rem; margin: 0 calc(clamp(1.4rem, 2.2vw, 2rem) * -1) .6rem;
+  border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+}
+.bl-bento__photo img { position: absolute; inset: 0; transition: transform var(--dur-slow) var(--ease-out); }
+.bl-bento__card--photo:has(a):hover .bl-bento__photo img { transform: scale(1.04); }
+.bl-bento__card--photo > .bl-icon-box { display: none; }
 /* 4 cards: big + two small on top row + one wide below them */
 .bl-bento:has(> :nth-child(4):last-child) > :nth-child(4) { grid-column: span 2; }
 @media (max-width: 1024px) {
@@ -21,6 +30,7 @@
   .bl-bento__card:first-child { grid-row: auto; }
 }
 @media (max-width: 768px) {
+  .bl-bento__photo { flex-basis: auto; min-height: 0; aspect-ratio: 16 / 10; }
   .bl-bento { grid-template-columns: 1fr; grid-auto-rows: auto; }
   .bl-bento__card:first-child, .bl-bento > * { grid-column: auto !important; }
 }

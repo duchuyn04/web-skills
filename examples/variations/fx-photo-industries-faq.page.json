@@ -1,0 +1,128 @@
+{
+  "_note": "Shows the optional photos on industries-rows (the card photo follows the row being read), faq-accordion (support team photo under the contact card) and contact-split (office photo at the top of the brand panel, with the map under the card). Harbourlight Contact is a fictional company; every figure is sample data.",
+  "archetype": "enterprise-cx",
+  "preset": "enterprise-navy",
+  "lang": "en",
+  "site": {
+    "brand": "Harbourlight Contact",
+    "brand_mark": "HC",
+    "title": "Harbourlight Contact | Customer support teams in Cebu",
+    "description": "Harbourlight Contact runs voice, chat and email support teams in Cebu for healthcare, retail, logistics and fintech companies."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Industries", "href": "#industries"},
+          {"label": "FAQ", "href": "#faq"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-fullbleed",
+      "data": {
+        "title": "Customer support teams for *growing service brands*",
+        "lead": "Harbourlight Contact runs voice, chat and email support from Cebu for healthcare, retail, logistics and fintech companies, with one team lead for every program.",
+        "primary_cta": {"label": "Contact us", "href": "#contact"},
+        "secondary_cta": {"label": "Industries we serve", "href": "#industries"},
+        "image": "team-meeting-bright-office",
+        "stats": [
+          {"value": "650", "label": "Agents in Cebu"},
+          {"value": "2014", "label": "Founded"},
+          {"value": "3", "label": "Support channels"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"title": "Our services"},
+        "cards": [
+          {"icon": "headset", "title": "Voice support", "text": "Inbound calls for orders, bookings, billing questions and account changes, answered in your scripts and tone.", "bullets": ["Inbound order and billing lines", "Appointment booking", "Call-back queues"]},
+          {"icon": "message-square", "title": "Chat and email", "text": "Written support with templates your team approves and weekly quality reviews on a sample of tickets."},
+          {"icon": "file-text", "title": "Back-office tasks", "text": "Refunds, order updates and account checks handled inside your tools by trained processors."},
+          {"icon": "bar-chart", "title": "Reporting", "text": "A weekly report on volume, response time and quality scores, reviewed with your program owner."}
+        ]
+      }
+    },
+    {
+      "type": "metrics-counter",
+      "data": {
+        "title": "Harbourlight in numbers",
+        "items": [
+          {"value": 650, "label": "Agents in production"},
+          {"value": 38, "label": "Client programs"},
+          {"value": 11, "label": "Years in Cebu"}
+        ]
+      }
+    },
+    {
+      "type": "industries-rows",
+      "data": {
+        "head": {"eyebrow": "Four sectors", "title": "Industries we serve", "lead": "Each sector has its own training track and a team lead who has run programs in it before."},
+        "cta": {"label": "Talk about your program", "href": "#contact"},
+        "link_label": "Talk to a team lead",
+        "items": [
+          {"icon": "heart-pulse", "title": "Healthcare", "text": "Appointment booking, benefits questions and claims intake for clinics and health plans.", "photo": {"src": "healthcare-consultation", "alt": "Doctor and nurse talking with a patient at a desk"}},
+          {"icon": "shopping-cart", "title": "Retail and ecommerce", "text": "Order tracking, returns and delivery questions for online stores during normal and peak seasons.", "photo": {"src": "ecommerce-packing", "alt": "Person packing a parcel at a work table"}},
+          {"icon": "truck", "title": "Logistics", "text": "Shipment status, delivery changes and driver support for courier and freight companies.", "photo": {"src": "warehouse-aisle-boxes", "alt": "Warehouse aisle lined with boxes"}},
+          {"icon": "landmark", "title": "Fintech", "text": "Card questions, onboarding checks and payment disputes for lenders and payment apps.", "photo": {"src": "finance-chart-screen", "alt": "Screen showing market charts"}}
+        ]
+      }
+    },
+    {
+      "type": "faq-accordion",
+      "data": {
+        "head": {"title": "Frequently asked questions"},
+        "aside": {"title": "Have a question about your program?", "text": "A team lead can walk you through staffing, training and reporting for your queue.", "cta": {"label": "Contact a team lead", "href": "#contact"}},
+        "photo": {"src": "desk-phone-monitors", "alt": "Harbourlight support agent working at a desk with two monitors"},
+        "items": [
+          {"q": "How are agents trained for our program?", "a": "New agents learn your products and tools on real tickets with a trainer before they take live contacts on their own."},
+          {"q": "Can we listen to calls and read tickets?", "a": "Yes. You get access to the same quality reviews our team leads use, and you can join the weekly review."},
+          {"q": "Which channels can one team cover?", "a": "One team can answer calls, chats and emails. Most programs start with one channel and add the others later."},
+          {"q": "Who is our contact at Harbourlight?", "a": "Every program has one team lead who handles staffing, training and the weekly report."}
+        ]
+      }
+    },
+    {
+      "type": "contact-split",
+      "id": "contact",
+      "data": {
+        "head": {"title": "Contact *Harbourlight Contact*"},
+        "form": {
+          "title": "Tell us about your support queue",
+          "text": "Share your channels, hours and monthly volume.",
+          "submit_label": "Send message",
+          "success_title": "Thanks, your message is in",
+          "success_text": "A team lead will reply by email to set up a call."
+        },
+        "aside": {
+          "photo": {"src": "office-building-entrance", "alt": "Entrance of the Harbourlight office building in Cebu"},
+          "title": "Our Cebu office",
+          "points": ["One team lead for every program", "Weekly quality reviews"],
+          "offices": [
+            {"flag": "ph", "name": "Cebu City", "address": "18th Floor, Cebu Business Park tower, Mabolo, Cebu City"}
+          ],
+          "email_label": "Email",
+          "email": "hello@harbourlight.example"
+        },
+        "map": {"query": "Cebu Business Park, Cebu City"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Harbourlight Contact runs voice, chat and email support teams in Cebu for service brands.",
+        "contacts": [{"icon": "mail", "label": "hello@harbourlight.example", "href": "mailto:hello@harbourlight.example"}],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "Voice support", "href": "#services"}, {"label": "Chat and email", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "Industries", "href": "#industries"}, {"label": "FAQ", "href": "#faq"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

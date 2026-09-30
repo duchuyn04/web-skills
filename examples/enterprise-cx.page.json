@@ -286,8 +286,8 @@
        "Knowledge base upkeep"
       ],
       "photo": {
-       "src": "team-coworking-laptops",
-       "alt": "Technical support agents testing software on laptops"
+       "src": "developer-headphones-monitors",
+       "alt": "Technical support agent in headphones working across three screens"
       }
      }
     ]
@@ -386,52 +386,57 @@
    }
   },
   {
-   "type": "industries-tiles",
+   "type": "image-cards",
+   "id": "industries",
    "data": {
     "head": {
      "title": "Industries we serve",
      "lead": "Banking, telecom, retail, healthcare and insurance programs each have their own training track and compliance lead."
     },
-    "tiles": [
+    "cards": [
      {
-      "icon": "landmark",
+      "tag": "Banking",
       "title": "Banking and fintech",
-      "text": "Card disputes, onboarding checks and collections with PCI DSS controls."
+      "text": "Card disputes, onboarding checks and collections with PCI DSS controls.",
+      "photo": {
+       "src": "finance-chart-screen",
+       "alt": "Screen with card dispute and collections figures"
+      },
+      "href": "#case-studies",
+      "link_label": "See our work"
      },
      {
-      "icon": "globe",
-      "title": "Telecom",
-      "text": "Billing questions, plan changes and device setup for prepaid and postpaid users."
-     },
-     {
-      "icon": "shopping-cart",
+      "tag": "Retail",
       "title": "Retail and ecommerce",
-      "text": "Order tracking, returns and marketplace seller support during peak seasons."
+      "text": "Order tracking, returns and marketplace seller support during peak seasons.",
+      "photo": {
+       "src": "warehouse-aisle-boxes",
+       "alt": "Fulfillment aisle stacked with parcels before a sale"
+      },
+      "href": "#case-studies",
+      "link_label": "See our work"
      },
      {
-      "icon": "heart-pulse",
-      "title": "Healthcare",
-      "text": "Appointment scheduling, benefits questions and claims intake under HIPAA rules."
+      "tag": "Healthcare",
+      "title": "Healthcare providers",
+      "text": "Appointment scheduling, benefits questions and claims intake under HIPAA rules.",
+      "photo": {
+       "src": "doctor-tablet",
+       "alt": "Doctor checking appointment schedules on a tablet"
+      },
+      "href": "#case-studies",
+      "link_label": "See our work"
      },
      {
-      "icon": "plane",
-      "title": "Travel",
-      "text": "Booking changes, refunds and disruption handling across time zones."
-     },
-     {
-      "icon": "zap",
-      "title": "Energy and utilities",
-      "text": "Meter reads, outage calls and payment plans for residential customers."
-     },
-     {
-      "icon": "shield-check",
-      "title": "Insurance",
-      "text": "First notice of loss, policy servicing and renewal outreach."
-     },
-     {
-      "icon": "code",
-      "title": "Software and SaaS",
-      "text": "Account support, onboarding sessions and tier 2 technical help."
+      "tag": "Insurance",
+      "title": "Insurance and claims",
+      "text": "First notice of loss, policy servicing and renewal outreach.",
+      "photo": {
+       "src": "paperwork-review-desk",
+       "alt": "Claims processor reading a first notice of loss"
+      },
+      "href": "#case-studies",
+      "link_label": "See our work"
      }
     ]
    }
@@ -472,7 +477,7 @@
       "client": "Orbital Telecom",
       "industry": "Telecom",
       "photo": {
-       "src": "team-coworking-laptops",
+       "src": "team-meeting-bright-office",
        "alt": "Orbital support pod during a morning huddle"
       },
       "title": "Added Vietnamese and Tagalog chat support ahead of a regional launch",
@@ -545,7 +550,7 @@
      "label": "Read the FAQ",
      "href": "#faq"
     },
-    "image": "meeting-handshake"
+    "image": "team-meeting-table"
    }
   },
   {
@@ -645,8 +650,8 @@
       "title": "How to plan a vendor transition without losing CSAT",
       "text": "The week-by-week checklist we use to move programs between vendors.",
       "photo": {
-       "src": "meeting-handshake",
-       "alt": "Two managers signing a transition plan"
+       "src": "presenter-planning-board",
+       "alt": "Transition lead walking a client team through the week-by-week plan"
       },
       "href": "#contact"
      },
@@ -656,8 +661,8 @@
       "title": "What actually lowers handle time in banking support",
       "text": "Knowledge base fixes beat new tools in 7 of 10 programs we reviewed.",
       "photo": {
-       "src": "finance-chart-screen",
-       "alt": "Screen with handle time and queue charts"
+       "src": "laptop-conference-room",
+       "alt": "Analyst reviewing handle time reports on a laptop"
       },
       "href": "#contact"
      },
@@ -666,8 +671,8 @@
       "meta": "Healthcare",
       "title": "Patient scheduling at scale under HIPAA rules",
       "photo": {
-       "src": "doctor-tablet",
-       "alt": "Doctor reviewing patient schedules on a tablet"
+       "src": "training-workshop-board",
+       "alt": "Scheduling team lead running a HIPAA refresher session"
       },
       "href": "#case-studies"
      }
@@ -678,7 +683,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "aside": {
@@ -716,7 +720,6 @@
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Talk to our *solutions team*",
     "lead": "Tell us what you want to outsource. A solutions lead replies within two business days with a team design, timeline and price range.",
     "points": [

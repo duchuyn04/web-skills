@@ -1,8 +1,9 @@
 <section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}" data-sequence>
-  <div class="bl-container bl-process">
+  <div class="bl-container bl-process{{#steps.0.photo}} bl-process--photos{{/steps.0.photo}}">
     <div class="bl-process__side">
       {{> head}}
       {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}" data-reveal>{{label}}</a>{{/cta}}
+      {{#steps.0.photo}}<div class="bl-frame bl-process__frame" aria-hidden="true" data-reveal>{{#steps}}{{#photo}}<img class="bl-process__shot" src="{{src}}" alt="" width="640" height="480" loading="lazy" data-step-shot="{{@index}}">{{/photo}}{{/steps}}</div>{{/steps.0.photo}}
     </div>
     <ol class="bl-process__steps" data-process>
       <li class="bl-process__line" aria-hidden="true"><span class="bl-process__fill"></span></li>
@@ -12,6 +13,7 @@
         <span class="bl-step__label bl-mono">{{label}}</span>
         <h3 class="bl-h3">{{title}}</h3>
         <p>{{text}}</p>
+        {{#photo}}<div class="bl-frame bl-step__photo"><img src="{{src}}" alt="{{alt}}" width="640" height="480" loading="lazy"></div>{{/photo}}
       </li>
       {{/steps}}
     </ol>

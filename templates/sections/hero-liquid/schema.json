@@ -1,6 +1,6 @@
 {
   "variant": "hero-liquid",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Hero with two soft brand-colour shapes on the right that drift together and merge into one, drawn like a contour map: a solid core with two thin outline rings. A few small droplets circle slowly and join the shape now and then, and on desktop the pointer adds one more droplet that the shape reaches for. Optional labels ride on the two shapes until they merge (for example Your team and Our team), then one merged label shows. Metaphor: two teams become one. Blob sizes, orbits, speeds and colour split are seeded from the brand name. Fits people-first CX, staffing and dedicated-team companies.",
   "tone": "hero",

@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-overlap"],
       "note": "heading and one button low on the left over full-height video"
     },
     {

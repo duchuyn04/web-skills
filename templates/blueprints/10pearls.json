@@ -19,6 +19,7 @@
       "cols": 6,
       "count": 6,
       "media": "full",
+      "compose": ["hero-panels"],
       "note": "heading and tag line at left over a dark visual, a row of six service labels at the bottom"
     },
     {

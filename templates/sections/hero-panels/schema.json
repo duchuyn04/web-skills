@@ -1,0 +1,30 @@
+{
+  "variant": "hero-panels",
+  "group": "hero",
+  "forms": ["hero-fullbleed", "hero-split"],
+  "summary": "Panel hero after ELEKS: a large rounded photo panel with the headline, lead and buttons over a dark shade, then 3-4 tall narrow photo panels side by side, each labelled vertically with one of the client's real service lines or industries and linking to its section. Hovering or focusing a narrow panel widens it and shows one line about it. An optional small white card across the joint offers a consultation. On tablets and phones the narrow panels become rows under the main panel. Needs one wide photo and one photo per panel; suits software, IT and IT-BPO companies with a few clear sectors or service lines.",
+  "tone": "light",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["panel-rail-widen", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "lead": {"type": "text", "min": 60, "max": 200},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "photo": {"$ref": "photo"},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "consult": {"type": "object", "required": false, "fields": {
+      "title": {"type": "text", "min": 10, "max": 60},
+      "cta": {"$ref": "cta"}
+    }},
+    "panels_label": {"type": "text", "min": 3, "max": 40, "default": "Service lines"},
+    "panels": {"type": "list", "min": 3, "max": 4, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 2, "max": 20},
+      "text": {"type": "text", "min": 10, "max": 90},
+      "photo": {"$ref": "photo"},
+      "href": {"type": "href"}
+    }}}
+  }
+}

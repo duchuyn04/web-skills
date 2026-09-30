@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-news"],
       "note": "copy left over a full-width dark visual with a button; stacked news cards on the right"
     },
     {

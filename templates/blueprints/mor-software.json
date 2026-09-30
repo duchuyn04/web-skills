@@ -5,7 +5,7 @@
   "summary": "Dark centered hero with four service link columns and a curved bottom edge, then mostly light sections: reasons slider, a figure and photo mosaic, badge rows, a tech stack tab panel, project slider, a dark contact statement, a quote slider, a video list, a blue news slider, press logos, an FAQ, a blue call bar and a dark office slider.",
   "header": "simple",
   "sections": [
-    {"form": "hero-center", "role": "hero", "tone": "dark", "media": "none", "note": "centered two-line headline on a starry dark navy ground, four outlined link columns with bullet lists underneath, curved white edge at the bottom"},
+    {"form": "hero-center", "role": "hero", "tone": "dark", "media": "none", "compose": ["hero-promo"], "note": "centered two-line headline on a starry dark navy ground, four outlined link columns with bullet lists underneath, curved white edge at the bottom"},
     {"form": "carousel-cards", "role": "about", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "large heading left with intro paragraph right, three outlined cards with line icons, title and long paragraph, arrows and a pill button below, gradient circles as decoration"},
     {"form": "metrics", "role": "metrics", "tone": "light", "cols": 3, "count": 4, "media": "full", "note": "mosaic grid of equal square tiles: a text tile with label, heading and paragraph, dark figure tiles and photo tiles mixed, four figures in total"},
     {"form": "icon-strip", "role": "awards", "tone": "light", "cols": 8, "count": 16, "media": "none", "optional": true, "note": "centered label above two rows of round seals and certification badges"},

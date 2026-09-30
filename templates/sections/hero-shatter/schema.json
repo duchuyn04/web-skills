@@ -1,6 +1,6 @@
 {
   "variant": "hero-shatter",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Photo-led hero: the wide team photo on the right arrives in pieces. 24 tiles (12 on phones) fly in from different depths and angles and lock together into the full picture in about 1.4 s, then the tiles are swapped for the single photo. On fine pointers the tiles near the cursor lift a few pixels toward the viewer. Assembly order (diagonal sweep, centre-out, column wave or scattered), scatter depth, rotation mix and lift height are seeded from the brand name. Needs a real team or office photo (the client's own or a library key) and its alt text; fits staffing brands and CX centers with good photography.",
   "tone": "hero",

@@ -20,6 +20,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-tabs"],
       "note": "large heading left with a button, red geometric visual and a slide index on the right"
     },
     {

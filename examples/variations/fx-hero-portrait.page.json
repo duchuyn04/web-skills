@@ -1,0 +1,132 @@
+{
+  "_note": "Shows hero-portrait (dark copy card with service chips beside a circle portrait with stat stickers). Tanglaw Staffing is a fictional company; every figure is sample data.",
+  "archetype": "offshore-staffing",
+  "preset": "human-warm",
+  "lang": "en",
+  "site": {
+    "brand": "Tanglaw Staffing",
+    "brand_mark": "TS",
+    "title": "Tanglaw Staffing | Dedicated offshore staff in Cebu",
+    "description": "Tanglaw Staffing hires and manages dedicated support, finance and admin staff in Cebu for small and mid-sized companies in Australia and the US."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "How it works", "href": "#process"},
+          {"label": "Reviews", "href": "#reviews"}
+        ],
+        "cta": {"label": "Book a call", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-portrait",
+      "data": {
+        "title": "Dedicated offshore staff in *Cebu, Philippines*",
+        "lead": "Tanglaw Staffing hires support, finance and admin staff in Cebu for companies in Australia and the US. You interview every candidate and approve every hire.",
+        "chips_label": "What can we help you with?",
+        "chips": [
+          {"label": "Customer support", "href": "#services", "icon": "headset"},
+          {"label": "Bookkeeping", "href": "#services", "icon": "calculator"},
+          {"label": "Virtual assistants", "href": "#services", "icon": "user-check"},
+          {"label": "Sales support", "href": "#services", "icon": "phone"},
+          {"label": "Data entry", "href": "#services", "icon": "file-text"},
+          {"label": "IT helpdesk", "href": "#services", "icon": "server"}
+        ],
+        "primary_cta": {"label": "Book a call", "href": "#contact"},
+        "secondary_cta": {"label": "See how hiring works", "href": "#process"},
+        "photo": {"src": "portrait-woman-office", "alt": "A Tanglaw Staffing team lead smiling by an office window"},
+        "stats": [
+          {"value": "260", "label": "Staff in Cebu"},
+          {"value": "94%", "label": "Staff retained after a year"},
+          {"value": "21 days", "label": "Average time to a first hire"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "id": "services",
+      "data": {
+        "head": {"eyebrow": "Cebu delivery center", "title": "Roles we hire for"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Email, chat and phone agents who answer in your help desk under your brand name.",
+            "bullets": ["Screened for written English", "Trained on your macros", "Weekly quality scores"]
+          },
+          {"icon": "calculator", "title": "Bookkeeping", "text": "Bookkeepers who reconcile accounts and prepare month-end reports in your ledger."},
+          {"icon": "user-check", "title": "Virtual assistants", "text": "Assistants for inboxes, calendars, travel and supplier follow-up."},
+          {"icon": "server", "title": "IT helpdesk", "text": "First-line technicians for password resets, device setup and ticket triage."}
+        ]
+      }
+    },
+    {
+      "type": "steps-row",
+      "id": "process",
+      "data": {
+        "head": {"title": "How hiring works"},
+        "steps": [
+          {"title": "Tell us the role", "photo": {"src": "office-worker-laptop", "alt": "Tanglaw account manager on a call about a new role"}, "text": "A thirty minute call covers the tasks, hours, tools and the budget for the seat."},
+          {"title": "Interview a shortlist", "photo": {"src": "laptop-conference-room", "alt": "Hiring manager interviewing a candidate on a video call"}, "text": "Our recruiters send three screened candidates and you interview the ones you like."},
+          {"title": "Start with support", "photo": {"src": "team-coworking-laptops", "alt": "New hire working beside the Cebu team"}, "text": "Your new hire starts in our Cebu office with an account manager who checks in weekly."}
+        ]
+      }
+    },
+    {
+      "type": "testimonials-rated",
+      "id": "reviews",
+      "data": {
+        "head": {"title": "Client reviews"},
+        "items": [
+          {"quote": "Our two support hires learned the product in a fortnight and now cover the overnight queue on their own.", "name": "Priya Nair", "role": "Head of Support", "company": "Harbour Homewares"},
+          {"stars": "4", "quote": "The shortlist was small and every candidate was worth interviewing, which saved our managers a lot of time.", "name": "Tom Walsh", "role": "Operations Director", "company": "Kauri Property"},
+          {"quote": "Month-end used to take our team a week. Our bookkeeper in Cebu closes it in three days with notes on every change.", "name": "Ana Ruiz", "role": "Founder", "company": "Saltbush Outdoor"}
+        ]
+      }
+    },
+    {
+      "type": "faq-accordion",
+      "data": {
+        "photo": {"src": "desk-phone-monitors", "alt": "Tanglaw support agent at her desk in Cebu"},
+        "head": {"title": "Frequently asked questions"},
+        "items": [
+          {"q": "Who employs the staff?", "a": "Tanglaw Staffing employs them in Cebu and handles payroll, benefits and the office. They work only on your tasks."},
+          {"q": "Can we interview candidates ourselves?", "a": "Yes. You interview the shortlist and nobody starts without your approval."},
+          {"q": "What hours do they work?", "a": "Staff work the hours you set, including shifts that match Australian or US business hours."},
+          {"q": "What happens if a hire leaves?", "a": "Your account manager opens a new search the same week and keeps your process notes for the next person."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "id": "contact",
+      "data": {
+        "title": "Hire your first *Cebu team member*",
+        "text": "Book a call and we will send a role plan and a shortlist timeline the same week.",
+        "primary_cta": {"label": "Book a call", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tanglaw Staffing hires and manages dedicated offshore staff in Cebu for companies in Australia and the US.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer support", "href": "#services"},
+            {"label": "Bookkeeping", "href": "#services"},
+            {"label": "IT helpdesk", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "How it works", "href": "#process"},
+            {"label": "Reviews", "href": "#reviews"},
+            {"label": "Contact", "href": "#contact"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

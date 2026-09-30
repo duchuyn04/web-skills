@@ -1,0 +1,30 @@
+{
+  "variant": "hero-portrait",
+  "group": "hero",
+  "forms": ["hero-split", "hero-left-text"],
+  "summary": "Split hero after MicroSourcing and Horatio. Left: the headline, lead and a short question (for example 'What can we help you with?') above 3-6 service chips that link to the page's sections, then a full-width button; by default all of it sits in a large dark rounded card (\"card\": false puts it plain on the page). Right: one real person photo cropped into a large circle on a brand-colour disc, with a thick accent arc that draws once on load and 2-3 small stat stickers around the edge that pop in one after another. No loops. Needs one real photo of a person (a smiling team member works best); suits staffing, contact center and multi-service companies.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["portrait-arc-draw", "stat-sticker-pop", "chip-stagger", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "card": {"type": "bool", "default": true},
+    "chips_label": {"type": "text", "min": 3, "max": 40, "required": false},
+    "chips": {"type": "list", "min": 0, "max": 6, "default": [], "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 2, "max": 26},
+      "href": {"type": "href"},
+      "icon": {"type": "icon"}
+    }}},
+    "photo": {"$ref": "photo"},
+    "stats": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 10},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}}
+  }
+}

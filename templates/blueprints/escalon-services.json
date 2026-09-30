@@ -20,6 +20,7 @@
       "media": "right",
       "cols": null,
       "count": null,
+      "compose": ["hero-collage"],
       "note": "heading and button left, photo collage right"
     },
     {

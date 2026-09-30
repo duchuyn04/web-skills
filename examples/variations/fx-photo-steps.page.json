@@ -1,0 +1,89 @@
+{
+  "_note": "Shows steps-row with a photo on every step. Brightpier Staffing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Brightpier Staffing",
+    "brand_mark": "BP",
+    "title": "Brightpier Staffing | Dedicated support and QA staff in Da Nang",
+    "description": "Brightpier Staffing places dedicated customer support and software testing staff in Da Nang for software companies."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "How it works", "href": "#how-it-works"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Talk to us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "title": "Dedicated support and QA staff *in Da Nang*",
+        "lead": "Brightpier Staffing places customer support agents and software testers in Da Nang who work only on your product, in your tools and your hours.",
+        "primary_cta": {"label": "Talk to us", "href": "#get-started"},
+        "secondary_cta": {"label": "How it works", "href": "#how-it-works"},
+        "photo": {"src": "developer-headphones-monitors", "alt": "Brightpier team member testing software at three screens"}
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"title": "Our services"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer support staff",
+            "text": "Agents who answer email and chat for your product in your help desk.",
+            "bullets": ["Your macros and tone", "Your working hours", "Weekly quality review"]
+          },
+          {"icon": "bug", "title": "Software testers", "text": "Manual and regression testing against your test plans before each release."},
+          {"icon": "users", "title": "Team leads", "text": "A lead in Da Nang who plans shifts and reports to your manager."},
+          {"icon": "file-text", "title": "Documentation", "text": "Help center articles and release notes kept up to date."}
+        ]
+      }
+    },
+    {
+      "type": "steps-row",
+      "data": {
+        "head": {"title": "How it works"},
+        "steps": [
+          {"title": "Tell us the role", "text": "One call to agree the tasks, tools, hours and the skills the person needs.", "photo": {"src": "laptop-conference-room", "alt": "Man with glasses working on a laptop in a meeting room"}},
+          {"title": "Meet the shortlist", "text": "You interview candidates we tested on your own sample tasks and pick who joins.", "photo": {"src": "portrait-woman-office", "alt": "Smiling candidate in a blazer standing by an office window"}},
+          {"title": "Start the work", "text": "Your new team member learns your product with their lead and starts on live tickets.", "photo": {"src": "code-review-pair", "alt": "Two colleagues looking at code on a laptop together"}}
+        ],
+        "cta": {"label": "Talk to us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Add *one person* to your team first",
+        "text": "Most clients start with a single role and grow the team once the work settles.",
+        "primary_cta": {"label": "Talk to us", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Brightpier Staffing places dedicated support and QA staff in Da Nang for software companies.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer support", "href": "#services"},
+            {"label": "Software testing", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "How it works", "href": "#how-it-works"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

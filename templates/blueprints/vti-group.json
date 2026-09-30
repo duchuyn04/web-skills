@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-tabs"],
       "note": "heading, text and button on the left over a blue technology image with slider dots"
     },
     {

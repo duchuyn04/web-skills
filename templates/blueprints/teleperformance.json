@@ -5,7 +5,7 @@
   "summary": "Full-bleed video hero with centered copy, a dark centered intro, a metrics band over a photo with a small image slider, then light pillar and service sections, a purple industry link grid, a dark AI product row, a quote, two case rows, a white paper slider and a form before the footer.",
   "header": "simple",
   "sections": [
-    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "note": "centered large headline and one outlined button over full-width video with floating interface panels on the left"},
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-news"], "note": "centered large headline and one outlined button over full-width video with floating interface panels on the left"},
     {"form": "text-block", "role": "intro", "tone": "dark", "media": "none", "note": "small label, centered heading, one paragraph and an outlined button on a flat dark ground"},
     {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 5, "count": 5, "media": "full", "note": "centered heading over a blurred photo, one row of large figures with short captions, outlined button and a three-image slider with arrows below"},
     {"form": "cards-text", "role": "process", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "centered label and heading, four short centered text columns with small caps titles, no borders"},

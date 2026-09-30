@@ -16,6 +16,9 @@ share 70% or more of those choices read as the same template, and build.py warns
 import argparse
 import json
 import sys
+for _stream in (sys.stdout, sys.stderr):  # Vietnamese text must not crash printing on a cp1252 console or pipe
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 from pathlib import Path
 
 SKILL = Path(__file__).resolve().parent.parent
@@ -44,11 +47,12 @@ def aliases():
     return out
 
 
-def signature_variants():
+def expressive_variants():
+    """Variants in the expressive tier (3D objects, WebGL scenes, folding effects): only for "motion": "expressive" pages."""
     out = set()
     for d in (TPL / "sections").iterdir():
         f = d / "schema.json"
-        if f.is_file() and '"signature": true' in f.read_text(encoding="utf-8"):
+        if f.is_file() and '"tier": "expressive"' in f.read_text(encoding="utf-8"):
             out.add(d.name)
     return out
 
@@ -150,7 +154,7 @@ def blueprint_report(args, pages, count):
     import build
     lib = build.load_library()
     bps = lib["blueprints"]
-    sig = signature_variants()
+    sig = expressive_variants()
     taken = {}
     for path, page in pages:
         if page.get("blueprint"):
@@ -182,13 +186,16 @@ def blueprint_report(args, pages, count):
         print(b.get("summary", ""))
         print("")
         for i, s in enumerate(b["sections"]):
-            opts = sorted(build.fitting_variants(s, lib), key=lambda v: (v not in sig, count.get(v, 0), v))
+            compose = s.get("compose") or []
+            opts = sorted(build.fitting_variants(s, lib), key=lambda v: (v not in compose, v in sig, count.get(v, 0), v))
             grid = ("cols %s, items %s" % (s.get("cols"), s.get("count"))) if s.get("count") else ""
             print("%2d %-11s %-15s %-6s %s%s" % (i + 1, s["role"], s["form"], s.get("tone", ""), "optional " if build.slot_optional(s) else "", grid))
             print("     " + s.get("note", ""))
-            print("     variants: " + (", ".join(v + ("*" if v in sig else "") for v in opts) or "NONE (use a custom section)"))
+            print("     variants: " + (", ".join(v + ("=" if v in compose else "") + ("^" if v in sig else "") for v in opts) or "NONE (use a custom section)"))
         print("")
-        print("* = signature motion (a 3D or animated visual in the same layout). Keep the order; leave out only optional sections.")
+        print("Keep the order; leave out only optional sections. Calm variants come first.")
+        print("= = the real site's hero composition. When a hero lists one, build.py requires it (or a business hero: %s)." % ", ".join(sorted(build.BUSINESS_HEROES)))
+        print("^ = expressive tier (3D object, WebGL scene or folding effect): only on pages with \"motion\": \"expressive\", for a brief that asks for a 3D or animation-led page. Bands with a \"visual\" field take a WebGL backdrop only on those pages too.")
     if args.coverage:
         gaps = {}
         for k, b in bps.items():
@@ -217,7 +224,7 @@ def main():
 
     if args.archetype:
         a = arch.get(args.archetype)
-        sig = signature_variants()
+        sig = expressive_variants()
         if not a:
             print("unknown archetype %r. Choose one of: %s" % (args.archetype, ", ".join(arch)))
             return 1
@@ -226,11 +233,11 @@ def main():
         for s in a["slots"]:
             if s["slot"] in ("floating", "exit"):
                 continue
-            ordered = sorted(s["variants"], key=lambda v: (count.get(v, 0), v not in sig, s["variants"].index(v)))
+            ordered = sorted(s["variants"], key=lambda v: (v in sig, count.get(v, 0), s["variants"].index(v)))
             flag = "required" if s.get("required") else ("recommended" if s.get("recommended") else "optional")
-            print("%-12s %-11s %s" % (s["slot"], flag, ", ".join("%s%s (%d)" % (v, "*" if v in sig else "", count.get(v, 0)) for v in ordered)))
+            print("%-12s %-11s %s" % (s["slot"], flag, ", ".join("%s%s (%d)" % (v, "^" if v in sig else "", count.get(v, 0)) for v in ordered)))
         print("\nPick the first variant in each line that fits the content. A count of 0 means no page uses it yet.")
-        print("* = signature motion. build.py needs at least %d of them per page unless page.json sets \"motion\": \"calm\"." % 3)
+        print("^ = expressive tier (3D object, WebGL scene or folding effect): build.py accepts it only when page.json sets \"motion\": \"expressive\" and the brief asks for a 3D or animation-led page.")
 
     if args.check:
         page = load_json(args.check)

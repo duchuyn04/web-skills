@@ -1,5 +1,5 @@
 {
-  "_note": "Second page for the CSS 3D section variants: services-cylinder with 8 cards, services-cube with 4 cards (one-sided and two-sided blocks), industries-slats without photos or links, faq-fold and cta-letter with the email form. Ledgerwise Partners is a fictional company; every figure is sample data. A real page uses one services variant, not both.",
+  "_note": "Second page for the CSS 3D section variants: services-cube with 4 cards (one-sided and two-sided blocks), feature-rows and banner-image for photos, industries-slats without photos or links, faq-fold and cta-letter with the email form. Ledgerwise Partners is a fictional company; every figure is sample data. A real page uses one services variant, not both.",
   "archetype": "it-bpo-partner",
   "preset": "crimson-trust",
   "lang": "en",
@@ -55,76 +55,7 @@
       }
     },
     {
-      "type": "services-cylinder",
-      "data": {
-        "head": {
-          "title": "Eight services for *accounting practices*"
-        },
-        "tabs_label": "Our services",
-        "cards": [
-          {
-            "icon": "file-text",
-            "title": "Bookkeeping",
-            "text": "Bank feeds, coding and reconciliations kept current in Xero, QuickBooks or Sage for each of your clients.",
-            "bullets": [
-              "Monthly or weekly cycles",
-              "Queries batched for you"
-            ]
-          },
-          {
-            "icon": "wallet",
-            "title": "Payroll",
-            "text": "Payroll runs, RTI submissions and payslips prepared for your approval before each pay date."
-          },
-          {
-            "icon": "receipt",
-            "title": "VAT returns",
-            "text": "VAT workings and draft returns prepared from the ledger, with a variance note for anything unusual.",
-            "bullets": [
-              "MTD bridging files",
-              "Variance notes"
-            ]
-          },
-          {
-            "icon": "calculator",
-            "tab": "Year-end",
-            "title": "Year-end accounts",
-            "text": "Draft statutory accounts and working papers ready for your review, in your own templates.",
-            "link": {
-              "label": "See a sample pack",
-              "href": "#get-started"
-            }
-          },
-          {
-            "icon": "landmark",
-            "tab": "Self assessment",
-            "title": "Self assessment returns",
-            "text": "Personal tax returns prepared from client records, with open questions listed before filing."
-          },
-          {
-            "icon": "building",
-            "tab": "Corporation tax",
-            "title": "Corporation tax computations",
-            "text": "CT600 computations and supporting schedules prepared alongside the year-end accounts."
-          },
-          {
-            "icon": "bar-chart",
-            "tab": "Management",
-            "title": "Management accounts",
-            "text": "Monthly management packs with commentary drafted for your review before they reach the client."
-          },
-          {
-            "icon": "clipboard-check",
-            "tab": "Onboarding",
-            "title": "Client onboarding",
-            "text": "Engagement letters, ID checks and ledger setup handled for each new client you take on."
-          }
-        ]
-      }
-    },
-    {
       "type": "services-cube",
-      "id": "service-levels",
       "data": {
         "head": {
           "title": "Turnaround you can *plan around*"
@@ -184,6 +115,53 @@
             "text": "Personal tax returns prepared from client records, with open questions listed before filing."
           }
         ]
+      }
+    },
+    {
+      "type": "feature-rows",
+      "data": {
+        "head": {
+          "title": "How a client file moves through Manila"
+        },
+        "rows": [
+          {
+            "title": "Bookkeeping kept current",
+            "text": "Bank feeds, coding and reconciliations stay up to date in Xero, QuickBooks or Sage, and open questions go to you in one weekly list.",
+            "bullets": [
+              "Weekly or monthly cycles",
+              "One query list per week"
+            ],
+            "photo": {
+              "src": "paperwork-review-desk",
+              "alt": "Ledgerwise accountant reading printed statements at a desk"
+            }
+          },
+          {
+            "title": "Year-end packs ready for review",
+            "text": "Draft statutory accounts and working papers are prepared in your own templates and checked by a qualified accountant before they come back.",
+            "bullets": [
+              "Your templates",
+              "Second review before return"
+            ],
+            "photo": {
+              "src": "calculator-pens-flatlay",
+              "alt": "Calculator, pens and a client folder on a wooden desk"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "banner-image",
+      "data": {
+        "title": "One review desk for every file",
+        "text": "A qualified accountant checks each file in the Manila office before it goes back to your practice.",
+        "cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        },
+        "image": "meeting-room-empty",
+        "align": "left"
       }
     },
     {
@@ -252,7 +230,6 @@
     {
       "type": "cta-letter",
       "data": {
-        "eyebrow": "Contact",
         "title": "Tell us about *your practice*",
         "text": "Leave your email and a team lead will send a short questionnaire about your clients, systems and busy months.",
         "form": {

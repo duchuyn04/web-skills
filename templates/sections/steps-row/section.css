@@ -10,8 +10,13 @@
 .bl-step__title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.15rem; color: var(--text-strong); margin-bottom: .5rem; }
 .bl-step__text { font-size: var(--fs-sm); color: var(--text); line-height: 1.6; }
 .bl-steps__cta { display: flex; justify-content: center; margin-top: 2.25rem; }
+/* Optional step photos: a rounded picture on top of each card, the numeral sits on its lower edge */
+.bl-steps .bl-step__photo { aspect-ratio: 3 / 2; margin-bottom: 0; border-radius: var(--radius); }
+.bl-steps .bl-step__photo img { object-position: 50% 25%; }
+.bl-steps--photos .bl-step__num { position: relative; min-width: 3.1rem; height: 3.1rem; margin: -1.55rem 0 1rem 1rem; font-size: 1.15rem; }
 @media (max-width: 900px) {
   .bl-steps, .bl-steps:has(> .bl-step:nth-child(5)) { grid-template-columns: 1fr; }
   .bl-steps__line { left: calc(clamp(1.5rem, 2.5vw, 2rem) + 1.9rem); right: auto; top: 2rem; bottom: 2rem; width: 2px; height: auto; background: var(--c-accent); transform-origin: top center; transform: scaleY(0); }
   .bl-steps__line.is-in, html:not(.js) .bl-steps__line { transform: scaleY(1); }
+  .bl-steps .bl-step__photo { aspect-ratio: 16 / 9; }
 }

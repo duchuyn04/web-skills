@@ -19,6 +19,7 @@
       "media": "full",
       "cols": null,
       "count": 4,
+      "compose": ["hero-tabs"],
       "note": "large light card with heading left and a 3D visual right, arrows on both sides and four thumbnail tabs under it"
     },
     {

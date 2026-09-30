@@ -5,7 +5,7 @@
   "summary": "Dark hero over an abstract video, a client logo row, a photo metrics band, icon cards, a four-tile offering grid, several logo and award rows, a tabbed case grid on green, a video testimonial and an FAQ list.",
   "header": "mega",
   "sections": [
-    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "note": "left-aligned heading, paragraph and two buttons over a dark video background"},
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-overlap"], "note": "left-aligned heading, paragraph and two buttons over a dark video background"},
     {"form": "logo-strip", "role": "clients", "tone": "light", "count": 8, "optional": true, "note": "centered heading above one row of client logos"},
     {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 3, "count": 3, "note": "three photo tiles, each with a large figure and label"},
     {"form": "cards-icon", "role": "about", "tone": "light", "cols": 4, "count": 4, "note": "centered heading and intro, four small icon cards in a row"},

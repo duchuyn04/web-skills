@@ -20,6 +20,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-overlap", "hero-panels"],
       "note": "heading, text and button on the left over a rounded office photo"
     },
     {

@@ -17,6 +17,7 @@
       "role": "hero",
       "tone": "dark",
       "media": "full",
+      "compose": ["hero-promo"],
       "note": "centered heading with underline accent, short text and a button, then a large rounded photo with a notched corner and two floating stat chips"
     },
     {

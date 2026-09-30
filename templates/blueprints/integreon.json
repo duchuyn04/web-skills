@@ -20,6 +20,7 @@
       "cols": null,
       "count": null,
       "media": "right",
+      "compose": ["hero-overlap"],
       "note": "large heading, checklist and button at left over a faded office photo"
     },
     {

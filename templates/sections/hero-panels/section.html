@@ -1,0 +1,31 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--panels bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-hpanels" data-reveal-group>
+      <div class="bl-hpanels__main bl-tone-dark" data-reveal="fade">
+        <div class="bl-hpanels__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="960" height="640" fetchpriority="high"></div>
+        <div class="bl-hpanels__copy">
+          {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+          <h1 class="bl-h1">{{title}}</h1>
+          <p class="bl-lead bl-hero__lead">{{lead}}</p>
+          <div class="bl-btn-row">
+            <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+            {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+          </div>
+          {{#proof.0}}<ul class="bl-hero__proof">{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+        </div>
+      </div>
+      {{#consult}}<div class="bl-hpanels__consult bl-tone-light" data-reveal>
+        <p class="bl-hpanels__consult-title">{{title}}</p>
+        <a class="bl-link" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+      </div>{{/consult}}
+      <nav class="bl-hpanels__rail" aria-label="{{panels_label}}">
+        {{#panels}}<a class="bl-hpanel bl-tone-dark" href="{{href}}" data-reveal>
+          <span class="bl-hpanel__media" aria-hidden="true"><img src="{{photo.src}}" alt="" width="360" height="640" loading="lazy"></span>
+          <span class="bl-hpanel__label">{{label}}</span>
+          <span class="bl-hpanel__text">{{text}}</span>
+          <span class="bl-hpanel__plus" aria-hidden="true">{{icon:plus}}</span>
+        </a>{{/panels}}
+      </nav>
+    </div>
+  </div>
+</section>

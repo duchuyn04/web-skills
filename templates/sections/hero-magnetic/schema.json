@@ -1,6 +1,6 @@
 {
   "variant": "hero-magnetic",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-fullbleed", "hero-video", "hero-left-text", "hero-center"],
   "summary": "Hero over a calm plane of evenly spaced dots seen slightly from above. Where the pointer moves, the plane dips like fabric under a weight, the dots slide aside and the ones under the most pull turn the brand colour, then spring back. With no pointer, one slow ripple crosses the plane every few seconds. Dots under the copy are dimmed so text stays readable. Spacing, tilt, ripple origin and period, dot shape and colour mix are seeded from the brand name. Needs only the usual hero copy; fits AI data annotation, data operations, trust and safety and analytics outsourcing.",
   "tone": "hero",

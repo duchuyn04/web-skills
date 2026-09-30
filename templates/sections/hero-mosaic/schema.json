@@ -1,0 +1,19 @@
+{
+  "variant": "hero-mosaic",
+  "group": "hero",
+  "forms": ["hero-fullbleed", "hero-center", "hero-video"],
+  "summary": "Full-width hero over a tilted wall of 6-10 real photos (team, office, the work itself) tinted in the brand colour, with a very large bold centered heading, a short centered lead and centered buttons (Kyanon Digital's hero). The photos fade in on load and alternate rows drift sideways a little as the page scrolls. Needs 6 or more photos: the client's own team and office photos are best, library photos are allowed. Suits companies with a people or culture story, or with many service lines that one picture cannot show. Keep the title short: it is set very large and should break into two lines.",
+  "tone": "dark",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["tinted-photo-mosaic", "mosaic-row-drift", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 70},
+    "lead": {"type": "text", "min": 60, "max": 200},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "photos": {"type": "list", "min": 6, "max": 10, "item": {"type": "image"}},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}}
+  }
+}

@@ -9,11 +9,18 @@
     "mono": "JetBrains Mono",
     "google": "family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
+  "fonts_vi": {
+    "_note": "Used for \"lang\": \"vi\": the fonts above lack Vietnamese glyphs.",
+    "heading": "Be Vietnam Pro",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Be+Vietnam+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
   "type": {"heading_weight": 600, "heading_tracking": "-0.02em"},
   "colors": {"primary": "#0b1f44", "accent": "#1d69ed", "accent_2": "#0ea5e9"},
   "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "18px", "radius_btn": "999px"},
   "hero_tone": "light",
-  "eyebrow": "line",
+  "eyebrow": "plain",
   "design": {"edges": "angle", "image_mask": "rounded", "highlight": "color", "media_reveal": "clip"},
   "tone_cycle": ["light", "muted"],
   "tones": {

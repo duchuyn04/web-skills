@@ -5,7 +5,7 @@
   "summary": "Blue full-bleed slider hero, a client logo row, a text and illustration split, a dark metrics band with intro copy, a four-card case row, two rows of award badges, a featured news list, a photo testimonial slider and a blue form band.",
   "header": "simple",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "slider with arrows at both edges: headline, short paragraph and one small button left over a full-width blue photo of two people, dots bottom right"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-tabs"], "note": "slider with arrows at both edges: headline, short paragraph and one small button left over a full-width blue photo of two people, dots bottom right"},
     {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "one row of grey brand logos with small arrows at each end, directly below the hero"},
     {"form": "feature-split", "role": "services", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "small label, heading, paragraph and button left; second heading and paragraph above an isometric illustration right"},
     {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 5, "count": 5, "media": "none", "note": "left-aligned heading, paragraph and cyan button on a deep navy ground with a large circle, then one row of five big figures with captions"},

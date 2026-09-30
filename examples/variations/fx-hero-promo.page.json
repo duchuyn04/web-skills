@@ -1,0 +1,132 @@
+{
+  "_note": "Shows hero-promo (Firstsource-style centered headline with an accent block and a row of photo cards that link into the page). Tallpine Operations is a fictional company; every figure is sample data.",
+  "archetype": "enterprise-cx",
+  "preset": "orange-charcoal",
+  "lang": "en",
+  "site": {
+    "brand": "Tallpine Operations",
+    "brand_mark": "TP",
+    "title": "Tallpine Operations | Customer care and back-office teams",
+    "description": "Tallpine Operations runs customer care, claims processing and finance operations for insurers, lenders and retailers from Manila and Ho Chi Minh City."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Results", "href": "#case-studies"},
+          {"label": "Careers", "href": "#careers"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-promo",
+      "data": {
+        "title": "Operations you can audit. *Results you can sign off.*",
+        "lead": "Tallpine Operations runs customer care, claims and finance teams for insurers, lenders and retailers, with weekly reports your auditors can read.",
+        "primary_cta": {"label": "Talk to our team", "href": "#contact"},
+        "secondary_cta": {"label": "See our services", "href": "#services"},
+        "cards": [
+          {"tag": "Services", "title": "Customer care in six languages", "photo": {"src": "desk-phone-monitors", "alt": "Support agent at a desk with a phone and two monitors"}, "href": "#services"},
+          {"tag": "Case study", "title": "How a lender cut claims backlog to two days", "photo": {"src": "paperwork-review-desk", "alt": "Claims processor reading printed documents at a desk"}, "href": "#case-studies"},
+          {"tag": "In numbers", "title": "1,400 people across two delivery centers", "photo": {"src": "team-meeting-bright-office", "alt": "Team meeting in a glass-walled office"}, "href": "#why-us"},
+          {"tag": "Careers", "title": "Open roles in Manila and Ho Chi Minh City", "photo": {"src": "training-workshop-board", "alt": "New hires in a training session at a flip chart"}, "href": "#careers"}
+        ]
+      }
+    },
+    {
+      "type": "services-tabs",
+      "data": {
+        "head": {"eyebrow": "Three service lines", "title": "Our services", "lead": "Most clients start with one line and add a second after the first quarter."},
+        "tabs": [
+          {"tab": "Customer care", "icon": "headset", "title": "Voice, chat and email support", "text": "Agents answer policy, billing and order questions by phone, chat and email, working in your helpdesk and your tone of voice.", "bullets": ["Tier 1 and tier 2 queues", "Six languages", "Weekend coverage"], "photo": {"src": "desk-phone-monitors", "alt": "Agent answering a customer call at her desk"}},
+          {"tab": "Claims", "icon": "file-text", "title": "Claims intake and processing", "text": "Processors check documents, enter claims in your core system and send edge cases to a senior reviewer before payout.", "bullets": ["Document checks", "Claims keying", "Second review on high-value claims"], "photo": {"src": "paperwork-desk-hands", "alt": "Hands holding a pen over printed claim pages"}},
+          {"tab": "Finance operations", "icon": "calculator", "title": "Payables, receivables and reconciliation", "text": "Accountants process invoices, chase receivables and close bank reconciliations each month against your chart of accounts.", "bullets": ["Invoice processing", "Collections follow-up", "Month-end reconciliation"], "photo": {"src": "bookkeeping-calculator-laptop", "alt": "Accountant working with a calculator and a laptop"}}
+        ]
+      }
+    },
+    {
+      "type": "metrics-panel",
+      "data": {
+        "title": "Tallpine in numbers",
+        "text": "Figures for active programs at the end of the last quarter.",
+        "items": [
+          {"value": 1400, "suffix": "+", "label": "People on client programs"},
+          {"value": 2, "label": "Delivery centers"},
+          {"value": 38, "label": "Active clients"},
+          {"value": 11, "label": "Years in operation"}
+        ]
+      }
+    },
+    {
+      "type": "case-slider",
+      "data": {
+        "head": {"title": "Case studies", "lead": "Scope and results as reported by each client."},
+        "cases": [
+          {"client": "Ridgeway Lending", "industry": "Lending", "photo": {"src": "paperwork-signing-laptop", "alt": "Loan officer signing papers beside a laptop"}, "title": "Cut the claims backlog from nine days to two in one quarter", "results": [{"value": "2 days", "label": "Backlog after 90 days"}, {"value": "14", "label": "Processors added"}]},
+          {"client": "Harborview Insurance", "industry": "Insurance", "photo": {"src": "meeting-handshake", "alt": "Two managers shaking hands across a desk"}, "title": "Moved first notice of loss calls to a dedicated weekend team", "results": [{"value": "24", "label": "Agents on the queue"}, {"value": "7 days", "label": "Weekly coverage"}]},
+          {"client": "Northgate Retail", "industry": "Retail", "photo": {"src": "ecommerce-packing", "alt": "Order being packed at a work table"}, "title": "Took over refunds and order questions ahead of the holiday season", "results": [{"value": "3x", "label": "Seasonal ramp"}, {"value": "60", "label": "Agents at peak"}]}
+        ]
+      }
+    },
+    {
+      "type": "careers-band",
+      "data": {
+        "title": "Work with Tallpine",
+        "text": "We hire support agents, claims processors and accountants in Manila and Ho Chi Minh City, with paid training before you start.",
+        "openings": "32 open positions",
+        "perks": ["Paid training", "Day shifts available"],
+        "cta": {"label": "View open roles", "href": "#contact"},
+        "photos": [
+          {"src": "training-workshop-board", "alt": "New hires in a training session"},
+          {"src": "team-coworking-laptops", "alt": "Team members working at a shared table"},
+          {"src": "office-worker-laptop", "alt": "Team member typing on a laptop in a bright office"}
+        ]
+      }
+    },
+    {
+      "type": "contact-split",
+      "data": {
+        "head": {"title": "Contact *Tallpine Operations*"},
+        "form": {
+          "title": "Tell us about the program",
+          "text": "Share the work and the volume you have in mind.",
+          "submit_label": "Send message",
+          "success_title": "Thanks, your message is in",
+          "success_text": "A program lead will reply by email."
+        },
+        "aside": {
+          "title": "Our offices",
+          "points": ["Two delivery centers", "Weekly program reports"],
+          "offices": [
+            {"flag": "ph", "name": "Manila", "address": "Ayala Avenue, Makati City, Metro Manila, Philippines"},
+            {"flag": "vn", "name": "Ho Chi Minh City", "address": "Nguyen Hue Boulevard, District 1, Ho Chi Minh City, Vietnam"}
+          ],
+          "email_label": "Email",
+          "email": "hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tallpine Operations runs customer care, claims and finance teams from Manila and Ho Chi Minh City.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer care", "href": "#services"},
+            {"label": "Claims", "href": "#services"},
+            {"label": "Finance operations", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Case studies", "href": "#case-studies"},
+            {"label": "Careers", "href": "#careers"},
+            {"label": "Contact", "href": "#contact"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "variant": "hero-overlap",
+  "group": "hero",
+  "forms": ["hero-fullbleed", "hero-video", "hero-center"],
+  "summary": "Photo-led hero after Foundever: an edge-to-edge people photo with a very large two-line heading over its top-left corner, and a solid white card that overlaps the lower-left edge of the photo and runs below it, holding the lead, the buttons and up to three proof ticks. Up to three figures sit in a quiet row beside the card. The photo settles from a slight zoom on load and moves a little slower than the page on scroll; the heading words rise once. Needs one wide photo of real people at work (client photo first, library photo otherwise) with the subject away from the top-left corner, a short heading (about 2-6 words per line), and the usual hero copy. Suits contact centers, CX and staffing companies whose people are the product.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["photo-settle-zoom", "overlap-card-rise", "heading-word-rise", "photo-scroll-drift", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "photo": {"$ref": "photo"},
+    "focus": {"type": "enum", "values": ["top", "center", "bottom"], "default": "center"},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "stats": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}}
+  }
+}

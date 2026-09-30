@@ -225,7 +225,8 @@
       "label": "Ngôn ngữ hỗ trợ",
       "note": "Tiếng Việt, Anh, Nhật"
      }
-    ]
+    ],
+    "image": "team-meeting-table"
    }
   },
   {
@@ -340,13 +341,16 @@
       "q": "Dữ liệu của doanh nghiệp được bảo mật ra sao?",
       "a": "Mộc Lan BPO áp dụng hệ thống quản lý an toàn thông tin theo ISO 27001. Quyền truy cập được cấp theo từng vị trí và thu hồi ngay khi nhân sự nghỉ việc."
      }
-    ]
+    ],
+    "photo": {
+     "src": "portrait-woman-team-lead",
+     "alt": "Trưởng nhóm chăm sóc khách hàng của Mộc Lan BPO tại văn phòng"
+    }
    }
   },
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Liên hệ",
     "title": "Nhận *báo giá* dịch vụ",
     "lead": "Cho chúng tôi biết dịch vụ doanh nghiệp cần và quy mô dự kiến. Bộ phận kinh doanh sẽ liên hệ để khảo sát và gửi báo giá.",
     "points": [

@@ -1,0 +1,28 @@
+{
+  "variant": "testimonials-rated",
+  "group": "proof",
+  "forms": ["testimonial-block", "carousel-cards", "cards-text"],
+  "summary": "Client reviews as a rated carousel: heading and an optional overall score on the left with previous and next buttons, and wide review cards on the right, each with its star rating, the quote, a photo or initials, the reviewer's name, role and company. Drag, swipe, arrow keys and the buttons all move it. Needs 3-8 real reviews from the brief, word for word.",
+  "tone": "auto",
+  "anchor": "reviews",
+  "shared": ["slider"],
+  "animations": ["reveal", "review-carousel"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "rating": {"type": "object", "required": false, "fields": {
+      "score": {"type": "text", "min": 1, "max": 8},
+      "label": {"type": "text", "min": 6, "max": 70}
+    }},
+    "items": {"type": "list", "min": 3, "max": 8, "item": {"type": "object", "fields": {
+      "stars": {"type": "enum", "values": ["5", "4", "3"], "default": "5"},
+      "quote": {"type": "text", "min": 60, "max": 320},
+      "name": {"type": "text", "min": 3, "max": 40},
+      "role": {"type": "text", "min": 3, "max": 60},
+      "company": {"type": "text", "min": 2, "max": 48},
+      "avatar": {"type": "image", "required": false}
+    }}},
+    "rating_label": {"type": "text", "min": 3, "max": 30, "default": "Rating"},
+    "prev_label": {"type": "text", "min": 2, "max": 24, "default": "Previous review"},
+    "next_label": {"type": "text", "min": 2, "max": 24, "default": "Next review"}
+  }
+}

@@ -387,52 +387,53 @@
    }
   },
   {
-   "type": "industries-tiles",
+   "type": "image-cards",
+   "id": "industries",
    "data": {
     "head": {
      "title": "Industries we serve",
-     "lead": "Banking, telecom, retail, healthcare and insurance programs each have their own training track and compliance lead."
+     "lead": "Banking, retail, insurance and software programs each have their own training track and compliance lead."
     },
-    "tiles": [
+    "cards": [
      {
-      "icon": "landmark",
+      "tag": "Banking",
       "title": "Banking and fintech",
-      "text": "Card disputes, onboarding checks and collections with PCI DSS controls."
+      "text": "Card disputes, onboarding checks and collections with PCI DSS controls.",
+      "photo": {
+       "src": "bookkeeping-calculator-laptop",
+       "alt": "Hands on a calculator in front of a laptop with an accounting app"
+      },
+      "href": "#contact"
      },
      {
-      "icon": "globe",
-      "title": "Telecom",
-      "text": "Billing questions, plan changes and device setup for prepaid and postpaid users."
-     },
-     {
-      "icon": "shopping-cart",
+      "tag": "Retail",
       "title": "Retail and ecommerce",
-      "text": "Order tracking, returns and marketplace seller support during peak seasons."
+      "text": "Order tracking, returns and marketplace seller support during peak seasons.",
+      "photo": {
+       "src": "warehouse-aisle-boxes",
+       "alt": "Warehouse aisle lined with stacked cardboard boxes"
+      },
+      "href": "#contact"
      },
      {
-      "icon": "heart-pulse",
-      "title": "Healthcare",
-      "text": "Appointment scheduling, benefits questions and claims intake under HIPAA rules."
+      "tag": "Insurance",
+      "title": "Insurance claims and policies",
+      "text": "First notice of loss, policy servicing and renewal outreach.",
+      "photo": {
+       "src": "paperwork-review-desk",
+       "alt": "Person reading printed documents at a wooden desk"
+      },
+      "href": "#contact"
      },
      {
-      "icon": "plane",
-      "title": "Travel",
-      "text": "Booking changes, refunds and disruption handling across time zones."
-     },
-     {
-      "icon": "zap",
-      "title": "Energy and utilities",
-      "text": "Meter reads, outage calls and payment plans for residential customers."
-     },
-     {
-      "icon": "shield-check",
-      "title": "Insurance",
-      "text": "First notice of loss, policy servicing and renewal outreach."
-     },
-     {
-      "icon": "code",
+      "tag": "Software",
       "title": "Software and SaaS",
-      "text": "Account support, onboarding sessions and tier 2 technical help."
+      "text": "Account support, onboarding sessions and tier 2 technical help.",
+      "photo": {
+       "src": "developer-headphones-monitors",
+       "alt": "Engineer in headphones working at a desk with three screens"
+      },
+      "href": "#contact"
      }
     ]
    }
@@ -680,7 +681,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "aside": {
@@ -718,7 +718,6 @@
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Talk to our *solutions team*",
     "lead": "Tell us what you want to outsource. A solutions lead replies within two business days with a team design, timeline and price range.",
     "points": [

@@ -41,7 +41,7 @@
    }
   },
   {
-   "type": "hero-dark-network",
+   "type": "hero-fullbleed",
    "data": {
     "eyebrow": "Data annotation and model evaluation",
     "title": "Human data for *AI training and evaluation*",
@@ -54,29 +54,12 @@
      "label": "How it works",
      "href": "#process"
     },
-    "panel": {
-     "title": "RLHF batch 2291",
-     "status": "Live",
-     "rows": [
-      {
-       "label": "Tasks completed today",
-       "value": "18,420"
-      },
-      {
-       "label": "Inter-rater agreement",
-       "value": "0.91"
-      },
-      {
-       "label": "Gold-set accuracy",
-       "value": "98.3%"
-      },
-      {
-       "label": "Median task time",
-       "value": "2m 14s"
-      }
-     ]
-    },
-    "chips": [
+    "proof": [
+     "SOC 2 Type II audited",
+     "RLHF and red-teaming programs"
+    ],
+    "image": "team-engineers-screen",
+    "stats": [
      {
       "value": "1,800+",
       "label": "Vetted annotators"
@@ -86,12 +69,12 @@
       "label": "Languages"
      },
      {
-      "value": "24h",
-      "label": "Pilot turnaround"
+      "value": "98.3%",
+      "label": "Gold-set accuracy"
      },
      {
-      "value": "SOC 2",
-      "label": "Type II audited"
+      "value": "24h",
+      "label": "Pilot turnaround"
      }
     ]
    }
@@ -143,6 +126,10 @@
       "link": {
        "label": "Talk to an expert",
        "href": "#contact"
+      },
+      "photo": {
+       "src": "developer-headphones-monitors",
+       "alt": "Rater in headphones comparing model answers across three screens"
       }
      },
      {
@@ -231,7 +218,8 @@
       "label": "Days to first batch",
       "note": "Standard pilot"
      }
-    ]
+    ],
+    "image": "team-meeting-table"
    }
   },
   {
@@ -245,8 +233,8 @@
       "client": "Heliograph AI",
       "industry": "Foundation models",
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Annotators reviewing model responses on a laptop"
+       "src": "code-review-pair",
+       "alt": "Two annotators checking model responses on a laptop"
       },
       "title": "Built a 300-person coding RLHF team in six weeks",
       "results": [
@@ -283,8 +271,8 @@
       "client": "Meridian ML",
       "industry": "Enterprise AI",
       "photo": {
-       "src": "team-coworking-laptops",
-       "alt": "Evaluation team comparing model outputs"
+       "src": "laptop-conference-room",
+       "alt": "Evaluation lead comparing chatbot answers on a laptop"
       },
       "title": "Ran blind evals across 12 languages for a support chatbot",
       "results": [
@@ -362,8 +350,8 @@
       "meta": "8 min read",
       "title": "Why rater agreement drops after week three, and how to stop it",
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Raters comparing two model answers"
+       "src": "presenter-planning-board",
+       "alt": "Quality lead walking raters through calibration notes"
       },
       "href": "#contact"
      },
@@ -372,8 +360,8 @@
       "meta": "5 min read",
       "title": "Keypoint guidelines that cut rework by a third",
       "photo": {
-       "src": "office-interior",
-       "alt": "Secure labeling floor"
+       "src": "warehouse-aisle-boxes",
+       "alt": "Warehouse aisle of the kind shown in keypoint labeling footage"
       },
       "href": "#contact"
      },
@@ -413,13 +401,16 @@
       "q": "What turnaround can we expect?",
       "a": "Pilot batches return in 10 days. Production batches follow the service levels agreed in your statement of work."
      }
-    ]
+    ],
+    "photo": {
+     "src": "training-workshop-board",
+     "alt": "Annotation lead training a new rater cohort at a flip chart"
+    }
    }
   },
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Request a *pilot plan*",
     "lead": "Share the task type and volume. Our solutions engineer sends a pilot scope, timeline and price within two business days.",
     "points": [

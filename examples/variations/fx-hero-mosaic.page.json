@@ -1,0 +1,88 @@
+{
+  "_note": "Shows hero-mosaic. Redwater Digital is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "crimson-trust",
+  "lang": "en",
+  "site": {
+    "brand": "Redwater Digital",
+    "brand_mark": "RD",
+    "title": "Redwater Digital | Software and back-office teams in Ho Chi Minh City",
+    "description": "Redwater Digital builds software and runs back-office work for companies in Japan, Singapore and Australia, with 420 staff in Ho Chi Minh City."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Contact", "href": "#get-started"},
+          {"label": "About", "href": "#top"}
+        ],
+        "cta": {"label": "Talk to our team", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-mosaic",
+      "data": {
+        "title": "Software and operations teams *built in Vietnam*",
+        "lead": "Redwater Digital builds web and mobile products and runs finance and support work for clients in Japan, Singapore and Australia.",
+        "primary_cta": {"label": "Talk to our team", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "photos": [
+          "team-coworking-laptops",
+          "developer-headphones-monitors",
+          "team-meeting-bright-office",
+          "code-review-pair",
+          "training-workshop-board",
+          "desk-phone-monitors",
+          "team-engineers-screen",
+          "presenter-planning-board"
+        ],
+        "proof": ["420 staff in Ho Chi Minh City", "Founded in 2012"]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"title": "Our services"},
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Product engineering",
+            "text": "Web and mobile teams that ship in two-week sprints and demo every release.",
+            "bullets": ["React and Flutter teams", "Test automation", "Release notes each sprint"]
+          },
+          {"icon": "receipt", "title": "Finance operations", "text": "Bookkeeping, payables and month-end close in your ledger."},
+          {"icon": "headset", "title": "Customer support", "text": "Email and chat support in your help desk and your tone of voice."},
+          {"icon": "database", "title": "Data processing", "text": "Catalogue updates, document entry and checks against your source files."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Meet the team that would *run your work*",
+        "text": "A 30 minute call with a delivery lead, then a written plan for the first month.",
+        "primary_cta": {"label": "Talk to our team", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Redwater Digital builds software and runs back-office work from Ho Chi Minh City.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Product engineering", "href": "#services"},
+            {"label": "Finance operations", "href": "#services"},
+            {"label": "Customer support", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

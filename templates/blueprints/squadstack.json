@@ -20,6 +20,7 @@
       "media": "right",
       "cols": 4,
       "count": 4,
+      "compose": ["hero-dashboard"],
       "note": "copy and two buttons left, product visual right, a row of four figures under both"
     },
     {

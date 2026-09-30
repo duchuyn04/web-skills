@@ -5,7 +5,7 @@
   "summary": "Light page: a photo hero with a lead form card on the left, a logo row and a service card slider, a benefits grid, a FAQ accordion, a testimonial slider on a strong brand-colour ground and a contact form with office details.",
   "header": "mega",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "light", "media": "full", "note": "white form card with heading and three fields on the left over a wide photo of two handshaking people"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "light", "media": "full", "compose": ["hero-overlap"], "note": "white form card with heading and three fields on the left over a wide photo of two handshaking people"},
     {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 6, "count": 6, "optional": true, "note": "centered heading and one row of client logos"},
     {"form": "carousel-cards", "role": "services", "tone": "light", "cols": 4, "count": 4, "note": "centered heading and paragraph, four icon cards with a link in a slider with dots"},
     {"form": "cards-icon", "role": "about", "tone": "muted", "cols": 3, "count": 6, "note": "heading and paragraph left in the first column, six white check-icon cards staggered in two rows of three"},

@@ -2,7 +2,7 @@
   "variant": "contact-split",
   "group": "cta",
   "forms": ["form"],
-  "summary": "Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email.",
+  "summary": "Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email. Optional aside.photo: a real photo of the office or the team at the top of the brand-colour panel, above the reasons and offices. Optional map: an embedded Google Map of the main office under the card, with an Open in Google Maps link. With both, the photo shows the place inside the card and the map sits under the card.",
   "tone": "auto",
   "anchor": "contact",
   "animations": ["reveal"],
@@ -23,6 +23,7 @@
       "action": {"type": "href", "required": false}
     }},
     "aside": {"type": "object", "fields": {
+      "photo": {"$ref": "photo", "required": false},
       "title": {"type": "text", "min": 5, "max": 40},
       "points": {"type": "list", "min": 2, "max": 6, "item": {"type": "text", "min": 6, "max": 90}},
       "offices": {"type": "list", "min": 1, "max": 4, "item": {"type": "object", "fields": {
@@ -33,6 +34,11 @@
       }}},
       "email_label": {"type": "text", "min": 3, "max": 30, "required": false},
       "email": {"type": "email", "required": false}
+    }},
+    "map": {"type": "object", "required": false, "fields": {
+      "query": {"type": "text", "min": 3, "max": 160},
+      "title": {"type": "text", "min": 3, "max": 60, "default": "Office map"},
+      "open_label": {"type": "text", "min": 2, "max": 36, "default": "Open in Google Maps"}
     }}
   }
 }

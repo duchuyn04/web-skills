@@ -30,6 +30,9 @@ Photos marked (card) are 1024 px wide: use them in cards, tiles and case slides,
 | Key | What it shows | Good for | Not for |
 |:---|:---|:---|:---|
 | `accounting-documents-calculator` | Close-up of hands writing in a ledger next to a desk calculator, binders and charts | Bookkeeping, accounting, finance and accounting BPO | |
+| `paperwork-review-desk` | A person at a wooden desk reading printed documents, warm window light, hands and papers in focus | Accounting, payroll, document processing, back office | |
+| `paperwork-desk-hands` | Hands holding a pen over printed pages on a desk, phone to one side | Bookkeeping, document review, contract work | |
+| `calculator-pens-flatlay` | Calculator, pens and an orange folder on a wooden desk, seen from above | Accounting, tax, finance and accounting BPO | |
 | `bookkeeping-calculator-laptop` | Hands on a calculator in front of a laptop showing an accounting app | Bookkeeping, invoicing, payroll, accounts payable | |
 | `paperwork-signing-laptop` | Man in a brown jacket leaning over a desk signing papers beside a laptop | Document processing, contracts, KYC, claims | |
 | `finance-chart-screen` | Dark screen with market charts and figures | Banking, fintech, data analytics industry cards | People-focused sections (no people) |

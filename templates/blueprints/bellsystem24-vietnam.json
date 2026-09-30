@@ -20,6 +20,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-overlap", "hero-mosaic"],
       "note": "centered heading over a wide photo of people in motion, no buttons"
     },
     {

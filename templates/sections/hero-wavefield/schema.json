@@ -1,6 +1,6 @@
 {
   "variant": "hero-wavefield",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-fullbleed", "hero-video", "hero-center"],
   "summary": "Full-width hero over a wide field of dots seen from a low angle, lifted by three slow crossing swells; the crests catch the brand colour and the pointer raises a soft mound under it. The copy sits in the calm space above the field, stats at the foot. Swell directions, lengths and speeds are seeded from the brand name. Needs only the usual hero copy; fits contact centers, CX and voice programs.",
   "tone": "hero",

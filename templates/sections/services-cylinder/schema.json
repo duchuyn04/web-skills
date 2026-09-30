@@ -1,6 +1,6 @@
 {
   "variant": "services-cylinder",
-  "group": "services", "signature": true,
+  "group": "services", "signature": true, "tier": "expressive",
   "forms": ["carousel-cards", "tabs"],
   "reshape": true,
   "summary": "5-8 service cards stand on a slowly tilted 3D drum (CSS 3D). The front card faces the visitor; the cards beside it curve away and fade. A numbered scale of service names above the drum (APG tabs) and previous/next buttons below it turn the drum to the chosen card. When the section is first seen the drum turns in from a brand-seeded offset; tilt, turn direction and card spacing are seeded from the brand name. Phones get a plain list. Needs 5-8 real service lines; with 3-4 use services-tabs or services-bento.",

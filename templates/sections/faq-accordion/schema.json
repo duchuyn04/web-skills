@@ -2,12 +2,13 @@
   "variant": "faq-accordion",
   "group": "faq",
   "forms": ["faq-accordion"],
-  "summary": "Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation.",
+  "summary": "Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation. Optional photo (a real support or team photo) under the contact card in the left column, so the answers sit next to the people who give them.",
   "tone": "auto",
   "anchor": "faq",
   "animations": ["smooth-accordion-expansion"],
   "fields": {
     "head": {"$ref": "head"},
+    "photo": {"$ref": "photo", "required": false},
     "aside": {"type": "object", "required": false, "fields": {
       "title": {"type": "text", "min": 8, "max": 60},
       "text": {"type": "text", "min": 30, "max": 160},

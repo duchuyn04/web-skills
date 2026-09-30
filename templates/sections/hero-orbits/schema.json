@@ -1,6 +1,6 @@
 {
   "variant": "hero-orbits",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Hero with a 3D gyroscope on the right: a core carrying the brand monogram and three tilted orbit rings that carry the company's real service lines as chips. Chips in front grow and sharpen, chips behind fade and pass behind the core; the whole system leans toward the pointer and a chip under the pointer stops its ring. Ring tilts, speeds and directions are seeded from the brand name. Needs 3-9 service names from the brief.",
   "tone": "hero",

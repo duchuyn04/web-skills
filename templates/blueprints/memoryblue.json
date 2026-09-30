@@ -5,7 +5,7 @@
   "summary": "Gradient hero with award badges, a four figure row, a photo and video feature, a five column service row, two alternating feature splits, a video block, a dark data panel, a logo row, a call to action, an FAQ and a blog row.",
   "header": "simple",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "left aligned headline and two buttons over a blue gradient, award badges at the right edge"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-news"], "note": "left aligned headline and two buttons over a blue gradient, award badges at the right edge"},
     {"form": "metrics", "role": "metrics", "tone": "light", "cols": 4, "count": 4, "note": "small heading and a row of four large coloured figures with captions"},
     {"form": "feature-split", "role": "about", "tone": "dark", "media": "right", "note": "text left over a city photo, a video thumbnail right"},
     {"form": "cards-text", "role": "services", "tone": "muted", "cols": 5, "count": 5, "note": "centered heading and paragraph, five columns each led by a large letter with a short text and link"},

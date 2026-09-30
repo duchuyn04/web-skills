@@ -45,7 +45,9 @@ Presets that set them: `corporate-blue` (angle edges, clip reveal), `crimson-tru
 
 ## Heading labels
 
-A section title may carry a small label (eyebrow) when it adds information the title does not (a service name, a region, a date). Use it on at most half of the sections; build.py warns above half and fails when every section head has one or when the label repeats a word of its title. `orange-charcoal` and `teal-fresh` draw it as a pill with a thin border; the others draw a short line before sentence-case text. `"theme": {"eyebrow": "caps"}` sets short uppercase labels tracked 8%. To switch on any preset, set `"theme": {"eyebrow": "pill"}`, `"line"` or `"caps"`.
+A section title may carry a small label (eyebrow) when it adds information the title does not (a service name, a region, a date). Use it on at most a third of the section titles; build.py fails above that and when the label repeats a word of its title. `orange-charcoal` and `teal-fresh` draw it as a pill with a thin border; the others set it as plain sentence-case text in the accent colour, with no line before it (a short rule in front of a label reads as an em dash). `"theme": {"eyebrow": "caps"}` sets short uppercase labels tracked 8%, except on Vietnamese pages, where capitals with diacritics are hard to read and build.py keeps plain labels. To switch on any preset, set `"theme": {"eyebrow": "pill"}`, `"plain"` or `"caps"` (`"line"` is still accepted and renders as plain).
+
+Fonts for Vietnamese pages: `corporate-blue` (Poppins), `clean-minimal` (DM Sans), `orange-charcoal` (Schibsted Grotesk) and `teal-fresh` (Outfit) use families without Vietnamese glyphs, so each preset carries `fonts_vi` (Be Vietnam Pro, Public Sans, Archivo, Lexend) that build.py uses for `"lang": "vi"`. A preset added later must list only families from `VI_FONTS` in build.py or carry its own `fonts_vi`; build.py fails otherwise.
 
 ## Tones
 

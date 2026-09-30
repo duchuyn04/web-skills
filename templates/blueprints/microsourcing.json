@@ -5,7 +5,7 @@
   "summary": "Dark split hero with a round photo, a dark intro split, a logo slider, a dark partnership split, a light metrics block, a compliance list, a dark testimonial slider, a careers split and a dark closing form.",
   "header": "simple",
   "sections": [
-    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "large heading, short text and button left, round photo with small floating stat cards right"},
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "compose": ["hero-portrait"], "note": "large heading, short text and button left, round photo with small floating stat cards right"},
     {"form": "feature-split", "role": "services", "tone": "dark", "media": "left", "note": "heading, two paragraphs and two buttons over a soft background image"},
     {"form": "logo-strip", "role": "clients", "tone": "dark", "count": 6, "optional": true, "note": "single row of client logos sliding"},
     {"form": "feature-split", "role": "about", "tone": "dark", "media": "right", "note": "small eyebrow, heading and paragraphs left, photo right"},

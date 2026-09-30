@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-overlap"],
       "note": "large heading top left over a full-width photo, a white card with text and two buttons below it"
     },
     {

@@ -17,6 +17,7 @@
       "role": "hero",
       "tone": "dark",
       "media": "full",
+      "compose": ["hero-panels"],
       "note": "rounded photo panel: serif heading, text and a row of award marks left, white consultation card and tall vertical sector panels right, round arrows below"
     },
     {

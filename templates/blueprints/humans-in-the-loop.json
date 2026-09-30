@@ -5,7 +5,7 @@
   "summary": "Sky-blue split hero with a logo row on its lower edge, a centered intro, three image cards, a map split about social mission, stacked video-style testimonials, story cards, a social impact block with figures, a team split and a purple closing CTA.",
   "header": "simple",
   "sections": [
-    {"form": "hero-split", "role": "hero", "tone": "muted", "media": "right", "note": "coloured ground, heading, short text and two buttons left, cut-out image right, client logo row along the bottom edge"},
+    {"form": "hero-split", "role": "hero", "tone": "muted", "media": "right", "compose": ["hero-portrait"], "note": "coloured ground, heading, short text and two buttons left, cut-out image right, client logo row along the bottom edge"},
     {"form": "text-block", "role": "intro", "tone": "light", "media": "none", "note": "small eyebrow, centered heading and one line of text"},
     {"form": "cards-image", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "three columns, each with a large annotated image, title and short text, one button below"},
     {"form": "feature-split", "role": "about", "tone": "light", "media": "right", "note": "wide heading on top, text and button left, world map with pins right"},

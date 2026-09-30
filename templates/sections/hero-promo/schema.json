@@ -1,0 +1,23 @@
+{
+  "variant": "hero-promo",
+  "group": "hero",
+  "forms": ["hero-center", "hero-left-text"],
+  "summary": "Centered hero after Firstsource: a large headline whose *accent* part sits on a solid brand-colour block, a short centered lead and one or two buttons, then a row of 3 or 4 tall photo cards that link into the page (a service line, a case study, careers, a report). Each card has a real photo, a small tag and a title on a dark shade, and a round arrow. Suits enterprise and multi-service BPOs with several things worth a click; every card href must point at a real section or page, never at a placeholder.",
+  "tone": "light",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["accent-block-wipe", "promo-cards-rise", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "lead": {"type": "text", "min": 60, "max": 200},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "cards": {"type": "list", "min": 3, "max": 4, "item": {"type": "object", "fields": {
+      "tag": {"type": "text", "min": 2, "max": 24, "required": false},
+      "title": {"type": "text", "min": 6, "max": 60},
+      "photo": {"$ref": "photo"},
+      "href": {"type": "href"}
+    }}}
+  }
+}

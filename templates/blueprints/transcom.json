@@ -5,7 +5,7 @@
   "summary": "Dark photo hero with left copy and three pill buttons, a white tabbed result-card section, a dark service card row with round photos and a short call band, a pale world map with a figure row, a slider of article cards, an accordion list and a closing band.",
   "header": "simple",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "two-line large headline left over a full-width team photo, three pill buttons below"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-overlap"], "note": "two-line large headline left over a full-width team photo, three pill buttons below"},
     {"form": "tabs", "role": "cases", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "centered heading and small line, pill tab switch, four pastel result cards with photo on top, big figure, divider and short text; round arrows below"},
     {"form": "cards-image", "role": "services", "tone": "dark", "cols": 4, "count": 4, "media": "none", "note": "centered heading and line on a dark patterned ground, four white cards each topped by a round photo that overlaps the edge, title and paragraph"},
     {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "optional": true, "note": "centered heading, one line and a single yellow button on a deep green ground, continues the card section"},

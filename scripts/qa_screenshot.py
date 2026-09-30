@@ -27,6 +27,9 @@ Look at every screenshot yourself after the script passes.
 import argparse
 import re
 import sys
+for _stream in (sys.stdout, sys.stderr):  # Vietnamese text must not crash printing on a cp1252 console or pipe
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 from pathlib import Path
 
 MIN_FPS = 30
@@ -75,6 +78,16 @@ CHECK_JS = r"""
 }
 """
 
+FREEZE_JS = r"""
+() => {
+  const s = document.createElement('style');
+  s.id = 'bl-qa-freeze';
+  s.textContent = '.js [data-reveal]{opacity:1!important;transform:none!important;}'
+    + '.js.bl-media-clip [data-reveal] :is(.bl-frame,.bl-mosaic__tile) img{clip-path:none!important;transition:none!important;}';
+  document.head.appendChild(s);
+}
+"""
+
 SCROLL_JS = r"""
 async () => {
   const step = Math.round(window.innerHeight * 0.7);
@@ -87,6 +100,11 @@ async () => {
   go(document.documentElement.scrollHeight);
   await new Promise((r) => setTimeout(r, 300));
   document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
+  /* full-page shots showed empty frames where lazy photos had not loaded yet: load every photo before the shot */
+  document.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
+  const pending = [].filter.call(document.images, (img) => !img.complete)
+    .map((img) => new Promise((r) => { img.addEventListener('load', r, { once: true }); img.addEventListener('error', r, { once: true }); }));
+  await Promise.race([Promise.all(pending), new Promise((r) => setTimeout(r, 6000))]);
   go(0);
   await new Promise((r) => setTimeout(r, 2300));
 }
@@ -585,7 +603,11 @@ def main():
             page.evaluate(SCROLL_JS)
             res = page.evaluate(CHECK_JS)
             shot = out / ("page-%d.png" % w)
+            # the full-page capture grows the viewport, which restarts photo reveals (clip wipes) mid-shot and left
+            # empty frames in page-*.png; hold every reveal at its end state for this one shot
+            page.evaluate(FREEZE_JS)
             page.screenshot(path=str(shot), full_page=True)
+            page.evaluate("() => { const s = document.getElementById('bl-qa-freeze'); if (s) s.remove(); }")
             problems, warnings = [], []
             problems += ["overflow: " + s for s in res["overflow"]]
             if res["overflowCount"] > len(res["overflow"]):

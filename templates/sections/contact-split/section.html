@@ -30,6 +30,7 @@
       </div>
       {{#aside}}
       <aside class="bl-csplit__aside bl-tone-accent">
+        {{#photo}}<figure class="bl-csplit__photo"><img src="{{src}}" alt="{{alt}}" width="560" height="320" loading="lazy" decoding="async"></figure>{{/photo}}
         <h3 class="bl-csplit__title">{{title}}</h3>
         <ul class="bl-checks">{{#points}}<li>{{icon:check}}<span>{{.}}</span></li>{{/points}}</ul>
         <ul class="bl-offices">
@@ -45,5 +46,11 @@
       </aside>
       {{/aside}}
     </div>
+    {{#map}}
+    <div class="bl-csplit__map" data-reveal="fade">
+      <iframe tabindex="-1" title="{{title}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://maps.google.com/maps?q={{urlq:query}}&amp;z=15&amp;output=embed"></iframe>
+      <a class="bl-csplit__open" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query={{urlq:query}}">{{open_label}}{{arrow}}</a>
+    </div>
+    {{/map}}
   </div>
 </section>

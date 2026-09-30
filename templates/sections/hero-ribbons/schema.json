@@ -1,6 +1,6 @@
 {
   "variant": "hero-ribbons",
-  "group": "hero", "signature": true, "aliases": ["hero-wave"],
+  "group": "hero", "signature": true, "tier": "expressive", "aliases": ["hero-wave"],
   "forms": ["hero-split"],
   "summary": "Brand-colour hero with animated line ribbons that bend away from the pointer, a headline that rises word by word with a marker sweep on the accent words, and a carousel on the right that alternates a rotating dotted globe (drag to turn, flight arcs from the home city) with arched photo slides. One button pauses every motion. Echo: the same ribbons run behind the dark sections further down (up to three); list section ids in echo to choose them, or set echo to [\"none\"] to turn it off.",
   "tone": "accent",

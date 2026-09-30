@@ -3,16 +3,17 @@
   "group": "services",
   "forms": ["cards-text", "cards-icon"],
   "open": true,
-  "summary": "Bento grid of 4 or 5 service cards; the first card is large with a check list. On hover a card rises 3px and its border turns the brand colour.",
+  "summary": "Bento grid of 4 or 5 service cards; the first card is large with a check list. On hover a card with a link rises 3px and its border turns the brand colour. Optional \"photo\" on the first card: a real photo of the work (team at desks, a support floor, paperwork) fills the top of the large card above its title, text and check list, and the icon is dropped there; the photo zooms slightly on hover when the card has a link. A photo on any other card is ignored.",
   "tone": "auto",
   "anchor": "services",
-  "animations": ["card-hover-lift", "reveal"],
+  "animations": ["card-hover-lift", "bento-photo-zoom", "reveal"],
   "fields": {
     "head": {"$ref": "head"},
     "cards": {
       "type": "list", "min": 4, "max": 5,
       "item": {"type": "object", "fields": {
         "icon": {"type": "icon"},
+        "photo": {"$ref": "photo", "required": false},
         "title": {"type": "text", "min": 4, "max": 44},
         "text": {"type": "text", "min": 40, "max": 190},
         "bullets": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 3, "max": 56}},

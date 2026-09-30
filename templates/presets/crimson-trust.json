@@ -13,7 +13,7 @@
   "colors": {"primary": "#1c1d26", "accent": "#de1b35", "accent_2": "#f59e0b"},
   "shape": {"radius_sm": "4px", "radius": "6px", "radius_lg": "10px", "radius_btn": "6px"},
   "hero_tone": "light",
-  "eyebrow": "line",
+  "eyebrow": "plain",
   "design": {"edges": "none", "image_mask": "angle", "highlight": "underline", "media_reveal": "fade"},
   "tone_cycle": ["light", "muted"],
   "tones": {

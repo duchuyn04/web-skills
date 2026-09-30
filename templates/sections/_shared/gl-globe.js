@@ -10,7 +10,7 @@
      tour  a large whole globe right of centre, for a scroll-driven tour
    "rise" and "tour" are solid: a body sphere with soft light, an atmosphere rim in the accent colour, dots lit from the
    upper left and no far side showing through.
-   Overrides on the host: data-globe-scale (multiplies the radius), data-globe-x and data-globe-y (centre as a share of the
+   Overrides on the host: data-globe-glow (atmosphere strength, default 1), data-globe-scale (multiplies the radius), data-globe-x and data-globe-y (centre as a share of the
    box width and height) and data-globe-tilt (degrees the pins sit above the disc centre; default 30 for rise, else 0).
    API for section scripts (host.__blgl.vis): focus(lat, lon) turns the globe to face a point and marks the pin there
    with .is-focus; focus(null) goes back to the sway. Mask: scripts/make_globe_mask.py. */
@@ -66,7 +66,7 @@
     var u = {
       uIntro: { value: 0 }, uPx: { value: 2 }, uT: { value: 0 },
       uFar: { value: solid ? 0 : 0.12 }, uLit: { value: solid ? 1 : 0 },
-      uLand: { value: ctx.mix(col.muted, col.text, 0.45) }, uSea: { value: col.muted }, uHot: { value: col.blend }
+      uLand: { value: solid ? ctx.mix(col.blend, col.text, 0.4) : ctx.mix(col.muted, col.text, 0.45) }, uSea: { value: col.muted }, uHot: { value: col.blend }
     };
     Object.assign(u, ctx.guardUniforms);
     var FACING = [
@@ -101,14 +101,15 @@
       body.renderOrder = -2;
       ctx.scene.add(body);
       var glowMat = new THREE.ShaderMaterial({
-        uniforms: { uHot: u.uHot, uIntro: u.uIntro },
+        uniforms: { uHot: u.uHot, uIntro: u.uIntro, uGlow: { value: (parseFloat(ctx.host.getAttribute('data-globe-glow')) || 1) * 0.75 } },
         transparent: true, depthTest: true, depthWrite: false, side: THREE.BackSide, blending: THREE.AdditiveBlending,
         vertexShader: 'varying vec3 vN; void main() { vN = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
         fragmentShader: [
-          'uniform vec3 uHot; uniform float uIntro; varying vec3 vN;',
+          'uniform vec3 uHot; uniform float uIntro, uGlow; varying vec3 vN;',
           'void main() {',
-          '  float i = pow(clamp(0.5 + dot(normalize(vN), vec3(0.0, 0.0, 1.0)) * 0.9, 0.0, 1.0), 3.4);',
-          '  gl_FragColor = vec4(uHot * i, i * 0.6 * uIntro);',
+          '  // back faces: n.z is 0 at the outer edge of the glow sphere and about -0.45 where it meets the globe',
+          '  float e = smoothstep(0.0, 0.5, -normalize(vN).z);',
+          '  gl_FragColor = vec4(uHot * e, e * e * uGlow * uIntro);',
           '}'
         ].join('\n')
       });

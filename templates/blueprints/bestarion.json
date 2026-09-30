@@ -5,7 +5,7 @@
   "summary": "Strong brand-colour split hero with a globe visual, a white intro beside a photo grid, a dark trust band with four figures, white link-row service lists, a dark two-card AI section, a two-card audience block, a case slider, a review slider, an award strip and a split contact section with an advantages panel.",
   "header": "mega",
   "sections": [
-    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "orange ground with wave lines: headline and paragraph left, dotted globe right, a filled and an outlined pill button centered along the bottom"},
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "compose": ["hero-gradient"], "note": "orange ground with wave lines: headline and paragraph left, dotted globe right, a filled and an outlined pill button centered along the bottom"},
     {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "small logo mark, heading and two paragraphs left, three-by-three grid of rounded video-call style portraits right"},
     {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 2, "count": 4, "media": "none", "note": "dark inset panel: pill label, two-colour heading and paragraph left, four figures in a two-by-two grid split by thin cross lines right"},
     {"form": "list-rows", "role": "services", "tone": "light", "cols": 2, "count": 10, "media": "none", "note": "two stacked groups, each with a pill label, heading and line, then pale rounded link rows with an icon slot and an orange arrow in two columns (eight rows, then two)"},

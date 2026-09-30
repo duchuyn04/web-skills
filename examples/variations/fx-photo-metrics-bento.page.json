@@ -1,0 +1,110 @@
+{
+  "_note": "Shows the optional photos on services-bento (first card) and metrics-counter (photo band). Harbourlight Support is a fictional company; every figure is sample data.",
+  "archetype": "enterprise-cx",
+  "preset": "enterprise-navy",
+  "lang": "en",
+  "site": {
+    "brand": "Harbourlight Support",
+    "brand_mark": "HS",
+    "title": "Harbourlight Support | Customer care and back-office teams in Cebu",
+    "description": "Harbourlight Support runs customer care, order processing and bookkeeping teams in Cebu for retail and software companies in Australia and the United States."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Results", "href": "#results"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Talk to our team", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "title": "Customer care and back-office teams *in Cebu*",
+        "lead": "Harbourlight Support answers customers, processes orders and keeps the books for retail and software companies, with 410 staff in one Cebu delivery center.",
+        "primary_cta": {"label": "Talk to our team", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "proof": ["Founded in 2014", "One account lead per client"],
+        "photo": {"src": "team-coworking-laptops", "alt": "Harbourlight team members working together at a shared table"}
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What our teams run", "lead": "Most clients start with one queue and add a second service after the first quarter."},
+        "cards": [
+          {
+            "icon": "headset",
+            "photo": {"src": "desk-phone-monitors", "alt": "Support agent at a desk with a phone and two monitors"},
+            "title": "Customer care",
+            "text": "Phone, chat and email support in your help desk, with replies checked against your tone guide every week.",
+            "bullets": ["Weekday and weekend shifts", "Weekly quality scores", "Escalation rules you set"],
+            "link": {"label": "Talk to our team", "href": "#get-started"}
+          },
+          {"icon": "shopping-cart", "title": "Order processing", "text": "Orders, refunds and address changes handled inside your store admin during your business hours."},
+          {"icon": "calculator", "title": "Bookkeeping", "text": "Bills, bank reconciliation and month-end reports prepared for your accountant to review."},
+          {"icon": "file-text", "title": "Data entry", "text": "Catalogue updates, invoices and form data keyed in and checked by a second person."}
+        ]
+      }
+    },
+    {
+      "type": "metrics-counter",
+      "data": {
+        "title": "Harbourlight in numbers",
+        "lead": "Figures for all active client programs at the end of the last financial year.",
+        "image": "team-meeting-bright-office",
+        "items": [
+          {"value": 410, "label": "Staff in Cebu", "note": "Care, back office and support roles"},
+          {"value": 38, "label": "Active clients", "note": "Retail and software companies"},
+          {"value": 11, "label": "Years in operation", "note": "Since 2014"},
+          {"value": 92, "suffix": "%", "label": "Clients renewing", "note": "At the last contract review"}
+        ]
+      }
+    },
+    {
+      "type": "contact-split",
+      "id": "get-started",
+      "data": {
+        "head": {"title": "Contact *Harbourlight Support*"},
+        "form": {
+          "title": "Tell us about the work",
+          "text": "Share the queue or task you want to move and the hours it needs.",
+          "submit_label": "Send message",
+          "success_title": "Thanks, your message is in",
+          "success_text": "An account lead will reply by email."
+        },
+        "aside": {
+          "title": "Our delivery center",
+          "points": ["Founded in 2014", "410 staff in Cebu"],
+          "offices": [
+            {"flag": "ph", "name": "Cebu City", "address": "Cebu IT Park, Lahug, Cebu City 6000, Philippines"}
+          ],
+          "email_label": "Email",
+          "email": "hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Harbourlight Support runs customer care and back-office teams in Cebu for retail and software companies.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer care", "href": "#services"},
+            {"label": "Order processing", "href": "#services"},
+            {"label": "Bookkeeping", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Results", "href": "#results"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

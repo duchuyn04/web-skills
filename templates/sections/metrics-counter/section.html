@@ -1,5 +1,6 @@
-<section id="{{section.id}}" class="bl-section bl-metrics{{#visual}} bl-has-backdrop{{/visual}} bl-tone-{{section.tone}}"{{#visual}} data-fx="3d" data-seed="{{site.brand}}" data-gl="{{visual}}"{{/visual}}>
+<section id="{{section.id}}" class="bl-section bl-metrics{{#visual}} bl-has-backdrop{{/visual}}{{^visual}}{{#image}} bl-metrics--photo{{/image}}{{/visual}} bl-tone-{{section.tone}}"{{#visual}} data-fx="3d" data-seed="{{site.brand}}" data-gl="{{visual}}"{{/visual}}>
   {{#visual}}<div class="bl-backdrop" aria-hidden="true"><canvas data-gl-canvas></canvas></div>{{/visual}}
+  {{^visual}}{{#image}}<div class="bl-metrics__media" aria-hidden="true" data-metrics-photo><img src="{{image}}" alt="" width="1600" height="900" loading="lazy" decoding="async"><span class="bl-metrics__scrim"></span></div>{{/image}}{{/visual}}
   <div class="bl-container">
     <div class="bl-metrics__head" data-reveal data-gl-copy>
       <div>

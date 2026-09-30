@@ -1,6 +1,6 @@
 {
   "variant": "services-cube",
-  "group": "services", "signature": true,
+  "group": "services", "signature": true, "tier": "expressive",
   "forms": ["cards-icon"],
   "reshape": true,
   "summary": "Grid of 3-6 service blocks built as square columns (CSS 3D). Each block rests as a flat card (icon, title, text); a row of side names under it (Overview, Scope, SLA, Tools) or a click on the card turns the column a quarter turn to the next side: scope as a check list, service levels as large figures on a dark side, tools as chips. Sides appear only for the fields a card has. With a mouse the column leans a few degrees on hover to show its next side; when the grid is first seen the blocks turn once in a wave and back. Turn axis, wave direction and wave side are seeded from the brand name. Figures must come from the brief.",

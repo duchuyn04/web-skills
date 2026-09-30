@@ -19,6 +19,7 @@
       "media": "right",
       "cols": null,
       "count": null,
+      "compose": ["hero-portrait"],
       "note": "heading and two buttons left, portrait photo right"
     },
     {

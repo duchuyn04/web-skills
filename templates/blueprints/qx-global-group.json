@@ -20,6 +20,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-panels", "hero-overlap"],
       "note": "left-aligned headline and button over a photo, an anchor link bar along the bottom"
     },
     {

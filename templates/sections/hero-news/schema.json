@@ -1,0 +1,30 @@
+{
+  "variant": "hero-news",
+  "group": "hero",
+  "forms": ["hero-fullbleed", "hero-video", "hero-split"],
+  "summary": "Full-width dark hero in the style of large CX groups: a photo under a strong brand-colour shade (or a plain dark ground), the headline, lead and buttons on the left, and on the right a column of two solid cards that slide in one after the other. The first card lists 2-3 recent items (meta line and title, each a link, for example a case study, a report or a new delivery center); the second features one item with a small photo, a line of text and a button. Every item and the feature must be real and come from the brief (published case studies, reports, announcements, certifications); never invent news. Suits enterprise BPOs that have case studies, reports or announcements to point to; without them use hero-fullbleed.",
+  "tone": "dark",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["news-cards-slide-in", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "image": {"type": "image", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "list_label": {"type": "text", "min": 3, "max": 30},
+    "items": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+      "meta": {"type": "text", "min": 3, "max": 24},
+      "title": {"type": "text", "min": 10, "max": 90},
+      "href": {"type": "href"}
+    }}},
+    "feature": {"type": "object", "required": false, "fields": {
+      "photo": {"$ref": "photo"},
+      "text": {"type": "text", "min": 20, "max": 140},
+      "cta": {"$ref": "cta"}
+    }}
+  }
+}

@@ -1,0 +1,23 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--overlap bl-tone-{{section.tone}}" data-hovl>
+  <div class="bl-hovl__stage">
+    <div class="bl-hovl__media">
+      <div class="bl-hovl__pan" data-hovl-pan><img class="bl-hovl__img bl-hovl__img--{{focus}}" src="{{photo.src}}" alt="{{photo.alt}}" width="1600" height="1000" fetchpriority="high" data-hovl-img></div>
+      <span class="bl-hovl__shade" aria-hidden="true"></span>
+    </div>
+    <div class="bl-container bl-hovl__head">
+      {{#eyebrow}}<p class="bl-eyebrow bl-hovl__eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hovl__title" data-hovl-title>{{title}}</h1>
+    </div>
+  </div>
+  <div class="bl-container bl-hovl__below">
+    <div class="bl-hovl__card" data-reveal>
+      <p class="bl-lead bl-hovl__lead">{{lead}}</p>
+      <div class="bl-btn-row">
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof bl-hovl__proof">{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    {{#stats.0}}<dl class="bl-hovl__stats" data-reveal="fade">{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

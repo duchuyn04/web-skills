@@ -1,6 +1,6 @@
 {
   "variant": "hero-particles",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Dark hero with a 3D particle cloud on the right that morphs between a sphere, the company's own monogram (brand_mark, extruded in depth), a torus and a lattice cube, turning slowly and tilting toward the pointer. Shape order, spin and palette mix are seeded from the brand name, so no two sites match. Copy on the left, optional stats strip.",
   "tone": "dark",

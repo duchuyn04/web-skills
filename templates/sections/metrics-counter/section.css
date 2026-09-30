@@ -9,6 +9,13 @@
 .bl-metric__value { order: -1; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(2.4rem, 3vw + 1rem, 3.6rem); line-height: 1; letter-spacing: -0.03em; color: var(--text-strong); font-variant-numeric: tabular-nums; margin-bottom: .9rem; }
 .bl-metric__label { font-weight: 700; color: var(--text-strong); font-size: var(--fs-sm); }
 .bl-metric__note { margin-top: .35rem; font-size: var(--fs-xs); color: var(--text-muted); line-height: 1.5; }
+/* photo-band-parallax: optional photo behind the numbers; the scrim is the section background at 88%, so the
+   tone's text colours keep their contrast; the photo is 124% tall so the scroll drift never shows an edge */
+.bl-metrics--photo { isolation: isolate; }
+.bl-metrics__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: var(--bg); }
+.bl-metrics__media img { position: absolute; left: 0; top: -12%; width: 100%; height: 124%; object-fit: cover; }
+.bl-metrics__scrim { position: absolute; inset: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); }
+.bl-metrics--photo .bl-metric { border-top-color: color-mix(in srgb, var(--text-strong) 34%, transparent); }
 @media (max-width: 1024px) {
   .bl-metrics__head { grid-template-columns: 1fr; }
   .bl-metrics__grid, .bl-metrics__grid:has(> :nth-child(3):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; }

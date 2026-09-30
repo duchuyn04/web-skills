@@ -1,6 +1,6 @@
 {
   "variant": "team-coverflow",
-  "group": "team", "signature": true,
+  "group": "team", "signature": true, "tier": "expressive",
   "forms": ["carousel-cards"],
   "reshape": true,
   "summary": "Leadership portraits in a 3D coverflow: the person in the middle faces the reader, up to two on each side turn away in perspective. Previous and next buttons, the arrow keys or a click on a side portrait bring that person to the middle, and the name, role, short bio and LinkedIn link under the row crossfade to them. No auto-rotation. Turn angle, spacing and corner radius are seeded from the brand name. Needs 3-8 real people who agreed to be shown, each with their own photo; without photos use team-grid.",

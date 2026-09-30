@@ -1,0 +1,91 @@
+{
+  "_note": "Shows process-sticky with a photo on every step: the pinned column follows the step being read. Tidemark Outsourcing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "clean-minimal",
+  "lang": "en",
+  "site": {
+    "brand": "Tidemark Outsourcing",
+    "brand_mark": "TM",
+    "title": "Tidemark Outsourcing | Back-office and support teams in Cebu",
+    "description": "Tidemark Outsourcing hires and runs back-office and customer support teams in Cebu for accounting firms and online retailers."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "How we start", "href": "#process"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Book a call", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "title": "Back-office teams in Cebu for *accounting firms and retailers*",
+        "lead": "Tidemark Outsourcing hires bookkeepers, order processors and support agents in Cebu, trains them on your tools and runs the team day to day.",
+        "primary_cta": {"label": "Book a call", "href": "#get-started"},
+        "secondary_cta": {"label": "How we start", "href": "#process"},
+        "photo": {"src": "team-coworking-laptops", "alt": "Tidemark team members working together at a shared table"}
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"title": "Our services"},
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Bookkeeping",
+            "text": "Month-end close, reconciliations and payables for accounting firms and their clients.",
+            "bullets": ["Work in your ledger", "Reviewer on every file", "Close checklist per client"]
+          },
+          {"icon": "shopping-cart", "title": "Order processing", "text": "Order entry, returns and refunds handled in your store admin."},
+          {"icon": "headset", "title": "Customer support", "text": "Email and chat replies written in your tone of voice."},
+          {"icon": "file-text", "title": "Data entry", "text": "Invoices, forms and catalog updates checked against the source."}
+        ]
+      }
+    },
+    {
+      "type": "process-sticky",
+      "data": {
+        "head": {"title": "How a new team starts", "lead": "Most teams handle live work in their fourth week. You see each step before the next one begins."},
+        "cta": {"label": "Book a call", "href": "#get-started"},
+        "steps": [
+          {"label": "Week 1", "title": "Scope and role profile", "text": "We map the tasks, tools and volumes with your lead and write a role profile that you sign off before hiring starts.", "photo": {"src": "presenter-planning-board", "alt": "Team lead mapping tasks on a sticky-note board with colleagues"}},
+          {"label": "Week 2", "title": "Shortlist and interviews", "text": "Recruiters in Cebu test candidates on your sample tasks. You interview the shortlist and choose who joins.", "photo": {"src": "meeting-handshake", "alt": "Two people shaking hands across a desk after an interview"}},
+          {"label": "Week 3", "title": "Training on your tools", "text": "New hires learn your ledger, store admin and help desk on copies of real work, with a reviewer checking each file.", "photo": {"src": "training-workshop-board", "alt": "Trainer presenting to a group in front of a flip chart"}},
+          {"label": "Week 4", "title": "Live work with review", "text": "The team takes live work while a reviewer checks every item for two weeks, then samples a share each day.", "photo": {"src": "desk-phone-monitors", "alt": "Team member working at a desk with two monitors and a phone"}}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Start with *two people* and your task list",
+        "text": "We scope the role with you in one call and send a written plan the same week.",
+        "primary_cta": {"label": "Book a call", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tidemark Outsourcing runs back-office and customer support teams in Cebu.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Bookkeeping", "href": "#services"},
+            {"label": "Order processing", "href": "#services"},
+            {"label": "Customer support", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "How we start", "href": "#process"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

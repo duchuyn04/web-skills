@@ -1,0 +1,28 @@
+{
+  "variant": "hero-tabs",
+  "group": "hero",
+  "forms": ["hero-fullbleed", "hero-video", "hero-split", "hero-left-text"],
+  "summary": "Hero on a large rounded stage with a row of 3 or 4 thumbnail tabs under it (small photo, short label, a thin progress bar on the active tab). The first tab carries the page headline, lead and buttons; the other tabs are real service lines or offers from the brief, each with its own title, text, photo and link. It replaces the photo sliders many BPO homepages open with (TDCX, CMC Global, Genpact), as accessible tabs: the stage advances every 7 seconds until the visitor picks a tab, holds on hover and focus, and stays still with reduced motion or Pause animations. style \"photo\" (default) puts the copy over the slide photo with a dark shade on the left; style \"card\" sets the copy on a light card with the photo in a rounded frame on the right. Never invent service lines to fill the extra tabs.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["tab-stage-crossfade", "tab-progress-autoadvance", "reveal"],
+  "fields": {
+    "style": {"type": "enum", "values": ["photo", "card"], "default": "photo"},
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "lead": {"type": "text", "min": 60, "max": 200},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "tab_label": {"type": "text", "min": 2, "max": 24},
+    "photo": {"$ref": "photo"},
+    "slides": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 2, "max": 24},
+      "title": {"type": "text", "min": 10, "max": 70},
+      "text": {"type": "text", "min": 30, "max": 160},
+      "photo": {"$ref": "photo"},
+      "cta": {"$ref": "cta"}
+    }}},
+    "tabs_label": {"type": "text", "min": 3, "max": 40, "default": "Our services"}
+  }
+}

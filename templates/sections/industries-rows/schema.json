@@ -3,7 +3,7 @@
   "group": "industries", "signature": true,
   "forms": ["list-rows"],
   "open": true,
-  "summary": "Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none.",
+  "summary": "Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none. Optional photo per row (give one to every row or to none): the card then shows the photo of the row being hovered or focused and cross-fades as the reader moves down the list, so the picture follows the industry; touch screens and reduced motion show a small thumbnail in each row instead.",
   "tone": "auto",
   "anchor": "industries",
   "animations": [
@@ -46,6 +46,10 @@
           },
           "href": {
             "type": "href",
+            "required": false
+          },
+          "photo": {
+            "$ref": "photo",
             "required": false
           }
         }

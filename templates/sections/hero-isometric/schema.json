@@ -1,6 +1,6 @@
 {
   "variant": "hero-isometric",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Light hero with an isometric operations floor on the right: blocks rise one after another, brand-coloured roofs mark the busy desks, small packets travel the aisles between them, and the block nearest the pointer lifts. Layout of tall blocks, coloured roofs and packet routes is seeded from the brand name. Fits back-office, finance and operations companies.",
   "tone": "hero",

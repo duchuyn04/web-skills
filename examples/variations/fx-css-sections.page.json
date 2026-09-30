@@ -1,5 +1,5 @@
 {
-  "_note": "Shows the CSS 3D section variants services-cylinder, services-cube, industries-slats, faq-fold and cta-letter. Harbourline Services is a fictional company; every figure is sample data. A real page uses one services variant, not both.",
+  "_note": "Shows the CSS 3D section variants services-cylinder, industries-slats (with photos), faq-fold and cta-letter; services-cube is on fx-css-sections-b. Harbourline Services is a fictional company; every figure is sample data.",
   "archetype": "it-bpo-partner",
   "preset": "clean-minimal",
   "lang": "en",
@@ -134,139 +134,45 @@
       }
     },
     {
-      "type": "services-cube",
-      "id": "service-levels",
+      "type": "feature-rows",
       "data": {
         "head": {
-          "title": "What each team does, and *how it is measured*",
-          "lead": "Every service has a written scope, agreed service levels and the tools the team works in. Turn a block to read each side."
+          "title": "What each team does and how it is measured",
+          "lead": "Every service has a written scope, agreed service levels and the tools the team works in."
         },
-        "cards": [
+        "rows": [
           {
-            "icon": "calculator",
             "title": "Accounting and close",
-            "text": "Month-end close, payables and bank reconciliations prepared in your ledger and reviewed before sign-off.",
-            "scope": [
+            "text": "Month-end close, payables and bank reconciliations prepared in your ledger and reviewed by a senior accountant before sign-off.",
+            "bullets": [
               "Bank and card reconciliations",
               "Accruals and prepayments",
-              "Supplier invoice processing",
               "Management pack draft"
             ],
-            "sla": [
-              {
-                "value": "Day 5",
-                "label": "Close pack delivered"
-              },
-              {
-                "value": "48 h",
-                "label": "Invoice posting"
-              }
-            ],
-            "tools": [
-              "Xero",
-              "MYOB",
-              "NetSuite",
-              "Dext"
-            ]
+            "photo": {
+              "src": "bookkeeping-calculator-laptop",
+              "alt": "Harbourline accountant reconciling invoices on a laptop"
+            },
+            "badge": {
+              "value": "Day 5",
+              "label": "Close pack delivered"
+            }
           },
           {
-            "icon": "wallet",
-            "title": "Payroll processing",
-            "text": "Pay runs, leave balances and payslips prepared for your approval before each pay date.",
-            "scope": [
-              "Timesheet import and checks",
-              "Leave and entitlement updates",
-              "Payslips and remittance files"
-            ],
-            "sla": [
-              {
-                "value": "2 days",
-                "label": "Pay run ready before pay date"
-              }
-            ],
-            "tools": [
-              "KeyPay",
-              "Xero Payroll"
-            ]
-          },
-          {
-            "icon": "bug",
             "title": "QA and testing",
-            "text": "Manual and automated regression testing on each release candidate, with defects logged in your tracker.",
-            "scope": [
+            "text": "Manual and automated regression testing on each release candidate, with defects logged in your tracker and triaged with your team.",
+            "bullets": [
               "Test plans per release",
               "Regression suites in Playwright",
               "Defect triage with your team"
             ],
-            "sla": [
-              {
-                "value": "24 h",
-                "label": "Regression run per candidate"
-              },
-              {
-                "value": "4 h",
-                "label": "Blocker defects reported"
-              }
-            ],
-            "tools": [
-              "Playwright",
-              "Cypress",
-              "Jira",
-              "TestRail"
-            ]
-          },
-          {
-            "icon": "database",
-            "title": "Data operations",
-            "text": "Catalog updates, data entry and cleanup with a daily error count and a weekly sample audit.",
-            "scope": [
-              "Product catalog updates",
-              "Record cleanup and merging",
-              "Weekly sample audit"
-            ],
-            "tools": [
-              "Shopify",
-              "Airtable",
-              "Google Sheets"
-            ]
-          },
-          {
-            "icon": "headset",
-            "title": "Support desk",
-            "text": "Email and chat support in English and Japanese, answered in your helpdesk with your macros and tags.",
-            "scope": [
-              "Email and chat tickets",
-              "Tagging and escalation",
-              "Weekly ticket review"
-            ],
-            "sla": [
-              {
-                "value": "2 h",
-                "label": "First reply, business hours"
-              },
-              {
-                "value": "90%",
-                "label": "Tickets closed without escalation"
-              }
-            ],
-            "tools": [
-              "Zendesk",
-              "Freshdesk",
-              "Intercom"
-            ]
-          },
-          {
-            "icon": "code",
-            "title": "Software development",
-            "text": "Web and mobile squads that join your sprints and ship through your release process.",
-            "scope": [
-              "Feature work in your repository",
-              "Code review on every merge",
-              "Release notes per sprint"
-            ],
-            "link": {
-              "label": "Talk to an engineer",
-              "href": "#get-started"
+            "photo": {
+              "src": "code-review-pair",
+              "alt": "Two Harbourline testers reviewing a failing test on a laptop"
+            },
+            "badge": {
+              "value": "24 h",
+              "label": "Regression cycle"
             }
           }
         ]
@@ -362,7 +268,6 @@
     {
       "type": "cta-letter",
       "data": {
-        "eyebrow": "Next step",
         "title": "Send us the work you want to *hand off*",
         "text": "Tell us the service, your systems and the monthly volume. A team lead replies with a team plan and a price range within two business days.",
         "points": [

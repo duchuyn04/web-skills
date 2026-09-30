@@ -1,0 +1,33 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--news bl-tone-{{section.tone}}" data-hero-news>
+  <div class="bl-hnews__media" aria-hidden="true">
+    {{#image}}<img class="bl-hnews__img" src="{{image}}" alt="" width="1600" height="900" fetchpriority="high">{{/image}}
+    <span class="bl-hnews__shade"></span>
+  </div>
+  <div class="bl-container bl-hnews">
+    <div class="bl-hnews__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hnews__title" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    <div class="bl-hnews__side">
+      <nav class="bl-hnews__card bl-hnews__list" aria-label="{{list_label}}" data-hnews-card>
+        <p class="bl-hnews__label">{{list_label}}</p>
+        <ul>
+          {{#items}}<li><a class="bl-hnews__item" href="{{href}}"><span class="bl-hnews__meta">{{meta}}</span><span class="bl-hnews__name">{{title}}</span></a></li>{{/items}}
+        </ul>
+      </nav>
+      {{#feature}}<div class="bl-hnews__card bl-hnews__feature bl-tone-light" data-hnews-card>
+        <div class="bl-frame bl-hnews__thumb"><img src="{{photo.src}}" alt="{{photo.alt}}" width="240" height="300" loading="lazy"></div>
+        <div class="bl-hnews__fbody">
+          <p class="bl-hnews__ftext">{{text}}</p>
+          <a class="bl-btn bl-btn--primary bl-btn--sm" href="{{cta.href}}">{{cta.label}}</a>
+        </div>
+      </div>{{/feature}}
+    </div>
+  </div>
+</section>

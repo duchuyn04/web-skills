@@ -5,7 +5,7 @@
   "summary": "Light page with a large hero area, three service tiles, a dark testimonial panel, two more tile sets for platforms and technologies, a brand logo grid, an about band with photo, partner and award logo rows and a content hub before the footer.",
   "header": "simple",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "light", "media": "full", "note": "large slider area at the top; content was not loaded in the capture"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "light", "media": "full", "compose": ["hero-tabs"], "note": "large slider area at the top; content was not loaded in the capture"},
     {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "small label and centered heading with one accent word, three grey tiles with title, one line and a round arrow button"},
     {"form": "testimonial-block", "role": "testimonial", "tone": "muted", "count": 3, "media": "right", "optional": true, "note": "one wide rounded dark panel with quote left and a portrait right, arrows at both edges"},
     {"form": "cards-text", "role": "tools", "tone": "light", "cols": 3, "count": 9, "note": "label and centered heading, three rows of three grey tiles with title, line and round arrow button"},

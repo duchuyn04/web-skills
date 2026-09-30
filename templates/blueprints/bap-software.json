@@ -5,7 +5,7 @@
   "summary": "Dark navy split hero with a stat grid, a light service card grid, a diagram-centred reasons block, a photo industry grid, logo rows, a dark awards band, an event photo slider, a case slider, a featured news list and a dark office map panel.",
   "header": "simple",
   "sections": [
-    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "large headline, paragraph, filled and outlined buttons and a five-figure stat grid left; framed photo slider right"},
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "compose": ["hero-tabs"], "note": "large headline, paragraph, filled and outlined buttons and a five-figure stat grid left; framed photo slider right"},
     {"form": "cards-image", "role": "services", "tone": "light", "cols": 4, "count": 14, "media": "none", "note": "small label, centered heading and line, cards with a wide image on top and a strong blue text block with caps title and paragraph, last row partly filled"},
     {"form": "cards-text", "role": "about", "tone": "light", "cols": 2, "count": 4, "media": "none", "note": "centered heading, four numbered points in two columns arranged around a diamond-shaped diagram in the middle"},
     {"form": "cards-image", "role": "industries", "tone": "light", "cols": 4, "count": 7, "media": "none", "note": "small label and centered statement, photo tiles with icon and name over a dark overlay, four in the first row and three centered in the second"},

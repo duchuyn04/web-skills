@@ -1,0 +1,54 @@
+/* hero-overlap: photo-settle-zoom, overlap-card-rise, heading-word-rise, photo-scroll-drift.
+   An edge-to-edge people photo with the heading over its top-left corner and a solid card that overlaps its lower edge. */
+.bl-hero--overlap { --hovl-lap: clamp(4.5rem, 9vw, 8.5rem); padding-top: calc(var(--header-h) + var(--header-extra)); padding-bottom: clamp(3.5rem, 6vw, 5.5rem); }
+.bl-hovl__stage { position: relative; isolation: isolate; overflow: hidden; min-height: clamp(520px, 76vh, 780px); display: flex; align-items: flex-start; background: var(--c-primary); }
+.bl-hovl__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.bl-hovl__pan { position: absolute; inset: -7% 0; }
+.bl-hovl__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.bl-hovl__img--top { object-position: 50% 22%; }
+.bl-hovl__img--bottom { object-position: 50% 78%; }
+/* photo scrim in the primary colour, strongest behind the heading corner */
+.bl-hovl__shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, color-mix(in srgb, var(--c-primary) 78%, transparent) 0%, color-mix(in srgb, var(--c-primary) 46%, transparent) 38%, transparent 66%),
+    linear-gradient(180deg, color-mix(in srgb, var(--c-primary) 40%, transparent) 0%, transparent 46%);
+}
+.bl-hovl__head { padding-top: clamp(3rem, 6.5vw, 5.75rem); padding-bottom: calc(var(--hovl-lap) + 2.5rem); }
+.bl-hovl__eyebrow { color: #fff; margin-bottom: 1.1rem; }
+.bl-hero .bl-hovl__title {
+  max-width: 13ch; margin: 0; color: #fff;
+  font-size: clamp(2.7rem, 4.6vw + 1rem, 5.4rem); line-height: 1.02; letter-spacing: -0.03em;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, .28);
+}
+.bl-hovl__title .bl-hl { color: var(--c-accent-on-dark, #fff); }
+
+/* the card starts over the photo and runs below it; figures sit beside it on the page ground */
+.bl-hovl__below {
+  position: relative; z-index: 2; margin-top: calc(var(--hovl-lap) * -1);
+  display: grid; grid-template-columns: minmax(0, 37rem) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: end;
+}
+.bl-hovl__card {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+.bl-hovl__lead { margin-bottom: 1.6rem; color: var(--text-strong); }
+.bl-hovl__proof { margin-top: 1.5rem; }
+.bl-hovl__stats { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); padding-bottom: .35rem; }
+.bl-hovl__stats > div { display: flex; flex-direction: column; min-width: 7.5rem; }
+.bl-hovl__stats dd { order: -1; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.9rem, 1.8vw + 1.1rem, 2.75rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--text-strong); }
+.bl-hovl__stats dt { margin-top: .35rem; font-size: var(--fs-sm); color: var(--text-muted); }
+
+@media (max-width: 1024px) {
+  .bl-hovl__below { grid-template-columns: minmax(0, 1fr); }
+  .bl-hovl__card { max-width: 40rem; }
+  .bl-hovl__stats { justify-content: flex-start; }
+}
+@media (max-width: 768px) {
+  .bl-hero--overlap { --hovl-lap: 3.5rem; }
+  .bl-hovl__stage { min-height: 460px; }
+  .bl-hovl__shade { background: linear-gradient(180deg, color-mix(in srgb, var(--c-primary) 72%, transparent) 0%, color-mix(in srgb, var(--c-primary) 50%, transparent) 55%, color-mix(in srgb, var(--c-primary) 30%, transparent) 100%); }
+  .bl-hero .bl-hovl__title { font-size: clamp(2.3rem, 9vw, 3rem); max-width: none; }
+  .bl-hovl__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr)); }
+  .bl-hovl__stats > div { min-width: 0; }
+}

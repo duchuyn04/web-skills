@@ -1,0 +1,38 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-htabs bl-htabs--{{style}} bl-tone-{{section.tone}}" data-htabs>
+  <div class="bl-container">
+    <div class="bl-htabs__stage" data-reveal="fade">
+      <div class="bl-htabs__panel is-active" id="{{section.id}}-p0" role="tabpanel" aria-labelledby="{{section.id}}-t0">
+        <div class="bl-htabs__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="1200" height="800" fetchpriority="high"></div>
+        <div class="bl-htabs__copy" data-reveal-group>
+          {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+          <h1 class="bl-h1 bl-htabs__title" data-reveal>{{title}}</h1>
+          <p class="bl-lead bl-htabs__text" data-reveal>{{lead}}</p>
+          <div class="bl-btn-row" data-reveal>
+            <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+            {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+          </div>
+        </div>
+      </div>
+      {{#slides}}<div class="bl-htabs__panel" id="{{section.id}}-p{{@n}}" role="tabpanel" aria-labelledby="{{section.id}}-t{{@n}}" aria-hidden="true" inert>
+        <div class="bl-htabs__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="1200" height="800" loading="lazy" decoding="async"></div>
+        <div class="bl-htabs__copy">
+          <h2 class="bl-h1 bl-htabs__title">{{title}}</h2>
+          <p class="bl-lead bl-htabs__text">{{text}}</p>
+          <div class="bl-btn-row"><a class="bl-btn bl-btn--primary bl-btn--lg" href="{{cta.href}}">{{cta.label}}</a></div>
+        </div>
+      </div>{{/slides}}
+    </div>
+    <div class="bl-htabs__tabs" role="tablist" aria-label="{{tabs_label}}" data-reveal>
+      <button class="bl-htabs__tab is-active" type="button" role="tab" id="{{section.id}}-t0" aria-controls="{{section.id}}-p0" aria-selected="true">
+        <span class="bl-htabs__thumb"><img src="{{photo.src}}" alt="" width="96" height="72" loading="lazy" decoding="async"></span>
+        <span class="bl-htabs__label">{{tab_label}}</span>
+        <span class="bl-htabs__track" aria-hidden="true"><span class="bl-htabs__bar" data-htabs-bar></span></span>
+      </button>
+      {{#slides}}<button class="bl-htabs__tab" type="button" role="tab" id="{{section.id}}-t{{@n}}" aria-controls="{{section.id}}-p{{@n}}" aria-selected="false" tabindex="-1">
+        <span class="bl-htabs__thumb"><img src="{{photo.src}}" alt="" width="96" height="72" loading="lazy" decoding="async"></span>
+        <span class="bl-htabs__label">{{label}}</span>
+        <span class="bl-htabs__track" aria-hidden="true"><span class="bl-htabs__bar" data-htabs-bar></span></span>
+      </button>{{/slides}}
+    </div>
+  </div>
+</section>

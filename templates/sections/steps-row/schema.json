@@ -2,7 +2,7 @@
   "variant": "steps-row",
   "group": "process",
   "forms": ["cards-icon", "icon-strip"],
-  "summary": "A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step.",
+  "summary": "A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step. Optional photo per step, shown as a rounded picture at the top of each card with the numeral sitting on its lower edge (the connector line is left out then); use a photo on every step or none.",
   "tone": "auto",
   "anchor": "how-it-works",
   "animations": ["reveal", "connector-line-draw"],
@@ -10,7 +10,8 @@
     "head": {"$ref": "head"},
     "steps": {"type": "list", "min": 3, "max": 4, "item": {"type": "object", "fields": {
       "title": {"type": "text", "min": 3, "max": 40},
-      "text": {"type": "text", "min": 20, "max": 160}
+      "text": {"type": "text", "min": 20, "max": 160},
+      "photo": {"$ref": "photo", "required": false}
     }}},
     "cta": {"$ref": "cta", "required": false}
   }

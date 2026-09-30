@@ -103,6 +103,7 @@
         });
       })(el);
       el.setAttribute('aria-label', label);
+      el.classList.add('bl-split-text');
       el.__blSplit = { targets: targets, words: words, chars: chars };
       return el.__blSplit;
     }

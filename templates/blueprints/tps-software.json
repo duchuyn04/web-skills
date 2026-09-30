@@ -19,6 +19,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-mosaic"],
       "note": "dark full-width visual with large centered headline and a form popup over it"
     },
     {

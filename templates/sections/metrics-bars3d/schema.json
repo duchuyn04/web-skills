@@ -2,7 +2,7 @@
   "variant": "metrics-bars3d",
   "group": "metrics",
   "forms": ["metrics"],
-  "signature": true,
+  "signature": true, "tier": "expressive",
   "summary": "Before and after results as pairs of solid 3D columns on small gridded plinths: a muted Before column and a brand-colour After column per measure. Columns grow from the plinth in turn while the numbers on top count up, and each pair says whether lower or higher is better. Heights are scaled per measure, so minutes and percentages never share one axis. Without a before value a measure draws one column scaled against 100, so use percentages there. A \"[KPI]\" placeholder draws an empty dashed column. Plinth yaw, grid density and the Before tint are seeded from the brand name. Needs 2-4 of the client's real before and after figures; for plain totals use metrics-counter.",
   "tone": "auto",
   "anchor": "results",

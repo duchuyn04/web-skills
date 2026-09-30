@@ -1,0 +1,151 @@
+{
+  "_note": "Shows hero-news. Meridian Harbor CX is a fictional company; every figure, case study and announcement is sample data. On a client page the hero items and feature must come from the brief.",
+  "archetype": "enterprise-cx",
+  "preset": "enterprise-navy",
+  "lang": "en",
+  "site": {
+    "brand": "Meridian Harbor CX",
+    "brand_mark": "MH",
+    "title": "Meridian Harbor CX | Customer care and claims operations",
+    "description": "Meridian Harbor CX runs customer care, claims intake and back-office teams for insurers, banks and travel brands from Cebu and Da Nang."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Results", "href": "#results"},
+          {"label": "Case studies", "href": "#case-studies"},
+          {"label": "Security", "href": "#security"}
+        ],
+        "cta": {"label": "Talk to sales", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-news",
+      "data": {
+        "title": "Customer and claims operations for *insurers and banks*",
+        "lead": "Meridian Harbor CX runs voice, chat and claims intake programs from Cebu and Da Nang. 1,900 agents work under one quality framework for every client.",
+        "primary_cta": {"label": "Talk to sales", "href": "#contact"},
+        "secondary_cta": {"label": "See our services", "href": "#services"},
+        "image": "team-meeting-bright-office",
+        "proof": ["ISO 27001 certified", "Founded in 2011"],
+        "list_label": "Latest from Meridian Harbor",
+        "items": [
+          {"meta": "Case study", "title": "How a travel insurer moved claims intake to one 60-seat team", "href": "#case-studies"},
+          {"meta": "Certification", "title": "Cebu delivery center passes its 2025 ISO 27001 surveillance audit", "href": "#security"},
+          {"meta": "Delivery center", "title": "Da Nang site reaches 400 seats across voice and back office", "href": "#results"}
+        ],
+        "feature": {
+          "photo": {"src": "meeting-handshake", "alt": "Meridian Harbor and bank operations leads at a review meeting"},
+          "text": "Case study: a regional bank cut average handle time by 27 percent in six months.",
+          "cta": {"label": "Read the case", "href": "#case-studies"}
+        }
+      }
+    },
+    {
+      "type": "services-bento",
+      "id": "services",
+      "data": {
+        "head": {"title": "Our services", "lead": "Programs start with one channel or one process and grow from there, each with its own quality form and weekly report."},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer care",
+            "text": "Voice, chat and email support for policyholders, account holders and travellers.",
+            "bullets": ["Inbound voice and chat", "Complaint handling", "Weekly quality scores"]
+          },
+          {"icon": "file-text", "title": "Claims intake", "text": "First notice of loss, document checks and claim set-up in your core system."},
+          {"icon": "landmark", "title": "Banking back office", "text": "Account opening checks, card disputes and payment exceptions."},
+          {"icon": "shield-check", "title": "Quality assurance", "text": "Call and ticket scoring against your rubric, with coaching notes for each agent."}
+        ]
+      }
+    },
+    {
+      "type": "metrics-counter",
+      "id": "results",
+      "data": {
+        "image": "team-meeting-table",
+        "title": "Meridian Harbor in figures",
+        "lead": "Figures for active programs in 2025, measured by client quality teams.",
+        "items": [
+          {"value": 1900, "suffix": "+", "label": "Agents in production", "note": "Cebu and Da Nang"},
+          {"value": 400, "label": "Seats in Da Nang", "note": "Voice and back office"},
+          {"value": 27, "suffix": "%", "label": "Lower handle time", "note": "Regional bank program"},
+          {"value": 14, "label": "Years in operation", "note": "Since 2011"}
+        ]
+      }
+    },
+    {
+      "type": "case-slider",
+      "id": "case-studies",
+      "data": {
+        "head": {"eyebrow": "Client results", "title": "Case studies", "lead": "Scope, timeline and results as each client reported them."},
+        "cases": [
+          {
+            "client": "Coastline Travel Insurance",
+            "industry": "Insurance",
+            "photo": {"src": "desk-phone-monitors", "alt": "Claims intake agent at a desk with two monitors"},
+            "title": "Moved claims intake from three regional vendors to one 60-seat team",
+            "results": [{"value": "60", "label": "Seats in one team"}, {"value": "9 wk", "label": "Full transition"}]
+          },
+          {
+            "client": "Pinecrest Bank",
+            "industry": "Banking",
+            "photo": {"src": "meeting-handshake", "alt": "Pinecrest Bank and Meridian Harbor leads at a contract meeting"},
+            "title": "Cut average handle time on card support within six months",
+            "results": [{"value": "-27%", "label": "Average handle time"}, {"value": "6 mo", "label": "Time to result"}]
+          },
+          {
+            "client": "Aster Air",
+            "industry": "Travel",
+            "photo": {"src": "team-coworking-laptops", "alt": "Aster Air support pod during a morning huddle"},
+            "title": "Added weekend chat coverage for rebooking during peak season",
+            "results": [{"value": "2", "label": "New weekend shifts"}, {"value": "3 wk", "label": "Time to launch"}]
+          }
+        ]
+      }
+    },
+    {
+      "type": "compliance-badges",
+      "id": "security",
+      "data": {
+        "head": {"title": "Security and compliance", "lead": "Both delivery centers follow the same access controls and clean-desk policy, audited externally each year."},
+        "points": ["Badge access to production floors", "Client data stays in your systems", "Quarterly access reviews shared with you"],
+        "badges": [
+          {"code": "ISO 27001", "label": "Information security"},
+          {"code": "PCI DSS", "label": "Card data handling", "icon": "lock"}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "id": "contact",
+      "data": {
+        "title": "Start with one queue",
+        "text": "Tell us the channel, the volume and the hours you need covered, and we will plan a pilot team.",
+        "primary_cta": {"label": "Talk to sales", "href": "mailto:sales@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Meridian Harbor CX runs customer care, claims intake and back-office teams from Cebu and Da Nang.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer care", "href": "#services"},
+            {"label": "Claims intake", "href": "#services"},
+            {"label": "Banking back office", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Case studies", "href": "#case-studies"},
+            {"label": "Security", "href": "#security"},
+            {"label": "Contact", "href": "#contact"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -18,6 +18,7 @@
       "role": "hero",
       "tone": "dark",
       "media": "right",
+      "compose": ["hero-qualifier"],
       "note": "serif heading with italic accent and short text left, frosted glass card right holding four stacked choice buttons"
     },
     {

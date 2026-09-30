@@ -378,6 +378,7 @@
   {
    "type": "metrics-counter",
    "data": {
+    "image": "desk-phone-monitors",
     "eyebrow": "Results",
     "title": "Meridian at a glance",
     "lead": "Figures for active programs in 2025. CSAT and handle time are measured by client QA teams.",
@@ -499,8 +500,11 @@
   {
    "type": "faq-accordion",
    "data": {
+    "photo": {
+     "src": "portrait-woman-team-lead",
+     "alt": "Smiling team lead with a coffee, her team working behind her"
+    },
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "aside": {
@@ -538,7 +542,6 @@
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Talk to our *solutions team*",
     "lead": "Tell us what you want to outsource. A solutions lead replies within two business days with a team design, timeline and price range.",
     "points": [

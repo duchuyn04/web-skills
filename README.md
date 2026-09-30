@@ -123,11 +123,12 @@ Thư viện có 41 ảnh mẫu (nhân viên văn phòng, kế toán, đào tạo
 
 Có 8 bộ màu. Ngoài 5 bộ mặc định theo kiểu trang còn có `corporate-blue`, `crimson-trust` và `teal-fresh`, dành cho thương hiệu có logo xanh dương, đỏ hoặc xanh ngọc (ba nhóm màu này chiếm khoảng 55% trong 113 site đã phân tích). Ba bộ này bật thêm các tùy chọn thiết kế: mép section cắt chéo hoặc cong, khung ảnh cắt góc hoặc hình vòm, chữ nhấn dạng gradient hoặc gạch chân, ảnh hiện ra bằng hiệu ứng quét từ dưới lên. Bộ màu nào cũng dùng được các tùy chọn này qua khóa `theme` trong `page.json`, chi tiết ở `references/style-presets.md`.
 
-Ba lớp kiểm tra chạy trước khi giao:
+Bốn lớp kiểm tra, ba lớp đầu chạy trước khi giao:
 
 1. `build.py` kiểm tra `page.json` theo schema từng section: giới hạn độ dài chữ, số item, tên icon, link nội bộ, thứ tự section, giọng văn và câu chép từ trang mẫu. Mỗi lỗi ghi rõ đường dẫn JSON và cách sửa.
 2. `lint_output.py` quét trang đã dựng: emoji, mũi tên bằng chữ, gạch ngang dài, dấu ngoặc cong, từ ngữ kiểu AI, thiếu `alt`, nhiều hơn một `h1`, inline style.
 3. `qa_screenshot.py` chụp ở 1440, 768 và 390 px, tìm phần tử tràn ngang, chữ bị cắt, ảnh hỏng và lỗi JavaScript.
+4. `tests/run.py` dành cho người bảo trì skill: build trang mẫu sạch trong `tests/fixtures/`, các ca phải lỗi trong `tests/cases.json` (logo bịa, trích dẫn bị kéo dài, số liệu không có trong brief, emoji, hiệu ứng 3D khi brief không yêu cầu...), mọi trang trong `examples/` và, với `--sites`, mọi site đã làm. Chạy lại sau mỗi lần sửa luật. Lịch sử thay đổi luật nằm trong `CHANGELOG.md`.
 
 ## Cấu trúc thư mục
 
@@ -138,6 +139,7 @@ templates/        base.css, base.js, 49 section, 8 bộ màu, icon, cờ, ảnh 
 examples/         5 file page.json mẫu, mỗi kiểu trang một file; variations/ có 3 trang, mỗi bộ màu mới một trang; vi/ có trang mẫu tiếng Việt
 previews/         ảnh chụp từng section
 scripts/          build, lint, QA, sinh tài liệu
+tests/            test hồi quy cho luật build (run.py, cases.json, fixtures/)
 agents/           metadata cho Codex
 ```
 

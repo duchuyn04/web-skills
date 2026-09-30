@@ -19,6 +19,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-news"],
       "note": "left-aligned headline and text over a dark visual, a row of four figures and a video card at the right"
     },
     {

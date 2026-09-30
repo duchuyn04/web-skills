@@ -1,0 +1,24 @@
+{
+  "variant": "locations-gmap",
+  "group": "locations",
+  "forms": ["locations-map", "feature-split"],
+  "summary": "Offices with a live Google Map: office cards on the left (city, name, address, phone, email, hours) and an embedded map on the right that switches to the office you pick, with an Open in Google Maps link. No API key; the map loads lazily. Use it wherever the brief gives real office addresses; a placeholder address still centres the map on its city.",
+  "tone": "auto",
+  "anchor": "locations",
+  "animations": ["reveal", "map-office-switch"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "offices": {"type": "list", "min": 1, "max": 4, "item": {"type": "object", "fields": {
+      "city": {"type": "text", "min": 2, "max": 30},
+      "name": {"type": "text", "min": 2, "max": 48},
+      "address": {"type": "text", "min": 10, "max": 160},
+      "map_query": {"type": "text", "min": 3, "max": 160, "required": false},
+      "phone": {"type": "text", "min": 5, "max": 32, "required": false},
+      "email": {"type": "text", "min": 5, "max": 60, "required": false},
+      "hours": {"type": "text", "min": 5, "max": 60, "required": false}
+    }}},
+    "show_label": {"type": "text", "min": 2, "max": 30, "default": "Show on map"},
+    "open_label": {"type": "text", "min": 2, "max": 36, "default": "Open in Google Maps"},
+    "map_title": {"type": "text", "min": 3, "max": 60, "default": "Office map"}
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "_note": "Shows hero-overlap. Harbor Lane CX is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "human-warm",
+  "lang": "en",
+  "site": {
+    "brand": "Harbor Lane CX",
+    "brand_mark": "HL",
+    "title": "Harbor Lane CX | Customer support teams in Cebu",
+    "description": "Harbor Lane CX runs voice, chat and email support teams in Cebu for retail, travel and software brands in Australia and the United States."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Reviews", "href": "#reviews"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Talk to our team", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-overlap",
+      "data": {
+        "title": "Customer care, run by *people in Cebu*",
+        "lead": "Harbor Lane CX runs voice, chat and email support for retail, travel and software brands, with team leads who report to you every morning.",
+        "primary_cta": {"label": "Talk to our team", "href": "#get-started"},
+        "secondary_cta": {"label": "See our services", "href": "#services"},
+        "photo": {"src": "team-meeting-table", "alt": "Harbor Lane CX agents at a team briefing around a long table"},
+        "focus": "center",
+        "proof": ["Weekly QA scorecards", "One team lead per 12 agents"],
+        "stats": [
+          {"value": "420", "label": "Agents in Cebu"},
+          {"value": "11", "label": "Years in operation"},
+          {"value": "3", "label": "Channels covered"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What the teams handle"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Voice support",
+            "text": "Inbound calls for orders, bookings and accounts, answered in your scripts and tone.",
+            "bullets": ["Your scripts and tone", "Call QA every week", "Daily handle-time report"]
+          },
+          {"icon": "message-square", "title": "Chat and messaging", "text": "Live chat and in-app messages with agents who work two chats at a time."},
+          {"icon": "mail", "title": "Email and tickets", "text": "Ticket queues worked in your help desk, sorted by urgency each morning."},
+          {"icon": "clipboard-check", "title": "Back office", "text": "Refunds, order changes and account updates checked by a second agent."}
+        ]
+      }
+    },
+    {
+      "type": "testimonials-rated",
+      "data": {
+        "head": {"title": "What clients say"},
+        "items": [
+          {"quote": "The Cebu team took over our weekend phones in three weeks and our customers did not notice the change.", "name": "Olivia Grant", "role": "Head of Customer Care", "company": "Coastline Travel"},
+          {"stars": "4", "quote": "Morning reports from the team lead mean I know about a problem before our own staff log in.", "name": "Marcus Lee", "role": "Support Manager", "company": "Tallow Home"},
+          {"quote": "Chat response times dropped in the first month and the replies still sound like us.", "name": "Priya Raman", "role": "COO", "company": "Brightfold Apps"}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Start with a *six-agent pilot*",
+        "text": "We staff one queue for 60 days and send you the weekly QA scores.",
+        "primary_cta": {"label": "Talk to our team", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Harbor Lane CX runs customer support teams in Cebu for retail, travel and software brands.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Voice support", "href": "#services"},
+            {"label": "Chat and messaging", "href": "#services"},
+            {"label": "Email and tickets", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Reviews", "href": "#reviews"},
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -55,7 +55,6 @@
 /* actions */
 .bl-fxletter__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
 .bl-fxletter__sign { font-family: var(--font-heading); font-size: 1.05rem; font-style: italic; color: var(--text-strong); }
-.bl-fxletter__sign::before { content: ""; display: inline-block; vertical-align: middle; width: 2rem; height: 1px; margin-right: .7rem; background: var(--border-strong); }
 .bl-fxletter__form { flex: 1 1 26rem; display: grid; gap: .6rem; }
 .bl-fxletter__form-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: .75rem; }
 .bl-fxletter__done { display: flex; align-items: center; gap: .5rem; font-weight: 600; color: var(--text-strong); }

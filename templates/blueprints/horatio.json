@@ -5,7 +5,7 @@
   "summary": "Light page with a split hero (dark form-like card left, portrait with stat chips right), an about split, a four-card quote grid, a vertical-tab service block, a dark rounded call panel, a quote and video slider, an award tab strip, an industry card slider, a people split, a three-step process and a dark closing band.",
   "header": "simple",
   "sections": [
-    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "note": "left: large dark rounded card with headline, short paragraph, six selectable service chips in two rows and a full-width button; right: cut-out portrait on shapes with three floating stat chips"},
+    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "compose": ["hero-portrait"], "note": "left: large dark rounded card with headline, short paragraph, six selectable service chips in two rows and a full-width button; right: cut-out portrait on shapes with three floating stat chips"},
     {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "small label, heading, paragraph and one small button left, cut-out portrait on coloured shapes right"},
     {"form": "cards-text", "role": "testimonial", "tone": "light", "cols": 2, "count": 4, "media": "none", "note": "two rows of two soft cards, each with a small icon, heading, quote, and a footer with avatar, name and client logo"},
     {"form": "tabs", "role": "services", "tone": "light", "cols": 2, "count": 7, "media": "right", "note": "centered heading and line, vertical list of service tabs left, large photo right with title, paragraph and a small button below"},

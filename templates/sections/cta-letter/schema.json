@@ -1,6 +1,6 @@
 {
   "variant": "cta-letter",
-  "group": "cta", "signature": true,
+  "group": "cta", "signature": true, "tier": "expressive",
   "forms": ["cta-band"],
   "summary": "Closing call to action set as a tri-fold letter (CSS 3D). When it scrolls into view the outer third unfolds, then the other, revealing a letterhead with the brand seal and title, a short note with ticks, and the buttons (or a one-line email form) with an optional sign-off. It unfolds once, then stays a flat paper card with faint fold lines. Fold order, paper tint and seal side are seeded from the brand name. Needs primary_cta or form. Suits accounting, tax, legal and insurance BPO.",
   "tone": "auto",

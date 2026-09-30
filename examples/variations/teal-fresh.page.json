@@ -172,6 +172,10 @@
     },
     "cards": [
      {
+      "photo": {
+       "src": "desk-phone-monitors",
+       "alt": "Caller at a desk with a phone and two monitors"
+      },
       "icon": "phone",
       "title": "Outbound SDR teams",
       "text": "Dedicated callers who prospect, qualify and book meetings on your reps' calendars.",
@@ -278,6 +282,7 @@
   {
    "type": "metrics-counter",
    "data": {
+    "image": "team-meeting-bright-office",
     "title": "Results from B2B campaigns",
     "items": [
      {
@@ -458,7 +463,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "items": [
@@ -484,7 +488,6 @@
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Get a *campaign plan*",
     "lead": "Tell us who you sell to. We reply with a target list sample, call plan and price.",
     "points": [

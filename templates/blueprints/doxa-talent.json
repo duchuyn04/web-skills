@@ -20,6 +20,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-overlap"],
       "note": "left-aligned headline, short lines and one button over a gradient photo"
     },
     {

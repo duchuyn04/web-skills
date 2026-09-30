@@ -129,6 +129,10 @@
     },
     "cards": [
      {
+      "photo": {
+       "src": "desk-phone-monitors",
+       "alt": "Support specialist at a desk with a phone and two monitors"
+      },
       "icon": "headset",
       "title": "Customer support",
       "text": "Email, chat and phone agents with C1 English who learn your product and answer in your brand voice.",
@@ -365,6 +369,10 @@
   {
    "type": "faq-accordion",
    "data": {
+    "photo": {
+     "src": "portrait-man-desk",
+     "alt": "Smiling account manager at a white desk with a laptop"
+    },
     "head": {
      "eyebrow": "FAQ",
      "title": "Frequently asked questions"
@@ -405,7 +413,6 @@
    "type": "contact-split",
    "data": {
     "head": {
-     "eyebrow": "Get in touch",
      "title": "Contact *Keystone Staffing*"
     },
     "form": {

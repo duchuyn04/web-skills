@@ -119,11 +119,12 @@
    }
   },
   {
-   "type": "hero-terrain",
+   "type": "hero-news",
    "data": {
     "eyebrow": "Customer experience and back-office services",
     "title": "Customer operations for *banks, telcos and retail*",
     "lead": "Northbridge CX has run voice, chat and back-office programs since 2009. Our 2,400 agents work from Manila, Ho Chi Minh City, Bogota and Krakow in 12 languages.",
+    "image": "desk-phone-monitors",
     "primary_cta": {
      "label": "Talk to an expert",
      "href": "#contact"
@@ -137,22 +138,22 @@
      "24/7 coverage",
      "Founded in 2009"
     ],
-    "stats": [
+    "list_label": "Latest from Northbridge",
+    "items": [
      {
-      "value": "2,400+",
-      "label": "Trained agents"
+      "meta": "Case study",
+      "title": "Kestrel Bank moved three card-support vendors into one 180-seat program",
+      "href": "#case-studies"
      },
      {
-      "value": "94.6%",
-      "label": "Average CSAT, 2025"
+      "meta": "Delivery centers",
+      "title": "Four centers in Manila, Ho Chi Minh City, Bogota and Krakow",
+      "href": "#centers"
      },
      {
-      "value": "12",
-      "label": "Languages supported"
-     },
-     {
-      "value": "4",
-      "label": "Delivery centers"
+      "meta": "Industries",
+      "title": "Programs for banks, telcos and retail brands",
+      "href": "#industries"
      }
     ]
    }
@@ -187,8 +188,7 @@
       "label": "Days to go live",
       "note": "For a 25-seat program"
      }
-    ],
-    "visual": "dots"
+    ]
    }
   },
   {
@@ -481,7 +481,7 @@
    }
   },
   {
-   "type": "cta-letter",
+   "type": "cta-band",
    "id": "contact",
    "data": {
     "title": "Start with a *10-seat pilot*",
@@ -497,8 +497,7 @@
     "secondary_cta": {
      "label": "Talk to an expert",
      "href": "#top"
-    },
-    "sign_off": "The Northbridge CX operations team"
+    }
    }
   },
   {

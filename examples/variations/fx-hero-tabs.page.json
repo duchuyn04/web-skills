@@ -1,0 +1,125 @@
+{
+  "_note": "Shows hero-tabs (style photo; set \"style\": \"card\" for the light card version). Tallis Contact is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Tallis Contact",
+    "brand_mark": "TC",
+    "title": "Tallis Contact | Customer care and back-office teams in Manila",
+    "description": "Tallis Contact runs customer care, back-office processing and technical support teams from Manila and Cebu for retail, travel and software companies."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Reviews", "href": "#reviews"},
+          {"label": "Offices", "href": "#locations"}
+        ],
+        "cta": {"label": "Contact us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-tabs",
+      "data": {
+        "style": "photo",
+        "title": "Customer care teams for *retail, travel and software*",
+        "lead": "Tallis Contact answers calls, chats and emails for 40 brands from Manila and Cebu, with a team lead and a quality analyst on every account.",
+        "primary_cta": {"label": "Contact us", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "tab_label": "Customer care",
+        "photo": {"src": "desk-phone-monitors", "alt": "Tallis Contact agent at a desk with a phone and two monitors"},
+        "slides": [
+          {
+            "label": "Back office",
+            "title": "Order, refund and claims processing",
+            "text": "Trained processors work in your order system and hand back every batch with an error count.",
+            "photo": {"src": "paperwork-review-desk", "alt": "Processor reviewing printed claim documents at a desk"},
+            "cta": {"label": "See back-office work", "href": "#services"}
+          },
+          {
+            "label": "Technical support",
+            "title": "Tier 1 and tier 2 support for software products",
+            "text": "Support engineers reproduce bugs, write clear tickets and follow them through with your developers.",
+            "photo": {"src": "developer-headphones-monitors", "alt": "Support engineer with headphones working at three screens"},
+            "cta": {"label": "See technical support", "href": "#services"}
+          },
+          {
+            "label": "Onboarding",
+            "title": "A new team live in six weeks",
+            "text": "We hire, train on your product and run a two-week pilot before the team takes live contacts.",
+            "photo": {"src": "training-workshop-board", "alt": "Trainer presenting to a new support team at a flip chart"},
+            "cta": {"label": "Talk to our team", "href": "#get-started"}
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Manila and Cebu", "title": "Our services"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer care",
+            "text": "Voice, chat and email support in your brand's tone, with weekend and holiday cover.",
+            "bullets": ["Team lead on every account", "Daily quality scoring", "Weekly report"]
+          },
+          {"icon": "file-text", "title": "Back office", "text": "Orders, refunds, claims and data entry, checked before each batch goes back."},
+          {"icon": "code", "title": "Technical support", "text": "Tier 1 and tier 2 support with ticket notes your developers can act on."},
+          {"icon": "users", "title": "Onboarding", "text": "Hiring, product training and a two-week pilot before go-live."}
+        ]
+      }
+    },
+    {
+      "type": "testimonials-rated",
+      "data": {
+        "head": {"title": "Client reviews"},
+        "items": [
+          {"quote": "Tallis took over our weekend chat queue in five weeks and our customers never noticed the switch.", "name": "Rachel Moss", "role": "Head of Support", "company": "Wayfare Travel"},
+          {"stars": "4", "quote": "The refund backlog was gone in the first month, and the error reports made it easy to trust the work.", "name": "Tom Becker", "role": "Operations Manager", "company": "Ridge Outdoor"},
+          {"quote": "Their tickets are the clearest our developers get. Bugs come in with steps, screenshots and the account ID.", "name": "Priya Nair", "role": "VP Engineering", "company": "Cloverleaf Apps"}
+        ]
+      }
+    },
+    {
+      "type": "locations-gmap",
+      "data": {
+        "head": {"title": "Our offices"},
+        "offices": [
+          {"city": "Manila", "name": "Tallis Contact Manila", "address": "Ayala Avenue, Makati City, Metro Manila, Philippines", "phone": "+63 2 0000 0000", "email": "hello@example.com", "hours": "Open 24 hours"},
+          {"city": "Cebu", "name": "Tallis Contact Cebu", "address": "Cebu IT Park, Lahug, Cebu City, Philippines", "phone": "+63 32 000 0000"}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Start with a *two-week pilot*",
+        "text": "Tell us the queue and the hours. We send a team plan and a price within a week.",
+        "primary_cta": {"label": "Contact us", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tallis Contact runs customer care, back-office and technical support teams from Manila and Cebu.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer care", "href": "#services"},
+            {"label": "Back office", "href": "#services"},
+            {"label": "Technical support", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Reviews", "href": "#reviews"},
+            {"label": "Offices", "href": "#locations"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

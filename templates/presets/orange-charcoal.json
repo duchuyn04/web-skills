@@ -9,6 +9,13 @@
     "mono": "JetBrains Mono",
     "google": "family=Schibsted+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
+  "fonts_vi": {
+    "_note": "Used for \"lang\": \"vi\": the fonts above lack Vietnamese glyphs.",
+    "heading": "Archivo",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
   "type": {"heading_weight": 700, "heading_tracking": "-0.025em"},
   "colors": {"primary": "#1b1e23", "accent": "#c94f08", "accent_2": "#f7931e"},
   "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "16px", "radius_btn": "999px"},

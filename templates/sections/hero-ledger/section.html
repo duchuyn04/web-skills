@@ -1,0 +1,33 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hledger bl-tone-{{section.tone}}" data-hledger>
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hledger__rules"></span></div>
+  <div class="bl-container">
+    <div class="bl-hledger__grid">
+      <div class="bl-hledger__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1" data-reveal>{{title}}</h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-hledger__visual" data-hledger-visual>
+        <div class="bl-frame bl-hledger__photo"><img src="{{photo.src}}" alt="{{photo.alt}}" width="720" height="820" fetchpriority="high"></div>
+        <div class="bl-hledger__sheets" aria-hidden="true">
+          {{#sheets}}
+          <div class="bl-hledger__sheet bl-hledger__sheet--{{@n}}" data-hledger-sheet>
+            <p class="bl-hledger__tag">{{tag}}</p>
+            <p class="bl-hledger__title">{{title}}</p>
+            <ul class="bl-hledger__rows">
+              {{#rows}}<li><span>{{.}}</span><i class="bl-hledger__fill" data-hledger-fill></i><b class="bl-hledger__tick" data-hledger-tick>{{icon:check}}</b></li>{{/rows}}
+            </ul>
+            {{#@first}}<svg class="bl-hledger__chart" viewBox="0 0 240 56" preserveAspectRatio="none" aria-hidden="true"><path class="bl-hledger__base" d="M0 55.5H240"/><path class="bl-hledger__line" data-hledger-line d="M2 46 L34 40 L62 43 L94 31 L124 34 L156 22 L186 25 L214 12 L238 8"/></svg>{{/@first}}
+          </div>
+          {{/sheets}}
+        </div>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-hledger__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

@@ -157,6 +157,10 @@
       "link": {
        "label": "Talk to an expert",
        "href": "#contact"
+      },
+      "photo": {
+       "src": "desk-phone-monitors",
+       "alt": "Caller at a desk phone working a call list on two monitors"
       }
      },
      {
@@ -198,7 +202,8 @@
       "label": "Weeks to first meetings",
       "note": "Including list build and training"
      }
-    ]
+    ],
+    "image": "team-meeting-bright-office"
    }
   },
   {
@@ -339,13 +344,16 @@
       "q": "How fast can a campaign start?",
       "a": "Most campaigns place their first calls within two weeks and book first meetings in week three."
      }
-    ]
+    ],
+    "photo": {
+     "src": "portrait-woman-team-lead",
+     "alt": "Campaign team lead with a coffee in the sales room"
+    }
    }
   },
   {
    "type": "cta-multistep",
    "data": {
-    "eyebrow": "Contact us",
     "title": "Get a *campaign plan*",
     "lead": "Tell us who you sell to. We reply with a target list sample, call plan and price.",
     "points": [

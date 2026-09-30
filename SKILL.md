@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "1.0.0"
+  version: "3.0.0"
 ---
 
 # BPO landing builder
@@ -27,7 +27,7 @@ Get these from the user or their files. Ask one short message for anything missi
 - Delivery locations (cities), headcount, languages
 - Proof: real KPIs, client names or logos, certifications, testimonials
 - Contact: email, phone, WhatsApp or Zalo link, form endpoint if they have one
-- Brand colors (hex, exactly as in the logo; build.py derives every shade) and page language (default English). The logo color always goes in `theme.accent`, even when it is bright: build.py darkens the button shade for contrast and keeps the original for highlights. Do not skip it and do not put it in `theme.primary`, which is the dark section and footer color.
+- Brand colors (hex, exactly as in the logo; build.py derives every shade) and page language (default English). The logo color always goes in `theme.accent`, even when it is bright: build.py darkens the button shade for contrast and keeps the original for highlights. Do not skip it and do not put it in `theme.primary`, which is the dark section and footer color. When page.json names a logo file (`site.logo`), build.py reads the logo's colours and fails a `theme.accent` that is not one of them, and a coloured logo without `theme.accent`. It also fails framework default colours (Bootstrap's `#D9534F` red, Tailwind's `#3B82F6` blue and the like) unless the brief or the logo has that exact colour. Never invent a brand colour: without a logo and without a colour in the brief, leave `theme` out and let the preset choose.
 - Photos of their own office or team, if any (put them next to page.json)
 
 ## Step 2: Choose archetype and preset
@@ -51,14 +51,16 @@ Tie-breakers:
 
 ## Step 2a: Follow a real layout (blueprint)
 
-Every page follows the layout of one real BPO homepage, section by section. The layouts are in `templates/blueprints/` (about 90 real sites, measured in the browser and checked by hand against their screenshots). What changes from the source is the client's copy, the brand colours and the 3D visuals; the order, layout forms, tones and grid sizes stay. Read `references/layout-blueprints.md`, then:
+Every page follows the layout of one real BPO homepage, section by section. The layouts are in `templates/blueprints/` (about 90 real sites, measured in the browser and checked by hand against their screenshots). What changes from the source is the client's copy, brand colours and photos; the order, layout forms, tones and grid sizes stay. Read `references/layout-blueprints.md`, then:
 
 ```
 python SKILL/scripts/variety.py --blueprints <archetype> --sites sites
 python SKILL/scripts/variety.py --blueprint <key>
 ```
 
-The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it; the ones marked `*` carry the 3D visual. Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint, a page that reorders or skips required sections, and a second site on the same blueprint while free ones remain.
+The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2c). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
+
+The hero follows the real site too. About two thirds of the blueprints name the hero composition of their source site in `"compose"` (a white card over a wide photo, a tilted photo mosaic, a round portrait beside a card of service chips, a row of photo cards under a centered headline, a photo stage with thumbnail tabs, a column of news cards, tall sector panels). build.py fails a page on such a blueprint whose hero is not one of those variants, or a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`) when it fits the client. This is what keeps ten sites from opening with the same text-left, photo-right hero.
 
 ## Step 2b: Do not repeat a look
 
@@ -70,36 +72,44 @@ python SKILL/scripts/variety.py --archetype <archetype> --sites sites
 
 It lists every slot with its variants ordered from least to most used across `sites/*/page.json`, and the presets the same way. For each slot, take the first variant in the line that fits the client's content (a variant still has to suit the facts: do not pick `models-board` without engagement models or `industries-rows` without industries). Prefer a preset nobody has used when the client has no brand colours. `build.py` warns when the finished page shares 70% or more of its look (preset plus variant per slot, hero and services count double) with another site, and names the slots to swap; treat that warning like a copy warning and fix it.
 
-Motion-signature variants, added to widen the library: `hero-ribbons` (canvas line ribbons, word-rise headline, globe and photo carousel, optional `echo` of the ribbons behind later dark sections), `services-stack` (sticky stacking cards), `models-board` (compare slot: engagement models with a who-does-what board) and `industries-rows` (industries or audience slot: large rows, cursor-follow card). `examples/variations/motion-signature.page.json` shows all four.
+## Step 2c: Keep motion calm
 
-Effects from `bpo-landing-animations/05-new-effects-research.md`: `hero-chat` (a sample support chat plays in the hero; label it as a sample), `logo-wall` (logo grid whose cells flip, instead of the marquee), `metrics-rings` (SLA percentages as drawing rings), `testimonials-drift` (drifting quote columns with a Pause button, 9 or more real quotes), `case-filter` (case studies filtered by industry with a View Transition) and `"wordmark": true` on `footer-columns` (brand name edge to edge). `examples/variations/proof-motion.page.json` shows them. Every footer carries a Pause animations button that stops all motion on the page (WCAG 2.2.2); keep `motion_toggle` on whenever the page has a loop, a carousel, a video or `testimonials-drift`.
+BPO buyers judge a vendor on trust first: people photography, certifications, client logos, figures, case studies, star-rated reviews, office addresses with a map and a contact form. Sites such as TDCX, TaskUs and Concentrix keep motion quiet (reveals, counters, a logo strip, a review carousel, tabs). Pages built here do the same: `"motion"` defaults to `"calm"`, and you normally leave the field out.
 
-## Step 2c: Give the page signature motion
+The library has two tiers.
 
-Clients compare these pages with agency-built sites, so a page made only of fade-in sections reads as a template. Every page needs at least three sections from the signature set, and build.py fails the page until it has them:
+Calm variants fit any page: everything that `variety.py` does not mark with `^`. A few of them carry one small moving piece tied to the business. Use at most one of those in the hero, and only when it fits (the archetype's hero line in `variety.py --archetype` shows which heroes it accepts):
 
-| Slot | Signature variants (pick by metaphor, not list order) |
+Hero compositions from real sites (the blueprint names the one to use; each needs real content and photos):
+
+| Variant | Source | Needs |
+|:---|:---|:---|
+| `hero-overlap` | Foundever | a wide people photo; lead and buttons sit on a white card over its lower edge |
+| `hero-mosaic` | Kyanon | 6-10 photos of the team, offices and work, tinted in the brand colour |
+| `hero-portrait` | MicroSourcing, Horatio | one smiling team member photo; 3-6 service chips linking to sections; 2-3 real figures |
+| `hero-promo` | Firstsource | 3-4 photo cards linking to real sections (a service, a case study, careers) |
+| `hero-tabs` | Genpact, TDCX, CMC | 3-4 real service lines, each with its photo; replaces the photo sliders of real sites |
+| `hero-news` | Concentrix | 2-3 real items (case studies, a report, a new center) and an optional featured item |
+| `hero-panels` | ELEKS | 3-4 real sectors or service lines, each with a photo |
+
+Business heroes, when the client's work fits:
+
+| Business | Hero |
 |:---|:---|
-| hero, tech and AI | `hero-particles` (particles form the monogram), `hero-magnetic` (dot plane bends under the pointer), `hero-dark-network` (AI data operations), `hero-monolith` (extruded monogram block) |
-| hero, back office and data | `hero-flow` (scattered particle streams sorted into calm lanes; finance, accounting, data processing, IT operations) |
-| hero, operations and scale | `hero-terrain` (landscape with stats on the peaks), `hero-isometric` (operations floor), `hero-dashboard` (exploded dashboard of real services and stats), `hero-wavefield` (field of dots under slow swells; CX and voice) |
-| hero, several service lines | `hero-orbits` (service chips on orbit rings), `hero-prism` (headline line turns through the services), `hero-ribbons` (line ribbons and globe carousel) |
-| hero, people and staffing | `hero-deck` (fanned deck of real roles), `hero-shatter` (the client's team photo assembles), `hero-liquid` ("your team and ours" merge) |
-| hero, contact centers and 24/7 | `hero-sundial` (24-hour dial with live hub times; needs 2+ real hubs), `hero-chat` (sample support chat) |
-| hero, offshore and multi-site | `hero-globe` (dotted globe with the real delivery cities pinned and arcs to client markets; needs 1+ real hub city) |
-| services | `services-stack` (sticky stacking cards), `services-cylinder` (drum of 5-8 services), `services-cube` (blocks that turn to scope, SLA, tools) |
-| process | `process-sticky`, `process-layers` (isometric plates open with scroll), `process-pipeline` (packets through stations) |
-| compare | `models-board` (who does what in each engagement model) |
-| industries, audience | `industries-rows` (4+ industries), `industries-slats` (angled slats turn to face you) |
-| metrics, trust | `metrics-rings` (percentages), `metrics-bars3d` (real before and after results) |
-| logos | `logo-wall` (8+ real client names) |
-| proof | `testimonials-drift` (6+ real quotes), `case-filter` (4+ real cases), `proof-book` (3+ real cases as an open book) |
-| about, team | `about-helix` (4+ real milestones), `team-coverflow` (3+ real leaders) |
-| locations | `locations-map`, `locations-relief` (tilted map with a column per hub) |
-| faq, cta | `faq-fold` (answers unfold like paper), `cta-letter` (closing letter unfolds) |
-| calculator, voice | `cost-calculator`, `voice-sample` |
+| Contact center, multilingual support | `hero-voice` (team photo with a call card that answers in each language the brief names), `hero-chat` (sample support chat; label it as a sample) |
+| Accounting, payroll, back office | `hero-ledger` (paperwork photo with report sheets that fan in and get ticked) |
+| Several service lines with reporting | `hero-dashboard` (panels built from the real services and stats) |
+| Anything else | `hero-split-image`, `hero-fullbleed`, `hero-collage`, `hero-qualifier`, `hero-cycler-centered`, `hero-gradient` |
 
-The hero is the page's identity, so every site in `sites/` gets its own signature hero: build.py fails a page whose hero another site already uses while an unused signature hero fits the archetype, and names the free ones. Pick the one whose metaphor suits the company (see the table), not the first in the list. All 3D heroes seed their motion from the brand name, so even a repeated hero moves differently. `python SKILL/scripts/variety.py --archetype <archetype>` marks them with `*` and lists them first. The archetype examples in `examples/` use the calmer variants, so after copying one, swap at least three slots to signature variants, taking the data shape from `examples/variations/motion-signature.page.json` and `examples/variations/proof-motion.page.json`. Signature variants still need real content: never invent industries, quotes or logos to use one. `hero-ribbons` repeats its ribbons behind the dark sections below it by itself; that shared motif is what makes the page feel designed. Set `"motion": "calm"` at the top of page.json only when the client asks for a still, conservative page.
+Photos: a page with 6 or more content sections needs a photo in at least 40% of them (real BPO homepages: median 33%, top quarter 44%), and at most two sections may put an icon on every item; build.py fails otherwise and names the sections that take a photo. Text-only sections now take photos: `metrics-counter` "image" (the figures over a photo), `services-bento` first card "photo", `process-sticky` and `steps-row` a photo on every step (process-sticky swaps the pinned photo as the reader moves through the steps), `industries-rows` a photo on every row (shown in the card that follows the hovered row), `faq-accordion` "photo", `contact-split` "aside.photo". Use the client's photos first, then library photos from `references/assets.md` that match the section.
+
+Trust sections to reach for when the brief has the content: `testimonials-rated` (3-8 real reviews with star ratings, optional overall score), `locations-gmap` (office cards beside a live Google Map; a blueprint with no locations slot can show the office through `contact-split` with `"map": {"query": "<address>"}`), `logo-wall` (8+ real client names), `metrics-rings` (real percentages), `case-filter` (4+ real cases), `voice-sample` (real call recordings) and `cost-calculator` (real salary rates). `process-sticky`, `services-stack`, `models-board` and `industries-rows` need no client figures.
+
+Expressive variants (`^` in `variety.py`) are 3D objects, WebGL scenes, particles and folding effects: `hero-globe`, `hero-particles`, `hero-terrain`, `hero-flow`, `hero-wavefield`, `hero-magnetic`, `hero-dark-network`, `hero-ribbons`, `hero-orbits`, `hero-monolith`, `hero-prism`, `hero-isometric`, `hero-deck`, `hero-shatter`, `hero-liquid`, `hero-sundial`, `services-cube`, `services-cylinder`, `process-layers`, `process-pipeline`, `industries-slats`, `metrics-bars3d`, `locations-relief`, `proof-book`, `about-helix`, `team-coverflow`, `faq-fold` and `cta-letter`, plus the `"visual"` backdrop on bands. build.py fails any of them unless page.json sets `"motion": "expressive"`, and it fails `"expressive"` unless the brief asks for a 3D or animation-led page (words such as "3D", "WebGL", "immersive", "nhiều hiệu ứng"). Never add such words to the brief yourself. `examples/variations/*.page.json` shows the expressive variants; copy their data shape only for such a client, and read "Where the 3D goes" in `references/layout-blueprints.md`.
+
+build.py warns when another site in `sites/` already opens with the same hero and names unused ones. Switch only to one that fits the business as well; a fitting repeated hero is better than an unfitting new one.
+
+Every footer carries a Pause animations button that stops all motion on the page (WCAG 2.2.2); keep `motion_toggle` on whenever the page has a loop, a carousel, a video or `testimonials-drift`.
 
 ## Step 3: Start from the example
 
@@ -163,7 +173,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/page-anatomy.md`: archetypes and exact slot order (generated)
 - `references/section-catalog.md`: every variant, its fields, limits and preview (generated)
 - `references/style-presets.md`: presets, design options, brand color overrides, tones
-- `references/layout-blueprints.md`: the real-site layouts every page follows, how sections map to variants, and where the 3D visuals go
+- `references/layout-blueprints.md`: the real-site layouts every page follows, how sections map to variants, and where the 3D visuals go on expressive pages
 - `references/anti-slop.md`: design tells of generated pages (labels on every heading, 01/02 on everything, icon squares, arrows on every button, hover lift on cards, glows) and which build, lint and QA checks catch them. Read it before writing page.json.
 - `references/color-system.md`: how brand colors become tokens (OKLCH, contrast, harmony rules), the gradient policy (flat surfaces; gradients only for photo scrims, edge fades, shading and hard-stop patterns, enforced by lint) and the contrast, focus and link checks in QA
 - `references/content-rules.md`: copy rules and how to handle missing facts
@@ -175,6 +185,16 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
 
 ## Maintaining the library
+
+Run the regression tests after any change to `build.py`, `lint_output.py`, `rules.py`, a schema or an example:
+
+```
+py -3.11 SKILL/tests/run.py --qa --sites sites
+```
+
+It builds the clean fixture `tests/fixtures/quayside.page.json` and each must-fail case in `tests/cases.json` (invented logos, extended quotes, figures and claims missing from the brief, copied example text, emoji, dashes, arrows, banned words, expressive motion without a request, the rules pin), then builds and lints every example and every site in `sites/` without touching their `dist/`. It must print `ALL TESTS PASSED`. A rule that the build learns from a new failure gets a case in `tests/cases.json`.
+
+When a new check can fail a page that built before, raise `RULES_VERSION` in `build.py` and the version at the top of this file, and add an entry to `CHANGELOG.md`. A site built under rules 1 keeps building with `"rules": "1"` in its page.json: build.py then prints the content checks added in rules 2 as warnings and lint does the same for the design checks, while the schema, copy (AGENTS.md) and accessibility checks stay errors. build.py accepts the pin only when the site's output folder holds a build made under rules 1, so a new page cannot use it. Never add `"rules"` to a new page.
 
 After changing a template or schema, rebuild every page in `examples/` and `examples/variations/`, run lint and QA on each, then run `python SKILL/scripts/make_catalog.py` to regenerate the catalog, anatomy and animation map (add `--previews <dist> ...` to refresh preview images).
 

@@ -20,6 +20,7 @@
       "cols": 2,
       "count": null,
       "media": "right",
+      "compose": ["hero-collage"],
       "note": "eyebrow, heading, subline and button on the left, collage of illustrated portraits on the right"
     },
     {

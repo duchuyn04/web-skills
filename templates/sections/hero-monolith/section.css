@@ -14,7 +14,7 @@
   font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap;
 }
 .bl-hmono__plaque span + span { display: inline-flex; align-items: center; gap: .9rem; font-weight: 600; }
-.bl-hmono__plaque span + span::before { content: ""; width: 1.4rem; height: 1px; background: var(--border-strong); }
+.bl-hmono__plaque span + span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--border-strong); }
 .bl-hmono .bl-h3d__toggle { bottom: 0; }
 @media (max-width: 560px) {
   .bl-hmono__plaque { letter-spacing: .12em; }

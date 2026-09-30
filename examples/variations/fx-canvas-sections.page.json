@@ -81,7 +81,6 @@
     {
       "type": "cta-band",
       "data": {
-        "eyebrow": "Contact",
         "title": "Send us a month of *invoice volumes*",
         "text": "We reply with a staffing plan, a price per invoice and a start date.",
         "primary_cta": {"label": "Get a quote", "href": "mailto:hello@example.com"}

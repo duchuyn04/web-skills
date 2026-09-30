@@ -1,6 +1,6 @@
 {
   "variant": "hero-prism",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-left-text"],
   "summary": "Type-led hero: the last line of the headline sits on a solid three-sided prism in the brand colour that turns about its horizontal axis every 2.4-3.2 s to show the next service line, with shaded side faces. An index of the same service lines on the right marks the one in front. Two full passes, then it rests on the first phrase; the page-wide Pause switch stops it and reduced motion shows the phrases as plain text. Turn direction, dwell time and face colour are seeded from the brand name. The title is the start of one sentence and each cycle phrase must finish it: 'Full-stack services from Da Nang' followed by 'mobile apps' is wrong, 'We run your' followed by 'support desk', 'payroll' or 'QA testing' is right. Read title plus every phrase aloud before building. Needs 3-6 service phrases of up to 24 characters; fits multi-service BPO and IT-BPO partners. Do not use it on a page with hero-cycler-centered.",
   "tone": "hero",

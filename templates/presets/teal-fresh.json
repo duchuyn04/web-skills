@@ -9,6 +9,13 @@
     "mono": "JetBrains Mono",
     "google": "family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
+  "fonts_vi": {
+    "_note": "Used for \"lang\": \"vi\": the fonts above lack Vietnamese glyphs.",
+    "heading": "Lexend",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "google": "family=Lexend:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+  },
   "type": {"heading_weight": 600, "heading_tracking": "-0.025em"},
   "colors": {"primary": "#0b2b2a", "accent": "#0a7f78", "accent_2": "#34d399"},
   "shape": {"radius_sm": "10px", "radius": "16px", "radius_lg": "24px", "radius_btn": "999px"},

@@ -8,8 +8,12 @@ Usage:
 Exit code 0 = clean, 1 = errors found. Warnings never fail the run.
 Fix copy problems in page.json and rebuild. Never patch dist/ by hand.
 """
+import json
 import re
 import sys
+for _stream in (sys.stdout, sys.stderr):  # Vietnamese text must not crash printing on a cp1252 console or pipe
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -18,7 +22,10 @@ import rules  # noqa: E402
 
 TEXT_ATTRS = {"alt", "title", "aria-label", "placeholder", "content", "value"}
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-CUSTOM_PROP_STYLE = re.compile(r"^\s*(--[\w-]+\s*:\s*[^;]+;?\s*)+$")
+# Design checks and the rules version that added them. A site that build.py built with an older "rules" pin (see
+# build-report.json) gets the newer ones as warnings; copy, accessibility and structure checks stay errors everywhere.
+RULES_SINCE = {"gradient": 2, "caps-tracking": 2, "justify": 2, "slow-motion": 2, "glow": 2, "numbered-marker": 2, "dash-rule": 3}
+CUSTOM_PROP_STYLE =re.compile(r"^\s*(--[\w-]+\s*:\s*[^;]+;?\s*)+$")
 
 
 class Page(HTMLParser):
@@ -64,8 +71,15 @@ def main():
         print("No index.html in %s. Run build.py first." % dist)
         return 2
     errors, warns = [], []
+    try:
+        # the rules version build.py wrote; an older one means the site pins "rules" in page.json
+        pinned = int(json.loads((dist / "build-report.json").read_text(encoding="utf-8")).get("rules", 99))
+    except (OSError, ValueError, TypeError):
+        pinned = 99
 
     def add(level, where, code, msg):
+        if level == "error" and RULES_SINCE.get(code, 0) > pinned:
+            level, msg = "warn", "[rules %d, not enforced] %s" % (pinned, msg)
         (errors if level == "error" else warns).append("%s [%s] %s" % (where, code, msg))
 
     src = index.read_text(encoding="utf-8")
@@ -277,6 +291,13 @@ def _check_design_css(css, add):
             if key not in seen:
                 seen.add(key)
                 add(level, "css " + at, code, msg)
+        if re.search(r"::?(before|after)\b", selector) and re.search(r"content\s*:\s*(\"\"|'')", body) and "absolute" not in body:
+            h = re.search(r"(?<![-\w])height\s*:\s*([\d.]+)px", body)
+            w = re.search(r"(?<![-\w])width\s*:\s*([\d.]+)(rem|em|px)", body)
+            if h and w and float(h.group(1)) <= 3:
+                wpx = float(w.group(1)) * (16 if w.group(2) != "px" else 1)
+                if 8 <= wpx <= 64:
+                    once("dash-rule", "a short line drawn in front of or after text (%s wide, %spx high) reads as a dash; drop it or use spacing" % (w.group(1) + w.group(2), h.group(1)))
         if re.search(r"text-transform\s*:\s*uppercase", body):
             m = re.search(r"letter-spacing\s*:\s*(-?[\d.]+)em", body)
             if m and not 0.05 <= float(m.group(1)) <= 0.12:

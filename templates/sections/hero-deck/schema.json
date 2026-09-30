@@ -1,6 +1,6 @@
 {
   "variant": "hero-deck",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Hero with a deck of role cards on the right (role title, icon, 2-3 skills, optional seniority or language note). The cards fan out in 3D as the hero appears; every 2.8 s the front card slides out and goes to the back until the deck returns to the first role, then it stops. A Next role button steps the deck by hand, the page-wide Pause switch stops it, and hovering spreads the fan. Fan angle, lean, direction and card tints are seeded from the brand name. Needs 4-7 real roles the company staffs; fits staff augmentation, dedicated teams and offshore staffing. Cards show roles only, never names or photos of people.",
   "tone": "hero",

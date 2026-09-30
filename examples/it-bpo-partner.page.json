@@ -106,7 +106,11 @@
     "proof": [
      "14 years in operation",
      "ISO 27001 certified"
-    ]
+    ],
+    "photo": {
+     "src": "code-review-pair",
+     "alt": "Two Harbor Point engineers reviewing code on a laptop"
+    }
    }
   },
   {
@@ -447,7 +451,6 @@
    "type": "compliance-badges",
    "data": {
     "head": {
-     "eyebrow": "Quality and security",
      "title": "Certifications",
      "lead": "External auditors review our security and quality systems each year."
     },
@@ -468,7 +471,6 @@
    "type": "contact-split",
    "data": {
     "head": {
-     "eyebrow": "Get in touch",
      "title": "Contact *Harbor Point*"
     },
     "form": {
@@ -503,7 +505,11 @@
       }
      ],
      "email_label": "Project inquiries",
-     "email": "hello@harborpoint.example"
+     "email": "hello@harborpoint.example",
+     "photo": {
+      "src": "office-building-entrance",
+      "alt": "Entrance of the Harbor Point office building at dusk"
+     }
     }
    }
   },

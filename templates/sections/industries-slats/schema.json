@@ -1,6 +1,6 @@
 {
   "variant": "industries-slats",
-  "group": "industries", "signature": true,
+  "group": "industries", "signature": true, "tier": "expressive",
   "forms": ["cards-image"],
   "reshape": true,
   "summary": "4-8 tall industry slats stand side by side like the louvres of a shutter (CSS 3D): each turned slat shows a sliver of its photo (or a brand-tinted panel with a large icon) and a vertical title. Hovering, focusing or tapping a slat turns it to face the visitor with its short text; its neighbours fan away on both sides. One slat is always open; which one opens first, the width of the open slat and the fan angle are seeded from the brand name. Tablets and phones get a plain card list. Needs 4 or more industries from the brief; with fewer use industries-tiles.",

@@ -18,6 +18,7 @@
       "role": "hero",
       "tone": "light",
       "media": "right",
+      "compose": ["hero-news"],
       "note": "large short heading left with an accent rule, rounded video player right, thin announcement strip above"
     },
     {

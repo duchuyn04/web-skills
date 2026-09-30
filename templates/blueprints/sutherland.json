@@ -19,6 +19,7 @@
       "cols": 3,
       "count": 3,
       "media": "right",
+      "compose": ["hero-news"],
       "note": "large heading and short copy on the left, a glass ring visual on the right, three stat cards along the bottom edge and a pill-shaped search bar below"
     },
     {

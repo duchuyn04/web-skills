@@ -1,0 +1,128 @@
+{
+  "_note": "Test fixture: a clean page outside examples/, built on a blueprint and checked against its brief. Quayside Staffing is fictional. tests/cases.json derives every must-fail case from this page, so keep it passing.",
+  "archetype": "offshore-staffing",
+  "preset": "human-warm",
+  "blueprint": "kdci-outsourcing",
+  "lang": "en",
+  "brief": "Quayside Staffing is an offshore staffing company in Cebu, Philippines. We hire dedicated customer support agents, bookkeepers and virtual assistants for small ecommerce and property management businesses in Australia and New Zealand. Founded in 2016. 140 staff in one Cebu office. Clients approve every hire after an interview. Each client gets one account manager and a monthly report. No call recordings. Clients: Tidewater Homewares, Kauri Property Group, Saltbush Outdoor, Harbourline Rentals, Bramble Kitchenware, Northcove Realty. Reviews: 'Quayside found us two support agents in three weeks and both are still with us.' Priya Nair, Operations Manager, Tidewater Homewares, 5 stars. 'Our bookkeeper in Cebu closes the month before our own team is back from the weekend.' Tom Walsh, Director, Kauri Property Group, 5 stars. 'Clear invoices, one contact person and staff who ask good questions.' Ana Ruiz, Founder, Saltbush Outdoor, 4 stars. Office: Unit 1204, Skyrise Tower, Salinas Drive, Cebu City. Email hello@quayside.example.",
+  "site": {
+    "brand": "Quayside Staffing",
+    "title": "Quayside Staffing | Offshore staff in Cebu",
+    "description": "Quayside Staffing hires customer support agents, bookkeepers and virtual assistants in Cebu for businesses in Australia and New Zealand."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Why Quayside", "href": "#why"},
+          {"label": "Reviews", "href": "#reviews"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-overlap",
+      "data": {
+        "eyebrow": "Offshore staffing in Cebu",
+        "title": "Offshore staff for *Australian and New Zealand businesses*",
+        "lead": "Quayside Staffing hires customer support agents, bookkeepers and virtual assistants in Cebu for ecommerce and property management businesses. You approve every hire.",
+        "primary_cta": {"label": "Contact us", "href": "#contact"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "photo": {"src": "team-coworking-laptops", "alt": "Quayside Staffing team members working at a shared table"},
+        "stats": [
+          {"value": "140", "label": "Staff in Cebu"},
+          {"value": "2016", "label": "Founded"}
+        ]
+      }
+    },
+    {
+      "type": "logo-marquee",
+      "data": {
+        "label": "Staff for ecommerce and property businesses",
+        "logos": [
+          {"name": "Tidewater Homewares"},
+          {"name": "Kauri Property Group"},
+          {"name": "Saltbush Outdoor"},
+          {"name": "Harbourline Rentals"},
+          {"name": "Bramble Kitchenware"},
+          {"name": "Northcove Realty"}
+        ]
+      }
+    },
+    {
+      "type": "image-cards",
+      "id": "services",
+      "data": {
+        "head": {"title": "Our services"},
+        "cards": [
+          {"tag": "Support", "title": "Customer support agents", "photo": {"src": "desk-phone-monitors", "alt": "Support agent at a desk with two monitors"}, "href": "#contact"},
+          {"tag": "Finance", "title": "Bookkeepers", "photo": {"src": "bookkeeping-calculator-laptop", "alt": "Bookkeeper working with a calculator and a laptop"}, "href": "#contact"},
+          {"tag": "Admin", "title": "Virtual assistants", "photo": {"src": "office-worker-laptop", "alt": "Assistant typing on a laptop in a bright office"}, "href": "#contact"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "id": "why",
+      "data": {
+        "head": {"title": "Why Quayside"},
+        "cards": [
+          {"icon": "user-check", "photo": {"src": "team-meeting-bright-office", "alt": "Quayside recruiters meeting a client team in a glass-walled office"}, "title": "You approve every hire", "text": "Our recruiters shortlist candidates in Cebu. You interview them and decide who joins your team.", "bullets": ["Shortlist from our recruiters", "Interview with your team", "Your final approval"]},
+          {"icon": "users", "title": "One account manager", "text": "One person at Quayside answers your questions and handles changes to the team."},
+          {"icon": "bar-chart", "title": "A monthly report", "text": "A short report each month covers the work your offshore staff completed."},
+          {"icon": "building", "title": "Working since 2016", "text": "Quayside Staffing has placed staff for businesses in Australia and New Zealand since 2016."}
+        ]
+      }
+    },
+    {
+      "type": "testimonials-rated",
+      "id": "reviews",
+      "data": {
+        "head": {"title": "Client reviews"},
+        "items": [
+          {"stars": "5", "quote": "Quayside found us two support agents in three weeks and both are still with us.", "name": "Priya Nair", "role": "Operations Manager", "company": "Tidewater Homewares"},
+          {"stars": "5", "quote": "Our bookkeeper in Cebu closes the month before our own team is back from the weekend.", "name": "Tom Walsh", "role": "Director", "company": "Kauri Property Group"},
+          {"stars": "4", "quote": "Clear invoices, one contact person and staff who ask good questions.", "name": "Ana Ruiz", "role": "Founder", "company": "Saltbush Outdoor"}
+        ]
+      }
+    },
+    {
+      "type": "contact-split",
+      "id": "contact",
+      "data": {
+        "head": {"title": "Contact *Quayside Staffing*"},
+        "form": {
+          "title": "Tell us about the role",
+          "text": "Share the role and the hours you need covered.",
+          "submit_label": "Send message",
+          "success_title": "Thanks, your message is in",
+          "success_text": "Your account manager will reply by email."
+        },
+        "aside": {
+          "title": "Our office",
+          "photo": {"src": "office-interior", "alt": "Corridor and kitchen of the Quayside Staffing office"},
+          "points": ["Founded in 2016", "140 staff in Cebu"],
+          "offices": [
+            {"flag": "ph", "name": "Cebu City", "address": "Unit 1204, Skyrise Tower, Salinas Drive, Cebu City"}
+          ],
+          "email_label": "Email",
+          "email": "hello@quayside.example"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Quayside Staffing hires offshore staff in Cebu for businesses in Australia and New Zealand.",
+        "contacts": [{"icon": "mail", "label": "hello@quayside.example", "href": "mailto:hello@quayside.example"}],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "Customer support", "href": "#services"}, {"label": "Bookkeeping", "href": "#services"}, {"label": "Virtual assistants", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "Why Quayside", "href": "#why"}, {"label": "Reviews", "href": "#reviews"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

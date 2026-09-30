@@ -5,7 +5,7 @@
   "summary": "Light and airy page: a pale slider hero, alternating text and product-image splits, industry and studio card grids, a client logo row, a figures row, a video story block, two culture splits and a dark form section with a background image.",
   "header": "mega",
   "sections": [
-    {"form": "hero-video", "role": "hero", "tone": "light", "media": "full", "note": "left-aligned announcement heading, one button and slider bars at the bottom over a pale animated background"},
+    {"form": "hero-video", "role": "hero", "tone": "light", "media": "full", "compose": ["hero-tabs"], "note": "left-aligned announcement heading, one button and slider bars at the bottom over a pale animated background"},
     {"form": "feature-split", "role": "about", "tone": "light", "media": "left", "note": "product screenshot left, logo, paragraph and outlined button right"},
     {"form": "cards-image", "role": "industries", "tone": "light", "cols": 4, "count": 8, "note": "heading and line, two rows of four image cards with title and text, a button below"},
     {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "heading, three text cards with a rule and short text, a button below"},

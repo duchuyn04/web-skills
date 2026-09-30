@@ -17,6 +17,7 @@
       "role": "hero",
       "tone": "dark",
       "media": "full",
+      "compose": ["hero-mosaic"],
       "note": "huge bold centered heading over a tilted photo mosaic tinted brand red; a floating assistant chip at the bottom right"
     },
     {

@@ -5,7 +5,7 @@
   "summary": "Warm cream page with a side menu: a hero with a wide photo under the heading, then service and case sliders, a video block, a golden figures panel, an industry slider, a team-model slider and a closing photo CTA.",
   "header": "simple",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "muted", "media": "full", "note": "heading and short text on top, one wide rounded photo below, small logo row under it"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "muted", "media": "full", "compose": ["hero-overlap"], "note": "heading and short text on top, one wide rounded photo below, small logo row under it"},
     {"form": "carousel-cards", "role": "services", "tone": "muted", "count": 4, "note": "heading and two buttons, then a photo left beside stacked expandable service rows"},
     {"form": "carousel-cards", "role": "cases", "tone": "muted", "count": 5, "optional": true, "note": "heading, then photo left beside a case with logo, text, one big figure and a button, slider controls below"},
     {"form": "video-block", "role": "about", "tone": "muted", "media": "full", "optional": true, "note": "eyebrow, heading and a small button, then a large rounded video frame"},

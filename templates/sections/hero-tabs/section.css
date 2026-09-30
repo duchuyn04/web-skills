@@ -1,0 +1,72 @@
+/* hero-tabs: tab-stage-crossfade and tab-progress-autoadvance. A rounded stage holds one panel per tab, stacked in the
+   same grid cell; the active one fades in. The stage sets its own colour tokens, so it reads the same on a light or a
+   dark hero: "photo" is always dark (copy on a shaded photo), "card" is always light (copy on a pale card). */
+.bl-htabs { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.bl-htabs__stage { position: relative; display: grid; border-radius: calc(var(--radius-lg) + 6px); overflow: hidden; isolation: isolate; }
+.bl-htabs__panel {
+  grid-area: 1 / 1; position: relative; display: grid; min-width: 0;
+  opacity: 0; visibility: hidden; transition: opacity .45s var(--ease-out), visibility 0s linear .45s;
+}
+.bl-htabs__panel.is-active { opacity: 1; visibility: visible; transition: opacity .45s var(--ease-out), visibility 0s; z-index: 1; }
+.bl-htabs__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform .5s var(--ease-out); }
+.bl-htabs__panel.is-active .bl-htabs__media img { transform: scale(1); }
+.bl-htabs__title { font-size: clamp(2.1rem, 2.4vw + 1rem, 3.5rem); margin-bottom: 1.1rem; }
+.bl-htabs__text { max-width: 34rem; margin-bottom: 2rem; }
+
+/* style photo: the photo fills the stage, a primary shade on the left carries the copy */
+.bl-htabs--photo .bl-htabs__stage {
+  --text-strong: #fff; --text: rgba(255, 255, 255, .88); --text-muted: rgba(255, 255, 255, .74);
+  --border-strong: rgba(255, 255, 255, .6); --surface-2: rgba(255, 255, 255, .12);
+  --accent-ink: var(--c-accent-on-dark); --focus-ring: #fff;
+  background: var(--c-primary); color: var(--text); min-height: clamp(520px, 70vh, 680px);
+}
+.bl-htabs--photo .bl-htabs__media { position: absolute; inset: 0; z-index: -1; }
+.bl-htabs--photo .bl-htabs__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c-primary) 92%, transparent) 0%, color-mix(in srgb, var(--c-primary) 74%, transparent) 40%, color-mix(in srgb, var(--c-primary) 8%, transparent) 78%);
+}
+.bl-htabs--photo .bl-htabs__copy { align-self: center; max-width: 640px; padding: clamp(2.5rem, 5vw, 4.5rem); }
+
+/* style card: a pale card with the copy left and the photo framed right */
+.bl-htabs--card .bl-htabs__stage {
+  --bg: color-mix(in srgb, var(--c-primary) 4%, #fff); --surface: #fff; --surface-2: color-mix(in srgb, var(--c-primary) 7%, #fff);
+  --text-strong: var(--c-primary); --text: color-mix(in srgb, var(--c-primary) 80%, #fff); --text-muted: color-mix(in srgb, var(--c-primary) 68%, #fff);
+  --border: color-mix(in srgb, var(--c-primary) 12%, #fff); --border-strong: color-mix(in srgb, var(--c-primary) 32%, #fff);
+  --accent-ink: var(--c-accent); --focus-ring: var(--c-accent);
+  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+}
+.bl-htabs--card .bl-htabs__panel { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(1.5rem, 4vw, 3.5rem); padding: clamp(1.25rem, 2.5vw, 2rem); }
+.bl-htabs--card .bl-htabs__copy { padding: clamp(1.25rem, 3vw, 2.75rem) 0 clamp(1.25rem, 3vw, 2.75rem) clamp(.75rem, 2.5vw, 2.25rem); }
+.bl-htabs--card .bl-htabs__media { order: 2; aspect-ratio: 5 / 4; border-radius: var(--radius-lg); overflow: hidden; }
+
+/* tabs: thumbnail, label and a progress track */
+.bl-htabs__tabs { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(.6rem, 1.5vw, 1rem); margin-top: clamp(.9rem, 1.8vw, 1.25rem); }
+.bl-htabs__tab {
+  position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: .85rem;
+  min-height: 72px; padding: .6rem .9rem .8rem .6rem; text-align: left; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  transition: border-color var(--dur-fast) var(--ease-std), background-color var(--dur-fast) var(--ease-std), color var(--dur-fast) var(--ease-std);
+}
+.bl-htabs__tab:hover { border-color: var(--border-strong); color: var(--text-strong); }
+.bl-htabs__tab.is-active { border-color: var(--border-strong); color: var(--text-strong); background: var(--surface-2); }
+.bl-htabs__thumb { width: 64px; height: 48px; border-radius: calc(var(--radius-sm) + 2px); overflow: hidden; background: var(--surface-2); }
+.bl-htabs__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.bl-htabs__label { font-size: var(--fs-sm); font-weight: 700; line-height: 1.3; }
+.bl-htabs__track { position: absolute; left: .9rem; right: .9rem; bottom: .45rem; height: 3px; border-radius: 3px; background: var(--border); overflow: hidden; }
+.bl-htabs__bar { display: block; height: 100%; background: var(--accent-ink); transform: scaleX(0); transform-origin: left center; }
+.bl-htabs__tab.is-active .bl-htabs__bar { transform: scaleX(1); }
+
+@media (max-width: 1024px) {
+  .bl-htabs--card .bl-htabs__panel { grid-template-columns: 1fr; }
+  .bl-htabs--card .bl-htabs__media { order: 0; aspect-ratio: 16 / 9; }
+  .bl-htabs--card .bl-htabs__copy { padding: .5rem clamp(.5rem, 2vw, 1rem) 1rem; }
+}
+@media (max-width: 768px) {
+  .bl-htabs--photo .bl-htabs__stage { min-height: 0; }
+  .bl-htabs--photo .bl-htabs__media::after { background: color-mix(in srgb, var(--c-primary) 80%, transparent); }
+  .bl-htabs--photo .bl-htabs__copy { padding: 2.25rem 1.4rem 2.5rem; }
+  .bl-htabs__tabs { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bl-htabs__tab { grid-template-columns: 1fr; gap: .5rem; padding: .55rem .6rem .9rem; min-height: 0; }
+  .bl-htabs__thumb { width: 100%; height: 64px; }
+  .bl-htabs__track { left: .6rem; right: .6rem; }
+}

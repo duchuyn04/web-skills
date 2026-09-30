@@ -1,0 +1,102 @@
+{
+  "_note": "Shows hero-panels (after ELEKS). Kestrel Soft is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Kestrel Soft",
+    "brand_mark": "KS",
+    "title": "Kestrel Soft | Software teams in Da Nang for four industries",
+    "description": "Kestrel Soft builds and runs software for fintech, healthcare, logistics and retail companies, with 180 engineers in Da Nang."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Industries", "href": "#industries"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Book a call", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-panels",
+      "data": {
+        "title": "Software delivery partner for *four industries*",
+        "lead": "Kestrel Soft builds, tests and runs software for fintech, healthcare, logistics and retail companies, with 180 engineers in Da Nang.",
+        "primary_cta": {"label": "Book a call", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "photo": {"src": "team-engineers-screen", "alt": "Three Kestrel Soft engineers reviewing code on a laptop"},
+        "proof": ["180 engineers", "Founded in 2014"],
+        "consult": {
+          "title": "Talk to an engineer about your project scope",
+          "cta": {"label": "Book a call", "href": "#get-started"}
+        },
+        "panels_label": "Industries",
+        "panels": [
+          {"label": "Fintech", "text": "Payment, lending and reporting systems with audit trails.", "photo": {"src": "finance-chart-screen", "alt": "Screen with market charts"}, "href": "#industries"},
+          {"label": "Healthcare", "text": "Patient portals, booking and records built to clinic rules.", "photo": {"src": "doctor-tablet", "alt": "Doctor holding a tablet"}, "href": "#industries"},
+          {"label": "Logistics", "text": "Warehouse, route and tracking software for shippers.", "photo": {"src": "warehouse-racks", "alt": "Warehouse pallet racks"}, "href": "#industries"},
+          {"label": "Retail", "text": "Store, order and returns systems for online sellers.", "photo": {"src": "ecommerce-packing", "alt": "Person packing a parcel"}, "href": "#industries"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Da Nang delivery", "title": "Our services"},
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Custom software",
+            "text": "Web and mobile products built by a fixed team that stays with the code after launch.",
+            "bullets": ["Discovery and estimates", "Two-week releases", "Code handed over each sprint"]
+          },
+          {"icon": "check-circle", "title": "QA and testing", "text": "Manual and automated tests written against your acceptance criteria before each release."},
+          {"icon": "server", "title": "Cloud and DevOps", "text": "Build pipelines, monitoring and cost reports for workloads on the cloud you already use."},
+          {"icon": "users", "title": "Dedicated teams", "text": "Engineers who work only on your product and join your standups and planning."}
+        ]
+      }
+    },
+    {
+      "type": "industries-tiles",
+      "data": {
+        "head": {"title": "Industries we serve"},
+        "tiles": [
+          {"icon": "landmark", "title": "Fintech", "text": "Payment, lending and reporting systems for banks and finance startups."},
+          {"icon": "heart-pulse", "title": "Healthcare", "text": "Patient portals, appointment booking and clinic record systems."},
+          {"icon": "truck", "title": "Logistics", "text": "Warehouse, routing and shipment tracking software for carriers."},
+          {"icon": "shopping-cart", "title": "Retail", "text": "Online stores, order handling and returns tools for sellers."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us what you need to *build next*",
+        "text": "Send a short brief and an engineer replies with questions and a first estimate.",
+        "primary_cta": {"label": "Email the team", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Kestrel Soft builds and runs software for fintech, healthcare, logistics and retail companies from Da Nang.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Custom software", "href": "#services"},
+            {"label": "QA and testing", "href": "#services"},
+            {"label": "Dedicated teams", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Industries", "href": "#industries"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

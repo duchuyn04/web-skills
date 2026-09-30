@@ -1,0 +1,43 @@
+/* testimonials-rated: review-carousel. Aside with the score and buttons, a scroll-snap track of wide review cards. */
+/* overflow-x: clip keeps the bleeding track inside the page without making a scroll box, so the sticky aside still works */
+.bl-trated { overflow-x: clip; }
+.bl-trated__layout { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; }
+.bl-trated__aside { position: sticky; top: calc(var(--header-h) + 2rem); }
+.bl-trated__aside .bl-lead { margin-top: 1rem; }
+.bl-trated__score { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: .15rem 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.bl-trated__score strong { grid-row: span 2; font-family: var(--font-heading); font-size: clamp(2.4rem, 3vw + 1rem, 3.4rem); line-height: 1; color: var(--text-strong); }
+.bl-trated__score small { font-size: var(--fs-sm); color: var(--text-muted); }
+.bl-trated__nav { margin-top: 2rem; }
+.bl-trated__stars { display: inline-flex; gap: .15rem; color: var(--c-accent); }
+.bl-trated__stars > [aria-hidden] { display: inline-flex; gap: .15rem; }
+.bl-trated__stars .bl-icon { width: 18px; height: 18px; fill: currentColor; stroke: none; }
+.bl-trated__stars[data-rating="4"] [aria-hidden] .bl-icon:nth-child(n+5),
+.bl-trated__stars[data-rating="3"] [aria-hidden] .bl-icon:nth-child(n+4) { color: var(--border-strong); }
+.bl-trated__viewport { min-width: 0; margin-right: calc(-1 * max(var(--gutter), (100vw - var(--container)) / 2 + var(--gutter))); }
+.bl-trated__track {
+  display: flex; gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding: .25rem max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))) 1rem .25rem; cursor: grab; overscroll-behavior-x: contain;
+}
+.bl-trated__track::-webkit-scrollbar { display: none; }
+.bl-trated__track.is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.bl-trated__card {
+  flex: 0 0 min(460px, 82%); scroll-snap-align: start; display: flex; flex-direction: column; gap: 1.1rem;
+  padding: clamp(1.5rem, 2.5vw, 2.1rem); border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border);
+  transition: opacity var(--dur) var(--ease-std);
+}
+.bl-trated__card.is-dim { opacity: .5; }
+.bl-trated__quote { flex: 1; }
+.bl-trated__quote p { font-size: var(--fs-lead); line-height: 1.6; color: var(--text-strong); }
+.bl-trated__who { display: flex; align-items: center; gap: .85rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+.bl-trated__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; }
+.bl-trated__initials { display: grid; place-items: center; background: var(--c-accent-soft); color: var(--accent-ink); font-weight: 700; }
+.bl-trated__who strong { display: block; color: var(--text-strong); }
+.bl-trated__who small { display: block; font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.4; }
+.bl-trated__company { color: var(--text) !important; font-weight: 600; }
+@media (max-width: 960px) {
+  .bl-trated__layout { grid-template-columns: 1fr; }
+  .bl-trated__aside { position: static; }
+  .bl-trated__viewport { margin-right: calc(-1 * var(--gutter)); }
+  .bl-trated__track { padding-right: var(--gutter); }
+  .bl-trated__card { flex-basis: 86%; }
+}

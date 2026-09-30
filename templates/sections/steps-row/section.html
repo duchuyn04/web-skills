@@ -1,10 +1,11 @@
 <section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}" data-sequence>
   <div class="bl-container">
     {{> head-center}}
-    <ol class="bl-steps" data-reveal-group>
-      <li class="bl-steps__line" aria-hidden="true" data-reveal></li>
+    <ol class="bl-steps{{#steps.0.photo}} bl-steps--photos{{/steps.0.photo}}" data-reveal-group>
+      {{^steps.0.photo}}<li class="bl-steps__line" aria-hidden="true" data-reveal></li>{{/steps.0.photo}}
       {{#steps}}
       <li class="bl-step" data-reveal>
+        {{#photo}}<div class="bl-frame bl-step__photo"><img src="{{src}}" alt="{{alt}}" width="480" height="320" loading="lazy"></div>{{/photo}}
         <span class="bl-step__num" aria-hidden="true">{{@num}}</span>
         <h3 class="bl-step__title">{{title}}</h3>
         <p class="bl-step__text">{{text}}</p>

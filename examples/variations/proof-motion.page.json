@@ -151,6 +151,7 @@
         "cards": [
           {
             "icon": "message-circle",
+            "photo": {"src": "team-coworking-laptops", "alt": "Support agents answering chat queues at a shared table"},
             "title": "Chat and email support",
             "text": "Agents handle chat and email queues in Zendesk, Gorgias or Intercom, with a team lead reviewing tone and accuracy every week.",
             "bullets": [
@@ -289,7 +290,6 @@
       "type": "testimonials-drift",
       "data": {
         "head": {
-          "eyebrow": "Reviews",
           "title": "What clients say"
         },
         "items": [
@@ -348,6 +348,7 @@
           "note": "We only use your details to reply to this request."
         },
         "aside": {
+          "photo": {"src": "team-meeting-table", "alt": "Pilot team reviewing the first week of QA scores"},
           "title": "What a pilot includes",
           "points": [
             "Ten agents trained on your macros",

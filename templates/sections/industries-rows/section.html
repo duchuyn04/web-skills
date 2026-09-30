@@ -1,4 +1,4 @@
-<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-industries-rows" data-irows>
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-industries-rows{{#items.0.photo}} bl-industries-rows--photos{{/items.0.photo}}" data-irows>
   <div class="bl-container bl-industries-rows__grid">
     <div class="bl-industries-rows__side">
       {{> head}}
@@ -11,6 +11,7 @@
           <a class="bl-industries-rows__row" href="{{#href}}{{href}}{{/href}}{{^href}}{{cta.href}}{{/href}}" data-irow>
             <span class="bl-industries-rows__fill" aria-hidden="true"></span>
             <span class="bl-industries-rows__icon" aria-hidden="true">{{icon:$icon}}</span>
+            {{#photo}}<span class="bl-industries-rows__thumb" aria-hidden="true"><img src="{{src}}" alt="" width="160" height="120" loading="lazy" decoding="async" data-irow-photo></span>{{/photo}}
             <span class="bl-industries-rows__body">
               <span class="bl-industries-rows__title">{{title}}</span>
               <span class="bl-industries-rows__text">{{text}}</span>
@@ -21,6 +22,7 @@
         {{/items}}
       </ul>
       <div class="bl-industries-rows__card" aria-hidden="true" data-icard>
+        {{#items.0.photo}}<span class="bl-industries-rows__card-photo"><img src="{{src}}" alt="" width="320" height="240" loading="lazy" decoding="async" data-icard-img><img src="{{src}}" alt="" width="320" height="240" loading="lazy" decoding="async" data-icard-img></span>{{/items.0.photo}}
         <span class="bl-industries-rows__card-icon" data-icard-icon></span>
         <strong class="bl-industries-rows__card-title" data-icard-title></strong>
         <span class="bl-industries-rows__card-text" data-icard-text></span>

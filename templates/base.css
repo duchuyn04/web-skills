@@ -86,15 +86,15 @@ h1, h2, h3, h4 { font-weight: inherit; }
 .bl-small { font-size: var(--fs-sm); }
 .bl-hl { color: var(--accent-ink); }
 .bl-mono { font-family: var(--font-mono); letter-spacing: 0; }
+/* Eyebrow: a small plain label. No rule before it: a short line in front of text reads as a dash. */
 .bl-eyebrow {
-  display: inline-flex; align-items: center; gap: .65rem;
+  display: inline-flex; align-items: center; gap: .45rem;
   font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 600; line-height: 1.3;
   letter-spacing: 0; color: var(--accent-ink);
   margin-bottom: .85rem;
 }
 /* Caps eyebrow (preset "eyebrow": "caps"): short labels only, tracked 8% as caps need */
 .bl-eyebrow-caps .bl-eyebrow { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.bl-eyebrow::before { content: ""; width: 1.6rem; height: 2px; border-radius: 2px; background: currentColor; flex-shrink: 0; }
 
 /* Pill eyebrow (preset "eyebrow": "pill" or theme.eyebrow) */
 .bl-eyebrow-pill .bl-eyebrow {
@@ -102,7 +102,6 @@ h1, h2, h3, h4 { font-weight: inherit; }
   font-size: .8rem; font-weight: 600; letter-spacing: .01em; text-transform: none;
   background: var(--surface); border: 1px solid color-mix(in srgb, var(--accent-ink) 32%, transparent);
 }
-.bl-eyebrow-pill .bl-eyebrow::before { display: none; }
 
 /* Buttons on a brand-coloured (accent) surface */
 .bl-tone-accent .bl-btn--primary { background: var(--c-on-accent); color: var(--c-accent); box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .45); }
@@ -227,7 +226,10 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 .bl-hl-underline .bl-hl { color: inherit; text-decoration: underline; text-decoration-color: var(--c-accent); text-decoration-thickness: .1em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
 
 /* BL.motion.split: each word (or the characters of a word) sits in a mask; the padding keeps tall Vietnamese marks inside it */
-.bl-split__w { display: inline-block; overflow: hidden; vertical-align: top; white-space: nowrap; padding: .24em 0 .16em; margin: -.24em 0 -.16em; }
+.bl-split__w { display: inline-block; overflow: hidden; vertical-align: top; white-space: nowrap; padding: .3em 0 .4em; margin: -.3em 0 -.4em; }
+/* the underline highlight sits on the split words, not on the parent, so it survives the masks */
+.bl-hl-underline .bl-split-text .bl-hl { text-decoration: none; }
+.bl-hl-underline .bl-split-text .bl-hl .bl-split__i { text-decoration: underline; text-decoration-color: var(--c-accent); text-decoration-thickness: .06em; text-underline-offset: .22em; text-decoration-skip-ink: none; }
 .bl-split__i { display: inline-block; }
 
 /* Media reveal: photos wipe in from the bottom inside their frame */

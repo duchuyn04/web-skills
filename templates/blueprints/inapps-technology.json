@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-overlap"],
       "note": "headline, buttons and four stats left over a team photo"
     },
     {

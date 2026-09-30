@@ -1,6 +1,6 @@
 {
   "variant": "hero-globe",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Hero with a dotted 3D globe on the right: land drawn in evenly spaced dots, the company's delivery hubs pinned in the brand colour with their city names, and arcs to the client markets with a light pulse running along each one. The globe sways around the hubs and leans toward the pointer. Rotation and pulse timing are seeded from the brand name. Needs 1-4 delivery cities from the brief (keys from templates/data/cities.json or {name, country, lat, lon}) and optionally up to 6 client market cities; fits offshore staffing, nearshore and multi-site contact centers.",
   "tone": "hero",

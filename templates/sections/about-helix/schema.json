@@ -1,6 +1,6 @@
 {
   "variant": "about-helix",
-  "group": "about", "signature": true,
+  "group": "about", "signature": true, "tier": "expressive",
   "forms": ["feature-split"],
   "reshape": true,
   "summary": "Company history as cards wound around a vertical helix with a thin central spine. The section pins while the visitor scrolls; each step of scroll turns and lifts the helix so the next milestone faces the reader, earlier and later years curving away behind. A year rail beside the heading shows where the reader is. Phones and reduced motion get a plain vertical timeline. Handedness, step angle, rise and spine style are seeded from the brand name. Needs 4-10 real milestones (year, what happened, one line) from the brief; company history is never invented, so leave the section out without them.",

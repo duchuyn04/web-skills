@@ -5,7 +5,7 @@
   "summary": "Dark full-bleed hero with a figure row, a light two-row service grid, a dark centered statement, a report split, case cards with a quote, an industry link list, two dark split rows, a light CTA band, a logo section and an insights grid with a newsletter strip.",
   "header": "mega",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "large heading, paragraph and button left over a dark image, three figures or logos in a row at the bottom"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-news", "hero-overlap"], "note": "large heading, paragraph and button left over a dark image, three figures or logos in a row at the bottom"},
     {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 6, "note": "heading and intro left-aligned, two rows of three icon cards with outline buttons"},
     {"form": "statement", "role": "intro", "tone": "dark", "media": "full", "note": "eyebrow, centered heading, short text and a button over a dark abstract background"},
     {"form": "feature-split", "role": "about", "tone": "dark", "media": "left", "optional": true, "note": "report cover image left, eyebrow, heading, text and button right"},

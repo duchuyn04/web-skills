@@ -1,0 +1,26 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--mosaic bl-tone-{{section.tone}}" data-hero-mosaic>
+  <div class="bl-hmosaic__bg" aria-hidden="true">
+    <div class="bl-hmosaic__grid" data-mosaic-grid>
+      {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"{{#@first}} fetchpriority="high"{{/@first}}></div>{{/photos}}
+      {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"></div>{{/photos}}
+      {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"></div>{{/photos}}
+      {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"></div>{{/photos}}
+      {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"></div>{{/photos}}
+      {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"></div>{{/photos}}
+    </div>
+    <span class="bl-hmosaic__tint"></span>
+    <span class="bl-hmosaic__shade"></span>
+  </div>
+  <div class="bl-container">
+    <div class="bl-hmosaic__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hmosaic__title" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead bl-hmosaic__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row bl-hmosaic__btns" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof bl-hmosaic__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+  </div>
+</section>

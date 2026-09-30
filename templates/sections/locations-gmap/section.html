@@ -1,0 +1,35 @@
+<section id="{{section.id}}" class="bl-section bl-gmap bl-tone-{{section.tone}}" data-gmap>
+  <div class="bl-container">
+    {{> head}}
+    <div class="bl-gmap__grid">
+      <ul class="bl-gmap__list" data-reveal-group>
+        {{#offices}}
+        <li class="bl-gmap__office{{#@first}} is-active{{/@first}}" data-reveal data-gmap-office>
+          <button class="bl-gmap__pick" type="button" aria-pressed="{{@first}}" aria-controls="{{section.id}}-map"
+            data-src="https://maps.google.com/maps?q={{#map_query}}{{urlq:map_query}}{{/map_query}}{{^map_query}}{{urlq:address}}{{/map_query}}&amp;z=15&amp;output=embed"
+            data-open="https://www.google.com/maps/search/?api=1&amp;query={{#map_query}}{{urlq:map_query}}{{/map_query}}{{^map_query}}{{urlq:address}}{{/map_query}}"
+            data-name="{{name}}">
+            <span class="bl-gmap__city">{{icon:map-pin}}<span>{{city}}</span></span>
+            <strong class="bl-gmap__name">{{name}}</strong>
+            <span class="bl-gmap__address">{{address}}</span>
+            <span class="bl-gmap__show">{{show_label}}</span>
+          </button>
+          {{#phone}}<p class="bl-gmap__line">{{icon:phone}}<span>{{phone}}</span></p>{{/phone}}
+          {{#email}}<p class="bl-gmap__line">{{icon:mail}}<span>{{email}}</span></p>{{/email}}
+          {{#hours}}<p class="bl-gmap__line">{{icon:clock}}<span>{{hours}}</span></p>{{/hours}}
+        </li>
+        {{/offices}}
+      </ul>
+      <div class="bl-gmap__map" id="{{section.id}}-map" data-reveal="fade">
+        {{#offices.0}}
+        <iframe data-gmap-frame tabindex="-1" title="{{map_title}}: {{name}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="https://maps.google.com/maps?q={{#map_query}}{{urlq:map_query}}{{/map_query}}{{^map_query}}{{urlq:address}}{{/map_query}}&amp;z=15&amp;output=embed"></iframe>
+      </div>
+      <div class="bl-gmap__foot">
+        <a class="bl-gmap__open" data-gmap-open target="_blank" rel="noopener"
+          href="https://www.google.com/maps/search/?api=1&amp;query={{#map_query}}{{urlq:map_query}}{{/map_query}}{{^map_query}}{{urlq:address}}{{/map_query}}">{{open_label}}{{arrow}}</a>
+        {{/offices.0}}
+      </div>
+    </div>
+  </div>
+</section>

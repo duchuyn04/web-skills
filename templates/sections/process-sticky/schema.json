@@ -2,10 +2,10 @@
   "variant": "process-sticky",
   "group": "process", "signature": true,
   "forms": ["list-rows"],
-  "summary": "Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scroll on the right; a progress line fills and each checkpoint lights up as it passes.",
+  "summary": "Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scroll on the right; a progress line fills and each checkpoint lights up as it passes. Optional photo per step (use one on every step or none): the pinned column then shows a rounded frame under the heading that cross-fades to the photo of the step being read. On tablets, phones and with reduced motion each photo sits under its own step instead.",
   "tone": "auto",
   "anchor": "process",
-  "animations": ["sticky-sidebar-process-scroll", "reveal"],
+  "animations": ["sticky-sidebar-process-scroll", "step-photo-crossfade", "reveal"],
   "fields": {
     "head": {"$ref": "head"},
     "cta": {"$ref": "cta", "required": false},
@@ -14,7 +14,8 @@
       "item": {"type": "object", "fields": {
         "label": {"type": "text", "min": 2, "max": 20},
         "title": {"type": "text", "min": 3, "max": 60},
-        "text": {"type": "text", "min": 40, "max": 220}
+        "text": {"type": "text", "min": 40, "max": 220},
+        "photo": {"$ref": "photo", "required": false}
       }}
     }
   }

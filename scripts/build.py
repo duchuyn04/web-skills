@@ -17,6 +17,10 @@ import math
 import re
 import shutil
 import sys
+import urllib.parse
+for _stream in (sys.stdout, sys.stderr):  # Vietnamese text must not crash printing on a cp1252 console or pipe
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 from datetime import date
 from pathlib import Path
 
@@ -25,6 +29,9 @@ sys.path.insert(0, str(HERE))
 import rules  # noqa: E402
 
 SKILL = HERE.parent
+# Version of the content rules. Bump it when a new check can fail a page that built before, and add a CHANGELOG.md
+# entry. A site built under an older version keeps building with "rules": "<that version>" (see rules_pin in main).
+RULES_VERSION = 3
 TPL = SKILL / "templates"
 SECTIONS_DIR = TPL / "sections"
 IMAGES_DIR = TPL / "assets" / "images"
@@ -286,6 +293,9 @@ class Renderer:
             if code.startswith("$"):
                 code = self.lookup(code[1:], stack) or ""
             return self.flag(code)
+        if key.startswith("urlq:"):
+            # a value inside a URL query, for example a map search: {{urlq:address}}
+            return html.escape(urllib.parse.quote_plus(str(self.lookup(key[5:], stack) or "")), quote=True)
         if key.startswith("json:"):
             return html.escape(json.dumps(self.lookup(key[5:], stack), ensure_ascii=False), quote=True)
         val = self.lookup(key, stack)
@@ -316,9 +326,13 @@ class Ctx:
         self.images = {}
         self.anchors = []
         self.placeholders = []
+        self.soft = False
 
     def err(self, path, msg):
-        self.errors.append("%s: %s" % (path, msg))
+        if self.soft:
+            self.warnings.append("%s: [rules %s, not enforced] %s" % (path, self.soft, msg))
+        else:
+            self.errors.append("%s: %s" % (path, msg))
 
     def warn(self, path, msg):
         self.warnings.append("%s: %s" % (path, msg))
@@ -1013,6 +1027,7 @@ PROOF_FIELDS = {
     "logo-wall": ("logos", ("name",)),
     "testimonials": ("items", ("name", "company", "quote")),
     "testimonials-drift": ("items", ("name", "company", "quote")),
+    "testimonials-rated": ("items", ("name", "company", "quote")),
     "quote-spotlight": ("quotes", ("name", "company", "quote")),
     "case-slider": ("cases", ("client",)),
     "case-filter": ("cases", ("client",)),
@@ -1209,6 +1224,59 @@ def _title(d):
     return t if isinstance(t, str) else None
 
 
+PHOTO_KEYS = ("photo", "image", "photos", "images", "poster", "video")
+PHOTO_SHARE = 0.4  # real BPO homepages: median 33%, p75 44% of sections carry a photo (92 blueprints)
+PHOTO_MIN_SECTIONS = 6  # short demo pages are left alone
+
+
+def _has_photo(o):
+    if isinstance(o, dict):
+        return any((k in PHOTO_KEYS and v) or _has_photo(v) for k, v in o.items())
+    if isinstance(o, list):
+        return any(_has_photo(x) for x in o)
+    return False
+
+
+def _photo_fields(fields, prefix=""):
+    """Paths of the optional photo fields a variant schema offers, such as "image" or "steps[].photo"."""
+    out = []
+    for k, f in (fields or {}).items():
+        if not isinstance(f, dict):
+            continue
+        if f.get("type") in ("image", "video") or f.get("$ref") == "photo" or k in ("photo", "image"):
+            out.append(prefix + k)
+        elif f.get("type") == "object":
+            out += _photo_fields(f.get("fields"), prefix + k + ".")
+        elif f.get("type") == "list" and isinstance(f.get("item"), dict):
+            it = f["item"]
+            if it.get("type") == "image" or it.get("$ref") == "photo":
+                out.append(prefix + k + "[]")
+            elif it.get("type") == "object":
+                out += _photo_fields(it.get("fields"), prefix + k + "[].")
+    return [x for x in out if not x.endswith(("avatar", "logo", "src"))]
+
+
+def check_photos(ctx, sections):
+    """A page built only from text blocks and icon cards reads as generated. Real BPO homepages show people, offices
+    and the work: at least PHOTO_SHARE of the content sections carry a photo."""
+    body = [s for s in sections if s["variant"].get("group") not in ("header", "footer", "floating", "exit", None)]
+    if len(body) < PHOTO_MIN_SECTIONS:
+        return
+    with_photo = [s for s in body if _has_photo(s["data"])]
+    need = -(-int(PHOTO_SHARE * 100) * len(body) // 100)
+    if len(with_photo) >= need:
+        return
+    tips = []
+    for s in body:
+        if s in with_photo:
+            continue
+        fields = _photo_fields(s["variant"].get("fields"))
+        if fields:
+            tips.append("%s (%s): add %s" % (s["path"], s["type"], " or ".join(fields)))
+    ctx.err("sections", "%d of %d content sections carry a photo; a page this long needs at least %d. Real BPO homepages show the team, the offices and the work (median 33%%, top quarter 44%% of sections). %s. Client photos first, then library photos from references/assets.md that fit the section (never a photo of a different industry)."
+            % (len(with_photo), len(body), need, ("Sections that take a photo: " + "; ".join(tips)) if tips else "Swap a text-only section for a photo variant (feature-rows, image-cards, services-tabs, banner-image, case-slider)"))
+
+
 def check_design(ctx, sections, site, preset, theme):
     heads, accented, icon_sections = [], [], []
     for s in sections:
@@ -1239,14 +1307,14 @@ def check_design(ctx, sections, site, preset, theme):
                 icon_sections.append(s["path"])
                 break
     with_brow = [p for p, b in heads if b]
-    if len(heads) >= 4 and len(with_brow) == len(heads):
-        ctx.err("sections", "every section title (%d) has a label above it. A label on every heading is the most common tell of a generated page; keep labels only where they add information, on at most half of the sections." % len(heads))
-    elif heads and len(with_brow) > len(heads) / 2:
-        ctx.warn("sections", "%d of %d section titles have a label above them; keep at most half (references/anti-slop.md)." % (len(with_brow), len(heads)))
+    allowed = max(1, len(heads) // 3)
+    if len(with_brow) > allowed:
+        ctx.err("sections", "%d of %d section titles have a label (eyebrow) above them; at most %d may. A label above every heading is the most common tell of a generated page. Keep a label only where it adds something the title does not say (a region, a year, a service line) and delete the rest: %s." % (len(with_brow), len(heads), allowed, ", ".join(with_brow)))
     if len(accented) > 1:
         ctx.warn("sections", "%d section titles below the hero have *accent* words (%s). Accent the hero title only; one coloured word in every heading reads as generated." % (len(accented), ", ".join(accented[:4])))
     if len(icon_sections) > 2:
-        ctx.warn("sections", "%d sections put an icon on every item (%s). Keep icons where they help scanning, in at most two sections." % (len(icon_sections), ", ".join(icon_sections)))
+        ctx.err("sections", "%d sections put an icon on every item (%s). Rows of icon cards make a page read as text and templates; keep icons in at most two sections and give the others photos (see the photo rule below) or plain lists." % (len(icon_sections), ", ".join(icon_sections)))
+    check_photos(ctx, sections)
     pinned = [s["path"] for s in sections if s["type"] in PINNED_VARIANTS]
     if len(pinned) > 1:
         ctx.warn("sections", "%d pinned scroll sections (%s). Scrolling that holds the page still is tiring after the first one; keep one." % (len(pinned), ", ".join(pinned)))
@@ -1272,6 +1340,71 @@ def check_design(ctx, sections, site, preset, theme):
                 cream = False
             if cream and 25 <= H <= 50:
                 ctx.warn("preset.colors", "cream background with a terracotta accent, a look generated pages converge on. Use the client's colours in theme.")
+
+
+# Default palette colours of CSS frameworks. A model that has no brand colour reaches for these, and they are what
+# makes a page look generated (a Bootstrap "danger" red accent on navy). Allowed only when the brief or logo has them.
+FRAMEWORK_COLORS = {
+    "#d9534f": "Bootstrap 3 danger red", "#dc3545": "Bootstrap danger red", "#337ab7": "Bootstrap 3 primary blue",
+    "#007bff": "Bootstrap 4 primary blue", "#0d6efd": "Bootstrap 5 primary blue", "#28a745": "Bootstrap success green",
+    "#198754": "Bootstrap 5 success green", "#5cb85c": "Bootstrap 3 success green", "#f0ad4e": "Bootstrap 3 warning orange",
+    "#ffc107": "Bootstrap warning yellow", "#17a2b8": "Bootstrap info teal", "#0dcaf0": "Bootstrap 5 info cyan",
+    "#5bc0de": "Bootstrap 3 info blue", "#6f42c1": "Bootstrap purple", "#e83e8c": "Bootstrap pink",
+    "#fd7e14": "Bootstrap orange", "#20c997": "Bootstrap teal", "#6610f2": "Bootstrap indigo",
+    "#ef4444": "Tailwind red-500", "#dc2626": "Tailwind red-600", "#f97316": "Tailwind orange-500", "#ea580c": "Tailwind orange-600",
+    "#f59e0b": "Tailwind amber-500", "#d97706": "Tailwind amber-600", "#22c55e": "Tailwind green-500", "#16a34a": "Tailwind green-600",
+    "#10b981": "Tailwind emerald-500", "#059669": "Tailwind emerald-600", "#14b8a6": "Tailwind teal-500", "#0d9488": "Tailwind teal-600",
+    "#06b6d4": "Tailwind cyan-500", "#0891b2": "Tailwind cyan-600", "#0ea5e9": "Tailwind sky-500", "#0284c7": "Tailwind sky-600",
+    "#3b82f6": "Tailwind blue-500", "#2563eb": "Tailwind blue-600", "#6366f1": "Tailwind indigo-500", "#4f46e5": "Tailwind indigo-600",
+    "#8b5cf6": "Tailwind violet-500", "#7c3aed": "Tailwind violet-600", "#a855f7": "Tailwind purple-500", "#9333ea": "Tailwind purple-600",
+    "#ec4899": "Tailwind pink-500", "#db2777": "Tailwind pink-600",
+}
+LOGO_HUE_TOLERANCE = 25  # degrees of OKLCH hue between theme.accent and the nearest logo colour
+
+
+def check_brand_colors(ctx, top, page_dir, brief, raw_site):
+    """theme.accent is the logo colour. With a logo file: fail when the accent (given or from the preset) is not one of
+    the logo's hues. Always: fail on a framework default colour the brief and logo do not have."""
+    import logo_colors
+    theme = top.get("theme") or {}
+    logo = raw_site.get("logo") if isinstance(raw_site, dict) else None  # as written, before it is copied to assets
+    hues = None
+    if logo and not re.match(r"^https?://", logo):
+        hues = logo_colors.logo_hues(page_dir / logo, to_oklch)
+        if hues is None:
+            ctx.warn("site.logo", "could not read the colours of %s (use PNG or SVG, or install Pillow), so theme.accent was not checked against it." % logo)
+    listed = ", ".join("%s (%d%%)" % (h, round(s * 100)) for h, _, s in (hues or [])[:3])
+
+    def from_logo(hex_):
+        if not hues:
+            return False
+        L, C, H = to_oklch(parse_hex(hex_))
+        return C >= 0.04 and any(hue_distance(H, hh) <= LOGO_HUE_TOLERANCE for _, hh, _ in hues)
+
+    brief_up = (brief or "").lower()
+    for key in ("accent", "accent_2", "primary"):
+        val = theme.get(key)
+        if not val:
+            continue
+        name = FRAMEWORK_COLORS.get(val.lower())
+        if name and val.lower() not in brief_up and not from_logo(val):
+            ctx.err("page.theme." + key, "%s is the %s default, not a brand colour. Use the client's colour: the logo's main hue in theme.accent%s, or leave the field out when the client gave none." % (val, name, " (%s)" % listed if listed else ""))
+    if hues:
+        acc = theme.get("accent")
+        if not acc:
+            ctx.err("page.theme.accent", "the logo is coloured (%s) but theme.accent is not set, so the page uses the preset's accent. Put the logo's main colour, %s, in theme.accent." % (listed, hues[0][0]))
+        elif not from_logo(acc):
+            ctx.err("page.theme.accent", "theme.accent %s is not a colour of the logo (%s). The accent is the logo colour; build.py derives the button and highlight shades from it. Use %s." % (acc, listed, hues[0][0]))
+    elif theme.get("accent") and hues is None and not logo and theme["accent"].lower() not in brief_up:
+        ctx.warn("page.theme.accent", "theme.accent %s is not in the brief and the page has no logo to check it against. If the client gave no colour, leave theme.accent out and let the preset choose." % theme["accent"])
+
+
+# Families on Google Fonts that ship a Vietnamese subset (checked 2026-09-30 against the css2 API). A preset whose
+# fonts are not all here must carry "fonts_vi", which build.py uses for "lang": "vi".
+VI_FONTS = {"Archivo", "Barlow", "Be Vietnam Pro", "Bricolage Grotesque", "Encode Sans", "Epilogue", "IBM Plex Sans", "Inter",
+            "JetBrains Mono", "Josefin Sans", "Lexend", "Libre Franklin", "Lora", "Manrope", "Montserrat", "Mulish",
+            "Noto Serif", "Nunito Sans", "Onest", "Plus Jakarta Sans", "Public Sans", "Raleway", "Roboto",
+            "Source Sans 3", "Source Serif 4", "Space Grotesk", "Work Sans"}
 
 
 def check_voice(ctx, sections, lang):
@@ -1326,13 +1459,19 @@ def check_voice(ctx, sections, lang):
         ctx.warn("sections", "'every/each call, contact, agent...' appears %d times (%s). AI copy leans on it; keep one." % (len(every), ", ".join(dict.fromkeys(e.lower() for e in every))))
 
 
-MIN_SIGNATURE = 3
 # Sections that draw each figure (ring arc, column height): a placeholder leaves an empty shape.
 DRAWN_FIGURES = {"metrics-rings", "metrics-bars3d"}
 PLACEHOLDER_RE = re.compile(r"\[[^\]]{1,24}\]")
 
 
-CALM_RE = re.compile(r"\b(calm|static|minimal|simple|no (animation|motion|effects)|without (animation|motion|effects)|subtle)\b", re.I)
+# English words, plus the Vietnamese a brief uses when the client asks for a 3D or animation-led page
+# ("hieu ung 3D", "nhieu hieu ung", "sinh dong", "chuyen dong manh")
+EXPRESSIVE_RE = re.compile(r"\b(3d|webgl|immersive|expressive|animation[- ]led|(rich|heavy|bold|lots of) (animation|animations|motion|effects))\b|nhiều hiệu ứng|hiệu ứng mạnh|sinh động|chuyển động mạnh", re.I)
+
+
+def is_expressive(s):
+    """An expressive variant (3D object, WebGL scene, particles, folding paper) or a band with a WebGL "visual" backdrop."""
+    return s["variant"].get("tier") == "expressive" or bool((s["data"] or {}).get("visual"))
 
 
 def check_figures(ctx, sections):
@@ -1363,16 +1502,16 @@ def check_figures(ctx, sections):
 
 
 def check_motion(ctx, sections, archetype, lib, motion, brief=""):
-    """A page built from the library should not look like a static template: at least three sections carry
-    signature motion (canvas, scroll-linked or interactive effects) unless the page asks for "motion": "calm"."""
-    empty = set()
+    """BPO buyers judge trust first, so pages are calm by default: photos, reveals, counters, carousels, maps and at
+    most one contextual piece in the hero. Expressive variants (3D objects, WebGL scenes, particles, folding paper) and
+    band "visual" backdrops need "motion": "expressive", which is allowed only when the brief asks for a 3D or
+    animation-led page."""
     for s in sections:
         if s["type"] not in DRAWN_FIGURES:
             continue
         data = {k: v for k, v in s["data"].items() if k != "head"}
         holes = [p for p, t in _strings_with_paths(data, s["path"] + ".data") if PLACEHOLDER_RE.search(t)]
         if holes:
-            empty.add(s["path"])
             ctx.err(holes[0], "%s draws each figure as a shape, so a placeholder shows an empty ring or column. Use it only with the client's real figures; otherwise use metrics-counter (placeholders allowed there) or drop the section." % s["type"])
     for s in sections:
         if s["type"] == "hero-prism":
@@ -1383,37 +1522,27 @@ def check_motion(ctx, sections, archetype, lib, motion, brief=""):
                 if norm_text(c) and (norm_text(c) in title or norm_text(c).split()[-1] == last[0]):
                     ctx.err(s["path"] + ".data.title", "the title already ends the sentence the way the cycle phrase '%s' does, so the headline reads as two endings. End the title where the phrases begin: title 'Outsourced teams for', cycle 'web development', 'QA and testing'." % c)
                     break
-    if motion == "calm" and brief and not CALM_RE.search(brief):
-        ctx.err("page.motion", "\"motion\": \"calm\" is for clients who ask for a still page, and this brief does not. Give the page its 3D sections instead: run python scripts/variety.py --blueprint <key> and use the variants marked * or a band with \"visual\".")
-    if motion == "calm" or not archetype:
+    if motion == "signature":
+        motion = "expressive"  # the old name of the mode
+    if motion == "expressive":
+        if brief and not EXPRESSIVE_RE.search(brief):
+            ctx.err("page.motion", "\"motion\": \"expressive\" is for clients who ask for a 3D or animation-led page, and this brief does not. Remove the field: BPO buyers judge trust first, so pages stay calm (photos, reveals, counters, carousels, maps). python scripts/variety.py --blueprint <key> lists the calm variants first.")
         return
-    used = [s["type"] for s in sections if (s["variant"].get("signature") or (s["data"] or {}).get("visual")) and s["path"] not in empty]
-    need = MIN_SIGNATURE
-    if any(s.get("bp_slot") for s in sections):
-        # a blueprint page can only swap visuals where its real layout has a 3D-capable form
-        bp = next(s["bp_blueprint"] for s in sections if s.get("bp_slot"))
-        roles = {slot["form"] for slot in bp["sections"] if slot.get("role") not in PROOF_ROLES and any(has_motion_option(lib["variants"][v]) for v in fitting_variants(slot, lib))}
-        room = len(roles)
-        need = min(MIN_SIGNATURE, room)
-    if len(used) >= need:
-        return
-    options = []
-    if any(s.get("bp_slot") for s in sections):
-        for s in sections:
-            sig = [v + (" with visual" if not lib["variants"][v].get("signature") else "") for v in fitting_variants(s["bp_slot"], lib) if has_motion_option(lib["variants"][v])] if s.get("bp_slot") else []
-            if sig and not (s["variant"].get("signature") or (s["data"] or {}).get("visual")):
-                options.append("%s (%s): %s" % (s["path"], s["type"], ", ".join(sig)))
-    else:
-        for slot in archetype["slots"]:
-            sig = [v for v in slot["variants"] if lib["variants"].get(v, {}).get("signature")]
-            if sig:
-                options.append("%s: %s" % (slot["slot"], ", ".join(sig)))
-    ctx.err("sections", "only %d section(s) with signature motion (%s); this page needs at least %d. Swap variants in these slots where the brief has the content: %s. Pick ones the brief can fill: process, faq, cta, services and compare variants need no client figures, while rings, columns, logos and proof need real ones. Copy their data shape from examples/variations/motion-signature.page.json or proof-motion.page.json. For a deliberately still page set \"motion\": \"calm\"."
-            % (len(used), ", ".join(used) or "none", need, "; ".join(options)))
+    for s in sections:
+        if not is_expressive(s):
+            continue
+        if s["variant"].get("tier") != "expressive":
+            ctx.err(s["path"] + ".data.visual", "the WebGL \"visual\" backdrop is an expressive effect. Remove the field; a calm page keeps its bands flat. It is allowed only with \"motion\": \"expressive\", for a brief that asks for a 3D or animation-led page.")
+            continue
+        same = fitting_variants(s["bp_slot"], lib) if s.get("bp_slot") else [k for k, v in lib["variants"].items() if v.get("group") == s["variant"].get("group")]
+        calm = [v for v in same if lib["variants"][v].get("tier") != "expressive"]
+        ctx.err(s["path"], "%s is an expressive variant (3D object, WebGL scene or folding effect). Professional BPO pages keep motion quiet, with at most one contextual piece in the hero. Use a calm variant for this slot: %s. Expressive variants are allowed only with \"motion\": \"expressive\", for a brief that asks for a 3D or animation-led page."
+                % (s["type"], ", ".join(calm) or "drop the section"))
 
 
-def check_unique_hero(ctx, page, page_path, sections, archetype, lib):
-    """Each site gets its own signature hero while unused ones remain: the hero is the first thing a visitor sees."""
+def check_unique_hero(ctx, page, page_path, sections, archetype, lib, motion="calm"):
+    """Warn when a sibling site already opens with the same hero. A warning, not an error: the build must not
+    depend on which other sites sit next to the page."""
     import variety
     hero = next((s["type"] for s in sections if s["variant"].get("group") == "hero"), None)
     if not hero or not archetype:
@@ -1427,12 +1556,10 @@ def check_unique_hero(ctx, page, page_path, sections, archetype, lib):
     if hero not in taken:
         return
     slot = next((s for s in archetype["slots"] if s["slot"] == "hero"), {"variants": []})
-    free = [v for v in slot["variants"] if lib["variants"].get(v, {}).get("signature") and v not in taken]
-    msg = "the hero %s is already used by %s. Every site should open with its own signature hero" % (hero, ", ".join(taken[hero]))
+    free = [v for v in slot["variants"] if v not in taken and (motion in ("expressive", "signature") or lib["variants"].get(v, {}).get("tier") != "expressive")]
+    msg = "the hero %s is already used by %s" % (hero, ", ".join(taken[hero]))
     if free:
-        ctx.err("sections", msg + "; pick one of the unused ones: %s (see references/section-catalog.md for what each needs)." % ", ".join(free))
-    else:
-        ctx.warn("sections", msg + "; every signature hero for this archetype is taken, so this repeat is allowed. Its brand-seeded motion still differs.")
+        ctx.warn("sections", msg + ". If one of these fits the business as well, use it so the sites look different: %s." % ", ".join(free))
 
 
 def check_variety(ctx, page, page_path):
@@ -1471,6 +1598,9 @@ ROLE_GROUPS = {
     "compare": {"compare", "pricing"},
     "tools": {"tools", "logos"},
 }
+# Heroes built around the client's own work (a call card in its languages, its paperwork, a support chat, its real
+# service panels). They may stand in for a blueprint's hero composition when they fit the business.
+BUSINESS_HEROES = {"hero-voice", "hero-ledger", "hero-chat", "hero-dashboard"}
 # Sections that need the client's own proof are left out when the brief has none, whatever the blueprint says
 PROOF_ROLES = {"testimonial", "cases", "clients", "awards", "news", "team", "careers", "locations"}
 
@@ -1496,16 +1626,11 @@ def slot_accepts(slot, variant):
     return g in ROLE_GROUPS.get(role, set()) or slot["form"] in FORM_LED or bool(variant.get("open"))
 
 
-def has_motion_option(variant):
-    """Signature variants, and plain bands that take a 3D backdrop through their "visual" field."""
-    return bool(variant.get("signature") or "visual" in variant.get("fields", {}))
-
-
 def fitting_variants(slot, lib):
     return [k for k, v in lib["variants"].items() if slot_accepts(slot, v)]
 
 
-def check_blueprint(ctx, bp, bp_key, sections, lib):
+def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm"):
     """Match the page's content sections to the blueprint's slots, in order. Optional slots may be left out."""
     slots = bp["sections"]
     body = [s for s in sections if s["variant"].get("group") not in CHROME_GROUPS]
@@ -1527,6 +1652,10 @@ def check_blueprint(ctx, bp, bp_key, sections, lib):
                 ctx.err(s["path"], "blueprint %r needs a %s section (%s) before %s. Use one of: %s." % (bp_key, slots[m]["role"], slots[m]["form"], s["type"], ", ".join(fitting_variants(slots[m], lib)) or "a custom section"))
         s["bp_slot"] = slots[k]
         s["bp_blueprint"] = bp
+        # the real site's hero composition ("compose" in the blueprint): a generic text-and-photo hero loses it
+        compose = slots[k].get("compose")
+        if compose and slots[k].get("role") == "hero" and s["type"] not in compose and s["type"] not in BUSINESS_HEROES and not s["type"].startswith("custom:") and not (motion in ("expressive", "signature") and s["variant"].get("tier") == "expressive"):
+            ctx.err(s["path"] + ".type", "blueprint %r opens with this hero: %s. Build it with %s. A business hero (%s) may replace it when it fits the client and the form. A generic text-and-photo hero is what makes generated sites look alike." % (bp_key, slots[k].get("note", ""), " or ".join(compose), ", ".join(sorted(BUSINESS_HEROES))))
         roles_seen.add(slots[k]["role"])
         forms_seen.add(slots[k]["form"])
         want = slots[k].get("count")
@@ -1556,7 +1685,30 @@ def check_blueprint(ctx, bp, bp_key, sections, lib):
         ctx.err("sections", "the page fills %d of the %d content sections of blueprint %r, too few to keep its layout. Pick a blueprint with fewer content sections (python scripts/variety.py --blueprints <archetype> shows the counts)." % (core_used, len(core), bp_key))
 
 
+def rules_pin(ctx, top, out_dir):
+    """The pinned rules version ("1" or "2") when the page pins one and its output folder holds a build made under
+    that version; otherwise False.
+
+    The pin keeps a site that was built before rules 2 building: the content checks added since (brief, blueprint,
+    evidence, copied example text, voice, design, motion) print as warnings. A new page cannot use it, because its
+    output folder has no earlier build, or only builds made under the current rules."""
+    pin = top.get("rules")
+    if not pin or int(pin) >= RULES_VERSION:
+        return False
+    try:
+        prev = int(json.loads((out_dir / "build-report.json").read_text(encoding="utf-8")).get("rules", 1))
+    except (OSError, ValueError):
+        prev = None
+    if prev != int(pin):
+        ctx.err("page.rules", "\"rules\": \"%s\" only keeps an existing site building, and %s holds no build made under rules %s. A new page follows the current rules: remove the field." % (pin, out_dir, pin))
+        return False
+    ctx.warn("page.rules", "this site was built under rules %s, so the content checks added since (up to rules %d) print as warnings marked [rules %s, not enforced]. Fix them and remove the field when the client's content is next revised." % (pin, RULES_VERSION, pin))
+    return pin
+
+
 def check_unique_blueprint(ctx, page, page_path, archetype_key, lib):
+    """Warn when a sibling site already follows the same blueprint. A warning, not an error: the build must not
+    depend on which other sites sit next to the page."""
     import variety
     key = page.get("blueprint")
     if not key:
@@ -1570,9 +1722,7 @@ def check_unique_blueprint(ctx, page, page_path, archetype_key, lib):
     free = [k for k, b in lib["blueprints"].items() if archetype_key in b.get("fits", []) and k not in taken]
     msg = "blueprint %r is already used by %s" % (key, ", ".join(taken[key]))
     if free:
-        ctx.err("page.blueprint", msg + "; every site follows its own real layout. Free blueprints for this archetype: %s." % ", ".join(free))
-    else:
-        ctx.warn("page.blueprint", msg + "; no free blueprint is left for this archetype, so the repeat is allowed.")
+        ctx.warn("page.blueprint", msg + ". If one of these fits the brief as well, use it so the sites differ in layout: %s." % ", ".join(free))
 
 
 def check_order(ctx, archetype, sections, lib):
@@ -1624,7 +1774,7 @@ PAGE_SPEC = {
             "primary": {"type": "color", "required": False},
             "accent": {"type": "color", "required": False},
             "accent_2": {"type": "color", "required": False},
-            "eyebrow": {"type": "enum", "values": ["line", "pill", "caps"], "required": False},
+            "eyebrow": {"type": "enum", "values": ["plain", "pill", "caps", "line"], "required": False},
             "edges": {"type": "enum", "values": ["none", "angle", "curve"], "required": False},
             "image_mask": {"type": "enum", "values": ["rounded", "angle", "arch"], "required": False},
             "highlight": {"type": "enum", "values": ["color", "gradient", "underline"], "required": False},
@@ -1633,7 +1783,8 @@ PAGE_SPEC = {
         "features": {"type": "object", "required": False, "fields": {
             "magnetic_cta": {"type": "bool", "default": False},
         }},
-        "motion": {"type": "enum", "values": ["signature", "calm"], "default": "signature"},
+        "motion": {"type": "enum", "values": ["calm", "expressive", "signature"], "default": "calm"},
+        "rules": {"type": "enum", "values": ["1", "2"], "required": False},
         "override_order": {"type": "object", "required": False, "fields": {
             "reason": {"type": "text", "min": 20, "max": 300},
         }},
@@ -1681,6 +1832,12 @@ def main():
     preset = lib["presets"].get(top.get("preset"))
     if not preset:
         ctx.err("page.preset", "unknown preset %r. Choose one of: %s" % (top.get("preset"), ", ".join(lib["presets"])))
+    elif top.get("lang") == "vi":
+        if preset.get("fonts_vi"):
+            preset = dict(preset, fonts=preset["fonts_vi"])  # the preset's own faces lack Vietnamese diacritics
+        missing = [preset["fonts"][k] for k in ("heading", "body") if preset["fonts"][k] not in VI_FONTS]
+        if missing:
+            ctx.err("page.preset", "preset %s uses %s, which has no Vietnamese glyphs, so accented letters fall back to another font. This is a library bug: give the preset a \"fonts_vi\" entry with families from VI_FONTS in build.py." % (top.get("preset"), ", ".join(missing)))
 
     # Sections.
     sections = []
@@ -1765,17 +1922,20 @@ def main():
             tone_override = None
         sections.append({"type": t, "variant": variant, "id": sid, "data": data, "tone_override": tone_override, "path": p})
 
+    legacy = rules_pin(ctx, top, out_dir)
+    ctx.soft = legacy
     bp_key = top.get("blueprint")
     bp = lib["blueprints"].get(bp_key) if bp_key else None
     if bp_key and not bp:
         ctx.err("page.blueprint", "unknown blueprint %r. Choose one of: %s" % (bp_key, ", ".join(lib["blueprints"])))
     if bp:
-        check_blueprint(ctx, bp, bp_key, sections, lib)
+        check_blueprint(ctx, bp, bp_key, sections, lib, top.get("motion", "calm"))
     elif archetype and not top.get("override_order"):
         check_order(ctx, archetype, raw_sections if isinstance(raw_sections, list) else [], lib)
     elif top.get("override_order"):
         ctx.warn("page.override_order", "archetype order check skipped: %s" % top["override_order"]["reason"])
 
+    check_brand_colors(ctx, top, page_path.parent, brief, page.get("site"))
     check_voice(ctx, sections, top.get("lang", "en"))
     check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {})
     check_figures(ctx, sections)
@@ -1791,9 +1951,10 @@ def main():
         else:
             check_evidence(ctx, sections, brief)
         check_variety(ctx, page, page_path)
-        check_motion(ctx, sections, archetype, lib, top.get("motion", "signature"), brief or "")
-        check_unique_hero(ctx, page, page_path, sections, archetype, lib)
+        check_motion(ctx, sections, archetype, lib, top.get("motion", "calm"), brief or "")
+        check_unique_hero(ctx, page, page_path, sections, archetype, lib, top.get("motion", "calm"))
         check_unique_blueprint(ctx, page, page_path, arch_key, lib)
+    ctx.soft = False
 
     for path, anchor in ctx.anchors:
         if anchor not in ids and anchor != "top":
@@ -1883,7 +2044,11 @@ def main():
     for k in design:
         if theme.get(k):
             design[k] = theme[k]
-    eyebrow = theme.get("eyebrow") or preset.get("eyebrow", "line")
+    eyebrow = theme.get("eyebrow") or preset.get("eyebrow", "plain")
+    if eyebrow == "line":
+        eyebrow = "plain"  # the old rule before the label read as a dash; "line" is kept as a name only
+    if eyebrow == "caps" and top.get("lang") == "vi":
+        eyebrow = "plain"  # tracked capitals with Vietnamese diacritics are hard to read
     root_class = " ".join(["bl-eyebrow-%s" % eyebrow, "bl-edges-%s" % design["edges"], "bl-mask-%s" % design["image_mask"],
                            "bl-hl-%s" % design["highlight"], "bl-media-%s" % design["media_reveal"]])
     shell = {"root_class": root_class, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
@@ -1923,7 +2088,7 @@ def main():
     for rel, src in ctx.images.items():
         (out_dir / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, out_dir / rel)
-    rep = {"archetype": arch_key, "preset": top["preset"], "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections],
+    rep = {"rules": int(legacy) if legacy else RULES_VERSION, "archetype": arch_key, "preset": top["preset"], "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections],
            "warnings": ctx.warnings, "placeholders": ctx.placeholders}
     (out_dir / "build-report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
     report(ctx, failed=False)

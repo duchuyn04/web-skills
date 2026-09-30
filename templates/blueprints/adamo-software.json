@@ -5,7 +5,7 @@
   "summary": "A dark blue page throughout: centered hero over a video, a logo row, an accordion capabilities split, a figures band, an industry list over a photo, a tabbed process block, a logo strip, technology and case sliders, an FAQ, a blog split and a contact form.",
   "header": "mega",
   "sections": [
-    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "note": "centered eyebrow, heading, short text and a button over a dark tech video"},
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-mosaic"], "note": "centered eyebrow, heading, short text and a button over a dark tech video"},
     {"form": "logo-strip", "role": "clients", "tone": "light", "optional": true, "note": "thin row of client logos under the hero"},
     {"form": "feature-split", "role": "services", "tone": "dark", "media": "left", "note": "eyebrow and heading, image left, accordion of four capability rows right"},
     {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 4, "count": 4, "note": "heading with an intro, mixed tiles of large figures and labels"},

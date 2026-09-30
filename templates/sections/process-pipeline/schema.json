@@ -1,6 +1,6 @@
 {
   "variant": "process-pipeline",
-  "group": "process", "signature": true,
+  "group": "process", "signature": true, "tier": "expressive",
   "forms": ["cards-icon"],
   "reshape": true,
   "summary": "Isometric flow diagram with one station per real process step, joined by pipes. Small packets (documents, tickets or data rows) travel the pipes: grey on the way in, brand colour once processed, with a tick after the checking step, and they leave on the right. The lit station moves along the line; hovering a step below lights its station. Station heights, pipe height and packet speed are seeded from the brand name. Needs 3-6 real steps from the brief (title, one sentence, icon, packet type); the step whose icon is shield-check, clipboard-check, check-circle, check, search or eye marks the checking step, otherwise the last step does. Fits document, claims, invoice and data processing.",

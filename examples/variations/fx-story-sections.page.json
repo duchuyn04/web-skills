@@ -121,7 +121,7 @@
     {
       "type": "cta-band",
       "data": {
-        "eyebrow": "Contact",
+        "image": "paperwork-review-desk",
         "title": "Send us your *close calendar*",
         "text": "We reply within two working days with a team plan and a monthly price.",
         "primary_cta": {"label": "Book a call", "href": "mailto:hello@kestrel.example"}

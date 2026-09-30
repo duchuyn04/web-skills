@@ -5,7 +5,7 @@
   "summary": "Photo hero with three buttons, a dark intro text band, a grid of dark audience tiles, a bright blue message band, a white benefits section with photos and a six icon row, a testimonial band with a client logo grid and a photo closing call to action.",
   "header": "simple",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "centered uppercase headline over a photo, three orange pill buttons in a row"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-mosaic"], "note": "centered uppercase headline over a photo, three orange pill buttons in a row"},
     {"form": "text-block", "role": "intro", "tone": "dark", "media": "none", "note": "slate band with two centered paragraphs and a text link"},
     {"form": "cards-icon", "role": "services", "tone": "light", "cols": 3, "count": 7, "note": "grid of dark rectangular tiles, each with a small icon and a short label, rows of three"},
     {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "note": "bright blue band with a centered offer line and one orange button"},

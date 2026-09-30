@@ -92,6 +92,10 @@
     },
     "cards": [
      {
+      "photo": {
+       "src": "office-worker-laptop",
+       "alt": "Support specialist typing on a laptop in a bright office"
+      },
       "icon": "headset",
       "title": "Customer support",
       "text": "Email, chat and phone agents for ecommerce and SaaS brands.",
@@ -479,7 +483,6 @@
   {
    "type": "careers-band",
    "data": {
-    "eyebrow": "Careers",
     "title": "Join our team",
     "text": "We hire support agents, accountants and QA engineers in Ho Chi Minh City, Da Nang, Manila and Cebu.",
     "openings": "45 open positions",
@@ -541,7 +544,6 @@
    "type": "contact-split",
    "data": {
     "head": {
-     "eyebrow": "Contact us",
      "title": "Get a *quote*"
     },
     "form": {
@@ -554,6 +556,10 @@
      "note": "We only use your details to reply to this request."
     },
     "aside": {
+     "photo": {
+      "src": "office-interior",
+      "alt": "Corridor and kitchen of a modern delivery center"
+     },
      "title": "Why companies choose us",
      "points": [
       "Founded in 2016",

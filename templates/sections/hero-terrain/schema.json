@@ -1,6 +1,6 @@
 {
   "variant": "hero-terrain",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-fullbleed", "hero-video", "hero-center"],
   "summary": "Full-width dark hero over a 3D wireframe terrain that rolls toward the viewer like a sea of data; the camera leans with the pointer and the first stats float as beacons over the peaks. Wave frequencies, heights and beacon positions are seeded from the brand name. Copy sits over the calm upper area; stats strip below.",
   "tone": "dark",

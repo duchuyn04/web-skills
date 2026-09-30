@@ -5,7 +5,7 @@
   "summary": "Light centered hero with a product visual, a client logo row, a dark parent-brand band, a dark tabbed service panel, then a photo and quote mosaic, a three step process, a dark call to action panel and a resource card grid.",
   "header": "simple",
   "sections": [
-    {"form": "hero-center", "role": "hero", "tone": "light", "media": "none", "note": "small logo line, centered headline, paragraph and two buttons, with a floating UI collage below"},
+    {"form": "hero-center", "role": "hero", "tone": "light", "media": "none", "compose": ["hero-promo"], "note": "small logo line, centered headline, paragraph and two buttons, with a floating UI collage below"},
     {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 6, "count": 6, "optional": true, "note": "single row of six client logos"},
     {"form": "text-block", "role": "intro", "tone": "dark", "media": "right", "note": "black band with heading and paragraph left and a large logo mark right"},
     {"form": "tabs", "role": "services", "tone": "dark", "cols": 4, "count": 4, "media": "right", "note": "centered heading and pill tabs; a white panel with checklist left and UI collage right, then a row of four bordered feature boxes"},

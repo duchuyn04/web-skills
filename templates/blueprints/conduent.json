@@ -5,7 +5,7 @@
   "summary": "Dark full-bleed slider hero, a dark three-figure band, a centered intro, three service cards, a promo split banner, a second intro with an awards strip, then featured insights and a careers band before a news strip.",
   "header": "mega",
   "sections": [
-    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "copy left over a full-width photo, slider dots below"},
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "compose": ["hero-tabs"], "note": "copy left over a full-width photo, slider dots below"},
     {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 4, "count": 3, "note": "heading on the left, three large figures with captions in one row"},
     {"form": "text-block", "role": "intro", "tone": "light", "media": "none", "note": "centered heading and one paragraph"},
     {"form": "cards-image", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "three columns, each with a picture, title, short text and a link"},

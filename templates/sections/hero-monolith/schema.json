@@ -1,6 +1,6 @@
 {
   "variant": "hero-monolith",
-  "group": "hero", "signature": true,
+  "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split"],
   "summary": "Calm, signage-like hero: the company monogram (site.brand_mark, 1-3 characters) stands on the right as a solid extruded block with real depth, like a sign cut from stone or brushed metal. It turns slowly left and right by about 20-28 degrees, leans toward a fine pointer, a sheen crosses its face as it turns and its side faces darken with the light. The brand name sits under it as a plaque. Extrusion depth, turn amplitude, light side, face treatment and period are seeded from the brand name. Fits finance and accounting BPO, banks' outsourcing partners and large enterprise groups. Copy on the left, optional stats strip.",
   "tone": "hero",

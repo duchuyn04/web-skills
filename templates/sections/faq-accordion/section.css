@@ -5,6 +5,8 @@
 .bl-faq__card { display: grid; gap: .7rem; justify-items: start; padding: 1.5rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
 .bl-faq__card strong { font-family: var(--font-heading); font-size: 1.1rem; color: var(--text-strong); }
 .bl-faq__card p { font-size: var(--fs-sm); }
+.bl-faq__photo { margin-top: 1.5rem; aspect-ratio: 4 / 3; }
+.bl-faq__card + .bl-faq__photo { margin-top: 1rem; }
 .bl-acc { border-bottom: 1px solid var(--border); }
 .bl-acc:first-child { border-top: 1px solid var(--border); }
 .bl-acc__btn {
@@ -20,6 +22,6 @@
 .js .bl-acc__btn[aria-expanded="true"] + .bl-acc__panel, .js .bl-acc__h:has(> [aria-expanded="true"]) + .bl-acc__panel { grid-template-rows: 1fr; }
 .bl-acc__inner { min-height: 0; overflow: hidden; }
 .bl-acc__inner p { padding: 0 3.5rem 1.5rem 0; color: var(--text); }
-@media (max-width: 1024px) { .bl-faq { grid-template-columns: 1fr; } .bl-faq__side { position: static; } }
+@media (max-width: 1024px) { .bl-faq { grid-template-columns: 1fr; } .bl-faq__side { position: static; } .bl-faq__photo { aspect-ratio: 16 / 9; max-width: 640px; } }
 @media (max-width: 560px) { .bl-acc__inner p { padding-right: 0; } }
 .bl-acc__inner p { max-width: 62ch; }

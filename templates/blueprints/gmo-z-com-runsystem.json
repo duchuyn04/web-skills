@@ -19,6 +19,7 @@
       "cols": null,
       "count": null,
       "media": "full",
+      "compose": ["hero-overlap"],
       "note": "heading and short copy at left over a full-width photo, one button"
     },
     {

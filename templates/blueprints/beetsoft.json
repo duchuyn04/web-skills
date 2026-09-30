@@ -19,6 +19,7 @@
       "media": "full",
       "cols": null,
       "count": null,
+      "compose": ["hero-overlap"],
       "note": "left aligned heading, sub line and two buttons over a warehouse photo"
     },
     {

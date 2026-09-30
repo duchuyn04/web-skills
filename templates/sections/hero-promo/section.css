@@ -1,0 +1,68 @@
+/* hero-promo: accent-block-wipe, promo-cards-rise. Centered headline with the accent phrase on a solid brand block,
+   then a row of tall photo cards that link into the page. */
+.bl-hero--promo { padding-bottom: clamp(3rem, 5vw, 4.5rem); }
+.bl-hero-promo__copy { max-width: 920px; margin-inline: auto; text-align: center; }
+.bl-hero-promo__copy .bl-eyebrow { justify-content: center; }
+.bl-hero-promo__title { font-size: clamp(2.2rem, 3.4vw + 1rem, 4.1rem); line-height: 1.12; margin-bottom: 1.75rem; }
+/* the accent phrase: a solid block in the brand colour, text in the button text colour */
+/* inline-block, so a phrase that wraps stays one solid block and the wipe covers every line */
+.bl-hero-promo__title .bl-hl {
+  display: inline-block; max-width: 100%;
+  color: var(--c-on-accent); background: var(--c-accent); text-decoration: none;
+  padding: .04em .3em .1em; margin-top: .06em;
+}
+.js .bl-hero-promo__title .bl-hl { clip-path: inset(0 100% 0 0); transition: clip-path .45s var(--ease-out) .12s; }
+.js .bl-hero-promo__title.is-in .bl-hl { clip-path: inset(0 0 0 0); }
+.bl-hero-promo__lead { max-width: 42rem; margin-inline: auto; margin-bottom: 2rem; }
+.bl-hero-promo__ctas { justify-content: center; }
+
+/* cards */
+.bl-hero-promo__cards {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(.9rem, 1.6vw, 1.4rem);
+  margin-top: clamp(3rem, 6vw, 4.75rem);
+}
+.bl-hero-promo__card {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;
+  aspect-ratio: 3 / 3.7; overflow: hidden; border-radius: var(--radius-lg); background: var(--c-primary); color: #fff;
+  isolation: isolate;
+}
+.bl-hero-promo__img {
+  position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .45s var(--ease-out);
+}
+/* photo scrim: dark at the bottom where the text sits */
+.bl-hero-promo__card::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(0deg, rgba(8, 12, 24, .92) 0%, rgba(8, 12, 24, .72) 34%, rgba(8, 12, 24, .12) 68%, rgba(8, 12, 24, 0) 100%);
+}
+.bl-hero-promo__card:hover .bl-hero-promo__img, .bl-hero-promo__card:focus-visible .bl-hero-promo__img { transform: scale(1.05); }
+.bl-hero-promo__card:focus-visible { outline: 3px solid var(--focus-ring, var(--accent-ink)); outline-offset: 3px; }
+.bl-hero-promo__text { display: grid; gap: .45rem; padding: clamp(1.1rem, 1.6vw, 1.5rem); padding-top: 0; }
+.bl-hero-promo__tag { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255, 255, 255, .86); }
+:lang(vi) .bl-hero-promo__tag { text-transform: none; letter-spacing: .01em; font-size: var(--fs-sm); }
+.bl-hero-promo__name { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.05rem, .5vw + .9rem, 1.25rem); line-height: 1.3; letter-spacing: -0.01em; color: #fff; text-wrap: balance; }
+.bl-hero-promo__go {
+  position: absolute; top: .9rem; right: .9rem; width: 36px; height: 36px; display: grid; place-items: center;
+  border-radius: 50%; background: rgba(8, 12, 24, .72); color: #fff; border: 1px solid rgba(255, 255, 255, .28);
+  transition: background-color var(--dur-fast) var(--ease-std), color var(--dur-fast) var(--ease-std);
+}
+.bl-hero-promo__go .arrow-icon { width: 16px; height: 16px; }
+.bl-hero-promo__card:hover .bl-hero-promo__go, .bl-hero-promo__card:focus-visible .bl-hero-promo__go { background: var(--c-accent); color: var(--c-on-accent); border-color: transparent; }
+.bl-hero-promo__card:hover .arrow-icon { transform: translateX(2px); }
+
+@media (max-width: 1024px) {
+  .bl-hero-promo__cards { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bl-hero-promo__card { aspect-ratio: 4 / 3.6; }
+}
+@media (max-width: 560px) {
+  /* one card per swipe, the next one peeking in */
+  .bl-hero-promo__cards {
+    grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 78%;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter) .5rem; scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .bl-hero-promo__cards::-webkit-scrollbar { display: none; }
+  .bl-hero-promo__item { scroll-snap-align: start; }
+  .bl-hero-promo__card { aspect-ratio: 3 / 3.6; }
+}

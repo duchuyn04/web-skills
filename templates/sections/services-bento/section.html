@@ -3,7 +3,8 @@
     {{> head-split}}
     <div class="bl-bento" data-reveal-group>
       {{#cards}}
-      <article class="bl-bento__card" data-reveal>
+      <article class="bl-bento__card{{#@first}}{{#photo}} bl-bento__card--photo{{/photo}}{{/@first}}" data-reveal>
+        {{#@first}}{{#photo}}<div class="bl-frame bl-bento__photo"><img src="{{src}}" alt="{{alt}}" width="960" height="560" loading="lazy" decoding="async"></div>{{/photo}}{{/@first}}
         <span class="bl-icon-box">{{icon:$icon}}</span>
         <h3 class="bl-h3">{{title}}</h3>
         <p>{{text}}</p>

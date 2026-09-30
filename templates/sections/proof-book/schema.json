@@ -1,6 +1,6 @@
 {
   "variant": "proof-book",
-  "group": "proof", "signature": true,
+  "group": "proof", "signature": true, "tier": "expressive",
   "forms": ["carousel-cards", "testimonial-block"],
   "reshape": true,
   "summary": "Case studies laid out as an open book: the left page names the client, industry and challenge with a photo, the right page gives the result headline and 2-3 figures. Next case turns the right-hand leaf over the spine in 3D, with shading running across the paper as it bends; Previous case turns it back. Buttons, arrow keys and a click on the page corner all turn; no dragging needed. Phones show one page per case and turn it about its left edge. Paper tone, corner radius, spine shadow and turn speed are seeded from the brand name. Needs 3-6 real case studies with a challenge line each; with fewer, use case-slider or quote-spotlight.",
