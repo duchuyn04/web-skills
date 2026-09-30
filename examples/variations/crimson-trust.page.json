@@ -66,15 +66,15 @@
     "photos": [
      {
       "src": "portrait-woman-office",
-      "alt": "Keystone accountant at her desk"
+      "alt": "Smiling woman in a blazer by a window"
      },
      {
       "src": "avatar-man-2",
-      "alt": "Keystone support team lead"
+      "alt": "Head-and-shoulder portrait of a man"
      },
      {
       "src": "avatar-woman-2",
-      "alt": "Keystone payroll specialist"
+      "alt": "Head-and-shoulder portrait of a woman"
      }
     ]
    }
@@ -186,8 +186,8 @@
        "Client sign-off on every hire"
       ],
       "photo": {
-       "src": "portrait-woman-office",
-       "alt": "Keystone team lead smiling in the Manila office"
+       "src": "portrait-woman-team-lead",
+       "alt": "Smiling woman in a red sweater with a coffee, team behind her"
       },
       "badge": {
        "value": "15 days",
@@ -315,8 +315,7 @@
       "quote": "We hired two accountants through Keystone in 2023 and now have nine. Month-end close takes four days instead of eleven, and the team feels like part of our office.",
       "name": "Priya Raman",
       "role": "Finance Director",
-      "company": "Accounting firm",
-      "avatar": "avatar-woman-1"
+      "company": "Accounting firm"
      }
     ]
    }
@@ -348,8 +347,8 @@
       "meta": "4 min read",
       "title": "Data security questions to ask any staffing vendor",
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Team checking a security dashboard"
+       "src": "team-meeting-table",
+       "alt": "Diverse team of eight around a conference table with laptops and coffee"
       },
       "href": "#contact"
      },

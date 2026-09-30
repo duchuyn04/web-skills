@@ -57,7 +57,7 @@
     ],
     "photo": {
      "src": "portrait-woman-office",
-     "alt": "ClearLine sales development lead in the office"
+     "alt": "Smiling woman in a blazer by a window"
     },
     "badges": [
      {
@@ -217,22 +217,19 @@
       "quote": "Two ClearLine SDRs now book more first meetings than our in-house team of four did last year, and the notes in HubSpot are better.",
       "name": "Rachel Ortiz",
       "role": "VP Sales",
-      "company": "Stackwise",
-      "avatar": "avatar-woman-2"
+      "company": "Stackwise"
      },
      {
       "quote": "They listened to our call recordings, rewrote the opener and our connect-to-meeting rate doubled in a month.",
       "name": "Tom Becker",
       "role": "Head of Growth",
-      "company": "Ledgerly",
-      "avatar": "avatar-man-1"
+      "company": "Ledgerly"
      },
      {
       "quote": "Our Spanish-speaking market finally gets called back the same day. Inbound leads no longer wait until Monday.",
       "name": "Luis Moreno",
       "role": "Sales Director",
-      "company": "Fieldnote",
-      "avatar": "avatar-man-3"
+      "company": "Fieldnote"
      }
     ]
    }

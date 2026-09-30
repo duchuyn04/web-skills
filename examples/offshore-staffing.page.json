@@ -72,7 +72,7 @@
     ],
     "photo": {
      "src": "team-coworking-laptops",
-     "alt": "Lotus team members working together at a shared table"
+     "alt": "Four people at a wooden table on laptops, one with headphones"
     },
     "badges": [
      {
@@ -233,7 +233,7 @@
       "text": "We map tasks, tools, hours and language level with you, then agree on salary bands for each role.",
       "photo": {
        "src": "presenter-planning-board",
-       "alt": "Client and Lotus leads mapping roles on a sticky-note board"
+       "alt": "Woman in a wheelchair presenting a sticky-note plan to colleagues"
       }
      },
      {
@@ -394,15 +394,13 @@
       "quote": "We started with two support agents and now run a team of fourteen. Response times dropped from six hours to under one, and our US staff now handle enterprise accounts.",
       "name": "Dana Whitfield",
       "role": "Head of Customer Success",
-      "company": "Brightpath",
-      "avatar": "avatar-woman-1"
+      "company": "Brightpath"
      },
      {
       "quote": "Our month-end close moved from twelve days to six after the Lotus bookkeepers took over reconciliations. They ask good questions and document everything.",
       "name": "Marcus Lee",
       "role": "Finance Director",
-      "company": "Quill Finance",
-      "avatar": "avatar-man-2"
+      "company": "Quill Finance"
      },
      {
       "quote": "The QA engineers joined our sprint rituals in the first week. Release bugs reported by customers fell by half in one quarter.",
@@ -451,7 +449,7 @@
     ],
     "photo": {
      "src": "portrait-woman-team-lead",
-     "alt": "Lotus Staffing team lead in the Ho Chi Minh City office"
+     "alt": "Smiling woman in a red sweater with a coffee, team behind her"
     }
    }
   },

@@ -54,7 +54,7 @@
         ],
         "photo": {
           "src": "team-engineers-screen",
-          "alt": "Harbourline engineers reviewing a release on a shared screen"
+          "alt": "Three engineers looking at code on a laptop"
         }
       }
     },
@@ -151,7 +151,7 @@
             ],
             "photo": {
               "src": "bookkeeping-calculator-laptop",
-              "alt": "Harbourline accountant reconciling invoices on a laptop"
+              "alt": "Hands on a calculator in front of a laptop showing an accounting app"
             },
             "badge": {
               "value": "Day 5",
@@ -168,7 +168,7 @@
             ],
             "photo": {
               "src": "code-review-pair",
-              "alt": "Two Harbourline testers reviewing a failing test on a laptop"
+              "alt": "Two women looking at code on a laptop, from over the shoulder"
             },
             "badge": {
               "value": "24 h",

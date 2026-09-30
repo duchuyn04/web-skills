@@ -28,7 +28,7 @@
         "lead": "Harbor Lane CX runs voice, chat and email support for retail, travel and software brands, with team leads who report to you every morning.",
         "primary_cta": {"label": "Talk to our team", "href": "#get-started"},
         "secondary_cta": {"label": "See our services", "href": "#services"},
-        "photo": {"src": "team-meeting-table", "alt": "Harbor Lane CX agents at a team briefing around a long table"},
+        "photo": {"src": "team-meeting-table", "alt": "Diverse team of eight around a conference table with laptops and coffee"},
         "focus": "center",
         "proof": ["Weekly QA scorecards", "One team lead per 12 agents"],
         "stats": [

@@ -4,7 +4,7 @@ Run `python scripts/build.py --list` for the live lists. This file explains what
 
 ## Image library (`templates/assets/images`)
 
-Use the key (file name without extension) in any `image` field. Always write a real `alt` describing the photo in the page's context. Read the "What it shows" column before choosing: pick the photo whose content matches the section, not the one whose name sounds closest. These are sample photos of strangers, not the client's staff; tell the user every stock photo on the page should be replaced with the client's own before launch.
+Use the key (file name without extension) in any `image` field. Always write a real `alt` that says what the picture shows. Never name the client or write "our team" or "our office" in it: build.py fails a library photo captioned as the client. Use each photo once per page. Read the "What it shows" column before choosing: pick the photo whose content matches the section, not the one whose name sounds closest. These are sample photos of strangers, not the client's staff; tell the user every stock photo on the page should be replaced with the client's own before launch.
 
 Photos marked (card) are 1024 px wide: use them in cards, tiles and case slides, never as a full-width hero or banner background.
 

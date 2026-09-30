@@ -31,7 +31,7 @@ import rules  # noqa: E402
 SKILL = HERE.parent
 # Version of the content rules. Bump it when a new check can fail a page that built before, and add a CHANGELOG.md
 # entry. A site built under an older version keeps building with "rules": "<that version>" (see rules_pin in main).
-RULES_VERSION = 3
+RULES_VERSION = 4
 TPL = SKILL / "templates"
 SECTIONS_DIR = TPL / "sections"
 IMAGES_DIR = TPL / "assets" / "images"
@@ -1042,7 +1042,8 @@ CLAIM_RE = re.compile(
     r"Clutch|Gartner|Forrester|Everest Group|Great Place to Work|award[- ]winning|"
     r"guarantee[ds]?|money[- ]back|no extra cost|at no cost|free of charge|free trial|risk[- ]free|replacement|backup bench|"
     r"call recordings?|recorded calls|24/7|"
-    r"setup fees?|hidden fees?|per (?:agent|seat|hour|FTE)|fixed monthly (?:fee|price)|"
+    r"setup fees?|hidden (?:fees?|charges?|costs?)|per (?:agent|seat|hour|FTE)|fixed monthly (?:fee|price)|"
+    r"never share|background[- ]check(?:s|ed)?|encrypt(?:ed|ion)?|time ?zones?|"
     r"WhatsApp|Messenger|Instagram|Viber|VDI|virtual desktops?|"
     r"month[- ]to[- ]month|lock[- ]in|long[- ]term contracts?|cancel any ?time|notice period|no minimum|minimum term|"
     r"English|Spanish|Tagalog|Japanese|Vietnamese|French|German|Mandarin|Cantonese|Korean|Portuguese|Italian|Arabic|Thai|Bahasa)\b",
@@ -1110,6 +1111,10 @@ def check_evidence(ctx, sections, brief):
                     what = "quote" if f == "quote" else "name"
                     ctx.err(path, "this %s is not in the brief (\"%s\"). Proof must be real: use only clients, people and quotes the client supplied, word for word. Never add, shorten or reword a quote; drop the item or the section instead." % (what, v[:60]))
     check_audience(ctx, sections, nb)
+    for s in sections:
+        for path, url in _form_actions(s["data"], s["path"] + ".data"):
+            if url.startswith(("http://", "https://")) and url.split("#")[0].rstrip("/") not in brief:
+                ctx.err(path, "the form posts to %s, which the brief does not give, so every enquiry would fail. Leave \"action\" out: the form then shows its thank-you message until the client supplies their own form endpoint." % url)
     # Figures inside quoted passages may appear only inside that quote on the page (checked word for word above).
     allowed_terms = number_terms(QUOTED_RE.sub(" ", brief))
     this_year = datetime.date.today().year
@@ -1125,7 +1130,10 @@ def check_evidence(ctx, sections, brief):
                 term = m.group(1)
                 t = norm_text(term)
                 # "No call recordings", "without GDPR": the brief rules the claim out.
-                if re.search(r"(?:^| )(?:no|not|without|never|don t have|do not have)(?: [a-z0-9]+){0,2} " + re.escape(t) + r"(?: |$)", nb):
+                neg = r"(?:^| )(?:no|not|without|never|don t have|do not have)(?: [a-z0-9]+){0,2} " + re.escape(t) + r"(?: |$)"
+                if re.search(neg, nb):
+                    if re.search(neg, norm_text(text)):
+                        continue  # the page repeats the brief's "no setup fee"
                     key = (path, "not:" + t)
                     if key not in seen:
                         seen.add(key)
@@ -1146,6 +1154,19 @@ def check_evidence(ctx, sections, brief):
                     continue
                 seen.add((path, term))
                 ctx.err(path, "\"%s\" is a time, size or duration the brief does not give. Remove it, or write the sentence without the number." % term)
+
+
+def _form_actions(o, path):
+    if isinstance(o, dict):
+        for k, v in o.items():
+            p = "%s.%s" % (path, k)
+            if k == "action" and isinstance(v, str):
+                yield p, v.strip()
+            else:
+                yield from _form_actions(v, p)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            yield from _form_actions(v, "%s[%d]" % (path, i))
 
 
 def _strings_with_paths(o, path):
@@ -1200,6 +1221,79 @@ def check_images(ctx, sections):
         both = sorted(group & used)
         if len(both) > 1:
             ctx.warn("sections", "%s show the same person; readers will notice. Keep one." % " and ".join(both))
+
+
+def _library_photos(o, path, keys, out):
+    """(path, key, alt) for each library photo in the raw page data."""
+    if isinstance(o, dict):
+        src = o.get("src")
+        if isinstance(src, str) and src in keys:
+            out.append((path, src, o.get("alt") if isinstance(o.get("alt"), str) else ""))
+        for k, v in o.items():
+            if k in ("src", "alt"):
+                continue
+            p = "%s.%s" % (path, k)
+            if isinstance(v, str) and v in keys:
+                out.append((p, v, ""))
+            else:
+                _library_photos(v, p, keys, out)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            _library_photos(v, "%s[%d]" % (path, i), keys, out)
+    return out
+
+
+def check_stock_photos(ctx, raw_sections, brand):
+    """A weak model reaches the photo share by repeating the same pictures, and captions stock photos as the
+    client's team or office. Library photos appear once per page and their alt text says what the picture shows."""
+    found = []
+    for i, sec in enumerate(raw_sections if isinstance(raw_sections, list) else []):
+        if isinstance(sec, dict):
+            _library_photos(sec.get("data"), "sections[%d].data" % i, ctx.lib["images"], found)
+    nbrand = norm_text(brand or "")
+    names = {nbrand} if nbrand else set()
+    if nbrand and len(nbrand.split()[0]) >= 4:
+        names.add(nbrand.split()[0])
+    first = {}
+    for path, key, alt in found:
+        if path.endswith(".avatar"):
+            ctx.err(path, "%r is a stock face. Next to a real client's name and quote it makes the review look fake. Leave \"avatar\" out (the initials show instead) or use a photo file the client supplied." % key)
+            continue
+        if key in first:
+            ctx.err(path, "photo %r is already used at %s. Each library photo appears once on a page: pick another key from references/assets.md, use the client's own photos, or drop this one." % (key, first[key]))
+        else:
+            first[key] = path
+        na = " " + norm_text(alt) + " "
+        if any(" %s " % n in na for n in names) or re.search(r" (?:our|we|us) ", na):
+            ctx.err(path + ".alt", "\"%s\": %r is a stock photo, not a picture of %s or its people. Describe what the picture shows (\"Two people checking invoices at a desk\") without the company's name or \"our\". Only the client's own photo files may name them." % (alt, key, brand or "the client"))
+
+
+PEOPLE_SECTIONS = {"team-grid", "team-coverflow", "quote-spotlight", "testimonials", "testimonials-drift", "testimonials-rated"}
+
+
+def check_named_faces(ctx, raw_sections):
+    """Team and review sections put a photo next to a person's name: a library portrait there is a stranger
+    presented as that person."""
+    for i, sec in enumerate(raw_sections if isinstance(raw_sections, list) else []):
+        if not isinstance(sec, dict) or sec.get("type") not in PEOPLE_SECTIONS:
+            continue
+        data = sec.get("data")
+        for k, items in (data or {}).items():
+            for j, it in enumerate(items if isinstance(items, list) else []):
+                if not (isinstance(it, dict) and isinstance(it.get("name"), str)):
+                    continue
+                for f in ("photo", "image"):
+                    v = it.get(f)
+                    key = v.get("src") if isinstance(v, dict) else v
+                    if isinstance(key, str) and key in ctx.lib["images"]:
+                        ctx.err("sections[%d].data.%s[%d].%s" % (i, k, j, f), "%r is a stock portrait shown as %s. People on the page need their own photo: use a file the client supplied, or choose a variant without portraits (team-grid and team-coverflow need photos, so drop the section)." % (key, it["name"]))
+
+
+def check_legal(ctx, sections, brand):
+    for s in sections:
+        legal = s["data"].get("legal") if s["type"] == "footer-columns" else None
+        if isinstance(legal, str) and (re.match(r"\s*(?:\u00a9|\(c\)|copyright)", legal, re.I)):
+            ctx.err(s["path"] + ".data.legal", "the footer already prints \"\u00a9 <year> %s.\" before this text. Write only what follows, for example \"All rights reserved.\"" % (brand or "<brand>"))
 
 
 # Design tells of generated pages (docs/research/ui-anti-slop.md in the job repo, references/anti-slop.md).
@@ -1686,7 +1780,7 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm"):
 
 
 def rules_pin(ctx, top, out_dir):
-    """The pinned rules version ("1" or "2") when the page pins one and its output folder holds a build made under
+    """The pinned rules version ("1", "2" or "3") when the page pins one and its output folder holds a build made under
     that version; otherwise False.
 
     The pin keeps a site that was built before rules 2 building: the content checks added since (brief, blueprint,
@@ -1784,7 +1878,7 @@ PAGE_SPEC = {
             "magnetic_cta": {"type": "bool", "default": False},
         }},
         "motion": {"type": "enum", "values": ["calm", "expressive", "signature"], "default": "calm"},
-        "rules": {"type": "enum", "values": ["1", "2"], "required": False},
+        "rules": {"type": "enum", "values": ["1", "2", "3"], "required": False},
         "override_order": {"type": "object", "required": False, "fields": {
             "reason": {"type": "text", "min": 20, "max": 300},
         }},
@@ -1940,8 +2034,11 @@ def main():
     check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {})
     check_figures(ctx, sections)
     check_images(ctx, sections)
+    check_stock_photos(ctx, raw_sections, (top.get("site") or {}).get("brand"))
+    check_legal(ctx, sections, (top.get("site") or {}).get("brand"))
     if SKILL / "examples" not in page_path.parents:
         check_copied(ctx, sections, brief)
+        check_named_faces(ctx, raw_sections)
         if brief:
             check_numbers(ctx, sections, brief)
         if not top.get("blueprint") and lib["blueprints"]:

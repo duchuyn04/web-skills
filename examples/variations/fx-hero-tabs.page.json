@@ -30,7 +30,7 @@
         "primary_cta": {"label": "Contact us", "href": "#get-started"},
         "secondary_cta": {"label": "Our services", "href": "#services"},
         "tab_label": "Customer care",
-        "photo": {"src": "desk-phone-monitors", "alt": "Tallis Contact agent at a desk with a phone and two monitors"},
+        "photo": {"src": "desk-phone-monitors", "alt": "Woman at a desk with a desk phone and two monitors showing a web app, seen from behind"},
         "slides": [
           {
             "label": "Back office",

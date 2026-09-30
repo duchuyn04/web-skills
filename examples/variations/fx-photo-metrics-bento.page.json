@@ -29,7 +29,7 @@
         "primary_cta": {"label": "Talk to our team", "href": "#get-started"},
         "secondary_cta": {"label": "Our services", "href": "#services"},
         "proof": ["Founded in 2014", "One account lead per client"],
-        "photo": {"src": "team-coworking-laptops", "alt": "Harbourlight team members working together at a shared table"}
+        "photo": {"src": "team-coworking-laptops", "alt": "Four people at a wooden table on laptops, one with headphones"}
       }
     },
     {

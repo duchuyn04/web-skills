@@ -319,8 +319,8 @@
        "Client sign-off on every hire"
       ],
       "photo": {
-       "src": "portrait-woman-office",
-       "alt": "Meridian team lead smiling in the Manila office"
+       "src": "portrait-woman-glasses-desk",
+       "alt": "Woman in glasses at a white desk, calm expression"
       },
       "badge": {
        "value": "15 days",
@@ -337,8 +337,8 @@
        "Coaching logged per agent"
       ],
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Quality analysts reviewing a support ticket together"
+       "src": "team-meeting-table",
+       "alt": "Diverse team of eight around a conference table with laptops and coffee"
       },
       "link": {
        "label": "Talk to an expert",
@@ -350,8 +350,8 @@
       "title": "Shared reporting dashboard",
       "text": "Handle time, CSAT, backlog and QA scores sit on one dashboard that refreshes each morning.",
       "photo": {
-       "src": "office-interior",
-       "alt": "Quiet operations floor with wall screens"
+       "src": "team-meeting-bright-office",
+       "alt": "Five colleagues in a lively meeting in a glass-walled office, one man standing"
       },
       "badge": {
        "value": "07:00",
@@ -370,7 +370,7 @@
      "label": "Book a site visit",
      "href": "#contact"
     },
-    "image": "office-interior",
+    "image": "laptop-conference-room",
     "full_width": true,
     "align": "left"
    }
@@ -423,8 +423,8 @@
       "tag": "Banking",
       "title": "Card disputes and fraud alerts handled in one call",
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Banking support team reviewing a dispute queue"
+       "src": "office-worker-laptop",
+       "alt": "Smiling man in a blazer typing on a laptop in a bright office"
       },
       "href": "#contact"
      },
@@ -441,8 +441,8 @@
       "tag": "Retail",
       "title": "Peak season order support without new hiring rounds",
       "photo": {
-       "src": "team-coworking-laptops",
-       "alt": "Retail support agents working on laptops"
+       "src": "training-workshop-board",
+       "alt": "Man presenting to a group in front of a flip chart covered with sticky notes"
       },
       "href": "#contact"
      },
@@ -477,22 +477,19 @@
       "quote": "They took over our dispute queue in nine weeks and first contact resolution went up in the second month. Our own team now visits Da Nang to learn from their coaches.",
       "name": "Dana Whitfield",
       "role": "VP Customer Operations",
-      "company": "Regional bank",
-      "avatar": "avatar-woman-1"
+      "company": "Regional bank"
      },
      {
       "quote": "We moved claims intake from three vendors to one. Reporting is simpler, and the weekly calibration calls are the most useful meeting on my calendar.",
       "name": "Marcus Oyelaran",
       "role": "Director of Claims",
-      "company": "Mutual insurer",
-      "avatar": "avatar-man-1"
+      "company": "Mutual insurer"
      },
      {
       "quote": "Peak season used to mean hiring 200 temps. Meridian flexed the team up and back down again with no drop in satisfaction scores.",
       "name": "Lena Park",
       "role": "Head of Customer Care",
-      "company": "Online retailer",
-      "avatar": "avatar-woman-2"
+      "company": "Online retailer"
      }
     ]
    }

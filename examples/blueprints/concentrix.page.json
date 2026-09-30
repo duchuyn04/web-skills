@@ -233,7 +233,7 @@
       ],
       "photo": {
        "src": "portrait-woman-office",
-       "alt": "Northbridge team lead smiling in the Manila office"
+       "alt": "Smiling woman in a blazer by a window"
       },
       "badge": {
        "value": "15 days",
@@ -266,8 +266,8 @@
       "title": "Telecom programs",
       "text": "Billing questions, plan changes and device setup for prepaid and postpaid users.",
       "photo": {
-       "src": "desk-phone-monitors",
-       "alt": "Team at work on telecom programs"
+       "src": "team-meeting-table",
+       "alt": "Diverse team of eight around a conference table with laptops and coffee"
       },
       "href": "#contact",
       "link_label": "Talk to an expert"
@@ -402,7 +402,7 @@
       "industry": "Banking",
       "photo": {
        "src": "meeting-handshake",
-       "alt": "Kestrel Bank and Northbridge leads at a contract meeting"
+       "alt": "Two men in shirts shaking hands across a desk"
       },
       "title": "Consolidated three card-support vendors into one 180-seat program",
       "results": [
@@ -443,8 +443,8 @@
       "client": "Maple Retail",
       "industry": "Ecommerce",
       "photo": {
-       "src": "ecommerce-packing",
-       "alt": "Order being packed for a holiday shipment"
+       "src": "warehouse-aisle-boxes",
+       "alt": "Warehouse aisle lined with stacked cardboard boxes"
       },
       "title": "Scaled from 40 to 140 agents for the holiday peak without missing SLA",
       "results": [
@@ -462,8 +462,8 @@
       "client": "Lumen Health",
       "industry": "Healthcare",
       "photo": {
-       "src": "healthcare-consultation",
-       "alt": "Doctor and nurse meeting a patient at a clinic desk"
+       "src": "doctor-tablet",
+       "alt": "Doctor in a white coat with a stethoscope holding a tablet"
       },
       "title": "Took over patient scheduling and benefits calls under HIPAA controls",
       "results": [

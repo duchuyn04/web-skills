@@ -78,7 +78,7 @@
       "data": {
         "head": {"title": "Frequently asked questions"},
         "aside": {"title": "Have a question about your program?", "text": "A team lead can walk you through staffing, training and reporting for your queue.", "cta": {"label": "Contact a team lead", "href": "#contact"}},
-        "photo": {"src": "desk-phone-monitors", "alt": "Harbourlight support agent working at a desk with two monitors"},
+        "photo": {"src": "desk-phone-monitors", "alt": "Woman at a desk with a desk phone and two monitors showing a web app, seen from behind"},
         "items": [
           {"q": "How are agents trained for our program?", "a": "New agents learn your products and tools on real tickets with a trainer before they take live contacts on their own."},
           {"q": "Can we listen to calls and read tickets?", "a": "Yes. You get access to the same quality reviews our team leads use, and you can join the weekly review."},
@@ -100,7 +100,7 @@
           "success_text": "A team lead will reply by email to set up a call."
         },
         "aside": {
-          "photo": {"src": "office-building-entrance", "alt": "Entrance of the Harbourlight office building in Cebu"},
+          "photo": {"src": "office-building-entrance", "alt": "Glass office building entrance at dusk with people walking in"},
           "title": "Our Cebu office",
           "points": ["One team lead for every program", "Weekly quality reviews"],
           "offices": [

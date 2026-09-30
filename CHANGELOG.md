@@ -2,6 +2,16 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 4.0.0 (2026-09-30)
+
+Rules 4, from a test page built by Haiku. Pages built under rules 3 keep building with `"rules": "3"`.
+
+- Library photos: each appears once on a page, and the alt text may not name the client or say "our". Library avatars on reviews and library portraits in `team-grid` and `team-coverflow` fail: a stock face never stands for a named person.
+- A form `action` must be a URL the brief gives. Without one the form shows its thank-you message.
+- The footer `legal` text may not start with a copyright line (the template prints one).
+- The brief checks catch "hidden charges", "never share", "time zones", "background checks" and "encrypted" when the brief does not say them, and let the page repeat a "no" the brief gives ("No setup fee").
+- Examples: stock alts describe the picture, repeated photos replaced, library avatars removed from reviews.
+
 ## 3.0.0 (2026-09-30)
 
 Rules 3. Pages built under rules 1 or 2 keep building with `"rules": "1"` or `"rules": "2"`.

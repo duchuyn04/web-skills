@@ -41,7 +41,7 @@
       "data": {
         "head": {"eyebrow": "Three service lines", "title": "Our services", "lead": "Most clients start with one line and add a second after the first quarter."},
         "tabs": [
-          {"tab": "Customer care", "icon": "headset", "title": "Voice, chat and email support", "text": "Agents answer policy, billing and order questions by phone, chat and email, working in your helpdesk and your tone of voice.", "bullets": ["Tier 1 and tier 2 queues", "Six languages", "Weekend coverage"], "photo": {"src": "desk-phone-monitors", "alt": "Agent answering a customer call at her desk"}},
+          {"tab": "Customer care", "icon": "headset", "title": "Voice, chat and email support", "text": "Agents answer policy, billing and order questions by phone, chat and email, working in your helpdesk and your tone of voice.", "bullets": ["Tier 1 and tier 2 queues", "Six languages", "Weekend coverage"], "photo": {"src": "team-meeting-table", "alt": "Diverse team of eight around a conference table with laptops and coffee"}},
           {"tab": "Claims", "icon": "file-text", "title": "Claims intake and processing", "text": "Processors check documents, enter claims in your core system and send edge cases to a senior reviewer before payout.", "bullets": ["Document checks", "Claims keying", "Second review on high-value claims"], "photo": {"src": "paperwork-desk-hands", "alt": "Hands holding a pen over printed claim pages"}},
           {"tab": "Finance operations", "icon": "calculator", "title": "Payables, receivables and reconciliation", "text": "Accountants process invoices, chase receivables and close bank reconciliations each month against your chart of accounts.", "bullets": ["Invoice processing", "Collections follow-up", "Month-end reconciliation"], "photo": {"src": "bookkeeping-calculator-laptop", "alt": "Accountant working with a calculator and a laptop"}}
         ]
@@ -80,7 +80,7 @@
         "perks": ["Paid training", "Day shifts available"],
         "cta": {"label": "View open roles", "href": "#contact"},
         "photos": [
-          {"src": "training-workshop-board", "alt": "New hires in a training session"},
+          {"src": "laptop-conference-room", "alt": "Man with glasses on a laptop at a long conference table"},
           {"src": "team-coworking-laptops", "alt": "Team members working at a shared table"},
           {"src": "office-worker-laptop", "alt": "Team member typing on a laptop in a bright office"}
         ]

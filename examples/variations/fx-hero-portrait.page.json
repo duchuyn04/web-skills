@@ -37,7 +37,7 @@
         ],
         "primary_cta": {"label": "Book a call", "href": "#contact"},
         "secondary_cta": {"label": "See how hiring works", "href": "#process"},
-        "photo": {"src": "portrait-woman-office", "alt": "A Tanglaw Staffing team lead smiling by an office window"},
+        "photo": {"src": "portrait-woman-office", "alt": "Smiling woman in a blazer by a window"},
         "stats": [
           {"value": "260", "label": "Staff in Cebu"},
           {"value": "94%", "label": "Staff retained after a year"},
@@ -69,7 +69,7 @@
       "data": {
         "head": {"title": "How hiring works"},
         "steps": [
-          {"title": "Tell us the role", "photo": {"src": "office-worker-laptop", "alt": "Tanglaw account manager on a call about a new role"}, "text": "A thirty minute call covers the tasks, hours, tools and the budget for the seat."},
+          {"title": "Tell us the role", "photo": {"src": "office-worker-laptop", "alt": "Smiling man in a blazer typing on a laptop in a bright office"}, "text": "A thirty minute call covers the tasks, hours, tools and the budget for the seat."},
           {"title": "Interview a shortlist", "photo": {"src": "laptop-conference-room", "alt": "Hiring manager interviewing a candidate on a video call"}, "text": "Our recruiters send three screened candidates and you interview the ones you like."},
           {"title": "Start with support", "photo": {"src": "team-coworking-laptops", "alt": "New hire working beside the Cebu team"}, "text": "Your new hire starts in our Cebu office with an account manager who checks in weekly."}
         ]
@@ -90,7 +90,7 @@
     {
       "type": "faq-accordion",
       "data": {
-        "photo": {"src": "desk-phone-monitors", "alt": "Tanglaw support agent at her desk in Cebu"},
+        "photo": {"src": "desk-phone-monitors", "alt": "Woman at a desk with a desk phone and two monitors showing a web app, seen from behind"},
         "head": {"title": "Frequently asked questions"},
         "items": [
           {"q": "Who employs the staff?", "a": "Tanglaw Staffing employs them in Cebu and handles payroll, benefits and the office. They work only on your tasks."},

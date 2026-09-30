@@ -38,7 +38,7 @@
           {"meta": "Delivery center", "title": "Da Nang site reaches 400 seats across voice and back office", "href": "#results"}
         ],
         "feature": {
-          "photo": {"src": "meeting-handshake", "alt": "Meridian Harbor and bank operations leads at a review meeting"},
+          "photo": {"src": "meeting-handshake", "alt": "Two men in shirts shaking hands across a desk"},
           "text": "Case study: a regional bank cut average handle time by 27 percent in six months.",
           "cta": {"label": "Read the case", "href": "#case-studies"}
         }
@@ -93,7 +93,7 @@
           {
             "client": "Pinecrest Bank",
             "industry": "Banking",
-            "photo": {"src": "meeting-handshake", "alt": "Pinecrest Bank and Meridian Harbor leads at a contract meeting"},
+            "photo": {"src": "laptop-conference-room", "alt": "Man with glasses on a laptop at a long conference table"},
             "title": "Cut average handle time on card support within six months",
             "results": [{"value": "-27%", "label": "Average handle time"}, {"value": "6 mo", "label": "Time to result"}]
           },

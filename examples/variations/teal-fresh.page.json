@@ -58,7 +58,7 @@
     ],
     "photo": {
      "src": "portrait-woman-office",
-     "alt": "Brightwave sales development lead in the office"
+     "alt": "Smiling woman in a blazer by a window"
     },
     "badges": [
      {
@@ -224,8 +224,8 @@
        "Client sign-off on every hire"
       ],
       "photo": {
-       "src": "portrait-woman-office",
-       "alt": "Brightwave team lead smiling in the Manila office"
+       "src": "portrait-woman-team-lead",
+       "alt": "Smiling woman in a red sweater with a coffee, team behind her"
       },
       "badge": {
        "value": "15 days",
@@ -314,15 +314,13 @@
       "quote": "Missed calls were costing us new patients every week. Brightwave picks up every one, and bookings went from 40 to 65 a week within two months.",
       "name": "Jorge Salinas",
       "role": "Practice Manager",
-      "company": "Dental group",
-      "avatar": "avatar-man-3"
+      "company": "Dental group"
      },
      {
       "quote": "Their agents qualify better than our old in-house team did. My sales reps now only talk to buyers who already have a budget and a date.",
       "name": "Hannah Cole",
       "role": "Head of Sales",
-      "company": "SaaS company",
-      "avatar": "avatar-woman-2"
+      "company": "SaaS company"
      }
     ]
    }
@@ -433,8 +431,8 @@
       "tag": "Guide",
       "title": "How clinics cut no-shows with a reminder call",
       "photo": {
-       "src": "portrait-woman-office",
-       "alt": "Receptionist checking a schedule"
+       "src": "portrait-woman-glasses-desk",
+       "alt": "Woman in glasses at a white desk, calm expression"
       },
       "href": "#contact"
      },
@@ -442,8 +440,8 @@
       "tag": "Report",
       "title": "When after-hours callers are most likely to book",
       "photo": {
-       "src": "team-engineers-screen",
-       "alt": "Analysts reviewing call data"
+       "src": "team-meeting-table",
+       "alt": "Diverse team of eight around a conference table with laptops and coffee"
       },
       "href": "#contact"
      },

@@ -30,7 +30,7 @@
         "lead": "Quayside Staffing hires customer support agents, bookkeepers and virtual assistants in Cebu for ecommerce and property management businesses. You approve every hire.",
         "primary_cta": {"label": "Contact us", "href": "#contact"},
         "secondary_cta": {"label": "Our services", "href": "#services"},
-        "photo": {"src": "team-coworking-laptops", "alt": "Quayside Staffing team members working at a shared table"},
+        "photo": {"src": "team-coworking-laptops", "alt": "Four people at a wooden table on laptops, one with headphones"},
         "stats": [
           {"value": "140", "label": "Staff in Cebu"},
           {"value": "2016", "label": "Founded"}
@@ -69,7 +69,7 @@
       "data": {
         "head": {"title": "Why Quayside"},
         "cards": [
-          {"icon": "user-check", "photo": {"src": "team-meeting-bright-office", "alt": "Quayside recruiters meeting a client team in a glass-walled office"}, "title": "You approve every hire", "text": "Our recruiters shortlist candidates in Cebu. You interview them and decide who joins your team.", "bullets": ["Shortlist from our recruiters", "Interview with your team", "Your final approval"]},
+          {"icon": "user-check", "photo": {"src": "team-meeting-bright-office", "alt": "Five colleagues in a lively meeting in a glass-walled office, one man standing"}, "title": "You approve every hire", "text": "Our recruiters shortlist candidates in Cebu. You interview them and decide who joins your team.", "bullets": ["Shortlist from our recruiters", "Interview with your team", "Your final approval"]},
           {"icon": "users", "title": "One account manager", "text": "One person at Quayside answers your questions and handles changes to the team."},
           {"icon": "bar-chart", "title": "A monthly report", "text": "A short report each month covers the work your offshore staff completed."},
           {"icon": "building", "title": "Working since 2016", "text": "Quayside Staffing has placed staff for businesses in Australia and New Zealand since 2016."}
@@ -102,7 +102,7 @@
         },
         "aside": {
           "title": "Our office",
-          "photo": {"src": "office-interior", "alt": "Corridor and kitchen of the Quayside Staffing office"},
+          "photo": {"src": "office-interior", "alt": "Empty modern office corridor with kitchen"},
           "points": ["Founded in 2016", "140 staff in Cebu"],
           "offices": [
             {"flag": "ph", "name": "Cebu City", "address": "Unit 1204, Skyrise Tower, Salinas Drive, Cebu City"}

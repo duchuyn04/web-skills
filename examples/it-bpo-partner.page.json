@@ -109,7 +109,7 @@
     ],
     "photo": {
      "src": "code-review-pair",
-     "alt": "Two Harbor Point engineers reviewing code on a laptop"
+     "alt": "Two women looking at code on a laptop, from over the shoulder"
     }
    }
   },
@@ -128,27 +128,27 @@
     "photos": [
      {
       "src": "avatar-man-1",
-      "alt": "Harbor Point engineering lead"
+      "alt": "Head-and-shoulder portrait of a man"
      },
      {
       "src": "avatar-woman-1",
-      "alt": "Harbor Point accounting manager"
+      "alt": "Head-and-shoulder portrait of a woman"
      },
      {
       "src": "avatar-man-2",
-      "alt": "Harbor Point QA lead"
+      "alt": "Head-and-shoulder portrait of a man"
      },
      {
       "src": "portrait-woman-studio",
-      "alt": "Harbor Point data operations analyst"
+      "alt": "Woman in a dark top under studio light"
      },
      {
       "src": "avatar-man-3",
-      "alt": "Harbor Point delivery director"
+      "alt": "Head-and-shoulder portrait of a man"
      },
      {
       "src": "avatar-woman-2",
-      "alt": "Harbor Point client success manager"
+      "alt": "Head-and-shoulder portrait of a woman"
      }
     ]
    }
@@ -427,22 +427,19 @@
       "quote": "Harbor Point's engineers work like part of our own team. Releases are on time and the code reviews are thorough.",
       "name": "Laura Mitchell",
       "role": "VP Engineering",
-      "company": "Northgate Logistics",
-      "avatar": "avatar-woman-2"
+      "company": "Northgate Logistics"
      },
      {
       "quote": "Busy season used to mean overtime for everyone. Now our Harbor Point team handles the volume and our staff focus on advisory work.",
       "name": "Daniel Reyes",
       "role": "Managing Partner",
-      "company": "Fairview CPA",
-      "avatar": "avatar-man-2"
+      "company": "Fairview CPA"
      },
      {
       "quote": "They understood our Japanese customers and our English-speaking product team equally well. That is rare.",
       "name": "Kenji Watanabe",
       "role": "Head of Digital",
-      "company": "Kaede Retail",
-      "avatar": "avatar-man-1"
+      "company": "Kaede Retail"
      }
     ]
    }
@@ -508,7 +505,7 @@
      "email": "hello@harborpoint.example",
      "photo": {
       "src": "office-building-entrance",
-      "alt": "Entrance of the Harbor Point office building at dusk"
+      "alt": "Glass office building entrance at dusk with people walking in"
      }
     }
    }

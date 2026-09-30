@@ -28,7 +28,7 @@
         "lead": "Kestrel Soft builds, tests and runs software for fintech, healthcare, logistics and retail companies, with 180 engineers in Da Nang.",
         "primary_cta": {"label": "Book a call", "href": "#get-started"},
         "secondary_cta": {"label": "Our services", "href": "#services"},
-        "photo": {"src": "team-engineers-screen", "alt": "Three Kestrel Soft engineers reviewing code on a laptop"},
+        "photo": {"src": "team-engineers-screen", "alt": "Three engineers looking at code on a laptop"},
         "proof": ["180 engineers", "Founded in 2014"],
         "consult": {
           "title": "Talk to an engineer about your project scope",

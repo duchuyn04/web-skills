@@ -286,8 +286,8 @@
        "Knowledge base upkeep"
       ],
       "photo": {
-       "src": "team-coworking-laptops",
-       "alt": "Technical support agents testing software on laptops"
+       "src": "team-meeting-table",
+       "alt": "Diverse team of eight around a conference table with laptops and coffee"
       }
      }
     ]
@@ -311,7 +311,7 @@
       ],
       "photo": {
        "src": "portrait-woman-office",
-       "alt": "Northbridge team lead smiling in the Manila office"
+       "alt": "Smiling woman in a blazer by a window"
       },
       "badge": {
        "value": "15 days",
@@ -452,7 +452,7 @@
       "industry": "Banking",
       "photo": {
        "src": "meeting-handshake",
-       "alt": "Kestrel Bank and Northbridge leads at a contract meeting"
+       "alt": "Two men in shirts shaking hands across a desk"
       },
       "title": "Consolidated three card-support vendors into one 180-seat program",
       "results": [
@@ -474,8 +474,8 @@
       "client": "Orbital Telecom",
       "industry": "Telecom",
       "photo": {
-       "src": "team-coworking-laptops",
-       "alt": "Orbital support pod during a morning huddle"
+       "src": "team-meeting-bright-office",
+       "alt": "Five colleagues in a lively meeting in a glass-walled office, one man standing"
       },
       "title": "Added Vietnamese and Tagalog chat support ahead of a regional launch",
       "results": [
@@ -548,7 +548,7 @@
      "label": "Read the FAQ",
      "href": "#faq"
     },
-    "image": "meeting-handshake"
+    "image": "laptop-conference-room"
    }
   },
   {
@@ -648,8 +648,8 @@
       "title": "How to plan a vendor transition without losing CSAT",
       "text": "The week-by-week checklist we use to move programs between vendors.",
       "photo": {
-       "src": "meeting-handshake",
-       "alt": "Two managers signing a transition plan"
+       "src": "office-worker-laptop",
+       "alt": "Smiling man in a blazer typing on a laptop in a bright office"
       },
       "href": "#contact"
      },
