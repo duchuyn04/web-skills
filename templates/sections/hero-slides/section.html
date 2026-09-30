@@ -1,0 +1,35 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hslides bl-tone-{{section.tone}}" data-hslides aria-roledescription="carousel" aria-label="{{carousel_label}}">
+  <div class="bl-hslides__viewport" data-hslides-viewport aria-live="off">
+    {{#slides}}<div class="bl-hslides__slide bl-hslides__slide--{{layout}} bl-hslides__slide--{{side}}{{#@first}} is-active{{/@first}}" id="{{section.id}}-s{{@n}}" role="group" aria-roledescription="slide" aria-label="{{dot_label}}" data-layout="{{layout}}"{{^@first}} aria-hidden="true" inert{{/@first}}>
+      <div class="bl-container bl-hslides__inner">
+        {{#photo}}<div class="bl-hslides__media"><img src="{{src}}" alt="{{alt}}" width="1600" height="1000"{{#@first}} fetchpriority="high"{{/@first}}{{^@first}} loading="lazy" decoding="async"{{/@first}}><span class="bl-hslides__shade" aria-hidden="true"></span></div>{{/photo}}
+        <div class="bl-hslides__copy">
+          {{#eyebrow}}<p class="bl-eyebrow bl-hslides__rise">{{eyebrow}}</p>{{/eyebrow}}
+          {{#@first}}<h1 class="bl-h1 bl-hslides__title bl-hslides__rise">{{title}}</h1>{{/@first}}{{^@first}}<h2 class="bl-h1 bl-hslides__title bl-hslides__rise">{{title}}</h2>{{/@first}}
+          <p class="bl-lead bl-hslides__lead bl-hslides__rise">{{lead}}</p>
+          {{#ticks.0}}<ul class="bl-checks bl-hslides__ticks bl-hslides__rise">{{#ticks}}<li>{{icon:check}}<span>{{.}}</span></li>{{/ticks}}</ul>{{/ticks.0}}
+          <div class="bl-btn-row bl-hslides__rise">
+            <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+            {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+          </div>
+        </div>
+        {{#cards.0}}<ul class="bl-hslides__cards">{{#cards}}<li class="bl-hslides__rise"><a class="bl-hslides__card" href="{{href}}">
+          <span class="bl-hslides__card-media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="800" loading="lazy" decoding="async"></span>
+          <span class="bl-hslides__card-copy"><strong>{{title}}</strong>{{#text}}<span>{{text}}</span>{{/text}}</span>
+        </a></li>{{/cards}}</ul>{{/cards.0}}
+        {{#panels.0}}<ul class="bl-hslides__panels">{{#panels}}<li class="bl-hslides__panel bl-hslides__rise"><a class="bl-hslides__panel-link" href="{{href}}">
+          <span class="bl-hslides__panel-media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="900" loading="lazy" decoding="async"></span>
+          <span class="bl-hslides__panel-copy"><strong>{{title}}</strong>{{#text}}<span>{{text}}</span>{{/text}}</span>
+        </a></li>{{/panels}}</ul>{{/panels.0}}
+      </div>
+    </div>{{/slides}}
+  </div>
+  <div class="bl-hslides__nav">
+    <div class="bl-container bl-hslides__nav-inner">
+      <div class="bl-hslides__dots" role="group" aria-label="{{carousel_label}}" data-hslides-dots>
+        {{#slides}}<button class="bl-hslides__dot{{#@first}} is-active{{/@first}}" type="button" aria-controls="{{section.id}}-s{{@n}}" aria-label="{{dot_label}}"{{#@first}} aria-current="true"{{/@first}}{{^@first}} tabindex="-1"{{/@first}}><span class="bl-hslides__pill" aria-hidden="true"><span class="bl-hslides__bar" data-hslides-bar></span></span></button>{{/slides}}
+      </div>
+      <button class="bl-hslides__toggle" type="button" data-hslides-toggle aria-label="{{pause_label}}" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}" hidden><span class="bl-hslides__i-pause">{{icon:pause}}</span><span class="bl-hslides__i-play">{{icon:play}}</span></button>
+    </div>
+  </div>
+</section>

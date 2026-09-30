@@ -2,7 +2,7 @@
   "variant": "hero-finder",
   "group": "hero",
   "forms": ["hero-split"],
-  "summary": "Split hero after IRIS Software. Dark ground: a short eyebrow, a large headline whose *accent* part is set in the brand colour, the lead and optional buttons on the left; on the right one person photo on a rounded brand-colour panel, with 2 or 3 small white cards over its edges, each naming a real service line with an icon and a small drawn mark (bar chart, tick or list lines). Under the copy a finder bar straddles the hero's lower edge: 2 or 3 labelled dropdowns (for example Industry, Company size, Looking for) whose options each jump to a section of the page, and a search button that opens the most specific choice. The panel rises, the cards pop in and their marks draw once; no loops. Suits multi-service companies whose visitors arrive with different needs.",
+  "summary": "Split hero after IRIS Software. Dark ground: a short eyebrow, a large headline whose *accent* part is set in the brand colour, the lead and optional buttons on the left; on the right one person photo on a rounded brand-colour panel, with 2 or 3 small white cards over its edges, each naming a real service line with an icon, an optional one-line note and an optional tick. No grey bars or drawn charts stand in for content. Under the copy a finder bar straddles the hero's lower edge: 2 or 3 labelled dropdowns (for example Industry, Company size, Looking for) whose options each jump to a section of the page, and a search button that opens the most specific choice. The panel rises, the cards pop in and their ticks draw once; no loops. Suits multi-service companies whose visitors arrive with different needs.",
   "tone": "dark",
   "anchor": "top",
   "shared": ["hero"],
@@ -17,7 +17,8 @@
     "cards": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "object", "fields": {
       "title": {"type": "text", "min": 3, "max": 26},
       "icon": {"type": "icon"},
-      "mark": {"type": "enum", "values": ["bars", "tick", "list"], "default": "tick"}
+      "note": {"type": "text", "min": 8, "max": 48, "required": false},
+      "tick": {"type": "bool", "default": false}
     }}},
     "finder": {"type": "object", "required": false, "fields": {
       "label": {"type": "text", "min": 3, "max": 40, "required": false},

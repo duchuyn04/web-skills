@@ -40,6 +40,7 @@ Reference it in page.json as `{"type": "custom:<name>", "data": {...}}`. Custom 
 - Icons with `{{icon:name}}` or `{{icon:$field}}`, arrows with `{{arrow}}`, flags with `{{flag:$field}}`.
 - Add `data-reveal` to blocks that should fade in; put `data-reveal-group` on a parent to stagger children.
 - Animate only transform and opacity. Add nothing that ignores `prefers-reduced-motion`.
+- No mock UI: real words, figures from the brief and photos only. QA fails empty filled shapes stacked like text lines and rows of empty bars drawn as a chart (`anti-slop.md`, Mock UI). Mark a genuine control shape that trips it with `data-mock-ok`.
 
 ## 4. Motion and performance
 

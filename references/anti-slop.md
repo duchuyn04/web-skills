@@ -39,6 +39,16 @@ The library templates already follow these rules. What you control in `page.json
 - Hero variants that change on a timer (`hero-cycler-centered`, `hero-deck`) hide most of their text most of the time; say the essentials in the lead too (build.py warns).
 - Stats may stay in the hero or right below it: 58% of real BPO homepages show big numbers (`industry-voice.md`), which outweighs the vendor advice against stat strips.
 
+## Mock UI
+
+Rules 5, from a user review of six generated sites (SoGlobal, 2026-09-30): decoration that imitates software reads as generated. Real BPO homepages show real words, real figures and photos.
+
+- No grey bars standing in for lines of text (skeleton lines), no drawn bar charts without data, no fake notifications, like counts, hearts, chat bubbles, floating chips or badges, code windows or dashboards filled with placeholder rows. A card over a photo carries a real service name, a figure from the brief or a tick, nothing else.
+- `qa_screenshot.py` fails empty filled shapes stacked like text lines and rows of empty bars on one baseline ("mock UI"). Progress bars, sliders, meters and controls are exempt; a custom section that truly needs such a shape marks it `data-mock-ok` and says why in the spec.
+- 3D is for a picture of the actual work (a ledger, a desk, a device), used once on a page and only when the brief asks for it.
+- The footer wordmark (the brand name edge to edge in huge type) stays off unless the brief asks for it; build.py fails it otherwise.
+- The hero users rated most professional: a full-bleed photo under a dark scrim with centered copy (`hero-fullbleed` with `"align": "center"`, or a `"fullbleed"` slide in `hero-slides`). `variety.py` lists these heroes first.
+
 ## Colour
 
 - A violet accent on a light page, and a cream page with a terracotta accent, are the default looks of generated sites. build.py warns when a preset produces them without client colours. The client's own colours always win.

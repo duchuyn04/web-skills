@@ -149,6 +149,11 @@ def swaps(page, shared, pages, arch):
     return out
 
 
+# Heroes users picked as the most professional in reviews (SoGlobal, 2026-09-30): a full-bleed photo under a dark scrim
+# with centered copy, and the multi-slide hero whose slides each take their own layout. Listed first wherever they fit.
+FAVOURITE_HEROES = ("hero-fullbleed", "hero-slides")
+
+
 def blueprint_report(args, pages, count):
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import build
@@ -189,7 +194,7 @@ def blueprint_report(args, pages, count):
         print("")
         for i, s in enumerate(b["sections"]):
             compose = s.get("compose") or []
-            opts = sorted(build.fitting_variants(s, lib), key=lambda v: (v not in compose, v in sig, count.get(v, 0), v))
+            opts = sorted(build.fitting_variants(s, lib), key=lambda v: (v not in compose, v in sig, v not in FAVOURITE_HEROES, count.get(v, 0), v))
             grid = ("cols %s, items %s" % (s.get("cols"), s.get("count"))) if s.get("count") else ""
             print("%2d %-11s %-15s %-6s %s%s" % (i + 1, s["role"], s["form"], s.get("tone", ""), "optional " if build.slot_optional(s) else "", grid))
             print("     " + s.get("note", ""))
@@ -235,7 +240,7 @@ def main():
         for s in a["slots"]:
             if s["slot"] in ("floating", "exit"):
                 continue
-            ordered = sorted(s["variants"], key=lambda v: (v in sig, count.get(v, 0), s["variants"].index(v)))
+            ordered = sorted(s["variants"], key=lambda v: (v in sig, v not in FAVOURITE_HEROES, count.get(v, 0), s["variants"].index(v)))
             flag = "required" if s.get("required") else ("recommended" if s.get("recommended") else "optional")
             print("%-12s %-11s %s" % (s["slot"], flag, ", ".join("%s%s (%d)" % (v, "^" if v in sig else "", count.get(v, 0)) for v in ordered)))
         print("\nPick the first variant in each line that fits the content. A count of 0 means no page uses it yet.")

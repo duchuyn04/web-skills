@@ -13,13 +13,9 @@
       <div class="bl-hfind__stage">
         <span class="bl-hfind__panel" aria-hidden="true" data-hfind-panel></span>
         <div class="bl-hfind__photo" data-hfind-photo><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="760" fetchpriority="high"></div>
-        {{#cards.0}}<ul class="bl-hfind__cards">{{#cards}}<li class="bl-hfind__card bl-hfind__card--{{@n}} bl-hfind__card--{{mark}} bl-tone-light" data-hfind-card>
-          <span class="bl-hfind__card-head"><span class="bl-hfind__card-title">{{title}}</span><span class="bl-hfind__card-icon">{{icon:$icon}}</span></span>
-          <span class="bl-hfind__mark" aria-hidden="true">
-            <span class="bl-hfind__bars"><i></i><i></i><i></i><i></i></span>
-            <svg class="bl-hfind__tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10.5" stroke-width="0"></circle><polyline points="7 12.5 10.5 16 17 8.5" pathLength="1"></polyline></svg>
-            <span class="bl-hfind__lines"><i></i><i></i><i></i></span>
-          </span>
+        {{#cards.0}}<ul class="bl-hfind__cards">{{#cards}}<li class="bl-hfind__card bl-hfind__card--{{@n}} bl-tone-light" data-hfind-card>
+          <span class="bl-hfind__card-head"><span class="bl-hfind__card-title">{{title}}</span>{{#tick}}<svg class="bl-hfind__tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10.5" stroke-width="0"></circle><polyline points="7 12.5 10.5 16 17 8.5" pathLength="1"></polyline></svg>{{/tick}}{{^tick}}<span class="bl-hfind__card-icon">{{icon:$icon}}</span>{{/tick}}</span>
+          {{#note}}<span class="bl-hfind__card-note">{{note}}</span>{{/note}}
         </li>{{/cards}}</ul>{{/cards.0}}
       </div>
     </div>

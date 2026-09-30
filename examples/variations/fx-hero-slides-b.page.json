@@ -1,0 +1,300 @@
+{
+ "_note": "temporary test page for hero-slides layouts overlap, panels, split right and fullbleed on a light hero",
+ "archetype": "enterprise-cx",
+ "preset": "teal-fresh",
+ "lang": "en",
+ "site": {
+  "brand": "Harbourline",
+  "brand_mark": "HL",
+  "title": "Harbourline | Accounting, IT support and marketing outsourcing",
+  "description": "Harbourline runs accounting, IT support and marketing operations for small and mid-sized companies from its teams in Manila and Da Nang."
+ },
+ "sections": [
+  {
+   "type": "header-simple",
+   "data": {
+    "links": [
+     {
+      "label": "Services",
+      "href": "#services"
+     },
+     {
+      "label": "Figures",
+      "href": "#figures"
+     },
+     {
+      "label": "Contact",
+      "href": "#contact"
+     }
+    ],
+    "cta": {
+     "label": "Get a quote",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "hero-slides",
+   "data": {
+    "carousel_label": "Harbourline services",
+    "slides": [
+     {
+      "layout": "overlap",
+      "dot_label": "Harbourline",
+      "eyebrow": "Accounting, IT support and marketing",
+      "title": "Harbourline runs the *back office* behind growing companies",
+      "lead": "Harbourline gives small and mid-sized companies trained teams for bookkeeping, IT support and marketing operations.",
+      "primary_cta": {
+       "label": "Get a quote",
+       "href": "#contact"
+      },
+      "secondary_cta": {
+       "label": "Our services",
+       "href": "#services"
+      },
+      "photo": {
+       "src": "team-meeting-table",
+       "alt": "Team of eight around a conference table with laptops"
+      }
+     },
+     {
+      "layout": "panels",
+      "dot_label": "Service lines",
+      "title": "Three *service lines*, one account manager",
+      "lead": "Pick the work you want to hand over first. Each line has its own team lead and a written process for your account.",
+      "primary_cta": {
+       "label": "Our services",
+       "href": "#services"
+      },
+      "panels": [
+       {
+        "title": "Accounting",
+        "text": "Ledgers, reconciliations and month-end packs",
+        "href": "#services",
+        "photo": {
+         "src": "accounting-documents-calculator",
+         "alt": "Hands writing in a ledger next to a desk calculator"
+        }
+       },
+       {
+        "title": "IT support",
+        "text": "Help desk tickets, laptops and accounts",
+        "href": "#services",
+        "photo": {
+         "src": "code-review-pair",
+         "alt": "Two women looking at code on a laptop"
+        }
+       },
+       {
+        "title": "Marketing",
+        "text": "Social scheduling, email builds and reports",
+        "href": "#services",
+        "photo": {
+         "src": "presenter-planning-board",
+         "alt": "Woman presenting a sticky-note plan to colleagues"
+        }
+       }
+      ]
+     },
+     {
+      "layout": "split",
+      "side": "right",
+      "dot_label": "IT support",
+      "title": "IT support desks that work *your ticket queue*",
+      "lead": "Harbourline engineers answer user tickets, manage laptops and accounts, and pass anything they cannot fix to your team.",
+      "ticks": [
+       "First-line and second-line support",
+       "Laptop setup and account changes"
+      ],
+      "primary_cta": {
+       "label": "IT support",
+       "href": "#services"
+      },
+      "photo": {
+       "src": "developer-headphones-monitors",
+       "alt": "Woman in orange headphones working at a desk with three screens"
+      }
+     },
+     {
+      "layout": "fullbleed",
+      "dot_label": "Teams",
+      "title": "Teams in *Manila and Da Nang*",
+      "lead": "Harbourline staff work in two delivery centers with managed IT, team leads and HR support on site.",
+      "primary_cta": {
+       "label": "Contact us",
+       "href": "#contact"
+      },
+      "photo": {
+       "src": "team-meeting-bright-office",
+       "alt": "Five colleagues in a meeting in a glass-walled office"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "services-tabs",
+   "id": "services",
+   "data": {
+    "head": {
+     "title": "Our services",
+     "lead": "Each service line has its own team lead, a written process for your account and a monthly review with you."
+    },
+    "tabs": [
+     {
+      "tab": "Accounting",
+      "icon": "calculator",
+      "title": "Accounting and bookkeeping",
+      "text": "Harbourline bookkeepers post transactions, reconcile bank and card accounts and prepare month-end packs in the software you already use.",
+      "bullets": [
+       "Purchase and sales ledgers",
+       "Bank and card reconciliations",
+       "Month-end close checklist"
+      ],
+      "photo": {
+       "src": "bookkeeping-calculator-laptop",
+       "alt": "Hands on a calculator in front of a laptop with an accounting app"
+      }
+     },
+     {
+      "tab": "IT support",
+      "icon": "server",
+      "title": "IT support and device management",
+      "text": "Our support engineers work your help desk queue, set up laptops for new starters and keep user accounts in order across your systems.",
+      "bullets": [
+       "Help desk tickets",
+       "New starter laptops",
+       "Account and access changes"
+      ],
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Three engineers looking at code on a laptop"
+      }
+     },
+     {
+      "tab": "Marketing",
+      "icon": "target",
+      "title": "Marketing operations",
+      "text": "Harbourline marketers schedule posts, build email campaigns from your templates and send a report on every campaign at the end of the month.",
+      "bullets": [
+       "Social media scheduling",
+       "Email campaign builds",
+       "Monthly campaign report"
+      ],
+      "photo": {
+       "src": "training-workshop-board",
+       "alt": "Man presenting to a group in front of a flip chart"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-counter",
+   "id": "figures",
+   "data": {
+    "title": "Harbourline in numbers",
+    "items": [
+     {
+      "value": 260,
+      "label": "Staff in Manila and Da Nang"
+     },
+     {
+      "value": 9,
+      "label": "Years in business"
+     },
+     {
+      "value": 3,
+      "label": "Service lines"
+     }
+    ],
+    "image": "meeting-room-empty"
+   }
+  },
+  {
+   "type": "contact-split",
+   "id": "contact",
+   "data": {
+    "head": {
+     "title": "Contact *Harbourline*"
+    },
+    "form": {
+     "title": "Tell us what you need",
+     "text": "A team lead will reply within one working day.",
+     "phone_label": "Phone (optional)",
+     "submit_label": "Send message",
+     "success_title": "Thanks, we have your message",
+     "success_text": "A team lead will reply to set up a call.",
+     "note": "We only use your details to reply to this request."
+    },
+    "aside": {
+     "title": "Why companies choose Harbourline",
+     "points": [
+      "Nine years running outsourced teams",
+      "One account manager for every service line",
+      "Teams in Manila and Da Nang"
+     ],
+     "offices": [
+      {
+       "flag": "ph",
+       "name": "Manila",
+       "address": "12th Floor, 6789 Ayala Avenue, Makati City",
+       "phone": "+63 2 5550 0142"
+      },
+      {
+       "flag": "vn",
+       "name": "Da Nang",
+       "address": "8th Floor, 25 Bach Dang Street, Hai Chau District",
+       "phone": "+84 236 555 0190"
+      }
+     ],
+     "email_label": "New clients",
+     "email": "hello@example.com",
+     "photo": {
+      "src": "office-building-entrance",
+      "alt": "Glass office building entrance at dusk with people walking in"
+     }
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Harbourline runs accounting, IT support and marketing operations for small and mid-sized companies.",
+    "columns": [
+     {
+      "heading": "Services",
+      "links": [
+       {
+        "label": "Accounting",
+        "href": "#services"
+       },
+       {
+        "label": "IT support",
+        "href": "#services"
+       },
+       {
+        "label": "Marketing",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "Figures",
+        "href": "#figures"
+       },
+       {
+        "label": "Contact",
+        "href": "#contact"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved."
+   }
+  }
+ ]
+}

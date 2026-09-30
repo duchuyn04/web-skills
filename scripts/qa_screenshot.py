@@ -25,6 +25,7 @@ Checks (exit code 1 if any fail):
 Look at every screenshot yourself after the script passes.
 """
 import argparse
+import json
 import re
 import sys
 for _stream in (sys.stdout, sys.stderr):  # Vietnamese text must not crash printing on a cp1252 console or pipe
@@ -351,6 +352,30 @@ DESIGN_JS = r"""(hoverSelectors) => {
     if (!visible(el)) continue;
     out.shadows.push(where(el) + ' ' + name(el));
   }
+
+  // 6. mock UI: empty grey bars standing in for lines of text, or empty bars drawn as a chart (rules 5).
+  // Real sites show real words and photos; a stack of placeholder lines reads as a generated page.
+  const filled = (el) => { const cs = getComputedStyle(el);
+    return (cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent') || cs.backgroundImage !== 'none'; };
+  const blank = (el) => !el.textContent.trim() && !el.querySelector('img, video, picture, svg, canvas, input, select, textarea');
+  const skip = (el) => el.closest('[role="progressbar"], [role="slider"], [role="tablist"], [role="meter"], progress, meter, nav, footer, header, [data-mock-ok]') || el.matches(INTERACTIVE) || el.closest(INTERACTIVE);
+  out.mock = [];
+  const seenMock = new Set();
+  for (const parent of document.querySelectorAll('main *')) {
+    const kids = Array.from(parent.children).filter(k => visible(k) && blank(k) && filled(k) && !skip(k));
+    if (kids.length < 2) continue;
+    const rects = kids.map(k => k.getBoundingClientRect());
+    // text lines: flat bars of 3-16px stacked one under another
+    const lines = rects.filter(r => r.height >= 3 && r.height <= 16 && r.width >= 30 && r.width > r.height * 4);
+    const rows = new Set(lines.map(r => Math.round(r.top)));
+    // chart: three or more narrow upright bars side by side, standing on one baseline
+    const bars = rects.filter(r => r.width >= 3 && r.width <= 48 && r.height >= 8);
+    const base = new Set(bars.map(r => Math.round(r.bottom / 3)));
+    const kind = (lines.length >= 2 && rows.size >= 2) ? 'placeholder lines' : (bars.length >= 3 && base.size === 1 && new Set(bars.map(r => Math.round(r.height))).size >= 2) ? 'drawn bar chart' : '';
+    if (!kind) continue;
+    const key = where(parent) + ' ' + name(parent);
+    if (!seenMock.has(key)) { seenMock.add(key); out.mock.push(key + ' (' + kind + ')'); }
+  }
   return out;
 }"""
 
@@ -592,6 +617,11 @@ def main():
         return 2
     out = Path(args.out).resolve() if args.out else dist / "qa"
     out.mkdir(parents=True, exist_ok=True)
+    try:
+        # a site that pins an older rules version ("rules" in page.json) gets the newer checks as warnings
+        pinned = int(json.loads((dist / "build-report.json").read_text(encoding="utf-8")).get("rules", 99))
+    except (OSError, ValueError, TypeError):
+        pinned = 99
     failed = False
     with sync_playwright() as p:
         browser, label = launch(p)
@@ -641,6 +671,8 @@ def main():
                         problems.append(msg)
                     else:
                         warnings.append(msg)
+                for m in des["mock"]:
+                    (problems if pinned >= 5 else warnings).append(("" if pinned >= 5 else "[rules %d, not enforced] " % pinned) + "mock UI in %s: empty shapes stand in for real content. Show real words, figures from the brief or a photo; no grey text lines, drawn charts, fake notifications or floating chips (references/anti-slop.md, Mock UI)" % m)
                 if des["sizes"] > SIZE_LIMIT:
                     warnings.append("%d different font sizes on the page; a clear type scale uses fewer (target %d or less)" % (des["sizes"], SIZE_LIMIT))
                 if len(des["cards"]) >= 3:

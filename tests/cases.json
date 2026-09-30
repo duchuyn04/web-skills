@@ -3,6 +3,12 @@
   "cases": [
     {"name": "clean", "ok": true, "why": "the fixture itself builds and lints"},
 
+    {"name": "footer-wordmark-unasked", "ok": false, "why": "the huge footer wordmark without the brief asking for it (rules 5)",
+     "set": {"sections.7.data.wordmark": true}, "errors": ["sections[7].data.wordmark"]},
+    {"name": "footer-wordmark-asked", "ok": true, "why": "the brief asks for the brand name in large type in the footer",
+     "set": {"sections.7.data.wordmark": true},
+     "replace": {"brief": ["Email hello@quayside.example.", "Email hello@quayside.example. Footer: the brand name in large type as a wordmark."]}},
+
     {"name": "invented-logo", "ok": false, "why": "a client name the brief does not give",
      "append": {"sections.2.data.logos": {"name": "Pacific Mart"}}, "errors": ["Pacific Mart"]},
     {"name": "extended-quote", "ok": false, "why": "a real quote with words added",
@@ -91,6 +97,9 @@
     {"name": "rules-pin-3", "ok": true, "why": "a site built under rules 3 keeps building with the rules 4 checks as warnings",
      "set": {"rules": "3", "sections.1.data.photo.alt": "Quayside Staffing recruiters at a shared table"},
      "prior_report": {"rules": 3, "archetype": "offshore-staffing"}, "warnings": ["[rules 3, not enforced]"]},
+    {"name": "rules-pin-4", "ok": true, "why": "a site built under rules 4 keeps its footer wordmark, with the rules 5 check as a warning",
+     "set": {"rules": "4", "sections.7.data.wordmark": true},
+     "prior_report": {"rules": 4, "archetype": "offshore-staffing"}, "warnings": ["[rules 4, not enforced]", "wordmark"]},
     {"name": "motion-style-set", "ok": true, "why": "a page can ask for one of the four motion styles",
      "set": {"theme": {"motion_style": "mask"}}},
     {"name": "motion-style-unknown", "ok": false, "why": "only the four measured motion styles exist",

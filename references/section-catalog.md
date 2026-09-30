@@ -33,7 +33,7 @@ These sit at the top of page.json, next to `sections`.
 - `features`: object (optional)
   - `magnetic_cta`: true/false (optional, default false)
 - `motion`: one of calm, expressive, signature (optional, default "calm")
-- `rules`: one of 1, 2, 3 (optional)
+- `rules`: one of 1, 2, 3, 4 (optional)
 - `override_order`: object (optional)
   - `reason`: text 20-300 chars
 
@@ -965,7 +965,7 @@ Fields:
 
 ## hero-finder
 
-Split hero after IRIS Software. Dark ground: a short eyebrow, a large headline whose *accent* part is set in the brand colour, the lead and optional buttons on the left; on the right one person photo on a rounded brand-colour panel, with 2 or 3 small white cards over its edges, each naming a real service line with an icon and a small drawn mark (bar chart, tick or list lines). Under the copy a finder bar straddles the hero's lower edge: 2 or 3 labelled dropdowns (for example Industry, Company size, Looking for) whose options each jump to a section of the page, and a search button that opens the most specific choice. The panel rises, the cards pop in and their marks draw once; no loops. Suits multi-service companies whose visitors arrive with different needs.
+Split hero after IRIS Software. Dark ground: a short eyebrow, a large headline whose *accent* part is set in the brand colour, the lead and optional buttons on the left; on the right one person photo on a rounded brand-colour panel, with 2 or 3 small white cards over its edges, each naming a real service line with an icon, an optional one-line note and an optional tick. No grey bars or drawn charts stand in for content. Under the copy a finder bar straddles the hero's lower edge: 2 or 3 labelled dropdowns (for example Industry, Company size, Looking for) whose options each jump to a section of the page, and a search button that opens the most specific choice. The panel rises, the cards pop in and their ticks draw once; no loops. Suits multi-service companies whose visitors arrive with different needs.
 
 - Group: `hero`. Default anchor: `#top`. Tone: dark.
 - Built-in motion: finder-panel-rise, finder-card-pop, finder-mark-draw, finder-bar-rise, reveal.
@@ -989,7 +989,8 @@ Fields:
 - `cards`: list of 0-3 (optional), each item:
   - `title`: text 3-26 chars
   - `icon`: icon name
-  - `mark`: one of bars, tick, list (optional, default "tick")
+  - `note`: text 8-48 chars (optional)
+  - `tick`: true/false (optional, default false)
 - `finder`: object (optional)
   - `label`: text 3-40 chars (optional)
   - `selects`: list of 2-3, each item:
@@ -1628,6 +1629,52 @@ Fields:
 - `stats`: list of 0-4 (optional), each item:
   - `value`: text 1-12 chars
   - `label`: text 3-32 chars
+
+## hero-slides
+
+Hero of 2-4 slides switched by round dots, for a company with several service lines that each deserve the first screen. Every slide picks its own layout and no two slides share one: "fullbleed" (a full-width photo under a dark shade with the copy centered), "split" (a large photo on one side, the copy with 2-4 ticks on the other), "cards" (centered copy above three tall photo cards that link into the page), "panels" (copy left, three narrow photo panels right that widen on hover or focus) and "overlap" (a wide photo with a solid copy card over its lower edge). Real photos and real text only: no mock screens, badges or chips. The active dot is longer and fills over 6 seconds; the slides advance until the visitor picks one, hold on hover, focus and off screen, and stay still with reduced motion or Pause animations. The first slide carries the page headline (h1). On phones each slide keeps its own height and the dots sit at the top of the hero, so nothing is cropped and the dots are always in the first screen.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: slides-crossfade, slides-dot-timer, slides-copy-rise, slides-panel-widen, slides-height-follow.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-slides.jpg`
+
+Fields:
+
+- `carousel_label`: text 3-40 chars (optional, default "Our services")
+- `pause_label`: text 3-32 chars (optional, default "Stop slide rotation")
+- `play_label`: text 3-32 chars (optional, default "Start slide rotation")
+- `slides`: list of 2-4, each item:
+  - `layout`: one of fullbleed, split, cards, panels, overlap
+  - `dot_label`: text 2-28 chars
+  - `side`: one of right, left (optional, default "right")
+  - `eyebrow`: text 3-44 chars (optional)
+  - `title`: text with *accent* 12-84 chars
+  - `lead`: text 40-220 chars
+  - `primary_cta`: object
+    - `label`: text 2-30 chars
+    - `href`: link
+  - `secondary_cta`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+  - `photo`: object (optional)
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `ticks`: list of 2-4 (optional) (each text 3-64 chars)
+  - `cards`: list of 3-3 (optional), each item:
+    - `title`: text 3-32 chars
+    - `text`: text 10-80 chars (optional)
+    - `href`: link
+    - `photo`: object
+      - `src`: image key or path
+      - `alt`: text 5-140 chars
+  - `panels`: list of 3-3 (optional), each item:
+    - `title`: text 3-28 chars
+    - `text`: text 10-90 chars (optional)
+    - `href`: link
+    - `photo`: object
+      - `src`: image key or path
+      - `alt`: text 5-140 chars
 
 ## hero-split-image
 

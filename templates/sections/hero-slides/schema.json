@@ -1,0 +1,39 @@
+{
+  "variant": "hero-slides",
+  "group": "hero",
+  "forms": ["hero-fullbleed", "hero-split", "hero-center"],
+  "summary": "Hero of 2-4 slides switched by round dots, for a company with several service lines that each deserve the first screen. Every slide picks its own layout and no two slides share one: \"fullbleed\" (a full-width photo under a dark shade with the copy centered), \"split\" (a large photo on one side, the copy with 2-4 ticks on the other), \"cards\" (centered copy above three tall photo cards that link into the page), \"panels\" (copy left, three narrow photo panels right that widen on hover or focus) and \"overlap\" (a wide photo with a solid copy card over its lower edge). Real photos and real text only: no mock screens, badges or chips. The active dot is longer and fills over 6 seconds; the slides advance until the visitor picks one, hold on hover, focus and off screen, and stay still with reduced motion or Pause animations. The first slide carries the page headline (h1). On phones each slide keeps its own height and the dots sit at the top of the hero, so nothing is cropped and the dots are always in the first screen.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["slides-crossfade", "slides-dot-timer", "slides-copy-rise", "slides-panel-widen", "slides-height-follow"],
+  "fields": {
+    "carousel_label": {"type": "text", "min": 3, "max": 40, "default": "Our services"},
+    "pause_label": {"type": "text", "min": 3, "max": 32, "default": "Stop slide rotation"},
+    "play_label": {"type": "text", "min": 3, "max": 32, "default": "Start slide rotation"},
+    "slides": {"type": "list", "min": 2, "max": 4, "item": {"type": "object", "fields": {
+      "layout": {"type": "enum", "values": ["fullbleed", "split", "cards", "panels", "overlap"]},
+      "dot_label": {"type": "text", "min": 2, "max": 28},
+      "side": {"type": "enum", "values": ["right", "left"], "default": "right"},
+      "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+      "title": {"type": "markup", "min": 12, "max": 84},
+      "lead": {"type": "text", "min": 40, "max": 220},
+      "primary_cta": {"$ref": "cta"},
+      "secondary_cta": {"$ref": "cta", "required": false},
+      "photo": {"$ref": "photo", "required": false},
+      "ticks": {"type": "list", "min": 2, "max": 4, "required": false, "item": {"type": "text", "min": 3, "max": 64}},
+      "cards": {"type": "list", "min": 3, "max": 3, "required": false, "item": {"type": "object", "fields": {
+        "title": {"type": "text", "min": 3, "max": 32},
+        "text": {"type": "text", "min": 10, "max": 80, "required": false},
+        "href": {"type": "href"},
+        "photo": {"$ref": "photo"}
+      }}},
+      "panels": {"type": "list", "min": 3, "max": 3, "required": false, "item": {"type": "object", "fields": {
+        "title": {"type": "text", "min": 3, "max": 28},
+        "text": {"type": "text", "min": 10, "max": 90, "required": false},
+        "href": {"type": "href"},
+        "photo": {"$ref": "photo"}
+      }}}
+    }}}
+  }
+}

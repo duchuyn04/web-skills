@@ -63,9 +63,9 @@
     "lead": "Kestrel Ledger runs bookkeeping, payroll, HR administration and finance systems support for accountancy practices, schools and growing companies across the UK.",
     "photo": {"src": "portrait-woman-office", "alt": "Smiling woman in a blazer standing by an office window"},
     "cards": [
-     {"title": "Management accounts", "icon": "bar-chart", "mark": "bars"},
-     {"title": "Payroll on time", "icon": "calendar", "mark": "tick"},
-     {"title": "HR records kept current", "icon": "users", "mark": "list"}
+     {"title": "Management accounts", "icon": "bar-chart"},
+     {"title": "Payroll on time", "icon": "calendar", "tick": true},
+     {"title": "HR records kept current", "icon": "users"}
     ],
     "finder": {
      "label": "Find the right service",

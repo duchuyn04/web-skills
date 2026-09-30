@@ -37,25 +37,11 @@
 .bl-hfind__card-icon { flex-shrink: 0; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--c-accent-soft); color: var(--accent-ink); }
 .bl-hfind__card-icon .bl-icon { width: 16px; height: 16px; }
 
-/* the small drawn mark: one of bars, tick or list lines */
-.bl-hfind__mark { display: block; }
-.bl-hfind__bars, .bl-hfind__tick, .bl-hfind__lines { display: none; }
-.bl-hfind__card--bars .bl-hfind__bars, .bl-hfind__card--list .bl-hfind__lines { display: flex; }
-.bl-hfind__card--tick .bl-hfind__tick { display: block; }
-.bl-hfind__bars { align-items: flex-end; gap: .45rem; height: 3.1rem; padding: 0 .2rem; border-bottom: 1px solid var(--border-strong); }
-.bl-hfind__bars i { flex: 1; border-radius: 3px 3px 0 0; background: var(--c-accent); transform-origin: 50% 100%; }
-.bl-hfind__bars i:nth-child(1) { height: 42%; opacity: .45; }
-.bl-hfind__bars i:nth-child(2) { height: 64%; opacity: .6; }
-.bl-hfind__bars i:nth-child(3) { height: 52%; opacity: .75; }
-.bl-hfind__bars i:nth-child(4) { height: 94%; }
-.bl-hfind__tick { width: 2.3rem; height: 2.3rem; margin-left: auto; color: var(--c-on-accent); }
+/* real words only: an optional one-line note and an optional tick, never grey bars or a drawn chart standing in for content */
+.bl-hfind__card-note { display: block; font-size: var(--fs-sm); line-height: 1.45; color: var(--text); }
+.bl-hfind__tick { display: block; flex-shrink: 0; width: 30px; height: 30px; color: var(--c-on-accent); }
 .bl-hfind__tick circle { fill: var(--c-accent); }
 .bl-hfind__tick polyline { stroke-dasharray: 1; stroke-dashoffset: 0; }
-.bl-hfind__lines { flex-direction: column; gap: .45rem; }
-.bl-hfind__lines i { display: block; height: .5rem; border-radius: 999px; background: var(--surface-2); transform-origin: 0 50%; }
-.bl-hfind__lines i:nth-child(1) { width: 88%; background: var(--c-accent-soft); }
-.bl-hfind__lines i:nth-child(2) { width: 70%; }
-.bl-hfind__lines i:nth-child(3) { width: 52%; }
 
 /* finder bar: labelled dropdowns and a search button, half over the dark ground */
 .bl-hfind__base { position: relative; display: flow-root; padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }

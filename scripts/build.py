@@ -31,7 +31,7 @@ import rules  # noqa: E402
 SKILL = HERE.parent
 # Version of the content rules. Bump it when a new check can fail a page that built before, and add a CHANGELOG.md
 # entry. A site built under an older version keeps building with "rules": "<that version>" (see rules_pin in main).
-RULES_VERSION = 4
+RULES_VERSION = 5
 TPL = SKILL / "templates"
 SECTIONS_DIR = TPL / "sections"
 IMAGES_DIR = TPL / "assets" / "images"
@@ -1330,6 +1330,15 @@ def _eyebrow(d):
     return e if isinstance(e, str) and e.strip() else None
 
 
+def _hero_copy(d):
+    """Title and lead of a hero; hero-slides keeps them on its first slide."""
+    slides = d.get("slides") if isinstance(d.get("slides"), list) else []
+    first = slides[0] if slides and isinstance(slides[0], dict) else {}
+    title = d.get("title") if isinstance(d.get("title"), str) else first.get("title")
+    lead = d.get("lead") if isinstance(d.get("lead"), str) else first.get("lead")
+    return (title if isinstance(title, str) else None, lead if isinstance(lead, str) else "")
+
+
 def _title(d):
     t = d.get("title")
     if not isinstance(t, str) and isinstance(d.get("head"), dict):
@@ -1397,8 +1406,8 @@ def check_design(ctx, sections, site, preset, theme):
         g = s["variant"].get("group")
         title = _title(d)
         if g == "hero":
-            lead = d.get("lead") if isinstance(d.get("lead"), str) else ""
-            text = plain(lead or title or "")
+            title_h, lead = _hero_copy(d)
+            text = plain(lead or title_h or title or "")
             if site.get("brand") and site["brand"].lower() not in text.lower():
                 ctx.err(s["path"] + ".data.lead", "the hero lead does not name the company. Start it with \"%s\" so the first screen could not belong to another brand (references/anti-slop.md)." % site["brand"])
             if s["type"] in TIMER_VARIANTS:
@@ -1533,6 +1542,8 @@ def check_voice(ctx, sections, lang, bp=None):
         d = s["data"] if isinstance(s["data"], dict) else {}
         g = s["variant"].get("group")
         title = d.get("title") if isinstance(d.get("title"), str) else (d.get("head") or {}).get("title")
+        if g == "hero":
+            title = _hero_copy(d)[0] or title
         if g == "hero" and title:
             t = plain(title)
             n = len(t.split())
@@ -1581,6 +1592,9 @@ PLACEHOLDER_RE = re.compile(r"\[[^\]]{1,24}\]")
 
 # English words, plus the Vietnamese a brief uses when the client asks for a 3D or animation-led page
 # ("hieu ung 3D", "nhieu hieu ung", "sinh dong", "chuyen dong manh")
+# The footer wordmark (the brand name set edge to edge in huge type) is off unless the brief asks for it: users read it
+# as a template flourish (SoGlobal review, 2026-09-30).
+WORDMARK_RE = re.compile(r"wordmark|(large|big|giant|huge) (brand name|logo type)|brand name in (large|big|huge) (type|letters)|chữ thương hiệu (lớn|cỡ lớn)", re.I)
 EXPRESSIVE_RE = re.compile(r"\b(3d|webgl|immersive|expressive|animation[- ]led|(rich|heavy|bold|lots of) (animation|animations|motion|effects))\b|nhiều hiệu ứng|hiệu ứng mạnh|sinh động|chuyển động mạnh", re.I)
 
 
@@ -1901,7 +1915,7 @@ PAGE_SPEC = {
             "magnetic_cta": {"type": "bool", "default": False},
         }},
         "motion": {"type": "enum", "values": ["calm", "expressive", "signature"], "default": "calm"},
-        "rules": {"type": "enum", "values": ["1", "2", "3"], "required": False},
+        "rules": {"type": "enum", "values": [str(v) for v in range(1, RULES_VERSION)], "required": False},
         "override_order": {"type": "object", "required": False, "fields": {
             "reason": {"type": "text", "min": 20, "max": 300},
         }},
@@ -2021,6 +2035,21 @@ def main():
             ctx.warn(p + ".data.form.action", "no form action set; the form shows a thank-you message but sends nothing. Add a form endpoint URL before launch.")
         if t == "cta-letter" and not data.get("form") and not data.get("primary_cta"):
             ctx.err(p + ".data", "cta-letter needs primary_cta or form, or the letter has no way to reply.")
+        if t == "hero-slides":
+            # every slide takes its own layout, so the hero changes shape from slide to slide (SoGlobal review)
+            need = {"fullbleed": ("photo",), "split": ("photo", "ticks"), "cards": ("cards",), "panels": ("panels",), "overlap": ("photo",)}
+            seen = {}
+            for i, sl in enumerate(data.get("slides") or []):
+                lay = sl.get("layout")
+                if lay in seen:
+                    ctx.err("%s.data.slides[%d].layout" % (p, i), "slide %d uses layout %r like slide %d. Every slide takes its own layout (fullbleed, split, cards, panels, overlap), so the hero changes shape from slide to slide." % (i + 1, lay, seen[lay] + 1))
+                seen.setdefault(lay, i)
+                for f in need.get(lay, ()):
+                    if not sl.get(f):
+                        ctx.err("%s.data.slides[%d].%s" % (p, i, f), "layout %r needs %s." % (lay, f))
+                for f in ("photo", "ticks", "cards", "panels"):
+                    if sl.get(f) and f not in need.get(lay, ()) and not (f == "ticks" and lay == "fullbleed"):
+                        ctx.warn("%s.data.slides[%d].%s" % (p, i, f), "layout %r does not show %s; remove it or pick a layout that uses it." % (lay, f))
         if t == "hero-sundial":
             for i, hub in enumerate(data.get("hubs") or []):
                 if isinstance(hub.get("city"), dict) and not hub["city"].get("tz"):
@@ -2059,6 +2088,9 @@ def main():
     check_images(ctx, sections)
     check_stock_photos(ctx, raw_sections, (top.get("site") or {}).get("brand"))
     check_legal(ctx, sections, (top.get("site") or {}).get("brand"))
+    for s in sections:
+        if s["type"] == "footer-columns" and s["data"].get("wordmark") and not WORDMARK_RE.search(brief or ""):
+            ctx.err(s["path"] + ".data.wordmark", "the footer wordmark (the brand name in huge type) is on, but the brief does not ask for it. Clients read it as a template flourish; leave it off unless the brief asks for a large brand name in the footer.")
     if SKILL / "examples" not in page_path.parents:
         check_copied(ctx, sections, brief)
         check_named_faces(ctx, raw_sections)

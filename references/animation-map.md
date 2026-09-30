@@ -6,9 +6,14 @@ All motion follows the performance rules gathered in the research: only transfor
 
 | Animation id | Built into | Timing |
 |:---|:---|:---|
+| `slides-crossfade` | `hero-slides` | the active slide fades in over the last one (0.6s ease-out); its photo settles from 105% (1.4s) |
+| `slides-dot-timer` | `hero-slides` | the active dot widens to a pill and fills left to right over 6 s, then the next slide shows; holds on hover, focus, off screen and Pause animations, and stops for good when a dot is picked |
+| `slides-copy-rise` | `hero-slides` | the incoming slide's eyebrow, title, lead, ticks, buttons and cards rise 18px and fade in (0.6-0.7s, 70ms apart after 150ms); fade style keeps them in place |
+| `slides-panel-widen` | `hero-slides` | panels layout: the hovered or focused photo panel widens to 2.3 times the others and shows its line (0.45s ease-out); the first panel is wide at rest |
+| `slides-height-follow` | `hero-slides` | up to 1024px the hero animates to the height of the incoming slide (0.5s ease-out), so a short slide leaves no empty band |
 | `finder-panel-rise` | `hero-finder` | the brand panel behind the photo grows up from its base as the hero is seen (0.8s power3.out), the photo rises 24px and fades in 0.2s later |
 | `finder-card-pop` | `hero-finder` | the white cards over the panel pop in one after another (0.5s back.out, 160ms apart, from 750ms) |
-| `finder-mark-draw` | `hero-finder` | inside the cards the bars grow (0.5s, 70ms apart, from 1s), the tick draws (0.45s at 1.2s) and the list lines extend (0.5s, 80ms apart, at 1.3s); once only |
+| `finder-mark-draw` | `hero-finder` | on a card that carries a tick, the tick draws once (0.45s at 1.2s) |
 | `finder-bar-rise` | `hero-finder` | the finder bar settles 18px upward onto the hero's lower edge (0.8s power3.out, 400ms) |
 | `vtabs-bar-slide` | `solutions-vtabs` | the brand bar under the active way-to-browse slides to the chosen tab (300ms --ease-std); on tablets and phones the chosen pill fills with the brand colour instead |
 | `vtabs-cards-rise` | `solutions-vtabs` | on a tab change the new cards rise 12px and fade in (360ms --ease-out, 60ms apart, capped at the fourth card); skipped with reduced motion |

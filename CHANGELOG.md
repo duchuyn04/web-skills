@@ -2,6 +2,17 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.0.0 (2026-09-30)
+
+Rules 5, from a user review of six sites built with 4.2.0 (SoGlobal: accounting, IT and marketing outsourcing). Pages built under rules 4 keep building with `"rules": "4"`; the new checks then print as warnings.
+
+- No mock UI. QA fails empty filled shapes stacked like lines of text and rows of empty bars drawn as a chart (`mock UI`): the user read grey placeholder lines, fake notifications, hearts, floating chips and code windows as a generated page. Progress bars, sliders, meters and controls are exempt; a custom section marks a genuine exception with `data-mock-ok`. `references/anti-slop.md` has a new Mock UI section.
+- `hero-finder` cards carry real words only: a title, an icon or a tick, and an optional one-line note. The drawn bar chart and grey list lines are gone (`mark` is replaced by `note` and `tick`).
+- The footer wordmark (the brand name in huge type) fails the build unless the brief asks for it.
+- New calm variant `hero-slides`: 2-4 slides switched by round dots with a 6 s timer that holds on hover, focus and Pause animations and stops once a dot is picked. Every slide takes its own layout (`fullbleed`, `split`, `cards`, `panels`, `overlap`; build.py fails a repeated layout or a layout without its photo, ticks, cards or panels). The first slide carries the h1. On phones and tablets each slide keeps its own height and the dots sit under the header, so nothing is cropped and the dots stay in the first screen. It replaces the custom multi-slide heroes six sites had to write.
+- The heroes users rated most professional, `hero-fullbleed` (with `"align": "center"`) and `hero-slides`, are listed first by `variety.py`.
+- The hero copy checks read the first slide of `hero-slides`.
+
 ## 4.2.0 (2026-09-30)
 
 Layouts from four sites a client named as the standard for a professional page: IRIS Software Group, Intelligent Outsourcing, Innovature BPO and Bestarion. Rules stay at 4: nothing here fails a page that built before.
