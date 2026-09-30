@@ -1,0 +1,183 @@
+{
+  "_note": "Shows hero-dashboard. Cobalt Ridge IT Services is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "dark-ai",
+  "lang": "en",
+  "site": {
+    "brand": "Cobalt Ridge IT Services",
+    "brand_mark": "CR",
+    "title": "Cobalt Ridge IT Services | Managed service desk in Da Nang",
+    "description": "Cobalt Ridge IT Services runs service desk, monitoring and data operations teams in Da Nang for software companies in Australia and the UK."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-dashboard",
+      "data": {
+        "eyebrow": "Managed service desk",
+        "title": "Service desk and data teams in *Da Nang*",
+        "lead": "Cobalt Ridge IT Services runs service desk, monitoring and data operations teams for software companies in Australia and the UK, with weekly reports on every queue.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Australian and UK hours"
+        ],
+        "services": [
+          {
+            "icon": "headset",
+            "label": "Service desk"
+          },
+          {
+            "icon": "server",
+            "label": "Network monitoring"
+          },
+          {
+            "icon": "database",
+            "label": "Data operations"
+          },
+          {
+            "icon": "bug",
+            "label": "QA and testing"
+          },
+          {
+            "icon": "shield-check",
+            "label": "Access management"
+          }
+        ],
+        "stats": [
+          {
+            "value": "210",
+            "label": "Engineers and analysts"
+          },
+          {
+            "value": "24/7",
+            "label": "Service desk coverage"
+          },
+          {
+            "value": "11",
+            "label": "Years in business"
+          },
+          {
+            "value": "3",
+            "label": "Delivery floors"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Service desk",
+            "text": "First and second line support by phone, chat and email in your ticketing tool.",
+            "bullets": [
+              "Your ticket categories",
+              "Named team leads",
+              "Weekly queue reports"
+            ]
+          },
+          {
+            "icon": "server",
+            "title": "Network monitoring",
+            "text": "Alert triage and escalation for servers, networks and cloud accounts."
+          },
+          {
+            "icon": "database",
+            "title": "Data operations",
+            "text": "Data entry, cleanup and labelling with daily error counts."
+          },
+          {
+            "icon": "bug",
+            "title": "QA and testing",
+            "text": "Manual and automated regression testing on each release."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us which queues to *hand over*",
+        "text": "Send your ticket volumes and hours and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Cobalt Ridge IT Services runs service desk, monitoring and data operations teams in Da Nang for software companies in Australia and the UK.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Service desk",
+                "href": "#services"
+              },
+              {
+                "label": "Network monitoring",
+                "href": "#services"
+              },
+              {
+                "label": "Data operations",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

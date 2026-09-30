@@ -1,0 +1,24 @@
+{
+  "variant": "hero-particles",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split"],
+  "summary": "Dark hero with a 3D particle cloud on the right that morphs between a sphere, the company's own monogram (brand_mark, extruded in depth), a torus and a lattice cube, turning slowly and tilting toward the pointer. Shape order, spin and palette mix are seeded from the brand name, so no two sites match. Copy on the left, optional stats strip.",
+  "tone": "dark",
+  "anchor": "top",
+  "shared": ["hero", "ribbons", "scene3d"],
+  "animations": ["particle-morph-3d", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "stats": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}},
+    "pause_label": {"type": "text", "min": 3, "max": 30, "default": "Pause animations"},
+    "play_label": {"type": "text", "min": 3, "max": 30, "default": "Play animations"}
+  }
+}

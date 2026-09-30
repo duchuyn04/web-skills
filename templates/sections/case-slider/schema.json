@@ -1,6 +1,7 @@
 {
   "variant": "case-slider",
   "group": "proof",
+  "forms": ["carousel-cards"],
   "summary": "Horizontal case-study carousel with drag, swipe, snap and prev/next buttons. Each card: photo, client, industry, result headline, 2-3 result figures.",
   "tone": "auto",
   "anchor": "case-studies",

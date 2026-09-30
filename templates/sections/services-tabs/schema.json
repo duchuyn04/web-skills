@@ -1,6 +1,8 @@
 {
   "variant": "services-tabs",
   "group": "services",
+  "forms": ["tabs"],
+  "open": true,
   "summary": "Centered heading, a pill tab switcher (3-5 service lines) and one panel per tab: copy with check list on the left, photo on the right.",
   "tone": "auto",
   "anchor": "services",

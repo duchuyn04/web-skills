@@ -9,7 +9,5 @@
 }
 .bl-tile.is-tilting { transition-duration: 80ms, var(--dur), var(--dur); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
 .bl-tile p { font-size: var(--fs-sm); }
-.bl-tile__glare { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(320px circle at var(--gx, 50%) var(--gy, 0%), rgba(255, 255, 255, .22), transparent 60%); transition: opacity var(--dur) var(--ease-std); }
-.bl-tile.is-tilting .bl-tile__glare { opacity: 1; }
 @media (max-width: 1024px) { .bl-tiles, .bl-tiles:has(> :nth-child(6):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .bl-tiles, .bl-tiles:has(> :nth-child(6):last-child) { grid-template-columns: 1fr; } }

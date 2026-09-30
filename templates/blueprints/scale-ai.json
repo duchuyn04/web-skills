@@ -1,0 +1,71 @@
+{
+  "id": "scale-ai",
+  "source": {
+    "name": "Scale AI",
+    "url": "https://scale.com/",
+    "category": "AI Data Annotation & Operations BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops"
+  ],
+  "summary": "Near-black hero with a scrolling visual, a dark statement panel, a light research slider, benchmark cards, a mixed news grid and a tan closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "centered heading over full-width imagery with a small link low right"
+    },
+    {
+      "form": "statement",
+      "role": "intro",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "large sentence in a dark green panel over a scan image"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "services",
+      "tone": "muted",
+      "cols": 4,
+      "count": 8,
+      "media": "none",
+      "note": "centered heading with floating image tiles above two rows of link cards in a slider"
+    },
+    {
+      "form": "cards-text",
+      "role": "cases",
+      "tone": "muted",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "heading above three text cards with a link each"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "light",
+      "cols": 2,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "heading, then a large featured card and smaller article cards in a mixed grid"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "muted",
+      "cols": 2,
+      "count": null,
+      "media": "none",
+      "note": "tan band with heading and button on the left and a line illustration on the right"
+    }
+  ]
+}

@@ -91,7 +91,6 @@
   {
    "type": "statement-band",
    "data": {
-    "eyebrow": "Về chúng tôi",
     "title": "Mộc Lan BPO nhận vận hành *các quy trình lặp lại* cho doanh nghiệp vừa và lớn",
     "text": "Nghe gọi tổng đài, hạch toán chứng từ, nhập liệu và đối soát là những việc cần nhiều nhân sự nhưng ít thay đổi. Khách hàng giữ quyền quyết định quy trình, còn tuyển dụng, đào tạo và giám sát do Mộc Lan BPO đảm nhiệm.",
     "points": [
@@ -104,7 +103,6 @@
    "type": "pillars-numbered",
    "data": {
     "head": {
-     "eyebrow": "Cách làm việc",
      "title": "Quy trình triển khai",
      "lead": "Mỗi dự án có một quản lý vận hành phụ trách, từ khâu tuyển dụng đến báo cáo định kỳ."
     },
@@ -203,7 +201,6 @@
   {
    "type": "metrics-counter",
    "data": {
-    "eyebrow": "Thành tựu",
     "title": "Mộc Lan BPO *qua những con số*",
     "lead": "Số liệu tổng hợp đến hết năm 2025, theo báo cáo nội bộ.",
     "items": [
@@ -267,7 +264,6 @@
    "type": "locations-map",
    "data": {
     "head": {
-     "eyebrow": "Văn phòng",
      "title": "Trung tâm vận hành",
      "lead": "Hai trung tâm dùng chung quy trình kiểm soát chất lượng và quy định bảo mật."
     },
@@ -317,7 +313,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "Hỏi đáp",
      "title": "Câu hỏi thường gặp"
     },
     "aside": {

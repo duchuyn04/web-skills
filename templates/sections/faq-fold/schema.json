@@ -1,0 +1,26 @@
+{
+  "variant": "faq-fold",
+  "group": "faq", "signature": true,
+  "forms": ["faq-accordion"],
+  "summary": "Centered FAQ list with numbered questions (APG accordion). Opening a question unfolds its answer like a folded sheet (CSS 3D): two or three panels swing down from the fold lines with crease shading, then lie flat as a normal paper card that keeps faint fold marks. The first answer unfolds once when the list is first seen. Fold count and crease depth are seeded from the brand name. Optional closing bar with a contact link. Suits accounting, tax, payroll, legal and insurance BPO.",
+  "tone": "auto",
+  "anchor": "faq",
+  "shared": ["stage3d"],
+  "animations": ["paper-fold-open-3d", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "open_first": {"type": "bool", "default": true},
+    "aside": {"type": "object", "required": false, "fields": {
+      "title": {"type": "text", "min": 8, "max": 60},
+      "text": {"type": "text", "min": 30, "max": 160, "required": false},
+      "cta": {"$ref": "cta"}
+    }},
+    "items": {
+      "type": "list", "min": 4, "max": 8,
+      "item": {"type": "object", "fields": {
+        "q": {"type": "text", "min": 10, "max": 120},
+        "a": {"type": "text", "min": 30, "max": 520}
+      }}
+    }
+  }
+}

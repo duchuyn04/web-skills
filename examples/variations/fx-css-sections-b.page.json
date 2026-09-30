@@ -1,0 +1,306 @@
+{
+  "_note": "Second page for the CSS 3D section variants: services-cylinder with 8 cards, services-cube with 4 cards (one-sided and two-sided blocks), industries-slats without photos or links, faq-fold and cta-letter with the email form. Ledgerwise Partners is a fictional company; every figure is sample data. A real page uses one services variant, not both.",
+  "archetype": "it-bpo-partner",
+  "preset": "crimson-trust",
+  "lang": "en",
+  "override_order": {"reason": "Demo page: shows several variants that share one slot, so it cannot follow a single archetype order."},
+  "site": {
+    "brand": "Ledgerwise Partners",
+    "brand_mark": "LP",
+    "title": "Ledgerwise Partners | Accounting and tax back office",
+    "description": "Ledgerwise Partners prepares bookkeeping, payroll and tax work for accounting practices in the UK and Ireland from an office in Manila."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Sectors",
+            "href": "#industries"
+          },
+          {
+            "label": "FAQ",
+            "href": "#faq"
+          }
+        ],
+        "cta": {
+          "label": "Get in touch",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "eyebrow": "Back office for accounting practices",
+        "title": "Bookkeeping and tax prep for *UK practices*",
+        "lead": "Ledgerwise Partners prepares bookkeeping, payroll and year-end work for accounting practices in the UK and Ireland. Every file is reviewed by a qualified accountant before it goes back.",
+        "primary_cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "See services",
+          "href": "#services"
+        },
+        "photo": {
+          "src": "paperwork-signing-laptop",
+          "alt": "Ledgerwise accountant reviewing a client file"
+        }
+      }
+    },
+    {
+      "type": "services-cylinder",
+      "data": {
+        "head": {
+          "title": "Eight services for *accounting practices*"
+        },
+        "tabs_label": "Our services",
+        "cards": [
+          {
+            "icon": "file-text",
+            "title": "Bookkeeping",
+            "text": "Bank feeds, coding and reconciliations kept current in Xero, QuickBooks or Sage for each of your clients.",
+            "bullets": [
+              "Monthly or weekly cycles",
+              "Queries batched for you"
+            ]
+          },
+          {
+            "icon": "wallet",
+            "title": "Payroll",
+            "text": "Payroll runs, RTI submissions and payslips prepared for your approval before each pay date."
+          },
+          {
+            "icon": "receipt",
+            "title": "VAT returns",
+            "text": "VAT workings and draft returns prepared from the ledger, with a variance note for anything unusual.",
+            "bullets": [
+              "MTD bridging files",
+              "Variance notes"
+            ]
+          },
+          {
+            "icon": "calculator",
+            "tab": "Year-end",
+            "title": "Year-end accounts",
+            "text": "Draft statutory accounts and working papers ready for your review, in your own templates.",
+            "link": {
+              "label": "See a sample pack",
+              "href": "#get-started"
+            }
+          },
+          {
+            "icon": "landmark",
+            "tab": "Self assessment",
+            "title": "Self assessment returns",
+            "text": "Personal tax returns prepared from client records, with open questions listed before filing."
+          },
+          {
+            "icon": "building",
+            "tab": "Corporation tax",
+            "title": "Corporation tax computations",
+            "text": "CT600 computations and supporting schedules prepared alongside the year-end accounts."
+          },
+          {
+            "icon": "bar-chart",
+            "tab": "Management",
+            "title": "Management accounts",
+            "text": "Monthly management packs with commentary drafted for your review before they reach the client."
+          },
+          {
+            "icon": "clipboard-check",
+            "tab": "Onboarding",
+            "title": "Client onboarding",
+            "text": "Engagement letters, ID checks and ledger setup handled for each new client you take on."
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-cube",
+      "id": "service-levels",
+      "data": {
+        "head": {
+          "title": "Turnaround you can *plan around*"
+        },
+        "cards": [
+          {
+            "icon": "file-text",
+            "title": "Bookkeeping",
+            "text": "Ledgers kept current for each client, with queries batched once a week.",
+            "scope": [
+              "Bank and card reconciliations",
+              "Supplier and sales invoices",
+              "Weekly query list"
+            ],
+            "sla": [
+              {
+                "value": "3 days",
+                "label": "Month reconciled after bank data arrives"
+              }
+            ],
+            "tools": [
+              "Xero",
+              "QuickBooks",
+              "Sage",
+              "Dext"
+            ]
+          },
+          {
+            "icon": "wallet",
+            "title": "Payroll",
+            "text": "Pay runs prepared and checked by a second person before you approve them.",
+            "scope": [
+              "RTI submissions",
+              "Pension uploads",
+              "Payslips"
+            ],
+            "sla": [
+              {
+                "value": "2 days",
+                "label": "Before each pay date"
+              }
+            ]
+          },
+          {
+            "icon": "calculator",
+            "title": "Year-end accounts",
+            "text": "Draft accounts and working papers in your templates, ready for partner review.",
+            "scope": [
+              "Draft statutory accounts",
+              "Working papers",
+              "Review notes"
+            ]
+          },
+          {
+            "icon": "landmark",
+            "title": "Self assessment",
+            "text": "Personal tax returns prepared from client records, with open questions listed before filing."
+          }
+        ]
+      }
+    },
+    {
+      "type": "industries-slats",
+      "data": {
+        "head": {
+          "eyebrow": "Sectors",
+          "title": "Practices we *support*"
+        },
+        "tiles": [
+          {
+            "icon": "calculator",
+            "title": "High street practices",
+            "text": "Small practices that need bookkeeping and payroll capacity in the busy months."
+          },
+          {
+            "icon": "building",
+            "title": "Regional firms",
+            "text": "Multi-office firms that send year-end and tax work in batches through the year."
+          },
+          {
+            "icon": "trending-up",
+            "title": "Cloud accountants",
+            "text": "Fixed-fee practices built on Xero and QuickBooks with many small clients."
+          },
+          {
+            "icon": "briefcase",
+            "title": "Tax advisers",
+            "text": "Advisers who want returns and computations prepared before their own review."
+          },
+          {
+            "icon": "users",
+            "title": "Payroll bureaus",
+            "text": "Bureaus that need a second team for month-end payroll peaks."
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq-fold",
+      "data": {
+        "head": {
+          "title": "Common questions"
+        },
+        "open_first": false,
+        "items": [
+          {
+            "q": "Do your staff hold accounting qualifications?",
+            "a": "Every file is prepared by a trained accountant and reviewed by a qualified accountant before it is returned to you."
+          },
+          {
+            "q": "Where is client data stored?",
+            "a": "Client data stays in your systems. Our team works through the access you grant and never keeps local copies."
+          },
+          {
+            "q": "Can we send work in batches?",
+            "a": "Yes. Many practices send year-end and tax work in batches, and we agree a turnaround for each batch before it starts."
+          },
+          {
+            "q": "How do we raise a query on a file?",
+            "a": "Comment on the file in your practice software or email the team lead, who answers within one business day."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-letter",
+      "data": {
+        "eyebrow": "Contact",
+        "title": "Tell us about *your practice*",
+        "text": "Leave your email and a team lead will send a short questionnaire about your clients, systems and busy months.",
+        "form": {
+          "email_label": "Work email",
+          "submit_label": "Send",
+          "success_text": "Thank you. A team lead will email you within one business day."
+        },
+        "secondary_cta": {
+          "label": "Or read the FAQ",
+          "href": "#faq"
+        },
+        "sign_off": "Ledgerwise Partners, Manila"
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Ledgerwise Partners prepares bookkeeping, payroll and tax work for accounting practices in the UK and Ireland from an office in Manila.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Bookkeeping",
+                "href": "#services"
+              },
+              {
+                "label": "Payroll",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

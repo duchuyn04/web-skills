@@ -1,6 +1,7 @@
 {
   "variant": "models-board",
-  "group": "compare",
+  "group": "compare", "signature": true,
+  "forms": ["tabs"],
   "summary": "Engagement model switcher with a responsibility board: pick a model on the left and a token on each task row slides to Your team, Shared or the vendor column, with live counters in the column heads.",
   "tone": "auto",
   "anchor": "how-we-work",

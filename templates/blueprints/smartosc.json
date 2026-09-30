@@ -1,0 +1,18 @@
+{
+  "id": "smartosc",
+  "source": {"name": "SmartOSC", "url": "https://www.smartosc.com/", "category": "Vietnam & Southeast Asia Leaders", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Light page with a large hero area, three service tiles, a dark testimonial panel, two more tile sets for platforms and technologies, a brand logo grid, an about band with photo, partner and award logo rows and a content hub before the footer.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "light", "media": "full", "note": "large slider area at the top; content was not loaded in the capture"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "small label and centered heading with one accent word, three grey tiles with title, one line and a round arrow button"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "muted", "count": 3, "media": "right", "optional": true, "note": "one wide rounded dark panel with quote left and a portrait right, arrows at both edges"},
+    {"form": "cards-text", "role": "tools", "tone": "light", "cols": 3, "count": 9, "note": "label and centered heading, three rows of three grey tiles with title, line and round arrow button"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 3, "count": 6, "optional": true, "note": "centered heading, two rows of three empty logo boxes and a small link below"},
+    {"form": "feature-split", "role": "about", "tone": "muted", "media": "right", "note": "label, heading with accent word, paragraph and link left, office photo right"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 6, "count": 6, "optional": true, "note": "label, centered heading with a link, one row of partner logos"},
+    {"form": "icon-strip", "role": "awards", "tone": "light", "cols": 6, "count": 6, "optional": true, "note": "label and one centered line, then a row of award badges"},
+    {"form": "media-list", "role": "news", "tone": "light", "cols": 2, "count": 4, "optional": true, "note": "heading and link list left, two by two article cards with photo and title right"}
+  ]
+}

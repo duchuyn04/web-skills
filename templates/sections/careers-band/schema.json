@@ -1,6 +1,7 @@
 {
   "variant": "careers-band",
   "group": "careers",
+  "forms": ["image-band", "statement"],
   "summary": "Careers invitation: centered heading, one paragraph, an optional open-positions count and perks, and a button to the jobs page, with 2-4 office photos placed around it (a row under the text on phones). BPO sites are also recruiting sites: most link to careers from the home page.",
   "tone": "auto",
   "anchor": "careers",

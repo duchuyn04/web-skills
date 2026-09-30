@@ -1,6 +1,7 @@
 {
   "variant": "hero-chat",
-  "group": "hero",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split"],
   "summary": "Headline, lead and buttons on the left; on the right a chat window plays a short sample support conversation: customer bubble, typing dots, agent reply, then a result tag. It plays once when the hero is seen and ends on a Replay button. Label it as a sample; screen readers get the full transcript as a list.",
   "tone": "hero",
   "anchor": "top",

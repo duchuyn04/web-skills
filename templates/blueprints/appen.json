@@ -1,0 +1,62 @@
+{
+  "id": "appen",
+  "source": {
+    "name": "Appen",
+    "url": "https://appen.com/",
+    "category": "AI Data & Annotation",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops"
+  ],
+  "summary": "Pale hero with a glass 3D object and copy at right, a light six-card grid, a tall image beside a timeline, a logo grid and a dark closing band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "3D glass object at left, heading, copy and two buttons right-aligned at right"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "note": "centered heading and intro, two rows of three bordered cards each with a number, text and small tags"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "cols": null,
+      "count": 9,
+      "media": "left",
+      "note": "tall image at left, heading and a vertical timeline of dated entries at right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 7,
+      "count": 21,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, three rows of seven grey logos"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered heading, one line and a white button on a black band"
+    }
+  ]
+}

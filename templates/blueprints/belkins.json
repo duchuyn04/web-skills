@@ -1,0 +1,20 @@
+{
+  "id": "belkins",
+  "source": {"name": "Belkins", "url": "https://belkins.io/", "category": "Outbound Sales and Lead Generation", "collected": "2026-09-26"},
+  "fits": ["cx-voice-sales"],
+  "summary": "Light grey page with a centered hero and logo row, a feature card beside a link list, a six-card problem grid, a large centered call band, a dark rounded funnel tab panel, a single-column feature stack, a case slider, a review slider, an award badge grid, a role tab block and a three-column resource grid.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-center", "role": "hero", "tone": "muted", "media": "none", "note": "small orange label, very large two-line headline, one line and one orange button, then a caption and an edge-to-edge row of grey client logos; soft blurred shapes behind"},
+    {"form": "cards-icon", "role": "services", "tone": "muted", "cols": 2, "count": 11, "media": "left", "note": "centered heading and line; left a large white card with an image, title, two-column bullets and a round arrow, right an intro line above ten white link rows with arrows in two columns"},
+    {"form": "cards-icon", "role": "intro", "tone": "muted", "cols": 3, "count": 6, "media": "none", "note": "centered heading and line, two rows of three near-white cards each with a small orange icon, bold title and short text"},
+    {"form": "cta-band", "role": "cta", "tone": "muted", "media": "none", "optional": true, "note": "very large centered claim with one orange accent figure and a single orange button, no background panel"},
+    {"form": "tabs", "role": "process", "tone": "dark", "cols": 2, "count": 8, "media": "right", "note": "large rounded black panel: centered heading and line, left two grouped lists of stage tabs with the active one expanded, right a stacked funnel graphic with one orange step"},
+    {"form": "feature-split", "role": "about", "tone": "muted", "cols": 1, "count": 5, "media": "right", "note": "five stacked white cards in the right half, each with a dark illustration on top, title and paragraph; the left half is empty, likely a sticky heading"},
+    {"form": "carousel-cards", "role": "cases", "tone": "muted", "cols": 2, "count": 4, "media": "none", "optional": true, "note": "heading and line left with two round arrows right, wide white case cards with a logo, title, round arrow link, and two stacked figure cards at the right side of each card; small button below"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "muted", "cols": 3, "count": 6, "media": "none", "optional": true, "note": "large heading left with two round arrows right, row of white quote cards with rating, tag chip, quote and small author line"},
+    {"form": "cards-image", "role": "awards", "tone": "muted", "cols": 3, "count": 6, "media": "right", "optional": true, "note": "heading, line and two review-site scores left, two rows of three grey tiles with award badges right"},
+    {"form": "tabs", "role": "team", "tone": "muted", "cols": 6, "count": 6, "media": "right", "optional": true, "note": "two-colour centered heading, six icon tabs in a row, a wide white panel with title, paragraph and round arrow link left and a large grey image placeholder right"},
+    {"form": "cards-image", "role": "news", "tone": "muted", "cols": 3, "count": 3, "media": "none", "optional": true, "note": "centered heading, three columns labelled blog, webinars and podcasts, each with a large image and title; the first column adds two more text rows"}
+  ]
+}

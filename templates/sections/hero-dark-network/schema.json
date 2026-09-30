@@ -1,11 +1,12 @@
 {
   "variant": "hero-dark-network",
-  "group": "hero",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split", "hero-fullbleed"],
   "summary": "Dark hero over an animated canvas node network that tilts with the mouse; copy on the left, a live operations panel on the right, optional KPI chips.",
   "tone": "dark",
   "anchor": "top",
   "shared": ["hero"],
-  "animations": ["hero-3d-point-cloud-nodes", "shimmer-button-glow", "reveal"],
+  "animations": ["hero-3d-point-cloud-nodes", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
     "title": {"type": "markup", "min": 12, "max": 90},

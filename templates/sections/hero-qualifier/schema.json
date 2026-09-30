@@ -1,6 +1,7 @@
 {
   "variant": "hero-qualifier",
   "group": "hero",
+  "forms": ["hero-split"],
   "summary": "Hero with a quick-pick card on the right: a short question (for example 'What do you need first?') and 3-5 answers that jump straight to the right section. Copy and one button on the left. Good when visitors come for very different services.",
   "tone": "dark",
   "anchor": "top",

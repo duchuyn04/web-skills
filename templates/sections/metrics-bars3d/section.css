@@ -1,0 +1,104 @@
+/* metrics-bars3d: before and after columns as CSS 3D boxes (front, two sides, top) on a gridded plinth.
+   Heights are scaled per measure from the numbers in page.json: --b (before) and --a (after) set inline.
+   The chart is aria-hidden; the legend under it carries every figure as text.
+   Seeds (build time): --mb-yaw plinth turn, --mb-sign turn direction, --mb-grid grid density, --mb-tint Before tint. */
+.bl-mbars {
+  --cw: clamp(40px, 4.4vw, 62px);
+  --cd: var(--cw);
+  --cg: calc(var(--cw) * .55);
+  --hmax: clamp(150px, 16vw, 230px);
+  --pd: calc(var(--cw) * .5);
+  --yaw: calc((8deg + var(--mb-yaw, .5) * 10deg) * var(--mb-sign, 1) * -1);
+  --mb-before: color-mix(in oklab, color-mix(in oklab, var(--c-accent) calc(var(--mb-tint, .5) * 35%), var(--text-muted)) 42%, var(--surface));
+}
+.bl-mbars__grid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(1.25rem, 2.5vw, 2.5rem); }
+.bl-mbars__item { display: flex; flex-direction: column; min-width: 0; }
+
+.bl-mbars__stage { --fx-persp: 950px; position: relative; height: calc(var(--hmax) + 110px); perspective-origin: calc(50% + var(--po, 0px)) -20%; }
+.bl-mbars__scene { position: absolute; left: 50%; bottom: 46px; width: 0; height: 0; transform: rotateX(-12deg) rotateY(var(--yaw)); }
+
+/* plinth: gridded floor plus a thin lip on three sides */
+.bl-mbars__plinth { --pw: calc(var(--cw) * 2 + var(--cg) + var(--pd) * 2); --pz: calc(var(--cd) + var(--pd) * 2); position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
+.bl-mbars__item.is-single .bl-mbars__plinth { --pw: calc(var(--cw) + var(--pd) * 2.4); }
+.bl-mbars__floor {
+  position: absolute; width: var(--pw); height: var(--pz); left: calc(var(--pw) / -2); top: calc(var(--pz) / -2);
+  transform: rotateX(90deg); border: 1px solid var(--border-strong); border-radius: 3px;
+  background-color: var(--surface);
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: calc(10px + var(--mb-grid, .5) * 10px) calc(10px + var(--mb-grid, .5) * 10px);
+  background-position: center;
+}
+.bl-mbars__lip { position: absolute; top: 0; height: 9px; backface-visibility: hidden; background: color-mix(in oklab, var(--surface-2) 62%, var(--text-muted)); }
+.bl-mbars__lip--front { width: var(--pw); left: calc(var(--pw) / -2); transform: translateZ(calc(var(--pz) / 2)); }
+.bl-mbars__lip--left, .bl-mbars__lip--right { width: var(--pz); left: calc(var(--pz) / -2); background: color-mix(in oklab, var(--surface-2) 45%, var(--text-muted)); }
+.bl-mbars__lip--left { transform: rotateY(-90deg) translateZ(calc(var(--pw) / 2)); }
+.bl-mbars__lip--right { transform: rotateY(90deg) translateZ(calc(var(--pw) / 2)); }
+
+/* columns */
+.bl-mbars__col { position: absolute; bottom: 0; width: var(--cw); height: var(--hmax); transform-style: preserve-3d; }
+.bl-mbars__col.is-before { left: calc(var(--cg) / -2 - var(--cw)); --k: calc(var(--b, 0) / max(var(--a, 0), var(--b, 0), .000001)); --dl: calc(var(--i, 0) * 160ms); }
+.bl-mbars__col.is-after { left: calc(var(--cg) / 2); --k: calc(var(--a, 0) / max(var(--a, 0), var(--b, 0), .000001)); --dl: calc(var(--i, 0) * 160ms + 150ms); }
+.bl-mbars__item.is-single .bl-mbars__col.is-after { left: calc(var(--cw) / -2); --k: min(1, calc(var(--a, 0) / 100)); --dl: calc(var(--i, 0) * 160ms); }
+.bl-mbars__col.is-empty { --k: .55; }
+.bl-mbars__box { position: absolute; inset: 0; transform-origin: 50% 100%; transform: scaleY(.004); transition: transform 1.2s var(--ease-out) var(--dl); }
+.is-grown .bl-mbars__box { transform: scaleY(max(.02, var(--k))); }
+.bl-mbars__f { position: absolute; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.bl-mbars__f--front { inset: 0; transform: translateZ(calc(var(--cd) / 2)); }
+.bl-mbars__f--left, .bl-mbars__f--right { top: 0; bottom: 0; width: var(--cd); left: calc(50% - var(--cd) / 2); }
+.bl-mbars__f--left { transform: rotateY(-90deg) translateZ(calc(var(--cw) / 2)); }
+.bl-mbars__f--right { transform: rotateY(90deg) translateZ(calc(var(--cw) / 2)); }
+.bl-mbars__f--top { left: 0; right: 0; height: var(--cd); top: calc(var(--cd) / -2); transform: rotateX(90deg); }
+
+.is-after .bl-mbars__f--front { background: var(--c-accent); }
+.is-after .bl-mbars__f--left, .is-after .bl-mbars__f--right { background: color-mix(in oklab, var(--c-accent) 72%, #000); }
+.is-after .bl-mbars__f--top { background: color-mix(in oklab, var(--c-accent) 70%, #fff); }
+.is-before .bl-mbars__f--front { background: var(--mb-before); }
+.is-before .bl-mbars__f--left, .is-before .bl-mbars__f--right { background: color-mix(in oklab, var(--mb-before) 80%, #000); }
+.is-before .bl-mbars__f--top { background: color-mix(in oklab, var(--mb-before) 60%, #fff); }
+/* a [KPI] placeholder: an empty dashed outline where the real figure goes */
+.bl-mbars__col.is-empty .bl-mbars__f { background: transparent; }
+.bl-mbars__col.is-empty .bl-mbars__f--front, .bl-mbars__col.is-empty .bl-mbars__f--top { border: 1.5px dashed var(--border-strong); }
+.bl-mbars__col.is-empty .bl-mbars__f--left, .bl-mbars__col.is-empty .bl-mbars__f--right { display: none; }
+
+/* the number rides on top of its column, in the plane of its back edge so the top face never covers it,
+   and always faces the reader (inverse of the scene turn) */
+.bl-mbars__num {
+  position: absolute; left: 50%; bottom: 0; white-space: nowrap;
+  font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(.85rem, .45vw + .7rem, 1.12rem); line-height: 1; letter-spacing: -.01em;
+  color: var(--text-strong);
+  transform: translate3d(-50%, -12px, calc(var(--cd) / -2)) rotateY(calc(var(--yaw) * -1)) rotateX(12deg);
+  transition: transform 1.2s var(--ease-out) var(--dl);
+}
+.is-grown .bl-mbars__num { transform: translate3d(-50%, calc(var(--hmax) * max(.02, var(--k)) * -1 - 12px), calc(var(--cd) / -2)) rotateY(calc(var(--yaw) * -1)) rotateX(12deg); }
+.is-after .bl-mbars__num { color: var(--accent-ink); }
+.is-empty .bl-mbars__num { color: var(--text-muted); }
+
+/* legend: the real text */
+.bl-mbars__legend { padding-top: 1.1rem; border-top: 1px solid var(--border); }
+.bl-mbars__label { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: var(--fs-h3); line-height: 1.3; color: var(--text-strong); }
+.bl-mbars__vals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem 1rem; margin-top: .8rem; }
+.is-single .bl-mbars__vals { grid-template-columns: minmax(0, 1fr); }
+.bl-mbars__val { display: flex; flex-direction: column; gap: .1rem; }
+.bl-mbars__val dt { display: inline-flex; align-items: center; gap: .45rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+.bl-mbars__val dt::before { content: ""; width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.bl-mbars__val.is-before dt::before { background: var(--mb-before); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--mb-before) 70%, #000); }
+.bl-mbars__val.is-after dt::before { background: var(--c-accent); }
+.bl-mbars__val dd { font-weight: 700; font-size: 1.12rem; color: var(--text-strong); }
+.bl-mbars__better { display: inline-flex; align-items: center; gap: .4rem; margin-top: .85rem; padding: .25rem .65rem; border-radius: 999px; background: var(--c-accent-soft); color: var(--accent-ink); font-size: var(--fs-xs); font-weight: 700; }
+.bl-mbars__better .bl-icon { width: 14px; height: 14px; }
+.bl-mbars__better.is-lower .bl-icon { transform: scaleY(-1); }
+.bl-mbars__better.is-lower .bl-mbars__better-higher, .bl-mbars__better.is-higher .bl-mbars__better-lower { display: none; }
+.bl-mbars__note { margin-top: .6rem; font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.5; }
+
+@media (max-width: 960px) {
+  .bl-mbars__grid { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; }
+}
+@media (max-width: 560px) {
+  .bl-mbars { --cw: 30px; --hmax: 120px; --pd: 12px; }
+  .bl-mbars__grid { grid-template-columns: minmax(0, 1fr); row-gap: 1.25rem; }
+  .bl-mbars__item { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 1rem; align-items: center; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .bl-mbars__stage { height: calc(var(--hmax) + 50px); }
+  .bl-mbars__scene { bottom: 30px; }
+  .bl-mbars__num { display: none; }
+  .bl-mbars__legend { padding-top: 0; border-top: 0; }
+}

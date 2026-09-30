@@ -11,8 +11,8 @@ You do not pick shades yourself. Give the client's colors in `theme` (see `style
 | `--c-accent` | Button fills, active states, key marks | White label at 4.5:1. A brighter brand is darkened at the same OKLCH hue until it passes. |
 | `--c-on-accent` | Text on `--c-accent` | White, or a dark tint of the accent hue for very light accents (OKLCH L 0.80 or more). |
 | `--c-accent-2` | Decorative second color | Within 60 degrees of the accent hue unless the client supplied it. |
-| `--c-accent-blend` | The only color allowed to mix with the accent in glows and gradients | `accent_2` when it is within 90 degrees of the accent, otherwise a light tint of the accent. |
-| `--c-accent-blend-deep` | Gradient end behind text on brand-colored sections | `--c-accent-blend` darkened until the on-accent text still reaches 4.5:1 over it. |
+| `--c-accent-blend` | Second flat tone for small decorative marks (daylight bands, beacons, map rings) | `accent_2` when it is within 90 degrees of the accent, otherwise a light tint of the accent. |
+| `--c-accent-blend-deep` | A deeper blend tone that still carries on-accent text | `--c-accent-blend` darkened until the on-accent text still reaches 4.5:1 over it. |
 | `--c-accent-on-dark` | Accent text or marks on a `--c-primary` block inside a light section | 4.5:1 on the primary color. |
 | `--c-primary` | Dark sections, footer, heading text on light tones | The preset's, the client's, or a dark tint of a warm accent's hue. |
 | `--text`, `--text-muted`, `--text-strong` | Body, secondary and heading text per tone | 4.5:1 on the tone's `bg`, `surface` and `surface-2`. |
@@ -27,17 +27,30 @@ All shade changes move OKLCH lightness at a fixed hue (chroma only drops when th
 1. Contrast uses the WCAG 2 relative luminance (sRGB threshold 0.04045) and the ratio is never rounded before comparing (4.499:1 fails 4.5).
 2. Button labels reach 4.5:1. The accent is darkened at constant hue for white labels; a dark label is used only for accents with OKLCH L 0.80 or more.
 3. A darkened accent keeps its hue within 5 degrees; build.py warns when it loses more than 0.20 of lightness.
-4. When the accent was darkened and the client gave no `accent_2`, the original brand color becomes `accent_2`, so the bright color still appears in glows and highlights.
+4. When the accent was darkened and the client gave no `accent_2`, the original brand color becomes `accent_2`, so the bright color still appears in small decorative marks.
 5. Accent text (`--accent-ink`) passes 4.5:1 on every ground of its tone, including tinted chips.
 6. Text tokens pass 4.5:1 on `bg`, `surface` and `surface-2`.
 7. Input borders pass 3:1; focus rings pass 3:1.
 8. A preset `accent_2` more than 60 degrees from the accent hue is replaced by an analogous one (accent hue plus 25 degrees, a little lighter). A client's own second color is kept.
-9. When accent and `accent_2` are more than 90 degrees apart, glows and gradients never mix them: complementary hues average to grey or olive in every interpolation space.
-10. Gradients and color mixes between two brand colors interpolate `in oklab`.
-11. A glow is dropped on a dark tone whose background has OKLCH chroma of 0.03 or more and a hue more than 90 degrees from the glow (orange over navy turns brown).
+9. When accent and `accent_2` are more than 90 degrees apart, `--c-accent-blend` never mixes them: complementary hues average to grey or olive in every interpolation space.
+10. Color mixes between two brand colors interpolate `in oklab`.
+11. Gradients follow the section "Gradients" below; lint_output.py enforces it.
 12. Neutrals (backgrounds, surfaces, gray text) with visible chroma are moved to the accent hue and capped at chroma 0.012-0.015 for surfaces and 0.02 for text. A warm brand gets warm grays, a blue brand cool grays.
-13. A warm accent (hue 20-100) set in `theme` without `primary` gets a brand-tinted dark `primary` (OKLCH L 0.24) instead of the preset's navy.
+13. A warm accent (hue 20-100) set in `theme` without `primary` gets a brand-tinted dark `primary` (OKLCH L 0.24) instead of the preset's navy. A light, colored `primary` given without an `accent` is the logo color in the wrong key and becomes the accent; any other `primary` lighter than OKLCH L 0.40 is darkened to L 0.24 at the same hue.
 14. Pass or fail uses the WCAG 2 ratio only. APCA is not normative yet, and CSS `contrast-color()` is not used for button text.
+
+## Gradients
+
+Surfaces are flat. A gradient is allowed only when it does a job a flat color cannot:
+
+- a scrim over a photo or video so the text on it stays readable (hero-fullbleed, banner-image, video-block, country-cards, industries-slats)
+- an edge fade: a mask that fades a marquee, carousel or canvas into the section background
+- a shadow or the shading of a 3D object in one hue (a book gutter, a fold crease, a sphere, a floor shadow)
+- a hard-stop pattern: grid lines, dot grids, split fills, range tracks
+
+Never use gradient text, glow blobs (blurred color circles), color-to-color backgrounds on sections, cards, panels or buttons, light sweeps on buttons, or hover spotlights and glare. The `highlight: gradient` preset value is kept for old pages and renders like `color`.
+
+lint_output.py fails the page when a soft gradient mixes two color families (accent, second accent, primary or a raw colored value), when a soft gradient fades the accent or second accent out (a glow), when gradient text is used (`background-clip: text`), and when an element is blurred by 24px or more (a glow blob). Neutral fades (transparent, black, white, background and surface tokens), shading in the primary color and hard-stop patterns pass.
 
 ## Render-time checks (qa_screenshot.py)
 

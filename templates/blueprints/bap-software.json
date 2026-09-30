@@ -1,0 +1,20 @@
+{
+  "id": "bap-software",
+  "source": {"name": "BAP Software", "url": "https://bap-software.net/en/", "category": "Vietnam IT Outsourcing", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Dark navy split hero with a stat grid, a light service card grid, a diagram-centred reasons block, a photo industry grid, logo rows, a dark awards band, an event photo slider, a case slider, a featured news list and a dark office map panel.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "large headline, paragraph, filled and outlined buttons and a five-figure stat grid left; framed photo slider right"},
+    {"form": "cards-image", "role": "services", "tone": "light", "cols": 4, "count": 14, "media": "none", "note": "small label, centered heading and line, cards with a wide image on top and a strong blue text block with caps title and paragraph, last row partly filled"},
+    {"form": "cards-text", "role": "about", "tone": "light", "cols": 2, "count": 4, "media": "none", "note": "centered heading, four numbered points in two columns arranged around a diamond-shaped diagram in the middle"},
+    {"form": "cards-image", "role": "industries", "tone": "light", "cols": 4, "count": 7, "media": "none", "note": "small label and centered statement, photo tiles with icon and name over a dark overlay, four in the first row and three centered in the second"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "centered caps label above one scrolling row of small product logos"},
+    {"form": "text-block", "role": "awards", "tone": "dark", "media": "right", "optional": true, "note": "heading, short line, a row of certification seals and a white pill button left; large trophy picture right on a navy ground"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "centered heading and line above a scrolling row of client logos"},
+    {"form": "image-band", "role": "about", "tone": "muted", "media": "full", "optional": true, "note": "full-width coverflow of event photos, larger centre photo with smaller tilted ones at each side"},
+    {"form": "carousel-cards", "role": "cases", "tone": "light", "cols": 3, "count": 6, "media": "none", "optional": true, "note": "heading left with a dark button right, three white cards with image on top, title, excerpt and read-more link, dots below"},
+    {"form": "media-list", "role": "news", "tone": "muted", "cols": 2, "count": 4, "media": "left", "optional": true, "note": "centered heading and line on a pale blue ground, one large featured article left and three horizontal cards with thumbnail right"},
+    {"form": "locations-map", "role": "locations", "tone": "dark", "cols": 2, "count": 8, "media": "right", "note": "heading and line left with a vertical list of city pills, right a rounded panel with building photo, address, phone, hours and a small map, dotted world map behind"}
+  ]
+}

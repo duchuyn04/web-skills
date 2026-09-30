@@ -1,0 +1,20 @@
+{
+  "id": "horatio",
+  "source": {"name": "Horatio", "url": "https://www.gohoratio.com/", "category": "Nearshore CX Outsourcing", "collected": "2026-09-26"},
+  "fits": ["cx-voice-sales", "enterprise-cx"],
+  "summary": "Light page with a split hero (dark form-like card left, portrait with stat chips right), an about split, a four-card quote grid, a vertical-tab service block, a dark rounded call panel, a quote and video slider, an award tab strip, an industry card slider, a people split, a three-step process and a dark closing band.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "note": "left: large dark rounded card with headline, short paragraph, six selectable service chips in two rows and a full-width button; right: cut-out portrait on shapes with three floating stat chips"},
+    {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "small label, heading, paragraph and one small button left, cut-out portrait on coloured shapes right"},
+    {"form": "cards-text", "role": "testimonial", "tone": "light", "cols": 2, "count": 4, "media": "none", "note": "two rows of two soft cards, each with a small icon, heading, quote, and a footer with avatar, name and client logo"},
+    {"form": "tabs", "role": "services", "tone": "light", "cols": 2, "count": 7, "media": "right", "note": "centered heading and line, vertical list of service tabs left, large photo right with title, paragraph and a small button below"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "full", "optional": true, "note": "rounded dark panel over a blurred office photo, small label, two-line heading, short line and one small button, left aligned"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "light", "cols": 2, "count": 3, "media": "right", "optional": true, "note": "centered label and heading, one wide slide split into a quote card and a video portrait with play button, counter and arrows below"},
+    {"form": "tabs", "role": "awards", "tone": "muted", "cols": 5, "count": 5, "media": "none", "optional": true, "note": "centered label, heading and line, small tab switch, row of round white badges with arrows at each side and a button below"},
+    {"form": "carousel-cards", "role": "industries", "tone": "muted", "cols": 3, "count": 6, "media": "none", "note": "label, heading and paragraph left, slider of white cards with photo on top, tag chip, title, line and a text link"},
+    {"form": "feature-split", "role": "team", "tone": "light", "cols": 2, "count": 1, "media": "right", "optional": true, "note": "label, heading, paragraph and small button left, collage of round-cornered photos and sticker shapes right"},
+    {"form": "cards-text", "role": "process", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "centered heading and line, numbered squares joined by a line, three white cards with title and short text"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "note": "row of large pill and circle shapes with a photo, then centered heading, paragraph and one button on a dark navy ground"}
+  ]
+}

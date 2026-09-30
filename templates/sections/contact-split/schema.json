@@ -1,6 +1,7 @@
 {
   "variant": "contact-split",
   "group": "cta",
+  "forms": ["form"],
   "summary": "Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email.",
   "tone": "auto",
   "anchor": "contact",

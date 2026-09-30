@@ -1,5 +1,6 @@
 /* logo-wall: group logos into 8 or 12 cells, flip once in a cascade when seen; mode "cycle" keeps flipping one cell
-   every 2.5s while the wall is on screen, the tab is visible and the page-wide motion switch is on. */
+   every 2.5s while the wall is on screen. The cycle is a GSAP tween registered with BL.motion.ambient, so the
+   page-wide motion switch holds it; GSAP's ticker stops with the tab hidden. */
 (function () {
   document.querySelectorAll('[data-logowall]').forEach(function (wall) {
     var BL = window.BL || {};
@@ -18,7 +19,8 @@
       cell.items.forEach(function (logo, k) { if (k === 0) logo.classList.add('is-on'); cell.el.appendChild(logo); });
       wall.appendChild(cell.el);
     });
-    if (BL.RM) return;
+    if (BL.RM || !BL.gsap) return;
+    var gsap = BL.gsap;
 
     function flip(cell) {
       if (cell.items.length < 2) return;
@@ -29,24 +31,21 @@
       nxt.classList.remove('is-off');
       void nxt.offsetWidth;
       nxt.classList.add('is-on');
-      setTimeout(function () { cur.classList.remove('is-off'); }, 650);
+      gsap.delayedCall(0.65, function () { cur.classList.remove('is-off'); });
     }
-    var visible = false, timer = 0;
-    function tick() {
-      timer = 0;
-      if (!visible || BL.paused || document.hidden) return;
-      var flippable = cells.filter(function (x) { return x.items.length > 1; });
-      if (flippable.length) flip(flippable[Math.floor(Math.random() * flippable.length)]);
-      timer = setTimeout(tick, 2500);
+    var visible = false;
+    if (wall.getAttribute('data-mode') === 'cycle') {
+      BL.motion.ambient(gsap.to({}, { duration: 2.5, repeat: -1, onRepeat: function () {
+        if (!visible) return;
+        var flippable = cells.filter(function (x) { return x.items.length > 1; });
+        if (flippable.length) flip(flippable[Math.floor(Math.random() * flippable.length)]);
+      } }));
     }
-    function arm() { if (!timer && wall.getAttribute('data-mode') === 'cycle') timer = setTimeout(tick, 2500); }
-    if (BL.onVisible) BL.onVisible(wall, function () {
-      cells.forEach(function (cell, i) { setTimeout(function () { flip(cell); }, 300 + i * 80); });
+    BL.onVisible(wall, function () {
+      cells.forEach(function (cell, i) { gsap.delayedCall(0.3 + i * 0.08, function () { flip(cell); }); });
     }, 0.35);
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; if (visible) arm(); }, { threshold: 0.2 }).observe(wall);
-    }
-    document.addEventListener('bl:motion', function (e) { if (!e.detail.paused) arm(); });
-    document.addEventListener('visibilitychange', function () { if (!document.hidden) arm(); });
+      new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; }, { threshold: 0.2 }).observe(wall);
+    } else visible = true;
   });
 })();

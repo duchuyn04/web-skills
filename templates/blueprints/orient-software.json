@@ -1,0 +1,17 @@
+{
+  "id": "orient-software",
+  "source": {"name": "Orient Software", "url": "https://www.orientsoftware.com/", "category": "IT Outsourcing Vietnam", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Warm cream page with a side menu: a hero with a wide photo under the heading, then service and case sliders, a video block, a golden figures panel, an industry slider, a team-model slider and a closing photo CTA.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "muted", "media": "full", "note": "heading and short text on top, one wide rounded photo below, small logo row under it"},
+    {"form": "carousel-cards", "role": "services", "tone": "muted", "count": 4, "note": "heading and two buttons, then a photo left beside stacked expandable service rows"},
+    {"form": "carousel-cards", "role": "cases", "tone": "muted", "count": 5, "optional": true, "note": "heading, then photo left beside a case with logo, text, one big figure and a button, slider controls below"},
+    {"form": "video-block", "role": "about", "tone": "muted", "media": "full", "optional": true, "note": "eyebrow, heading and a small button, then a large rounded video frame"},
+    {"form": "metrics", "role": "metrics", "tone": "muted", "cols": 3, "count": 3, "note": "golden rounded panel with heading and three oversized figures sliding"},
+    {"form": "carousel-cards", "role": "industries", "tone": "muted", "count": 6, "note": "heading with a button, row of photo cards that slides sideways"},
+    {"form": "carousel-cards", "role": "team", "tone": "muted", "cols": 2, "count": 3, "note": "heading, large photo with numbered steps left and two overlapping model cards right"},
+    {"form": "cta-band", "role": "cta", "tone": "light", "media": "full", "note": "photo across the panel with heading, short text, button and a badge row on the right"}
+  ]
+}

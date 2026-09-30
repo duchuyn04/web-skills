@@ -1,0 +1,20 @@
+{
+  "id": "savvycom-software",
+  "source": {"name": "Savvycom", "url": "https://savvycom.vn/", "category": "IT Outsourcing Vietnam", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Dark hero over an abstract video, a client logo row, a photo metrics band, icon cards, a four-tile offering grid, several logo and award rows, a tabbed case grid on green, a video testimonial and an FAQ list.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "note": "left-aligned heading, paragraph and two buttons over a dark video background"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "count": 8, "optional": true, "note": "centered heading above one row of client logos"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 3, "count": 3, "note": "three photo tiles, each with a large figure and label"},
+    {"form": "cards-icon", "role": "about", "tone": "light", "cols": 4, "count": 4, "note": "centered heading and intro, four small icon cards in a row"},
+    {"form": "cards-image", "role": "services", "tone": "light", "cols": 2, "count": 4, "note": "centered heading, 2 by 2 grid of cards with a dark banner image, text and link chips, one button below"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "count": 24, "optional": true, "note": "partner logos in two rows, followed by a second heading and a row of association logos"},
+    {"form": "carousel-cards", "role": "awards", "tone": "light", "count": 5, "optional": true, "note": "heading and subline, row of award badges that slides"},
+    {"form": "logo-strip", "role": "news", "tone": "light", "count": 8, "optional": true, "note": "heading with a row of press logos"},
+    {"form": "cards-image", "role": "cases", "tone": "muted", "cols": 3, "count": 9, "note": "heading, category tab pills, three rows of three green image cards, a button below"},
+    {"form": "video-block", "role": "testimonial", "tone": "light", "media": "full", "optional": true, "note": "centered heading and intro above one video frame"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "count": 6, "note": "centered heading, first item open in a green box, other questions as single lines"}
+  ]
+}

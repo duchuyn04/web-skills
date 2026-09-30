@@ -1,0 +1,42 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-mbars" data-mbars data-fx="3d" data-seed="{{site.brand}}" style="--mb-yaw: {{site.seed.a}}; --mb-sign: {{site.seed.sign}}; --mb-grid: {{site.seed.b}}; --mb-tint: {{site.seed.c}};">
+  <div class="bl-container">
+    {{> head-split}}
+    <ul class="bl-mbars__grid" data-mbars-grid>
+      {{#items}}
+      <li class="bl-mbars__item{{^before}} is-single{{/before}}" data-mbars-item style="--i: {{@index}};{{#before.count}} --b: {{before.count}};{{/before.count}}{{#after.count}} --a: {{after.count}};{{/after.count}}">
+        <div class="bl-mbars__stage fx3d-stage" aria-hidden="true">
+          <div class="bl-mbars__scene fx3d-rig">
+            <div class="bl-mbars__plinth">
+              <span class="bl-mbars__floor"></span>
+              <span class="bl-mbars__lip bl-mbars__lip--front"></span>
+              <span class="bl-mbars__lip bl-mbars__lip--left"></span>
+              <span class="bl-mbars__lip bl-mbars__lip--right"></span>
+            </div>
+            {{#before}}
+            <div class="bl-mbars__col is-before{{^count}} is-empty{{/count}}">
+              <div class="bl-mbars__box fx3d-rig"><span class="bl-mbars__f bl-mbars__f--front"></span><span class="bl-mbars__f bl-mbars__f--left"></span><span class="bl-mbars__f bl-mbars__f--right"></span><span class="bl-mbars__f bl-mbars__f--top"></span></div>
+              <span class="bl-mbars__num" data-num="{{count}}" data-dec="{{decimals}}" data-pre="{{prefix}}" data-suf="{{suffix}}">{{display}}</span>
+            </div>
+            {{/before}}
+            {{#after}}
+            <div class="bl-mbars__col is-after{{^count}} is-empty{{/count}}">
+              <div class="bl-mbars__box fx3d-rig"><span class="bl-mbars__f bl-mbars__f--front"></span><span class="bl-mbars__f bl-mbars__f--left"></span><span class="bl-mbars__f bl-mbars__f--right"></span><span class="bl-mbars__f bl-mbars__f--top"></span></div>
+              <span class="bl-mbars__num" data-num="{{count}}" data-dec="{{decimals}}" data-pre="{{prefix}}" data-suf="{{suffix}}">{{display}}</span>
+            </div>
+            {{/after}}
+          </div>
+        </div>
+        <div class="bl-mbars__legend">
+          <h3 class="bl-mbars__label">{{label}}</h3>
+          <dl class="bl-mbars__vals">
+            {{#before}}<div class="bl-mbars__val is-before"><dt>{{before_label}}</dt><dd>{{display}}{{#unit}} {{unit}}{{/unit}}</dd></div>{{/before}}
+            <div class="bl-mbars__val is-after"><dt>{{after_label}}</dt><dd>{{after.display}}{{#unit}} {{unit}}{{/unit}}</dd></div>
+          </dl>
+          <p class="bl-mbars__better is-{{better}}">{{icon:trending-up}}<span class="bl-mbars__better-lower">{{lower_label}}</span><span class="bl-mbars__better-higher">{{higher_label}}</span></p>
+          {{#note}}<p class="bl-mbars__note">{{note}}</p>{{/note}}
+        </div>
+      </li>
+      {{/items}}
+    </ul>
+  </div>
+</section>

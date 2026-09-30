@@ -1,0 +1,119 @@
+{
+  "id": "prialto",
+  "source": {
+    "name": "Prialto",
+    "url": "https://www.prialto.com/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "enterprise-cx"
+  ],
+  "summary": "Dark hero with illustrated portraits, a logo row, alternating text and illustration rows, review cards, a news card row, one case row and a dark closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "dark",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "eyebrow, heading, subline and button on the left, collage of illustrated portraits on the right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "muted",
+      "cols": 5,
+      "count": 10,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over a two-row logo strip"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "bold statement with a paragraph and bullet list on the left, diagram illustration on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "three review cards with round photo, name, quote and star rating"
+    },
+    {
+      "form": "statement",
+      "role": "intro",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "narrow dark band with one centered sentence"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "note": "eyebrow, heading and paragraph on the left, illustration with badge chips on the right"
+    },
+    {
+      "form": "feature-split",
+      "role": "process",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "note": "illustration on the left, eyebrow, heading and paragraph on the right"
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "eyebrow, heading and paragraph on the left, illustration on the right"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "muted",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and intro over three white article cards with a button below"
+    },
+    {
+      "form": "feature-split",
+      "role": "cases",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "optional": true,
+      "note": "eyebrow, heading, quote text and two links on the left, round photo on the right"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "dark band with illustration shapes at the sides, centered heading and button"
+    }
+  ]
+}

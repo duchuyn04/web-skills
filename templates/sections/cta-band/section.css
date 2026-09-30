@@ -4,8 +4,6 @@
   padding: clamp(2.25rem, 5vw, 4rem); border-radius: calc(var(--radius-lg) + 8px);
   background: var(--c-primary); color: var(--text); box-shadow: var(--shadow-lg); border: 1px solid var(--border);
 }
-.bl-ctaband .bl-glow--a { right: -140px; top: -220px; opacity: .45; }
-.bl-ctaband .bl-glow--b { left: -180px; bottom: -260px; opacity: .3; }
 .bl-ctaband__copy { position: relative; max-width: 720px; }
 .bl-ctaband .bl-h2 { margin-bottom: 1rem; }
 .bl-ctaband .bl-lead { margin-bottom: 1.5rem; }

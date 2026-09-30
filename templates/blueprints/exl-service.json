@@ -1,0 +1,99 @@
+{
+  "id": "exl-service",
+  "source": {
+    "name": "EXL Service",
+    "url": "https://www.exlservice.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx",
+    "ai-data-ops"
+  ],
+  "summary": "Light hero with a video panel, then dark testimonial and service card bands, a tabbed industries block, a dark insights panel, award cards, a partner band, a dark metrics block and a dark accolades grid.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "media": "right",
+      "note": "large short heading left with an accent rule, rounded video player right, thin announcement strip above"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "dark",
+      "media": "left",
+      "cols": 2,
+      "count": 4,
+      "optional": true,
+      "note": "big heading, slider of wide quote cards each with a portrait left and quote right, progress lines and arrows below"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading left, one row of four rounded cards with a photo top, title, short text and a small arrow"
+    },
+    {
+      "form": "tabs",
+      "role": "industries",
+      "tone": "muted",
+      "media": "right",
+      "cols": 1,
+      "count": 7,
+      "note": "stacked heading and vertical pill tabs left, description and link centre, tall gradient feature card right, arrows below"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 5,
+      "optional": true,
+      "note": "rounded dark panel: heading, one large article card with dark caption plus four small article cards, button and newsletter line below"
+    },
+    {
+      "form": "cards-text",
+      "role": "awards",
+      "tone": "muted",
+      "media": "none",
+      "cols": 2,
+      "count": 4,
+      "optional": true,
+      "note": "rounded gradient panel: heading and button left, two by two white recognition cards right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "muted",
+      "media": "none",
+      "optional": true,
+      "note": "rounded light panel with heading and button; the logos were still hidden in the capture"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 5,
+      "note": "heading and short text left, outlined figure tiles right in a three plus two arrangement"
+    },
+    {
+      "form": "cards-image",
+      "role": "awards",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "optional": true,
+      "note": "rounded outline panel: heading, short text and link left, grid of six logo tiles right in two columns"
+    }
+  ]
+}

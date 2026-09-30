@@ -1,11 +1,12 @@
 {
   "variant": "hero-fullbleed",
   "group": "hero",
+  "forms": ["hero-fullbleed", "hero-video", "hero-center"],
   "summary": "Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button.",
   "tone": "dark",
   "anchor": "top",
   "shared": ["hero"],
-  "animations": ["hero-ambient-video-mask", "shimmer-button-glow", "reveal"],
+  "animations": ["hero-ambient-video-mask", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
     "title": {"type": "markup", "min": 12, "max": 90},

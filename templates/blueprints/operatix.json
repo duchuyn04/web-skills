@@ -1,0 +1,111 @@
+{
+  "id": "operatix",
+  "source": {
+    "name": "Operatix",
+    "url": "https://operatix.net/",
+    "category": "B2B Sales Development & Lead Gen BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales"
+  ],
+  "summary": "Light split hero, a client logo slider, a four-card service row, a dark review band, a figure row, two split features, a podcast band, a card row and a tabbed blog.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading, short text, button and rating on the left, a photo on the right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 13,
+      "optional": true,
+      "note": "heading over a single logo slider with round arrows"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, four white cards with picture, text and button"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "optional": true,
+      "note": "dark band with a review slider and a button at the right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "muted",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, four large figures in one row"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 2,
+      "note": "centered heading, two staggered blocks each with heading, text and a check list"
+    },
+    {
+      "form": "cta-band",
+      "role": "news",
+      "tone": "muted",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "optional": true,
+      "note": "blue band with a white rounded card holding heading, text and button"
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "muted",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "optional": true,
+      "note": "heading, text and download button on the left, a book cover on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading left with text right, four tall cards each with a button"
+    },
+    {
+      "form": "tabs",
+      "role": "news",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "centered heading, tab links and three article cards with links"
+    }
+  ]
+}

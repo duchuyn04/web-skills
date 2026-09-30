@@ -1,6 +1,7 @@
 {
   "variant": "testimonials",
   "group": "proof",
+  "forms": ["testimonial-block", "cards-text"],
   "summary": "Three client quote cards with name, role, company and photo (or initials). The middle card is raised.",
   "tone": "auto",
   "anchor": "testimonials",

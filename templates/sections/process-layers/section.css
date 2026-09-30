@@ -1,0 +1,140 @@
+/* process-layers: one isometric plate per step. Closed, the plates sit close together; as each step passes the
+   middle of the screen its plate lifts to its open height and slides toward the text, lit in the brand colour.
+   Scroll-driven CSS (view timelines shared through timeline-scope) where supported; section.js adds is-sd there
+   and otherwise toggles is-open and is-active from an IntersectionObserver with 700 ms transitions.
+   Seeds (build time): --pl-a iso angle, --pl-b open spacing, --pl-c corner radius, --pl-d plate tint; data-side. */
+.bl-play {
+  --S: clamp(180px, 18vw, 250px);
+  --T: 12px;
+  --gc: 16px;
+  --go: calc(52px + var(--pl-b, .5) * 22px);
+  --iso: calc(-35deg - var(--pl-a, .5) * 15deg);
+  --pr: calc(2px + var(--pl-c, .5) * 8px);
+  --dir: 1;
+  --slide: calc(34px * var(--dir));
+}
+.bl-play[data-side="-1"] { --dir: -1; }
+.bl-play__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+.bl-play[data-side="-1"] .bl-play__stage { order: 2; }
+
+/* stage and stack */
+.bl-play__stage {
+  --fx-persp: 2600px; perspective-origin: 50% 30%;
+  position: sticky; top: calc(var(--header-h) + 3rem);
+  height: min(600px, calc(100vh - var(--header-h) - 6rem)); min-height: 440px;
+  display: grid; place-items: center;
+}
+.bl-play__stack { width: var(--S); height: var(--S); transform: rotateX(56deg) rotateZ(var(--iso)); --n: 6; }
+.bl-play__stack:has(> :nth-child(3):nth-last-child(2)) { --n: 3; }
+.bl-play__stack:has(> :nth-child(4):nth-last-child(2)) { --n: 4; }
+.bl-play__stack:has(> :nth-child(5):nth-last-child(2)) { --n: 5; }
+.bl-play__plate {
+  --z-c: calc(((var(--n) - 1) / 2 - var(--i)) * var(--gc));
+  --z-o: calc(((var(--n) - 1) / 2 - var(--i)) * var(--go));
+  --sx: calc(cos(var(--iso)) * var(--slide));
+  --sy: calc(sin(var(--iso)) * var(--slide) * -1);
+  position: absolute; inset: 0; transform-style: preserve-3d;
+  transform: translate3d(0, 0, var(--z-c));
+  transition: transform .7s var(--ease-out);
+}
+.bl-play__plate.is-open { transform: translate3d(0, 0, var(--z-o)); }
+.bl-play__plate.is-active { transform: translate3d(var(--sx), var(--sy), var(--z-o)); }
+.bl-play__shadow {
+  position: absolute; inset: -18%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(15, 23, 42, .16), rgba(15, 23, 42, 0));
+  transform: translateZ(calc((var(--n) - 1) / -2 * var(--go) - 36px));
+}
+
+/* faces: top plus four thin sides, back faces culled */
+.bl-play__top, .bl-play__side { position: absolute; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.bl-play__top {
+  inset: 0; overflow: clip; border-radius: var(--pr); border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--accent-ink);
+}
+.bl-play__plate:nth-child(even) .bl-play__top { background: color-mix(in oklab, var(--surface) calc(97% - var(--pl-d, .5) * 6%), var(--c-accent)); }
+.bl-play__side { background: color-mix(in oklab, var(--surface) 70%, var(--text-muted)); }
+.bl-play__side--s { left: var(--pr); right: var(--pr); top: 100%; height: var(--T); transform-origin: 50% 0; transform: rotateX(-90deg); }
+.bl-play__side--n { left: var(--pr); right: var(--pr); bottom: 100%; height: var(--T); transform-origin: 50% 100%; transform: rotateX(90deg); }
+.bl-play__side--e { top: var(--pr); bottom: var(--pr); left: 100%; width: var(--T); transform-origin: 0 50%; transform: rotateY(90deg); background: color-mix(in oklab, var(--surface) 55%, var(--text-muted)); }
+.bl-play__side--w { top: var(--pr); bottom: var(--pr); right: 100%; width: var(--T); transform-origin: 100% 50%; transform: rotateY(-90deg); background: color-mix(in oklab, var(--surface) 55%, var(--text-muted)); }
+.bl-play__plate.is-active .bl-play__side { background: color-mix(in oklab, var(--c-accent) 70%, #000); }
+.bl-play__mark { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: .5rem; }
+.bl-play__mark .bl-icon { width: 34%; height: 34%; stroke-width: 1.5; }
+.bl-play__num { position: absolute; left: 10%; top: 9%; font-size: .95rem; font-weight: 700; color: var(--text-muted); }
+.bl-play__lit { position: absolute; inset: 0; background: var(--c-accent); color: var(--c-on-accent); opacity: 0; transition: opacity .5s var(--ease-std); }
+.bl-play__lit .bl-play__num { color: var(--c-on-accent); }
+.bl-play__plate.is-active .bl-play__lit { opacity: 1; }
+
+/* step list */
+.bl-play__steps { counter-reset: none; }
+.bl-play__step { position: relative; padding-block: clamp(2rem, 10vh, 5.5rem); border-top: 1px solid var(--border); }
+.bl-play__step:first-child { padding-top: clamp(1rem, 4vh, 2rem); border-top: 0; }
+.bl-play__label { display: flex; align-items: center; gap: .7rem; font-size: var(--fs-sm); font-weight: 700; color: var(--text-muted); }
+.bl-play__icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-sm, 8px); background: var(--c-accent-soft); color: var(--accent-ink); transition: background-color .4s var(--ease-std), color .4s var(--ease-std); }
+.bl-play__icon .bl-icon { width: 18px; height: 18px; }
+.bl-play__step.is-active .bl-play__icon { background: var(--c-accent); color: var(--c-on-accent); }
+.bl-play__title { margin-top: .9rem; }
+.bl-play__text { margin-top: .55rem; max-width: 52ch; color: var(--text); }
+.bl-play__cta { margin-top: 1rem; }
+/* leader line from the lit plate to its step, drawn once per step (small, one-shot) */
+.bl-play__lead { position: absolute; top: calc(clamp(2rem, 10vh, 5.5rem) + 17px); width: clamp(28px, 4vw, 64px); height: 2px; background: var(--c-accent); transform: scaleX(0); transition: transform .6s var(--ease-out); }
+.bl-play__step:first-child .bl-play__lead { top: calc(clamp(1rem, 4vh, 2rem) + 17px); }
+.bl-play__lead::before { content: ""; position: absolute; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); }
+.bl-play[data-side="1"] .bl-play__lead { right: calc(100% + 12px); transform-origin: 100% 50%; }
+.bl-play[data-side="1"] .bl-play__lead::before { left: -4px; }
+.bl-play[data-side="-1"] .bl-play__lead { left: calc(100% + 12px); transform-origin: 0 50%; }
+.bl-play[data-side="-1"] .bl-play__lead::before { right: -4px; }
+.bl-play__step.is-active .bl-play__lead { transform: scaleX(1); }
+
+/* scroll-driven version: each plate follows its own step's view timeline */
+@supports (animation-timeline: view()) {
+  @media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+    .bl-play.is-sd { timeline-scope: --pls1, --pls2, --pls3, --pls4, --pls5, --pls6; }
+    .bl-play.is-sd .bl-play__step:nth-child(1) { view-timeline-name: --pls1; }
+    .bl-play.is-sd .bl-play__step:nth-child(2) { view-timeline-name: --pls2; }
+    .bl-play.is-sd .bl-play__step:nth-child(3) { view-timeline-name: --pls3; }
+    .bl-play.is-sd .bl-play__step:nth-child(4) { view-timeline-name: --pls4; }
+    .bl-play.is-sd .bl-play__step:nth-child(5) { view-timeline-name: --pls5; }
+    .bl-play.is-sd .bl-play__step:nth-child(6) { view-timeline-name: --pls6; }
+    .bl-play.is-sd .bl-play__plate:nth-child(1) { --tl: --pls1; }
+    .bl-play.is-sd .bl-play__plate:nth-child(2) { --tl: --pls2; }
+    .bl-play.is-sd .bl-play__plate:nth-child(3) { --tl: --pls3; }
+    .bl-play.is-sd .bl-play__plate:nth-child(4) { --tl: --pls4; }
+    .bl-play.is-sd .bl-play__plate:nth-child(5) { --tl: --pls5; }
+    .bl-play.is-sd .bl-play__plate:nth-child(6) { --tl: --pls6; }
+    .bl-play.is-sd .bl-play__plate { transition: none; animation: bl-play-plate linear both; animation-timeline: var(--tl); animation-range: cover 15% cover 85%; }
+    .bl-play.is-sd .bl-play__lit { transition: none; animation: bl-play-lit linear both; animation-timeline: var(--tl); animation-range: cover 15% cover 85%; }
+  }
+}
+@keyframes bl-play-plate {
+  0% { transform: translate3d(0, 0, var(--z-c)); }
+  30%, 70% { transform: translate3d(var(--sx), var(--sy), var(--z-o)); }
+  100% { transform: translate3d(0, 0, var(--z-o)); }
+}
+@keyframes bl-play-lit { 0%, 18% { opacity: 0; } 32%, 68% { opacity: 1; } 84%, 100% { opacity: 0; } }
+
+/* phones and reduced motion: the stack is shown open and still */
+@media (max-width: 899px) {
+  .bl-play { --S: 160px; --go: 40px; --T: 9px; }
+  .bl-play__grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .bl-play[data-side="-1"] .bl-play__stage { order: 0; }
+  .bl-play__stage { position: relative; top: 0; min-height: 0; height: calc(var(--S) * .82 + (var(--n, 6) - 1) * var(--go) * .83 + 70px); }
+  .bl-play__plate, .bl-play__plate.is-active { transform: translate3d(0, 0, var(--z-o)); }
+  .bl-play__step { padding-block: 1.6rem; }
+  .bl-play__step:first-child { padding-top: .5rem; }
+  .bl-play__lead { display: none; }
+}
+.bl-play__stage { --n: 6; }
+.bl-play__stage:has(.bl-play__stack > :nth-child(3):nth-last-child(2)) { --n: 3; }
+.bl-play__stage:has(.bl-play__stack > :nth-child(4):nth-last-child(2)) { --n: 4; }
+.bl-play__stage:has(.bl-play__stack > :nth-child(5):nth-last-child(2)) { --n: 5; }
+@media (prefers-reduced-motion: reduce) {
+  .bl-play__plate, .bl-play__plate.is-active { transform: translate3d(0, 0, var(--z-o)); }
+}
+
+/* qa_screenshot.py adds .bl-shot before element shots: stack open, first step lit, stage in the flow */
+.bl-shot .bl-play__stage { position: relative; top: 0; }
+.bl-shot .bl-play__plate { animation: none !important; transform: translate3d(0, 0, var(--z-o)) !important; }
+.bl-shot .bl-play__plate:first-child { transform: translate3d(var(--sx), var(--sy), var(--z-o)) !important; }
+.bl-shot .bl-play__lit { animation: none !important; opacity: 0 !important; }
+.bl-shot .bl-play__plate:first-child .bl-play__lit { opacity: 1 !important; }

@@ -129,7 +129,6 @@
    "type": "voice-sample",
    "data": {
     "head": {
-     "eyebrow": "Call samples",
      "title": "Recordings from live campaigns",
      "lead": "Recorded with permission on live campaigns. Names of prospects are removed."
     },
@@ -182,7 +181,7 @@
        "CRM logging on every call"
       ],
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -208,7 +207,6 @@
    "type": "feature-rows",
    "data": {
     "head": {
-     "eyebrow": "Why Brightwave",
      "title": "Why clients choose Brightwave",
      "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
     },
@@ -244,7 +242,7 @@
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#faq"
       }
      },
@@ -267,7 +265,6 @@
   {
    "type": "banner-image",
    "data": {
-    "eyebrow": "After-hours coverage",
     "title": "Half of booked calls come in *after 6 pm*",
     "cta": {
      "label": "See coverage plans",
@@ -281,7 +278,6 @@
   {
    "type": "metrics-counter",
    "data": {
-    "eyebrow": "Results",
     "title": "Results from B2B campaigns",
     "items": [
      {
@@ -330,7 +326,6 @@
    "type": "pricing-toggle",
    "data": {
     "head": {
-     "eyebrow": "Pricing",
      "title": "Pay per caller or per meeting"
     },
     "models": [
@@ -386,7 +381,7 @@
          "Rebooking of no-shows"
         ],
         "cta": {
-         "label": "Ask about fit",
+         "label": "Talk to an expert",
          "href": "#contact"
         }
        },

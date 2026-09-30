@@ -1,0 +1,59 @@
+/* hero-prism: prism-headline-3d. The last headline line is a three-sided prism: stage (perspective) > rig
+   (preserve-3d, turns about the X axis) > three faces, each turned 120 degrees and pushed out by the apothem of
+   the triangle (h / (2 tan 60deg) = h x .2887). The rig sits back by the same apothem, so the face in front lies
+   in the page plane at its natural size. A hidden sizer stacks every phrase in one grid cell, so the prism is as
+   wide as the longest phrase and the headline never reflows. Faces are shaded through an overlay on each face. */
+.bl-hprism__grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.bl-hprism__copy { position: relative; z-index: 2; min-width: 0; }
+.bl-hprism__h1 { max-width: 15em; }
+.bl-hprism__intro { display: block; }
+/* the spoken sentence stays in the heading; tiny type keeps its clipped text from widening the heading box */
+.bl-hprism__h1 .bl-sr-only { font-size: 1px; white-space: normal; }
+.bl-hprism__line {
+  --h: 1.3em; --ap: calc(var(--h) * .2887);
+  position: relative; display: block; width: max-content; max-width: 100%; margin-top: .1em;
+  font-size: calc(1em * var(--pscale, 1)); line-height: 1.1;
+}
+.bl-hprism__sizer { display: grid; width: max-content; visibility: hidden; height: var(--h); padding: 0 .32em; align-items: center; }
+.bl-hprism__sizer > span { grid-area: 1 / 1; white-space: nowrap; }
+.bl-hprism__stage { position: absolute; inset: 0; --fx-persp: 720px; perspective-origin: 50% 50%; }
+.bl-hprism__rig {
+  position: absolute; inset: 0; transform-origin: 50% 50%;
+  transform: translateZ(calc(var(--ap) * -1)) rotateX(var(--turn, 0deg));
+  transition: transform .9s cubic-bezier(.65, 0, .25, 1);
+}
+.bl-hprism__face {
+  position: absolute; inset: 0; display: flex; align-items: center; padding: 0 .32em; white-space: nowrap;
+  border-radius: 3px; background: var(--c-accent); color: var(--c-on-accent);
+  transform: rotateX(calc(var(--k, 0) * 120deg * var(--sign, 1))) translateZ(var(--ap));
+}
+.bl-hprism__face:nth-child(2) { --k: 1; }
+.bl-hprism__face:nth-child(3) { --k: 2; }
+.bl-hprism--ink .bl-hprism__face { background: var(--text-strong); color: var(--bg); }
+.bl-hprism__face::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #000; opacity: var(--shade, .42); transition: opacity .9s cubic-bezier(.65, 0, .25, 1); pointer-events: none; }
+.bl-hprism__face.is-front::after { opacity: 0; }
+.bl-hprism__static { display: none; margin-top: .25em; font-size: .56em; line-height: 1.25; color: var(--accent-ink); }
+
+/* index of the same service lines; the one in front carries a thin progress line for its dwell time */
+.bl-hprism__index { position: relative; padding-bottom: .5rem; }
+.bl-hprism__label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); padding-bottom: .9rem; border-bottom: 1px solid var(--border-strong); }
+.bl-hprism__item { position: relative; display: flex; align-items: baseline; gap: .9rem; padding: .85rem 0; border-bottom: 1px solid var(--border); color: var(--text); transition: color .4s var(--ease-out); }
+.bl-hprism__name { font-weight: 600; }
+.bl-hprism__item.is-on { color: var(--text-strong); }
+.bl-hprism__bar { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--c-accent); transform: scaleX(0); transform-origin: 0 50%; }
+.bl-hprism__item.is-on .bl-hprism__bar { transform: scaleX(1); }
+.bl-hprism.is-running .bl-hprism__item.is-on .bl-hprism__bar { animation: bl-hprism-dwell var(--dwell, 2800ms) linear both; }
+@keyframes bl-hprism-dwell { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.bl-hprism .bl-hprism__toggle { position: static; margin-top: 1.4rem; }
+
+@media (max-width: 960px) {
+  .bl-hprism__grid { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .bl-hprism__index { max-width: 520px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-hprism__line { display: none; }
+  .bl-hprism__static { display: block; }
+  .bl-hprism__bar { display: none; }
+}
+/* QA element screenshots: finish a running turn at once */
+.bl-shot .bl-hprism__rig, .bl-shot .bl-hprism__face::after { transition: none; }

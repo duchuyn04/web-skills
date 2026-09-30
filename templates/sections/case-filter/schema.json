@@ -1,6 +1,7 @@
 {
   "variant": "case-filter",
-  "group": "proof",
+  "group": "proof", "signature": true,
+  "forms": ["cards-image"],
   "summary": "Case-study grid with filter pills built from each case's industry (All plus one pill per industry). Choosing a pill moves the cards that stay to their new places with a View Transition, fades the others out and announces the count. Browsers without View Transitions switch instantly. Needs 4 or more real cases in at least two industries.",
   "tone": "auto",
   "anchor": "case-studies",

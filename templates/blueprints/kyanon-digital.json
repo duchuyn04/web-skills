@@ -1,0 +1,106 @@
+{
+  "id": "kyanon-digital",
+  "source": {
+    "name": "Kyanon Digital",
+    "url": "https://kyanon.digital/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Strong red mosaic hero, a black statement slide, a red metrics band, badge and logo rows, a tile grid of offerings, a project grid with filters, dark review slider, four-card strengths block, insights slider and a red consultation form.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "note": "huge bold centered heading over a tilted photo mosaic tinted brand red; a floating assistant chip at the bottom right"
+    },
+    {
+      "form": "feature-split",
+      "role": "intro",
+      "tone": "dark",
+      "media": "right",
+      "note": "black slide: small label, large light heading and text link left, glowing hexagon visual right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "note": "brand-colour band, one row of four figures with small captions and diamond dividers"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 6,
+      "count": 8,
+      "optional": true,
+      "note": "centered heading, one row of round and hex badges, slider style"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 5,
+      "count": 10,
+      "optional": true,
+      "note": "centered heading, one row of client logos in outlined cards, slider style"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "muted",
+      "cols": 3,
+      "count": 6,
+      "note": "three by two tile grid: first tile solid brand colour with the heading, one tile dark with a pill list, the rest grey with title, short text and a button at the bottom"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "light",
+      "cols": 3,
+      "count": 9,
+      "optional": true,
+      "note": "heading left with four dropdown filters right, three columns of project cards with a photo, title and outlined button, link to load more"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "dark",
+      "cols": 2,
+      "count": 6,
+      "optional": true,
+      "note": "centered heading, two white review cards side by side with logo, stars and text, progress line and round arrows"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "note": "heading and one line left, four pale cards with a thin line icon, title and paragraph on a dark red gradient"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "optional": true,
+      "note": "heading left with a small link right, three article cards with photo, title and date row, arrows below"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "dark",
+      "note": "rounded brand-red panel: heading and contact line left, message box and three fields with a send button right"
+    }
+  ]
+}

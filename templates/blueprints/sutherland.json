@@ -1,0 +1,72 @@
+{
+  "id": "sutherland",
+  "source": {
+    "name": "Sutherland",
+    "url": "https://www.sutherlandglobal.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Dark hero with a 3D ring on the right and three stat cards, a dark list of services, then light outcome, industry and insight sections and a dark closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "right",
+      "note": "large heading and short copy on the left, a glass ring visual on the right, three stat cards along the bottom edge and a pill-shaped search bar below"
+    },
+    {
+      "form": "list-rows",
+      "role": "services",
+      "tone": "dark",
+      "cols": 2,
+      "count": 6,
+      "media": "none",
+      "note": "heading left, six large stacked link rows on the right, a short description under the last row"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "cols": 1,
+      "count": 3,
+      "media": "full",
+      "optional": true,
+      "note": "heading left with slider arrows right, one wide photo card per slide with a big figure and a tag"
+    },
+    {
+      "form": "icon-strip",
+      "role": "industries",
+      "tone": "light",
+      "cols": 2,
+      "count": 10,
+      "media": "none",
+      "note": "heading and short copy on the left, ten small icon links in two columns on the right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "muted",
+      "cols": 2,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "heading left, white article cards with a photo below the title in a slider"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "heading and one line of copy with a button on the left, glass ring visual on the right"
+    }
+  ]
+}

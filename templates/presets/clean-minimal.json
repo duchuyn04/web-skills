@@ -1,6 +1,6 @@
 {
   "name": "clean-minimal",
-  "label": "Clean minimal white and violet",
+  "label": "Clean minimal white and forest green",
   "use_for": "Finance, accounting, legal and consulting-style BPO, and Nordic or Japanese markets that prefer calm layouts.",
   "references": ["Genpact", "Transcom", "Firstsource", "Arvato", "Capita"],
   "fonts": {
@@ -10,7 +10,7 @@
     "google": "family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
   "type": {"heading_weight": 700, "heading_tracking": "-0.03em"},
-  "colors": {"primary": "#1a1f36", "accent": "#5b3df5", "accent_2": "#0ea5e9"},
+  "colors": {"primary": "#1a1f36", "accent": "#2f6b3a", "accent_2": "#4d8c2a"},
   "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "16px", "radius_btn": "10px"},
   "hero_tone": "light",
   "tone_cycle": ["light", "muted"],

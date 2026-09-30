@@ -1,0 +1,18 @@
+{
+  "id": "cmc-global",
+  "source": {"name": "CMC Global", "url": "https://cmcglobal.com.vn/", "category": "Vietnam IT Outsourcing", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Blue full-bleed slider hero, a client logo row, a text and illustration split, a dark metrics band with intro copy, a four-card case row, two rows of award badges, a featured news list, a photo testimonial slider and a blue form band.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "slider with arrows at both edges: headline, short paragraph and one small button left over a full-width blue photo of two people, dots bottom right"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "one row of grey brand logos with small arrows at each end, directly below the hero"},
+    {"form": "feature-split", "role": "services", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "small label, heading, paragraph and button left; second heading and paragraph above an isometric illustration right"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 5, "count": 5, "media": "none", "note": "left-aligned heading, paragraph and cyan button on a deep navy ground with a large circle, then one row of five big figures with captions"},
+    {"form": "cards-image", "role": "cases", "tone": "light", "cols": 4, "count": 4, "media": "none", "optional": true, "note": "small label, heading left with a button right, four white cards with banner image on top, bold title and clipped paragraph"},
+    {"form": "icon-strip", "role": "awards", "tone": "muted", "cols": 5, "count": 10, "media": "none", "optional": true, "note": "small label, then two rows of white square badge tiles with arrows at the sides"},
+    {"form": "media-list", "role": "news", "tone": "light", "cols": 2, "count": 4, "media": "left", "optional": true, "note": "small label and heading, one large featured article with photo and excerpt left, three small rows of thumbnail, title and date right, dark button below"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "muted", "cols": 2, "count": 1, "media": "left", "optional": true, "note": "small label and heading, large portrait left, quote with client logo, name and big quote mark right, arrows at the sides and a faded logo row below"},
+    {"form": "form", "role": "cta", "tone": "dark", "cols": 2, "count": 1, "media": "none", "note": "brand-blue ground: large heading at the bottom left, tall white form card right with many fields, dropdowns and a submit button"}
+  ]
+}

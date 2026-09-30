@@ -169,7 +169,6 @@
    "type": "services-bento",
    "data": {
     "head": {
-     "eyebrow": "Services",
      "title": "Roles we fill",
      "lead": "Each hire works only for your company, joins your chat channels and follows your processes."
     },
@@ -184,7 +183,7 @@
        "Weekly QA scoring"
       ],
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -251,7 +250,6 @@
    "type": "video-block",
    "data": {
     "head": {
-     "eyebrow": "Our office",
      "title": "Inside our Ho Chi Minh City office",
      "lead": "A two minute walk through the floor, the desks your team would use and the managers who run it."
     },
@@ -268,7 +266,6 @@
    "type": "pricing-toggle",
    "data": {
     "head": {
-     "eyebrow": "Pricing",
      "title": "Pricing",
      "lead": "Choose a full-time dedicated team or pay for a shared pool of hours each month."
     },
@@ -370,7 +367,6 @@
    "type": "testimonials",
    "data": {
     "head": {
-     "eyebrow": "Client stories",
      "title": "What our clients say"
     },
     "items": [

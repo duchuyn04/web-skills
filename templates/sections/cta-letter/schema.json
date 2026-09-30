@@ -1,0 +1,25 @@
+{
+  "variant": "cta-letter",
+  "group": "cta", "signature": true,
+  "forms": ["cta-band"],
+  "summary": "Closing call to action set as a tri-fold letter (CSS 3D). When it scrolls into view the outer third unfolds, then the other, revealing a letterhead with the brand seal and title, a short note with ticks, and the buttons (or a one-line email form) with an optional sign-off. It unfolds once, then stays a flat paper card with faint fold lines. Fold order, paper tint and seal side are seeded from the brand name. Needs primary_cta or form. Suits accounting, tax, legal and insurance BPO.",
+  "tone": "auto",
+  "anchor": "get-started",
+  "shared": ["stage3d"],
+  "animations": ["letter-unfold-3d", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 80},
+    "text": {"type": "text", "min": 30, "max": 220, "required": false},
+    "points": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 40}},
+    "primary_cta": {"$ref": "cta", "required": false},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "form": {"type": "object", "required": false, "fields": {
+      "email_label": {"type": "text", "min": 2, "max": 28, "default": "Work email"},
+      "submit_label": {"type": "text", "min": 3, "max": 30},
+      "success_text": {"type": "text", "min": 20, "max": 160},
+      "action": {"type": "href", "required": false}
+    }},
+    "sign_off": {"type": "text", "min": 3, "max": 60, "required": false}
+  }
+}

@@ -1,6 +1,7 @@
 {
   "variant": "pricing-toggle",
   "group": "pricing",
+  "forms": ["tabs"],
   "summary": "Engagement models: a two-way switch (for example Dedicated team / Shared service) swaps between two sets of 2-3 plan cards. Use \"Custom quote\" as the price when the client has no public price.",
   "tone": "auto",
   "anchor": "pricing",

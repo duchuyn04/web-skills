@@ -1,6 +1,7 @@
 {
   "variant": "steps-row",
   "group": "process",
+  "forms": ["cards-icon", "icon-strip"],
   "summary": "A compact 'How it works': 3 or 4 numbered steps in a row of cards with large numerals (01, 02, 03) joined by a line that draws in as the row enters. Shorter than process-sticky; use it when the process fits in a sentence per step.",
   "tone": "auto",
   "anchor": "how-it-works",

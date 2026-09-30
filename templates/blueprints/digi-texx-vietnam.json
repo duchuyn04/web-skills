@@ -1,0 +1,130 @@
+{
+  "id": "digi-texx-vietnam",
+  "source": {
+    "name": "DIGI-TEXX Vietnam",
+    "url": "https://digi-texx.com/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner",
+    "ai-data-ops"
+  ],
+  "summary": "Dark hero over a city photo, then light and dark alternating bands: two offer cards, six service cards, a product row, four figures, quotes, awards, memberships, case rows, a video band, news and a closing dark call to action.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "heading and button left over a city photo"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 2,
+      "note": "centered heading, two large image cards side by side with a short text"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "note": "centered heading, two rows of three image cards with a title, text and a button"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "dark band with centered heading and four product tiles with a label"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, four icon figures in a row"
+    },
+    {
+      "form": "cards-text",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "note": "centered heading, two rows of three quote cards with a name line"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "media": "none",
+      "cols": 5,
+      "count": 5,
+      "note": "rating badge heading and a row of award badges, one button below",
+      "optional": true
+    },
+    {
+      "form": "icon-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": 5,
+      "count": 5,
+      "note": "centered heading and a row of membership logos",
+      "optional": true
+    },
+    {
+      "form": "media-list",
+      "role": "cases",
+      "tone": "muted",
+      "media": "none",
+      "cols": 1,
+      "count": 3,
+      "note": "centered heading, three stacked rows of image left and text right, one button below",
+      "optional": true
+    },
+    {
+      "form": "video-block",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading, a video prompt and one button on a dark ground",
+      "optional": true
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading, one wide featured story and two smaller image cards under it",
+      "optional": true
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading with one button over a dark tech image"
+    }
+  ]
+}

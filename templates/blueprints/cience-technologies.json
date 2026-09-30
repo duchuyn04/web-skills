@@ -1,0 +1,108 @@
+{
+  "id": "cience-technologies",
+  "source": {
+    "name": "CIENCE Technologies",
+    "url": "https://www.cience.com/",
+    "category": "B2B Sales Development & Lead Gen BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales"
+  ],
+  "summary": "Beige page with a photo hero, a product panel, logo strip, service row lists, an icon grid, dark and light rating sections, a capability card, four steps and a dark closing split.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "heading, text, buttons and logo row on the left, photo on the right"
+    },
+    {
+      "form": "list-rows",
+      "role": "intro",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "white product panel with three columns of data and tags"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 6,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "caption above a row of grey client logos"
+    },
+    {
+      "form": "list-rows",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": 5,
+      "media": "none",
+      "note": "heading on the left and text right, then two feature cards and four smaller cards in a row"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": 6,
+      "media": "right",
+      "note": "left side empty for a heading, two-column grid of numbered cards on the right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "heading and text, then four coloured figures in a row"
+    },
+    {
+      "form": "cards-text",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 4,
+      "count": 8,
+      "media": "none",
+      "optional": true,
+      "note": "heading with link, two rows of four rating tiles"
+    },
+    {
+      "form": "feature-split",
+      "role": "process",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "note": "product card on the left and heading with text on the right, a row of role icons below"
+    },
+    {
+      "form": "cards-text",
+      "role": "process",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "heading, then four numbered step columns"
+    },
+    {
+      "form": "feature-split",
+      "role": "cta",
+      "tone": "dark",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "heading, text and buttons on the left, line illustration on the right"
+    }
+  ]
+}

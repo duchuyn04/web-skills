@@ -1,6 +1,7 @@
 {
   "variant": "header-mega",
   "group": "header",
+  "forms": ["header"],
   "summary": "Fixed header with utility top bar, language switcher (SVG flags) and one or two megamenu dropdowns. For multi-service enterprise brands.",
   "tone": "header",
   "anchor": "site-header",

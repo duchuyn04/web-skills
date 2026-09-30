@@ -1,0 +1,16 @@
+{
+  "id": "firstsource",
+  "source": {"name": "Firstsource", "url": "https://www.firstsource.com/", "category": "Global CX & Enterprise BPO", "collected": "2026-09-26"},
+  "fits": ["enterprise-cx", "it-bpo-partner"],
+  "summary": "Light centered hero with a row of four report cards, two light text-card sections, a photo tile grid of services, a dark quote band, a recognition slider beside a heading and a closing contact form.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-center", "role": "hero", "tone": "light", "media": "none", "note": "large centered headline with one accented line, short paragraph and one button; four tall promo cards in a row underneath"},
+    {"form": "cards-text", "role": "intro", "tone": "light", "cols": 2, "count": 4, "note": "small label and centered heading with a paragraph, then a two by two grid of white text cards each with a tag"},
+    {"form": "cards-text", "role": "about", "tone": "muted", "cols": 3, "count": 5, "note": "label and left heading, then tinted cards in rows of three and two"},
+    {"form": "cards-image", "role": "services", "tone": "light", "cols": 3, "count": 7, "note": "label and centered heading, photo tiles with the title over the bottom edge; one tile is taller and spans two rows"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "dark", "media": "none", "optional": true, "note": "one long quote on a dark navy band with the speaker name and title below"},
+    {"form": "feature-split", "role": "awards", "tone": "light", "media": "right", "optional": true, "note": "label, heading and short paragraph on the left; a slider of award cards with dots on the right"},
+    {"form": "form", "role": "cta", "tone": "light", "media": "none", "note": "heading and paragraph on the left, a short four field form with a submit button on the right"}
+  ]
+}

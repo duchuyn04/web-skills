@@ -1,0 +1,21 @@
+{
+  "id": "teleperformance",
+  "source": {"name": "Teleperformance", "url": "https://www.tp.com/en-us/", "category": "Global CX & Enterprise BPO", "collected": "2026-09-26"},
+  "fits": ["enterprise-cx"],
+  "summary": "Full-bleed video hero with centered copy, a dark centered intro, a metrics band over a photo with a small image slider, then light pillar and service sections, a purple industry link grid, a dark AI product row, a quote, two case rows, a white paper slider and a form before the footer.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "note": "centered large headline and one outlined button over full-width video with floating interface panels on the left"},
+    {"form": "text-block", "role": "intro", "tone": "dark", "media": "none", "note": "small label, centered heading, one paragraph and an outlined button on a flat dark ground"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 5, "count": 5, "media": "full", "note": "centered heading over a blurred photo, one row of large figures with short captions, outlined button and a three-image slider with arrows below"},
+    {"form": "cards-text", "role": "process", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "centered label and heading, four short centered text columns with small caps titles, no borders"},
+    {"form": "video-block", "role": "cta", "tone": "muted", "media": "full", "optional": true, "note": "full-width looping 3D video band with a single centered outlined button"},
+    {"form": "link-list", "role": "industries", "tone": "dark", "cols": 4, "count": 11, "media": "none", "note": "centered label and heading on a colour ground, four columns of underlined text links"},
+    {"form": "carousel-cards", "role": "services", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "centered heading, four tall photo cards with caption at the bottom, arrows below, one line and a button under the slider"},
+    {"form": "cards-text", "role": "tools", "tone": "dark", "cols": 4, "count": 4, "media": "none", "note": "centered label, heading and short line, then four product columns each with a wordmark, one line and an outlined button"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "media": "none", "optional": true, "note": "one centered analyst quote with name and company below, no image"},
+    {"form": "feature-split", "role": "cases", "tone": "light", "cols": 2, "count": 2, "media": "left", "optional": true, "note": "two stacked rows, the first with photo left and text right, the second reversed; label, large heading, paragraph and outlined button"},
+    {"form": "carousel-cards", "role": "news", "tone": "dark", "cols": 4, "count": 7, "media": "none", "optional": true, "note": "centered heading, slider of white cards with image on top, tag, title and small arrow; arrows below"},
+    {"form": "form", "role": "cta", "tone": "dark", "media": "none", "note": "large heading and short line left, contact form card right, sits directly above the footer"}
+  ]
+}

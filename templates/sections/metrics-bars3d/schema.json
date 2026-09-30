@@ -1,0 +1,105 @@
+{
+  "variant": "metrics-bars3d",
+  "group": "metrics",
+  "forms": ["metrics"],
+  "signature": true,
+  "summary": "Before and after results as pairs of solid 3D columns on small gridded plinths: a muted Before column and a brand-colour After column per measure. Columns grow from the plinth in turn while the numbers on top count up, and each pair says whether lower or higher is better. Heights are scaled per measure, so minutes and percentages never share one axis. Without a before value a measure draws one column scaled against 100, so use percentages there. A \"[KPI]\" placeholder draws an empty dashed column. Plinth yaw, grid density and the Before tint are seeded from the brand name. Needs 2-4 of the client's real before and after figures; for plain totals use metrics-counter.",
+  "tone": "auto",
+  "anchor": "results",
+  "shared": [
+    "stage3d"
+  ],
+  "animations": [
+    "column-grow-3d",
+    "odometer-number-counter",
+    "reveal"
+  ],
+  "fields": {
+    "head": {
+      "$ref": "head"
+    },
+    "before_label": {
+      "type": "text",
+      "min": 3,
+      "max": 16,
+      "default": "Before"
+    },
+    "after_label": {
+      "type": "text",
+      "min": 3,
+      "max": 16,
+      "default": "After"
+    },
+    "lower_label": {
+      "type": "text",
+      "min": 3,
+      "max": 28,
+      "default": "Lower is better"
+    },
+    "higher_label": {
+      "type": "text",
+      "min": 3,
+      "max": 28,
+      "default": "Higher is better"
+    },
+    "items": {
+      "type": "list",
+      "min": 2,
+      "max": 4,
+      "item": {
+        "type": "object",
+        "fields": {
+          "label": {
+            "type": "text",
+            "min": 3,
+            "max": 40
+          },
+          "before": {
+            "type": "stat",
+            "required": false
+          },
+          "after": {
+            "type": "stat"
+          },
+          "prefix": {
+            "type": "text",
+            "min": 1,
+            "max": 3,
+            "required": false
+          },
+          "suffix": {
+            "type": "text",
+            "min": 1,
+            "max": 8,
+            "required": false
+          },
+          "unit": {
+            "type": "text",
+            "min": 1,
+            "max": 10,
+            "required": false
+          },
+          "decimals": {
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "required": false
+          },
+          "better": {
+            "type": "enum",
+            "values": [
+              "lower",
+              "higher"
+            ]
+          },
+          "note": {
+            "type": "text",
+            "min": 5,
+            "max": 90,
+            "required": false
+          }
+        }
+      }
+    }
+  }
+}

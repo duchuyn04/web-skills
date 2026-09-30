@@ -1,0 +1,117 @@
+{
+  "id": "cleverly",
+  "source": {
+    "name": "Cleverly",
+    "url": "https://www.cleverly.co/",
+    "category": "B2B Sales Development & Lead Gen BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales"
+  ],
+  "summary": "Dark purple hero with a stat row, then light sections: logos with review cards, a case carousel, a four-step icon row, channel cards, an expert grid, a two-column comparison, a call to action, review grid, FAQ and a closing band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading, sub line, two buttons and three figures on a gradient"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 20,
+      "note": "heading, two rows of client logos and review cards under them"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 4,
+      "note": "centered heading, slider of case cards with a video thumbnail and result text, one button"
+    },
+    {
+      "form": "cards-icon",
+      "role": "process",
+      "tone": "muted",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading and intro, four numbered icon steps, one button"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 4,
+      "note": "centered heading, two by two channel cards with a title and text, one button"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "muted",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading and intro, three feature cards, one button"
+    },
+    {
+      "form": "cards-text",
+      "role": "compare",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 2,
+      "note": "centered heading, two columns of checklist items in contrasting colours, one button",
+      "optional": true
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading and one button on a brand-colour band"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "muted",
+      "media": "none",
+      "cols": null,
+      "count": 8,
+      "note": "centered heading and rating line above a grid of review cards",
+      "optional": true
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 3,
+      "note": "centered heading, accordion questions and a show more button"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered closing heading with a button"
+    }
+  ]
+}

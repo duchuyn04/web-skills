@@ -7,11 +7,11 @@
     var typing = win.querySelector('[data-typing]');
     var ctl = win.querySelector('[data-chat-ctl]');
     var step = 0, timer = 0, playing = false;
-    if (BL.RM || !msgs.length) { if (ctl) ctl.hidden = true; return; }
+    if (BL.RM || !msgs.length || !BL.gsap) { if (ctl) ctl.hidden = true; return; }
 
     function label(done) { ctl.textContent = ctl.getAttribute(done ? 'data-label-replay' : 'data-label-pause'); }
     function stop(done) {
-      clearTimeout(timer); timer = 0; playing = false;
+      if (timer) timer.kill(); timer = 0; playing = false;
       typing.classList.remove('is-on');
       if (done) msgs.forEach(function (m) { m.classList.add('is-shown'); });
       label(true);
@@ -22,16 +22,16 @@
       var isAgent = m.classList.contains('bl-chatwin__msg--agent');
       var wait = step === 0 ? 400 : (isAgent ? 1400 : 900);
       if (isAgent) { m.parentNode.insertBefore(typing, m); typing.classList.add('is-on'); }
-      timer = setTimeout(function () {
+      timer = BL.gsap.delayedCall(wait / 1000, function () {
         typing.classList.remove('is-on');
         m.classList.add('is-shown');
         step++;
         next();
-      }, wait);
+      });
     }
     function play() {
       if (BL.paused) return;
-      clearTimeout(timer);
+      if (timer) timer.kill();
       step = 0; playing = true;
       win.classList.add('is-playing');
       msgs.forEach(function (m) { m.classList.remove('is-shown'); });

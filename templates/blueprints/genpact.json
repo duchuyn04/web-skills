@@ -1,0 +1,91 @@
+{
+  "id": "genpact",
+  "source": {
+    "name": "Genpact",
+    "url": "https://www.genpact.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Dark page with a light hero card carousel, a centered intro, three-card carousels for cases and insights, a quote, a three-figure band, photo service cards and a short closing call to action.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": 4,
+      "note": "large light card with heading left and a 3D visual right, arrows on both sides and four thumbnail tabs under it"
+    },
+    {
+      "form": "statement",
+      "role": "intro",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered large heading with a short paragraph below"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading left with an outline button right, three tall photo cards with a caption under each",
+      "optional": true
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "one centered quote with a client logo under it",
+      "optional": true
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading and short line left with a button right, three image cards with tag and caption",
+      "optional": true
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "three large figures in separate dark tiles"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading left with a button right, wide photo tiles with a label bar under each"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "left aligned heading with one filled button"
+    }
+  ]
+}

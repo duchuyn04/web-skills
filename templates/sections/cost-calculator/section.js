@@ -10,7 +10,7 @@
     var onEl = root.querySelector('[data-calc-on]');
     var offEl = root.querySelector('[data-calc-off]');
     var offBar = root.querySelector('[data-calc-offbar]');
-    var shown = 0, anim = 0, lastPct = null;
+    var shown = 0, anim = null, lastPct = null;
     var money = function (n) { return cur + window.BL.formatNumber(Math.round(n), 0); };
     var active = function () { return roles.filter(function (r) { return r.getAttribute('aria-checked') === 'true'; })[0] || roles[0]; };
 
@@ -32,16 +32,13 @@
         pctEl.classList.remove('is-bump'); void pctEl.offsetWidth; pctEl.classList.add('is-bump');
       }
       lastPct = pct;
-      var from = shown, t0 = null;
-      cancelAnimationFrame(anim);
-      if (window.BL.RM) { shown = save; saveEl.textContent = money(save); return; }
-      (function step(ts) {
-        if (t0 === null) t0 = ts;
-        var p = Math.min((ts - t0) / 400, 1);
-        shown = from + (save - from) * (1 - Math.pow(1 - p, 3));
-        saveEl.textContent = money(shown);
-        if (p < 1) anim = requestAnimationFrame(step);
-      })(performance.now());
+      if (anim) anim.kill();
+      if (window.BL.RM || !window.BL.gsap) { shown = save; saveEl.textContent = money(save); return; }
+      var box = { v: shown };
+      anim = window.BL.gsap.to(box, {
+        v: save, duration: 0.4, ease: 'power2.out',
+        onUpdate: function () { shown = box.v; saveEl.textContent = money(shown); }
+      });
     }
     roles.forEach(function (r) {
       r.addEventListener('click', function () {

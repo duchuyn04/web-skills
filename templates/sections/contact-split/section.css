@@ -18,7 +18,7 @@
 @keyframes bl-cform-in { from { opacity: 0; transform: translateY(10px); } }
 .bl-csplit__aside {
   position: relative; display: flex; flex-direction: column; gap: 1.5rem; padding: clamp(1.75rem, 4vw, 2.75rem);
-  background: linear-gradient(160deg, var(--c-accent), color-mix(in srgb, var(--c-accent) 82%, #000));
+  background: var(--c-accent);
 }
 .bl-csplit__title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.3rem, .8vw + 1rem, 1.6rem); color: var(--text-strong); }
 .bl-csplit__aside .bl-checks { font-size: var(--fs-sm); color: var(--text-strong); padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }

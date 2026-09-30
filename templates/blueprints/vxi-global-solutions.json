@@ -1,0 +1,72 @@
+{
+  "id": "vxi-global-solutions",
+  "source": {
+    "name": "VXI Global Solutions",
+    "url": "https://vxi.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Dark throughout: a full-bleed video hero, a card slider of insights, an image band with a button, a slider of industry tiles and a small career split.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "heading and one button low on the left over full-height video"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "heading and intro on the left, a row of four tall image cards with a centered button below"
+    },
+    {
+      "form": "image-band",
+      "role": "intro",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "rounded photo band with a centered heading, short text and button on it"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "industries",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "heading and intro on the left, four tall image tiles with labels and a centered button below"
+    },
+    {
+      "form": "feature-split",
+      "role": "careers",
+      "tone": "dark",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "optional": true,
+      "note": "heading, text and button on the left, one photo on the right"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "closing footer area with a small contact button and a large logo mark; no separate band"
+    }
+  ]
+}

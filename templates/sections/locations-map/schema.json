@@ -1,6 +1,7 @@
 {
   "variant": "locations-map",
-  "group": "locations",
+  "group": "locations", "signature": true,
+  "forms": ["locations-map"],
   "summary": "Dotted world map with radar-pulse pins for each delivery hub (hover or focus shows headcount and detail), plus a row of hub cards with SVG flags.",
   "tone": "auto",
   "anchor": "locations",

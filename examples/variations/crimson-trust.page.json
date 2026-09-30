@@ -111,7 +111,6 @@
   {
    "type": "statement-band",
    "data": {
-    "eyebrow": "About Keystone",
     "title": "Keystone places *full-time staff* who work for one client only",
     "text": "Staff sit in our office, use the client's tools and report to the client's managers. Keystone handles payroll, benefits, equipment and local compliance.",
     "points": [
@@ -139,7 +138,7 @@
        "Weekly QA scoring"
       ],
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -170,7 +169,6 @@
    "type": "feature-rows",
    "data": {
     "head": {
-     "eyebrow": "Why Keystone",
      "title": "Why clients choose Keystone",
      "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
     },
@@ -206,7 +204,7 @@
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#faq"
       }
      },
@@ -244,7 +242,6 @@
    "type": "process-sticky",
    "data": {
     "head": {
-     "eyebrow": "Process",
      "title": "How it works",
      "lead": "Most teams start work four weeks after the first call. An account manager runs each step and reports to you on Fridays."
     },
@@ -324,7 +321,6 @@
    "type": "image-cards",
    "data": {
     "head": {
-     "eyebrow": "Guides",
      "title": "Resources",
      "lead": "Plain answers to the questions finance teams ask us most."
     },

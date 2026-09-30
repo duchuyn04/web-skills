@@ -1,0 +1,111 @@
+{
+  "id": "10pearls",
+  "source": {
+    "name": "10Pearls",
+    "url": "https://10pearls.com/",
+    "category": "IT Outsourcing & Software",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Dark hero with a service strip, light logo and case sections, purple bands, a six-item value grid, dark awards, news, team photo and map sections, and a contact split.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": 6,
+      "count": 6,
+      "media": "full",
+      "note": "heading and tag line at left over a dark visual, a row of six service labels at the bottom"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 6,
+      "count": 18,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, three rows of six colored logos"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "cols": 1,
+      "count": 5,
+      "media": "full",
+      "optional": true,
+      "note": "centered heading and intro, one wide photo card with text overlay and a row of case labels below, button under"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "optional": true,
+      "note": "purple gradient band, heading and description at left, button right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "note": "centered heading and intro, two rows of three icon items, a small caption below"
+    },
+    {
+      "form": "cards-image",
+      "role": "awards",
+      "tone": "dark",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, two rows of three award logos with captions, button below"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "photo cards with tag, title and short line, arrows and dots"
+    },
+    {
+      "form": "image-band",
+      "role": "team",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "heading and line above a wide group photo"
+    },
+    {
+      "form": "locations-map",
+      "role": "locations",
+      "tone": "dark",
+      "cols": null,
+      "count": 4,
+      "media": "left",
+      "note": "world map at left, figures and text at right, a strip of city names under it"
+    },
+    {
+      "form": "feature-split",
+      "role": "cta",
+      "tone": "light",
+      "cols": null,
+      "count": 3,
+      "media": "left",
+      "note": "photo at left, heading and three stacked steps with a button at right"
+    }
+  ]
+}

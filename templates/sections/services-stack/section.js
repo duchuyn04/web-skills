@@ -1,7 +1,6 @@
 /* services-stack: sticky-card-stack, flowing-line-ribbons on the brand card */
 (function () {
   document.querySelectorAll('[data-sstack]').forEach(function (sec) {
-    var RM = window.BL && window.BL.RM;
     var cards = Array.prototype.slice.call(sec.querySelectorAll('[data-scard]'));
     var items = cards.map(function (c) { return c.parentNode; });
     var shades = cards.map(function (c) { return c.querySelector('.bl-services-stack__shade'); });
@@ -20,11 +19,8 @@
       }
     });
 
-    if (RM) return;
-    var wide = window.matchMedia('(min-width: 861px)');
-    var ticking = false;
+    /* scroll-linked shrink and shade: one ScrollTrigger per stack, skipped under reduced motion */
     function update() {
-      ticking = false;
       if (!wide.matches) {
         cards.forEach(function (c, i) { c.style.transform = ''; shades[i].style.opacity = '0'; });
         return;
@@ -41,9 +37,16 @@
         shades[i].style.opacity = Math.min(0.45, depth * 0.22).toFixed(3);
       });
     }
-    function request() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-    window.addEventListener('scroll', request, { passive: true });
-    window.addEventListener('resize', request);
-    update();
+    var wide = window.matchMedia('(min-width: 861px)');
+    if (!window.ScrollTrigger || !window.BL) return;
+    window.BL.motion.media(function (reduce) {
+      if (reduce) return;
+      var trig = window.ScrollTrigger.create({ trigger: sec, start: 'top bottom', end: 'bottom top', onUpdate: update, onRefresh: update });
+      update();
+      return function () {
+        trig.kill();
+        cards.forEach(function (c, i) { c.style.transform = ''; shades[i].style.opacity = '0'; });
+      };
+    });
   });
 })();

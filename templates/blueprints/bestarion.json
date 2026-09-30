@@ -1,0 +1,19 @@
+{
+  "id": "bestarion",
+  "source": {"name": "Bestarion", "url": "https://bestarion.com/", "category": "Vietnam IT Outsourcing", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Strong brand-colour split hero with a globe visual, a white intro beside a photo grid, a dark trust band with four figures, white link-row service lists, a dark two-card AI section, a two-card audience block, a case slider, a review slider, an award strip and a split contact section with an advantages panel.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "orange ground with wave lines: headline and paragraph left, dotted globe right, a filled and an outlined pill button centered along the bottom"},
+    {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "small logo mark, heading and two paragraphs left, three-by-three grid of rounded video-call style portraits right"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 2, "count": 4, "media": "none", "note": "dark inset panel: pill label, two-colour heading and paragraph left, four figures in a two-by-two grid split by thin cross lines right"},
+    {"form": "list-rows", "role": "services", "tone": "light", "cols": 2, "count": 10, "media": "none", "note": "two stacked groups, each with a pill label, heading and line, then pale rounded link rows with an icon slot and an orange arrow in two columns (eight rows, then two)"},
+    {"form": "cards-text", "role": "services", "tone": "dark", "cols": 2, "count": 2, "media": "none", "note": "dark ground with curved lines: two-colour heading and a button left, two cream cards each with a dark title bar and arrow, then a list of items with round icons, bold names and short lines"},
+    {"form": "cards-text", "role": "industries", "tone": "light", "cols": 2, "count": 2, "media": "none", "note": "centered pill label and heading, two pale cards each with an accent title, paragraph and a checked bullet list"},
+    {"form": "carousel-cards", "role": "cases", "tone": "light", "cols": 1, "count": 1, "media": "left", "optional": true, "note": "centered pill label and two-line heading, one wide bordered card with an image left, title, meta lines, bullet points and a filled button right"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "light", "cols": 1, "count": 1, "media": "none", "optional": true, "note": "centered pill label, heading and line, one wide card with star row, quote, and author with title"},
+    {"form": "icon-strip", "role": "awards", "tone": "light", "media": "none", "optional": true, "note": "heading at the top left and a row of certification badges below on white"},
+    {"form": "form", "role": "cta", "tone": "light", "cols": 2, "count": 1, "media": "none", "note": "centered pill label and heading with an accent phrase, a card split in two: pale form panel left, solid brand-colour panel right with a tick list of advantages and office contacts"}
+  ]
+}

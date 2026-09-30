@@ -1,6 +1,8 @@
 {
   "variant": "image-cards",
   "group": "cards",
+  "forms": ["cards-image", "carousel-cards"],
+  "open": true,
   "summary": "Clickable photo cards with tag, meta line, title and short text. Grid of 3, 4 or 6 cards, or a draggable slider of 3 to 8 cards when \"slider\" is true. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.",
   "tone": "auto",
   "anchor": "insights",

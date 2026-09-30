@@ -42,7 +42,7 @@ Proof chips and badges: founding year, headcount, certifications, languages, cov
 
 ## Section headings
 
-About a third should be plain labels, a few can be claims, and at most one in four should address the reader. Put the accent markup on the hero and two or three headings, not on every one.
+About a third should be plain labels, a few can be claims, and at most one in four should address the reader. Put the accent markup on the hero and at most one other heading (a coloured word in every title is a named tell of generated pages, see `anti-slop.md`).
 
 | Section | Common English labels | Common Vietnamese labels |
 |:---|:---|:---|

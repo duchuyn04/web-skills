@@ -112,7 +112,6 @@
   {
    "type": "about-mosaic",
    "data": {
-    "eyebrow": "About us",
     "title": "About *Harbor Point*",
     "paragraphs": [
      "Harbor Point is an **IT outsourcing** and **business process outsourcing** company founded in Ho Chi Minh City in 2012. We run dedicated engineering squads and back-office teams that work inside our clients' own tools and hours.",
@@ -320,7 +319,6 @@
    "type": "audience-cards",
    "data": {
     "head": {
-     "eyebrow": "Who we serve",
      "title": "Who we work with"
     },
     "cards": [
@@ -418,7 +416,6 @@
    "type": "testimonials",
    "data": {
     "head": {
-     "eyebrow": "Client stories",
      "title": "What our clients say"
     },
     "items": [

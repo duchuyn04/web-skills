@@ -1,6 +1,7 @@
 {
   "variant": "quote-spotlight",
   "group": "proof",
+  "forms": ["testimonial-block"],
   "summary": "One large client quote on a dark band with a big quote mark, the person and an optional client logo or wordmark. With 2-5 quotes it becomes a crossfading slider with previous/next buttons and dots. Only use real, approved quotes.",
   "tone": "dark",
   "anchor": "client-voice",

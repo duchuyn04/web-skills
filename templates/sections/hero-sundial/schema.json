@@ -1,0 +1,34 @@
+{
+  "variant": "hero-sundial",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split"],
+  "summary": "Follow-the-sun hero: a 24-hour dial lies tilted like a clock face on a table, with 00:00 at the front and noon at the back. Each delivery hub sits on the ring at its current local hour and carries an upright label with the city and its live local time; a soft band marks daylight (06:00-18:00 local) and hubs inside their shift glow in the brand colour. On entry the dial swings into place and a pulse runs once around the ring, flashing each hub it passes. Tilt, turn, tick style and pulse direction are seeded from the brand name. Needs 2-6 real hubs from the brief (city keys with a time zone), optional role and shift hours per hub.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero", "ribbons", "scene3d", "stage3d"],
+  "animations": ["sundial-swing-in", "sundial-handoff-pulse", "sundial-live-clock", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "dial_label": {"type": "text", "min": 3, "max": 44, "default": "Our hubs, live local time"},
+    "hubs": {"type": "list", "min": 2, "max": 6, "item": {"type": "object", "fields": {
+      "city": {"type": "city"},
+      "role": {"type": "text", "min": 3, "max": 26, "required": false},
+      "shift": {"type": "text", "min": 11, "max": 11, "required": false}
+    }}},
+    "on_label": {"type": "text", "min": 2, "max": 16, "default": "On shift"},
+    "off_label": {"type": "text", "min": 2, "max": 16, "default": "Off shift"},
+    "day_label": {"type": "text", "min": 3, "max": 30, "default": "Daylight 06:00-18:00"},
+    "count_label": {"type": "text", "min": 3, "max": 30, "default": "hubs on shift now"},
+    "stats": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}},
+    "pause_label": {"type": "text", "min": 3, "max": 30, "default": "Pause animations"},
+    "play_label": {"type": "text", "min": 3, "max": 30, "default": "Play animations"}
+  }
+}

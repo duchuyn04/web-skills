@@ -1,0 +1,20 @@
+{
+  "id": "outsource2india",
+  "source": {"name": "Outsource2India", "url": "https://www.outsource2india.com/", "category": "Offshore Staffing", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "Dense classic page: a dark hero with a claims list, a lead form strip and long intro, a four-column service icon grid, a dark process block with a step diagram, a figures row, dark client logos, testimonial rows, a dark reasons grid, a contact form and an FAQ list.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "large figure and a list of four claims with a button left over a dark tech image"},
+    {"form": "text-block", "role": "intro", "tone": "light", "media": "none", "note": "inline enquiry form strip, then a centered heading and several paragraphs"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 4, "count": 20, "note": "centered heading, five rows of four small icon tiles, a button below"},
+    {"form": "feature-split", "role": "process", "tone": "dark", "media": "right", "note": "numbered step list left, circular five-part diagram right, link button below"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 4, "count": 4, "note": "four large figures with small icons in one row"},
+    {"form": "logo-strip", "role": "clients", "tone": "dark", "count": 5, "optional": true, "note": "heading and short text left, large white logo tiles in a row"},
+    {"form": "list-rows", "role": "testimonial", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "heading centered, three quote columns with name lines and a button"},
+    {"form": "cards-image", "role": "testimonial", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "three video thumbnails with caption lines and a button"},
+    {"form": "cards-icon", "role": "about", "tone": "dark", "cols": 3, "count": 6, "note": "heading, two rows of three grey cards with an icon, title and paragraph, one wide closing card"},
+    {"form": "form", "role": "cta", "tone": "light", "media": "none", "note": "form fields with captcha left, contact heading and email line right"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "count": 7, "note": "centered heading and a list of single-line questions"}
+  ]
+}

@@ -4,20 +4,18 @@
 /* model tabs */
 .bl-models-board__tabs { display: grid; gap: .6rem; }
 .bl-models-board__tab {
-  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1rem; width: 100%; text-align: left; cursor: pointer;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; width: 100%; text-align: left; cursor: pointer;
   padding: 1rem 1.1rem; border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--surface); color: var(--text-strong);
   font: inherit; transition: transform var(--dur) var(--ease-out), background-color var(--dur) var(--ease-std), border-color var(--dur) var(--ease-std);
 }
 .bl-models-board__tab:hover { transform: translateX(4px); border-color: var(--border-strong); }
 .bl-models-board__tab:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
-.bl-models-board__tab-num { font-size: 1.6rem; font-weight: 600; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px var(--accent-ink); }
 .bl-models-board__tab-copy strong { display: block; font-family: var(--font-heading); font-size: 1.08rem; line-height: 1.25; }
 .bl-models-board__tab-copy small { display: block; margin-top: .15rem; font-size: var(--fs-sm); color: var(--text-muted); }
 .bl-models-board__tab-go { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); opacity: 0; transform: translateX(-8px); transition: opacity var(--dur) var(--ease-std), transform var(--dur) var(--ease-out); }
 .bl-models-board__tab-go .arrow-icon { width: 16px; height: 16px; }
 .bl-models-board__tab[aria-selected="true"] { background: var(--c-primary); border-color: var(--c-primary); color: white; }
 .bl-models-board__tab[aria-selected="true"] small { color: color-mix(in srgb, white 70%, var(--c-primary)); }
-.bl-models-board__tab[aria-selected="true"] .bl-models-board__tab-num { -webkit-text-stroke-color: var(--c-accent-on-dark, var(--c-accent-2)); }
 .bl-models-board__tab[aria-selected="true"] .bl-models-board__tab-go { opacity: 1; transform: none; background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
 
 /* active model detail */
@@ -44,7 +42,7 @@
 .bl-models-board__label { font-weight: 600; color: var(--text-strong); line-height: 1.35; font-size: var(--fs-sm); }
 .bl-models-board__label--head { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
 .bl-models-board__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; }
-.bl-models-board__col { display: flex; flex-direction: column; align-items: center; gap: .2rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }
+.bl-models-board__col { display: flex; flex-direction: column; align-items: center; gap: .2rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
 .bl-models-board__col b { font-family: var(--font-heading); font-size: 1.6rem; line-height: 1; letter-spacing: 0; color: var(--text-strong); display: inline-block; }
 .bl-models-board__col b.is-bump { animation: bl-mb-bump .45s var(--ease-back); }
 @keyframes bl-mb-bump { 40% { transform: translateY(-5px) scale(1.18); } }
@@ -66,7 +64,7 @@
 }
 .bl-models-board__fill--you { background: var(--surface); border: 2px solid var(--c-primary); }
 .bl-models-board__fill--shared { background: linear-gradient(90deg, var(--c-primary) 0 50%, var(--c-accent) 50% 100%); }
-.bl-models-board__fill--us { background: var(--c-accent); box-shadow: 0 8px 18px -8px var(--c-accent); }
+.bl-models-board__fill--us { background: var(--c-accent); }
 .bl-models-board__token[data-owner="you"] .bl-models-board__fill--you,
 .bl-models-board__token[data-owner="shared"] .bl-models-board__fill--shared,
 .bl-models-board__token[data-owner="us"] .bl-models-board__fill--us { opacity: 1; }
@@ -88,7 +86,7 @@
   .bl-models-board__col b { font-size: 1.3rem; }
   .bl-models-board__fill { height: 24px; }
   .bl-models-board__tab-go { display: none; }
-  .bl-models-board__tab { grid-template-columns: auto minmax(0, 1fr); }
+  .bl-models-board__tab { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   .bl-models-board__token, .bl-models-board__fill { transition: none; }

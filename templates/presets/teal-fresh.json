@@ -1,7 +1,7 @@
 {
   "name": "teal-fresh",
   "label": "Teal fresh",
-  "use_for": "Young CX, staffing and AI data startups that want a friendly, modern feel: deep teal with a mint highlight, big rounded corners, arched photos and gradient highlights.",
+  "use_for": "Young CX, staffing and AI data startups that want a friendly, modern feel: deep teal with a mint highlight, big rounded corners, arched photos and brand-colour highlights.",
   "references": ["Foundever", "Emapta", "Humans in the Loop", "Boldr", "Sama"],
   "fonts": {
     "heading": "Outfit",
@@ -14,7 +14,7 @@
   "shape": {"radius_sm": "10px", "radius": "16px", "radius_lg": "24px", "radius_btn": "999px"},
   "hero_tone": "light",
   "eyebrow": "pill",
-  "design": {"edges": "curve", "image_mask": "arch", "highlight": "gradient", "media_reveal": "clip"},
+  "design": {"edges": "curve", "image_mask": "arch", "highlight": "color", "media_reveal": "clip"},
   "tone_cycle": ["light", "muted"],
   "tones": {
     "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#eef8f5", "text": "#3f5552", "text_strong": "$primary", "text_muted": "#5b706d", "border": "#dcebe7", "is_dark": false},

@@ -1,0 +1,120 @@
+{
+  "id": "qx-global-group",
+  "source": {
+    "name": "QX Global Group",
+    "url": "https://qxglobalgroup.com/",
+    "category": "Finance, Accounting & Legal BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "it-bpo-partner"
+  ],
+  "summary": "Dark photo hero with an anchor bar, a text intro with a banner slider, a figure row, a photo band, service cards, story and case sliders, an industry report block, a photo split, an awards slider and a dark closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "left-aligned headline and button over a photo, an anchor link bar along the bottom"
+    },
+    {
+      "form": "text-block",
+      "role": "intro",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading and short paragraph, then a wide banner slider with dots"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, four large figures in one row"
+    },
+    {
+      "form": "image-band",
+      "role": "about",
+      "tone": "light",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "thin full-width photo strip"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading and intro, four cards with photo, title, text and a link button"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "muted",
+      "media": "none",
+      "cols": 2,
+      "count": 2,
+      "optional": true,
+      "note": "heading with a button at the right, two video story cards with dots"
+    },
+    {
+      "form": "feature-split",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 1,
+      "optional": true,
+      "note": "heading, intro, a wide report chart and a button, with dots"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "centered heading, three case cards with picture, title and button, with dots"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "left",
+      "cols": null,
+      "count": null,
+      "note": "large photo on the left, heading, text and button on the right"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "media": "none",
+      "cols": 5,
+      "count": 10,
+      "optional": true,
+      "note": "centered heading and a slider of award logos with dots"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "dark grey band with heading, one line and a button, small chat icon at the right"
+    }
+  ]
+}

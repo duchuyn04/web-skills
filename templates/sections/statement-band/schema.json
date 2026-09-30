@@ -1,11 +1,16 @@
 {
   "variant": "statement-band",
   "group": "intro",
+  "forms": ["statement", "text-block"],
+  "open": true,
   "summary": "A single centered statement: small label, a large two-line headline and one paragraph, with an optional link and up to three proof ticks. Use right after the hero or logos to say who you are in one breath.",
   "tone": "auto",
   "anchor": "who-we-are",
+  "shared": ["backdrop3d"],
+  "shared_by_field": {"visual": {"*": ["ribbons", "three", "gl"], "dots": ["gl-dots"], "terrain": ["gl-terrain"], "wave": ["gl-wave"], "globe": ["gl-globe"], "flow": ["gl-flow"]}},
   "animations": ["reveal", "word-by-word-reveal"],
   "fields": {
+    "visual": {"type": "enum", "values": ["dots", "terrain", "wave", "globe", "flow"], "required": false},
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 20, "max": 140},
     "text": {"type": "text", "min": 40, "max": 320, "required": false},

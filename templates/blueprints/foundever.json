@@ -1,0 +1,81 @@
+{
+  "id": "foundever",
+  "source": {
+    "name": "Foundever",
+    "url": "https://foundever.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Photo hero with a white copy card, a split band of dark story and light figures, a video case section, three text columns, an award row, an FAQ and a news row.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "large heading top left over a full-width photo, a white card with text and two buttons below it"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "dark",
+      "cols": 2,
+      "count": 4,
+      "media": "right",
+      "note": "left half dark with heading, text and outline button and a round-cropped photo; right half light with a heading and a 2x2 grid of large figures"
+    },
+    {
+      "form": "video-block",
+      "role": "cases",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "heading, short text and button on the left, a wide video player on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "light",
+      "cols": 4,
+      "count": 3,
+      "media": "none",
+      "note": "heading and paragraph in the first column, three text columns with coloured titles beside it"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over a row of five award badges with a small link below"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "media": "none",
+      "note": "heading, text and a small prompt card on the left, four accordion questions on the right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "three image cards with tags, title and short excerpt"
+    }
+  ]
+}

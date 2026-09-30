@@ -1,0 +1,20 @@
+{
+  "id": "globant",
+  "source": {"name": "Globant", "url": "https://www.globant.com/", "category": "Nearshore & Global Software Outsourcing", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Light and airy page: a pale slider hero, alternating text and product-image splits, industry and studio card grids, a client logo row, a figures row, a video story block, two culture splits and a dark form section with a background image.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-video", "role": "hero", "tone": "light", "media": "full", "note": "left-aligned announcement heading, one button and slider bars at the bottom over a pale animated background"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "left", "note": "product screenshot left, logo, paragraph and outlined button right"},
+    {"form": "cards-image", "role": "industries", "tone": "light", "cols": 4, "count": 8, "note": "heading and line, two rows of four image cards with title and text, a button below"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "heading, three text cards with a rule and short text, a button below"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "left", "note": "screenshot left, heading, paragraph and outlined button right"},
+    {"form": "logo-strip", "role": "clients", "tone": "muted", "cols": 7, "count": 7, "optional": true, "note": "heading and one row of grayscale client logos"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 5, "count": 5, "note": "one row of five large figures with captions and a button below"},
+    {"form": "feature-split", "role": "cases", "tone": "light", "media": "right", "optional": true, "note": "centered heading and paragraph, story text left, video panel right"},
+    {"form": "feature-split", "role": "careers", "tone": "light", "media": "left", "optional": true, "note": "team photo left, heading, paragraph and button right"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "right", "optional": true, "note": "large heading and paragraph left, collage of portraits right"},
+    {"form": "form", "role": "cta", "tone": "dark", "media": "left", "note": "heading left over a dark image, white form card right"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "mor-software",
+  "source": {"name": "MOR Software", "url": "https://morsoftware.com/", "category": "Vietnam IT Outsourcing", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Dark centered hero with four service link columns and a curved bottom edge, then mostly light sections: reasons slider, a figure and photo mosaic, badge rows, a tech stack tab panel, project slider, a dark contact statement, a quote slider, a video list, a blue news slider, press logos, an FAQ, a blue call bar and a dark office slider.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-center", "role": "hero", "tone": "dark", "media": "none", "note": "centered two-line headline on a starry dark navy ground, four outlined link columns with bullet lists underneath, curved white edge at the bottom"},
+    {"form": "carousel-cards", "role": "about", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "large heading left with intro paragraph right, three outlined cards with line icons, title and long paragraph, arrows and a pill button below, gradient circles as decoration"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 3, "count": 4, "media": "full", "note": "mosaic grid of equal square tiles: a text tile with label, heading and paragraph, dark figure tiles and photo tiles mixed, four figures in total"},
+    {"form": "icon-strip", "role": "awards", "tone": "light", "cols": 8, "count": 16, "media": "none", "optional": true, "note": "centered label above two rows of round seals and certification badges"},
+    {"form": "tabs", "role": "tools", "tone": "light", "cols": 6, "count": 5, "media": "none", "note": "heading and short paragraph, vertical list of five category tabs left, grid of small technology logo tiles right with a small arrow"},
+    {"form": "carousel-cards", "role": "cases", "tone": "muted", "cols": 3, "count": 3, "media": "none", "optional": true, "note": "centered label and heading, white project cards with a tall image, title and tags, progress bar and a pill button below"},
+    {"form": "statement", "role": "cta", "tone": "dark", "media": "full", "optional": true, "note": "one centered line over a network-pattern dark band with a large round gradient contact button under a thin horizontal rule"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "cols": 2, "count": 4, "media": "left", "optional": true, "note": "large circle image left, right: label, heading, quote text, name and company, bar pagination, oversized quote mark behind"},
+    {"form": "video-block", "role": "about", "tone": "light", "cols": 2, "count": 11, "media": "left", "optional": true, "note": "centered heading, big video player left and a scrollable list of video titles with durations right"},
+    {"form": "carousel-cards", "role": "news", "tone": "dark", "cols": 3, "count": 3, "media": "none", "optional": true, "note": "brand-blue ground: heading top left, slider of dark image cards with date and title overlay, round arrows bottom left and a pill button right"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "centered label above a single scrolling row of press logos"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "cols": 1, "count": 3, "media": "none", "note": "centered heading, stacked white rows with chevrons on soft shadow, gradient circles behind"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "note": "wide rounded blue bar with a paper-plane icon and a line left and a gradient pill button right"},
+    {"form": "carousel-cards", "role": "locations", "tone": "dark", "cols": 4, "count": 4, "media": "none", "optional": true, "note": "navy strip with round arrows at both sides and four office columns showing city, phone, address and email, above the footer"}
+  ]
+}

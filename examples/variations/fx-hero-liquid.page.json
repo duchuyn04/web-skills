@@ -1,0 +1,86 @@
+{
+  "_note": "Shows hero-liquid. Tandem Staffing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "human-warm",
+  "lang": "en",
+  "site": {
+    "brand": "Tandem Staffing",
+    "brand_mark": "TD",
+    "title": "Tandem Staffing | Dedicated teams that work inside yours",
+    "description": "Tandem Staffing hires and manages dedicated support, finance and design staff in Cebu who work in your tools, your hours and your team channels."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Contact", "href": "#get-started"},
+          {"label": "About", "href": "#top"}
+        ],
+        "cta": {"label": "Book a call", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-liquid",
+      "data": {
+        "eyebrow": "Dedicated teams",
+        "title": "Your team and ours, *working as one*",
+        "lead": "Tandem Staffing hires and manages dedicated support, finance and design staff in Cebu. They join your tools, your hours and your team channels, and report to your managers.",
+        "primary_cta": {"label": "Book a call", "href": "#get-started"},
+        "secondary_cta": {"label": "Roles we hire", "href": "#services"},
+        "proof": ["Staff hired in 3-5 weeks", "No setup fee"],
+        "blob_labels": ["Your team", "Our team"],
+        "merge_label": "One team",
+        "stats": [
+          {"value": "180", "label": "Staff in Cebu"},
+          {"value": "38", "label": "Client teams"},
+          {"value": "92%", "label": "Staff kept after a year"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "Roles we hire and manage"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Chat, email and phone agents who work in your help desk and your shift pattern.",
+            "bullets": ["Hired to your profile", "Managed on site", "Monthly reviews"]
+          },
+          {"icon": "calculator", "title": "Finance", "text": "Bookkeepers and accounts assistants trained in your accounting system."},
+          {"icon": "layers", "title": "Design", "text": "Graphic and marketing designers who join your review cycle."},
+          {"icon": "users", "title": "Team leads", "text": "An on-site lead for teams of eight or more, reporting to your manager."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us about the role you *need to fill*",
+        "text": "Send the job description and we reply with a profile of the people we would hire.",
+        "primary_cta": {"label": "Send a job description", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tandem Staffing hires and manages dedicated support, finance and design staff in Cebu.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer support", "href": "#services"},
+            {"label": "Finance", "href": "#services"},
+            {"label": "Design", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

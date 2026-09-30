@@ -1,0 +1,16 @@
+{
+  "id": "kdci-outsourcing",
+  "source": {"name": "KDCI Outsourcing", "url": "https://www.kdci.co/", "category": "Philippines Offshore BPO & Staffing", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "Light page: a photo hero with a lead form card on the left, a logo row and a service card slider, a benefits grid, a FAQ accordion, a testimonial slider on a strong brand-colour ground and a contact form with office details.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "light", "media": "full", "note": "white form card with heading and three fields on the left over a wide photo of two handshaking people"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 6, "count": 6, "optional": true, "note": "centered heading and one row of client logos"},
+    {"form": "carousel-cards", "role": "services", "tone": "light", "cols": 4, "count": 4, "note": "centered heading and paragraph, four icon cards with a link in a slider with dots"},
+    {"form": "cards-icon", "role": "about", "tone": "muted", "cols": 3, "count": 6, "note": "heading and paragraph left in the first column, six white check-icon cards staggered in two rows of three"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "cols": 1, "count": 5, "optional": true, "note": "left heading, five full-width grey accordion rows"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "dark", "cols": 3, "count": 3, "optional": true, "note": "centered heading on a strong brand-colour ground, three white quote cards with a portrait, in a slider"},
+    {"form": "form", "role": "cta", "tone": "light", "note": "heading, form on the left, office and contact details on the right"}
+  ]
+}

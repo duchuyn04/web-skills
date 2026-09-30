@@ -1,0 +1,18 @@
+<section id="{{section.id}}" class="bl-section bl-ppl bl-tone-{{section.tone}}" data-sequence data-ppl data-fx="3d" data-seed="{{site.brand}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-ppl__diagram" data-reveal="fade" aria-hidden="true" data-ppl-diagram>
+      <svg class="bl-ppl__svg" viewBox="0 0 1200 185" data-ppl-svg aria-hidden="true" focusable="false"></svg>
+      <div class="bl-ppl__packets" data-ppl-packets></div>
+      <div hidden data-ppl-kinds><span data-kind="doc">{{icon:file-text}}</span><span data-kind="ticket">{{icon:tag}}</span><span data-kind="row">{{icon:database}}</span><span data-kind="tick">{{icon:check}}</span></div>
+    </div>
+    <ol class="bl-ppl__steps" data-reveal-group>
+      {{#stages}}<li class="bl-ppl__step" data-reveal data-ppl-step data-packet="{{packet}}" data-icon="{{icon}}">
+        <div class="bl-ppl__top"><span class="bl-ppl__num bl-mono" aria-hidden="true">{{@num}}</span><span class="bl-ppl__icon">{{icon:$icon}}</span></div>
+        <h3 class="bl-ppl__title">{{title}}</h3>
+        <p class="bl-ppl__text">{{text}}</p>
+      </li>{{/stages}}
+    </ol>
+    {{#cta}}<div class="bl-ppl__cta" data-reveal><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}</a></div>{{/cta}}
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-h3d bl-hshat bl-tone-{{section.tone}}" data-fx="3d" data-hshat data-seed="{{site.brand}}" data-grid="{{grid}}">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hero__grid"></span></div>
+  <div class="bl-container">
+    <div class="bl-hshat__grid">
+      <div class="bl-h3d__copy bl-hshat__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1" data-reveal>{{title}}</h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-hshat__visual" data-reveal="fade">
+        <span class="bl-hshat__mark bl-hshat__mark--tl" aria-hidden="true"></span><span class="bl-hshat__mark bl-hshat__mark--tr" aria-hidden="true"></span>
+        <span class="bl-hshat__mark bl-hshat__mark--bl" aria-hidden="true"></span><span class="bl-hshat__mark bl-hshat__mark--br" aria-hidden="true"></span>
+        <div class="bl-hshat__stage fx3d-stage" data-hshat-stage>
+          <img class="bl-hshat__img" src="{{image}}" alt="{{image_alt}}" width="1200" height="800" fetchpriority="high" data-hshat-img>
+          <div class="bl-hshat__rig fx3d-rig" data-hshat-rig aria-hidden="true" hidden></div>
+        </div>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-h3d__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

@@ -1,0 +1,20 @@
+{
+  "id": "n-ix",
+  "source": {"name": "N-iX", "url": "https://www.n-ix.com/", "category": "IT Outsourcing Eastern Europe", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Orange hero with right-aligned copy and a four-figure row, a logo strip, a centered statement, a phase block with a quote slider and stat cards, an orange report banner with partner badges, a service grid, an orange industry split, article cards, a news row, an offices map and a contact form.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "brand-colour ground, heading and two buttons right, dot-pattern art left, four figures in a row along the bottom"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "count": 8, "optional": true, "note": "single row of client logos"},
+    {"form": "statement", "role": "intro", "tone": "light", "media": "none", "note": "large centered sentence, a two-column pair of short paragraphs and a closing line"},
+    {"form": "tabs", "role": "process", "tone": "light", "count": 4, "note": "large centered heading and intro, then a quote slider with arrows, then three small stat cards"},
+    {"form": "image-band", "role": "about", "tone": "dark", "media": "full", "optional": true, "note": "brand-colour banner with a report title and download button, then a centered heading and partner badge row with a button"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 6, "note": "centered heading, two rows of three text cards with arrow links"},
+    {"form": "feature-split", "role": "industries", "tone": "dark", "media": "right", "note": "brand-colour ground, heading with a link, industry names as a list left, one large figure right"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 3, "count": 6, "optional": true, "note": "grid of article and case cards with tags, one wide card in the middle row"},
+    {"form": "cards-text", "role": "news", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "centered heading, three short news cards"},
+    {"form": "locations-map", "role": "locations", "tone": "light", "media": "full", "note": "centered heading and country list above a world map with legend and contact lines"},
+    {"form": "form", "role": "cta", "tone": "light", "media": "right", "note": "heading, text and short form left, trust logos, partner logos and compliance badges right"}
+  ]
+}

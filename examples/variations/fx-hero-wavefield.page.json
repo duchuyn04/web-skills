@@ -1,0 +1,84 @@
+{
+  "_note": "Shows hero-wavefield. Gridline Labs is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "teal-fresh",
+  "lang": "en",
+  "site": {
+    "brand": "Gridline Labs",
+    "brand_mark": "GL",
+    "title": "Gridline Labs | Data annotation and model evaluation teams",
+    "description": "Gridline Labs labels images, text and audio for machine learning teams, with 320 trained annotators in Da Nang and a second QA pass on every batch."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Contact", "href": "#get-started"},
+          {"label": "About", "href": "#top"}
+        ],
+        "cta": {"label": "Request a pilot", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-wavefield",
+      "data": {
+        "eyebrow": "Data annotation",
+        "title": "Training data labelled *item by item*",
+        "lead": "Gridline Labs labels images, text and audio for machine learning teams. 320 trained annotators in Da Nang work in your guidelines, and a second reviewer checks every batch.",
+        "primary_cta": {"label": "Request a pilot", "href": "#get-started"},
+        "secondary_cta": {"label": "What we label", "href": "#services"},
+        "proof": ["Second-pass QA on every batch", "ISO 27001 certified"],
+        "stats": [
+          {"value": "320", "label": "Trained annotators"},
+          {"value": "14", "label": "Languages covered"},
+          {"value": "6", "label": "Years in business"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What we label"},
+        "cards": [
+          {
+            "icon": "eye",
+            "title": "Image and video",
+            "text": "Bounding boxes, polygons and frame-by-frame tracking in your labelling tool or ours.",
+            "bullets": ["Work in your guidelines", "Second-pass review", "Daily error counts"]
+          },
+          {"icon": "file-text", "title": "Text", "text": "Classification, entity tagging and intent labels in 14 languages."},
+          {"icon": "mic", "title": "Audio", "text": "Transcription and speaker labels checked against the recording."},
+          {"icon": "sliders", "title": "Model evaluation", "text": "Side-by-side ratings of model answers against your rubric."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Send us *500 items* and your guidelines",
+        "text": "We label them in a paid pilot and send the error report with the batch.",
+        "primary_cta": {"label": "Request a pilot", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Gridline Labs labels images, text and audio for machine learning teams from Da Nang.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Image and video", "href": "#services"},
+            {"label": "Text", "href": "#services"},
+            {"label": "Audio", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "variant": "about-mosaic",
   "group": "about",
+  "forms": ["feature-split"],
   "summary": "Company introduction: heading and one or two paragraphs (with **bold** key terms) on the left, a mosaic of 3, 4, 6 or 9 team photos on the right that pop in one by one.",
   "tone": "auto",
   "anchor": "about",

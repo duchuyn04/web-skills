@@ -1,0 +1,111 @@
+{
+  "id": "innovature-bpo",
+  "source": {
+    "name": "Innovature BPO",
+    "url": "https://innovatureinc.com/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "it-bpo-partner"
+  ],
+  "summary": "Light pale-blue page with a split hero, a stat split, logo and award rows, a role slider, a pricing split, three step cards, a talent split, case cards and a contact form.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "heading, text and two buttons on the left, badge graphic on the right, a row of small trust items below"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "media": "right",
+      "note": "heading and text on the left, four icon stat tiles in a 2x2 grid on the right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 6,
+      "count": 12,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over a row of client logos with a caption"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 5,
+      "count": 10,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and two rows of five certificate and award badges"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "industries",
+      "tone": "light",
+      "cols": 7,
+      "count": 7,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and a row of tall industry cards each listing roles"
+    },
+    {
+      "form": "feature-split",
+      "role": "pricing",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "heading, text and buttons on the left, large calculator screenshot on the right"
+    },
+    {
+      "form": "cards-image",
+      "role": "process",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "centered heading over three numbered photo cards with text"
+    },
+    {
+      "form": "feature-split",
+      "role": "team",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "heading, text, bullets and button on the left, photo collage on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over three quote cards with a button below"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "none",
+      "note": "heading and text on the left, a consultation form card on the right"
+    }
+  ]
+}

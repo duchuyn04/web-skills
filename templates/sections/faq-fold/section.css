@@ -1,0 +1,68 @@
+/* faq-fold: paper-fold-open-3d. While an answer opens (about 0.7s) the real sheet is hidden and 2-3 strips, each a
+   clipped copy of one part of it, swing from rotateX(-90deg) to 0 about their top edges, each nested in the one
+   above so the folds chain. Then the strips are removed and the real text shows. The strip wrappers stay
+   preserve-3d with no opacity, filter or overflow; only the paper inside each strip clips (overflow: clip). */
+.bl-fxfold { --folds: 3; }
+.bl-fxfold__inner { max-width: 920px; }
+.bl-fxfold__list { border-top: 1px solid var(--border-strong); }
+.bl-fxfold__item { border-bottom: 1px solid var(--border); }
+.bl-fxfold__h { font: inherit; }
+.bl-fxfold__btn {
+  width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; text-align: left;
+  padding: 1.3rem 0; font-family: var(--font-heading); font-size: clamp(1rem, .4vw + .92rem, 1.14rem); font-weight: 600; line-height: 1.45;
+  color: var(--text-strong); border-radius: var(--radius-sm);
+}
+.bl-fxfold__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.bl-fxfold__btn:hover .bl-fxfold__q { color: var(--accent-ink); }
+.bl-fxfold__icon {
+  width: 36px; height: 36px; display: grid; place-items: center; border-radius: var(--radius-sm); border: 1px solid var(--border-strong);
+  color: var(--text-strong); transition: transform .5s var(--ease-out), background-color var(--dur-fast), border-color var(--dur-fast), color var(--dur-fast);
+}
+.bl-fxfold__icon .bl-icon { width: 18px; height: 18px; }
+.bl-fxfold__btn[aria-expanded="true"] .bl-fxfold__icon { transform: perspective(200px) rotateX(180deg); background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
+
+/* height: grid rows 0fr to 1fr, as in faq-accordion */
+.bl-fxfold__panel { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .5s var(--ease-out); }
+.js .bl-fxfold__panel { grid-template-rows: 0fr; }
+.js .bl-fxfold__item.is-open .bl-fxfold__panel { grid-template-rows: 1fr; }
+.bl-fxfold__clip { position: relative; min-height: 0; overflow: hidden; }
+.js .bl-fxfold__item:not(.is-open) .bl-fxfold__clip { visibility: hidden; transition: visibility 0s linear .5s; }
+.bl-fxfold__sheet {
+  position: relative; max-width: 62ch; margin: 0 0 1.6rem; padding: 1.35rem 1.6rem 1.45rem; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border); color: var(--text); line-height: 1.7;
+}
+/* faint fold marks where the sheet was creased, only at the two edges so no line runs through the text */
+.bl-fxfold__sheet::before {
+  --crease: repeating-linear-gradient(180deg, transparent 0 calc(100% / var(--folds) - 1px), color-mix(in srgb, var(--c-primary) 14%, transparent) calc(100% / var(--folds) - 1px) calc(100% / var(--folds)));
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: var(--crease) left top / 12px 100% no-repeat, var(--crease) right top / 12px 100% no-repeat;
+}
+.bl-fxfold__item.is-folding .bl-fxfold__sheet { visibility: hidden; }
+
+/* the fold: stage over the sheet, strips nested one in another */
+.bl-fxfold__fold { position: absolute; perspective: 900px; perspective-origin: 50% 0; pointer-events: none; }
+.bl-fxfold__strip { position: absolute; left: 0; right: 0; transform-style: preserve-3d; transform-origin: 50% 0; transform: rotateX(-90deg); }
+.bl-fxfold__paper {
+  position: relative; height: 100%; overflow: clip; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: 2px;
+}
+.bl-fxfold__strip.is-first > .bl-fxfold__paper { border-radius: var(--radius) var(--radius) 2px 2px; }
+.bl-fxfold__strip.is-last > .bl-fxfold__paper { border-radius: 2px 2px var(--radius) var(--radius); }
+.bl-fxfold__item.is-folding .bl-fxfold__paper .bl-fxfold__sheet { position: absolute; left: 0; width: 100%; margin: 0; visibility: visible; }
+.bl-fxfold__crease {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c-primary) 45%, transparent), transparent 70%);
+}
+
+/* closing bar */
+.bl-fxfold__aside {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: 2.5rem;
+  padding: 1.35rem 1.5rem; border-radius: var(--radius-lg); background: var(--surface-2); border: 1px solid var(--border);
+}
+.bl-fxfold__aside-copy { flex: 1 1 20rem; }
+.bl-fxfold__aside strong { display: block; font-family: var(--font-heading); font-size: 1.08rem; color: var(--text-strong); }
+.bl-fxfold__aside p { font-size: var(--fs-sm); margin-top: .2rem; }
+@media (max-width: 560px) {
+  .bl-fxfold__btn { grid-template-columns: minmax(0, 1fr) auto; gap: .7rem; }
+  .bl-fxfold__sheet { margin-left: 0; padding: 1.1rem 1.15rem 1.2rem; }
+}

@@ -1,0 +1,24 @@
+{
+  "variant": "hero-isometric",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split"],
+  "summary": "Light hero with an isometric operations floor on the right: blocks rise one after another, brand-coloured roofs mark the busy desks, small packets travel the aisles between them, and the block nearest the pointer lifts. Layout of tall blocks, coloured roofs and packet routes is seeded from the brand name. Fits back-office, finance and operations companies.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero", "ribbons", "scene3d"],
+  "animations": ["isometric-floor-3d", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "stats": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}},
+    "pause_label": {"type": "text", "min": 3, "max": 30, "default": "Pause animations"},
+    "play_label": {"type": "text", "min": 3, "max": 30, "default": "Play animations"}
+  }
+}

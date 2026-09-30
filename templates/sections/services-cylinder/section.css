@@ -1,0 +1,94 @@
+/* services-cylinder: cylinder-turn-3d. Cards stand on a drum (rotateY(i * 360 / n) translateZ(r)); the rig turns
+   the chosen card to the front in 1s. The stage is the only element that crops or fades; the rig stays preserve-3d. */
+.bl-fxcyl { --cw: 360px; }
+.bl-fxcyl .bl-head { margin-bottom: clamp(2rem, 3.5vw, 3rem); }
+
+/* numbered scale of service names (tabs) */
+.bl-fxcyl__scale {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); max-width: 1080px; margin-inline: auto;
+  border-top: 1px solid var(--border-strong);
+}
+.bl-fxcyl__tab {
+  position: relative; display: grid; justify-items: center; align-content: start; gap: .2rem; min-width: 0;
+  padding: 1.15rem .5rem .6rem; text-align: center; color: var(--text-muted); border-radius: var(--radius-sm);
+  transition: color var(--dur) var(--ease-std);
+}
+.bl-fxcyl__tick {
+  position: absolute; left: 50%; top: -1px; width: 1px; height: 10px; background: var(--border-strong);
+  transform-origin: 50% 0; transition: transform .5s var(--ease-out), background-color var(--dur) var(--ease-std);
+}
+.bl-fxcyl__tab-name { font-size: var(--fs-sm); font-weight: 600; line-height: 1.3; color: var(--text); text-wrap: balance; }
+.bl-fxcyl__tab:hover .bl-fxcyl__tab-name { color: var(--text-strong); }
+.bl-fxcyl__tab:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.bl-fxcyl__tab[aria-selected="true"] .bl-fxcyl__tick { width: 3px; margin-left: -1px; background: var(--c-accent); transform: scaleY(1.8); }
+.bl-fxcyl__tab[aria-selected="true"] .bl-fxcyl__tab-name { color: var(--text-strong); }
+
+/* drum */
+.bl-fxcyl__stage {
+  --fx-persp: 1900px;
+  perspective-origin: 50% 35%;
+  overflow: clip; padding: 2.75rem 0 3.25rem; margin-top: .5rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+.bl-fxcyl__floor {
+  position: absolute; left: 50%; bottom: 1.1rem; width: min(86%, 900px); height: 64px; transform: translateX(-50%);
+  border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c-primary) 16%, transparent), transparent);
+}
+.bl-fxcyl__floor::after {
+  content: ""; position: absolute; inset: 14px 6%; border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--c-primary) 14%, transparent);
+}
+.bl-fxcyl__rig {
+  display: grid; width: min(var(--cw), 100%); margin-inline: auto;
+  transition: transform 1s cubic-bezier(.16, 1, .3, 1);
+}
+.bl-fxcyl.is-still .bl-fxcyl__rig, .bl-fxcyl.is-still .bl-fxcyl__card::after { transition: none; }
+.bl-fxcyl__card {
+  grid-area: 1 / 1; position: relative; display: flex; flex-direction: column; gap: .85rem; min-height: 400px;
+  padding: 1.6rem 1.6rem 1.7rem; border-radius: var(--radius-lg);
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: 0 30px 50px -34px rgba(15, 23, 42, .35);
+}
+/* depth shade: cards turned away sink into the section colour. It fades the face, never the rig. */
+.bl-fxcyl__card::after {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none;
+  background: var(--bg); opacity: var(--dim, 0); transition: opacity 1s cubic-bezier(.16, 1, .3, 1);
+}
+.bl-fxcyl__card.is-away { visibility: hidden; }
+.bl-fxcyl__card.is-front { border-color: color-mix(in srgb, var(--c-accent) 38%, var(--border)); }
+.bl-fxcyl__card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: .35rem; }
+.bl-fxcyl__text { font-size: var(--fs-sm); line-height: 1.6; }
+.bl-fxcyl__checks { gap: .5rem; padding-top: .9rem; border-top: 1px solid var(--border); font-size: var(--fs-sm); color: var(--text-strong); }
+.bl-fxcyl__link { margin-top: auto; padding-top: .4rem; font-size: var(--fs-sm); }
+
+/* previous / next and position */
+.bl-fxcyl__controls { display: flex; align-items: center; justify-content: center; gap: 1.1rem; }
+.bl-fxcyl__btn {
+  width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%;
+  border: 1px solid var(--border-input); color: var(--text-strong); background: var(--surface);
+  transition: background-color var(--dur-fast) var(--ease-std), border-color var(--dur-fast) var(--ease-std), color var(--dur-fast) var(--ease-std);
+}
+.bl-fxcyl__btn:hover { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
+.bl-fxcyl__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; border-radius: 50%; }
+.bl-fxcyl__btn .bl-icon { width: 20px; height: 20px; }
+.bl-fxcyl__count { display: flex; align-items: baseline; gap: .35rem; min-width: 5.5rem; justify-content: center; font-size: var(--fs-sm); color: var(--text-muted); }
+.bl-fxcyl__count b { font-size: 1.05rem; color: var(--text-strong); }
+
+@media (max-width: 1024px) {
+  .bl-fxcyl { --cw: 320px; }
+  .bl-fxcyl__tab-name { font-size: var(--fs-xs); }
+}
+
+/* phones: a plain list of cards */
+.bl-fxcyl.is-list .bl-fxcyl__scale, .bl-fxcyl.is-list .bl-fxcyl__controls, .bl-fxcyl.is-list .bl-fxcyl__floor { display: none; }
+.bl-fxcyl.is-list .bl-fxcyl__stage { overflow: visible; padding: 0; -webkit-mask-image: none; mask-image: none; }
+.bl-fxcyl.is-list .bl-fxcyl__rig { width: 100%; gap: 1rem; transform: none; }
+.bl-fxcyl.is-list .bl-fxcyl__card { grid-area: auto; min-height: 0; transform: none; }
+.bl-fxcyl.is-list .bl-fxcyl__card::after { display: none; }
+/* without JS: a grid of flat cards */
+html:not(.js) .bl-fxcyl__rig { width: 100%; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+html:not(.js) .bl-fxcyl__card { grid-area: auto; }
+html:not(.js) .bl-fxcyl__scale, html:not(.js) .bl-fxcyl__controls, html:not(.js) .bl-fxcyl__floor { display: none; }
+html:not(.js) .bl-fxcyl__stage { -webkit-mask-image: none; mask-image: none; }

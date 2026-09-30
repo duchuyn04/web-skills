@@ -1,0 +1,37 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-play" data-sequence data-play data-fx="3d" data-seed="{{site.brand}}" data-side="{{site.seed.sign}}" style="--pl-a: {{site.seed.a}}; --pl-b: {{site.seed.b}}; --pl-c: {{site.seed.c}}; --pl-d: {{site.seed.d}};">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-play__grid">
+      <div class="bl-play__stage fx3d-stage" aria-hidden="true">
+        <div class="bl-play__stack fx3d-rig" data-play-stack>
+          {{#steps}}
+          <div class="bl-play__plate" style="--i: {{@index}};" data-plate>
+            <span class="bl-play__side bl-play__side--s"></span>
+            <span class="bl-play__side bl-play__side--e"></span>
+            <span class="bl-play__side bl-play__side--n"></span>
+            <span class="bl-play__side bl-play__side--w"></span>
+            <span class="bl-play__top">
+              <span class="bl-play__mark"><span class="bl-play__num bl-mono">{{@num}}</span>{{icon:$icon}}</span>
+              <span class="bl-play__lit"><span class="bl-play__mark"><span class="bl-play__num bl-mono">{{@num}}</span>{{icon:$icon}}</span></span>
+            </span>
+          </div>
+          {{/steps}}
+          <span class="bl-play__shadow"></span>
+        </div>
+      </div>
+      <div class="bl-play__copy">
+        <ol class="bl-play__steps" data-play-steps>
+          {{#steps}}
+          <li class="bl-play__step" data-step>
+            <span class="bl-play__lead" aria-hidden="true"></span>
+            <p class="bl-play__label"><span class="bl-play__icon" aria-hidden="true">{{icon:$icon}}</span><span class="bl-mono">{{label}}</span></p>
+            <h3 class="bl-h3 bl-play__title">{{title}}</h3>
+            <p class="bl-play__text">{{text}}</p>
+          </li>
+          {{/steps}}
+        </ol>
+        {{#cta}}<a class="bl-btn bl-btn--primary bl-play__cta" href="{{href}}">{{label}}</a>{{/cta}}
+      </div>
+    </div>
+  </div>
+</section>

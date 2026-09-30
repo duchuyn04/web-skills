@@ -2,7 +2,7 @@
   <div class="bl-container bl-industries-rows__grid">
     <div class="bl-industries-rows__side">
       {{> head}}
-      <a class="bl-btn bl-btn--primary" href="{{cta.href}}" data-reveal>{{cta.label}}{{arrow}}</a>
+      <a class="bl-btn bl-btn--primary" href="{{cta.href}}" data-reveal>{{cta.label}}</a>
     </div>
     <div class="bl-industries-rows__wrap">
       <ul class="bl-industries-rows__list" data-reveal-group>
@@ -10,7 +10,6 @@
         <li class="bl-industries-rows__item" data-reveal>
           <a class="bl-industries-rows__row" href="{{#href}}{{href}}{{/href}}{{^href}}{{cta.href}}{{/href}}" data-irow>
             <span class="bl-industries-rows__fill" aria-hidden="true"></span>
-            <span class="bl-industries-rows__num bl-mono" aria-hidden="true">{{@num}}</span>
             <span class="bl-industries-rows__icon" aria-hidden="true">{{icon:$icon}}</span>
             <span class="bl-industries-rows__body">
               <span class="bl-industries-rows__title">{{title}}</span>

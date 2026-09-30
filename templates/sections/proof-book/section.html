@@ -1,0 +1,38 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-pbook" data-sequence data-pbook data-fx="3d" data-seed="{{site.brand}}" style="--pb-warm: {{site.seed.a}}; --pb-round: {{site.seed.b}}; --pb-spine: {{site.seed.c}}; --pb-speed: {{site.seed.d}};">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-pbook__wrap" role="region" aria-roledescription="carousel" aria-label="{{carousel_label}}" data-reveal data-pbook-wrap>
+      <div class="bl-pbook__controls">
+        <button class="bl-pbook__btn" type="button" data-pbook-prev>{{icon:chevron-left}}<span>{{prev_label}}</span></button>
+        <p class="bl-pbook__count bl-mono" aria-hidden="true"><span data-pbook-now>01</span><span class="bl-pbook__count-sep"></span><span data-pbook-total></span></p>
+        <button class="bl-pbook__btn bl-pbook__btn--next" type="button" data-pbook-next><span>{{next_label}}</span>{{icon:chevron-right}}</button>
+      </div>
+      <p class="bl-sr-only" aria-live="polite" data-pbook-live data-case-label="{{case_label}}" data-of-label="{{of_label}}"></p>
+      <div class="bl-pbook__book fx3d-stage" data-pbook-stage>
+        <div class="bl-pbook__spread" data-pbook-spread>
+          {{#cases}}
+          <article class="bl-pbook__case" role="group" aria-roledescription="slide" aria-label="{{client}}" data-case>
+            <div class="bl-pbook__page bl-pbook__page--l{{#@first}} is-on{{/@first}}" data-side="l">
+              <p class="bl-pbook__run bl-mono" aria-hidden="true">{{case_label}} {{@num}}</p>
+              <p class="bl-pbook__industry">{{industry}}</p>
+              <h3 class="bl-pbook__client">{{client}}</h3>
+              <div class="bl-pbook__photo"><img src="{{photo.src}}" alt="{{photo.alt}}" width="440" height="220" loading="lazy" draggable="false"></div>
+              <p class="bl-pbook__label">{{challenge_label}}</p>
+              <p class="bl-pbook__text">{{challenge}}</p>
+            </div>
+            <div class="bl-pbook__page bl-pbook__page--r{{#@first}} is-on{{/@first}}" data-side="r">
+              <p class="bl-pbook__run bl-pbook__run--r bl-mono" aria-hidden="true">{{client}}</p>
+              <p class="bl-pbook__label">{{result_label}}</p>
+              <p class="bl-pbook__title">{{title}}</p>
+              <dl class="bl-pbook__results">{{#results}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/results}}</dl>
+              {{#link}}<a class="bl-link bl-pbook__link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+            </div>
+          </article>
+          {{/cases}}
+        </div>
+        <span class="bl-pbook__cast" aria-hidden="true" data-pbook-cast></span>
+        <span class="bl-pbook__corner" aria-hidden="true" data-pbook-corner></span>
+      </div>
+    </div>
+  </div>
+</section>

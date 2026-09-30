@@ -1,6 +1,7 @@
 {
   "variant": "metrics-panel",
   "group": "metrics",
+  "forms": ["metrics"],
   "summary": "Rounded dark panel inside the page margins: short trust statement on the left, four numbers in a 2x2 grid with cross dividers on the right. Numbers count up once when scrolled into view.",
   "tone": "auto",
   "anchor": "why-us",

@@ -1,6 +1,7 @@
 {
   "variant": "floating-chat",
   "group": "floating",
+  "forms": ["floating"],
   "summary": "Round contact button fixed bottom-right with a pulsing online dot and a label bubble. Appears after the hero scrolls away.",
   "tone": "none",
   "anchor": "quick-contact",

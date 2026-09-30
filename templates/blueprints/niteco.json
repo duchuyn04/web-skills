@@ -1,0 +1,100 @@
+{
+  "id": "niteco",
+  "source": {
+    "name": "Niteco",
+    "url": "https://www.niteco.com/",
+    "category": "IT Outsourcing & Software",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "An all-dark page: split hero with line art, service columns with link lists, a figures row, a mosaic of case tiles, one testimonial, news rows, a fundraising band, an office grid and a yellow closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "heading, short copy and a button at left, gold line art at right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "centered heading in two lines, three columns each with an icon, text and a list of arrow links"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "centered heading, four large gold figures with captions"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "dark",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "heading and intro at left, mosaic of colored case tiles with mock screens, one button below"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "dark",
+      "cols": null,
+      "count": 1,
+      "media": "none",
+      "optional": true,
+      "note": "big quote mark, quote and name with slider arrows and dots"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "dark",
+      "cols": 2,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "heading and intro, four text-only article rows in two columns"
+    },
+    {
+      "form": "image-band",
+      "role": "about",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "heading, one statement and a button centered over a dark band"
+    },
+    {
+      "form": "cards-text",
+      "role": "locations",
+      "tone": "dark",
+      "cols": 4,
+      "count": 8,
+      "media": "none",
+      "note": "intro line, eight office cards in two rows of four"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "yellow band, heading left and a button"
+    }
+  ]
+}

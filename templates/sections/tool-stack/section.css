@@ -5,7 +5,6 @@
 .bl-tools__grid > :nth-child(6n+4), .bl-tools__grid > :nth-child(6n+5), .bl-tools__grid > :nth-child(6n+6) { translate: 1.5rem 0; }
 .js .bl-tools__grid > [data-reveal="pop"]:nth-child(6n+4), .js .bl-tools__grid > [data-reveal="pop"]:nth-child(6n+5), .js .bl-tools__grid > [data-reveal="pop"]:nth-child(6n+6) { translate: 1.5rem 0; }
 .bl-tool { display: flex; align-items: center; gap: .7rem; min-width: 0; padding: .7rem .85rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); box-shadow: 0 1px 2px rgba(0, 0, 0, .04); transition: border-color var(--dur-fast), box-shadow var(--dur) var(--ease-out); }
-.bl-tool:hover { border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
 .bl-tool__mark { width: 36px; height: 36px; flex-shrink: 0; display: grid; place-items: center; border-radius: 9px; background: var(--c-accent-soft); color: var(--accent-ink); font-family: var(--font-heading); font-weight: 800; font-size: 1rem; }
 .bl-tool:nth-child(3n+2) .bl-tool__mark { background: color-mix(in srgb, var(--c-accent-2) 22%, var(--surface)); color: var(--text-strong); }
 .bl-tool:nth-child(3n+3) .bl-tool__mark { background: color-mix(in srgb, var(--c-primary) 12%, var(--surface)); color: var(--text-strong); }

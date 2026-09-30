@@ -1,0 +1,13 @@
+{
+  "name": "bpo-landing-builder-vendor",
+  "private": true,
+  "description": "Builds the vendored GSAP and Three.js files. Page builds never need Node.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "gsap": "3.15.0",
+    "three": "0.186.1"
+  }
+}

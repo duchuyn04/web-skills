@@ -1,0 +1,101 @@
+{
+  "id": "gmo-z-com-runsystem",
+  "source": {
+    "name": "GMO-Z.com RUNSYSTEM",
+    "url": "https://runsystem.net/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Blue hero over a handshake photo, an about block with figures, a grid of service cards, a product slider, a dark map section with reasons, testimonials, news and a client logo row.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "heading and short copy at left over a full-width photo, one button"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "left",
+      "note": "photo left, heading, copy and button right, four figures in a row below"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 4,
+      "count": 12,
+      "media": "none",
+      "note": "grid of small white cards each with an icon and a label, several rows"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "cols": 3,
+      "count": 8,
+      "media": "none",
+      "optional": true,
+      "note": "product cards with a logo, title, short text and a round button, in a slider"
+    },
+    {
+      "form": "locations-map",
+      "role": "locations",
+      "tone": "dark",
+      "cols": null,
+      "count": 3,
+      "media": "none",
+      "note": "heading, large map in the middle with text callouts on both sides"
+    },
+    {
+      "form": "cards-text",
+      "role": "compare",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "heading left, four columns each with a title and short paragraph"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": null,
+      "count": 1,
+      "media": "left",
+      "optional": true,
+      "note": "heading, photo, star rating and quote with slider arrows"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "heading with link at right, article cards with a photo, title and date"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 6,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "heading left, one row of client logos"
+    }
+  ]
+}

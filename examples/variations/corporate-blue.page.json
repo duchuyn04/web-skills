@@ -231,7 +231,6 @@
    "type": "services-tabs",
    "data": {
     "head": {
-     "eyebrow": "Services",
      "title": "Customer care and back-office services",
      "lead": "Most clients start with one channel and add programs in the second quarter. Each program has its own playbook, QA form and reporting schedule."
     },
@@ -251,7 +250,7 @@
        "alt": "Customer care team lead smiling in the office"
       },
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -307,7 +306,6 @@
    "type": "feature-rows",
    "data": {
     "head": {
-     "eyebrow": "Why Meridian",
      "title": "Why clients choose Meridian",
      "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
     },
@@ -343,7 +341,7 @@
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#faq"
       }
      },
@@ -366,7 +364,6 @@
   {
    "type": "banner-image",
    "data": {
-    "eyebrow": "Da Nang delivery hub",
     "title": "Our *1,400-seat* delivery center in Da Nang",
     "text": "Clean-desk zones, badge-controlled pods and on-site quality coaches for every 12 agents.",
     "cta": {
@@ -415,7 +412,6 @@
    "type": "image-cards",
    "data": {
     "head": {
-     "eyebrow": "Industries",
      "title": "Industries we serve",
      "lead": "Each industry team has its own training track, QA form and compliance lead."
     },

@@ -1,6 +1,7 @@
 {
   "variant": "header-simple",
   "group": "header",
+  "forms": ["header"],
   "summary": "Fixed header with brand, 3-6 anchor links and one CTA. Shrinks and blurs on scroll. Default for single-offer pages.",
   "tone": "header",
   "anchor": "site-header",

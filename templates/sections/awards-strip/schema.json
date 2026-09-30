@@ -1,6 +1,7 @@
 {
   "variant": "awards-strip",
   "group": "awards",
+  "forms": ["icon-strip"],
   "summary": "A centered row of shield-shaped award badges (issuer, award, year) drawn in the brand colours, with an optional review score such as '4.9 / 5 on Clutch'. Set dark for a boxed dark card. List only awards, rankings and review scores the client really holds; no third-party logos are used.",
   "tone": "auto",
   "anchor": "awards",

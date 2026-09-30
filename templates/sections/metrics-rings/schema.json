@@ -1,6 +1,7 @@
 {
   "variant": "metrics-rings",
-  "group": "metrics",
+  "group": "metrics", "signature": true,
+  "forms": ["metrics"],
   "summary": "Service levels as thin rings: each ring's arc draws to its percentage while the number counts up in the middle, label and note underneath. For pages that sell on SLAs (answer rate, QA accuracy, retention) rather than headcount. Values are percentages 0-100; \"[KPI]\" leaves the ring empty.",
   "tone": "auto",
   "anchor": "results",

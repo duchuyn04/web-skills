@@ -1,8 +1,5 @@
 /* cta-multistep: multi-step-form-slide (x 30px, 350ms), progress 33 / 66 / 100 */
 .bl-cta { overflow: hidden; }
-.bl-cta__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-.bl-cta__bg .bl-glow--a { left: -200px; top: -220px; opacity: .35; }
-.bl-cta__bg .bl-glow--b { right: -160px; bottom: -260px; opacity: .3; }
 .bl-cta__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
 .bl-cta__copy .bl-h2 { margin-bottom: 1.2rem; }
 .bl-cta__copy .bl-lead { margin-bottom: 2rem; }

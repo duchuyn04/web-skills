@@ -1,0 +1,28 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-helix" data-sequence data-helix data-fx="3d" data-seed="{{site.brand}}" style="--hx-a: {{site.seed.a}}; --hx-b: {{site.seed.b}}; --hx-c: {{site.seed.c}}; --hx-hand: {{site.seed.sign}};">
+  <div class="bl-helix__track" data-helix-track>
+    <div class="bl-helix__pin">
+      <div class="bl-container bl-helix__grid">
+        <div class="bl-helix__copy">
+          {{> head}}
+          <ol class="bl-helix__rail" aria-hidden="true">{{#milestones}}<li data-rail><span class="bl-mono">{{year}}</span></li>{{/milestones}}</ol>
+        </div>
+        <div class="bl-helix__stage fx3d-stage">
+          <div class="bl-helix__rig fx3d-rig" data-helix-rig>
+            <span class="bl-helix__spine" aria-hidden="true"></span>
+            <span class="bl-helix__spine bl-helix__spine--b" aria-hidden="true"></span>
+            <ol class="bl-helix__list">
+              {{#milestones}}
+              <li class="bl-helix__card" style="--i: {{@index}};" data-card>
+                <p class="bl-helix__year">{{year}}</p>
+                <h3 class="bl-helix__title">{{title}}</h3>
+                <p class="bl-helix__text">{{text}}</p>
+              </li>
+              {{/milestones}}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bl-helix__marks" aria-hidden="true">{{#milestones}}<span data-mark></span>{{/milestones}}</div>
+  </div>
+</section>

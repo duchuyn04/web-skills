@@ -1,0 +1,20 @@
+{
+  "id": "nashtech",
+  "source": {"name": "NashTech", "url": "https://nashtechglobal.com/", "category": "IT Outsourcing Vietnam", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "Dark full-bleed hero with a figure row, a light two-row service grid, a dark centered statement, a report split, case cards with a quote, an industry link list, two dark split rows, a light CTA band, a logo section and an insights grid with a newsletter strip.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "large heading, paragraph and button left over a dark image, three figures or logos in a row at the bottom"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 3, "count": 6, "note": "heading and intro left-aligned, two rows of three icon cards with outline buttons"},
+    {"form": "statement", "role": "intro", "tone": "dark", "media": "full", "note": "eyebrow, centered heading, short text and a button over a dark abstract background"},
+    {"form": "feature-split", "role": "about", "tone": "dark", "media": "left", "optional": true, "note": "report cover image left, eyebrow, heading, text and button right"},
+    {"form": "carousel-cards", "role": "cases", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "heading with link right, three case cards with logos, then a quote block with a side heading"},
+    {"form": "link-list", "role": "industries", "tone": "light", "cols": 2, "count": 6, "note": "heading and text left, right column of rows with arrows"},
+    {"form": "feature-split", "role": "locations", "tone": "dark", "media": "none", "note": "eyebrow, heading, paragraph and outline button, text only"},
+    {"form": "feature-split", "role": "team", "tone": "dark", "media": "right", "note": "text and button left, team photo right"},
+    {"form": "cta-band", "role": "cta", "tone": "light", "media": "none", "note": "centered heading, paragraph and button"},
+    {"form": "logo-strip", "role": "clients", "tone": "muted", "optional": true, "note": "heading left with a partner logo row"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 4, "count": 4, "optional": true, "note": "heading with link right, four article cards, then a dark newsletter strip with an email field"}
+  ]
+}

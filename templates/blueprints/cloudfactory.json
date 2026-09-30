@@ -1,0 +1,18 @@
+{
+  "id": "cloudfactory",
+  "source": {"name": "CloudFactory", "url": "https://www.cloudfactory.com/", "category": "AI Data Annotation & Operations BPO", "collected": "2026-09-26"},
+  "fits": ["ai-data-ops"],
+  "summary": "A light page with a centered hero, a logo row, a large heading beside a visual with four icon points, then centered heading sections with white cards, a client quote slider, an industries split and a closing centered call to action.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-center", "role": "hero", "tone": "light", "media": "none", "note": "large centered headline in two colours, short paragraph and one button on a soft pale ground"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 6, "count": 6, "optional": true, "note": "small caption and a single row of client logos"},
+    {"form": "feature-split", "role": "intro", "tone": "light", "media": "right", "note": "very large heading left and an isometric visual right, followed by four small icon points in a row"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 2, "count": 4, "note": "centered heading and paragraph, a two by two grid of white shadow cards with centered blue titles"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 4, "count": 3, "note": "label, centered heading with one coloured phrase and paragraph, then a row of short white cards"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "media": "left", "optional": true, "note": "centered heading, a card with a small photo left and a quote right, slider dots below"},
+    {"form": "feature-split", "role": "industries", "tone": "light", "media": "right", "note": "label and heading, a pill tag, then paragraph left and a photo right"},
+    {"form": "cards-text", "role": "about", "tone": "light", "cols": 3, "count": 3, "note": "label, centered heading and paragraph, three white cards with blue titles"},
+    {"form": "cta-band", "role": "cta", "tone": "light", "media": "none", "note": "large centered grey headline, one paragraph and a small button"}
+  ]
+}

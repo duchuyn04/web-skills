@@ -1,0 +1,92 @@
+{
+  "id": "carenet-health",
+  "source": {
+    "name": "Carenet Health",
+    "url": "https://carenethealthcare.com/",
+    "category": "Finance, Accounting & Legal BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx",
+    "cx-voice-sales"
+  ],
+  "summary": "Compact white hero with pill tags, a five-figure metrics row, a photo statement band, a video split, three result cards, a red-led article row, a quote panel over a photo, a certification row and a photo closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-left-text",
+      "role": "hero",
+      "tone": "light",
+      "media": "none",
+      "note": "two-tone heading and three outlined pill tags left, two paragraphs right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "note": "one row of five large light figures with two-line captions"
+    },
+    {
+      "form": "image-band",
+      "role": "intro",
+      "tone": "dark",
+      "media": "full",
+      "note": "wide close-up photo band with a short two-tone statement at the right"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "muted",
+      "media": "left",
+      "cols": 2,
+      "count": 1,
+      "note": "heading left with a paragraph right, then a rounded video still left with a play button and heading, text right"
+    },
+    {
+      "form": "cards-text",
+      "role": "cases",
+      "tone": "muted",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "three columns, each with a red tag, large figure, label, rule, title, paragraph and download link"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "optional": true,
+      "note": "first tile solid red with the heading, then four image cards with title and read link"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "right",
+      "cols": 1,
+      "count": 6,
+      "optional": true,
+      "note": "heading left, wide photo right with a rounded red quote card, dots and arrows"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "optional": true,
+      "note": "one row of four grey certification badges"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "muted",
+      "media": "left",
+      "note": "photo of a glass building on the left, heading with red accent word and a red button right"
+    }
+  ]
+}

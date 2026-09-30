@@ -1,0 +1,109 @@
+{
+  "id": "shaip",
+  "source": {
+    "name": "Shaip",
+    "url": "https://www.shaip.com/",
+    "category": "AI Data Annotation & Operations BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops"
+  ],
+  "summary": "Light centered hero, a logo row and a cream run of image cards, a catalog grid and a split feature, then a specialty grid, a dark plum platform block, tabbed stories, compliance badges and a dark closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered headline, one line of text with a tag and a single button"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "optional": true,
+      "note": "one row of grey partner logos"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "muted",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading, three cards each with a large photo, title, text and link"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "muted",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading and intro, four dataset cards with photo, large figure, bullet lines and link"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "muted",
+      "media": "right",
+      "cols": null,
+      "count": 6,
+      "note": "heading and bullet list with a link on the left over a green ground, a purple visual on the right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "muted",
+      "media": "none",
+      "cols": 3,
+      "count": 5,
+      "note": "centered heading, two rows of three cards with icon, title, text and link; one slot holds a picture"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "tools",
+      "tone": "dark",
+      "media": "none",
+      "cols": 1,
+      "count": 3,
+      "note": "centered heading with small tab links, a wide product screenshot in a coral panel with text at the right"
+    },
+    {
+      "form": "tabs",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "centered heading, a three-way tab bar and three case cards with photo, title and button"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "media": "none",
+      "cols": 5,
+      "count": 5,
+      "optional": true,
+      "note": "centered heading and a row of five compliance tiles"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "dark maroon strip with heading, then a dark band with heading, text and one button"
+    }
+  ]
+}

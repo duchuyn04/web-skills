@@ -1,0 +1,10 @@
+/* hero-globe: dotted-globe-arcs-3d. The WebGL globe fills the stage; pin labels are moved over their dots by gl-globe.js. */
+.bl-hglobe__pins { position: absolute; inset: 0; pointer-events: none; }
+.bl-hglobe__pin {
+  position: absolute; left: 0; top: 0; padding: .3rem .6rem; border-radius: 999px; white-space: nowrap;
+  font-size: var(--fs-xs); font-weight: 600; line-height: 1.2; color: var(--text-strong);
+  background: var(--surface); border: 1px solid var(--border); opacity: 0; transition: opacity .3s var(--ease-out);
+}
+.bl-hglobe__pin--hub { border-color: var(--accent-ink); }
+.bl-hglobe__pin.is-on { opacity: 1; }
+@media (max-width: 560px) { .bl-hglobe__pin:not(.bl-hglobe__pin--hub) { display: none; } }

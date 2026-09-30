@@ -1,0 +1,18 @@
+{
+  "id": "beepo",
+  "source": {"name": "Beepo", "url": "https://www.beepo.com.au/", "category": "Philippines Offshore BPO & Staffing", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "Photo hero with three buttons, a dark intro text band, a grid of dark audience tiles, a bright blue message band, a white benefits section with photos and a six icon row, a testimonial band with a client logo grid and a photo closing call to action.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "centered uppercase headline over a photo, three orange pill buttons in a row"},
+    {"form": "text-block", "role": "intro", "tone": "dark", "media": "none", "note": "slate band with two centered paragraphs and a text link"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 3, "count": 7, "note": "grid of dark rectangular tiles, each with a small icon and a short label, rows of three"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "note": "bright blue band with a centered offer line and one orange button"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "right", "note": "orange centered heading, long paragraphs left and a photo collage with a round crop right, a button below"},
+    {"form": "cards-icon", "role": "process", "tone": "muted", "cols": 6, "count": 6, "note": "row of six illustrated benefit columns with blue titles and short text"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "dark", "media": "none", "optional": true, "note": "dark band with a centered heading and a single client quote card"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 4, "count": 8, "optional": true, "note": "two rows of four large client logos on white"},
+    {"form": "image-band", "role": "cta", "tone": "dark", "media": "full", "note": "photo band with an orange closing question and a button on it"}
+  ]
+}

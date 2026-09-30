@@ -141,7 +141,7 @@
        "Coding, math and law specialists"
       ],
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -172,7 +172,6 @@
    "type": "process-sticky",
    "data": {
     "head": {
-     "eyebrow": "Process",
      "title": "How a program starts",
      "lead": "A dedicated project lead and QA analyst own your program from the first pilot batch."
     },
@@ -239,7 +238,6 @@
    "type": "case-slider",
    "data": {
     "head": {
-     "eyebrow": "Clients",
      "title": "Case studies"
     },
     "cases": [
@@ -322,7 +320,6 @@
    "type": "compliance-badges",
    "data": {
     "head": {
-     "eyebrow": "Security",
      "title": "Data security",
      "lead": "Annotators work in locked-down facilities or managed desktops with no download, copy or screenshot rights."
     },
@@ -397,7 +394,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "items": [

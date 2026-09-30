@@ -1,0 +1,21 @@
+{
+  "variant": "locations-relief",
+  "group": "locations", "signature": true,
+  "forms": ["locations-map"],
+  "summary": "The dotted world map cropped to the region around the delivery hubs lies tilted like a tabletop model, with a solid column rising at each hub and an upright label (city, role, headcount). Column height follows headcount on a log scale only when every hub has a headcount from the brief; otherwise all columns are equal. Hovering or focusing a hub card below lifts its column and draws a thin arc to the head office (the hub marked hq). Tilt, turn and column colours are seeded from the brand name. Needs 2-8 real hubs (city keys), a role each, optional headcount and detail.",
+  "tone": "auto",
+  "anchor": "locations",
+  "shared": ["stage3d"],
+  "animations": ["relief-map-tilt-in", "relief-column-rise", "relief-hub-arc", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "hubs": {"type": "list", "min": 2, "max": 8, "item": {"type": "object", "fields": {
+      "city": {"type": "city"},
+      "role": {"type": "text", "min": 3, "max": 34},
+      "headcount": {"type": "text", "min": 1, "max": 20, "required": false},
+      "detail": {"type": "text", "min": 5, "max": 80, "required": false},
+      "hq": {"type": "bool", "required": false}
+    }}},
+    "hq_label": {"type": "text", "min": 3, "max": 20, "default": "Head office"}
+  }
+}

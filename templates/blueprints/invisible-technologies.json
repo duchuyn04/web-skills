@@ -1,0 +1,91 @@
+{
+  "id": "invisible-technologies",
+  "source": {
+    "name": "Invisible Technologies",
+    "url": "https://invisibletech.ai/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops",
+    "enterprise-cx"
+  ],
+  "summary": "Light centered hero with a logo row, then tabbed platform panels, a story split, a testimonial slider, an insights row, a dark FAQ and a dark closing split.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered heading, short text and two buttons, a row of client logos beneath"
+    },
+    {
+      "form": "tabs",
+      "role": "tools",
+      "tone": "muted",
+      "cols": 2,
+      "count": 3,
+      "media": "right",
+      "note": "heading and text on the left, a vertical tab list beside a large product screenshot"
+    },
+    {
+      "form": "feature-split",
+      "role": "cases",
+      "tone": "dark",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "note": "dark case card with big type on the left, a newsletter signup block on the right"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "muted",
+      "cols": 2,
+      "count": 7,
+      "media": "right",
+      "note": "heading and intro on top, a vertical tab list on the left with a text panel and screenshot on the right"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading above three quote cards with logos"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over three dark image cards"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "dark",
+      "cols": 2,
+      "count": 5,
+      "media": "none",
+      "note": "heading on the left, accordion questions on the right"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "note": "dark closing band with a 3D image on the left and heading, text and button on the right"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "adamo-software",
+  "source": {"name": "Adamo Software", "url": "https://adamosoft.com/", "category": "IT Outsourcing Vietnam", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner"],
+  "summary": "A dark blue page throughout: centered hero over a video, a logo row, an accordion capabilities split, a figures band, an industry list over a photo, a tabbed process block, a logo strip, technology and case sliders, an FAQ, a blog split and a contact form.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "full", "note": "centered eyebrow, heading, short text and a button over a dark tech video"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "optional": true, "note": "thin row of client logos under the hero"},
+    {"form": "feature-split", "role": "services", "tone": "dark", "media": "left", "note": "eyebrow and heading, image left, accordion of four capability rows right"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 4, "count": 4, "note": "heading with an intro, mixed tiles of large figures and labels"},
+    {"form": "feature-split", "role": "industries", "tone": "dark", "media": "left", "note": "photo left, heading and a vertical list of five industries with icons right"},
+    {"form": "tabs", "role": "process", "tone": "dark", "count": 6, "note": "heading, a row of phase tabs, description with a button below"},
+    {"form": "logo-strip", "role": "clients", "tone": "dark", "optional": true, "note": "one row of small technology logos"},
+    {"form": "carousel-cards", "role": "services", "tone": "dark", "cols": 3, "count": 6, "note": "heading with slider arrows, dark image cards with title, text and link"},
+    {"form": "carousel-cards", "role": "cases", "tone": "dark", "cols": 2, "count": 4, "optional": true, "note": "heading with arrows and a view-all link, two large product screenshot cards"},
+    {"form": "faq-accordion", "role": "faq", "tone": "dark", "count": 8, "note": "heading, first answer open, remaining questions in single dark rows"},
+    {"form": "media-list", "role": "news", "tone": "dark", "count": 3, "optional": true, "note": "heading with a read-blog link, one large article and smaller article rows"},
+    {"form": "form", "role": "cta", "tone": "dark", "media": "left", "note": "office details and a badge left, contact form with a few fields right"}
+  ]
+}

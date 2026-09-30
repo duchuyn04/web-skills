@@ -1,0 +1,41 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-h3d bl-hdeck bl-tone-{{section.tone}}" data-fx="3d" data-hdeck data-seed="{{site.brand}}" style="--sa: {{site.seed.a}}; --sb: {{site.seed.b}}; --dir: {{site.seed.sign}};">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hero__grid"></span></div>
+  <div class="bl-container">
+    <div class="bl-h3d__grid bl-hdeck__grid">
+      <div class="bl-h3d__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1" data-reveal>{{title}}</h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-hdeck__visual" data-reveal="fade" role="region" aria-roledescription="carousel" aria-labelledby="{{section.id}}-deck">
+        <div class="bl-hdeck__bar">
+          <p class="bl-hdeck__label" id="{{section.id}}-deck">{{deck_label}}</p>
+          <span class="bl-hdeck__count" aria-hidden="true"><b data-deck-pos>01</b><span data-deck-total></span></span>
+          <div class="bl-hdeck__controls">
+            <button class="bl-h3d__toggle bl-hdeck__toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}"><span class="bl-motion-toggle__pause">{{icon:pause}}</span><span class="bl-motion-toggle__play">{{icon:play}}</span><span data-motion-label>{{pause_label}}</span></button>
+            <button class="bl-hdeck__next" type="button" data-deck-next><span>{{next_label}}</span>{{arrow}}</button>
+          </div>
+        </div>
+        <div class="bl-hdeck__stage fx3d-stage">
+          <div class="bl-hdeck__rig fx3d-rig" data-deck>
+            {{#roles}}<div class="bl-hdeck__card" role="group" aria-roledescription="slide" aria-label="{{title}}" data-card>
+              <div class="bl-hdeck__face">
+                <div class="bl-hdeck__top"><span class="bl-hdeck__ico">{{icon:$icon}}</span>{{#meta}}<span class="bl-hdeck__meta">{{meta}}</span>{{/meta}}</div>
+                <p class="bl-hdeck__title">{{title}}</p>
+                <ul class="bl-hdeck__skills">{{#skills}}<li>{{.}}</li>{{/skills}}</ul>
+                <p class="bl-hdeck__foot" aria-hidden="true"><span>{{site.brand_mark}}</span>{{deck_label}}</p>
+              </div>
+            </div>{{/roles}}
+          </div>
+        </div>
+        <p class="bl-sr-only" aria-live="polite" data-deck-live></p>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-h3d__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

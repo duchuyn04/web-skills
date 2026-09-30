@@ -34,7 +34,22 @@
           "hero-qualifier",
           "hero-collage",
           "hero-ribbons",
-          "hero-chat"
+          "hero-chat",
+          "hero-particles",
+          "hero-terrain",
+          "hero-orbits",
+          "hero-isometric",
+          "hero-dashboard",
+          "hero-deck",
+          "hero-prism",
+          "hero-monolith",
+          "hero-shatter",
+          "hero-sundial",
+          "hero-magnetic",
+          "hero-wavefield",
+          "hero-flow",
+          "hero-globe",
+          "hero-liquid"
         ],
         "required": true
       },
@@ -62,7 +77,8 @@
         "slot": "about",
         "variants": [
           "pillars-numbered",
-          "about-mosaic"
+          "about-mosaic",
+          "about-helix"
         ]
       },
       {
@@ -71,7 +87,9 @@
           "services-tabs",
           "services-bento",
           "service-links",
-          "services-stack"
+          "services-stack",
+          "services-cylinder",
+          "services-cube"
         ],
         "required": true
       },
@@ -105,7 +123,9 @@
         "slot": "process",
         "variants": [
           "steps-row",
-          "process-sticky"
+          "process-sticky",
+          "process-layers",
+          "process-pipeline"
         ]
       },
       {
@@ -113,7 +133,8 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
-          "metrics-rings"
+          "metrics-rings",
+          "metrics-bars3d"
         ],
         "required": true
       },
@@ -129,7 +150,8 @@
           "industries-tiles",
           "image-cards",
           "audience-cards",
-          "industries-rows"
+          "industries-rows",
+          "industries-slats"
         ]
       },
       {
@@ -139,7 +161,8 @@
           "testimonials",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ],
         "recommended": true
       },
@@ -149,7 +172,8 @@
           "testimonials",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ]
       },
       {
@@ -168,7 +192,8 @@
         "slot": "locations",
         "variants": [
           "locations-map",
-          "country-cards"
+          "country-cards",
+          "locations-relief"
         ]
       },
       {
@@ -186,7 +211,8 @@
       {
         "slot": "team",
         "variants": [
-          "team-grid"
+          "team-grid",
+          "team-coverflow"
         ]
       },
       {
@@ -198,7 +224,8 @@
       {
         "slot": "faq",
         "variants": [
-          "faq-accordion"
+          "faq-accordion",
+          "faq-fold"
         ]
       },
       {
@@ -206,7 +233,8 @@
         "variants": [
           "cta-multistep",
           "cta-band",
-          "contact-split"
+          "contact-split",
+          "cta-letter"
         ],
         "required": true
       },
@@ -267,7 +295,22 @@
           "hero-qualifier",
           "hero-collage",
           "hero-ribbons",
-          "hero-chat"
+          "hero-chat",
+          "hero-particles",
+          "hero-terrain",
+          "hero-orbits",
+          "hero-isometric",
+          "hero-dashboard",
+          "hero-deck",
+          "hero-prism",
+          "hero-monolith",
+          "hero-shatter",
+          "hero-sundial",
+          "hero-magnetic",
+          "hero-wavefield",
+          "hero-flow",
+          "hero-globe",
+          "hero-liquid"
         ],
         "required": true
       },
@@ -304,7 +347,9 @@
           "services-bento",
           "services-tabs",
           "service-links",
-          "services-stack"
+          "services-stack",
+          "services-cylinder",
+          "services-cube"
         ],
         "required": true
       },
@@ -338,7 +383,9 @@
         "slot": "process",
         "variants": [
           "process-sticky",
-          "steps-row"
+          "steps-row",
+          "process-layers",
+          "process-pipeline"
         ],
         "required": true
       },
@@ -353,7 +400,8 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
-          "metrics-rings"
+          "metrics-rings",
+          "metrics-bars3d"
         ]
       },
       {
@@ -366,7 +414,8 @@
         "slot": "locations",
         "variants": [
           "locations-map",
-          "country-cards"
+          "country-cards",
+          "locations-relief"
         ]
       },
       {
@@ -376,7 +425,8 @@
           "case-slider",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ],
         "recommended": true
       },
@@ -407,7 +457,8 @@
       {
         "slot": "team",
         "variants": [
-          "team-grid"
+          "team-grid",
+          "team-coverflow"
         ]
       },
       {
@@ -419,7 +470,8 @@
       {
         "slot": "faq",
         "variants": [
-          "faq-accordion"
+          "faq-accordion",
+          "faq-fold"
         ],
         "required": true
       },
@@ -428,7 +480,8 @@
         "variants": [
           "cta-multistep",
           "cta-band",
-          "contact-split"
+          "contact-split",
+          "cta-letter"
         ],
         "required": true
       },
@@ -484,7 +537,22 @@
           "hero-gradient",
           "hero-qualifier",
           "hero-collage",
-          "hero-ribbons"
+          "hero-ribbons",
+          "hero-particles",
+          "hero-terrain",
+          "hero-orbits",
+          "hero-isometric",
+          "hero-dashboard",
+          "hero-deck",
+          "hero-prism",
+          "hero-monolith",
+          "hero-shatter",
+          "hero-sundial",
+          "hero-magnetic",
+          "hero-wavefield",
+          "hero-flow",
+          "hero-globe",
+          "hero-liquid"
         ],
         "required": true
       },
@@ -513,7 +581,9 @@
         "variants": [
           "services-bento",
           "service-links",
-          "services-stack"
+          "services-stack",
+          "services-cylinder",
+          "services-cube"
         ],
         "required": true
       },
@@ -547,7 +617,9 @@
         "slot": "process",
         "variants": [
           "process-sticky",
-          "steps-row"
+          "steps-row",
+          "process-layers",
+          "process-pipeline"
         ],
         "required": true
       },
@@ -556,7 +628,8 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
-          "metrics-rings"
+          "metrics-rings",
+          "metrics-bars3d"
         ],
         "required": true
       },
@@ -573,7 +646,8 @@
           "testimonials",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ],
         "recommended": true
       },
@@ -600,7 +674,8 @@
         "slot": "locations",
         "variants": [
           "locations-map",
-          "country-cards"
+          "country-cards",
+          "locations-relief"
         ]
       },
       {
@@ -612,7 +687,8 @@
       {
         "slot": "team",
         "variants": [
-          "team-grid"
+          "team-grid",
+          "team-coverflow"
         ]
       },
       {
@@ -624,7 +700,8 @@
       {
         "slot": "faq",
         "variants": [
-          "faq-accordion"
+          "faq-accordion",
+          "faq-fold"
         ]
       },
       {
@@ -632,7 +709,8 @@
         "variants": [
           "cta-multistep",
           "cta-band",
-          "contact-split"
+          "contact-split",
+          "cta-letter"
         ],
         "required": true
       },
@@ -691,7 +769,22 @@
           "hero-qualifier",
           "hero-collage",
           "hero-ribbons",
-          "hero-chat"
+          "hero-chat",
+          "hero-particles",
+          "hero-terrain",
+          "hero-orbits",
+          "hero-isometric",
+          "hero-dashboard",
+          "hero-deck",
+          "hero-prism",
+          "hero-monolith",
+          "hero-shatter",
+          "hero-sundial",
+          "hero-magnetic",
+          "hero-wavefield",
+          "hero-flow",
+          "hero-globe",
+          "hero-liquid"
         ],
         "required": true
       },
@@ -728,7 +821,9 @@
           "services-bento",
           "services-tabs",
           "service-links",
-          "services-stack"
+          "services-stack",
+          "services-cylinder",
+          "services-cube"
         ],
         "required": true
       },
@@ -769,7 +864,8 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
-          "metrics-rings"
+          "metrics-rings",
+          "metrics-bars3d"
         ],
         "required": true
       },
@@ -777,7 +873,9 @@
         "slot": "process",
         "variants": [
           "process-sticky",
-          "steps-row"
+          "steps-row",
+          "process-layers",
+          "process-pipeline"
         ]
       },
       {
@@ -787,7 +885,8 @@
           "case-slider",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ],
         "recommended": true
       },
@@ -824,7 +923,8 @@
       {
         "slot": "team",
         "variants": [
-          "team-grid"
+          "team-grid",
+          "team-coverflow"
         ]
       },
       {
@@ -836,7 +936,8 @@
       {
         "slot": "faq",
         "variants": [
-          "faq-accordion"
+          "faq-accordion",
+          "faq-fold"
         ],
         "required": true
       },
@@ -845,7 +946,8 @@
         "variants": [
           "cta-multistep",
           "cta-band",
-          "contact-split"
+          "contact-split",
+          "cta-letter"
         ],
         "required": true
       },
@@ -903,7 +1005,22 @@
           "hero-fullbleed",
           "hero-qualifier",
           "hero-collage",
-          "hero-ribbons"
+          "hero-ribbons",
+          "hero-particles",
+          "hero-terrain",
+          "hero-orbits",
+          "hero-isometric",
+          "hero-dashboard",
+          "hero-deck",
+          "hero-prism",
+          "hero-monolith",
+          "hero-shatter",
+          "hero-sundial",
+          "hero-magnetic",
+          "hero-wavefield",
+          "hero-flow",
+          "hero-globe",
+          "hero-liquid"
         ],
         "required": true
       },
@@ -917,7 +1034,8 @@
         "slot": "about",
         "variants": [
           "about-mosaic",
-          "pillars-numbered"
+          "pillars-numbered",
+          "about-helix"
         ]
       },
       {
@@ -925,7 +1043,8 @@
         "variants": [
           "metrics-panel",
           "metrics-counter",
-          "metrics-rings"
+          "metrics-rings",
+          "metrics-bars3d"
         ],
         "recommended": true
       },
@@ -949,7 +1068,9 @@
           "service-links",
           "services-bento",
           "services-tabs",
-          "services-stack"
+          "services-stack",
+          "services-cylinder",
+          "services-cube"
         ],
         "required": true
       },
@@ -983,7 +1104,9 @@
         "slot": "process",
         "variants": [
           "steps-row",
-          "process-sticky"
+          "process-sticky",
+          "process-layers",
+          "process-pipeline"
         ]
       },
       {
@@ -991,7 +1114,8 @@
         "variants": [
           "audience-cards",
           "industries-tiles",
-          "industries-rows"
+          "industries-rows",
+          "industries-slats"
         ]
       },
       {
@@ -1001,7 +1125,8 @@
           "testimonials",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ],
         "recommended": true
       },
@@ -1011,7 +1136,8 @@
           "testimonials",
           "quote-spotlight",
           "testimonials-drift",
-          "case-filter"
+          "case-filter",
+          "proof-book"
         ]
       },
       {
@@ -1030,7 +1156,8 @@
         "slot": "locations",
         "variants": [
           "locations-map",
-          "country-cards"
+          "country-cards",
+          "locations-relief"
         ]
       },
       {
@@ -1042,7 +1169,8 @@
       {
         "slot": "team",
         "variants": [
-          "team-grid"
+          "team-grid",
+          "team-coverflow"
         ]
       },
       {
@@ -1054,7 +1182,8 @@
       {
         "slot": "faq",
         "variants": [
-          "faq-accordion"
+          "faq-accordion",
+          "faq-fold"
         ]
       },
       {
@@ -1062,7 +1191,8 @@
         "variants": [
           "contact-split",
           "cta-multistep",
-          "cta-band"
+          "cta-band",
+          "cta-letter"
         ],
         "required": true
       },

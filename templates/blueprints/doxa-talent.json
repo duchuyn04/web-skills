@@ -1,0 +1,127 @@
+{
+  "id": "doxa-talent",
+  "source": {
+    "name": "Doxa Talent",
+    "url": "https://doxatalent.com/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "cx-voice-sales"
+  ],
+  "summary": "Teal gradient hero, a certification badge row, then a run of dark and muted bands (intro copy, comparison panel, cards, video testimonials, steps), a story with portrait, media block, FAQ and a closing form band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "left-aligned headline, short lines and one button over a gradient photo"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "media": "none",
+      "cols": 7,
+      "count": 7,
+      "optional": true,
+      "note": "one row of certification and rating badges"
+    },
+    {
+      "form": "text-block",
+      "role": "intro",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading with two short paragraphs"
+    },
+    {
+      "form": "cards-text",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "cols": 2,
+      "count": 2,
+      "note": "dark panel split into two text columns under a bold heading"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading centered over three text columns and a small button below"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading and intro, three cards each with an icon, title and text, closing line below"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading, three video thumbnails each with a quote and name below"
+    },
+    {
+      "form": "cards-icon",
+      "role": "process",
+      "tone": "dark",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading left, four numbered step cards in one row"
+    },
+    {
+      "form": "feature-split",
+      "role": "cases",
+      "tone": "light",
+      "media": "left",
+      "cols": null,
+      "count": null,
+      "note": "round portrait on the left, heading, quote and closing line on the right"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "dark",
+      "media": "none",
+      "cols": 2,
+      "count": 3,
+      "optional": true,
+      "note": "large video panel on the left with two small article rows stacked on the right"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "dark",
+      "media": "none",
+      "cols": 2,
+      "count": 6,
+      "note": "centered heading, questions in two columns"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "heading, short text and one wide button in a rounded dark box"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+/* Shared: herogl. Full-bleed WebGL hero (hero-wavefield, hero-flow): the scene fills the hero behind the copy, the
+   copy sits left or centred, stats and the pause button sit at the foot. The scene dims itself under the copy. */
+.bl-hgl { background: var(--bg); }
+.bl-hgl__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bl-hgl__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg) 0%, transparent 18%, transparent 82%, var(--bg) 100%); }
+.bl-hgl__bg canvas { position: absolute; inset: 0; }
+.bl-hgl__inner { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: clamp(2.5rem, 6vw, 5rem); min-height: clamp(560px, 80vh, 860px); }
+.bl-hgl__copy { max-width: 620px; }
+.bl-hgl__foot { display: flex; align-items: flex-end; gap: 1.5rem; }
+.bl-hgl__stats { flex: 1; margin-top: 0; max-width: 860px; background: color-mix(in oklab, var(--bg) 78%, transparent); }
+.bl-hgl .bl-hgl__toggle { position: static; margin-left: auto; flex: none; }
+@media (max-width: 960px) {
+  .bl-hgl__inner { min-height: 0; }
+  .bl-hgl__foot { flex-direction: column; align-items: stretch; }
+  .bl-hgl .bl-hgl__toggle { align-self: flex-end; }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "emapta",
+  "source": {"name": "Emapta", "url": "https://emapta.com/", "category": "Next-Gen Tech BPO & CX Startups", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "A dark page from top to bottom: split hero, logo row, service cards, several talent marketplace and hub card sections, a tabbed industry panel, security badges, a client quote and a video band.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "headline, paragraph, four ticks and a button left; product screenshot collage right"},
+    {"form": "logo-strip", "role": "clients", "tone": "dark", "cols": 6, "count": 6, "optional": true, "note": "single row of six client logos"},
+    {"form": "cards-image", "role": "services", "tone": "dark", "cols": 3, "count": 3, "note": "heading left with a paragraph right, then three photo cards with text and a button"},
+    {"form": "feature-split", "role": "about", "tone": "dark", "media": "right", "note": "heading and paragraph left with a two by two tick grid, a stat callout card right"},
+    {"form": "cards-icon", "role": "compare", "tone": "light", "cols": 5, "count": 5, "note": "centered heading and paragraph, a row of five short benefit tiles"},
+    {"form": "cards-text", "role": "locations", "tone": "dark", "cols": 3, "count": 3, "note": "centered heading, three region cards with bullet lists and a button"},
+    {"form": "tabs", "role": "industries", "tone": "light", "cols": 3, "count": 11, "note": "dark banner with centered heading, three tabs, then a three column link list below"},
+    {"form": "icon-strip", "role": "awards", "tone": "dark", "cols": 6, "count": 6, "optional": true, "note": "heading, button and a row of certification badges"},
+    {"form": "feature-split", "role": "careers", "tone": "dark", "media": "left", "optional": true, "note": "text and button left, an award badge below, image right"},
+    {"form": "statement", "role": "intro", "tone": "dark", "media": "none", "note": "label, centered heading and one paragraph on an image ground"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "media": "none", "optional": true, "note": "heading left with arrows right, one quote card with author below"},
+    {"form": "video-block", "role": "cta", "tone": "dark", "media": "full", "optional": true, "note": "full-width video band before the footer"}
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "helpware",
+  "source": {
+    "name": "Helpware",
+    "url": "https://helpware.com/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx",
+    "cx-voice-sales"
+  ],
+  "summary": "Near-black page throughout: a centered serif hero, then three full-height division panels with a cut-out visual left and a text card right, and a closing block with a giant wordmark.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "dark",
+      "media": "none",
+      "note": "large serif heading centered on a plain dark ground with one short line below"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "dark",
+      "media": "left",
+      "cols": 2,
+      "count": 1,
+      "note": "full-height panel, huge faint word behind, glowing portrait left, dark text card right with logo, heading, one button and a wrap of pill tags"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "dark",
+      "media": "left",
+      "cols": 2,
+      "count": 1,
+      "note": "same panel repeated with a different tint and visual, tag pills at the bottom of the text card"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "dark",
+      "media": "left",
+      "cols": 2,
+      "count": 1,
+      "note": "third repeat of the panel with a device visual left and text card right"
+    },
+    {
+      "form": "text-block",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "optional": true,
+      "note": "short company paragraph left, small link columns right, a giant outlined wordmark across the full width below"
+    }
+  ]
+}

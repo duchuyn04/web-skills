@@ -1,0 +1,34 @@
+{
+  "variant": "services-cube",
+  "group": "services", "signature": true,
+  "forms": ["cards-icon"],
+  "reshape": true,
+  "summary": "Grid of 3-6 service blocks built as square columns (CSS 3D). Each block rests as a flat card (icon, title, text); a row of side names under it (Overview, Scope, SLA, Tools) or a click on the card turns the column a quarter turn to the next side: scope as a check list, service levels as large figures on a dark side, tools as chips. Sides appear only for the fields a card has. With a mouse the column leans a few degrees on hover to show its next side; when the grid is first seen the blocks turn once in a wave and back. Turn axis, wave direction and wave side are seeded from the brand name. Figures must come from the brief.",
+  "tone": "auto",
+  "anchor": "services",
+  "shared": ["stage3d"],
+  "animations": ["block-quarter-turn-3d", "block-entry-wave", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "overview_label": {"type": "text", "min": 3, "max": 14, "default": "Overview"},
+    "scope_label": {"type": "text", "min": 3, "max": 14, "default": "Scope"},
+    "sla_label": {"type": "text", "min": 3, "max": 14, "default": "SLA"},
+    "tools_label": {"type": "text", "min": 3, "max": 14, "default": "Tools"},
+    "sides_label": {"type": "text", "min": 3, "max": 30, "default": "Sides of this service"},
+    "cards": {
+      "type": "list", "min": 3, "max": 6,
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "title": {"type": "text", "min": 4, "max": 40},
+        "text": {"type": "text", "min": 40, "max": 150},
+        "scope": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 3, "max": 56}},
+        "sla": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "object", "fields": {
+          "value": {"type": "text", "min": 1, "max": 12},
+          "label": {"type": "text", "min": 3, "max": 40}
+        }}},
+        "tools": {"type": "list", "min": 0, "max": 6, "default": [], "item": {"type": "text", "min": 2, "max": 24}},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    }
+  }
+}

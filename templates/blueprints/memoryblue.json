@@ -1,0 +1,21 @@
+{
+  "id": "memoryblue",
+  "source": {"name": "memoryBlue", "url": "https://memoryblue.com/", "category": "B2B Sales Development & Lead Gen BPO", "collected": "2026-09-26"},
+  "fits": ["cx-voice-sales"],
+  "summary": "Gradient hero with award badges, a four figure row, a photo and video feature, a five column service row, two alternating feature splits, a video block, a dark data panel, a logo row, a call to action, an FAQ and a blog row.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "left aligned headline and two buttons over a blue gradient, award badges at the right edge"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 4, "count": 4, "note": "small heading and a row of four large coloured figures with captions"},
+    {"form": "feature-split", "role": "about", "tone": "dark", "media": "right", "note": "text left over a city photo, a video thumbnail right"},
+    {"form": "cards-text", "role": "services", "tone": "muted", "cols": 5, "count": 5, "note": "centered heading and paragraph, five columns each led by a large letter with a short text and link"},
+    {"form": "feature-split", "role": "cases", "tone": "light", "media": "left", "note": "photo left, heading and tick list right, with a second tick list block underneath"},
+    {"form": "feature-split", "role": "careers", "tone": "light", "media": "left", "note": "media space left, heading, paragraphs and three links right"},
+    {"form": "video-block", "role": "testimonial", "tone": "light", "media": "full", "optional": true, "note": "centered heading, short paragraph and one wide video player"},
+    {"form": "image-band", "role": "tools", "tone": "dark", "media": "full", "note": "dark blue band with centered heading and a large dashboard screenshot"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 1, "count": 1, "optional": true, "note": "centered heading with a single client logo"},
+    {"form": "cta-band", "role": "cta", "tone": "light", "media": "right", "note": "heading, short text and one button left, media space right"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "count": 5, "note": "heading and intro left, five collapsed questions with plus icons"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 4, "count": 4, "optional": true, "note": "feature card left followed by three article links with dates"}
+  ]
+}

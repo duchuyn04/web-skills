@@ -1,0 +1,159 @@
+{
+  "_note": "Shows hero-shatter. Pinewell People is a fictional company; every figure is sample data and the photo is a library image.",
+  "archetype": "it-bpo-partner",
+  "preset": "teal-fresh",
+  "lang": "en",
+  "site": {
+    "brand": "Pinewell People",
+    "brand_mark": "PP",
+    "title": "Pinewell People | Customer support and back-office teams in Cebu",
+    "description": "Pinewell People builds customer support and back-office teams in Cebu for online retailers and software companies in the US and Australia."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-shatter",
+      "data": {
+        "eyebrow": "Customer support outsourcing",
+        "title": "Support and back-office teams in *Cebu*",
+        "lead": "Pinewell People builds customer support and back-office teams for online retailers and software companies in the US and Australia, trained on your tools.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "US and Australian hours",
+          "Zendesk and Gorgias"
+        ],
+        "image": "team-meeting-bright-office",
+        "image_alt": "A team meeting around a table in a bright office",
+        "stats": [
+          {
+            "value": "320",
+            "label": "Agents and specialists"
+          },
+          {
+            "value": "8",
+            "label": "Years in business"
+          },
+          {
+            "value": "2",
+            "label": "Delivery centers"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Chat, email and phone support on US and Australian hours.",
+            "bullets": [
+              "Trained on your tools",
+              "Named team leads",
+              "Weekly quality reviews"
+            ]
+          },
+          {
+            "icon": "shopping-cart",
+            "title": "Order management",
+            "text": "Order changes, returns and refunds handled in your store admin."
+          },
+          {
+            "icon": "file-text",
+            "title": "Back-office support",
+            "text": "Data entry, document checks and account updates."
+          },
+          {
+            "icon": "users",
+            "title": "Dedicated teams",
+            "text": "Full-time staff who work only on your account."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us about the team you *need*",
+        "text": "Send your volumes and hours and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Pinewell People builds customer support and back-office teams in Cebu for online retailers and software companies in the US and Australia.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Customer support",
+                "href": "#services"
+              },
+              {
+                "label": "Order management",
+                "href": "#services"
+              },
+              {
+                "label": "Back-office support",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "humans-in-the-loop",
+  "source": {"name": "Humans in the Loop", "url": "https://humansintheloop.org/", "category": "AI Data Annotation", "collected": "2026-09-26"},
+  "fits": ["ai-data-ops"],
+  "summary": "Sky-blue split hero with a logo row on its lower edge, a centered intro, three image cards, a map split about social mission, stacked video-style testimonials, story cards, a social impact block with figures, a team split and a purple closing CTA.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "muted", "media": "right", "note": "coloured ground, heading, short text and two buttons left, cut-out image right, client logo row along the bottom edge"},
+    {"form": "text-block", "role": "intro", "tone": "light", "media": "none", "note": "small eyebrow, centered heading and one line of text"},
+    {"form": "cards-image", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "three columns, each with a large annotated image, title and short text, one button below"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "right", "note": "wide heading on top, text and button left, world map with pins right"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "count": 3, "optional": true, "note": "heading, then stacked quotes, each with a round portrait left and quote right"},
+    {"form": "cards-image", "role": "cases", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "centered heading, three story cards with image, name and short text"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 2, "count": 2, "note": "eyebrow and heading with two paragraphs, then two figures with icons"},
+    {"form": "feature-split", "role": "team", "tone": "light", "media": "left", "note": "heading on top, round team photo left, text right, three figures and a button below"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "note": "centered heading, one line and a button on a deep purple ground before the link columns"}
+  ]
+}

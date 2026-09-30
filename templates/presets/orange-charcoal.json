@@ -4,10 +4,10 @@
   "use_for": "IT outsourcing and BPO partners that sell both software teams and back-office services, often from Vietnam or Asia to US, EU and Japan. Confident, warm, businesslike; pill labels above every heading.",
   "references": ["Bestarion", "Saigon Technology", "SmartOSC", "Orient Software", "KMS Technology"],
   "fonts": {
-    "heading": "Inter",
+    "heading": "Schibsted Grotesk",
     "body": "Inter",
     "mono": "JetBrains Mono",
-    "google": "family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600"
+    "google": "family=Schibsted+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
   "type": {"heading_weight": 700, "heading_tracking": "-0.025em"},
   "colors": {"primary": "#1b1e23", "accent": "#c94f08", "accent_2": "#f7931e"},

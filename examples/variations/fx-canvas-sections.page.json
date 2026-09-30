@@ -1,0 +1,110 @@
+{
+  "_note": "Shows process-pipeline and locations-relief. Ledgerline Processing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "crimson-trust",
+  "lang": "en",
+  "site": {
+    "brand": "Ledgerline Processing",
+    "brand_mark": "LP",
+    "title": "Ledgerline Processing | Invoice and document processing",
+    "description": "Ledgerline Processing captures, checks and posts supplier invoices for finance teams, from offices in Ho Chi Minh City, Da Nang and Manila."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Process", "href": "#how-it-works"},
+          {"label": "Offices", "href": "#locations"}
+        ],
+        "cta": {"label": "Get a quote", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "eyebrow": "Accounts payable processing",
+        "title": "Supplier invoices captured, checked and *posted*",
+        "lead": "Ledgerline Processing runs accounts payable for finance teams: we capture every invoice, match it to the order, route it for approval and post it to your ledger.",
+        "primary_cta": {"label": "Get a quote", "href": "#get-started"},
+        "secondary_cta": {"label": "See the process", "href": "#how-it-works"},
+        "proof": ["Two-person check on every batch", "ISO 27001 certified"],
+        "photo": {"src": "accounting-documents-calculator", "alt": "Invoices and a calculator on an accountant's desk"},
+        "badges": [
+          {"icon": "file-text", "value": "40,000", "label": "Invoices a month"},
+          {"icon": "users", "value": "670", "label": "Staff in three offices"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What we process"},
+        "cards": [
+          {
+            "icon": "receipt",
+            "title": "Supplier invoices",
+            "text": "Paper, PDF and e-invoices captured, coded to your chart of accounts and matched to orders.",
+            "bullets": ["Three-way matching", "Work in your ERP", "Daily exception list"]
+          },
+          {"icon": "wallet", "title": "Expense claims", "text": "Receipts checked against your expense policy before they reach a manager."},
+          {"icon": "landmark", "title": "Payment runs", "text": "Payment files prepared for your bank and checked against approved invoices."},
+          {"icon": "file-text", "title": "Supplier records", "text": "New supplier forms, bank detail changes and statement reconciliation."}
+        ]
+      }
+    },
+    {
+      "type": "process-pipeline",
+      "data": {
+        "head": { "title": "How an invoice moves through our team", "lead": "Each invoice passes five stations. Anything that fails a check goes back to the station that can fix it."},
+        "stages": [
+          {"title": "Intake", "text": "Invoices arrive by email, supplier portal or scanned post into one queue.", "icon": "mail", "packet": "doc"},
+          {"title": "Capture and coding", "text": "Header and line data are captured and coded to your accounts.", "icon": "file-text", "packet": "doc"},
+          {"title": "Matching", "text": "Each invoice is matched to its purchase order and goods receipt.", "icon": "workflow", "packet": "row"},
+          {"title": "Second check", "text": "A second person checks amounts, tax and supplier bank details.", "icon": "clipboard-check", "packet": "row"},
+          {"title": "Posting", "text": "Approved invoices are posted to your ledger and filed with their audit trail.", "icon": "database", "packet": "ticket"}
+        ]
+      }
+    },
+    {
+      "type": "locations-relief",
+      "data": {
+        "head": { "title": "Three offices, one team", "lead": "Our head office in Ho Chi Minh City runs the process; Da Nang and Manila add capacity and English-language supplier support."},
+        "hubs": [
+          {"city": "ho-chi-minh-city", "role": "Head office, capture and posting", "headcount": "420 staff", "detail": "Operations, quality and client management", "hq": true},
+          {"city": "da-nang", "role": "Matching and checks", "headcount": "160 staff", "detail": "Second-check team and night shift"},
+          {"city": "manila", "role": "Supplier support", "headcount": "90 staff", "detail": "English-language supplier queries"}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "eyebrow": "Contact",
+        "title": "Send us a month of *invoice volumes*",
+        "text": "We reply with a staffing plan, a price per invoice and a start date.",
+        "primary_cta": {"label": "Get a quote", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Ledgerline Processing captures, checks and posts supplier invoices for finance teams.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Supplier invoices", "href": "#services"},
+            {"label": "Expense claims", "href": "#services"},
+            {"label": "Payment runs", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Process", "href": "#how-it-works"},
+            {"label": "Offices", "href": "#locations"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

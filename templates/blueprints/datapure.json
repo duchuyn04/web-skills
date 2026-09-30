@@ -1,0 +1,16 @@
+{
+  "id": "datapure",
+  "source": {"name": "DataPure", "url": "https://www.datapure.ai/", "category": "AI Data Annotation & Operations BPO", "collected": "2026-09-26"},
+  "fits": ["ai-data-ops"],
+  "summary": "Light hero with a picture collage, a wide product photo, four large white solution panels on a strong brand-colour ground, two rows of image tiles in sliders, a testimonial slider and a very short footer.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "note": "two-line heading, email field and button left, a collage of four product pictures right"},
+    {"form": "image-band", "role": "intro", "tone": "light", "media": "full", "optional": true, "note": "one wide photo strip under the hero, no text"},
+    {"form": "feature-split", "role": "services", "tone": "dark", "cols": 2, "count": 4, "media": "right", "note": "centered heading on a brand-colour ground, four large white panels stacked, each with text and a button, picture alternating right and left"},
+    {"form": "carousel-cards", "role": "industries", "tone": "muted", "cols": 6, "count": 7, "optional": true, "note": "centered heading, a slider of tall rounded image tiles with a label at the bottom"},
+    {"form": "carousel-cards", "role": "industries", "tone": "muted", "cols": 6, "count": 8, "optional": true, "note": "second slider of image tiles with labels, same style, no heading"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "count": 3, "media": "none", "optional": true, "note": "centered heading and subline, one quote at a time with round arrows either side and dots"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "note": "short dark closing strip with logo and a few links"}
+  ]
+}

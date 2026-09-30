@@ -1,0 +1,119 @@
+{
+  "id": "cloudstaff",
+  "source": {
+    "name": "Cloudstaff",
+    "url": "https://www.cloudstaff.com/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing"
+  ],
+  "summary": "Light page that opens with a split hero, then a four-icon stats band, logo row, role cards, a video, a pricing split, a blue three-step band, a map, certification badges, FAQ and a split contact form.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading and two buttons left, portrait photo right"
+    },
+    {
+      "form": "metrics",
+      "role": "about",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, four icon stats in a row, one button below"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "single row of client logos under a small caption",
+      "optional": true
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "note": "centered heading and intro, two rows of three portrait cards with a title and a role list"
+    },
+    {
+      "form": "video-block",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading, case story text left and a video player right",
+      "optional": true
+    },
+    {
+      "form": "feature-split",
+      "role": "pricing",
+      "tone": "muted",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading and paragraph left, product screenshot right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "process",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading and intro on a brand-colour ground, three icon cards, one button below"
+    },
+    {
+      "form": "locations-map",
+      "role": "locations",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading and paragraph above a world map with pins",
+      "optional": true
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "media": "none",
+      "cols": 6,
+      "count": 12,
+      "note": "centered heading, two rows of six certification and award badges with labels",
+      "optional": true
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 8,
+      "note": "centered heading over a single column of accordion questions"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "muted",
+      "media": "none",
+      "cols": 2,
+      "count": null,
+      "note": "brand-colour card with copy left, contact form right"
+    }
+  ]
+}

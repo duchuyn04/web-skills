@@ -1,13 +1,13 @@
 <section id="{{section.id}}" class="bl-section bl-section--tight bl-banner-sec{{#full_width}} bl-banner-sec--full{{/full_width}} bl-tone-{{section.tone}}">
   <div class="{{^full_width}}bl-container{{/full_width}}">
-    <div class="bl-banner bl-banner--{{align}} bl-tone-dark" data-reveal>
-      <div class="bl-banner__frame" aria-hidden="true"><img src="{{image}}" alt="" width="1440" height="560" loading="lazy"></div>
+    <div class="bl-banner bl-banner--{{align}} bl-tone-dark{{#visual}} bl-has-backdrop{{/visual}}" data-reveal{{#visual}} data-fx="3d" data-seed="{{site.brand}}" data-gl="{{visual}}"{{/visual}}>
+      {{^visual}}<div class="bl-banner__frame" aria-hidden="true"><img src="{{image}}" alt="" width="1440" height="560" loading="lazy"></div>{{/visual}}{{#visual}}<div class="bl-backdrop" aria-hidden="true"><canvas data-gl-canvas></canvas></div>{{/visual}}
       <div class="bl-banner__shade" aria-hidden="true"></div>
-      <div class="{{#full_width}}bl-container {{/full_width}}bl-banner__copy">
+      <div class="{{#full_width}}bl-container {{/full_width}}bl-banner__copy" data-gl-copy>
         {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
         <h2 class="bl-h2">{{title}}</h2>
         {{#text}}<p class="bl-lead">{{text}}</p>{{/text}}
-        {{#cta}}<a class="bl-btn bl-btn--primary bl-btn--lg" href="{{href}}">{{label}}{{arrow}}</a>{{/cta}}
+        {{#cta}}<a class="bl-btn bl-btn--primary bl-btn--lg" href="{{href}}">{{label}}</a>{{/cta}}
       </div>
     </div>
   </div>

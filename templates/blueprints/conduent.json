@@ -1,0 +1,19 @@
+{
+  "id": "conduent",
+  "source": {"name": "Conduent", "url": "https://www.conduent.com/", "category": "Global CX & Enterprise BPO", "collected": "2026-09-26"},
+  "fits": ["enterprise-cx"],
+  "summary": "Dark full-bleed slider hero, a dark three-figure band, a centered intro, three service cards, a promo split banner, a second intro with an awards strip, then featured insights and a careers band before a news strip.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "copy left over a full-width photo, slider dots below"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 4, "count": 3, "note": "heading on the left, three large figures with captions in one row"},
+    {"form": "text-block", "role": "intro", "tone": "light", "media": "none", "note": "centered heading and one paragraph"},
+    {"form": "cards-image", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "three columns, each with a picture, title, short text and a link"},
+    {"form": "feature-split", "role": "news", "tone": "muted", "media": "left", "optional": true, "note": "promo banner with an angled dark panel on the right holding a headline and a link"},
+    {"form": "text-block", "role": "about", "tone": "light", "media": "none", "note": "centered heading and one paragraph"},
+    {"form": "icon-strip", "role": "awards", "tone": "light", "count": 8, "optional": true, "note": "carousel of award badges in two rows"},
+    {"form": "feature-split", "role": "cases", "tone": "light", "cols": 2, "count": 3, "optional": true, "note": "heading centered; one large image card left, two text rows with links right"},
+    {"form": "cta-band", "role": "careers", "tone": "dark", "media": "none", "optional": true, "note": "rounded gradient band with text and a button on the right"},
+    {"form": "text-block", "role": "news", "tone": "muted", "media": "none", "optional": true, "note": "short heading left with a view-all button below"}
+  ]
+}

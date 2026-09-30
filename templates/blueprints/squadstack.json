@@ -1,0 +1,127 @@
+{
+  "id": "squadstack",
+  "source": {
+    "name": "SquadStack",
+    "url": "https://www.squadstack.ai/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales",
+    "ai-data-ops"
+  ],
+  "summary": "Light violet-tinted page with a split hero and a stat row, client logo grid, tabbed campaign demos, case carousels, a chart split, product carousel, comparison table, badges with a diagram, news, FAQ and a closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "media": "right",
+      "cols": 4,
+      "count": 4,
+      "note": "copy and two buttons left, product visual right, a row of four figures under both"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": 8,
+      "count": 40,
+      "note": "centered caption above a dense grid of client logos"
+    },
+    {
+      "form": "tabs",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 4,
+      "note": "heading left, tabs across the top switching between call demo cards"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "note": "heading left with arrows right, cards with a photo, a caption and a row of result figures"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading and paragraph on the top row, two charts side by side below"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 7,
+      "note": "heading, a step row under it, then product cards with a small visual and text"
+    },
+    {
+      "form": "list-rows",
+      "role": "compare",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 5,
+      "note": "heading left, two-column comparison table with labelled rows"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading left, row of round security badges right",
+      "optional": true
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "light",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "heading left and a large dark integration diagram beside it"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 5,
+      "note": "heading, two large image cards left and a short list of small rows right",
+      "optional": true
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 8,
+      "note": "centered heading over two columns of accordion questions"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "closing heading with one button above the footer links"
+    }
+  ]
+}

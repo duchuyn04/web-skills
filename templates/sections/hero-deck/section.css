@@ -1,0 +1,81 @@
+/* hero-deck: role-deck-fan-3d. Stage (perspective) > rig (preserve-3d, leans) > cards (flat planes). Each card sits
+   at its slot: slot 0 is the front card, upright; later slots step back in depth and turn about a pivot below the
+   deck. A shuffle slides the front card aside while it fades, then brings it back in at the last slot. Cards fade,
+   never the rig. */
+.bl-hdeck {
+  --card-w: clamp(236px, 20vw, 286px);
+  --fan: calc((5deg + var(--sa, .5) * 2.5deg) * var(--fan-fit, .8) * var(--fan-m, 1));
+  --lean: calc((var(--sb, .5) - .5) * 14deg);
+}
+.bl-hdeck__grid { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); }
+.bl-hdeck__visual { position: relative; width: 100%; max-width: 540px; justify-self: end; }
+.bl-hdeck__bar { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1rem; padding-bottom: .9rem; border-bottom: 1px solid var(--border); }
+.bl-hdeck__label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-strong); }
+.bl-hdeck__count { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-muted); }
+.bl-hdeck__count b { color: var(--text-strong); font-weight: 600; }
+.bl-hdeck__controls { margin-left: auto; display: flex; gap: .5rem; }
+.bl-hdeck .bl-hdeck__toggle { position: static; }
+.bl-hdeck__next {
+  display: inline-flex; align-items: center; gap: .45rem; padding: .4rem .85rem; border-radius: var(--radius-btn);
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-strong); font-size: var(--fs-xs); font-weight: 600;
+}
+.bl-hdeck__next:hover { border-color: var(--accent-ink); }
+.bl-hdeck__next:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+.bl-hdeck__stage { --fx-persp: 1200px; perspective-origin: 50% 20%; display: grid; justify-items: center; padding: 2.4rem 0 3rem; }
+.bl-hdeck__rig {
+  --f: 0; --k: 1;
+  width: var(--card-w); aspect-ratio: 5 / 6;
+  transform: translateX(calc(var(--dir, 1) * -16%)) rotateX(5deg) rotateY(var(--lean));
+}
+.bl-hdeck.is-fanned .bl-hdeck__rig { --f: 1; }
+.bl-hdeck__card {
+  --slot: 0;
+  position: absolute; inset: 0; transform-origin: 50% 118%;
+  transform: translate3d(calc(var(--slot) * 8px * var(--dir, 1) * var(--f)), 0, calc(var(--slot) * -26px))
+    rotateZ(calc(var(--slot) * var(--fan) * var(--k) * var(--dir, 1) * var(--f)));
+  transition: transform .8s var(--ease-out), opacity .45s var(--ease-out);
+}
+.bl-hdeck__card:nth-child(2) { --slot: 1; } .bl-hdeck__card:nth-child(3) { --slot: 2; } .bl-hdeck__card:nth-child(4) { --slot: 3; }
+.bl-hdeck__card:nth-child(5) { --slot: 4; } .bl-hdeck__card:nth-child(6) { --slot: 5; } .bl-hdeck__card:nth-child(7) { --slot: 6; }
+/* shuffle: the front card slides aside and fades, jumps to the back unseen, then fades in there */
+.bl-hdeck__card.is-out { transform: translate3d(calc(var(--dir, 1) * -46%), -4%, 40px) rotateZ(calc(var(--dir, 1) * -7deg)); opacity: 0; }
+.bl-hdeck__card.is-jump { transition: none; opacity: 0; }
+
+.bl-hdeck__face {
+  height: 100%; display: flex; flex-direction: column; padding: 1.3rem 1.3rem 1.1rem; border-radius: var(--radius-lg); overflow: clip;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border-strong);
+  box-shadow: 0 26px 40px -30px rgba(15, 23, 42, .55);
+  transition: transform .35s var(--ease-out);
+}
+.bl-hdeck__card.is-t1 .bl-hdeck__face { border-color: var(--border); }
+.bl-hdeck__card.is-t2 .bl-hdeck__face { background: color-mix(in oklab, var(--c-accent) 7%, var(--surface)); border-color: color-mix(in oklab, var(--c-accent) 26%, var(--border)); }
+.bl-hdeck__top { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; }
+.bl-hdeck__ico { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; border-radius: var(--radius); background: var(--c-accent-soft); color: var(--accent-ink); }
+.bl-hdeck__ico .bl-icon { width: 1.3rem; height: 1.3rem; }
+.bl-hdeck__meta { padding: .22rem .6rem; border-radius: 999px; border: 1px solid var(--border-strong); font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 600; color: var(--text-strong); white-space: nowrap; }
+.bl-hdeck__title { margin-top: auto; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.42rem; line-height: 1.15; letter-spacing: -0.015em; color: var(--text-strong); text-wrap: balance; }
+.bl-hdeck__skills { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .9rem; }
+.bl-hdeck__skills li { padding: .2rem .6rem; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); font-size: var(--fs-xs); font-weight: 600; color: var(--text-strong); }
+.bl-hdeck__foot { display: flex; align-items: center; gap: .5rem; margin-top: 1rem; padding-top: .75rem; border-top: 1px solid var(--border); font-size: var(--fs-xs); font-weight: 600; color: var(--text-muted); }
+.bl-hdeck__foot span { display: grid; place-items: center; min-width: 1.6rem; height: 1.6rem; padding: 0 .3rem; border-radius: 6px; background: var(--c-accent); color: var(--c-on-accent); font-size: .66rem; font-weight: 800; letter-spacing: 0; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .bl-hdeck__stage:hover .bl-hdeck__rig { --k: 1.45; }
+}
+@media (max-width: 960px) {
+  .bl-hdeck__grid { grid-template-columns: minmax(0, 1fr); }
+  .bl-hdeck__visual { justify-self: center; max-width: 520px; }
+}
+@media (max-width: 560px) {
+  .bl-hdeck { --card-w: min(228px, 58vw); --fan-m: .72; }
+  .bl-hdeck__rig { transform: translateX(calc(var(--dir, 1) * -18%)) rotateX(5deg) rotateY(calc(var(--lean) * .5)); }
+  .bl-hdeck__title { font-size: 1.22rem; }
+  .bl-hdeck__face { padding: 1.05rem 1.05rem .95rem; }
+  .bl-hdeck__stage { padding-bottom: 2.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-hdeck__card, .bl-hdeck__face { transition: none; }
+}
+/* QA element screenshots: finish any running shuffle at once */
+.bl-shot .bl-hdeck__card { transition: none; }

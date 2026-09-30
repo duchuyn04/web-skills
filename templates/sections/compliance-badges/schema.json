@@ -1,6 +1,7 @@
 {
   "variant": "compliance-badges",
   "group": "compliance",
+  "forms": ["icon-strip"],
   "summary": "Heading and short security statement on the left; 1-6 certification badges that pop in one after another. List only certifications the client actually holds.",
   "tone": "auto",
   "anchor": "security",

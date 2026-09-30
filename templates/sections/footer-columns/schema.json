@@ -1,6 +1,7 @@
 {
   "variant": "footer-columns",
   "group": "footer",
+  "forms": ["footer"],
   "summary": "Dark footer: brand blurb, contacts and social icons, 2-4 link columns, legal bar with optional certification line and a page-wide Pause animations button. Optional wordmark: the brand name set edge to edge in very large type, letters rising in as the footer enters.",
   "tone": "dark",
   "anchor": "site-footer",

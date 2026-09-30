@@ -1,0 +1,116 @@
+{
+  "id": "beetsoft",
+  "source": {
+    "name": "BeetSoft",
+    "url": "https://beetsoft.com.vn/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Dark hero, then light sections with a figure band, a numbered problem grid, tabbed solutions with a dashboard, an architecture diagram, results figures, client logos, a process row, group companies, reasons with a contact card and a closing band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "left aligned heading, sub line and two buttons over a warehouse photo"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "four figures in one row directly under the hero"
+    },
+    {
+      "form": "cards-text",
+      "role": "intro",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 4,
+      "note": "left heading, four numbered text cards in two columns, a dark quote box and a button below"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "light",
+      "media": "left",
+      "cols": null,
+      "count": 6,
+      "note": "heading, vertical tab list left and a dashboard mock right"
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "light",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "heading centered above a full-width layered system diagram"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "muted",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading with a marker line, four figures, then two small lists of awards and certifications"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 8,
+      "note": "heading and a grid of logo cards with a country tag",
+      "optional": true
+    },
+    {
+      "form": "cards-text",
+      "role": "process",
+      "tone": "light",
+      "media": "none",
+      "cols": 5,
+      "count": 5,
+      "note": "heading, five step columns with one accented dark step"
+    },
+    {
+      "form": "cards-text",
+      "role": "about",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading and three company cards with text and links"
+    },
+    {
+      "form": "list-rows",
+      "role": "about",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 7,
+      "note": "heading with numbered reason rows left and a dark contact card right"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "one line with a button on a dark strip"
+    }
+  ]
+}

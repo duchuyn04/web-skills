@@ -1,0 +1,153 @@
+{
+  "_note": "Shows hero-particles. Northwind Data Labs is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "dark-ai",
+  "lang": "en",
+  "site": {
+    "brand": "Northwind Data Labs",
+    "brand_mark": "ND",
+    "title": "Northwind Data Labs | AI data annotation",
+    "description": "Northwind Data Labs labels images, text and audio for machine learning teams, with 260 annotators working in two shifts from Hanoi."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-particles",
+      "data": {
+        "eyebrow": "AI data annotation",
+        "title": "Data labeling teams for *AI products*",
+        "lead": "Northwind Data Labs labels images, text and audio for machine learning teams, with 260 annotators working in two shifts from Hanoi.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "stats": [
+          {
+            "value": "260",
+            "label": "Annotators"
+          },
+          {
+            "value": "98.4%",
+            "label": "Label accuracy, last quarter"
+          },
+          {
+            "value": "2",
+            "label": "Shifts a day"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "database",
+            "title": "Image and video labeling",
+            "text": "Bounding boxes, polygons and tracking for vision models, reviewed twice before delivery.",
+            "bullets": [
+              "Reviewed before delivery",
+              "Work in your tools",
+              "Weekly reporting"
+            ]
+          },
+          {
+            "icon": "message-square",
+            "title": "Text and conversation data",
+            "text": "Intent tagging, entity labels and response ranking for language models."
+          },
+          {
+            "icon": "mic",
+            "title": "Audio transcription",
+            "text": "Verbatim and clean transcripts with speaker tags in English and Vietnamese."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Quality review",
+            "text": "A second annotator checks a sample of every batch against your guideline."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us what you need to *hand off*",
+        "text": "Send a short brief and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Northwind Data Labs labels images, text and audio for machine learning teams, with 260 annotators working in two shifts from Hanoi.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Image and video labeling",
+                "href": "#services"
+              },
+              {
+                "label": "Text and conversation data",
+                "href": "#services"
+              },
+              {
+                "label": "Audio transcription",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

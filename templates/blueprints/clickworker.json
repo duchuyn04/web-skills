@@ -1,0 +1,90 @@
+{
+  "id": "clickworker",
+  "source": {
+    "name": "Clickworker",
+    "url": "https://www.clickworker.com/",
+    "category": "AI Data Annotation & Operations BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops"
+  ],
+  "summary": "Dark network-image hero with wave dividers, then intro splits with illustrations, a two-column service card grid, a yellow strengths block, a dotted world map, a dark app mockup band, three case cards and a dark closing band with a crowd silhouette.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "note": "small label, large heading, short text and one yellow button left-aligned over a dark network image, wavy bottom edge"
+    },
+    {
+      "form": "feature-split",
+      "role": "intro",
+      "tone": "light",
+      "media": "right",
+      "cols": 2,
+      "count": 1,
+      "note": "heading with a line marker, two paragraphs left, flat illustration right"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 6,
+      "note": "heading with a line marker and one line, then two columns of white cards with a three-photo strip, title, text and small link list; the last card is a plain button card"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "right",
+      "cols": 2,
+      "count": 1,
+      "note": "heading with a line marker, short definition list with bullets and a paragraph left, illustration right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "dark",
+      "cols": 2,
+      "count": 6,
+      "note": "strong yellow ground with wavy edges, heading with a line marker, two columns of three items each with a title, two ticked lines and a large dark icon right"
+    },
+    {
+      "form": "locations-map",
+      "role": "locations",
+      "tone": "light",
+      "media": "full",
+      "note": "dotted world map with coloured pins and percentages, heading, text and link overlaid at the lower right"
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "dark",
+      "media": "full",
+      "cols": 1,
+      "count": 1,
+      "note": "dark slate band with wavy edges: heading with a line marker and short text, wide phone and tablet mockups below"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "heading with a line marker and one line, three white cards with a photo, coloured title and paragraph"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "full",
+      "note": "dark image with glow dots, centered heading with a line marker, two buttons and a row of coloured crowd silhouettes at the bottom"
+    }
+  ]
+}

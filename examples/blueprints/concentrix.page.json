@@ -1,0 +1,595 @@
+{
+ "_note": "Example on the concentrix blueprint (templates/blueprints/concentrix.json): the real page's section order, forms and tones, with Northbridge CX sample content, the brand's colours and 3D visuals in the hero, industries and closing sections.",
+ "archetype": "enterprise-cx",
+ "blueprint": "concentrix",
+ "preset": "enterprise-navy",
+ "lang": "en",
+ "site": {
+  "brand": "Northbridge CX",
+  "brand_mark": "NB",
+  "title": "Northbridge CX | Customer experience operations at scale",
+  "description": "Northbridge CX runs omnichannel customer care, back-office and trust and safety teams from Manila, Ho Chi Minh City, Bogota and Krakow."
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "topbar": {
+     "note": "ISO 27001 and PCI DSS certified delivery in 4 countries",
+     "links": [
+      {
+       "label": "Careers",
+       "href": "#centers"
+      },
+      {
+       "label": "Security",
+       "href": "#centers"
+      }
+     ]
+    },
+    "languages": [
+     {
+      "flag": "us",
+      "label": "English",
+      "href": "#top",
+      "current": true
+     },
+     {
+      "flag": "vn",
+      "label": "Tieng Viet",
+      "href": "#top"
+     },
+     {
+      "flag": "jp",
+      "label": "Japanese",
+      "href": "#top"
+     }
+    ],
+    "links": [
+     {
+      "label": "Solutions",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Customer care",
+         "links": [
+          {
+           "label": "Omnichannel support",
+           "href": "#services"
+          },
+          {
+           "label": "Technical support",
+           "href": "#services"
+          },
+          {
+           "label": "Multilingual desks",
+           "href": "#services"
+          }
+         ]
+        },
+        {
+         "heading": "Operations",
+         "links": [
+          {
+           "label": "Back-office processing",
+           "href": "#services"
+          },
+          {
+           "label": "Trust and safety",
+           "href": "#services"
+          },
+          {
+           "label": "Data labeling",
+           "href": "#services"
+          }
+         ]
+        }
+       ],
+       "featured": {
+        "tag": "Case study",
+        "title": "How a regional bank cut average handle time by 31 percent",
+        "text": "A 180-seat voice and chat program moved from three vendors to one in 11 weeks.",
+        "link_label": "Read the case",
+        "href": "#case-studies"
+       }
+      }
+     },
+     {
+      "label": "Industries",
+      "href": "#industries"
+     },
+     {
+      "label": "Results",
+      "href": "#results"
+     },
+     {
+      "label": "Locations",
+      "href": "#centers"
+     },
+     {
+      "label": "FAQ",
+      "href": "#contact"
+     }
+    ],
+    "cta": {
+     "label": "Talk to sales",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "hero-terrain",
+   "data": {
+    "eyebrow": "Customer experience and back-office services",
+    "title": "Customer operations for *banks, telcos and retail*",
+    "lead": "Northbridge CX has run voice, chat and back-office programs since 2009. Our 2,400 agents work from Manila, Ho Chi Minh City, Bogota and Krakow in 12 languages.",
+    "primary_cta": {
+     "label": "Talk to an expert",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "See case studies",
+     "href": "#case-studies"
+    },
+    "proof": [
+     "ISO 27001 and PCI DSS certified",
+     "24/7 coverage",
+     "Founded in 2009"
+    ],
+    "stats": [
+     {
+      "value": "2,400+",
+      "label": "Trained agents"
+     },
+     {
+      "value": "94.6%",
+      "label": "Average CSAT, 2025"
+     },
+     {
+      "value": "12",
+      "label": "Languages supported"
+     },
+     {
+      "value": "4",
+      "label": "Delivery centers"
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-counter",
+   "data": {
+    "eyebrow": "Results",
+    "title": "Northbridge at a glance",
+    "lead": "Figures for active programs in 2025. CSAT and handle time are measured by client QA teams.",
+    "items": [
+     {
+      "value": 2400,
+      "suffix": "+",
+      "label": "Agents in production",
+      "note": "Across four delivery centers"
+     },
+     {
+      "value": 94.6,
+      "suffix": "%",
+      "label": "Average CSAT",
+      "note": "Voice, chat and email combined"
+     },
+     {
+      "value": 31,
+      "suffix": "%",
+      "label": "Lower handle time",
+      "note": "Median change after six months"
+     },
+     {
+      "value": 30,
+      "label": "Days to go live",
+      "note": "For a 25-seat program"
+     }
+    ],
+    "visual": "dots"
+   }
+  },
+  {
+   "type": "pillars-numbered",
+   "data": {
+    "head": {
+     "title": "What we run for clients",
+     "lead": "Three service lines, each with its own operations lead and a shared dashboard for your team."
+    },
+    "items": [
+     {
+      "title": "Customer care",
+      "text": "Voice, chat and email support in 12 languages, with quality scoring on every channel."
+     },
+     {
+      "title": "Back office",
+      "text": "Claims intake, KYC checks and order processing handled by trained teams with audit trails."
+     },
+     {
+      "title": "Trust and safety",
+      "text": "Content review and fraud checks with wellness support and clear escalation paths."
+     }
+    ]
+   },
+   "id": "services"
+  },
+  {
+   "type": "feature-rows",
+   "data": {
+    "head": {
+     "title": "Why clients choose Northbridge",
+     "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
+    },
+    "rows": [
+     {
+      "eyebrow": "Hiring",
+      "title": "Hiring with client sign-off",
+      "text": "Recruiters screen for language level, product knowledge and tone. Your team interviews the shortlist and approves each hire before training starts.",
+      "bullets": [
+       "Language and tone assessments",
+       "Client sign-off on every hire"
+      ],
+      "photo": {
+       "src": "portrait-woman-office",
+       "alt": "Northbridge team lead smiling in the Manila office"
+      },
+      "badge": {
+       "value": "15 days",
+       "label": "Average time to hire"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "type": "image-cards",
+   "id": "industries",
+   "data": {
+    "head": {
+     "title": "Industries we serve",
+     "lead": "Banking, telecom, retail, healthcare and insurance programs each have their own training track and compliance lead."
+    },
+    "cards": [
+     {
+      "title": "Banking and fintech",
+      "text": "Card disputes, onboarding checks and collections with PCI DSS controls.",
+      "photo": {
+       "src": "finance-chart-screen",
+       "alt": "Team at work on banking and fintech programs"
+      },
+      "href": "#contact",
+      "link_label": "Talk to an expert"
+     },
+     {
+      "title": "Telecom programs",
+      "text": "Billing questions, plan changes and device setup for prepaid and postpaid users.",
+      "photo": {
+       "src": "desk-phone-monitors",
+       "alt": "Team at work on telecom programs"
+      },
+      "href": "#contact",
+      "link_label": "Talk to an expert"
+     },
+     {
+      "title": "Retail and ecommerce",
+      "text": "Order tracking, returns and marketplace seller support during peak seasons.",
+      "photo": {
+       "src": "ecommerce-packing",
+       "alt": "Team at work on retail and ecommerce programs"
+      },
+      "href": "#contact",
+      "link_label": "Talk to an expert"
+     },
+     {
+      "title": "Healthcare",
+      "text": "Appointment scheduling, benefits questions and claims intake under HIPAA rules.",
+      "photo": {
+       "src": "healthcare-consultation",
+       "alt": "Team at work on healthcare programs"
+      },
+      "href": "#contact",
+      "link_label": "Talk to an expert"
+     },
+     {
+      "title": "Travel programs",
+      "text": "Booking changes, refunds and disruption handling across time zones.",
+      "photo": {
+       "src": "port-containers",
+       "alt": "Team at work on travel programs"
+      },
+      "href": "#contact",
+      "link_label": "Talk to an expert"
+     },
+     {
+      "title": "Energy and utilities",
+      "text": "Meter reads, outage calls and payment plans for residential customers.",
+      "photo": {
+       "src": "office-building-entrance",
+       "alt": "Team at work on energy and utilities programs"
+      },
+      "href": "#contact",
+      "link_label": "Talk to an expert"
+     }
+    ]
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Operations partner for banks, telcos and retail brands in 14 countries",
+    "logos": [
+     {
+      "name": "Kestrel Bank"
+     },
+     {
+      "name": "Orbital Telecom"
+     },
+     {
+      "name": "Maple Retail"
+     },
+     {
+      "name": "Lumen Health"
+     },
+     {
+      "name": "Harbor Air"
+     },
+     {
+      "name": "Vantage Pay"
+     },
+     {
+      "name": "Cobalt Energy"
+     },
+     {
+      "name": "Summit Insure"
+     }
+    ]
+   }
+  },
+  {
+   "type": "about-mosaic",
+   "id": "centers",
+   "data": {
+    "title": "Four centers, one way of working",
+    "paragraphs": [
+     "Manila, Ho Chi Minh City, Bogota and Krakow share one training program, one quality rubric and one reporting format, so a program can move or grow between sites without a restart."
+    ],
+    "cta": {
+     "label": "Talk to an expert",
+     "href": "#contact"
+    },
+    "photos": [
+     {
+      "src": "avatar-man-1",
+      "alt": "Harbor Point engineering lead"
+     },
+     {
+      "src": "avatar-woman-1",
+      "alt": "Harbor Point accounting manager"
+     },
+     {
+      "src": "avatar-man-2",
+      "alt": "Harbor Point QA lead"
+     },
+     {
+      "src": "portrait-woman-studio",
+      "alt": "Harbor Point data operations analyst"
+     },
+     {
+      "src": "avatar-man-3",
+      "alt": "Harbor Point delivery director"
+     },
+     {
+      "src": "avatar-woman-2",
+      "alt": "Harbor Point client success manager"
+     }
+    ],
+    "points": []
+   }
+  },
+  {
+   "type": "case-slider",
+   "data": {
+    "head": {
+     "eyebrow": "Client results",
+     "title": "Case studies",
+     "lead": "Scope, timeline and results as reported by each client."
+    },
+    "cases": [
+     {
+      "client": "Kestrel Bank",
+      "industry": "Banking",
+      "photo": {
+       "src": "meeting-handshake",
+       "alt": "Kestrel Bank and Northbridge leads at a contract meeting"
+      },
+      "title": "Consolidated three card-support vendors into one 180-seat program",
+      "results": [
+       {
+        "value": "-31%",
+        "label": "Average handle time"
+       },
+       {
+        "value": "11 wk",
+        "label": "Full transition"
+       }
+      ],
+      "link": {
+       "label": "Read the case",
+       "href": "#contact"
+      }
+     },
+     {
+      "client": "Orbital Telecom",
+      "industry": "Telecom",
+      "photo": {
+       "src": "team-coworking-laptops",
+       "alt": "Orbital support pod during a morning huddle"
+      },
+      "title": "Added Vietnamese and Tagalog chat support ahead of a regional launch",
+      "results": [
+       {
+        "value": "92%",
+        "label": "First-contact resolution"
+       },
+       {
+        "value": "2",
+        "label": "New languages"
+       }
+      ]
+     },
+     {
+      "client": "Maple Retail",
+      "industry": "Ecommerce",
+      "photo": {
+       "src": "ecommerce-packing",
+       "alt": "Order being packed for a holiday shipment"
+      },
+      "title": "Scaled from 40 to 140 agents for the holiday peak without missing SLA",
+      "results": [
+       {
+        "value": "3.5x",
+        "label": "Seasonal ramp"
+       },
+       {
+        "value": "99.2%",
+        "label": "SLA met"
+       }
+      ]
+     },
+     {
+      "client": "Lumen Health",
+      "industry": "Healthcare",
+      "photo": {
+       "src": "healthcare-consultation",
+       "alt": "Doctor and nurse meeting a patient at a clinic desk"
+      },
+      "title": "Took over patient scheduling and benefits calls under HIPAA controls",
+      "results": [
+       {
+        "value": "-42%",
+        "label": "Abandoned calls"
+       },
+       {
+        "value": "4.7/5",
+        "label": "Patient rating"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta-letter",
+   "id": "contact",
+   "data": {
+    "title": "Start with a *10-seat pilot*",
+    "text": "Run one queue with us for 60 days. If the results do not beat your current setup, you can end the contract.",
+    "points": [
+     "No setup fee",
+     "60 day exit clause"
+    ],
+    "primary_cta": {
+     "label": "Request a pilot",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Talk to an expert",
+     "href": "#top"
+    },
+    "sign_off": "The Northbridge CX operations team"
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Customer care, back-office and trust and safety teams for regulated brands, run from four delivery centers.",
+    "contacts": [
+     {
+      "icon": "mail",
+      "label": "sales@northbridge-cx.example",
+      "href": "mailto:sales@northbridge-cx.example"
+     },
+     {
+      "icon": "map-pin",
+      "label": "Makati City, Metro Manila"
+     }
+    ],
+    "socials": [
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "youtube",
+      "label": "YouTube",
+      "href": "https://www.youtube.com"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "Solutions",
+      "links": [
+       {
+        "label": "Customer care",
+        "href": "#services"
+       },
+       {
+        "label": "Back office",
+        "href": "#services"
+       },
+       {
+        "label": "Trust and safety",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "Locations",
+        "href": "#centers"
+       },
+       {
+        "label": "Security",
+        "href": "#centers"
+       },
+       {
+        "label": "Client results",
+        "href": "#case-studies"
+       }
+      ]
+     },
+     {
+      "heading": "Contact",
+      "links": [
+       {
+        "label": "Request a proposal",
+        "href": "#contact"
+       },
+       {
+        "label": "FAQ",
+        "href": "#contact"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [
+     {
+      "label": "Privacy",
+      "href": "#top"
+     },
+     {
+      "label": "Terms",
+      "href": "#top"
+     }
+    ],
+    "certifications": "ISO 27001 | SOC 2 Type II | PCI DSS"
+   }
+  }
+ ]
+}

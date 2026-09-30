@@ -1,0 +1,25 @@
+{
+  "variant": "hero-shatter",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split"],
+  "summary": "Photo-led hero: the wide team photo on the right arrives in pieces. 24 tiles (12 on phones) fly in from different depths and angles and lock together into the full picture in about 1.4 s, then the tiles are swapped for the single photo. On fine pointers the tiles near the cursor lift a few pixels toward the viewer. Assembly order (diagonal sweep, centre-out, column wave or scattered), scatter depth, rotation mix and lift height are seeded from the brand name. Needs a real team or office photo (the client's own or a library key) and its alt text; fits staffing brands and CX centers with good photography.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero", "ribbons", "scene3d", "stage3d"],
+  "animations": ["shatter-assemble-3d", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "image": {"type": "image"},
+    "image_alt": {"type": "text", "min": 5, "max": 140},
+    "grid": {"type": "enum", "values": ["6x4", "4x3"], "default": "6x4"},
+    "stats": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}}
+  }
+}

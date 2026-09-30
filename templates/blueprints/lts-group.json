@@ -1,0 +1,111 @@
+{
+  "id": "lts-group",
+  "source": {
+    "name": "LTS Group",
+    "url": "https://ltsgroup.tech/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner",
+    "ai-data-ops"
+  ],
+  "summary": "Blue event-style hero slider, staggered service cards, tabbed domain panel, dark tech chip band, six strength cards, gradient achievements panel, case slider, review slider, logo row, news slider and a dark contact form with a quote card.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "dark",
+      "media": "right",
+      "note": "blue gradient with slide dots, heading, text and two buttons left, portrait poster right, curved bottom edge"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading and line, three white cards with a round icon, title, text and outlined button; the middle card sits lower"
+    },
+    {
+      "form": "tabs",
+      "role": "industries",
+      "tone": "light",
+      "media": "left",
+      "cols": 5,
+      "count": 5,
+      "note": "centered heading, row of icon tabs, then a white panel with image left and title, text and button right"
+    },
+    {
+      "form": "icon-strip",
+      "role": "tools",
+      "tone": "dark",
+      "cols": 5,
+      "count": 15,
+      "optional": true,
+      "note": "blue band with a curved edge: heading left, short text right, rows of dark rounded chips with small logos"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "note": "centered heading, two rows of three outlined cards with a coloured icon, title and paragraph over a faint world map"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 3,
+      "count": 6,
+      "note": "rounded blue gradient panel: heading and text, six large figures in two rows of three, certificate logos in a white strip at the bottom"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "optional": true,
+      "note": "centered heading and line, row of illustrated cards with title and tags, slider bar and a pill button"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "dark",
+      "cols": 3,
+      "count": 5,
+      "optional": true,
+      "note": "centered heading and line on blue, staggered white review cards with the centre card raised, quote marks and a progress bar"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "dark",
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, one row of white-on-blue client logos with arrows"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "centered heading and line, three white event cards with image, title and read link, pill button below"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "dark",
+      "cols": 2,
+      "count": 1,
+      "note": "centered heading and line, white form panel left with two-column fields and a button, dark quote card right"
+    }
+  ]
+}

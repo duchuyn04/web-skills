@@ -1,0 +1,215 @@
+{
+  "_note": "Shows hero-deck. Lumen Harbor Staffing is a fictional company; every role and figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "human-warm",
+  "lang": "en",
+  "site": {
+    "brand": "Lumen Harbor Staffing",
+    "brand_mark": "LH",
+    "title": "Lumen Harbor Staffing | Dedicated finance and tech teams in Manila",
+    "description": "Lumen Harbor Staffing hires and manages dedicated accountants, developers and support staff in Manila for companies in the US and Canada."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-deck",
+      "data": {
+        "eyebrow": "Staff augmentation",
+        "title": "Dedicated finance and tech staff in *Manila*",
+        "lead": "Lumen Harbor Staffing hires, equips and manages full-time accountants, developers and support staff who work your hours in your tools.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "Full-time staff",
+          "US and Canadian hours"
+        ],
+        "roles": [
+          {
+            "icon": "calculator",
+            "title": "Senior accountant",
+            "skills": [
+              "QuickBooks",
+              "Month-end close",
+              "Payroll"
+            ],
+            "meta": "5+ yrs"
+          },
+          {
+            "icon": "code",
+            "title": "Full-stack developer",
+            "skills": [
+              "React",
+              "Node.js",
+              "PostgreSQL"
+            ],
+            "meta": "3-6 yrs"
+          },
+          {
+            "icon": "headset",
+            "title": "Tier 2 support",
+            "skills": [
+              "Zendesk",
+              "Billing issues"
+            ],
+            "meta": "EN"
+          },
+          {
+            "icon": "bug",
+            "title": "QA engineer",
+            "skills": [
+              "Playwright",
+              "Test plans"
+            ],
+            "meta": "3+ yrs"
+          },
+          {
+            "icon": "receipt",
+            "title": "Payables specialist",
+            "skills": [
+              "Xero",
+              "Vendor statements"
+            ],
+            "meta": "2+ yrs"
+          },
+          {
+            "icon": "bar-chart",
+            "title": "Data analyst",
+            "skills": [
+              "SQL",
+              "Power BI"
+            ],
+            "meta": "3+ yrs"
+          }
+        ],
+        "stats": [
+          {
+            "value": "180",
+            "label": "Staff in Manila"
+          },
+          {
+            "value": "7",
+            "label": "Years in business"
+          },
+          {
+            "value": "40",
+            "label": "Client teams"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Finance and accounting staff",
+            "text": "Accountants, bookkeepers and payables specialists who work in your ledger.",
+            "bullets": [
+              "Full-time and dedicated",
+              "Your hours",
+              "Monthly performance review"
+            ]
+          },
+          {
+            "icon": "code",
+            "title": "Developers",
+            "text": "Front-end, back-end and full-stack developers who join your sprints."
+          },
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Tier 1 and tier 2 agents for chat, email and phone."
+          },
+          {
+            "icon": "bug",
+            "title": "QA engineers",
+            "text": "Manual and automated testers for web and mobile releases."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us which roles you need to *fill*",
+        "text": "Send the job descriptions and we reply with a hiring plan and monthly rates.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Lumen Harbor Staffing hires and manages dedicated accountants, developers and support staff in Manila for companies in the US and Canada.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Finance and accounting staff",
+                "href": "#services"
+              },
+              {
+                "label": "Developers",
+                "href": "#services"
+              },
+              {
+                "label": "Customer support",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

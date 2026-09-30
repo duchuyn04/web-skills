@@ -1,0 +1,175 @@
+{
+  "_note": "Shows hero-orbits. Bluefin Outsourcing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Bluefin Outsourcing",
+    "brand_mark": "BF",
+    "title": "Bluefin Outsourcing | IT and back-office services",
+    "description": "Bluefin Outsourcing builds software and runs finance and data operations for companies in Japan and Singapore, with 140 staff in one office."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-orbits",
+      "data": {
+        "eyebrow": "IT and back-office services",
+        "title": "Software and finance teams in *Ho Chi Minh City*",
+        "lead": "Bluefin Outsourcing builds software and runs finance and data operations for companies in Japan and Singapore, with 140 staff in one office.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "stats": [
+          {
+            "value": "140",
+            "label": "Staff"
+          },
+          {
+            "value": "9",
+            "label": "Years in business"
+          },
+          {
+            "value": "ISO 27001",
+            "label": "Certified"
+          }
+        ],
+        "services": [
+          {
+            "icon": "code",
+            "label": "Software development"
+          },
+          {
+            "icon": "bug",
+            "label": "QA"
+          },
+          {
+            "icon": "calculator",
+            "label": "Accounting"
+          },
+          {
+            "icon": "database",
+            "label": "Data operations"
+          },
+          {
+            "icon": "users",
+            "label": "Dedicated teams"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Software development",
+            "text": "Web and mobile products built by squads that join your sprint rituals.",
+            "bullets": [
+              "Reviewed before delivery",
+              "Work in your tools",
+              "Weekly reporting"
+            ]
+          },
+          {
+            "icon": "bug",
+            "title": "QA and testing",
+            "text": "Manual and automated regression testing on every release candidate."
+          },
+          {
+            "icon": "calculator",
+            "title": "Accounting",
+            "text": "Monthly close, payables and payroll prepared in your accounting system."
+          },
+          {
+            "icon": "database",
+            "title": "Data operations",
+            "text": "Catalog updates, data entry and cleanup with daily error counts."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us what you need to *hand off*",
+        "text": "Send a short brief and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Bluefin Outsourcing builds software and runs finance and data operations for companies in Japan and Singapore, with 140 staff in one office.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Software development",
+                "href": "#services"
+              },
+              {
+                "label": "QA and testing",
+                "href": "#services"
+              },
+              {
+                "label": "Accounting",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

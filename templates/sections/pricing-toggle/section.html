@@ -14,7 +14,7 @@
         <p class="bl-plan__price"><strong>{{price}}</strong>{{#unit}}<span>{{unit}}</span>{{/unit}}</p>
         <p class="bl-plan__text">{{text}}</p>
         <ul class="bl-checks">{{#features}}<li>{{icon:check}}<span>{{.}}</span></li>{{/features}}</ul>
-        <a class="bl-btn {{#featured}}bl-btn--primary bl-btn--shimmer{{/featured}}{{^featured}}bl-btn--ghost{{/featured}} bl-btn--block" href="{{cta.href}}">{{cta.label}}{{arrow}}</a>
+        <a class="bl-btn {{#featured}}bl-btn--primary{{/featured}}{{^featured}}bl-btn--ghost{{/featured}} bl-btn--block" href="{{cta.href}}">{{cta.label}}</a>
       </article>
       {{/plans}}
     </div>

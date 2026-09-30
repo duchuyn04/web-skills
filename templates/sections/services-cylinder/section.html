@@ -1,0 +1,37 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-fxcyl" data-fx="3d" data-fxcyl data-seed="{{site.brand}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-fxcyl__wrap" role="region" aria-roledescription="carousel" aria-label="{{tabs_label}}" data-reveal="fade">
+      <div class="bl-fxcyl__scale" role="tablist" aria-label="{{tabs_label}}">
+        {{#cards}}
+        <button class="bl-fxcyl__tab" type="button" role="tab" id="{{section.id}}-tab-{{@n}}" aria-controls="{{section.id}}-card-{{@n}}" aria-selected="{{#@first}}true{{/@first}}{{^@first}}false{{/@first}}" tabindex="{{#@first}}0{{/@first}}{{^@first}}-1{{/@first}}">
+          <span class="bl-fxcyl__tick" aria-hidden="true"></span>
+          <span class="bl-fxcyl__tab-name">{{#tab}}{{tab}}{{/tab}}{{^tab}}{{title}}{{/tab}}</span>
+        </button>
+        {{/cards}}
+      </div>
+      <div class="bl-fxcyl__stage fx3d-stage" data-fxcyl-stage>
+        <span class="bl-fxcyl__floor" aria-hidden="true"></span>
+        <div class="bl-fxcyl__rig fx3d-rig" data-fxcyl-rig>
+          {{#cards}}
+          <article class="bl-fxcyl__card fx3d-face" id="{{section.id}}-card-{{@n}}" role="tabpanel" aria-roledescription="slide" aria-labelledby="{{section.id}}-tab-{{@n}}" data-fxcyl-card>
+            <div class="bl-fxcyl__card-top">
+              <span class="bl-icon-box">{{icon:$icon}}</span>
+            </div>
+            <h3 class="bl-h3 bl-fxcyl__title">{{title}}</h3>
+            <p class="bl-fxcyl__text">{{text}}</p>
+            {{#bullets.0}}<ul class="bl-checks bl-fxcyl__checks">{{#bullets}}<li>{{icon:check}}<span>{{.}}</span></li>{{/bullets}}</ul>{{/bullets.0}}
+            {{#link}}<a class="bl-link bl-fxcyl__link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+          </article>
+          {{/cards}}
+        </div>
+      </div>
+      <div class="bl-fxcyl__controls">
+        <button class="bl-fxcyl__btn" type="button" data-fxcyl-prev aria-label="{{prev_label}}">{{icon:chevron-left}}</button>
+        <p class="bl-fxcyl__count bl-mono" aria-hidden="true"><b data-fxcyl-now>01</b><span>/</span><span data-fxcyl-total>01</span></p>
+        <button class="bl-fxcyl__btn" type="button" data-fxcyl-next aria-label="{{next_label}}">{{icon:chevron-right}}</button>
+      </div>
+      <p class="bl-sr-only" aria-live="polite" data-fxcyl-live></p>
+    </div>
+  </div>
+</section>

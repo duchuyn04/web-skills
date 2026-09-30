@@ -1,0 +1,118 @@
+{
+  "id": "kmc-solutions",
+  "source": {
+    "name": "KMC Solutions",
+    "url": "https://kmc.solutions/",
+    "category": "Philippines Offshore BPO & Staffing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing"
+  ],
+  "summary": "Light hero with a photo right, a logo row, a metrics row, four image cards, a dark feature with three points, a video block, numbered steps, location panels, a photo feature, video testimonials and a photo-and-form closing section.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "headline, paragraph and button left, photo right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": null,
+      "count": 8,
+      "media": "none",
+      "optional": true,
+      "note": "caption, intro line and one row of client logos with a button"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "note": "heading, five large orange figures in a row"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "heading, paragraph and button, then four cards with small pictures"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "dark panel: photo left, heading and three icon points right"
+    },
+    {
+      "form": "video-block",
+      "role": "intro",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, framed video, paragraph and button"
+    },
+    {
+      "form": "cards-text",
+      "role": "process",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "note": "heading, five large numbered steps in one row, button"
+    },
+    {
+      "form": "feature-split",
+      "role": "locations",
+      "tone": "muted",
+      "cols": 1,
+      "count": 2,
+      "media": "right",
+      "note": "heading, two stacked rows: dark text panel left, city photo right"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "photo collage left, heading and text right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading, three video testimonial cards with pager"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "heading and text with form right, photo below left"
+    }
+  ]
+}

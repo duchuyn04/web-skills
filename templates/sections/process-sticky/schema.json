@@ -1,6 +1,7 @@
 {
   "variant": "process-sticky",
-  "group": "process",
+  "group": "process", "signature": true,
+  "forms": ["list-rows"],
   "summary": "Onboarding roadmap: heading and CTA stay pinned on the left while 3-6 steps scroll on the right; a progress line fills and each checkpoint lights up as it passes.",
   "tone": "auto",
   "anchor": "process",

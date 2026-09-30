@@ -1,0 +1,99 @@
+{
+  "id": "tps-software",
+  "source": {
+    "name": "TPS Software",
+    "url": "https://tpssoft.com/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Dark hero with a contact popup over it, two icon-card blocks, a team split with round photos, a client logo band with figures, a three-step row, an industry slider, a case slider and a closing quote band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "dark full-width visual with large centered headline and a form popup over it"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "light",
+      "media": "left",
+      "cols": 2,
+      "count": 6,
+      "note": "centered heading, a blue figure card on the left and a two-by-three grid of small icon rows on the right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 6,
+      "note": "centered heading, three rows of two icon cards"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "left",
+      "cols": null,
+      "count": null,
+      "note": "round overlapping photos on the left, small label, heading, text and button on the right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "muted",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "optional": true,
+      "note": "centered heading and text, two large figures, then a row of client logos over a map"
+    },
+    {
+      "form": "cards-image",
+      "role": "process",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading, three step cards each with an illustration, title and text, button below"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "industries",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 8,
+      "note": "left heading, a slider of photo tiles with labels and arrows"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "media": "right",
+      "cols": 1,
+      "count": 6,
+      "optional": true,
+      "note": "centered heading, a large blue case card with picture on the right, arrows and dots, button below"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "muted",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered two-line heading and one button on a pale ground"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-h3d bl-hpart bl-tone-{{section.tone}}" data-hpart data-seed="{{site.brand}}" data-mark="{{site.brand_mark}}">
+  <div class="bl-hpart__bg" aria-hidden="true"></div>
+  <div class="bl-container">
+    <div class="bl-h3d__grid">
+      <div class="bl-h3d__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1" data-reveal>{{title}}</h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-h3d__stage" data-reveal="fade">
+        <canvas class="bl-h3d__canvas" data-hpart-canvas aria-hidden="true"></canvas>
+        <button class="bl-h3d__toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}"><span class="bl-motion-toggle__pause">{{icon:pause}}</span><span class="bl-motion-toggle__play">{{icon:play}}</span><span data-motion-label>{{pause_label}}</span></button>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-h3d__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

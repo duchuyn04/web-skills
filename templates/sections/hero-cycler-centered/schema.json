@@ -1,11 +1,12 @@
 {
   "variant": "hero-cycler-centered",
   "group": "hero",
+  "forms": ["hero-center"],
   "summary": "Centered headline whose last words rotate through 3-6 service names, lead, CTAs, proof ticks and an optional wide photo stage with floating KPI badges.",
   "tone": "hero",
   "anchor": "top",
   "shared": ["hero"],
-  "animations": ["kinetic-typography-cycler", "floating-glass-badges", "shimmer-button-glow", "reveal"],
+  "animations": ["kinetic-typography-cycler", "floating-glass-badges", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
     "title_before": {"type": "markup", "min": 6, "max": 60},

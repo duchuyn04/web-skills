@@ -1,7 +1,8 @@
 {
   "variant": "hero-gradient",
   "group": "hero",
-  "summary": "Hero painted in the brand colour with a soft gradient and fine wave lines; copy and two buttons on the left, a slowly turning dotted globe on the right, or a photo if you set one. Text uses the button text colour, so it stays readable with any accent.",
+  "forms": ["hero-split"],
+  "summary": "Hero painted in one flat brand colour with fine wave lines; copy and two buttons on the left, a slowly turning dotted globe on the right, or a photo if you set one. Text uses the button text colour, so it stays readable with any accent.",
   "tone": "accent",
   "anchor": "top",
   "shared": ["hero"],

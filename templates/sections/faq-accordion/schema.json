@@ -1,6 +1,7 @@
 {
   "variant": "faq-accordion",
   "group": "faq",
+  "forms": ["faq-accordion"],
   "summary": "Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation.",
   "tone": "auto",
   "anchor": "faq",

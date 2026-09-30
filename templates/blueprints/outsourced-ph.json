@@ -1,0 +1,20 @@
+{
+  "id": "outsourced-ph",
+  "source": {"name": "Outsourced", "url": "https://www.outsourced.ph/", "category": "Philippines Offshore Staffing", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "Dark hero with a diagonal lower edge and a line illustration, then a mix of white and dark sections: benefit tiles, a statement beside a video, three alternating feature rows, a four-step dark strip, press logos on a bright gradient, a photo band with a call card, a review slider, a role card slider and a dark form section.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "headline with one accent word, paragraph and one pill button left; two line-art characters right; the lower edge is cut diagonally into white"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "row of four small pale tiles, each with a short coloured lead word, two lines of text and a round dark arrow button at the bottom"},
+    {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "large statement with coloured phrases left, rounded video thumbnail with a play button right"},
+    {"form": "feature-split", "role": "services", "tone": "light", "cols": 2, "count": 3, "media": "left", "note": "three stacked rows that alternate sides: line illustration left with label, heading with accent word, paragraph and outlined button right; then photo right; then illustration left again"},
+    {"form": "cards-icon", "role": "process", "tone": "dark", "cols": 4, "count": 4, "media": "none", "note": "small label, left heading, four rounded translucent cards with a numbered bubble, line icon, bold title and a short line"},
+    {"form": "feature-split", "role": "cta", "tone": "dark", "cols": 2, "count": 1, "media": "right", "optional": true, "note": "large white rounded card inside the dark section: heading and pink pill button left, wide photo right"},
+    {"form": "logo-strip", "role": "awards", "tone": "muted", "media": "none", "optional": true, "note": "on a bright cyan gradient: small label, a dark speech-bubble panel with one large press logo and a quote, then a row of grey press logos"},
+    {"form": "image-band", "role": "cta", "tone": "light", "media": "full", "optional": true, "note": "wide angled photo of a person at a desk with a dark card on the left holding a label, short heading and a pink button"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "muted", "cols": 3, "count": 6, "media": "none", "optional": true, "note": "cyan gradient ground, heading, pale review cards with a large title, client logo at the top right, star row and quote text, progress bar below"},
+    {"form": "carousel-cards", "role": "services", "tone": "dark", "cols": 8, "count": 8, "media": "none", "note": "heading with accent word and line left, a horizontal strip of overlapping white role cards each with an icon, title, four job names and a link, progress bar and outlined button below"},
+    {"form": "form", "role": "cta", "tone": "dark", "cols": 2, "count": 1, "media": "none", "note": "heading and short line left, cyan rounded form card right with three fields and a dark submit button, followed by a contact card with phone numbers"}
+  ]
+}

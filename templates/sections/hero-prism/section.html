@@ -1,0 +1,36 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-h3d bl-hprism bl-tone-{{section.tone}}" data-fx="3d" data-hprism data-seed="{{site.brand}}" style="--sa: {{site.seed.a}}; --sb: {{site.seed.b}}; --sign: {{site.seed.sign}};">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hero__grid"></span></div>
+  <div class="bl-container">
+    <div class="bl-hprism__grid">
+      <div class="bl-hprism__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1 bl-hprism__h1" data-reveal>
+          <span class="bl-hprism__intro">{{title}}</span> <span class="bl-sr-only">{{#cycle}}{{^@first}}{{#@last}} {{and_word}} {{/@last}}{{^@last}}, {{/@last}}{{/@first}}{{.}}{{/cycle}}</span>
+          <span class="bl-hprism__line" aria-hidden="true" data-prism-line>
+            <span class="bl-hprism__sizer" data-prism-sizer>{{#cycle}}<span>{{.}}</span>{{/cycle}}</span>
+            <span class="bl-hprism__stage fx3d-stage">
+              <span class="bl-hprism__rig fx3d-rig" data-prism-rig>
+                <span class="bl-hprism__face fx3d-face is-front" data-face>{{cycle.0}}</span>
+                <span class="bl-hprism__face fx3d-face" data-face>{{cycle.1}}</span>
+                <span class="bl-hprism__face fx3d-face" data-face>{{cycle.2}}</span>
+              </span>
+            </span>
+          </span>
+          <span class="bl-hprism__static" aria-hidden="true">{{#cycle}}{{^@first}}{{#@last}} {{and_word}} {{/@last}}{{^@last}}, {{/@last}}{{/@first}}{{.}}{{/cycle}}</span>
+        </h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-hprism__index" data-reveal="fade">
+        <p class="bl-hprism__label">{{cycle_label}}</p>
+        <ol class="bl-hprism__list">{{#cycle}}<li class="bl-hprism__item{{#@first}} is-on{{/@first}}" data-prism-item><span class="bl-hprism__name">{{.}}</span><span class="bl-hprism__bar fx3d-loop" aria-hidden="true"></span></li>{{/cycle}}</ol>
+        <button class="bl-h3d__toggle bl-hprism__toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}"><span class="bl-motion-toggle__pause">{{icon:pause}}</span><span class="bl-motion-toggle__play">{{icon:play}}</span><span data-motion-label>{{pause_label}}</span></button>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-h3d__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

@@ -1,0 +1,80 @@
+{
+  "id": "clark-outsourcing",
+  "source": {
+    "name": "Clark Outsourcing",
+    "url": "https://clarkoutsourcing.com/",
+    "category": "Philippines Offshore BPO & Staffing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing"
+  ],
+  "summary": "Light left-aligned hero, two text-and-photo splits around a four-card service grid, a dark numbered card band, a testimonial grid and a photo closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-left-text",
+      "role": "hero",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "tag, large left-aligned headline, short text and two buttons on a pale ground"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading, two paragraphs and a button on the left, a rounded photo on the right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, intro and button, then four cards with icon, title and text"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading, long text and button on the left, a wide photo on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "process",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading and intro on navy, three numbered cards"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "optional": true,
+      "note": "centered heading, two rows of three quote cards with name and role"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "centered heading and button over a dark team photo"
+    }
+  ]
+}

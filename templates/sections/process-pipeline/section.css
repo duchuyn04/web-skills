@@ -1,0 +1,48 @@
+/* process-pipeline: isometric stations drawn as one static SVG (built by the script from the steps), pipes between
+   them and HTML packets moved along the pipes with transform-only Web Animations. The SVG never repaints while the
+   packets move; only the lit station changes fill every few seconds. */
+.bl-ppl__diagram { position: relative; margin: 0 auto clamp(1.5rem, 3vw, 2.5rem); max-width: 100%; }
+.bl-ppl__svg { display: block; width: 100%; height: auto; overflow: visible; }
+.bl-ppl__packets { position: absolute; inset: 0; pointer-events: none; }
+.bl-ppl__shadow { fill: color-mix(in oklab, var(--text-strong) 9%, transparent); }
+.bl-ppl__pipe-o { fill: none; stroke: var(--border-strong); stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+.bl-ppl__pipe-i { fill: none; stroke: var(--surface-2); stroke-width: 7.5; stroke-linecap: round; stroke-linejoin: round; }
+.bl-ppl__joint { fill: var(--surface); stroke: var(--border-strong); stroke-width: 1.5; }
+.bl-ppl__st { transition: transform .8s cubic-bezier(.16, 1, .3, 1), opacity .6s ease; transition-delay: calc(var(--i, 0) * 110ms); }
+.js .bl-ppl:not(.is-in) .bl-ppl__st { opacity: 0; transform: translateY(18px); }
+.bl-ppl__f { stroke: var(--border-strong); stroke-width: 1; stroke-linejoin: round; transition: fill .45s ease; }
+.bl-ppl__f--top { fill: var(--surface); }
+.bl-ppl__f--l { fill: color-mix(in oklab, var(--surface) 90%, var(--text-strong)); }
+.bl-ppl__f--r { fill: color-mix(in oklab, var(--surface) 80%, var(--text-strong)); }
+.bl-ppl__glyph { color: var(--text-muted); transition: color .45s ease; }
+.bl-ppl__st.is-lit .bl-ppl__f--top { fill: var(--c-accent); }
+.bl-ppl__st.is-lit .bl-ppl__f--l { fill: color-mix(in oklab, var(--c-accent) 82%, #000); }
+.bl-ppl__st.is-lit .bl-ppl__f--r { fill: color-mix(in oklab, var(--c-accent) 66%, #000); }
+.bl-ppl__st.is-lit .bl-ppl__glyph { color: var(--c-on-accent); }
+.bl-ppl__pk {
+  position: absolute; left: 0; top: 0; width: var(--pk, 22px); height: var(--pk, 22px); border-radius: 6px; display: grid; place-items: center;
+  background: var(--surface); border: 1px solid var(--border-strong); color: var(--text-muted); opacity: 0; will-change: transform, opacity;
+  box-shadow: 0 6px 12px -8px rgba(15, 23, 42, .5);
+}
+.bl-ppl__pk .bl-icon { width: 62%; height: 62%; }
+.bl-ppl__pk--done { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
+.bl-ppl__pk i { position: absolute; right: -32%; top: -32%; width: 58%; height: 58%; border-radius: 50%; display: grid; place-items: center; background: var(--surface); color: var(--accent-ink); border: 1px solid var(--border-strong); }
+.bl-ppl__pk i .bl-icon { width: 80%; height: 80%; stroke-width: 3; }
+.bl-ppl__steps { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: clamp(.75rem, 1.6vw, 1.25rem); }
+.bl-ppl__step { padding: 1.1rem 1.1rem 1.25rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--border); transition: border-color .4s ease, box-shadow .4s ease; }
+.bl-ppl__step.is-lit { border-top-color: var(--c-accent); box-shadow: 0 18px 36px -28px rgba(15, 23, 42, .45); }
+.bl-ppl__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: .75rem; }
+.bl-ppl__num { font-size: var(--fs-sm); font-weight: 700; color: var(--text-muted); }
+.bl-ppl__step.is-lit .bl-ppl__num { color: var(--accent-ink); }
+.bl-ppl__icon .bl-icon { width: 20px; height: 20px; color: var(--accent-ink); }
+.bl-ppl__title { font-family: var(--font-heading); font-size: 1.05rem; font-weight: var(--heading-weight); color: var(--text-strong); line-height: 1.25; margin-bottom: .4rem; }
+.bl-ppl__text { font-size: var(--fs-sm); color: var(--text); line-height: 1.5; }
+.bl-ppl__cta { margin-top: 2rem; text-align: center; }
+@media (max-width: 900px) {
+  .bl-ppl__steps { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .bl-ppl__steps { grid-template-columns: 1fr; }
+  .bl-ppl__pk { border-radius: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { .bl-ppl__st, .bl-ppl__f, .bl-ppl__glyph, .bl-ppl__step { transition: none; } }

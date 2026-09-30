@@ -1,0 +1,20 @@
+{
+  "id": "supportninja",
+  "source": {"name": "SupportNinja", "url": "https://www.supportninja.com/", "category": "Next-Gen Tech BPO & CX Startups", "collected": "2026-09-26"},
+  "fits": ["cx-voice-sales", "enterprise-cx"],
+  "summary": "Light split hero with an illustration, a logo row, a text-and-illustration split, a centered video block, a service list, resource cards with a dark CTA band, a tinted AI and security split, a chip cloud, numbered steps, testimonials and a closing split.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "note": "large serif heading and two buttons left, illustration right"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 5, "count": 10, "optional": true, "note": "small heading centered above two rows of logos"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "left", "note": "illustration left, heading and two short paragraphs right"},
+    {"form": "video-block", "role": "process", "tone": "muted", "media": "full", "note": "centered heading and paragraphs above a large video frame"},
+    {"form": "list-rows", "role": "services", "tone": "light", "cols": 3, "count": 5, "note": "centered intro, then five short text blocks in a 3 plus 2 grid and two buttons"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "heading centered, three resource cards with covers, a dark rounded CTA band below"},
+    {"form": "feature-split", "role": "about", "tone": "muted", "media": "left", "note": "tinted ground, photo left with heading and button right, then a text and small-card grid on security"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 5, "count": 12, "note": "heading and illustration, then rows of pill chips with icons"},
+    {"form": "cards-text", "role": "process", "tone": "muted", "cols": 3, "count": 3, "note": "centered heading, three step cards in a row, buttons above and below"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "light", "cols": 2, "count": 3, "optional": true, "note": "heading centered, quote cards in a slider"},
+    {"form": "cta-band", "role": "cta", "tone": "muted", "media": "left", "note": "illustration left, heading, short text and button right"}
+  ]
+}

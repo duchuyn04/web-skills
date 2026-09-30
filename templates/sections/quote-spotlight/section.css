@@ -1,7 +1,5 @@
 /* quote-spotlight: one big quote, optional crossfade slider */
 .bl-qspot-sec { overflow: hidden; }
-.bl-qspot__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-.bl-qspot__bg .bl-glow--a { left: 50%; top: -260px; transform: translateX(-50%); opacity: .25; }
 .bl-qspot { max-width: 980px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .bl-qspot__mark { color: var(--accent-ink); margin-bottom: 1.25rem; }
 .bl-qspot__mark .bl-icon { width: 56px; height: 56px; }

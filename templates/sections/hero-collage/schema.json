@@ -1,6 +1,7 @@
 {
   "variant": "hero-collage",
   "group": "hero",
+  "forms": ["hero-split"],
   "summary": "Split hero whose right side is a 3x3 collage of three round team photos and six flat geometric shapes (quarter circles, half circles, dots) in the brand colours. Friendly and distinctive without needing a big stock photo.",
   "tone": "hero",
   "anchor": "top",

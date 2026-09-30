@@ -1,6 +1,8 @@
 {
   "variant": "audience-cards",
   "group": "audience",
+  "forms": ["cards-text"],
+  "open": true,
   "summary": "Who we serve: centered heading and 2 or 3 tinted cards, each with an accent title, a short paragraph and a check list of what that audience gets.",
   "tone": "auto",
   "anchor": "who-we-serve",

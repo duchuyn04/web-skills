@@ -1,0 +1,91 @@
+{
+  "id": "acquire-bpo",
+  "source": {
+    "name": "Acquire BPO",
+    "url": "https://www.acquirebpo.com/",
+    "category": "Offshore Staffing & Outsourcing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "enterprise-cx"
+  ],
+  "summary": "Teal hero with a video frame and stat tiles, a light two-card intro, a dark differentiator band, a three-step process, client logos in tabs, a guarantee pair, one testimonial and a button band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "right",
+      "note": "copy and button at left, video frame right, three stat tiles under the copy"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "muted",
+      "cols": 2,
+      "count": 2,
+      "media": "none",
+      "note": "heading left, two white cards each with a wide photo, short text and a link"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "dark",
+      "cols": 4,
+      "count": 3,
+      "media": "none",
+      "note": "first column holds the heading and intro, three icon columns follow"
+    },
+    {
+      "form": "cards-icon",
+      "role": "process",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "heading left, three bordered step cards joined by dotted connectors, a centered button below"
+    },
+    {
+      "form": "tabs",
+      "role": "clients",
+      "tone": "light",
+      "cols": 8,
+      "count": 9,
+      "media": "none",
+      "optional": true,
+      "note": "row of category tabs above a grid of logos with names below"
+    },
+    {
+      "form": "cards-text",
+      "role": "compare",
+      "tone": "muted",
+      "cols": 2,
+      "count": 2,
+      "media": "none",
+      "note": "two headings with one line each, large empty space below"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": null,
+      "count": 1,
+      "media": "left",
+      "optional": true,
+      "note": "small round portrait, heading, quote and name centered between slider arrows, dots below"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "light",
+      "cols": null,
+      "count": 3,
+      "media": "none",
+      "note": "centered heading and three buttons in a row"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "_note": "Shows hero-isometric. Ledgerline Services is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "clean-minimal",
+  "lang": "en",
+  "site": {
+    "brand": "Ledgerline Services",
+    "brand_mark": "LL",
+    "title": "Ledgerline Services | Finance and accounting outsourcing",
+    "description": "Ledgerline Services prepares books, payroll and tax files for accounting firms in the US and Canada, with 75 accountants in Manila."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-isometric",
+      "data": {
+        "eyebrow": "Finance and accounting outsourcing",
+        "title": "Bookkeeping and payroll teams for *accounting firms*",
+        "lead": "Ledgerline Services prepares books, payroll and tax files for accounting firms in the US and Canada, with 75 accountants in Manila.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "stats": [
+          {
+            "value": "75",
+            "label": "Accountants"
+          },
+          {
+            "value": "2012",
+            "label": "Founded"
+          },
+          {
+            "value": "40",
+            "label": "Firms served"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Bookkeeping",
+            "text": "Monthly close and reconciliations for your clients, reviewed before hand-off.",
+            "bullets": [
+              "Reviewed before delivery",
+              "Work in your tools",
+              "Weekly reporting"
+            ]
+          },
+          {
+            "icon": "wallet",
+            "title": "Payroll",
+            "text": "Payroll runs prepared for approval, with filings tracked by due date."
+          },
+          {
+            "icon": "receipt",
+            "title": "Tax preparation",
+            "text": "Individual and business returns prepared for your reviewers in busy season."
+          },
+          {
+            "icon": "file-text",
+            "title": "Document processing",
+            "text": "Invoices and statements indexed and entered into your practice software."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us what you need to *hand off*",
+        "text": "Send a short brief and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Ledgerline Services prepares books, payroll and tax files for accounting firms in the US and Canada, with 75 accountants in Manila.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Bookkeeping",
+                "href": "#services"
+              },
+              {
+                "label": "Payroll",
+                "href": "#services"
+              },
+              {
+                "label": "Tax preparation",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

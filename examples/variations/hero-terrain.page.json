@@ -1,0 +1,157 @@
+{
+  "_note": "Shows hero-terrain. Meridian Contact Group is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "enterprise-navy",
+  "lang": "en",
+  "site": {
+    "brand": "Meridian Contact Group",
+    "brand_mark": "MC",
+    "title": "Meridian Contact Group | Customer operations at scale",
+    "description": "Meridian Contact Group runs voice, chat and back-office programs for banks and telcos from three delivery centers, 3,200 people in all."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-terrain",
+      "data": {
+        "eyebrow": "Customer operations at scale",
+        "title": "Customer operations for *banks and telcos*",
+        "lead": "Meridian Contact Group runs voice, chat and back-office programs for banks and telcos from three delivery centers, 3,200 people in all.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "stats": [
+          {
+            "value": "3,200",
+            "label": "People in production"
+          },
+          {
+            "value": "3",
+            "label": "Delivery centers"
+          },
+          {
+            "value": "11",
+            "label": "Languages"
+          },
+          {
+            "value": "24/7",
+            "label": "Coverage"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Voice and chat care",
+            "text": "Inbound care for card, billing and account questions across voice, chat and messaging apps.",
+            "bullets": [
+              "Reviewed before delivery",
+              "Work in your tools",
+              "Weekly reporting"
+            ]
+          },
+          {
+            "icon": "file-text",
+            "title": "Back-office processing",
+            "text": "KYC checks, disputes and order updates handled inside your own systems."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Trust and safety",
+            "text": "Content and transaction review with escalation to your policy team."
+          },
+          {
+            "icon": "bar-chart",
+            "title": "Reporting",
+            "text": "Daily service levels and weekly quality scores in a shared dashboard."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us what you need to *hand off*",
+        "text": "Send a short brief and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Meridian Contact Group runs voice, chat and back-office programs for banks and telcos from three delivery centers, 3,200 people in all.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Voice and chat care",
+                "href": "#services"
+              },
+              {
+                "label": "Back-office processing",
+                "href": "#services"
+              },
+              {
+                "label": "Trust and safety",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

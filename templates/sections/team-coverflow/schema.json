@@ -1,0 +1,26 @@
+{
+  "variant": "team-coverflow",
+  "group": "team", "signature": true,
+  "forms": ["carousel-cards"],
+  "reshape": true,
+  "summary": "Leadership portraits in a 3D coverflow: the person in the middle faces the reader, up to two on each side turn away in perspective. Previous and next buttons, the arrow keys or a click on a side portrait bring that person to the middle, and the name, role, short bio and LinkedIn link under the row crossfade to them. No auto-rotation. Turn angle, spacing and corner radius are seeded from the brand name. Needs 3-8 real people who agreed to be shown, each with their own photo; without photos use team-grid.",
+  "tone": "auto",
+  "anchor": "leadership",
+  "shared": ["stage3d"],
+  "animations": ["coverflow-3d", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "carousel_label": {"type": "text", "min": 3, "max": 40, "default": "Leadership team"},
+    "prev_label": {"type": "text", "min": 2, "max": 24, "default": "Previous person"},
+    "next_label": {"type": "text", "min": 2, "max": 24, "default": "Next person"},
+    "of_label": {"type": "text", "min": 1, "max": 8, "default": "of"},
+    "members": {"type": "list", "min": 3, "max": 8, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 3, "max": 40},
+      "role": {"type": "text", "min": 2, "max": 60},
+      "photo": {"type": "image"},
+      "bio": {"type": "text", "min": 20, "max": 200, "required": false},
+      "linkedin": {"type": "href", "required": false}
+    }}},
+    "linkedin_label": {"type": "text", "min": 3, "max": 30, "default": "LinkedIn profile"}
+  }
+}

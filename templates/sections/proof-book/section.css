@@ -1,0 +1,113 @@
+/* proof-book: case studies as an open book. Resting pages are flat; only the leaf that turns is 3D.
+   Seeds (build time): --pb-warm paper tone, --pb-round corner radius, --pb-spine gutter shadow, --pb-speed turn time. */
+.bl-pbook {
+  --pb-paper: color-mix(in oklab, color-mix(in oklab, var(--surface) 94%, #f1e4c9) calc(var(--pb-warm, .5) * 100%), color-mix(in oklab, var(--surface) 96%, #dfe7f2));
+  --pb-edge: color-mix(in oklab, var(--pb-paper) 78%, var(--text-muted));
+  --pb-r: calc(3px + var(--pb-round, .5) * 9px);
+  --pb-gutter: calc(.08 + var(--pb-spine, .5) * .1);
+  --pb-pad: clamp(1.5rem, 3.2vw, 2.75rem);
+}
+.bl-pbook__wrap { max-width: 1060px; margin-inline: auto; }
+
+/* Toolbar above the book: counter, previous, next (APG carousel: controls come before the slides) */
+.bl-pbook__controls { display: flex; align-items: center; justify-content: flex-end; gap: .75rem; margin-bottom: 2rem; }
+.bl-pbook__count { margin-right: auto; display: inline-flex; align-items: center; gap: .6rem; font-size: var(--fs-sm); color: var(--text-muted); }
+.bl-pbook__count [data-pbook-now] { color: var(--text-strong); font-weight: 700; }
+.bl-pbook__count-sep { width: 28px; height: 1px; background: var(--border-strong); }
+.bl-pbook__btn {
+  display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: .55rem 1.05rem;
+  border: 1px solid var(--border-strong); border-radius: var(--radius-btn); background: var(--surface);
+  color: var(--text-strong); font-size: .9rem; font-weight: 700; line-height: 1.2;
+  transition: background-color var(--dur-fast) var(--ease-std), border-color var(--dur-fast) var(--ease-std), transform var(--dur-fast) var(--ease-out);
+}
+.bl-pbook__btn .bl-icon { width: 1.05em; height: 1.05em; }
+.bl-pbook__btn:hover { background: var(--surface-2); border-color: var(--text-muted); }
+.bl-pbook__btn:hover .arrow-icon { transform: translateX(3px); }
+.bl-pbook__btn:active { transform: scale(.98); }
+.bl-pbook__btn--next { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
+.bl-pbook__btn--next:hover { background: var(--c-accent-hover); border-color: var(--c-accent-hover); }
+.bl-pbook__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+
+/* The book: a stage for the turning leaf. Spread and pages are ordinary flat boxes. */
+.bl-pbook__book { --fx-persp: 3200px; perspective-origin: 50% 45%; position: relative; }
+.bl-pbook__spread { display: grid; gap: 2.5rem; }
+.js .bl-pbook__spread { gap: 0; }
+.js .bl-pbook__case { grid-area: 1 / 1; }
+.bl-pbook__case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.bl-pbook__page {
+  position: relative; display: flex; flex-direction: column; min-height: 540px; padding: var(--pb-pad);
+  background-color: var(--pb-paper); color: var(--text);
+}
+.js .bl-pbook__page { visibility: hidden; }
+.js .bl-pbook__page.is-on { visibility: visible; }
+.bl-pbook__page--l {
+  border-radius: var(--pb-r) 0 0 var(--pb-r); padding-right: calc(var(--pb-pad) + .75rem);
+  box-shadow: -1px 1px 0 var(--pb-edge), -3px 3px 0 var(--pb-paper), -4px 4px 0 var(--pb-edge), -6px 6px 0 var(--pb-paper), -7px 7px 0 var(--pb-edge), -18px 30px 50px -28px rgba(15, 23, 42, .32);
+}
+.bl-pbook__page--r {
+  border-radius: 0 var(--pb-r) var(--pb-r) 0; padding-left: calc(var(--pb-pad) + .75rem); padding-bottom: calc(var(--pb-pad) + 1.75rem);
+  box-shadow: 1px 1px 0 var(--pb-edge), 3px 3px 0 var(--pb-paper), 4px 4px 0 var(--pb-edge), 6px 6px 0 var(--pb-paper), 7px 7px 0 var(--pb-edge), 18px 30px 50px -28px rgba(15, 23, 42, .32);
+}
+/* gutter shading: paper curving into the spine */
+.bl-pbook__page::before { content: ""; position: absolute; top: 0; bottom: 0; width: 16%; pointer-events: none; }
+.bl-pbook__page--l::before { right: 0; background: linear-gradient(to left, rgba(20, 24, 36, var(--pb-gutter)), rgba(20, 24, 36, 0)); }
+.bl-pbook__page--r::before { left: 0; background: linear-gradient(to right, rgba(20, 24, 36, calc(var(--pb-gutter) * 1.2)), rgba(20, 24, 36, 0)); }
+.bl-pbook__page > * { position: relative; }
+
+.bl-pbook__run { font-size: var(--fs-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.6rem; }
+.bl-pbook__run--r { text-align: right; }
+.bl-pbook__industry { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-ink); }
+.bl-pbook__client { margin-top: .35rem; font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.45rem, 1vw + 1rem, 1.9rem); line-height: 1.15; color: var(--text-strong); }
+.bl-pbook__photo { margin: 1.2rem 0 1.3rem; aspect-ratio: 2 / 1; overflow: hidden; border-radius: calc(var(--pb-r) * .6); background: var(--surface-2); }
+.bl-pbook__photo img { width: 100%; height: 100%; object-fit: cover; }
+.bl-pbook__label { display: flex; align-items: center; gap: .6rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: .55rem; }
+.bl-pbook__label::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.bl-pbook__text { font-size: var(--fs-body); line-height: 1.6; color: var(--text); text-wrap: pretty; }
+.bl-pbook__title { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.3rem, .9vw + 1rem, 1.7rem); line-height: 1.25; color: var(--text-strong); text-wrap: balance; }
+.bl-pbook__results { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.4rem 1.2rem; margin-top: auto; padding-top: 2rem; }
+.bl-pbook__results > div { display: flex; flex-direction: column; gap: .2rem; padding-top: .9rem; border-top: 2px solid var(--c-accent); }
+.bl-pbook__results dd { order: -1; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.9rem, 1.6vw + 1.1rem, 2.6rem); line-height: 1.05; letter-spacing: -.02em; color: var(--accent-ink); }
+.bl-pbook__results dt { font-size: var(--fs-sm); color: var(--text); line-height: 1.4; }
+.bl-pbook__link { margin-top: 1.6rem; align-self: flex-start; }
+
+/* Turn shading on the pages under the leaf, and the page corner that also turns */
+.bl-pbook__cast { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(42% 70% at 50% 50%, rgba(15, 20, 30, .16), rgba(15, 20, 30, 0) 70%); }
+.bl-pbook__corner {
+  position: absolute; right: 0; bottom: 0; width: 46px; height: 46px; cursor: pointer; transform-origin: 100% 100%;
+  border-bottom-right-radius: var(--pb-r);
+  background: linear-gradient(to top left, var(--pb-edge) 0 48%, rgba(15, 20, 30, .12) 49%, color-mix(in oklab, var(--pb-paper) 90%, var(--text-muted)) 51%, var(--pb-paper) 100%);
+  box-shadow: -3px -3px 8px -4px rgba(15, 20, 30, .25);
+  transition: transform var(--dur) var(--ease-out);
+}
+.bl-pbook__book.is-turning .bl-pbook__corner { opacity: 0; }
+html:not(.js) .bl-pbook__corner, html:not(.js) .bl-pbook__controls { display: none; }
+
+/* The leaf built by section.js: two hinged segments so the paper bends as it turns */
+.bl-pbook__leaf { position: absolute; top: 0; bottom: 0; left: 50%; width: 50%; transform-origin: 0 50%; z-index: 2; pointer-events: none; }
+.bl-pbook__seg { position: absolute; top: 0; bottom: 0; left: 50%; width: 50%; transform-origin: 0 50%; }
+.bl-pbook__face { position: absolute; top: 0; bottom: 0; overflow: clip; background-color: var(--pb-paper); }
+.bl-pbook__leaf > .bl-pbook__face { left: 0; width: 50%; }
+.bl-pbook__seg > .bl-pbook__face { left: 0; width: 100%; }
+.bl-pbook__face.is-back { transform: rotateY(180deg); }
+.bl-pbook__seg > .bl-pbook__face:not(.is-back) { border-radius: 0 var(--pb-r) var(--pb-r) 0; }
+.bl-pbook__seg > .bl-pbook__face.is-back { border-radius: var(--pb-r) 0 0 var(--pb-r); }
+.bl-pbook__leafpage { position: absolute; top: 0; left: 0; width: 200%; height: 100%; min-height: 0; margin: 0; visibility: visible !important; box-shadow: none; border-radius: 0; }
+.bl-pbook__leafpage.is-shift { left: -100%; }
+.bl-pbook__shade { position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(to right, rgba(15, 20, 30, .34), rgba(15, 20, 30, .06) 55%, rgba(15, 20, 30, .2)); }
+
+@media (max-width: 760px) {
+  .bl-pbook__book { overflow-x: clip; }
+  .bl-pbook__case { grid-template-columns: minmax(0, 1fr); }
+  .bl-pbook__page { min-height: 0; padding: 1.5rem 1.35rem; }
+  .bl-pbook__page--l { border-radius: var(--pb-r) var(--pb-r) 0 0; padding-right: 1.35rem; box-shadow: none; }
+  .bl-pbook__page--r { border-radius: 0 0 var(--pb-r) var(--pb-r); padding-left: 1.35rem; padding-top: .5rem; padding-bottom: 3.75rem; box-shadow: none; }
+  .bl-pbook__page::before, .bl-pbook__run { display: none; }
+  .bl-pbook__case { grid-template-rows: auto 1fr; }
+  .bl-pbook__results { margin-top: 0; padding-top: 1.4rem; }
+  .bl-pbook__spread { border-radius: var(--pb-r); box-shadow: 1px 1px 0 var(--pb-edge), 3px 3px 0 var(--pb-paper), 4px 4px 0 var(--pb-edge), 6px 6px 0 var(--pb-paper), 7px 7px 0 var(--pb-edge), 0 24px 40px -24px rgba(15, 23, 42, .3); }
+  .bl-pbook__leaf { left: 0; width: 100%; }
+  .bl-pbook__controls { gap: .5rem; }
+  .bl-pbook__btn { padding: .5rem .8rem; font-size: .85rem; }
+  .bl-pbook__btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .bl-pbook__btn { width: 44px; justify-content: center; padding: 0; }
+}

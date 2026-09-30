@@ -1,0 +1,2 @@
+/* hero-wavefield: dot-wave-field-3d. The field fills the lower part of the hero; the copy sits in the calm space above it. */
+.bl-hwave .bl-hgl__bg::after { background: linear-gradient(180deg, var(--bg) 0%, transparent 30%, transparent 86%, var(--bg) 100%); }

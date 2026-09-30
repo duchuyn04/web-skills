@@ -1,0 +1,17 @@
+{
+  "id": "transcom",
+  "source": {"name": "Transcom", "url": "https://transcom.com/", "category": "Global CX & Enterprise BPO", "collected": "2026-09-26"},
+  "fits": ["enterprise-cx"],
+  "summary": "Dark photo hero with left copy and three pill buttons, a white tabbed result-card section, a dark service card row with round photos and a short call band, a pale world map with a figure row, a slider of article cards, an accordion list and a closing band.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "two-line large headline left over a full-width team photo, three pill buttons below"},
+    {"form": "tabs", "role": "cases", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "centered heading and small line, pill tab switch, four pastel result cards with photo on top, big figure, divider and short text; round arrows below"},
+    {"form": "cards-image", "role": "services", "tone": "dark", "cols": 4, "count": 4, "media": "none", "note": "centered heading and line on a dark patterned ground, four white cards each topped by a round photo that overlaps the edge, title and paragraph"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "optional": true, "note": "centered heading, one line and a single yellow button on a deep green ground, continues the card section"},
+    {"form": "locations-map", "role": "locations", "tone": "muted", "cols": 4, "count": 4, "media": "full", "note": "left-aligned heading and line, wide world map with accented countries, row of four large figures with captions and a centered button"},
+    {"form": "carousel-cards", "role": "news", "tone": "muted", "cols": 3, "count": 3, "media": "right", "optional": true, "note": "heading and short line on the left, slider on the right with tall rounded photos, caption, tag and read-more link; dots below"},
+    {"form": "list-rows", "role": "about", "tone": "light", "cols": 1, "count": 4, "media": "none", "note": "heading and short paragraph left, four collapsed accordion rows with plus signs right"},
+    {"form": "cta-band", "role": "cta", "tone": "muted", "media": "none", "note": "left-aligned heading with one filled and one outlined button on a tinted ground, directly above the footer"}
+  ]
+}

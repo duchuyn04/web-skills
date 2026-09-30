@@ -1,0 +1,21 @@
+<section id="{{section.id}}" class="bl-section bl-lrel bl-tone-{{section.tone}}" data-lrel data-fx="3d" data-seed="{{site.brand}}" style="--s-a: {{site.seed.a}}; --s-b: {{site.seed.b}}; --sign: {{site.seed.sign}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="fx3d-stage bl-lrel__stage" aria-hidden="true" data-reveal="fade" data-lrel-stage>
+      <div class="fx3d-rig bl-lrel__rig" data-lrel-rig>
+        <div class="bl-lrel__plate" data-lrel-plate>{{> world-dots}}<svg class="bl-lrel__arcs" viewBox="0 0 1440 540" preserveAspectRatio="none" aria-hidden="true" focusable="false" data-lrel-arcs></svg></div>
+        {{#hubs}}<span class="bl-lrel__col" data-col data-hq="{{hq}}" data-headcount="{{headcount}}" data-x="{{city.x}}" data-y="{{city.y}}" style="--x: {{city.x}}%; --y: {{city.y}}%; --i: {{@index}}"><span class="bl-lrel__f bl-lrel__f--front"></span><span class="bl-lrel__f bl-lrel__f--back"></span><span class="bl-lrel__f bl-lrel__f--right"></span><span class="bl-lrel__f bl-lrel__f--left"></span><span class="bl-lrel__f bl-lrel__f--top"></span></span>{{/hubs}}
+        {{#hubs}}<span class="bl-lrel__tag" data-tag style="--x: {{city.x}}%; --y: {{city.y}}%; --i: {{@index}}"><strong>{{city.name}}</strong><span>{{role}}</span>{{#headcount}}<em class="bl-mono">{{headcount}}</em>{{/headcount}}</span>{{/hubs}}
+      </div>
+    </div>
+    <ul class="bl-lrel__hubs" data-reveal-group>
+      {{#hubs}}<li class="bl-lrel__hub" tabindex="0" data-reveal data-hub-card>
+        <div class="bl-lrel__hub-top">{{flag:$city.flag_code}}<span>{{city.country_name}}</span>{{#hq}}<span class="bl-chip bl-lrel__hq">{{hq_label}}</span>{{/hq}}</div>
+        <strong class="bl-lrel__city">{{city.name}}</strong>
+        <span class="bl-lrel__role">{{role}}</span>
+        {{#headcount}}<span class="bl-lrel__count bl-mono">{{headcount}}</span>{{/headcount}}
+        {{#detail}}<span class="bl-lrel__detail">{{detail}}</span>{{/detail}}
+      </li>{{/hubs}}
+    </ul>
+  </div>
+</section>

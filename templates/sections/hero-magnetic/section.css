@@ -1,0 +1,14 @@
+/* hero-magnetic: magnetic-dot-plane. A canvas of dots on a tilted plane fills the hero behind the copy. Dots under
+   the copy and stats are dimmed in the script, so text keeps its contrast; the fade below also calms the edges. */
+.bl-hmag { background: var(--bg); }
+.bl-hmag__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bl-hmag__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--bg) 0%, transparent 18%, transparent 82%, var(--bg) 100%); }
+.bl-hmag__inner { position: relative; display: flex; flex-direction: column; justify-content: center; gap: clamp(2.5rem, 6vw, 5rem); }
+.bl-hmag__copy { max-width: 600px; }
+.bl-hmag__foot { display: flex; align-items: flex-end; gap: 1.5rem; }
+.bl-hmag__stats { flex: 1; margin-top: 0; max-width: 860px; }
+.bl-hmag .bl-hmag__toggle { position: static; margin-left: auto; flex: none; }
+@media (max-width: 960px) {
+  .bl-hmag__foot { flex-direction: column; align-items: stretch; }
+  .bl-hmag .bl-hmag__toggle { align-self: flex-end; }
+}

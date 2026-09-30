@@ -1,0 +1,109 @@
+{
+  "id": "concentrix",
+  "source": {
+    "name": "Concentrix",
+    "url": "https://www.concentrix.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Dark full-bleed hero with news cards, a dark metrics band, light service cards and an image feature, an industry grid, a logo row, a brand feature card, dark case and insight carousels and a short closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "copy left over a full-width dark visual with a button; stacked news cards on the right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 6,
+      "count": 6,
+      "media": "none",
+      "note": "heading centered, six icon figures in one row"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "heading left with a button right, one row of three cards with a link each"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "copy and button left, a large pill-shaped photo right"
+    },
+    {
+      "form": "cards-image",
+      "role": "industries",
+      "tone": "light",
+      "cols": 4,
+      "count": 8,
+      "media": "none",
+      "note": "heading left with a button right, two rows of four icon cards"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "dark",
+      "cols": null,
+      "count": 8,
+      "media": "none",
+      "optional": true,
+      "note": "single row of partner logos on a dark gradient"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "muted",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "wide rounded card: photo left, brand logo, heading, text and button right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading left with a button right, three photo cards with captions"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "cols": 1,
+      "count": 4,
+      "media": "left",
+      "optional": true,
+      "note": "heading left with a button right, one large card with photo left and text right, dots below"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered heading, one line and a button"
+    }
+  ]
+}

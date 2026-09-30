@@ -1,0 +1,121 @@
+{
+  "id": "luvina-software",
+  "source": {
+    "name": "Luvina Software",
+    "url": "https://luvina.net/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner",
+    "offshore-staffing"
+  ],
+  "summary": "White hero with a red graphic, then core values, a red service list, an industry tile mosaic, a technology icon grid, a metrics and globe split, client logos, a quote, partner logos, awards and a contact form.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "light",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "large heading left with a button, red geometric visual and a slide index on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "about",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "big heading left of three short value columns"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "dark",
+      "media": "left",
+      "cols": null,
+      "count": 9,
+      "note": "brand-colour ground, vertical service list left, detail text and small image cards right"
+    },
+    {
+      "form": "cards-image",
+      "role": "industries",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 10,
+      "note": "centered heading and button, angled photo tiles in three rows with a label on each"
+    },
+    {
+      "form": "cards-icon",
+      "role": "tools",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 12,
+      "note": "centered heading and button, icon items in a grid of three columns",
+      "optional": true
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "muted",
+      "media": "right",
+      "cols": 2,
+      "count": 4,
+      "note": "heading and four figures left in two columns, dotted globe right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 3,
+      "note": "centered heading over a band of client logos on a brand-colour strip",
+      "optional": true
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "left",
+      "cols": null,
+      "count": 2,
+      "note": "large portrait left, heading and two quote entries right, one outline button",
+      "optional": true
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 5,
+      "note": "heading left and a row of partner logos, one button below",
+      "optional": true
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "note": "dark red ground, centered heading and two rows of circular award badges",
+      "optional": true
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "heading and contact line left, form fields below"
+    }
+  ]
+}

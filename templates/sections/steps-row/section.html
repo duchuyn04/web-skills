@@ -1,4 +1,4 @@
-<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}" data-sequence>
   <div class="bl-container">
     {{> head-center}}
     <ol class="bl-steps" data-reveal-group>
@@ -11,6 +11,6 @@
       </li>
       {{/steps}}
     </ol>
-    {{#cta}}<div class="bl-steps__cta" data-reveal><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}{{arrow}}</a></div>{{/cta}}
+    {{#cta}}<div class="bl-steps__cta" data-reveal><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}</a></div>{{/cta}}
   </div>
 </section>

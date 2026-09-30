@@ -18,7 +18,13 @@
         { y0: 0.12, y1: 0.78, amp: 0.06, freq: 1.2, spread: 0.16, twist: 1.2, shift: 2.1, speed: -0.00015, lines: 22, alpha: 0.24 }
       ]
     });
-    (hero.getAttribute('data-echo') || '').split(/\s+/).forEach(function (id) {
+    /* echo: the listed section ids; none listed means every dark section in main, up to three; "none" turns it off */
+    var echoIds = (hero.getAttribute('data-echo') || '').trim();
+    if (!echoIds) {
+      echoIds = Array.prototype.slice.call(document.querySelectorAll('main > .bl-tone-dark[id]'))
+        .filter(function (s) { return s !== hero; }).slice(0, 3).map(function (s) { return s.id; }).join(' ');
+    }
+    (echoIds === 'none' ? '' : echoIds).split(/\s+/).forEach(function (id) {
       var sec = id && document.getElementById(id);
       if (!sec) return;
       var c = document.createElement('canvas');

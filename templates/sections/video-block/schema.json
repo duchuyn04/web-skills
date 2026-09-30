@@ -1,6 +1,8 @@
 {
   "variant": "video-block",
   "group": "video",
+  "forms": ["video-block"],
+  "open": true,
   "summary": "Large 16:9 poster with a pulsing play button. Clicking opens the video in a modal: a local file, or a YouTube or Vimeo embed that only loads after the click. Needs a real client video; leave the section out if there is none.",
   "tone": "auto",
   "anchor": "video",

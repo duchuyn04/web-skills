@@ -1,0 +1,105 @@
+{
+  "id": "athena",
+  "source": {
+    "name": "Athena",
+    "url": "https://www.athena.com/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "cx-voice-sales"
+  ],
+  "summary": "Dark green hero with a role picker card, a light logo row, a photo and checklist split, an assessment banner, a dark three-step block, quote cards, tabbed feature and security points, three alternating use-case rows, a quote slider and a photo closing band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "dark",
+      "media": "right",
+      "note": "serif heading with italic accent and short text left, frosted glass card right holding four stacked choice buttons"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "optional": true,
+      "note": "one row of grey company logos in a thin band"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "light",
+      "media": "left",
+      "cols": 2,
+      "count": 4,
+      "note": "photo left with a callout strip below it, right column of a checklist and collapsed group titles with a button"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "muted",
+      "optional": true,
+      "note": "heading and one line left, dark button panel with two ticks right"
+    },
+    {
+      "form": "cards-text",
+      "role": "process",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "note": "heading left with a small button right, three numbered columns separated by thin vertical lines, callout line below"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "muted",
+      "media": "left",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "heading left, three cards in a row: a portrait photo, a beige quote card and a dark green quote card, centered button below"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "dark",
+      "media": "right",
+      "cols": 2,
+      "count": 3,
+      "note": "heading and three stacked tab rows left with a button, large photo right with caption chips, then a two by two grid of text points below a thin rule"
+    },
+    {
+      "form": "feature-split",
+      "role": "industries",
+      "tone": "muted",
+      "media": "left",
+      "cols": 2,
+      "count": 3,
+      "note": "three stacked rows alternating photo left, photo right, photo left; each has a small tag, serif heading and a bullet list"
+    },
+    {
+      "form": "statement",
+      "role": "intro",
+      "tone": "muted",
+      "note": "centered serif heading with a short paragraph, then a wide dark rounded strip with one accented line"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "muted",
+      "cols": 4,
+      "count": 6,
+      "optional": true,
+      "note": "centered small heading, row of white quote cards with a small avatar and name at the bottom, cut off at the right edge"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "full",
+      "note": "photo background under a green wash, centered serif heading and one outlined button"
+    }
+  ]
+}

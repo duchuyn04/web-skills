@@ -87,7 +87,6 @@
    "type": "services-bento",
    "data": {
     "head": {
-     "eyebrow": "Services",
      "title": "Roles we fill",
      "lead": "Every hire works only for your company, in your tools and your hours."
     },
@@ -102,7 +101,7 @@
        "Weekly QA scoring"
       ],
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -128,12 +127,11 @@
    "type": "tool-stack",
    "data": {
     "head": {
-     "eyebrow": "Tools",
      "title": "Platforms our teams *already use*",
      "lead": "New hires are trained on the tools you run today, so there is nothing to migrate."
     },
     "link": {
-     "label": "Ask about your stack",
+     "label": "Talk to an expert",
      "href": "#contact"
     },
     "tools": [
@@ -298,7 +296,6 @@
    "type": "steps-row",
    "data": {
     "head": {
-     "eyebrow": "Process",
      "title": "How it works",
      "lead": "Most teams start work three to four weeks after the first call."
     },
@@ -357,7 +354,6 @@
    "type": "country-cards",
    "data": {
     "head": {
-     "eyebrow": "Locations",
      "title": "Our offices",
      "lead": "Two countries, four offices, one set of security and HR policies."
     },
@@ -450,7 +446,6 @@
    "type": "team-grid",
    "data": {
     "head": {
-     "eyebrow": "Leadership",
      "title": "The people who run Lantern Staffing"
     },
     "members": [
@@ -520,7 +515,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "items": [

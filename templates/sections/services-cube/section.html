@@ -1,0 +1,34 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-fxcube" data-fx="3d" data-fxcube data-seed="{{site.brand}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-fxcube__grid" data-reveal-group>
+      {{#cards}}
+      <article class="bl-fxcube__block" data-fxcube-block data-reveal>
+        <div class="bl-fxcube__stage fx3d-stage">
+          <div class="bl-fxcube__rig fx3d-rig" data-fxcube-rig>
+            <div class="bl-fxcube__face bl-fxcube__face--front fx3d-face is-front" data-face data-name="{{overview_label}}">
+              <div class="bl-fxcube__top"><span class="bl-icon-box">{{icon:$icon}}</span></div>
+              <h3 class="bl-h3">{{title}}</h3>
+              <p class="bl-fxcube__text">{{text}}</p>
+              {{#link}}<a class="bl-link bl-fxcube__link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+            </div>
+            {{#scope.0}}<div class="bl-fxcube__face bl-fxcube__face--scope fx3d-face" data-face data-name="{{scope_label}}">
+              <p class="bl-fxcube__label">{{scope_label}}</p>
+              <ul class="bl-checks bl-fxcube__checks">{{#scope}}<li>{{icon:check}}<span>{{.}}</span></li>{{/scope}}</ul>
+            </div>{{/scope.0}}
+            {{#sla.0}}<div class="bl-fxcube__face bl-fxcube__face--sla bl-tone-dark fx3d-face" data-face data-name="{{sla_label}}">
+              <p class="bl-fxcube__label">{{sla_label}}</p>
+              <dl class="bl-fxcube__sla">{{#sla}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/sla}}</dl>
+            </div>{{/sla.0}}
+            {{#tools.0}}<div class="bl-fxcube__face bl-fxcube__face--tools fx3d-face" data-face data-name="{{tools_label}}">
+              <p class="bl-fxcube__label">{{tools_label}}</p>
+              <ul class="bl-fxcube__tools">{{#tools}}<li class="bl-chip">{{.}}</li>{{/tools}}</ul>
+            </div>{{/tools.0}}
+          </div>
+        </div>
+        <div class="bl-fxcube__sides" role="group" aria-label="{{sides_label}}: {{title}}" data-fxcube-sides></div>
+      </article>
+      {{/cards}}
+    </div>
+  </div>
+</section>

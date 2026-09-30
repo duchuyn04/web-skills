@@ -1,0 +1,119 @@
+{
+  "id": "sama",
+  "source": {
+    "name": "Sama",
+    "url": "https://www.sama.com/",
+    "category": "AI Data Annotation & Operations BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops"
+  ],
+  "summary": "Dark centered hero, logo row, light stats band, dark outcome list, service cards, a lilac process band, a green testimonial slider, a contact split, case cards and closing bands.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading, sub line and a button over a large soft glow"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": 8,
+      "note": "caption and one row of client logos on a bright strip",
+      "optional": true
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "muted",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading, four figures with labels, one button below"
+    },
+    {
+      "form": "list-rows",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": 3,
+      "note": "heading and text left, three outcome rows right"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "centered heading and intro, four cards each with an illustration and short text"
+    },
+    {
+      "form": "cards-text",
+      "role": "process",
+      "tone": "muted",
+      "media": "right",
+      "cols": 3,
+      "count": 3,
+      "note": "heading and intro left with a photo cluster, three numbered step columns"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "dark",
+      "media": "none",
+      "cols": 2,
+      "count": 4,
+      "note": "heading and arrows left, quote cards with a portrait in a slider on a green ground",
+      "optional": true
+    },
+    {
+      "form": "feature-split",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "heading and button left, short text and a bullet list right"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "muted",
+      "media": "none",
+      "cols": 2,
+      "count": 4,
+      "note": "centered heading, two by two photo cards with a caption and a link, one button below",
+      "optional": true
+    },
+    {
+      "form": "text-block",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "heading and paragraph with one button on a green ground",
+      "optional": true
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading and one button"
+    }
+  ]
+}

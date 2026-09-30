@@ -1,0 +1,33 @@
+/* hero-shatter: shatter-assemble-3d. Stage (perspective) > rig (preserve-3d) > tiles (flat faces). Every tile
+   clips its own copy of the photo, placed so the tiles add up to the full picture; the browser decodes the image
+   once. After the assembly the tiles are hidden and the single photo shows, so nothing stays on its own layer.
+   Tiles fade one by one; the rig never gets opacity. */
+.bl-hshat__grid { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); gap: clamp(2rem, 4.5vw, 4rem); align-items: center; }
+.bl-hshat__visual { position: relative; }
+.bl-hshat__stage { position: relative; aspect-ratio: 3 / 2; --fx-persp: 1100px; perspective-origin: 50% 45%; }
+.bl-hshat__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); background: var(--surface-2); }
+.bl-hshat.is-tiled .bl-hshat__img { visibility: hidden; }
+/* hairline tile grid over the photo: the seams the tiles locked into */
+.bl-hshat__stage::after {
+  content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); pointer-events: none;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, .2) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, .2) 1px, transparent 1px);
+  background-size: calc(100% / var(--cols, 6)) calc(100% / var(--rows, 4)); background-position: -1px -1px;
+}
+.bl-hshat__rig { position: absolute; inset: 0; }
+.bl-hshat__tile { position: absolute; overflow: clip; backface-visibility: hidden; transition: transform .45s var(--ease-out); }
+.bl-hshat__tile img { position: absolute; max-width: none; object-fit: cover; }
+.bl-hshat__tile::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255, 255, 255, .55); opacity: 0; transition: opacity .3s var(--ease-out); }
+.bl-hshat__tile.is-up::after { opacity: 1; }
+/* crop marks at the corners of the frame */
+.bl-hshat__mark { position: absolute; width: 18px; height: 18px; border: 0 solid var(--border-strong); pointer-events: none; }
+.bl-hshat__mark--tl { left: -14px; top: -14px; border-left-width: 1px; border-top-width: 1px; }
+.bl-hshat__mark--tr { right: -14px; top: -14px; border-right-width: 1px; border-top-width: 1px; }
+.bl-hshat__mark--bl { left: -14px; bottom: -14px; border-left-width: 1px; border-bottom-width: 1px; }
+.bl-hshat__mark--br { right: -14px; bottom: -14px; border-right-width: 1px; border-bottom-width: 1px; }
+@media (max-width: 960px) {
+  .bl-hshat__grid { grid-template-columns: minmax(0, 1fr); }
+  .bl-hshat__visual { max-width: 680px; width: 100%; justify-self: center; }
+}
+@media (max-width: 560px) {
+  .bl-hshat__mark { display: none; }
+}

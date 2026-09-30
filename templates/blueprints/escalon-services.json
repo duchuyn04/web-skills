@@ -1,0 +1,121 @@
+{
+  "id": "escalon-services",
+  "source": {
+    "name": "Escalon Services",
+    "url": "https://escalon.services/",
+    "category": "Finance, Accounting & Legal BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx",
+    "offshore-staffing"
+  ],
+  "summary": "Purple hero split, a dark video band, a figure and logo strip, three service cards, six alternating industry rows, a comparison table with a quote card, testimonial slider, FAQ, news cards and a closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "dark",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "heading and button left, photo collage right"
+    },
+    {
+      "form": "video-block",
+      "role": "about",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "centered heading, a large video player and a button below",
+      "optional": true
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered line with three figures"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 6,
+      "note": "one row of client logos under the figures",
+      "optional": true
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading with intro, three photo cards with title, text and link"
+    },
+    {
+      "form": "feature-split",
+      "role": "industries",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 6,
+      "note": "heading, six stacked rows that alternate photo left and text right"
+    },
+    {
+      "form": "list-rows",
+      "role": "compare",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": 4,
+      "note": "heading and a comparison table, followed by a quote form card",
+      "optional": true
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading over a slider of quote cards with dots",
+      "optional": true
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 6,
+      "note": "centered heading over one column of accordion questions"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "centered heading, three article cards",
+      "optional": true
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "heading and short bullet list left, button"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "datamatics",
+  "source": {"name": "Datamatics", "url": "https://www.datamatics.com/", "category": "Finance, Accounting & Legal BPO", "collected": "2026-09-26"},
+  "fits": ["it-bpo-partner", "offshore-staffing"],
+  "summary": "Dark slider hero with a thought-paper banner, a dark intro over a texture image, then light bands for a logo slider, a promo card, three service columns, a testimonial slider and resource cards, ending on a wide image band and a dark contact strip.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "slider with centered type over a dark full-width image, arrows at the edges and two small buttons"},
+    {"form": "text-block", "role": "intro", "tone": "dark", "media": "full", "note": "two short paragraphs and a button left over a dark abstract image"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 5, "count": 10, "optional": true, "note": "centered heading and one row of client logos in a slider"},
+    {"form": "feature-split", "role": "intro", "tone": "muted", "media": "left", "optional": true, "note": "promo picture left, heading, paragraph and a red bullet list right"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 3, "count": 3, "note": "centered heading and paragraph, three columns each with an icon, text and a list of links"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "muted", "count": 6, "media": "none", "optional": true, "note": "centered heading, video thumbnail, quote and name, arrows either side and dots"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "centered heading, three article cards with photo, tag, title and link"},
+    {"form": "image-band", "role": "intro", "tone": "light", "media": "full", "optional": true, "note": "wide banner with anniversary text and a watch button"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "note": "centered heading, one line and a button over a dark image"}
+  ]
+}

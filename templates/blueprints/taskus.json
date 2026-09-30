@@ -1,0 +1,17 @@
+{
+  "id": "taskus",
+  "source": {"name": "TaskUs", "url": "https://www.taskus.com/", "category": "Global CX & Enterprise BPO", "collected": "2026-09-26"},
+  "fits": ["enterprise-cx", "ai-data-ops"],
+  "summary": "Dark page throughout: a video-style hero with a phone visual, a statement with team photo and three icon points, a world map band, a logo tab strip on a brand-colour ground, a testimonial slider, a two-row article grid and a rounded closing band.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-video", "role": "hero", "tone": "dark", "media": "right", "note": "copy left with two buttons and a phone mockup right; slider arrows at the edges and dots below"},
+    {"form": "feature-split", "role": "services", "tone": "dark", "cols": 2, "count": 1, "media": "right", "note": "large statement and two buttons left, team photo right"},
+    {"form": "cards-icon", "role": "services", "tone": "dark", "cols": 3, "count": 3, "note": "three small icon points in one row under the statement, thin dividers"},
+    {"form": "locations-map", "role": "locations", "tone": "dark", "media": "right", "optional": true, "note": "heading, short text and button left, dotted world map right, wide photo below"},
+    {"form": "tabs", "role": "awards", "tone": "dark", "cols": 4, "count": 4, "optional": true, "note": "centered heading and pill tabs, one row of partner logos, on a strong brand-colour ground"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "dark", "cols": 2, "count": 3, "optional": true, "note": "centered heading, large quote panels in a slider with a round next button"},
+    {"form": "cards-text", "role": "cases", "tone": "dark", "cols": 3, "count": 6, "optional": true, "note": "centered heading, two rows of three outlined cards with a tag, title and a pill button"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "note": "large rounded brand-colour panel with centered heading, one line and two buttons"}
+  ]
+}

@@ -96,7 +96,6 @@
       "type": "models-board",
       "data": {
         "head": {
-          "eyebrow": "How we work",
           "title": "Who does what in each model",
           "lead": "Pick an engagement model to see which tasks stay with your team and which ones Kestrel Loop runs."
         },
@@ -154,7 +153,6 @@
     {
       "type": "cta-band",
       "data": {
-        "eyebrow": "Contact",
         "title": "Tell us what you need to *build or hand off*",
         "text": "Send a short brief and a solutions lead replies with a team plan and a price range.",
         "primary_cta": { "label": "Get a quote", "href": "mailto:hello@kestrelloop.example" },

@@ -1,0 +1,51 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hdash bl-tone-{{section.tone}}" data-fx="3d" data-hdash data-seed="{{site.brand}}" style="--sa: {{site.seed.a}}; --sb: {{site.seed.b}}; --sc: {{site.seed.c}}; --sign: {{site.seed.sign}};">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hero__grid"></span></div>
+  <div class="bl-container bl-hdash__grid">
+    <div class="bl-hdash__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+    <div class="bl-hdash__visual" data-reveal="fade">
+      <p class="bl-sr-only">{{mockup_label}}, {{board_title}}:</p>
+      <ul class="bl-sr-only">{{#stats}}<li>{{label}}: {{value}}</li>{{/stats}}<li>{{services_label}}: {{#services}}{{label}}{{^@last}}, {{/@last}}{{/services}}</li></ul>
+      <div class="bl-hdash__stage fx3d-stage" aria-hidden="true">
+        <div class="bl-hdash__rig fx3d-rig" data-hdash-rig>
+          <div class="bl-hdash__plate"></div>
+          <div class="bl-hdash__layout">
+            <div class="bl-hdash__slot bl-hdash__slot--bar" data-slot="bar">
+              <div class="bl-hdash__panel bl-hdash__bar">
+                <span class="bl-hdash__mark">{{site.brand_mark}}</span>
+                <span class="bl-hdash__title">{{board_title}}</span>
+                <span class="bl-hdash__skel"><i></i><i></i><i></i></span>
+              </div>
+            </div>
+            <div class="bl-hdash__slot bl-hdash__slot--queue" data-slot="queue">
+              <span class="bl-hdash__shade"></span>
+              <div class="bl-hdash__panel bl-hdash__queue">
+                <p class="bl-hdash__label">{{services_label}}</p>
+                <ul>{{#services}}<li><span class="bl-hdash__ico">{{icon:$icon}}</span><span class="bl-hdash__name">{{label}}</span><span class="bl-hdash__dot"></span></li>{{/services}}</ul>
+              </div>
+            </div>
+            <div class="bl-hdash__kpis">
+              {{#stats}}<div class="bl-hdash__slot bl-hdash__slot--kpi" data-slot="kpi">
+                <span class="bl-hdash__shade"></span>
+                <div class="bl-hdash__panel bl-hdash__kpi">
+                  <p class="bl-hdash__label">{{label}}</p>
+                  <p class="bl-hdash__value">{{value}}</p>
+                  <span class="bl-hdash__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                </div>
+              </div>{{/stats}}
+            </div>
+          </div>
+          <span class="bl-hdash__chip">{{icon:activity}}<span>{{mockup_label}}</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

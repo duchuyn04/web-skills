@@ -1,6 +1,7 @@
 {
   "variant": "cost-calculator",
-  "group": "calculator",
+  "group": "calculator", "signature": true,
+  "forms": ["calculator"],
   "summary": "Savings calculator: pick a role and drag the team-size slider; onshore vs offshore cost bars and the yearly saving update live. Pitch and reassurance points on the left.",
   "tone": "auto",
   "anchor": "savings",

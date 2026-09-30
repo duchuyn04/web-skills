@@ -1,0 +1,147 @@
+{
+  "id": "inapps-technology",
+  "source": {
+    "name": "InApps Technology",
+    "url": "https://inapps.net/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Light hero over a team photo with stats, a logo row, a service grid with colored tiles, recognition tabs, a tech stack grid, method rows, a dark testimonial and metrics run, engagement models, process steps, case cards, an FAQ and a dark contact form.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "headline, buttons and four stats left over a team photo"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": null,
+      "count": 9,
+      "media": "none",
+      "optional": true,
+      "note": "caption and one row of client logos"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "note": "heading left, a mosaic of six cards with two colored tiles"
+    },
+    {
+      "form": "tabs",
+      "role": "awards",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, review platform tabs with three rating cards"
+    },
+    {
+      "form": "cards-icon",
+      "role": "tools",
+      "tone": "light",
+      "cols": null,
+      "count": 22,
+      "media": "none",
+      "optional": true,
+      "note": "heading with button, many small technology chips in a grid"
+    },
+    {
+      "form": "list-rows",
+      "role": "about",
+      "tone": "light",
+      "cols": 1,
+      "count": 4,
+      "media": "none",
+      "note": "heading left, four numbered explanation rows right"
+    },
+    {
+      "form": "tabs",
+      "role": "testimonial",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "full",
+      "optional": true,
+      "note": "dark band, heading and tabbed video testimonials"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "note": "heading left, big figures in a 3 by 2 arrangement with ratings"
+    },
+    {
+      "form": "list-rows",
+      "role": "process",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "centered heading, three columns of short points with tag chips"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "right",
+      "note": "heading, tab pills for engagement models, description left and diagram right"
+    },
+    {
+      "form": "feature-split",
+      "role": "process",
+      "tone": "light",
+      "cols": 1,
+      "count": 3,
+      "media": "right",
+      "note": "heading and steps left, a photo right"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading with a link, three case cards with images"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "cols": 1,
+      "count": 6,
+      "media": "none",
+      "note": "heading with button left, six questions right"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "dark",
+      "cols": 1,
+      "count": 3,
+      "media": "full",
+      "note": "dark band: heading and bullet points left, contact form right"
+    }
+  ]
+}

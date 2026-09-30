@@ -1,7 +1,9 @@
 {
   "variant": "industries-tiles",
   "group": "industries",
-  "summary": "Grid of 4 or 8 industry tiles (icon, title, one line). Tiles tilt up to 6 degrees toward the mouse with a light glare.",
+  "forms": ["cards-icon"],
+  "open": true,
+  "summary": "Grid of 4 or 8 industry tiles (icon, title, one line). Tiles tilt up to 6 degrees toward the mouse.",
   "tone": "auto",
   "anchor": "industries",
   "animations": ["card-tilt-3d-perspective", "reveal"],

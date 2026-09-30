@@ -1,16 +1,21 @@
 {
   "variant": "banner-image",
   "group": "banner",
+  "forms": ["image-band"],
+  "open": true,
   "summary": "Mid-page photo band with a brand-colour shade, a strong line, one sentence and a button. Boxed inside the page margins (default) or full width. Use between long content sections to reset attention.",
   "tone": "auto",
   "anchor": "highlight",
+  "shared": ["backdrop3d"],
+  "shared_by_field": {"visual": {"*": ["ribbons", "three", "gl"], "dots": ["gl-dots"], "terrain": ["gl-terrain"], "wave": ["gl-wave"], "globe": ["gl-globe"], "flow": ["gl-flow"]}},
   "animations": ["reveal", "slow-photo-zoom"],
   "fields": {
+    "visual": {"type": "enum", "values": ["dots", "terrain", "wave", "globe", "flow"], "required": false},
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 12, "max": 90},
     "text": {"type": "text", "min": 30, "max": 220, "required": false},
     "cta": {"$ref": "cta", "required": false},
-    "image": {"type": "image"},
+    "image": {"type": "image", "required": false},
     "full_width": {"type": "bool", "default": false},
     "align": {"type": "enum", "values": ["left", "center"], "default": "left"}
   }

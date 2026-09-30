@@ -1,6 +1,8 @@
 {
   "variant": "services-stack",
-  "group": "services",
+  "group": "services", "signature": true,
+  "forms": ["feature-split"],
+  "reshape": true,
   "summary": "Service cards that pin under the header and stack on top of each other while scrolling; earlier cards scale back and dim. Cards cycle light, navy and brand color, the brand card carries the hero line ribbons. Mobile shows a plain list.",
   "tone": "auto",
   "anchor": "services",

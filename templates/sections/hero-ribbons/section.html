@@ -1,7 +1,6 @@
 <section id="{{section.id}}" class="bl-section bl-hero bl-hero-rib bl-tone-{{section.tone}}" data-hero-ribbons data-echo="{{#echo}}{{.}} {{/echo}}" data-home="{{#home_city}}{{lat}},{{lon}}{{/home_city}}" data-arcs="{{#arc_cities}}{{lat}},{{lon}};{{/arc_cities}}">
   <div class="bl-hero-rib__bg" aria-hidden="true">
     <canvas class="bl-hero-rib__lines" data-rib-lines></canvas>
-    <span class="bl-hero-rib__sun"></span>
   </div>
   <div class="bl-container">
     <div class="bl-hero-rib__grid">
@@ -10,7 +9,7 @@
         <h1 class="bl-h1 bl-hero-rib__title" data-split>{{title}}</h1>
         <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
         <div class="bl-btn-row" data-reveal>
-          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}{{arrow}}</a>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
           {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
         </div>
         {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}

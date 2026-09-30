@@ -1,0 +1,28 @@
+{
+  "variant": "services-cylinder",
+  "group": "services", "signature": true,
+  "forms": ["carousel-cards", "tabs"],
+  "reshape": true,
+  "summary": "5-8 service cards stand on a slowly tilted 3D drum (CSS 3D). The front card faces the visitor; the cards beside it curve away and fade. A numbered scale of service names above the drum (APG tabs) and previous/next buttons below it turn the drum to the chosen card. When the section is first seen the drum turns in from a brand-seeded offset; tilt, turn direction and card spacing are seeded from the brand name. Phones get a plain list. Needs 5-8 real service lines; with 3-4 use services-tabs or services-bento.",
+  "tone": "auto",
+  "anchor": "services",
+  "shared": ["stage3d"],
+  "animations": ["cylinder-turn-3d", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "tabs_label": {"type": "text", "min": 3, "max": 40, "default": "Services"},
+    "prev_label": {"type": "text", "min": 3, "max": 30, "default": "Previous service"},
+    "next_label": {"type": "text", "min": 3, "max": 30, "default": "Next service"},
+    "cards": {
+      "type": "list", "min": 5, "max": 8,
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "tab": {"type": "text", "min": 2, "max": 20, "required": false},
+        "title": {"type": "text", "min": 4, "max": 44},
+        "text": {"type": "text", "min": 40, "max": 170},
+        "bullets": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 48}},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    }
+  }
+}

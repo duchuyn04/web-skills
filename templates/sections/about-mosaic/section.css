@@ -9,5 +9,4 @@
 .bl-mosaic__tile { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-sm); background: var(--surface-2); }
 .bl-mosaic:has(> :nth-child(3):last-child) .bl-mosaic__tile { aspect-ratio: 3 / 4; }
 .bl-mosaic__tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
-.bl-mosaic__tile:hover img { transform: scale(1.06); }
 @media (max-width: 1024px) { .bl-mosaic-wrap { grid-template-columns: 1fr; } .bl-mosaic { max-width: 560px; } }

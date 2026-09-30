@@ -5,6 +5,9 @@ Usage:
     python variety.py --archetype it-bpo-partner        least-used variant first, for every slot
     python variety.py --check sites/acme/page.json      compare one page with every other page
     python variety.py --report                          usage of every variant and preset
+    python variety.py --blueprints it-bpo-partner       real-site layouts for an archetype, unused first
+    python variety.py --blueprint concentrix            the variants that fit each section of one layout
+    python variety.py --coverage                        blueprint sections the library cannot fill yet
 
 Pages are found under --sites (default: ./sites). Examples in the skill folder are ignored.
 A page's look is its preset plus the variant chosen for each slot. Two pages whose looks
@@ -27,6 +30,29 @@ def load_json(path):
         return json.load(f)
 
 
+def aliases():
+    """custom section name mapped to the library variant it copies (schema "aliases"), so hand-built sites count too"""
+    out = {}
+    for d in (TPL / "sections").iterdir():
+        f = d / "schema.json"
+        if f.is_file():
+            try:
+                for a in load_json(f).get("aliases", []):
+                    out[a] = d.name
+            except ValueError:
+                pass
+    return out
+
+
+def signature_variants():
+    out = set()
+    for d in (TPL / "sections").iterdir():
+        f = d / "schema.json"
+        if f.is_file() and '"signature": true' in f.read_text(encoding="utf-8"):
+            out.add(d.name)
+    return out
+
+
 def archetypes():
     return {k: v for k, v in load_json(TPL / "archetypes.json").items() if not k.startswith("_")}
 
@@ -35,11 +61,15 @@ def look(page, arch):
     """Return {slot: variant} for a page, plus the preset under the key 'preset'."""
     slots = arch.get(page.get("archetype"), {}).get("slots", [])
     out = {"preset": page.get("preset", "")}
+    alias = aliases()
     for sec in page.get("sections", []):
         t = sec.get("type", "")
         if t.startswith("custom:"):
-            out["custom:" + t[7:]] = t
-            continue
+            if t[7:] in alias:
+                t = alias[t[7:]]
+            else:
+                out["custom:" + t[7:]] = t
+                continue
         for s in slots:
             if t in s["variants"] and s["slot"] not in out:
                 out[s["slot"]] = t
@@ -115,12 +145,70 @@ def swaps(page, shared, pages, arch):
     return out
 
 
+def blueprint_report(args, pages, count):
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build
+    lib = build.load_library()
+    bps = lib["blueprints"]
+    sig = signature_variants()
+    taken = {}
+    for path, page in pages:
+        if page.get("blueprint"):
+            taken.setdefault(page["blueprint"], []).append(path.parent.name)
+    if args.blueprints:
+        # a page must say what the company does, so layouts without a services section are not offered
+        fit = [k for k, b in bps.items() if args.blueprints in b.get("fits", []) and any(s["role"] == "services" for s in b["sections"])]
+        if not fit:
+            print("no blueprint fits %r. Archetypes: %s" % (args.blueprints, ", ".join(sorted({a for b in bps.values() for a in b.get("fits", [])}))))
+        for k in sorted(fit, key=lambda k: (len(taken.get(k, [])), k)):
+            b = bps[k]
+            forms = " | ".join("%s:%s%s" % (s["role"], s["form"], "?" if build.slot_optional(s) else "") for s in b["sections"])
+            used = (", used by " + ", ".join(taken[k])) if k in taken else ", unused"
+            core = [s for s in b["sections"] if not build.slot_optional(s)]
+            proof = [s for s in b["sections"] if s.get("role") in build.PROOF_ROLES]
+            print("")
+            print("%s  (%s%s)" % (k, b["source"]["name"], used))
+            print("  %d sections: %d always needed, %d need client proof (logos, quotes, cases, team), %d other optional" % (len(b["sections"]), len(core), len(proof), len(b["sections"]) - len(core) - len(proof)))
+            print("  " + b.get("summary", ""))
+            print("  " + forms)
+        print("")
+        print("Pick an unused blueprint whose sections the brief can fill (? = optional; proof sections are left out when the brief has no proof). The page needs a services section and at least 5 content sections. Then run --blueprint KEY.")
+    if args.blueprint:
+        b = bps.get(args.blueprint)
+        if not b:
+            print("unknown blueprint %r" % args.blueprint)
+            return
+        print("%s: %s" % (args.blueprint, b["source"]["name"]))
+        print(b.get("summary", ""))
+        print("")
+        for i, s in enumerate(b["sections"]):
+            opts = sorted(build.fitting_variants(s, lib), key=lambda v: (v not in sig, count.get(v, 0), v))
+            grid = ("cols %s, items %s" % (s.get("cols"), s.get("count"))) if s.get("count") else ""
+            print("%2d %-11s %-15s %-6s %s%s" % (i + 1, s["role"], s["form"], s.get("tone", ""), "optional " if build.slot_optional(s) else "", grid))
+            print("     " + s.get("note", ""))
+            print("     variants: " + (", ".join(v + ("*" if v in sig else "") for v in opts) or "NONE (use a custom section)"))
+        print("")
+        print("* = signature motion (a 3D or animated visual in the same layout). Keep the order; leave out only optional sections.")
+    if args.coverage:
+        gaps = {}
+        for k, b in bps.items():
+            for s in b["sections"]:
+                if not build.fitting_variants(s, lib):
+                    gaps.setdefault((s["form"], s["role"]), []).append(k)
+        for (form, role), keys in sorted(gaps.items(), key=lambda x: -len(x[1])):
+            print("%-16s %-12s %2d  %s" % (form, role, len(keys), ", ".join(keys[:6])))
+        print("%d form and role pairs have no variant." % len(gaps))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--sites", default="sites", help="folder that holds one folder per site (default: ./sites)")
     ap.add_argument("--archetype", help="print every slot of this archetype with variants ordered from least to most used")
     ap.add_argument("--check", help="page.json to compare with the other pages")
     ap.add_argument("--report", action="store_true", help="print usage of every variant and preset")
+    ap.add_argument("--blueprints", metavar="ARCHETYPE", help="list the real-site layouts that fit this archetype, unused first")
+    ap.add_argument("--blueprint", metavar="KEY", help="print each section of one layout with the variants that fit it")
+    ap.add_argument("--coverage", action="store_true", help="list blueprint sections that no variant fits")
     args = ap.parse_args()
     arch = archetypes()
     pages = find_pages(args.sites, skip=args.check)
@@ -129,6 +217,7 @@ def main():
 
     if args.archetype:
         a = arch.get(args.archetype)
+        sig = signature_variants()
         if not a:
             print("unknown archetype %r. Choose one of: %s" % (args.archetype, ", ".join(arch)))
             return 1
@@ -137,10 +226,11 @@ def main():
         for s in a["slots"]:
             if s["slot"] in ("floating", "exit"):
                 continue
-            ordered = sorted(s["variants"], key=lambda v: (count.get(v, 0), s["variants"].index(v)))
+            ordered = sorted(s["variants"], key=lambda v: (count.get(v, 0), v not in sig, s["variants"].index(v)))
             flag = "required" if s.get("required") else ("recommended" if s.get("recommended") else "optional")
-            print("%-12s %-11s %s" % (s["slot"], flag, ", ".join("%s (%d)" % (v, count.get(v, 0)) for v in ordered)))
+            print("%-12s %-11s %s" % (s["slot"], flag, ", ".join("%s%s (%d)" % (v, "*" if v in sig else "", count.get(v, 0)) for v in ordered)))
         print("\nPick the first variant in each line that fits the content. A count of 0 means no page uses it yet.")
+        print("* = signature motion. build.py needs at least %d of them per page unless page.json sets \"motion\": \"calm\"." % 3)
 
     if args.check:
         page = load_json(args.check)
@@ -154,6 +244,9 @@ def main():
                     print("  swap %s for one of: %s" % (slot, ", ".join(options)))
             if "preset" in shared:
                 print("  or pick another preset (python variety.py --archetype %s lists them by use)" % page.get("archetype"))
+
+    if args.blueprints or args.blueprint or args.coverage:
+        blueprint_report(args, pages, count)
 
     if args.report:
         for k in sorted(count, key=lambda k: (-count[k], str(k))):

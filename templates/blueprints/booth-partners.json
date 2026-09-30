@@ -1,0 +1,117 @@
+{
+  "id": "booth-partners",
+  "source": {
+    "name": "Booth & Partners",
+    "url": "https://hirebooth.com/",
+    "category": "Philippines Offshore BPO & Staffing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing"
+  ],
+  "summary": "Dark green hero with a large framed team photo and floating stat chips, a logo row, an icon card grid, tabbed panels, a bento of quotes and figures, a platform split, an about split with figures, badges, articles and a green closing band with a wide photo.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "note": "centered heading with underline accent, short text and a button, then a large rounded photo with a notched corner and two floating stat chips"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "optional": true,
+      "note": "small centered label and a row of client logos"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": 6,
+      "note": "heading left with a paragraph right, two columns of three soft rounded cards with a line icon, title and one line"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "dark",
+      "media": "right",
+      "cols": 4,
+      "count": 4,
+      "note": "row of four pill tabs, then a large rounded green panel with title, text, bullets and button left and a photo with a cut corner right"
+    },
+    {
+      "form": "cards-text",
+      "role": "cases",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "optional": true,
+      "note": "heading with accent word left and a pill button right, bento of quote cards, coloured stat tiles and loose portrait photos"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 2,
+      "note": "heading with accent word and one line, two pill tabs, green rounded panel with a title and text, three icon columns and a button"
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "muted",
+      "media": "right",
+      "cols": 2,
+      "count": 1,
+      "note": "mint band: heading, tick list and button left, product screenshot over a photo right"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "left",
+      "cols": 2,
+      "count": 1,
+      "note": "rounded photo left with a small icon badge, heading, paragraphs, bullets and two buttons right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "three figures in one row, each with a small icon, a large number and a short caption"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "tiny centered label and three certification badges in a row"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "optional": true,
+      "note": "heading with accent words left and a pill button right, three article cards with photo, tag, title and read link"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "media": "full",
+      "note": "green ground with a curved bottom edge, centered heading with underline accent, text and a button, wide team photo below"
+    }
+  ]
+}

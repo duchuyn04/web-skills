@@ -6,7 +6,6 @@
   border-radius: var(--radius-lg); background: var(--surface-2); border: 1px solid var(--border);
   transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
 }
-.bl-aud__card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .bl-aud__title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.2rem, .6vw + 1rem, 1.4rem); line-height: 1.3; color: var(--accent-ink); letter-spacing: -0.01em; }
 .bl-aud__card > p { color: var(--text); }
 .bl-aud__card .bl-checks { font-size: var(--fs-sm); color: var(--text-strong); }

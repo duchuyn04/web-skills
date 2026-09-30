@@ -1,0 +1,110 @@
+{
+  "id": "quatrro-business-support-service",
+  "source": {
+    "name": "Quatrro Business Support Services",
+    "url": "https://continuserve.com/",
+    "category": "Finance, Accounting & Legal BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "enterprise-cx"
+  ],
+  "summary": "Photo hero, a centered statement with award badges, an image card grid, an icon text grid, a link-row list, three figures, logo and quote sliders, news cards and a photo closing band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "heading, text and button on the left over a rounded office photo"
+    },
+    {
+      "form": "statement",
+      "role": "intro",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered large sentence with a row of award badges below"
+    },
+    {
+      "form": "cards-image",
+      "role": "industries",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "note": "eyebrow, heading and intro over two rows of three photo cards with arrow buttons"
+    },
+    {
+      "form": "cards-icon",
+      "role": "about",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "media": "none",
+      "note": "centered heading over a 2x2 grid of icon items with short text"
+    },
+    {
+      "form": "list-rows",
+      "role": "services",
+      "tone": "muted",
+      "cols": 1,
+      "count": 4,
+      "media": "none",
+      "note": "heading and link on top, four rows each with icon, title, text and arrow, inside a tinted card"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "three large figures in a row with labels"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 6,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "small caption above a row of client logos with dots"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "muted",
+      "cols": 1,
+      "count": 1,
+      "media": "none",
+      "optional": true,
+      "note": "a single quote with arrow controls in a tinted card"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading with a link, three article cards"
+    },
+    {
+      "form": "image-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "photo band with a large heading and outline button on the right"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": "salesroads",
+  "source": {
+    "name": "SalesRoads",
+    "url": "https://salesroads.com/",
+    "category": "B2B Sales Development & Lead Gen BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales"
+  ],
+  "summary": "Light centered hero, a client logo row, a video results block, a dark quote band, two boxed service rows, an FAQ with a diagram, a large grid of result cards, testimonials and a form.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered headline, paragraph and button"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": null,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "heading and one row of client logos"
+    },
+    {
+      "form": "video-block",
+      "role": "cases",
+      "tone": "light",
+      "cols": 1,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, three rows of result text beside a video thumbnail"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "dark",
+      "cols": null,
+      "count": 1,
+      "media": "none",
+      "optional": true,
+      "note": "dark band: heading left, quote with rating and name right"
+    },
+    {
+      "form": "list-rows",
+      "role": "services",
+      "tone": "light",
+      "cols": 1,
+      "count": 2,
+      "media": "none",
+      "note": "centered heading, boxed card with colored label left and two lists of offerings right"
+    },
+    {
+      "form": "list-rows",
+      "role": "services",
+      "tone": "light",
+      "cols": 1,
+      "count": 1,
+      "media": "none",
+      "note": "second boxed card in the same shape, colored label left"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "about",
+      "tone": "light",
+      "cols": 1,
+      "count": 3,
+      "media": "right",
+      "note": "heading, short points left, diagram right"
+    },
+    {
+      "form": "cards-image",
+      "role": "cases",
+      "tone": "light",
+      "cols": 2,
+      "count": 16,
+      "media": "none",
+      "optional": true,
+      "note": "heading and filter tabs, grid of yellow result cards each with a client logo"
+    },
+    {
+      "form": "cards-text",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading, three testimonial cards with portrait, name and quote"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "heading with text and a contact form"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "vti-group",
+  "source": {
+    "name": "VTI Group",
+    "url": "https://vti.com.vn/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Blue image hero, a floating service list, partner and certification rows, a stats block with photo mosaic, an industry grid and several light slider sections down to news.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "heading, text and button on the left over a blue technology image with slider dots"
+    },
+    {
+      "form": "link-list",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 9,
+      "media": "none",
+      "note": "centered heading over a card with a three-column list of service links with arrows"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and a row of partner logos"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and a row of certification badges"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "heading, text and button on the left with four figures, a photo mosaic with a video tile below"
+    },
+    {
+      "form": "cards-icon",
+      "role": "industries",
+      "tone": "light",
+      "cols": 4,
+      "count": 8,
+      "media": "none",
+      "note": "centered heading and intro over two rows of four icon cards"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and a row of award images"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 1,
+      "count": 1,
+      "media": "none",
+      "optional": true,
+      "note": "logo row above a single quote with photo and button"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "heading with a link on the right, four case image cards"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "heading with a link on the right, four article cards"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "media": "left",
+      "optional": true,
+      "note": "heading with a link, one large featured article on the left and a stack of small rows on the right"
+    }
+  ]
+}

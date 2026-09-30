@@ -1,6 +1,7 @@
 {
   "variant": "voice-sample",
-  "group": "voice",
+  "group": "voice", "signature": true,
+  "forms": ["media-list"],
   "summary": "Call-quality proof: 2-4 agent sample players with play/pause, language flag and a 24-bar soundwave that moves while audio plays. Pitch and points on the left.",
   "tone": "auto",
   "anchor": "call-samples",

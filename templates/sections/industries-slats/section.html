@@ -1,0 +1,25 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-fxslat" data-fx="3d" data-fxslat data-seed="{{site.brand}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <div class="bl-fxslat__stage fx3d-stage" data-fxslat-stage data-reveal="fade">
+      <ul class="bl-fxslat__rig fx3d-rig" role="list">
+        {{#tiles}}
+        <li class="bl-fxslat__slat{{#photo}} has-photo{{/photo}}" data-slat style="--t: {{@index}};"{{#href}} data-href="{{href}}"{{/href}}>
+          <div class="bl-fxslat__face">
+            {{#photo}}<img class="bl-fxslat__img" src="{{photo}}" alt="" width="480" height="600" loading="lazy">{{/photo}}
+            {{^photo}}<span class="bl-fxslat__mark" aria-hidden="true">{{icon:$icon}}</span>{{/photo}}
+            <span class="bl-fxslat__shade" aria-hidden="true"></span>
+            <span class="bl-fxslat__vtitle" aria-hidden="true">{{title}}</span>
+            <div class="bl-fxslat__band">
+              <span class="bl-fxslat__icon">{{icon:$icon}}</span>
+              <h3 class="bl-fxslat__title">{{#href}}<a class="bl-fxslat__ctl" href="{{href}}">{{title}}</a>{{/href}}{{^href}}<button class="bl-fxslat__ctl" type="button" aria-expanded="false" aria-controls="{{section.id}}-slat-{{@n}}">{{title}}</button>{{/href}}</h3>
+              <p class="bl-fxslat__text" id="{{section.id}}-slat-{{@n}}">{{text}}</p>
+              {{#href}}<span class="bl-fxslat__more" aria-hidden="true">{{link_label}}{{arrow}}</span>{{/href}}
+            </div>
+          </div>
+        </li>
+        {{/tiles}}
+      </ul>
+    </div>
+  </div>
+</section>

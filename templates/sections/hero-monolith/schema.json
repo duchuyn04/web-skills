@@ -1,0 +1,25 @@
+{
+  "variant": "hero-monolith",
+  "group": "hero", "signature": true,
+  "forms": ["hero-split"],
+  "summary": "Calm, signage-like hero: the company monogram (site.brand_mark, 1-3 characters) stands on the right as a solid extruded block with real depth, like a sign cut from stone or brushed metal. It turns slowly left and right by about 20-28 degrees, leans toward a fine pointer, a sheen crosses its face as it turns and its side faces darken with the light. The brand name sits under it as a plaque. Extrusion depth, turn amplitude, light side, face treatment and period are seeded from the brand name. Fits finance and accounting BPO, banks' outsourcing partners and large enterprise groups. Copy on the left, optional stats strip.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero", "ribbons", "scene3d", "stage3d"],
+  "animations": ["monolith-extrude-3d", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "caption": {"type": "text", "min": 3, "max": 32, "required": false},
+    "stats": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "object", "fields": {
+      "value": {"type": "text", "min": 1, "max": 12},
+      "label": {"type": "text", "min": 3, "max": 32}
+    }}},
+    "pause_label": {"type": "text", "min": 3, "max": 30, "default": "Pause animations"},
+    "play_label": {"type": "text", "min": 3, "max": 30, "default": "Play animations"}
+  }
+}

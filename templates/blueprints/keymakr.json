@@ -1,0 +1,82 @@
+{
+  "id": "keymakr",
+  "source": {
+    "name": "Keymakr",
+    "url": "https://keymakr.com/",
+    "category": "AI Data Annotation & Operations BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "ai-data-ops"
+  ],
+  "summary": "Dark video hero with a rating and figure strip, a logo row, a tabbed service block, a list of expert rows, an industry icon grid, review cards and a video band before the footer.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-video",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "left-aligned headline, short text and button over a dark robot image, with a rating and figure row along the bottom"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "media": "none",
+      "cols": 8,
+      "count": 8,
+      "optional": true,
+      "note": "one row of grey brand logos"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "light",
+      "media": "right",
+      "cols": null,
+      "count": 6,
+      "note": "pill tabs below a text column with bullets and a button on the left and a dark video panel on the right"
+    },
+    {
+      "form": "media-list",
+      "role": "team",
+      "tone": "muted",
+      "media": "left",
+      "cols": 1,
+      "count": 4,
+      "note": "heading and intro side by side, then four stacked cards each with a photo on the left and text with a button on the right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "industries",
+      "tone": "light",
+      "media": "none",
+      "cols": 5,
+      "count": 15,
+      "note": "heading left with a short line on the right, three rows of five small icon tiles"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 2,
+      "optional": true,
+      "note": "heading left with rating badges on the right, two quote cards each with a button"
+    },
+    {
+      "form": "video-block",
+      "role": "tools",
+      "tone": "light",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "optional": true,
+      "note": "heading with short text, a wide image strip, two paragraphs and a button"
+    }
+  ]
+}

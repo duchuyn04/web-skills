@@ -141,7 +141,6 @@
    "type": "services-bento",
    "data": {
     "head": {
-     "eyebrow": "Services",
      "title": "Our services",
      "lead": "Hire one service or the full outbound cycle with one team."
     },
@@ -156,7 +155,7 @@
        "CRM logging on every call"
       ],
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -181,7 +180,6 @@
   {
    "type": "metrics-counter",
    "data": {
-    "eyebrow": "Results",
     "title": "Results from B2B campaigns",
     "items": [
      {
@@ -207,7 +205,6 @@
    "type": "testimonials",
    "data": {
     "head": {
-     "eyebrow": "Clients",
      "title": "What our clients say"
     },
     "items": [
@@ -295,7 +292,7 @@
          "Rebooking of no-shows"
         ],
         "cta": {
-         "label": "Ask about fit",
+         "label": "Talk to an expert",
          "href": "#contact"
         }
        },
@@ -323,7 +320,6 @@
    "type": "faq-accordion",
    "data": {
     "head": {
-     "eyebrow": "FAQ",
      "title": "Frequently asked questions"
     },
     "items": [

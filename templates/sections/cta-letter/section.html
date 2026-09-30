@@ -1,0 +1,49 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-fxletter" data-fx="3d" data-fxletter data-seed="{{site.brand}}" style="--tint: {{site.seed.c}};">
+  <div class="bl-container">
+    <div class="bl-fxletter__stage fx3d-stage" data-letter-stage>
+      <div class="bl-fxletter__rig fx3d-rig">
+        <div class="bl-fxletter__panel bl-fxletter__panel--top" data-letter-panel="top">
+          <div class="bl-fxletter__face fx3d-face">
+            <div class="bl-fxletter__head">
+              <span class="bl-fxletter__seal" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/><circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/></svg><b>{{site.brand_mark}}</b></span>
+              <span class="bl-fxletter__brand">{{site.brand}}</span>
+              {{#eyebrow}}<p class="bl-fxletter__ref bl-mono">{{eyebrow}}</p>{{/eyebrow}}
+            </div>
+            <h2 class="bl-h2 bl-fxletter__title">{{title}}</h2>
+            <span class="bl-fxletter__crease bl-fxletter__crease--bottom" aria-hidden="true"></span>
+          </div>
+          <div class="bl-fxletter__back fx3d-face" aria-hidden="true"><span class="bl-fxletter__back-seal">{{site.brand_mark}}</span></div>
+        </div>
+        <div class="bl-fxletter__panel bl-fxletter__panel--mid">
+          <div class="bl-fxletter__face">
+            {{#text}}<p class="bl-fxletter__text">{{text}}</p>{{/text}}
+            {{#points.0}}<ul class="bl-fxletter__points">{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+            <span class="bl-fxletter__crease bl-fxletter__crease--top" aria-hidden="true"></span>
+            <span class="bl-fxletter__crease bl-fxletter__crease--bottom" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="bl-fxletter__panel bl-fxletter__panel--bottom" data-letter-panel="bottom">
+          <div class="bl-fxletter__face fx3d-face">
+            <div class="bl-fxletter__actions">
+              {{^form}}<div class="bl-btn-row">
+                {{#primary_cta}}<a class="bl-btn bl-btn--primary bl-btn--lg" href="{{href}}">{{label}}</a>{{/primary_cta}}
+                {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+              </div>{{/form}}
+              {{#form}}<form class="bl-fxletter__form" data-letter-form{{#action}} action="{{action}}" method="post"{{/action}} novalidate>
+                <div class="bl-fxletter__form-row">
+                  <div class="bl-field"><label class="bl-label" for="{{section.id}}-email">{{email_label}}</label><input class="bl-input" id="{{section.id}}-email" name="email" type="email" autocomplete="email" required></div>
+                  <button class="bl-btn bl-btn--primary bl-btn--lg" type="submit">{{submit_label}}</button>
+                </div>
+                <p class="bl-fxletter__done" role="status" hidden>{{icon:check-circle}}<span>{{success_text}}</span></p>
+                {{#secondary_cta}}<a class="bl-link bl-fxletter__alt" href="{{href}}">{{label}}{{arrow}}</a>{{/secondary_cta}}
+              </form>{{/form}}
+              {{#sign_off}}<p class="bl-fxletter__sign">{{sign_off}}</p>{{/sign_off}}
+            </div>
+            <span class="bl-fxletter__crease bl-fxletter__crease--top" aria-hidden="true"></span>
+          </div>
+          <div class="bl-fxletter__back fx3d-face" aria-hidden="true"><span class="bl-fxletter__back-seal">{{site.brand_mark}}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

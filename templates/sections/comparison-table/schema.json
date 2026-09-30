@@ -1,6 +1,7 @@
 {
   "variant": "comparison-table",
   "group": "compare",
+  "forms": ["list-rows"],
   "summary": "Side-by-side table: the company in the first, tinted column against one or two alternatives (hiring in-house, freelancers, other vendors). Each row is one buying criterion with a tick, cross or partial mark and an optional short note. Turns into stacked cards on phones. Only compare on facts the client can back up.",
   "tone": "auto",
   "anchor": "compare",

@@ -1,8 +1,6 @@
 /* Shared hero: background, glows, floating-glass-badges, proof list */
 .bl-hero { padding-top: calc(var(--header-h) + var(--header-extra) + clamp(3rem, 6vw, 5.5rem)); padding-bottom: clamp(4rem, 7vw, 6.5rem); overflow: hidden; }
 .bl-hero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.bl-hero__bg .bl-glow--a { top: -180px; right: -120px; }
-.bl-hero__bg .bl-glow--b { bottom: -220px; left: -160px; opacity: .35; }
 .bl-hero__grid {
   position: absolute; inset: 0; opacity: .55;
   background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);

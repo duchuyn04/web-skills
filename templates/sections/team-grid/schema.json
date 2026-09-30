@@ -1,6 +1,7 @@
 {
   "variant": "team-grid",
   "group": "team",
+  "forms": ["cards-image"],
   "summary": "Leadership or key people: square portraits on softly tinted tiles with name, role and an optional LinkedIn link and short bio. 3, 4, 6 or 8 people. Use only real people who agreed to be shown, with their own photos.",
   "tone": "auto",
   "anchor": "leadership",

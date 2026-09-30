@@ -1,0 +1,71 @@
+{
+  "id": "eleks",
+  "source": {
+    "name": "ELEKS",
+    "url": "https://eleks.com/",
+    "category": "Nearshore & Global Software Outsourcing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Rounded dark photo hero with side sector panels, a guided service picker slider, a case block, dark figures, an industry column slider, a two-by-two article grid and a dark contact form with a quote card.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "note": "rounded photo panel: serif heading, text and a row of award marks left, white consultation card and tall vertical sector panels right, round arrows below"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 8,
+      "note": "small label and serif heading, question-step panel at the left followed by a slider of outlined service cards with a slide-to-open pill, arrows below"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "media": "none",
+      "optional": true,
+      "note": "small label and serif heading left, wide row of image cards (still loading in the capture) and a pill button below"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 2,
+      "count": 4,
+      "note": "small label and heading left, four light figures with captions in two rows right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "industries",
+      "tone": "muted",
+      "cols": 5,
+      "count": 13,
+      "note": "small label and serif heading left with round arrows right, columns separated by thin lines, each with a square icon, name and two short lines"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "optional": true,
+      "note": "small label and heading, two by two article cards with image, tags, title, link and author, pill button below"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "dark",
+      "note": "dark ground: heading and two-column form left, white quote card with arrows right"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-h3d bl-horb bl-tone-{{section.tone}}" data-horb data-seed="{{site.brand}}">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hero__grid"></span></div>
+  <div class="bl-container">
+    <div class="bl-h3d__grid">
+      <div class="bl-h3d__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1" data-reveal>{{title}}</h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-h3d__stage bl-horb__stage" data-reveal="fade" data-horb-stage>
+        <p class="bl-sr-only">{{orbit_label}}:</p>
+        <ul class="bl-sr-only">{{#services}}<li>{{label}}</li>{{/services}}</ul>
+        <canvas class="bl-h3d__canvas" data-horb-back aria-hidden="true"></canvas>
+        <div class="bl-horb__core" aria-hidden="true"><span>{{site.brand_mark}}</span></div>
+        <canvas class="bl-h3d__canvas bl-horb__front" data-horb-front aria-hidden="true"></canvas>
+        <div class="bl-horb__chips" aria-hidden="true">{{#services}}<span class="bl-horb__chip" data-chip>{{icon:$icon}}<span>{{label}}</span></span>{{/services}}</div>
+        <button class="bl-h3d__toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}"><span class="bl-motion-toggle__pause">{{icon:pause}}</span><span class="bl-motion-toggle__play">{{icon:play}}</span><span data-motion-label>{{pause_label}}</span></button>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-h3d__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

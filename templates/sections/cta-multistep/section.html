@@ -1,5 +1,4 @@
 <section id="{{section.id}}" class="bl-section bl-cta bl-tone-{{section.tone}}">
-  <div class="bl-cta__bg" aria-hidden="true"><span class="bl-glow bl-glow--a"></span><span class="bl-glow bl-glow--b"></span></div>
   <div class="bl-container bl-cta__grid">
     <div class="bl-cta__copy" data-reveal-group>
       {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
@@ -19,13 +18,13 @@
           <legend class="bl-wizard__title">{{step1_title}}</legend>
           <div class="bl-options">{{#services}}<label class="bl-option"><input type="radio" name="service" value="{{.}}" required><span>{{.}}</span>{{icon:check}}</label>{{/services}}</div>
           <p class="bl-wizard__error" role="alert" hidden>{{error_label}}</p>
-          <div class="bl-wizard__nav"><button type="button" class="bl-btn bl-btn--primary bl-btn--block" data-next>{{next_label}}{{arrow}}</button></div>
+          <div class="bl-wizard__nav"><button type="button" class="bl-btn bl-btn--primary bl-btn--block" data-next>{{next_label}}</button></div>
         </fieldset>
         <fieldset class="bl-wizard__step" data-step>
           <legend class="bl-wizard__title">{{step2_title}}</legend>
           <div class="bl-options bl-options--grid">{{#sizes}}<label class="bl-option"><input type="radio" name="team_size" value="{{.}}" required><span>{{.}}</span>{{icon:check}}</label>{{/sizes}}</div>
           <p class="bl-wizard__error" role="alert" hidden>{{error_label}}</p>
-          <div class="bl-wizard__nav"><button type="button" class="bl-btn bl-btn--ghost" data-back>{{back_label}}</button><button type="button" class="bl-btn bl-btn--primary" data-next>{{next_label}}{{arrow}}</button></div>
+          <div class="bl-wizard__nav"><button type="button" class="bl-btn bl-btn--ghost" data-back>{{back_label}}</button><button type="button" class="bl-btn bl-btn--primary" data-next>{{next_label}}</button></div>
         </fieldset>
         <fieldset class="bl-wizard__step" data-step>
           <legend class="bl-wizard__title">{{step3_title}}</legend>
@@ -35,7 +34,7 @@
             <div class="bl-field"><label class="bl-label" for="{{section.id}}-company">{{company_label}}</label><input class="bl-input" id="{{section.id}}-company" name="company" type="text" autocomplete="organization" required></div>
             {{#message_label}}<div class="bl-field"><label class="bl-label" for="{{section.id}}-msg">{{message_label}}</label><textarea class="bl-input" id="{{section.id}}-msg" name="message" rows="3"></textarea></div>{{/message_label}}
           </div>
-          <div class="bl-wizard__nav"><button type="button" class="bl-btn bl-btn--ghost" data-back>{{back_label}}</button><button type="submit" class="bl-btn bl-btn--primary bl-btn--shimmer">{{submit_label}}{{arrow}}</button></div>
+          <div class="bl-wizard__nav"><button type="button" class="bl-btn bl-btn--ghost" data-back>{{back_label}}</button><button type="submit" class="bl-btn bl-btn--primary">{{submit_label}}</button></div>
         </fieldset>
         <div class="bl-wizard__done" role="status" hidden>
           <span class="bl-wizard__done-icon">{{icon:check-circle}}</span>

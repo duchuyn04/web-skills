@@ -1,0 +1,52 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-h3d bl-hsun bl-tone-{{section.tone}}" data-hsun data-fx="3d" data-seed="{{site.brand}}" style="--s-a: {{site.seed.a}}; --s-b: {{site.seed.b}}; --s-c: {{site.seed.c}}; --sign: {{site.seed.sign}}">
+  <div class="bl-hero__bg" aria-hidden="true"><span class="bl-hero__grid"></span></div>
+  <div class="bl-container">
+    <div class="bl-h3d__grid">
+      <div class="bl-h3d__copy" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h1 class="bl-h1" data-reveal>{{title}}</h1>
+        <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+        <div class="bl-btn-row" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+        {{#proof.0}}<ul class="bl-hero__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+      </div>
+      <div class="bl-hsun__stage" data-reveal="fade">
+        <p class="bl-hsun__label">{{dial_label}}</p>
+        <ul class="bl-sr-only">{{#hubs}}<li data-sr-hub>{{city.name}}, {{city.country_name}}{{#role}}, {{role}}{{/role}}: <time data-sr-time></time> <span data-sr-state></span></li>{{/hubs}}</ul>
+        <div class="fx3d-stage bl-hsun__view" aria-hidden="true">
+          <div class="fx3d-rig bl-hsun__rig" data-hsun-rig>
+            <span class="bl-hsun__shadow"></span>
+            <span class="bl-hsun__base"></span>
+            <svg class="bl-hsun__dial" viewBox="0 0 560 560" aria-hidden="true" focusable="false">
+              <defs><linearGradient id="{{section.id}}-day" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="0" y2="300"><stop class="bl-hsun__stop" offset="0" stop-opacity=".95"/><stop class="bl-hsun__stop" offset="1" stop-opacity="0"/></linearGradient></defs>
+              <circle class="bl-hsun__plate" cx="280" cy="280" r="275"/>
+              <circle class="bl-hsun__night" cx="280" cy="280" r="222"/>
+              <path class="bl-hsun__day" d="M58 280A222 222 0 0 1 502 280" stroke="url(#{{section.id}}-day)"/>
+              <circle class="bl-hsun__line" cx="280" cy="280" r="205"/>
+              <circle class="bl-hsun__line" cx="280" cy="280" r="239"/>
+              <circle class="bl-hsun__inner" cx="280" cy="280" r="140"/>
+              <path class="bl-hsun__ticks bl-hsun__ticks--bars" d="M280.0 524.0L280.0 542.0M214.8 523.4L213.2 529.2M154.0 498.2L151.0 503.4M103.2 456.8L96.2 463.8M61.8 406.0L56.6 409.0M36.6 345.2L30.8 346.8M36.0 280.0L18.0 280.0M36.6 214.8L30.8 213.2M61.8 154.0L56.6 151.0M103.2 103.2L96.2 96.2M154.0 61.8L151.0 56.6M214.8 36.6L213.2 30.8M280.0 36.0L280.0 18.0M345.2 36.6L346.8 30.8M406.0 61.8L409.0 56.6M456.8 103.2L463.8 96.2M498.2 154.0L503.4 151.0M523.4 214.8L529.2 213.2M524.0 280.0L542.0 280.0M523.4 345.2L529.2 346.8M498.2 406.0L503.4 409.0M456.8 456.8L463.8 463.8M406.0 498.2L409.0 503.4M345.2 523.4L346.8 529.2"/>
+              <path class="bl-hsun__ticks bl-hsun__ticks--dots" d="M280.0 535.0h0M214.0 526.3h0M152.5 500.8h0M99.7 460.3h0M59.2 407.5h0M33.7 346.0h0M25.0 280.0h0M33.7 214.0h0M59.2 152.5h0M99.7 99.7h0M152.5 59.2h0M214.0 33.7h0M280.0 25.0h0M346.0 33.7h0M407.5 59.2h0M460.3 99.7h0M500.8 152.5h0M526.3 214.0h0M535.0 280.0h0M526.3 346.0h0M500.8 407.5h0M460.3 460.3h0M407.5 500.8h0"/>
+              <g class="bl-hsun__hours"><text x="280" y="458" class="is-major">00</text><text x="154.1" y="405.9">03</text><text x="102" y="280" class="is-major">06</text><text x="154.1" y="154.1">09</text><text x="280" y="102" class="is-major">12</text><text x="405.9" y="154.1">15</text><text x="458" y="280" class="is-major">18</text><text x="405.9" y="405.9">21</text></g>
+              <circle class="bl-hsun__hub" cx="280" cy="280" r="5"/>
+            </svg>
+            <span class="bl-hsun__pulse" data-hsun-pulse><span></span></span>
+            {{#hubs}}<span class="bl-hsun__pin" data-hub data-tz="{{city.tz}}" data-shift="{{shift}}"><span class="bl-hsun__mark" data-mark></span><span class="bl-hsun__chip" data-chip><span class="bl-hsun__city">{{city.name}}</span>{{#role}}<span class="bl-hsun__role">{{role}}</span>{{/role}}<span class="bl-hsun__now"><span class="bl-mono" data-time>--:--</span><span class="bl-hsun__state" data-state>{{off_label}}</span></span></span></span>{{/hubs}}
+          </div>
+        </div>
+        <div class="bl-hsun__foot">
+          <p class="bl-hsun__count"><strong class="bl-mono" data-hsun-count></strong> <span>{{count_label}}</span></p>
+          <ul class="bl-hsun__legend" aria-hidden="true">
+            <li><span class="bl-hsun__key bl-hsun__key--day"></span>{{day_label}}</li>
+            <li><span class="bl-hsun__key bl-hsun__key--on"></span>{{on_label}}</li>
+            <li><span class="bl-hsun__key bl-hsun__key--off"></span>{{off_label}}</li>
+          </ul>
+          <button class="bl-h3d__toggle bl-hsun__toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="{{pause_label}}" data-label-play="{{play_label}}"><span class="bl-motion-toggle__pause">{{icon:pause}}</span><span class="bl-motion-toggle__play">{{icon:play}}</span><span data-motion-label>{{pause_label}}</span></button>
+        </div>
+      </div>
+    </div>
+    {{#stats.0}}<dl class="bl-h3d__stats" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
+  </div>
+</section>

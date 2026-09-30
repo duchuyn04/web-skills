@@ -1,0 +1,22 @@
+{
+  "id": "callbox",
+  "source": {"name": "Callbox", "url": "https://www.callboxinc.com/", "category": "B2B Sales Development & Lead Gen BPO", "collected": "2026-09-26"},
+  "fits": ["cx-voice-sales"],
+  "summary": "Long all-dark page with a full-bleed hero and logo row, then stacked bands for case results, services, metrics, regions, industries, process, technology, ratings, review sites, an FAQ and a closing band.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "media": "full", "note": "left copy with two buttons and a small figures row, client logos strip along the bottom; a modal popup covered the capture"},
+    {"form": "feature-split", "role": "cases", "tone": "dark", "cols": 3, "count": 3, "media": "left", "optional": true, "note": "heading and paragraph, three video story cards below, link right"},
+    {"form": "cards-icon", "role": "services", "tone": "dark", "cols": 3, "count": 6, "note": "label and heading, two rows of three service cards with icon and link, a button below"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 4, "count": 4, "note": "one row of four large figures"},
+    {"form": "cards-icon", "role": "locations", "tone": "dark", "cols": 2, "count": 4, "note": "heading and paragraph, four region cards in a two by two grid"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 3, "count": 3, "note": "heading and bullet list left, three figures in a panel right"},
+    {"form": "cards-icon", "role": "industries", "tone": "dark", "cols": 4, "count": 8, "note": "heading with a button right, two rows of four icon cards"},
+    {"form": "list-rows", "role": "process", "tone": "dark", "cols": 1, "count": 4, "note": "heading and stacked numbered steps left, a stats panel right"},
+    {"form": "list-rows", "role": "tools", "tone": "dark", "cols": 3, "count": 6, "optional": true, "note": "heading, a grid of feature blocks and a stats row"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "dark", "cols": 3, "count": 3, "optional": true, "note": "heading left with a button, three review cards"},
+    {"form": "cards-image", "role": "awards", "tone": "dark", "cols": 3, "count": 3, "optional": true, "note": "heading left, review-site rating badges right"},
+    {"form": "faq-accordion", "role": "faq", "tone": "dark", "cols": 1, "count": 10, "optional": true, "note": "heading and short text left, accordion rows right"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "note": "centered heading with two buttons"}
+  ]
+}

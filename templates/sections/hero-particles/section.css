@@ -1,0 +1,5 @@
+/* hero-particles: particle-morph-3d on a flat ground (no haze or glow, see color-system.md, Gradients). */
+.bl-hpart { background: var(--bg); }
+.bl-hpart__bg {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+}

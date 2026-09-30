@@ -29,7 +29,7 @@
 .bl-pin--tip-start:hover .bl-pin__tip, .bl-pin--tip-start:focus-visible .bl-pin__tip,
 .bl-pin--tip-end:hover .bl-pin__tip, .bl-pin--tip-end:focus-visible .bl-pin__tip { transform: none; }
 @media (max-width: 768px) {
-  .bl-pin { width: 20px; height: 20px; margin: -10px 0 0 -10px; }
+  .bl-pin { width: 24px; height: 24px; margin: -12px 0 0 -12px; }
   .bl-pin__dot { width: 8px; height: 8px; box-shadow: 0 0 0 2px var(--surface); }
   .bl-pin__tip { display: none; }
 }

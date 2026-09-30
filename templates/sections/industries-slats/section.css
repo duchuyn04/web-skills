@@ -1,0 +1,56 @@
+/* industries-slats: slat-louvre-turn-3d. Every slat has the same width; turned slats stand at rotateY(+-angle) so
+   they show a sliver, the open one faces the visitor at rotateY(0) translateZ(36px). JS writes one translateX per
+   slat so the projected widths fill the row; nothing animates width or layout. The stage alone crops. */
+.bl-fxslat { --sh: 470px; --sw: 340px; }
+.bl-fxslat__stage { --fx-persp: 1700px; perspective-origin: 50% 50%; overflow: clip; padding-block: 2.2rem; margin-inline: calc(var(--gutter) * -1); }
+.bl-fxslat__rig { position: relative; height: var(--sh); }
+.bl-fxslat__slat {
+  position: absolute; top: 0; left: 50%; width: var(--sw); height: 100%; margin-left: calc(var(--sw) / -2);
+  transition: transform .85s cubic-bezier(.16, 1, .3, 1);
+}
+.bl-fxslat.is-still .bl-fxslat__slat { transition: none; }
+.bl-fxslat__face {
+  position: relative; width: 100%; height: 100%; overflow: clip; border-radius: var(--radius);
+  background: color-mix(in oklab, var(--c-primary) calc(100% - var(--t, 0) * 9%), var(--c-accent));
+  box-shadow: 0 30px 50px -30px rgba(15, 23, 42, .5); cursor: pointer;
+}
+.bl-fxslat__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bl-fxslat__mark { position: absolute; right: -18%; top: 12%; width: 78%; color: var(--c-accent-on-dark); opacity: .28; }
+.bl-fxslat__mark .bl-icon { width: 100%; height: auto; stroke-width: 1.2; }
+.bl-fxslat__shade {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--c-primary) 20%, transparent) 0%, color-mix(in srgb, var(--c-primary) 82%, transparent) 100%);
+  transition: opacity .6s var(--ease-std);
+}
+.bl-fxslat__slat:not(.has-photo) .bl-fxslat__shade { opacity: .45; }
+.bl-fxslat__vtitle {
+  position: absolute; left: .85rem; bottom: 1.2rem; writing-mode: vertical-rl; transform: rotate(180deg);
+  font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.45rem; line-height: 1.1; letter-spacing: .01em;
+  color: #fff; white-space: nowrap; transition: opacity .35s var(--ease-std);
+}
+.bl-fxslat__band {
+  position: absolute; left: .75rem; right: .75rem; bottom: .75rem; display: grid; gap: .45rem; justify-items: start;
+  padding: 1.1rem 1.15rem 1.15rem; border-radius: calc(var(--radius) - 4px); background: var(--surface); color: var(--text);
+  opacity: 0; transform: translateY(14px); transition: opacity .35s var(--ease-std), transform .5s var(--ease-out);
+}
+.bl-fxslat__icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: var(--radius-sm); background: var(--c-accent-soft); color: var(--accent-ink); }
+.bl-fxslat__icon .bl-icon { width: 20px; height: 20px; }
+.bl-fxslat__title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.15rem; line-height: 1.25; color: var(--text-strong); }
+.bl-fxslat__ctl { color: inherit; text-align: left; font: inherit; border-radius: 4px; }
+.bl-fxslat__ctl:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+.bl-fxslat__text { font-size: var(--fs-sm); line-height: 1.55; }
+.bl-fxslat__more { display: inline-flex; align-items: center; gap: .4rem; font-size: var(--fs-sm); font-weight: 700; color: var(--accent-ink); }
+.bl-fxslat__slat.is-active .bl-fxslat__face { cursor: default; }
+.bl-fxslat__slat.is-active[data-href] .bl-fxslat__face { cursor: pointer; }
+.bl-fxslat__slat.is-active .bl-fxslat__vtitle { opacity: 0; }
+.bl-fxslat__slat.is-active .bl-fxslat__shade { opacity: .55; }
+.bl-fxslat__slat.is-active .bl-fxslat__band { opacity: 1; transform: none; transition-delay: .25s; }
+.bl-fxslat__slat:has(.bl-fxslat__ctl:focus-visible) .bl-fxslat__face { outline: 2px solid var(--focus-ring); outline-offset: 4px; }
+
+/* tablets and phones (or a row too narrow for the fan): a plain list of cards */
+.bl-fxslat.is-list .bl-fxslat__stage, html:not(.js) .bl-fxslat__stage { overflow: visible; padding: 0; margin-inline: 0; }
+.bl-fxslat.is-list .bl-fxslat__rig, html:not(.js) .bl-fxslat__rig { height: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.bl-fxslat.is-list .bl-fxslat__slat, html:not(.js) .bl-fxslat__slat { position: relative; left: auto; width: auto; margin: 0; transform: none; }
+.bl-fxslat.is-list .bl-fxslat__face, html:not(.js) .bl-fxslat__face { display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; cursor: default; }
+.bl-fxslat.is-list .bl-fxslat__vtitle, html:not(.js) .bl-fxslat__vtitle { display: none; }
+.bl-fxslat.is-list .bl-fxslat__band, html:not(.js) .bl-fxslat__band { position: relative; inset: auto; margin: 120px .75rem .75rem; opacity: 1; transform: none; }

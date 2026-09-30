@@ -1,0 +1,91 @@
+{
+  "id": "intouchcx",
+  "source": {
+    "name": "IntouchCX",
+    "url": "https://www.intouchcx.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx",
+    "cx-voice-sales"
+  ],
+  "summary": "Dark photo hero with curved colour shapes, a split promo band, cream service slider, a dark industry column, a careers block, a world map, a culture statement and a dark news slider.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "copy at lower left over a full-width portrait photo, curved green shape on the right"
+    },
+    {
+      "form": "feature-split",
+      "role": "intro",
+      "tone": "muted",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "bright colour panel, portrait cut-out on the left, short call to action on the right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "services",
+      "tone": "muted",
+      "cols": 3,
+      "count": 4,
+      "media": "none",
+      "note": "small label, large serif heading, cards with an icon, short text and a button in a horizontal slider"
+    },
+    {
+      "form": "list-rows",
+      "role": "industries",
+      "tone": "dark",
+      "cols": 1,
+      "count": 7,
+      "media": "none",
+      "note": "heading left, seven icon and label items placed on a winding vertical path on the right"
+    },
+    {
+      "form": "text-block",
+      "role": "careers",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "optional": true,
+      "note": "label, heading, short paragraph and two buttons on the left"
+    },
+    {
+      "form": "locations-map",
+      "role": "locations",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "wide dotted world map with a few green markers"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "muted",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "label, very large serif heading and a short paragraph, curved shape at the edge"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "cols": 1,
+      "count": 3,
+      "media": "full",
+      "optional": true,
+      "note": "label, heading and one line at left, one large article card with a wide photo and caption"
+    }
+  ]
+}

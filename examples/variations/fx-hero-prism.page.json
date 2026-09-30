@@ -1,0 +1,167 @@
+{
+  "_note": "Shows hero-prism. Tessel Outsourcing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "orange-charcoal",
+  "lang": "en",
+  "site": {
+    "brand": "Tessel Outsourcing",
+    "brand_mark": "TO",
+    "title": "Tessel Outsourcing | Software and back-office teams in Hanoi",
+    "description": "Tessel Outsourcing builds software and runs support, finance and data operations for companies in Japan, Germany and the US from Hanoi."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-prism",
+      "data": {
+        "eyebrow": "IT and business process outsourcing",
+        "title": "One Hanoi partner for",
+        "cycle": [
+          "software development",
+          "customer support",
+          "finance operations",
+          "QA and testing"
+        ],
+        "lead": "Tessel Outsourcing builds software and runs support, finance and data operations for companies in Japan, Germany and the US, with 260 staff in Hanoi.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Japanese and German speakers"
+        ],
+        "stats": [
+          {
+            "value": "260",
+            "label": "Staff in Hanoi"
+          },
+          {
+            "value": "13",
+            "label": "Years in business"
+          },
+          {
+            "value": "4",
+            "label": "Service lines"
+          },
+          {
+            "value": "3",
+            "label": "Client markets"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Software development",
+            "text": "Web and mobile products built by squads that join your sprints.",
+            "bullets": [
+              "Reviewed before delivery",
+              "Work in your tools",
+              "Weekly reporting"
+            ]
+          },
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Chat, email and phone support in English, Japanese and German."
+          },
+          {
+            "icon": "calculator",
+            "title": "Finance operations",
+            "text": "Payables, receivables and month-end close in your accounting system."
+          },
+          {
+            "icon": "bug",
+            "title": "QA and testing",
+            "text": "Manual and automated regression testing on every release."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us what you need to *hand off*",
+        "text": "Send a short brief and we reply with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tessel Outsourcing builds software and runs support, finance and data operations for companies in Japan, Germany and the US from Hanoi.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Software development",
+                "href": "#services"
+              },
+              {
+                "label": "Customer support",
+                "href": "#services"
+              },
+              {
+                "label": "Finance operations",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

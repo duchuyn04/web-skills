@@ -1,0 +1,63 @@
+/* services-cube: block-quarter-turn-3d and block-entry-wave. At rest a block is a flat card: every face shares one
+   grid cell (so the block is as tall as its tallest side), only the current face is painted and the rig has no
+   transform. A turn places the next face on the side of the column, turns the rig a quarter turn in 650ms, then
+   snaps back to the flat rest state with the new face in front. */
+.bl-fxcube__grid { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1.25rem, 2.2vw, 1.75rem); }
+.bl-fxcube__block { --cols: 3; position: relative; display: flex; flex-direction: column; gap: .7rem; width: calc((100% - (var(--cols) - 1) * clamp(1.25rem, 2.2vw, 1.75rem)) / var(--cols)); }
+.bl-fxcube__grid:has(> :nth-child(4):last-child) > .bl-fxcube__block { --cols: 2; }
+.bl-fxcube__block.is-turning { z-index: 2; }
+.bl-fxcube__stage { --fx-persp: 1300px; perspective-origin: 50% 50%; flex: 1; display: flex; }
+.bl-fxcube__rig { flex: 1; display: grid; transition: transform .65s cubic-bezier(.45, .05, .2, 1); }
+.bl-fxcube__block.is-peek .bl-fxcube__rig { transition-duration: .45s; transition-timing-function: cubic-bezier(.16, 1, .3, 1); }
+.bl-fxcube.is-still .bl-fxcube__rig { transition: none; }
+
+.bl-fxcube__face {
+  grid-area: 1 / 1; display: flex; flex-direction: column; gap: .8rem; min-height: 250px;
+  padding: 1.6rem 1.6rem 1.5rem; border-radius: var(--radius-lg);
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  box-shadow: 0 22px 40px -30px rgba(15, 23, 42, .35);
+}
+.js .bl-fxcube__face { opacity: 0; pointer-events: none; }
+.js .bl-fxcube__face.is-front, .js .bl-fxcube__face.is-next { opacity: 1; pointer-events: auto; }
+.js .bl-fxcube__block.has-sides .bl-fxcube__face { cursor: pointer; }
+.bl-fxcube__top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: .3rem; }
+.bl-fxcube__text { font-size: var(--fs-sm); line-height: 1.6; }
+.bl-fxcube__link { margin-top: auto; font-size: var(--fs-sm); }
+.bl-fxcube__label {
+  display: flex; align-items: center; gap: .55rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent-ink); padding-bottom: .8rem; margin-bottom: .2rem; border-bottom: 1px solid var(--border);
+}
+.bl-fxcube__face--scope { background: var(--surface-2); }
+.bl-fxcube__checks { gap: .65rem; font-size: var(--fs-sm); color: var(--text-strong); }
+.bl-fxcube__face--sla { border-color: var(--c-primary); }
+.bl-fxcube__sla { display: grid; gap: 1rem; }
+.bl-fxcube__sla div { display: flex; flex-direction: column-reverse; gap: .15rem; }
+.bl-fxcube__sla dd { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.7rem, 1.4vw + 1rem, 2.2rem); line-height: 1.05; letter-spacing: var(--heading-tracking); color: var(--text-strong); }
+.bl-fxcube__sla dt { font-size: var(--fs-sm); color: var(--text); }
+.bl-fxcube__tools { display: flex; flex-wrap: wrap; gap: .5rem; align-content: flex-start; }
+.bl-fxcube__tools .bl-chip { font-size: var(--fs-sm); font-weight: 600; padding: .4rem .8rem; }
+
+/* side names under the block: the current side carries a short bar */
+.bl-fxcube__sides { display: flex; flex-wrap: wrap; gap: .15rem .35rem; min-height: 2.1rem; }
+html:not(.js) .bl-fxcube__sides { display: none; }
+.bl-fxcube__side {
+  position: relative; padding: .6rem .6rem .35rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-muted); border-radius: var(--radius-sm); transition: color var(--dur-fast) var(--ease-std);
+}
+.bl-fxcube__side::before {
+  content: ""; position: absolute; left: .6rem; right: .6rem; top: 0; height: 2px; border-radius: 2px; background: var(--border-strong);
+  transform-origin: 0 50%; transition: background-color var(--dur) var(--ease-std);
+}
+.bl-fxcube__side:hover { color: var(--text-strong); }
+.bl-fxcube__side:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.bl-fxcube__side[aria-pressed="true"] { color: var(--text-strong); }
+.bl-fxcube__side[aria-pressed="true"]::before { background: var(--c-accent); }
+
+@media (max-width: 960px) { .bl-fxcube__block, .bl-fxcube__grid:has(> :nth-child(4):last-child) > .bl-fxcube__block { --cols: 2; } }
+@media (max-width: 640px) {
+  .bl-fxcube__block, .bl-fxcube__grid:has(> :nth-child(4):last-child) > .bl-fxcube__block { --cols: 1; }
+  .bl-fxcube__face { min-height: 0; }
+}
+/* without JS every side is shown, one after another */
+html:not(.js) .bl-fxcube__rig { gap: .75rem; }
+html:not(.js) .bl-fxcube__face { grid-area: auto; min-height: 0; }

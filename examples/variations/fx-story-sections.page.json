@@ -1,0 +1,143 @@
+{
+  "_note": "Shows proof-book, metrics-bars3d, process-layers, team-coverflow and about-helix. Kestrel Ledger is a fictional company; every name, figure and date is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "crimson-trust",
+  "lang": "en",
+  "override_order": {"reason": "Demo page: shows several variants that share one slot, so it cannot follow a single archetype order."},
+  "site": {
+    "brand": "Kestrel Ledger",
+    "brand_mark": "KL",
+    "title": "Kestrel Ledger | Accounting and finance operations in Da Nang",
+    "description": "Kestrel Ledger runs bookkeeping, payables and financial reporting for accounting firms and mid-size companies in Australia and the UK, from one office in Da Nang."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Results", "href": "#results"},
+          {"label": "Process", "href": "#process"},
+          {"label": "Case studies", "href": "#case-studies"},
+          {"label": "History", "href": "#history"}
+        ],
+        "cta": {"label": "Contact us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "eyebrow": "Finance and accounting outsourcing",
+        "title": "Accounting teams for firms in *Australia and the UK*",
+        "lead": "Kestrel Ledger runs bookkeeping, payables and month-end reporting for accounting firms and mid-size companies, from one office in Da Nang with 180 accountants.",
+        "primary_cta": {"label": "Book a call", "href": "#get-started"},
+        "secondary_cta": {"label": "See case studies", "href": "#case-studies"},
+        "proof": ["180 accountants", "Reviewer on every file", "UK and Australian hours"],
+        "photo": {"src": "bookkeeping-calculator-laptop", "alt": "Accountant reconciling figures on a laptop with a calculator"},
+        "badges": [
+          {"icon": "users", "value": "180", "label": "Accountants"},
+          {"icon": "calendar", "value": "12 years", "label": "In business"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "Our services"},
+        "cards": [
+          {"icon": "calculator", "title": "Bookkeeping", "text": "Daily transaction coding and bank reconciliations in Xero and MYOB files.", "bullets": ["Reviewed before month end", "Queries logged in your practice tool", "Weekly status note"]},
+          {"icon": "receipt", "title": "Accounts payable", "text": "Invoice capture, approval routing and payment runs on your calendar."},
+          {"icon": "bar-chart", "title": "Management reporting", "text": "Month-end packs, variance notes and cash flow forecasts for your clients."},
+          {"icon": "file-text", "title": "Tax preparation", "text": "Workpapers and draft returns prepared for your partners to review and sign."}
+        ]
+      }
+    },
+    {
+      "type": "metrics-bars3d",
+      "data": {
+        "head": { "title": "Before and after *Kestrel Ledger*", "lead": "Median figures across client teams in their first twelve months with us, measured against each client's own baseline."},
+        "items": [
+          {"label": "Month-end close", "before": 12, "after": 5, "unit": "days", "better": "lower", "note": "Working days from period end to signed pack"},
+          {"label": "Cost per invoice processed", "before": 7.8, "after": 3.1, "prefix": "$", "decimals": 2, "better": "lower"},
+          {"label": "First-pass accuracy", "before": 94.2, "after": 99.4, "suffix": "%", "better": "higher", "note": "Files passing review without changes"},
+          {"label": "Reports sent on time", "before": "[KPI]", "after": 98, "suffix": "%", "better": "higher"}
+        ]
+      }
+    },
+    {
+      "type": "process-layers",
+      "data": {
+        "head": {"eyebrow": "How we start", "title": "How a client team is set up", "lead": "Five steps from the first call to a team that runs your month end on its own."},
+        "cta": {"label": "Book a call", "href": "#get-started"},
+        "steps": [
+          {"label": "Week 1", "icon": "search", "title": "Discovery", "text": "We review your chart of accounts, close calendar and the files each team member touches, and agree what moves first."},
+          {"label": "Week 2", "icon": "clipboard-check", "title": "Process mapping", "text": "Each task is written up as a checklist with owners, cut-off times and the reviewer who signs it off."},
+          {"label": "Weeks 3-4", "icon": "users", "title": "Team setup", "text": "Accountants are selected for your software and sector, then trained on your files with a senior reviewer beside them."},
+          {"label": "Month 2", "icon": "workflow", "title": "Parallel run", "text": "Our team closes one month alongside yours. Every difference is traced and the checklists are corrected."},
+          {"label": "Month 3", "icon": "activity", "title": "Steady state", "text": "The team runs the close on its own, with a weekly status note and a monthly review of accuracy and timing."}
+        ]
+      }
+    },
+    {
+      "type": "proof-book",
+      "data": {
+        "head": { "title": "Case studies", "lead": "Four client files. Turn the page to read the next one."},
+        "cases": [
+          {"client": "Marlow and Pike", "industry": "Accounting firm", "photo": {"src": "accounting-documents-calculator", "alt": "Printed ledgers and a calculator on an accountant's desk"}, "challenge": "A 40-person practice in Leeds lost two senior bookkeepers before tax season and had 300 client files waiting for year-end work.", "title": "Year-end backlog cleared in seven weeks with a team of nine", "results": [{"value": "300", "label": "files completed"}, {"value": "7 wks", "label": "to clear the backlog"}]},
+          {"client": "Southgate Freight", "industry": "Logistics", "photo": {"src": "port-containers", "alt": "Shipping containers stacked at a port"}, "challenge": "Carrier invoices arrived in five formats and were keyed by hand, so the monthly payment run slipped by a week or more.", "title": "Carrier payables moved to one intake queue and a fixed weekly run", "results": [{"value": "4,200", "label": "invoices a month"}, {"value": "2 days", "label": "average approval time"}, {"value": "0", "label": "late payment fees"}]},
+          {"client": "Brightwater Clinics", "industry": "Healthcare", "photo": {"src": "healthcare-consultation", "alt": "Clinician talking with a patient in a consulting room"}, "challenge": "Eleven clinics closed their books separately, and the group finance team waited three weeks for a consolidated view.", "title": "One consolidated month-end pack for eleven clinics", "results": [{"value": "11", "label": "clinics in one close"}, {"value": "6 days", "label": "to the group pack"}]},
+          {"client": "Tallis Home", "industry": "Retail", "photo": {"src": "ecommerce-packing", "alt": "Online orders being packed at a warehouse bench"}, "challenge": "Marketplace payouts, refunds and fees did not match the bank, and the gap had grown for fourteen months.", "title": "Fourteen months of marketplace payouts reconciled", "results": [{"value": "14", "label": "months reconciled"}, {"value": "3", "label": "sales channels"}]}
+        ]
+      }
+    },
+    {
+      "type": "team-coverflow",
+      "data": {
+        "head": { "title": "Leadership team", "lead": "The people who run delivery, quality and client accounts."},
+        "members": [
+          {"name": "Helen Carver", "role": "Managing Director", "photo": "portrait-exec-woman-senior", "bio": "Chartered accountant who ran audit teams in Sydney before founding Kestrel Ledger in Da Nang.", "linkedin": "https://www.linkedin.com/"},
+          {"name": "Minh Tran", "role": "Head of Delivery", "photo": "avatar-man-2", "bio": "Runs the close calendar across every client team and chairs the weekly quality review."},
+          {"name": "Priya Nair", "role": "Quality Lead", "photo": "portrait-woman-office", "bio": "Owns the review checklists and signs off every new client's first three month-end packs."},
+          {"name": "Daniel Okafor", "role": "Client Director, UK", "photo": "avatar-man-1", "bio": "Looks after accounting firm clients in the UK and joins every onboarding call.", "linkedin": "https://www.linkedin.com/"},
+          {"name": "Lan Pham", "role": "Head of People", "photo": "avatar-woman-1", "bio": "Leads hiring and training for the accounting teams and the senior reviewer track."}
+        ]
+      }
+    },
+    {
+      "type": "about-helix",
+      "data": {
+        "head": { "title": "Twelve years in Da Nang", "lead": "From a four-person bookkeeping desk to 180 accountants serving firms in two countries."},
+        "milestones": [
+          {"year": "2014", "title": "Founded in Da Nang", "text": "Helen Carver opens a bookkeeping desk with four accountants and two Sydney clients."},
+          {"year": "2016", "title": "First accounting firm client", "text": "A Melbourne practice moves its bookkeeping and payroll files to the team."},
+          {"year": "2018", "title": "Payables service starts", "text": "Invoice capture and weekly payment runs are added for logistics and retail clients."},
+          {"year": "2019", "title": "UK clients", "text": "The team adds a UK shift and signs its first two practices in Leeds and Bristol."},
+          {"year": "2021", "title": "100 accountants", "text": "The office moves to a larger floor and the senior reviewer track begins."},
+          {"year": "2023", "title": "Management reporting", "text": "Month-end packs and cash flow forecasts become a service of their own."},
+          {"year": "2026", "title": "180 accountants", "text": "Kestrel Ledger now closes the books for more than 60 client businesses each month."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "eyebrow": "Contact",
+        "title": "Send us your *close calendar*",
+        "text": "We reply within two working days with a team plan and a monthly price.",
+        "primary_cta": {"label": "Book a call", "href": "mailto:hello@kestrel.example"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Kestrel Ledger runs bookkeeping, payables and financial reporting for accounting firms and companies in Australia and the UK.",
+        "contacts": [{"icon": "mail", "label": "hello@kestrel.example", "href": "mailto:hello@kestrel.example"}],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "Bookkeeping", "href": "#services"}, {"label": "Accounts payable", "href": "#services"}, {"label": "Reporting", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "Case studies", "href": "#case-studies"}, {"label": "Leadership", "href": "#leadership"}, {"label": "History", "href": "#history"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

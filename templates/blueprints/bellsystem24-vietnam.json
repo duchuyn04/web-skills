@@ -1,0 +1,92 @@
+{
+  "id": "bellsystem24-vietnam",
+  "source": {
+    "name": "Bellsystem24 Vietnam",
+    "url": "https://www.bs24vietnam.com/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales",
+    "enterprise-cx"
+  ],
+  "summary": "Full-width photo hero, an icon row and a services split with image tiles, a dark counter band, an industry pill grid, client logos with testimonial cards and a blog list.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "note": "centered heading over a wide photo of people in motion, no buttons"
+    },
+    {
+      "form": "icon-strip",
+      "role": "intro",
+      "tone": "light",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "four small icons with a label and a short line each"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "light",
+      "cols": null,
+      "count": 4,
+      "media": "right",
+      "note": "heading, orange rule, bullet list and a button at left, four overlapping photo tiles with labels at right"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "four large counters in a row on a dark textured band"
+    },
+    {
+      "form": "cards-text",
+      "role": "industries",
+      "tone": "light",
+      "cols": 5,
+      "count": 15,
+      "media": "none",
+      "note": "centered heading, three rows of five outlined pill labels"
+    },
+    {
+      "form": "icon-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 8,
+      "count": 8,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, one row of logos with slider arrows"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "three outlined quote cards each with a small portrait, name and company, dots below"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "muted",
+      "cols": 1,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, three ruled rows with date, tag and title, centered button"
+    }
+  ]
+}

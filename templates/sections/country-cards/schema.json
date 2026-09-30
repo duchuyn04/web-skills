@@ -1,6 +1,7 @@
 {
   "variant": "country-cards",
   "group": "locations",
+  "forms": ["carousel-cards", "cards-image"],
   "summary": "Delivery locations as tall photo cards in a draggable slider: country or city name on the photo, service tags, a round SVG flag and an optional short note. Cards sit at staggered heights. Use for offshore and nearshore hubs (Vietnam, Philippines, Colombia...); locations-map suits a world overview instead.",
   "tone": "auto",
   "anchor": "locations",

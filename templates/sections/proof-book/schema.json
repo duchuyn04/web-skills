@@ -1,0 +1,33 @@
+{
+  "variant": "proof-book",
+  "group": "proof", "signature": true,
+  "forms": ["carousel-cards", "testimonial-block"],
+  "reshape": true,
+  "summary": "Case studies laid out as an open book: the left page names the client, industry and challenge with a photo, the right page gives the result headline and 2-3 figures. Next case turns the right-hand leaf over the spine in 3D, with shading running across the paper as it bends; Previous case turns it back. Buttons, arrow keys and a click on the page corner all turn; no dragging needed. Phones show one page per case and turn it about its left edge. Paper tone, corner radius, spine shadow and turn speed are seeded from the brand name. Needs 3-6 real case studies with a challenge line each; with fewer, use case-slider or quote-spotlight.",
+  "tone": "auto",
+  "anchor": "case-studies",
+  "shared": ["stage3d"],
+  "animations": ["book-page-turn-3d", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "carousel_label": {"type": "text", "min": 3, "max": 40, "default": "Case studies"},
+    "prev_label": {"type": "text", "min": 2, "max": 20, "default": "Previous case"},
+    "next_label": {"type": "text", "min": 2, "max": 20, "default": "Next case"},
+    "case_label": {"type": "text", "min": 2, "max": 16, "default": "Case"},
+    "of_label": {"type": "text", "min": 1, "max": 8, "default": "of"},
+    "challenge_label": {"type": "text", "min": 3, "max": 24, "default": "The challenge"},
+    "result_label": {"type": "text", "min": 3, "max": 24, "default": "The result"},
+    "cases": {"type": "list", "min": 3, "max": 6, "item": {"type": "object", "fields": {
+      "client": {"type": "text", "min": 2, "max": 32},
+      "industry": {"type": "text", "min": 3, "max": 28},
+      "photo": {"$ref": "photo"},
+      "challenge": {"type": "text", "min": 40, "max": 190},
+      "title": {"type": "text", "min": 20, "max": 110},
+      "results": {"type": "list", "min": 2, "max": 3, "item": {"type": "object", "fields": {
+        "value": {"type": "text", "min": 1, "max": 10},
+        "label": {"type": "text", "min": 3, "max": 28}
+      }}},
+      "link": {"$ref": "cta", "required": false}
+    }}}
+  }
+}

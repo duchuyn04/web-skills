@@ -1,0 +1,131 @@
+{
+  "id": "andersen-lab",
+  "source": {
+    "name": "Andersen Lab",
+    "url": "https://andersenlab.com/",
+    "category": "Nearshore & Global Software Outsourcing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Dark hero with large type over a portrait and news items, a dark region band, light client logos, a capability list beside a diagram, a photo metrics band, awards, testimonials, a research feature, expert video carousel, expertise cards, events tabs and a consultation form.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-left-text",
+      "role": "hero",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "large headline and button left, portrait art right, three news items in a row below"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "dark band: heading, text and button, with rating badge"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": 4,
+      "count": 8,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and two rows of four client logos"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "light",
+      "cols": 1,
+      "count": 6,
+      "media": "right",
+      "note": "heading and vertical capability list left, line diagram right"
+    },
+    {
+      "form": "image-band",
+      "role": "cases",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "optional": true,
+      "note": "full-width photo band with a headline and link"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "heading and one row of five award badges"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "optional": true,
+      "note": "heading and a slider of client feedback"
+    },
+    {
+      "form": "feature-split",
+      "role": "tools",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "optional": true,
+      "note": "dark card: heading and button left, illustration right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "dark",
+      "cols": null,
+      "count": 3,
+      "media": "left",
+      "optional": true,
+      "note": "heading, large video card left with two small items stacked right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "industries",
+      "tone": "light",
+      "cols": 3,
+      "count": 21,
+      "media": "none",
+      "note": "heading and paragraph, slider of photo cards with lists"
+    },
+    {
+      "form": "tabs",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "heading, tab pills, three event cards"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "cols": 1,
+      "count": 4,
+      "media": "none",
+      "note": "heading with bullets left, contact form right"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-tcov" data-tcov data-fx="3d" data-seed="{{site.brand}}" style="--tc-a: {{site.seed.a}}; --tc-b: {{site.seed.b}}; --tc-c: {{site.seed.c}};">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-tcov__wrap" role="region" aria-roledescription="carousel" aria-label="{{carousel_label}}" data-reveal data-tcov-wrap>
+      <div class="bl-tcov__stage fx3d-stage">
+        <div class="bl-tcov__rig fx3d-rig" aria-hidden="true">
+          {{#members}}<div class="bl-tcov__card fx3d-face" data-card><img src="{{photo}}" alt="" width="280" height="360" loading="lazy" draggable="false"><span class="bl-tcov__dim"></span></div>{{/members}}
+        </div>
+      </div>
+      <div class="bl-tcov__controls">
+        <button class="bl-tcov__btn" type="button" data-tcov-prev>{{icon:chevron-left}}<span class="bl-sr-only">{{prev_label}}</span></button>
+        <p class="bl-tcov__count bl-mono" aria-hidden="true"><span data-tcov-now>01</span><span class="bl-tcov__sep"></span><span data-tcov-total></span></p>
+        <button class="bl-tcov__btn" type="button" data-tcov-next>{{icon:chevron-right}}<span class="bl-sr-only">{{next_label}}</span></button>
+      </div>
+      <div class="bl-tcov__info" aria-live="polite" data-of-label="{{of_label}}" data-tcov-info>
+        {{#members}}
+        <div class="bl-tcov__slide{{#@first}} is-current{{/@first}}" role="group" aria-roledescription="slide" aria-label="{{name}}" data-slide>
+          <h3 class="bl-tcov__name">{{name}}</h3>
+          <p class="bl-tcov__role">{{role}}</p>
+          {{#bio}}<p class="bl-tcov__bio">{{bio}}</p>{{/bio}}
+          {{#linkedin}}<a class="bl-tcov__in" href="{{linkedin}}">{{icon:linkedin}}<span>{{linkedin_label}}</span><span class="bl-sr-only">: {{name}}</span></a>{{/linkedin}}
+        </div>
+        {{/members}}
+      </div>
+    </div>
+  </div>
+</section>

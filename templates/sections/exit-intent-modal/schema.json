@@ -1,6 +1,7 @@
 {
   "variant": "exit-intent-modal",
   "group": "floating",
+  "forms": ["floating"],
   "summary": "Desktop-only modal that opens with a spring when the pointer leaves toward the browser bar, after 8 seconds on page. Shown at most once every 7 days.",
   "tone": "none",
   "anchor": "exit-offer",

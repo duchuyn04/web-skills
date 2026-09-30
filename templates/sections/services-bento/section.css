@@ -1,4 +1,4 @@
-/* services-bento: bento-spotlight-hover (radial glow follows --mx / --my) */
+/* services-bento: card-hover-lift (border turns brand colour and the card rises 3px) */
 .bl-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(210px, auto); gap: clamp(.9rem, 1.6vw, 1.25rem); }
 .bl-bento__card {
   position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; gap: .85rem;
@@ -6,24 +6,11 @@
   background: var(--surface); border: 1px solid var(--border);
   transition: border-color var(--dur) var(--ease-std), transform var(--dur) var(--ease-out);
 }
-.bl-bento__card::before {
-  content: ""; position: absolute; inset: -1px; z-index: -1; opacity: 0; pointer-events: none;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--c-accent) 14%, transparent), transparent 70%);
-  transition: opacity var(--dur) var(--ease-std);
-}
-.bl-bento__card::after {
-  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none; opacity: 0;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--accent-ink), transparent 70%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  transition: opacity var(--dur) var(--ease-std);
-}
-.bl-bento__card:hover::before, .bl-bento__card:hover::after { opacity: 1; }
-.bl-bento__card:hover { transform: translateY(-3px); }
+.bl-bento__card:has(a):hover { transform: translateY(-3px); border-color: var(--c-accent); }
 .bl-bento__card p { font-size: var(--fs-sm); }
 .bl-bento__card .bl-checks { font-size: var(--fs-sm); margin-top: .25rem; }
 .bl-bento__card .bl-link { margin-top: auto; padding-top: .5rem; font-size: var(--fs-sm); }
-.bl-bento__card:first-child { grid-column: span 2; grid-row: span 2; background: linear-gradient(160deg, var(--surface), var(--surface-2)); }
+.bl-bento__card:first-child { grid-column: span 2; grid-row: span 2; background: var(--surface-2); }
 .bl-bento__card:first-child .bl-h3 { font-size: clamp(1.35rem, 1vw + 1rem, 1.7rem); font-family: var(--font-heading); }
 .bl-bento__card:first-child p { font-size: var(--fs-body); }
 .bl-bento__card:first-child .bl-icon-box { width: 56px; height: 56px; }

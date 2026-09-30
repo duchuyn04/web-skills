@@ -1,11 +1,12 @@
 {
   "variant": "hero-split-image",
   "group": "hero",
+  "forms": ["hero-split"],
   "summary": "Headline, lead and two CTAs on the left; large photo on the right with up to 3 floating glass KPI badges.",
   "tone": "hero",
   "anchor": "top",
   "shared": ["hero"],
-  "animations": ["floating-glass-badges", "shimmer-button-glow", "reveal"],
+  "animations": ["floating-glass-badges", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
     "title": {"type": "markup", "min": 12, "max": 90},

@@ -1,6 +1,7 @@
 {
   "variant": "logo-marquee",
   "group": "logos",
+  "forms": ["logo-strip"],
   "summary": "Thin band of client logos (or text wordmarks) scrolling right to left, faded edges, pauses on hover.",
   "tone": "auto",
   "anchor": "clients",

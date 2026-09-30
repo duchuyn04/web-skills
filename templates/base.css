@@ -88,10 +88,12 @@ h1, h2, h3, h4 { font-weight: inherit; }
 .bl-mono { font-family: var(--font-mono); letter-spacing: 0; }
 .bl-eyebrow {
   display: inline-flex; align-items: center; gap: .65rem;
-  font-family: var(--font-body); font-size: var(--fs-xs); font-weight: 700; line-height: 1.2;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--accent-ink);
-  margin-bottom: 1rem;
+  font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 600; line-height: 1.3;
+  letter-spacing: 0; color: var(--accent-ink);
+  margin-bottom: .85rem;
 }
+/* Caps eyebrow (preset "eyebrow": "caps"): short labels only, tracked 8% as caps need */
+.bl-eyebrow-caps .bl-eyebrow { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .bl-eyebrow::before { content: ""; width: 1.6rem; height: 2px; border-radius: 2px; background: currentColor; flex-shrink: 0; }
 
 /* Pill eyebrow (preset "eyebrow": "pill" or theme.eyebrow) */
@@ -123,10 +125,9 @@ h1, h2, h3, h4 { font-weight: inherit; }
 .arrow-icon { width: 1.05em; height: 1.05em; flex-shrink: 0; transition: transform var(--dur-fast) var(--ease-out); }
 .bl-flag { width: 20px; height: 14px; flex-shrink: 0; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(15, 23, 42, .14); }
 .bl-icon-box {
-  width: 48px; height: 48px; flex-shrink: 0; display: grid; place-items: center;
-  border-radius: var(--radius); background: var(--c-accent-soft); color: var(--accent-ink);
+  width: 32px; height: 32px; flex-shrink: 0; display: grid; place-items: center start; color: var(--text-strong);
 }
-.bl-icon-box .bl-icon { width: 24px; height: 24px; }
+.bl-icon-box .bl-icon { width: 26px; height: 26px; }
 
 /* Buttons */
 .bl-btn {
@@ -139,21 +140,13 @@ h1, h2, h3, h4 { font-weight: inherit; }
 }
 .bl-btn:hover .arrow-icon, .bl-link:hover .arrow-icon { transform: translateX(3px); }
 .bl-btn:active { transform: scale(.98); }
-.bl-btn--primary { background: var(--c-accent); color: var(--c-on-accent); box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--c-accent) 80%, transparent); }
-.bl-btn--primary:hover { background: var(--c-accent-hover); transform: translateY(-2px); box-shadow: 0 16px 30px -14px color-mix(in srgb, var(--c-accent) 90%, transparent); }
+.bl-btn--primary { background: var(--c-accent); color: var(--c-on-accent); box-shadow: 0 1px 2px rgba(15, 23, 42, .16); }
+.bl-btn--primary:hover { background: var(--c-accent-hover); }
 .bl-btn--ghost { background: transparent; color: var(--text-strong); border-color: var(--border-strong); }
-.bl-btn--ghost:hover { background: var(--surface-2); border-color: var(--text-muted); transform: translateY(-2px); }
+.bl-btn--ghost:hover { background: var(--surface-2); border-color: var(--text-muted); }
 .bl-btn--sm { min-height: 40px; padding: .55rem 1.1rem; font-size: .88rem; }
 .bl-btn--lg { min-height: 54px; padding: .9rem 1.85rem; font-size: 1rem; }
 .bl-btn--block { width: 100%; }
-/* shimmer-button-glow: one light sweep every 5.5s */
-.bl-btn--shimmer::after {
-  content: ""; position: absolute; inset: 0 auto 0 0; width: 45%; z-index: 1; pointer-events: none;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .32), transparent);
-  transform: translateX(-160%) skewX(-20deg);
-  animation: bl-shimmer 5.5s var(--ease-std) 1.2s infinite;
-}
-@keyframes bl-shimmer { 0% { transform: translateX(-160%) skewX(-20deg); } 22%, 100% { transform: translateX(360%) skewX(-20deg); } }
 .bl-btn-row { display: flex; flex-wrap: wrap; gap: .85rem; align-items: center; }
 .bl-link { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; color: var(--accent-ink); }
 .bl-link:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -164,7 +157,7 @@ h1, h2, h3, h4 { font-weight: inherit; }
   border-radius: var(--radius-lg); padding: clamp(1.4rem, 2.2vw, 2rem);
   transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-std);
 }
-.bl-card--lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+.bl-card--lift:is(a, :has(a, button)):hover { border-color: var(--border-strong); }
 .bl-chip {
   display: inline-flex; align-items: center; gap: .4rem; padding: .3rem .7rem;
   border-radius: 999px; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .02em;
@@ -187,19 +180,11 @@ h1, h2, h3, h4 { font-weight: inherit; }
   box-shadow: var(--shadow-lg); border-radius: var(--radius);
 }
 
-/* Ambient glow decoration used by heroes and CTA bands */
-.bl-glow { position: absolute; z-index: -1; pointer-events: none; border-radius: 50%; filter: blur(60px); opacity: .55; }
-.bl-glow--a { width: 520px; height: 520px; background: color-mix(in srgb, var(--c-accent) 45%, transparent); }
-.bl-glow--b { width: 460px; height: 460px; background: color-mix(in srgb, var(--c-accent-blend, var(--c-accent-2)) 40%, transparent); }
 
-/* Reveal on scroll. Only hidden when JS is running. Uses the individual
-   translate / scale properties so it never fights a component's own transform. */
-.js [data-reveal] { opacity: 0; translate: 0 18px; transition: opacity .7s var(--ease-out), translate .7s var(--ease-out), scale .35s var(--ease-back); transition-delay: calc(var(--reveal-i, 0) * 80ms); }
-.js [data-reveal="pop"] { translate: none; scale: .9; }
-.js [data-reveal="fade"] { translate: none; }
-.js [data-reveal="left"] { translate: -28px 0; }
-.js [data-reveal="right"] { translate: 28px 0; }
-.js [data-reveal].is-in { opacity: 1; translate: none; scale: none; }
+/* Reveal on scroll. Only hidden when JS is running; base.js moves the element in with GSAP
+   (transform x/y/scale, 0.4 s) and clears its inline styles afterwards. */
+.js [data-reveal] { opacity: 0; }
+.js [data-reveal].is-in { opacity: 1; }
 
 /* Forms */
 .bl-field { display: grid; gap: .4rem; }
@@ -237,11 +222,16 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 .bl-mask-arch :is(.bl-row__frame, .bl-hero-split__frame, .bl-tabs__media, .bl-hero-grad__photo) { border-radius: 999px 999px var(--radius-lg) var(--radius-lg); }
 
 /* Title highlight styles */
-.bl-hl-gradient .bl-hl { background: linear-gradient(in oklab 100deg, var(--accent-ink) 10%, var(--accent-ink) 30%, color-mix(in oklab, var(--accent-ink) 55%, var(--accent-2-ink)) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* "gradient" is kept as a preset value for old pages and renders like "color": no gradient text */
+.bl-hl-gradient .bl-hl { color: var(--accent-ink); }
 .bl-hl-underline .bl-hl { color: inherit; text-decoration: underline; text-decoration-color: var(--c-accent); text-decoration-thickness: .1em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
 
+/* BL.motion.split: each word (or the characters of a word) sits in a mask; the padding keeps tall Vietnamese marks inside it */
+.bl-split__w { display: inline-block; overflow: hidden; vertical-align: top; white-space: nowrap; padding: .24em 0 .16em; margin: -.24em 0 -.16em; }
+.bl-split__i { display: inline-block; }
+
 /* Media reveal: photos wipe in from the bottom inside their frame */
-.js.bl-media-clip [data-reveal] :is(.bl-frame, .bl-mosaic__tile) img { clip-path: inset(100% 0 0 0); transition: clip-path 1s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 80ms + 120ms); }
+.js.bl-media-clip [data-reveal] :is(.bl-frame, .bl-mosaic__tile) img { clip-path: inset(100% 0 0 0); transition: clip-path .5s var(--ease-out); transition-delay: calc(min(var(--reveal-i, 0), 4) * 60ms + 80ms); }
 .js.bl-media-clip [data-reveal].is-in :is(.bl-frame, .bl-mosaic__tile) img { clip-path: inset(0 0 0 0); }
 
 /* Responsive */
@@ -260,7 +250,7 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
-  .js [data-reveal] { opacity: 1; translate: none; scale: none; }
+  .js [data-reveal] { opacity: 1; }
 }
 
 /* Page-wide motion switch: base.js sets data-motion="paused" on <html> */

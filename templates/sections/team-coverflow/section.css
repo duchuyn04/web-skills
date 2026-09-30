@@ -1,0 +1,56 @@
+/* team-coverflow: portraits placed by their offset d from the middle card (set by section.js as --d, --ad, --sg):
+   translateX(d * spacing) translateZ(-|d| * 130px) rotateY(-sign(d) * angle). The middle card has no transform.
+   Seeds (build time): --tc-a turn angle (45-60deg), --tc-b spacing, --tc-c corner radius. */
+.bl-tcov {
+  --ang: calc(45deg + var(--tc-a, .5) * 15deg);
+  --sp: calc(150px + var(--tc-b, .5) * 40px);
+  --cw: 280px; --ch: 360px;
+  --cr: calc(6px + var(--tc-c, .5) * 16px);
+}
+.bl-tcov__stage { --fx-persp: 1300px; perspective-origin: 50% 45%; position: relative; height: calc(var(--ch) + 48px); overflow: clip; }
+.bl-tcov__stage::after {
+  content: ""; position: absolute; left: 50%; bottom: 6px; width: min(900px, 90%); height: 40px; translate: -50% 0; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(15, 23, 42, .16), rgba(15, 23, 42, 0));
+}
+.bl-tcov__rig { position: absolute; left: 50%; top: 14px; width: 0; height: var(--ch); z-index: 1; }
+.bl-tcov__card {
+  position: absolute; top: 0; left: calc(var(--cw) / -2); width: var(--cw); height: var(--ch);
+  border-radius: var(--cr); overflow: clip; background: var(--surface-2); cursor: pointer;
+  box-shadow: 0 30px 50px -30px rgba(15, 23, 42, .45), 0 0 0 1px var(--border);
+  transform: translateX(calc(var(--d, 0) * var(--sp))) translateZ(calc(var(--ad, 0) * -130px)) rotateY(calc(var(--sg, 0) * var(--ang) * -1));
+  transition: transform .75s var(--ease-out), opacity .45s var(--ease-std), visibility 0s linear 0s;
+}
+.bl-tcov__card.is-center { transform: none; cursor: default; }
+.bl-tcov__card img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.bl-tcov__dim { position: absolute; inset: 0; background: var(--bg); opacity: calc(var(--ad, 0) * .2); transition: opacity .6s var(--ease-std); pointer-events: none; }
+.bl-tcov__card.is-far { opacity: 0; visibility: hidden; transition: transform .75s var(--ease-out), opacity .35s var(--ease-std), visibility 0s linear .35s; }
+.bl-tcov__card.no-trans, .bl-tcov__card.no-trans .bl-tcov__dim { transition: none; }
+html:not(.js) .bl-tcov__stage, html:not(.js) .bl-tcov__controls { display: none; }
+
+.bl-tcov__controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.1rem; }
+.bl-tcov__btn {
+  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-strong);
+  transition: background-color var(--dur-fast) var(--ease-std), transform var(--dur-fast) var(--ease-out);
+}
+.bl-tcov__btn:hover { background: var(--surface-2); transform: translateY(-2px); }
+.bl-tcov__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+.bl-tcov__btn .bl-icon { width: 20px; height: 20px; }
+.bl-tcov__count { display: inline-flex; align-items: center; gap: .6rem; min-width: 7rem; justify-content: center; font-size: var(--fs-sm); color: var(--text-muted); }
+.bl-tcov__count [data-tcov-now] { color: var(--text-strong); font-weight: 700; }
+.bl-tcov__sep { width: 28px; height: 1px; background: var(--border-strong); }
+
+.bl-tcov__info { display: grid; max-width: 580px; margin: 1.5rem auto 0; text-align: center; }
+.js .bl-tcov__slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; translate: 0 8px; transition: opacity .45s var(--ease-std), translate .45s var(--ease-out), visibility 0s linear .45s; }
+.js .bl-tcov__slide.is-current { opacity: 1; visibility: visible; translate: none; transition-delay: .1s, .1s, 0s; }
+html:not(.js) .bl-tcov__slide + .bl-tcov__slide { margin-top: 2rem; }
+.bl-tcov__name { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.35rem, .8vw + 1.05rem, 1.7rem); line-height: 1.2; color: var(--text-strong); }
+.bl-tcov__role { margin-top: .3rem; font-size: var(--fs-sm); font-weight: 700; letter-spacing: .02em; color: var(--accent-ink); }
+.bl-tcov__bio { margin-top: .75rem; color: var(--text); text-wrap: pretty; }
+.bl-tcov__in { display: inline-flex; align-items: center; gap: .45rem; margin-top: .9rem; font-size: var(--fs-sm); font-weight: 700; color: var(--accent-ink); }
+.bl-tcov__in:hover { text-decoration: underline; text-underline-offset: 4px; }
+.bl-tcov__in .bl-icon { width: 16px; height: 16px; }
+
+@media (max-width: 640px) {
+  .bl-tcov { --cw: 196px; --ch: 252px; --sp: 112px; --ang: calc(40deg + var(--tc-a, .5) * 10deg); }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "belay",
+  "source": {"name": "Belay", "url": "https://belaysolutions.com/", "category": "Remote Staffing and Virtual Assistants", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "Split hero with two service cards overlapping its lower edge, a full-width brand-colour quote band, a logo row, a five-step process strip, a comparison table, a resource form beside a book cover, a video testimonial and a small award strip.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "serif headline, one line and a button left, portrait in a round shape right on a diagonal two-tone ground (a pop-up covered part of the capture)"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 2, "count": 2, "media": "none", "note": "two white cards overlapping the bottom of the hero, each with a line icon, title, short text and a pill button"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "dark", "media": "none", "optional": true, "note": "full-width strong green band with oversized quote marks, one large quote and a small avatar with name and title right-aligned below"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "centered serif label above one row of grey client logos that runs edge to edge"},
+    {"form": "cards-icon", "role": "process", "tone": "light", "cols": 5, "count": 5, "media": "none", "note": "centered heading, five narrow pale cards in one row each with a small green icon, bold title and short text, then a line and a small pill button"},
+    {"form": "list-rows", "role": "compare", "tone": "light", "cols": 3, "count": 5, "media": "none", "note": "centered heading and a two-option switch, table with a criteria column, a accented dark brand column with ticks and a plain column with crosses"},
+    {"form": "form", "role": "cta", "tone": "muted", "cols": 2, "count": 1, "media": "right", "note": "grey rounded panel: serif heading, paragraph and a short form with pill fields left, tilted book cover right"},
+    {"form": "video-block", "role": "testimonial", "tone": "light", "media": "right", "optional": true, "note": "heading and one line left, large embedded video player right"},
+    {"form": "logo-strip", "role": "awards", "tone": "light", "media": "none", "optional": true, "note": "one row of award badges and ranking logos with small captions, directly above the footer"}
+  ]
+}

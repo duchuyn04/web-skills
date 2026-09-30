@@ -1,0 +1,118 @@
+{
+  "id": "forte-group",
+  "source": {
+    "name": "Forte Group",
+    "url": "https://www.fortegrp.com/",
+    "category": "Nearshore & Global Software Outsourcing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner"
+  ],
+  "summary": "Dark hero with figures and a video card, a two-card feature row, a testimonial slider, a tabbed service block, a dark client band, industry cards, text bands, a tabbed blog, FAQ and a closing form over a photo.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "left-aligned headline and text over a dark visual, a row of four figures and a video card at the right"
+    },
+    {
+      "form": "cards-image",
+      "role": "intro",
+      "tone": "muted",
+      "media": "none",
+      "cols": 2,
+      "count": 2,
+      "optional": true,
+      "note": "two large video cards side by side with headings"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "testimonial",
+      "tone": "light",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "heading and intro, three portrait cards with quote and logo, slider arrows"
+    },
+    {
+      "form": "tabs",
+      "role": "services",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": 3,
+      "note": "heading and text, vertical tabs on the left and a panel of cards with links on the right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "dark",
+      "media": "none",
+      "cols": 4,
+      "count": 16,
+      "optional": true,
+      "note": "dark band with heading, a block of client logos on the left and two case cards on the right"
+    },
+    {
+      "form": "cards-icon",
+      "role": "industries",
+      "tone": "light",
+      "media": "none",
+      "cols": 4,
+      "count": 4,
+      "note": "heading, four cards with icon, title, text and link"
+    },
+    {
+      "form": "text-block",
+      "role": "intro",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "one paragraph of centered text"
+    },
+    {
+      "form": "cards-image",
+      "role": "news",
+      "tone": "dark",
+      "media": "none",
+      "cols": 3,
+      "count": 6,
+      "optional": true,
+      "note": "tab links above two rows of three article cards and a button"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "light",
+      "media": "none",
+      "cols": 2,
+      "count": 6,
+      "note": "heading, questions in two columns"
+    },
+    {
+      "form": "text-block",
+      "role": "cta",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "large two-line heading with a short paragraph"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "form on the left with a quote card at the right over a city photo"
+    }
+  ]
+}

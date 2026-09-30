@@ -1,0 +1,23 @@
+{
+  "id": "martal-group",
+  "source": {"name": "Martal Group", "url": "https://martal.ca/", "category": "B2B Sales Development & Lead Gen BPO", "collected": "2026-09-26"},
+  "fits": ["cx-voice-sales"],
+  "summary": "A long page that opens dark over a photo (hero, logos, white intro and industry panel, team and map block), then switches to light with a lead form, card grids for services, team structure and tiers, a process list, a funnel chart, review score cards, a testimonial slider and a numbered FAQ.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-fullbleed", "role": "hero", "tone": "dark", "cols": 3, "count": 3, "media": "full", "note": "left copy with a huge word and a pill button, three small icon stats beside it, all over a dark office photo"},
+    {"form": "logo-strip", "role": "clients", "tone": "dark", "cols": 6, "count": 6, "optional": true, "media": "none", "note": "small caption left, one row of six grey logos, text link below"},
+    {"form": "text-block", "role": "intro", "tone": "light", "cols": 3, "count": null, "media": "none", "note": "white rounded panel over the dark photo, big split-weight heading left and two text columns right"},
+    {"form": "tabs", "role": "industries", "tone": "light", "cols": 3, "count": 24, "media": "none", "note": "inside the same white panel: heading, then a 3-column list of 24 small icon links acting as tabs, with a logo group and text links for the chosen tab beneath"},
+    {"form": "feature-split", "role": "team", "tone": "dark", "cols": null, "count": null, "media": "right", "note": "centered heading, big count statement left with rows of round portraits grouped by region right on a map ground; below it a text block with two columns, a four-item strip of short labels and two icon links with buttons"},
+    {"form": "form", "role": "cta", "tone": "light", "cols": null, "count": null, "optional": true, "media": "none", "note": "angled edge from the dark block, centered heading and a single email field with a button on the right"},
+    {"form": "cards-text", "role": "services", "tone": "muted", "cols": 3, "count": 9, "media": "none", "note": "centered heading, 3 by 3 grid of white cards with title, small circle arrow and short paragraph"},
+    {"form": "cards-icon", "role": "process", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "centered heading, three white cards with a line icon beside the title, subtitle and paragraph"},
+    {"form": "cards-text", "role": "pricing", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "centered heading, three white tier cards with a stepped bar mark, short scope lines and a progress line at the foot"},
+    {"form": "list-rows", "role": "process", "tone": "light", "cols": 2, "count": 10, "media": "none", "note": "large heading left with one intro sentence right, dotted rule, then a two-column checklist of ten short items"},
+    {"form": "feature-split", "role": "metrics", "tone": "light", "cols": null, "count": 8, "media": "right", "note": "small caption and huge split-weight heading left, stepped funnel bars with a figure range per row right"},
+    {"form": "cards-image", "role": "awards", "tone": "muted", "cols": 3, "count": 6, "optional": true, "media": "none", "note": "centered heading, two rows of three white cards each with a review-site logo, star row and score line"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "cols": null, "count": 1, "optional": true, "media": "none", "note": "caption and heading left-aligned, one quote with small portrait and name, round arrow buttons at both sides, text link below"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "cols": 1, "count": 14, "media": "none", "note": "left-aligned heading, fourteen numbered questions each with a circle number and a down-arrow toggle"}
+  ]
+}

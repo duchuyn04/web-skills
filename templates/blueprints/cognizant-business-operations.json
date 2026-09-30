@@ -1,0 +1,128 @@
+{
+  "id": "cognizant-business-operations",
+  "source": {
+    "name": "Cognizant Business Operations",
+    "url": "https://www.cognizant.com/us/en/services/business-operations",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Light hero with a large headline and a card, a dark intro band, a light outcomes row, dark spotlight and light AI feature cards, then tabbed services, awards and case carousels, an insights row, a long FAQ and a closing form band.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "muted",
+      "cols": null,
+      "count": null,
+      "media": "left",
+      "note": "large headline left over a soft background, one text card below; image behind"
+    },
+    {
+      "form": "text-block",
+      "role": "intro",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "dark band with a short heading and two paragraphs"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "light",
+      "cols": 7,
+      "count": 7,
+      "media": "none",
+      "note": "heading left, seven figures in one row"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "dark spotlight: heading and button left, portrait video right"
+    },
+    {
+      "form": "cards-image",
+      "role": "services",
+      "tone": "muted",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "note": "heading and intro paragraph, then a row of photo cards with a short caption each"
+    },
+    {
+      "form": "tabs",
+      "role": "industries",
+      "tone": "light",
+      "cols": 2,
+      "count": 10,
+      "media": "none",
+      "note": "vertical tab list on the left, two-column list of service blurbs on the right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "awards",
+      "tone": "light",
+      "cols": 4,
+      "count": 16,
+      "media": "none",
+      "optional": true,
+      "note": "heading, then a slider of analyst report cards with a link under each"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "muted",
+      "cols": 3,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "heading and intro, a row of photo cards with a link each"
+    },
+    {
+      "form": "image-band",
+      "role": "cases",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "full",
+      "optional": true,
+      "note": "full-width dark photo band with a quote-style headline and a button"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "muted",
+      "cols": 3,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "row of article cards with tag, title and link"
+    },
+    {
+      "form": "faq-accordion",
+      "role": "faq",
+      "tone": "muted",
+      "cols": 1,
+      "count": 13,
+      "media": "none",
+      "note": "heading with intro, then a long list of collapsed questions in two blocks"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "short heading with a contact form"
+    }
+  ]
+}

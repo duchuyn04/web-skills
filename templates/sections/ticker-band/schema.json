@@ -1,6 +1,7 @@
 {
   "variant": "ticker-band",
   "group": "ticker",
+  "forms": ["logo-strip"],
   "summary": "A slim band of large words (services, languages, industries) that scrolls sideways without end, separated by small icons. Painted in the brand colour by default. Pauses on hover and stops for reduced motion.",
   "tone": "accent",
   "anchor": "capabilities",

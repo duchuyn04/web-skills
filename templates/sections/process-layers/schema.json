@@ -1,0 +1,21 @@
+{
+  "variant": "process-layers",
+  "group": "process", "signature": true,
+  "forms": ["feature-split", "list-rows"],
+  "reshape": true,
+  "summary": "The process as a stack of thin isometric plates, one per step, beside the step list. As the visitor scrolls, the plates lift apart one after another and the plate for the step in view slides out toward its text, lit in the brand colour, with a short leader line to the step. Scroll-driven CSS where the browser supports it, an IntersectionObserver fallback elsewhere. Phones and reduced motion show the stack already open and still. Iso angle, plate spacing, corner radius and the side the stack sits on are seeded from the brand name. Needs 3-6 real steps of how the company takes work over; with fewer use steps-row.",
+  "tone": "auto",
+  "anchor": "process",
+  "shared": ["stage3d"],
+  "animations": ["iso-stack-explode-scroll", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cta": {"$ref": "cta", "required": false},
+    "steps": {"type": "list", "min": 3, "max": 6, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 2, "max": 20},
+      "title": {"type": "text", "min": 3, "max": 60},
+      "text": {"type": "text", "min": 40, "max": 220},
+      "icon": {"type": "icon"}
+    }}}
+  }
+}

@@ -1,10 +1,11 @@
 {
   "variant": "cta-multistep",
   "group": "cta",
+  "forms": ["form"],
   "summary": "Closing conversion block: pitch, reassurance points and direct contacts on the left; a 3-step quote form (service, team size, contact details) on the right.",
   "tone": "dark",
   "anchor": "contact",
-  "animations": ["multi-step-form-slide", "shimmer-button-glow", "reveal"],
+  "animations": ["multi-step-form-slide", "reveal"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 8, "max": 80},

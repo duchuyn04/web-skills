@@ -6,7 +6,6 @@
         <div class="bl-models-board__tabs" role="tablist" aria-label="{{tabs_label}}" aria-orientation="vertical">
           {{#models}}
           <button class="bl-models-board__tab" type="button" role="tab" id="{{section.id}}-tab-{{@n}}" aria-controls="{{section.id}}-panel-{{@n}}" aria-selected="{{#@first}}true{{/@first}}{{^@first}}false{{/@first}}" tabindex="{{#@first}}0{{/@first}}{{^@first}}-1{{/@first}}" data-owners="{{#owners}}{{.}} {{/owners}}">
-            <span class="bl-models-board__tab-num bl-mono" aria-hidden="true">{{@num}}</span>
             <span class="bl-models-board__tab-copy"><strong>{{name}}</strong><small>{{fit}}</small></span>
             <span class="bl-models-board__tab-go" aria-hidden="true">{{arrow}}</span>
           </button>
@@ -49,7 +48,7 @@
         </ul>
         <div class="bl-models-board__foot">
           {{#note}}<p class="bl-models-board__note">{{note}}</p>{{/note}}
-          {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}{{arrow}}</a>{{/cta}}
+          {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}</a>{{/cta}}
         </div>
       </div>
     </div>

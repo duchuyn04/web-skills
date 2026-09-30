@@ -15,7 +15,7 @@
   "hero_tone": "light",
   "tone_cycle": ["light", "muted"],
   "tones": {
-    "light": {"bg": "#fbf7f0", "surface": "#ffffff", "surface_2": "#f4eee3", "text": "#4a5553", "text_strong": "$primary", "text_muted": "#6b7471", "border": "#e8dfd0", "is_dark": false},
+    "light": {"bg": "#fffdfa", "surface": "#ffffff", "surface_2": "#f6f1e8", "text": "#4a5553", "text_strong": "$primary", "text_muted": "#6b7471", "border": "#e8dfd0", "is_dark": false},
     "muted": {"bg": "#f3ecdf", "surface": "#fffdf9", "surface_2": "#ebe2d2", "text": "#4a5553", "text_strong": "$primary", "text_muted": "#69716e", "border": "#e0d5c2", "is_dark": false},
     "dark": {"bg": "$primary", "surface": "mix($primary,#ffffff,0.06)", "surface_2": "mix($primary,#ffffff,0.11)", "text": "#bfd0cc", "text_strong": "#ffffff", "text_muted": "#93a8a3", "border": "rgba(255,255,255,0.12)", "is_dark": true}
   }

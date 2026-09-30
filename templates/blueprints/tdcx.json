@@ -1,0 +1,71 @@
+{
+  "id": "tdcx",
+  "source": {
+    "name": "TDCX",
+    "url": "https://www.tdcx.com/",
+    "category": "Global CX & Enterprise BPO",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx"
+  ],
+  "summary": "Dark full-bleed hero slider, a one-line intro, a muted three-column service band, an accordion with a photo, an award carousel and a dark closing band with a picture.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "dark",
+      "media": "full",
+      "cols": null,
+      "count": null,
+      "note": "slider with large left-aligned headline, short line and one button over a photo; arrows at the sides and dots below"
+    },
+    {
+      "form": "statement",
+      "role": "intro",
+      "tone": "light",
+      "media": "none",
+      "cols": null,
+      "count": null,
+      "note": "one centered sentence with a small logo mark at the left"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "muted",
+      "media": "none",
+      "cols": 3,
+      "count": 3,
+      "note": "left heading, three centered columns each with a line icon, small label, title, short text and a button"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "light",
+      "media": "left",
+      "cols": null,
+      "count": 4,
+      "note": "left heading over a rounded photo on the left and a list of four accordion rows on the right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "awards",
+      "tone": "muted",
+      "media": "none",
+      "cols": 5,
+      "count": 5,
+      "optional": true,
+      "note": "left heading, a row of award badges with arrows either side and a centered button"
+    },
+    {
+      "form": "feature-split",
+      "role": "cta",
+      "tone": "dark",
+      "media": "right",
+      "cols": null,
+      "count": null,
+      "note": "dark band with heading, short text and button on the left and a rounded picture on the right"
+    }
+  ]
+}

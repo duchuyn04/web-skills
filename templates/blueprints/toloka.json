@@ -1,0 +1,19 @@
+{
+  "id": "toloka",
+  "source": {"name": "Toloka", "url": "https://toloka.ai/", "category": "AI Data and Annotation", "collected": "2026-09-26"},
+  "fits": ["ai-data-ops"],
+  "summary": "White page with a soft gradient text-only hero and logo row, then a narrow centered column of restrained sections: a quote slider, grey card grids, a wide product slider with mockup images, three figure tiles, three icon lists, three article tiles, a logo row and a plain closing band.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-left-text", "role": "hero", "tone": "light", "media": "none", "note": "left-aligned headline, paragraph and one black pill button on a pale lilac and green gradient, a small label and a row of grey logos along the bottom"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "media": "none", "optional": true, "note": "short grey quote card on the right half with the source below and two round arrow buttons; the left half is empty"},
+    {"form": "cards-icon", "role": "services", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "heading left with a small outlined button right, three flat grey cards each with a tiny icon, title and one line"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 2, "count": 6, "media": "right", "note": "heading, short line and outlined button in a narrow left column, right two columns of grey cards with icon, title and description at staggered heights"},
+    {"form": "carousel-cards", "role": "services", "tone": "light", "cols": 4, "count": 6, "media": "none", "note": "heading left with two round arrows right, slider of columns each with a grey interface mockup on top, title, short bullet list and an outlined button"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "heading and small button left, then three flat grey tiles in a row with a figure and a caption"},
+    {"form": "cards-icon", "role": "about", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "left heading, three columns each with a bold title and three lines that start with a small icon"},
+    {"form": "cards-image", "role": "cases", "tone": "light", "cols": 3, "count": 3, "media": "none", "optional": true, "note": "heading left with a small outlined button right, three square pastel tiles with a centered logo or icon and a caption below"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "media": "none", "optional": true, "note": "small grey label above one edge-to-edge row of grey logos"},
+    {"form": "cta-band", "role": "cta", "tone": "light", "media": "none", "note": "left-aligned two-line heading and one black pill button on the same pale gradient as the hero, above the footer"}
+  ]
+}

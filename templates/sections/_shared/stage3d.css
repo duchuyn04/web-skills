@@ -1,0 +1,12 @@
+/* Shared: CSS 3D stage for the fx3d variants (research 06). Structure: .fx3d-stage (perspective, the only element
+   allowed to crop or fade) > .fx3d-rig (preserve-3d) > .fx3d-face (planes).
+   Never put opacity below 1, overflow other than visible or clip, filter, clip-path, mask, isolation or
+   mix-blend-mode on a .fx3d-rig: any of them flattens the scene to 2D (CSS Transforms 2). Fade faces, not rigs. */
+.fx3d-stage { position: relative; perspective: var(--fx-persp, 1400px); perspective-origin: 50% 40%; }
+.fx3d-rig { position: relative; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.16, 1, .3, 1); }
+.fx3d-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+html[data-motion="paused"] .fx3d-loop { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .fx3d-rig, .fx3d-face { transition: none !important; }
+  .fx3d-loop { animation: none !important; }
+}

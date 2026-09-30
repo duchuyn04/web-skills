@@ -4,10 +4,10 @@
   "use_for": "AI data annotation, trust and safety, data operations and tech-heavy BPO. Dark canvas, technical.",
   "references": ["Scale AI", "Invisible Technologies", "EXL", "Sutherland", "Toloka"],
   "fonts": {
-    "heading": "Space Grotesk",
+    "heading": "Bricolage Grotesque",
     "body": "Inter",
     "mono": "JetBrains Mono",
-    "google": "family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
+    "google": "family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600"
   },
   "type": {"heading_weight": 600, "heading_tracking": "-0.03em"},
   "colors": {"primary": "#05070c", "accent": "#3563f5", "accent_2": "#5ef2c2"},

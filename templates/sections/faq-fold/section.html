@@ -1,0 +1,31 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-fxfold" data-fx="3d" data-fxfold data-seed="{{site.brand}}"{{#open_first}} data-open-first{{/open_first}}>
+  <div class="bl-container bl-fxfold__inner">
+    {{> head-center}}
+    <div class="bl-fxfold__list" data-fxfold-list data-reveal>
+      {{#items}}
+      <div class="bl-fxfold__item" data-fold-item>
+        <h3 class="bl-fxfold__h">
+          <button class="bl-fxfold__btn" type="button" id="{{section.id}}-q{{@n}}" aria-expanded="false" aria-controls="{{section.id}}-a{{@n}}">
+            <span class="bl-fxfold__q">{{q}}</span>
+            <span class="bl-fxfold__icon" aria-hidden="true">{{icon:chevron-down}}</span>
+          </button>
+        </h3>
+        <div class="bl-fxfold__panel" id="{{section.id}}-a{{@n}}" role="region" aria-labelledby="{{section.id}}-q{{@n}}">
+          <div class="bl-fxfold__clip" data-fold-clip>
+            <div class="bl-fxfold__sheet" data-fold-sheet><p>{{a}}</p></div>
+          </div>
+        </div>
+      </div>
+      {{/items}}
+    </div>
+    {{#aside}}
+    <div class="bl-fxfold__aside" data-reveal>
+      <div class="bl-fxfold__aside-copy">
+        <strong>{{title}}</strong>
+        {{#text}}<p>{{text}}</p>{{/text}}
+      </div>
+      <a class="bl-btn bl-btn--ghost" href="{{cta.href}}">{{cta.label}}</a>
+    </div>
+    {{/aside}}
+  </div>
+</section>

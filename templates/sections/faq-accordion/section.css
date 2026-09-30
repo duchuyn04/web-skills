@@ -22,3 +22,4 @@
 .bl-acc__inner p { padding: 0 3.5rem 1.5rem 0; color: var(--text); }
 @media (max-width: 1024px) { .bl-faq { grid-template-columns: 1fr; } .bl-faq__side { position: static; } }
 @media (max-width: 560px) { .bl-acc__inner p { padding-right: 0; } }
+.bl-acc__inner p { max-width: 62ch; }

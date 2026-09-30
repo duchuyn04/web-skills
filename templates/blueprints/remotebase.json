@@ -1,0 +1,82 @@
+{
+  "id": "remotebase",
+  "source": {
+    "name": "Remotebase",
+    "url": "https://www.remotebase.com/",
+    "category": "Offshore Staffing & Outsourcing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "offshore-staffing",
+    "it-bpo-partner"
+  ],
+  "summary": "Centered light hero with floating UI cards and a logo row, then a tinted service display, a team split, dark client logo marquees, process steps, testimonials with case cards and a dark closing band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered large heading with two buttons, small UI cards floating at both sides, a row of client logos at the bottom"
+    },
+    {
+      "form": "cards-text",
+      "role": "services",
+      "tone": "light",
+      "cols": null,
+      "count": 4,
+      "media": "none",
+      "note": "centered heading, one wide display panel with copy left and a mock UI right, three smaller cards below"
+    },
+    {
+      "form": "feature-split",
+      "role": "team",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "heading and short copy on the left, a cluster of round portraits with small tags on the right"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "dark",
+      "cols": 8,
+      "count": 16,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and link, two rows of white logo tiles scrolling in a marquee"
+    },
+    {
+      "form": "cards-icon",
+      "role": "process",
+      "tone": "muted",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "centered heading, one wide panel with a four-node timeline and a text column under each node"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 4,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and a large quote with author, then three case cards each with a logo and figures"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "dark",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "heading and line of copy at left, two buttons at right"
+    }
+  ]
+}

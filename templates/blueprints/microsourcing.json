@@ -1,0 +1,18 @@
+{
+  "id": "microsourcing",
+  "source": {"name": "MicroSourcing", "url": "https://www.microsourcing.com/", "category": "Offshore Staffing", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing"],
+  "summary": "Dark split hero with a round photo, a dark intro split, a logo slider, a dark partnership split, a light metrics block, a compliance list, a dark testimonial slider, a careers split and a dark closing form.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "media": "right", "note": "large heading, short text and button left, round photo with small floating stat cards right"},
+    {"form": "feature-split", "role": "services", "tone": "dark", "media": "left", "note": "heading, two paragraphs and two buttons over a soft background image"},
+    {"form": "logo-strip", "role": "clients", "tone": "dark", "count": 6, "optional": true, "note": "single row of client logos sliding"},
+    {"form": "feature-split", "role": "about", "tone": "dark", "media": "right", "note": "small eyebrow, heading and paragraphs left, photo right"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 2, "count": 6, "note": "heading and short text left, six figures in two columns by three rows right"},
+    {"form": "feature-split", "role": "about", "tone": "light", "media": "left", "note": "heading and paragraph with a checklist of five certification lines and a link"},
+    {"form": "carousel-cards", "role": "testimonial", "tone": "dark", "count": 3, "optional": true, "note": "video-quote slider with a counter and arrows"},
+    {"form": "feature-split", "role": "careers", "tone": "light", "media": "left", "optional": true, "note": "photo collage left, heading, text and outline button right"},
+    {"form": "form", "role": "cta", "tone": "dark", "media": "none", "note": "centered heading and intro above a wide white form card with paired fields"}
+  ]
+}

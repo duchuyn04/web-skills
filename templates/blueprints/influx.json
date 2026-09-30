@@ -1,0 +1,92 @@
+{
+  "id": "influx",
+  "source": {
+    "name": "Influx",
+    "url": "https://influx.com/",
+    "category": "Next-Gen Tech BPO & CX Startups",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "cx-voice-sales",
+    "enterprise-cx"
+  ],
+  "summary": "Light centered hero with an email field, a logo row, a badge strip, a card mosaic around two portraits, two case teasers, a launch steps panel, a dark case carousel and a closing email band.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-center",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "centered headline, paragraph, email field with button and three small proof points"
+    },
+    {
+      "form": "logo-strip",
+      "role": "clients",
+      "tone": "light",
+      "cols": null,
+      "count": 10,
+      "media": "none",
+      "optional": true,
+      "note": "small caption and one row of ten logos"
+    },
+    {
+      "form": "icon-strip",
+      "role": "intro",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "note": "one rounded panel with five short icon badges"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "media": "none",
+      "note": "centered heading and paragraph; four icon cards in a two by two grid between two tall portraits; button below"
+    },
+    {
+      "form": "testimonial-block",
+      "role": "testimonial",
+      "tone": "muted",
+      "cols": 2,
+      "count": 2,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, two side by side case teasers with photo left and text right"
+    },
+    {
+      "form": "list-rows",
+      "role": "process",
+      "tone": "muted",
+      "cols": 1,
+      "count": 5,
+      "media": "none",
+      "note": "centered heading, then a panel with a step box left and five toggle rows right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "dark",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading on dark, three white result cards with arrows"
+    },
+    {
+      "form": "cta-band",
+      "role": "cta",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "none",
+      "note": "rounded card with heading, line and email field with button"
+    }
+  ]
+}

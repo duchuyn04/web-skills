@@ -1,6 +1,8 @@
 {
   "variant": "solution-panels",
   "group": "solutions",
+  "forms": ["cards-text"],
+  "open": true,
   "summary": "Dark band with fine wave lines: heading with an accent phrase and one button, then 2 or 3 light cards. Each card has a dark title bar (optionally linked) and a list of offerings with icon, name and one line.",
   "tone": "dark",
   "anchor": "solutions",

@@ -1,0 +1,157 @@
+{
+  "_note": "Shows hero-monolith. Halvorsen Ledger Services is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "crimson-trust",
+  "lang": "en",
+  "site": {
+    "brand": "Halvorsen Ledger Services",
+    "brand_mark": "HL",
+    "title": "Halvorsen Ledger Services | Finance and accounting outsourcing",
+    "description": "Halvorsen Ledger Services runs bookkeeping, payables, payroll and month-end close for accounting firms and mid-sized companies in the UK and Ireland."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          },
+          {
+            "label": "About",
+            "href": "#top"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-monolith",
+      "data": {
+        "eyebrow": "Finance and accounting outsourcing",
+        "title": "Bookkeeping and month-end close for *UK firms*",
+        "lead": "Halvorsen Ledger Services runs bookkeeping, payables, payroll and month-end close for accounting firms and mid-sized companies in the UK and Ireland.",
+        "primary_cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Xero and Sage partners"
+        ],
+        "stats": [
+          {
+            "value": "140",
+            "label": "Qualified accountants"
+          },
+          {
+            "value": "16",
+            "label": "Years in business"
+          },
+          {
+            "value": "60",
+            "label": "Accounting firm clients"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "eyebrow": "Services",
+          "title": "Our services"
+        },
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Bookkeeping",
+            "text": "Daily and monthly bookkeeping in Xero, Sage and QuickBooks.",
+            "bullets": [
+              "Reviewed by a senior",
+              "Your chart of accounts",
+              "Monthly reconciliations"
+            ]
+          },
+          {
+            "icon": "receipt",
+            "title": "Payables and receivables",
+            "text": "Invoice processing, supplier statements and credit control."
+          },
+          {
+            "icon": "wallet",
+            "title": "Payroll",
+            "text": "Monthly and weekly payroll with pension and tax filings prepared."
+          },
+          {
+            "icon": "file-text",
+            "title": "Month-end close",
+            "text": "Accruals, journals and management accounts ready for review."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us which ledgers to *take on*",
+        "text": "Send your monthly volumes and we reply with a team plan and a fixed monthly fee.",
+        "primary_cta": {
+          "label": "Book a call",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Halvorsen Ledger Services runs bookkeeping, payables, payroll and month-end close for accounting firms and mid-sized companies in the UK and Ireland.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Bookkeeping",
+                "href": "#services"
+              },
+              {
+                "label": "Payables and receivables",
+                "href": "#services"
+              },
+              {
+                "label": "Payroll",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

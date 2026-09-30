@@ -241,7 +241,7 @@
        "alt": "Customer care agent working a ticket queue at her desk"
       },
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#contact"
       }
      },
@@ -297,7 +297,6 @@
    "type": "feature-rows",
    "data": {
     "head": {
-     "eyebrow": "Why Northbridge",
      "title": "Why clients choose Northbridge",
      "lead": "Clients approve new hires, see quality scores daily and follow results on one shared dashboard."
     },
@@ -333,7 +332,7 @@
        "alt": "Quality analysts reviewing a support ticket together"
       },
       "link": {
-       "label": "Learn more",
+       "label": "Talk to an expert",
        "href": "#faq"
       }
      },
@@ -390,7 +389,6 @@
    "type": "industries-tiles",
    "data": {
     "head": {
-     "eyebrow": "Industries",
      "title": "Industries we serve",
      "lead": "Banking, telecom, retail, healthcare and insurance programs each have their own training track and compliance lead."
     },
@@ -533,7 +531,6 @@
   {
    "type": "cta-band",
    "data": {
-    "eyebrow": "Pilot program",
     "title": "Start with a *10-seat pilot*",
     "text": "Run one queue with us for 60 days. If the results do not beat your current setup, you can end the contract.",
     "points": [
@@ -555,7 +552,6 @@
    "type": "locations-map",
    "data": {
     "head": {
-     "eyebrow": "Delivery centers",
      "title": "Our delivery centers",
      "lead": "Four sites in Asia, Latin America and Europe share one QA process and one set of security controls, so programs can run across time zones."
     },
@@ -591,7 +587,6 @@
    "type": "compliance-badges",
    "data": {
     "head": {
-     "eyebrow": "Security",
      "title": "Security and compliance",
      "lead": "All delivery centers use the same access controls and clean-desk policy and are audited externally each year."
     },
@@ -636,7 +631,6 @@
    "type": "image-cards",
    "data": {
     "head": {
-     "eyebrow": "Insights",
      "title": "Latest insights",
      "lead": "Short reads from our quality, workforce and training leads."
     },

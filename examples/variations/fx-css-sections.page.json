@@ -1,0 +1,423 @@
+{
+  "_note": "Shows the CSS 3D section variants services-cylinder, services-cube, industries-slats, faq-fold and cta-letter. Harbourline Services is a fictional company; every figure is sample data. A real page uses one services variant, not both.",
+  "archetype": "it-bpo-partner",
+  "preset": "clean-minimal",
+  "lang": "en",
+  "override_order": {"reason": "Demo page: shows several variants that share one slot, so it cannot follow a single archetype order."},
+  "site": {
+    "brand": "Harbourline Services",
+    "brand_mark": "HS",
+    "title": "Harbourline Services | Software and back-office teams",
+    "description": "Harbourline Services runs software, QA, accounting and data teams from Da Nang for companies in Australia, the UK and Japan."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Industries",
+            "href": "#industries"
+          },
+          {
+            "label": "FAQ",
+            "href": "#faq"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "eyebrow": "Software and back-office teams",
+        "title": "Engineering and finance teams in *Da Nang*",
+        "lead": "Harbourline Services runs software, QA, accounting and data teams for companies in Australia, the UK and Japan. Each team works in the client's tools and reports every week.",
+        "primary_cta": {
+          "label": "Talk to us",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Teams from 3 people"
+        ],
+        "photo": {
+          "src": "team-engineers-screen",
+          "alt": "Harbourline engineers reviewing a release on a shared screen"
+        }
+      }
+    },
+    {
+      "type": "services-cylinder",
+      "data": {
+        "head": {
+          "title": "Six service lines, *one delivery team*",
+          "lead": "Pick a service on the scale or turn the drum. Every line runs from the same Da Nang office under one account lead."
+        },
+        "cards": [
+          {
+            "icon": "code",
+            "tab": "Software",
+            "title": "Software development",
+            "text": "Web and mobile squads that join your sprints, work in your repository and ship through your release process.",
+            "bullets": [
+              "Code review on every merge",
+              "Your tools and ceremonies"
+            ],
+            "link": {
+              "label": "Talk to an engineer",
+              "href": "#get-started"
+            }
+          },
+          {
+            "icon": "bug",
+            "tab": "QA and testing",
+            "title": "QA and testing",
+            "text": "Manual and automated regression testing on each release candidate, with defects logged in your tracker.",
+            "bullets": [
+              "Test plans per release",
+              "Playwright and Cypress suites"
+            ]
+          },
+          {
+            "icon": "calculator",
+            "tab": "Accounting",
+            "title": "Accounting and close",
+            "text": "Monthly close, payables and reconciliations prepared in Xero, MYOB or NetSuite and reviewed by a senior accountant.",
+            "bullets": [
+              "Close checklist per entity",
+              "Reviewer sign-off"
+            ]
+          },
+          {
+            "icon": "wallet",
+            "tab": "Payroll",
+            "title": "Payroll processing",
+            "text": "Pay runs, leave balances and payslips prepared for your approval before every pay date.",
+            "bullets": [
+              "Two-person check",
+              "Audit trail per run"
+            ]
+          },
+          {
+            "icon": "database",
+            "tab": "Data operations",
+            "title": "Data operations",
+            "text": "Catalog updates, data entry and cleanup with a daily error count and a weekly sample audit.",
+            "bullets": [
+              "Daily error report",
+              "Weekly sample audit"
+            ]
+          },
+          {
+            "icon": "headset",
+            "tab": "Support desk",
+            "title": "Customer support desk",
+            "text": "Email and chat support in English and Japanese, answered in your helpdesk with your macros and tags.",
+            "bullets": [
+              "Zendesk and Freshdesk",
+              "Weekly ticket review"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-cube",
+      "id": "service-levels",
+      "data": {
+        "head": {
+          "title": "What each team does, and *how it is measured*",
+          "lead": "Every service has a written scope, agreed service levels and the tools the team works in. Turn a block to read each side."
+        },
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Accounting and close",
+            "text": "Month-end close, payables and bank reconciliations prepared in your ledger and reviewed before sign-off.",
+            "scope": [
+              "Bank and card reconciliations",
+              "Accruals and prepayments",
+              "Supplier invoice processing",
+              "Management pack draft"
+            ],
+            "sla": [
+              {
+                "value": "Day 5",
+                "label": "Close pack delivered"
+              },
+              {
+                "value": "48 h",
+                "label": "Invoice posting"
+              }
+            ],
+            "tools": [
+              "Xero",
+              "MYOB",
+              "NetSuite",
+              "Dext"
+            ]
+          },
+          {
+            "icon": "wallet",
+            "title": "Payroll processing",
+            "text": "Pay runs, leave balances and payslips prepared for your approval before each pay date.",
+            "scope": [
+              "Timesheet import and checks",
+              "Leave and entitlement updates",
+              "Payslips and remittance files"
+            ],
+            "sla": [
+              {
+                "value": "2 days",
+                "label": "Pay run ready before pay date"
+              }
+            ],
+            "tools": [
+              "KeyPay",
+              "Xero Payroll"
+            ]
+          },
+          {
+            "icon": "bug",
+            "title": "QA and testing",
+            "text": "Manual and automated regression testing on each release candidate, with defects logged in your tracker.",
+            "scope": [
+              "Test plans per release",
+              "Regression suites in Playwright",
+              "Defect triage with your team"
+            ],
+            "sla": [
+              {
+                "value": "24 h",
+                "label": "Regression run per candidate"
+              },
+              {
+                "value": "4 h",
+                "label": "Blocker defects reported"
+              }
+            ],
+            "tools": [
+              "Playwright",
+              "Cypress",
+              "Jira",
+              "TestRail"
+            ]
+          },
+          {
+            "icon": "database",
+            "title": "Data operations",
+            "text": "Catalog updates, data entry and cleanup with a daily error count and a weekly sample audit.",
+            "scope": [
+              "Product catalog updates",
+              "Record cleanup and merging",
+              "Weekly sample audit"
+            ],
+            "tools": [
+              "Shopify",
+              "Airtable",
+              "Google Sheets"
+            ]
+          },
+          {
+            "icon": "headset",
+            "title": "Support desk",
+            "text": "Email and chat support in English and Japanese, answered in your helpdesk with your macros and tags.",
+            "scope": [
+              "Email and chat tickets",
+              "Tagging and escalation",
+              "Weekly ticket review"
+            ],
+            "sla": [
+              {
+                "value": "2 h",
+                "label": "First reply, business hours"
+              },
+              {
+                "value": "90%",
+                "label": "Tickets closed without escalation"
+              }
+            ],
+            "tools": [
+              "Zendesk",
+              "Freshdesk",
+              "Intercom"
+            ]
+          },
+          {
+            "icon": "code",
+            "title": "Software development",
+            "text": "Web and mobile squads that join your sprints and ship through your release process.",
+            "scope": [
+              "Feature work in your repository",
+              "Code review on every merge",
+              "Release notes per sprint"
+            ],
+            "link": {
+              "label": "Talk to an engineer",
+              "href": "#get-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "industries-slats",
+      "data": {
+        "head": {
+          "eyebrow": "Industries",
+          "title": "Sectors we *work in*",
+          "lead": "Most clients come from six sectors. Each team learns the client's rules, systems and review steps before it goes live."
+        },
+        "tiles": [
+          {
+            "icon": "landmark",
+            "title": "Accounting firms",
+            "text": "Bookkeeping, reconciliations and tax preparation for practices that serve small and mid-size clients.",
+            "photo": "accounting-documents-calculator",
+            "href": "#get-started"
+          },
+          {
+            "icon": "trending-up",
+            "title": "Financial services",
+            "text": "Onboarding checks, statement processing and back-office support for lenders and brokers.",
+            "photo": "finance-chart-screen"
+          },
+          {
+            "icon": "heart-pulse",
+            "title": "Healthcare",
+            "text": "Claims data entry, patient scheduling and billing support under agreed privacy controls.",
+            "photo": "healthcare-consultation"
+          },
+          {
+            "icon": "shopping-cart",
+            "title": "E-commerce",
+            "text": "Catalog updates, order support and returns handling for online stores in English and Japanese.",
+            "photo": "ecommerce-packing"
+          },
+          {
+            "icon": "truck",
+            "title": "Logistics",
+            "text": "Shipment documents, tracking updates and invoice matching for freight forwarders.",
+            "photo": "port-containers"
+          },
+          {
+            "icon": "code",
+            "title": "Software companies",
+            "text": "QA, support desk and development squads for SaaS teams that ship every week.",
+            "photo": "developer-headphones-monitors"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq-fold",
+      "data": {
+        "head": {
+          "title": "Questions buyers ask *before they sign*"
+        },
+        "items": [
+          {
+            "q": "How do you keep client financial data secure?",
+            "a": "Staff work on managed laptops inside our Da Nang office, with no local storage and access only to the systems a client approves. We are ISO 27001 certified and sign your data processing terms before any access is granted. Access is removed on the day a team member leaves the account."
+          },
+          {
+            "q": "Which accounting systems do your teams work in?",
+            "a": "Xero, MYOB, QuickBooks Online and NetSuite. Other systems are possible after a short training period agreed in the statement of work."
+          },
+          {
+            "q": "Who reviews the work before it reaches us?",
+            "a": "Every close pack and pay run is prepared by one accountant and checked by a senior reviewer before it is sent. Review notes stay in the working papers so your team can see what changed."
+          },
+          {
+            "q": "How long does it take to start?",
+            "a": "A team of three usually starts within four weeks: one week to agree scope and access, then two to three weeks of training on your files and checklists."
+          },
+          {
+            "q": "Can we start with one service and add more later?",
+            "a": "Yes. Most clients start with bookkeeping or QA and add payroll, data operations or a support desk once the first team is running."
+          }
+        ],
+        "aside": {
+          "title": "Have a question that is not listed?",
+          "text": "Send it to the team lead and get an answer within one business day.",
+          "cta": {
+            "label": "Ask a question",
+            "href": "#get-started"
+          }
+        }
+      }
+    },
+    {
+      "type": "cta-letter",
+      "data": {
+        "eyebrow": "Next step",
+        "title": "Send us the work you want to *hand off*",
+        "text": "Tell us the service, your systems and the monthly volume. A team lead replies with a team plan and a price range within two business days.",
+        "points": [
+          "No setup fee",
+          "Start with a team of three"
+        ],
+        "primary_cta": {
+          "label": "Email the team",
+          "href": "mailto:hello@example.com"
+        },
+        "secondary_cta": {
+          "label": "Read the FAQ",
+          "href": "#faq"
+        },
+        "sign_off": "The Harbourline team, Da Nang"
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Harbourline Services runs software, QA, accounting and data teams from Da Nang for companies in Australia, the UK and Japan.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Software development",
+                "href": "#services"
+              },
+              {
+                "label": "Accounting",
+                "href": "#services"
+              },
+              {
+                "label": "Data operations",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "groove-technology",
+  "source": {
+    "name": "Groove Technology",
+    "url": "https://groovetechnology.com/",
+    "category": "Vietnam & Southeast Asia Leaders",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "it-bpo-partner",
+    "offshore-staffing"
+  ],
+  "summary": "Light page with a split hero, model comparison, role cards, technology rows, a solutions split, badges, work slider, review cards, video split, blog and contact form.",
+  "header": "simple",
+  "sections": [
+    {
+      "form": "hero-split",
+      "role": "hero",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "right",
+      "note": "large heading, text and two buttons on the left, wireframe graphic on the right"
+    },
+    {
+      "form": "cards-text",
+      "role": "intro",
+      "tone": "light",
+      "cols": 2,
+      "count": 2,
+      "media": "none",
+      "note": "centered heading and two model cards with an icon and short text under a label row"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 3,
+      "count": 6,
+      "media": "none",
+      "note": "centered heading and intro over two rows of three icon cards"
+    },
+    {
+      "form": "media-list",
+      "role": "tools",
+      "tone": "light",
+      "cols": 1,
+      "count": 6,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over labelled rows of technology logos with a button"
+    },
+    {
+      "form": "feature-split",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "note": "team photo on the left, a list of solution links on the right"
+    },
+    {
+      "form": "icon-strip",
+      "role": "awards",
+      "tone": "light",
+      "cols": 5,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and text over a row of certification and ranking badges"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "cases",
+      "tone": "light",
+      "cols": 3,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading and a slider of case cards with arrows and a button"
+    },
+    {
+      "form": "cards-text",
+      "role": "testimonial",
+      "tone": "light",
+      "cols": 3,
+      "count": 5,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading over quote cards and a review-site logo tile"
+    },
+    {
+      "form": "video-block",
+      "role": "about",
+      "tone": "light",
+      "cols": 2,
+      "count": null,
+      "media": "left",
+      "optional": true,
+      "note": "video player on the left, heading, text and tags on the right"
+    },
+    {
+      "form": "media-list",
+      "role": "news",
+      "tone": "light",
+      "cols": 2,
+      "count": 4,
+      "media": "left",
+      "optional": true,
+      "note": "centered heading, one featured article left and two article rows right"
+    },
+    {
+      "form": "form",
+      "role": "cta",
+      "tone": "light",
+      "cols": 1,
+      "count": null,
+      "media": "none",
+      "note": "centered heading over a stacked contact form"
+    }
+  ]
+}

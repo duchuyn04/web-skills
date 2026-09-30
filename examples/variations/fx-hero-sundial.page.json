@@ -1,0 +1,89 @@
+{
+  "_note": "Shows hero-sundial. Tidewater Support is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "enterprise-navy",
+  "lang": "en",
+  "site": {
+    "brand": "Tidewater Support",
+    "brand_mark": "TS",
+    "title": "Tidewater Support | Round-the-clock IT and customer support",
+    "description": "Tidewater Support runs IT service desks and customer support from Manila, Krakow and Bogota, so a team is on shift in every hour of the day."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Hubs", "href": "#top"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Talk to us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-sundial",
+      "data": {
+        "eyebrow": "Follow-the-sun support",
+        "title": "Three hubs, one queue, *every hour covered*",
+        "lead": "Tidewater Support runs IT service desks and customer support from Manila, Krakow and Bogota. Each hub hands open tickets to the next one at the end of its shift.",
+        "primary_cta": {"label": "Plan your coverage", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "proof": ["ISO 27001 certified", "English, Polish and Spanish"],
+        "hubs": [
+          {"city": "manila", "role": "Customer support", "shift": "07:00-16:00"},
+          {"city": "krakow", "role": "IT service desk", "shift": "08:00-17:00"},
+          {"city": "bogota", "role": "Spanish support", "shift": "08:00-17:00"}
+        ],
+        "stats": [
+          {"value": "3", "label": "Delivery hubs"},
+          {"value": "24/7", "label": "Queue coverage"},
+          {"value": "11", "label": "Years in business"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What each hub runs"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Email, chat and phone support in your help desk, with a written handoff note at every shift change.",
+            "bullets": ["Work in your tools", "Shift handoff notes", "Weekly reporting"]
+          },
+          {"icon": "server", "title": "IT service desk", "text": "Password resets, access requests and first-line incident triage for your staff."},
+          {"icon": "languages", "title": "Spanish support", "text": "Native Spanish agents for customers in Latin America and Spain."},
+          {"icon": "clock", "title": "Night coverage", "text": "Overnight queues for your region answered by the hub that is on its day shift."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Tell us which hours your queue *goes quiet*",
+        "text": "Send your ticket volumes by hour and we reply with a shift plan across our hubs.",
+        "primary_cta": {"label": "Send your volumes", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tidewater Support runs IT service desks and customer support from Manila, Krakow and Bogota.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer support", "href": "#services"},
+            {"label": "IT service desk", "href": "#services"},
+            {"label": "Spanish support", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

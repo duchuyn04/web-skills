@@ -1,0 +1,15 @@
+{
+  "id": "labelbox",
+  "source": {"name": "Labelbox", "url": "https://labelbox.com/", "category": "AI Data Annotation & Operations BPO", "collected": "2026-09-26"},
+  "fits": ["ai-data-ops"],
+  "summary": "A warm beige page with a large centered headline and a wide product screenshot, two audience blocks built from pastel panels, a logo row, a featured case plus three case cards and a closing research panel with link rows.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-center", "role": "hero", "tone": "muted", "cols": null, "count": null, "media": "none", "note": "light-weight headline and one sentence centered, small step pills, then a full-width product screenshot panel below"},
+    {"form": "feature-split", "role": "services", "tone": "muted", "cols": 4, "count": 5, "media": "right", "note": "very large heading with subhead and paragraph left, then one tinted panel with product name and text left and a diagram right, four short text columns along its bottom"},
+    {"form": "feature-split", "role": "services", "tone": "muted", "cols": 1, "count": 3, "media": "right", "note": "large heading and one line, then three stacked wide pastel panels each with name and paragraph left and a striped colour block right"},
+    {"form": "logo-strip", "role": "clients", "tone": "muted", "cols": 7, "count": 7, "optional": true, "media": "none", "note": "heading left, then one rounded bar holding seven separate logo tiles"},
+    {"form": "cards-image", "role": "cases", "tone": "muted", "cols": 3, "count": 4, "optional": true, "media": "left", "note": "one wide featured case with a large abstract image left and problem, solution, result columns right, then a row of three image-top case cards with logo, title and read link"},
+    {"form": "list-rows", "role": "news", "tone": "muted", "cols": 2, "count": 3, "optional": true, "media": "none", "note": "large gradient rounded panel, label and big heading with paragraph left, three tinted link rows with a small arrow right"}
+  ]
+}

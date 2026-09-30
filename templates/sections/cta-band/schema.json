@@ -1,11 +1,15 @@
 {
   "variant": "cta-band",
   "group": "cta",
-  "summary": "Short call-to-action panel in the brand's dark color with soft glows: title, one line, one or two buttons, optional ticks and a photo on the right. Use mid-page to break up long pages, or as the closing CTA when the client has no quote form.",
+  "forms": ["cta-band"],
+  "summary": "Short call-to-action panel in the brand's dark color: title, one line, one or two buttons, optional ticks and a photo on the right. Use mid-page to break up long pages, or as the closing CTA when the client has no quote form.",
   "tone": "auto",
   "anchor": "get-started",
-  "animations": ["shimmer-button-glow", "reveal"],
+  "shared": ["backdrop3d"],
+  "shared_by_field": {"visual": {"*": ["ribbons", "three", "gl"], "dots": ["gl-dots"], "terrain": ["gl-terrain"], "wave": ["gl-wave"], "globe": ["gl-globe"], "flow": ["gl-flow"]}},
+  "animations": ["reveal"],
   "fields": {
+    "visual": {"type": "enum", "values": ["dots", "terrain", "wave", "globe", "flow"], "required": false},
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 12, "max": 80},
     "text": {"type": "text", "min": 30, "max": 200, "required": false},

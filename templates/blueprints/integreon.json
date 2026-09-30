@@ -1,0 +1,73 @@
+{
+  "id": "integreon",
+  "source": {
+    "name": "Integreon",
+    "url": "https://www.integreon.com/",
+    "category": "Knowledge & Business Process Outsourcing",
+    "collected": "2026-09-26"
+  },
+  "fits": [
+    "enterprise-cx",
+    "offshore-staffing"
+  ],
+  "summary": "Light hero with a photo, a two-column solution intro, a dark counter band, a pale split with photo, and two card sliders for news and events.",
+  "header": "mega",
+  "sections": [
+    {
+      "form": "hero-fullbleed",
+      "role": "hero",
+      "tone": "light",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "large heading, checklist and button at left over a faded office photo"
+    },
+    {
+      "form": "cards-icon",
+      "role": "services",
+      "tone": "light",
+      "cols": 2,
+      "count": 2,
+      "media": "none",
+      "note": "centered heading and intro, two centered columns each with icon, title, text and a button"
+    },
+    {
+      "form": "metrics",
+      "role": "metrics",
+      "tone": "dark",
+      "cols": 4,
+      "count": 4,
+      "media": "none",
+      "note": "centered heading, four large figures in a row"
+    },
+    {
+      "form": "feature-split",
+      "role": "about",
+      "tone": "muted",
+      "cols": null,
+      "count": null,
+      "media": "right",
+      "note": "heading, two paragraphs and a button at left, photo of two people at right"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "centered heading, white cards with a photo, tag, date and title, arrows and dots"
+    },
+    {
+      "form": "carousel-cards",
+      "role": "news",
+      "tone": "light",
+      "cols": 3,
+      "count": 3,
+      "media": "none",
+      "optional": true,
+      "note": "same slider form for events and webinars"
+    }
+  ]
+}

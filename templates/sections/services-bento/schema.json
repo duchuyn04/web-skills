@@ -1,10 +1,12 @@
 {
   "variant": "services-bento",
   "group": "services",
-  "summary": "Bento grid of 4 or 5 service cards; the first card is large with a check list. A soft spotlight follows the mouse across each card.",
+  "forms": ["cards-text", "cards-icon"],
+  "open": true,
+  "summary": "Bento grid of 4 or 5 service cards; the first card is large with a check list. On hover a card rises 3px and its border turns the brand colour.",
   "tone": "auto",
   "anchor": "services",
-  "animations": ["bento-spotlight-hover", "reveal"],
+  "animations": ["card-hover-lift", "reveal"],
   "fields": {
     "head": {"$ref": "head"},
     "cards": {

@@ -1,0 +1,15 @@
+{
+  "id": "modsquad",
+  "source": {"name": "ModSquad", "url": "https://modsquad.com/", "category": "Next-Gen Tech BPO & CX Startups", "collected": "2026-09-26"},
+  "fits": ["enterprise-cx", "cx-voice-sales"],
+  "summary": "A quiet all-light page: a split hero with a monochrome artwork on the right, one row of four text cards, a plain text intro, a two-column outcomes list, an empty-looking logo row and a small boxed closing band.",
+  "header": "simple",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "light", "cols": null, "count": null, "media": "right", "note": "bold heading and short paragraph left, tall line-art picture right, no buttons"},
+    {"form": "cards-text", "role": "services", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "small label and heading left-aligned above one row of four tinted cards, each with title, paragraph and a text link"},
+    {"form": "text-block", "role": "intro", "tone": "light", "cols": null, "count": null, "media": "none", "note": "small label, heading and one wide paragraph left-aligned, text link below"},
+    {"form": "list-rows", "role": "about", "tone": "light", "cols": 2, "count": 8, "media": "none", "note": "label and heading in the left column, eight stacked rows of bold title plus short paragraph in the right column, text link at the end"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": null, "count": null, "optional": true, "media": "none", "note": "small centered caption above a logo row; logos were not loaded in the capture"},
+    {"form": "cta-band", "role": "cta", "tone": "muted", "cols": null, "count": null, "media": "none", "note": "narrow tinted box with a centered heading and one dark button"}
+  ]
+}

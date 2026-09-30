@@ -1,6 +1,8 @@
 {
   "variant": "feature-rows",
   "group": "features",
+  "forms": ["feature-split", "media-list"],
+  "open": true,
   "summary": "2-4 rows that alternate photo and copy sides. Each row: eyebrow, title, text, optional check list, link and a small glass stat on the photo. Use for how you work, what makes the team different, or one row per service.",
   "tone": "auto",
   "anchor": "how-we-work",
@@ -9,7 +11,7 @@
     "head": {"$ref": "head", "required": false},
     "start": {"type": "enum", "values": ["image-right", "image-left"], "default": "image-right"},
     "rows": {
-      "type": "list", "min": 2, "max": 4,
+      "type": "list", "min": 1, "max": 4,
       "item": {"type": "object", "fields": {
         "eyebrow": {"type": "text", "min": 3, "max": 32, "required": false},
         "title": {"type": "text", "min": 8, "max": 70},

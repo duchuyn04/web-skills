@@ -1,0 +1,17 @@
+{
+  "id": "invensis",
+  "source": {"name": "Invensis", "url": "https://www.invensis.net/", "category": "Finance, Accounting & Legal BPO", "collected": "2026-09-26"},
+  "fits": ["offshore-staffing", "it-bpo-partner"],
+  "summary": "Light split hero, a client logo row, a metrics intro with a text column and four figures, a blue two column services and industries panel, a dark metrics band over a dotted globe, a three quote row, a photo news mosaic and a blue and white quote form.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "light", "media": "right", "note": "heading in two colours and one button left, a business photo right"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 8, "count": 8, "optional": true, "note": "centered heading with a single row of client logos"},
+    {"form": "metrics", "role": "about", "tone": "light", "cols": 2, "count": 4, "media": "none", "note": "heading and long paragraphs left, a two by two grid of icon figures right"},
+    {"form": "cards-text", "role": "services", "tone": "dark", "cols": 2, "count": 2, "media": "full", "note": "blue band with a photo strip on top, two columns below each with heading, paragraph and a button for services and industries"},
+    {"form": "metrics", "role": "metrics", "tone": "dark", "cols": 3, "count": 3, "media": "right", "note": "heading and paragraphs left over a dotted globe, three large figures in a row at the bottom"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "cols": 3, "count": 3, "optional": true, "note": "centered heading, three white quote cards with star ratings"},
+    {"form": "media-list", "role": "news", "tone": "dark", "cols": 2, "count": 4, "optional": true, "note": "two by two mosaic of photo tiles alternating with coloured text tiles for blog posts and case studies"},
+    {"form": "form", "role": "cta", "tone": "light", "media": "none", "note": "blue contact details panel left, a quote request form with underlined fields right"}
+  ]
+}

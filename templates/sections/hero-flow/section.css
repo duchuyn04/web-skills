@@ -1,0 +1,2 @@
+/* hero-flow: particle-flow-lanes-3d. Streams run the full height behind the copy; the scene dims them under it. */
+.bl-hflow .bl-hgl__bg::after { background: linear-gradient(180deg, var(--bg) 0%, transparent 14%, transparent 86%, var(--bg) 100%); }

@@ -98,7 +98,7 @@ def main():
     out.append("")
     for key, v in lib["variants"].items():
         out += ["## %s" % key, "", v["summary"], ""]
-        out.append("- Group: `%s`. Default anchor: `#%s`. Tone: %s." % (v.get("group"), v.get("anchor"), v.get("tone", "auto")))
+        out.append("- Group: `%s`. Default anchor: `#%s`. Tone: %s.%s" % (v.get("group"), v.get("anchor"), v.get("tone", "auto"), " Signature motion (counts toward the 3 a page needs)." if v.get("signature") else ""))
         if v.get("animations"):
             out.append("- Built-in motion: %s." % ", ".join(v["animations"]))
         out.append("- Allowed in: %s." % (", ".join(uses.get(key, [])) or "custom order only"))
@@ -140,15 +140,15 @@ def write_anatomy(lib):
 TIMING = {
     "header-shrink-blur": "300ms ease-out-expo after 50px of scroll",
     "megamenu-slide-fade": "220ms, 120ms hover intent to open, 150ms to close",
-    "magnetic-cta-button": "max 8px x 6px pull within 30px of the button",
+    "magnetic-cta-button": "GSAP quickTo, 300ms power3.out, max 8px x 6px pull within 30px of the button",
     "kinetic-typography-cycler": "520ms ease-back entrance, 2800ms hold",
     "floating-glass-badges": "4.4s alternate loop, +-6px, staggered",
     "hero-3d-point-cloud-nodes": "canvas, 36-110 points, lerp 0.05, pauses off-screen",
     "hero-ambient-video-mask": "muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen",
     "infinite-logo-marquee": "40s linear loop, pauses on hover",
-    "odometer-number-counter": "2000ms ease-out, once, threshold 0.3",
+    "odometer-number-counter": "GSAP, 2000ms power2.out, once, threshold 0.3",
     "staggered-badge-pop-in": "350ms ease-back, 80ms stagger",
-    "bento-spotlight-hover": "radial glow follows pointer, rAF throttled",
+    "card-hover-lift": "card rises 3px and its border turns the brand colour on hover",
     "card-tilt-3d-perspective": "max 6deg, perspective 1000px, glare",
     "sliding-pill-tab-switcher": "300ms standard ease",
     "smooth-accordion-expansion": "grid rows 0fr to 1fr, 320ms",
@@ -159,11 +159,10 @@ TIMING = {
     "toggle-model-flip": "380ms ease-out-expo, 60ms stagger",
     "interactive-map-pin-pulse": "2.2s radar rings, 150ms tooltip with 100ms delay",
     "fluid-case-study-slider": "scroll-snap, mouse drag with momentum",
-    "shimmer-button-glow": "one sweep every 5.5s",
     "floating-whatsapp-chat-bounce": "appears after the hero, 1.8s ping dot",
     "exit-intent-spring-modal": "520ms ease-back, after 8s, once per 7 days",
     "globe-spin": "dotted world map scrolling behind a sphere mask, 60s linear loop",
-    "reveal": "fade up 18px, 700ms ease-out-expo, 80ms stagger in groups",
+    "reveal": "GSAP: fade and rise 12px over 400ms expo.out, 60ms stagger (up to 4 steps) in groups; pop scales from 0.96, left and right slide 16px",
     "text-marquee": "60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion",
     "quote-crossfade": "600ms fade plus 10px rise, prev/next buttons, dots and arrow keys, no autoplay",
     "word-by-word-reveal": "each word fades from 18% to full opacity over 500ms, 45ms stagger, once",
@@ -191,6 +190,39 @@ TIMING = {
     "view-transition-filter-grid": "filter pills; cards move to new places with a 380ms View Transition, instant where unsupported",
     "footer-wordmark-rise": "brand name fitted to the footer width, letters rise 900ms with 40ms stagger, once",
     "page-motion-switch": "one Pause animations button (footer) freezes every CSS animation, video, canvas loop and carousel",
+    "particle-morph-3d": "about 900 particles morph sphere, brand monogram, torus and lattice cube every 5.1s (1.7s morph), turn slowly, tilt to the pointer; seeded by brand",
+    "wireframe-terrain-3d": "WebGL wireframe terrain (84 x 52 mesh, heights in the vertex shader) rolls toward the viewer, camera leans with the pointer, stats ride the peaks as beacons; seeded by brand",
+    "orbit-gyroscope-3d": "three tilted rings carry service chips around a brand core, chips depth-sorted and scaled, pointer tilts the system, hover stops a ring; seeded by brand",
+    "isometric-floor-3d": "isometric blocks rise in a 2.4s wave, packets travel the aisles, the block under the pointer lifts; seeded by brand",
+    "dashboard-explode-3d": "HTML dashboard panels lift into an exploded stack and swing to a three-quarter view once (1.6s, 80ms stagger); camera follows a fine pointer up to 8 deg",
+    "role-deck-fan-3d": "role cards fan out (0.8s), then the front card moves to the back every 2.8s until the first role returns, then rests; Next button and pause",
+    "prism-headline-3d": "the last headline line sits on a three-sided prism that turns 0.9s after each 2.4-3.2s dwell, two passes, then rests on the first phrase",
+    "monolith-extrude-3d": "brand monogram as an extruded canvas block (16-24 layers) turning 20-28 deg on a 12-16s period with a moving sheen, 30 fps cap",
+    "shatter-assemble-3d": "photo tiles fly in from depth and lock into the full photo once (about 1.45s); tiles near a fine pointer lift",
+    "sundial-swing-in": "tilted 24-hour dial swings in over 1.8s once; hub labels fade in after 1.1s",
+    "sundial-handoff-pulse": "a dot runs once around the dial in 3s, each hub pulses for 520ms as it passes",
+    "sundial-live-clock": "hub clocks and positions update each minute; on-shift hubs carry a 3.2s halo; Pause freezes, Play jumps to now",
+    "magnetic-dot-plane": "WebGL dot plane seen from above dips under the pointer and tints the pulled dots; idle ripple every 7-11s",
+    "dot-wave-field-3d": "WebGL field of about 20 000 dots under three crossing swells, crests in the accent colour, a soft mound under the pointer; seeded by brand",
+    "particle-flow-lanes-3d": "WebGL particle streams, scattered where they enter and sorted into 4-7 calm lanes where they leave, 10-30 s per crossing; the pointer parts the stream; seeded by brand",
+    "dotted-globe-arcs-3d": "WebGL dotted globe that sways 20 degrees around the delivery hubs; a light pulse runs along each hub-to-market arc every 4.5s, hub rings pulse every 2s",
+    "liquid-merge-contours": "two brand shapes drawn as contour rings merge over 4.2-6s, then breathe on a 5.2s cycle; 30 fps cap",
+    "cylinder-turn-3d": "service cards on a drum turn to the chosen card in 1s; turns in once when seen; tabs, buttons and arrow keys",
+    "block-quarter-turn-3d": "each service block turns a quarter (650ms) to show scope, SLA or tools; leans 13 deg on hover",
+    "block-entry-wave": "blocks turn to a side and back once when the grid is seen, 90ms apart, about 2.3s",
+    "slat-louvre-turn-3d": "angled industry slats; the hovered or focused one turns to face the visitor in 850ms and shows its text",
+    "paper-fold-open-3d": "FAQ answers unfold in 2-3 creased strips (420ms each, 170ms stagger), then become plain text",
+    "letter-unfold-3d": "closing CTA unfolds once like a tri-fold letter (1.25s) when seen or focused",
+    "book-page-turn-3d": "case studies as an open book; Next or Previous turns a hinged, shaded leaf in 800-1000ms",
+    "column-grow-3d": "before and after 3D columns grow once (1.2s, 160ms between pairs) while numbers count up",
+    "iso-stack-explode-scroll": "isometric plates, one per step, separate and light up with scroll (view timeline, IntersectionObserver fallback)",
+    "coverflow-3d": "leadership portraits in a coverflow; buttons, arrow keys and clicks move it (750ms), no auto-rotation",
+    "helix-turn-scroll-3d": "company milestones on a helix that turns one step per 36vh of scroll (0.85s); plain timeline on phones",
+    "pipeline-packet-flow": "packets travel isometric pipes between process stations, 3-4.2s per pipe, only on screen",
+    "pipeline-station-light": "the lit station moves every 2.4s (0.45s fade); hover pins a step",
+    "relief-map-tilt-in": "dotted world map cropped to the hubs tilts in like a tabletop model (1.5s)",
+    "relief-column-rise": "a column rises at each hub (1.1s, 120ms stagger), height from headcount only when every hub has one",
+    "relief-hub-arc": "an arc to the head office draws in 0.8s on hover or focus of a hub",
     "shape-float":"flat shapes drift 8px on a 7s alternate loop, the ring turns once per 24s",
 }
 
@@ -202,7 +234,7 @@ def write_animation_map(lib):
             where.setdefault(a.split(" ")[0], []).append(key)
     out = ["# Animation map", "",
            "Generated by `scripts/make_catalog.py`. Every animation below is already coded inside the section templates. You never write animation code: choose the section that carries the effect.", "",
-           "All motion follows the performance rules gathered in the research: only transform and opacity animate, easing is `cubic-bezier(0.16, 1, 0.3, 1)` unless noted, and `prefers-reduced-motion` turns movement off.", "",
+           "All motion follows the performance rules gathered in the research: only transform and opacity animate, easing is `cubic-bezier(0.16, 1, 0.3, 1)` (GSAP `expo.out`) unless noted, and `prefers-reduced-motion` turns movement off. Tweens run on GSAP and 3D scenes on Three.js WebGL; see `motion-libraries.md`.", "",
            "| Animation id | Built into | Timing |", "|:---|:---|:---|"]
     for a, t in TIMING.items():
         out.append("| `%s` | %s | %s |" % (a, ", ".join("`%s`" % v for v in where.get(a, [])) or "none", t))

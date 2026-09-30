@@ -25,6 +25,7 @@ Checks (exit code 1 if any fail):
 Look at every screenshot yourself after the script passes.
 """
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -77,14 +78,16 @@ CHECK_JS = r"""
 SCROLL_JS = r"""
 async () => {
   const step = Math.round(window.innerHeight * 0.7);
+  /* html has scroll-behavior: smooth; instant jumps make sure every section really scrolls into view */
+  const go = (y) => window.scrollTo({ top: y, left: 0, behavior: 'instant' });
   for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
-    window.scrollTo(0, y);
+    go(y);
     await new Promise((r) => setTimeout(r, 90));
   }
-  window.scrollTo(0, document.documentElement.scrollHeight);
+  go(document.documentElement.scrollHeight);
   await new Promise((r) => setTimeout(r, 300));
   document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
-  window.scrollTo(0, 0);
+  go(0);
   await new Promise((r) => setTimeout(r, 2300));
 }
 """
@@ -241,11 +244,133 @@ FPS_JS = """async (ms) => {
 MOTION_TARGETS_JS = """() => {
   const out = [];
   document.querySelectorAll('main > *').forEach((s, i) => {
-    const moving = i === 0 || s.querySelector('canvas, video') || [...s.querySelectorAll('*')].some(e => getComputedStyle(e).animationIterationCount === 'infinite');
+    const moving = i === 0 || s.matches('[data-fx="3d"]') || s.querySelector('canvas, video, [data-fx="3d"]') || [...s.querySelectorAll('*')].some(e => getComputedStyle(e).animationIterationCount === 'infinite');
     if (moving) out.push(s.id || ('section-' + (i + 1)));
   });
   return out;
 }"""
+
+
+DESIGN_JS = r"""(hoverSelectors) => {
+  const INTERACTIVE = 'a, button, summary, label, input, select, textarea, [role="button"], [role="tab"], [tabindex]';
+  const visible = (el) => { const r = el.getBoundingClientRect(); const cs = getComputedStyle(el);
+    return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none' && parseFloat(cs.opacity) > 0.05; };
+  const where = (el) => { const s = el.closest('section, header, footer'); return s ? (s.id || s.tagName.toLowerCase()) : 'page'; };
+  const name = (el) => el.tagName.toLowerCase() + (el.classList[0] ? '.' + el.classList[0] : '');
+  const out = { hover: [], lines: [], thin: [], sizes: 0, cards: [], shadows: [] };
+
+  // 1. hover motion on things that cannot be clicked
+  const seenHover = new Set();
+  for (const sel of hoverSelectors) {
+    let els = [];
+    try { els = document.querySelectorAll(sel); } catch (e) { continue; }
+    for (const el of els) {
+      if (!visible(el) || el.matches(INTERACTIVE) || el.querySelector(INTERACTIVE) || el.closest(INTERACTIVE)) continue;
+      const key = where(el) + ' ' + name(el);
+      if (!seenHover.has(key)) { seenHover.add(key); out.hover.push(key + ' (' + sel.slice(0, 60) + ')'); }
+    }
+  }
+
+  // 2. line length, 3. thin small text, font sizes
+  const sizes = new Set();
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const textEls = new Set();
+  while (walker.nextNode()) {
+    const n = walker.currentNode;
+    if (!n.textContent.trim()) continue;
+    const el = n.parentElement;
+    if (!el || el.closest('script, style, canvas, svg, noscript, [aria-hidden="true"], .sr-only, .bl-sr')) continue;
+    textEls.add(el);
+  }
+  for (const el of textEls) {
+    if (!visible(el)) continue;
+    const cs = getComputedStyle(el);
+    const fs = parseFloat(cs.fontSize);
+    sizes.add(Math.round(fs));
+    if (parseInt(cs.fontWeight, 10) < 400 && fs < 24) out.thin.push(where(el) + ' ' + name(el) + ' weight ' + cs.fontWeight + ' at ' + Math.round(fs) + 'px');
+  }
+  out.sizes = sizes.size;
+  const seenLine = new Set();
+  for (const el of document.querySelectorAll('main p, main li, main .bl-lead')) {
+    if (!visible(el) || el.closest('table, nav, [aria-hidden="true"]')) continue;
+    const text = el.textContent.replace(/\s+/g, ' ').trim();
+    if (text.length < 60) continue;
+    const range = document.createRange(); range.selectNodeContents(el);
+    const tops = new Set(Array.from(range.getClientRects()).filter(r => r.width > 2).map(r => Math.round(r.top / 4)));
+    if (tops.size < 2) continue;
+    const cpl = text.length / tops.size;
+    const key = where(el) + ' ' + name(el);
+    if (cpl > 75 && !seenLine.has(key)) { seenLine.add(key); out.lines.push({ where: key, cpl: Math.round(cpl), text: text.slice(0, 50) }); }
+  }
+
+  // 4. rows of three or more look-alike cards that lead nowhere
+  const chrome = (el) => { const cs = getComputedStyle(el);
+    const bg = cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent';
+    return (bg || parseFloat(cs.borderTopWidth) >= 1 || cs.boxShadow !== 'none') && parseFloat(cs.borderTopLeftRadius) > 0; };
+  const seenRow = new Set();
+  for (const parent of document.querySelectorAll('main *')) {
+    const kids = Array.from(parent.children).filter(visible);
+    if (kids.length < 3) continue;
+    const r0 = kids[0].getBoundingClientRect();
+    const row = kids.filter(k => { const r = k.getBoundingClientRect(); return Math.abs(r.width - r0.width) <= 2 && Math.abs(r.top - r0.top) <= 4 && r.width > 120 && r.height > 80; });
+    if (row.length < 3 || !row.every(chrome)) continue;
+    if (row.some(k => k.matches(INTERACTIVE) || k.querySelector(INTERACTIVE))) continue;
+    const sec = where(parent);
+    if (!seenRow.has(sec)) { seenRow.add(sec); out.cards.push(sec + ' ' + name(row[0]) + ' x' + row.length); }
+  }
+
+  // 5. resting shadows on things that are not controls
+  for (const el of document.querySelectorAll('main *')) {
+    if (el.matches(INTERACTIVE) || el.closest(INTERACTIVE) || el.closest('dialog, .fx3d-stage, canvas')) continue;
+    const cs = getComputedStyle(el);
+    if (cs.boxShadow === 'none') continue;
+    const soft = cs.boxShadow.split(/,(?![^(]*\))/).some(l => { if (/inset/.test(l)) return false;
+      const n = (l.match(/-?[\d.]+px/g) || []).map(parseFloat); return (n[2] || 0) > 0; });
+    if (!soft) continue;
+    if (!visible(el)) continue;
+    out.shadows.push(where(el) + ' ' + name(el));
+  }
+  return out;
+}"""
+
+TARGET_JS = r"""() => {
+  const els = Array.from(document.querySelectorAll('a[href], button, input:not([type=hidden]), select, textarea, summary, [role="button"]'));
+  const rects = els.map(el => el.getBoundingClientRect());
+  const out = [];
+  els.forEach((el, i) => {
+    const r = rects[i];
+    const cs = getComputedStyle(el);
+    if (!r.width || !r.height || cs.visibility === 'hidden' || el.closest('[aria-hidden="true"], [inert]')) return;
+    if (r.width >= 24 && r.height >= 24) return;
+    // inline links inside running text are exempt (WCAG 2.5.8)
+    if (cs.display === 'inline' && el.closest('p, li, dd, td, figcaption, label')) return;
+    // spacing exception: a 24px circle on its centre touches no other target
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    const clash = rects.some((o, j) => j !== i && o.width && o.height &&
+      Math.max(o.left - cx, 0, cx - o.right) ** 2 + Math.max(o.top - cy, 0, cy - o.bottom) ** 2 < 144);
+    if (!clash) return;
+    const s = el.closest('section, header, footer');
+    out.push((s ? (s.id || s.tagName.toLowerCase()) : 'page') + ' ' + el.tagName.toLowerCase() + (el.classList[0] ? '.' + el.classList[0] : '') + ' ' + Math.round(r.width) + 'x' + Math.round(r.height));
+  });
+  return Array.from(new Set(out)).slice(0, 12);
+}"""
+
+
+def hover_selectors(dist):
+    """Selectors of elements that move or grow a shadow on :hover (the part of each selector before :hover)."""
+    css = "\n".join(f.read_text(encoding="utf-8") for f in sorted((dist / "assets").rglob("*.css")))
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    out = []
+    for m in re.finditer(r"([^{}]+)\{([^{}]*)\}", css):
+        sel, body = m.group(1), m.group(2)
+        if ":hover" not in sel or not re.search(r"(?<![-\w])(transform|translate|scale|box-shadow|filter)\s*:", body):
+            continue
+        for part in sel.split(","):
+            if ":hover" in part:
+                base = part.split(":hover")[0].strip()
+                if base and base not in out:
+                    out.append(base)
+    return out
 
 
 def motion_check(browser, index):
@@ -266,6 +391,107 @@ def motion_check(browser, index):
                             "(see Motion and performance in references/custom-section-spec.md)." % (sid, r["fps"], r["p95"], MIN_FPS))
     ctx.close()
     return lines, problems
+
+
+GL_HOSTS_JS = "() => [...document.querySelectorAll('[data-gl]')].map((h, i) => { if (!h.id) h.id = 'bl-gl-' + i; return h.id; })"
+MIN_COVERAGE = 0.002  # share of canvas pixels a WebGL scene must draw
+
+
+def webgl_check(browser, index):
+    """Every data-gl scene mounts and draws. Returns (lines, problems, warnings)."""
+    ctx = browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=1)
+    page = ctx.new_page()
+    page.goto(index.as_uri(), wait_until="load")
+    page.wait_for_timeout(1200)
+    lines, problems, warnings = [], [], []
+    for hid in page.evaluate(GL_HOSTS_JS):
+        page.evaluate("id => document.getElementById(id).scrollIntoView({block: 'center'})", hid)
+        page.wait_for_timeout(1800)
+        r = page.evaluate("id => { const h = document.getElementById(id); return {kind: h.dataset.gl, off: h.hasAttribute('data-gl-off'), "
+                          "cov: window.BLGL ? BLGL.coverage(h) : -2}; }", hid)
+        if r["off"]:
+            warnings.append("WebGL is not available in this browser, so the %s scene in #%s is hidden; check it in a browser with a GPU" % (r["kind"], hid))
+            continue
+        if r["cov"] == -2:
+            problems.append("#%s has data-gl=\"%s\" but _shared/gl.js is not on the page (add \"three\", \"gl\" and \"gl-%s\" to the section's shared list)" % (hid, r["kind"], r["kind"]))
+            continue
+        if r["cov"] < 0:
+            problems.append("the %s scene in #%s never mounted: no gl-%s.js on the page, or the canvas has no data-gl-canvas" % (r["kind"], hid, r["kind"]))
+            continue
+        lines.append("%s %s %.1f%%" % (hid, r["kind"], r["cov"] * 100))
+        if r["cov"] < MIN_COVERAGE:
+            problems.append("the %s scene in #%s draws almost nothing (%.2f%% of the canvas); check its colours against the section tone and the data-gl-copy boxes" % (r["kind"], hid, r["cov"] * 100))
+    ctx.close()
+    return lines, problems, warnings
+
+
+def reduced_motion_check(browser, index):
+    """With prefers-reduced-motion: every revealed element is visible, nothing is pinned, no errors. Returns problems."""
+    ctx = browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=1, reduced_motion="reduce")
+    page = ctx.new_page()
+    errors = []
+    page.on("pageerror", lambda e: errors.append("JS error with reduced motion: %s" % e))
+    page.goto(index.as_uri(), wait_until="load")
+    page.evaluate(SCROLL_JS)
+    page.wait_for_timeout(400)
+    r = page.evaluate("""() => {
+      const hidden = [...document.querySelectorAll('[data-reveal]')].filter(el => el.getClientRects().length && parseFloat(getComputedStyle(el).opacity) < 0.99)
+        .slice(0, 5).map(el => (el.closest('[id]') || {}).id + ' ' + el.tagName.toLowerCase() + '.' + [...el.classList].join('.'));
+      const pins = window.ScrollTrigger ? ScrollTrigger.getAll().filter(t => t.pin).length : 0;
+      return {hidden, pins};
+    }""")
+    ctx.close()
+    problems = errors
+    problems += ["still hidden with reduced motion: %s" % h for h in r["hidden"]]
+    if r["pins"]:
+        problems.append("%d ScrollTrigger pins stay active with reduced motion; build pins inside BL.motion.media and skip them when reduce is true" % r["pins"])
+    return problems
+
+
+def pause_check(browser, index):
+    """After the page-wide Pause switch: no registered GSAP loop runs and WebGL canvases stand still. Returns problems."""
+    ctx = browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=1)
+    page = ctx.new_page()
+    page.goto(index.as_uri(), wait_until="load")
+    page.wait_for_timeout(1500)
+    page.evaluate("window.BL && BL.setPaused(true)")
+    problems = []
+    running = page.evaluate("() => window.BL && BL.motion && BL.motion.ambientList ? BL.motion.ambientList().filter(a => a.isActive && a.isActive()).length : 0")
+    if running:
+        problems.append("%d GSAP loops keep running after Pause animations" % running)
+    for hid in page.evaluate(GL_HOSTS_JS):
+        frames = "id => { const m = document.getElementById(id).__blgl; return m && m.drawn ? m.drawn.frames : -1; }"
+        page.evaluate("id => document.getElementById(id).scrollIntoView({block: 'center'})", hid)
+        page.wait_for_timeout(600)
+        a = page.evaluate(frames, hid)
+        if a < 0:
+            continue
+        page.wait_for_timeout(900)
+        if page.evaluate(frames, hid) - a > 2:
+            problems.append("the WebGL scene in #%s keeps moving after Pause animations" % hid)
+    ctx.close()
+    return problems
+
+
+def no_webgl_check(p, index):
+    """In a browser without WebGL the page still runs: no JS errors, scenes marked data-gl-off. Returns problems."""
+    try:
+        browser = p.chromium.launch(channel="msedge", args=["--disable-webgl", "--disable-3d-apis"])
+    except Exception:
+        try:
+            browser = p.chromium.launch(args=["--disable-webgl", "--disable-3d-apis"])
+        except Exception:
+            return []
+    page = browser.new_page(viewport={"width": 1440, "height": 900})
+    errors = []
+    page.on("pageerror", lambda e: errors.append("JS error without WebGL: %s" % e))
+    page.goto(index.as_uri(), wait_until="load")
+    page.evaluate(SCROLL_JS)
+    left = page.evaluate("() => [...document.querySelectorAll('[data-gl]')].filter(h => !h.hasAttribute('data-gl-off') && h.__blgl).length")
+    browser.close()
+    if left:
+        errors.append("%d WebGL scenes claim to run in a browser without WebGL" % left)
+    return errors
 
 
 def focus_problems(page, limit=80):
@@ -306,6 +532,10 @@ def cvd_shots(browser, index, out):
         files.append(f.name)
     ctx.close()
     return files
+
+
+SIZE_LIMIT = 18    # distinct font sizes: base tokens are seven, the library pages measure 14-18; more means sections add their own
+SHADOW_LIMIT = 12  # resting shadows on non-controls
 
 
 def launch(p):
@@ -356,7 +586,7 @@ def main():
             res = page.evaluate(CHECK_JS)
             shot = out / ("page-%d.png" % w)
             page.screenshot(path=str(shot), full_page=True)
-            problems = []
+            problems, warnings = [], []
             problems += ["overflow: " + s for s in res["overflow"]]
             if res["overflowCount"] > len(res["overflow"]):
                 problems.append("overflow: ... %d more elements" % (res["overflowCount"] - len(res["overflow"])))
@@ -372,12 +602,33 @@ def main():
                 for f in page.evaluate(LINKS_JS):
                     problems.append("link in running text in #%s is not underlined and only %.2f:1 from the text around it (needs 3:1): \"%s\"" % (f["where"], f["ratio"], f["text"]))
                 problems += focus_problems(page)
+                des = page.evaluate(DESIGN_JS, hover_selectors(dist))
+                for h in des["hover"]:
+                    problems.append("hover motion on something that cannot be clicked: %s. Move or shadow only links and buttons on hover (references/anti-slop.md)" % h)
+                for x in des["thin"][:6]:
+                    problems.append("light font weight on small text: %s. Use 400 or heavier below 24px" % x)
+                for ln in des["lines"]:
+                    msg = "about %d characters per line in %s (\"%s...\"); keep lines under 75" % (ln["cpl"], ln["where"], ln["text"])
+                    if ln["cpl"] > 90:
+                        problems.append(msg)
+                    else:
+                        warnings.append(msg)
+                if des["sizes"] > SIZE_LIMIT:
+                    warnings.append("%d different font sizes on the page; a clear type scale uses fewer (target %d or less)" % (des["sizes"], SIZE_LIMIT))
+                if len(des["cards"]) >= 3:
+                    warnings.append("rows of look-alike cards that lead nowhere in %d sections (%s); use a list, columns under a rule or fewer boxes" % (len(des["cards"]), "; ".join(des["cards"])))
+                if len(des["shadows"]) > SHADOW_LIMIT:
+                    warnings.append("%d resting shadows on things that are not controls (%s ...); a shadow reads as clickable" % (len(des["shadows"]), ", ".join(des["shadows"][:4])))
+            for x in page.evaluate(TARGET_JS):
+                problems.append("tap target smaller than 24x24px with a neighbour too close (WCAG 2.5.8): %s" % x)
             if res["h1"] != 1:
                 problems.append("expected exactly one <h1>, found %d" % res["h1"])
             status = "OK  " if not problems else "FAIL"
             print("%s %4dpx  page height %dpx  screenshot %s" % (status, w, res["height"], shot))
             for pr in problems:
                 print("       " + pr)
+            for wr in warnings:
+                print("  WARN " + wr)
             failed = failed or bool(problems)
             if args.sections:
                 sdir = out / ("sections-%d" % w)
@@ -396,12 +647,32 @@ def main():
             for pr in problems:
                 print("       " + pr)
             failed = failed or bool(problems)
+        has_gl = 'data-gl="' in index.read_text(encoding="utf-8")
+        if has_gl:
+            lines, problems, warnings = webgl_check(browser, index)
+            print("%s webgl: %s" % ("OK  " if not problems else "FAIL", ", ".join(lines) or "no scene drew"))
+            for pr in problems:
+                print("       " + pr)
+            for wr in warnings:
+                print("  WARN " + wr)
+            failed = failed or bool(problems)
+        for name, problems in (("reduced motion", reduced_motion_check(browser, index)), ("pause", pause_check(browser, index))):
+            print("%s %s" % ("OK  " if not problems else "FAIL", name))
+            for pr in problems:
+                print("       " + pr)
+            failed = failed or bool(problems)
         if args.cvd:
             try:
                 print("     colour vision shots: %s" % ", ".join(cvd_shots(browser, index, out)))
             except Exception as e:
                 print("     colour vision shots need Chrome or Edge: %s" % e)
         browser.close()
+        if has_gl:
+            problems = no_webgl_check(p, index)
+            print("%s without WebGL" % ("OK  " if not problems else "FAIL"))
+            for pr in problems:
+                print("       " + pr)
+            failed = failed or bool(problems)
     if failed:
         print("\nQA FAILED. Fix the cause in page.json (shorter copy, fewer items) or in the section template, rebuild, run QA again.")
         return 1

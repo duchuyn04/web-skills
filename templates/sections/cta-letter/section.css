@@ -1,0 +1,87 @@
+/* cta-letter: letter-unfold-3d. Three equal rows. Folded, the top third turns about its bottom edge to
+   rotateX(-180deg) and the bottom third about its top edge to rotateX(180deg), both lying over the middle with the
+   outer one 3px nearer; their back faces show the outside of the letter. On first view the outer third unfolds
+   (0.75s), then the inner one (from 0.5s), and every panel ends at transform none: a flat card. */
+.bl-fxletter { --tint: 0; --paper: color-mix(in srgb, var(--c-accent) calc(var(--tint) * 5%), var(--surface)); }
+.bl-fxletter__stage { --fx-persp: 2200px; perspective-origin: 50% 50%; position: relative; max-width: 960px; margin-inline: auto; }
+.bl-fxletter__stage::before {
+  content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); pointer-events: none;
+  box-shadow: 0 40px 70px -40px rgba(15, 23, 42, .45); transition: opacity .6s var(--ease-std) .9s;
+}
+.bl-fxletter__rig { display: grid; grid-template-rows: repeat(3, 1fr); }
+.bl-fxletter__panel { position: relative; transform-style: preserve-3d; transition: transform .75s cubic-bezier(.55, 0, .2, 1); }
+.bl-fxletter__panel--top { transform-origin: 50% 100%; }
+.bl-fxletter__panel--bottom { transform-origin: 50% 0; transition-delay: .5s; }
+.bl-fxletter.is-bottom-first .bl-fxletter__panel--top { transition-delay: .5s; }
+.bl-fxletter.is-bottom-first .bl-fxletter__panel--bottom { transition-delay: 0s; }
+.bl-fxletter.is-still .bl-fxletter__panel, .bl-fxletter.is-still .bl-fxletter__crease, .bl-fxletter.is-still .bl-fxletter__stage::before { transition: none; }
+
+.bl-fxletter__face {
+  position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 1rem;
+  padding: clamp(1.4rem, 3vw, 2.1rem) clamp(1.3rem, 4vw, 3rem); background: var(--paper); color: var(--text);
+  border: 1px solid var(--border);
+}
+.bl-fxletter__panel--top .bl-fxletter__face { border-radius: var(--radius-lg) var(--radius-lg) 0 0; border-bottom: 0; justify-content: flex-end; }
+.bl-fxletter__panel--mid .bl-fxletter__face { border-top-color: color-mix(in srgb, var(--c-primary) 11%, var(--paper)); border-bottom-color: color-mix(in srgb, var(--c-primary) 11%, var(--paper)); }
+.bl-fxletter__panel--bottom .bl-fxletter__face { border-radius: 0 0 var(--radius-lg) var(--radius-lg); border-top: 0; }
+.bl-fxletter__back {
+  position: absolute; inset: 0; display: grid; place-items: center; transform: rotateX(180deg);
+  background-color: color-mix(in srgb, var(--c-primary) 5%, var(--paper));
+  background-image: repeating-linear-gradient(135deg, transparent 0 9px, color-mix(in srgb, var(--c-primary) 6%, transparent) 9px 10px);
+  border: 1px solid var(--border); border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.bl-fxletter__panel--bottom .bl-fxletter__back { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+.bl-fxletter__back-seal {
+  width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--c-accent); color: var(--c-on-accent); font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--c-accent) 22%, transparent);
+}
+
+/* letterhead */
+.bl-fxletter__head { display: flex; align-items: center; gap: .9rem; padding-bottom: 1rem; margin-bottom: .3rem; border-bottom: 1px solid var(--border); }
+.bl-fxletter.is-seal-right .bl-fxletter__head { flex-direction: row-reverse; }
+.bl-fxletter__seal { position: relative; width: 48px; height: 48px; flex-shrink: 0; display: grid; place-items: center; color: var(--accent-ink); }
+.bl-fxletter__seal svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bl-fxletter__seal b { font-family: var(--font-heading); font-size: .92rem; font-weight: 700; }
+.bl-fxletter__brand { font-family: var(--font-heading); font-weight: 600; color: var(--text-strong); }
+.bl-fxletter__ref { margin-left: auto; font-size: var(--fs-xs); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); }
+.bl-fxletter.is-seal-right .bl-fxletter__ref { margin-left: 0; margin-right: auto; }
+.bl-fxletter__title { font-size: clamp(1.6rem, 1.6vw + 1rem, 2.3rem); }
+.bl-fxletter__text { font-size: var(--fs-lead); line-height: 1.6; max-width: 62ch; }
+.bl-fxletter__points { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: var(--fs-sm); font-weight: 600; color: var(--text-strong); }
+.bl-fxletter__points li { display: inline-flex; align-items: center; gap: .45rem; }
+.bl-fxletter__points .bl-icon { width: 1.05rem; height: 1.05rem; color: var(--accent-ink); }
+
+/* actions */
+.bl-fxletter__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.bl-fxletter__sign { font-family: var(--font-heading); font-size: 1.05rem; font-style: italic; color: var(--text-strong); }
+.bl-fxletter__sign::before { content: ""; display: inline-block; vertical-align: middle; width: 2rem; height: 1px; margin-right: .7rem; background: var(--border-strong); }
+.bl-fxletter__form { flex: 1 1 26rem; display: grid; gap: .6rem; }
+.bl-fxletter__form-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: .75rem; }
+.bl-fxletter__done { display: flex; align-items: center; gap: .5rem; font-weight: 600; color: var(--text-strong); }
+.bl-fxletter__done .bl-icon { color: var(--accent-ink); }
+.bl-fxletter__alt { font-size: var(--fs-sm); justify-self: start; }
+
+/* crease shading, only while folded or unfolding */
+.bl-fxletter__crease { position: absolute; left: 0; right: 0; height: 38%; pointer-events: none; opacity: 0; transition: opacity .7s var(--ease-std) .55s; }
+.bl-fxletter__crease--bottom { bottom: 0; background: linear-gradient(0deg, color-mix(in srgb, var(--c-primary) 16%, transparent), transparent); }
+.bl-fxletter__crease--top { top: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--c-primary) 16%, transparent), transparent); }
+
+/* folded state (set by JS before the letter is seen; never under reduced motion) */
+.bl-fxletter.is-folded .bl-fxletter__panel--top { transform: translateZ(3px) rotateX(-180deg); }
+.bl-fxletter.is-folded .bl-fxletter__panel--bottom { transform: translateZ(1.5px) rotateX(180deg); }
+.bl-fxletter.is-folded.is-bottom-first .bl-fxletter__panel--top { transform: translateZ(1.5px) rotateX(-180deg); }
+.bl-fxletter.is-folded.is-bottom-first .bl-fxletter__panel--bottom { transform: translateZ(3px) rotateX(180deg); }
+.bl-fxletter.is-folded .bl-fxletter__crease { opacity: 1; transition-delay: 0s; }
+.bl-fxletter.is-folded .bl-fxletter__stage::before { opacity: 0; transition-delay: 0s; }
+html.bl-shot .bl-fxletter .bl-fxletter__panel { transform: none; transition: none; }
+html.bl-shot .bl-fxletter .bl-fxletter__crease { opacity: 0; transition: none; }
+html.bl-shot .bl-fxletter .bl-fxletter__stage::before { opacity: 1; transition: none; }
+
+@media (max-width: 640px) {
+  .bl-fxletter__form-row { grid-template-columns: 1fr; }
+  .bl-fxletter__actions .bl-btn-row { width: 100%; }
+}
+/* only the outside of the folded letter carries the seal */
+.bl-fxletter:not(.is-bottom-first) .bl-fxletter__panel--bottom .bl-fxletter__back-seal,
+.bl-fxletter.is-bottom-first .bl-fxletter__panel--top .bl-fxletter__back-seal { display: none; }
