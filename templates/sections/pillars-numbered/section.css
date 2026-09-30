@@ -1,4 +1,9 @@
 /* pillars-numbered: three plain columns under a rule. No cards, numbers or hover lift (docs/research/ui-anti-slop.md, L1 and L5). */
-.bl-pillar { padding-top: 1.25rem; border-top: 2px solid var(--text-strong); }
+.bl-pillar__rule { display: block; height: 2px; margin-bottom: 1.25rem; background: var(--text-strong); }
 .bl-pillar .bl-h3 { margin-bottom: .6rem; }
 .bl-pillar p { font-size: var(--fs-sm); color: var(--text); }
+/* pillar-rule-draw: the rule over each column draws left to right, columns one after another (--reveal-i), then the
+   text under it fades up. */
+.js .bl-pillar p { transition: opacity .7s var(--ease-out), transform .8s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 120ms + 450ms); }
+.js .bl-pillar:not(.is-in) p { opacity: 0; transform: translateY(10px); }
+@media (prefers-reduced-motion: reduce) { .js .bl-pillar p { opacity: 1 !important; transform: none !important; } }

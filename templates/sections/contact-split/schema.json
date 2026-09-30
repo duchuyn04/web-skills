@@ -5,7 +5,7 @@
   "summary": "Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email. Optional aside.photo: a real photo of the office or the team at the top of the brand-colour panel, above the reasons and offices. Optional map: an embedded Google Map of the main office under the card, with an Open in Google Maps link. With both, the photo shows the place inside the card and the map sits under the card.",
   "tone": "auto",
   "anchor": "contact",
-  "animations": ["reveal"],
+  "animations": ["reveal", "aside-rise-open", "point-tick-sequence", "form-field-cascade", "photo-scroll-drift"],
   "fields": {
     "head": {"$ref": "head"},
     "form": {"type": "object", "fields": {

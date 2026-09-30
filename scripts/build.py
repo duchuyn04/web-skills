@@ -1181,6 +1181,23 @@ def _strings_with_paths(o, path):
         yield path, o
 
 
+# How elements arrive on scroll (base.js, base.css). Measured on 92 real BPO homepages: see references/motion-research.md.
+# The share is how often build.py picks the style for a page that does not set theme.motion_style.
+MOTION_STYLES = {"rise": 0.35, "slide": 0.25, "fade": 0.25, "mask": 0.15}
+
+
+def motion_style(theme, preset, seed):
+    style = theme.get("motion_style") or preset.get("design", {}).get("motion_style")
+    if style:
+        return style
+    x, acc = float(seed["e"]), 0.0
+    for name, share in MOTION_STYLES.items():
+        acc += share
+        if x < acc:
+            return name
+    return "rise"
+
+
 def brand_seed(text, count=8):
     """Same FNV-1a + mulberry32 generator as scene3d.js and stage3d.js, so CSS-only 3D variants get the brand's
     numbers at build time (templates read {{site.seed.a}} ... {{site.seed.h}}, each 0-1, and {{site.seed.sign}}, 1 or -1)."""
@@ -1873,6 +1890,7 @@ PAGE_SPEC = {
             "image_mask": {"type": "enum", "values": ["rounded", "angle", "arch"], "required": False},
             "highlight": {"type": "enum", "values": ["color", "gradient", "underline"], "required": False},
             "media_reveal": {"type": "enum", "values": ["fade", "clip"], "required": False},
+            "motion_style": {"type": "enum", "values": list(MOTION_STYLES), "required": False},
         }},
         "features": {"type": "object", "required": False, "fields": {
             "magnetic_cta": {"type": "bool", "default": False},
@@ -2147,7 +2165,8 @@ def main():
     if eyebrow == "caps" and top.get("lang") == "vi":
         eyebrow = "plain"  # tracked capitals with Vietnamese diacritics are hard to read
     root_class = " ".join(["bl-eyebrow-%s" % eyebrow, "bl-edges-%s" % design["edges"], "bl-mask-%s" % design["image_mask"],
-                           "bl-hl-%s" % design["highlight"], "bl-media-%s" % design["media_reveal"]])
+                           "bl-hl-%s" % design["highlight"], "bl-media-%s" % design["media_reveal"],
+                           "bl-motion-%s" % motion_style(theme, preset, site["seed"])])
     shell = {"root_class": root_class, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
              "body": Safe(assemble_body(body)), "hero_tone": hero_tone}
     page_html = renderer.render_file(TPL / "page.html", [shell])
@@ -2185,7 +2204,7 @@ def main():
     for rel, src in ctx.images.items():
         (out_dir / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, out_dir / rel)
-    rep = {"rules": int(legacy) if legacy else RULES_VERSION, "archetype": arch_key, "preset": top["preset"], "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections],
+    rep = {"rules": int(legacy) if legacy else RULES_VERSION, "archetype": arch_key, "preset": top["preset"], "motion_style": re.search(r"bl-motion-(\w+)", root_class).group(1), "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections],
            "warnings": ctx.warnings, "placeholders": ctx.placeholders}
     (out_dir / "build-report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
     report(ctx, failed=False)

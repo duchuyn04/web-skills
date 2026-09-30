@@ -6,7 +6,7 @@
   "tone": "auto",
   "anchor": "locations",
   "shared": ["slider"],
-  "animations": ["reveal", "fluid-case-study-slider"],
+  "animations": ["reveal", "fluid-case-study-slider", "country-cards-slide-in", "flag-pop"],
   "fields": {
     "head": {"$ref": "head"},
     "cards": {"type": "list", "min": 3, "max": 8, "item": {"type": "object", "fields": {

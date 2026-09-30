@@ -9,7 +9,7 @@
       {{#rating}}
       <div class="bl-trated__score">
         <strong>{{score}}</strong>
-        <span class="bl-trated__stars" aria-hidden="true">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span>
+        <span class="bl-trated__stars" aria-hidden="true" data-seq>{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span>
         <small>{{label}}</small>
       </div>
       {{/rating}}
@@ -22,7 +22,7 @@
       <div class="bl-trated__track" data-slider-track tabindex="0" aria-label="{{head.title_plain}}">
         {{#items}}
         <figure class="bl-trated__card" data-reveal>
-          <p class="bl-trated__stars" data-rating="{{stars}}"><span class="bl-sr-only">{{rating_label}}: {{stars}}/5</span><span aria-hidden="true">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span></p>
+          <p class="bl-trated__stars" data-rating="{{stars}}"><span class="bl-sr-only">{{rating_label}}: {{stars}}/5</span><span aria-hidden="true" data-seq>{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span></p>
           <blockquote class="bl-trated__quote"><p>{{quote}}</p></blockquote>
           <figcaption class="bl-trated__who">
             {{#avatar}}<img class="bl-trated__avatar" src="{{avatar}}" alt="" width="56" height="56" loading="lazy" draggable="false">{{/avatar}}{{^avatar}}<span class="bl-trated__avatar bl-trated__initials" aria-hidden="true">{{initials}}</span>{{/avatar}}

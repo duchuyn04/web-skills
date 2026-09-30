@@ -28,7 +28,8 @@
 .bl-trated__card.is-dim { opacity: .5; }
 .bl-trated__quote { flex: 1; }
 .bl-trated__quote p { font-size: var(--fs-lead); line-height: 1.6; color: var(--text-strong); }
-.bl-trated__who { display: flex; align-items: center; gap: .85rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+.bl-trated__who { position: relative; display: flex; align-items: center; gap: .85rem; padding-top: 1.1rem; }
+.bl-trated__who::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--border); transform-origin: left center; }
 .bl-trated__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; }
 .bl-trated__initials { display: grid; place-items: center; background: var(--c-accent-soft); color: var(--accent-ink); font-weight: 700; }
 .bl-trated__who strong { display: block; color: var(--text-strong); }
@@ -40,4 +41,18 @@
   .bl-trated__viewport { margin-right: calc(-1 * var(--gutter)); }
   .bl-trated__track { padding-right: var(--gutter); }
   .bl-trated__card { flex-basis: 86%; }
+}
+/* star-fill-sequence: the stars of each review pop in one after another (data-seq) as the card arrives or slides
+   into view; review-settle: the quote rises a little after the stars, then the rule above the reviewer draws and the
+   reviewer line fades in. */
+.js .bl-trated__stars [data-seq] > *, .js .bl-trated__stars[data-seq] > * { transition: opacity .35s var(--ease-out), transform .45s var(--ease-back); transition-delay: calc(var(--seq-i, 0) * 80ms + 120ms); }
+.js .bl-trated__stars [data-seq]:not(.is-seen) > *, .js .bl-trated__stars[data-seq]:not(.is-seen) > * { opacity: 0; transform: scale(.4); }
+.js .bl-trated__quote { transition: opacity .7s var(--ease-out) .3s, transform .8s var(--ease-out) .3s; }
+.js .bl-trated__card:not(.is-in) .bl-trated__quote { opacity: 0; transform: translateY(12px); }
+.js .bl-trated__who::before { transition: transform .9s var(--ease-out) .5s; }
+.js .bl-trated__card:not(.is-in) .bl-trated__who::before { transform: scaleX(0); }
+.js .bl-trated__who > * { transition: opacity .6s var(--ease-out) .65s; }
+.js .bl-trated__card:not(.is-in) .bl-trated__who > * { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-trated__stars [data-seq] > *, .js .bl-trated__stars[data-seq] > *, .js .bl-trated__quote, .js .bl-trated__who::before, .js .bl-trated__who > * { opacity: 1 !important; transform: none !important; }
 }

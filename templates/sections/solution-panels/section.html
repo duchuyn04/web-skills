@@ -10,9 +10,9 @@
     <div class="bl-spanels" data-reveal-group>
       {{#panels}}
       <article class="bl-spanel bl-tone-light" data-reveal>
-        {{#href}}<a class="bl-spanel__bar" href="{{href}}"><span>{{title}}</span>{{arrow}}</a>{{/href}}
-        {{^href}}<p class="bl-spanel__bar"><span>{{title}}</span></p>{{/href}}
-        <ul class="bl-spanel__list">
+        {{#href}}<a class="bl-spanel__bar" href="{{href}}" data-wipe><span>{{title}}</span>{{arrow}}</a>{{/href}}
+        {{^href}}<p class="bl-spanel__bar" data-wipe><span>{{title}}</span></p>{{/href}}
+        <ul class="bl-spanel__list" data-seq>
           {{#items}}<li class="bl-spanel__item"><span class="bl-spanel__icon">{{icon:$icon}}</span><span><strong>{{title}}</strong><span>{{text}}</span></span></li>{{/items}}
         </ul>
       </article>
@@ -20,3 +20,9 @@
     </div>
   </div>
 </section>
+/* panel-bar-wipe: each dark title bar opens left to right after its panel lands (the panel's --reveal-i staggers the
+   bars), then the items arrive one by one and their icons pop (data-seq). */
+.js .bl-spanel__list[data-seq] > * { transition-delay: calc(var(--reveal-i, 0) * 120ms + var(--seq-i, 0) * 110ms + 450ms); }
+.js .bl-spanel__list[data-seq] .bl-spanel__icon { transition: transform .45s var(--ease-back); transition-delay: calc(var(--reveal-i, 0) * 120ms + var(--seq-i, 0) * 110ms + 600ms); }
+.js .bl-spanel__list[data-seq]:not(.is-seen) .bl-spanel__icon { transform: scale(.4) rotate(-20deg); }
+@media (prefers-reduced-motion: reduce) { .js .bl-spanel__list[data-seq] .bl-spanel__icon { transform: none !important; } }

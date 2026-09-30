@@ -1,18 +1,18 @@
 <section id="{{section.id}}" class="bl-section bl-section--tight bl-tone-{{section.tone}}">
   <div class="bl-container">
-    <div class="bl-ctaband bl-tone-dark{{^visual}}{{#image}} bl-ctaband--image{{/image}}{{/visual}}{{#visual}} bl-has-backdrop{{/visual}}" data-reveal{{#visual}} data-fx="3d" data-seed="{{site.brand}}" data-gl="{{visual}}"{{/visual}}>
+    <div class="bl-ctaband bl-tone-dark{{^visual}}{{#image}} bl-ctaband--image{{/image}}{{/visual}}{{#visual}} bl-has-backdrop{{/visual}}"{{^visual}} data-wipe{{/visual}}{{#visual}} data-reveal data-fx="3d" data-seed="{{site.brand}}" data-gl="{{visual}}"{{/visual}}>
       {{#visual}}<div class="bl-backdrop" aria-hidden="true"><canvas data-gl-canvas></canvas></div>{{/visual}}
-      <div class="bl-ctaband__copy" data-gl-copy>
+      <div class="bl-ctaband__copy" data-gl-copy{{^visual}} data-reveal{{/visual}}>
         {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
         <h2 class="bl-h2">{{title}}</h2>
         {{#text}}<p class="bl-lead">{{text}}</p>{{/text}}
-        {{#points.0}}<ul class="bl-ctaband__points">{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+        {{#points.0}}<ul class="bl-ctaband__points" data-seq>{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
         <div class="bl-btn-row">
           <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
           {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
         </div>
       </div>
-      {{^visual}}{{#image}}<div class="bl-ctaband__media" aria-hidden="true"><img src="{{image}}" alt="" width="560" height="420" loading="lazy"></div>{{/image}}{{/visual}}
+      {{^visual}}{{#image}}<div class="bl-ctaband__media" aria-hidden="true"><img src="{{image}}" alt="" width="560" height="420" loading="lazy" data-parallax="8"></div>{{/image}}{{/visual}}
     </div>
   </div>
 </section>

@@ -9,7 +9,7 @@
       </div>
       <dl class="bl-mpanel__grid">
         {{#items}}
-        <div class="bl-mpanel__stat">
+        <div class="bl-mpanel__stat" style="--i: {{@n}}">
           <dt>{{label}}</dt>
           <dd><span{{#value.count}} data-count="{{value.count}}" data-decimals="{{value.decimals}}" data-prefix="{{value.prefix}}" data-suffix="{{value.suffix}}"{{/value.count}}>{{value.display}}</span></dd>
         </div>

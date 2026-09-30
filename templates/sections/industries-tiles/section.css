@@ -11,3 +11,13 @@
 .bl-tile p { font-size: var(--fs-sm); }
 @media (max-width: 1024px) { .bl-tiles, .bl-tiles:has(> :nth-child(6):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .bl-tiles, .bl-tiles:has(> :nth-child(6):last-child) { grid-template-columns: 1fr; } }
+/* tile-icon-pop: after each tile lands, its icon springs in from a small turned start and a thin accent rule draws
+   along the tile's top edge (the tile's --reveal-i staggers both) */
+.bl-tile::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--c-accent); transform-origin: left center; pointer-events: none; }
+.js .bl-tile::before { transition: transform .9s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 90ms + 350ms); }
+.js .bl-tile:not(.is-in)::before { transform: scaleX(0); }
+.js .bl-tile .bl-icon-box { transition: transform .5s var(--ease-back), opacity .3s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 90ms + 250ms); }
+.js .bl-tile:not(.is-in) .bl-icon-box { opacity: 0; transform: scale(.4) rotate(-24deg); }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-tile::before, .js .bl-tile .bl-icon-box { transform: none !important; opacity: 1 !important; }
+}

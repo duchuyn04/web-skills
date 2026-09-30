@@ -7,7 +7,7 @@
   "anchor": "results",
   "shared": ["backdrop3d"],
   "shared_by_field": {"visual": {"*": ["ribbons", "three", "gl"], "dots": ["gl-dots"], "terrain": ["gl-terrain"], "wave": ["gl-wave"], "globe": ["gl-globe"], "flow": ["gl-flow"]}},
-  "animations": ["odometer-number-counter", "photo-band-parallax", "reveal"],
+  "animations": ["odometer-number-counter", "metric-rule-draw", "photo-band-parallax", "reveal"],
   "fields": {
     "visual": {"type": "enum", "values": ["dots", "terrain", "wave", "globe", "flow"], "required": false},
     "image": {"type": "image", "required": false},

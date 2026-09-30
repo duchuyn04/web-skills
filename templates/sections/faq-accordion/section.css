@@ -7,7 +7,7 @@
 .bl-faq__card p { font-size: var(--fs-sm); }
 .bl-faq__photo { margin-top: 1.5rem; aspect-ratio: 4 / 3; }
 .bl-faq__card + .bl-faq__photo { margin-top: 1rem; }
-.bl-acc { border-bottom: 1px solid var(--border); }
+.bl-acc { position: relative; }
 .bl-acc:first-child { border-top: 1px solid var(--border); }
 .bl-acc__btn {
   width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: left;
@@ -25,3 +25,12 @@
 @media (max-width: 1024px) { .bl-faq { grid-template-columns: 1fr; } .bl-faq__side { position: static; } .bl-faq__photo { aspect-ratio: 16 / 9; max-width: 640px; } }
 @media (max-width: 560px) { .bl-acc__inner p { padding-right: 0; } }
 .bl-acc__inner p { max-width: 62ch; }
+/* faq-rule-draw: each row's divider draws left to right as its row arrives (the row's --reveal-i staggers them);
+   answer-settle: an opened answer fades up while its row expands. photo-scroll-drift comes from data-parallax. */
+.bl-acc__rule { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--border); pointer-events: none; }
+.js .bl-acc__rule { transition-duration: .9s; }
+.js .bl-acc__inner p { opacity: 0; transform: translateY(6px); transition: opacity 320ms var(--ease-out), transform 320ms var(--ease-out); }
+.js .bl-acc__h:has(> [aria-expanded="true"]) + .bl-acc__panel .bl-acc__inner p { opacity: 1; transform: none; transition-delay: 80ms; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-acc__inner p { transform: none !important; }
+}

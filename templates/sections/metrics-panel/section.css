@@ -7,10 +7,21 @@
 }
 .bl-mpanel .bl-h2 { margin-bottom: 1.1rem; }
 .bl-mpanel__text { color: var(--text); line-height: 1.75; }
-.bl-mpanel__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bl-mpanel__grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .bl-mpanel__stat { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: clamp(1.4rem, 3vw, 2.4rem) 1rem; }
-.bl-mpanel__stat:nth-child(odd) { border-right: 1px solid var(--border-strong); }
-.bl-mpanel__stat:nth-child(-n+2) { border-bottom: 1px solid var(--border-strong); }
+/* panel-cross-draw: the two rules that split the 2x2 grid draw out from the centre as the panel lands, then each
+   label arrives under its counting number */
+.bl-mpanel__grid::before, .bl-mpanel__grid::after { content: ""; position: absolute; background: var(--border-strong); pointer-events: none; }
+.bl-mpanel__grid::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+.bl-mpanel__grid::after { top: 50%; left: 0; right: 0; height: 1px; }
+.js .bl-mpanel__grid::before, .js .bl-mpanel__grid::after { transition: transform 1s var(--ease-out) .25s; }
+.js .bl-mpanel:not(.is-in) .bl-mpanel__grid::before { transform: scaleY(0); }
+.js .bl-mpanel:not(.is-in) .bl-mpanel__grid::after { transform: scaleX(0); }
+.js .bl-mpanel__stat dt { transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(var(--i, 1) * 110ms + 450ms); }
+.js .bl-mpanel:not(.is-in) .bl-mpanel__stat dt { opacity: 0; transform: translateY(8px); }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-mpanel__grid::before, .js .bl-mpanel__grid::after, .js .bl-mpanel__stat dt { transform: none !important; opacity: 1 !important; }
+}
 .bl-mpanel__stat dd { order: -1; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(2rem, 2.2vw + 1rem, 3rem); line-height: 1.05; letter-spacing: -0.03em; color: var(--accent-ink); font-variant-numeric: tabular-nums; margin-bottom: .5rem; }
 .bl-mpanel__stat dt { font-size: var(--fs-sm); color: var(--text-strong); font-weight: 600; }
 @media (max-width: 900px) { .bl-mpanel { grid-template-columns: 1fr; } }

@@ -6,7 +6,7 @@
   "summary": "2-4 rows that alternate photo and copy sides. Each row: eyebrow, title, text, optional check list, link and a small glass stat on the photo. Use for how you work, what makes the team different, or one row per service.",
   "tone": "auto",
   "anchor": "how-we-work",
-  "animations": ["reveal"],
+  "animations": ["reveal", "frame-wipe-from-copy", "photo-scroll-drift", "check-sequence", "badge-settle"],
   "fields": {
     "head": {"$ref": "head", "required": false},
     "start": {"type": "enum", "values": ["image-right", "image-left"], "default": "image-right"},

@@ -19,8 +19,20 @@
 .no-pill .bl-tabs__tab[aria-selected="true"], html:not(.js) .bl-tabs__tab[aria-selected="true"] { background: var(--surface); }
 .bl-tabs__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .bl-tabs__panel[hidden] { display: none; }
-.bl-tabs__panel.is-entering { animation: bl-tab-in 320ms var(--ease-out); }
-@keyframes bl-tab-in { from { opacity: 0; transform: translateX(10px); } }
+/* tab-panel-wipe: the chosen panel's photo opens from the copy side and settles from 108%, then the title, text,
+   list and link rise one after another. It plays when the tabs first come into view and on every tab change;
+   never with reduced motion (section.js adds .is-entering only when motion is allowed). */
+.js .bl-tabs:not(.is-shown) .bl-tabs__panel { opacity: 0; }
+.bl-tabs__panel.is-entering .bl-tabs__media { animation: bl-tab-wipe 800ms var(--ease-out) both; }
+.bl-tabs__panel.is-entering .bl-tabs__media img { animation: bl-tab-settle 1000ms var(--ease-out) both; }
+.bl-tabs__panel.is-entering .bl-tabs__copy > * { animation: bl-tab-rise 560ms var(--ease-out) both; }
+.bl-tabs__panel.is-entering .bl-tabs__copy > :nth-child(2) { animation-delay: 70ms; }
+.bl-tabs__panel.is-entering .bl-tabs__copy > :nth-child(3) { animation-delay: 140ms; }
+.bl-tabs__panel.is-entering .bl-tabs__copy > :nth-child(4) { animation-delay: 210ms; }
+@keyframes bl-tab-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes bl-tab-settle { from { transform: scale(1.08); } to { transform: none; } }
+@keyframes bl-tab-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js .bl-tabs .bl-tabs__panel { opacity: 1; } }
 .bl-tabs__title { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.45rem, 1.2vw + 1rem, 1.9rem); line-height: 1.2; color: var(--text-strong); margin-bottom: 1rem; }
 .bl-tabs__copy .bl-lead { margin-bottom: 1.5rem; }
 .bl-tabs__copy .bl-checks { margin-bottom: 1.75rem; }

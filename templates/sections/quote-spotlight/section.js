@@ -1,6 +1,8 @@
 /* quote-spotlight: crossfade between quotes with buttons and arrow keys (no autoplay) */
 (function () {
   document.querySelectorAll('[data-qspot]').forEach(function (root) {
+    /* quote-mark-draw: every path of the mark gets the same length, so CSS can draw it with a dash offset */
+    root.querySelectorAll('.bl-qspot__mark path').forEach(function (p) { p.setAttribute('pathLength', '100'); });
     var items = Array.prototype.slice.call(root.querySelectorAll('[data-qspot-item]'));
     var dots = Array.prototype.slice.call(root.querySelectorAll('.bl-qspot__dot'));
     if (items.length < 2) return;

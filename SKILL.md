@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "4.0.0"
+  version: "4.1.0"
 ---
 
 # BPO landing builder
@@ -75,6 +75,8 @@ It lists every slot with its variants ordered from least to most used across `si
 ## Step 2c: Keep motion calm
 
 BPO buyers judge a vendor on trust first: people photography, certifications, client logos, figures, case studies, star-rated reviews, office addresses with a map and a contact form. Sites such as TDCX, TaskUs and Concentrix keep motion quiet (reveals, counters, a logo strip, a review carousel, tabs). Pages built here do the same: `"motion"` defaults to `"calm"`, and you normally leave the field out.
+
+Calm does not mean every page moves the same way. Each section carries its own entrance tied to what it shows (a photo frame that opens from the side of the copy, a check list that ticks in, panel bars that wipe open, stars that fill, a video that grows with the scroll), and `theme.motion_style` sets how the page's elements arrive: `rise`, `slide`, `fade` or `mask`. Leave `motion_style` out: build.py picks it from the brand name, so pages for different clients differ. Set it only when the client asks for calmer (`fade`) or livelier (`mask`) motion. `references/motion-research.md` has the measurements from 89 real BPO homepages behind these choices. Never add animation code to a page.
 
 The library has two tiers.
 
@@ -181,6 +183,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/industry-voice.md`: how real BPO sites write (hero patterns, heading labels, proof, button labels, Vietnamese), measured on 120 homepages
 - `references/assets.md`: image library, icons, flags, cities
 - `references/animation-map.md`: which section carries which animation, with timings (generated)
+- `references/motion-research.md`: how 89 real BPO homepages animate (scroll entrances, hovers, carousels, sticky and scroll-linked pieces) and the four motion styles built from it
 - `references/custom-section-spec.md`: fallback for blocks outside the library
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
 

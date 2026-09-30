@@ -12,3 +12,13 @@
 .bl-aud__card .bl-checks .bl-icon { color: var(--text-strong); }
 .bl-aud__card .bl-link { margin-top: auto; }
 @media (max-width: 900px) { .bl-aud, .bl-aud:has(> :nth-child(3):last-child) { grid-template-columns: 1fr; } }
+/* icon-box-pop: the icon tile turns up into place as its card lands; check-sequence: the points arrive one by one and
+   their ticks pop (data-seq). */
+.js .bl-aud__card .bl-icon-box { transition: opacity .5s var(--ease-out), transform .6s var(--ease-back); transition-delay: calc(var(--reveal-i, 0) * 80ms + 220ms); }
+.js .bl-aud__card:not(.is-in) .bl-icon-box { opacity: 0; transform: translateY(8px) rotate(-10deg) scale(.7); }
+.js .bl-aud__card .bl-checks[data-seq] > * { transition-delay: calc(var(--reveal-i, 0) * 80ms + var(--seq-i, 0) * 90ms + 300ms); }
+.js .bl-aud__card .bl-checks[data-seq] > li svg { transition: transform .45s var(--ease-back); transition-delay: calc(var(--reveal-i, 0) * 80ms + var(--seq-i, 0) * 90ms + 420ms); }
+.js .bl-aud__card .bl-checks[data-seq]:not(.is-seen) > li svg { transform: scale(0); }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-aud__card .bl-icon-box, .js .bl-aud__card .bl-checks[data-seq] > li svg { opacity: 1 !important; transform: none !important; }
+}

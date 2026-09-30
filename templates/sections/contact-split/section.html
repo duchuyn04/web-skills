@@ -29,10 +29,10 @@
         {{/form}}
       </div>
       {{#aside}}
-      <aside class="bl-csplit__aside bl-tone-accent">
-        {{#photo}}<figure class="bl-csplit__photo"><img src="{{src}}" alt="{{alt}}" width="560" height="320" loading="lazy" decoding="async"></figure>{{/photo}}
+      <aside class="bl-csplit__aside bl-tone-accent" data-wipe="up">
+        {{#photo}}<figure class="bl-csplit__photo"><img src="{{src}}" alt="{{alt}}" width="560" height="320" loading="lazy" decoding="async" data-parallax="6"></figure>{{/photo}}
         <h3 class="bl-csplit__title">{{title}}</h3>
-        <ul class="bl-checks">{{#points}}<li>{{icon:check}}<span>{{.}}</span></li>{{/points}}</ul>
+        <ul class="bl-checks" data-seq>{{#points}}<li>{{icon:check}}<span>{{.}}</span></li>{{/points}}</ul>
         <ul class="bl-offices">
           {{#offices}}
           <li class="bl-office">

@@ -6,7 +6,7 @@
   "summary": "Grid of 4 or 8 industry tiles (icon, title, one line). Tiles tilt up to 6 degrees toward the mouse.",
   "tone": "auto",
   "anchor": "industries",
-  "animations": ["card-tilt-3d-perspective", "reveal"],
+  "animations": ["card-tilt-3d-perspective", "tile-icon-pop", "reveal"],
   "fields": {
     "head": {"$ref": "head"},
     "tiles": {

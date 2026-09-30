@@ -5,7 +5,7 @@
   "summary": "Company introduction: heading and one or two paragraphs (with **bold** key terms) on the left, a mosaic of 3, 4, 6 or 9 team photos on the right that pop in one by one.",
   "tone": "auto",
   "anchor": "about",
-  "animations": ["reveal", "staggered-badge-pop-in"],
+  "animations": ["reveal", "mosaic-tile-open", "check-sequence"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 6, "max": 80},

@@ -25,3 +25,16 @@
 .bl-icards--slider { display: flex; grid-template-columns: none; }
 .bl-icards--slider .bl-icard { flex: 0 0 min(360px, 82vw); }
 .bl-icards--slider.bl-icards--tall .bl-icard { flex-basis: min(300px, 76vw); }
+/* card-photo-open: the photo opens upward inside the card (data-wipe="up", staggered with the card's --reveal-i);
+   card-copy-follow: in the grid, the tag, title, text and link rise in after the photo */
+.js .bl-icard__body > * { transition: opacity .6s var(--ease-out), translate .6s var(--ease-out), color var(--dur-fast) var(--ease-std); }
+.js .bl-icard[data-reveal] .bl-icard__body > * { transition-delay: calc(var(--reveal-i, 0) * 120ms + 380ms), calc(var(--reveal-i, 0) * 120ms + 380ms), 0s; }
+.js .bl-icard[data-reveal] .bl-icard__body > :nth-child(2) { transition-delay: calc(var(--reveal-i, 0) * 120ms + 450ms), calc(var(--reveal-i, 0) * 120ms + 450ms), 0s; }
+.js .bl-icard[data-reveal] .bl-icard__body > :nth-child(n + 3) { transition-delay: calc(var(--reveal-i, 0) * 120ms + 520ms), calc(var(--reveal-i, 0) * 120ms + 520ms), 0s; }
+.js .bl-icard[data-reveal]:not(.is-in) .bl-icard__body > * { opacity: 0; translate: 0 10px; }
+/* cards-slide-in (slider mode): hidden until section.js brings the cards in */
+.js .bl-icards--slider:not(.is-in) > .bl-icard { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-icard[data-reveal]:not(.is-in) .bl-icard__body > * { opacity: 1; translate: none; }
+  .js .bl-icards--slider:not(.is-in) > .bl-icard { opacity: 1; }
+}

@@ -24,3 +24,15 @@
 .bl-qspot__dots { display: flex; gap: .5rem; }
 .bl-qspot__dot { width: 8px; height: 8px; border-radius: 999px; background: var(--border-strong); transition: width var(--dur) var(--ease-out), background-color var(--dur); }
 .bl-qspot__dot.is-active { width: 24px; background: var(--accent-ink); }
+/* quote-mark-draw: when the block comes into view the quote mark is drawn stroke by stroke (1.1s), the first quote
+   settles, then the speaker line fades in. The crossfade between quotes is unchanged. */
+.js .bl-qspot__mark path { stroke-dasharray: 100; transition: stroke-dashoffset 1.1s var(--ease-out) .1s; }
+.js .bl-qspot:not(.is-in) .bl-qspot__mark path { stroke-dashoffset: 100; }
+.js .bl-qspot:not(.is-in) .bl-qspot__item.is-active { opacity: 0; transform: translateY(14px); }
+.js .bl-qspot.is-in .bl-qspot__item.is-active { transition: opacity .8s var(--ease-out) .35s, transform .9s var(--ease-out) .35s, visibility 0s; }
+.js .bl-qspot__who { transition: opacity .6s var(--ease-out) .75s; }
+.js .bl-qspot:not(.is-in) .bl-qspot__who { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-qspot__mark path { stroke-dashoffset: 0 !important; }
+  .js .bl-qspot__item.is-active, .js .bl-qspot__who { opacity: 1 !important; transform: none !important; }
+}

@@ -8,7 +8,7 @@
   "anchor": "highlight",
   "shared": ["backdrop3d"],
   "shared_by_field": {"visual": {"*": ["ribbons", "three", "gl"], "dots": ["gl-dots"], "terrain": ["gl-terrain"], "wave": ["gl-wave"], "globe": ["gl-globe"], "flow": ["gl-flow"]}},
-  "animations": ["reveal", "slow-photo-zoom"],
+  "animations": ["reveal", "slow-photo-zoom", "photo-scroll-drift", "copy-line-stagger"],
   "fields": {
     "visual": {"type": "enum", "values": ["dots", "terrain", "wave", "globe", "flow"], "required": false},
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},

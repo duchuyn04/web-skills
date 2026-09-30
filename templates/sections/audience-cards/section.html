@@ -7,7 +7,7 @@
         {{#icon}}<span class="bl-icon-box">{{icon:$icon}}</span>{{/icon}}
         <h3 class="bl-aud__title">{{title}}</h3>
         <p>{{text}}</p>
-        <ul class="bl-checks">{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>
+        <ul class="bl-checks" data-seq>{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>
         {{#link}}<a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
       </article>
       {{/cards}}

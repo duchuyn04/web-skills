@@ -6,6 +6,56 @@ All motion follows the performance rules gathered in the research: only transfor
 
 | Animation id | Built into | Timing |
 |:---|:---|:---|
+| `cases-slide-in` | `case-slider` | case cards arrive from the right one after another when the track enters (0.8s power3.out, 100ms apart, up to the sixth card); fade style keeps them in place |
+| `country-cards-slide-in` | `country-cards` | country cards arrive from the right one after another when the track enters (0.8s power3.out, 100ms apart); fade style keeps them in place |
+| `flag-pop` | `country-cards` | the round flag badge pops from 0 after its card lands (0.5s ease-back, 600ms plus 100ms per card) |
+| `cards-slide-in` | `image-cards` | slider mode: cards arrive from the right one after another when the track enters (0.8s power3.out, 100ms apart) |
+| `card-photo-open` | `image-cards` | the card photo opens upward inside its frame (1s), staggered with the card |
+| `card-copy-follow` | `image-cards` | tag, title, text and link rise 10px and fade in after the photo (0.6s, 380-520ms after the card) |
+| `link-row-fill` | `service-links` | each link's panel fills left to right as the row arrives (0.8s, 90ms per row), then icon, label and arrow slide in 10px; hover slides the label 3px and the arrow 4px |
+| `mosaic-tile-open` | `about-mosaic` | each photo opens into its slot from a different side (right, up, left, down), 1s, 110ms apart |
+| `star-fill-sequence` | `testimonials-rated` | stars pop in one by one (scale 0.4 to 1, 450ms ease-back, 80ms stagger) as each card arrives or slides into view; the aside score stars too |
+| `review-settle` | `testimonials`, `testimonials-rated` | the quote rises 12px after the card lands (0.8s), the rule above the reviewer draws left to right (0.9s), then the reviewer line fades in |
+| `quote-mark-settle` | `testimonials` | the quote mark tips up from -14deg and 60% into place (0.7s ease-back), 80ms stagger per card, before the quote and reviewer follow |
+| `icon-box-pop` | `audience-cards` | the icon tile turns up into place (8px, -10deg, 70% to rest, 0.6s ease-back) as its card lands |
+| `pillar-rule-draw` | `pillars-numbered` | the rule over each column draws left to right (1s), columns 120ms apart, then the text fades up 10px |
+| `quote-mark-draw` | `quote-spotlight` | the quote mark draws stroke by stroke (1.1s), the first quote settles 14px (0.9s), then the speaker line fades in |
+| `band-wipe-open` | `cta-band` | the dark band opens left to right (1s), the copy rises in, the photo appears once the band is open; bands with a visual keep the plain reveal |
+| `point-tick-sequence` | `contact-split`, `cta-band` | check points arrive one by one 100ms apart, each icon pops in (0.45s ease-back), after the band or panel opens |
+| `aside-rise-open` | `contact-split` | the brand-colour panel opens from the bottom (1s, 0.25s after the card lands) |
+| `form-field-cascade` | `contact-split` | form title, text and field rows rise 14px (0.6s, 80ms apart); the submit button arrives with the card |
+| `frame-grow-on-scroll` | `video-block` | the player widens from 90% to full size as it scrolls up to the middle of the screen (scroll-linked, wide screens) |
+| `play-button-settle` | `video-block` | the play button pops in from 60% (0.6s ease-back, 0.45s after the frame), then the title and running time rise 12px |
+| `copy-line-stagger` | `banner-image` | eyebrow, title, text and button rise 18px (0.7s, 120ms apart) as the band fades in |
+| `faq-rule-draw` | `faq-accordion` | row dividers draw left to right as rows arrive (0.9s, 120ms stagger per row) |
+| `answer-settle` | `faq-accordion` | an opened answer fades up 6px (320ms, 80ms after the row starts to expand) |
+| `tab-panel-wipe` | `services-tabs` | on first view and on each tab change the photo opens left to right (800ms) and settles from 108% (1s), then title, text, list and link rise 14px (560ms, 70ms stagger) |
+| `panel-cross-draw` | `metrics-panel` | the two rules splitting the 2x2 grid draw out from the centre (1s after 250ms), then each label rises 8px (0.6s, 110ms stagger) |
+| `metric-rule-draw` | `metrics-counter` | the rule above each figure draws left to right (1.2s, 120ms stagger) while the number counts, then the note fades in |
+| `tile-icon-pop` | `industries-tiles` | after each tile lands its icon springs in from 0.4 and -24deg (0.5s ease-back) and a 2px accent rule draws along the top edge (0.9s), 90ms stagger |
+| `frame-wipe-from-copy` | `feature-rows` | the photo frame opens from the side of the copy (clip, 1s), the tinted block behind it settles 22px into place (0.9s after 0.3s) |
+| `photo-scroll-drift` | `banner-image`, `careers-band`, `contact-split`, `cta-band`, `faq-accordion`, `feature-rows`, `hero-overlap` | the photo drifts 6-12% of its height inside its frame while the frame crosses the screen (scroll-linked, wide screens, off for reduced motion) |
+| `check-sequence` | `about-mosaic`, `audience-cards`, `compliance-badges`, `feature-rows` | check list items rise 10px one after another (90ms apart) and each tick pops from 0 (0.45s ease-back) |
+| `badge-settle` | `feature-rows` | the glass stat on the photo rises 14px into place after the photo opens (0.6s after 0.75s) |
+| `panel-bar-wipe` | `solution-panels` | each panel's dark title bar opens left to right (1s), 120ms after the panel before it |
+| `item-sequence` | `solution-panels` | list items arrive one after another (110ms apart, after the bar), icons turn and pop in (0.45s ease-back) |
+| `tinted-photo-mosaic` | `hero-mosaic` | tiles fade and scale in from the centre of the wall once (0.5s, 20ms apart) |
+| `mosaic-row-drift` | `hero-mosaic` | alternate rows slide sideways in opposite directions while the hero scrolls away (scroll-linked) |
+| `news-cards-slide-in` | `hero-news` | the list card, then the feature card, slide in from the right once (0.45s each, 150ms apart) |
+| `photo-settle-zoom` | `hero-overlap` | the hero photo settles from 106% to full size once (1.6s) |
+| `overlap-card-rise` | `hero-overlap` | the copy card rises over the photo edge with the page reveal |
+| `heading-word-rise` | `hero-overlap` | headline words rise out of a mask once (0.6s, 50ms apart) |
+| `panel-rail-widen` | `hero-panels` | a hovered or focused service panel widens (0.45s) and its text fades in after 150ms |
+| `portrait-arc-draw` | `hero-portrait` | the accent arc draws around the portrait once (0.8s after 0.3s) |
+| `stat-sticker-pop` | `hero-portrait` | stat stickers pop in one after another (0.45s, 160ms apart, back ease) |
+| `chip-stagger` | `hero-portrait` | service chips rise in a short stagger (0.35s, 50ms apart) |
+| `accent-block-wipe` | `hero-promo` | the solid block behind the accent phrase wipes in left to right (0.45s after 0.12s) |
+| `promo-cards-rise` | `hero-promo` | the photo cards rise in a stagger with the page reveal; the photo zooms slightly on hover (0.45s) |
+| `tab-stage-crossfade` | `hero-tabs` | panels cross-fade (0.45s) and the photo settles from 104% when a tab changes |
+| `tab-progress-autoadvance` | `hero-tabs` | the active tab's bar fills over 7s, then the next tab opens; stops once a tab is picked, on hover, focus, Pause and off screen |
+| `photo-band-parallax` | `metrics-counter` | the band photo moves a little slower than the page (scroll-linked, off for reduced motion) |
+| `step-photo-crossfade` | `process-sticky` | the pinned photo cross-fades to the step being read (0.4s) |
+| `bento-photo-zoom` | `services-bento` | the first card's photo zooms slightly on hover |
 | `header-shrink-blur` | `header-mega`, `header-simple` | 300ms ease-out-expo after 50px of scroll |
 | `megamenu-slide-fade` | `header-mega` | 220ms, 120ms hover intent to open, 150ms to close |
 | `magnetic-cta-button` | `header-mega`, `header-simple` | GSAP quickTo, 300ms power3.out, max 8px x 6px pull within 30px of the button |
@@ -15,7 +65,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `hero-ambient-video-mask` | `hero-fullbleed` | muted loop or photo under a brand shade, pause button, paused for reduced motion and off-screen |
 | `infinite-logo-marquee` | `logo-marquee` | 40s linear loop, pauses on hover |
 | `odometer-number-counter` | `metrics-bars3d`, `metrics-counter`, `metrics-panel`, `metrics-rings` | GSAP, 2000ms power2.out, once, threshold 0.3 |
-| `staggered-badge-pop-in` | `about-mosaic`, `awards-strip`, `compliance-badges`, `hero-qualifier`, `tool-stack` | 350ms ease-back, 80ms stagger |
+| `staggered-badge-pop-in` | `awards-strip`, `compliance-badges`, `hero-qualifier`, `tool-stack` | 350ms ease-back, 80ms stagger |
 | `card-hover-lift` | `services-bento` | card rises 3px and its border turns the brand colour on hover |
 | `card-tilt-3d-perspective` | `industries-tiles` | max 6deg, perspective 1000px, glare |
 | `sliding-pill-tab-switcher` | `services-tabs` | 300ms standard ease |
@@ -30,7 +80,7 @@ All motion follows the performance rules gathered in the research: only transfor
 | `floating-whatsapp-chat-bounce` | `floating-chat` | appears after the hero, 1.8s ping dot |
 | `exit-intent-spring-modal` | `exit-intent-modal` | 520ms ease-back, after 8s, once per 7 days |
 | `globe-spin` | `hero-gradient` | dotted world map scrolling behind a sphere mask, 60s linear loop |
-| `reveal` | `about-helix`, `about-mosaic`, `audience-cards`, `awards-strip`, `banner-image`, `careers-band`, `case-filter`, `case-slider`, `comparison-table`, `contact-split`, `cost-calculator`, `country-cards`, `cta-band`, `cta-letter`, `cta-multistep`, `faq-fold`, `feature-rows`, `hero-chat`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-dashboard`, `hero-deck`, `hero-flow`, `hero-fullbleed`, `hero-globe`, `hero-gradient`, `hero-isometric`, `hero-ledger`, `hero-liquid`, `hero-magnetic`, `hero-monolith`, `hero-mosaic`, `hero-news`, `hero-orbits`, `hero-overlap`, `hero-panels`, `hero-particles`, `hero-portrait`, `hero-prism`, `hero-promo`, `hero-qualifier`, `hero-ribbons`, `hero-shatter`, `hero-split-image`, `hero-sundial`, `hero-tabs`, `hero-terrain`, `hero-voice`, `hero-wavefield`, `image-cards`, `industries-slats`, `industries-tiles`, `locations-gmap`, `locations-map`, `locations-relief`, `metrics-bars3d`, `metrics-counter`, `metrics-panel`, `metrics-rings`, `models-board`, `pillars-numbered`, `pricing-toggle`, `process-layers`, `process-pipeline`, `process-sticky`, `proof-book`, `quote-spotlight`, `service-links`, `services-bento`, `services-cube`, `services-cylinder`, `services-stack`, `services-tabs`, `solution-panels`, `statement-band`, `steps-row`, `team-coverflow`, `team-grid`, `testimonials`, `testimonials-rated`, `tool-stack`, `video-block`, `voice-sample` | GSAP: fade and rise 12px over 400ms expo.out, 60ms stagger (up to 4 steps) in groups; pop scales from 0.96, left and right slide 16px |
+| `reveal` | `about-helix`, `about-mosaic`, `audience-cards`, `awards-strip`, `banner-image`, `careers-band`, `case-filter`, `case-slider`, `comparison-table`, `contact-split`, `cost-calculator`, `country-cards`, `cta-band`, `cta-letter`, `cta-multistep`, `faq-fold`, `feature-rows`, `hero-chat`, `hero-collage`, `hero-cycler-centered`, `hero-dark-network`, `hero-dashboard`, `hero-deck`, `hero-flow`, `hero-fullbleed`, `hero-globe`, `hero-gradient`, `hero-isometric`, `hero-ledger`, `hero-liquid`, `hero-magnetic`, `hero-monolith`, `hero-mosaic`, `hero-news`, `hero-orbits`, `hero-overlap`, `hero-panels`, `hero-particles`, `hero-portrait`, `hero-prism`, `hero-promo`, `hero-qualifier`, `hero-ribbons`, `hero-shatter`, `hero-split-image`, `hero-sundial`, `hero-tabs`, `hero-terrain`, `hero-voice`, `hero-wavefield`, `image-cards`, `industries-slats`, `industries-tiles`, `locations-gmap`, `locations-map`, `locations-relief`, `metrics-bars3d`, `metrics-counter`, `metrics-panel`, `metrics-rings`, `models-board`, `pillars-numbered`, `pricing-toggle`, `process-layers`, `process-pipeline`, `process-sticky`, `proof-book`, `quote-spotlight`, `service-links`, `services-bento`, `services-cube`, `services-cylinder`, `services-stack`, `services-tabs`, `solution-panels`, `statement-band`, `steps-row`, `team-coverflow`, `team-grid`, `testimonials`, `testimonials-rated`, `tool-stack`, `video-block`, `voice-sample` | GSAP, set by the page's motion style: rise (fade and rise 40px, 0.8s power3.out), slide (cards in a row slide in 56px from the right, the rest rise 24px), fade (0.7s, no movement) or mask (rise 24px, section titles rise word by word from a mask, photos open from the bottom and settle from 112%); 80-100ms stagger up to 6 steps in groups |
 | `text-marquee` | `ticker-band` | 60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion |
 | `quote-crossfade` | `quote-spotlight` | 600ms fade plus 10px rise, prev/next buttons, dots and arrow keys, no autoplay |
 | `word-by-word-reveal` | `statement-band` | each word fades from 18% to full opacity over 500ms, 45ms stagger, once |
@@ -109,7 +159,8 @@ These are not tied to one section. The preset sets them and `theme` in page.json
 | `edges` | none, angle, curve | Bottom edge of the hero and of dark sections is cut at an angle or curved; the next section slides under it. |
 | `image_mask` | rounded, angle, arch | Photo frames (feature rows, split heroes, tabs, boxed banners) get a cut corner or an arched top. |
 | `highlight` | color, gradient, underline | How `*accent*` words in headings look. |
-| `media_reveal` | fade, clip | `clip` wipes photos up from the bottom (1s) as they enter. |
+| `media_reveal` | fade, clip | `clip` wipes photos up from the bottom (0.9s) as they enter. |
+| `motion_style` | rise, slide, fade, mask | How elements arrive on scroll (see `reveal` above and `motion-research.md`). Leave it out: build.py picks one from the brand name (rise 35%, slide 25%, fade 25%, mask 15% of brands), so pages for different clients move differently. Set it only when the client asks for calmer or livelier motion. |
 
 
 `magnetic-cta-button` is off by default. Turn it on with `"features": {"magnetic_cta": true}` in page.json.

@@ -5,7 +5,7 @@
   "summary": "Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation. Optional photo (a real support or team photo) under the contact card in the left column, so the answers sit next to the people who give them.",
   "tone": "auto",
   "anchor": "faq",
-  "animations": ["smooth-accordion-expansion"],
+  "animations": ["smooth-accordion-expansion", "faq-rule-draw", "answer-settle", "photo-scroll-drift"],
   "fields": {
     "head": {"$ref": "head"},
     "photo": {"$ref": "photo", "required": false},

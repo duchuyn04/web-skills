@@ -15,3 +15,11 @@
 .bl-ccard__flag { position: absolute; z-index: 1; right: .9rem; bottom: -26px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); box-shadow: var(--shadow-lg); }
 .bl-ccard__flag .bl-flag { width: 30px; height: 21px; }
 .bl-ccard__text { margin-top: 1.4rem; padding-right: 3.5rem; font-size: var(--fs-sm); color: var(--text); line-height: 1.55; }
+/* country-cards-slide-in (section.js adds .is-in to the track) and flag-pop: the flag badge pops after its card lands */
+.js .bl-ccards:not(.is-in) > .bl-ccard { opacity: 0; }
+.js .bl-ccard__flag { transition: transform .5s var(--ease-back); transition-delay: calc(var(--ccard-i, 0) * 100ms + 600ms); }
+.js .bl-ccards:not(.is-in) .bl-ccard__flag { transform: scale(0); }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-ccards:not(.is-in) > .bl-ccard { opacity: 1; }
+  .js .bl-ccards:not(.is-in) .bl-ccard__flag { transform: none; }
+}

@@ -6,7 +6,7 @@
   "summary": "One to three service groups stacked (for example IT outsourcing, then BPO). Each group: pill label, title, one line, then a two-column grid of link rows with an arrow. Good when there are many services with their own pages.",
   "tone": "auto",
   "anchor": "services",
-  "animations": ["reveal"],
+  "animations": ["reveal", "link-row-fill"],
   "fields": {
     "groups": {
       "type": "list", "min": 1, "max": 3,

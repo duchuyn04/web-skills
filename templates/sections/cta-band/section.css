@@ -22,3 +22,14 @@
   .bl-ctaband--image .bl-ctaband__copy { padding-block: 0; }
   .bl-ctaband__media { display: none; }
 }
+/* band-wipe-open: without a visual the dark band opens left to right; the inset stays outside the box so the shadow
+   is not clipped once open. The copy rises in (data-reveal), the photo drifts (data-parallax), the points tick in. */
+.js .bl-ctaband[data-wipe] { clip-path: inset(-48px 100% -48px -48px); transition: clip-path 1s var(--ease-out) .05s; }
+.js .bl-ctaband[data-wipe].is-seen { clip-path: inset(-48px -48px -48px -48px); }
+.js .bl-ctaband__points[data-seq] > * { transition-delay: calc(var(--seq-i, 0) * 100ms + 550ms); }
+.js .bl-ctaband__points[data-seq] .bl-icon { transition: transform .45s var(--ease-back); transition-delay: calc(var(--seq-i, 0) * 100ms + 650ms); }
+.js .bl-ctaband__points[data-seq]:not(.is-seen) .bl-icon { transform: scale(0); }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-ctaband[data-wipe] { clip-path: none !important; }
+  .js .bl-ctaband__points[data-seq] .bl-icon { transform: none !important; }
+}

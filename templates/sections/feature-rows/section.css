@@ -11,7 +11,6 @@
 .bl-rows--image-right .bl-row:nth-child(even) .bl-row__media::before,
 .bl-rows--image-left .bl-row:nth-child(odd) .bl-row__media::before { right: auto; left: -18px; }
 .bl-row__frame { aspect-ratio: 5 / 4; border-radius: calc(var(--radius-lg) + 4px); box-shadow: var(--shadow-lg); }
-.bl-row__frame img { transition: transform 700ms var(--ease-out); }
 .bl-row__badge { position: absolute; left: -12px; bottom: 36px; display: grid; gap: .1rem; padding: .8rem 1.1rem; min-width: 150px; }
 .bl-rows--image-right .bl-row:nth-child(odd) .bl-row__badge,
 .bl-rows--image-left .bl-row:nth-child(even) .bl-row__badge { left: auto; right: -12px; }
@@ -24,4 +23,18 @@
   .bl-row { grid-template-columns: 1fr; }
   .bl-row .bl-row__media { order: 0 !important; max-width: 560px; }
   .bl-row__badge { left: 12px !important; right: auto !important; }
+}
+/* frame-wipe-from-copy: the frame opens from the side of the copy; the tinted block behind it settles into place,
+   then the glass stat. photo-scroll-drift comes from data-parallax, the check list from data-seq (base.js). */
+.js .bl-rows--image-right .bl-row:nth-child(even) .bl-row__frame[data-wipe]:not(.is-seen),
+.js .bl-rows--image-left .bl-row:nth-child(odd) .bl-row__frame[data-wipe]:not(.is-seen) { clip-path: inset(0 0 0 100%); }
+.js .bl-row__media::before { transition: transform .9s var(--ease-out) .3s, opacity .6s var(--ease-out) .3s; }
+.js .bl-row__media:not(.is-in)::before { opacity: 0; transform: translate(-22px, -22px); }
+.js :is(.bl-rows--image-right .bl-row:nth-child(even), .bl-rows--image-left .bl-row:nth-child(odd)) .bl-row__media:not(.is-in)::before { transform: translate(22px, -22px); }
+.js .bl-row__badge { transition: opacity .5s var(--ease-out) .75s, transform .6s var(--ease-out) .75s; }
+.js .bl-row__media:not(.is-in) .bl-row__badge { opacity: 0; transform: translateY(14px); }
+.js .bl-row .bl-checks[data-seq] > li svg { transition: transform .45s var(--ease-back); transition-delay: calc(var(--seq-i, 0) * 90ms + 260ms); }
+.js .bl-row .bl-checks[data-seq]:not(.is-seen) > li svg { transform: scale(0); }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-row__media::before, .js .bl-row__badge, .js .bl-row .bl-checks[data-seq] > li svg { opacity: 1 !important; transform: none !important; }
 }

@@ -64,6 +64,22 @@
       });
     },
     reveal: function (els) { [].forEach.call(els, function (el) { revealNow(el, 0); }); },
+    /* Cards of a horizontal track (case-slider, country-cards, image-cards slider) arrive from the right one after
+       another when the track comes into view: 0.8 s power3.out, 100 ms apart up to the sixth card. The "fade" style
+       keeps them in place. Adds .is-in to the track when they start (and at once for reduced motion). Cards off to the
+       right of a scrolling track never intersect, so the track is watched, not the cards. */
+    trackIn: function (track) {
+      var cards = [].slice.call(track.children);
+      if (reduced() || !gsap) { track.classList.add('is-in'); return; }
+      onVisible(track, function () {
+        gsap.fromTo(cards, { opacity: 0, x: BL.motion.style === 'fade' ? 0 : 64 }, {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power3.out',
+          stagger: function (i) { return Math.min(i, 5) * 0.1; },
+          clearProps: 'opacity,transform'
+        });
+        track.classList.add('is-in');
+      }, 0.2);
+    },
     /* QA: the registered ambient tweens */
     ambientList: function () { return ambient.slice(); },
     /* Split a heading into words (or characters) for a rise-in. Text is normalised to NFC first so a Vietnamese
@@ -179,19 +195,50 @@
     doc.querySelectorAll('[data-mega].is-open').forEach(function (item) { if (!item.contains(e.target)) item.classList.remove('is-open'); });
   });
 
-  /* Reveal on scroll: 0.4 s, up to 4 staggered steps of 60 ms inside [data-reveal-group].
-     GSAP moves the element with transform, so resting offsets a section sets with the CSS translate property stay put.
+  /* Reveal on scroll. The page's motion style (root class bl-motion-*, set by build.py from theme.motion_style or the
+     brand seed) decides how elements arrive. The four styles come from 92 real BPO homepages
+     (references/motion-research.md): most that animate rise 30-60 px over 0.8-0.9 s, cards in a row often slide in
+     from the side, some split section titles into masked words, and many only fade.
+     [data-reveal] values: "" (the style's default), "pop", "fade", "left", "right". Children of [data-reveal-group]
+     stagger. GSAP moves the element with transform, so resting offsets set with the CSS translate property stay put.
      CSS keeps the hidden start state (.js [data-reveal] { opacity: 0 }) and .is-in still marks revealed elements. */
-  var FROM = { pop: { scale: 0.96 }, fade: {}, left: { x: -16 }, right: { x: 16 } };
+  var STYLE = (root.className.match(/\bbl-motion-(rise|slide|mask|fade)\b/) || [0, 'rise'])[1];
+  var MS = {
+    rise: { y: 40, dur: 0.8, ease: 'power3.out', gap: 0.08 },
+    slide: { y: 24, dur: 0.8, ease: 'power3.out', gap: 0.1, x: 56 },
+    mask: { y: 24, dur: 0.9, ease: 'expo.out', gap: 0.08 },
+    fade: { y: 0, dur: 0.7, ease: 'power1.out', gap: 0.08 }
+  }[STYLE];
+  BL.motion.style = STYLE;
+  var WIDE = window.matchMedia ? window.matchMedia('(min-width: 769px)') : { matches: true };
+  var FROM = { pop: { scale: 0.96 }, fade: {}, left: { x: -32 }, right: { x: 32 } };
+  function fromFor(el) {
+    var kind = el.getAttribute('data-reveal');
+    if (FROM[kind]) return FROM[kind];
+    /* slide: cards in a row come in from the right on wide screens; one column rises */
+    if (MS.x && WIDE.matches && el.style.getPropertyValue('--reveal-i')) return { x: MS.x };
+    return MS.y ? { y: MS.y } : {};
+  }
+  /* mask: section titles rise word by word out of a mask as their head arrives */
+  function maskTitles(el) {
+    if (STYLE !== 'mask' || !gsap) return;
+    var titles = el.matches('.bl-h2') ? [el] : el.querySelectorAll('.bl-h2');
+    [].forEach.call(titles, function (h) {
+      if (h.__blMasked) return;
+      h.__blMasked = true;
+      var t = BL.motion.split(h).targets;
+      gsap.fromTo(t, { yPercent: 105 }, { yPercent: 0, duration: 0.9, ease: 'expo.out', stagger: 0.045, clearProps: 'transform' });
+    });
+  }
   function revealNow(el, i) {
     el.classList.add('is-in');
     if (!gsap || reduced()) { el.style.opacity = ''; return; }
-    var from = FROM[el.getAttribute('data-reveal')] || { y: 12 };
     gsap.set(el, { transition: 'none' });
-    gsap.fromTo(el, Object.assign({ opacity: 0 }, from), {
-      opacity: 1, x: 0, y: 0, scale: 1, duration: 0.4, ease: EASE, delay: Math.min(i, 4) * 0.06,
+    gsap.fromTo(el, Object.assign({ opacity: 0 }, fromFor(el)), {
+      opacity: 1, x: 0, y: 0, scale: 1, duration: MS.dur, ease: MS.ease, delay: Math.min(i, 5) * MS.gap,
       clearProps: 'opacity,transform,transition'
     });
+    maskTitles(el);
   }
   doc.querySelectorAll('[data-reveal-group]').forEach(function (group) {
     group.querySelectorAll('[data-reveal]').forEach(function (el, i) { el.style.setProperty('--reveal-i', String(i)); });
@@ -200,11 +247,51 @@
     if (reduced()) { el.classList.add('is-in'); return; }
     onVisible(el, function (t) { revealNow(t, parseInt(t.style.getPropertyValue('--reveal-i') || '0', 10)); }, 0.12);
   });
+
+  /* One-shot entrances drawn in CSS: base.js only adds .is-seen when the element comes into view.
+     data-draw   a rule or line grows from its start edge ("x", default, or "y")
+     data-wipe   the element is uncovered by a clip ("right", default: left to right; "left", "up", "down")
+     data-seq    its children arrive one after another (each child gets --seq-i); the section's CSS says how */
+  var SEEN = '[data-draw],[data-wipe],[data-seq]';
+  doc.querySelectorAll('[data-seq]').forEach(function (el) {
+    [].forEach.call(el.children, function (c, i) { c.style.setProperty('--seq-i', String(i)); });
+  });
+  /* a clipped or scaleX(0) element has no visible area for IntersectionObserver, so watch its parent */
+  doc.querySelectorAll(SEEN).forEach(function (el) {
+    if (reduced()) { el.classList.add('is-seen'); return; }
+    onVisible(el.parentElement || el, function () {
+      el.classList.add('is-seen');
+      /* a sequence hands its children's transitions back once it has played */
+      if (el.hasAttribute('data-seq')) setTimeout(function () { el.classList.add('is-settled'); }, 150 + el.children.length * 120 + 1800);
+    }, 0.15);
+  });
   if (rmQuery && rmQuery.addEventListener) {
     rmQuery.addEventListener('change', function () {
-      if (reduced()) doc.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      if (!reduced()) return;
+      doc.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      doc.querySelectorAll(SEEN).forEach(function (el) { el.classList.add('is-seen'); });
     });
   }
+
+  /* Scroll-linked, wide screens only, off for reduced motion:
+     data-parallax="8"  a photo drifts 8% of its height inside its frame while the frame crosses the screen
+     data-grow          a video or photo block widens from 90% to full size as it scrolls up to the middle */
+  BL.motion.media(function (reduce) {
+    if (reduce || !gsap || !ST || !WIDE.matches) return;
+    doc.querySelectorAll('[data-parallax]').forEach(function (img) {
+      var amt = Math.min(12, parseFloat(img.getAttribute('data-parallax')) || 8);
+      gsap.fromTo(img, { yPercent: -amt, scale: 1 + amt / 40 }, {
+        yPercent: amt, scale: 1 + amt / 40, ease: 'none',
+        scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+    doc.querySelectorAll('[data-grow]').forEach(function (el) {
+      gsap.fromTo(el, { scale: 0.9 }, {
+        scale: 1, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top bottom', end: 'center 60%', scrub: true }
+      });
+    });
+  });
 
   /* odometer-number-counter: HTML holds the final value, GSAP counts up once over 2 s */
   doc.querySelectorAll('[data-count]').forEach(function (el) {

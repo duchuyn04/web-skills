@@ -6,7 +6,7 @@
   "summary": "Dark band with fine wave lines: heading with an accent phrase and one button, then 2 or 3 light cards. Each card has a dark title bar (optionally linked) and a list of offerings with icon, name and one line.",
   "tone": "dark",
   "anchor": "solutions",
-  "animations": ["reveal"],
+  "animations": ["reveal", "panel-bar-wipe", "item-sequence"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 15, "max": 110},

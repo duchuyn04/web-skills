@@ -6,6 +6,13 @@
     var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
     if (!tabs.length) return;
 
+    /* tab-panel-wipe: restart the panel entrance (CSS keyframes); skipped with reduced motion */
+    function play(panel) {
+      panel.classList.remove('is-entering');
+      if (window.BL.RM) return;
+      void panel.offsetWidth;
+      panel.classList.add('is-entering');
+    }
     function movePill(tab) {
       if (!pill) return;
       pill.style.setProperty('--pill-x', tab.offsetLeft + 'px');
@@ -20,9 +27,7 @@
         if (!panel) return;
         if (on && panel.hidden) {
           panel.hidden = false;
-          panel.classList.remove('is-entering');
-          void panel.offsetWidth;
-          panel.classList.add('is-entering');
+          play(panel);
         } else if (!on) {
           panel.hidden = true;
         }
@@ -46,6 +51,17 @@
       });
     });
     var current = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];
+    /* the first panel plays the same entrance when the tabs come into view */
+    /* hidden panels keep lazy photos unloaded, so a wipe on a first tab change would open an empty frame: fetch them
+       once the tabs are on screen */
+    function preload() { root.querySelectorAll('.bl-tabs__panel img[loading="lazy"]').forEach(function (img) { img.loading = 'eager'; }); }
+    if (window.BL.RM) { root.classList.add('is-shown'); window.BL.onVisible(root, preload, 0); }
+    else window.BL.onVisible(root, function () {
+      preload();
+      root.classList.add('is-shown');
+      var open = root.querySelector('.bl-tabs__panel:not([hidden])');
+      if (open) play(open);
+    }, 0.2);
     pill.style.transition = 'none';
     movePill(current);
     void pill.offsetWidth;

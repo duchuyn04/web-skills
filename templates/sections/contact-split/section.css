@@ -43,3 +43,20 @@
 .bl-csplit__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .bl-csplit__open { position: absolute; right: 1rem; top: 1rem; display: inline-flex; align-items: center; gap: .4rem; padding: .55rem .9rem; border-radius: var(--radius); background: var(--surface); color: var(--text-strong); border: 1px solid var(--border-strong); font-size: var(--fs-sm); font-weight: 600; }
 .bl-csplit__open:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
+/* aside-rise-open: the brand panel opens from the bottom after the card lands, then its points tick in one by one.
+   form-field-cascade: the form's title, rows and message field rise in order (the submit button keeps its own
+   transitions and arrives with the card). */
+.js .bl-csplit__aside[data-wipe] { transition-delay: .25s; }
+.js .bl-csplit__aside .bl-checks[data-seq] > * { transition-delay: calc(var(--seq-i, 0) * 100ms + 750ms); }
+.js .bl-csplit__aside .bl-checks[data-seq] .bl-icon { transition: transform .45s var(--ease-back); transition-delay: calc(var(--seq-i, 0) * 100ms + 850ms); }
+.js .bl-csplit__aside .bl-checks[data-seq]:not(.is-seen) .bl-icon { transform: scale(0); }
+.js .bl-cform__fields > :not(.bl-btn) { transition: opacity .6s var(--ease-out), translate .6s var(--ease-out); }
+.js .bl-csplit:not(.is-in) .bl-cform__fields > :not(.bl-btn) { opacity: 0; translate: 0 14px; }
+.bl-cform__fields > :nth-child(2) { transition-delay: 80ms; }
+.bl-cform__fields > :nth-child(3) { transition-delay: 160ms; }
+.bl-cform__fields > :nth-child(4) { transition-delay: 240ms; }
+.bl-cform__fields > :nth-child(5) { transition-delay: 320ms; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-csplit__aside .bl-checks[data-seq] .bl-icon { transform: none !important; }
+  .js .bl-cform__fields > * { opacity: 1 !important; translate: none !important; }
+}

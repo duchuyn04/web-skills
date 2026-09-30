@@ -2,6 +2,16 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 4.1.0 (2026-09-30)
+
+Motion measured on real sites. Rules stay at 4: nothing here fails a page that built before.
+
+- `references/motion-research.md`: how 89 of the 92 blueprint homepages animate, measured with `scripts/research/motion_probe.py`. Half move nothing on scroll; the rest rise 30-60 px over 0.8-0.9 s, cards slide in from the side, and the differences sit in hovers, carousels, sticky and scroll-linked pieces.
+- `theme.motion_style` (`rise`, `slide`, `fade`, `mask`) sets how elements arrive. Left out, build.py picks it from the brand name, so pages for different clients move differently. `build-report.json` records it.
+- New base primitives in `base.js` and `base.css`: `data-draw` (a rule grows), `data-wipe` (a clip opens), `data-seq` (children arrive in turn), `data-parallax` (a photo drifts in its frame), `data-grow` (a block widens with the scroll) and `BL.motion.trackIn` (slider cards arrive from the right). QA's screenshot freeze and reduced-motion check cover them.
+- 23 calm sections carry their own entrance tied to what they show: feature-rows, solution-panels, testimonials-rated, testimonials, audience-cards, pillars-numbered, quote-spotlight, cta-band, contact-split, video-block, banner-image, careers-band, image-cards, case-slider, country-cards, service-links, about-mosaic, faq-accordion, services-tabs, metrics-panel, metrics-counter, industries-tiles and compliance-badges. `references/animation-map.md` lists every one with its timing.
+- Lint allows scroll entrances up to 1.2 s (real sites run 0.6-1 s); hovers stay within 0.5 s.
+
 ## 4.0.0 (2026-09-30)
 
 Rules 4, from a test page built by Haiku. Pages built under rules 3 keep building with `"rules": "3"`.

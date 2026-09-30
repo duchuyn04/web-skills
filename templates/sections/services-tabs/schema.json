@@ -6,7 +6,7 @@
   "summary": "Centered heading, a pill tab switcher (3-5 service lines) and one panel per tab: copy with check list on the left, photo on the right.",
   "tone": "auto",
   "anchor": "services",
-  "animations": ["sliding-pill-tab-switcher", "reveal"],
+  "animations": ["sliding-pill-tab-switcher", "tab-panel-wipe", "reveal"],
   "fields": {
     "head": {"$ref": "head"},
     "tabs": {

@@ -1,5 +1,5 @@
-<a class="bl-icard" href="{{href}}" data-reveal draggable="false">
-        <span class="bl-frame bl-icard__media"><img src="{{photo.src}}" alt="{{photo.alt}}" width="480" height="320" loading="lazy" draggable="false"></span>
+<a class="bl-icard" href="{{href}}"{{^slider}} data-reveal{{/slider}} draggable="false">
+        <span class="bl-frame bl-icard__media" data-wipe="up"><img src="{{photo.src}}" alt="{{photo.alt}}" width="480" height="320" loading="lazy" draggable="false"></span>
         <span class="bl-icard__body">
           {{#tag}}<span class="bl-icard__top"><span class="bl-chip bl-chip--accent">{{tag}}</span>{{#meta}}<span class="bl-icard__meta">{{meta}}</span>{{/meta}}</span>{{/tag}}
           {{^tag}}{{#meta}}<span class="bl-icard__top"><span class="bl-icard__meta">{{meta}}</span></span>{{/meta}}{{/tag}}

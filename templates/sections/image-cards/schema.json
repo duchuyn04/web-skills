@@ -7,7 +7,7 @@
   "tone": "auto",
   "anchor": "insights",
   "shared": ["slider"],
-  "animations": ["reveal", "fluid-case-study-slider (slider mode)"],
+  "animations": ["reveal", "card-photo-open", "card-copy-follow", "fluid-case-study-slider (slider mode)", "cards-slide-in (slider mode)"],
   "fields": {
     "head": {"$ref": "head"},
     "view_all": {"$ref": "cta", "required": false},

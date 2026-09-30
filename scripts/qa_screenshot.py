@@ -83,7 +83,9 @@ FREEZE_JS = r"""
   const s = document.createElement('style');
   s.id = 'bl-qa-freeze';
   s.textContent = '.js [data-reveal]{opacity:1!important;transform:none!important;}'
-    + '.js.bl-media-clip [data-reveal] :is(.bl-frame,.bl-mosaic__tile) img{clip-path:none!important;transition:none!important;}';
+    + '.js [data-reveal] :is(.bl-frame,.bl-mosaic__tile) img{clip-path:none!important;scale:1!important;transition:none!important;}'
+    + '.js [data-draw]{transform:none!important;transition:none!important;}.js [data-wipe]{clip-path:none!important;transition:none!important;}'
+    + '.js [data-seq]>*{opacity:1!important;transform:none!important;transition:none!important;}.bl-split__i{transform:none!important;}';
   document.head.appendChild(s);
 }
 """
@@ -100,6 +102,7 @@ async () => {
   go(document.documentElement.scrollHeight);
   await new Promise((r) => setTimeout(r, 300));
   document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
+  document.querySelectorAll('[data-draw],[data-wipe],[data-seq]').forEach((el) => el.classList.add('is-seen'));
   /* full-page shots showed empty frames where lazy photos had not loaded yet: load every photo before the shot */
   document.querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = 'eager'; });
   const pending = [].filter.call(document.images, (img) => !img.complete)
@@ -453,10 +456,13 @@ def reduced_motion_check(browser, index):
     page.evaluate(SCROLL_JS)
     page.wait_for_timeout(400)
     r = page.evaluate("""() => {
-      const hidden = [...document.querySelectorAll('[data-reveal]')].filter(el => el.getClientRects().length && parseFloat(getComputedStyle(el).opacity) < 0.99)
+      const seqKids = [...document.querySelectorAll('[data-seq] > *')];
+      const hidden = [...document.querySelectorAll('[data-reveal]'), ...seqKids].filter(el => el.getClientRects().length && parseFloat(getComputedStyle(el).opacity) < 0.99)
         .slice(0, 5).map(el => (el.closest('[id]') || {}).id + ' ' + el.tagName.toLowerCase() + '.' + [...el.classList].join('.'));
       const pins = window.ScrollTrigger ? ScrollTrigger.getAll().filter(t => t.pin).length : 0;
-      return {hidden, pins};
+      const covered = [...document.querySelectorAll('[data-wipe],[data-draw]')].filter(el => { const cs = getComputedStyle(el); return (/inset\(/.test(cs.clipPath) && /100%/.test(cs.clipPath)) || /matrix\(0,|matrix\([^,]+, [^,]+, [^,]+, 0,/.test(cs.transform); })
+        .slice(0, 5).map(el => (el.closest('[id]') || {}).id + ' ' + el.tagName.toLowerCase() + '.' + [...el.classList].join('.'));
+      return {hidden: hidden.concat(covered), pins};
     }""")
     ctx.close()
     problems = errors

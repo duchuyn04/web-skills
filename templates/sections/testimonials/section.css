@@ -2,12 +2,26 @@
 .bl-quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); align-items: start; }
 .bl-quote { display: flex; flex-direction: column; gap: 1.25rem; height: 100%; padding: clamp(1.5rem, 2.4vw, 2.1rem); border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
 .bl-quote:nth-child(2) { margin-top: -1.5rem; box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
-.bl-quote__mark { color: var(--accent-ink); }
+.bl-quote__mark { color: var(--accent-ink); display: inline-flex; transform-origin: left bottom; }
 .bl-quote__mark .bl-icon { width: 30px; height: 30px; }
 .bl-quote blockquote p { font-size: 1.04rem; line-height: 1.7; color: var(--text-strong); }
-.bl-quote__who { display: flex; align-items: center; gap: .85rem; margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.bl-quote__who { position: relative; display: flex; align-items: center; gap: .85rem; margin-top: auto; padding-top: 1.25rem; }
+.bl-quote__who::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--border); transform-origin: left center; }
 .bl-quote__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .bl-quote__initials { display: grid; place-items: center; background: var(--c-accent-soft); color: var(--accent-ink); font-weight: 800; font-size: .95rem; }
 .bl-quote__who strong { display: block; color: var(--text-strong); font-size: .95rem; }
 .bl-quote__who small { display: block; color: var(--text-muted); font-size: var(--fs-xs); line-height: 1.4; }
 @media (max-width: 1024px) { .bl-quotes { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; } .bl-quote:nth-child(2) { margin-top: 0; } }
+/* quote-mark-settle: after each card lands, its quote mark tips up into place, the quote follows, then the rule above
+   the reviewer draws and the name fades in. Cards stagger through --reveal-i. */
+.js .bl-quote__mark { transition: opacity .5s var(--ease-out), transform .7s var(--ease-back); transition-delay: calc(var(--reveal-i, 0) * 80ms + 200ms); }
+.js .bl-quote:not(.is-in) .bl-quote__mark { opacity: 0; transform: rotate(-14deg) scale(.6); }
+.js .bl-quote blockquote { transition: opacity .7s var(--ease-out), transform .8s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 80ms + 320ms); }
+.js .bl-quote:not(.is-in) blockquote { opacity: 0; transform: translateY(12px); }
+.js .bl-quote__who::before { transition: transform .9s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 80ms + 480ms); }
+.js .bl-quote:not(.is-in) .bl-quote__who::before { transform: scaleX(0); }
+.js .bl-quote__who > * { transition: opacity .6s var(--ease-out); transition-delay: calc(var(--reveal-i, 0) * 80ms + 620ms); }
+.js .bl-quote:not(.is-in) .bl-quote__who > * { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-quote__mark, .js .bl-quote blockquote, .js .bl-quote__who::before, .js .bl-quote__who > * { opacity: 1 !important; transform: none !important; }
+}

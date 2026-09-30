@@ -5,7 +5,7 @@
   "summary": "Careers invitation: centered heading, one paragraph, an optional open-positions count and perks, and a button to the jobs page, with 2-4 office photos placed around it (a row under the text on phones). BPO sites are also recruiting sites: most link to careers from the home page.",
   "tone": "auto",
   "anchor": "careers",
-  "animations": ["reveal", "photo-drift-in"],
+  "animations": ["reveal", "photo-drift-in", "photo-scroll-drift"],
   "fields": {
     "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
     "title": {"type": "markup", "min": 8, "max": 80},

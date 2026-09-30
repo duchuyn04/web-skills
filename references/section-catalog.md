@@ -29,10 +29,11 @@ These sit at the top of page.json, next to `sections`.
   - `image_mask`: one of rounded, angle, arch (optional)
   - `highlight`: one of color, gradient, underline (optional)
   - `media_reveal`: one of fade, clip (optional)
+  - `motion_style`: one of rise, slide, fade, mask (optional)
 - `features`: object (optional)
   - `magnetic_cta`: true/false (optional, default false)
 - `motion`: one of calm, expressive, signature (optional, default "calm")
-- `rules`: one of 1, 2 (optional)
+- `rules`: one of 1, 2, 3 (optional)
 - `override_order`: object (optional)
   - `reason`: text 20-300 chars
 
@@ -61,7 +62,7 @@ Fields:
 Company introduction: heading and one or two paragraphs (with **bold** key terms) on the left, a mosaic of 3, 4, 6 or 9 team photos on the right that pop in one by one.
 
 - Group: `about`. Default anchor: `#about`. Tone: auto.
-- Built-in motion: reveal, staggered-badge-pop-in.
+- Built-in motion: reveal, mosaic-tile-open, check-sequence.
 - Allowed in: enterprise-cx/about?, it-bpo-partner/about?.
 - Preview: `previews/about-mosaic.jpg`
 
@@ -83,7 +84,7 @@ Fields:
 Who we serve: centered heading and 2 or 3 tinted cards, each with an accent title, a short paragraph and a check list of what that audience gets.
 
 - Group: `audience`. Default anchor: `#who-we-serve`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, icon-box-pop, check-sequence.
 - Allowed in: enterprise-cx/industries?, it-bpo-partner/audience?.
 - Preview: `previews/audience-cards.jpg`
 
@@ -134,7 +135,7 @@ Fields:
 Mid-page photo band with a brand-colour shade, a strong line, one sentence and a button. Boxed inside the page margins (default) or full width. Use between long content sections to reset attention.
 
 - Group: `banner`. Default anchor: `#highlight`. Tone: auto.
-- Built-in motion: reveal, slow-photo-zoom.
+- Built-in motion: reveal, slow-photo-zoom, photo-scroll-drift, copy-line-stagger.
 - Allowed in: enterprise-cx/banner?, offshore-staffing/banner?, ai-data-ops/banner?, cx-voice-sales/banner?, it-bpo-partner/banner?.
 - Preview: `previews/banner-image.jpg`
 
@@ -156,7 +157,7 @@ Fields:
 Careers invitation: centered heading, one paragraph, an optional open-positions count and perks, and a button to the jobs page, with 2-4 office photos placed around it (a row under the text on phones). BPO sites are also recruiting sites: most link to careers from the home page.
 
 - Group: `careers`. Default anchor: `#careers`. Tone: auto.
-- Built-in motion: reveal, photo-drift-in.
+- Built-in motion: reveal, photo-drift-in, photo-scroll-drift.
 - Allowed in: enterprise-cx/careers?, offshore-staffing/careers?, ai-data-ops/careers?, cx-voice-sales/careers?, it-bpo-partner/careers?.
 - Preview: `previews/careers-band.jpg`
 
@@ -214,7 +215,7 @@ Fields:
 Horizontal case-study carousel with drag, swipe, snap and prev/next buttons. Each card: photo, client, industry, result headline, 2-3 result figures.
 
 - Group: `proof`. Default anchor: `#case-studies`. Tone: auto.
-- Built-in motion: fluid-case-study-slider, reveal.
+- Built-in motion: fluid-case-study-slider, cases-slide-in, reveal.
 - Allowed in: enterprise-cx/proof?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?.
 - Preview: `previews/case-slider.jpg`
 
@@ -275,7 +276,7 @@ Fields:
 Heading and short security statement on the left; 1-6 certification badges that pop in one after another. List only certifications the client actually holds.
 
 - Group: `compliance`. Default anchor: `#security`. Tone: auto.
-- Built-in motion: staggered-badge-pop-in.
+- Built-in motion: staggered-badge-pop-in, check-sequence.
 - Allowed in: enterprise-cx/compliance?, offshore-staffing/compliance?, ai-data-ops/compliance, cx-voice-sales/compliance?, it-bpo-partner/compliance?.
 - Preview: `previews/compliance-badges.jpg`
 
@@ -296,7 +297,7 @@ Fields:
 Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email. Optional aside.photo: a real photo of the office or the team at the top of the brand-colour panel, above the reasons and offices. Optional map: an embedded Google Map of the main office under the card, with an Open in Google Maps link. With both, the photo shows the place inside the card and the map sits under the card.
 
 - Group: `cta`. Default anchor: `#contact`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, aside-rise-open, point-tick-sequence, form-field-cascade, photo-scroll-drift.
 - Allowed in: enterprise-cx/cta, offshore-staffing/cta, ai-data-ops/cta, cx-voice-sales/cta, it-bpo-partner/cta.
 - Preview: `previews/contact-split.jpg`
 
@@ -379,7 +380,7 @@ Fields:
 Delivery locations as tall photo cards in a draggable slider: country or city name on the photo, service tags, a round SVG flag and an optional short note. Cards sit at staggered heights. Use for offshore and nearshore hubs (Vietnam, Philippines, Colombia...); locations-map suits a world overview instead.
 
 - Group: `locations`. Default anchor: `#locations`. Tone: auto.
-- Built-in motion: reveal, fluid-case-study-slider.
+- Built-in motion: reveal, fluid-case-study-slider, country-cards-slide-in, flag-pop.
 - Allowed in: enterprise-cx/locations?, offshore-staffing/locations?, ai-data-ops/locations?, it-bpo-partner/locations?.
 - Preview: `previews/country-cards.jpg`
 
@@ -409,7 +410,7 @@ Fields:
 Short call-to-action panel in the brand's dark color: title, one line, one or two buttons, optional ticks and a photo on the right. Use mid-page to break up long pages, or as the closing CTA when the client has no quote form.
 
 - Group: `cta`. Default anchor: `#get-started`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, band-wipe-open, photo-scroll-drift, point-tick-sequence.
 - Allowed in: enterprise-cx/mid-cta?, enterprise-cx/cta, offshore-staffing/mid-cta?, offshore-staffing/cta, ai-data-ops/mid-cta?, ai-data-ops/cta, cx-voice-sales/mid-cta?, cx-voice-sales/cta, it-bpo-partner/cta.
 - Preview: `previews/cta-band.jpg`
 
@@ -518,7 +519,7 @@ Fields:
 Heading and a contact card on the left; 4-8 questions on the right that open with a smooth grid-rows animation. Optional photo (a real support or team photo) under the contact card in the left column, so the answers sit next to the people who give them.
 
 - Group: `faq`. Default anchor: `#faq`. Tone: auto.
-- Built-in motion: smooth-accordion-expansion.
+- Built-in motion: smooth-accordion-expansion, faq-rule-draw, answer-settle, photo-scroll-drift.
 - Allowed in: enterprise-cx/faq?, offshore-staffing/faq, ai-data-ops/faq?, cx-voice-sales/faq, it-bpo-partner/faq?.
 - Preview: `previews/faq-accordion.jpg`
 
@@ -572,7 +573,7 @@ Fields:
 2-4 rows that alternate photo and copy sides. Each row: eyebrow, title, text, optional check list, link and a small glass stat on the photo. Use for how you work, what makes the team different, or one row per service.
 
 - Group: `features`. Default anchor: `#how-we-work`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, frame-wipe-from-copy, photo-scroll-drift, check-sequence, badge-settle.
 - Allowed in: enterprise-cx/features?, offshore-staffing/features?, ai-data-ops/features?, cx-voice-sales/features?, it-bpo-partner/solutions?.
 - Preview: `previews/feature-rows.jpg`
 
@@ -1724,7 +1725,7 @@ Fields:
 Clickable photo cards with tag, meta line, title and short text. Grid of 3, 4 or 6 cards, or a draggable slider of 3 to 8 cards when "slider" is true. Use for insights and news, industries with photos, or solution pages. Optional 'view all' link next to the heading.
 
 - Group: `cards`. Default anchor: `#insights`. Tone: auto.
-- Built-in motion: reveal, fluid-case-study-slider (slider mode).
+- Built-in motion: reveal, card-photo-open, card-copy-follow, fluid-case-study-slider (slider mode), cards-slide-in (slider mode).
 - Allowed in: enterprise-cx/industries?, enterprise-cx/news?, offshore-staffing/news?, ai-data-ops/news?, cx-voice-sales/news?, it-bpo-partner/news?.
 - Preview: `previews/image-cards.jpg`
 
@@ -1808,7 +1809,7 @@ Fields:
 Grid of 4 or 8 industry tiles (icon, title, one line). Tiles tilt up to 6 degrees toward the mouse.
 
 - Group: `industries`. Default anchor: `#industries`. Tone: auto.
-- Built-in motion: card-tilt-3d-perspective, reveal.
+- Built-in motion: card-tilt-3d-perspective, tile-icon-pop, reveal.
 - Allowed in: enterprise-cx/industries?, it-bpo-partner/audience?.
 - Preview: `previews/industries-tiles.jpg`
 
@@ -1963,7 +1964,7 @@ Fields:
 Dark band with a short heading and 3-4 large numbers that count up once when scrolled into view. Optional "image": a real photo (team, floor, office) fills the band behind the numbers under a solid scrim in the section colour and drifts slightly slower than the page while scrolling. When "visual" is also set, "visual" wins and the photo is not shown.
 
 - Group: `metrics`. Default anchor: `#results`. Tone: dark.
-- Built-in motion: odometer-number-counter, photo-band-parallax, reveal.
+- Built-in motion: odometer-number-counter, metric-rule-draw, photo-band-parallax, reveal.
 - Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
 - Preview: `previews/metrics-counter.jpg`
 
@@ -1987,7 +1988,7 @@ Fields:
 Rounded dark panel inside the page margins: short trust statement on the left, four numbers in a 2x2 grid with cross dividers on the right. Numbers count up once when scrolled into view.
 
 - Group: `metrics`. Default anchor: `#why-us`. Tone: auto.
-- Built-in motion: odometer-number-counter, reveal.
+- Built-in motion: odometer-number-counter, panel-cross-draw, reveal.
 - Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
 - Preview: `previews/metrics-panel.jpg`
 
@@ -2066,7 +2067,7 @@ Fields:
 Split heading (title left, lead right) above three pillars set as plain columns under a rule (the name is historical: no numbers, no cards). Use for 'why us' or operating principles.
 
 - Group: `about`. Default anchor: `#about`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, pillar-rule-draw.
 - Allowed in: enterprise-cx/about?, it-bpo-partner/about?.
 - Preview: `previews/pillars-numbered.jpg`
 
@@ -2226,7 +2227,7 @@ Fields:
 One large client quote on a dark band with a big quote mark, the person and an optional client logo or wordmark. With 2-5 quotes it becomes a crossfading slider with previous/next buttons and dots. Only use real, approved quotes.
 
 - Group: `proof`. Default anchor: `#client-voice`. Tone: dark.
-- Built-in motion: reveal, quote-crossfade.
+- Built-in motion: reveal, quote-crossfade, quote-mark-draw.
 - Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
 - Preview: `previews/quote-spotlight.jpg`
 
@@ -2248,7 +2249,7 @@ Fields:
 One to three service groups stacked (for example IT outsourcing, then BPO). Each group: pill label, title, one line, then a two-column grid of link rows with an arrow. Good when there are many services with their own pages.
 
 - Group: `services`. Default anchor: `#services`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, link-row-fill.
 - Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
 - Preview: `previews/service-links.jpg`
 
@@ -2384,7 +2385,7 @@ Fields:
 Centered heading, a pill tab switcher (3-5 service lines) and one panel per tab: copy with check list on the left, photo on the right.
 
 - Group: `services`. Default anchor: `#services`. Tone: auto.
-- Built-in motion: sliding-pill-tab-switcher, reveal.
+- Built-in motion: sliding-pill-tab-switcher, tab-panel-wipe, reveal.
 - Allowed in: enterprise-cx/services, offshore-staffing/services, cx-voice-sales/services, it-bpo-partner/services.
 - Preview: `previews/services-tabs.jpg`
 
@@ -2412,7 +2413,7 @@ Fields:
 Dark band with fine wave lines: heading with an accent phrase and one button, then 2 or 3 light cards. Each card has a dark title bar (optionally linked) and a list of offerings with icon, name and one line.
 
 - Group: `solutions`. Default anchor: `#solutions`. Tone: dark.
-- Built-in motion: reveal.
+- Built-in motion: reveal, panel-bar-wipe, item-sequence.
 - Allowed in: enterprise-cx/features?, offshore-staffing/features?, ai-data-ops/features?, cx-voice-sales/features?, it-bpo-partner/solutions?.
 - Preview: `previews/solution-panels.jpg`
 
@@ -2532,7 +2533,7 @@ Fields:
 Three client quote cards with name, role, company and photo (or initials). The middle card is raised.
 
 - Group: `proof`. Default anchor: `#testimonials`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, quote-mark-settle, review-settle.
 - Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
 - Preview: `previews/testimonials.jpg`
 
@@ -2578,7 +2579,7 @@ Fields:
 Client reviews as a rated carousel: heading and an optional overall score on the left with previous and next buttons, and wide review cards on the right, each with its star rating, the quote, a photo or initials, the reviewer's name, role and company. Drag, swipe, arrow keys and the buttons all move it. Needs 3-8 real reviews from the brief, word for word.
 
 - Group: `proof`. Default anchor: `#reviews`. Tone: auto.
-- Built-in motion: reveal, review-carousel.
+- Built-in motion: reveal, review-carousel, star-fill-sequence, review-settle.
 - Allowed in: enterprise-cx/proof?, enterprise-cx/proof-extra?, offshore-staffing/proof?, ai-data-ops/proof?, cx-voice-sales/proof?, it-bpo-partner/proof?, it-bpo-partner/proof-extra?.
 - Preview: `previews/testimonials-rated.jpg`
 
@@ -2647,7 +2648,7 @@ Fields:
 Large 16:9 poster with a pulsing play button. Clicking opens the video in a modal: a local file, or a YouTube or Vimeo embed that only loads after the click. Needs a real client video; leave the section out if there is none.
 
 - Group: `video`. Default anchor: `#video`. Tone: auto.
-- Built-in motion: reveal.
+- Built-in motion: reveal, frame-grow-on-scroll, play-button-settle.
 - Allowed in: enterprise-cx/video?, offshore-staffing/video?, ai-data-ops/video?, cx-voice-sales/video?.
 - Preview: `previews/video-block.jpg`
 

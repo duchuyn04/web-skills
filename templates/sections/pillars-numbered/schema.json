@@ -6,7 +6,7 @@
   "summary": "Split heading (title left, lead right) above three pillars set as plain columns under a rule (the name is historical: no numbers, no cards). Use for 'why us' or operating principles.",
   "tone": "auto",
   "anchor": "about",
-  "animations": ["reveal"],
+  "animations": ["reveal", "pillar-rule-draw"],
   "fields": {
     "head": {"$ref": "head"},
     "items": {

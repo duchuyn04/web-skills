@@ -6,7 +6,7 @@
   "tone": "auto",
   "anchor": "reviews",
   "shared": ["slider"],
-  "animations": ["reveal", "review-carousel"],
+  "animations": ["reveal", "review-carousel", "star-fill-sequence", "review-settle"],
   "fields": {
     "head": {"$ref": "head"},
     "rating": {"type": "object", "required": false, "fields": {

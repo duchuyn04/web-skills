@@ -28,3 +28,6 @@
 .bl-case__results dt { font-size: var(--fs-xs); color: var(--text-muted); font-weight: 600; margin-top: .25rem; }
 .bl-case .bl-link { font-size: var(--fs-sm); }
 @media (max-width: 1024px) { .bl-cases__head .bl-head__aside { display: flex; align-items: center; justify-content: space-between; gap: 1rem; } }
+/* cases-slide-in: hidden until section.js brings the cards in (it adds .is-in to the track) */
+.js .bl-cases__track:not(.is-in) > .bl-case { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .js .bl-cases__track:not(.is-in) > .bl-case { opacity: 1; } }

@@ -5,7 +5,7 @@
   "summary": "Heading and short security statement on the left; 1-6 certification badges that pop in one after another. List only certifications the client actually holds.",
   "tone": "auto",
   "anchor": "security",
-  "animations": ["staggered-badge-pop-in"],
+  "animations": ["staggered-badge-pop-in", "check-sequence"],
   "fields": {
     "head": {"$ref": "head"},
     "points": {"$ref": "points", "required": false, "default": []},

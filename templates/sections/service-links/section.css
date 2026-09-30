@@ -5,14 +5,27 @@
 .bl-slinks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem clamp(1rem, 2.5vw, 1.5rem); }
 .bl-slink {
   display: flex; align-items: center; gap: .9rem; min-height: 64px; padding: .9rem 1.4rem;
-  border-radius: var(--radius); background: var(--surface-2); border: 1px solid transparent;
+  position: relative; isolation: isolate; border-radius: var(--radius); border: 1px solid transparent;
   font-weight: 600; color: var(--text-strong);
   transition: background-color var(--dur-fast) var(--ease-std), border-color var(--dur-fast) var(--ease-std), transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
 }
-.bl-slink__label { flex: 1; }
+.bl-slink__label { flex: 1; transition: transform var(--dur) var(--ease-out); }
 .bl-slink .arrow-icon { color: var(--accent-ink); }
-.bl-slink:hover { background: var(--surface); border-color: var(--border); box-shadow: 0 12px 28px -18px rgba(15, 23, 42, .35); transform: translateY(-2px); }
+.bl-slink:hover { border-color: var(--border); box-shadow: 0 12px 28px -18px rgba(15, 23, 42, .35); transform: translateY(-2px); }
 .bl-slink:hover .arrow-icon { transform: translateX(4px); }
+.bl-slink:hover .bl-slink__label { transform: translateX(3px); }
 .bl-slink__icon { width: 36px; height: 36px; flex-shrink: 0; display: grid; place-items: center; border-radius: 10px; background: var(--c-accent-soft); color: var(--accent-ink); }
 .bl-slink__icon .bl-icon { width: 18px; height: 18px; }
 @media (max-width: 720px) { .bl-slinks { grid-template-columns: 1fr; } }
+/* the row's fill is a layer, so it can sweep in: link-row-fill. As each row arrives (rows are staggered by --reveal-i),
+   its panel fills left to right, then the icon, label and arrow slide in after it. */
+.bl-slink::before { content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit; background: var(--surface-2); transform-origin: left center; transition: transform .8s var(--ease-out), background-color var(--dur-fast) var(--ease-std); transition-delay: calc(var(--reveal-i, 0) * 90ms), 0s; }
+.bl-slink:hover::before { background: var(--surface); }
+.js .bl-slinks > li:not(.is-in) .bl-slink::before { transform: scaleX(0); }
+.js .bl-slink > * { transition: opacity .5s var(--ease-out), translate .6s var(--ease-out), transform var(--dur) var(--ease-out); }
+.js .bl-slinks > li:not(.is-in) .bl-slink > * { opacity: 0; translate: -10px 0; }
+.js .bl-slinks > li.is-in .bl-slink > * { transition-delay: calc(var(--reveal-i, 0) * 90ms + 300ms), calc(var(--reveal-i, 0) * 90ms + 300ms), 0s; }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-slinks > li:not(.is-in) .bl-slink::before { transform: none; }
+  .js .bl-slinks > li:not(.is-in) .bl-slink > * { translate: none; opacity: 1; }
+}

@@ -307,8 +307,11 @@ def _check_design_css(css, add):
         if "[data-reveal]" in selector or ":hover" in selector:
             for prop in re.findall(r"(?:transition|animation)(?:-duration)?\s*:\s*([^;]+)", body):
                 longest = max((_seconds(v, u) for v, u in DURATION_RE.findall(prop.split("calc(")[0])), default=0)
-                if longest > 0.5:
-                    once("slow-motion", "%.2fs on a reveal or hover; interface motion stays within 0.1-0.5s" % longest)
+                # hovers answer the pointer (0.1-0.5s); scroll entrances on real BPO sites run 0.6-1s (references/motion-research.md)
+                limit = 0.5 if ":hover" in selector else 1.2
+                if longest > limit:
+                    once("slow-motion", "%.2fs on a %s; %s" % (longest, "hover" if limit == 0.5 else "scroll reveal",
+                         "hover motion stays within 0.1-0.5s" if limit == 0.5 else "entrances stay within 1.2s"))
         for sh in re.findall(r"box-shadow\s*:\s*([^;]+)", body):
             for layer in _split_top(sh):
                 if "inset" in layer:
