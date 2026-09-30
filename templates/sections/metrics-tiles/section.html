@@ -1,0 +1,20 @@
+<section id="{{section.id}}" class="bl-section bl-section--tight bl-tone-{{section.tone}}">
+  <div class="bl-container bl-mtiles bl-mtiles--{{layout}}">
+    {{#head}}<div class="bl-mtiles__copy" data-reveal>
+      {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+      <h2 class="bl-h2">{{title}}</h2>
+      {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+      {{#text}}<p class="bl-mtiles__text">{{text}}</p>{{/text}}
+    </div>{{/head}}
+    <ul class="bl-mtiles__grid" role="list" data-reveal-group>
+      {{#items}}
+      <li class="bl-mtiles__tile" data-reveal style="--i: {{@n}}">
+        {{#icon}}<span class="bl-mtiles__icon">{{icon:$icon}}</span>{{/icon}}
+        <p class="bl-mtiles__fig"><span{{#value.count}} data-count="{{value.count}}" data-decimals="{{value.decimals}}" data-prefix="{{value.prefix}}" data-suffix="{{value.suffix}}"{{/value.count}}>{{value.display}}</span></p>
+        <p class="bl-mtiles__label">{{label}}</p>
+        {{#href}}<a class="bl-mtiles__go" href="{{href}}" aria-label="{{label}}">{{arrow}}</a>{{/href}}
+      </li>
+      {{/items}}
+    </ul>
+  </div>
+</section>

@@ -164,18 +164,20 @@ def blueprint_report(args, pages, count):
         fit = [k for k, b in bps.items() if args.blueprints in b.get("fits", []) and any(s["role"] == "services" for s in b["sections"])]
         if not fit:
             print("no blueprint fits %r. Archetypes: %s" % (args.blueprints, ", ".join(sorted({a for b in bps.values() for a in b.get("fits", [])}))))
-        for k in sorted(fit, key=lambda k: (len(taken.get(k, [])), k)):
+        # layouts a client named as the standard ("preferred": true) come first, unused ones before used ones
+        for k in sorted(fit, key=lambda k: (not bps[k].get("preferred"), len(taken.get(k, [])), k)):
             b = bps[k]
             forms = " | ".join("%s:%s%s" % (s["role"], s["form"], "?" if build.slot_optional(s) else "") for s in b["sections"])
             used = (", used by " + ", ".join(taken[k])) if k in taken else ", unused"
             core = [s for s in b["sections"] if not build.slot_optional(s)]
             proof = [s for s in b["sections"] if s.get("role") in build.PROOF_ROLES]
             print("")
-            print("%s  (%s%s)" % (k, b["source"]["name"], used))
+            print("%s%s  (%s%s)" % (k, " *" if b.get("preferred") else "", b["source"]["name"], used))
             print("  %d sections: %d always needed, %d need client proof (logos, quotes, cases, team), %d other optional" % (len(b["sections"]), len(core), len(proof), len(b["sections"]) - len(core) - len(proof)))
             print("  " + b.get("summary", ""))
             print("  " + forms)
         print("")
+        print("* = preferred: a layout clients named as the standard for a professional page. Take the first unused * blueprint the brief can fill; go down the list only when none fits.")
         print("Pick an unused blueprint whose sections the brief can fill (? = optional; proof sections are left out when the brief has no proof). The page needs a services section and at least 5 content sections. Then run --blueprint KEY.")
     if args.blueprint:
         b = bps.get(args.blueprint)

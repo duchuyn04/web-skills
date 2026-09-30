@@ -1,0 +1,26 @@
+{
+  "variant": "metrics-tiles",
+  "group": "metrics",
+  "forms": ["metrics"],
+  "summary": "Figures on flat tiles. layout \"row\": 3 or 4 tinted tiles in one row, each a large number over a short two-line label, with an optional heading above (a proof strip right under the hero). layout \"split\": heading and one or two paragraphs on the left, a 2x2 grid of tiles on the right with an optional icon, the figure, a caption and an optional round arrow link; the two diagonal tiles are filled in the brand colour. Numbers count up once when seen.",
+  "tone": "auto",
+  "anchor": "figures",
+  "animations": ["odometer-number-counter", "tile-label-follow", "reveal"],
+  "fields": {
+    "layout": {"type": "enum", "values": ["row", "split"], "default": "row"},
+    "head": {"$ref": "head", "required": false},
+    "text": {"type": "text", "min": 40, "max": 280, "required": false},
+    "items": {
+      "type": "list", "min": 3, "max": 4,
+      "item": {"type": "object", "fields": {
+        "value": {"type": "stat"},
+        "prefix": {"type": "text", "min": 1, "max": 3, "required": false},
+        "suffix": {"type": "text", "min": 1, "max": 8, "required": false},
+        "decimals": {"type": "number", "min": 0, "max": 2, "required": false},
+        "label": {"type": "text", "min": 3, "max": 48},
+        "icon": {"type": "icon", "required": false},
+        "href": {"type": "href", "required": false}
+      }}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "variant": "faq-grid",
+  "group": "faq",
+  "forms": ["faq-accordion"],
+  "summary": "Centered heading, then 4-10 questions in two columns of tinted rounded boxes. Each box opens its answer with a smooth grid-rows animation while its plus sign turns into a minus. Optional link to the full FAQ page centered below.",
+  "tone": "auto",
+  "anchor": "faq",
+  "animations": ["smooth-accordion-expansion", "faq-plus-to-minus", "answer-settle", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "items": {
+      "type": "list", "min": 4, "max": 10,
+      "item": {"type": "object", "fields": {
+        "q": {"type": "text", "min": 10, "max": 120},
+        "a": {"type": "text", "min": 30, "max": 520}
+      }}
+    },
+    "link": {"$ref": "cta", "required": false}
+  }
+}

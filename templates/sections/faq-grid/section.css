@@ -1,0 +1,30 @@
+/* faq-grid: two columns of tinted question boxes; answers open with grid rows 0fr to 1fr (320ms) */
+.bl-fgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.75rem, 1.4vw, 1rem); align-items: start; max-width: 1080px; margin-inline: auto; }
+.bl-fgrid__item { border-radius: var(--radius); background: var(--surface-2); }
+.bl-fgrid__btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; text-align: left;
+  padding: clamp(1.1rem, 1.6vw, 1.35rem) clamp(1.1rem, 1.8vw, 1.5rem); border-radius: var(--radius);
+  font-family: var(--font-body); font-size: clamp(.98rem, .25vw + .92rem, 1.06rem); font-weight: 500; line-height: 1.45; color: var(--text-strong);
+  transition: color var(--dur-fast);
+}
+.bl-fgrid__btn:hover { color: var(--accent-ink); }
+/* faq-plus-to-minus: the plus turns a quarter and fades while the minus fades in */
+.bl-fgrid__icon { position: relative; flex-shrink: 0; width: 1.5rem; height: 1.5rem; color: var(--accent-ink); }
+.bl-fgrid__icon .bl-icon { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform 320ms var(--ease-out), opacity 320ms var(--ease-out); }
+.bl-fgrid__minus { opacity: 0; }
+.bl-fgrid__btn[aria-expanded="true"] .bl-fgrid__plus { transform: rotate(90deg); opacity: 0; }
+.bl-fgrid__btn[aria-expanded="true"] .bl-fgrid__minus { opacity: 1; }
+.bl-fgrid__panel { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 320ms var(--ease-out); }
+.js .bl-fgrid__panel { grid-template-rows: 0fr; }
+.js .bl-fgrid__h:has(> [aria-expanded="true"]) + .bl-fgrid__panel { grid-template-rows: 1fr; }
+.bl-fgrid__inner { min-height: 0; overflow: hidden; }
+.bl-fgrid__inner p { padding: 0 clamp(1.1rem, 1.8vw, 1.5rem) clamp(1.1rem, 1.6vw, 1.35rem); color: var(--text); font-size: var(--fs-sm); line-height: 1.7; max-width: 62ch; }
+/* answer-settle: an opened answer fades up while its box expands */
+.js .bl-fgrid__inner p { opacity: 0; transform: translateY(6px); transition: opacity 320ms var(--ease-out), transform 320ms var(--ease-out); }
+.js .bl-fgrid__h:has(> [aria-expanded="true"]) + .bl-fgrid__panel .bl-fgrid__inner p { opacity: 1; transform: none; transition-delay: 80ms; }
+.bl-fgrid__more { margin-top: clamp(1.75rem, 3vw, 2.5rem); text-align: center; }
+@media (max-width: 760px) { .bl-fgrid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-fgrid__inner p { transform: none !important; }
+  .bl-fgrid__icon .bl-icon { transition: none; }
+}

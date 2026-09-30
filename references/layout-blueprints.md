@@ -19,9 +19,28 @@ python SKILL/scripts/variety.py --blueprint <key>                          each 
 6. Tones come from the blueprint, even for variants that are usually dark; do not set `tone` on sections.
 7. Every figure on the page comes from the brief (stats, salaries, prices). Pages are calm by default; `"motion": "expressive"` is only for a brief that asks for a 3D or animation-led page.
 
+## Preferred layouts
+
+Four blueprints carry `"preferred": true`: `iris` (IRIS Software Group), `intelligent-outsourcing` (Intelligent Outsourcing), `innovature-bpo` (Innovature BPO) and `bestarion` (Bestarion). A client named these four sites as the standard for a professional page (2026-09-30). `variety.py --blueprints` lists them first with a `*`, unused ones before used ones, and build.py names them first when it suggests a free layout. Take the first unused `*` blueprint whose sections the brief can fill; go further down the list only when none fits (Iris needs client logos, reviews or articles to reach five sections; Innovature suits staffing with roles by industry; Intelligent Outsourcing suits a long staffing page with a founder and FAQ; Bestarion suits software plus back-office services).
+
+What the four have in common, and what the library rebuilds from them:
+
+| Pattern | Source | Variant |
+|:---|:---|:---|
+| Dark hero with a portrait on a colour panel, small UI cards and a solution finder bar over its lower edge | Iris | `hero-finder` |
+| Solution browser: vertical tabs (by service, size, industry) beside a raised panel of cards | Iris | `solutions-vtabs` |
+| Chevron-cut photo with a call button beside a two-column enquiry form | Iris | `contact-photo` |
+| Row of four light figure tiles; copy beside a two-by-two bento of figure tiles | Intelligent Outsourcing, Innovature | `metrics-tiles` (`layout` row or split) |
+| Questions in two columns of tinted boxes | Intelligent Outsourcing | `faq-grid` |
+| Sideways track of role cards by industry with a progress bar | Innovature | `roles-carousel` |
+| Hero stage with slide tabs along its lower edge | Innovature | `hero-tabs` |
+| Split hero in the brand colour, link-row service lists, advantage panel beside the form | Bestarion | `hero-gradient`, `service-links`, `contact-split` |
+
+Shared traits: people photography in almost every section, one accent colour on white or a pale tint, figures and certifications near the top, star-rated reviews, pill buttons, and quiet motion (reveals, counters, one carousel). None of them uses 3D or particles.
+
 ## The hero composition ("compose")
 
-A blueprint's hero slot may list `"compose"`: the variants that rebuild the source site's hero composition, not only its form. `hero-overlap` (Foundever: heading over a wide photo, white card over its lower edge), `hero-mosaic` (Kyanon: tilted, tinted photo mosaic behind a centered heading), `hero-portrait` (MicroSourcing, Horatio: dark card with service chips beside a round portrait), `hero-promo` (Firstsource: centered headline with an accent block, photo cards below), `hero-tabs` (Genpact, TDCX: photo stage with thumbnail tabs instead of a slider), `hero-news` (Concentrix: copy over a dark photo, a column of news cards), `hero-panels` (ELEKS: photo panel beside tall sector panels), plus the existing `hero-collage`, `hero-dashboard`, `hero-qualifier` and `hero-gradient` where they match. build.py fails a hero outside the list, except a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`) and, on a page whose brief asked for 3D, an expressive hero. `variety.py --blueprint <key>` marks the listed variants with `=`. When adding a blueprint, add `"compose"` whenever the source hero is more than text beside or over one photo, and build a new variant when none matches.
+A blueprint's hero slot may list `"compose"`: the variants that rebuild the source site's hero composition, not only its form. `hero-overlap` (Foundever: heading over a wide photo, white card over its lower edge), `hero-mosaic` (Kyanon: tilted, tinted photo mosaic behind a centered heading), `hero-portrait` (MicroSourcing, Horatio: dark card with service chips beside a round portrait), `hero-promo` (Firstsource: centered headline with an accent block, photo cards below), `hero-tabs` (Genpact, TDCX: photo stage with thumbnail tabs instead of a slider), `hero-news` (Concentrix: copy over a dark photo, a column of news cards), `hero-panels` (ELEKS: photo panel beside tall sector panels), `hero-finder` (IRIS: portrait on a colour panel with small UI cards and a finder bar over the hero's lower edge), plus the existing `hero-collage`, `hero-dashboard`, `hero-qualifier` and `hero-gradient` where they match. build.py fails a hero outside the list, except a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`) and, on a page whose brief asked for 3D, an expressive hero. `variety.py --blueprint <key>` marks the listed variants with `=`. When adding a blueprint, add `"compose"` whenever the source hero is more than text beside or over one photo, and build a new variant when none matches.
 
 ## Where the 3D goes (expressive pages only)
 

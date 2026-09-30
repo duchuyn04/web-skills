@@ -1,0 +1,264 @@
+{
+ "_note": "Example on the innovature-bpo blueprint (templates/blueprints/innovature-bpo.json), one of the four preferred layouts: the real page's section order, forms and tones, with Bluecrest Staffing sample content. Every name, quote, figure and rate is in the brief.",
+ "archetype": "offshore-staffing",
+ "blueprint": "innovature-bpo",
+ "preset": "corporate-blue",
+ "lang": "en",
+ "brief": "Bluecrest Staffing builds dedicated offshore teams in Ho Chi Minh City, Vietnam and Cebu, Philippines for companies in the US, UK and Australia. Founded 11 years ago. 620 staff across both offices. 96% of clients renew each year. Clients save up to 65% against a local hire. A new team is usually working within 14 days of signing. Certifications: ISO/IEC 27001:2022 and ISO 9001:2015. Clients include Harlow Freight, Northgate Dental, Pinecrest Insurance, Tallyworks Accounting, Orbit Home Goods and Kestrel Software. Roles by industry: finance and accounting (bookkeeper, accounts payable clerk, payroll officer, tax preparer), healthcare (patient support agent, medical billing specialist, insurance verification agent), logistics (dispatch coordinator, shipment tracking agent, freight billing clerk), ecommerce (order support agent, product listing editor, returns processor), software and IT (QA tester, help desk technician, data analyst), insurance (claims support agent, policy administrator, underwriting assistant), real estate (transaction coordinator, listing assistant, leasing support agent). Yearly cost per person, local US hire vs Bluecrest: bookkeeper 58000 vs 20300, customer support agent 49000 vs 16800, QA tester 84000 vs 29400. Process: define the team and goals, Bluecrest recruits and sets up the team, the team works as an extension of the client with monthly reporting. Talent pool of pre-vetted candidates, clients interview and approve every hire. Quotes: 'Bluecrest found us four bookkeepers in two weeks, and all four are still with us two years later.' Dana Whitfield, Finance Director, Tallyworks Accounting. 'Our claims backlog was gone within a quarter. The Cebu team follows our checklists better than we did.' Marcus Lee, Operations Manager, Pinecrest Insurance. 'We started with one QA tester and now run a team of nine. Reporting every month keeps us close to the work.' Priya Raman, VP Engineering, Kestrel Software. Offices: 12th Floor, 81 Cach Mang Thang Tam Street, District 3, Ho Chi Minh City, phone (+84) 28 5555 0181; 9th Floor, Cebu IT Park, Lahug, Cebu City, phone (+63) 32 555 0147. Email: hello@bluecrest.example.",
+ "site": {
+  "brand": "Bluecrest Staffing",
+  "brand_mark": "BC",
+  "title": "Bluecrest Staffing | Offshore teams in Vietnam and the Philippines",
+  "description": "Bluecrest Staffing builds dedicated offshore teams in Ho Chi Minh City and Cebu for companies in the US, UK and Australia."
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "topbar": {
+     "note": "ISO/IEC 27001:2022 certified offices in Vietnam and the Philippines",
+     "links": [
+      {"label": "Talent pool", "href": "#talent"},
+      {"label": "Contact", "href": "#contact"}
+     ]
+    },
+    "links": [
+     {
+      "label": "Solutions",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Back office",
+         "links": [
+          {"label": "Finance and accounting", "href": "#services"},
+          {"label": "Insurance support", "href": "#services"},
+          {"label": "Real estate support", "href": "#services"}
+         ]
+        },
+        {
+         "heading": "Customer and tech",
+         "links": [
+          {"label": "Healthcare support", "href": "#services"},
+          {"label": "Ecommerce support", "href": "#services"},
+          {"label": "Software and IT", "href": "#services"}
+         ]
+        }
+       ]
+      }
+     },
+     {"label": "Pricing", "href": "#calculator"},
+     {"label": "How it works", "href": "#process"},
+     {"label": "Clients", "href": "#testimonials"}
+    ],
+    "cta": {"label": "Get a quote", "href": "#contact"}
+   }
+  },
+  {
+   "type": "hero-tabs",
+   "data": {
+    "style": "card",
+    "title": "Offshore staffing in *Vietnam and the Philippines*",
+    "lead": "Bluecrest Staffing builds dedicated teams in Ho Chi Minh City and Cebu for companies in the US, UK and Australia.",
+    "primary_cta": {"label": "Get pricing", "href": "#calculator"},
+    "secondary_cta": {"label": "Speak with an expert", "href": "#contact"},
+    "tab_label": "Offshore teams",
+    "photo": {"src": "team-meeting-bright-office", "alt": "Team meeting around a table in a bright office"},
+    "slides": [
+     {
+      "label": "Finance roles",
+      "title": "Bookkeepers, payroll officers and tax preparers",
+      "text": "Finance staff who work in your accounting software and follow your month-end checklist.",
+      "photo": {"src": "paperwork-review-desk", "alt": "Person reviewing printed statements at a desk"},
+      "cta": {"label": "See finance roles", "href": "#services"}
+     },
+     {
+      "label": "Software and IT",
+      "title": "QA testers, help desk technicians and data analysts",
+      "text": "Technical staff who join your sprints, your ticket queue and your stand-ups.",
+      "photo": {"src": "developer-headphones-monitors", "alt": "Developer with headphones working at three screens"},
+      "cta": {"label": "See IT roles", "href": "#services"}
+     },
+     {
+      "label": "Team in 14 days",
+      "title": "A new team working within 14 days",
+      "text": "Most clients have their team working within 14 days of signing.",
+      "photo": {"src": "training-workshop-board", "alt": "Trainer presenting to a new team at a flip chart"},
+      "cta": {"label": "How it works", "href": "#process"}
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-tiles",
+   "data": {
+    "layout": "split",
+    "head": {
+     "title": "Offshore teams in Ho Chi Minh City and Cebu",
+     "lead": "Bluecrest Staffing recruits each person for one client, sets them up in our Ho Chi Minh City or Cebu office and manages HR, IT and payroll."
+    },
+    "text": "You interview and approve every hire. Your team works your hours, in your tools, and reports to you every month.",
+    "items": [
+     {"value": 11, "label": "Years building offshore teams"},
+     {"value": 620, "label": "Staff across Vietnam and the Philippines", "href": "#talent"},
+     {"value": 65, "suffix": "%", "label": "Top saving against a local hire", "href": "#calculator"},
+     {"value": 96, "suffix": "%", "label": "Clients renewing each year"}
+    ]
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Trusted by businesses in the US, UK and Australia",
+    "logos": [
+     {"name": "Harlow Freight"},
+     {"name": "Northgate Dental"},
+     {"name": "Pinecrest Insurance"},
+     {"name": "Tallyworks Accounting"},
+     {"name": "Orbit Home Goods"},
+     {"name": "Kestrel Software"}
+    ]
+   }
+  },
+  {
+   "type": "compliance-badges",
+   "data": {
+    "head": {
+     "title": "Certifications",
+     "lead": "Both offices are audited for information security and quality management."
+    },
+    "badges": [
+     {"code": "ISO/IEC 27001", "label": "Information security, 2022"},
+     {"code": "ISO 9001", "label": "Quality management, 2015"}
+    ]
+   }
+  },
+  {
+   "type": "roles-carousel",
+   "data": {
+    "head": {
+     "title": "Outsourced roles by industry",
+     "lead": "The roles clients in each industry ask us for most. Every role can be a single hire or part of a team."
+    },
+    "items": [
+     {"icon": "calculator", "title": "Finance and accounting", "roles": ["Bookkeeper", "Accounts payable clerk", "Payroll officer", "Tax preparer"], "link": {"label": "View all roles", "href": "#contact"}},
+     {"icon": "heart-pulse", "title": "Healthcare", "roles": ["Patient support agent", "Medical billing specialist", "Insurance verification agent"], "link": {"label": "View all roles", "href": "#contact"}},
+     {"icon": "truck", "title": "Logistics", "roles": ["Dispatch coordinator", "Shipment tracking agent", "Freight billing clerk"], "link": {"label": "View all roles", "href": "#contact"}},
+     {"icon": "shopping-cart", "title": "Ecommerce", "roles": ["Order support agent", "Product listing editor", "Returns processor"], "link": {"label": "View all roles", "href": "#contact"}},
+     {"icon": "code", "title": "Software and IT", "roles": ["QA tester", "Help desk technician", "Data analyst"], "link": {"label": "View all roles", "href": "#contact"}},
+     {"icon": "landmark", "title": "Insurance", "roles": ["Claims support agent", "Policy administrator", "Underwriting assistant"], "link": {"label": "View all roles", "href": "#contact"}},
+     {"icon": "building", "title": "Real estate", "roles": ["Transaction coordinator", "Listing assistant", "Leasing support agent"], "link": {"label": "View all roles", "href": "#contact"}}
+    ]
+   }
+  },
+  {
+   "type": "cost-calculator",
+   "id": "calculator",
+   "data": {
+    "head": {
+     "title": "Savings calculator",
+     "lead": "Pick a role and a team size to compare a local US hire with a Bluecrest team member."
+    },
+    "points": ["Clients save up to 65% against a local hire", "You interview and approve every hire", "Monthly reporting on every team"],
+    "card_title": "Estimate your yearly saving",
+    "roles": [
+     {"label": "Bookkeeper", "onshore": 58000, "offshore": 20300},
+     {"label": "Customer support agent", "onshore": 49000, "offshore": 16800},
+     {"label": "QA tester", "onshore": 84000, "offshore": 29400}
+    ],
+    "team": {"label": "Team size", "unit": "people", "min": 1, "max": 30, "start": 5},
+    "onshore_label": "Local hire (US)",
+    "offshore_label": "Bluecrest team",
+    "savings_label": "Estimated saving",
+    "cta": {"label": "Get a quote", "href": "#contact"},
+    "disclaimer": "Yearly cost per person. Your quote depends on seniority, shift and language needs."
+   }
+  },
+  {
+   "type": "image-cards",
+   "id": "process",
+   "data": {
+    "head": {
+     "title": "How it works",
+     "lead": "From the first call to a team that reports to you every month."
+    },
+    "cards": [
+     {"tag": "Step 1", "title": "Define your team and goals", "text": "We agree on the roles, skills, hours and tools your team needs.", "photo": {"src": "meeting-handshake", "alt": "Two people shaking hands across a meeting table"}, "href": "#contact", "link_label": "Book a call"},
+     {"tag": "Step 2", "title": "We recruit and set up your team", "text": "Bluecrest shortlists candidates, you interview them, and we set up desks, IT and payroll.", "photo": {"src": "presenter-planning-board", "alt": "Recruiter walking colleagues through a planning board"}, "href": "#talent", "link_label": "See the talent pool"},
+     {"tag": "Step 3", "title": "Your team works as part of yours", "text": "Your team works your hours in your tools, with monthly reporting from Bluecrest.", "photo": {"src": "laptop-conference-room", "alt": "Laptop open on a conference room table during a video call"}, "href": "#contact", "link_label": "Talk to us"}
+    ]
+   }
+  },
+  {
+   "type": "about-mosaic",
+   "id": "talent",
+   "data": {
+    "title": "Our talent pool",
+    "paragraphs": ["Bluecrest keeps a talent pool of **pre-vetted candidates** in Ho Chi Minh City and Cebu. You review their profiles, interview the ones you like and approve every hire."],
+    "points": ["Pre-vetted candidates", "You interview every hire", "Teams working within 14 days"],
+    "cta": {"label": "Explore the talent pool", "href": "#contact"},
+    "photos": [
+     {"src": "portrait-woman-office", "alt": "Smiling woman in an office"},
+     {"src": "portrait-man-desk", "alt": "Man sitting at a desk and smiling"},
+     {"src": "portrait-woman-glasses-desk", "alt": "Woman with glasses at a desk"},
+     {"src": "portrait-woman-team-lead", "alt": "Woman in an office smiling at the camera"}
+    ]
+   }
+  },
+  {
+   "type": "testimonials",
+   "data": {
+    "head": {"title": "Success stories"},
+    "items": [
+     {"quote": "Bluecrest found us four bookkeepers in two weeks, and all four are still with us two years later.", "name": "Dana Whitfield", "role": "Finance Director", "company": "Tallyworks Accounting"},
+     {"quote": "Our claims backlog was gone within a quarter. The Cebu team follows our checklists better than we did.", "name": "Marcus Lee", "role": "Operations Manager", "company": "Pinecrest Insurance"},
+     {"quote": "We started with one QA tester and now run a team of nine. Reporting every month keeps us close to the work.", "name": "Priya Raman", "role": "VP Engineering", "company": "Kestrel Software"}
+    ]
+   }
+  },
+  {
+   "type": "contact-split",
+   "data": {
+    "head": {"title": "Contact *Bluecrest*"},
+    "form": {
+     "title": "Free consultation",
+     "text": "Tell us about the roles you need and we will design your team structure.",
+     "phone_label": "Phone (optional)",
+     "submit_label": "Get free consultation",
+     "success_title": "Thanks, we have your request",
+     "success_text": "Our team will reply to set up a call.",
+     "note": "We only use your details to reply to this request."
+    },
+    "aside": {
+     "title": "Why clients choose Bluecrest",
+     "points": ["11 years building offshore teams", "620 staff in Vietnam and the Philippines", "96% of clients renew each year", "Teams working within 14 days"],
+     "offices": [
+      {"flag": "vn", "name": "Vietnam", "address": "12th Floor, 81 Cach Mang Thang Tam Street, District 3, Ho Chi Minh City", "phone": "(+84) 28 5555 0181"},
+      {"flag": "ph", "name": "Philippines", "address": "9th Floor, Cebu IT Park, Lahug, Cebu City", "phone": "(+63) 32 555 0147"}
+     ],
+     "email_label": "Email",
+     "email": "hello@bluecrest.example",
+     "photo": {"src": "office-building-entrance", "alt": "Glass office building entrance at dusk with people walking in"}
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Dedicated offshore teams in Ho Chi Minh City and Cebu for companies in the US, UK and Australia.",
+    "contacts": [
+     {"icon": "mail", "label": "hello@bluecrest.example", "href": "mailto:hello@bluecrest.example"},
+     {"icon": "map-pin", "label": "District 3, Ho Chi Minh City"}
+    ],
+    "socials": [{"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"}],
+    "columns": [
+     {"heading": "Solutions", "links": [{"label": "Roles by industry", "href": "#services"}, {"label": "Pricing", "href": "#calculator"}, {"label": "Talent pool", "href": "#talent"}]},
+     {"heading": "Company", "links": [{"label": "How it works", "href": "#process"}, {"label": "Clients", "href": "#testimonials"}, {"label": "Contact", "href": "#contact"}]}
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [{"label": "Privacy", "href": "#top"}, {"label": "Terms", "href": "#top"}],
+    "certifications": "ISO/IEC 27001:2022 | ISO 9001:2015"
+   }
+  }
+ ]
+}

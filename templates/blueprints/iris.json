@@ -1,0 +1,17 @@
+{
+  "id": "iris",
+  "source": {"name": "IRIS Software Group", "url": "https://www.iris.co.uk/", "category": "Finance, Accounting & Legal BPO", "collected": "2026-09-30"},
+  "fits": ["enterprise-cx", "it-bpo-partner", "offshore-staffing"],
+  "preferred": true,
+  "summary": "Short, proof-led UK page: a dark hero with a portrait on a colour panel and a solution finder bar across its lower edge, a logo band under a big trust figure, a solution browser with vertical tabs, three customer stories, three articles and a contact form beside a chevron photo. Needs client logos, reviews or articles to reach five sections.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "dark", "cols": 2, "media": "right", "compose": ["hero-finder"], "note": "slate ground: small audience line, two-colour heading (first line in a light accent), lead left; a smiling portrait on a rounded brand-colour panel with three small white UI cards over its edges right; a finder bar with Industry, Size and Looking for selects and a search button overlaps the hero's lower edge"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 8, "count": 8, "media": "none", "note": "centered heading built on one large trust figure, one centered line, then a scrolling row of client logos"},
+    {"form": "tabs", "role": "services", "tone": "muted", "cols": 2, "count": 6, "media": "left", "note": "centered heading; vertical tabs left (by business area, by business size, by industry) with an accent bar under the active one; a raised white panel right with a two-column grid of six cards, each with a picture slot, a coloured title, a paragraph and a See more link"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "light", "cols": 3, "count": 3, "media": "top", "optional": true, "note": "centered heading and line, three columns each with a video poster or photo on top, the quote in bold and the name with job title, a centered link to all stories below"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 3, "count": 3, "media": "top", "optional": true, "note": "centered heading, three white article cards with a photo, a small caps category tag, the title, an excerpt and a pill button"},
+    {"form": "form", "role": "cta", "tone": "muted", "cols": 2, "count": 1, "media": "left", "note": "pale band: a smiling headset photo cut into a chevron pointing right at the left edge with a Call us now pill on its tip, heading across the top, a sub-heading and a two-column enquiry form (name, job title, company, email, phone, company size) right"},
+    {"form": "text-block", "role": "intro", "tone": "light", "media": "none", "optional": true, "note": "centered two-line statement and a faded paragraph that opens with a Read more link on a thin rule"}
+  ]
+}

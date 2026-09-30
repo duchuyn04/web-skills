@@ -1,0 +1,28 @@
+{
+  "variant": "solutions-vtabs",
+  "group": "services",
+  "forms": ["tabs"],
+  "open": true,
+  "summary": "Solution finder after IRIS: centered heading, then a vertical list of 2-4 ways to browse (by service, by company size, by industry) on the left, the active one marked by a thick brand-colour bar, and a raised white panel overlapping it on the right with that tab's 2-6 solution cards in two columns. Each card has an optional photo at its side, a title in the brand or dark ink (alternating), a short paragraph and a See more link. On tablets and phones the ways to browse become a row of pills above the panel.",
+  "tone": "muted",
+  "anchor": "services",
+  "animations": ["vtabs-bar-slide", "vtabs-cards-rise", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "tabs": {
+      "type": "list", "min": 2, "max": 4,
+      "item": {"type": "object", "fields": {
+        "tab": {"type": "text", "min": 3, "max": 26},
+        "items": {
+          "type": "list", "min": 2, "max": 6,
+          "item": {"type": "object", "fields": {
+            "photo": {"$ref": "photo", "required": false},
+            "title": {"type": "text", "min": 3, "max": 48},
+            "text": {"type": "text", "min": 30, "max": 220},
+            "link": {"$ref": "cta", "required": false}
+          }}
+        }
+      }}
+    }
+  }
+}

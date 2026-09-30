@@ -1,0 +1,14 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-fgrid" data-faq-grid data-reveal-group>
+      {{#items}}
+      <div class="bl-fgrid__item" data-reveal>
+        <h3 class="bl-fgrid__h"><button class="bl-fgrid__btn" type="button" id="{{section.id}}-q{{@n}}" aria-expanded="false" aria-controls="{{section.id}}-a{{@n}}"><span>{{q}}</span><span class="bl-fgrid__icon" aria-hidden="true">{{icon:plus bl-fgrid__plus}}{{icon:minus bl-fgrid__minus}}</span></button></h3>
+        <div class="bl-fgrid__panel" id="{{section.id}}-a{{@n}}" role="region" aria-labelledby="{{section.id}}-q{{@n}}"><div class="bl-fgrid__inner"><p>{{a}}</p></div></div>
+      </div>
+      {{/items}}
+    </div>
+    {{#link}}<p class="bl-fgrid__more" data-reveal><a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a></p>{{/link}}
+  </div>
+</section>

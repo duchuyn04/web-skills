@@ -1,0 +1,108 @@
+{
+  "_note": "Shows contact-photo, the closing enquiry block after IRIS Software: a chevron-cut people photo from the left edge with a call button beside its tip, and a two-column form with first and last name, job title, a topic select and a privacy link. Ledgerline Payroll is a fictional company; every figure is sample data.",
+  "archetype": "offshore-staffing",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Ledgerline Payroll",
+    "brand_mark": "LP",
+    "title": "Ledgerline Payroll | Payroll and bookkeeping teams for UK firms",
+    "description": "Ledgerline Payroll runs payroll and bookkeeping teams for UK accounting practices and small businesses."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "How it works", "href": "#how-it-works"},
+          {"label": "FAQ", "href": "#faq"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-fullbleed",
+      "data": {
+        "title": "Payroll and bookkeeping teams for *UK accounting firms*",
+        "lead": "Ledgerline Payroll runs monthly payroll, pension submissions and bookkeeping for UK practices, with one account manager for every client.",
+        "primary_cta": {"label": "Contact us", "href": "#contact"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "image": "team-meeting-bright-office"
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"title": "Our services"},
+        "cards": [
+          {"icon": "wallet", "title": "Monthly payroll", "text": "Payslips, starters and leavers, statutory pay and RTI submissions run on your payroll software and checked before release.", "bullets": ["RTI submissions", "Starters and leavers", "Statutory pay"]},
+          {"icon": "file-text", "title": "Bookkeeping", "text": "Bank reconciliations, purchase and sales ledgers and month-end journals prepared for your review."},
+          {"icon": "landmark", "title": "Pension submissions", "text": "Auto-enrolment assessments and pension contribution files sent to each provider on schedule."},
+          {"icon": "bar-chart", "title": "Reporting", "text": "A monthly pack with payroll totals, variances and open queries, reviewed with your account manager."}
+        ]
+      }
+    },
+    {
+      "type": "steps-row",
+      "data": {
+        "head": {"title": "How it works", "lead": "Most practices hand over their first payroll run within a month of the first call."},
+        "steps": [
+          {"title": "Review your payroll", "text": "We look at your employee count, pay dates, pension schemes and the software you use."},
+          {"title": "Set up access", "text": "Your account manager sets up access to your payroll and bookkeeping software and agrees a monthly timetable."},
+          {"title": "Run and report", "text": "We run each payroll, send the reports for your approval and file the submissions after you sign off."}
+        ],
+        "cta": {"label": "Book a call", "href": "#contact"}
+      }
+    },
+    {
+      "type": "faq-accordion",
+      "data": {
+        "head": {"title": "Frequently asked questions"},
+        "aside": {"title": "Have a question about your payroll?", "text": "An account manager can walk you through how a monthly run works with your software.", "cta": {"label": "Contact us", "href": "#contact"}},
+        "items": [
+          {"q": "Which payroll software do you work in?", "a": "We work in the payroll software you already use, so your employees and records stay where they are."},
+          {"q": "Who approves each payroll run?", "a": "You do. We send the reports before every run and only release payslips after you sign off."},
+          {"q": "Can you take over part way through the tax year?", "a": "Yes. We take the year-to-date figures from your current records and continue from the next pay date."},
+          {"q": "Who is our contact at Ledgerline?", "a": "Every client has one account manager who handles the timetable, queries and the monthly report."}
+        ]
+      }
+    },
+    {
+      "type": "contact-photo",
+      "id": "contact",
+      "data": {
+        "head": {"title": "Ready to speak to *our payroll team*?"},
+        "photo": {"src": "portrait-woman-team-lead", "alt": "Smiling woman in a red sweater holding a coffee in an office"},
+        "call": {"label": "Call us now", "phone": "+44 20 7946 0000", "text": "Monday to Friday, 9am to 5pm UK time"},
+        "form": {
+          "title": "Tell us how many employees you pay and which software you use.",
+          "name_label": "First name",
+          "last_name_label": "Last name",
+          "role_label": "Job title",
+          "company_label": "Company name",
+          "email_label": "Email address",
+          "phone_label": "Phone number",
+          "topic_label": "What do you need help with?",
+          "topic_options": ["Monthly payroll", "Bookkeeping", "Pension submissions", "Something else"],
+          "submit_label": "Send enquiry",
+          "success_title": "Thanks, your enquiry is in",
+          "success_text": "An account manager will reply by email to arrange a short call.",
+          "privacy": {"label": "How we use your data", "href": "https://ledgerline.example/privacy"}
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Ledgerline Payroll runs payroll and bookkeeping teams for UK accounting practices.",
+        "contacts": [{"icon": "mail", "label": "hello@ledgerline.example", "href": "mailto:hello@ledgerline.example"}],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "Monthly payroll", "href": "#services"}, {"label": "Bookkeeping", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "FAQ", "href": "#faq"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

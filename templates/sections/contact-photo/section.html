@@ -1,0 +1,43 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-cphoto">
+  <div class="bl-cphoto__grid">
+    <div class="bl-cphoto__media">
+      {{#photo}}<figure class="bl-cphoto__shape"><div class="bl-cphoto__wipe" data-wipe="left"><img src="{{src}}" alt="{{alt}}" width="720" height="900" loading="lazy" decoding="async"></div></figure>{{/photo}}
+    </div>
+    <div class="bl-cphoto__main">
+      {{> head-center}}
+      <div class="bl-cphoto__body">
+        {{#call}}
+        <div class="bl-cphoto__reach" data-reveal>
+          <a class="bl-btn bl-btn--primary bl-btn--lg bl-cphoto__call" href="{{phone_href}}">{{icon:phone}}<span>{{label}}</span></a>
+          <p class="bl-cphoto__phone"><a href="{{phone_href}}">{{phone}}</a>{{#text}}<span>{{text}}</span>{{/text}}</p>
+        </div>
+        {{/call}}
+        {{#form}}
+        <form class="bl-cphoto__form" data-cphoto-form{{#action}} action="{{action}}" method="post"{{/action}} novalidate data-reveal>
+          <div class="bl-cphoto__fields">
+            <h3 class="bl-cphoto__title">{{title}}</h3>
+            <div class="bl-cphoto__grid2">
+              <div class="bl-field"><label class="bl-label" for="{{section.id}}-name">{{name_label}}</label><input class="bl-input" id="{{section.id}}-name" name="name" type="text" autocomplete="{{#last_name_label}}given-name{{/last_name_label}}{{^last_name_label}}name{{/last_name_label}}" required></div>
+              {{#last_name_label}}<div class="bl-field"><label class="bl-label" for="{{section.id}}-last">{{last_name_label}}</label><input class="bl-input" id="{{section.id}}-last" name="last_name" type="text" autocomplete="family-name" required></div>{{/last_name_label}}
+              {{#role_label}}<div class="bl-field"><label class="bl-label" for="{{section.id}}-role">{{role_label}}</label><input class="bl-input" id="{{section.id}}-role" name="job_title" type="text" autocomplete="organization-title"></div>{{/role_label}}
+              <div class="bl-field"><label class="bl-label" for="{{section.id}}-company">{{company_label}}</label><input class="bl-input" id="{{section.id}}-company" name="company" type="text" autocomplete="organization"></div>
+              <div class="bl-field"><label class="bl-label" for="{{section.id}}-email">{{email_label}}</label><input class="bl-input" id="{{section.id}}-email" name="email" type="email" autocomplete="email" required></div>
+              {{#phone_label}}<div class="bl-field"><label class="bl-label" for="{{section.id}}-phone">{{phone_label}}</label><input class="bl-input" id="{{section.id}}-phone" name="phone" type="tel" autocomplete="tel"></div>{{/phone_label}}
+              {{#topic_label}}<div class="bl-field bl-cphoto__wide"><label class="bl-label" for="{{section.id}}-topic">{{topic_label}}</label><span class="bl-cphoto__select"><select class="bl-input" id="{{section.id}}-topic" name="topic">{{#topic_options}}<option>{{.}}</option>{{/topic_options}}</select>{{icon:chevron-down}}</span></div>{{/topic_label}}
+              {{#message_label}}<div class="bl-field bl-cphoto__wide"><label class="bl-label" for="{{section.id}}-msg">{{message_label}}</label><textarea class="bl-input" id="{{section.id}}-msg" name="message" rows="3"></textarea></div>{{/message_label}}
+            </div>
+            {{#note}}<p class="bl-cphoto__note">{{icon:lock}}<span>{{note}}</span></p>{{/note}}
+            {{#privacy}}<p class="bl-cphoto__note bl-cphoto__privacy"><a href="{{href}}">{{label}}</a></p>{{/privacy}}
+            <button type="submit" class="bl-btn bl-btn--primary bl-btn--lg">{{submit_label}}</button>
+          </div>
+          <div class="bl-cphoto__done" role="status" hidden>
+            <span class="bl-cphoto__done-icon">{{icon:check-circle}}</span>
+            <strong>{{success_title}}</strong>
+            <p>{{success_text}}</p>
+          </div>
+        </form>
+        {{/form}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -138,6 +138,18 @@ def write_anatomy(lib):
 
 
 TIMING = {
+    "finder-panel-rise": "the brand panel behind the photo grows up from its base as the hero is seen (0.8s power3.out), the photo rises 24px and fades in 0.2s later",
+    "finder-card-pop": "the white cards over the panel pop in one after another (0.5s back.out, 160ms apart, from 750ms)",
+    "finder-mark-draw": "inside the cards the bars grow (0.5s, 70ms apart, from 1s), the tick draws (0.45s at 1.2s) and the list lines extend (0.5s, 80ms apart, at 1.3s); once only",
+    "finder-bar-rise": "the finder bar settles 18px upward onto the hero's lower edge (0.8s power3.out, 400ms)",
+    "vtabs-bar-slide": "the brand bar under the active way-to-browse slides to the chosen tab (300ms --ease-std); on tablets and phones the chosen pill fills with the brand colour instead",
+    "vtabs-cards-rise": "on a tab change the new cards rise 12px and fade in (360ms --ease-out, 60ms apart, capped at the fourth card); skipped with reduced motion",
+    "roles-slide-in": "role cards arrive from the right one after another when the track enters (0.8s power3.out, 100ms apart, up to the sixth card); fade style keeps them in place",
+    "roles-scroll-bar": "the thumb under the track follows the scroll position, its width the visible share of the track (updated per animation frame, no easing)",
+    "chevron-photo-open": "the chevron photo is uncovered from its tip toward the page edge (clip wipe 1.1s ease-out) while it settles from 108% scale",
+    "call-button-pop": "the round call button grows from 0.8 (0.5s ease-back) 550ms after its column comes into view",
+    "tile-label-follow": "each tile's label rises 8px and fades in after its tile lands, while the figure counts up (0.6s, 300ms plus 90ms per tile)",
+    "faq-plus-to-minus": "the plus sign turns 90 degrees and fades while a minus fades in (320ms), in step with the answer opening",
     "cases-slide-in": "case cards arrive from the right one after another when the track enters (0.8s power3.out, 100ms apart, up to the sixth card); fade style keeps them in place",
     "country-cards-slide-in": "country cards arrive from the right one after another when the track enters (0.8s power3.out, 100ms apart); fade style keeps them in place",
     "flag-pop": "the round flag badge pops from 0 after its card lands (0.5s ease-back, 600ms plus 100ms per card)",
@@ -155,7 +167,7 @@ TIMING = {
     "band-wipe-open": "the dark band opens left to right (1s), the copy rises in, the photo appears once the band is open; bands with a visual keep the plain reveal",
     "point-tick-sequence": "check points arrive one by one 100ms apart, each icon pops in (0.45s ease-back), after the band or panel opens",
     "aside-rise-open": "the brand-colour panel opens from the bottom (1s, 0.25s after the card lands)",
-    "form-field-cascade": "form title, text and field rows rise 14px (0.6s, 80ms apart); the submit button arrives with the card",
+    "form-field-cascade": "form title, text and field rows rise 14px (0.6s, 40-80ms apart); the submit button arrives with the card",
     "frame-grow-on-scroll": "the player widens from 90% to full size as it scrolls up to the middle of the screen (scroll-linked, wide screens)",
     "play-button-settle": "the play button pops in from 60% (0.6s ease-back, 0.45s after the frame), then the title and running time rise 12px",
     "copy-line-stagger": "eyebrow, title, text and button rise 18px (0.7s, 120ms apart) as the band fades in",

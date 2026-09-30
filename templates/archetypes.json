@@ -34,6 +34,7 @@
           "hero-tabs",
           "hero-news",
           "hero-panels",
+          "hero-finder",
           "hero-split-image",
           "hero-cycler-centered",
           "hero-fullbleed",
@@ -94,6 +95,8 @@
         "slot": "services",
         "variants": [
           "services-tabs",
+          "solutions-vtabs",
+          "roles-carousel",
           "services-bento",
           "service-links",
           "services-stack",
@@ -142,6 +145,7 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
+          "metrics-tiles",
           "metrics-rings",
           "metrics-bars3d"
         ],
@@ -158,6 +162,7 @@
         "variants": [
           "industries-tiles",
           "image-cards",
+          "roles-carousel",
           "audience-cards",
           "industries-rows",
           "industries-slats"
@@ -237,6 +242,7 @@
         "slot": "faq",
         "variants": [
           "faq-accordion",
+          "faq-grid",
           "faq-fold"
         ]
       },
@@ -246,6 +252,7 @@
           "cta-multistep",
           "cta-band",
           "contact-split",
+          "contact-photo",
           "cta-letter"
         ],
         "required": true
@@ -307,6 +314,7 @@
           "hero-tabs",
           "hero-news",
           "hero-panels",
+          "hero-finder",
           "hero-cycler-centered",
           "hero-split-image",
           "hero-fullbleed",
@@ -367,6 +375,8 @@
         "variants": [
           "services-bento",
           "services-tabs",
+          "solutions-vtabs",
+          "roles-carousel",
           "service-links",
           "services-stack",
           "services-cylinder",
@@ -421,6 +431,7 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
+          "metrics-tiles",
           "metrics-rings",
           "metrics-bars3d"
         ]
@@ -494,6 +505,7 @@
         "slot": "faq",
         "variants": [
           "faq-accordion",
+          "faq-grid",
           "faq-fold"
         ],
         "required": true
@@ -504,6 +516,7 @@
           "cta-multistep",
           "cta-band",
           "contact-split",
+          "contact-photo",
           "cta-letter"
         ],
         "required": true
@@ -562,6 +575,7 @@
           "hero-tabs",
           "hero-news",
           "hero-panels",
+          "hero-finder",
           "hero-dark-network",
           "hero-fullbleed",
           "hero-gradient",
@@ -613,6 +627,8 @@
         "variants": [
           "services-bento",
           "service-links",
+          "solutions-vtabs",
+          "roles-carousel",
           "services-stack",
           "services-cylinder",
           "services-cube"
@@ -660,6 +676,7 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
+          "metrics-tiles",
           "metrics-rings",
           "metrics-bars3d"
         ],
@@ -735,6 +752,7 @@
         "slot": "faq",
         "variants": [
           "faq-accordion",
+          "faq-grid",
           "faq-fold"
         ]
       },
@@ -744,6 +762,7 @@
           "cta-multistep",
           "cta-band",
           "contact-split",
+          "contact-photo",
           "cta-letter"
         ],
         "required": true
@@ -803,6 +822,7 @@
           "hero-tabs",
           "hero-news",
           "hero-panels",
+          "hero-finder",
           "hero-split-image",
           "hero-cycler-centered",
           "hero-fullbleed",
@@ -863,6 +883,8 @@
         "variants": [
           "services-bento",
           "services-tabs",
+          "solutions-vtabs",
+          "roles-carousel",
           "service-links",
           "services-stack",
           "services-cylinder",
@@ -907,6 +929,7 @@
         "variants": [
           "metrics-counter",
           "metrics-panel",
+          "metrics-tiles",
           "metrics-rings",
           "metrics-bars3d"
         ],
@@ -981,6 +1004,7 @@
         "slot": "faq",
         "variants": [
           "faq-accordion",
+          "faq-grid",
           "faq-fold"
         ],
         "required": true
@@ -991,6 +1015,7 @@
           "cta-multistep",
           "cta-band",
           "contact-split",
+          "contact-photo",
           "cta-letter"
         ],
         "required": true
@@ -1051,6 +1076,7 @@
           "hero-tabs",
           "hero-news",
           "hero-panels",
+          "hero-finder",
           "hero-gradient",
           "hero-split-image",
           "hero-fullbleed",
@@ -1095,6 +1121,7 @@
         "slot": "trust",
         "variants": [
           "metrics-panel",
+          "metrics-tiles",
           "metrics-counter",
           "metrics-rings",
           "metrics-bars3d"
@@ -1121,6 +1148,8 @@
           "service-links",
           "services-bento",
           "services-tabs",
+          "solutions-vtabs",
+          "roles-carousel",
           "services-stack",
           "services-cylinder",
           "services-cube"
@@ -1166,6 +1195,7 @@
         "slot": "audience",
         "variants": [
           "audience-cards",
+          "roles-carousel",
           "industries-tiles",
           "industries-rows",
           "industries-slats"
@@ -1239,6 +1269,7 @@
         "slot": "faq",
         "variants": [
           "faq-accordion",
+          "faq-grid",
           "faq-fold"
         ]
       },
@@ -1246,6 +1277,7 @@
         "slot": "cta",
         "variants": [
           "contact-split",
+          "contact-photo",
           "cta-multistep",
           "cta-band",
           "cta-letter"

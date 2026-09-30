@@ -28,6 +28,10 @@ RULES_SINCE = {"gradient": 2, "caps-tracking": 2, "justify": 2, "slow-motion": 2
 CUSTOM_PROP_STYLE =re.compile(r"^\s*(--[\w-]+\s*:\s*[^;]+;?\s*)+$")
 
 
+# a selector or at-rule followed by a declaration block, or a /* comment */, in visible text
+STRAY_CODE = re.compile(r"/\*|(^|\s)[.#@][\w-][^{}\n]{0,160}\{[^{}]*:[^{}]*\}|\{\s*[\w-]+\s*:\s*[^;{}]+;[^{}]*\}")
+
+
 class Page(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -95,6 +99,11 @@ def main():
             continue
         for f in rules.check_text(value):
             add(f.level, "index.html:%d <%s %s>" % (line, tag, name), f.code, "%s (near: \"%s\")" % (f.message, f.excerpt))
+
+    # 1b. CSS or JS that slipped out of its file into the markup shows on the page as text (solution-panels in 4.1.0)
+    for line, text in page.texts:
+        if STRAY_CODE.search(text):
+            add("error", "index.html:%d" % line, "stray-code", "visible text looks like CSS or a code comment (near: \"%s\"). A section template holds code outside <style> and <script>; move it into section.css or section.js." % text[:70])
 
     # 2. Characters that must not appear anywhere, code and comments included.
     files = [index] + sorted((dist / "assets").rglob("*.css")) + sorted((dist / "assets").rglob("*.js"))

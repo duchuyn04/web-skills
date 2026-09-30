@@ -1,0 +1,29 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-solutions-vtabs__wrap" data-vtabs>
+      <div class="bl-solutions-vtabs__rail" data-reveal>
+        <div class="bl-solutions-vtabs__list" role="tablist" aria-orientation="vertical" aria-label="{{head.title_plain}}">
+          <span class="bl-solutions-vtabs__bar" aria-hidden="true"></span>
+          {{#tabs}}<button class="bl-solutions-vtabs__tab" type="button" role="tab" id="{{section.id}}-vtab-{{@n}}" aria-controls="{{section.id}}-vpanel-{{@n}}" aria-selected="{{#@first}}true{{/@first}}{{^@first}}false{{/@first}}"{{^@first}} tabindex="-1"{{/@first}}>{{tab}}</button>{{/tabs}}
+        </div>
+      </div>
+      <div class="bl-solutions-vtabs__panel" data-reveal>
+        {{#tabs}}
+        <div class="bl-solutions-vtabs__pane" role="tabpanel" id="{{section.id}}-vpanel-{{@n}}" aria-labelledby="{{section.id}}-vtab-{{@n}}" tabindex="0"{{^@first}} hidden{{/@first}}>
+          {{#items}}
+          <article class="bl-solutions-vtabs__card{{#photo}} bl-solutions-vtabs__card--photo{{/photo}}">
+            {{#photo}}<div class="bl-frame bl-solutions-vtabs__media"><img src="{{src}}" alt="{{alt}}" width="240" height="300" loading="lazy" decoding="async"></div>{{/photo}}
+            <div class="bl-solutions-vtabs__body">
+              <h3 class="bl-solutions-vtabs__title">{{title}}</h3>
+              <p class="bl-solutions-vtabs__text">{{text}}</p>
+              {{#link}}<a class="bl-link bl-solutions-vtabs__link" href="{{href}}">{{label}}</a>{{/link}}
+            </div>
+          </article>
+          {{/items}}
+        </div>
+        {{/tabs}}
+      </div>
+    </div>
+  </div>
+</section>

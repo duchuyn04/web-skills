@@ -1,0 +1,123 @@
+{
+  "_note": "Shows metrics-tiles with layout split (copy beside a 2x2 grid of figure tiles, after Innovature) and faq-grid (two columns of question boxes, after Intelligent Outsourcing). layout row (a line of 3-4 tinted figure tiles, usually right under the hero, head optional) takes the same items without icons. Riverbend Offshore is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Riverbend Offshore",
+    "brand_mark": "RO",
+    "title": "Riverbend Offshore | Accounting and software teams in Da Nang",
+    "description": "Riverbend Offshore builds dedicated accounting and software teams in Da Nang for firms in Australia, the United Kingdom and the United States."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Figures", "href": "#figures"},
+          {"label": "Services", "href": "#services"},
+          {"label": "FAQ", "href": "#faq"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "title": "Offshore accounting and software teams *in Da Nang*",
+        "lead": "Riverbend Offshore hires, trains and manages dedicated staff in Da Nang for accounting firms and software companies, so your team keeps the client work.",
+        "primary_cta": {"label": "Contact us", "href": "#contact"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "proof": ["Founded in 2013", "One office in Da Nang"],
+        "photo": {"src": "team-engineers-screen", "alt": "Three engineers looking at code on a large monitor"}
+      }
+    },
+    {
+      "type": "metrics-tiles",
+      "data": {
+        "layout": "split",
+        "head": {
+          "title": "Dedicated staff who work in your systems",
+          "lead": "Riverbend Offshore recruits each person for one client, then trains them on that client's tools and review steps before their first live task."
+        },
+        "text": "Your staff sit in our Da Nang office with managed IT, a local team lead and HR support, and they join your meetings in your working hours.",
+        "items": [
+          {"value": 12, "suffix": "+", "label": "Years running offshore teams", "icon": "calendar"},
+          {"value": 340, "label": "Staff in our Da Nang office", "icon": "users", "href": "#services"},
+          {"value": 55, "suffix": "%", "label": "Lower cost than a local hire", "icon": "percent"},
+          {"value": 94, "suffix": "%", "label": "Clients renewing each year", "icon": "smile", "href": "#contact"}
+        ]
+      }
+    },
+    {
+      "type": "service-links",
+      "data": {
+        "groups": [
+          {
+            "eyebrow": "Roles we hire",
+            "title": "Accounting and software roles",
+            "text": "Each role is hired for one client and trained on that client's software and checklists.",
+            "links": [
+              {"label": "Bookkeepers", "href": "#contact", "icon": "calculator"},
+              {"label": "Payroll officers", "href": "#contact", "icon": "wallet"},
+              {"label": "Audit assistants", "href": "#contact", "icon": "clipboard-check"},
+              {"label": "Software developers", "href": "#contact", "icon": "code"},
+              {"label": "QA testers", "href": "#contact", "icon": "bug"},
+              {"label": "Support engineers", "href": "#contact", "icon": "headset"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq-grid",
+      "data": {
+        "head": {"title": "Questions firms ask before they start"},
+        "items": [
+          {"q": "Is this the same as outsourcing a task?", "a": "No. Your staff member works only for your firm, follows your processes and reports to your managers. Riverbend handles the hiring, payroll, office and IT."},
+          {"q": "What hours does my team member work?", "a": "Staff work the hours you agree at the start. Most clients choose a shift that overlaps their mornings so questions are answered the same day."},
+          {"q": "How long does it take to get started?", "a": "Most roles are filled within four to six weeks, including two weeks of training on your software before live work."},
+          {"q": "What happens if someone leaves?", "a": "We recruit and train a replacement for the role, and the team lead covers urgent work in the meantime."},
+          {"q": "Which software can the team use?", "a": "The team works in the tools you already use. We set up access with your IT team and follow your security rules."},
+          {"q": "Can we interview the candidates?", "a": "Yes. We send a shortlist and you interview and choose the person who joins your team."}
+        ],
+        "link": {"label": "Ask a question", "href": "#contact"}
+      }
+    },
+    {
+      "type": "contact-split",
+      "id": "contact",
+      "data": {
+        "head": {"title": "Contact *Riverbend Offshore*"},
+        "form": {
+          "title": "Tell us about the role",
+          "text": "Share the role, the software it uses and the hours it needs.",
+          "submit_label": "Send message",
+          "success_title": "Thanks, your message is in",
+          "success_text": "A team lead will reply by email to set up a call."
+        },
+        "aside": {
+          "title": "Our Da Nang office",
+          "points": ["Founded in 2013", "340 staff in Da Nang"],
+          "offices": [
+            {"flag": "vn", "name": "Da Nang", "address": "Bach Dang Street, Hai Chau District, Da Nang, Vietnam"}
+          ],
+          "email_label": "Email",
+          "email": "hello@riverbend.example"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Riverbend Offshore builds dedicated accounting and software teams in Da Nang.",
+        "contacts": [{"icon": "mail", "label": "hello@riverbend.example", "href": "mailto:hello@riverbend.example"}],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "Accounting roles", "href": "#services"}, {"label": "Software roles", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "Figures", "href": "#figures"}, {"label": "FAQ", "href": "#faq"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

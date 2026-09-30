@@ -1,0 +1,86 @@
+/* contact-photo: chevron-cut people photo from the left edge, heading and enquiry form on the right (IRIS Software) */
+.bl-cphoto { padding-block: 0; overflow: hidden; }
+.bl-cphoto__grid { display: grid; grid-template-columns: minmax(0, 34%) minmax(0, 1fr); min-height: 600px; }
+.bl-cphoto__media { position: relative; }
+.bl-cphoto__shape { position: absolute; inset: 0; margin: 0; clip-path: polygon(0 0, 46% 0, 100% 50%, 46% 100%, 0 100%); background: var(--surface-2); }
+.bl-cphoto__wipe { width: 100%; height: 100%; }
+.bl-cphoto__wipe img { width: 100%; height: 100%; object-fit: cover; object-position: 35% 30%; }
+.bl-cphoto__main {
+  padding-block: var(--section-y);
+  padding-left: clamp(1.5rem, 4vw, 4rem);
+  padding-right: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+}
+.bl-cphoto .bl-head { margin-bottom: clamp(2rem, 3.5vw, 3rem); }
+.bl-cphoto__body { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center; }
+.bl-cphoto__body:has(.bl-cphoto__reach) { grid-template-columns: minmax(0, .62fr) minmax(0, 2fr); }
+.bl-cphoto__reach { display: grid; justify-items: start; gap: .9rem; }
+.bl-cphoto__call { border-radius: 999px; }
+.bl-cphoto__call .bl-icon { width: 1.1rem; height: 1.1rem; }
+.bl-cphoto__phone { display: grid; gap: .25rem; font-size: var(--fs-sm); color: var(--text); }
+.bl-cphoto__phone a { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--text-strong); }
+.bl-cphoto__phone a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.bl-cphoto__form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.25rem); }
+.bl-cphoto__fields { display: grid; gap: 1.1rem; }
+.bl-cphoto__title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.15rem, .6vw + 1rem, 1.35rem); line-height: 1.3; color: var(--text-strong); }
+.bl-cphoto__grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.1rem; }
+.bl-cphoto__wide { grid-column: 1 / -1; }
+.bl-cphoto__select { position: relative; display: block; }
+.bl-cphoto__select select { appearance: none; padding-right: 2.6rem; cursor: pointer; }
+.bl-cphoto__select .bl-icon { position: absolute; right: .9rem; top: 50%; width: 1rem; height: 1rem; translate: 0 -50%; pointer-events: none; color: var(--text-muted); }
+.bl-cphoto__note { display: flex; gap: .5rem; align-items: flex-start; font-size: var(--fs-xs); color: var(--text-muted); }
+.bl-cphoto__note .bl-icon { width: 14px; height: 14px; margin-top: .15rem; flex: none; }
+.bl-cphoto__privacy { margin-top: -.6rem; }
+.bl-cphoto__privacy a { color: var(--accent-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.bl-cphoto__fields .bl-btn { justify-self: start; }
+.bl-cphoto__done { display: grid; justify-items: start; gap: .75rem; padding: 1.5rem 0; animation: bl-cphoto-in 350ms var(--ease-out); }
+.bl-cphoto__done-icon { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: var(--c-accent-soft); color: var(--accent-ink); }
+.bl-cphoto__done-icon .bl-icon { width: 30px; height: 30px; }
+.bl-cphoto__done strong { font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-strong); }
+@keyframes bl-cphoto-in { from { opacity: 0; transform: translateY(10px); } }
+
+/* chevron-photo-open: the photo is uncovered from the chevron's tip toward the page edge while it settles from 108%.
+   call-button-pop: the call button grows in after the photo has opened.
+   form-field-cascade: the form title, fields and button rise in order once the form is in view. */
+.js .bl-cphoto__wipe[data-wipe] { transition-duration: 1.1s; }
+.js .bl-cphoto__wipe img { scale: 1.08; transition: scale 1.1s var(--ease-out); }
+.js .bl-cphoto__wipe.is-seen img { scale: 1; }
+.js .bl-cphoto__call { transition: transform .5s var(--ease-back), background-color var(--dur-fast) var(--ease-std); transition-delay: .55s; }
+.js .bl-cphoto__reach:not(.is-in) .bl-cphoto__call { transform: scale(.8); }
+.js .bl-cphoto__reach.is-in .bl-cphoto__call:hover { transition-delay: 0s; }
+.js .bl-cphoto__fields > :not(.bl-cphoto__grid2), .js .bl-cphoto__grid2 > * { transition: opacity .6s var(--ease-out), translate .6s var(--ease-out); }
+.js .bl-cphoto__form:not(.is-in) :is(.bl-cphoto__fields > :not(.bl-cphoto__grid2), .bl-cphoto__grid2 > *) { opacity: 0; translate: 0 14px; }
+.bl-cphoto__grid2 > :nth-child(1) { transition-delay: 80ms; }
+.bl-cphoto__grid2 > :nth-child(2) { transition-delay: 120ms; }
+.bl-cphoto__grid2 > :nth-child(3) { transition-delay: 160ms; }
+.bl-cphoto__grid2 > :nth-child(4) { transition-delay: 200ms; }
+.bl-cphoto__grid2 > :nth-child(5) { transition-delay: 240ms; }
+.bl-cphoto__grid2 > :nth-child(6) { transition-delay: 280ms; }
+.bl-cphoto__grid2 > :nth-child(n+7) { transition-delay: 320ms; }
+.bl-cphoto__fields > :nth-child(n+3) { transition-delay: 360ms; }
+
+@media (max-width: 1100px) {
+  .bl-cphoto__body:has(.bl-cphoto__reach) { grid-template-columns: 1fr; }
+  .bl-cphoto__reach { grid-auto-flow: column; justify-content: start; align-items: center; gap: 1.25rem; }
+}
+/* tablets: the photo becomes a band on top whose chevron points down into the form */
+@media (max-width: 900px) {
+  .bl-cphoto__grid { grid-template-columns: 1fr; min-height: 0; }
+  .bl-cphoto__media { height: clamp(220px, 38vw, 320px); }
+  .bl-cphoto__shape { clip-path: polygon(0 0, 100% 0, 100% 72%, 50% 100%, 0 72%); }
+  .bl-cphoto__wipe img { object-position: 50% 30%; }
+  .js .bl-cphoto__wipe[data-wipe]:not(.is-seen) { clip-path: inset(100% 0 0 0); }
+  .bl-cphoto__main { padding: clamp(2.5rem, 6vw, 3.5rem) var(--gutter) var(--section-y); }
+}
+/* phones: a plain photo strip, then one column */
+@media (max-width: 600px) {
+  .bl-cphoto__media { height: 200px; }
+  .bl-cphoto__shape { clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%); }
+  .bl-cphoto__grid2 { grid-template-columns: 1fr; }
+  .bl-cphoto__reach { grid-auto-flow: row; justify-items: start; }
+  .bl-cphoto__fields .bl-btn { justify-self: stretch; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-cphoto__wipe img, .js .bl-cphoto__call { scale: 1 !important; transform: none !important; }
+  .js .bl-cphoto__form :is(.bl-cphoto__fields > *, .bl-cphoto__grid2 > *) { opacity: 1 !important; translate: none !important; }
+}

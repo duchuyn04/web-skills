@@ -1,0 +1,66 @@
+{
+  "variant": "roles-carousel",
+  "group": "services",
+  "forms": ["carousel-cards"],
+  "summary": "Roles by industry or team (Innovature): centered heading and lead over a track of 4-8 tall white cards that runs past the page edge. Each card has a thin accent top edge, an optional icon square, the industry or team name, a check list of 3-5 roles or tasks and an optional link such as 'View all roles'. A thin bar under the track shows how far it is scrolled; previous and next buttons, drag, swipe and the arrow keys move it.",
+  "tone": "auto",
+  "anchor": "services",
+  "shared": [
+    "slider"
+  ],
+  "animations": [
+    "roles-slide-in",
+    "roles-scroll-bar",
+    "reveal"
+  ],
+  "fields": {
+    "head": {
+      "$ref": "head"
+    },
+    "prev_label": {
+      "type": "text",
+      "min": 2,
+      "max": 24,
+      "default": "Previous cards"
+    },
+    "next_label": {
+      "type": "text",
+      "min": 2,
+      "max": 24,
+      "default": "Next cards"
+    },
+    "items": {
+      "type": "list",
+      "min": 4,
+      "max": 8,
+      "item": {
+        "type": "object",
+        "fields": {
+          "icon": {
+            "type": "icon",
+            "required": false
+          },
+          "title": {
+            "type": "text",
+            "min": 3,
+            "max": 34
+          },
+          "roles": {
+            "type": "list",
+            "min": 3,
+            "max": 5,
+            "item": {
+              "type": "text",
+              "min": 3,
+              "max": 40
+            }
+          },
+          "link": {
+            "$ref": "cta",
+            "required": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "_note": "Shows roles-carousel as the services section of a staffing page: one card per industry with the roles placed in it, a scroll bar under the track and previous/next buttons. Tidewell Staffing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Tidewell Staffing",
+    "brand_mark": "TW",
+    "title": "Tidewell Staffing | Offshore staff in Ho Chi Minh City and Cebu",
+    "description": "Tidewell Staffing places dedicated offshore staff in Ho Chi Minh City and Cebu for finance, healthcare, logistics and software companies."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Roles", "href": "#services"},
+          {"label": "How it works", "href": "#how-it-works"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Get a quote", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "title": "Offshore staff for *finance, healthcare and logistics*",
+        "lead": "Tidewell Staffing hires and supports full-time staff in Ho Chi Minh City and Cebu who work only for your company, on your tools and in your hours.",
+        "primary_cta": {"label": "Get a quote", "href": "#get-started"},
+        "secondary_cta": {"label": "See the roles", "href": "#services"},
+        "photo": {"src": "team-coworking-laptops", "alt": "Colleagues working on laptops at a shared table in a bright office"}
+      }
+    },
+    {
+      "type": "roles-carousel",
+      "data": {
+        "head": {"title": "Roles we place by industry", "lead": "Each card lists the roles clients in that sector ask for most. Every role can be staffed full time or as part of a team."},
+        "items": [
+          {"icon": "calculator", "title": "Finance and accounting", "roles": ["Bookkeeper", "Accounts payable clerk", "Accounts receivable clerk", "Payroll officer"], "link": {"label": "View all roles", "href": "#get-started"}},
+          {"icon": "heart-pulse", "title": "Healthcare", "roles": ["Patient support agent", "Medical billing specialist", "Claims processor"], "link": {"label": "View all roles", "href": "#get-started"}},
+          {"icon": "truck", "title": "Logistics", "roles": ["Dispatch coordinator", "Shipment tracking agent", "Freight billing clerk", "Customs document clerk"], "link": {"label": "View all roles", "href": "#get-started"}},
+          {"icon": "shopping-cart", "title": "Ecommerce", "roles": ["Order support agent", "Product listing editor", "Returns processor"], "link": {"label": "View all roles", "href": "#get-started"}},
+          {"icon": "code", "title": "Software and IT", "roles": ["QA tester", "Help desk technician", "Front-end developer", "Data analyst"], "link": {"label": "View all roles", "href": "#get-started"}},
+          {"icon": "users", "title": "Staffing agencies", "roles": ["Recruitment coordinator", "Candidate sourcer", "Timesheet administrator"], "link": {"label": "View all roles", "href": "#get-started"}},
+          {"icon": "landmark", "title": "Insurance", "roles": ["Policy administrator", "Claims support agent", "Underwriting assistant"], "link": {"label": "View all roles", "href": "#get-started"}}
+        ]
+      }
+    },
+    {
+      "type": "steps-row",
+      "data": {
+        "head": {"title": "How it works"},
+        "steps": [
+          {"title": "Describe the role", "text": "A short call to list the tasks, tools, hours and the experience the person needs.", "photo": {"src": "meeting-room-empty", "alt": "Empty meeting room with a long table and chairs"}},
+          {"title": "Interview candidates", "text": "You meet a shortlist tested on sample tasks from your own work and choose who joins.", "photo": {"src": "portrait-woman-glasses-desk", "alt": "Woman in glasses smiling at a desk with a laptop"}},
+          {"title": "Start with a lead", "text": "Your new hire starts with a team lead on site who handles equipment, payroll and daily check-ins.", "photo": {"src": "office-interior", "alt": "Open office floor with desks and monitors"}}
+        ],
+        "cta": {"label": "Get a quote", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Start with *one role*",
+        "text": "Tell us which role you need first and we will send a shortlist plan and a monthly cost.",
+        "primary_cta": {"label": "Get a quote", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Tidewell Staffing places dedicated offshore staff in Ho Chi Minh City and Cebu.",
+        "columns": [
+          {"heading": "Roles", "links": [
+            {"label": "Finance and accounting", "href": "#services"},
+            {"label": "Healthcare", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "How it works", "href": "#how-it-works"},
+            {"label": "Contact", "href": "#get-started"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

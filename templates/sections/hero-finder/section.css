@@ -1,0 +1,121 @@
+/* hero-finder: finder-panel-rise, finder-card-pop, finder-mark-draw, finder-bar-rise. Copy on the dark ground beside
+   a person photo on a brand-colour panel with small white cards over its edges; a finder bar of labelled dropdowns
+   straddles the lower edge of the dark ground (the light band under it is .bl-hfind__base). */
+.bl-hfind__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.bl-hfind--finder { padding-bottom: 0; }
+.bl-hfind--finder .bl-hfind__grid { padding-bottom: clamp(4.5rem, 6vw, 5.75rem); }
+.bl-hfind .bl-h1 { font-size: clamp(2.2rem, 2.6vw + 1rem, 3.5rem); line-height: 1.08; }
+.bl-hfind.bl-tone-dark .bl-h1 .bl-hl { color: var(--c-accent-on-dark); }
+.bl-hfind .bl-hero__lead { max-width: 33rem; }
+.bl-hfind:not(:has(.bl-btn-row)) .bl-hero__lead { margin-bottom: 0; }
+.bl-hfind__eyebrow { margin-bottom: 1.1rem; font-size: var(--fs-sm); font-weight: 700; line-height: 1.35; color: var(--text-strong); }
+
+/* photo on a brand-colour panel */
+.bl-hfind__visual { display: flex; justify-content: flex-end; }
+.bl-hfind__stage { position: relative; width: min(100%, 540px); aspect-ratio: 1 / .92; }
+.bl-hfind__panel {
+  position: absolute; inset: 0 7% 0 30%; border-radius: calc(var(--radius-lg) + 4px); background: var(--c-accent);
+  transform-origin: 50% 100%;
+}
+.bl-hfind__photo {
+  position: absolute; inset: 7% 14% 7% 19%; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-2);
+}
+.bl-hfind__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+
+/* white cards over the panel edges */
+.bl-hfind__cards { position: absolute; inset: 0; pointer-events: none; }
+.bl-hfind__card {
+  position: absolute; z-index: 2; display: flex; flex-direction: column; gap: .6rem; width: 11.5rem; padding: .8rem .9rem .9rem;
+  border-radius: var(--radius); background: var(--surface); color: var(--text-strong); border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg); pointer-events: auto;
+}
+.bl-hfind__card--1 { top: 13%; left: 0; }
+.bl-hfind__card--2 { top: -3%; right: 0; }
+.bl-hfind__card--3 { bottom: 8%; right: -2%; }
+.bl-hfind__card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; }
+.bl-hfind__card-title { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: .88rem; line-height: 1.25; letter-spacing: var(--heading-tracking); }
+.bl-hfind__card-icon { flex-shrink: 0; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--c-accent-soft); color: var(--accent-ink); }
+.bl-hfind__card-icon .bl-icon { width: 16px; height: 16px; }
+
+/* the small drawn mark: one of bars, tick or list lines */
+.bl-hfind__mark { display: block; }
+.bl-hfind__bars, .bl-hfind__tick, .bl-hfind__lines { display: none; }
+.bl-hfind__card--bars .bl-hfind__bars, .bl-hfind__card--list .bl-hfind__lines { display: flex; }
+.bl-hfind__card--tick .bl-hfind__tick { display: block; }
+.bl-hfind__bars { align-items: flex-end; gap: .45rem; height: 3.1rem; padding: 0 .2rem; border-bottom: 1px solid var(--border-strong); }
+.bl-hfind__bars i { flex: 1; border-radius: 3px 3px 0 0; background: var(--c-accent); transform-origin: 50% 100%; }
+.bl-hfind__bars i:nth-child(1) { height: 42%; opacity: .45; }
+.bl-hfind__bars i:nth-child(2) { height: 64%; opacity: .6; }
+.bl-hfind__bars i:nth-child(3) { height: 52%; opacity: .75; }
+.bl-hfind__bars i:nth-child(4) { height: 94%; }
+.bl-hfind__tick { width: 2.3rem; height: 2.3rem; margin-left: auto; color: var(--c-on-accent); }
+.bl-hfind__tick circle { fill: var(--c-accent); }
+.bl-hfind__tick polyline { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.bl-hfind__lines { flex-direction: column; gap: .45rem; }
+.bl-hfind__lines i { display: block; height: .5rem; border-radius: 999px; background: var(--surface-2); transform-origin: 0 50%; }
+.bl-hfind__lines i:nth-child(1) { width: 88%; background: var(--c-accent-soft); }
+.bl-hfind__lines i:nth-child(2) { width: 70%; }
+.bl-hfind__lines i:nth-child(3) { width: 52%; }
+
+/* finder bar: labelled dropdowns and a search button, half over the dark ground */
+.bl-hfind__base { position: relative; display: flow-root; padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.bl-hfind__finder {
+  position: relative; z-index: 3; display: grid; grid-template-columns: repeat(var(--hfind-cols, 3), minmax(0, 1fr)) auto; align-items: stretch;
+  margin: -44px auto 0; max-width: 64rem; border-radius: var(--radius-lg); background: var(--surface-2); border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg); overflow: hidden;
+}
+.bl-hfind__finder:has(.bl-hfind__field:nth-of-type(2):last-of-type) { --hfind-cols: 2; }
+.bl-hfind__field { display: flex; align-items: center; gap: .75rem; min-width: 0; padding: 1rem 1.1rem; }
+.bl-hfind__field + .bl-hfind__field { border-left: 1px solid var(--border); }
+.bl-hfind__label { flex-shrink: 0; font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: .92rem; color: var(--text-strong); }
+.bl-hfind__select { position: relative; flex: 1; min-width: 0; }
+.bl-hfind__select select {
+  appearance: none; -webkit-appearance: none; width: 100%; min-height: 46px; padding: .55rem 2.4rem .55rem .95rem;
+  border: 1px solid var(--border-input); border-radius: var(--radius-btn); background: var(--surface); color: var(--text-strong);
+  font-size: .9rem; cursor: pointer; text-overflow: ellipsis;
+  transition: border-color var(--dur-fast) var(--ease-std);
+}
+.bl-hfind__select select:hover { border-color: var(--accent-ink); }
+.bl-hfind__select select:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-color: var(--accent-ink); }
+.bl-hfind__caret { position: absolute; right: .8rem; top: 50%; width: 18px; height: 18px; margin-top: -9px; color: var(--text-muted); pointer-events: none; }
+.bl-hfind__go {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-width: 5.5rem; padding: 0 1.6rem;
+  border: 0; background: var(--c-accent); color: var(--c-on-accent); font-weight: 700; font-size: .95rem; cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-std);
+}
+.bl-hfind__go .bl-icon { width: 22px; height: 22px; }
+.bl-hfind__go:hover { background: var(--c-accent-blend-deep); }
+.bl-hfind__go:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: -5px; }
+.bl-hfind__hint { grid-column: 1 / -1; font-size: var(--fs-sm); font-weight: 600; color: var(--text-strong); }
+.bl-hfind__hint:empty { display: none; }
+.bl-hfind__hint:not(:empty) { padding: 0 1.1rem .85rem; }
+
+/* preset edges: the finder bar is the hero's lower edge, so the angle or curve is not cut into it */
+.bl-edges-angle main > section.bl-hfind.bl-hfind--finder, .bl-edges-curve main > section.bl-hfind.bl-hfind--finder,
+.bl-edges-angle section.bl-hfind.bl-hfind--finder, .bl-edges-curve section.bl-hfind.bl-hfind--finder { clip-path: none; border-radius: 0; padding-bottom: 0; }
+
+@media (max-width: 1024px) {
+  .bl-hfind__grid { grid-template-columns: 1fr; }
+  .bl-hfind__visual { justify-content: center; }
+  .bl-hfind__stage { width: min(100%, 500px); }
+  .bl-hfind__finder { grid-template-columns: repeat(var(--hfind-cols, 3), minmax(0, 1fr)); }
+  .bl-hfind__field { flex-direction: column; align-items: stretch; gap: .4rem; }
+  .bl-hfind__go { grid-column: 1 / -1; min-height: 52px; }
+}
+@media (max-width: 640px) {
+  .bl-hfind--finder .bl-hfind__grid { padding-bottom: 4rem; }
+  .bl-hfind__stage { aspect-ratio: 1 / 1; }
+  .bl-hfind__panel { inset: 2% 3% 0 24%; }
+  .bl-hfind__photo { inset: 9% 10% 6% 12%; }
+  .bl-hfind__card { width: 9.25rem; padding: .6rem .7rem .7rem; gap: .45rem; }
+  .bl-hfind__card-title { font-size: .78rem; }
+  .bl-hfind__card-icon { width: 26px; height: 26px; }
+  .bl-hfind__bars { height: 2.2rem; }
+  .bl-hfind__tick { width: 1.8rem; height: 1.8rem; }
+  .bl-hfind__card--1 { top: 16%; left: -2%; }
+  .bl-hfind__card--2 { top: -2%; right: -2%; }
+  .bl-hfind__card--3 { bottom: 2%; right: -2%; }
+  .bl-hfind__finder { grid-template-columns: 1fr; margin-top: -36px; }
+  .bl-hfind__field + .bl-hfind__field { border-left: 0; border-top: 1px solid var(--border); }
+  .bl-hfind__field { padding: .8rem 1rem; }
+}

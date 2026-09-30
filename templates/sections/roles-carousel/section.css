@@ -1,0 +1,46 @@
+/* roles-carousel: roles-slide-in (BL.motion.trackIn), roles-scroll-bar. Drag, snap and the buttons are the shared slider's. */
+.bl-roles { list-style: none; margin: 0; padding-top: .5rem; padding-bottom: 1.25rem; }
+.bl-roles__card {
+  position: relative; flex: 0 0 clamp(212px, 14.8vw, 236px); display: flex; flex-direction: column; gap: .9rem;
+  padding: 1.5rem 1.35rem 1.35rem; border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.bl-roles__card::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--c-accent);
+}
+.bl-roles__icon {
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: var(--radius-sm);
+  background: var(--c-accent); color: var(--c-on-accent);
+}
+.bl-roles__icon .bl-icon { width: 22px; height: 22px; }
+.bl-roles__title {
+  font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.14rem; line-height: 1.3;
+  color: var(--text-strong); letter-spacing: -0.01em;
+}
+.bl-roles__list { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; font-size: var(--fs-sm); color: var(--text); }
+.bl-roles__list li { display: flex; gap: .55rem; align-items: flex-start; line-height: 1.45; }
+.bl-roles__list .bl-icon { width: 1rem; height: 1rem; margin-top: .15rem; flex-shrink: 0; color: var(--accent-ink); }
+.bl-roles__link {
+  margin-top: auto; padding-top: .9rem; align-self: flex-start; font-size: var(--fs-sm); font-weight: 700; color: var(--accent-ink);
+  text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-fast) var(--ease-std);
+}
+.bl-roles__link:hover { text-decoration-color: currentColor; }
+.bl-roles__card:has(.bl-roles__link) .bl-roles__list { padding-bottom: .25rem; }
+
+/* roles-scroll-bar: the thumb's width is the visible share of the track, its offset the scroll position */
+.bl-roles__foot { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.25rem; }
+.bl-roles__bar { position: relative; flex: 1; height: 4px; border-radius: 4px; background: var(--border); overflow: hidden; }
+.bl-roles__thumb {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 100%; border-radius: inherit; background: var(--c-accent);
+  transform-origin: 0 50%; transform: translateX(var(--roles-x, 0%)) scaleX(var(--roles-w, .5));
+}
+
+/* roles-slide-in: hidden until section.js brings the cards in (BL.motion.trackIn adds .is-in to the track) */
+.js .bl-roles:not(.is-in) > .bl-roles__card { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .js .bl-roles:not(.is-in) > .bl-roles__card { opacity: 1; } }
+
+@media (max-width: 640px) {
+  .bl-roles__card { flex-basis: min(260px, 74vw); }
+  .bl-roles__foot { gap: 1rem; }
+}

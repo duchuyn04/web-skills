@@ -1,0 +1,280 @@
+{
+ "_note": "Example on the intelligent-outsourcing blueprint (templates/blueprints/intelligent-outsourcing.json): the real page's section order, forms and tones, with Kestrel Offshore sample content. Every name, quote and figure is in the brief.",
+ "brief": "Kestrel Offshore (fictional sample): dedicated offshore accounting staff for UK accounting and bookkeeping firms. Team based in Cebu, Philippines; UK office at 14 Park Row, Leeds LS1 5HN. Founded in 2017 by Martin Hale, a UK chartered accountant who ran a 12-person practice in Leeds and could not hire enough staff. He wrote the book The Capacity Plan. 120+ UK firms use Kestrel teams. 9 years working with UK practices. New staff train for 3 weeks in the Kestrel Academy before day one. Average time to a first team member: 5 weeks. Roles: offshore accountants, bookkeepers, payroll specialists, finance teams. Staff work UK office hours in the client's own software (Xero, QuickBooks, Sage, IRIS). Brand colour: crimson #B0122C, with deep red #7A0C1E for dark bands and the footer. Reviews: Priya Sandhu, Partner, Sandhu and Co Accountants: \"Our Kestrel accountant had the month-end packs done before our own team got to them. Three months in, we took on eleven new clients without a single new UK hire.\" Tom Whitlock, Director, Whitlock Bookkeeping: \"I expected to spend my evenings checking work. Instead our two bookkeepers follow our checklists to the letter and ask good questions when something looks off.\" Grace Ellery, Practice Manager, Ellery Tax: \"Self assessment season used to mean weekends in the office. This January the team in Cebu handled the data entry and we signed off returns on time.\" Articles: How to add capacity without hiring locally (Offshoring, 2 September 2026); Five signs your practice has a capacity problem (Practice growth, 18 August 2026); Keeping control of quality with an offshore team (Quality, 4 August 2026). Contact: hello@kestrel-offshore.example.",
+ "archetype": "offshore-staffing",
+ "blueprint": "intelligent-outsourcing",
+ "preset": "crimson-trust",
+ "lang": "en",
+ "site": {
+  "brand": "Kestrel Offshore",
+  "brand_mark": "KO",
+  "title": "Kestrel Offshore | Offshore accounting staff for UK firms",
+  "description": "Kestrel Offshore places dedicated offshore accountants, bookkeepers and payroll staff with UK accounting firms, trained and supported from Cebu."
+ },
+ "theme": {
+  "primary": "#7A0C1E",
+  "accent": "#B0122C",
+  "image_mask": "rounded",
+  "highlight": "color",
+  "eyebrow": "caps"
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "topbar": {
+     "note": "14 Park Row, Leeds LS1 5HN",
+     "links": [
+      {"label": "Careers", "href": "#about"},
+      {"label": "Contact", "href": "#get-started"}
+     ]
+    },
+    "languages": [
+     {"flag": "gb", "label": "United Kingdom", "href": "#top", "current": true}
+    ],
+    "links": [
+     {
+      "label": "Services",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Offshore roles",
+         "links": [
+          {"label": "Offshore accountants", "href": "#services"},
+          {"label": "Offshore bookkeepers", "href": "#services"},
+          {"label": "Payroll specialists", "href": "#services"},
+          {"label": "Finance teams", "href": "#services"}
+         ]
+        },
+        {
+         "heading": "Working with us",
+         "links": [
+          {"label": "How it works", "href": "#how-it-works"},
+          {"label": "Why firms choose us", "href": "#why-us"},
+          {"label": "Questions", "href": "#faq"}
+         ]
+        }
+       ]
+      }
+     },
+     {"label": "How it works", "href": "#how-it-works"},
+     {"label": "About us", "href": "#founder"},
+     {"label": "Resources", "href": "#insights"}
+    ],
+    "cta": {"label": "Book a free call", "href": "#get-started"}
+   }
+  },
+  {
+   "type": "hero-split-image",
+   "data": {
+    "eyebrow": "120+ UK firms since 2017",
+    "title": "Offshore accounting teams for *UK firms*",
+    "lead": "Kestrel Offshore helps UK accounting firms hire and keep offshore accountants, bookkeepers and payroll staff, so partners can spend their time on clients and advisory work.",
+    "primary_cta": {"label": "Book a free call", "href": "#get-started"},
+    "secondary_cta": {"label": "See the roles", "href": "#services"},
+    "photo": {"src": "team-meeting-bright-office", "alt": "Five colleagues in a meeting in a glass-walled office, one man standing"},
+    "badges": [
+     {"icon": "check-circle", "value": "Your team", "label": "Works only for your firm"}
+    ]
+   }
+  },
+  {
+   "type": "metrics-tiles",
+   "data": {
+    "layout": "row",
+    "items": [
+     {"value": 120, "suffix": "+", "label": "UK firms use a Kestrel team"},
+     {"value": 9, "suffix": "years", "label": "Working with UK practices"},
+     {"value": 3, "suffix": "weeks", "label": "Academy training before day one"},
+     {"value": 5, "suffix": "weeks", "label": "Average time to your first hire"}
+    ]
+   }
+  },
+  {
+   "type": "image-cards",
+   "id": "services",
+   "data": {
+    "head": {
+     "title": "Offshore staff for *accounting firms*",
+     "lead": "Every Kestrel team member works for one firm, trained to its standards and supported by our HR team in Cebu. You get the person; we handle the rest."
+    },
+    "ratio": "tall",
+    "cards": [
+     {"title": "Offshore accountants", "text": "Accounts preparation, working papers and management packs for your client list.", "photo": {"src": "portrait-woman-office", "alt": "Smiling woman in a blazer standing by an office window"}, "href": "#get-started", "link_label": "Hire an accountant"},
+     {"title": "Offshore bookkeepers", "text": "Bank reconciliations, purchase and sales ledgers and VAT working papers.", "photo": {"src": "portrait-man-desk", "alt": "Smiling man in a polo shirt at a white desk with a laptop"}, "href": "#get-started", "link_label": "Hire a bookkeeper"},
+     {"title": "Payroll specialists", "text": "Weekly and monthly payroll runs, starters and leavers, pension submissions and payslips.", "photo": {"src": "portrait-woman-glasses-desk", "alt": "Woman in glasses sitting at a white desk"}, "href": "#get-started", "link_label": "Hire payroll staff"},
+     {"title": "Offshore finance teams", "text": "Two or more people with a team lead, for firms that want a whole function covered.", "photo": {"src": "portrait-woman-team-lead", "alt": "Smiling woman in a red sweater holding a coffee, colleagues behind her"}, "href": "#get-started", "link_label": "Plan a team"}
+    ]
+   }
+  },
+  {
+   "type": "feature-rows",
+   "id": "capacity",
+   "data": {
+    "start": "image-left",
+    "rows": [
+     {
+      "title": "Capacity is the problem, not demand",
+      "text": "Most UK practices have more work than people. Salaries keep rising, good candidates are scarce and senior accountants end up doing routine work during VAT and year-end peaks.",
+      "bullets": ["Open roles that stay unfilled for months", "Rising salary expectations", "Deadline peaks at VAT quarters and year end", "Senior staff tied up with routine work"],
+      "photo": {"src": "desk-phone-monitors", "alt": "Woman at a desk with a desk phone and two monitors, seen from behind"}
+     }
+    ]
+   }
+  },
+  {
+   "type": "about-mosaic",
+   "data": {
+    "title": "Offshore staff inside *UK practices*",
+    "paragraphs": [
+     "Kestrel builds an offshore team that sits inside your firm. Your staff follow **your systems and checklists**, work **UK office hours** and join your team meetings like anyone else on the payroll."
+    ],
+    "points": ["Work in your Xero, QuickBooks, Sage or IRIS", "Report to your managers", "Cover day-to-day accounting and compliance work"],
+    "cta": {"label": "Start building your team", "href": "#get-started"},
+    "photos": [
+     {"src": "team-coworking-laptops", "alt": "Four people at a wooden table working on laptops"},
+     {"src": "training-workshop-board", "alt": "Man presenting to a group in front of a flip chart with sticky notes"},
+     {"src": "team-meeting-table", "alt": "Eight people around a conference table with laptops and coffee"},
+     {"src": "office-worker-laptop", "alt": "Smiling man in a blazer typing on a laptop in a bright office"}
+    ]
+   }
+  },
+  {
+   "type": "services-bento",
+   "id": "why-us",
+   "data": {
+    "head": {
+     "title": "Why UK accounting firms work with Kestrel",
+     "lead": "Practical support built around capacity: the right people, trained on your processes and kept for the long term."
+    },
+    "cards": [
+     {"icon": "briefcase", "photo": {"src": "bookkeeping-calculator-laptop", "alt": "Hands on a calculator in front of a laptop showing an accounting app"}, "title": "Built around your firm", "text": "Each role is shaped around your structure, software and workload. Nothing is sent to a shared pool.", "bullets": ["Your checklists", "Your review steps", "Your software"]},
+     {"icon": "users", "title": "Your team, not ours", "text": "Staff work directly with you and follow your processes. We look after HR, equipment and the office."},
+     {"icon": "calculator", "title": "Accounting only", "text": "We place accounting, bookkeeping and payroll roles only, so we know UK deadlines and compliance work."},
+     {"icon": "graduation-cap", "title": "Trained before day one", "text": "New staff spend 3 weeks in the Kestrel Academy on UK accounting practice before they join you."},
+     {"icon": "trending-up", "title": "Start small and grow", "text": "Begin with one role, then add people as your client list grows. The same team lead supports every hire."}
+    ]
+   }
+  },
+  {
+   "type": "steps-row",
+   "data": {
+    "head": {
+     "title": "How it works",
+     "lead": "A simple process to find the right people, get them working quickly and keep them for the long term."
+    },
+    "steps": [
+     {"title": "Define the role", "text": "We look at your workload and agree what to hand over and what the role should deliver."},
+     {"title": "Source and select", "text": "We shortlist candidates who match the role. You interview them and choose who joins."},
+     {"title": "Onboard and support", "text": "We run onboarding and ongoing HR, and check in with you on how the work is going."}
+    ],
+    "cta": {"label": "Book a free consultation", "href": "#get-started"}
+   }
+  },
+  {
+   "type": "pillars-numbered",
+   "id": "benefits",
+   "data": {
+    "head": {
+     "title": "What firms gain",
+     "lead": "More capacity, better use of your senior people and room to grow without the local hiring market."
+    },
+    "items": [
+     {"title": "More capacity", "text": "Take on more client work without stretching the team you already have."},
+     {"title": "Senior time back", "text": "Free experienced accountants for advisory work, client relationships and reviews."},
+     {"title": "Calmer busy seasons", "text": "Add hands before VAT quarters, year end and self assessment instead of working weekends."}
+    ]
+   }
+  },
+  {
+   "type": "testimonials",
+   "id": "reviews",
+   "data": {
+    "head": {"title": "What UK practice owners say"},
+    "items": [
+     {"quote": "Our Kestrel accountant had the month-end packs done before our own team got to them. Three months in, we took on eleven new clients without a single new UK hire.", "name": "Priya Sandhu", "role": "Partner", "company": "Sandhu and Co Accountants"},
+     {"quote": "I expected to spend my evenings checking work. Instead our two bookkeepers follow our checklists to the letter and ask good questions when something looks off.", "name": "Tom Whitlock", "role": "Director", "company": "Whitlock Bookkeeping"},
+     {"quote": "Self assessment season used to mean weekends in the office. This January the team in Cebu handled the data entry and we signed off returns on time.", "name": "Grace Ellery", "role": "Practice Manager", "company": "Ellery Tax"}
+    ]
+   }
+  },
+  {
+   "type": "faq-grid",
+   "data": {
+    "head": {"title": "Questions UK firms ask before they start"},
+    "items": [
+     {"q": "Is this the same as outsourcing?", "a": "No work leaves your firm's processes. Your team member works only for you, in your software, and reports to your managers. We employ them and look after HR and the office."},
+     {"q": "What hours does my team member work?", "a": "They work UK office hours, so they are online when your UK team is and can join your meetings and calls."},
+     {"q": "How long does it take to get started?", "a": "The average time to a first team member is 5 weeks, which includes 3 weeks of training in the Kestrel Academy."},
+     {"q": "Which software can the team use?", "a": "Our staff work in Xero, QuickBooks, Sage and IRIS, and learn any other systems your firm uses during onboarding."},
+     {"q": "Do we interview the candidates?", "a": "Yes. We shortlist candidates who match the role, and you interview them and decide who joins your team."},
+     {"q": "What happens if someone leaves?", "a": "We recruit a replacement for the same role and hand over using the checklists and notes your team already keeps."}
+    ],
+    "link": {"label": "Ask us a question", "href": "#get-started"}
+   }
+  },
+  {
+   "type": "feature-rows",
+   "id": "founder",
+   "data": {
+    "start": "image-left",
+    "rows": [
+     {
+      "title": "Built by a UK practice owner who needed it himself",
+      "text": "Martin Hale is a UK chartered accountant who ran a 12-person practice in Leeds and could not hire enough staff. He built Kestrel for his own firm in 2017, then opened it to others.",
+      "bullets": ["Founded in Leeds in 2017", "Author of The Capacity Plan"],
+      "photo": {"src": "paperwork-review-desk", "alt": "A person at a wooden desk reading printed documents in warm window light"},
+      "link": {"label": "Read our story", "href": "#get-started"}
+     }
+    ]
+   }
+  },
+  {
+   "type": "image-cards",
+   "id": "insights",
+   "data": {
+    "head": {
+     "title": "Insights for growing accounting firms",
+     "lead": "Practical guidance on capacity, workflows and building the right team structure for your practice."
+    },
+    "cards": [
+     {"tag": "Offshoring", "meta": "2 September 2026", "title": "How to add capacity without hiring locally", "photo": {"src": "accounting-documents-calculator", "alt": "Hands writing in a ledger next to a desk calculator and binders"}, "href": "#insights", "link_label": "Read this article"},
+     {"tag": "Practice growth", "meta": "18 August 2026", "title": "Five signs your practice has a capacity problem", "photo": {"src": "paperwork-desk-hands", "alt": "Hands holding a pen over printed pages on a desk"}, "href": "#insights", "link_label": "Read this article"},
+     {"tag": "Quality", "meta": "4 August 2026", "title": "Keeping control of quality with an offshore team", "photo": {"src": "calculator-pens-flatlay", "alt": "Calculator, pens and an orange folder on a wooden desk seen from above"}, "href": "#insights", "link_label": "Read this article"}
+    ]
+   }
+  },
+  {
+   "type": "cta-band",
+   "data": {
+    "title": "Ready to add capacity to your firm?",
+    "text": "Talk to us about your workload, your team and where offshore support would make a difference. No commitment, just a conversation.",
+    "primary_cta": {"label": "Book a free consultation", "href": "mailto:hello@kestrel-offshore.example"},
+    "secondary_cta": {"label": "Read our story", "href": "#founder"}
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Dedicated offshore accounting teams for UK practices, based in Cebu, Philippines. Founded by a UK accountant in 2017.",
+    "contacts": [
+     {"icon": "mail", "label": "hello@kestrel-offshore.example", "href": "mailto:hello@kestrel-offshore.example"},
+     {"icon": "map-pin", "label": "14 Park Row, Leeds LS1 5HN"}
+    ],
+    "socials": [
+     {"icon": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com"},
+     {"icon": "facebook", "label": "Facebook", "href": "https://www.facebook.com"},
+     {"icon": "youtube", "label": "YouTube", "href": "https://www.youtube.com"}
+    ],
+    "columns": [
+     {"heading": "Services", "links": [{"label": "Offshore accountants", "href": "#services"}, {"label": "Offshore bookkeepers", "href": "#services"}, {"label": "Payroll specialists", "href": "#services"}, {"label": "How it works", "href": "#how-it-works"}]},
+     {"heading": "About", "links": [{"label": "Our story", "href": "#founder"}, {"label": "Why Kestrel", "href": "#why-us"}, {"label": "Reviews", "href": "#reviews"}]},
+     {"heading": "Resources", "links": [{"label": "Insights", "href": "#insights"}, {"label": "Questions", "href": "#faq"}]}
+    ],
+    "legal": "Kestrel Offshore Ltd, registered in England and Wales",
+    "legal_links": [{"label": "Privacy policy", "href": "#top"}]
+   }
+  }
+ ]
+}

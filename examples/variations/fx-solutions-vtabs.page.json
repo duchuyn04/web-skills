@@ -1,0 +1,117 @@
+{
+  "_note": "Shows solutions-vtabs (IRIS-style solution finder: ways to browse on the left, a raised panel of solution cards on the right, photos on the cards of the first tab only). Fernhill Back Office is a fictional company; every figure is sample data.",
+  "archetype": "offshore-staffing",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Fernhill Back Office",
+    "brand_mark": "FB",
+    "title": "Fernhill Back Office | Bookkeeping and payroll teams for UK firms",
+    "description": "Fernhill Back Office runs bookkeeping, payroll and accounts payable teams for UK accounting practices and their clients."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Solutions", "href": "#services"},
+          {"label": "How it works", "href": "#process"},
+          {"label": "FAQ", "href": "#faq"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-fullbleed",
+      "data": {
+        "title": "Bookkeeping and payroll teams for *UK accounting firms*",
+        "lead": "Fernhill Back Office runs bookkeeping, payroll and accounts payable work for UK practices, inside the software each practice already uses.",
+        "primary_cta": {"label": "Contact us", "href": "#contact"},
+        "secondary_cta": {"label": "Browse solutions", "href": "#services"},
+        "image": "team-coworking-laptops"
+      }
+    },
+    {
+      "type": "solutions-vtabs",
+      "data": {
+        "head": {"title": "Solutions for every kind of practice", "lead": "Browse by the work you want to hand over, by the size of your firm or by the sector your clients work in."},
+        "tabs": [
+          {
+            "tab": "By service area",
+            "items": [
+              {"photo": {"src": "bookkeeping-calculator-laptop", "alt": "Hands on a calculator in front of a laptop showing an accounting app"}, "title": "Bookkeeping", "text": "Bank reconciliations, sales and purchase ledgers and month-end checks, done in Xero, QuickBooks or Sage to your practice checklist.", "link": {"label": "Bookkeeping services", "href": "#contact"}},
+              {"photo": {"src": "paperwork-review-desk", "alt": "A person at a wooden desk reading printed documents"}, "title": "Payroll", "text": "Weekly and monthly payroll runs, starters and leavers, pension submissions and payslips. A second processor checks each run before sign-off.", "link": {"label": "Payroll services", "href": "#contact"}},
+              {"photo": {"src": "paperwork-signing-laptop", "alt": "Man in a brown jacket signing papers beside a laptop"}, "title": "Accounts payable", "text": "Supplier invoices coded, matched to purchase orders and queued for approval. You get an aged creditors report every week.", "link": {"label": "Accounts payable services", "href": "#contact"}},
+              {"photo": {"src": "calculator-pens-flatlay", "alt": "Calculator, pens and an orange folder on a wooden desk"}, "title": "Year-end support", "text": "Working papers, fixed asset registers and draft accounts prepared for review by your qualified staff.", "link": {"label": "Year-end support", "href": "#contact"}}
+            ]
+          },
+          {
+            "tab": "By company size",
+            "items": [
+              {"title": "Sole practitioners", "text": "One part-time processor who takes the routine ledgers off your desk during the busy months.", "link": {"label": "Plans for sole practitioners", "href": "#contact"}},
+              {"title": "Small firms", "text": "A shared team of two or three processors working to one checklist. One named reviewer checks your files.", "link": {"label": "Plans for small firms", "href": "#contact"}},
+              {"title": "Mid-size practices", "text": "A dedicated team with its own lead, split by service line. The lead reports to your practice manager each week.", "link": {"label": "Plans for mid-size practices", "href": "#contact"}},
+              {"title": "Large practices", "text": "Several teams across bookkeeping, payroll and year-end. Capacity is planned against your deadline calendar.", "link": {"label": "Plans for large practices", "href": "#contact"}}
+            ]
+          },
+          {
+            "tab": "By industry",
+            "items": [
+              {"title": "Healthcare", "text": "Bookkeeping and payroll for dental and GP practices, including locum pay and associate statements.", "link": {"label": "Healthcare clients", "href": "#contact"}},
+              {"title": "Retail", "text": "Daily takings, stock purchases and card settlements reconciled for shops on one or several sites.", "link": {"label": "Retail clients", "href": "#contact"}},
+              {"title": "Hospitality", "text": "Tronc, tips and shift-based payroll for restaurants and hotels, plus weekly labour cost reports.", "link": {"label": "Hospitality clients", "href": "#contact"}},
+              {"title": "Construction", "text": "CIS returns, subcontractor payments and job costing for builders and trades firms.", "link": {"label": "Construction clients", "href": "#contact"}}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "steps-row",
+      "id": "process",
+      "data": {
+        "head": {"title": "How it works"},
+        "steps": [
+          {"title": "Share your checklist", "text": "Send the ledgers, payrolls and deadlines you want to hand over and the software you use."},
+          {"title": "Meet your team", "text": "We name the processors and the reviewer who will work on your files and agree the weekly routine."},
+          {"title": "Start on live work", "text": "The team works inside your software and sends a status report to your practice manager every Friday."}
+        ]
+      }
+    },
+    {
+      "type": "faq-accordion",
+      "id": "faq",
+      "data": {
+        "head": {"title": "Frequently asked questions"},
+        "aside": {"title": "Have a question about your files?", "text": "Our practice lead can walk you through the handover for your ledgers and payrolls.", "cta": {"label": "Ask a question", "href": "#contact"}},
+        "items": [
+          {"q": "Which software does the team use?", "a": "The team works in the software your practice already uses. Tell us which packages you run and we staff the team for them."},
+          {"q": "Who reviews the work?", "a": "A named reviewer checks each file before it goes back to you. Your own staff sign off the final accounts."},
+          {"q": "Can we start with one service?", "a": "Yes. Most practices start with bookkeeping or payroll and add other work once the routine is settled."},
+          {"q": "How do we send documents?", "a": "Documents come through the portal or shared folders your practice already uses. The team does not ask clients to change how they send paperwork."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "id": "contact",
+      "data": {
+        "title": "Talk to Fernhill about *your workload*",
+        "text": "Tell us which ledgers and payrolls you run and when your deadlines fall. We reply with a team plan.",
+        "primary_cta": {"label": "Contact us", "href": "mailto:hello@fernhill.example"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Fernhill Back Office runs bookkeeping, payroll and accounts payable teams for UK accounting practices.",
+        "contacts": [{"icon": "mail", "label": "hello@fernhill.example", "href": "mailto:hello@fernhill.example"}],
+        "columns": [
+          {"heading": "Solutions", "links": [{"label": "Bookkeeping", "href": "#services"}, {"label": "Payroll", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "How it works", "href": "#process"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

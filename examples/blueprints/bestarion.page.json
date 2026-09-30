@@ -1,0 +1,657 @@
+{
+ "_note": "Example on the bestarion blueprint (templates/blueprints/bestarion.json): the real page's section order, forms and tones, with Lamson Digital sample content. Lamson Digital is fictional; every name, quote and figure is sample data from the brief below.",
+ "archetype": "it-bpo-partner",
+ "blueprint": "bestarion",
+ "preset": "orange-charcoal",
+ "lang": "en",
+ "brief": "Lamson Digital is an IT outsourcing and business process outsourcing company founded in Ho Chi Minh City in 2008, with a second delivery center in Da Nang and a sales office in Denver, United States. 18 years in operation, 260 engineers and specialists, 340 projects delivered, 98% client satisfaction. Certified ISO 27001:2022 and ISO 9001:2015, appraised at CMMI Level 3. Software services: custom software development, web and mobile apps, QA and test automation, DevOps and cloud migration, data engineering and analytics, legacy system maintenance, AI chatbot development, dedicated development teams. Back-office services: bookkeeping and reconciliation, payroll processing. AI work: support assistants, voice assistants, invoice document reading, discovery workshops, workflow builds, monthly run and improve reports. Clients: product companies and enterprises in healthcare, finance, retail and education; US CPA and accounting firms (white-label bookkeeping, payroll and tax preparation support, full-time equivalent staff). Case studies: Brightpath Health, healthcare supply chain platform, 15% lower annual supply spend, 70-person team; Summit Ledger CPA, accounting, took over bookkeeping for 120 small business clients, month-end close in 6 days, 99.5% reconciliation accuracy; Coastline Learning, education, rebuilt a learning platform for 40,000 students, 3x faster page loads, 0 hours of downtime at launch. Reviews: Grace Holloway, VP of Technology at Brightpath Health: \"Lamson Digital gave us a team that knows healthcare data and ships every sprint. Two years in, we still add people to it.\" Mark Ellison, Managing Partner at Summit Ledger CPA: \"Our busy season used to mean late nights for everyone. The Lamson Digital bookkeepers now close our client books on time, every month.\" Thao Nguyen, Product Director at Coastline Learning: \"They rebuilt our platform in eight months and the launch went without a single hour of downtime.\" Awards: Clutch Top IT Services Company Vietnam 2025, GoodFirms Top Software Developers 2025, VINASA Sao Khue Award 2024. Rated 4.9 out of 5 on Clutch from 38 reviews. Offices: 6th Floor, 45 Le Duan Street, Ben Nghe Ward, District 1, Ho Chi Minh City, phone (+84) 28 5555 0145; 1600 Stout Street, Suite 1200, Denver, CO 80202, phone (+1) 303 555 0188. Email hello@lamsondigital.example.",
+ "site": {
+  "brand": "Lamson Digital",
+  "brand_mark": "LD",
+  "title": "Lamson Digital | IT outsourcing and BPO from Vietnam",
+  "description": "Lamson Digital builds software and runs bookkeeping and payroll for clients in the US from Ho Chi Minh City and Da Nang."
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "topbar": {
+     "note": "(+84) 28 5555 0145 | (+1) 303 555 0188",
+     "links": [
+      {
+       "label": "Email us",
+       "href": "mailto:hello@lamsondigital.example"
+      }
+     ]
+    },
+    "languages": [
+     {
+      "flag": "vn",
+      "label": "Vietnam",
+      "href": "#top",
+      "current": true
+     },
+     {
+      "flag": "us",
+      "label": "USA",
+      "href": "#top"
+     }
+    ],
+    "links": [
+     {
+      "label": "Services",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Software",
+         "links": [
+          {
+           "label": "Custom software",
+           "href": "#services"
+          },
+          {
+           "label": "QA and testing",
+           "href": "#services"
+          },
+          {
+           "label": "DevOps and cloud",
+           "href": "#services"
+          },
+          {
+           "label": "Dedicated teams",
+           "href": "#services"
+          }
+         ]
+        },
+        {
+         "heading": "Back office",
+         "links": [
+          {
+           "label": "Bookkeeping",
+           "href": "#services"
+          },
+          {
+           "label": "Payroll processing",
+           "href": "#services"
+          },
+          {
+           "label": "AI solutions",
+           "href": "#solutions"
+          }
+         ]
+        }
+       ],
+       "featured": {
+        "tag": "Case study",
+        "title": "A healthcare supply platform that cut spend by 15%",
+        "text": "A 70-person team built and runs the platform for Brightpath Health.",
+        "link_label": "Read the case",
+        "href": "#case-studies"
+       }
+      }
+     },
+     {
+      "label": "AI solutions",
+      "href": "#solutions"
+     },
+     {
+      "label": "Who we serve",
+      "href": "#who-we-serve"
+     },
+     {
+      "label": "Case studies",
+      "href": "#case-studies"
+     },
+     {
+      "label": "About",
+      "href": "#about"
+     }
+    ],
+    "cta": {
+     "label": "Book a consultation",
+     "href": "#contact"
+    }
+   }
+  },
+  {
+   "type": "hero-gradient",
+   "data": {
+    "title": "AI-ready IT and *business process outsourcing* from Vietnam",
+    "lead": "Lamson Digital builds software and runs bookkeeping and payroll for companies in the US. 260 engineers and specialists work from Ho Chi Minh City and Da Nang.",
+    "primary_cta": {
+     "label": "Book a consultation",
+     "href": "#contact"
+    },
+    "secondary_cta": {
+     "label": "Our services",
+     "href": "#services"
+    },
+    "photo": {
+     "src": "developer-headphones-monitors",
+     "alt": "Developer with headphones working across two monitors"
+    }
+   }
+  },
+  {
+   "type": "about-mosaic",
+   "data": {
+    "title": "Lamson Digital, your *IT outsourcing and BPO* partner",
+    "paragraphs": [
+     "Lamson Digital is an **IT outsourcing** and **business process outsourcing** company founded in Ho Chi Minh City in 2008. Engineers and accountants work in your tools, on your calendar, from two delivery centers in Vietnam.",
+     "We are certified for **ISO 27001:2022** and **ISO 9001:2015** and appraised at **CMMI Level 3**. Clients in healthcare, finance, retail and education keep their teams with us for years."
+    ],
+    "photos": [
+     {
+      "src": "avatar-woman-1",
+      "alt": "Head-and-shoulder portrait of a woman"
+     },
+     {
+      "src": "avatar-man-1",
+      "alt": "Head-and-shoulder portrait of a man"
+     },
+     {
+      "src": "portrait-woman-office",
+      "alt": "Woman smiling in a bright office"
+     },
+     {
+      "src": "avatar-man-2",
+      "alt": "Head-and-shoulder portrait of a man in a shirt"
+     },
+     {
+      "src": "portrait-woman-studio",
+      "alt": "Woman in a dark top under studio light"
+     },
+     {
+      "src": "portrait-man-desk",
+      "alt": "Man sitting at a desk with a laptop"
+     },
+     {
+      "src": "avatar-woman-2",
+      "alt": "Head-and-shoulder portrait of a smiling woman"
+     },
+     {
+      "src": "avatar-man-3",
+      "alt": "Head-and-shoulder portrait of a man with short hair"
+     },
+     {
+      "src": "portrait-woman-glasses-desk",
+      "alt": "Woman with glasses working at a desk"
+     }
+    ]
+   }
+  },
+  {
+   "type": "metrics-panel",
+   "data": {
+    "eyebrow": "Why choose us",
+    "title": "Building trust through *audited delivery*",
+    "text": "Our delivery centers follow ISO 27001:2022 and ISO 9001:2015 processes and are appraised at CMMI Level 3.",
+    "items": [
+     {
+      "value": 18,
+      "suffix": "+",
+      "label": "Years in operation"
+     },
+     {
+      "value": 260,
+      "suffix": "+",
+      "label": "Engineers and specialists"
+     },
+     {
+      "value": 340,
+      "suffix": "+",
+      "label": "Projects delivered"
+     },
+     {
+      "value": 98,
+      "suffix": "%",
+      "label": "Client satisfaction"
+     }
+    ]
+   }
+  },
+  {
+   "type": "service-links",
+   "data": {
+    "groups": [
+     {
+      "eyebrow": "ITO services",
+      "title": "Full-cycle software development",
+      "text": "From the first prototype to long-term maintenance, our engineers join your sprints and code reviews.",
+      "links": [
+       {
+        "label": "Custom software development",
+        "href": "#contact",
+        "icon": "code"
+       },
+       {
+        "label": "Web and mobile apps",
+        "href": "#contact",
+        "icon": "layers"
+       },
+       {
+        "label": "QA and test automation",
+        "href": "#contact",
+        "icon": "bug"
+       },
+       {
+        "label": "DevOps and cloud migration",
+        "href": "#contact",
+        "icon": "server"
+       },
+       {
+        "label": "Data engineering and analytics",
+        "href": "#contact",
+        "icon": "database"
+       },
+       {
+        "label": "Legacy system maintenance",
+        "href": "#contact",
+        "icon": "sliders"
+       },
+       {
+        "label": "AI chatbot development",
+        "href": "#contact",
+        "icon": "bot"
+       },
+       {
+        "label": "Dedicated development teams",
+        "href": "#contact",
+        "icon": "users"
+       }
+      ]
+     },
+     {
+      "eyebrow": "BPO services",
+      "title": "Back-office work, done to your checklist",
+      "text": "Trained bookkeepers and payroll specialists who close on your calendar and report every month.",
+      "links": [
+       {
+        "label": "Bookkeeping and reconciliation",
+        "href": "#contact",
+        "icon": "receipt"
+       },
+       {
+        "label": "Payroll processing",
+        "href": "#contact",
+        "icon": "wallet"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "solution-panels",
+   "data": {
+    "title": "*AI solutions* for support, finance and operations",
+    "lead": "Start with one workflow, measure the hours it saves, then scale it with the team that built it.",
+    "cta": {
+     "label": "Talk to an AI lead",
+     "href": "#contact"
+    },
+    "panels": [
+     {
+      "title": "AI assistants",
+      "href": "#contact",
+      "items": [
+       {
+        "icon": "message-square",
+        "title": "Support assistant",
+        "text": "Answers common questions from your help center and hands complex cases to a person."
+       },
+       {
+        "icon": "mic",
+        "title": "Voice assistant",
+        "text": "Takes order status and booking calls and logs each one in your CRM."
+       },
+       {
+        "icon": "file-text",
+        "title": "Invoice reader",
+        "text": "Reads totals, dates and vendor names from invoices into your ledger."
+       }
+      ]
+     },
+     {
+      "title": "Automation services",
+      "href": "#contact",
+      "items": [
+       {
+        "icon": "target",
+        "title": "Discovery workshop",
+        "text": "We map one process with your team and estimate the hours automation can save."
+       },
+       {
+        "icon": "workflow",
+        "title": "Workflow build",
+        "text": "Connectors between your CRM, ticketing and finance tools, tested on real data."
+       },
+       {
+        "icon": "activity",
+        "title": "Run and improve",
+        "text": "A monthly report on accuracy and hours saved, with fixes shipped every sprint."
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "audience-cards",
+   "data": {
+    "head": {
+     "title": "Who we serve"
+    },
+    "cards": [
+     {
+      "title": "Product companies and enterprises",
+      "text": "Healthcare, finance, retail and education companies that need engineering capacity without a long hiring cycle.",
+      "points": [
+       "Full-cycle software development",
+       "Dedicated engineering teams",
+       "Data and analytics projects",
+       "AI assistants and automation"
+      ]
+     },
+     {
+      "title": "US CPA and accounting firms",
+      "text": "Firms that want steady month-end capacity in busy season and through the rest of the year.",
+      "points": [
+       "White-label bookkeeping",
+       "Payroll and tax preparation support",
+       "Full-time equivalent staff"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "case-slider",
+   "data": {
+    "head": {
+     "title": "Case studies"
+    },
+    "cases": [
+     {
+      "client": "Brightpath Health",
+      "industry": "Healthcare",
+      "photo": {
+       "src": "team-engineers-screen",
+       "alt": "Engineers reviewing a dashboard on a large screen"
+      },
+      "title": "A supply chain platform that cut hospital purchasing spend",
+      "results": [
+       {
+        "value": "15%",
+        "label": "Lower annual spend"
+       },
+       {
+        "value": "70",
+        "label": "People on the team"
+       }
+      ]
+     },
+     {
+      "client": "Summit Ledger CPA",
+      "industry": "Accounting",
+      "photo": {
+       "src": "bookkeeping-calculator-laptop",
+       "alt": "Hands on a calculator beside a laptop with a spreadsheet"
+      },
+      "title": "Bookkeeping taken over for 120 small business clients",
+      "results": [
+       {
+        "value": "6 days",
+        "label": "Month-end close"
+       },
+       {
+        "value": "99.5%",
+        "label": "Reconciliation accuracy"
+       }
+      ]
+     },
+     {
+      "client": "Coastline Learning",
+      "industry": "Education",
+      "photo": {
+       "src": "team-coworking-laptops",
+       "alt": "People working on laptops at a shared table"
+      },
+      "title": "A learning platform rebuilt for 40,000 students",
+      "results": [
+       {
+        "value": "3x",
+        "label": "Faster page loads"
+       },
+       {
+        "value": "0 hours",
+        "label": "Downtime at launch"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "testimonials-rated",
+   "data": {
+    "head": {
+     "title": "What our clients say"
+    },
+    "rating": {
+     "score": "4.9",
+     "label": "out of 5 on Clutch from 38 reviews"
+    },
+    "items": [
+     {
+      "quote": "Lamson Digital gave us a team that knows healthcare data and ships every sprint. Two years in, we still add people to it.",
+      "name": "Grace Holloway",
+      "role": "VP of Technology",
+      "company": "Brightpath Health"
+     },
+     {
+      "quote": "Our busy season used to mean late nights for everyone. The Lamson Digital bookkeepers now close our client books on time, every month.",
+      "name": "Mark Ellison",
+      "role": "Managing Partner",
+      "company": "Summit Ledger CPA"
+     },
+     {
+      "quote": "They rebuilt our platform in eight months and the launch went without a single hour of downtime.",
+      "name": "Thao Nguyen",
+      "role": "Product Director",
+      "company": "Coastline Learning"
+     }
+    ]
+   }
+  },
+  {
+   "type": "awards-strip",
+   "data": {
+    "title": "Recognition and awards",
+    "awards": [
+     {
+      "issuer": "Clutch",
+      "title": "Top IT Services Company",
+      "year": "2025"
+     },
+     {
+      "issuer": "GoodFirms",
+      "title": "Top Software Developers",
+      "year": "2025"
+     },
+     {
+      "issuer": "VINASA",
+      "title": "Sao Khue Award",
+      "year": "2024"
+     }
+    ],
+    "rating": {
+     "score": "4.9",
+     "out_of": "5",
+     "source": "Clutch",
+     "count": "38 reviews"
+    }
+   }
+  },
+  {
+   "type": "contact-split",
+   "data": {
+    "head": {
+     "eyebrow": "Contact us",
+     "title": "Start your project and watch your *business grow*"
+    },
+    "form": {
+     "title": "Drop us a line",
+     "text": "A solutions lead will reply within one business day.",
+     "phone_label": "Phone (optional)",
+     "submit_label": "Send message",
+     "success_title": "Thanks, we have your message",
+     "success_text": "A solutions lead will reply to set up a call.",
+     "note": "We only use your details to reply to this request."
+    },
+    "aside": {
+     "title": "Our advantages",
+     "points": [
+      "18 years of software and back-office delivery",
+      "260+ engineers and specialists",
+      "340+ projects delivered",
+      "ISO 27001:2022 and ISO 9001:2015 certified"
+     ],
+     "offices": [
+      {
+       "flag": "vn",
+       "name": "Vietnam",
+       "address": "6th Floor, 45 Le Duan Street, Ben Nghe Ward, District 1, Ho Chi Minh City",
+       "phone": "(+84) 28 5555 0145"
+      },
+      {
+       "flag": "us",
+       "name": "United States",
+       "address": "1600 Stout Street, Suite 1200, Denver, CO 80202",
+       "phone": "(+1) 303 555 0188"
+      }
+     ],
+     "email_label": "Project inquiries",
+     "email": "hello@lamsondigital.example",
+     "photo": {
+      "src": "office-building-entrance",
+      "alt": "Glass office building entrance at dusk with people walking in"
+     }
+    }
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Software teams and back-office services from Ho Chi Minh City and Da Nang for clients in the United States.",
+    "contacts": [
+     {
+      "icon": "phone",
+      "label": "(+84) 28 5555 0145",
+      "href": "tel:+842855550145"
+     },
+     {
+      "icon": "mail",
+      "label": "hello@lamsondigital.example",
+      "href": "mailto:hello@lamsondigital.example"
+     }
+    ],
+    "socials": [
+     {
+      "icon": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com"
+     },
+     {
+      "icon": "facebook",
+      "label": "Facebook",
+      "href": "https://www.facebook.com"
+     },
+     {
+      "icon": "youtube",
+      "label": "YouTube",
+      "href": "https://www.youtube.com"
+     }
+    ],
+    "columns": [
+     {
+      "heading": "ITO services",
+      "links": [
+       {
+        "label": "Software development",
+        "href": "#services"
+       },
+       {
+        "label": "Software testing",
+        "href": "#services"
+       },
+       {
+        "label": "DevOps",
+        "href": "#services"
+       },
+       {
+        "label": "Data analytics",
+        "href": "#services"
+       }
+      ]
+     },
+     {
+      "heading": "BPO services",
+      "links": [
+       {
+        "label": "Bookkeeping",
+        "href": "#services"
+       },
+       {
+        "label": "Payroll processing",
+        "href": "#services"
+       },
+       {
+        "label": "AI solutions",
+        "href": "#solutions"
+       }
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {
+        "label": "About us",
+        "href": "#about"
+       },
+       {
+        "label": "Case studies",
+        "href": "#case-studies"
+       },
+       {
+        "label": "Contact",
+        "href": "#contact"
+       }
+      ]
+     }
+    ],
+    "legal": "All rights reserved.",
+    "legal_links": [
+     {
+      "label": "Privacy policy",
+      "href": "#top"
+     },
+     {
+      "label": "Security policy",
+      "href": "#top"
+     }
+    ],
+    "certifications": "ISO 27001:2022 | ISO 9001:2015 | CMMI Level 3"
+   }
+  },
+  {
+   "type": "floating-chat",
+   "data": {
+    "label": "Chat with our team",
+    "status": "Replies within a day",
+    "href": "#contact"
+   }
+  }
+ ]
+}

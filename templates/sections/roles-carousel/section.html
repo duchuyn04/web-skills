@@ -1,0 +1,24 @@
+<section id="{{section.id}}" class="bl-section bl-roles-sec bl-tone-{{section.tone}}" data-slider>
+  <div class="bl-container">
+    {{> head-center}}
+  </div>
+  <ul class="bl-slider-track bl-roles" data-slider-track tabindex="0" aria-label="{{head.title_plain}}">
+    {{#items}}
+    <li class="bl-roles__card">
+      {{#icon}}<span class="bl-roles__icon">{{icon:$icon}}</span>{{/icon}}
+      <h3 class="bl-roles__title">{{title}}</h3>
+      <ul class="bl-roles__list">{{#roles}}<li>{{icon:check}}<span>{{.}}</span></li>{{/roles}}</ul>
+      {{#link}}<a class="bl-roles__link" href="{{href}}">{{label}}</a>{{/link}}
+    </li>
+    {{/items}}
+  </ul>
+  <div class="bl-container">
+    <div class="bl-roles__foot">
+      <div class="bl-roles__bar" aria-hidden="true"><span class="bl-roles__thumb"></span></div>
+      <div class="bl-slider-nav">
+        <button class="bl-round-btn" type="button" data-slider-prev>{{icon:chevron-left}}<span class="bl-sr-only">{{prev_label}}</span></button>
+        <button class="bl-round-btn" type="button" data-slider-next>{{icon:chevron-right}}<span class="bl-sr-only">{{next_label}}</span></button>
+      </div>
+    </div>
+  </div>
+</section>

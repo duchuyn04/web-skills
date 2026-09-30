@@ -1,0 +1,43 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hfind{{#finder}} bl-hfind--finder{{/finder}} bl-tone-{{section.tone}}" data-hfind>
+  <div class="bl-container bl-hfind__grid">
+    <div class="bl-hfind__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-hfind__eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      {{#primary_cta}}<div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>{{/primary_cta}}
+    </div>
+    <div class="bl-hfind__visual">
+      <div class="bl-hfind__stage">
+        <span class="bl-hfind__panel" aria-hidden="true" data-hfind-panel></span>
+        <div class="bl-hfind__photo" data-hfind-photo><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="760" fetchpriority="high"></div>
+        {{#cards.0}}<ul class="bl-hfind__cards">{{#cards}}<li class="bl-hfind__card bl-hfind__card--{{@n}} bl-hfind__card--{{mark}} bl-tone-light" data-hfind-card>
+          <span class="bl-hfind__card-head"><span class="bl-hfind__card-title">{{title}}</span><span class="bl-hfind__card-icon">{{icon:$icon}}</span></span>
+          <span class="bl-hfind__mark" aria-hidden="true">
+            <span class="bl-hfind__bars"><i></i><i></i><i></i><i></i></span>
+            <svg class="bl-hfind__tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10.5" stroke-width="0"></circle><polyline points="7 12.5 10.5 16 17 8.5" pathLength="1"></polyline></svg>
+            <span class="bl-hfind__lines"><i></i><i></i><i></i></span>
+          </span>
+        </li>{{/cards}}</ul>{{/cards.0}}
+      </div>
+    </div>
+  </div>
+  {{#finder}}<div class="bl-hfind__base bl-tone-light"><div class="bl-container">
+    <form class="bl-hfind__finder" action="#" data-hfind-form{{#label}} aria-label="{{label}}"{{/label}}>
+      {{#selects}}<div class="bl-hfind__field">
+        <label class="bl-hfind__label" for="{{section.id}}-find-{{@n}}">{{label}}</label>
+        <span class="bl-hfind__select">
+          <select id="{{section.id}}-find-{{@n}}" name="find-{{@n}}">
+            <option value="">{{placeholder}}</option>
+            {{#options}}<option value="{{href}}">{{label}}</option>{{/options}}
+          </select>
+          {{icon:chevron-down bl-hfind__caret}}
+        </span>
+      </div>{{/selects}}
+      <button class="bl-hfind__go" type="submit">{{icon:search}}<span>{{button}}</span></button>
+      <p class="bl-hfind__hint" role="status" aria-live="polite" data-hfind-hint data-text="{{hint}}"></p>
+    </form>
+  </div></div>{{/finder}}
+</section>

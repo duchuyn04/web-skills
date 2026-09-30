@@ -1,0 +1,145 @@
+{
+  "_note": "Shows hero-finder (dark hero with a person photo on a brand panel, small service cards and a finder bar of dropdowns that jump to sections). Brightwater is a fictional company; every figure is sample data.",
+  "archetype": "enterprise-cx",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Brightwater",
+    "brand_mark": "BW",
+    "title": "Brightwater | Accounting, payroll and HR outsourcing",
+    "description": "Brightwater runs bookkeeping, payroll and HR administration for accountancy practices, schools and growing companies in the UK."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Who we help", "href": "#industries"},
+          {"label": "Reviews", "href": "#reviews"}
+        ],
+        "cta": {"label": "Talk to us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-finder",
+      "data": {
+        "eyebrow": "For accountancy, payroll and HR teams",
+        "title": "*Outsourced finance and HR* for UK businesses",
+        "lead": "Brightwater runs bookkeeping, payroll and HR administration for accountancy practices, schools and growing companies across the UK.",
+        "photo": {"src": "portrait-woman-office", "alt": "Smiling woman in a blazer standing by an office window"},
+        "cards": [
+          {"title": "Management accounts", "icon": "bar-chart", "mark": "bars"},
+          {"title": "Payroll run on time", "icon": "calendar", "mark": "tick"},
+          {"title": "HR records kept current", "icon": "users", "mark": "list"}
+        ],
+        "finder": {
+          "label": "Find the right service",
+          "selects": [
+            {"label": "Industry", "placeholder": "Select an industry", "options": [
+              {"label": "Accountancy practices", "href": "#industries"},
+              {"label": "Schools and trusts", "href": "#industries"},
+              {"label": "Retail and hospitality", "href": "#industries"}
+            ]},
+            {"label": "Size", "placeholder": "Select a size", "options": [
+              {"label": "Up to 50 staff", "href": "#services"},
+              {"label": "50 to 250 staff", "href": "#services"},
+              {"label": "Over 250 staff", "href": "#contact"}
+            ]},
+            {"label": "Looking for", "placeholder": "Select an area", "options": [
+              {"label": "Bookkeeping", "href": "#services"},
+              {"label": "Payroll", "href": "#services"},
+              {"label": "HR administration", "href": "#services"},
+              {"label": "A call with an adviser", "href": "#contact"}
+            ]}
+          ],
+          "button": "Search"
+        }
+      }
+    },
+    {
+      "type": "logo-marquee",
+      "data": {
+        "label": "Trusted by practices, schools and retailers across the UK",
+        "logos": [{"name": "Harrow Lane Accountants"}, {"name": "Oakfield Academy Trust"}, {"name": "Northgate Retail"}, {"name": "Pennine Dental"}, {"name": "Castleford Hotels"}, {"name": "Marlow and Finch"}]
+      }
+    },
+    {
+      "type": "services-tabs",
+      "id": "services",
+      "data": {
+        "head": {"title": "Services for finance and HR teams", "lead": "Most clients start with one service and add a second within the first year. Each service has a named account manager and a monthly timetable."},
+        "tabs": [
+          {"tab": "Bookkeeping", "icon": "calculator", "title": "Bookkeeping and management accounts", "text": "Our bookkeepers post transactions, reconcile bank accounts and send management accounts by the tenth working day of each month.", "bullets": ["Bank and card reconciliations", "Purchase and sales ledgers", "Monthly management accounts"], "photo": {"src": "bookkeeping-calculator-laptop", "alt": "Hands on a calculator in front of a laptop with an accounting app"}},
+          {"tab": "Payroll", "icon": "wallet", "title": "Payroll for weekly and monthly staff", "text": "We run weekly and monthly payrolls, handle starters and leavers and send payslips to staff by email on the agreed date.", "bullets": ["RTI submissions", "Pension auto-enrolment", "Starters, leavers and changes"], "photo": {"src": "desk-phone-monitors", "alt": "Woman at a desk with a desk phone and two monitors"}},
+          {"tab": "HR administration", "icon": "users", "title": "HR records, contracts and absence", "text": "Our HR team keeps employee records current, drafts contracts from your templates and tracks holidays and absence each month.", "bullets": ["Contracts and offer letters", "Holiday and absence tracking", "Right to work checks"], "photo": {"src": "team-coworking-laptops", "alt": "Four people working on laptops at a wooden table"}}
+        ]
+      }
+    },
+    {
+      "type": "metrics-counter",
+      "data": {
+        "title": "Brightwater in numbers",
+        "items": [
+          {"value": 1200, "suffix": "+", "label": "Payslips run each month"},
+          {"value": 340, "label": "Clients across the UK"},
+          {"value": 18, "label": "Years in business"},
+          {"value": 96, "suffix": "%", "label": "Clients who renew each year"}
+        ],
+        "image": "team-meeting-table"
+      }
+    },
+    {
+      "type": "audience-cards",
+      "id": "industries",
+      "data": {
+        "head": {"title": "Who we help"},
+        "cards": [
+          {"title": "Accountancy practices", "text": "Practices that hand over bookkeeping and payroll for their clients during busy months or all year round.", "points": ["White-label bookkeeping", "Client payroll bureau", "Year-end preparation files"]},
+          {"title": "Schools and trusts", "text": "Academies and trusts that need payroll and HR records handled for teaching and support staff.", "points": ["Teachers' pension returns", "Support staff payroll", "HR records for each school"]},
+          {"title": "Growing companies", "text": "Retail, hospitality and service companies with 20 to 500 staff and no in-house finance team.", "points": ["Weekly payroll for shift staff", "Monthly management accounts", "Contracts and absence tracking"]}
+        ]
+      }
+    },
+    {
+      "type": "testimonials-rated",
+      "id": "reviews",
+      "data": {
+        "head": {"title": "Client reviews"},
+        "items": [
+          {"quote": "Our payroll runs on the same day every month and the reports arrive before anyone asks for them.", "name": "Helen Carter", "role": "Finance Director", "company": "Oakfield Academy Trust"},
+          {"quote": "Brightwater took over bookkeeping for forty of our clients in the busy season without a single missed deadline.", "name": "David Moss", "role": "Partner", "company": "Harrow Lane Accountants"},
+          {"stars": "4", "quote": "Starters and leavers used to take a week of emails. Now we fill in one form and the change shows on the next payslip.", "name": "Sara Okafor", "role": "Operations Manager", "company": "Castleford Hotels"}
+        ]
+      }
+    },
+    {
+      "type": "contact-split",
+      "id": "contact",
+      "data": {
+        "head": {"title": "Speak to one of our *advisers*"},
+        "form": {"title": "Tell us what you need", "text": "An adviser will reply within one working day.", "phone_label": "Phone (optional)", "submit_label": "Send message", "success_title": "Thanks, we have your message", "success_text": "An adviser will reply to set up a call.", "note": "We only use your details to reply to this request."},
+        "aside": {"title": "Why clients choose us", "points": ["18 years of payroll and bookkeeping work", "A named account manager for every client", "Monthly timetable agreed before the first run"], "offices": [{"flag": "gb", "name": "Leeds", "address": "4 Park Square East, Leeds LS1 2NE", "phone": "0113 496 0000"}], "email_label": "New clients", "email": "hello@example.com", "photo": {"src": "office-building-entrance", "alt": "Glass office building entrance at dusk with people walking in"}}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Brightwater runs bookkeeping, payroll and HR administration for UK businesses.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Bookkeeping", "href": "#services"},
+            {"label": "Payroll", "href": "#services"},
+            {"label": "HR administration", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Who we help", "href": "#industries"},
+            {"label": "Reviews", "href": "#reviews"},
+            {"label": "Contact", "href": "#contact"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

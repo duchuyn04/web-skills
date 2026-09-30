@@ -1,111 +1,20 @@
 {
   "id": "innovature-bpo",
-  "source": {
-    "name": "Innovature BPO",
-    "url": "https://innovatureinc.com/",
-    "category": "Vietnam & Southeast Asia Leaders",
-    "collected": "2026-09-26"
-  },
-  "fits": [
-    "offshore-staffing",
-    "it-bpo-partner"
-  ],
-  "summary": "Light pale-blue page with a split hero, a stat split, logo and award rows, a role slider, a pricing split, three step cards, a talent split, case cards and a contact form.",
+  "source": {"name": "Innovature BPO", "url": "https://innovatureinc.com/", "category": "Vietnam & Southeast Asia Leaders", "collected": "2026-09-30"},
+  "fits": ["offshore-staffing", "it-bpo-partner"],
+  "preferred": true,
+  "summary": "Light pale-blue offshore staffing page: a hero stage with slide tabs along its lower edge, an intro beside four figure tiles, a logo row, an award grid, a carousel of roles by industry, a savings calculator, three photo steps, a talent pool split, three quote cards and a contact form.",
   "header": "mega",
   "sections": [
-    {
-      "form": "hero-split",
-      "role": "hero",
-      "tone": "light",
-      "cols": 2,
-      "count": null,
-      "media": "right",
-      "note": "heading, text and two buttons on the left, badge graphic on the right, a row of small trust items below"
-    },
-    {
-      "form": "metrics",
-      "role": "metrics",
-      "tone": "light",
-      "cols": 2,
-      "count": 4,
-      "media": "right",
-      "note": "heading and text on the left, four icon stat tiles in a 2x2 grid on the right"
-    },
-    {
-      "form": "logo-strip",
-      "role": "clients",
-      "tone": "light",
-      "cols": 6,
-      "count": 12,
-      "media": "none",
-      "optional": true,
-      "note": "centered heading over a row of client logos with a caption"
-    },
-    {
-      "form": "icon-strip",
-      "role": "awards",
-      "tone": "light",
-      "cols": 5,
-      "count": 10,
-      "media": "none",
-      "optional": true,
-      "note": "centered heading and two rows of five certificate and award badges"
-    },
-    {
-      "form": "carousel-cards",
-      "role": "industries",
-      "tone": "light",
-      "cols": 7,
-      "count": 7,
-      "media": "none",
-      "optional": true,
-      "note": "centered heading and a row of tall industry cards each listing roles"
-    },
-    {
-      "form": "feature-split",
-      "role": "pricing",
-      "tone": "light",
-      "cols": 2,
-      "count": null,
-      "media": "right",
-      "note": "heading, text and buttons on the left, large calculator screenshot on the right"
-    },
-    {
-      "form": "cards-image",
-      "role": "process",
-      "tone": "light",
-      "cols": 3,
-      "count": 3,
-      "media": "none",
-      "note": "centered heading over three numbered photo cards with text"
-    },
-    {
-      "form": "feature-split",
-      "role": "team",
-      "tone": "light",
-      "cols": 2,
-      "count": null,
-      "media": "right",
-      "note": "heading, text, bullets and button on the left, photo collage on the right"
-    },
-    {
-      "form": "cards-text",
-      "role": "testimonial",
-      "tone": "light",
-      "cols": 3,
-      "count": 3,
-      "media": "none",
-      "optional": true,
-      "note": "centered heading over three quote cards with a button below"
-    },
-    {
-      "form": "form",
-      "role": "cta",
-      "tone": "light",
-      "cols": 2,
-      "count": null,
-      "media": "none",
-      "note": "heading and text on the left, a consultation form card on the right"
-    }
+    {"form": "hero-split", "role": "hero", "tone": "light", "cols": 2, "media": "right", "compose": ["hero-tabs"], "note": "pale blue ground: heading, lead and two pill buttons left, a large award or badge graphic right; four slide tabs with a title, one line and a thin progress bar on the active tab run along the bottom, with a 01 / 04 counter and arrows"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 2, "count": 4, "media": "right", "note": "heading and two paragraphs left, a two-by-two bento of tiles right: small index, a large badge, icon or figure, a two-line caption and a round arrow; two tiles filled in the brand blue, two light"},
+    {"form": "logo-strip", "role": "clients", "tone": "light", "cols": 6, "count": 6, "media": "none", "optional": true, "note": "centered heading over one row of client logos and a one-line caption"},
+    {"form": "icon-strip", "role": "awards", "tone": "light", "cols": 5, "count": 10, "media": "none", "optional": true, "note": "centered heading and line, two rows of five certificate and award badges in cells split by thin lines, each with a caption"},
+    {"form": "carousel-cards", "role": "services", "tone": "light", "cols": 7, "count": 7, "media": "none", "note": "centered heading and line, a sideways track of tall white cards with a blue top edge, an icon square, the industry name, a check list of roles and a View all roles link, with a progress bar under the track"},
+    {"form": "calculator", "role": "pricing", "tone": "light", "cols": 2, "media": "right", "optional": true, "note": "heading, a lead with a bold accent phrase, two small figure boxes and a pill button left; a browser-framed savings table by role right"},
+    {"form": "cards-image", "role": "process", "tone": "light", "cols": 3, "count": 3, "media": "top", "note": "centered heading and line, three cards joined by a thin line, each with a photo, a large blue numeral, a title and a paragraph, a pill link to the FAQ below"},
+    {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "one large rounded card: heading, paragraph, three tick chips and a pill button left; a grid of candidate portraits with role labels on a blue shape right"},
+    {"form": "cards-text", "role": "testimonial", "tone": "light", "cols": 3, "count": 3, "media": "none", "optional": true, "note": "heading and line at the left, three quote cards with a quote mark, number, the quote fading into a Read full story pill and the author with initials and title, a pill button below"},
+    {"form": "form", "role": "cta", "tone": "light", "cols": 2, "count": 1, "media": "none", "note": "large heading, a line and three small value chips with a pill button left, a white consultation form card right (name, email, company, job title, source, details, consent)"}
   ]
 }

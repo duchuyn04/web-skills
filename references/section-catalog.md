@@ -292,6 +292,48 @@ Fields:
   - `label`: text 3-44 chars
   - `icon`: icon name (optional, default "shield-check")
 
+## contact-photo
+
+Closing contact block after IRIS Software: a people photo cut into a chevron runs from the page's left edge, with an optional round call button beside its tip; the heading sits across the top on the right and the enquiry form lies below it in a two-column grid (name, optional last name and job title, company, email, phone, an optional topic select, message, privacy line). The photo opens from the tip when it scrolls into view. Stacks to a photo band with a downward chevron on tablets and a photo strip on phones.
+
+- Group: `cta`. Default anchor: `#contact`. Tone: auto.
+- Built-in motion: reveal, chevron-photo-open, call-button-pop, form-field-cascade.
+- Allowed in: enterprise-cx/cta, offshore-staffing/cta, ai-data-ops/cta, cx-voice-sales/cta, it-bpo-partner/cta.
+- Preview: `previews/contact-photo.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `call`: object (optional)
+  - `label`: text 3-24 chars
+  - `phone`: text 5-24 chars
+  - `text`: text 10-90 chars (optional)
+- `form`: object
+  - `title`: text 5-70 chars
+  - `name_label`: text 2-28 chars (optional, default "Full name")
+  - `last_name_label`: text 2-28 chars (optional)
+  - `role_label`: text 2-28 chars (optional)
+  - `company_label`: text 2-28 chars (optional, default "Company")
+  - `email_label`: text 2-28 chars (optional, default "Work email")
+  - `phone_label`: text 2-28 chars (optional)
+  - `topic_label`: text 2-36 chars (optional)
+  - `topic_options`: list of 2-8 (optional) (each text 2-40 chars)
+  - `message_label`: text 2-40 chars (optional)
+  - `submit_label`: text 3-30 chars
+  - `success_title`: text 5-60 chars
+  - `success_text`: text 20-200 chars
+  - `note`: text 20-160 chars (optional)
+  - `privacy`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+  - `action`: link (optional)
+
 ## contact-split
 
 Closing contact block: centered heading, then one card split in two. Left: a short form (name, email, company, phone, message). Right: a brand-colour panel with reasons to work with you, each office with flag, address and phone, and the sales email. Optional aside.photo: a real photo of the office or the team at the top of the brand-colour panel, above the reasons and offices. Optional map: an embedded Google Map of the main office under the card, with an Open in Google Maps link. With both, the photo shows the place inside the card and the map sits under the card.
@@ -567,6 +609,28 @@ Fields:
 - `items`: list of 4-8, each item:
   - `q`: text 10-120 chars
   - `a`: text 30-520 chars
+
+## faq-grid
+
+Centered heading, then 4-10 questions in two columns of tinted rounded boxes. Each box opens its answer with a smooth grid-rows animation while its plus sign turns into a minus. Optional link to the full FAQ page centered below.
+
+- Group: `faq`. Default anchor: `#faq`. Tone: auto.
+- Built-in motion: smooth-accordion-expansion, faq-plus-to-minus, answer-settle, reveal.
+- Allowed in: enterprise-cx/faq?, offshore-staffing/faq, ai-data-ops/faq?, cx-voice-sales/faq, it-bpo-partner/faq?.
+- Preview: `previews/faq-grid.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `items`: list of 4-10, each item:
+  - `q`: text 10-120 chars
+  - `a`: text 30-520 chars
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
 
 ## feature-rows
 
@@ -898,6 +962,44 @@ Fields:
   - `label`: text 3-32 chars
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
+
+## hero-finder
+
+Split hero after IRIS Software. Dark ground: a short eyebrow, a large headline whose *accent* part is set in the brand colour, the lead and optional buttons on the left; on the right one person photo on a rounded brand-colour panel, with 2 or 3 small white cards over its edges, each naming a real service line with an icon and a small drawn mark (bar chart, tick or list lines). Under the copy a finder bar straddles the hero's lower edge: 2 or 3 labelled dropdowns (for example Industry, Company size, Looking for) whose options each jump to a section of the page, and a search button that opens the most specific choice. The panel rises, the cards pop in and their marks draw once; no loops. Suits multi-service companies whose visitors arrive with different needs.
+
+- Group: `hero`. Default anchor: `#top`. Tone: dark.
+- Built-in motion: finder-panel-rise, finder-card-pop, finder-mark-draw, finder-bar-rise, reveal.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-finder.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-48 chars (optional)
+- `title`: text with *accent* 12-80 chars
+- `lead`: text 60-220 chars
+- `primary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `cards`: list of 0-3 (optional), each item:
+  - `title`: text 3-26 chars
+  - `icon`: icon name
+  - `mark`: one of bars, tick, list (optional, default "tick")
+- `finder`: object (optional)
+  - `label`: text 3-40 chars (optional)
+  - `selects`: list of 2-3, each item:
+    - `label`: text 3-18 chars
+    - `placeholder`: text 3-26 chars
+    - `options`: list of 2-8, each item:
+      - `label`: text 2-40 chars
+      - `href`: link
+  - `button`: text 3-20 chars (optional, default "Search")
+  - `hint`: text 8-60 chars (optional, default "Pick an option in one of the lists first.")
 
 ## hero-flow
 
@@ -2025,6 +2127,32 @@ Fields:
   - `label`: text 3-44 chars
   - `note`: text 5-80 chars (optional)
 
+## metrics-tiles
+
+Figures on flat tiles. layout "row": 3 or 4 tinted tiles in one row, each a large number over a short two-line label, with an optional heading above (a proof strip right under the hero). layout "split": heading and one or two paragraphs on the left, a 2x2 grid of tiles on the right with an optional icon, the figure, a caption and an optional round arrow link; the two diagonal tiles are filled in the brand colour. Numbers count up once when seen.
+
+- Group: `metrics`. Default anchor: `#figures`. Tone: auto.
+- Built-in motion: odometer-number-counter, tile-label-follow, reveal.
+- Allowed in: enterprise-cx/metrics, offshore-staffing/metrics?, ai-data-ops/metrics, cx-voice-sales/metrics, it-bpo-partner/trust?.
+- Preview: `previews/metrics-tiles.jpg`
+
+Fields:
+
+- `layout`: one of row, split (optional, default "row")
+- `head`: object (optional)
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `text`: text 40-280 chars (optional)
+- `items`: list of 3-4, each item:
+  - `value`: number (or "[KPI]" placeholder)
+  - `prefix`: text 1-3 chars (optional)
+  - `suffix`: text 1-8 chars (optional)
+  - `decimals`: number 0-2 (optional)
+  - `label`: text 3-48 chars
+  - `icon`: icon name (optional)
+  - `href`: link (optional)
+
 ## models-board
 
 Engagement model switcher with a responsibility board: pick a model on the left and a token on each task row slides to Your team, Shared or the vendor column, with live counters in the column heads.
@@ -2244,6 +2372,31 @@ Fields:
 - `prev_label`: text 2-20 chars (optional, default "Previous quote")
 - `next_label`: text 2-20 chars (optional, default "Next quote")
 
+## roles-carousel
+
+Roles by industry or team (Innovature): centered heading and lead over a track of 4-8 tall white cards that runs past the page edge. Each card has a thin accent top edge, an optional icon square, the industry or team name, a check list of 3-5 roles or tasks and an optional link such as 'View all roles'. A thin bar under the track shows how far it is scrolled; previous and next buttons, drag, swipe and the arrow keys move it.
+
+- Group: `services`. Default anchor: `#services`. Tone: auto.
+- Built-in motion: roles-slide-in, roles-scroll-bar, reveal.
+- Allowed in: enterprise-cx/services, enterprise-cx/industries?, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services, it-bpo-partner/audience?.
+- Preview: `previews/roles-carousel.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `prev_label`: text 2-24 chars (optional, default "Previous cards")
+- `next_label`: text 2-24 chars (optional, default "Next cards")
+- `items`: list of 4-8, each item:
+  - `icon`: icon name (optional)
+  - `title`: text 3-34 chars
+  - `roles`: list of 3-5 (each text 3-40 chars)
+  - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+
 ## service-links
 
 One to three service groups stacked (for example IT outsourcing, then BPO). Each group: pill label, title, one line, then a two-column grid of link rows with an arrow. Good when there are many services with their own pages.
@@ -2432,6 +2585,33 @@ Fields:
     - `icon`: icon name
     - `title`: text 3-48 chars
     - `text`: text 30-170 chars
+
+## solutions-vtabs
+
+Solution finder after IRIS: centered heading, then a vertical list of 2-4 ways to browse (by service, by company size, by industry) on the left, the active one marked by a thick brand-colour bar, and a raised white panel overlapping it on the right with that tab's 2-6 solution cards in two columns. Each card has an optional photo at its side, a title in the brand or dark ink (alternating), a short paragraph and a See more link. On tablets and phones the ways to browse become a row of pills above the panel.
+
+- Group: `services`. Default anchor: `#services`. Tone: muted.
+- Built-in motion: vtabs-bar-slide, vtabs-cards-rise, reveal.
+- Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
+- Preview: `previews/solutions-vtabs.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `tabs`: list of 2-4, each item:
+  - `tab`: text 3-26 chars
+  - `items`: list of 2-6, each item:
+    - `photo`: object (optional)
+      - `src`: image key or path
+      - `alt`: text 5-140 chars
+    - `title`: text 3-48 chars
+    - `text`: text 30-220 chars
+    - `link`: object (optional)
+      - `label`: text 2-30 chars
+      - `href`: link
 
 ## statement-band
 

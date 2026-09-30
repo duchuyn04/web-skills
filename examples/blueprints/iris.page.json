@@ -1,0 +1,238 @@
+{
+ "_note": "Example on the iris blueprint (templates/blueprints/iris.json): the real page's section order, forms and tones, with Kestrel Ledger sample content. Kestrel Ledger is a fictional company; every name, quote and figure is sample data.",
+ "archetype": "enterprise-cx",
+ "blueprint": "iris",
+ "preset": "enterprise-navy",
+ "lang": "en",
+ "brief": "Kestrel Ledger is a UK company in Leeds that runs outsourced bookkeeping, payroll, HR administration and finance systems support for accountancy practices, schools and academy trusts, and growing companies. Over 3,000 organisations use Kestrel Ledger every month. Brand colours: slate #26313D and blue #1F6FD1. Services: bookkeeping, payroll, HR administration, management accounts, finance systems support. Client wordmarks we may show: Harrow Lane Accountants, Oakfield Academy Trust, Northgate Retail, Pennine Dental, Castleford Hotels, Marlow and Finch, Wren Valley Schools, Ashby Engineering. Reviews: \"Month-end used to take our team a full week. Kestrel Ledger closes the books in three days and flags anything odd before our partners ask.\" (Priya Shah, Practice Manager, Harrow Lane Accountants). \"Payroll for four schools now runs on one calendar. Our business manager spends Fridays on budgets instead of chasing timesheets.\" (Gareth Ellis, Chief Financial Officer, Oakfield Academy Trust). \"They moved us off spreadsheets and onto Xero without losing a single supplier record. The handover notes were better than our own.\" (Hannah Cole, Finance Director, Northgate Retail). Articles: \"Making Tax Digital for income tax: what practices should prepare this year\" (Guide, 6 min read); \"Five payroll checks that catch errors before payday\" (Blog, 4 min read); \"How academy trusts can share one finance team across schools\" (Case study, 5 min read). Phone: +44 113 496 0000, Monday to Friday, 8.30am to 5.30pm. Privacy page: https://kestrelledger.example/privacy.",
+ "theme": {"primary": "#26313D", "accent": "#1F6FD1"},
+ "site": {
+  "brand": "Kestrel Ledger",
+  "brand_mark": "KL",
+  "title": "Kestrel Ledger | Bookkeeping, payroll and HR outsourcing in the UK",
+  "description": "Kestrel Ledger runs bookkeeping, payroll, HR administration and finance systems support for accountancy practices, schools and growing companies across the UK."
+ },
+ "sections": [
+  {
+   "type": "header-mega",
+   "data": {
+    "topbar": {
+     "note": "Call us on +44 113 496 0000",
+     "links": [
+      {"label": "Client login", "href": "#contact"},
+      {"label": "Support", "href": "#contact"}
+     ]
+    },
+    "links": [
+     {
+      "label": "Services",
+      "href": "#services",
+      "mega": {
+       "columns": [
+        {
+         "heading": "Finance",
+         "links": [
+          {"label": "Bookkeeping", "href": "#services"},
+          {"label": "Management accounts", "href": "#services"},
+          {"label": "Finance systems support", "href": "#services"}
+         ]
+        },
+        {
+         "heading": "People",
+         "links": [
+          {"label": "Payroll", "href": "#services"},
+          {"label": "HR administration", "href": "#services"},
+          {"label": "Right to work checks", "href": "#services"}
+         ]
+        }
+       ]
+      }
+     },
+     {"label": "Customer stories", "href": "#testimonials"},
+     {"label": "Insights", "href": "#insights"},
+     {"label": "Contact", "href": "#contact"}
+    ],
+    "cta": {"label": "Book a call", "href": "#contact"}
+   }
+  },
+  {
+   "type": "hero-finder",
+   "data": {
+    "eyebrow": "For accountancy, payroll, HR and education",
+    "title": "*Finance and payroll teams* for UK organisations",
+    "lead": "Kestrel Ledger runs bookkeeping, payroll, HR administration and finance systems support for accountancy practices, schools and growing companies across the UK.",
+    "photo": {"src": "portrait-woman-office", "alt": "Smiling woman in a blazer standing by an office window"},
+    "cards": [
+     {"title": "Management accounts", "icon": "bar-chart", "mark": "bars"},
+     {"title": "Payroll on time", "icon": "calendar", "mark": "tick"},
+     {"title": "HR records kept current", "icon": "users", "mark": "list"}
+    ],
+    "finder": {
+     "label": "Find the right service",
+     "selects": [
+      {
+       "label": "Industry",
+       "placeholder": "Select an industry",
+       "options": [
+        {"label": "Accountancy practices", "href": "#services"},
+        {"label": "Schools and trusts", "href": "#services"},
+        {"label": "Retail and hospitality", "href": "#services"}
+       ]
+      },
+      {
+       "label": "Size",
+       "placeholder": "Select a size",
+       "options": [
+        {"label": "Up to 50 staff", "href": "#services"},
+        {"label": "50 to 250 staff", "href": "#services"},
+        {"label": "Over 250 staff", "href": "#contact"}
+       ]
+      },
+      {
+       "label": "Looking for",
+       "placeholder": "Select an area",
+       "options": [
+        {"label": "Bookkeeping", "href": "#services"},
+        {"label": "Payroll", "href": "#services"},
+        {"label": "HR administration", "href": "#services"},
+        {"label": "A call with an adviser", "href": "#contact"}
+       ]
+      }
+     ],
+     "button": "Search"
+    }
+   }
+  },
+  {
+   "type": "logo-marquee",
+   "data": {
+    "label": "Trusted by over 3,000 organisations across the UK",
+    "logos": [
+     {"name": "Harrow Lane Accountants"},
+     {"name": "Oakfield Academy Trust"},
+     {"name": "Northgate Retail"},
+     {"name": "Pennine Dental"},
+     {"name": "Castleford Hotels"},
+     {"name": "Marlow and Finch"},
+     {"name": "Wren Valley Schools"},
+     {"name": "Ashby Engineering"}
+    ]
+   }
+  },
+  {
+   "type": "solutions-vtabs",
+   "data": {
+    "head": {"title": "Our services"},
+    "tabs": [
+     {
+      "tab": "By business area",
+      "items": [
+       {"photo": {"src": "bookkeeping-calculator-laptop", "alt": "Hands on a calculator in front of a laptop showing an accounting app"}, "title": "Bookkeeping", "text": "Bank reconciliations, sales and purchase ledgers and month-end checks, kept in your own Xero, Sage or QuickBooks file.", "link": {"label": "See more", "href": "#contact"}},
+       {"photo": {"src": "paperwork-review-desk", "alt": "A person at a wooden desk reading printed documents"}, "title": "Payroll", "text": "Weekly and monthly pay runs, starters and leavers, pension submissions and payslips, checked by a second processor before sign-off.", "link": {"label": "See more", "href": "#contact"}},
+       {"photo": {"src": "portrait-woman-glasses-desk", "alt": "Woman in glasses working at a white desk"}, "title": "HR administration", "text": "Contracts, absence records, right to work checks and HR letters prepared to your templates and filed in one place.", "link": {"label": "See more", "href": "#contact"}},
+       {"photo": {"src": "finance-chart-screen", "alt": "Line and bar charts on a computer screen"}, "title": "Management accounts", "text": "A monthly pack with profit and loss, cash position and variance notes, ready for your board or partners.", "link": {"label": "See more", "href": "#contact"}}
+      ]
+     },
+     {
+      "tab": "By business size",
+      "items": [
+       {"title": "Small businesses", "text": "One named bookkeeper who handles the ledgers and payroll for companies with a handful of staff.", "link": {"label": "See more", "href": "#contact"}},
+       {"title": "Growing companies", "text": "A small team across bookkeeping, payroll and HR administration, with one account manager as your contact.", "link": {"label": "See more", "href": "#contact"}},
+       {"title": "Large organisations", "text": "Dedicated teams per service line, planned against your month-end and payroll calendar.", "link": {"label": "See more", "href": "#contact"}},
+       {"title": "Accountancy practices", "text": "White-label bookkeeping and payroll for your clients, prepared to your practice checklist for review.", "link": {"label": "See more", "href": "#contact"}}
+      ]
+     },
+     {
+      "tab": "By industry",
+      "items": [
+       {"title": "Schools and trusts", "text": "Payroll and purchase ledgers for academy trusts, with one calendar across every school in the trust.", "link": {"label": "See more", "href": "#contact"}},
+       {"title": "Healthcare", "text": "Bookkeeping and payroll for dental and GP practices, including associate statements and locum pay.", "link": {"label": "See more", "href": "#contact"}},
+       {"title": "Retail", "text": "Daily takings, card settlements and stock purchases reconciled for shops on one or several sites.", "link": {"label": "See more", "href": "#contact"}},
+       {"title": "Hospitality", "text": "Shift-based payroll, tips and weekly labour cost reports for restaurants and hotels.", "link": {"label": "See more", "href": "#contact"}}
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "testimonials",
+   "data": {
+    "head": {"title": "Customer success stories", "lead": "What finance and school business leaders say about working with Kestrel Ledger."},
+    "items": [
+     {"quote": "Month-end used to take our team a full week. Kestrel Ledger closes the books in three days and flags anything odd before our partners ask.", "name": "Priya Shah", "role": "Practice Manager", "company": "Harrow Lane Accountants"},
+     {"quote": "Payroll for four schools now runs on one calendar. Our business manager spends Fridays on budgets instead of chasing timesheets.", "name": "Gareth Ellis", "role": "Chief Financial Officer", "company": "Oakfield Academy Trust"},
+     {"quote": "They moved us off spreadsheets and onto Xero without losing a single supplier record. The handover notes were better than our own.", "name": "Hannah Cole", "role": "Finance Director", "company": "Northgate Retail"}
+    ]
+   }
+  },
+  {
+   "type": "image-cards",
+   "id": "insights",
+   "data": {
+    "head": {"title": "Latest content"},
+    "cards": [
+     {"tag": "Guide", "meta": "6 min read", "title": "Making Tax Digital for income tax: what practices should prepare this year", "photo": {"src": "accounting-documents-calculator", "alt": "Printed accounts and a calculator on a desk"}, "href": "#contact", "link_label": "Read now"},
+     {"tag": "Blog", "meta": "4 min read", "title": "Five payroll checks that catch errors before payday", "photo": {"src": "paperwork-desk-hands", "alt": "Hands sorting printed pages on a desk"}, "href": "#contact", "link_label": "Read now"},
+     {"tag": "Case study", "meta": "5 min read", "title": "How academy trusts can share one finance team across schools", "photo": {"src": "team-meeting-bright-office", "alt": "Colleagues talking around a table in a bright office"}, "href": "#contact", "link_label": "Read now"}
+    ]
+   }
+  },
+  {
+   "type": "contact-photo",
+   "id": "contact",
+   "data": {
+    "head": {"title": "Ready to speak to *one of our experts*?"},
+    "photo": {"src": "portrait-woman-team-lead", "alt": "Smiling woman in a red sweater holding a coffee in an office"},
+    "call": {"label": "Call us now", "phone": "+44 113 496 0000", "text": "Monday to Friday, 8.30am to 5.30pm"},
+    "form": {
+     "title": "Find out how our services can help you",
+     "name_label": "First name",
+     "last_name_label": "Last name",
+     "role_label": "Job title",
+     "company_label": "Company name",
+     "email_label": "Email address",
+     "phone_label": "Phone number",
+     "topic_label": "What do you need help with?",
+     "topic_options": ["Bookkeeping", "Payroll", "HR administration", "Management accounts", "Something else"],
+     "submit_label": "Send enquiry",
+     "success_title": "Thanks, your enquiry is in",
+     "success_text": "An adviser will reply by email to arrange a short call.",
+     "privacy": {"label": "How we use your data", "href": "https://kestrelledger.example/privacy"}
+    }
+   }
+  },
+  {
+   "type": "statement-band",
+   "data": {
+    "title": "Finding *finance and payroll support* in the UK is simpler with Kestrel Ledger",
+    "text": "Kestrel Ledger is based in Leeds and runs bookkeeping, payroll, HR administration, management accounts and finance systems support for accountancy practices, schools and academy trusts, and growing companies."
+   }
+  },
+  {
+   "type": "footer-columns",
+   "data": {
+    "blurb": "Kestrel Ledger runs bookkeeping, payroll and HR administration for UK organisations from Leeds.",
+    "columns": [
+     {
+      "heading": "Services",
+      "links": [
+       {"label": "Bookkeeping", "href": "#services"},
+       {"label": "Payroll", "href": "#services"},
+       {"label": "HR administration", "href": "#services"},
+       {"label": "Management accounts", "href": "#services"}
+      ]
+     },
+     {
+      "heading": "Company",
+      "links": [
+       {"label": "Customer stories", "href": "#testimonials"},
+       {"label": "Insights", "href": "#insights"},
+       {"label": "Contact", "href": "#contact"}
+      ]
+     }
+    ],
+    "legal": "All rights reserved."
+   }
+  }
+ ]
+}

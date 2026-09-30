@@ -598,6 +598,8 @@ def enrich_stats(obj):
                 if dec is None:
                     dec = len(str(num).split(".")[1]) if isinstance(num, float) and "." in str(num) else 0
                 pre, suf = obj.get("prefix") or "", obj.get("suffix") or ""
+                if len(suf) >= 3 and suf[0].isalpha():
+                    suf = " " + suf  # a word unit ("2 weeks", "5 năm"); short units stay attached ("10k", "3x", "5bn")
                 if isinstance(num, int) and 1900 <= num <= 2099 and not pre and not suf:
                     # A year: no thousands separator and no count-up from zero.
                     obj[k] = {"display": str(num), "count": None}
@@ -1518,7 +1520,7 @@ VI_FONTS = {"Archivo", "Barlow", "Be Vietnam Pro", "Bricolage Grotesque", "Encod
             "Source Sans 3", "Source Serif 4", "Space Grotesk", "Work Sans"}
 
 
-def check_voice(ctx, sections, lang):
+def check_voice(ctx, sections, lang, bp=None):
     """Page-level voice checks measured against 113 real BPO homepages (references/industry-voice.md).
 
     Real sites: hero titles have a median of 5 words and 15% address the reader; 12% of section headings
@@ -1560,7 +1562,9 @@ def check_voice(ctx, sections, lang):
         if not labels:
             ctx.warn("sections", "no section heading is a short label. A third of real BPO headings are 1-4 word labels (\"Our services\", \"Case studies\", \"Awards and certifications\"); a page where every heading is a crafted sentence reads as AI-written.")
     types = {s["type"] for s in sections}
-    if not types & {"metrics-counter", "metrics-panel", "metrics-rings", "metrics-bars3d", "compliance-badges"}:
+    # a blueprint without a metrics or awards slot (IRIS) cannot take one, so the warning would only nag
+    bp_room = bp is None or any(x.get("role") in ("metrics", "awards") for x in bp.get("sections", []))
+    if bp_room and not types & {"metrics-counter", "metrics-panel", "metrics-rings", "metrics-bars3d", "metrics-tiles", "compliance-badges"}:
         ctx.warn("sections", "the page has no metrics or certification section. 58% of real BPO homepages show big numbers (staff, clients, years) and many show certifications; if the brief has such figures, add metrics-counter or compliance-badges.")
     riders = sum(t.count(", with ") for t in all_strings(sections))
     if lang == "en" and riders > 3:
@@ -1831,6 +1835,7 @@ def check_unique_blueprint(ctx, page, page_path, archetype_key, lib):
     if key not in taken:
         return
     free = [k for k, b in lib["blueprints"].items() if archetype_key in b.get("fits", []) and k not in taken]
+    free.sort(key=lambda k: not lib["blueprints"][k].get("preferred"))  # layouts clients named as the standard first
     msg = "blueprint %r is already used by %s" % (key, ", ".join(taken[key]))
     if free:
         ctx.warn("page.blueprint", msg + ". If one of these fits the brief as well, use it so the sites differ in layout: %s." % ", ".join(free))
@@ -2012,7 +2017,7 @@ def main():
                 ctx.err(p + ".data.video", "set exactly one of src (a video file) or embed (a YouTube or Vimeo URL)")
         if t == "voice-sample" and any(not x.get("audio") for x in data.get("samples") or []):
             ctx.warn(p + ".data.samples", "some samples have no audio file; their players animate without sound. Add real recordings before launch.")
-        if (t in ("cta-multistep", "contact-split") or t == "cta-letter" and data.get("form")) and not (data.get("form") or {}).get("action"):
+        if (t in ("cta-multistep", "contact-split", "contact-photo") or t == "cta-letter" and data.get("form")) and not (data.get("form") or {}).get("action"):
             ctx.warn(p + ".data.form.action", "no form action set; the form shows a thank-you message but sends nothing. Add a form endpoint URL before launch.")
         if t == "cta-letter" and not data.get("form") and not data.get("primary_cta"):
             ctx.err(p + ".data", "cta-letter needs primary_cta or form, or the letter has no way to reply.")
@@ -2048,7 +2053,7 @@ def main():
         ctx.warn("page.override_order", "archetype order check skipped: %s" % top["override_order"]["reason"])
 
     check_brand_colors(ctx, top, page_path.parent, brief, page.get("site"))
-    check_voice(ctx, sections, top.get("lang", "en"))
+    check_voice(ctx, sections, top.get("lang", "en"), bp)
     check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {})
     check_figures(ctx, sections)
     check_images(ctx, sections)

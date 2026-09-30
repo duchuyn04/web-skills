@@ -20,3 +20,10 @@ a.bl-spanel__bar:hover .arrow-icon { transform: translateX(4px); }
 .bl-spanel__item strong { display: block; color: var(--text-strong); font-size: 1rem; margin-bottom: .2rem; }
 .bl-spanel__item span span { display: block; font-size: var(--fs-sm); color: var(--text); line-height: 1.55; }
 @media (max-width: 900px) { .bl-spanels, .bl-spanels:has(> :nth-child(3):last-child) { grid-template-columns: 1fr; } }
+
+/* panel-bar-wipe: each dark title bar opens left to right after its panel lands (the panel's --reveal-i staggers the
+   bars), then the items arrive one by one and their icons pop (data-seq). */
+.js .bl-spanel__list[data-seq] > * { transition-delay: calc(var(--reveal-i, 0) * 120ms + var(--seq-i, 0) * 110ms + 450ms); }
+.js .bl-spanel__list[data-seq] .bl-spanel__icon { transition: transform .45s var(--ease-back); transition-delay: calc(var(--reveal-i, 0) * 120ms + var(--seq-i, 0) * 110ms + 600ms); }
+.js .bl-spanel__list[data-seq]:not(.is-seen) .bl-spanel__icon { transform: scale(.4) rotate(-20deg); }
+@media (prefers-reduced-motion: reduce) { .js .bl-spanel__list[data-seq] .bl-spanel__icon { transform: none !important; } }

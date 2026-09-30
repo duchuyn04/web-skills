@@ -1,0 +1,36 @@
+{
+  "variant": "contact-photo",
+  "group": "cta",
+  "forms": ["form"],
+  "summary": "Closing contact block after IRIS Software: a people photo cut into a chevron runs from the page's left edge, with an optional round call button beside its tip; the heading sits across the top on the right and the enquiry form lies below it in a two-column grid (name, optional last name and job title, company, email, phone, an optional topic select, message, privacy line). The photo opens from the tip when it scrolls into view. Stacks to a photo band with a downward chevron on tablets and a photo strip on phones.",
+  "tone": "auto",
+  "anchor": "contact",
+  "animations": ["reveal", "chevron-photo-open", "call-button-pop", "form-field-cascade"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "photo": {"$ref": "photo"},
+    "call": {"type": "object", "required": false, "fields": {
+      "label": {"type": "text", "min": 3, "max": 24},
+      "phone": {"type": "text", "min": 5, "max": 24},
+      "text": {"type": "text", "min": 10, "max": 90, "required": false}
+    }},
+    "form": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 5, "max": 70},
+      "name_label": {"type": "text", "min": 2, "max": 28, "default": "Full name"},
+      "last_name_label": {"type": "text", "min": 2, "max": 28, "required": false},
+      "role_label": {"type": "text", "min": 2, "max": 28, "required": false},
+      "company_label": {"type": "text", "min": 2, "max": 28, "default": "Company"},
+      "email_label": {"type": "text", "min": 2, "max": 28, "default": "Work email"},
+      "phone_label": {"type": "text", "min": 2, "max": 28, "required": false},
+      "topic_label": {"type": "text", "min": 2, "max": 36, "required": false},
+      "topic_options": {"type": "list", "min": 2, "max": 8, "required": false, "item": {"type": "text", "min": 2, "max": 40}},
+      "message_label": {"type": "text", "min": 2, "max": 40, "required": false},
+      "submit_label": {"type": "text", "min": 3, "max": 30},
+      "success_title": {"type": "text", "min": 5, "max": 60},
+      "success_text": {"type": "text", "min": 20, "max": 200},
+      "note": {"type": "text", "min": 20, "max": 160, "required": false},
+      "privacy": {"$ref": "cta", "required": false},
+      "action": {"type": "href", "required": false}
+    }}
+  }
+}

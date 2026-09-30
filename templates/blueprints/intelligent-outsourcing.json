@@ -1,0 +1,23 @@
+{
+  "id": "intelligent-outsourcing",
+  "source": {"name": "Intelligent Outsourcing", "url": "https://intelligent-outsourcing.io/", "category": "Philippines Offshore BPO & Staffing", "collected": "2026-09-30"},
+  "fits": ["offshore-staffing", "it-bpo-partner"],
+  "preferred": true,
+  "summary": "Long, calm offshore staffing page for accounting firms: a pale split hero with a team photo, a row of four figure tiles, role cards with portraits, a problem split, a split with a three-photo mosaic, six reasons, three numbered steps, five benefit cards, a brand-colour review band, a two-column FAQ, a founder story, articles and a brand-colour closing band.",
+  "header": "mega",
+  "sections": [
+    {"form": "hero-split", "role": "hero", "tone": "muted", "cols": 2, "media": "right", "note": "pale tinted ground: small caps trust line in the accent, three-line heading ending on an accent phrase, a lead with the roles in bold and a filled plus an outlined pill button left; a rounded team photo right with a small white card (tick, two lines) over its lower left corner"},
+    {"form": "metrics", "role": "metrics", "tone": "light", "cols": 4, "count": 4, "media": "none", "note": "four light grey tiles in a row, each a large accent figure over a two-line bold label, no heading"},
+    {"form": "cards-image", "role": "services", "tone": "light", "cols": 4, "count": 4, "media": "top", "note": "centered heading and a short paragraph ending on an accent phrase, four role cards each with a portrait on a pale tile with a tinted arc behind it, the role name, two lines and an underlined accent link; a centered question and link below"},
+    {"form": "feature-split", "role": "intro", "tone": "muted", "cols": 2, "count": 1, "media": "left", "note": "grey band: a rounded office photo left; a two-colour heading naming the client's problem, one line, a bold lead-in, a bullet list of pains and one bold accent line right"},
+    {"form": "feature-split", "role": "about", "tone": "light", "cols": 2, "count": 1, "media": "right", "note": "heading, paragraph, a bold lead-in and a bullet list, a bold closing line and a pill button left; three rounded photos right (two side by side over one wide)"},
+    {"form": "cards-icon", "role": "about", "tone": "muted", "cols": 3, "count": 6, "media": "none", "note": "centered heading and line, six white cards in a three by two grid, each with a round tinted icon, a bold title and a short paragraph"},
+    {"form": "cards-icon", "role": "process", "tone": "light", "cols": 3, "count": 3, "media": "none", "note": "centered heading and line, three pale cards with a large accent numeral (01, 02, 03), a title and a paragraph, a centered pill button below"},
+    {"form": "cards-text", "role": "about", "tone": "muted", "cols": 3, "count": 5, "media": "none", "optional": true, "note": "centered heading and line, five white text cards (three, then two wider) with a bold title and one or two lines"},
+    {"form": "testimonial-block", "role": "testimonial", "tone": "dark", "cols": 3, "count": 3, "media": "none", "note": "brand-colour band: centered white heading, three white review cards with a star row, the quote, a rule, a round photo, name and firm, an outlined pill button below"},
+    {"form": "faq-accordion", "role": "faq", "tone": "light", "cols": 2, "count": 8, "media": "none", "note": "centered heading, questions in two columns of pale rounded boxes with a plus sign, a centered underlined link to all questions below"},
+    {"form": "feature-split", "role": "about", "tone": "muted", "cols": 2, "count": 1, "media": "left", "optional": true, "note": "grey band: a portrait of the founder left; heading, three short paragraphs and two pill buttons (the full story, the founder's book) right"},
+    {"form": "cards-image", "role": "news", "tone": "light", "cols": 3, "count": 3, "media": "top", "optional": true, "note": "heading and paragraph at the left, three article cards with a branded image, the title, category and date line in the accent, an excerpt and an underlined link"},
+    {"form": "cta-band", "role": "cta", "tone": "dark", "media": "none", "note": "full-width brand-colour band: centered white heading, two short lines, one accent line, a white pill button and a line with two text links"}
+  ]
+}

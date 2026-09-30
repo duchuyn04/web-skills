@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "4.1.0"
+  version: "4.2.0"
 ---
 
 # BPO landing builder
@@ -58,7 +58,7 @@ python SKILL/scripts/variety.py --blueprints <archetype> --sites sites
 python SKILL/scripts/variety.py --blueprint <key>
 ```
 
-The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2c). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
+The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Layouts marked `*` are preferred: clients named those sites (IRIS, Intelligent Outsourcing, Innovature, Bestarion) as the standard for a professional page, so they come first. Take the first unused `*` layout whose sections the brief can fill, and go further down only when none fits; otherwise pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2c). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
 
 The hero follows the real site too. About two thirds of the blueprints name the hero composition of their source site in `"compose"` (a white card over a wide photo, a tilted photo mosaic, a round portrait beside a card of service chips, a row of photo cards under a centered headline, a photo stage with thumbnail tabs, a column of news cards, tall sector panels). build.py fails a page on such a blueprint whose hero is not one of those variants, or a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`) when it fits the client. This is what keeps ten sites from opening with the same text-left, photo-right hero.
 
@@ -93,6 +93,7 @@ Hero compositions from real sites (the blueprint names the one to use; each need
 | `hero-tabs` | Genpact, TDCX, CMC | 3-4 real service lines, each with its photo; replaces the photo sliders of real sites |
 | `hero-news` | Concentrix | 2-3 real items (case studies, a report, a new center) and an optional featured item |
 | `hero-panels` | ELEKS | 3-4 real sectors or service lines, each with a photo |
+| `hero-finder` | IRIS | one person photo; 2-3 real service lines for the small cards; 2-3 ways to browse (industry, size, need) whose options link to page sections |
 
 Business heroes, when the client's work fits:
 

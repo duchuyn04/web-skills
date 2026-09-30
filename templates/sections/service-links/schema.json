@@ -1,7 +1,7 @@
 {
   "variant": "service-links",
   "group": "services",
-  "forms": ["link-list"],
+  "forms": ["link-list", "list-rows"],
   "open": true,
   "summary": "One to three service groups stacked (for example IT outsourcing, then BPO). Each group: pill label, title, one line, then a two-column grid of link rows with an arrow. Good when there are many services with their own pages.",
   "tone": "auto",
