@@ -1,0 +1,241 @@
+{# Product page 'retail': two columns, promo box, installment, store stock, add-ons, sticky buy bar (Thegioididong, CellphoneS). #}
+{{ m.crumbs([(p.category_name, root ~ "c/" ~ p.category ~ ".html"), (p.name, None)]) }}
+<div class="ctn pdp" data-pdp="{{ p.id }}">
+  <div class="pdp-title">
+    <h1>{{ p.name }}</h1>
+    <div class="pdp-sub">
+      {% if p.rating %}<a href="#reviews" class="pdp-rate">{{ p.rating|stars }}<b>{{ p.rating.avg|string|replace(".", ",") }}</b><span>{{ p.rating.count }} đánh giá</span></a>{% endif %}
+      {% if p.sold %}<span class="pdp-sold">Đã bán {{ "{:,}".format(p.sold)|replace(",", ".") }}</span>{% endif %}
+      <button class="link-btn" type="button" data-compare="{{ p.id }}" aria-pressed="false">{{ icon("compare", "i-sm") }}<span>So sánh</span></button>
+      <button class="link-btn" type="button" data-fav="{{ p.id }}" aria-pressed="false">{{ icon("heart", "i-sm") }}<span>Yêu thích</span></button>
+    </div>
+  </div>
+
+  <div class="pdp-grid">
+    <div class="pdp-left">
+      <div class="gallery" data-gallery>
+        <div class="gallery-main">
+          {% for g in p.gallery %}
+          <img src="{{ root }}{{ g.src }}" alt="{{ p.name }}{% if g.color %} màu {{ g.color }}{% endif %}" width="400" height="400" data-gallery-img="{{ loop.index0 }}" {% if not loop.first %}hidden loading="lazy"{% endif %}>
+          {% endfor %}
+          {% if p.gallery|length > 1 %}
+          <button class="gallery-btn gallery-prev" type="button" data-gallery-prev aria-label="Ảnh trước">{{ icon("chevron-left") }}</button>
+          <button class="gallery-btn gallery-next" type="button" data-gallery-next aria-label="Ảnh sau">{{ icon("chevron-right") }}</button>
+          {% endif %}
+        </div>
+        {% if p.gallery|length > 1 %}
+        <div class="gallery-thumbs" role="tablist" aria-label="Chọn ảnh">
+          {% for g in p.gallery %}
+          <button type="button" role="tab" data-gallery-thumb="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}"><img src="{{ root }}{{ g.src }}" alt="" width="64" height="64" loading="lazy"><span>{{ g.color }}</span></button>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if p.highlights or p.warranty or p.in_box %}
+      <section class="box pdp-info" aria-labelledby="h-info">
+        <h2 id="h-info">Thông tin sản phẩm</h2>
+        <ul class="ticks">
+          {% for h in p.highlights %}<li>{{ icon("check", "i-sm") }}<span>{{ h }}</span></li>{% endfor %}
+          {% if p.in_box %}<li>{{ icon("package", "i-sm") }}<span>Trong hộp: {{ p.in_box|join(", ") }}</span></li>{% endif %}
+          {% if p.warranty %}<li>{{ icon("shield-check", "i-sm") }}<span>Bảo hành {{ p.warranty }}</span></li>{% endif %}
+        </ul>
+      </section>
+      {% endif %}
+    </div>
+
+    <div class="pdp-right">
+      <div class="buybox" data-buybox>
+        <div class="pdp-price">
+          <strong data-v-price>{{ p.price|vnd }}</strong>
+          <s data-v-old {% if not p.old_price %}hidden{% endif %}>{{ (p.old_price or 0)|vnd }}</s>
+          <span class="pdp-off" data-v-off {% if not p.discount %}hidden{% endif %}>-{{ p.discount }}%</span>
+        </div>
+        {% if p.installment %}<p class="pdp-inst">{{ icon("credit-card", "i-sm") }}<span>Trả góp 0%: khoảng <b data-v-monthly>{{ (p.price / 12)|round(-3)|vnd }}</b>/tháng trong 12 tháng</span></p>{% endif %}
+
+        {% for o in p.options %}
+        <fieldset class="opt" data-opt="{{ loop.index0 }}">
+          <legend>{{ o.name }}: <b data-opt-value>{{ o["values"][0].name }}</b></legend>
+          <div class="opt-list{% if o.color %} opt-colors{% endif %}">
+            {% set oi = loop.index0 %}
+            {% for v in o["values"] %}
+            <button type="button" class="opt-btn" data-opt-btn="{{ v.name }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+              {% if o.color %}<span class="swatch" style="--sw: {{ v.hex }}"></span>{% endif %}
+              <span class="opt-name">{{ v.name }}</span>
+              {% if v.price %}<span class="opt-price">{{ v.price|vnd }}</span>{% endif %}
+            </button>
+            {% endfor %}
+          </div>
+        </fieldset>
+        {% endfor %}
+
+        <p class="stock" data-v-stock></p>
+
+        {% if p.promos %}
+        <section class="promo-box" aria-labelledby="h-promo">
+          <h2 id="h-promo">{{ icon("gift", "i-sm") }}Khuyến mãi</h2>
+          <ol>{% for pr in p.promos %}<li>{{ pr }}</li>{% endfor %}</ol>
+        </section>
+        {% endif %}
+
+        <div class="buy-actions">
+          <button class="btn btn-primary btn-buy" type="button" data-buy-now><b>Mua ngay</b><small>Giao tận nơi hoặc nhận tại cửa hàng</small></button>
+          <button class="btn btn-outline btn-cart" type="button" data-add-cart>{{ icon("shopping-cart") }}<span>Thêm vào giỏ</span></button>
+          {% if p.installment %}<button class="btn btn-outline btn-inst" type="button" data-buy-now data-installment><b>Trả góp 0%</b><small>Duyệt qua thẻ tín dụng</small></button>{% endif %}
+          <button class="btn btn-outline btn-notify" type="button" data-notify hidden>{{ icon("bell") }}<span>Báo khi có hàng</span></button>
+        </div>
+
+        <ul class="pdp-policy">
+          {% for b in benefits[:3] %}<li>{{ icon(b.icon, "i-sm") }}<span>{{ b.title }}</span></li>{% endfor %}
+        </ul>
+
+        {% if stores %}
+        <section class="avail" aria-labelledby="h-avail" data-avail>
+          <h2 id="h-avail">{{ icon("store", "i-sm") }}Còn hàng tại cửa hàng</h2>
+          <label class="sr" for="avail-city">Chọn tỉnh, thành</label>
+          <select id="avail-city" data-avail-city>
+            {% for c in stores|map(attribute="city")|unique %}<option>{{ c }}</option>{% endfor %}
+          </select>
+          <ul class="avail-list" data-avail-list></ul>
+        </section>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if p.addons %}
+  <section class="box addons" aria-labelledby="h-addons" data-addons>
+    <h2 id="h-addons">Thường được mua kèm</h2>
+    <ul>
+      {% for a in p.addons %}{% set ap = pid[a] %}
+      <li><label class="check"><input type="checkbox" value="{{ ap.id }}" data-addon="{{ ap.variants[0].sku }}" checked>
+        <img src="{{ root }}{{ ap.image }}" alt="" width="56" height="56" loading="lazy">
+        <span><a href="{{ root }}p/{{ ap.id }}.html">{{ ap.name }}</a><b>{{ ap.price|vnd }}</b></span></label></li>
+      {% endfor %}
+    </ul>
+    <button class="btn btn-outline" type="button" data-addons-add>{{ icon("plus", "i-sm") }}Thêm sản phẩm đã chọn vào giỏ</button>
+  </section>
+  {% endif %}
+
+  <nav class="pdp-tabs" aria-label="Nội dung sản phẩm">
+    {% if p.description %}<a href="#desc">Đặc điểm nổi bật</a>{% endif %}
+    {% if p.specs %}<a href="#specs">Thông số kỹ thuật</a>{% endif %}
+    <a href="#reviews">Đánh giá</a>
+    <a href="#qa">Hỏi đáp</a>
+  </nav>
+
+  <div class="pdp-content">
+    <div class="pdp-col">
+      {% if p.description %}
+      <section class="box prose" id="desc" aria-labelledby="h-desc" data-clamp>
+        <h2 id="h-desc">Đặc điểm nổi bật</h2>
+        {% for para in p.description %}<p>{{ para }}</p>{% endfor %}
+        <button class="link-btn clamp-btn" type="button" data-clamp-toggle hidden>Xem thêm{{ icon("chevron-down", "i-sm") }}</button>
+      </section>
+      {% endif %}
+
+      {% if p.faq %}
+      <section class="box faq" aria-labelledby="h-faq">
+        <h2 id="h-faq">Câu hỏi thường gặp</h2>
+        {% for f in p.faq %}<details><summary>{{ f.q }}{{ icon("chevron-down", "i-sm") }}</summary><p>{{ f.a }}</p></details>{% endfor %}
+      </section>
+      {% endif %}
+
+      <section class="box reviews" id="reviews" aria-labelledby="h-rev" data-reviews>
+        <h2 id="h-rev">Đánh giá {{ p.name }}</h2>
+        {% if p.reviews %}
+        {% set counts = [0, 0, 0, 0, 0] %}
+        <div class="rev-summary">
+          <div class="rev-score"><b>{{ p.rating.avg|string|replace(".", ",") }}</b><span>/5</span>{{ p.rating|stars }}<small>{{ p.rating.count }} đánh giá</small></div>
+          <ul class="rev-bars">
+            {% for s in [5, 4, 3, 2, 1] %}
+            {% set n = p.reviews|selectattr("stars", "equalto", s)|list|length %}
+            <li><span>{{ s }} {{ icon("star", "i-xs") }}</span><i style="--w: {{ (n * 100 / p.reviews|length)|round|int }}%"></i><small>{{ (n * 100 / p.reviews|length)|round|int }}%</small></li>
+            {% endfor %}
+          </ul>
+          <button class="btn btn-primary" type="button" data-review-open>Viết đánh giá</button>
+        </div>
+        <div class="chips rev-filter" role="group" aria-label="Lọc đánh giá">
+          <button type="button" class="chip is-on" data-rev-filter="" aria-pressed="true">Tất cả</button>
+          {% for s in [5, 4, 3, 2, 1] %}<button type="button" class="chip" data-rev-filter="{{ s }}" aria-pressed="false">{{ s }} sao</button>{% endfor %}
+        </div>
+        <ul class="rev-list">
+          {% for r in p.reviews %}
+          <li data-stars="{{ r.stars }}">
+            <div class="rev-head"><span class="avatar" aria-hidden="true">{{ r.name[:1] }}</span><b>{{ r.name }}</b>{% if r.verified %}<span class="tag-ok">{{ icon("check-circle", "i-xs") }}Đã mua tại {{ shop.name }}</span>{% endif %}</div>
+            <div class="rev-meta">{{ {"avg": r.stars}|stars }}{% if r.variant %}<small>{{ r.variant }}</small>{% endif %}{% if r.date %}<small>{{ r.date }}</small>{% endif %}</div>
+            <p>{{ r.text }}</p>
+            {% if r.reply %}<div class="rev-reply"><b>{{ shop.name }}</b><p>{{ r.reply }}</p></div>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div class="rev-empty"><p>Chưa có đánh giá cho sản phẩm này.</p><button class="btn btn-outline" type="button" data-review-open>Viết đánh giá đầu tiên</button></div>
+        {% endif %}
+        <form class="rev-form" data-review-form hidden>
+          <h3>Đánh giá của bạn</h3>
+          <div class="star-input" role="radiogroup" aria-label="Số sao">
+            {% for s in [1, 2, 3, 4, 5] %}<label><input type="radio" name="stars" value="{{ s }}" {% if s == 5 %}checked{% endif %}><span class="sr">{{ s }} sao</span>{{ icon("star") }}</label>{% endfor %}
+          </div>
+          <label class="field"><span>Họ tên</span><input name="name" required autocomplete="name"></label>
+          <label class="field"><span>Nhận xét</span><textarea name="text" rows="3" required minlength="10" placeholder="Chia sẻ trải nghiệm thực tế về sản phẩm"></textarea></label>
+          <div class="form-row"><button class="btn btn-primary" type="submit">Gửi đánh giá</button><button class="btn btn-ghost" type="button" data-review-cancel>Hủy</button></div>
+          <p class="hint">Đánh giá được kiểm duyệt trước khi hiển thị.</p>
+        </form>
+      </section>
+
+      <section class="box qa" id="qa" aria-labelledby="h-qa" data-qa>
+        <h2 id="h-qa">Hỏi đáp về sản phẩm</h2>
+        <form class="qa-form" data-qa-form>
+          <label class="sr" for="qa-q">Câu hỏi của bạn</label>
+          <input id="qa-q" name="q" required minlength="8" placeholder="Bạn có câu hỏi về sản phẩm? Đặt câu hỏi tại đây">
+          <button class="btn btn-primary" type="submit">{{ icon("send", "i-sm") }}Gửi</button>
+        </form>
+        <ul class="qa-list" data-qa-list>
+          {% for q in p.qa %}
+          <li><div class="qa-q"><span class="avatar" aria-hidden="true">{{ q.name[:1] if q.name else "K" }}</span><div><b>{{ q.name or "Khách hàng" }}</b><p>{{ q.q }}</p></div></div>
+            {% if q.a %}<div class="qa-a"><span class="avatar avatar-shop" aria-hidden="true">{{ shop.name[:1] }}</span><div><b>{{ shop.name }}</b><p>{{ q.a }}</p></div></div>{% endif %}</li>
+          {% endfor %}
+        </ul>
+        {% if not p.qa %}<p class="muted" data-qa-empty>Chưa có câu hỏi nào.</p>{% endif %}
+      </section>
+    </div>
+
+    {% if p.specs %}
+    <aside class="pdp-col pdp-aside">
+      <section class="box specs" id="specs" aria-labelledby="h-specs">
+        <h2 id="h-specs">Thông số kỹ thuật</h2>
+        <table class="spec-table">
+          {% for g in p.specs %}
+          <tbody{% if loop.index > 2 %} data-spec-more hidden{% endif %}>
+            <tr class="spec-group"><th colspan="2" scope="colgroup">{{ g.group }}</th></tr>
+            {% for k, v in g.rows %}<tr><th scope="row">{{ k }}</th><td>{{ v }}</td></tr>{% endfor %}
+          </tbody>
+          {% endfor %}
+        </table>
+        {% if p.specs|length > 2 %}<button class="btn btn-outline btn-block" type="button" data-spec-toggle aria-expanded="false">Xem cấu hình chi tiết{{ icon("chevron-down", "i-sm") }}</button>{% endif %}
+      </section>
+    </aside>
+    {% endif %}
+  </div>
+
+  {% if similar %}
+  <section class="sec" aria-labelledby="h-sim">
+    <div class="sec-head"><h2 id="h-sim">Sản phẩm tương tự</h2><a class="sec-more" href="{{ root }}c/{{ p.category }}.html">Xem tất cả{{ arrow }}</a></div>
+    {{ m.rail(similar, "rail-similar") }}
+  </section>
+  {% endif %}
+  <section class="sec" aria-labelledby="h-recent" data-recent hidden>
+    <div class="sec-head"><h2 id="h-recent">Sản phẩm đã xem</h2></div>
+    <div class="rail"><div class="rail-track" data-recent-track></div></div>
+  </section>
+</div>
+
+<div class="buybar" data-buybar>
+  <div class="ctn buybar-in">
+    <img src="{{ root }}{{ p.image }}" alt="" width="48" height="48" data-buybar-img>
+    <div class="buybar-info"><b>{{ p.name }}</b><span data-buybar-variant></span><strong data-buybar-price>{{ p.price|vnd }}</strong></div>
+    <button class="btn btn-outline icon-only" type="button" data-add-cart aria-label="Thêm vào giỏ">{{ icon("shopping-cart") }}</button>
+    <button class="btn btn-primary" type="button" data-buy-now>Mua ngay</button>
+  </div>
+</div>

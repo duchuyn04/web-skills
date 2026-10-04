@@ -1,0 +1,15 @@
+/* Card 'spec': spec lines first, big price. */
+.pc-spec .pc-link{gap:6px}
+.pc-spec .pc-media{aspect-ratio:4/3}
+.pc-spec .pc-media img{width:80%;height:80%}
+.pcs-brand{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-muted)}
+.pc-spec .pc-name{font-family:var(--font-head);font-size:15px;min-height:2.6em}
+.pcs-lines{display:flex;flex-direction:column;gap:3px;padding:8px 10px;border-radius:var(--radius);background:var(--c-surface-2);font-size:12.5px;color:var(--c-text)}
+.pcs-lines li{display:flex;align-items:center;gap:6px;min-width:0}
+.pcs-lines li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pcs-lines .i{color:var(--c-accent-ink);flex:none}
+.pcs-price{display:flex;flex-direction:column;gap:2px;margin-top:2px}
+.pcs-price strong{font-family:var(--font-head);font-size:20px;color:var(--c-price);line-height:1.15}
+.pcs-old{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--c-muted)}
+.pcs-old .pc-off{position:static;font-style:normal;padding:1px 6px;font-size:11.5px}
+.pc-spec .pc-badge{left:0;right:auto}

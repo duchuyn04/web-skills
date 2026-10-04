@@ -1,0 +1,17 @@
+{# Section 'collections': {"type": "collections", "title"?, "items": [2-4 of {"title", "text"?, "products": [3-6 ids], "bg"?}]}
+   Each collection is a tinted panel with its title and text beside a short row of its products. #}
+<section class="sec ctn bq-cols" aria-labelledby="h-col-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-col-{{ sec._i }}">{{ sec.title or "Bộ sưu tập" }}</h2></div>
+  {% for c in sec["items"] %}
+  <div class="bq-col{% if loop.index is even %} bq-col-r{% endif %}" style="--col-bg: {{ c.bg or 'var(--c-surface-2)' }}">
+    <div class="bq-col-copy">
+      <h3>{{ c.title }}</h3>
+      {% if c.text %}<p>{{ c.text }}</p>{% endif %}
+      <p class="bq-col-n">{{ c.products|length }} sản phẩm</p>
+    </div>
+    <div class="bq-col-items">
+      {% for pid_ in c.products[:6] %}{{ m.card(pid[pid_]) }}{% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>

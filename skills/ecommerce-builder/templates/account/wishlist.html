@@ -1,0 +1,8 @@
+{% extends "account/_layout.html" %}
+{% block account %}
+<h1 class="acc-title">Sản phẩm yêu thích</h1>
+<div class="grid grid-acc" data-wishlist-grid></div>
+<div data-wishlist-empty hidden>
+  <div class="empty"><span class="empty-ic">{{ icon("heart") }}</span><h2>Chưa có sản phẩm yêu thích</h2><p>Bấm biểu tượng trái tim trên sản phẩm để lưu lại xem sau.</p><a class="btn btn-primary" href="{{ root }}index.html">Khám phá sản phẩm</a></div>
+</div>
+{% endblock %}

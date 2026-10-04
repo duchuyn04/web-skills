@@ -1,0 +1,7 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{% for sec in sections %}
+{% include "sections/" ~ sec.type ~ ".html" %}
+{% endfor %}
+{% endblock %}

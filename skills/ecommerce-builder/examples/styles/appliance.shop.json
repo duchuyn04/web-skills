@@ -1,0 +1,1603 @@
+{
+ "_note": "Shop mẫu kiểu appliance. Thương hiệu, sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "demo": true,
+ "sample_content": true,
+ "style": "appliance",
+ "lang": "vi",
+ "brief": "Chuỗi điện máy mẫu Gia An bán tivi, tủ lạnh, máy giặt, máy lạnh và loa cho gia đình. Mọi thương hiệu, giá, dịch vụ, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "shop": {
+  "name": "Điện máy Gia An",
+  "tagline": "Tivi, tủ lạnh, máy giặt, máy lạnh cho gia đình",
+  "hotline": "1800 0000",
+  "email": "cskh@example.com",
+  "address": "[Địa chỉ trụ sở]",
+  "hours": "7:30 - 21:30",
+  "legal": "Cửa hàng mẫu do ecommerce-builder tạo. Thông tin pháp lý điền khi chạy thật.",
+  "socials": [
+   {
+    "type": "facebook",
+    "url": "#"
+   },
+   {
+    "type": "youtube",
+    "url": "#"
+   }
+  ]
+ },
+ "theme": {
+  "preset": "appliance-fresh"
+ },
+ "announcement": [
+  "Miễn phí giao và lắp đặt nội thành",
+  "Bảo hành tại nhà",
+  "Trả góp 0% qua thẻ tín dụng"
+ ],
+ "categories": [
+  {
+   "id": "tivi",
+   "name": "Tivi",
+   "icon": "tv",
+   "device": "tv",
+   "facets": [
+    {
+     "key": "size",
+     "label": "Kích thước"
+    },
+    {
+     "key": "panel",
+     "label": "Công nghệ màn hình"
+    }
+   ]
+  },
+  {
+   "id": "tu-lanh",
+   "name": "Tủ lạnh",
+   "icon": "refrigerator",
+   "device": "fridge",
+   "facets": [
+    {
+     "key": "capacity",
+     "label": "Dung tích"
+    },
+    {
+     "key": "type",
+     "label": "Kiểu tủ"
+    }
+   ]
+  },
+  {
+   "id": "may-giat",
+   "name": "Máy giặt",
+   "icon": "washing-machine",
+   "device": "washer",
+   "facets": [
+    {
+     "key": "load",
+     "label": "Khối lượng giặt"
+    },
+    {
+     "key": "type",
+     "label": "Kiểu máy"
+    }
+   ]
+  },
+  {
+   "id": "may-lanh",
+   "name": "Máy lạnh",
+   "icon": "air-vent",
+   "device": "aircon",
+   "facets": [
+    {
+     "key": "power",
+     "label": "Công suất"
+    },
+    {
+     "key": "inverter",
+     "label": "Inverter"
+    }
+   ]
+  },
+  {
+   "id": "am-thanh",
+   "name": "Loa, âm thanh",
+   "icon": "speaker",
+   "device": "speaker",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại loa"
+    }
+   ]
+  }
+ ],
+ "brands": [
+  {
+   "id": "viora",
+   "name": "Viora"
+  },
+  {
+   "id": "kelvo",
+   "name": "Kelvo"
+  },
+  {
+   "id": "aquano",
+   "name": "Aquano"
+  },
+  {
+   "id": "bemo",
+   "name": "Bemo"
+  }
+ ],
+ "products": [
+  {
+   "id": "viora-4k-uhd",
+   "name": "Tivi Viora 4K UHD",
+   "brand": "viora",
+   "category": "tivi",
+   "device": "tv",
+   "facets": {
+    "size": [
+     "43 inch",
+     "50 inch",
+     "55 inch"
+    ],
+    "panel": "LED"
+   },
+   "card_specs": [
+    "4K",
+    "Google TV",
+    "Điều khiển giọng nói"
+   ],
+   "specs": [
+    {
+     "group": "Hình ảnh",
+     "rows": [
+      [
+       "Độ phân giải",
+       "4K (3840 x 2160)"
+      ],
+      [
+       "Tấm nền",
+       "LED"
+      ],
+      [
+       "HDR",
+       "HDR10"
+      ]
+     ]
+    },
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Công suất loa",
+       "20W"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "HDMI",
+       "3 cổng"
+      ],
+      [
+       "USB",
+       "2 cổng"
+      ],
+      [
+       "Wi-Fi",
+       "Có"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Tivi 4K dùng Google TV, có kho ứng dụng xem phim, tìm kiếm bằng giọng nói tiếng Việt.",
+    "Ba kích thước 43, 50 và 55 inch cho phòng ngủ, phòng khách nhỏ và vừa."
+   ],
+   "highlights": [
+    "Google TV, tìm bằng giọng nói tiếng Việt",
+    "Chế độ trẻ em giới hạn thời gian xem"
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 312
+   },
+   "sold": 2140,
+   "badges": [
+    "hot"
+   ],
+   "promos": [
+    "Miễn phí giao và lắp đặt treo tường nội thành",
+    "Tặng gói xem phim 3 tháng"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Kích thước",
+     "values": [
+      {
+       "name": "43 inch",
+       "price": 6990000,
+       "old_price": 7990000
+      },
+      {
+       "name": "50 inch",
+       "price": 8490000,
+       "old_price": 9490000
+      },
+      {
+       "name": "55 inch",
+       "price": 9990000,
+       "old_price": 11490000
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Chị Mai",
+     "stars": 5,
+     "text": "Nhân viên giao đúng hẹn, lắp đặt gọn và hướng dẫn cách dùng kỹ. Máy chạy êm.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Anh Tuấn",
+     "stars": 5,
+     "text": "Giá tốt hơn chỗ khác, trả góp duyệt nhanh trong ngày.",
+     "verified": true,
+     "date": "14/09/2026"
+    },
+    {
+     "name": "Cô Hạnh",
+     "stars": 4,
+     "text": "Sản phẩm đẹp, dùng ổn. Thời gian giao hơi trễ một chút vì trời mưa.",
+     "verified": true,
+     "date": "05/09/2026"
+    }
+   ],
+   "qa": [
+    {
+     "name": "Chị Lan",
+     "q": "Lắp đặt có tốn thêm phí vật tư không?",
+     "a": "Gói lắp đặt tiêu chuẩn đã gồm công lắp. Vật tư phát sinh ngoài gói được báo giá trước khi làm."
+    }
+   ]
+  },
+  {
+   "id": "viora-qled-pro",
+   "name": "Tivi Viora QLED Pro",
+   "brand": "viora",
+   "category": "tivi",
+   "device": "tv",
+   "facets": {
+    "size": [
+     "65 inch",
+     "75 inch"
+    ],
+    "panel": "QLED"
+   },
+   "card_specs": [
+    "QLED",
+    "120 Hz",
+    "Dolby Atmos"
+   ],
+   "specs": [
+    {
+     "group": "Hình ảnh",
+     "rows": [
+      [
+       "Độ phân giải",
+       "4K"
+      ],
+      [
+       "Tấm nền",
+       "QLED"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ]
+     ]
+    },
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Công suất loa",
+       "40W"
+      ],
+      [
+       "Công nghệ",
+       "Dolby Atmos"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Màn hình QLED 65 và 75 inch, 120 Hz cho thể thao và máy chơi game."
+   ],
+   "highlights": [
+    "Màu sắc rực, xem tốt khi phòng sáng"
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 96
+   },
+   "sold": 410,
+   "badges": [
+    "new"
+   ],
+   "promos": [
+    "Miễn phí giao và lắp đặt treo tường nội thành"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Kích thước",
+     "values": [
+      {
+       "name": "65 inch",
+       "price": 18990000,
+       "old_price": 21990000
+      },
+      {
+       "name": "75 inch",
+       "price": 26990000,
+       "old_price": 29990000
+      }
+     ]
+    }
+   ],
+   "qa": [
+    {
+     "name": "Chị Lan",
+     "q": "Lắp đặt có tốn thêm phí vật tư không?",
+     "a": "Gói lắp đặt tiêu chuẩn đã gồm công lắp. Vật tư phát sinh ngoài gói được báo giá trước khi làm."
+    }
+   ]
+  },
+  {
+   "id": "viora-oled-55",
+   "name": "Tivi Viora OLED 55 inch",
+   "brand": "viora",
+   "category": "tivi",
+   "device": "tv",
+   "facets": {
+    "size": "55 inch",
+    "panel": "OLED"
+   },
+   "card_specs": [
+    "OLED",
+    "55 inch",
+    "4K"
+   ],
+   "specs": [
+    {
+     "group": "Hình ảnh",
+     "rows": [
+      [
+       "Kích thước",
+       "55 inch"
+      ],
+      [
+       "Tấm nền",
+       "OLED"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Tivi OLED cho màu đen sâu, góc nhìn rộng, xem phim buổi tối."
+   ],
+   "highlights": [
+    "Màu đen sâu, xem phim tối rõ"
+   ],
+   "rating": {
+    "avg": 4.9,
+    "count": 41
+   },
+   "sold": 130,
+   "badges": [
+    "exclusive"
+   ],
+   "promos": [],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "price": 24990000,
+   "old_price": 28990000,
+   "qa": [
+    {
+     "name": "Chị Lan",
+     "q": "Lắp đặt có tốn thêm phí vật tư không?",
+     "a": "Gói lắp đặt tiêu chuẩn đã gồm công lắp. Vật tư phát sinh ngoài gói được báo giá trước khi làm."
+    }
+   ]
+  },
+  {
+   "id": "kelvo-inverter",
+   "name": "Tủ lạnh Kelvo Inverter",
+   "brand": "kelvo",
+   "category": "tu-lanh",
+   "device": "fridge",
+   "facets": {
+    "capacity": [
+     "256 lít",
+     "326 lít"
+    ],
+    "type": "Ngăn đá trên"
+   },
+   "card_specs": [
+    "Inverter",
+    "Ngăn đá trên",
+    "Tiết kiệm điện"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Kiểu tủ",
+       "Ngăn đá trên"
+      ],
+      [
+       "Công nghệ",
+       "Inverter"
+      ],
+      [
+       "Làm lạnh",
+       "Luồng khí đa chiều"
+      ]
+     ]
+    },
+    {
+     "group": "Tiện ích",
+     "rows": [
+      [
+       "Ngăn rau củ",
+       "Giữ ẩm"
+      ],
+      [
+       "Khử mùi",
+       "Có"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Tủ lạnh Inverter chạy êm, hợp gia đình 3 đến 5 người.",
+    "Ngăn rau củ giữ ẩm, kệ kính chịu lực."
+   ],
+   "highlights": [
+    "Chạy êm, tiết kiệm điện",
+    "Ngăn rau củ giữ ẩm"
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 258
+   },
+   "sold": 1860,
+   "badges": [
+    "hot"
+   ],
+   "promos": [
+    "Miễn phí giao tận nhà"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Dung tích",
+     "values": [
+      {
+       "name": "256 lít",
+       "price": 7490000,
+       "old_price": 8290000
+      },
+      {
+       "name": "326 lít",
+       "price": 9290000,
+       "old_price": 10290000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Bạc",
+       "hex": "#c9ced6"
+      },
+      {
+       "name": "Đen",
+       "hex": "#2a2c31"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Chị Mai",
+     "stars": 5,
+     "text": "Nhân viên giao đúng hẹn, lắp đặt gọn và hướng dẫn cách dùng kỹ. Máy chạy êm.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Anh Tuấn",
+     "stars": 5,
+     "text": "Giá tốt hơn chỗ khác, trả góp duyệt nhanh trong ngày.",
+     "verified": true,
+     "date": "14/09/2026"
+    },
+    {
+     "name": "Cô Hạnh",
+     "stars": 4,
+     "text": "Sản phẩm đẹp, dùng ổn. Thời gian giao hơi trễ một chút vì trời mưa.",
+     "verified": true,
+     "date": "05/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "kelvo-side-by-side",
+   "name": "Tủ lạnh Kelvo Side by Side 600 lít",
+   "brand": "kelvo",
+   "category": "tu-lanh",
+   "device": "fridge",
+   "facets": {
+    "capacity": "600 lít",
+    "type": "Side by side"
+   },
+   "card_specs": [
+    "600 lít",
+    "Side by side",
+    "Lấy nước ngoài"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Dung tích",
+       "600 lít"
+      ],
+      [
+       "Kiểu tủ",
+       "Side by side"
+      ],
+      [
+       "Lấy nước ngoài",
+       "Có"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Tủ hai cánh dung tích lớn cho gia đình đông người, có vòi lấy nước bên ngoài."
+   ],
+   "highlights": [
+    "Lấy nước không cần mở cửa"
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 74
+   },
+   "sold": 260,
+   "badges": [],
+   "promos": [
+    "Miễn phí giao tận nhà"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "price": 19990000,
+   "old_price": 22990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1f2125"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kelvo-mini-90",
+   "name": "Tủ lạnh mini Kelvo 90 lít",
+   "brand": "kelvo",
+   "category": "tu-lanh",
+   "device": "fridge",
+   "facets": {
+    "capacity": "90 lít",
+    "type": "Mini"
+   },
+   "card_specs": [
+    "90 lít",
+    "Mini",
+    "Phòng trọ"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Dung tích",
+       "90 lít"
+      ],
+      [
+       "Kiểu tủ",
+       "Một cửa"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Tủ lạnh nhỏ cho phòng trọ, văn phòng."
+   ],
+   "highlights": [],
+   "rating": {
+    "avg": 4.4,
+    "count": 190
+   },
+   "sold": 1320,
+   "badges": [],
+   "promos": [],
+   "installment": false,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "price": 2890000,
+   "old_price": 3290000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aquano-cua-truoc",
+   "name": "Máy giặt Aquano cửa trước Inverter",
+   "brand": "aquano",
+   "category": "may-giat",
+   "device": "washer",
+   "facets": {
+    "load": [
+     "9 kg",
+     "10 kg"
+    ],
+    "type": "Cửa trước"
+   },
+   "card_specs": [
+    "Inverter",
+    "Cửa trước",
+    "Giặt hơi nước"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Kiểu máy",
+       "Cửa trước"
+      ],
+      [
+       "Công nghệ",
+       "Inverter"
+      ],
+      [
+       "Giặt hơi nước",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Tiện ích",
+     "rows": [
+      [
+       "Hẹn giờ",
+       "Có"
+      ],
+      [
+       "Khóa trẻ em",
+       "Có"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Máy giặt cửa trước chạy êm, chế độ hơi nước giảm nhăn quần áo."
+   ],
+   "highlights": [
+    "Chạy êm, ít rung",
+    "Khóa trẻ em"
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 204
+   },
+   "sold": 1450,
+   "badges": [
+    "hot"
+   ],
+   "promos": [
+    "Miễn phí giao và lắp đặt"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Khối lượng giặt",
+     "values": [
+      {
+       "name": "9 kg",
+       "price": 8490000,
+       "old_price": 9490000
+      },
+      {
+       "name": "10 kg",
+       "price": 9490000,
+       "old_price": 10490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      },
+      {
+       "name": "Xám",
+       "hex": "#6b7078"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Chị Mai",
+     "stars": 5,
+     "text": "Nhân viên giao đúng hẹn, lắp đặt gọn và hướng dẫn cách dùng kỹ. Máy chạy êm.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Anh Tuấn",
+     "stars": 5,
+     "text": "Giá tốt hơn chỗ khác, trả góp duyệt nhanh trong ngày.",
+     "verified": true,
+     "date": "14/09/2026"
+    },
+    {
+     "name": "Cô Hạnh",
+     "stars": 4,
+     "text": "Sản phẩm đẹp, dùng ổn. Thời gian giao hơi trễ một chút vì trời mưa.",
+     "verified": true,
+     "date": "05/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "aquano-cua-tren",
+   "name": "Máy giặt Aquano cửa trên 8 kg",
+   "brand": "aquano",
+   "category": "may-giat",
+   "device": "washer",
+   "facets": {
+    "load": "8 kg",
+    "type": "Cửa trên"
+   },
+   "card_specs": [
+    "8 kg",
+    "Cửa trên",
+    "Lồng giặt inox"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Khối lượng giặt",
+       "8 kg"
+      ],
+      [
+       "Kiểu máy",
+       "Cửa trên"
+      ],
+      [
+       "Lồng giặt",
+       "Inox"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Máy giặt cửa trên giá dễ chịu, lồng inox."
+   ],
+   "highlights": [],
+   "rating": {
+    "avg": 4.5,
+    "count": 330
+   },
+   "sold": 2210,
+   "badges": [],
+   "promos": [],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "price": 4690000,
+   "old_price": 5290000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aquano-giat-say",
+   "name": "Máy giặt sấy Aquano 10 kg",
+   "brand": "aquano",
+   "category": "may-giat",
+   "device": "washer",
+   "facets": {
+    "load": "10 kg",
+    "type": "Giặt sấy"
+   },
+   "card_specs": [
+    "Giặt 10 kg",
+    "Sấy 7 kg",
+    "Inverter"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Khối lượng giặt",
+       "10 kg"
+      ],
+      [
+       "Khối lượng sấy",
+       "7 kg"
+      ],
+      [
+       "Công nghệ",
+       "Inverter"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Giặt xong sấy luôn, hợp căn hộ không có chỗ phơi."
+   ],
+   "highlights": [
+    "Không cần chỗ phơi"
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 88
+   },
+   "sold": 350,
+   "badges": [
+    "new"
+   ],
+   "promos": [],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "price": 14990000,
+   "old_price": 16990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xám",
+       "hex": "#5d6168"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kelvo-may-lanh",
+   "name": "Máy lạnh Kelvo Inverter",
+   "brand": "kelvo",
+   "category": "may-lanh",
+   "device": "aircon",
+   "facets": {
+    "power": [
+     "1 HP",
+     "1,5 HP",
+     "2 HP"
+    ],
+    "inverter": "Có"
+   },
+   "card_specs": [
+    "Inverter",
+    "Làm lạnh nhanh",
+    "Lọc bụi mịn"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Công nghệ",
+       "Inverter"
+      ],
+      [
+       "Gas",
+       "R32"
+      ],
+      [
+       "Lọc không khí",
+       "Lọc bụi mịn"
+      ]
+     ]
+    },
+    {
+     "group": "Phạm vi làm lạnh",
+     "rows": [
+      [
+       "1 HP",
+       "Dưới 15 mét vuông"
+      ],
+      [
+       "1,5 HP",
+       "15 đến 20 mét vuông"
+      ],
+      [
+       "2 HP",
+       "20 đến 30 mét vuông"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Máy lạnh Inverter, ba công suất theo diện tích phòng."
+   ],
+   "highlights": [
+    "Chọn công suất theo diện tích phòng",
+    "Chạy êm ban đêm"
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 402
+   },
+   "sold": 3120,
+   "badges": [
+    "hot"
+   ],
+   "promos": [
+    "Miễn phí lắp đặt, tặng 3 mét ống đồng"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Công suất",
+     "values": [
+      {
+       "name": "1 HP",
+       "price": 6990000,
+       "old_price": 7990000
+      },
+      {
+       "name": "1,5 HP",
+       "price": 8990000,
+       "old_price": 9990000
+      },
+      {
+       "name": "2 HP",
+       "price": 12490000,
+       "old_price": 13990000
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Chị Mai",
+     "stars": 5,
+     "text": "Nhân viên giao đúng hẹn, lắp đặt gọn và hướng dẫn cách dùng kỹ. Máy chạy êm.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Anh Tuấn",
+     "stars": 5,
+     "text": "Giá tốt hơn chỗ khác, trả góp duyệt nhanh trong ngày.",
+     "verified": true,
+     "date": "14/09/2026"
+    },
+    {
+     "name": "Cô Hạnh",
+     "stars": 4,
+     "text": "Sản phẩm đẹp, dùng ổn. Thời gian giao hơi trễ một chút vì trời mưa.",
+     "verified": true,
+     "date": "05/09/2026"
+    }
+   ],
+   "qa": [
+    {
+     "name": "Chị Lan",
+     "q": "Lắp đặt có tốn thêm phí vật tư không?",
+     "a": "Gói lắp đặt tiêu chuẩn đã gồm công lắp. Vật tư phát sinh ngoài gói được báo giá trước khi làm."
+    }
+   ]
+  },
+  {
+   "id": "kelvo-may-lanh-wifi",
+   "name": "Máy lạnh Kelvo Inverter Wi-Fi",
+   "brand": "kelvo",
+   "category": "may-lanh",
+   "device": "aircon",
+   "facets": {
+    "power": [
+     "1 HP",
+     "1,5 HP"
+    ],
+    "inverter": "Có"
+   },
+   "card_specs": [
+    "Wi-Fi",
+    "Inverter",
+    "Điều khiển qua điện thoại"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Công nghệ",
+       "Inverter"
+      ],
+      [
+       "Kết nối",
+       "Wi-Fi, ứng dụng điện thoại"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Bật, tắt và hẹn giờ qua điện thoại."
+   ],
+   "highlights": [
+    "Hẹn giờ qua điện thoại"
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 120
+   },
+   "sold": 640,
+   "badges": [
+    "new"
+   ],
+   "promos": [
+    "Miễn phí lắp đặt, tặng 3 mét ống đồng"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Công suất",
+     "values": [
+      {
+       "name": "1 HP",
+       "price": 8490000,
+       "old_price": 9290000
+      },
+      {
+       "name": "1,5 HP",
+       "price": 10490000,
+       "old_price": 11490000
+      }
+     ]
+    }
+   ],
+   "qa": [
+    {
+     "name": "Chị Lan",
+     "q": "Lắp đặt có tốn thêm phí vật tư không?",
+     "a": "Gói lắp đặt tiêu chuẩn đã gồm công lắp. Vật tư phát sinh ngoài gói được báo giá trước khi làm."
+    }
+   ]
+  },
+  {
+   "id": "bemo-soundbar",
+   "name": "Loa thanh Bemo 3.1",
+   "brand": "bemo",
+   "category": "am-thanh",
+   "device": "speaker",
+   "facets": {
+    "type": "Loa thanh"
+   },
+   "card_specs": [
+    "3.1 kênh",
+    "Loa siêu trầm",
+    "HDMI ARC"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Số kênh",
+       "3.1"
+      ],
+      [
+       "Loa siêu trầm",
+       "Không dây"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "HDMI ARC, quang, Bluetooth"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Loa thanh cắm vào tivi qua HDMI ARC, có loa siêu trầm không dây."
+   ],
+   "highlights": [],
+   "rating": {
+    "avg": 4.5,
+    "count": 140
+   },
+   "sold": 720,
+   "badges": [],
+   "promos": [],
+   "installment": true,
+   "warranty": "12 tháng",
+   "released": "2026-06",
+   "price": 4990000,
+   "old_price": 5990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1f2125"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bemo-karaoke",
+   "name": "Loa kéo karaoke Bemo",
+   "brand": "bemo",
+   "category": "am-thanh",
+   "device": "speaker",
+   "facets": {
+    "type": "Loa karaoke"
+   },
+   "card_specs": [
+    "Kèm 2 micro",
+    "Pin 6 giờ",
+    "Bánh xe kéo"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Micro",
+       "2 micro không dây"
+      ],
+      [
+       "Pin",
+       "Khoảng 6 giờ"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Loa kéo có bánh xe, kèm hai micro không dây cho tiệc gia đình."
+   ],
+   "highlights": [],
+   "rating": {
+    "avg": 4.4,
+    "count": 260
+   },
+   "sold": 1500,
+   "badges": [],
+   "promos": [],
+   "installment": true,
+   "warranty": "12 tháng",
+   "released": "2026-06",
+   "price": 3490000,
+   "old_price": 3990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1f2125"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "slides": [
+    {
+     "tab": "Tivi 4K",
+     "label": "Tuần lễ tivi",
+     "title": "Tivi 4K Viora, lắp miễn phí",
+     "text": "Ba kích thước 43 đến 55 inch, giao và treo tường trong ngày nội thành.",
+     "product": "viora-4k-uhd",
+     "bg": "accent-dark",
+     "cta": "Chọn kích thước"
+    },
+    {
+     "tab": "Máy lạnh",
+     "label": "Mùa nóng",
+     "title": "Máy lạnh Inverter chạy êm",
+     "text": "Chọn công suất theo diện tích phòng, lắp đặt miễn phí.",
+     "product": "kelvo-may-lanh",
+     "bg": "accent",
+     "cta": "Xem công suất"
+    },
+    {
+     "tab": "Giặt sấy",
+     "label": "Mới về",
+     "title": "Giặt xong sấy luôn",
+     "text": "Máy giặt sấy 10 kg cho căn hộ không có chỗ phơi.",
+     "product": "aquano-giat-say",
+     "bg": "accent-dark",
+     "cta": "Mua ngay"
+    }
+   ],
+   "side": [
+    {
+     "title": "Tủ lạnh Inverter",
+     "text": "Từ 7.490.000 đ",
+     "product": "kelvo-inverter",
+     "bg": "accent-soft"
+    },
+    {
+     "title": "Máy giặt cửa trước",
+     "text": "Giảm đến 1 triệu",
+     "product": "aquano-cua-truoc",
+     "bg": "accent-soft"
+    },
+    {
+     "title": "Tivi QLED 65 inch",
+     "text": "Màn lớn cho phòng khách",
+     "product": "viora-qled-pro",
+     "bg": "accent-soft"
+    }
+   ]
+  },
+  {
+   "type": "categories",
+   "title": "Danh mục sản phẩm"
+  },
+  {
+   "type": "rooms",
+   "title": "Mua sắm theo phòng",
+   "items": [
+    {
+     "title": "Phòng khách",
+     "text": "Tivi, loa thanh",
+     "category": "tivi",
+     "product": "viora-qled-pro",
+     "bg": "accent-soft"
+    },
+    {
+     "title": "Phòng bếp",
+     "text": "Tủ lạnh các cỡ",
+     "category": "tu-lanh",
+     "product": "kelvo-side-by-side",
+     "bg": "accent-soft"
+    },
+    {
+     "title": "Giặt ủi",
+     "text": "Máy giặt, giặt sấy",
+     "category": "may-giat",
+     "product": "aquano-cua-truoc",
+     "bg": "accent-soft"
+    },
+    {
+     "title": "Phòng ngủ",
+     "text": "Máy lạnh 1 HP",
+     "category": "may-lanh",
+     "query": {
+      "power": "1 HP"
+     },
+     "product": "kelvo-may-lanh-wifi",
+     "bg": "accent-soft"
+    }
+   ]
+  },
+  {
+   "type": "services",
+   "title": "Dịch vụ tại Điện máy Gia An",
+   "items": [
+    {
+     "icon": "truck",
+     "title": "Giao và lắp đặt miễn phí",
+     "text": "Nội thành, trong ngày với đơn đặt trước 16:00"
+    },
+    {
+     "icon": "home",
+     "title": "Bảo hành tại nhà",
+     "text": "Kỹ thuật viên đến tận nơi với tivi, tủ lạnh, máy giặt, máy lạnh"
+    },
+    {
+     "icon": "refresh",
+     "title": "Đổi mới 30 ngày",
+     "text": "Nếu lỗi do nhà sản xuất"
+    },
+    {
+     "icon": "credit-card",
+     "title": "Trả góp 0%",
+     "text": "Qua thẻ tín dụng, kỳ hạn 6 hoặc 12 tháng"
+    }
+   ]
+  },
+  {
+   "type": "flash-sale",
+   "title": "Giờ vàng điện máy",
+   "ends": "22:00",
+   "items": [
+    {
+     "product": "kelvo-mini-90",
+     "sale_price": 2590000,
+     "limit": 40,
+     "sold": 27
+    },
+    {
+     "product": "aquano-cua-tren",
+     "sale_price": 4290000,
+     "limit": 30,
+     "sold": 18
+    },
+    {
+     "product": "bemo-karaoke",
+     "sale_price": 2990000,
+     "limit": 25,
+     "sold": 21
+    },
+    {
+     "product": "bemo-soundbar",
+     "sale_price": 4490000,
+     "limit": 20,
+     "sold": 6
+    },
+    {
+     "product": "viora-4k-uhd",
+     "sale_price": 6490000,
+     "limit": 15,
+     "sold": 11
+    }
+   ]
+  },
+  {
+   "type": "rail",
+   "category": "tivi",
+   "title": "Tivi bán chạy"
+  },
+  {
+   "type": "rail",
+   "category": "tu-lanh",
+   "title": "Tủ lạnh"
+  },
+  {
+   "type": "rail",
+   "category": "may-lanh",
+   "title": "Máy lạnh"
+  },
+  {
+   "type": "rail",
+   "category": "may-giat",
+   "title": "Máy giặt"
+  },
+  {
+   "type": "brands",
+   "title": "Thương hiệu"
+  },
+  {
+   "type": "grid",
+   "category": "am-thanh",
+   "title": "Loa, âm thanh"
+  },
+  {
+   "type": "stores-cta"
+  }
+ ],
+ "promotions": [
+  {
+   "code": "GIAAN300",
+   "type": "fixed",
+   "value": 300000,
+   "min": 8000000,
+   "label": "Giảm 300.000 đ cho đơn từ 8 triệu",
+   "ends": "31/12/2026",
+   "limit": 500,
+   "used": 120
+  },
+  {
+   "code": "LAPDAT",
+   "type": "shipping",
+   "value": 0,
+   "min": 1000000,
+   "label": "Miễn phí giao hàng cho đơn từ 1 triệu",
+   "ends": "31/12/2026",
+   "limit": 2000,
+   "used": 860
+  }
+ ],
+ "shipping": [
+  {
+   "id": "standard",
+   "name": "Giao và lắp đặt tiêu chuẩn",
+   "fee": 0,
+   "eta": "1-3 ngày"
+  },
+  {
+   "id": "sameday",
+   "name": "Giao và lắp đặt trong ngày",
+   "fee": 100000,
+   "eta": "Trong ngày nếu đặt trước 16:00",
+   "cities": [
+    "TP. Hồ Chí Minh",
+    "Cần Thơ"
+   ]
+  }
+ ],
+ "payments": [
+  {
+   "id": "cod",
+   "name": "Thanh toán khi nhận hàng (COD)",
+   "icon": "banknote"
+  },
+  {
+   "id": "bank",
+   "name": "Chuyển khoản ngân hàng",
+   "icon": "landmark",
+   "note": "Hiện thông tin chuyển khoản sau khi đặt",
+   "bank": {
+    "name": "[Tên ngân hàng]",
+    "account": "[Số tài khoản]",
+    "holder": "[Tên chủ tài khoản]"
+   }
+  },
+  {
+   "id": "installment",
+   "name": "Trả góp 0% qua thẻ tín dụng",
+   "icon": "calendar",
+   "note": "Kỳ hạn 6 hoặc 12 tháng"
+  }
+ ],
+ "benefits": [
+  {
+   "icon": "truck",
+   "title": "Giao, lắp miễn phí",
+   "text": "Nội thành, trong ngày"
+  },
+  {
+   "icon": "home",
+   "title": "Bảo hành tại nhà",
+   "text": "Kỹ thuật viên đến tận nơi"
+  },
+  {
+   "icon": "refresh",
+   "title": "Đổi mới 30 ngày",
+   "text": "Nếu lỗi do nhà sản xuất"
+  },
+  {
+   "icon": "credit-card",
+   "title": "Trả góp 0%",
+   "text": "Qua thẻ tín dụng"
+  }
+ ],
+ "stores": [
+  {
+   "id": "hcm-thu-duc",
+   "name": "Gia An Thủ Đức",
+   "city": "TP. Hồ Chí Minh",
+   "address": "[Số nhà], Phường Thủ Đức, TP. Hồ Chí Minh",
+   "hours": "7:30 - 21:30",
+   "phone": "1800 0000"
+  },
+  {
+   "id": "hcm-go-vap",
+   "name": "Gia An Gò Vấp",
+   "city": "TP. Hồ Chí Minh",
+   "address": "[Số nhà], Phường Gò Vấp, TP. Hồ Chí Minh",
+   "hours": "7:30 - 21:30",
+   "phone": "1800 0000"
+  },
+  {
+   "id": "ct-ninh-kieu",
+   "name": "Gia An Ninh Kiều",
+   "city": "Cần Thơ",
+   "address": "[Số nhà], Phường Ninh Kiều, Cần Thơ",
+   "hours": "7:30 - 21:00",
+   "phone": "1800 0000"
+  }
+ ],
+ "policies": [
+  {
+   "id": "bao-hanh",
+   "title": "Chính sách bảo hành",
+   "body": [
+    "Tivi, tủ lạnh, máy giặt và máy lạnh được bảo hành tại nhà theo thời hạn ghi trên trang sản phẩm.",
+    {
+     "heading": "Cách yêu cầu bảo hành",
+     "items": [
+      "Gọi tổng đài hoặc nhắn tin trang Facebook của cửa hàng",
+      "Kỹ thuật viên hẹn giờ đến kiểm tra tại nhà"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "doi-tra",
+   "title": "Chính sách đổi trả",
+   "body": [
+    "Đổi máy mới cùng loại trong 30 ngày nếu lỗi do nhà sản xuất."
+   ]
+  },
+  {
+   "id": "giao-lap",
+   "title": "Giao hàng và lắp đặt",
+   "body": [
+    "Miễn phí giao và lắp đặt tiêu chuẩn nội thành trong 1-3 ngày.",
+    "Giao và lắp đặt trong ngày tại TP. Hồ Chí Minh và Cần Thơ cho đơn đặt trước 16:00."
+   ]
+  },
+  {
+   "id": "bao-mat",
+   "title": "Chính sách bảo mật",
+   "body": [
+    "Thông tin khách hàng chỉ dùng để giao hàng, lắp đặt và bảo hành."
+   ]
+  }
+ ]
+}

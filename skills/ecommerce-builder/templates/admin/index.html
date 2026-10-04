@@ -1,0 +1,80 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <div><h1>Tổng quan</h1><p class="muted" data-greeting></p></div>
+  <div class="period" data-period></div>
+</div>
+<p class="range-note muted" data-range-note></p>
+
+<ul class="kpis kpis-6" data-kpis role="list"></ul>
+
+<div class="adm-grid">
+  <section class="card card-wide" aria-labelledby="h-main">
+    <div class="card-head">
+      <h2 id="h-main" data-main-title>Doanh thu thuần</h2>
+      <div class="legend" data-main-legend></div>
+      <div class="seg-sm" role="group" aria-label="Gom theo" data-grain></div>
+      <button class="link-btn" type="button" data-table-toggle="main">Xem dạng bảng</button>
+    </div>
+    <div class="chart" data-chart="main"></div>
+    <div class="chart-table" data-chart-table="main" hidden></div>
+  </section>
+  <section class="card" aria-labelledby="h-todo">
+    <div class="card-head"><h2 id="h-todo">Việc cần làm</h2></div>
+    <ul class="todo" data-todo></ul>
+  </section>
+
+  <section class="card" aria-labelledby="h-funnel">
+    <div class="card-head"><h2 id="h-funnel">Phễu chuyển đổi</h2></div>
+    <div data-funnel></div>
+  </section>
+  <section class="card" aria-labelledby="h-channel">
+    <div class="card-head"><h2 id="h-channel">Doanh thu theo kênh bán</h2></div>
+    <div class="chart" data-chart="channel"></div>
+  </section>
+  <section class="card" aria-labelledby="h-newret">
+    <div class="card-head"><h2 id="h-newret">Khách mới và khách quay lại</h2></div>
+    <div data-newret></div>
+  </section>
+
+  <section class="card card-wide" aria-labelledby="h-heat">
+    <div class="card-head"><h2 id="h-heat">Đơn hàng theo giờ trong tuần</h2><span class="muted small" data-heat-note></span></div>
+    <div data-heat></div>
+  </section>
+  <section class="card" aria-labelledby="h-status">
+    <div class="card-head"><h2 id="h-status">Đơn theo trạng thái</h2></div>
+    <div class="chart" data-chart="status"></div>
+    <dl class="mini-stats" data-ops></dl>
+  </section>
+
+  <section class="card card-wide" aria-labelledby="h-top">
+    <div class="card-head"><h2 id="h-top">Sản phẩm bán chạy</h2><a class="link-sm" href="reports.html">Xem báo cáo</a></div>
+    <div class="table-wrap"><table class="tbl" data-top></table></div>
+  </section>
+  <section class="card" aria-labelledby="h-cat">
+    <div class="card-head"><h2 id="h-cat">Doanh thu theo danh mục</h2></div>
+    <div class="chart" data-chart="cat"></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-topc">
+    <div class="card-head"><h2 id="h-topc">Khách chi nhiều nhất</h2><a class="link-sm" href="customers.html">Khách hàng</a></div>
+    <ul class="leader" data-top-customers></ul>
+  </section>
+  <section class="card" aria-labelledby="h-vouch">
+    <div class="card-head"><h2 id="h-vouch">Mã giảm giá được dùng</h2><a class="link-sm" href="promotions.html">Khuyến mãi</a></div>
+    <ul class="leader" data-top-vouchers></ul>
+  </section>
+  <section class="card" aria-labelledby="h-pay">
+    <div class="card-head"><h2 id="h-pay">Phương thức thanh toán</h2></div>
+    <div class="chart" data-chart="pay"></div>
+  </section>
+  <section class="card" aria-labelledby="h-low">
+    <div class="card-head"><h2 id="h-low">Sắp hết hàng</h2><a class="link-sm" href="inventory.html?tab=low">Tồn kho</a></div>
+    <ul class="leader" data-low-stock></ul>
+  </section>
+  <section class="card card-wide" aria-labelledby="h-recent">
+    <div class="card-head"><h2 id="h-recent">Đơn mới nhất</h2><a class="link-sm" href="orders.html">Tất cả đơn</a></div>
+    <ul class="mini-orders mini-orders-2" data-recent-orders></ul>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{# Header 'tiered': row 1 logo, wide search, hotline, account, cart; row 2 a category bar with icons (GearVN, Dien May Xanh).
+   Colours come from the header tokens, so gaming (dark) and appliance (blue) both use it. #}
+{% if announcement %}
+<div class="tbar">
+  <div class="ctn tbar-in">
+    <p class="tbar-msg" data-ticker><span>{{ announcement[0] }}</span>{% for a in announcement[1:] %}<span class="tbar-more">{{ a }}</span>{% endfor %}</p>
+    <nav class="tbar-links" aria-label="Liên kết nhanh">
+      {% if stores %}<a href="{{ root }}stores.html">{{ icon("store", "i-sm") }}Cửa hàng</a>{% endif %}
+      <a href="{{ root }}track.html">{{ icon("package", "i-sm") }}Tra cứu đơn</a>
+    </nav>
+  </div>
+</div>
+{% endif %}
+<header class="hdr thdr" data-header>
+  <div class="ctn thdr-top">
+    <button class="hdr-burger icon-btn" type="button" data-open="catdrawer" aria-label="Mở danh mục">{{ icon("menu") }}</button>
+    <a class="logo" href="{{ root }}index.html" aria-label="{{ shop.name }}, trang chủ">
+      <span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span>
+    </a>
+    <form class="search" action="{{ root }}search.html" role="search" data-search>
+      <label class="sr" for="q">Tìm sản phẩm</label>
+      <input id="q" name="q" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-search-input>
+      <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+      <div class="suggest" data-suggest hidden></div>
+    </form>
+    <nav class="hdr-actions" aria-label="Tài khoản và giỏ hàng">
+      <a class="hdr-act hdr-hot" href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("headset") }}<span><small>Hotline</small><b>{{ shop.hotline }}</b></span></a>
+      <a class="hdr-act" href="{{ root }}account/index.html" data-account-link>{{ icon("user") }}<span data-account-label>Đăng nhập</span></a>
+      <a class="hdr-act hdr-cart" href="{{ root }}cart.html">{{ icon("shopping-cart") }}<span>Giỏ hàng</span><b class="count" data-cart-count hidden>0</b></a>
+    </nav>
+  </div>
+  <nav class="tcat" aria-label="Danh mục sản phẩm">
+    <ul class="ctn tcat-list">
+      {% for c in cats %}
+      <li><a href="{{ root }}c/{{ c.id }}.html" {% if cat is defined and cat and cat.id == c.id %}aria-current="page"{% endif %}>{{ icon(c.icon) }}<span>{{ c.name }}</span></a></li>
+      {% endfor %}
+      <li><a href="{{ root }}deals.html" {% if page_file == "deals.html" %}aria-current="page"{% endif %}>{{ icon("percent") }}<span>Khuyến mãi</span></a></li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,91 @@
+{
+ "_variants": {
+  "header": [
+   "bar",
+   "minimal",
+   "tiered",
+   "centered"
+  ],
+  "hero": [
+   "sidebar",
+   "spotlight",
+   "bento",
+   "wide",
+   "editorial"
+  ],
+  "card": [
+   "dense",
+   "clean",
+   "spec",
+   "gallery"
+  ],
+  "pdp": [
+   "retail",
+   "showcase",
+   "gallery"
+  ],
+  "plp": [
+   "sidebar",
+   "chips"
+  ],
+  "footer": [
+   "full",
+   "minimal"
+  ]
+ },
+ "retail": {
+  "pick": "mass-market phone and electronics chains: dense cards, promotions, installment, flash sales (Thegioididong, CellphoneS)",
+  "preset": "red-retail",
+  "header": "bar",
+  "hero": "sidebar",
+  "card": "dense",
+  "pdp": "retail",
+  "plp": "sidebar",
+  "footer": "full",
+  "fonts_query": "family=Be+Vietnam+Pro:wght@400;500;600;700;800"
+ },
+ "premium": {
+  "pick": "authorised resellers of premium brands and flagship models: large product imagery, few words, white space (Apple, Samsung stores)",
+  "preset": "clean-premium",
+  "header": "minimal",
+  "hero": "spotlight",
+  "card": "clean",
+  "pdp": "showcase",
+  "plp": "chips",
+  "footer": "minimal",
+  "fonts_query": "family=Be+Vietnam+Pro:wght@300;400;500;600;700"
+ },
+ "gaming": {
+  "pick": "gaming laptops, PC parts and gear: dark theme, specs up front, shop by need, PC build bundles (GearVN)",
+  "preset": "gaming-dark",
+  "header": "tiered",
+  "hero": "bento",
+  "card": "spec",
+  "pdp": "retail",
+  "plp": "sidebar",
+  "footer": "full",
+  "fonts_query": "family=Be+Vietnam+Pro:wght@400;500;600;700&family=Chakra+Petch:wght@500;600;700"
+ },
+ "appliance": {
+  "pick": "home appliances and TVs for families: large category icons, shop by room, delivery and installation services (Dien May Xanh)",
+  "preset": "appliance-fresh",
+  "header": "tiered",
+  "hero": "wide",
+  "card": "dense",
+  "pdp": "retail",
+  "plp": "sidebar",
+  "footer": "full",
+  "fonts_query": "family=Nunito:wght@400;600;700;800"
+ },
+ "boutique": {
+  "pick": "accessory boutiques with a small curated range: collections, editorial pictures, calm warm palette",
+  "preset": "boutique-warm",
+  "header": "centered",
+  "hero": "editorial",
+  "card": "gallery",
+  "pdp": "gallery",
+  "plp": "chips",
+  "footer": "minimal",
+  "fonts_query": "family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:wght@500;600;700"
+ }
+}

@@ -1,0 +1,35 @@
+.plc{padding-top:8px}
+.plc-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:8px 0 18px}
+.plc-head h1{font-family:var(--font-head);font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.02em}
+.plc-bar{position:sticky;top:58px;z-index:15;display:flex;align-items:center;gap:12px;padding:10px 0;background:var(--c-surface);border-bottom:1px solid var(--c-border);margin-bottom:14px}
+.plc-tools{display:flex;align-items:center;gap:8px;margin-left:auto}
+.plc-sort select{min-height:40px;padding:6px 34px 6px 14px;border:1px solid var(--c-border);border-radius:999px;background:var(--c-surface);font-size:14px;color:var(--c-text)}
+.plc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.plc .active-filters{margin-bottom:16px}
+.plc-intro{margin-top:56px;max-width:860px}
+.plc-n{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--c-text);color:var(--c-surface);font-size:11px;line-height:1}
+@media (min-width:1024px){
+  .plc-filters{position:static;max-height:none;display:block;background:none;border:0;flex:1;min-width:0}
+  .plc-filters .filters-head,.plc-filters .filters-foot{display:none}
+  .plc-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;overflow:visible}
+  .plc-chip{position:relative}
+  .plc-chip-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px;border:1px solid var(--c-border);border-radius:999px;background:var(--c-surface);font-size:14px;color:var(--c-text)}
+  .plc-chip-btn:hover{border-color:var(--c-muted)}
+  .plc-chip.has-value .plc-chip-btn,.plc-chip.is-open .plc-chip-btn{border-color:var(--c-text)}
+  .plc-chip.is-open .plc-chip-btn .i{transform:rotate(180deg)}
+  .plc-panel{display:none;position:absolute;left:0;top:calc(100% + 8px);z-index:20;min-width:250px;max-height:360px;overflow:auto;padding:10px 16px!important;background:var(--c-surface);border:1px solid var(--c-border)!important;border-radius:14px;box-shadow:0 14px 34px rgba(15,20,30,.12)}
+  .plc-chip.is-open .plc-panel{display:block}
+  .plc-panel legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+}
+@media (max-width:1180px){.plc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1023px){
+  .plc-bar{top:56px}
+  .plc-chip-btn{display:none}
+  .plc-panel{display:block}
+  .plc-chips{display:flex;flex-direction:column}
+}
+@media (max-width:767px){
+  .plc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .plc-bar{top:auto;position:static}
+  .plc-tools{width:100%;justify-content:space-between;margin-left:0}
+}

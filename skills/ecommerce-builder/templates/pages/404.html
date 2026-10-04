@@ -1,0 +1,21 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+<div class="ctn page">
+  <div class="empty empty-lg">
+    <span class="empty-code">404</span>
+    <h1>Không tìm thấy trang</h1>
+    <p>Trang bạn mở đã đổi địa chỉ hoặc không còn. Tìm sản phẩm khác hoặc quay về trang chủ.</p>
+    <form class="search search-page" action="{{ root }}search.html" role="search">
+      <label class="sr" for="q404">Tìm sản phẩm</label>
+      <input id="q404" name="q" type="search" placeholder="Bạn cần tìm gì?">
+      <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+    </form>
+    <a class="btn btn-primary" href="{{ root }}index.html">Về trang chủ</a>
+  </div>
+  <section class="sec" aria-labelledby="h-404">
+    <div class="sec-head"><h2 id="h-404">Sản phẩm nổi bật</h2></div>
+    <div class="grid">{% for p in products[:5] %}{{ m.card(p) }}{% endfor %}</div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <h1>Khuyến mãi</h1>
+  <div class="head-actions"><button class="btn btn-primary" type="button" data-promo-new>{{ icon("plus", "i-sm") }}Tạo mã giảm giá</button></div>
+</div>
+<div class="card card-flush">
+  <div class="table-wrap"><table class="tbl" data-promos></table></div>
+</div>
+<form class="card promo-form" data-promo-form hidden>
+  <div class="card-head"><h2>Mã giảm giá mới</h2></div>
+  <fieldset class="type-cards">
+    <legend>Loại giảm giá</legend>
+    <label class="type-card"><input type="radio" name="type" value="percent" checked><b>Giảm theo %</b><small>Có thể đặt mức giảm tối đa</small></label>
+    <label class="type-card"><input type="radio" name="type" value="fixed"><b>Giảm số tiền</b><small>Trừ thẳng vào đơn</small></label>
+    <label class="type-card"><input type="radio" name="type" value="shipping"><b>Miễn phí giao hàng</b><small>Trừ phí giao của đơn</small></label>
+  </fieldset>
+  <div class="form-grid form-grid-3">
+    <label class="field"><span>Mã</span><span class="input-group"><input name="code" required pattern="[A-Z0-9]{4,15}" placeholder="VD: TET2027"><button class="btn btn-ghost btn-sm" type="button" data-gen>Tạo mã</button></span></label>
+    <label class="field" data-when="percent fixed"><span>Mức giảm</span><input name="value" type="number" min="1" placeholder="10 hoặc 200000"></label>
+    <label class="field" data-when="percent"><span>Giảm tối đa (đ)</span><input name="max" type="number" min="0" placeholder="Không giới hạn"></label>
+    <label class="field"><span>Đơn tối thiểu (đ)</span><input name="min" type="number" min="0" value="0"></label>
+    <label class="field"><span>Tổng lượt dùng</span><input name="limit" type="number" min="1" placeholder="Không giới hạn"></label>
+    <label class="field"><span>Hết hạn</span><input name="ends" type="date"></label>
+    <label class="field field-full"><span>Mô tả hiển thị cho khách</span><input name="label" required placeholder="VD: Giảm 10% phụ kiện, tối đa 150.000 đ"></label>
+  </div>
+  <div class="form-row"><button class="btn btn-primary" type="submit">Tạo mã</button><button class="btn btn-ghost" type="button" data-promo-cancel>Hủy</button></div>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block description %}{{ p.name }} giá {{ p.price|vnd }}{% if p.old_price %}, giảm {{ p.discount }}%{% endif %} tại {{ shop.name }}.{% if p.warranty %} Bảo hành {{ p.warranty }}.{% endif %}{% endblock %}
+{% block og_type %}product{% endblock %}
+{% block head %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org", "@type": "Product", "name": p.name, "sku": p.variants[0].sku,
+  "brand": {"@type": "Brand", "name": p.brand_name}, "category": p.category_name,
+  "offers": {"@type": "AggregateOffer", "priceCurrency": "VND", "lowPrice": p.variants|map(attribute="price")|min, "highPrice": p.variants|map(attribute="price")|max,
+             "offerCount": p.variants|length, "availability": "https://schema.org/InStock" if p.stock_total else "https://schema.org/OutOfStock"}
+}|tojson }}</script>
+{% endblock %}
+{% block main %}
+{% include "pdp/" ~ layout.pdp ~ ".html" %}
+{% endblock %}

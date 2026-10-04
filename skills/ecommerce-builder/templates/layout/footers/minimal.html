@@ -1,0 +1,38 @@
+{# Footer 'minimal': small grey link columns, contacts, payment names, legal and demo note (Apple, Samsung stores). #}
+<footer class="ftr ftr-min">
+  <div class="ctn">
+    <div class="fm-grid">
+      <nav class="fm-col" aria-label="Mua sắm">
+        <h2>Mua sắm</h2>
+        <ul>{% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html">{{ c.name }}</a></li>{% endfor %}<li><a href="{{ root }}deals.html">Ưu đãi</a></li></ul>
+      </nav>
+      <nav class="fm-col" aria-label="Hỗ trợ">
+        <h2>Hỗ trợ</h2>
+        <ul>
+          <li><a href="{{ root }}track.html">Tra cứu đơn hàng</a></li>
+          <li><a href="{{ root }}account/orders.html">Đơn hàng của tôi</a></li>
+          <li><a href="{{ root }}compare.html">So sánh sản phẩm</a></li>
+          {% if stores %}<li><a href="{{ root }}stores.html">Cửa hàng</a></li>{% endif %}
+        </ul>
+      </nav>
+      <nav class="fm-col" aria-label="Chính sách">
+        <h2>Chính sách</h2>
+        <ul>{% for p in policies %}<li><a href="{{ root }}policy/{{ p.id }}.html">{{ p.title }}</a></li>{% endfor %}</ul>
+      </nav>
+      <div class="fm-col">
+        <h2>Liên hệ</h2>
+        <ul>
+          <li>Mua hàng: <a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ shop.hotline }}</a>{% if shop.hours %}, {{ shop.hours }}{% endif %}</li>
+          <li><a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+          {% if shop.address %}<li>{{ shop.address }}</li>{% endif %}
+        </ul>
+        {% if socials %}<ul class="fm-social">{% for s in socials %}<li><a href="{{ s.url }}" aria-label="{{ s.type|capitalize }}">{{ icon(s.type, "i-sm") }}</a></li>{% endfor %}</ul>{% endif %}
+      </div>
+    </div>
+    <p class="fm-pay">Thanh toán: {{ payments|map(attribute="name")|join(", ") }}.</p>
+    <div class="fm-bottom">
+      <span>{% if shop.legal %}{{ shop.legal }}{% else %}{{ year }} {{ shop.name }}{% endif %}</span>
+      {% if demo %}<span class="demo-note">{{ icon("info", "i-sm") }}Cửa hàng mẫu: sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa. <a href="{{ root }}admin/index.html">Xem trang quản trị</a></span>{% endif %}
+    </div>
+  </div>
+</footer>

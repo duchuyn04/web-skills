@@ -1,0 +1,74 @@
+/* Style 'appliance': family appliance chain. Fresh blue, Nunito, rounder parts, big category icons,
+   service promises up front. Builds on store.css and the tiered header; colours come from the tokens. */
+.st-appliance{font-size:15.5px}
+.st-appliance h1,.st-appliance h2,.st-appliance h3{font-weight:800;letter-spacing:-.005em}
+.st-appliance .btn{border-radius:12px;font-weight:700}
+.st-appliance .chip{font-weight:600}
+
+/* header: blue top row, white category bar with large icons */
+.st-appliance .tbar{background:color-mix(in srgb,var(--c-header) 78%,#000)}
+.st-appliance .thdr{border-bottom:0}
+.st-appliance .thdr .search input{border-radius:999px;padding-left:20px;min-height:44px;border:0}
+.st-appliance .thdr .search>button{border-radius:999px}
+.st-appliance .thdr .logo-mark{border-radius:12px}
+.st-appliance .tcat{background:var(--c-surface);border-top:0;border-bottom:1px solid var(--c-border)}
+.st-appliance .tcat-list{gap:4px;padding-top:6px;padding-bottom:6px}
+.st-appliance .tcat-list a{flex-direction:column;justify-content:center;gap:4px;min-width:96px;min-height:64px;padding:6px 10px;border-radius:14px;color:var(--c-text);opacity:1;font-size:13px;font-weight:700}
+.st-appliance .tcat-list a .i{width:26px;height:26px;color:var(--c-btn)}
+.st-appliance .tcat-list a:hover{background:var(--c-accent-soft)}
+.st-appliance .tcat-list a[aria-current=page]{background:var(--c-accent-soft);box-shadow:inset 0 -3px 0 var(--c-btn)}
+
+/* sections */
+.st-appliance .sec{margin-top:32px}
+.st-appliance .sec-head h2{font-size:22px}
+.st-appliance .sec-more{font-weight:700}
+
+/* categories: round icon wells in one white panel */
+.st-appliance .cat-tiles{grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px;padding:14px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.st-appliance .cat-tile{border:0;background:none;padding:10px 6px;border-radius:14px}
+.st-appliance .cat-tile:hover{background:var(--c-accent-soft)}
+.st-appliance .cat-tile img{width:78px;height:78px;padding:10px;border-radius:50%;background:var(--c-accent-soft)}
+.st-appliance .cat-tile span{font-size:14.5px;font-weight:700}
+
+/* dense card, softer and rounder */
+.st-appliance .pc{border-radius:18px;border-color:#dbe4ee}
+.st-appliance .pc:hover{border-color:var(--c-btn)}
+.st-appliance .pc-media{border-radius:14px;background:#f5f8fc}
+.st-appliance .pc-off{border-radius:999px;padding:3px 9px}
+.st-appliance .pc-badge{border-radius:999px}
+.st-appliance .pc-name{font-size:14.5px;font-weight:700}
+.st-appliance .pc-specs li{background:var(--c-accent-soft);color:var(--c-accent-ink);border-radius:999px;padding:2px 8px;font-weight:600}
+.st-appliance .pc-price strong{font-size:17px;font-weight:800}
+.st-appliance .pc-promo{border-radius:10px;background:#fff7e0;color:#5b4300}
+.st-appliance .pc-promo .i{color:#b06b00}
+.st-appliance .rail-btn{width:44px;height:44px}
+
+/* flash sale band */
+.st-appliance .flash-head{border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.st-appliance .flash-timer b{border-radius:8px;background:#0b2a4a}
+.st-appliance .flash .rail{background:var(--c-sale)}
+
+/* banners, brands, benefits, stores band */
+.st-appliance .banner,.st-appliance .side-banner{border-radius:var(--radius-lg)}
+.st-appliance .brand-strip a{border-radius:14px;font-weight:800}
+.st-appliance .benefits li,.st-appliance .stores-cta{border-radius:var(--radius-lg)}
+.st-appliance .benefits .i{color:var(--c-btn)}
+.st-appliance .stores-cta{background:var(--c-accent-soft);border-color:color-mix(in srgb,var(--c-btn) 18%,var(--c-border))}
+
+/* listing and product page */
+.st-appliance .filters,.st-appliance .box,.st-appliance .gallery,.st-appliance .avail,.st-appliance .summary-box,.st-appliance .co-block{border-radius:var(--radius-lg)}
+.st-appliance .brand-chip,.st-appliance .opt-btn{border-radius:12px}
+.st-appliance .pdp-policy li{border-radius:12px;background:var(--c-accent-soft);border-color:transparent;font-weight:600}
+.st-appliance .promo-box{border-radius:var(--radius-lg)}
+
+/* footer */
+.st-appliance .ftr-benefit .i{color:var(--c-btn)}
+
+@media (max-width:767px){
+  .st-appliance .tcat-list a{min-width:78px;min-height:58px;font-size:12px}
+  .st-appliance .tcat-list a .i{width:22px;height:22px}
+  .st-appliance .cat-tiles{grid-template-columns:repeat(4,minmax(0,1fr));padding:8px;gap:2px}
+  .st-appliance .cat-tile img{width:58px;height:58px;padding:7px}
+  .st-appliance .cat-tile span{font-size:12.5px}
+  .st-appliance .sec-head h2{font-size:19px}
+}

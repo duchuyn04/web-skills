@@ -1,0 +1,36 @@
+{# Header 'minimal': white bar, logo left, main categories as text links, search panel opened from an icon, account and cart icons (Apple, Samsung stores). #}
+{% if announcement %}
+<p class="hm-note"><span class="ctn">{{ announcement[0] }}</span></p>
+{% endif %}
+<header class="hdr hdr-min" data-header>
+  <div class="ctn hdr-in">
+    <button class="hdr-burger icon-btn" type="button" data-open="catdrawer" aria-label="Mở danh mục">{{ icon("menu") }}</button>
+    <a class="logo" href="{{ root }}index.html" aria-label="{{ shop.name }}, trang chủ">
+      <span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span>
+    </a>
+    <nav class="hm-nav" aria-label="Danh mục sản phẩm">
+      <ul>
+        {% for c in cats[:6] %}<li><a href="{{ root }}c/{{ c.id }}.html" {% if cat is defined and cat and cat.id == c.id %}aria-current="page"{% endif %}>{{ c.name }}</a></li>{% endfor %}
+        {% if stores %}<li><a href="{{ root }}stores.html">Cửa hàng</a></li>{% endif %}
+      </ul>
+    </nav>
+    <div class="hm-actions">
+      <button class="icon-btn" type="button" data-hm-search aria-expanded="false" aria-controls="hm-search" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+      <a class="icon-btn hm-acc" href="{{ root }}account/index.html" data-account-link aria-label="Tài khoản">{{ icon("user") }}<span class="sr" data-account-label>Đăng nhập</span></a>
+      <a class="icon-btn hm-cart" href="{{ root }}cart.html" aria-label="Giỏ hàng">{{ icon("bag") }}<b class="count" data-cart-count hidden>0</b></a>
+    </div>
+  </div>
+  <div class="hm-search" id="hm-search" hidden>
+    <div class="ctn">
+      <form class="search" action="{{ root }}search.html" role="search" data-search>
+        <label class="sr" for="q">Tìm sản phẩm</label>
+        <input id="q" name="q" type="search" placeholder="Tìm sản phẩm, ví dụ: {{ products[0].name }}" autocomplete="off" data-search-input>
+        <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+        <div class="suggest" data-suggest hidden></div>
+      </form>
+      <ul class="hm-quick" aria-label="Danh mục">
+        {% for c in cats[:6] %}<li><a href="{{ root }}c/{{ c.id }}.html">{{ c.name }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,6 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block description %}{{ cat.name }} chính hãng tại {{ shop.name }}: {{ cat.count }} sản phẩm, lọc theo hãng, giá và cấu hình.{% endblock %}
+{% block main %}
+{% include "plp/" ~ layout.plp ~ ".html" %}
+{% endblock %}

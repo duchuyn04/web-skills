@@ -1,0 +1,11 @@
+<section class="sec ctn" aria-label="{{ sec.title or 'Ưu đãi' }}">
+  {% if sec.title %}<div class="sec-head"><h2>{{ sec.title }}</h2></div>{% endif %}
+  <div class="banners banners-{{ sec["items"]|length }}">
+    {% for b in sec["items"] %}
+    <a class="banner" href="{{ b.href or (root ~ 'p/' ~ b.product ~ '.html' if b.product else root ~ 'deals.html') }}" style="--slide-bg: {{ b.bg or 'var(--c-dark)' }}; --slide-ink: {{ b.ink or '#ffffff' }}">
+      <span class="banner-copy"><b>{{ b.title }}</b>{% if b.text %}<span>{{ b.text }}</span>{% endif %}<em>{{ b.cta or "Xem ngay" }}{{ arrow }}</em></span>
+      {% if b.art %}<img src="{{ root }}{{ b.art }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>

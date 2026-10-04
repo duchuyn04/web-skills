@@ -1,0 +1,32 @@
+/* Header 'tiered': top row with search and actions, category bar below. Colours from header tokens. */
+.tbar{background:var(--c-dark);color:#d9dde3;font-size:12.5px}
+.tbar-in{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:30px}
+.tbar-msg{display:flex;gap:22px;margin:0;overflow:hidden;white-space:nowrap}
+.tbar-msg span{display:flex;align-items:center}
+.tbar-msg span+span::before{content:"";width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5;margin-right:22px}
+.tbar-links{display:flex;gap:16px;flex:none}
+.tbar-links a{display:inline-flex;align-items:center;gap:5px;min-height:28px}
+.tbar-links a:hover{text-decoration:underline}
+.thdr{border-bottom:1px solid color-mix(in srgb,var(--c-header-fg) 12%,transparent)}
+.thdr-top{display:flex;align-items:center;gap:16px;min-height:66px}
+.thdr .search{max-width:none;flex:1}
+.thdr .hdr-actions{margin-left:0}
+.tcat{background:color-mix(in srgb,var(--c-header) 88%,var(--c-header-fg));border-top:1px solid color-mix(in srgb,var(--c-header-fg) 10%,transparent)}
+.tcat-list{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding-top:4px;padding-bottom:4px}
+.tcat-list::-webkit-scrollbar{display:none}
+.tcat-list a{display:flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border-radius:var(--radius);color:var(--c-header-fg);font-size:14px;font-weight:600;white-space:nowrap;opacity:.88}
+.tcat-list a .i{width:18px;height:18px}
+.tcat-list a:hover,.tcat-list a[aria-current=page]{opacity:1;background:color-mix(in srgb,var(--c-header-fg) 12%,transparent)}
+.tcat-list a[aria-current=page]{box-shadow:inset 0 -2px 0 var(--c-accent)}
+@media (max-width:1023px){
+  .tbar-links{display:none}
+}
+@media (max-width:767px){
+  .tbar-msg .tbar-more{display:none}
+  .tbar-msg span+span::before{display:none}
+  .thdr-top{flex-wrap:wrap;gap:6px 8px;min-height:0;padding-top:8px;padding-bottom:10px}
+  .thdr .logo{margin-right:auto}
+  .thdr .search{order:5;flex-basis:100%}
+  .tcat-list{padding-top:2px;padding-bottom:2px}
+  .tcat-list a{min-height:38px;padding:0 10px;font-size:13px}
+}

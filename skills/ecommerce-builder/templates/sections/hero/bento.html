@@ -1,0 +1,20 @@
+{# Hero 'bento': one large tile and up to four smaller tiles in a grid, built from sec.slides then sec.side (GearVN home). #}
+{% set tiles = ((sec.slides or []) + (sec.side or []))[:5] %}
+<section class="bento-wrap" aria-label="Sản phẩm nổi bật">
+  <div class="ctn bento bento-n{{ tiles|length }}">
+    {% for s in tiles %}
+    {% set prod = pid[s.product] if s.product else None %}
+    <a class="bento-tile{% if loop.first %} bento-big{% endif %}" href="{{ s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') }}"
+       style="--slide-bg: {{ s.bg or 'var(--c-surface-2)' }}; --slide-ink: {{ s.ink or 'var(--c-text)' }}">
+      <span class="bento-copy">
+        {% if s.label %}<span class="bento-label">{{ s.label }}</span>{% endif %}
+        {% if loop.first %}<h2 class="bento-title">{{ s.title }}</h2>{% else %}<b class="bento-title">{{ s.title }}</b>{% endif %}
+        {% if s.text %}<span class="bento-text">{{ s.text }}</span>{% endif %}
+        {% if prod %}<span class="bento-price">Từ <strong>{{ prod.price|vnd }}</strong></span>{% endif %}
+        <span class="bento-cta">{{ s.cta or "Xem ngay" }}{{ arrow }}</span>
+      </span>
+      {% if s.art %}<img class="bento-art" src="{{ root }}{{ s.art }}" alt="" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>

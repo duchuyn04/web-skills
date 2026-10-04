@@ -1,0 +1,13 @@
+{% set fmap = {} %}
+{% for it in sec["items"] %}{% set _ = fmap.update({it.product: it}) %}{% endfor %}
+<section class="flash ctn" aria-labelledby="h-flash" data-flash data-ends="{{ sec.ends or '23:59' }}">
+  <div class="flash-head">
+    <h2 id="h-flash">{{ icon("flame") }}{{ sec.title or "Giá sốc hôm nay" }}</h2>
+    <div class="flash-timer" aria-label="Thời gian còn lại">
+      <span>Kết thúc sau</span>
+      <b data-t="h">00</b><i>:</i><b data-t="m">00</b><i>:</i><b data-t="s">00</b>
+    </div>
+    <a class="sec-more" href="{{ root }}deals.html">Xem tất cả{{ arrow }}</a>
+  </div>
+  {{ m.rail(sec["items"]|map(attribute="product")|map("extract", pid)|list, "rail-flash", fmap) }}
+</section>

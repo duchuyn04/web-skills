@@ -1,0 +1,16 @@
+{# Section 'newsletter': {"type": "newsletter", "title", "text"?} an email form. On a demo shop the address stays in this browser. #}
+<section class="sec ctn" aria-labelledby="h-nl-{{ sec._i }}">
+  <div class="bq-nl">
+    <div class="bq-nl-copy">
+      <h2 id="h-nl-{{ sec._i }}">{{ sec.title or "Nhận tin hàng mới" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+    </div>
+    <form class="bq-nl-form" data-newsletter novalidate>
+      <label class="sr" for="nl-{{ sec._i }}">Email</label>
+      <input id="nl-{{ sec._i }}" name="email" type="email" required autocomplete="email" placeholder="Email của bạn">
+      <button class="btn btn-primary" type="submit">Đăng ký</button>
+      <p class="bq-nl-msg" data-newsletter-msg role="status"></p>
+      {% if demo %}<p class="bq-nl-note">Cửa hàng mẫu: email chỉ lưu trên trình duyệt này, không gửi đi đâu.</p>{% endif %}
+    </form>
+  </div>
+</section>

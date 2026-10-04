@@ -1,0 +1,91 @@
+{# Listing 'chips': no sidebar; a row of filter chips that open small panels, sort on the right, roomy grid (Apple, Samsung, boutique stores).
+   Keeps every hook of store.js initPlp: [data-plp], [data-filters] around all inputs, [data-price-min], [data-price-max], [data-filter-reset],
+   [data-active-filters], [data-plp-count], [data-plp-count-n], [data-plp-empty], [data-plp-grid], [data-more], [data-more-n], [data-filter-count],
+   [data-filters-open], [data-filters-close], [data-scrim], [data-sort-select]. Panels open with js/v/plp-chips.js. #}
+{{ m.crumbs([(cat.name, None)]) }}
+<div class="ctn plp plc" data-plp data-cat="{{ cat.id }}">
+  <div class="plc-head">
+    <h1>{{ cat.name }}</h1>
+    <p class="muted" data-plp-count>{{ cat.count }} sản phẩm</p>
+  </div>
+
+  <div class="plc-bar">
+    <div class="filters plc-filters" id="filters" data-filters aria-label="Bộ lọc">
+      <div class="filters-head">
+        <b>{{ icon("filter", "i-sm") }}Bộ lọc</b>
+        <button type="button" class="link-btn" data-filter-reset>Xóa bộ lọc</button>
+        <button type="button" class="icon-btn filters-close" data-filters-close aria-label="Đóng bộ lọc">{{ icon("x") }}</button>
+      </div>
+      <div class="filters-scroll plc-chips">
+        {% if cat.brands|length > 1 %}
+        <div class="plc-chip" data-chip>
+          <button type="button" class="plc-chip-btn" aria-expanded="false" data-chip-btn>Thương hiệu{{ icon("chevron-down", "i-xs") }}</button>
+          <fieldset class="fgroup plc-panel" data-chip-panel>
+            <legend>Thương hiệu</legend>
+            {% for b in cat.brands %}<label class="check"><input type="checkbox" name="brand" value="{{ b.id }}"><span>{{ b.name }}</span></label>{% endfor %}
+          </fieldset>
+        </div>
+        {% endif %}
+        <div class="plc-chip" data-chip>
+          <button type="button" class="plc-chip-btn" aria-expanded="false" data-chip-btn>Mức giá{{ icon("chevron-down", "i-xs") }}</button>
+          <fieldset class="fgroup plc-panel" data-chip-panel>
+            <legend>Mức giá</legend>
+            {% for lo, hi in cat.price_ranges %}<label class="check"><input type="checkbox" name="price" value="{{ lo }}-{{ hi or '' }}"><span>{{ m.price_range(lo, hi) }}</span></label>{% endfor %}
+            <div class="price-custom">
+              <label><span class="sr">Giá từ</span><input type="number" inputmode="numeric" min="0" step="100000" placeholder="Từ" data-price-min></label>
+              <span aria-hidden="true">-</span>
+              <label><span class="sr">Giá đến</span><input type="number" inputmode="numeric" min="0" step="100000" placeholder="Đến" data-price-max></label>
+            </div>
+          </fieldset>
+        </div>
+        {% for f in cat.facets %}
+        {% if f["values"] %}
+        <div class="plc-chip" data-chip>
+          <button type="button" class="plc-chip-btn" aria-expanded="false" data-chip-btn>{{ f.label }}{{ icon("chevron-down", "i-xs") }}</button>
+          <fieldset class="fgroup plc-panel" data-chip-panel>
+            <legend>{{ f.label }}</legend>
+            {% for v in f["values"] %}<label class="check"><input type="checkbox" name="f:{{ f.key }}" value="{{ v }}"><span>{{ v }}</span></label>{% endfor %}
+          </fieldset>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="plc-chip" data-chip>
+          <button type="button" class="plc-chip-btn" aria-expanded="false" data-chip-btn>Khác{{ icon("chevron-down", "i-xs") }}</button>
+          <fieldset class="fgroup plc-panel" data-chip-panel>
+            <legend>Khác</legend>
+            <label class="check"><input type="checkbox" name="instock" value="1"><span>Chỉ hiện hàng còn</span></label>
+            <label class="check"><input type="checkbox" name="sale" value="1"><span>Đang giảm giá</span></label>
+          </fieldset>
+        </div>
+      </div>
+      <div class="filters-foot"><button class="btn btn-primary btn-block" type="button" data-filters-close>Xem <span data-plp-count-n>{{ cat.count }}</span> kết quả</button></div>
+    </div>
+    <div class="plc-tools">
+      <button class="btn btn-outline toolbar-filter" type="button" data-filters-open aria-controls="filters">{{ icon("sliders", "i-sm") }}Lọc<b class="count" data-filter-count hidden>0</b></button>
+      <label class="plc-sort"><span class="sr">Sắp xếp</span>
+        <select data-sort-select>
+          <option value="popular">Nổi bật</option><option value="new">Mới về</option><option value="price-asc">Giá thấp đến cao</option><option value="price-desc">Giá cao đến thấp</option><option value="discount">Giảm nhiều</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <ul class="active-filters" data-active-filters aria-label="Bộ lọc đang chọn"></ul>
+
+  <div class="grid grid-plp plc-grid" data-plp-grid data-step="20">
+    {% for p in items %}{{ m.card(p, lazy=loop.index > 6) }}{% endfor %}
+  </div>
+  <div class="plp-empty" data-plp-empty hidden>
+    {{ m.empty("search", "Không có sản phẩm phù hợp", "Bỏ bớt một vài bộ lọc hoặc chọn mức giá khác.") }}
+    <div class="more"><button class="btn btn-outline" type="button" data-filter-reset>Xóa bộ lọc</button></div>
+  </div>
+  <div class="more"><button class="btn btn-outline" type="button" data-more>Xem thêm <span data-more-n></span> sản phẩm{{ icon("chevron-down", "i-sm") }}</button></div>
+
+  {% if cat.intro %}
+  <section class="prose plc-intro" aria-labelledby="h-intro" data-clamp>
+    <h2 id="h-intro">{{ cat.intro_title or ("Chọn mua " ~ cat.name|lower ~ " tại " ~ shop.name) }}</h2>
+    {% for para in cat.intro %}<p>{{ para }}</p>{% endfor %}
+    <button class="link-btn clamp-btn" type="button" data-clamp-toggle hidden>Xem thêm{{ icon("chevron-down", "i-sm") }}</button>
+  </section>
+  {% endif %}
+</div>
+<div class="scrim" data-scrim hidden></div>

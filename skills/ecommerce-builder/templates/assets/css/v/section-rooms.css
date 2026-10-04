@@ -1,0 +1,19 @@
+/* Section 'rooms': shop by room tiles. */
+.rooms-grid{display:grid;gap:12px;grid-template-columns:repeat(4,1fr)}
+.rooms-3{grid-template-columns:repeat(3,1fr)}
+.rooms-5,.rooms-6{grid-template-columns:repeat(3,1fr)}
+.room{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:10px;height:100%;min-height:220px;padding:18px 18px 0;border-radius:var(--radius-lg);background:var(--room-bg,var(--c-accent-soft));color:var(--c-text);border:1px solid var(--c-border);overflow:hidden}
+.room:hover{border-color:var(--c-btn)}
+.room-copy{display:flex;flex-direction:column;gap:4px}
+.room-copy b{font-size:19px;font-weight:800;line-height:1.2}
+.room-copy span{font-size:14px;color:var(--c-muted)}
+.room-copy em{display:inline-flex;align-items:center;font-style:normal;font-weight:700;font-size:14px;color:var(--c-link);margin-top:4px}
+.room img{align-self:flex-end;width:62%;max-width:180px;margin-bottom:-8px}
+@media (max-width:1023px){.rooms-grid,.rooms-3,.rooms-5,.rooms-6{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:767px){
+  .rooms-grid{gap:8px}
+  .room{min-height:168px;padding:12px 12px 0}
+  .room-copy b{font-size:16px}
+  .room-copy span{font-size:12.5px}
+  .room img{width:70%}
+}

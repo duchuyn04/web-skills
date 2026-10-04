@@ -1,0 +1,1936 @@
+{
+ "_note": "Shop mẫu phong cách gaming. Thương hiệu, sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "demo": true,
+ "sample_content": true,
+ "style": "gaming",
+ "lang": "vi",
+ "brief": "Cửa hàng mẫu Nova Gear bán laptop gaming, màn hình, bàn phím, chuột, tai nghe, ghế gaming và tay cầm. Mọi thương hiệu, giá, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "shop": {
+  "name": "Nova Gear",
+  "tagline": "Laptop gaming, màn hình, gear chính hãng, trả góp 0%",
+  "hotline": "1900 0000",
+  "email": "hotro@example.com",
+  "address": "[Địa chỉ trụ sở]",
+  "hours": "9:00 - 21:30",
+  "legal": "Cửa hàng mẫu do ecommerce-builder tạo. Thông tin pháp lý điền khi chạy thật.",
+  "socials": [
+   {
+    "type": "facebook",
+    "url": "#"
+   },
+   {
+    "type": "youtube",
+    "url": "#"
+   }
+  ]
+ },
+ "theme": {
+  "preset": "gaming-dark"
+ },
+ "announcement": [
+  "Build PC theo yêu cầu, lắp ráp và test miễn phí",
+  "Trả góp 0% qua thẻ tín dụng",
+  "Đổi mới trong 15 ngày nếu lỗi do nhà sản xuất"
+ ],
+ "categories": [
+  {
+   "id": "laptop-gaming",
+   "name": "Laptop gaming",
+   "icon": "laptop",
+   "device": "laptop",
+   "facets": [
+    {
+     "key": "gpu",
+     "label": "Card đồ họa"
+    },
+    {
+     "key": "cpu",
+     "label": "CPU"
+    },
+    {
+     "key": "ram",
+     "label": "RAM, ổ cứng"
+    },
+    {
+     "key": "screen",
+     "label": "Màn hình"
+    }
+   ]
+  },
+  {
+   "id": "man-hinh",
+   "name": "Màn hình",
+   "icon": "monitor",
+   "device": "monitor",
+   "facets": [
+    {
+     "key": "size",
+     "label": "Kích thước"
+    },
+    {
+     "key": "hz",
+     "label": "Tần số quét"
+    },
+    {
+     "key": "panel",
+     "label": "Tấm nền"
+    }
+   ]
+  },
+  {
+   "id": "ban-phim",
+   "name": "Bàn phím",
+   "icon": "keyboard",
+   "device": "keyboard",
+   "facets": [
+    {
+     "key": "layout",
+     "label": "Layout"
+    },
+    {
+     "key": "switch",
+     "label": "Switch"
+    },
+    {
+     "key": "connect",
+     "label": "Kết nối"
+    }
+   ]
+  },
+  {
+   "id": "chuot",
+   "name": "Chuột",
+   "icon": "mouse",
+   "device": "mouse",
+   "facets": [
+    {
+     "key": "connect",
+     "label": "Kết nối"
+    },
+    {
+     "key": "weight",
+     "label": "Trọng lượng"
+    }
+   ]
+  },
+  {
+   "id": "tai-nghe",
+   "name": "Tai nghe",
+   "icon": "headphones",
+   "device": "headphones",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Kiểu"
+    },
+    {
+     "key": "connect",
+     "label": "Kết nối"
+    }
+   ]
+  },
+  {
+   "id": "ghe-gaming",
+   "name": "Ghế gaming",
+   "icon": "chair",
+   "device": "chair",
+   "facets": [
+    {
+     "key": "material",
+     "label": "Chất liệu"
+    },
+    {
+     "key": "recline",
+     "label": "Góc ngả"
+    }
+   ]
+  },
+  {
+   "id": "tay-cam",
+   "name": "Tay cầm",
+   "icon": "gamepad",
+   "device": "gamepad",
+   "facets": [
+    {
+     "key": "connect",
+     "label": "Kết nối"
+    },
+    {
+     "key": "platform",
+     "label": "Thiết bị"
+    }
+   ]
+  }
+ ],
+ "brands": [
+  {
+   "id": "raxon",
+   "name": "Raxon"
+  },
+  {
+   "id": "vyrex",
+   "name": "Vyrex"
+  },
+  {
+   "id": "kestrel",
+   "name": "Kestrel"
+  },
+  {
+   "id": "ardent",
+   "name": "Ardent"
+  },
+  {
+   "id": "pulse",
+   "name": "Pulse"
+  }
+ ],
+ "products": [
+  {
+   "id": "raxon-blade-16",
+   "name": "Raxon Blade 16",
+   "brand": "raxon",
+   "category": "laptop-gaming",
+   "options": [
+    {
+     "name": "Cấu hình",
+     "values": [
+      {
+       "name": "32 GB / 1 TB",
+       "price": 52990000,
+       "old_price": 56990000
+      },
+      {
+       "name": "64 GB / 2 TB",
+       "price": 61990000,
+       "old_price": 65990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#16181d"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "cpu": "Core i9-14900HX",
+    "gpu": "RTX 5080",
+    "ram": [
+     "32 GB",
+     "64 GB"
+    ],
+    "screen": "16 inch QHD+"
+   },
+   "card_specs": [
+    "Core i9-14900HX",
+    "RTX 5080",
+    "16 inch QHD+ 240 Hz",
+    "32 GB / 1 TB"
+   ],
+   "highlights": [
+    "Card đồ họa RTX 5080",
+    "Màn hình 16 inch QHD+ 240 Hz",
+    "Nặng 2,5 kg"
+   ],
+   "description": [
+    "Raxon Blade 16 dùng RTX 5080 và Core i9-14900HX, chơi tốt các tựa game eSports ở mức khung hình cao.",
+    "Màn hình 16 inch QHD+ 240 Hz cho chuyển động mượt trong game bắn súng. Bàn phím có đèn nền từng phím."
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "CPU",
+       "Core i9-14900HX"
+      ],
+      [
+       "Card đồ họa",
+       "RTX 5080"
+      ]
+     ]
+    },
+    {
+     "group": "Bộ nhớ",
+     "rows": [
+      [
+       "Cấu hình",
+       "32 GB / 1 TB, 64 GB / 2 TB"
+      ],
+      [
+       "Khe RAM",
+       "2 khe, tối đa 64 GB"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "16 inch QHD+"
+      ],
+      [
+       "Tần số quét",
+       "240 Hz"
+      ],
+      [
+       "Tấm nền",
+       "IPS, 100% sRGB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "USB-C, 3 x USB-A, HDMI 2.1, LAN"
+      ],
+      [
+       "Không dây",
+       "Wi-Fi 6E, Bluetooth 5.3"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Trọng lượng",
+       "2,5 kg"
+      ],
+      [
+       "Hệ điều hành",
+       "Windows 11 Home"
+      ]
+     ]
+    }
+   ],
+   "promos": [
+    "Tặng chuột Kestrel Viper",
+    "Giảm 1.000.000 đ khi mua kèm màn hình Vyrex"
+   ],
+   "badges": [
+    "new",
+    "hot"
+   ],
+   "installment": true,
+   "warranty": "24 tháng",
+   "in_box": [
+    "Máy",
+    "Bộ sạc",
+    "Sách hướng dẫn"
+   ],
+   "rating": {
+    "avg": 4.9,
+    "count": 86
+   },
+   "sold": 210,
+   "released": "2026-09",
+   "reviews": [
+    {
+     "name": "Đức Anh",
+     "stars": 5,
+     "text": "Máy chạy game nặng ổn định, quạt hơi ồn khi chơi lâu nhưng nhiệt độ giữ dưới 85 độ.",
+     "verified": true,
+     "date": "18/09/2026"
+    },
+    {
+     "name": "Minh Khoa",
+     "stars": 5,
+     "text": "Shop dán nhãn bảo hành và cài sẵn driver, nhận máy là chơi được ngay.",
+     "verified": true,
+     "date": "11/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Màn hình đẹp, pin dùng văn phòng khoảng 4 tiếng, cục sạc khá nặng.",
+     "verified": true,
+     "date": "03/09/2026"
+    },
+    {
+     "name": "Quang Huy",
+     "stars": 4,
+     "text": "Giao nhanh, đóng gói chắc chắn. Mong shop có thêm màu trắng.",
+     "verified": false,
+     "date": "27/08/2026"
+    }
+   ],
+   "qa": [
+    {
+     "name": "Long",
+     "q": "Máy nâng cấp RAM được không shop?",
+     "a": "Dạ được, máy có 2 khe RAM, nâng cấp tối đa 64 GB."
+    },
+    {
+     "name": "Tuấn",
+     "q": "Mua online có được kiểm tra máy trước khi nhận không?",
+     "a": "Dạ có, đơn COD được mở hộp kiểm tra trước khi thanh toán."
+    }
+   ]
+  },
+  {
+   "id": "raxon-strike-15",
+   "name": "Raxon Strike 15",
+   "brand": "raxon",
+   "category": "laptop-gaming",
+   "options": [
+    {
+     "name": "Cấu hình",
+     "values": [
+      {
+       "name": "16 GB / 512 GB",
+       "price": 27990000,
+       "old_price": 30990000
+      },
+      {
+       "name": "32 GB / 1 TB",
+       "price": 31490000,
+       "old_price": 33990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1b1d22"
+      },
+      {
+       "name": "Xám",
+       "hex": "#5d6168"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "cpu": "Core i7-14650HX",
+    "gpu": "RTX 5060",
+    "ram": [
+     "16 GB",
+     "32 GB"
+    ],
+    "screen": "15,6 inch FHD"
+   },
+   "card_specs": [
+    "Core i7-14650HX",
+    "RTX 5060",
+    "15,6 inch FHD 165 Hz",
+    "16 GB / 512 GB"
+   ],
+   "highlights": [
+    "Card đồ họa RTX 5060",
+    "Màn hình 15,6 inch FHD 165 Hz",
+    "Nặng 2,2 kg"
+   ],
+   "description": [
+    "Raxon Strike 15 dùng RTX 5060 và Core i7-14650HX, chơi tốt các tựa game eSports ở mức khung hình cao.",
+    "Màn hình 15,6 inch FHD 165 Hz cho chuyển động mượt trong game bắn súng. Bàn phím có đèn nền từng phím."
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "CPU",
+       "Core i7-14650HX"
+      ],
+      [
+       "Card đồ họa",
+       "RTX 5060"
+      ]
+     ]
+    },
+    {
+     "group": "Bộ nhớ",
+     "rows": [
+      [
+       "Cấu hình",
+       "16 GB / 512 GB, 32 GB / 1 TB"
+      ],
+      [
+       "Khe RAM",
+       "2 khe, tối đa 64 GB"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "15,6 inch FHD"
+      ],
+      [
+       "Tần số quét",
+       "165 Hz"
+      ],
+      [
+       "Tấm nền",
+       "IPS, 100% sRGB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "USB-C, 3 x USB-A, HDMI 2.1, LAN"
+      ],
+      [
+       "Không dây",
+       "Wi-Fi 6E, Bluetooth 5.3"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Trọng lượng",
+       "2,2 kg"
+      ],
+      [
+       "Hệ điều hành",
+       "Windows 11 Home"
+      ]
+     ]
+    }
+   ],
+   "promos": [
+    "Tặng balo Kestrel"
+   ],
+   "badges": [
+    "hot"
+   ],
+   "installment": true,
+   "warranty": "24 tháng",
+   "in_box": [
+    "Máy",
+    "Bộ sạc",
+    "Sách hướng dẫn"
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 241
+   },
+   "sold": 860,
+   "released": "2026-08",
+   "reviews": [
+    {
+     "name": "Đức Anh",
+     "stars": 5,
+     "text": "Máy chạy game nặng ổn định, quạt hơi ồn khi chơi lâu nhưng nhiệt độ giữ dưới 85 độ.",
+     "verified": true,
+     "date": "18/09/2026"
+    },
+    {
+     "name": "Minh Khoa",
+     "stars": 5,
+     "text": "Shop dán nhãn bảo hành và cài sẵn driver, nhận máy là chơi được ngay.",
+     "verified": true,
+     "date": "11/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Màn hình đẹp, pin dùng văn phòng khoảng 4 tiếng, cục sạc khá nặng.",
+     "verified": true,
+     "date": "03/09/2026"
+    },
+    {
+     "name": "Quang Huy",
+     "stars": 4,
+     "text": "Giao nhanh, đóng gói chắc chắn. Mong shop có thêm màu trắng.",
+     "verified": false,
+     "date": "27/08/2026"
+    }
+   ],
+   "qa": [
+    {
+     "name": "Long",
+     "q": "Máy nâng cấp RAM được không shop?",
+     "a": "Dạ được, máy có 2 khe RAM, nâng cấp tối đa 64 GB."
+    },
+    {
+     "name": "Tuấn",
+     "q": "Mua online có được kiểm tra máy trước khi nhận không?",
+     "a": "Dạ có, đơn COD được mở hộp kiểm tra trước khi thanh toán."
+    }
+   ]
+  },
+  {
+   "id": "raxon-nova-14",
+   "name": "Raxon Nova 14",
+   "brand": "raxon",
+   "category": "laptop-gaming",
+   "options": [
+    {
+     "name": "Cấu hình",
+     "values": [
+      {
+       "name": "16 GB / 1 TB",
+       "price": 23490000,
+       "old_price": 25490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Bạc",
+       "hex": "#cfd3d9"
+      },
+      {
+       "name": "Đen",
+       "hex": "#1b1d22"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "cpu": "Ryzen 7",
+    "gpu": "RTX 5050",
+    "ram": [
+     "16 GB"
+    ],
+    "screen": "14 inch 2.8K"
+   },
+   "card_specs": [
+    "Ryzen 7 8845HS",
+    "RTX 5050",
+    "14 inch 2.8K 120 Hz",
+    "16 GB / 1 TB"
+   ],
+   "highlights": [
+    "Card đồ họa RTX 5050",
+    "Màn hình 14 inch 2.8K 120 Hz",
+    "Nặng 1,6 kg"
+   ],
+   "description": [
+    "Raxon Nova 14 dùng RTX 5050 và Ryzen 7 8845HS, chơi tốt các tựa game eSports ở mức khung hình cao.",
+    "Màn hình 14 inch 2.8K 120 Hz cho chuyển động mượt trong game bắn súng. Bàn phím có đèn nền từng phím."
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "CPU",
+       "Ryzen 7 8845HS"
+      ],
+      [
+       "Card đồ họa",
+       "RTX 5050"
+      ]
+     ]
+    },
+    {
+     "group": "Bộ nhớ",
+     "rows": [
+      [
+       "Cấu hình",
+       "16 GB / 1 TB"
+      ],
+      [
+       "Khe RAM",
+       "2 khe, tối đa 64 GB"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "14 inch 2.8K"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ],
+      [
+       "Tấm nền",
+       "IPS, 100% sRGB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "USB-C, 3 x USB-A, HDMI 2.1, LAN"
+      ],
+      [
+       "Không dây",
+       "Wi-Fi 6E, Bluetooth 5.3"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Trọng lượng",
+       "1,6 kg"
+      ],
+      [
+       "Hệ điều hành",
+       "Windows 11 Home"
+      ]
+     ]
+    }
+   ],
+   "promos": [],
+   "badges": [],
+   "installment": true,
+   "warranty": "24 tháng",
+   "in_box": [
+    "Máy",
+    "Bộ sạc",
+    "Sách hướng dẫn"
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 132
+   },
+   "sold": 470,
+   "released": "2026-06",
+   "reviews": [
+    {
+     "name": "Đức Anh",
+     "stars": 5,
+     "text": "Máy chạy game nặng ổn định, quạt hơi ồn khi chơi lâu nhưng nhiệt độ giữ dưới 85 độ.",
+     "verified": true,
+     "date": "18/09/2026"
+    },
+    {
+     "name": "Minh Khoa",
+     "stars": 5,
+     "text": "Shop dán nhãn bảo hành và cài sẵn driver, nhận máy là chơi được ngay.",
+     "verified": true,
+     "date": "11/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Màn hình đẹp, pin dùng văn phòng khoảng 4 tiếng, cục sạc khá nặng.",
+     "verified": true,
+     "date": "03/09/2026"
+    },
+    {
+     "name": "Quang Huy",
+     "stars": 4,
+     "text": "Giao nhanh, đóng gói chắc chắn. Mong shop có thêm màu trắng.",
+     "verified": false,
+     "date": "27/08/2026"
+    }
+   ],
+   "qa": [
+    {
+     "name": "Long",
+     "q": "Máy nâng cấp RAM được không shop?",
+     "a": "Dạ được, máy có 2 khe RAM, nâng cấp tối đa 64 GB."
+    },
+    {
+     "name": "Tuấn",
+     "q": "Mua online có được kiểm tra máy trước khi nhận không?",
+     "a": "Dạ có, đơn COD được mở hộp kiểm tra trước khi thanh toán."
+    }
+   ]
+  },
+  {
+   "id": "vyrex-27q",
+   "name": "Vyrex 27Q 240Hz",
+   "brand": "vyrex",
+   "category": "man-hinh",
+   "facets": {
+    "size": "27 inch",
+    "hz": "240 Hz",
+    "panel": "Fast IPS"
+   },
+   "card_specs": [
+    "27 inch QHD",
+    "240 Hz",
+    "1 ms"
+   ],
+   "specs": [
+    {
+     "group": "Hiển thị",
+     "rows": [
+      [
+       "Kích thước",
+       "27 inch"
+      ],
+      [
+       "Độ phân giải",
+       "2560 x 1440"
+      ],
+      [
+       "Tần số quét",
+       "240 Hz"
+      ],
+      [
+       "Tấm nền",
+       "Fast IPS"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "2 x HDMI 2.1, DisplayPort 1.4"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 154
+   },
+   "sold": 620,
+   "description": [
+    "Màn hình 27 inch QHD 240 Hz cho game bắn súng, thời gian phản hồi 1 ms."
+   ],
+   "highlights": [],
+   "badges": [
+    "hot"
+   ],
+   "promos": [],
+   "warranty": "36 tháng",
+   "released": "2026-05",
+   "device": "monitor",
+   "price": 7490000,
+   "old_price": 8490000,
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "vyrex-24f",
+   "name": "Vyrex 24F 180Hz",
+   "brand": "vyrex",
+   "category": "man-hinh",
+   "facets": {
+    "size": "24 inch",
+    "hz": "180 Hz",
+    "panel": "IPS"
+   },
+   "card_specs": [
+    "24 inch FHD",
+    "180 Hz",
+    "IPS"
+   ],
+   "specs": [
+    {
+     "group": "Hiển thị",
+     "rows": [
+      [
+       "Kích thước",
+       "24 inch"
+      ],
+      [
+       "Độ phân giải",
+       "1920 x 1080"
+      ],
+      [
+       "Tần số quét",
+       "180 Hz"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 402
+   },
+   "sold": 1800,
+   "description": [
+    "Màn hình 24 inch 180 Hz cho máy bàn tầm trung."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "36 tháng",
+   "released": "2026-05",
+   "device": "monitor",
+   "price": 3290000,
+   "old_price": 3790000,
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "vyrex-34uw",
+   "name": "Vyrex 34UW Cong",
+   "brand": "vyrex",
+   "category": "man-hinh",
+   "facets": {
+    "size": "34 inch",
+    "hz": "165 Hz",
+    "panel": "VA cong"
+   },
+   "card_specs": [
+    "34 inch UWQHD",
+    "165 Hz",
+    "Cong 1500R"
+   ],
+   "specs": [
+    {
+     "group": "Hiển thị",
+     "rows": [
+      [
+       "Kích thước",
+       "34 inch, tỉ lệ 21:9"
+      ],
+      [
+       "Độ phân giải",
+       "3440 x 1440"
+      ],
+      [
+       "Tần số quét",
+       "165 Hz"
+      ],
+      [
+       "Độ cong",
+       "1500R"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 61
+   },
+   "sold": 140,
+   "description": [
+    "Màn hình cong 34 inch, rộng hơn màn 27 inch khoảng 30% cho game đua xe và dựng phim."
+   ],
+   "highlights": [],
+   "badges": [
+    "new"
+   ],
+   "promos": [],
+   "warranty": "36 tháng",
+   "released": "2026-05",
+   "device": "monitor",
+   "price": 11990000,
+   "old_price": 13490000,
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "kestrel-k75",
+   "name": "Kestrel K75 Pro",
+   "brand": "kestrel",
+   "category": "ban-phim",
+   "facets": {
+    "layout": "75%",
+    "switch": "Linear",
+    "connect": "Không dây"
+   },
+   "card_specs": [
+    "75%",
+    "Switch Linear",
+    "3 chế độ kết nối"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Layout",
+       "75%"
+      ],
+      [
+       "Switch",
+       "Linear, thay nóng"
+      ],
+      [
+       "Kết nối",
+       "2,4 GHz, Bluetooth, USB-C"
+      ],
+      [
+       "Pin",
+       "4.000 mAh"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 210
+   },
+   "sold": 940,
+   "description": [
+    "Bàn phím cơ 75%, switch linear thay nóng, kết nối ba chế độ."
+   ],
+   "highlights": [],
+   "badges": [
+    "hot"
+   ],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "keyboard",
+   "price": 1890000,
+   "old_price": 2190000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "kestrel-k60",
+   "name": "Kestrel K60 TKL",
+   "brand": "kestrel",
+   "category": "ban-phim",
+   "facets": {
+    "layout": "TKL",
+    "switch": "Tactile",
+    "connect": "Có dây"
+   },
+   "card_specs": [
+    "TKL",
+    "Switch Tactile",
+    "Có dây"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Layout",
+       "TKL"
+      ],
+      [
+       "Switch",
+       "Tactile"
+      ],
+      [
+       "Kết nối",
+       "USB-C có dây"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 330
+   },
+   "sold": 1500,
+   "description": [
+    "Bàn phím cơ TKL có dây, gọn cho bàn nhỏ."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "keyboard",
+   "price": 990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "kestrel-viper",
+   "name": "Kestrel Viper V3",
+   "brand": "kestrel",
+   "category": "chuot",
+   "facets": {
+    "connect": "Không dây",
+    "weight": "Dưới 60 g"
+   },
+   "card_specs": [
+    "26.000 DPI",
+    "54 g",
+    "Không dây"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Cảm biến",
+       "26.000 DPI"
+      ],
+      [
+       "Trọng lượng",
+       "54 g"
+      ],
+      [
+       "Kết nối",
+       "2,4 GHz, USB-C"
+      ],
+      [
+       "Pin",
+       "70 giờ"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 365
+   },
+   "sold": 2100,
+   "description": [
+    "Chuột không dây 54 g cho game bắn súng."
+   ],
+   "highlights": [],
+   "badges": [
+    "hot"
+   ],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "mouse",
+   "price": 1290000,
+   "old_price": 1590000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "kestrel-m2",
+   "name": "Kestrel M2",
+   "brand": "kestrel",
+   "category": "chuot",
+   "facets": {
+    "connect": "Có dây",
+    "weight": "60 - 80 g"
+   },
+   "card_specs": [
+    "12.000 DPI",
+    "68 g",
+    "Có dây"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Cảm biến",
+       "12.000 DPI"
+      ],
+      [
+       "Trọng lượng",
+       "68 g"
+      ],
+      [
+       "Kết nối",
+       "USB có dây"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.4,
+    "count": 520
+   },
+   "sold": 3200,
+   "description": [
+    "Chuột có dây giá dễ mua cho người mới chơi."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "mouse",
+   "price": 390000,
+   "old_price": 490000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Hoàng Nam",
+     "stars": 5,
+     "text": "Dùng ổn định sau một tháng, đóng gói kỹ.",
+     "verified": true,
+     "date": "20/09/2026"
+    },
+    {
+     "name": "Bảo Trâm",
+     "stars": 4,
+     "text": "Đúng mô tả, giao trong ngày ở Hà Nội.",
+     "verified": true,
+     "date": "14/09/2026"
+    }
+   ]
+  },
+  {
+   "id": "kestrel-h9",
+   "name": "Kestrel H9 Wireless",
+   "brand": "kestrel",
+   "category": "tai-nghe",
+   "facets": {
+    "type": "Chụp tai",
+    "connect": "Không dây"
+   },
+   "card_specs": [
+    "Âm thanh 7.1",
+    "Mic tháo rời",
+    "Pin 50 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Driver",
+       "50 mm"
+      ],
+      [
+       "Âm thanh vòm",
+       "7.1 giả lập"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Không dây",
+       "2,4 GHz, Bluetooth"
+      ],
+      [
+       "Pin",
+       "50 giờ"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 188
+   },
+   "sold": 760,
+   "description": [
+    "Tai nghe chụp tai không dây, mic tháo rời, pin 50 giờ."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "headphones",
+   "price": 2190000,
+   "old_price": 2490000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kestrel-h3",
+   "name": "Kestrel H3",
+   "brand": "kestrel",
+   "category": "tai-nghe",
+   "facets": {
+    "type": "Chụp tai",
+    "connect": "Có dây"
+   },
+   "card_specs": [
+    "Driver 50 mm",
+    "Jack 3,5 mm"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Driver",
+       "50 mm"
+      ],
+      [
+       "Kết nối",
+       "Jack 3,5 mm"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.3,
+    "count": 240
+   },
+   "sold": 1100,
+   "description": [
+    "Tai nghe có dây cho máy bàn và tay cầm."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "headphones",
+   "price": 690000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ardent-pro",
+   "name": "Ardent Pro X",
+   "brand": "ardent",
+   "category": "ghe-gaming",
+   "facets": {
+    "material": "Da PU",
+    "recline": "155 độ"
+   },
+   "card_specs": [
+    "Ngả 155 độ",
+    "Tựa tay 4D",
+    "Chịu tải 150 kg"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Chất liệu",
+       "Da PU, khung thép"
+      ],
+      [
+       "Góc ngả",
+       "90 - 155 độ"
+      ],
+      [
+       "Tựa tay",
+       "4D"
+      ],
+      [
+       "Tải trọng",
+       "150 kg"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 96
+   },
+   "sold": 320,
+   "description": [
+    "Ghế gaming khung thép, ngả 155 độ, tựa tay chỉnh 4 hướng."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "24 tháng khung, 12 tháng nệm",
+   "released": "2026-05",
+   "device": "chair",
+   "price": 4990000,
+   "old_price": 5690000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1f2125"
+      },
+      {
+       "name": "Đỏ",
+       "hex": "#a3262b"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ardent-lite",
+   "name": "Ardent Lite",
+   "brand": "ardent",
+   "category": "ghe-gaming",
+   "facets": {
+    "material": "Vải lưới",
+    "recline": "135 độ"
+   },
+   "card_specs": [
+    "Lưng lưới",
+    "Ngả 135 độ"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Chất liệu",
+       "Lưới thoáng khí"
+      ],
+      [
+       "Góc ngả",
+       "90 - 135 độ"
+      ],
+      [
+       "Tải trọng",
+       "120 kg"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.4,
+    "count": 150
+   },
+   "sold": 540,
+   "description": [
+    "Ghế lưng lưới thoáng, hợp phòng không có điều hòa."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "chair",
+   "price": 2490000,
+   "old_price": 2890000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1f2125"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pulse-pad",
+   "name": "Pulse Pad Elite",
+   "brand": "pulse",
+   "category": "tay-cam",
+   "facets": {
+    "connect": "Không dây",
+    "platform": "PC, điện thoại"
+   },
+   "card_specs": [
+    "Hall effect",
+    "Không dây",
+    "PC và điện thoại"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Cần analog",
+       "Hall effect, không trôi"
+      ],
+      [
+       "Kết nối",
+       "2,4 GHz, Bluetooth, USB-C"
+      ],
+      [
+       "Pin",
+       "20 giờ"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 140
+   },
+   "sold": 690,
+   "description": [
+    "Tay cầm cần analog hall effect, dùng cho PC và điện thoại."
+   ],
+   "highlights": [],
+   "badges": [
+    "new"
+   ],
+   "promos": [],
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "gamepad",
+   "price": 1490000,
+   "old_price": 1690000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "slides": [
+    {
+     "label": "Mới về",
+     "title": "Raxon Blade 16 RTX 5080",
+     "text": "Màn hình QHD+ 240 Hz, tặng chuột Kestrel Viper.",
+     "product": "raxon-blade-16",
+     "bg": "#1a1d26",
+     "cta": "Xem cấu hình"
+    }
+   ],
+   "side": [
+    {
+     "title": "Màn hình 240 Hz",
+     "text": "Vyrex 27Q giảm 1.000.000 đ",
+     "product": "vyrex-27q",
+     "bg": "#3a1216"
+    },
+    {
+     "title": "Chuột 54 g",
+     "text": "Kestrel Viper V3",
+     "product": "kestrel-viper",
+     "bg": "#12263a"
+    },
+    {
+     "title": "Ghế ngả 155 độ",
+     "text": "Ardent Pro X",
+     "product": "ardent-pro",
+     "bg": "#1f2a1c"
+    }
+   ]
+  },
+  {
+   "type": "needs",
+   "title": "Mua theo nhu cầu",
+   "items": [
+    {
+     "title": "Chơi game eSports",
+     "text": "Laptop RTX 5060 trở lên",
+     "icon": "gamepad",
+     "category": "laptop-gaming",
+     "query": {
+      "gpu": "RTX 5060"
+     },
+     "product": "raxon-strike-15"
+    },
+    {
+     "title": "Game AAA, dựng phim",
+     "text": "RTX 5080, RAM 32 GB",
+     "icon": "cpu",
+     "category": "laptop-gaming",
+     "query": {
+      "gpu": "RTX 5080"
+     },
+     "product": "raxon-blade-16"
+    },
+    {
+     "title": "Màn hình tần số cao",
+     "text": "240 Hz cho game bắn súng",
+     "icon": "monitor",
+     "category": "man-hinh",
+     "query": {
+      "hz": "240 Hz"
+     },
+     "product": "vyrex-27q"
+    },
+    {
+     "title": "Gear không dây",
+     "text": "Bàn phím, chuột không dây",
+     "icon": "zap",
+     "category": "chuot",
+     "query": {
+      "connect": "Không dây"
+     },
+     "product": "kestrel-viper"
+    }
+   ]
+  },
+  {
+   "type": "flash-sale",
+   "title": "Deal gear giờ vàng",
+   "ends": "23:59",
+   "items": [
+    {
+     "product": "kestrel-viper",
+     "sale_price": 1090000,
+     "limit": 40,
+     "sold": 27
+    },
+    {
+     "product": "kestrel-k75",
+     "sale_price": 1590000,
+     "limit": 30,
+     "sold": 12
+    },
+    {
+     "product": "vyrex-24f",
+     "sale_price": 2990000,
+     "limit": 20,
+     "sold": 15
+    },
+    {
+     "product": "kestrel-h9",
+     "sale_price": 1890000,
+     "limit": 25,
+     "sold": 8
+    },
+    {
+     "product": "pulse-pad",
+     "sale_price": 1290000,
+     "limit": 30,
+     "sold": 19
+    }
+   ]
+  },
+  {
+   "type": "rail",
+   "category": "laptop-gaming",
+   "title": "Laptop gaming"
+  },
+  {
+   "type": "bundle",
+   "title": "Combo góc máy chơi game",
+   "text": "Màn hình, bàn phím, chuột, tai nghe và ghế đồng bộ cho bàn máy mới.",
+   "products": [
+    "vyrex-27q",
+    "kestrel-k75",
+    "kestrel-viper",
+    "kestrel-h9",
+    "ardent-pro"
+   ],
+   "price": 16990000
+  },
+  {
+   "type": "rail",
+   "category": "man-hinh",
+   "title": "Màn hình gaming"
+  },
+  {
+   "type": "grid",
+   "title": "Gear bán chạy",
+   "products": [
+    "kestrel-k60",
+    "kestrel-m2",
+    "kestrel-h3",
+    "ardent-lite",
+    "pulse-pad",
+    "kestrel-k75",
+    "kestrel-viper",
+    "kestrel-h9",
+    "vyrex-34uw",
+    "raxon-nova-14"
+   ]
+  },
+  {
+   "type": "brands"
+  },
+  {
+   "type": "stores-cta"
+  }
+ ],
+ "promotions": [
+  {
+   "code": "NOVA300",
+   "type": "fixed",
+   "value": 300000,
+   "min": 10000000,
+   "label": "Giảm 300.000 đ cho đơn từ 10 triệu",
+   "ends": "31/12/2026",
+   "limit": 300,
+   "used": 96
+  },
+  {
+   "code": "GEAR10",
+   "type": "percent",
+   "value": 10,
+   "max": 200000,
+   "min": 800000,
+   "label": "Giảm 10% gear, tối đa 200.000 đ",
+   "ends": "31/12/2026",
+   "limit": 800,
+   "used": 311
+  }
+ ],
+ "shipping": [
+  {
+   "id": "standard",
+   "name": "Giao tiêu chuẩn",
+   "fee": 35000,
+   "free_over": 1000000,
+   "eta": "2-4 ngày"
+  },
+  {
+   "id": "express",
+   "name": "Giao trong ngày",
+   "fee": 50000,
+   "eta": "Trong ngày nếu đặt trước 16:00",
+   "cities": [
+    "Hà Nội",
+    "TP. Hồ Chí Minh"
+   ]
+  }
+ ],
+ "payments": [
+  {
+   "id": "cod",
+   "name": "Thanh toán khi nhận hàng (COD)",
+   "icon": "banknote"
+  },
+  {
+   "id": "bank",
+   "name": "Chuyển khoản ngân hàng",
+   "icon": "landmark",
+   "note": "Hiện thông tin chuyển khoản sau khi đặt",
+   "bank": {
+    "name": "[Tên ngân hàng]",
+    "account": "[Số tài khoản]",
+    "holder": "[Tên chủ tài khoản]"
+   }
+  },
+  {
+   "id": "installment",
+   "name": "Trả góp 0% qua thẻ tín dụng",
+   "icon": "calendar",
+   "note": "Kỳ hạn 6 hoặc 12 tháng"
+  }
+ ],
+ "benefits": [
+  {
+   "icon": "badge-check",
+   "title": "Hàng chính hãng",
+   "text": "Tem bảo hành, hóa đơn VAT"
+  },
+  {
+   "icon": "cpu",
+   "title": "Build PC miễn phí",
+   "text": "Lắp ráp và test trước khi giao"
+  },
+  {
+   "icon": "refresh",
+   "title": "Đổi mới 15 ngày",
+   "text": "Nếu lỗi do nhà sản xuất"
+  },
+  {
+   "icon": "credit-card",
+   "title": "Trả góp 0%",
+   "text": "Qua thẻ tín dụng, 6 hoặc 12 tháng"
+  }
+ ],
+ "stores": [
+  {
+   "id": "hn-thai-ha",
+   "name": "Nova Gear Thái Hà",
+   "city": "Hà Nội",
+   "address": "[Số nhà], Phường Đống Đa, Hà Nội",
+   "hours": "9:00 - 21:30",
+   "phone": "1900 0000"
+  },
+  {
+   "id": "hcm-q10",
+   "name": "Nova Gear Hòa Hưng",
+   "city": "TP. Hồ Chí Minh",
+   "address": "[Số nhà], Phường Hòa Hưng, TP. Hồ Chí Minh",
+   "hours": "9:00 - 22:00",
+   "phone": "1900 0000"
+  }
+ ],
+ "policies": [
+  {
+   "id": "bao-hanh",
+   "title": "Chính sách bảo hành",
+   "body": [
+    "Sản phẩm được bảo hành theo thời hạn ghi trên trang sản phẩm, tại cửa hàng hoặc trung tâm bảo hành của hãng.",
+    {
+     "heading": "Điều kiện bảo hành",
+     "items": [
+      "Còn tem bảo hành và số serial",
+      "Lỗi do nhà sản xuất"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "doi-tra",
+   "title": "Chính sách đổi trả",
+   "body": [
+    "Đổi sản phẩm mới cùng loại trong 15 ngày nếu lỗi do nhà sản xuất."
+   ]
+  },
+  {
+   "id": "giao-hang",
+   "title": "Chính sách giao hàng",
+   "body": [
+    "Giao tiêu chuẩn 2-4 ngày, miễn phí cho đơn từ 1.000.000 đ.",
+    "Giao trong ngày tại Hà Nội và TP. Hồ Chí Minh cho đơn đặt trước 16:00."
+   ]
+  },
+  {
+   "id": "bao-mat",
+   "title": "Chính sách bảo mật",
+   "body": [
+    "Thông tin khách hàng chỉ dùng để xác nhận, giao đơn và bảo hành."
+   ]
+  }
+ ]
+}

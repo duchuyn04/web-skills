@@ -1,0 +1,83 @@
+{% import "partials/bits.html" as bits with context %}
+{# Shared pieces. Import with: {% import "partials/macros.html" as m with context %} #}
+
+{% macro price(value, old=None, cls="") -%}{{ bits.price(value, old, cls) }}{%- endmacro %}
+
+{% macro rating(r, link=None) -%}{{ bits.rating(r, link) }}{%- endmacro %}
+
+{% macro price_range(lo, hi) -%}
+{%- set a = (lo / 1000000)|round(1)|string|replace(".0", "")|replace(".", ",") -%}
+{%- set b = ((hi or 0) / 1000000)|round(1)|string|replace(".0", "")|replace(".", ",") -%}
+{%- if not lo %}Dưới {{ b }} triệu{% elif not hi %}Trên {{ a }} triệu{% else %}{{ a }} - {{ b }} triệu{% endif -%}
+{%- endmacro %}
+
+{% macro facets_attr(p) -%}
+{{ p.facets|tojson|forceescape }}
+{%- endmacro %}
+
+{% import "partials/cards/" ~ layout.card ~ ".html" as cv with context %}
+{% macro card(p, flash=None, lazy=True) -%}
+{{ cv.card(p, flash, lazy) }}
+{%- endmacro %}
+
+{% macro rail(items, id, flash_map=None) -%}
+<div class="rail" data-rail>
+  <button class="rail-btn rail-prev" type="button" data-rail-prev aria-label="Xem sản phẩm trước">{{ icon("chevron-left") }}</button>
+  <div class="rail-track" id="{{ id }}" data-rail-track tabindex="0" aria-label="Danh sách sản phẩm, cuộn ngang">
+    {% for p in items %}{{ card(p, flash_map[p.id] if flash_map else None) }}{% endfor %}
+  </div>
+  <button class="rail-btn rail-next" type="button" data-rail-next aria-label="Xem sản phẩm tiếp theo">{{ icon("chevron-right") }}</button>
+</div>
+{%- endmacro %}
+
+{% macro crumbs(items) -%}
+<nav class="crumbs ctn" aria-label="Đường dẫn">
+  <ol>
+    <li><a href="{{ root }}index.html">{{ icon("home", "i-sm") }}<span>Trang chủ</span></a></li>
+    {% for label, href in items %}
+    <li>{{ icon("chevron-right", "i-sm") }}{% if href %}<a href="{{ href }}">{{ label }}</a>{% else %}<span aria-current="page">{{ label }}</span>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>
+{%- endmacro %}
+
+{% macro catmenu() -%}
+<div class="catmenu" data-catmenu>
+  <ul class="catmenu-list">
+    {% for c in cats %}
+    <li data-catmenu-item="{{ c.id }}"><a href="{{ root }}c/{{ c.id }}.html">{{ icon(c.icon) }}<span>{{ c.name }}</span>{{ icon("chevron-right", "i-sm") }}</a></li>
+    {% endfor %}
+  </ul>
+  {% for c in cats %}
+  <div class="catmenu-fly" data-catmenu-fly="{{ c.id }}" {% if not loop.first %}hidden{% endif %}>
+    <div class="catmenu-col">
+      <h3>Thương hiệu</h3>
+      <ul>{% for b in c.brands %}<li><a href="{{ root }}c/{{ c.id }}.html?brand={{ b.id }}">{{ b.name }}</a></li>{% endfor %}</ul>
+    </div>
+    <div class="catmenu-col">
+      <h3>Mức giá</h3>
+      <ul>{% for lo, hi in c.price_ranges %}<li><a href="{{ root }}c/{{ c.id }}.html?price={{ lo }}-{{ hi or '' }}">{{ price_range(lo, hi) }}</a></li>{% endfor %}</ul>
+    </div>
+    {% for f in c.facets[:1] %}
+    <div class="catmenu-col">
+      <h3>{{ f.label }}</h3>
+      <ul>{% for v in f["values"][:8] %}<li><a href="{{ root }}c/{{ c.id }}.html?{{ f.key }}={{ v|urlencode }}">{{ v }}</a></li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+    <div class="catmenu-col catmenu-hot">
+      <h3>Nổi bật</h3>
+      <ul>{% for p in by_cat[c.id][:3] %}<li><a href="{{ root }}p/{{ p.id }}.html"><img src="{{ root }}{{ p.image }}" alt="" width="48" height="48" loading="lazy"><span>{{ p.name }}<b>{{ p.price|vnd }}</b></span></a></li>{% endfor %}</ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{% macro empty(icon_name, title, text, cta_label=None, cta_href=None) -%}
+<div class="empty">
+  <span class="empty-ic">{{ icon(icon_name) }}</span>
+  <h2>{{ title }}</h2>
+  <p>{{ text }}</p>
+  {% if cta_label %}<a class="btn btn-primary" href="{{ cta_href }}">{{ cta_label }}</a>{% endif %}
+</div>
+{%- endmacro %}

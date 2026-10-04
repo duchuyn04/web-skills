@@ -1,0 +1,33 @@
+{# Hero 'spotlight': one product per screen, centered title, short line, price, two text links, large art underneath (Apple, Samsung). #}
+<section class="spot" aria-label="Sản phẩm nổi bật">
+  <div class="carousel spot-car" data-carousel data-interval="{{ sec.interval or 6000 }}">
+    <div class="carousel-track">
+      {% for s in sec.slides %}
+      {% set prod = pid[s.product] if s.product else None %}
+      {% set href = s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') %}
+      <div class="slide spot-slide{% if loop.first %} is-active{% endif %}" style="--slide-bg: {{ s.bg or '#f5f5f7' }}; --slide-ink: {{ s.ink or '#1d1d1f' }}" {% if not loop.first %}aria-hidden="true"{% endif %} data-slide>
+        <div class="spot-copy">
+          {% if s.label %}<p class="spot-label">{{ s.label }}</p>{% endif %}
+          <h2 class="spot-title">{{ s.title }}</h2>
+          {% if s.text %}<p class="spot-text">{{ s.text }}</p>{% endif %}
+          {% if prod %}<p class="spot-price">Giá từ {{ prod.price|vnd }}</p>{% endif %}
+          <p class="spot-links">
+            <a class="spot-btn" href="{{ href }}" {% if not loop.first %}tabindex="-1"{% endif %}>{{ s.cta or "Mua ngay" }}</a>
+            {% if s.product %}<a class="spot-more" href="{{ root }}p/{{ s.product }}.html" {% if not loop.first %}tabindex="-1"{% endif %}>Tìm hiểu thêm{{ arrow }}</a>{% endif %}
+          </p>
+        </div>
+        {% if s.art %}<img class="spot-art" src="{{ root }}{{ s.art }}" alt="{{ prod.name if prod else '' }}" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% if sec.slides|length > 1 %}
+    <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Sản phẩm trước">{{ icon("chevron-left") }}</button>
+    <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Sản phẩm tiếp theo">{{ icon("chevron-right") }}</button>
+    {% endif %}
+  </div>
+  {% if sec.slides|length > 1 %}
+  <div class="spot-dots" role="tablist" aria-label="Chọn sản phẩm">
+    {% for s in sec.slides %}<button type="button" role="tab" data-carousel-tab="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}"><span class="sr">{{ s.tab or s.title }}</span></button>{% endfor %}
+  </div>
+  {% endif %}
+</section>

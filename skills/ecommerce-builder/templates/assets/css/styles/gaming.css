@@ -1,0 +1,97 @@
+/* Style 'gaming': dark storefront, Chakra Petch headings, compact radius. The preset gaming-dark sets the dark tokens;
+   this file replaces the light colours that store.css writes as fixed values, so every page stays dark and readable. */
+:root{color-scheme:dark}
+body{background:var(--c-bg);color:var(--c-text)}
+h1,h2,h3,.sec-head h2,.flash-head h2,.slide-title,.logo-name,.pdp-title h1,.acc-title{font-family:var(--font-head);letter-spacing:.01em}
+.sec-head h2{font-size:22px}
+
+/* fills that carried white text on the price colour: use the button colour, which is dark enough for white */
+.count,.pc-off,.pdp-off,.promo-box li::before{background:var(--c-btn);color:var(--c-btn-fg)}
+.hdr-cart .count{background:var(--c-btn);color:var(--c-btn-fg)}
+
+/* surfaces and text written as light fixed values in store.css */
+.modal,dialog{background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)}
+.modal::backdrop{background:rgba(0,0,0,.65)}
+.toast{background:#1f2430;border:1px solid var(--c-border)}
+.toast a{color:#ff8a80}
+.pc-specs li{background:var(--c-surface-2);color:var(--c-text)}
+.pc-promo{background:var(--c-surface-2);color:var(--c-text)}
+.pc-progress::after{background:linear-gradient(90deg,var(--c-btn) var(--p),var(--c-surface-2) var(--p))}
+.pc-progress span{color:var(--c-text)}
+.pc-badge{background:var(--c-surface-2);color:var(--c-text)}
+.pc-badge-installment{background:#1d2b45;color:#a9c4ff}
+.pc-badge-new{background:#14352a;color:#7fe0ad}
+.pc-badge-hot{background:#3a2412;color:#ffb877}
+.badge{background:var(--c-surface-2);color:var(--c-text)}
+.badge-ok{background:#14352a;color:#7fe0ad}
+.badge-warn{background:#3a2c0f;color:#f3c565}
+.badge-bad{background:#3d1a17;color:#ff9a8f}
+.badge-info{background:#1d2b45;color:#a9c4ff}
+.pdp-inst{background:#1d2b45;color:#c3d4ff}
+.promo-box{border-color:color-mix(in srgb,var(--c-price) 40%,var(--c-border))}
+.promo-box h2{background:color-mix(in srgb,var(--c-price) 14%,var(--c-surface));color:var(--c-price)}
+.cmp-table tr.is-diff td{background:color-mix(in srgb,var(--c-accent) 12%,var(--c-surface))}
+.faq details p,.store-btn span,.qa-a,.rev-reply{color:var(--c-text)}
+.order-ok{background:#14352a;color:#7fe0ad}
+.brand-strip a,.brand-chip{color:var(--c-text)}
+.brand-strip a:hover{color:var(--c-accent-ink)}
+.tag-ok{color:#7fe0ad}
+.star-input label{color:#4a505c}
+.bank .qr{background:#fff}
+.chip{background:var(--c-surface);color:var(--c-text)}
+.btn-outline{background:transparent;color:var(--c-text);border-color:var(--c-border)}
+.btn-outline:hover{border-color:var(--c-accent);background:var(--c-surface-2)}
+.btn-ghost:hover{background:var(--c-surface-2)}
+.btn-buy,.btn-primary{letter-spacing:.01em}
+.btn-buy b,.btn-inst b{font-family:var(--font-head)}
+.btn-inst,.btn-cart{color:var(--c-text)}
+.field input,.field select,.field textarea,.input,.voucher input,.track-form input,.qa-form input,.price-custom input,.avail select,.sort-select select{background:var(--c-surface-2);border-color:var(--c-border);color:var(--c-text)}
+.field input::placeholder,.field textarea::placeholder,.voucher input::placeholder,.qa-form input::placeholder{color:#7d8592}
+.qty{border-color:var(--c-border)}
+.qty input{background:transparent;color:var(--c-text)}
+.qty button:hover,.icon-btn:hover{background:var(--c-surface-2)}
+
+/* header and search: the search box stays light on the dark bar, as on most gear stores */
+.search input{background:#f2f3f5;color:#14171c}
+.search input::placeholder{color:#5b6470}
+.suggest{border:1px solid var(--c-border)}
+.suggest a:hover,.suggest a[aria-selected=true]{background:var(--c-surface-2)}
+.mega,.catmenu-list,.hero-cats,.hero-cats .catmenu-fly{background:var(--c-surface);border-color:var(--c-border)}
+.drawer-panel{border-right:1px solid var(--c-border)}
+.drawer-list a{border-color:var(--c-border)}
+
+/* product art reads best on a lighter stage inside dark cards */
+.pc-media,.gallery-main,.cat-tile img,.co-items img,.cart-row img,.olist .thumbs img,.cmp-prod img,.gallery-thumbs img,.addons img,.catmenu-hot img,.suggest img,.bundle-item img{background:#262b35;border-radius:var(--radius)}
+.pc-media{border-radius:var(--radius)}
+.gallery{background:var(--c-surface)}
+.gallery-main{border-radius:var(--radius-lg)}
+.gallery-btn,.rail-btn,.carousel-btn{background:var(--c-surface-2);color:var(--c-text);box-shadow:none;border:1px solid var(--c-border)}
+
+/* cards and blocks: a visible edge instead of shadows */
+.pc{border-color:var(--c-border)}
+.pc:hover{border-color:var(--c-accent)}
+.box,.summary-box,.co-block,.cart-row,.empty,.stat,.store,.ship-progress,.avail,.filters,.acc-side,.voucher-card,.stores-cta,.cat-tile,.benefits li,.olist>li,.addr-list li,.side-banner,.order-hero,.cmp-wrap,.gallery,.tabs{border-color:var(--c-border)}
+.flash-head{border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.flash-timer b{background:#05070a;border:1px solid var(--c-border)}
+.flash .rail{background:color-mix(in srgb,var(--c-btn) 16%,var(--c-surface))}
+.spec-group th{background:var(--c-surface-2)}
+.pdp-tabs{background:var(--c-bg)}
+.pdp-tabs a:hover{background:var(--c-surface)}
+.seg-opt:has(input:checked),.card-radio:has(input:checked),.opt-btn[aria-pressed=true],.chip.is-on,.chip[aria-pressed=true],.brand-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c-accent) 16%,var(--c-surface));color:var(--c-text);border-color:var(--c-accent)}
+.opt-btn.is-out{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--c-surface-2) 6px 7px)}
+.steps .is-on>span{background:var(--c-surface)}
+.timeline li::before,.tracker .dot{background:var(--c-surface)}
+.tracker .is-done .dot{background:var(--c-ok);color:#05070a}
+.ftr{background:#090b0e;border-top-color:var(--c-border)}
+.ftr-bottom{background:#05070a;border-top-color:var(--c-border)}
+.ftr-benefits{border-bottom-color:var(--c-border)}
+.ftr-social a{background:var(--c-surface-2)}
+.bnav{background:#090b0e;border-top-color:var(--c-border)}
+.cmp-tray{background:var(--c-surface);border-top-color:var(--c-border)}
+.buybar{background:var(--c-surface);border-top-color:var(--c-border)}
+.scrim,.drawer{background:rgba(0,0,0,.6)}
+[data-clamp].is-clamped::after{background:linear-gradient(transparent,var(--c-surface))}
+.crumbs a{color:var(--c-link)}
+.sec-more,.link-btn,.link-sm{color:var(--c-link)}
+.pc-cmp{color:var(--c-link)}
+.pc-fav{color:var(--c-muted)}

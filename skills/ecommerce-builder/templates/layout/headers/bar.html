@@ -1,0 +1,40 @@
+{# Header 'bar': solid colour bar, category button with mega menu, wide search, hotline, account, cart. #}
+{% if announcement %}
+<div class="topbar">
+  <div class="ctn topbar-in">
+    <ul class="topbar-msgs" data-ticker>
+      {% for a in announcement %}<li>{{ icon(["truck","badge-check","refresh","credit-card","gift"][loop.index0 % 5]) }}<span>{{ a }}</span></li>{% endfor %}
+    </ul>
+    <nav class="topbar-links" aria-label="Liên kết nhanh">
+      {% if stores %}<a href="{{ root }}stores.html">{{ icon("store") }}Hệ thống cửa hàng</a>{% endif %}
+      <a href="{{ root }}track.html">{{ icon("package") }}Tra cứu đơn hàng</a>
+      <a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("phone") }}{{ shop.hotline }}</a>
+    </nav>
+  </div>
+</div>
+{% endif %}
+<header class="hdr" data-header>
+  <div class="ctn hdr-in">
+    <button class="hdr-burger icon-btn" type="button" data-open="catdrawer" aria-label="Mở danh mục">{{ icon("menu") }}</button>
+    <a class="logo" href="{{ root }}index.html" aria-label="{{ shop.name }}, trang chủ">
+      <span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span>
+    </a>
+    <div class="hdr-cat">
+      <button class="hdr-btn" type="button" data-mega-toggle aria-expanded="false" aria-controls="mega">{{ icon("grid") }}<span>Danh mục</span>{{ icon("chevron-down", "i-sm") }}</button>
+      <div class="mega" id="mega" hidden>
+        {{ m.catmenu() }}
+      </div>
+    </div>
+    <form class="search" action="{{ root }}search.html" role="search" data-search>
+      <label class="sr" for="q">Tìm sản phẩm</label>
+      <input id="q" name="q" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-search-input>
+      <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+      <div class="suggest" data-suggest hidden></div>
+    </form>
+    <nav class="hdr-actions" aria-label="Tài khoản và giỏ hàng">
+      <a class="hdr-act hdr-hot" href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("headset") }}<span><small>Gọi mua hàng</small><b>{{ shop.hotline }}</b></span></a>
+      <a class="hdr-act" href="{{ root }}account/index.html" data-account-link>{{ icon("user") }}<span data-account-label>Đăng nhập</span></a>
+      <a class="hdr-act hdr-cart" href="{{ root }}cart.html">{{ icon("shopping-cart") }}<span>Giỏ hàng</span><b class="count" data-cart-count hidden>0</b></a>
+    </nav>
+  </div>
+</header>

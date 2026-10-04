@@ -1,0 +1,23 @@
+{% extends "account/_layout.html" %}
+{% block account %}
+<div data-acc-order>
+  <div class="page-head">
+    <h1 class="acc-title">Đơn hàng <span class="code" data-t-code></span></h1>
+    <span class="badge" data-t-status></span>
+  </div>
+  <p class="muted" data-t-date></p>
+  <ol class="tracker" data-t-steps aria-label="Tiến độ đơn hàng"></ol>
+  <div class="order-grid">
+    <section class="box"><h2>Sản phẩm</h2><ul class="co-items" data-t-items></ul><dl class="totals" data-t-totals></dl></section>
+    <div class="order-side">
+      <section class="box"><h2>Nhận hàng</h2><div data-t-ship></div></section>
+      <section class="box"><h2>Lịch sử cập nhật</h2><ol class="timeline" data-t-timeline></ol></section>
+      <div class="order-actions">
+        <button class="btn btn-outline" type="button" data-reorder>{{ icon("refresh", "i-sm") }}Mua lại</button>
+        <button class="btn btn-ghost" type="button" data-cancel-order hidden>Hủy đơn</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div data-order-missing hidden><div class="empty"><span class="empty-ic">{{ icon("package") }}</span><h2>Không tìm thấy đơn hàng</h2><a class="btn btn-primary" href="orders.html">Về danh sách đơn</a></div></div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{# Section 'rooms': shop by room. Each tile links to a category listing, optionally pre-filtered (query keys are facet keys, brand or price).
+   Data: {"type": "rooms", "title"?, "items": [{"title", "text"?, "category" or "href", "query"?: {"key": "value"}, "product"?, "bg"? (light colour)}]} #}
+<section class="sec ctn rooms" aria-labelledby="h-rooms-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-rooms-{{ sec._i }}">{{ sec.title or "Mua sắm theo phòng" }}</h2></div>
+  <ul class="rooms-grid rooms-{{ sec["items"]|length }}">
+    {% for r in sec["items"] %}
+    {% set prod = pid[r.product] if r.product else None %}
+    {% set first = (by_cat.get(r.category) or [None])[0] if r.category else None %}
+    {% set img = prod.image if prod else (first.image if first else None) %}
+    {% set qs = r.get("query") or {} %}
+    {% set href = r.href or (root ~ "c/" ~ r.category ~ ".html" ~ ("?" ~ qs|urlencode if qs else "")) %}
+    <li><a class="room" href="{{ href }}" {% if r.bg %}style="--room-bg: {{ r.bg }}"{% endif %}>
+      <span class="room-copy">
+        <b>{{ r.title }}</b>
+        {% if r.text %}<span>{{ r.text }}</span>{% endif %}
+        <em>Xem sản phẩm{{ arrow }}</em>
+      </span>
+      {% if img %}<img src="{{ root }}{{ img }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

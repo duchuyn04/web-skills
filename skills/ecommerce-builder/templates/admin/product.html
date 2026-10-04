@@ -1,0 +1,58 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<form data-product-form novalidate>
+  <a class="back" href="products.html">{{ icon("chevron-left", "i-sm") }}Sản phẩm</a>
+  <div class="adm-head">
+    <h1 data-pf-title>Sửa sản phẩm</h1>
+    <div class="head-actions"><a class="btn btn-outline" data-pf-view target="_blank" rel="noopener">{{ icon("eye", "i-sm") }}Xem trên web</a></div>
+  </div>
+  <div class="detail-grid">
+    <div class="detail-main">
+      <section class="card">
+        <div class="card-head"><h2>Thông tin chung</h2></div>
+        <label class="field"><span>Tên sản phẩm</span><input name="name" readonly aria-describedby="name-hint"></label>
+        <p class="hint" id="name-hint">Tên, mô tả và thông số lấy từ shop.json; sửa ở đó rồi build lại để đổi trên mọi trang.</p>
+        <label class="field"><span>Ghi chú nội bộ (khách không thấy)</span><textarea name="desc" rows="3" placeholder="Ví dụ: hàng về đợt 2 ngày 20/10, ưu tiên khách đặt trước"></textarea></label>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Ảnh sản phẩm</h2><span class="muted small">Ảnh theo từng màu</span></div>
+        <ul class="media" data-pf-media></ul>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Giá và tồn kho theo phiên bản</h2></div>
+        <div class="table-wrap"><table class="tbl tbl-edit" data-pf-variants></table></div>
+        <p class="hint">Giá gốc để trống nếu không giảm giá. Tồn kho là số máy có thể bán ngay.</p>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Thông số kỹ thuật</h2></div>
+        <div data-pf-specs></div>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Hiển thị trên Google</h2></div>
+        <div class="serp" data-serp><span class="serp-url"></span><b class="serp-title"></b><span class="serp-desc"></span></div>
+        <label class="field"><span>Tiêu đề trang <small data-len="seo_title"></small></span><input name="seo_title" maxlength="70"></label>
+        <label class="field"><span>Mô tả <small data-len="seo_desc"></small></span><textarea name="seo_desc" rows="2" maxlength="170"></textarea></label>
+      </section>
+    </div>
+    <div class="detail-side">
+      <section class="card">
+        <div class="card-head"><h2>Trạng thái</h2></div>
+        <label class="field"><span class="sr">Trạng thái</span><select name="status"><option value="on">Đang bán</option><option value="off">Ẩn khỏi website</option></select></label>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Phân loại</h2></div>
+        <dl class="kv" data-pf-meta></dl>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>Hiệu quả 30 ngày</h2></div>
+        <dl class="kv" data-pf-perf></dl>
+      </section>
+    </div>
+  </div>
+  <div class="savebar" data-savebar hidden>
+    <span>{{ icon("alert", "i-sm") }}Có thay đổi chưa lưu</span>
+    <button class="btn btn-ghost" type="button" data-discard>Hủy thay đổi</button>
+    <button class="btn btn-primary" type="submit">Lưu</button>
+  </div>
+</form>
+{% endblock %}

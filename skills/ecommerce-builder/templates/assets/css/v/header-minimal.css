@@ -1,0 +1,32 @@
+.hm-note{margin:0;background:var(--c-surface-2);color:var(--c-muted);font-size:12.5px;text-align:center}
+.hm-note .ctn{display:block;padding-top:8px;padding-bottom:8px}
+.hdr-min{background:var(--c-surface);color:var(--c-text);border-bottom:1px solid var(--c-border)}
+.hdr-min .hdr-in{display:grid;grid-template-columns:auto 1fr auto;gap:24px;min-height:58px}
+.hdr-min .logo{font-size:18px;font-weight:700}
+.hdr-min .logo-mark{width:30px;height:30px;border-radius:8px;font-size:15px;background:var(--c-text);color:var(--c-surface)}
+.hm-nav ul{display:flex;justify-content:center;gap:4px 26px;flex-wrap:wrap}
+.hm-nav a{display:inline-flex;align-items:center;min-height:40px;font-size:14px;color:var(--c-text);opacity:.82}
+.hm-nav a:hover,.hm-nav a[aria-current=page]{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.hm-actions{display:flex;align-items:center;gap:2px}
+.hm-actions .icon-btn{color:var(--c-text)}
+.hm-actions .icon-btn:hover{background:var(--c-surface-2)}
+.hm-cart{position:relative}
+.hm-cart .count{position:absolute;right:2px;top:4px;background:var(--c-text);color:var(--c-surface)}
+.hm-search{border-top:1px solid var(--c-border);background:var(--c-surface)}
+.hm-search .ctn{padding-top:18px;padding-bottom:20px;display:flex;flex-direction:column;gap:12px;max-width:760px}
+.hm-search .search{max-width:none}
+.hm-search .search input{min-height:52px;font-size:17px;padding-left:18px;background:var(--c-surface-2);border:1px solid transparent;border-radius:14px;color:var(--c-text)}
+.hm-search .search input:focus{border-color:var(--c-link)}
+.hm-quick{display:flex;flex-wrap:wrap;gap:8px}
+.hm-quick a{display:inline-flex;align-items:center;min-height:34px;padding:4px 14px;border-radius:999px;background:var(--c-surface-2);font-size:13.5px}
+.hm-quick a:hover{text-decoration:underline}
+@media (max-width:1023px){
+  .hdr-min .hdr-in{grid-template-columns:auto 1fr auto;gap:8px}
+  .hm-nav{display:none}
+  .hdr-min .logo{justify-self:start}
+}
+@media (max-width:767px){
+  .hdr-min .hdr-in{flex-wrap:nowrap;padding-top:6px;padding-bottom:6px}
+  .hdr-min .logo{margin-right:0}
+  .hm-search .search input{font-size:16px}
+}

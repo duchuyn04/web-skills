@@ -1,0 +1,24 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <h1>Báo cáo bán hàng</h1>
+  <div class="period" data-period></div>
+</div>
+<p class="range-note muted" data-range-note></p>
+<ul class="kpis kpis-6" data-kpis></ul>
+<p class="formula">Cách tính: doanh thu thuần = tổng tiền hàng trừ giảm giá, không gồm phí giao và đơn đã hủy hoặc trả hàng. Giá trị đơn trung bình = doanh thu thuần chia số đơn không hủy. Tỷ lệ chuyển đổi = số đơn đặt trên website chia số lượt truy cập website. Tỷ lệ khách quay lại = số khách mua trong kỳ đã từng mua trước kỳ hoặc mua từ 2 đơn trong kỳ, chia tổng số khách mua trong kỳ. Kỳ so sánh có cùng độ dài, ngay trước kỳ đang xem hoặc cùng ngày của năm trước.</p>
+<div class="adm-grid">
+  <section class="card card-wide" aria-labelledby="h-r-orders">
+    <div class="card-head"><h2 id="h-r-orders" data-orders-title>Số đơn theo ngày</h2><button class="link-btn" type="button" data-table-toggle="orders">Xem dạng bảng</button></div>
+    <div class="chart" data-chart="orders"></div>
+    <div class="chart-table" data-chart-table="orders" hidden></div>
+  </section>
+  <section class="card" aria-labelledby="h-r-channel"><div class="card-head"><h2 id="h-r-channel">Theo kênh bán</h2></div><div class="chart" data-chart="channel"></div></section>
+  <section class="card" aria-labelledby="h-r-city"><div class="card-head"><h2 id="h-r-city">Theo tỉnh, thành</h2></div><div class="chart" data-chart="city"></div></section>
+  <section class="card" aria-labelledby="h-r-brand"><div class="card-head"><h2 id="h-r-brand">Theo thương hiệu</h2></div><div class="chart" data-chart="brand"></div></section>
+  <section class="card card-wide" aria-labelledby="h-r-prod">
+    <div class="card-head"><h2 id="h-r-prod">Chi tiết theo sản phẩm</h2><button class="btn btn-outline btn-sm" type="button" data-export="report">{{ icon("download", "i-sm") }}Xuất CSV</button></div>
+    <div class="table-wrap"><table class="tbl" data-report-table></table></div>
+  </section>
+</div>
+{% endblock %}

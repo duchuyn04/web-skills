@@ -1,0 +1,37 @@
+{# Header 'centered': quiet announcement line, logo centred on top, category links in a row under it, search behind an icon,
+   account and cart on the right (accessory boutiques). Hooks kept: [data-search], [data-search-input], [data-suggest],
+   [data-cart-count], [data-account-label], [data-open="catdrawer"]. #}
+{% if announcement %}
+<div class="hc-note"><div class="ctn"><p>{{ announcement[0] }}</p></div></div>
+{% endif %}
+<header class="hdr hc" data-header>
+  <div class="ctn hc-top">
+    <div class="hc-left">
+      <button class="hdr-burger icon-btn" type="button" data-open="catdrawer" aria-label="Mở danh mục">{{ icon("menu") }}</button>
+      {% if stores %}<a class="hc-link" href="{{ root }}stores.html">{{ icon("map-pin", "i-sm") }}<span>Cửa hàng</span></a>{% endif %}
+      <a class="hc-link hc-hide-m" href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>{{ shop.hotline }}</span></a>
+    </div>
+    <a class="hc-logo" href="{{ root }}index.html" aria-label="{{ shop.name }}, trang chủ">{{ shop.name }}</a>
+    <nav class="hc-right" aria-label="Tìm kiếm, tài khoản và giỏ hàng">
+      <button class="icon-btn" type="button" data-hc-search aria-expanded="false" aria-controls="hc-search" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+      <a class="icon-btn hc-acc" href="{{ root }}account/index.html" data-account-link aria-label="Tài khoản">{{ icon("user") }}<span class="sr" data-account-label>Đăng nhập</span></a>
+      <a class="icon-btn hc-cart" href="{{ root }}cart.html" aria-label="Giỏ hàng">{{ icon("bag") }}<b class="count" data-cart-count hidden>0</b></a>
+    </nav>
+  </div>
+  <nav class="ctn hc-nav" aria-label="Danh mục sản phẩm">
+    <ul>
+      {% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html" {% if cat is defined and cat and cat.id == c.id %}aria-current="page"{% endif %}>{{ c.name }}</a></li>{% endfor %}
+      <li><a href="{{ root }}deals.html">Ưu đãi</a></li>
+    </ul>
+  </nav>
+  <div class="hc-search" id="hc-search" hidden>
+    <div class="ctn">
+      <form class="search" action="{{ root }}search.html" role="search" data-search>
+        <label class="sr" for="q">Tìm sản phẩm</label>
+        <input id="q" name="q" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-search-input>
+        <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+        <div class="suggest" data-suggest hidden></div>
+      </form>
+    </div>
+  </div>
+</header>

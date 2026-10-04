@@ -1,0 +1,31 @@
+{# Hero 'editorial': split layout, a large art panel on a tinted background beside a text column; 1-3 slides with prev and next.
+   Uses the store.js carousel hooks: [data-carousel], [data-slide] (class is-active), [data-carousel-prev], [data-carousel-next]. #}
+<section class="ed-hero" aria-label="Giới thiệu">
+  <div class="ctn">
+    <div class="ed-carousel" data-carousel data-interval="{{ sec.interval or 7000 }}">
+      {% for s in sec.slides %}
+      {% set prod = pid[s.product] if s.product else None %}
+      {% set href = s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') %}
+      <article class="ed-slide{% if loop.first %} is-active{% endif %}" data-slide {% if not loop.first %}aria-hidden="true"{% endif %}
+        style="--ed-bg: {{ s.bg or 'var(--c-surface-2)' }}; --ed-ink: {{ s.ink or 'var(--c-text)' }}">
+        <div class="ed-art">
+          {% if s.art %}<img src="{{ root }}{{ s.art }}" alt="{{ prod.name if prod else '' }}" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+        </div>
+        <div class="ed-copy">
+          {% if s.label %}<p class="ed-label">{{ s.label }}</p>{% endif %}
+          <h2 class="ed-title">{{ s.title }}</h2>
+          {% if s.text %}<p class="ed-text">{{ s.text }}</p>{% endif %}
+          {% if prod %}<p class="ed-price">{{ prod.price|vnd }}</p>{% endif %}
+          <a class="ed-link" href="{{ href }}">{{ s.cta or "Xem sản phẩm" }}{{ arrow }}</a>
+        </div>
+      </article>
+      {% endfor %}
+      {% if sec.slides|length > 1 %}
+      <div class="ed-ctrl">
+        <button class="icon-btn" type="button" data-carousel-prev aria-label="Trước">{{ icon("chevron-left") }}</button>
+        <button class="icon-btn" type="button" data-carousel-next aria-label="Sau">{{ icon("chevron-right") }}</button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

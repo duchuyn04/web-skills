@@ -1,0 +1,35 @@
+/* Style 'premium': white pages, light grey bands, large type, product art first, ink prices, pill buttons. */
+:root{--c-price:var(--c-text)}
+body{background:var(--c-surface);font-size:16px}
+h1,h2,h3{font-family:var(--font-head);letter-spacing:-.015em}
+.ctn{max-width:1200px}
+.btn{border-radius:999px}
+.btn-primary{font-weight:600}
+.sec{margin-top:72px}
+.sec-head{margin-bottom:22px}
+.sec-head h2{font-size:clamp(24px,2.6vw,32px);font-weight:600;letter-spacing:-.02em}
+.sec-more{font-weight:500}
+.chip{border-radius:999px}
+.crumbs{font-size:12.5px}
+.box{border:0;background:var(--c-surface-2)}
+.cat-tiles{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:18px}
+.cat-tile{border:0;background:transparent;padding:0 4px}
+.cat-tile img{width:110px;height:110px;background:var(--c-surface-2);border-radius:50%;padding:14px}
+.cat-tile:hover{border:0}
+.cat-tile:hover span{text-decoration:underline}
+.cat-tile small{display:none}
+.brand-strip a{border:0;background:var(--c-surface-2);font-weight:600;letter-spacing:.04em}
+.benefits li,.ftr-benefit{border:0;background:var(--c-surface-2)}
+.benefits .i,.ftr-benefit .i{color:var(--c-text)}
+.stores-cta{border:0;background:var(--c-surface-2);padding:32px}
+.flash-head{background:var(--c-text);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.banner,.side-banner{border-radius:calc(var(--radius-lg) + 4px)}
+.page-head h1,.page>h1,.plp-head h1{font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-.02em}
+.summary-box,.co-block,.cart-row,.olist>li,.stat,.empty{border-color:var(--c-border);border-radius:var(--radius-lg)}
+.totals dd.grand{color:var(--c-text)}
+.pdp-tabs a:hover{background:var(--c-surface-2)}
+@media (max-width:767px){
+  .sec{margin-top:48px}
+  .cat-tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .cat-tile img{width:84px;height:84px}
+}

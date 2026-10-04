@@ -1,0 +1,48 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head"><h1>Cài đặt</h1></div>
+<div class="settings">
+  <nav class="settings-nav" aria-label="Mục cài đặt">
+    <a href="#s-store">Thông tin cửa hàng</a><a href="#s-pay">Thanh toán</a><a href="#s-ship">Vận chuyển</a><a href="#s-stores">Cửa hàng, kho</a><a href="#s-staff">Nhân viên</a><a href="#s-data">Dữ liệu mẫu</a>
+  </nav>
+  <div class="settings-body">
+    <section class="card" id="s-store">
+      <div class="card-head"><h2>Thông tin cửa hàng</h2></div>
+      <dl class="kv">
+        <dt>Tên</dt><dd>{{ shop.name }}</dd><dt>Hotline</dt><dd>{{ shop.hotline }}</dd><dt>Email</dt><dd>{{ shop.email }}</dd>
+        <dt>Địa chỉ</dt><dd>{{ shop.address }}</dd><dt>Giờ làm việc</dt><dd>{{ shop.hours }}</dd>
+      </dl>
+      <p class="hint">{{ icon("info", "i-xs") }}Sửa trong shop.json rồi build lại để thay đổi trên mọi trang.</p>
+    </section>
+    <section class="card" id="s-pay">
+      <div class="card-head"><h2>Phương thức thanh toán</h2></div>
+      <ul class="set-list">
+        {% for p in payments %}
+        <li><span class="set-ic">{{ icon(p.icon or "credit-card") }}</span><div><b>{{ p.name }}</b><small>{{ p.note or "" }}</small></div>
+          <label class="toggle"><input type="checkbox" checked data-set-pay="{{ p.id }}"><span class="sr">Bật {{ p.name }}</span></label></li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="card" id="s-ship">
+      <div class="card-head"><h2>Vận chuyển</h2></div>
+      <div class="table-wrap"><table class="tbl">
+        <thead><tr><th>Phương thức</th><th>Phí</th><th>Miễn phí từ</th><th>Thời gian</th><th>Khu vực</th></tr></thead>
+        <tbody>{% for s in shipping %}<tr><td>{{ s.name }}</td><td class="num">{{ s.fee|vnd }}</td><td class="num">{{ s.free_over|vnd if s.free_over else "Không" }}</td><td>{{ s.eta }}</td><td>{{ s.cities|join(", ") if s.cities else "Toàn quốc" }}</td></tr>{% endfor %}</tbody>
+      </table></div>
+    </section>
+    <section class="card" id="s-stores">
+      <div class="card-head"><h2>Cửa hàng, kho</h2></div>
+      <ul class="set-list">{% for st in stores %}<li><span class="set-ic">{{ icon("store") }}</span><div><b>{{ st.name }}</b><small>{{ st.address }}, {{ st.hours }}</small></div></li>{% else %}<li class="muted">Chưa có cửa hàng.</li>{% endfor %}</ul>
+    </section>
+    <section class="card" id="s-staff">
+      <div class="card-head"><h2>Nhân viên</h2></div>
+      <div class="table-wrap"><table class="tbl" data-staff></table></div>
+    </section>
+    <section class="card" id="s-data">
+      <div class="card-head"><h2>Dữ liệu trên trình duyệt này</h2></div>
+      <p class="muted">Đơn đặt thử, thay đổi giá, tồn kho và trạng thái đơn được lưu trên trình duyệt này để chạy thử. Xóa để quay về dữ liệu ban đầu.</p>
+      <div class="form-row"><button class="btn btn-outline btn-danger" type="button" data-reset-demo>{{ icon("trash", "i-sm") }}Xóa dữ liệu chạy thử</button></div>
+    </section>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{# Section 'services': the shop's service promises (delivery, installation, warranty at home). Every promise must come from the brief.
+   Data: {"type": "services", "title"?, "items": [{"icon", "title", "text"}]} #}
+<section class="sec ctn svc" aria-labelledby="h-svc-{{ sec._i }}">
+  <div class="svc-band">
+    <h2 id="h-svc-{{ sec._i }}">{{ sec.title or "Dịch vụ tại " ~ shop.name }}</h2>
+    <ul class="svc-list svc-{{ sec["items"]|length }}">
+      {% for s in sec["items"] %}
+      <li>
+        <span class="svc-ic">{{ icon(s.icon or "badge-check") }}</span>
+        <span class="svc-copy"><b>{{ s.title }}</b>{% if s.text %}<span>{{ s.text }}</span>{% endif %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

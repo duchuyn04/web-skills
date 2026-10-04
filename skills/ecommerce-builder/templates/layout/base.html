@@ -1,0 +1,68 @@
+{% import "partials/macros.html" as m with context %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{% block description %}{{ shop.name }}: {{ shop.tagline }}{% endblock %}">
+{% if demo %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<meta property="og:title" content="{{ title }}">
+<meta property="og:type" content="{% block og_type %}website{% endblock %}">
+<link rel="icon" href="{{ root }}assets/p/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ fonts }}&amp;display=swap">
+<link rel="stylesheet" href="{{ root }}assets/css/store.css">
+{% block head %}{% endblock %}
+<script>document.documentElement.classList.add('js');window.ROOT='{{ root }}';</script>
+</head>
+<body class="{{ body_class }} hdr-{{ header_style }} st-{{ style }} hd-{{ layout.header }} cd-{{ layout.card }} pdp-{{ layout.pdp }} plp-{{ layout.plp }} ft-{{ layout.footer }}">
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+{% include "layout/headers/" ~ layout.header ~ ".html" %}
+
+<div class="drawer" id="catdrawer" data-drawer hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Danh mục sản phẩm">
+    <div class="drawer-head"><b>Danh mục</b><button class="icon-btn" type="button" data-close aria-label="Đóng">{{ icon("x") }}</button></div>
+    <ul class="drawer-list">
+      {% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html">{{ icon(c.icon) }}<span>{{ c.name }}</span>{{ icon("chevron-right", "i-sm") }}</a></li>{% endfor %}
+      <li><a href="{{ root }}deals.html">{{ icon("percent") }}<span>Khuyến mãi</span>{{ icon("chevron-right", "i-sm") }}</a></li>
+      {% if stores %}<li><a href="{{ root }}stores.html">{{ icon("store") }}<span>Hệ thống cửa hàng</span>{{ icon("chevron-right", "i-sm") }}</a></li>{% endif %}
+      <li><a href="{{ root }}track.html">{{ icon("package") }}<span>Tra cứu đơn hàng</span>{{ icon("chevron-right", "i-sm") }}</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+{% include "layout/footers/" ~ layout.footer ~ ".html" %}
+
+<nav class="bnav" aria-label="Điều hướng nhanh">
+  <a href="{{ root }}index.html" {% if page_file == "index.html" %}aria-current="page"{% endif %}>{{ icon("home") }}<span>Trang chủ</span></a>
+  <button type="button" data-open="catdrawer">{{ icon("grid") }}<span>Danh mục</span></button>
+  <a href="{{ root }}deals.html" {% if page_file == "deals.html" %}aria-current="page"{% endif %}>{{ icon("percent") }}<span>Khuyến mãi</span></a>
+  <a href="{{ root }}cart.html" {% if page_file == "cart.html" %}aria-current="page"{% endif %}>{{ icon("shopping-cart") }}<span>Giỏ hàng</span><b class="count" data-cart-count hidden>0</b></a>
+  <a href="{{ root }}account/index.html" {% if page_file.startswith("account") %}aria-current="page"{% endif %}>{{ icon("user") }}<span>Tài khoản</span></a>
+</nav>
+
+<div class="cmp-tray" data-compare-tray hidden>
+  <div class="ctn cmp-tray-in">
+    <ul class="cmp-tray-items" data-compare-items></ul>
+    <div class="cmp-tray-act">
+      <a class="btn btn-primary" href="{{ root }}compare.html">So sánh ngay</a>
+      <button class="btn btn-ghost" type="button" data-compare-clear>Xóa tất cả</button>
+    </div>
+  </div>
+</div>
+<div class="toasts" aria-live="polite" data-toasts></div>
+
+<script src="{{ root }}assets/js/catalog.js"></script>
+<script src="{{ root }}assets/js/cards.js"></script>
+<script src="{{ root }}assets/js/common.js"></script>
+<script src="{{ root }}assets/js/store.js"></script>
+{% if style_js %}<script src="{{ root }}assets/js/style.js"></script>{% endif %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

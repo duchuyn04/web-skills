@@ -1,0 +1,12 @@
+{% if stores %}
+{% set cities = stores|map(attribute="city")|unique|list %}
+<section class="sec ctn">
+  <div class="stores-cta">
+    <div>
+      <h2>{{ sec.title or (stores|length ~ " cửa hàng tại " ~ cities|join(", ")) }}</h2>
+      <p>{{ sec.text or "Xem hàng, nhận hàng đặt online và bảo hành tại cửa hàng gần bạn." }}</p>
+    </div>
+    <a class="btn btn-primary" href="{{ root }}stores.html">{{ icon("map-pin") }}Tìm cửa hàng</a>
+  </div>
+</section>
+{% endif %}

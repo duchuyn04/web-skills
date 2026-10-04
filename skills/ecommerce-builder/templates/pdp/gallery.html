@@ -1,0 +1,170 @@
+{# Product page 'gallery': every colour image in a two-column grid on the left, sticky info on the right, then accordions
+   (Mô tả, Thông số, Giao hàng và đổi trả), reviews and similar products (accessory boutiques).
+   Hooks for store.js initPdp and qa.py: [data-pdp], [data-opt], [data-opt-btn], [data-opt-value], [data-v-price], [data-v-old],
+   [data-v-off], [data-v-stock], .buybox [data-add-cart], [data-buy-now], [data-notify], [data-recent], [data-recent-track]. #}
+{{ m.crumbs([(p.category_name, root ~ "c/" ~ p.category ~ ".html"), (p.name, None)]) }}
+<div class="ctn pdp pg" data-pdp="{{ p.id }}">
+  <div class="pg-grid">
+    <div class="pg-media" data-pg-media>
+      {% for g in p.gallery %}
+      <figure class="pg-shot{% if loop.first and p.gallery|length is odd %} pg-wide{% endif %}" data-pg-shot="{{ g.color }}">
+        <img src="{{ root }}{{ g.src }}" alt="{{ p.name }}{% if g.color %} màu {{ g.color }}{% endif %}" width="400" height="400" {% if loop.index > 2 %}loading="lazy"{% endif %}>
+        {% if g.color %}<figcaption>{{ g.color }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+
+    <div class="pg-info">
+      <div class="buybox pg-box" data-buybox>
+        <p class="pg-brand">{{ p.brand_name }}</p>
+        <h1 class="pg-name">{{ p.name }}</h1>
+        {% if p.rating %}<a href="#reviews" class="pg-rate">{{ p.rating|stars }}<span>{{ p.rating.avg|string|replace(".", ",") }}, {{ p.rating.count }} đánh giá</span></a>{% endif %}
+        <div class="pdp-price pg-price">
+          <strong data-v-price>{{ p.price|vnd }}</strong>
+          <s data-v-old {% if not p.old_price %}hidden{% endif %}>{{ (p.old_price or 0)|vnd }}</s>
+          <span class="pdp-off" data-v-off {% if not p.discount %}hidden{% endif %}>-{{ p.discount }}%</span>
+        </div>
+        {% if p.installment %}<p class="pg-inst">Trả góp 0%: khoảng <b data-v-monthly>{{ (p.price / 12)|round(-3)|vnd }}</b> mỗi tháng trong 12 tháng</p>{% endif %}
+
+        {% for o in p.options %}
+        <fieldset class="opt pg-opt{% if o.color %} pg-colors{% endif %}" data-opt="{{ loop.index0 }}">
+          <legend>{{ o.name }}: <b data-opt-value>{{ o["values"][0].name }}</b></legend>
+          <div class="opt-list">
+            {% for v in o["values"] %}
+            <button type="button" class="opt-btn" data-opt-btn="{{ v.name }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+              {% if o.color %}<span class="swatch" style="--sw: {{ v.hex }}"></span>{% endif %}<span class="opt-name">{{ v.name }}</span>{% if v.price %}<span class="opt-price">{{ v.price|vnd }}</span>{% endif %}
+            </button>
+            {% endfor %}
+          </div>
+        </fieldset>
+        {% endfor %}
+
+        <p class="stock" data-v-stock></p>
+        <div class="pg-buy">
+          <button class="btn btn-primary btn-lg" type="button" data-add-cart>{{ icon("bag") }}<span>Thêm vào giỏ</span></button>
+          <button class="btn btn-outline btn-lg" type="button" data-buy-now>Mua ngay</button>
+          <button class="btn btn-outline btn-lg" type="button" data-notify hidden>{{ icon("bell") }}<span>Báo khi có hàng</span></button>
+        </div>
+        <div class="pg-tools">
+          <button class="link-btn" type="button" data-fav="{{ p.id }}" aria-pressed="false">{{ icon("heart", "i-sm") }}<span>Lưu lại</span></button>
+          <button class="link-btn" type="button" data-compare="{{ p.id }}" aria-pressed="false">{{ icon("compare", "i-sm") }}<span>So sánh</span></button>
+        </div>
+        {% if p.promos %}<ul class="pg-promos">{% for pr in p.promos %}<li>{{ icon("gift", "i-sm") }}<span>{{ pr }}</span></li>{% endfor %}</ul>{% endif %}
+
+        <div class="pg-acc">
+          {% if p.description or p.highlights %}
+          <details open>
+            <summary>Mô tả{{ icon("chevron-down", "i-sm") }}</summary>
+            <div class="prose">
+              {% for para in p.description %}<p>{{ para }}</p>{% endfor %}
+              {% if p.highlights %}<ul>{% for h in p.highlights %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+          </details>
+          {% endif %}
+          {% if p.specs or p.warranty or p.in_box %}
+          <details id="specs">
+            <summary>Thông số{{ icon("chevron-down", "i-sm") }}</summary>
+            <table class="spec-table">
+              {% for g in p.specs %}
+              <tbody>
+                <tr class="spec-group"><th colspan="2" scope="colgroup">{{ g.group }}</th></tr>
+                {% for k, v in g.rows %}<tr><th scope="row">{{ k }}</th><td>{{ v }}</td></tr>{% endfor %}
+              </tbody>
+              {% endfor %}
+              {% if p.warranty or p.in_box %}
+              <tbody>
+                <tr class="spec-group"><th colspan="2" scope="colgroup">Bảo hành, đóng gói</th></tr>
+                {% if p.warranty %}<tr><th scope="row">Bảo hành</th><td>{{ p.warranty }}</td></tr>{% endif %}
+                {% if p.in_box %}<tr><th scope="row">Trong hộp</th><td>{{ p.in_box|join(", ") }}</td></tr>{% endif %}
+              </tbody>
+              {% endif %}
+            </table>
+          </details>
+          {% endif %}
+          {% if policies %}
+          <details>
+            <summary>Giao hàng và đổi trả{{ icon("chevron-down", "i-sm") }}</summary>
+            <div class="prose pg-pol">
+              {% for b in benefits %}<p><b>{{ b.title }}</b>: {{ b.text }}</p>{% endfor %}
+              <ul>{% for pol in policies %}<li><a href="{{ root }}policy/{{ pol.id }}.html">{{ pol.title }}</a></li>{% endfor %}</ul>
+            </div>
+          </details>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-more">
+      <section class="pg-rev reviews" id="reviews" aria-labelledby="h-rev" data-reviews>
+        <h2 id="h-rev">Đánh giá {{ p.name }}</h2>
+        {% if p.reviews %}
+        {% set counts = [0, 0, 0, 0, 0] %}
+        <div class="rev-summary">
+          <div class="rev-score"><b>{{ p.rating.avg|string|replace(".", ",") }}</b><span>/5</span>{{ p.rating|stars }}<small>{{ p.rating.count }} đánh giá</small></div>
+          <ul class="rev-bars">
+            {% for s in [5, 4, 3, 2, 1] %}
+            {% set n = p.reviews|selectattr("stars", "equalto", s)|list|length %}
+            <li><span>{{ s }} {{ icon("star", "i-xs") }}</span><i style="--w: {{ (n * 100 / p.reviews|length)|round|int }}%"></i><small>{{ (n * 100 / p.reviews|length)|round|int }}%</small></li>
+            {% endfor %}
+          </ul>
+          <button class="btn btn-primary" type="button" data-review-open>Viết đánh giá</button>
+        </div>
+        <div class="chips rev-filter" role="group" aria-label="Lọc đánh giá">
+          <button type="button" class="chip is-on" data-rev-filter="" aria-pressed="true">Tất cả</button>
+          {% for s in [5, 4, 3, 2, 1] %}<button type="button" class="chip" data-rev-filter="{{ s }}" aria-pressed="false">{{ s }} sao</button>{% endfor %}
+        </div>
+        <ul class="rev-list">
+          {% for r in p.reviews %}
+          <li data-stars="{{ r.stars }}">
+            <div class="rev-head"><span class="avatar" aria-hidden="true">{{ r.name[:1] }}</span><b>{{ r.name }}</b>{% if r.verified %}<span class="tag-ok">{{ icon("check-circle", "i-xs") }}Đã mua tại {{ shop.name }}</span>{% endif %}</div>
+            <div class="rev-meta">{{ {"avg": r.stars}|stars }}{% if r.variant %}<small>{{ r.variant }}</small>{% endif %}{% if r.date %}<small>{{ r.date }}</small>{% endif %}</div>
+            <p>{{ r.text }}</p>
+            {% if r.reply %}<div class="rev-reply"><b>{{ shop.name }}</b><p>{{ r.reply }}</p></div>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div class="rev-empty"><p>Chưa có đánh giá cho sản phẩm này.</p><button class="btn btn-outline" type="button" data-review-open>Viết đánh giá đầu tiên</button></div>
+        {% endif %}
+        <form class="rev-form" data-review-form hidden>
+          <h3>Đánh giá của bạn</h3>
+          <div class="star-input" role="radiogroup" aria-label="Số sao">
+            {% for s in [1, 2, 3, 4, 5] %}<label><input type="radio" name="stars" value="{{ s }}" {% if s == 5 %}checked{% endif %}><span class="sr">{{ s }} sao</span>{{ icon("star") }}</label>{% endfor %}
+          </div>
+          <label class="field"><span>Họ tên</span><input name="name" required autocomplete="name"></label>
+          <label class="field"><span>Nhận xét</span><textarea name="text" rows="3" required minlength="10" placeholder="Chia sẻ trải nghiệm thực tế về sản phẩm"></textarea></label>
+          <div class="form-row"><button class="btn btn-primary" type="submit">Gửi đánh giá</button><button class="btn btn-ghost" type="button" data-review-cancel>Hủy</button></div>
+          <p class="hint">Đánh giá được kiểm duyệt trước khi hiển thị.</p>
+        </form>
+      </section>
+
+
+      <section class="pg-qa qa" id="qa" aria-labelledby="h-qa" data-qa>
+        <h2 id="h-qa">Hỏi đáp</h2>
+        <form class="qa-form" data-qa-form>
+          <label class="sr" for="qa-q">Câu hỏi của bạn</label>
+          <input id="qa-q" name="q" required minlength="8" placeholder="Hỏi về sản phẩm này">
+          <button class="btn btn-outline" type="submit">Gửi câu hỏi</button>
+        </form>
+        <ul class="qa-list" data-qa-list>
+          {% for q in p.qa %}
+          <li><div class="qa-q"><span class="avatar" aria-hidden="true">{{ q.name[:1] if q.name else "K" }}</span><div><b>{{ q.name or "Khách hàng" }}</b><p>{{ q.q }}</p></div></div>
+            {% if q.a %}<div class="qa-a"><span class="avatar avatar-shop" aria-hidden="true">{{ shop.name[:1] }}</span><div><b>{{ shop.name }}</b><p>{{ q.a }}</p></div></div>{% endif %}</li>
+          {% endfor %}
+        </ul>
+        {% if not p.qa %}<p class="muted" data-qa-empty>Chưa có câu hỏi nào.</p>{% endif %}
+      </section>
+  </div>
+
+  {% if similar %}
+  <section class="sec" aria-labelledby="h-sim">
+    <div class="sec-head"><h2 id="h-sim">Có thể bạn thích</h2><a class="sec-more" href="{{ root }}c/{{ p.category }}.html">Xem tất cả{{ arrow }}</a></div>
+    {{ m.rail(similar, "rail-similar") }}
+  </section>
+  {% endif %}
+  <section class="sec" aria-labelledby="h-recent" data-recent hidden>
+    <div class="sec-head"><h2 id="h-recent">Bạn đã xem</h2></div>
+    <div class="rail"><div class="rail-track" data-recent-track></div></div>
+  </section>
+</div>

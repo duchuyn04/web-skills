@@ -1,0 +1,22 @@
+/* Card 'gallery': no border, tinted square picture, next colour on hover, ink price, colour dots. */
+.pc-g{border:0;background:transparent;border-radius:0}
+.pc-g:hover{border-color:transparent}
+.pc-g .pc-link{padding:0;gap:4px}
+.pc-g .pc-media{position:relative;aspect-ratio:1;background:var(--c-surface-2);border-radius:var(--radius);overflow:hidden;margin-bottom:8px}
+.pc-g .pc-media img{width:76%;height:76%;object-fit:contain;transition:opacity .25s ease}
+.pc-g .pc-alt{position:absolute;left:12%;top:12%;opacity:0}
+@media (hover:hover){
+  .pc-g:hover .has-alt img:first-child{opacity:0}
+  .pc-g:hover .pc-alt{opacity:1}
+}
+.pc-g .pc-off,.pc-g .pc-tag{position:absolute;left:10px;top:10px;padding:2px 8px;border-radius:var(--radius);font-size:12px;font-weight:600;background:var(--c-text);color:var(--c-surface)}
+.pc-g .pc-tag{background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border)}
+.pc-brand{font-size:12px;color:var(--c-muted)}
+.pc-g .pc-name{font-family:var(--font-head);font-size:16px;font-weight:500;line-height:1.3;min-height:0}
+.pc-g .pc-price strong{color:var(--c-price);font-size:15px;font-weight:600}
+.pc-g .pc-price s{font-size:12.5px}
+.pc-dots{display:flex;gap:6px;margin-top:4px}
+.pc-dots li{width:12px;height:12px;border-radius:50%;background:var(--sw);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.pc-left{font-size:12px;color:var(--c-muted)}
+.pc-g .pc-actions{padding:6px 0 0}
+.pc-g .pc-cmp{color:var(--c-muted)}

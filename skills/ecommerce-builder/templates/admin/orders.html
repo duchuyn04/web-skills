@@ -1,0 +1,27 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <h1>Đơn hàng</h1>
+  <div class="head-actions"><button class="btn btn-outline" type="button" data-export="orders">{{ icon("download", "i-sm") }}Xuất CSV</button></div>
+</div>
+<div class="card card-flush">
+  <div class="tabs" role="tablist" aria-label="Trạng thái đơn" data-status-tabs></div>
+  <div class="filters-row">
+    <label class="search-in"><span class="sr">Tìm đơn</span>{{ icon("search", "i-sm") }}<input type="search" placeholder="Mã đơn, tên khách, số điện thoại" data-q></label>
+    <label><span class="sr">Thanh toán</span><select data-f-pay><option value="">Mọi phương thức</option>{% for p in payments %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}</select></label>
+    <label><span class="sr">Đã thanh toán</span><select data-f-paid><option value="">Mọi trạng thái thanh toán</option><option value="1">Đã thanh toán</option><option value="0">Chưa thanh toán</option></select></label>
+    <label><span class="sr">Kênh</span><select data-f-channel><option value="">Mọi kênh</option><option>Website</option><option>Hotline</option><option>Cửa hàng</option></select></label>
+    <label><span class="sr">Thời gian</span><select data-f-days><option value="">Mọi thời gian</option><option value="1">Hôm nay</option><option value="7">7 ngày</option><option value="30">30 ngày</option></select></label>
+  </div>
+  <div class="bulk" data-bulk hidden>
+    <b data-bulk-n></b>
+    <button class="btn btn-sm" type="button" data-bulk-act="confirmed">Xác nhận</button>
+    <button class="btn btn-sm" type="button" data-bulk-act="packing">Chuyển sang đóng gói</button>
+    <button class="btn btn-sm" type="button" data-bulk-act="shipping">Giao cho vận chuyển</button>
+    <button class="btn btn-sm" type="button" data-bulk-print>{{ icon("printer", "i-sm") }}In phiếu</button>
+  </div>
+  <div class="table-wrap"><table class="tbl tbl-click" data-orders></table></div>
+  <div class="empty-row" data-orders-empty hidden><b>Không có đơn phù hợp</b><span>Đổi bộ lọc hoặc từ khóa tìm kiếm.</span></div>
+  <div class="pager" data-pager></div>
+</div>
+{% endblock %}

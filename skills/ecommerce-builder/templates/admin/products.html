@@ -1,0 +1,24 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <h1>Sản phẩm <small class="muted" data-p-count></small></h1>
+  <div class="head-actions">
+    <button class="btn btn-outline" type="button" data-export="products">{{ icon("download", "i-sm") }}Xuất CSV</button>
+    <button class="btn btn-primary" type="button" data-new-product>{{ icon("plus", "i-sm") }}Thêm sản phẩm</button>
+  </div>
+</div>
+<div class="card card-flush">
+  <div class="filters-row">
+    <label class="search-in"><span class="sr">Tìm sản phẩm</span>{{ icon("search", "i-sm") }}<input type="search" placeholder="Tên sản phẩm hoặc SKU" data-q></label>
+    <label><span class="sr">Danh mục</span><select data-f-cat><option value="">Mọi danh mục</option>{% for c in cats %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}</select></label>
+    <label><span class="sr">Trạng thái</span><select data-f-status><option value="">Mọi trạng thái</option><option value="on">Đang bán</option><option value="off">Đang ẩn</option><option value="out">Hết hàng</option></select></label>
+  </div>
+  <div class="bulk" data-bulk hidden>
+    <b data-bulk-n></b>
+    <button class="btn btn-sm" type="button" data-bulk-vis="show">Hiện trên web</button>
+    <button class="btn btn-sm" type="button" data-bulk-vis="hide">Ẩn khỏi web</button>
+  </div>
+  <div class="table-wrap"><table class="tbl tbl-click" data-products></table></div>
+  <div class="empty-row" data-p-empty hidden><b>Không có sản phẩm phù hợp</b><span>Đổi bộ lọc hoặc từ khóa.</span></div>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+<section class="sec ctn" aria-label="Cam kết">
+  <ul class="benefits">
+    {% for b in benefits %}<li>{{ icon(b.icon) }}<div><b>{{ b.title }}</b><span>{{ b.text }}</span></div></li>{% endfor %}
+  </ul>
+</section>

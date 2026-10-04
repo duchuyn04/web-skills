@@ -1,0 +1,11 @@
+{
+  "name": "web-skills",
+  "owner": { "name": "duchuyn04" },
+  "plugins": [
+    {
+      "name": "web-skills",
+      "source": "./",
+      "description": "BPO landing page builder and electronics e-commerce builder. Each skill is chosen automatically from what the user asks for."
+    }
+  ]
+}

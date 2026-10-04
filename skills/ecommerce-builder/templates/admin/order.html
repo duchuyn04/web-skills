@@ -1,0 +1,27 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div data-order>
+  <a class="back" href="orders.html">{{ icon("chevron-left", "i-sm") }}Đơn hàng</a>
+  <div class="adm-head">
+    <div><h1><span data-o-code></span> <span data-o-badges></span></h1><p class="muted" data-o-sub></p></div>
+    <div class="head-actions" data-o-actions></div>
+  </div>
+  <div class="o-steps" data-o-steps></div>
+  <div class="slip" data-slip aria-hidden="true"></div>
+  <div class="detail-grid">
+    <div class="detail-main">
+      <section class="card" id="serials"><div class="card-head"><h2>Sản phẩm</h2></div><div class="table-wrap"><table class="tbl" data-o-items></table></div><dl class="sum" data-o-sum></dl></section>
+      <section class="card"><div class="card-head"><h2>Thanh toán</h2><span data-o-paid></span></div><div data-o-pay></div></section>
+      <section class="card"><div class="card-head"><h2>Lịch sử đơn hàng</h2></div>
+        <form class="note-form" data-note-form><label class="sr" for="note">Ghi chú nội bộ</label><input id="note" name="note" placeholder="Thêm ghi chú nội bộ (khách không thấy)" required><button class="btn btn-outline btn-sm" type="submit">Lưu</button></form>
+        <ol class="timeline" data-o-timeline></ol></section>
+    </div>
+    <div class="detail-side">
+      <section class="card"><div class="card-head"><h2>Khách hàng</h2></div><div data-o-customer></div></section>
+      <section class="card"><div class="card-head"><h2>Nhận hàng</h2></div><div data-o-ship></div></section>
+      <section class="card" data-o-invoice-box hidden><div class="card-head"><h2>Hóa đơn công ty</h2></div><div data-o-invoice></div></section>
+    </div>
+  </div>
+</div>
+<div data-order-missing hidden><div class="empty"><h2>Không tìm thấy đơn hàng</h2><a class="btn btn-primary" href="orders.html">Về danh sách đơn</a></div></div>
+{% endblock %}

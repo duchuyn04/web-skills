@@ -1,0 +1,1366 @@
+{
+ "_note": "Shop mẫu phong cách boutique. Thương hiệu, sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "demo": true,
+ "sample_content": true,
+ "style": "boutique",
+ "lang": "vi",
+ "brief": "Cửa hàng mẫu Sương Studio bán phụ kiện công nghệ chọn lọc: tai nghe, loa mini, đồng hồ và dây đồng hồ, sạc, pin dự phòng, bàn phím, chuột, ốp lưng. Mọi thương hiệu, giá, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "shop": {
+  "name": "Sương Studio",
+  "tagline": "Phụ kiện công nghệ chọn lọc, gói quà miễn phí",
+  "hotline": "1900 0000",
+  "email": "xinchao@example.com",
+  "address": "[Địa chỉ cửa hàng]",
+  "hours": "9:00 - 21:00",
+  "legal": "Cửa hàng mẫu do ecommerce-builder tạo. Thông tin pháp lý điền khi chạy thật.",
+  "socials": [
+   {
+    "type": "facebook",
+    "url": "#"
+   }
+  ]
+ },
+ "theme": {
+  "preset": "boutique-warm"
+ },
+ "announcement": [
+  "Gói quà miễn phí, thiệp viết tay cho mọi đơn hàng"
+ ],
+ "categories": [
+  {
+   "id": "am-thanh",
+   "name": "Tai nghe, loa",
+   "icon": "headphones",
+   "device": "earbuds",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    },
+    {
+     "key": "feature",
+     "label": "Tính năng"
+    }
+   ]
+  },
+  {
+   "id": "dong-ho",
+   "name": "Đồng hồ, dây đeo",
+   "icon": "watch",
+   "device": "watch",
+   "facets": [
+    {
+     "key": "size",
+     "label": "Cỡ mặt"
+    },
+    {
+     "key": "feature",
+     "label": "Kiểu"
+    }
+   ]
+  },
+  {
+   "id": "sac-pin",
+   "name": "Sạc, pin dự phòng",
+   "icon": "plug",
+   "device": "charger",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    }
+   ]
+  },
+  {
+   "id": "ban-phim-chuot",
+   "name": "Bàn phím, chuột",
+   "icon": "keyboard",
+   "device": "keyboard",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    }
+   ]
+  },
+  {
+   "id": "op-lung",
+   "name": "Ốp lưng, dây đeo",
+   "icon": "smartphone",
+   "device": "phone",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    }
+   ]
+  }
+ ],
+ "brands": [
+  {
+   "id": "aura",
+   "name": "Aura"
+  },
+  {
+   "id": "tessel",
+   "name": "Tessel"
+  },
+  {
+   "id": "kiri",
+   "name": "Kiri"
+  },
+  {
+   "id": "bloom",
+   "name": "Bloom"
+  }
+ ],
+ "products": [
+  {
+   "id": "aura-pebble",
+   "name": "Aura Pebble tai nghe không dây",
+   "brand": "aura",
+   "category": "am-thanh",
+   "facets": {
+    "type": "Không dây nhét tai",
+    "feature": "Chống ồn"
+   },
+   "card_specs": [
+    "Chống ồn",
+    "Pin 28 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Driver",
+       "10 mm"
+      ],
+      [
+       "Chống ồn",
+       "Chủ động, 2 mức"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Tai nghe",
+       "7 giờ"
+      ],
+      [
+       "Kèm hộp sạc",
+       "28 giờ"
+      ],
+      [
+       "Sạc",
+       "USB-C, sạc không dây"
+      ]
+     ]
+    },
+    {
+     "group": "Khác",
+     "rows": [
+      [
+       "Kháng nước",
+       "IPX4"
+      ],
+      [
+       "Kết nối",
+       "Bluetooth 5.3, hai thiết bị"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Aura Pebble có hộp sạc hình viên sỏi, vỏ nhám mịn không bám vân tay.",
+    "Tai nghe nhỏ, nặng 4,6 g mỗi bên, đeo cả ngày không mỏi tai."
+   ],
+   "highlights": [
+    "Vỏ nhám mịn, không bám vân tay",
+    "Sạc không dây"
+   ],
+   "in_box": [
+    "Tai nghe",
+    "Hộp sạc",
+    "Cáp USB-C",
+    "3 cặp nút tai"
+   ],
+   "warranty": "12 tháng",
+   "badges": [
+    "new"
+   ],
+   "released": "2026-09",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "Tiêu chuẩn",
+       "price": 1890000,
+       "old_price": 2190000
+      },
+      {
+       "name": "Kèm túi da",
+       "price": 2190000,
+       "old_price": 2490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 126
+   },
+   "reviews": [
+    {
+     "name": "Bảo Ngọc",
+     "stars": 5,
+     "text": "Màu kem ngoài đời dịu hơn ảnh, cầm chắc tay. Hộp đựng gọn, bỏ túi áo khoác vừa.",
+     "verified": true,
+     "date": "14/09/2026",
+     "variant": "Kem"
+    },
+    {
+     "name": "Minh Khang",
+     "stars": 5,
+     "text": "Đóng gói cẩn thận, có thiệp viết tay. Âm thanh ấm, nghe nhạc acoustic rất hợp.",
+     "verified": true,
+     "date": "03/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Đẹp, nhẹ. Dây sạc đi kèm hơi ngắn nên mình mua thêm dây dài hơn.",
+     "verified": true,
+     "date": "27/08/2026"
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hằng",
+     "q": "Shop có gói quà không ạ?",
+     "a": "Có, chọn ghi chú gói quà khi đặt hàng, cửa hàng gói bằng giấy kraft và thiệp không ghi giá."
+    }
+   ]
+  },
+  {
+   "id": "aura-halo",
+   "name": "Aura Halo tai nghe chụp tai",
+   "brand": "aura",
+   "category": "am-thanh",
+   "facets": {
+    "type": "Chụp tai",
+    "feature": "Chống ồn"
+   },
+   "card_specs": [
+    "Chụp tai",
+    "Pin 45 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Driver",
+       "40 mm"
+      ],
+      [
+       "Chống ồn",
+       "Chủ động"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "45 giờ"
+      ],
+      [
+       "Sạc nhanh",
+       "10 phút cho 5 giờ nghe"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Đệm tai",
+       "Da protein"
+      ],
+      [
+       "Trọng lượng",
+       "238 g"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Aura Halo có đệm tai da mềm, gập gọn vào túi vải đi kèm.",
+    "Khung nhôm sơn mờ cùng màu với đệm tai."
+   ],
+   "highlights": [
+    "Gập gọn",
+    "Pin 45 giờ"
+   ],
+   "in_box": [
+    "Tai nghe",
+    "Túi vải",
+    "Cáp USB-C",
+    "Cáp 3,5 mm"
+   ],
+   "warranty": "12 tháng",
+   "badges": [],
+   "released": "2026-05",
+   "price": 3290000,
+   "old_price": 3590000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Be cát",
+       "hex": "#d8c4a8"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 64
+   },
+   "reviews": [
+    {
+     "name": "Bảo Ngọc",
+     "stars": 5,
+     "text": "Màu kem ngoài đời dịu hơn ảnh, cầm chắc tay. Hộp đựng gọn, bỏ túi áo khoác vừa.",
+     "verified": true,
+     "date": "14/09/2026",
+     "variant": "Kem"
+    },
+    {
+     "name": "Minh Khang",
+     "stars": 5,
+     "text": "Đóng gói cẩn thận, có thiệp viết tay. Âm thanh ấm, nghe nhạc acoustic rất hợp.",
+     "verified": true,
+     "date": "03/09/2026"
+    }
+   ],
+   "device": "headphones"
+  },
+  {
+   "id": "aura-dot",
+   "name": "Aura Dot loa mini",
+   "brand": "aura",
+   "category": "am-thanh",
+   "facets": {
+    "type": "Loa",
+    "feature": "Kháng nước"
+   },
+   "card_specs": [
+    "Loa 5W",
+    "IP67"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Công suất",
+       "5W"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "12 giờ"
+      ],
+      [
+       "Kháng nước",
+       "IP67"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Loa nhỏ bằng lòng bàn tay, có dây treo để mang theo khi đi dã ngoại."
+   ],
+   "highlights": [
+    "Dây treo vải",
+    "Kháng nước IP67"
+   ],
+   "in_box": [
+    "Loa",
+    "Cáp USB-C"
+   ],
+   "warranty": "12 tháng",
+   "badges": [],
+   "released": "2026-04",
+   "price": 990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Hồng đất",
+       "hex": "#c48b7f"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      },
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 88
+   },
+   "device": "speaker"
+  },
+  {
+   "id": "tessel-loop",
+   "name": "Tessel Loop dây đồng hồ dệt",
+   "brand": "tessel",
+   "category": "dong-ho",
+   "facets": {
+    "size": [
+     "41 mm",
+     "45 mm"
+    ],
+    "feature": "Dây dệt"
+   },
+   "card_specs": [
+    "Dây dệt",
+    "2 cỡ"
+   ],
+   "specs": [
+    {
+     "group": "Chất liệu",
+     "rows": [
+      [
+       "Dây",
+       "Sợi polyester dệt"
+      ],
+      [
+       "Khóa",
+       "Thép không gỉ"
+      ]
+     ]
+    },
+    {
+     "group": "Kích thước",
+     "rows": [
+      [
+       "Cỡ mặt",
+       "41 mm, 45 mm"
+      ],
+      [
+       "Cổ tay",
+       "130 - 200 mm"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Dây dệt mềm, thoáng, hợp đeo khi tập luyện và đi làm."
+   ],
+   "highlights": [
+    "Thoáng khí"
+   ],
+   "in_box": [
+    "Dây đồng hồ"
+   ],
+   "warranty": "6 tháng",
+   "badges": [],
+   "released": "2026-06",
+   "options": [
+    {
+     "name": "Cỡ mặt",
+     "values": [
+      {
+       "name": "41 mm",
+       "price": 490000
+      },
+      {
+       "name": "45 mm",
+       "price": 520000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Be cát",
+       "hex": "#d8c4a8"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      },
+      {
+       "name": "Xám đá",
+       "hex": "#9a9a95"
+      },
+      {
+       "name": "Hồng đất",
+       "hex": "#c48b7f"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 51
+   }
+  },
+  {
+   "id": "tessel-arc",
+   "name": "Tessel Arc đồng hồ thông minh",
+   "brand": "tessel",
+   "category": "dong-ho",
+   "facets": {
+    "size": "40 mm",
+    "feature": "Theo dõi sức khỏe"
+   },
+   "card_specs": [
+    "AMOLED",
+    "Pin 5 ngày"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "40 mm, AMOLED"
+      ],
+      [
+       "Kính",
+       "Sapphire"
+      ]
+     ]
+    },
+    {
+     "group": "Sức khỏe",
+     "rows": [
+      [
+       "Cảm biến",
+       "Nhịp tim, SpO2"
+      ],
+      [
+       "Giấc ngủ",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "Khoảng 5 ngày"
+      ],
+      [
+       "Kháng nước",
+       "5 ATM"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Tessel Arc có mặt tròn viền thép mảnh, dây da đi kèm.",
+    "Theo dõi nhịp tim, giấc ngủ và bước chân, pin khoảng 5 ngày."
+   ],
+   "highlights": [
+    "Mặt kính sapphire",
+    "Dây da đi kèm"
+   ],
+   "in_box": [
+    "Đồng hồ",
+    "Dây da",
+    "Đế sạc"
+   ],
+   "warranty": "12 tháng",
+   "badges": [
+    "new"
+   ],
+   "released": "2026-08",
+   "price": 4690000,
+   "old_price": 4990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 39
+   }
+  },
+  {
+   "id": "tessel-cube",
+   "name": "Tessel Cube sạc nhanh 35W",
+   "brand": "tessel",
+   "category": "sac-pin",
+   "facets": {
+    "type": "Củ sạc"
+   },
+   "card_specs": [
+    "35W",
+    "2 cổng USB-C"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Công suất",
+       "35W"
+      ],
+      [
+       "Cổng",
+       "2 x USB-C"
+      ],
+      [
+       "Công nghệ",
+       "GaN"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Củ sạc nhỏ gọn, chân cắm gập lại khi cất vào túi."
+   ],
+   "highlights": [
+    "Chân cắm gập"
+   ],
+   "in_box": [
+    "Củ sạc"
+   ],
+   "warranty": "18 tháng",
+   "badges": [],
+   "released": "2026-03",
+   "price": 520000,
+   "old_price": 590000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng sứ",
+       "hex": "#f4f2ee"
+      },
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 140
+   }
+  },
+  {
+   "id": "tessel-stone",
+   "name": "Tessel Stone pin dự phòng 10.000 mAh",
+   "brand": "tessel",
+   "category": "sac-pin",
+   "facets": {
+    "type": "Pin dự phòng"
+   },
+   "card_specs": [
+    "10.000 mAh",
+    "20W"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Dung lượng",
+       "10.000 mAh"
+      ],
+      [
+       "Công suất",
+       "20W"
+      ],
+      [
+       "Cổng",
+       "USB-C, USB-A"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Pin dự phòng vỏ nhám như đá cuội, mỏng 14 mm."
+   ],
+   "highlights": [
+    "Mỏng 14 mm"
+   ],
+   "in_box": [
+    "Pin dự phòng",
+    "Cáp USB-C"
+   ],
+   "warranty": "12 tháng",
+   "badges": [],
+   "released": "2026-02",
+   "price": 790000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Xám đá",
+       "hex": "#9a9a95"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 97
+   },
+   "device": "powerbank"
+  },
+  {
+   "id": "kiri-type",
+   "name": "Kiri Type bàn phím không dây",
+   "brand": "kiri",
+   "category": "ban-phim-chuot",
+   "facets": {
+    "type": "Bàn phím"
+   },
+   "card_specs": [
+    "Layout 75%",
+    "Bluetooth"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Layout",
+       "75%"
+      ],
+      [
+       "Switch",
+       "Cơ, êm"
+      ],
+      [
+       "Kết nối",
+       "Bluetooth, 2,4 GHz"
+      ],
+      [
+       "Pin",
+       "Khoảng 3 tháng"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Bàn phím cơ êm, keycap tròn màu pastel, gõ êm tay khi làm việc ở quán cà phê."
+   ],
+   "highlights": [
+    "Keycap tròn",
+    "Gõ êm"
+   ],
+   "in_box": [
+    "Bàn phím",
+    "Đầu thu 2,4 GHz",
+    "Cáp USB-C"
+   ],
+   "warranty": "12 tháng",
+   "badges": [],
+   "released": "2026-06",
+   "price": 1390000,
+   "old_price": 1590000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      },
+      {
+       "name": "Hồng đất",
+       "hex": "#c48b7f"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 73
+   },
+   "reviews": [
+    {
+     "name": "Minh Khang",
+     "stars": 5,
+     "text": "Đóng gói cẩn thận, có thiệp viết tay. Âm thanh ấm, nghe nhạc acoustic rất hợp.",
+     "verified": true,
+     "date": "03/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Đẹp, nhẹ. Dây sạc đi kèm hơi ngắn nên mình mua thêm dây dài hơn.",
+     "verified": true,
+     "date": "27/08/2026"
+    }
+   ]
+  },
+  {
+   "id": "kiri-mouse",
+   "name": "Kiri Mouse chuột không dây",
+   "brand": "kiri",
+   "category": "ban-phim-chuot",
+   "facets": {
+    "type": "Chuột"
+   },
+   "card_specs": [
+    "Không dây",
+    "Click êm"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Cảm biến",
+       "2.400 DPI"
+      ],
+      [
+       "Kết nối",
+       "Bluetooth"
+      ],
+      [
+       "Pin",
+       "AA, khoảng 12 tháng"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Chuột nhỏ, click êm, cùng bảng màu với bàn phím Kiri Type."
+   ],
+   "highlights": [],
+   "in_box": [
+    "Chuột",
+    "Pin AA"
+   ],
+   "warranty": "12 tháng",
+   "badges": [],
+   "released": "2026-06",
+   "price": 450000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      },
+      {
+       "name": "Hồng đất",
+       "hex": "#c48b7f"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.4,
+    "count": 58
+   },
+   "device": "mouse"
+  },
+  {
+   "id": "bloom-case-x9",
+   "name": "Bloom ốp lưng da cho Lumen X9",
+   "brand": "bloom",
+   "category": "op-lung",
+   "facets": {
+    "type": "Ốp lưng"
+   },
+   "card_specs": [
+    "Da thật",
+    "Lumen X9"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Chất liệu",
+       "Da bò thuộc thực vật"
+      ],
+      [
+       "Tương thích",
+       "Lumen X9, Lumen X9 Pro"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Ốp da lên màu theo thời gian sử dụng, mép viền ôm sát máy."
+   ],
+   "highlights": [
+    "Da thuộc thực vật"
+   ],
+   "in_box": [
+    "Ốp lưng"
+   ],
+   "warranty": "Đổi mới trong 30 ngày nếu lỗi",
+   "badges": [],
+   "released": "2026-05",
+   "price": 390000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Nâu gỗ",
+       "hex": "#8a6448"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      },
+      {
+       "name": "Be cát",
+       "hex": "#d8c4a8"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 102
+   },
+   "device": "phone"
+  },
+  {
+   "id": "bloom-case-clear",
+   "name": "Bloom ốp lưng trong viền màu",
+   "brand": "bloom",
+   "category": "op-lung",
+   "facets": {
+    "type": "Ốp lưng"
+   },
+   "card_specs": [
+    "Viền màu",
+    "Chống sốc"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Chất liệu",
+       "TPU và PC"
+      ],
+      [
+       "Tương thích",
+       "Lumen X9, Lumen A55"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Ốp trong suốt, viền màu nhạt, góc đệm khí chống sốc."
+   ],
+   "highlights": [],
+   "in_box": [
+    "Ốp lưng"
+   ],
+   "warranty": "Đổi mới trong 30 ngày nếu lỗi",
+   "badges": [],
+   "released": "2026-07",
+   "price": 250000,
+   "old_price": 290000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Hồng đất",
+       "hex": "#c48b7f"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      },
+      {
+       "name": "Be cát",
+       "hex": "#d8c4a8"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.3,
+    "count": 47
+   },
+   "device": "phone"
+  },
+  {
+   "id": "bloom-strap",
+   "name": "Bloom dây đeo điện thoại",
+   "brand": "bloom",
+   "category": "op-lung",
+   "facets": {
+    "type": "Dây đeo"
+   },
+   "card_specs": [
+    "Dây dù",
+    "Đeo chéo"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Chất liệu",
+       "Dây dù"
+      ],
+      [
+       "Chiều dài",
+       "Điều chỉnh 80 - 150 cm"
+      ]
+     ]
+    }
+   ],
+   "description": [
+    "Dây đeo chéo gắn qua miếng lót dưới ốp lưng, dùng với hầu hết điện thoại."
+   ],
+   "highlights": [],
+   "in_box": [
+    "Dây đeo",
+    "Miếng lót"
+   ],
+   "warranty": "6 tháng",
+   "badges": [
+    "new"
+   ],
+   "released": "2026-09",
+   "price": 190000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xanh rêu",
+       "hex": "#6b7a5e"
+      },
+      {
+       "name": "Hồng đất",
+       "hex": "#c48b7f"
+      },
+      {
+       "name": "Kem",
+       "hex": "#efe6d8"
+      },
+      {
+       "name": "Đen than",
+       "hex": "#2b2a28"
+      }
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 36
+   },
+   "device": "phone"
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "slides": [
+    {
+     "label": "Mới về",
+     "title": "Aura Pebble, tai nghe nhỏ như viên sỏi",
+     "text": "Vỏ nhám mịn ba màu kem, đen than, xanh rêu. Chống ồn chủ động, pin 28 giờ.",
+     "product": "aura-pebble",
+     "bg": "#ece3d6",
+     "cta": "Xem Aura Pebble"
+    },
+    {
+     "label": "Bàn làm việc",
+     "title": "Bàn phím Kiri Type màu pastel",
+     "text": "Gõ êm, keycap tròn, đi cùng chuột Kiri cùng bảng màu.",
+     "product": "kiri-type",
+     "bg": "#e3e8de",
+     "cta": "Xem bàn phím"
+    }
+   ]
+  },
+  {
+   "type": "collections",
+   "title": "Bộ sưu tập",
+   "items": [
+    {
+     "title": "Tông kem cho ngày nhẹ nhàng",
+     "text": "Tai nghe, sạc và pin cùng một màu kem, để chung một túi.",
+     "products": [
+      "aura-pebble",
+      "tessel-cube",
+      "tessel-stone",
+      "kiri-type"
+     ],
+     "bg": "#efe6d8"
+    },
+    {
+     "title": "Xanh rêu cho góc làm việc",
+     "text": "Bàn phím, chuột, dây đồng hồ và loa mini màu rêu.",
+     "products": [
+      "kiri-type",
+      "kiri-mouse",
+      "tessel-loop",
+      "aura-dot"
+     ],
+     "bg": "#e3e8de"
+    }
+   ]
+  },
+  {
+   "type": "grid",
+   "title": "Hàng mới về",
+   "products": [
+    "bloom-strap",
+    "tessel-arc",
+    "aura-pebble",
+    "aura-halo",
+    "tessel-loop",
+    "bloom-case-clear",
+    "kiri-mouse",
+    "aura-dot"
+   ],
+   "limit": 8,
+   "step": 8
+  },
+  {
+   "type": "editorial",
+   "title": "Ốp da lên màu theo năm tháng",
+   "text": [
+    "Bloom dùng da bò thuộc thực vật. Sau vài tháng, mép ốp chuyển sang màu đậm hơn theo cách bạn cầm máy.",
+    "Mỗi ốp được kiểm tra đường may trước khi đóng hộp."
+   ],
+   "product": "bloom-case-x9",
+   "bg": "#efe3d4",
+   "cta": "Xem ốp da Bloom"
+  },
+  {
+   "type": "categories",
+   "title": "Danh mục"
+  },
+  {
+   "type": "rail",
+   "category": "am-thanh",
+   "title": "Tai nghe, loa",
+   "tabs": false
+  },
+  {
+   "type": "brands",
+   "title": "Thương hiệu"
+  },
+  {
+   "type": "newsletter",
+   "title": "Nhận tin hàng mới",
+   "text": "Mỗi tháng một email về hàng mới và bộ sưu tập theo mùa."
+  },
+  {
+   "type": "benefits"
+  }
+ ],
+ "promotions": [
+  {
+   "code": "SUONG10",
+   "type": "percent",
+   "value": 10,
+   "max": 200000,
+   "min": 800000,
+   "label": "Giảm 10% cho đơn từ 800.000 đ, tối đa 200.000 đ",
+   "ends": "31/12/2026",
+   "limit": 300,
+   "used": 41
+  }
+ ],
+ "shipping": [
+  {
+   "id": "standard",
+   "name": "Giao tiêu chuẩn",
+   "fee": 25000,
+   "free_over": 600000,
+   "eta": "2-4 ngày"
+  },
+  {
+   "id": "express",
+   "name": "Giao trong ngày",
+   "fee": 40000,
+   "eta": "Trong ngày nếu đặt trước 15:00",
+   "cities": [
+    "Hà Nội"
+   ]
+  }
+ ],
+ "payments": [
+  {
+   "id": "cod",
+   "name": "Thanh toán khi nhận hàng (COD)",
+   "icon": "banknote"
+  },
+  {
+   "id": "bank",
+   "name": "Chuyển khoản ngân hàng",
+   "icon": "landmark",
+   "bank": {
+    "name": "[Tên ngân hàng]",
+    "account": "[Số tài khoản]",
+    "holder": "[Tên chủ tài khoản]"
+   }
+  },
+  {
+   "id": "wallet",
+   "name": "Ví điện tử",
+   "icon": "wallet",
+   "note": "Cần kết nối cổng thanh toán khi chạy thật"
+  }
+ ],
+ "benefits": [
+  {
+   "icon": "gift",
+   "title": "Gói quà miễn phí",
+   "text": "Giấy kraft và thiệp viết tay"
+  },
+  {
+   "icon": "truck",
+   "title": "Miễn phí giao hàng",
+   "text": "Cho đơn từ 600.000 đ"
+  },
+  {
+   "icon": "refresh",
+   "title": "Đổi trong 30 ngày",
+   "text": "Nếu lỗi do nhà sản xuất"
+  }
+ ],
+ "stores": [
+  {
+   "id": "hn-tay-ho",
+   "name": "Sương Studio Tây Hồ",
+   "city": "Hà Nội",
+   "address": "[Số nhà], Phường Tây Hồ, Hà Nội",
+   "hours": "9:00 - 21:00",
+   "phone": "1900 0000"
+  }
+ ],
+ "policies": [
+  {
+   "id": "doi-tra",
+   "title": "Đổi trả",
+   "body": [
+    "Đổi sản phẩm mới trong 30 ngày nếu lỗi do nhà sản xuất.",
+    {
+     "heading": "Không áp dụng",
+     "items": [
+      "Sản phẩm đã qua sử dụng, trầy xước",
+      "Thiếu hộp hoặc phụ kiện"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "giao-hang",
+   "title": "Giao hàng",
+   "body": [
+    "Giao tiêu chuẩn 2-4 ngày, miễn phí cho đơn từ 600.000 đ.",
+    "Giao trong ngày tại Hà Nội cho đơn đặt trước 15:00."
+   ]
+  },
+  {
+   "id": "bao-hanh",
+   "title": "Bảo hành",
+   "body": [
+    "Bảo hành theo thời hạn ghi trên trang sản phẩm, tại cửa hàng."
+   ]
+  },
+  {
+   "id": "bao-mat",
+   "title": "Bảo mật",
+   "body": [
+    "Thông tin khách hàng chỉ dùng để giao hàng và chăm sóc sau bán."
+   ]
+  }
+ ]
+}

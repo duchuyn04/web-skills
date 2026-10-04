@@ -1,0 +1,16 @@
+{# Section 'needs': shop by need. Each tile opens a category listing already filtered through the URL (brand, price or a facet key). #}
+<section class="sec ctn" aria-labelledby="h-needs-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-needs-{{ sec._i }}">{{ sec.title or "Mua theo nhu cầu" }}</h2></div>
+  <ul class="needs needs-{{ sec["items"]|length }}">
+    {% for it in sec["items"] %}
+    {% set q = it.get("query") or {} %}
+    {% set prod = pid[it.product] if it.product else None %}
+    <li><a class="need" href="{{ it.href or (root ~ 'c/' ~ it.category ~ '.html' ~ ('?' ~ q|urlencode if q else '')) }}">
+      <span class="need-ic">{{ icon(it.icon or "grid") }}</span>
+      <span class="need-copy"><b>{{ it.title }}</b>{% if it.text %}<span>{{ it.text }}</span>{% endif %}</span>
+      {% if prod %}<img class="need-art" src="{{ root }}{{ prod.image }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+      <span class="need-go">{{ arrow }}</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

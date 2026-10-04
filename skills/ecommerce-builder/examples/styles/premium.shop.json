@@ -1,0 +1,1826 @@
+{
+ "_note": "Cửa hàng mẫu cho phong cách premium. Thương hiệu Aurel, Mira, sản phẩm, giá và đánh giá đều là dữ liệu minh họa.",
+ "demo": true,
+ "sample_content": true,
+ "style": "premium",
+ "lang": "vi",
+ "brief": "Cửa hàng mẫu Vân Đài Store, đại lý ủy quyền của thương hiệu mẫu Aurel, bán điện thoại, máy tính bảng, laptop, đồng hồ, tai nghe và phụ kiện Mira. Mọi thương hiệu, giá, đánh giá và đơn hàng là dữ liệu minh họa.",
+ "shop": {
+  "name": "Vân Đài Store",
+  "tagline": "Đại lý ủy quyền Aurel tại Việt Nam",
+  "hotline": "1900 0000",
+  "email": "hotro@example.com",
+  "address": "[Địa chỉ trụ sở]",
+  "hours": "9:00 - 21:30",
+  "legal": "Cửa hàng mẫu do ecommerce-builder tạo. Thông tin pháp lý điền khi chạy thật.",
+  "socials": [
+   {
+    "type": "facebook",
+    "url": "#"
+   },
+   {
+    "type": "youtube",
+    "url": "#"
+   }
+  ]
+ },
+ "theme": {
+  "preset": "clean-premium"
+ },
+ "announcement": [
+  "Trả góp 0% đến 12 tháng, giao miễn phí toàn quốc, chuyển dữ liệu miễn phí tại cửa hàng."
+ ],
+ "categories": [
+  {
+   "id": "dien-thoai",
+   "name": "Điện thoại",
+   "icon": "smartphone",
+   "device": "phone",
+   "facets": [
+    {
+     "key": "storage",
+     "label": "Dung lượng"
+    },
+    {
+     "key": "screen",
+     "label": "Màn hình"
+    }
+   ],
+   "intro": [
+    "Vân Đài Store là đại lý ủy quyền Aurel, máy chính hãng có hóa đơn và bảo hành tại trung tâm ủy quyền.",
+    "Aurel One 7 Mini hợp với người thích máy nhỏ; Aurel One 7 Pro có camera tele 5x cho người chụp ảnh nhiều."
+   ]
+  },
+  {
+   "id": "may-tinh-bang",
+   "name": "Máy tính bảng",
+   "icon": "tablet",
+   "device": "tablet",
+   "facets": [
+    {
+     "key": "storage",
+     "label": "Dung lượng"
+    },
+    {
+     "key": "screen",
+     "label": "Màn hình"
+    }
+   ]
+  },
+  {
+   "id": "laptop",
+   "name": "Laptop",
+   "icon": "laptop",
+   "device": "laptop",
+   "facets": [
+    {
+     "key": "chip",
+     "label": "Chip"
+    },
+    {
+     "key": "ram",
+     "label": "RAM"
+    }
+   ]
+  },
+  {
+   "id": "dong-ho",
+   "name": "Đồng hồ",
+   "icon": "watch",
+   "device": "watch",
+   "facets": [
+    {
+     "key": "size",
+     "label": "Kích thước"
+    }
+   ]
+  },
+  {
+   "id": "tai-nghe",
+   "name": "Tai nghe",
+   "icon": "headphones",
+   "device": "earbuds",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    }
+   ]
+  },
+  {
+   "id": "phu-kien",
+   "name": "Phụ kiện",
+   "icon": "plug",
+   "device": "charger",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    }
+   ]
+  }
+ ],
+ "brands": [
+  {
+   "id": "aurel",
+   "name": "Aurel"
+  },
+  {
+   "id": "mira",
+   "name": "Mira"
+  }
+ ],
+ "products": [
+  {
+   "id": "aurel-one-7-pro",
+   "name": "Aurel One 7 Pro",
+   "brand": "aurel",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Dung lượng",
+     "values": [
+      {
+       "name": "256GB",
+       "price": 30990000
+      },
+      {
+       "name": "512GB",
+       "price": 36490000
+      },
+      {
+       "name": "1TB",
+       "price": 41990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Titan tự nhiên",
+       "hex": "#b9b2a7"
+      },
+      {
+       "name": "Titan đen",
+       "hex": "#2b2b2d"
+      },
+      {
+       "name": "Titan trắng",
+       "hex": "#e8e6e1"
+      },
+      {
+       "name": "Xanh thẳm",
+       "hex": "#2c3e55"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "storage": [
+     "256GB",
+     "512GB",
+     "1TB"
+    ],
+    "screen": "6,3 inch"
+   },
+   "card_specs": [
+    "6,3 inch",
+    "Aurel A9 Pro"
+   ],
+   "highlights": [
+    "Khung titan nhẹ hơn đời trước 19 g",
+    "Camera tele 5x chụp chân dung từ xa",
+    "Nút chụp ảnh riêng ở cạnh máy"
+   ],
+   "description": [
+    "Aurel One 7 Pro có khung titan và mặt kính nhám, cầm chắc tay mà vẫn nhẹ.",
+    "Cụm ba camera 48 MP chụp được ảnh rõ trong phòng thiếu sáng và quay video 4K.",
+    "Pin dùng trọn một ngày, sạc nhanh 50% trong 30 phút."
+   ],
+   "badges": [
+    "new"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "in_box": [
+    "Thân máy",
+    "Cáp sạc USB-C",
+    "Tài liệu"
+   ],
+   "released": "2026-09",
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "6,3 inch"
+      ],
+      [
+       "Công nghệ",
+       "OLED, 1 - 120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "2.000 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel A9 Pro"
+      ],
+      [
+       "Bộ nhớ trong",
+       "256GB, 512GB, 1TB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "48 MP chính, 48 MP góc rộng, tele 5x"
+      ],
+      [
+       "Camera trước",
+       "12 MP"
+      ],
+      [
+       "Quay video",
+       "4K 60 fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 27 giờ xem video"
+      ],
+      [
+       "Sạc",
+       "USB-C, sạc nhanh 30W, sạc không dây 15W"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung titan, mặt lưng kính nhám"
+      ],
+      [
+       "Kháng nước",
+       "IP68"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 312
+   },
+   "reviews": [
+    {
+     "name": "Minh Châu",
+     "stars": 5,
+     "text": "Máy cầm nhẹ, camera tele chụp con nhỏ ở sân trường rất rõ. Nhân viên cửa hàng chuyển dữ liệu từ máy cũ giúp mình.",
+     "verified": true,
+     "date": "20/09/2026",
+     "variant": "256GB, Titan tự nhiên"
+    },
+    {
+     "name": "Đức Anh",
+     "stars": 5,
+     "text": "Pin dùng hết ngày vẫn còn khoảng 25%. Giao hàng đúng hẹn, hộp còn niêm phong.",
+     "verified": true,
+     "date": "16/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Màn hình đẹp, loa to. Giá cao nhưng được trả góp 0% nên dễ mua hơn.",
+     "verified": true,
+     "date": "11/09/2026"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ hai SIM không?",
+     "a": "Có, một Nano SIM và một eSIM, hoặc hai eSIM."
+    },
+    {
+     "q": "Cửa hàng có chuyển dữ liệu từ máy cũ không?",
+     "a": "Có, nhân viên chuyển dữ liệu miễn phí khi nhận máy tại cửa hàng."
+    }
+   ]
+  },
+  {
+   "id": "aurel-one-7",
+   "name": "Aurel One 7",
+   "brand": "aurel",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Dung lượng",
+     "values": [
+      {
+       "name": "128GB",
+       "price": 22990000,
+       "old_price": 23990000
+      },
+      {
+       "name": "256GB",
+       "price": 25990000,
+       "old_price": 26990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#26272b"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eceef1"
+      },
+      {
+       "name": "Xanh lá",
+       "hex": "#9fb8a3"
+      },
+      {
+       "name": "Hồng",
+       "hex": "#e9c9cc"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "storage": [
+     "128GB",
+     "256GB"
+    ],
+    "screen": "6,1 inch"
+   },
+   "card_specs": [
+    "6,1 inch",
+    "Aurel A9"
+   ],
+   "highlights": [
+    "Màn hình 6,1 inch, 120 Hz",
+    "Nút chụp ảnh riêng",
+    "Kháng nước IP68"
+   ],
+   "description": [
+    "Aurel One 7 giữ kích thước gọn, dùng một tay thoải mái.",
+    "Chip A9 xử lý mượt các ứng dụng chỉnh ảnh và game phổ biến."
+   ],
+   "badges": [
+    "new"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "in_box": [
+    "Thân máy",
+    "Cáp sạc USB-C",
+    "Tài liệu"
+   ],
+   "released": "2026-09",
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "6,1 inch"
+      ],
+      [
+       "Công nghệ",
+       "OLED, 1 - 120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "2.000 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel A9"
+      ],
+      [
+       "Bộ nhớ trong",
+       "128GB, 256GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "48 MP chính, 12 MP góc rộng"
+      ],
+      [
+       "Camera trước",
+       "12 MP"
+      ],
+      [
+       "Quay video",
+       "4K 60 fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 22 giờ xem video"
+      ],
+      [
+       "Sạc",
+       "USB-C, sạc nhanh 30W, sạc không dây 15W"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung titan, mặt lưng kính nhám"
+      ],
+      [
+       "Kháng nước",
+       "IP68"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 488
+   },
+   "reviews": [
+    {
+     "name": "Minh Châu",
+     "stars": 5,
+     "text": "Máy cầm nhẹ, camera tele chụp con nhỏ ở sân trường rất rõ. Nhân viên cửa hàng chuyển dữ liệu từ máy cũ giúp mình.",
+     "verified": true,
+     "date": "20/09/2026",
+     "variant": "256GB, Titan tự nhiên"
+    },
+    {
+     "name": "Đức Anh",
+     "stars": 5,
+     "text": "Pin dùng hết ngày vẫn còn khoảng 25%. Giao hàng đúng hẹn, hộp còn niêm phong.",
+     "verified": true,
+     "date": "16/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Màn hình đẹp, loa to. Giá cao nhưng được trả góp 0% nên dễ mua hơn.",
+     "verified": true,
+     "date": "11/09/2026"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ hai SIM không?",
+     "a": "Có, một Nano SIM và một eSIM, hoặc hai eSIM."
+    },
+    {
+     "q": "Cửa hàng có chuyển dữ liệu từ máy cũ không?",
+     "a": "Có, nhân viên chuyển dữ liệu miễn phí khi nhận máy tại cửa hàng."
+    }
+   ]
+  },
+  {
+   "id": "aurel-one-7-mini",
+   "name": "Aurel One 7 Mini",
+   "brand": "aurel",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Dung lượng",
+     "values": [
+      {
+       "name": "128GB",
+       "price": 17990000,
+       "old_price": 19490000
+      },
+      {
+       "name": "256GB",
+       "price": 20990000,
+       "old_price": 22490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#26272b"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eceef1"
+      },
+      {
+       "name": "Xanh lá",
+       "hex": "#9fb8a3"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "storage": [
+     "128GB",
+     "256GB"
+    ],
+    "screen": "5,4 inch"
+   },
+   "card_specs": [
+    "5,4 inch",
+    "Aurel A8"
+   ],
+   "highlights": [
+    "Nặng 140 g",
+    "Màn hình 5,4 inch dễ bỏ túi"
+   ],
+   "description": [
+    "Aurel One 7 Mini dành cho người thích máy nhỏ: nặng 140 g, vừa túi áo."
+   ],
+   "badges": [],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "in_box": [
+    "Thân máy",
+    "Cáp sạc USB-C",
+    "Tài liệu"
+   ],
+   "released": "2025-10",
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "5,4 inch"
+      ],
+      [
+       "Công nghệ",
+       "OLED, 1 - 120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "2.000 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel A8"
+      ],
+      [
+       "Bộ nhớ trong",
+       "128GB, 256GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "48 MP chính"
+      ],
+      [
+       "Camera trước",
+       "12 MP"
+      ],
+      [
+       "Quay video",
+       "4K 60 fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 18 giờ xem video"
+      ],
+      [
+       "Sạc",
+       "USB-C, sạc nhanh 30W, sạc không dây 15W"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung titan, mặt lưng kính nhám"
+      ],
+      [
+       "Kháng nước",
+       "IP68"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-fold-3",
+   "name": "Aurel Fold 3",
+   "brand": "aurel",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Dung lượng",
+     "values": [
+      {
+       "name": "512GB",
+       "price": 44990000,
+       "old_price": 47990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen nhám",
+       "hex": "#26272b"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#d8dade"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "storage": [
+     "512GB"
+    ],
+    "screen": "7,6 inch gập"
+   },
+   "card_specs": [
+    "7,6 inch gập",
+    "Aurel A9 Pro"
+   ],
+   "highlights": [
+    "Màn hình trong 7,6 inch, màn hình ngoài 6,3 inch",
+    "Bản lề không khe hở khi gập"
+   ],
+   "description": [
+    "Aurel Fold 3 mở ra thành máy tính bảng nhỏ, chia đôi màn hình để làm hai việc cùng lúc."
+   ],
+   "badges": [],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "in_box": [
+    "Thân máy",
+    "Cáp sạc USB-C",
+    "Tài liệu"
+   ],
+   "released": "2026-09",
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "7,6 inch gập"
+      ],
+      [
+       "Công nghệ",
+       "OLED, 1 - 120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "2.000 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel A9 Pro"
+      ],
+      [
+       "Bộ nhớ trong",
+       "512GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "50 MP chính, tele 3x"
+      ],
+      [
+       "Camera trước",
+       "12 MP"
+      ],
+      [
+       "Quay video",
+       "4K 60 fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 20 giờ xem video"
+      ],
+      [
+       "Sạc",
+       "USB-C, sạc nhanh 30W, sạc không dây 15W"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung titan, mặt lưng kính nhám"
+      ],
+      [
+       "Kháng nước",
+       "IP68"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 74
+   }
+  },
+  {
+   "id": "aurel-slate-pro-12",
+   "name": "Aurel Slate Pro 12",
+   "brand": "aurel",
+   "category": "may-tinh-bang",
+   "device": "tablet",
+   "facets": {
+    "storage": [
+     "256GB",
+     "512GB"
+    ],
+    "screen": "12,9 inch"
+   },
+   "card_specs": [
+    "12,9 inch",
+    "Aurel A9 Pro"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "12,9 inch"
+      ],
+      [
+       "Công nghệ",
+       "OLED hai lớp, 120 Hz"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel A9 Pro"
+      ],
+      [
+       "Bộ nhớ trong",
+       "256GB, 512GB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "USB-C tốc độ cao"
+      ],
+      [
+       "Bút",
+       "Hỗ trợ Aurel Pen 2"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Màn hình OLED 12,9 inch",
+    "Mỏng 5,1 mm"
+   ],
+   "description": [
+    "Aurel Slate Pro 12 mỏng 5,1 mm, màn hình OLED hai lớp sáng và rõ khi vẽ hay xem phim."
+   ],
+   "badges": [
+    "new"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "options": [
+    {
+     "name": "Dung lượng",
+     "values": [
+      {
+       "name": "256GB",
+       "price": 28990000
+      },
+      {
+       "name": "512GB",
+       "price": 34990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xám không gian",
+       "hex": "#4b4d52"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#d8dade"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-slate-air-11",
+   "name": "Aurel Slate Air 11",
+   "brand": "aurel",
+   "category": "may-tinh-bang",
+   "device": "tablet",
+   "facets": {
+    "storage": [
+     "128GB",
+     "256GB"
+    ],
+    "screen": "11 inch"
+   },
+   "card_specs": [
+    "11 inch",
+    "Aurel A8"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "11 inch"
+      ],
+      [
+       "Công nghệ",
+       "LCD, 60 Hz"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel A8"
+      ],
+      [
+       "Bộ nhớ trong",
+       "128GB, 256GB"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Nhẹ 460 g",
+    "Ba màu"
+   ],
+   "description": [
+    "Aurel Slate Air 11 nhẹ 460 g, hợp với việc học và ghi chú."
+   ],
+   "badges": [],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "options": [
+    {
+     "name": "Dung lượng",
+     "values": [
+      {
+       "name": "128GB",
+       "price": 15990000,
+       "old_price": 16990000
+      },
+      {
+       "name": "256GB",
+       "price": 18990000,
+       "old_price": 19990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xanh dương",
+       "hex": "#8fa9c9"
+      },
+      {
+       "name": "Xám",
+       "hex": "#5e636b"
+      },
+      {
+       "name": "Tím nhạt",
+       "hex": "#c8bedf"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-book-pro-14",
+   "name": "Aurel Book Pro 14",
+   "brand": "aurel",
+   "category": "laptop",
+   "device": "laptop",
+   "facets": {
+    "chip": "Aurel M5 Pro",
+    "ram": [
+     "24GB",
+     "36GB"
+    ],
+    "screen": "14,2 inch"
+   },
+   "card_specs": [
+    "14,2 inch",
+    "Aurel M5 Pro"
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel M5 Pro"
+      ],
+      [
+       "RAM",
+       "24GB hoặc 36GB"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "14,2 inch"
+      ],
+      [
+       "Công nghệ",
+       "Mini LED, 120 Hz"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 22 giờ"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Pin đến 22 giờ",
+    "Màn hình Mini LED 120 Hz"
+   ],
+   "description": [
+    "Aurel Book Pro 14 dựng phim 4K và biên dịch mã nhanh, pin đủ cho một ngày làm việc xa ổ điện."
+   ],
+   "badges": [
+    "new"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "options": [
+    {
+     "name": "Cấu hình",
+     "values": [
+      {
+       "name": "24GB / 1TB",
+       "price": 49990000
+      },
+      {
+       "name": "36GB / 1TB",
+       "price": 59990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen không gian",
+       "hex": "#2b2d31"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#d6d8dc"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Châu",
+     "stars": 5,
+     "text": "Máy cầm nhẹ, camera tele chụp con nhỏ ở sân trường rất rõ. Nhân viên cửa hàng chuyển dữ liệu từ máy cũ giúp mình.",
+     "verified": true,
+     "date": "20/09/2026",
+     "variant": "256GB, Titan tự nhiên"
+    },
+    {
+     "name": "Đức Anh",
+     "stars": 5,
+     "text": "Pin dùng hết ngày vẫn còn khoảng 25%. Giao hàng đúng hẹn, hộp còn niêm phong.",
+     "verified": true,
+     "date": "16/09/2026"
+    },
+    {
+     "name": "Thảo Vy",
+     "stars": 4,
+     "text": "Màn hình đẹp, loa to. Giá cao nhưng được trả góp 0% nên dễ mua hơn.",
+     "verified": true,
+     "date": "11/09/2026"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Có xuất hóa đơn công ty được không?",
+     "a": "Có, nhập thông tin công ty ở bước đặt hàng."
+    },
+    {
+     "q": "Cửa hàng có chuyển dữ liệu từ máy cũ không?",
+     "a": "Có, nhân viên chuyển dữ liệu miễn phí khi nhận máy tại cửa hàng."
+    }
+   ]
+  },
+  {
+   "id": "aurel-book-air-13",
+   "name": "Aurel Book Air 13",
+   "brand": "aurel",
+   "category": "laptop",
+   "device": "laptop",
+   "facets": {
+    "chip": "Aurel M5",
+    "ram": [
+     "16GB"
+    ],
+    "screen": "13,6 inch"
+   },
+   "card_specs": [
+    "13,6 inch",
+    "Aurel M5"
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Aurel M5"
+      ],
+      [
+       "RAM",
+       "16GB"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "13,6 inch"
+      ],
+      [
+       "Công nghệ",
+       "IPS, 60 Hz"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 18 giờ"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Không quạt, chạy êm",
+    "Nặng 1,24 kg"
+   ],
+   "description": [
+    "Aurel Book Air 13 không có quạt nên chạy hoàn toàn êm, nặng 1,24 kg."
+   ],
+   "badges": [],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "options": [
+    {
+     "name": "Cấu hình",
+     "values": [
+      {
+       "name": "16GB / 256GB",
+       "price": 26990000,
+       "old_price": 27990000
+      },
+      {
+       "name": "16GB / 512GB",
+       "price": 31990000,
+       "old_price": 32990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xanh đêm",
+       "hex": "#2c3a4e"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#d6d8dc"
+      },
+      {
+       "name": "Vàng ánh sao",
+       "hex": "#e5d8c3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-watch-5",
+   "name": "Aurel Watch 5",
+   "brand": "aurel",
+   "category": "dong-ho",
+   "device": "watch",
+   "facets": {
+    "size": [
+     "41 mm",
+     "45 mm"
+    ]
+   },
+   "card_specs": [
+    "Màn hình luôn bật",
+    "Đo nhịp tim"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "41 mm hoặc 45 mm"
+      ],
+      [
+       "Công nghệ",
+       "OLED luôn bật"
+      ]
+     ]
+    },
+    {
+     "group": "Sức khỏe",
+     "rows": [
+      [
+       "Cảm biến",
+       "Nhịp tim, SpO2, nhiệt độ cổ tay"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 36 giờ"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Pin đến 36 giờ",
+    "Đo nhiệt độ cổ tay"
+   ],
+   "description": [
+    "Aurel Watch 5 theo dõi giấc ngủ, nhịp tim và báo khi nhịp tim bất thường."
+   ],
+   "badges": [],
+   "installment": false,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "options": [
+    {
+     "name": "Kích thước",
+     "values": [
+      {
+       "name": "41 mm",
+       "price": 10990000
+      },
+      {
+       "name": "45 mm",
+       "price": 11990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#26272b"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#d8dade"
+      },
+      {
+       "name": "Hồng",
+       "hex": "#e9c9cc"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-watch-ultra-2",
+   "name": "Aurel Watch Ultra 2",
+   "brand": "aurel",
+   "category": "dong-ho",
+   "device": "watch",
+   "facets": {
+    "size": [
+     "49 mm"
+    ]
+   },
+   "card_specs": [
+    "49 mm, titan",
+    "GPS hai tần số"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "49 mm"
+      ],
+      [
+       "Độ sáng tối đa",
+       "3.000 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Thể thao",
+     "rows": [
+      [
+       "Định vị",
+       "GPS hai tần số"
+      ],
+      [
+       "Lặn",
+       "Đến 40 m"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "Đến 72 giờ ở chế độ tiết kiệm"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Vỏ titan 49 mm",
+    "GPS hai tần số"
+   ],
+   "description": [
+    "Aurel Watch Ultra 2 dành cho chạy trail, leo núi và lặn biển."
+   ],
+   "badges": [
+    "new"
+   ],
+   "installment": false,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "price": 21990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Titan",
+       "hex": "#b9b2a7"
+      },
+      {
+       "name": "Titan đen",
+       "hex": "#2b2b2d"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-pods-pro-3",
+   "name": "Aurel Pods Pro 3",
+   "brand": "aurel",
+   "category": "tai-nghe",
+   "device": "earbuds",
+   "facets": {
+    "type": "Không dây, chống ồn"
+   },
+   "card_specs": [
+    "Chống ồn chủ động",
+    "Pin 30 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Chống ồn",
+       "Chủ động, có chế độ xuyên âm"
+      ],
+      [
+       "Âm thanh",
+       "Âm thanh không gian"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "8 giờ, 30 giờ với hộp sạc"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Chống ồn chủ động",
+    "Hộp sạc USB-C"
+   ],
+   "description": [
+    "Aurel Pods Pro 3 chặn tiếng ồn tàu xe, chuyển sang chế độ xuyên âm khi cần nghe xung quanh."
+   ],
+   "badges": [],
+   "installment": false,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "price": 6490000,
+   "old_price": 6990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#f2f3f5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aurel-pods-4",
+   "name": "Aurel Pods 4",
+   "brand": "aurel",
+   "category": "tai-nghe",
+   "device": "earbuds",
+   "facets": {
+    "type": "Không dây"
+   },
+   "card_specs": [
+    "Thiết kế mở",
+    "Pin 30 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Chống ồn",
+       "Không"
+      ],
+      [
+       "Âm thanh",
+       "Âm thanh không gian"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng pin",
+       "5 giờ, 30 giờ với hộp sạc"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Thiết kế mở, đeo lâu không đau tai"
+   ],
+   "description": [
+    "Aurel Pods 4 có thiết kế mở, đeo nhẹ tai suốt buổi làm việc."
+   ],
+   "badges": [],
+   "installment": false,
+   "warranty": "12 tháng tại trung tâm bảo hành ủy quyền",
+   "released": "2026-05",
+   "price": 3990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#f2f3f5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mira-sac-35w",
+   "name": "Bộ sạc Mira 35W hai cổng",
+   "brand": "mira",
+   "category": "phu-kien",
+   "device": "charger",
+   "facets": {
+    "type": "Củ sạc"
+   },
+   "card_specs": [
+    "35W",
+    "Hai cổng USB-C"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Công suất",
+       "35W"
+      ],
+      [
+       "Cổng",
+       "2 x USB-C"
+      ]
+     ]
+    }
+   ],
+   "highlights": [
+    "Sạc cùng lúc điện thoại và đồng hồ"
+   ],
+   "description": [
+    "Bộ sạc Mira 35W sạc cùng lúc hai thiết bị Aurel."
+   ],
+   "badges": [],
+   "installment": false,
+   "warranty": "12 tháng 1 đổi 1",
+   "released": "2026-05",
+   "price": 1290000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#f2f3f5"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "slides": [
+    {
+     "tab": "Aurel One 7 Pro",
+     "label": "Mới",
+     "title": "Aurel One 7 Pro",
+     "text": "Titan. Camera tele 5x. Nút chụp ảnh riêng.",
+     "product": "aurel-one-7-pro",
+     "bg": "#f5f5f7",
+     "cta": "Mua ngay"
+    },
+    {
+     "tab": "Aurel Book Pro 14",
+     "title": "Aurel Book Pro 14",
+     "text": "Chip M5 Pro, pin đến 22 giờ.",
+     "product": "aurel-book-pro-14",
+     "bg": "#0f0f11",
+     "cta": "Mua ngay"
+    },
+    {
+     "tab": "Aurel Watch Ultra 2",
+     "title": "Aurel Watch Ultra 2",
+     "text": "Vỏ titan 49 mm cho chạy trail và lặn biển.",
+     "product": "aurel-watch-ultra-2",
+     "bg": "#fbfbfd",
+     "cta": "Mua ngay"
+    }
+   ]
+  },
+  {
+   "type": "spotlight-tiles",
+   "items": [
+    {
+     "title": "Aurel Slate Pro 12",
+     "text": "Mỏng 5,1 mm, màn hình OLED hai lớp.",
+     "product": "aurel-slate-pro-12",
+     "bg": "#f5f5f7",
+     "cta": "Xem máy"
+    },
+    {
+     "title": "Aurel Pods Pro 3",
+     "text": "Chống ồn chủ động, âm thanh không gian.",
+     "product": "aurel-pods-pro-3",
+     "bg": "#1d1d1f",
+     "tone": "dark",
+     "cta": "Xem tai nghe"
+    },
+    {
+     "title": "Aurel Fold 3",
+     "text": "Mở ra là máy tính bảng nhỏ.",
+     "product": "aurel-fold-3",
+     "bg": "#1d1d1f",
+     "tone": "dark",
+     "cta": "Xem máy"
+    },
+    {
+     "title": "Aurel Book Air 13",
+     "text": "Không quạt, nặng 1,24 kg.",
+     "product": "aurel-book-air-13",
+     "bg": "#f5f5f7",
+     "cta": "Xem laptop"
+    }
+   ]
+  },
+  {
+   "type": "categories",
+   "title": "Mua theo dòng sản phẩm"
+  },
+  {
+   "type": "lineup",
+   "title": "Chọn điện thoại Aurel phù hợp",
+   "products": [
+    "aurel-one-7-pro",
+    "aurel-one-7",
+    "aurel-one-7-mini"
+   ],
+   "rows": [
+    "Kích thước",
+    "Chip xử lý",
+    "Camera sau",
+    "Thời lượng pin"
+   ]
+  },
+  {
+   "type": "rail",
+   "products": [
+    "aurel-book-pro-14",
+    "aurel-book-air-13",
+    "aurel-slate-pro-12",
+    "aurel-slate-air-11"
+   ],
+   "title": "Laptop và máy tính bảng",
+   "tabs": false
+  },
+  {
+   "type": "rail",
+   "products": [
+    "aurel-watch-5",
+    "aurel-watch-ultra-2",
+    "aurel-pods-pro-3",
+    "aurel-pods-4",
+    "mira-sac-35w"
+   ],
+   "title": "Đồng hồ, tai nghe và phụ kiện",
+   "tabs": false
+  },
+  {
+   "type": "benefits"
+  },
+  {
+   "type": "stores-cta",
+   "text": "Trải nghiệm máy, chuyển dữ liệu và nhận hàng đặt online tại cửa hàng."
+  }
+ ],
+ "promotions": [
+  {
+   "code": "VANDAI500",
+   "type": "fixed",
+   "value": 500000,
+   "min": 20000000,
+   "label": "Giảm 500.000 đ cho đơn từ 20 triệu",
+   "ends": "31/12/2026",
+   "limit": 300,
+   "used": 96
+  },
+  {
+   "code": "PHUKIEN10",
+   "type": "percent",
+   "value": 10,
+   "max": 300000,
+   "min": 1000000,
+   "label": "Giảm 10% phụ kiện, tối đa 300.000 đ",
+   "ends": "31/12/2026",
+   "limit": 500,
+   "used": 140
+  }
+ ],
+ "shipping": [
+  {
+   "id": "standard",
+   "name": "Giao tiêu chuẩn",
+   "fee": 0,
+   "eta": "2-3 ngày"
+  },
+  {
+   "id": "express",
+   "name": "Giao trong 2 giờ",
+   "fee": 40000,
+   "eta": "Trong 2 giờ nếu đặt trước 18:00",
+   "cities": [
+    "Hà Nội",
+    "TP. Hồ Chí Minh"
+   ]
+  }
+ ],
+ "payments": [
+  {
+   "id": "card",
+   "name": "Thẻ Visa, Mastercard, ATM",
+   "icon": "credit-card",
+   "note": "Cần kết nối cổng thanh toán khi chạy thật"
+  },
+  {
+   "id": "installment",
+   "name": "Trả góp 0% qua thẻ tín dụng",
+   "icon": "calendar",
+   "note": "Kỳ hạn 6 hoặc 12 tháng"
+  },
+  {
+   "id": "bank",
+   "name": "Chuyển khoản ngân hàng",
+   "icon": "landmark",
+   "bank": {
+    "name": "[Tên ngân hàng]",
+    "account": "[Số tài khoản]",
+    "holder": "[Tên chủ tài khoản]"
+   }
+  },
+  {
+   "id": "cod",
+   "name": "Thanh toán khi nhận hàng",
+   "icon": "banknote"
+  }
+ ],
+ "benefits": [
+  {
+   "icon": "badge-check",
+   "title": "Đại lý ủy quyền",
+   "text": "Máy chính hãng, bảo hành tại trung tâm ủy quyền"
+  },
+  {
+   "icon": "truck",
+   "title": "Giao miễn phí",
+   "text": "Toàn quốc, 2 giờ tại Hà Nội và TP. Hồ Chí Minh"
+  },
+  {
+   "icon": "credit-card",
+   "title": "Trả góp 0%",
+   "text": "Qua thẻ tín dụng, 6 hoặc 12 tháng"
+  },
+  {
+   "icon": "refresh",
+   "title": "Chuyển dữ liệu",
+   "text": "Miễn phí khi nhận máy tại cửa hàng"
+  }
+ ],
+ "stores": [
+  {
+   "id": "hn-trang-tien",
+   "name": "Vân Đài Tràng Tiền",
+   "city": "Hà Nội",
+   "address": "[Số nhà], Phường Hoàn Kiếm, Hà Nội",
+   "hours": "9:00 - 21:30",
+   "phone": "1900 0000"
+  },
+  {
+   "id": "hcm-dong-khoi",
+   "name": "Vân Đài Đồng Khởi",
+   "city": "TP. Hồ Chí Minh",
+   "address": "[Số nhà], Phường Sài Gòn, TP. Hồ Chí Minh",
+   "hours": "9:00 - 22:00",
+   "phone": "1900 0000"
+  }
+ ],
+ "policies": [
+  {
+   "id": "bao-hanh",
+   "title": "Chính sách bảo hành",
+   "body": [
+    "Sản phẩm Aurel được bảo hành 12 tháng tại trung tâm bảo hành ủy quyền.",
+    {
+     "heading": "Điều kiện",
+     "items": [
+      "Còn thời hạn, tem và số serial nguyên vẹn",
+      "Lỗi do nhà sản xuất"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "doi-tra",
+   "title": "Chính sách đổi trả",
+   "body": [
+    "Đổi máy mới trong 14 ngày nếu lỗi do nhà sản xuất."
+   ]
+  },
+  {
+   "id": "giao-hang",
+   "title": "Giao hàng",
+   "body": [
+    "Giao miễn phí toàn quốc trong 2-3 ngày; giao trong 2 giờ tại Hà Nội và TP. Hồ Chí Minh."
+   ]
+  },
+  {
+   "id": "bao-mat",
+   "title": "Bảo mật",
+   "body": [
+    "Thông tin khách hàng chỉ dùng để giao hàng và bảo hành."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{% extends "account/_layout.html" %}
+{% block account %}
+<h1 class="acc-title">Đơn hàng của tôi</h1>
+<div class="tabs" role="tablist" aria-label="Lọc đơn theo trạng thái" data-order-tabs>
+  <button type="button" role="tab" data-tab="" aria-selected="true">Tất cả</button>
+  <button type="button" role="tab" data-tab="pending" aria-selected="false">Chờ xác nhận</button>
+  <button type="button" role="tab" data-tab="shipping" aria-selected="false">Đang giao</button>
+  <button type="button" role="tab" data-tab="delivered" aria-selected="false">Đã giao</button>
+  <button type="button" role="tab" data-tab="cancelled" aria-selected="false">Đã hủy</button>
+</div>
+<ul class="olist olist-full" data-orders-list></ul>
+<div data-orders-empty hidden>
+  <div class="empty"><span class="empty-ic">{{ icon("package") }}</span><h2>Chưa có đơn hàng</h2><p>Đơn hàng đặt trên trình duyệt này sẽ hiện ở đây.</p><a class="btn btn-primary" href="{{ root }}index.html">Mua sắm ngay</a></div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Tra cứu đơn hàng", None)]) }}
+<div class="ctn page page-narrow" data-track-page>
+  <h1>Tra cứu đơn hàng</h1>
+  <form class="track-form box" data-track-form>
+    <label class="field"><span>Mã đơn hàng</span><input name="code" required placeholder="Ví dụ: DH24001" autocomplete="off"></label>
+    <label class="field"><span>Số điện thoại đặt hàng</span><input name="phone" type="tel" required inputmode="tel" placeholder="0912 345 678"></label>
+    <button class="btn btn-primary" type="submit">{{ icon("search", "i-sm") }}Tra cứu</button>
+  </form>
+  <p class="form-error" data-track-error hidden role="alert">Không tìm thấy đơn với mã và số điện thoại này. Kiểm tra lại hoặc gọi {{ shop.hotline }}.</p>
+  <div data-track-result hidden>
+    <section class="box track-head">
+      <div><small>Mã đơn</small><b class="code" data-t-code></b></div>
+      <div><small>Ngày đặt</small><b data-t-date></b></div>
+      <div><small>Dự kiến nhận</small><b data-t-eta></b></div>
+      <div><small>Trạng thái</small><span class="badge" data-t-status></span></div>
+    </section>
+    <ol class="tracker" data-t-steps aria-label="Tiến độ đơn hàng"></ol>
+    <div class="order-grid">
+      <section class="box"><h2>Sản phẩm</h2><ul class="co-items" data-t-items></ul><dl class="totals" data-t-totals></dl></section>
+      <section class="box"><h2>Lịch sử cập nhật</h2><ol class="timeline" data-t-timeline></ol></section>
+    </div>
+  </div>
+</div>
+{% endblock %}

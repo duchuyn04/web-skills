@@ -1,0 +1,30 @@
+/* Section 'bundle': combo of products with one add-all button. */
+.bundle{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;padding:20px;border-radius:var(--radius-lg);background:var(--c-surface);border:1px solid var(--c-border)}
+.bundle-head{grid-column:1/-1;display:flex;flex-direction:column;gap:4px}
+.bundle-head h2{font-family:var(--font-head);font-size:21px}
+.bundle-head p{color:var(--c-muted);font-size:14px}
+.bundle-items{display:flex;align-items:stretch;gap:0;overflow-x:auto;scrollbar-width:thin}
+.bundle-item{display:flex;align-items:center;flex:1 0 150px;min-width:150px}
+.bundle-item a{display:flex;flex-direction:column;gap:4px;flex:1;padding:10px;border-radius:var(--radius);background:var(--c-surface-2);height:100%}
+.bundle-item a:hover{outline:1px solid var(--c-accent)}
+.bundle-item img{width:100%;aspect-ratio:4/3;object-fit:contain}
+.bundle-name{font-weight:600;font-size:13.5px;line-height:1.3}
+.bundle-item small{font-size:12px;color:var(--c-muted)}
+.bundle-item b{color:var(--c-price);font-size:14px}
+.bundle-plus{display:grid;place-items:center;flex:none;width:28px;color:var(--c-muted)}
+.bundle-plus .i{width:18px;height:18px}
+.bundle-sum{display:flex;flex-direction:column;gap:12px;justify-content:center;padding:16px;border-radius:var(--radius);background:var(--c-surface-2)}
+.bundle-sum dl{display:grid;grid-template-columns:1fr auto;gap:6px 10px;margin:0;font-size:14px}
+.bundle-sum dt{color:var(--c-muted)}
+.bundle-sum dd{margin:0;text-align:right;font-weight:700}
+.bundle-was{text-decoration:line-through;color:var(--c-muted);font-weight:500}
+.bundle-price{color:var(--c-price);font-size:20px;font-family:var(--font-head)}
+.bundle-save{color:var(--c-ok)}
+.bundle-note{font-size:12px;color:var(--c-muted)}
+@media (max-width:1023px){
+  .bundle{grid-template-columns:1fr}
+}
+@media (max-width:767px){
+  .bundle{padding:14px;gap:14px}
+  .bundle-item{flex-basis:130px;min-width:130px}
+}

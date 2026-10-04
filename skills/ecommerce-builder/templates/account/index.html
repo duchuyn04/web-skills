@@ -1,0 +1,18 @@
+{% extends "account/_layout.html" %}
+{% block account %}
+<h1 class="acc-title">Xin chào, <span data-user-name>Khách</span></h1>
+<ul class="stat-row">
+  <li class="stat"><small>Đơn hàng</small><b data-stat-orders>0</b><a href="orders.html">Xem đơn</a></li>
+  <li class="stat"><small>Đang giao</small><b data-stat-shipping>0</b><a href="orders.html?tab=shipping">Theo dõi</a></li>
+  <li class="stat"><small>Yêu thích</small><b data-stat-fav>0</b><a href="wishlist.html">Xem danh sách</a></li>
+  <li class="stat"><small>Tổng đã mua</small><b data-stat-spent>0 đ</b></li>
+</ul>
+<section class="box" aria-labelledby="h-recent-o">
+  <div class="box-head"><h2 id="h-recent-o">Đơn hàng gần đây</h2><a class="link-sm" href="orders.html">Xem tất cả</a></div>
+  <ul class="olist" data-orders-recent></ul>
+</section>
+<section class="box" aria-labelledby="h-addr0">
+  <div class="box-head"><h2 id="h-addr0">Địa chỉ mặc định</h2><a class="link-sm" href="addresses.html">Quản lý</a></div>
+  <div data-default-address><p class="muted">Chưa có địa chỉ. Địa chỉ được lưu sau đơn hàng đầu tiên.</p></div>
+</section>
+{% endblock %}

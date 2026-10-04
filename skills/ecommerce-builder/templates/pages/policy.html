@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([(pol.title, None)]) }}
+<div class="ctn page policy-grid">
+  <nav class="side-nav" aria-label="Chính sách">
+    <ul>{% for p in policies %}<li><a href="{{ root }}policy/{{ p.id }}.html" {% if p.id == pol.id %}aria-current="page"{% endif %}>{{ p.title }}</a></li>{% endfor %}</ul>
+  </nav>
+  <article class="box prose">
+    <h1>{{ pol.title }}</h1>
+    {% for para in pol.body %}
+      {% if para is string %}<p>{{ para }}</p>
+      {% else %}<h2>{{ para.heading }}</h2>{% if para.get("items") %}<ul>{% for it in para.get("items") %}<li>{{ it }}</li>{% endfor %}</ul>{% endif %}{% if para.text %}<p>{{ para.text }}</p>{% endif %}
+      {% endif %}
+    {% endfor %}
+  </article>
+</div>
+{% endblock %}

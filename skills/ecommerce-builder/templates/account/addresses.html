@@ -1,0 +1,17 @@
+{% extends "account/_layout.html" %}
+{% block account %}
+<div class="page-head"><h1 class="acc-title">Sổ địa chỉ</h1><button class="btn btn-primary" type="button" data-addr-new>{{ icon("plus", "i-sm") }}Thêm địa chỉ</button></div>
+<ul class="addr-list" data-addr-list></ul>
+<form class="box addr-form" data-addr-form hidden>
+  <h2>Địa chỉ mới</h2>
+  <div class="form-grid form-grid-2">
+    <label class="field"><span>Họ và tên</span><input name="name" required autocomplete="name"></label>
+    <label class="field"><span>Số điện thoại</span><input name="phone" type="tel" required pattern="^(0|\+84)(3|5|7|8|9)[0-9]{8}$"></label>
+    <label class="field"><span>Tỉnh, thành phố</span><select name="province" required data-province><option value="">Chọn tỉnh, thành</option></select></label>
+    <label class="field"><span>Phường, xã</span><input name="ward" required></label>
+    <label class="field field-full"><span>Số nhà, tên đường</span><input name="street" required></label>
+  </div>
+  <label class="check"><input type="checkbox" name="default"><span>Đặt làm địa chỉ mặc định</span></label>
+  <div class="form-row"><button class="btn btn-primary" type="submit">Lưu địa chỉ</button><button class="btn btn-ghost" type="button" data-addr-cancel>Hủy</button></div>
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+{
+  "name": "web-skills",
+  "description": "Skills that build finished websites from one JSON file: BPO and outsourcing landing pages, and electronics e-commerce shops with an admin dashboard.",
+  "version": "1.0.0",
+  "author": { "name": "duchuyn04" },
+  "repository": "https://github.com/duchuyn04/bpo-landing-builder",
+  "keywords": ["landing-page", "bpo", "ecommerce", "website-generator", "vietnamese"]
+}

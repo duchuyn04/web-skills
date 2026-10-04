@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ title }}</title>
+<link rel="icon" href="{{ root }}assets/p/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ fonts }}&amp;display=swap">
+<link rel="stylesheet" href="{{ root }}assets/css/admin.css">
+<script>window.ROOT='{{ root }}';try{if(localStorage.getItem('adm-collapsed')==='1')document.documentElement.classList.add('side-mini')}catch(e){}</script>
+</head>
+<body class="{{ body_class }}">
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+{% set active = {"order": "orders", "product": "products", "customer": "customers"}.get(adm, adm) %}
+{% macro item(key, label, ic, badge="") -%}
+<a class="nav-item" href="{{ key }}.html" {% if active == key %}aria-current="page"{% endif %} title="{{ label }}">{{ icon(ic) }}<span class="nav-label">{{ label }}</span>{% if badge %}<b class="nav-badge" data-nav-badge="{{ badge }}" hidden></b>{% endif %}</a>
+{%- endmacro %}
+<div class="adm-shell" data-admin="{{ adm }}">
+  <aside class="adm-side" id="adm-side" data-side aria-label="Menu quản trị">
+    <div class="side-store">
+      <a class="side-store-main" href="index.html" title="{{ shop.name }}">
+        <span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span>
+        <span class="side-store-text"><b>{{ shop.name }}</b><small>{% if demo %}Cửa hàng mẫu{% else %}Quản trị bán hàng{% endif %}</small></span>
+      </a>
+      <a class="icon-btn side-store-open" href="{{ root }}index.html" target="_blank" rel="noopener" title="Xem cửa hàng" aria-label="Xem cửa hàng (mở tab mới)">{{ icon("external", "i-sm") }}</a>
+    </div>
+
+    <button class="side-search" type="button" data-palette-open title="Tìm nhanh">
+      {{ icon("search", "i-sm") }}<span class="nav-label">Tìm nhanh</span><kbd class="nav-label">Ctrl K</kbd>
+    </button>
+
+    <nav class="side-scroll" aria-label="Quản trị">
+      <ul class="side-group">
+        <li>{{ item("index", "Tổng quan", "dashboard") }}</li>
+      </ul>
+      <p class="side-label">Bán hàng</p>
+      <ul class="side-group">
+        <li>{{ item("orders", "Đơn hàng", "receipt", "orders") }}
+          <ul class="side-sub" data-side-sub>
+            <li><a href="orders.html?status=pending" data-sub="pending"><span class="nav-label">Chờ xác nhận</span><small data-sub-count="pending"></small></a></li>
+            <li><a href="orders.html?status=confirmed" data-sub="confirmed"><span class="nav-label">Cần đóng gói</span><small data-sub-count="confirmed"></small></a></li>
+            <li><a href="orders.html?status=shipping" data-sub="shipping"><span class="nav-label">Đang giao</span><small data-sub-count="shipping"></small></a></li>
+            <li><a href="orders.html?status=returned" data-sub="returned"><span class="nav-label">Trả hàng</span><small data-sub-count="returned"></small></a></li>
+          </ul>
+        </li>
+        <li>{{ item("customers", "Khách hàng", "users") }}</li>
+        <li>{{ item("promotions", "Khuyến mãi", "ticket") }}</li>
+      </ul>
+      <p class="side-label">Sản phẩm</p>
+      <ul class="side-group">
+        <li>{{ item("products", "Sản phẩm", "package") }}</li>
+        <li>{{ item("inventory", "Tồn kho", "warehouse", "stock") }}</li>
+      </ul>
+      <p class="side-label">Phân tích</p>
+      <ul class="side-group">
+        <li>{{ item("reports", "Báo cáo", "bar-chart") }}</li>
+      </ul>
+    </nav>
+
+    <div class="side-foot">
+      <ul class="side-group">
+        <li>{{ item("settings", "Cài đặt", "settings") }}</li>
+      </ul>
+      <div class="side-user">
+        <span class="avatar" aria-hidden="true" data-staff-initial>Q</span>
+        <span class="side-user-text nav-label"><b data-staff-name>Quản lý</b><small data-staff-role>Chủ cửa hàng</small></span>
+        <button class="icon-btn nav-label" type="button" data-staff-logout title="Đăng xuất" aria-label="Đăng xuất">{{ icon("log-out", "i-sm") }}</button>
+      </div>
+      <button class="side-collapse" type="button" data-side-collapse aria-pressed="false" title="Thu gọn menu">{{ icon("chevron-left", "i-sm") }}<span class="nav-label">Thu gọn</span></button>
+    </div>
+  </aside>
+  <div class="adm-scrim" data-side-close hidden></div>
+  <div class="adm-body">
+    <header class="adm-top">
+      <button class="icon-btn adm-burger" type="button" data-side-open aria-label="Mở menu" aria-controls="adm-side">{{ icon("menu") }}</button>
+      <button class="adm-search" type="button" data-palette-open>
+        {{ icon("search", "i-sm") }}<span>Tìm mã đơn, sản phẩm, khách hàng</span><kbd>Ctrl K</kbd>
+      </button>
+      <div class="adm-top-right">
+        {% if demo %}<span class="demo-pill" title="Dữ liệu minh họa">{{ icon("info", "i-xs") }}Dữ liệu mẫu</span>{% endif %}
+        <div class="notif">
+          <button class="icon-btn" type="button" data-notif-toggle aria-expanded="false" aria-controls="notif-panel" aria-label="Thông báo">{{ icon("bell") }}<b class="dot" data-notif-dot hidden></b></button>
+          <div class="notif-panel" id="notif-panel" data-notif-panel hidden>
+            <div class="notif-head"><b>Thông báo</b><button class="link-btn" type="button" data-notif-read>Đánh dấu đã đọc</button></div>
+            <ul data-notif-list></ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="adm-main">
+      {% block main %}{% endblock %}
+    </main>
+  </div>
+</div>
+
+<dialog class="palette" data-palette aria-label="Tìm nhanh">
+  <div class="palette-in">
+    <label class="palette-q">{{ icon("search", "i-sm") }}<span class="sr">Tìm nhanh</span><input type="search" placeholder="Gõ mã đơn, tên sản phẩm, tên hoặc số điện thoại khách" data-palette-q autocomplete="off"></label>
+    <ul class="palette-list" data-palette-list role="listbox"></ul>
+    <p class="palette-hint"><kbd>Enter</kbd> mở, <kbd>Esc</kbd> đóng, phím mũi tên lên xuống để chọn</p>
+  </div>
+</dialog>
+<div class="toasts" aria-live="polite" data-toasts></div>
+<div class="tip" data-tip role="tooltip" hidden></div>
+<script src="{{ root }}assets/js/catalog.js"></script>
+<script src="{{ root }}assets/js/seed.js"></script>
+<script src="{{ root }}assets/js/common.js"></script>
+<script src="{{ root }}assets/js/admin.js"></script>
+</body>
+</html>

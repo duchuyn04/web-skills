@@ -1,0 +1,18 @@
+{# Section 'editorial': {"type": "editorial", "title", "text": ["paragraph", ...], "product",
+   "bg"?, "cta"?, "href"?, "align"?: "right"} a picture beside a short text. #}
+{% set prod = pid[sec.product] if sec.product else None %}
+{% set href = sec.href or (root ~ 'p/' ~ sec.product ~ '.html' if sec.product else None) %}
+<section class="sec ctn" aria-labelledby="h-ed-{{ sec._i }}">
+  <div class="bq-ed{% if sec.align == 'right' %} bq-ed-r{% endif %}" style="--ed-bg: {{ sec.bg or 'var(--c-surface-2)' }}">
+    <div class="bq-ed-art">
+      {% if prod %}<img src="{{ root }}{{ prod.image }}" alt="{{ prod.name }}" width="400" height="400" loading="lazy">
+      {% elif sec.art %}<img src="{{ root }}{{ sec.art }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+    </div>
+    <div class="bq-ed-copy">
+      <h2 id="h-ed-{{ sec._i }}">{{ sec.title }}</h2>
+      {% for para in (sec.text if sec.text is not string else [sec.text]) %}<p>{{ para }}</p>{% endfor %}
+      {% if prod %}<p class="bq-ed-price">{{ prod.name }}, {{ prod.price|vnd }}</p>{% endif %}
+      {% if href %}<a class="ed-link" href="{{ href }}">{{ sec.cta or "Xem sản phẩm" }}{{ arrow }}</a>{% endif %}
+    </div>
+  </div>
+</section>

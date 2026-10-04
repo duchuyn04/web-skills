@@ -1,0 +1,16 @@
+/* Section 'editorial': a picture beside a short text. */
+.bq-ed{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius-lg);overflow:hidden;background:var(--c-surface);border:1px solid var(--c-border)}
+.bq-ed-art{display:grid;place-items:center;min-height:400px;padding:32px;background:var(--ed-bg)}
+.bq-ed-art img{width:min(68%,340px);filter:drop-shadow(0 16px 20px rgba(42,37,34,.14))}
+.bq-ed-r .bq-ed-art{order:2}
+.bq-ed-copy{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:48px}
+.bq-ed-copy h2{font-family:var(--font-head);font-size:32px;font-weight:600;line-height:1.2}
+.bq-ed-copy p{color:var(--c-muted);line-height:1.7;max-width:52ch}
+.bq-ed-copy .bq-ed-price{color:var(--c-text);font-weight:600}
+@media (max-width:900px){
+  .bq-ed{grid-template-columns:1fr}
+  .bq-ed-r .bq-ed-art{order:0}
+  .bq-ed-art{min-height:0;aspect-ratio:4/3;padding:24px}
+  .bq-ed-copy{padding:24px 20px}
+  .bq-ed-copy h2{font-size:26px}
+}

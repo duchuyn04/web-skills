@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+<div class="ctn page page-auth">
+  <div class="auth box" data-auth>
+    <div class="tabs tabs-2" role="tablist" aria-label="Đăng nhập hoặc đăng ký">
+      <button type="button" role="tab" aria-selected="true" data-auth-tab="login">Đăng nhập</button>
+      <button type="button" role="tab" aria-selected="false" data-auth-tab="register">Đăng ký</button>
+    </div>
+    <form data-auth-form="login">
+      <label class="field"><span>Số điện thoại hoặc email</span><input name="id" required autocomplete="username"></label>
+      <label class="field"><span>Mật khẩu</span><input name="password" type="password" required minlength="6" autocomplete="current-password"></label>
+      <div class="form-row form-row-between"><label class="check"><input type="checkbox" name="remember" checked><span>Ghi nhớ đăng nhập</span></label><a class="link-sm" href="#" data-forgot>Quên mật khẩu?</a></div>
+      <button class="btn btn-primary btn-block btn-lg" type="submit">Đăng nhập</button>
+      <p class="form-error" data-auth-error hidden role="alert"></p>
+    </form>
+    <form data-auth-form="register" hidden>
+      <label class="field"><span>Họ và tên</span><input name="name" required autocomplete="name"></label>
+      <label class="field"><span>Số điện thoại</span><input name="phone" type="tel" required pattern="^(0|\+84)(3|5|7|8|9)[0-9]{8}$" autocomplete="tel"></label>
+      <label class="field"><span>Email (không bắt buộc)</span><input name="email" type="email" autocomplete="email"></label>
+      <label class="field"><span>Mật khẩu</span><input name="password" type="password" required minlength="6" autocomplete="new-password"></label>
+      <button class="btn btn-primary btn-block btn-lg" type="submit">Tạo tài khoản</button>
+    </form>
+    {% if demo %}<p class="hint">{{ icon("info", "i-xs") }}Cửa hàng mẫu: tài khoản chỉ lưu trên trình duyệt này, không gửi đi đâu.</p>{% endif %}
+    <p class="auth-guest">Không muốn tạo tài khoản? <a href="{{ root }}cart.html">Đặt hàng không cần đăng nhập</a></p>
+  </div>
+</div>
+{% endblock %}

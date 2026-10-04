@@ -1,0 +1,44 @@
+{# Hero 'sidebar': category list, carousel with tab labels, side banners (CellphoneS, Phong Vu). #}
+<section class="hero" aria-label="Khuyến mãi nổi bật">
+  <div class="ctn hero-grid{% if not sec.side %} hero-noside{% endif %}">
+    <nav class="hero-cats" aria-label="Danh mục sản phẩm">
+      {{ m.catmenu() }}
+    </nav>
+    <div class="hero-main">
+      <div class="carousel" data-carousel data-interval="{{ sec.interval or 5000 }}">
+        <div class="carousel-track">
+          {% for s in sec.slides %}
+          {% set prod = pid[s.product] if s.product else None %}
+          <a class="slide{% if loop.first %} is-active{% endif %}" href="{{ s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') }}" style="--slide-bg: {{ s.bg or 'var(--c-dark)' }}; --slide-ink: {{ s.ink or '#ffffff' }}" {% if not loop.first %}aria-hidden="true" tabindex="-1"{% endif %} data-slide>
+            <div class="slide-copy">
+              {% if s.label %}<span class="slide-label">{{ s.label }}</span>{% endif %}
+              <h2 class="slide-title">{{ s.title }}</h2>
+              {% if s.text %}<p class="slide-text">{{ s.text }}</p>{% endif %}
+              {% if prod %}<p class="slide-price">Giá chỉ từ <strong>{{ prod.price|vnd }}</strong></p>{% endif %}
+              <span class="btn btn-light">{{ s.cta or "Mua ngay" }}{{ arrow }}</span>
+            </div>
+            {% if s.art %}<img class="slide-art" src="{{ root }}{{ s.art }}" alt="" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+          </a>
+          {% endfor %}
+        </div>
+        <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Banner trước">{{ icon("chevron-left") }}</button>
+        <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Banner tiếp theo">{{ icon("chevron-right") }}</button>
+      </div>
+      <div class="carousel-tabs" role="tablist" aria-label="Chọn banner">
+        {% for s in sec.slides %}
+        <button type="button" role="tab" data-carousel-tab="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ s.tab or s.title }}</button>
+        {% endfor %}
+      </div>
+    </div>
+    {% if sec.side %}
+    <div class="hero-side">
+      {% for s in sec.side[:3] %}
+      <a class="side-banner" href="{{ s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') }}" style="--slide-bg: {{ s.bg or 'var(--c-dark)' }}; --slide-ink: {{ s.ink or '#ffffff' }}">
+        <span class="side-copy"><b>{{ s.title }}</b>{% if s.text %}<span>{{ s.text }}</span>{% endif %}</span>
+        {% if s.art %}<img src="{{ root }}{{ s.art }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

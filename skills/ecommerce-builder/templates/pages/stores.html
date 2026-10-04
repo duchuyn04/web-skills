@@ -1,0 +1,32 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Hệ thống cửa hàng", None)]) }}
+<div class="ctn page" data-stores-page>
+  <div class="page-head">
+    <h1>Hệ thống cửa hàng <small>{{ stores|length }} cửa hàng</small></h1>
+    <label class="sort-select sort-select-on"><span class="sort-label">Tỉnh, thành</span>
+      <select data-store-city><option value="">Tất cả</option>{% for c in stores|map(attribute="city")|unique %}<option>{{ c }}</option>{% endfor %}</select>
+    </label>
+  </div>
+  <div class="stores-grid">
+    <ul class="store-list" data-store-list>
+      {% for st in stores %}
+      <li class="store" data-store="{{ st.id }}" data-city="{{ st.city }}" data-hours="{{ st.hours }}" data-map="{{ st.map or (st.name ~ ', ' ~ st.address) }}">
+        <button type="button" class="store-btn" data-store-pick aria-pressed="{{ 'true' if loop.first else 'false' }}">
+          <b>{{ st.name }}</b>
+          <span>{{ icon("map-pin", "i-sm") }}{{ st.address }}</span>
+          <span>{{ icon("clock", "i-sm") }}{{ st.hours }} <em class="open-state" data-open-state></em></span>
+          {% if st.phone %}<span>{{ icon("phone", "i-sm") }}{{ st.phone }}</span>{% endif %}
+        </button>
+        <a class="link-sm" href="https://www.google.com/maps/search/?api=1&query={{ (st.map or (st.name ~ ', ' ~ st.address))|urlencode }}" target="_blank" rel="noopener">Chỉ đường{{ icon("external", "i-xs") }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="store-map">
+      <iframe title="Bản đồ cửa hàng" data-store-map loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"
+        src="https://www.google.com/maps?q={{ (stores[0].map or (stores[0].name ~ ', ' ~ stores[0].address))|urlencode }}&output=embed"></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

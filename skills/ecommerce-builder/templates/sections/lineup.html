@@ -1,0 +1,27 @@
+{# Section 'lineup': 2-4 models side by side with the spec rows that tell them apart.
+   Data: title?, products (2-4 ids), rows (spec row names as written in products[].specs, or facet keys). #}
+{% set items = sec.products|map("extract", pid)|list %}
+<section class="sec ctn lineup" aria-labelledby="h-lineup-{{ sec._i }}">
+  <div class="sec-head lineup-head"><h2 id="h-lineup-{{ sec._i }}">{{ sec.title or "Chọn mẫu phù hợp với bạn" }}</h2>
+    <a class="sec-more" href="{{ root }}compare.html" data-lineup-compare="{{ sec.products|join(',') }}">So sánh chi tiết{{ arrow }}</a></div>
+  <div class="lineup-grid lineup-{{ items|length }}" role="list">
+    {% for p in items %}
+    <article class="lineup-col" role="listitem">
+      <a class="lineup-art" href="{{ root }}p/{{ p.id }}.html"><img src="{{ root }}{{ p.image }}" alt="{{ p.name }}" width="400" height="400" loading="lazy"></a>
+      {% set colors = (p.options|selectattr("color")|first) if p.options else None %}
+      {% if colors %}<ul class="pc-dots lineup-dots" aria-label="{{ colors['values']|length }} màu">{% for v in colors['values'][:6] %}<li style="--sw: {{ v.hex }}" title="{{ v.name }}"></li>{% endfor %}</ul>{% endif %}
+      <h3><a href="{{ root }}p/{{ p.id }}.html">{{ p.name }}</a></h3>
+      <p class="lineup-price">Từ {{ p.price|vnd }}</p>
+      <a class="btn btn-primary btn-sm lineup-buy" href="{{ root }}p/{{ p.id }}.html">Mua ngay</a>
+      <dl class="lineup-specs">
+        {% for row in sec.rows or [] %}
+        {% set ns = namespace(v="") %}
+        {% for g in p.specs %}{% for k, v in g.rows %}{% if k == row and not ns.v %}{% set ns.v = v %}{% endif %}{% endfor %}{% endfor %}
+        {% if not ns.v and p.facets.get(row) %}{% set fv = p.facets.get(row) %}{% set ns.v = fv|join(", ") if fv is not string else fv %}{% endif %}
+        <div><dt>{{ row }}</dt><dd>{{ ns.v or "Không có" }}</dd></div>
+        {% endfor %}
+      </dl>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,6 @@
+<section class="sec ctn" aria-labelledby="h-brands">
+  <div class="sec-head"><h2 id="h-brands">{{ sec.title or "Thương hiệu" }}</h2></div>
+  <ul class="brand-strip">
+    {% for b in brands %}<li><a href="{{ root }}search.html?brand={{ b.id }}">{{ b.name }}</a></li>{% endfor %}
+  </ul>
+</section>

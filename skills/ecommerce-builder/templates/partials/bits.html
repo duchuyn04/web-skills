@@ -1,0 +1,9 @@
+{# Small shared pieces for cards and pages. Import with: {% import "partials/bits.html" as b with context %} #}
+
+{% macro price(value, old=None, cls="") -%}
+<span class="price {{ cls }}"><strong>{{ value|vnd }}</strong>{% if old %}<s>{{ old|vnd }}</s>{% endif %}</span>
+{%- endmacro %}
+
+{% macro rating(r, link=None) -%}
+{% if r and r.avg %}<span class="rating">{{ r|stars }}<span class="rating-n">{{ r.avg|string|replace(".", ",") }}</span>{% if r.count %}<span class="rating-c">({{ r.count }})</span>{% endif %}</span>{% endif %}
+{%- endmacro %}

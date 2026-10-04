@@ -1,0 +1,11 @@
+<section class="sec ctn" aria-labelledby="h-cats">
+  <div class="sec-head"><h2 id="h-cats">{{ sec.title or "Danh mục nổi bật" }}</h2></div>
+  <ul class="cat-tiles">
+    {% for c in cats %}
+    <li><a class="cat-tile" href="{{ root }}c/{{ c.id }}.html">
+      <img src="{{ root }}{{ by_cat[c.id][0].image }}" alt="" width="400" height="400" loading="lazy">
+      <span>{{ c.name }}</span><small>{{ c.count }} sản phẩm</small>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

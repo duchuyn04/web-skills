@@ -1,0 +1,37 @@
+{# Section 'bundle': a set of products sold together (PC build, streaming setup). One button adds every item to the cart.
+   The cart charges each item's normal price; a bundle "price" is shown as the price staff confirm on the order. #}
+{% set items = sec.products|map("extract", pid)|list %}
+{% set total = items|sum(attribute="price") %}
+<section class="sec ctn" aria-labelledby="h-bundle-{{ sec._i }}">
+  <div class="bundle" data-bundle>
+    <div class="bundle-head">
+      <h2 id="h-bundle-{{ sec._i }}">{{ sec.title or "Combo gợi ý" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+    </div>
+    <ol class="bundle-items">
+      {% for p in items %}
+      {% set v = (p.variants|selectattr("stock")|first) or p.variants[0] %}
+      <li class="bundle-item" data-bundle-sku="{{ v.sku }}">
+        {% if not loop.first %}<span class="bundle-plus" aria-hidden="true">{{ icon("plus") }}</span>{% endif %}
+        <a href="{{ root }}p/{{ p.id }}.html">
+          <img src="{{ root }}{{ v.image or p.image }}" alt="" width="400" height="400" loading="lazy">
+          <span class="bundle-name">{{ p.name }}</span>
+          {% if v.label %}<small>{{ v.label }}</small>{% endif %}
+          <b>{{ v.price|vnd }}</b>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="bundle-sum">
+      <dl>
+        <dt>Mua lẻ {{ items|length }} sản phẩm</dt><dd{% if sec.price %} class="bundle-was"{% endif %}>{{ total|vnd }}</dd>
+        {% if sec.price %}
+        <dt>Giá combo</dt><dd class="bundle-price">{{ sec.price|vnd }}</dd>
+        <dt>Tiết kiệm</dt><dd class="bundle-save">{{ (total - sec.price)|vnd }}</dd>
+        {% endif %}
+      </dl>
+      <button class="btn btn-primary btn-lg" type="button" data-bundle-add>{{ icon("shopping-cart") }}Thêm cả combo vào giỏ</button>
+      {% if sec.price %}<p class="bundle-note">Giá combo áp dụng khi nhân viên xác nhận đơn; giỏ hàng hiện giá lẻ từng sản phẩm.</p>{% endif %}
+    </div>
+  </div>
+</section>

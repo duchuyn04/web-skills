@@ -1,0 +1,36 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Tìm kiếm", None)]) }}
+<div class="ctn page" data-search-page>
+  <div class="plp-head">
+    <h1 data-search-title>Tìm kiếm</h1>
+    <form class="search search-page" action="search.html" role="search">
+      <label class="sr" for="q2">Từ khóa</label>
+      <input id="q2" name="q" type="search" placeholder="Nhập tên sản phẩm, hãng hoặc danh mục" data-search-page-input>
+      <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+    </form>
+  </div>
+  <div class="toolbar">
+    <div class="chips" role="group" aria-label="Lọc theo danh mục" data-search-cats></div>
+    <label class="sort-select sort-select-on"><span class="sort-label">Sắp xếp</span>
+      <select data-search-sort>
+        <option value="relevant">Liên quan</option><option value="price-asc">Giá thấp đến cao</option><option value="price-desc">Giá cao đến thấp</option><option value="discount">Giảm nhiều</option>
+      </select>
+    </label>
+  </div>
+  <div class="grid grid-plp" data-search-grid></div>
+  <div data-search-empty hidden>
+    <div class="empty">
+      <span class="empty-ic">{{ icon("search") }}</span>
+      <h2 data-search-empty-title>Không tìm thấy sản phẩm</h2>
+      <p>Kiểm tra lại chính tả, dùng từ khóa ngắn hơn hoặc xem các danh mục bên dưới.</p>
+      <ul class="chips chips-center">{% for c in cats %}<li><a class="chip" href="{{ root }}c/{{ c.id }}.html">{{ c.name }}</a></li>{% endfor %}</ul>
+    </div>
+    <section class="sec" aria-labelledby="h-sug">
+      <div class="sec-head"><h2 id="h-sug">Có thể bạn quan tâm</h2></div>
+      <div class="grid">{% for p in (products|sort(attribute="discount", reverse=true))[:5] %}{{ m.card(p) }}{% endfor %}</div>
+    </section>
+  </div>
+</div>
+{% endblock %}

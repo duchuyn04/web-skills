@@ -1,0 +1,22 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <h1>Khách hàng <small class="muted" data-c-count></small></h1>
+  <div class="head-actions"><button class="btn btn-outline" type="button" data-export="customers">{{ icon("download", "i-sm") }}Xuất CSV</button></div>
+</div>
+<div class="card card-flush">
+  <div class="tabs" role="tablist" aria-label="Nhóm khách hàng" data-seg-tabs>
+    <button type="button" role="tab" data-tab="" aria-selected="true">Tất cả</button>
+    <button type="button" role="tab" data-tab="vip" aria-selected="false">VIP (từ 50 triệu)</button>
+    <button type="button" role="tab" data-tab="loyal" aria-selected="false">Thân thiết (từ 3 đơn)</button>
+    <button type="button" role="tab" data-tab="new" aria-selected="false">Mới (30 ngày)</button>
+    <button type="button" role="tab" data-tab="idle" aria-selected="false">Lâu chưa mua (60 ngày)</button>
+  </div>
+  <div class="filters-row">
+    <label class="search-in"><span class="sr">Tìm khách</span>{{ icon("search", "i-sm") }}<input type="search" placeholder="Tên, số điện thoại, email" data-q></label>
+    <label><span class="sr">Tỉnh, thành</span><select data-f-city><option value="">Mọi tỉnh, thành</option></select></label>
+  </div>
+  <div class="table-wrap"><table class="tbl tbl-click" data-customers></table></div>
+  <div class="pager" data-pager></div>
+</div>
+{% endblock %}

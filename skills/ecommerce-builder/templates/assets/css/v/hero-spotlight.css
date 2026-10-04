@@ -1,0 +1,27 @@
+.spot{padding:0}
+.spot-car{aspect-ratio:auto;height:clamp(560px,52vw,700px);overflow:hidden}
+.spot-slide{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;padding:56px 24px 32px;background:var(--slide-bg);color:var(--slide-ink)}
+.spot-copy{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:760px}
+.spot-label{font-size:15px;font-weight:600;color:var(--c-price)}
+.spot-slide[style*="--slide-ink: #ffffff"] .spot-label{color:inherit;opacity:.8}
+.spot-title{font-family:var(--font-head);font-size:clamp(34px,4.8vw,56px);font-weight:600;letter-spacing:-.025em;line-height:1.08}
+.spot-text{font-size:clamp(17px,1.6vw,22px);opacity:.88}
+.spot-price{font-size:16px;opacity:.8}
+.spot-links{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:12px}
+.spot-btn{display:inline-flex;align-items:center;min-height:44px;padding:8px 22px;border-radius:999px;background:var(--c-btn);color:var(--c-btn-fg);font-weight:600;font-size:15px}
+.spot-btn:hover{background:var(--c-btn-hover)}
+.spot-more{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:15px;color:inherit}
+.spot-more:hover{text-decoration:underline}
+.spot-art{flex:1 1 0;min-height:0;width:auto;max-width:min(460px,72%);object-fit:contain;margin-top:auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.18))}
+.spot .carousel-btn{background:color-mix(in srgb,var(--c-surface) 82%,transparent);border-radius:50%;width:44px;height:44px}
+.spot .carousel-prev{left:20px}.spot .carousel-next{right:20px}
+.spot-dots{display:flex;justify-content:center;gap:10px;padding:16px 0 4px}
+.spot-dots button{width:24px;height:24px;display:grid;place-items:center}
+.spot-dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c-border);transition:background-color .2s}
+.spot-dots button[aria-selected=true]::before{background:var(--c-text)}
+@media (max-width:767px){
+  .spot-car{height:540px}
+  .spot-slide{padding:40px 16px 24px;gap:14px}
+  .spot-art{max-width:min(320px,82%)}
+  .spot .carousel-btn{display:none}
+}

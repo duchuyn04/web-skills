@@ -1,0 +1,21 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("So sánh sản phẩm", None)]) }}
+<div class="ctn page" data-compare-page>
+  <div class="page-head">
+    <h1>So sánh sản phẩm</h1>
+    <label class="switch"><input type="checkbox" data-compare-diff><span>Chỉ xem điểm khác biệt</span></label>
+  </div>
+  <div class="cmp-wrap" data-compare-table></div>
+  <div data-compare-empty hidden>
+    {{ m.empty("compare", "Chưa có sản phẩm để so sánh", "Bấm So sánh trên thẻ sản phẩm để chọn tối đa 3 sản phẩm cùng loại.", "Xem điện thoại", root ~ "c/" ~ cats[0].id ~ ".html") }}
+  </div>
+  <dialog class="modal" data-compare-picker aria-labelledby="h-pick">
+    <div class="modal-head"><h2 id="h-pick">Thêm sản phẩm để so sánh</h2><button class="icon-btn" type="button" data-modal-close aria-label="Đóng">{{ icon("x") }}</button></div>
+    <label class="sr" for="pick-q">Tìm sản phẩm</label>
+    <input id="pick-q" class="input" type="search" placeholder="Nhập tên sản phẩm" data-compare-pick-q>
+    <ul class="pick-list" data-compare-pick-list></ul>
+  </dialog>
+</div>
+{% endblock %}

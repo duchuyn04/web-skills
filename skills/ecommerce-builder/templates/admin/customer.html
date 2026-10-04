@@ -1,0 +1,21 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div data-customer>
+  <a class="back" href="customers.html">{{ icon("chevron-left", "i-sm") }}Khách hàng</a>
+  <div class="adm-head"><div><h1 data-c-name></h1><p class="muted" data-c-sub></p></div></div>
+  <ul class="kpis" data-c-kpis></ul>
+  <div class="detail-grid">
+    <div class="detail-main">
+      <section class="card"><div class="card-head"><h2>Đơn hàng</h2></div><div class="table-wrap"><table class="tbl tbl-click" data-c-orders></table></div></section>
+      <section class="card"><div class="card-head"><h2>Sản phẩm đã mua</h2></div><ul class="bought" data-c-bought></ul></section>
+    </div>
+    <div class="detail-side">
+      <section class="card"><div class="card-head"><h2>Liên hệ</h2></div><dl class="kv" data-c-info></dl></section>
+      <section class="card"><div class="card-head"><h2>Ghi chú</h2></div>
+        <form class="note-form" data-c-note><label class="sr" for="cnote">Ghi chú</label><input id="cnote" name="note" placeholder="Ví dụ: thích liên hệ qua Zalo" required><button class="btn btn-outline btn-sm" type="submit">Lưu</button></form>
+        <ul class="notes" data-c-notes></ul></section>
+    </div>
+  </div>
+</div>
+<div data-c-missing hidden><div class="empty"><h2>Không tìm thấy khách hàng</h2><a class="btn btn-primary" href="customers.html">Về danh sách</a></div></div>
+{% endblock %}

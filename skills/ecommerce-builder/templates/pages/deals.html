@@ -1,0 +1,35 @@
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Khuyến mãi", None)]) }}
+<div class="ctn page">
+  <h1>Khuyến mãi</h1>
+  {% if promotions %}
+  <section class="sec" aria-labelledby="h-vouchers">
+    <div class="sec-head"><h2 id="h-vouchers">Mã giảm giá</h2></div>
+    <ul class="vouchers">
+      {% for pr in promotions %}
+      <li class="voucher-card">
+        <span class="voucher-ic">{{ icon("ticket") }}</span>
+        <div><b>{{ pr.label }}</b>
+          <small>{% if pr.min %}Đơn từ {{ pr.min|vnd }}{% endif %}{% if pr.ends %}{% if pr.min %}, {% endif %}hết hạn {{ pr.ends }}{% endif %}</small>
+          <code>{{ pr.code }}</code></div>
+        <button class="btn btn-outline" type="button" data-copy="{{ pr.code }}">{{ icon("copy", "i-sm") }}Sao chép</button>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  {% if flash %}
+  {% set sec = flash %}
+  {% include "sections/flash-sale.html" %}
+  {% endif %}
+  {% set sale = products|selectattr("discount")|sort(attribute="discount", reverse=true)|list %}
+  {% if sale %}
+  <section class="sec" aria-labelledby="h-sale">
+    <div class="sec-head"><h2 id="h-sale">Đang giảm giá</h2></div>
+    <div class="grid">{% for p in sale %}{{ m.card(p) }}{% endfor %}</div>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

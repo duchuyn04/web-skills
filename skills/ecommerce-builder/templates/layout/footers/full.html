@@ -1,0 +1,50 @@
+{# Footer 'full': promise row, five link columns, payment methods, legal line. #}
+<footer class="ftr">
+  <div class="ctn ftr-benefits">
+    {% for b in benefits %}
+    <div class="ftr-benefit">{{ icon(b.icon) }}<div><b>{{ b.title }}</b><span>{{ b.text }}</span></div></div>
+    {% endfor %}
+  </div>
+  <div class="ctn ftr-grid">
+    <div class="ftr-col ftr-brand">
+      <a class="logo logo-ftr" href="{{ root }}index.html"><span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span></a>
+      <p>{{ shop.tagline }}</p>
+      <ul class="ftr-contact">
+        <li>{{ icon("phone") }}<span>Mua hàng: <a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ shop.hotline }}</a>{% if shop.hours %} ({{ shop.hours }}){% endif %}</span></li>
+        <li>{{ icon("mail") }}<a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        {% if shop.address %}<li>{{ icon("map-pin") }}<span>{{ shop.address }}</span></li>{% endif %}
+      </ul>
+    </div>
+    <nav class="ftr-col" aria-label="Chính sách">
+      <h2>Chính sách</h2>
+      <ul>{% for p in policies %}<li><a href="{{ root }}policy/{{ p.id }}.html">{{ p.title }}</a></li>{% endfor %}</ul>
+    </nav>
+    <nav class="ftr-col" aria-label="Danh mục">
+      <h2>Danh mục</h2>
+      <ul>{% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html">{{ c.name }}</a></li>{% endfor %}</ul>
+    </nav>
+    <nav class="ftr-col" aria-label="Hỗ trợ">
+      <h2>Hỗ trợ khách hàng</h2>
+      <ul>
+        <li><a href="{{ root }}track.html">Tra cứu đơn hàng</a></li>
+        <li><a href="{{ root }}account/orders.html">Đơn hàng của tôi</a></li>
+        {% if stores %}<li><a href="{{ root }}stores.html">Hệ thống cửa hàng</a></li>{% endif %}
+        <li><a href="{{ root }}deals.html">Khuyến mãi</a></li>
+      </ul>
+    </nav>
+    <div class="ftr-col">
+      <h2>Thanh toán</h2>
+      <ul class="ftr-pay">{% for p in payments %}<li>{{ icon(p.icon or "credit-card") }}<span>{{ p.name }}</span></li>{% endfor %}</ul>
+      {% if socials %}
+      <h2>Kết nối</h2>
+      <ul class="ftr-social">{% for s in socials %}<li><a href="{{ s.url }}" aria-label="{{ s.type|capitalize }}">{{ icon(s.type) }}</a></li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+  </div>
+  <div class="ftr-bottom">
+    <div class="ctn ftr-bottom-in">
+      <span>{% if shop.legal %}{{ shop.legal }}{% else %}{{ year }} {{ shop.name }}{% endif %}</span>
+      {% if demo %}<span class="demo-note">{{ icon("info", "i-sm") }}Cửa hàng mẫu: sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa. <a href="{{ root }}admin/index.html">Xem trang quản trị</a></span>{% endif %}
+    </div>
+  </div>
+</footer>

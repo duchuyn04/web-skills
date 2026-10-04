@@ -1,0 +1,55 @@
+/* Hero 'wide': full-width banner carousel with labelled dots, then a row of small promo tiles. */
+.hw{padding-top:16px}
+.hw-main{position:relative}
+.hw-car{position:relative;border-radius:var(--radius-lg);overflow:hidden;height:360px;width:100%;aspect-ratio:auto;background:var(--c-surface-2)}
+.hw-track{position:relative;height:100%}
+.hw-slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:24px;padding:36px 56px;background:var(--slide-bg);color:var(--slide-ink,#fff);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.hw-slide.is-active{opacity:1;visibility:visible}
+.hw-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:520px}
+.hw-label{display:inline-block;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--slide-ink,#fff) 16%,transparent);font-size:13px;font-weight:700}
+.hw-title{font-size:clamp(26px,3.2vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.01em}
+.hw-text{font-size:16px;opacity:.92;max-width:44ch}
+.hw-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:15px}
+.hw-price strong{font-size:26px;font-weight:800}
+.hw-price s{opacity:.75;font-size:14px}
+.hw-cta{margin-top:6px;background:var(--slide-ink,#fff);color:var(--slide-bg);min-height:46px;padding:10px 22px}
+.hw-cta:hover{filter:brightness(.95)}
+.hw-art{justify-self:center;width:100%;max-width:330px;filter:drop-shadow(0 16px 24px rgba(0,0,0,.22))}
+.hw-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);opacity:0;transition:opacity .2s}
+.hw-car:hover .hw-btn,.hw-btn:focus-visible{opacity:1}
+.hw-prev{left:14px}.hw-next{right:14px}
+.hw-dots{display:flex;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.hw-dots button{display:inline-flex;align-items:center;min-height:32px;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--c-muted);background:var(--c-surface);border:1px solid var(--c-border)}
+.hw-dots button[aria-selected=true]{color:var(--c-btn-fg);background:var(--c-btn);border-color:var(--c-btn)}
+.hw-tiles{display:grid;gap:12px;margin-top:14px}
+.hw-tiles-1{grid-template-columns:1fr}.hw-tiles-2{grid-template-columns:repeat(2,1fr)}.hw-tiles-3{grid-template-columns:repeat(3,1fr)}.hw-tiles-4{grid-template-columns:repeat(4,1fr)}
+.hw-tile{display:flex;align-items:center;gap:10px;height:100%;min-height:112px;padding:14px 16px;border-radius:var(--radius-lg);background:var(--slide-bg);color:var(--slide-ink);border:1px solid color-mix(in srgb,var(--slide-ink) 10%,transparent);overflow:hidden}
+.hw-tile:hover{border-color:color-mix(in srgb,var(--slide-ink) 30%,transparent)}
+.hw-tile-copy{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
+.hw-tile-copy b{font-size:16px;line-height:1.25}
+.hw-tile-copy span{font-size:13.5px;opacity:.85}
+.hw-tile img{width:84px;height:84px;flex:none;object-fit:contain}
+@media (max-width:1023px){
+  .hw-car{height:320px}
+  .hw-slide{padding:28px 32px}
+  .hw-tiles-4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:767px){
+  .hw{padding-top:10px}
+  .hw-car{height:260px}
+  .hw-slide{grid-template-columns:minmax(0,1fr) 36%;gap:8px;padding:18px}
+  .hw-title{font-size:21px}
+  .hw-text{display:none}
+  .hw-price strong{font-size:19px}
+  .hw-cta{min-height:40px;padding:8px 14px;font-size:14px}
+  .hw-btn{display:none}
+  .hw-dots{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .hw-dots button{flex:none}
+  .hw-tiles{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}
+  .hw-tiles::-webkit-scrollbar{display:none}
+  .hw-tiles li{flex:0 0 64%;scroll-snap-align:start}
+  .hw-tiles-1 li{flex-basis:100%}
+  .hw-tile{min-height:96px;padding:10px 12px;flex-direction:column;align-items:flex-start}
+  .hw-tile img{width:56px;height:56px;align-self:flex-end;margin-top:-8px}
+  .hw-tile-copy b{font-size:14.5px}
+}

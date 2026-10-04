@@ -1,0 +1,38 @@
+{# Card 'clean': large image on a soft tile, name, price from, colour dots, only the "Mới" label (Apple, Samsung stores).
+   Keeps the store.js hooks of partials/cards/dense.html: article.pc[data-pc] with data-* attributes, [data-compare], [data-fav]. #}
+{% import "partials/bits.html" as b with context %}
+{% macro card(p, flash=None, lazy=True) -%}
+{% set sale = flash.sale_price if flash and flash.sale_price else p.price %}
+{% set old = p.old_price if not (flash and flash.sale_price) else (p.old_price or p.price) %}
+{% set off = ((old - sale) * 100 / old)|round|int if old else 0 %}
+{% set prices = p.variants|map(attribute="price")|list %}
+{% set colors = (p.options|selectattr("color")|first) if p.options else None %}
+<article class="pc pc-clean{% if flash %} pc-flash{% endif %}" data-pc data-id="{{ p.id }}" data-price="{{ sale }}" data-brand="{{ p.brand }}"
+  data-discount="{{ off }}" data-rating="{{ p.rating.avg if p.rating else 0 }}" data-stock="{{ p.stock_total }}" data-released="{{ p.released or '' }}"
+  data-facets="{{ p.facets|tojson|forceescape }}" data-name="{{ p.name|lower }}">
+  <a class="pc-link" href="{{ root }}p/{{ p.id }}.html">
+    <div class="pc-media">
+      <img src="{{ root }}{{ p.image }}" alt="{{ p.name }}" width="400" height="400" {% if lazy %}loading="lazy"{% endif %}>
+    </div>
+    <div class="pc-top">
+      {% if colors %}
+      <ul class="pc-dots" aria-label="{{ colors['values']|length }} màu">
+        {% for v in colors['values'][:6] %}<li style="--sw: {{ v.hex }}" title="{{ v.name }}"></li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if "new" in p.badges %}<p class="pc-new">Mới</p>{% endif %}
+    </div>
+    <h3 class="pc-name">{{ p.name }}</h3>
+    {% if p.card_specs %}<p class="pc-line">{{ p.card_specs[:2]|join(", ") }}</p>{% endif %}
+    <div class="pc-price">
+      <strong>{% if prices|min != prices|max and not flash %}Từ {% endif %}{{ sale|vnd }}</strong>
+      {% if old and old > sale %}<s>{{ old|vnd }}</s>{% endif %}
+    </div>
+    {% if flash and flash.limit %}<p class="pc-line">{{ flash.limit }} suất giá này</p>{% endif %}
+  </a>
+  <div class="pc-actions">
+    <button class="pc-cmp" type="button" data-compare="{{ p.id }}" aria-pressed="false">{{ icon("compare", "i-sm") }}<span>So sánh</span></button>
+    <button class="pc-fav" type="button" data-fav="{{ p.id }}" aria-pressed="false" aria-label="Thêm {{ p.name }} vào yêu thích">{{ icon("heart", "i-sm") }}</button>
+  </div>
+</article>
+{%- endmacro %}

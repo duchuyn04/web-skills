@@ -1,0 +1,36 @@
+{% extends "admin/_layout.html" %}
+{% block main %}
+<div class="adm-head">
+  <h1>Tồn kho</h1>
+  <div class="head-actions"><button class="btn btn-outline" type="button" data-export="inventory">{{ icon("download", "i-sm") }}Xuất CSV</button></div>
+</div>
+<ul class="kpis kpis-3" data-inv-kpis></ul>
+<div class="card card-flush">
+  <div class="tabs" role="tablist" aria-label="Lọc tồn kho" data-inv-tabs>
+    <button type="button" role="tab" data-tab="" aria-selected="true">Tất cả</button>
+    <button type="button" role="tab" data-tab="low" aria-selected="false">Sắp hết (5 trở xuống)</button>
+    <button type="button" role="tab" data-tab="out" aria-selected="false">Hết hàng</button>
+  </div>
+  <div class="filters-row">
+    <label class="search-in"><span class="sr">Tìm</span>{{ icon("search", "i-sm") }}<input type="search" placeholder="Tên sản phẩm hoặc SKU" data-q></label>
+    <label><span class="sr">Danh mục</span><select data-f-cat><option value="">Mọi danh mục</option>{% for c in cats %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}</select></label>
+  </div>
+  <div class="table-wrap"><table class="tbl" data-inv></table></div>
+</div>
+<section class="card" aria-labelledby="h-log">
+  <div class="card-head"><h2 id="h-log">Lịch sử điều chỉnh</h2></div>
+  <div class="table-wrap"><table class="tbl" data-inv-log></table></div>
+</section>
+<dialog class="modal" data-adjust aria-labelledby="h-adj">
+  <form method="dialog" data-adjust-form>
+    <div class="modal-head"><h2 id="h-adj">Điều chỉnh tồn kho</h2><button class="icon-btn" type="button" data-modal-close aria-label="Đóng">{{ icon("x") }}</button></div>
+    <p data-adj-name></p>
+    <div class="form-grid form-grid-2">
+      <label class="field"><span>Loại</span><select name="mode"><option value="in">Nhập thêm</option><option value="out">Xuất bớt</option><option value="set">Đặt lại số tồn</option></select></label>
+      <label class="field"><span>Số lượng</span><input name="qty" type="number" min="0" required></label>
+      <label class="field field-full"><span>Lý do</span><select name="reason"><option>Nhập hàng từ nhà cung cấp</option><option>Kiểm kho</option><option>Hàng lỗi, trả nhà cung cấp</option><option>Chuyển cửa hàng</option></select></label>
+    </div>
+    <div class="form-row"><button class="btn btn-primary" type="submit" value="ok">Lưu điều chỉnh</button></div>
+  </form>
+</dialog>
+{% endblock %}

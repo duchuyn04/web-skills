@@ -1,0 +1,46 @@
+{# Hero 'wide': a full-width carousel of large banners, then up to four small promo tiles (Dien May Xanh, family appliance stores). #}
+<section class="hero hw" aria-label="Khuyến mãi nổi bật">
+  <div class="ctn">
+    <div class="hw-main">
+      <div class="carousel hw-car" data-carousel data-interval="{{ sec.interval or 5000 }}">
+        <div class="hw-track">
+          {% for s in sec.slides %}
+          {% set prod = pid[s.product] if s.product else None %}
+          <a class="hw-slide{% if loop.first %} is-active{% endif %}" href="{{ s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') }}" style="--slide-bg: {{ s.bg or 'var(--c-btn)' }}; --slide-ink: {{ s.ink or '#ffffff' }}" {% if not loop.first %}aria-hidden="true" tabindex="-1"{% endif %} data-slide>
+            <div class="hw-copy">
+              {% if s.label %}<span class="hw-label">{{ s.label }}</span>{% endif %}
+              <h2 class="hw-title">{{ s.title }}</h2>
+              {% if s.text %}<p class="hw-text">{{ s.text }}</p>{% endif %}
+              {% if prod %}<p class="hw-price"><span>Giá chỉ từ</span><strong>{{ prod.price|vnd }}</strong>{% if prod.old_price %}<s>{{ prod.old_price|vnd }}</s>{% endif %}</p>{% endif %}
+              <span class="btn hw-cta">{{ s.cta or "Mua ngay" }}{{ arrow }}</span>
+            </div>
+            {% if s.art %}<img class="hw-art" src="{{ root }}{{ s.art }}" alt="" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+          </a>
+          {% endfor %}
+        </div>
+        {% if sec.slides|length > 1 %}
+        <button class="hw-btn hw-prev" type="button" data-carousel-prev aria-label="Banner trước">{{ icon("chevron-left") }}</button>
+        <button class="hw-btn hw-next" type="button" data-carousel-next aria-label="Banner tiếp theo">{{ icon("chevron-right") }}</button>
+        {% endif %}
+      </div>
+      {% if sec.slides|length > 1 %}
+      <div class="hw-dots" role="tablist" aria-label="Chọn banner">
+        {% for s in sec.slides %}
+        <button type="button" role="tab" data-carousel-tab="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}"><span class="sr">{{ s.tab or s.title }}</span><span class="hw-dot-label" aria-hidden="true">{{ s.tab or s.title }}</span></button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% if sec.side %}
+    <ul class="hw-tiles hw-tiles-{{ sec.side[:4]|length }}">
+      {% for s in sec.side[:4] %}
+      {% set prod = pid[s.product] if s.product else None %}
+      <li><a class="hw-tile" href="{{ s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') }}" style="--slide-bg: {{ s.bg or 'var(--c-surface)' }}; --slide-ink: {{ s.ink or 'var(--c-text)' }}">
+        <span class="hw-tile-copy"><b>{{ s.title }}</b>{% if s.text %}<span>{{ s.text }}</span>{% elif prod %}<span>Từ {{ prod.price|vnd }}</span>{% endif %}</span>
+        {% if s.art %}<img src="{{ root }}{{ s.art }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+      </a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
