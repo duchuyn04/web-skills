@@ -1,0 +1,16 @@
+{# Rooms 'strip': shop by room as one horizontal strip of small picture chips (picture, room name, one line), scrolling sideways on phones. Pick it for four or more rooms without taking a lot of height. #}
+<section class="sec ctn" aria-labelledby="h-rooms-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-rooms-{{ sec._i }}">{{ sec.title or "Mua sắm theo phòng" }}</h2></div>
+  <ul class="rs-row">
+    {% for r in sec["items"] %}
+    {% set prod = pid[r.product] if r.product else None %}
+    {% set first = (by_cat.get(r.category) or [None])[0] if r.category else None %}
+    {% set img = prod.image if prod else (first.image if first else None) %}
+    {% set qs = r.get("query") or {} %}
+    <li><a class="rs-item" href="{{ r.href or (root ~ 'c/' ~ r.category ~ '.html' ~ ('?' ~ qs|urlencode if qs else '')) }}">
+      {% if img %}<img src="{{ root }}{{ img }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+      <span><b>{{ r.title }}</b>{% if r.text %}<small>{{ r.text }}</small>{% endif %}</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,13 @@
+{# Stores call to action 'split': two columns, the sentence about the stores on the left and a large button on a tinted panel on the right. Pick it for a closing call to visit a store. #}
+{% if stores %}
+{% set cities = stores|map(attribute="city")|unique|list %}
+<section class="sec ctn" aria-labelledby="h-ss-{{ sec._i }}">
+  <div class="ss">
+    <div class="ss-copy">
+      <h2 id="h-ss-{{ sec._i }}">{{ sec.title or (stores|length ~ " cửa hàng tại " ~ cities|join(", ")) }}</h2>
+      <p>{{ sec.text or "Xem hàng, nhận hàng đặt online và bảo hành tại cửa hàng gần bạn." }}</p>
+    </div>
+    <div class="ss-act"><a class="btn btn-primary btn-lg" href="{{ root }}stores.html">{{ icon("map-pin") }}Tìm cửa hàng gần bạn</a></div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,33 @@
+{# Card 'row': a horizontal compact card with the picture on the left and, on the right, the name, one spec line, the price with the old price and the discount. Pick it for dense lists and for rails read on phones, where two rows of cards show more products at once. Keeps every store.js hook listed at the top of partials/cards/dense.html. #}
+{% import "partials/bits.html" as b with context %}
+{% macro card(p, flash=None, lazy=True) -%}
+{% set sale = flash.sale_price if flash and flash.sale_price else p.price %}
+{% set old = p.old_price if not (flash and flash.sale_price) else (p.old_price or p.price) %}
+{% set off = ((old - sale) * 100 / old)|round|int if old else 0 %}
+<article class="pc pc-row{% if flash %} pc-flash{% endif %}" data-pc data-id="{{ p.id }}" data-price="{{ sale }}" data-brand="{{ p.brand }}"
+  data-discount="{{ off }}" data-rating="{{ p.rating.avg if p.rating else 0 }}" data-stock="{{ p.stock_total }}" data-released="{{ p.released or '' }}"
+  data-facets="{{ p.facets|tojson|forceescape }}" data-name="{{ p.name|lower }}">
+  <a class="pc-link" href="{{ root }}p/{{ p.id }}.html">
+    <div class="pc-media">
+      <img src="{{ root }}{{ p.image }}" alt="{{ p.name }}" width="400" height="400" {% if lazy %}loading="lazy"{% endif %}>
+    </div>
+    <div class="pc-body">
+      <h3 class="pc-name">{{ p.name }}</h3>
+      {% if p.card_specs %}<p class="pc-line">{{ p.card_specs[:3]|join(" · ") }}</p>{% endif %}
+      <div class="pc-price">
+        <strong>{{ sale|vnd }}</strong>
+        {% if old and old > sale %}<s>{{ old|vnd }}</s><span class="pc-off">-{{ off }}%</span>{% endif %}
+      </div>
+      {% if flash and flash.limit %}
+      {% set sold = flash.sold or 0 %}
+      <div class="pc-progress" style="--p: {{ (sold * 100 / flash.limit)|round|int }}%"><span>{% if flash.sold is defined and flash.sold is not none %}Đã bán {{ sold }}/{{ flash.limit }}{% else %}{{ flash.limit }} suất giá sốc{% endif %}</span></div>
+      {% elif p.badges %}<span class="pc-badge pc-badge-{{ p.badges[0] }}">{{ badges[p.badges[0]] }}</span>
+      {% else %}<div class="pc-meta">{{ b.rating(p.rating) }}</div>{% endif %}
+    </div>
+  </a>
+  <div class="pc-actions">
+    <button class="pc-cmp" type="button" data-compare="{{ p.id }}" aria-pressed="false" aria-label="So sánh {{ p.name }}">{{ icon("compare", "i-sm") }}<span class="sr">So sánh</span></button>
+    <button class="pc-fav" type="button" data-fav="{{ p.id }}" aria-pressed="false" aria-label="Thêm {{ p.name }} vào yêu thích">{{ icon("heart", "i-sm") }}</button>
+  </div>
+</article>
+{%- endmacro %}

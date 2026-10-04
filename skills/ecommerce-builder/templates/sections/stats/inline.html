@@ -1,0 +1,8 @@
+{# Section 'stats', variant 'inline': the same figures on one calm line with thin dividers, no animation. Pick it for a quiet trust strip under the hero. #}
+<section class="sec ctn" aria-label="{{ sec.title or 'Số liệu của cửa hàng' }}">
+  <ul class="st-inline">
+    {% for s in sec["items"] %}
+    <li><b>{{ s.value }}</b>{% if s.label %}<span>{{ s.label }}</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>

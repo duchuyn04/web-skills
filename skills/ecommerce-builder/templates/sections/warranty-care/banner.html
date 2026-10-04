@@ -1,0 +1,14 @@
+{# Section 'warranty-care', variant 'banner': a full-width statement block in the button colour with the promises as a row underneath. Data adds "text" (one sentence) under the title. Pick it when warranty is the shop's main selling point. #}
+<section class="sec ctn" aria-labelledby="h-wc-{{ sec._i }}">
+  <div class="wc-banner">
+    <div class="wc-statement">
+      <h2 id="h-wc-{{ sec._i }}">{{ sec.title or "Bảo hành và dịch vụ" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+    </div>
+    <ul class="wc-row">
+      {% for s in sec["items"] %}
+      <li><span class="wc-ic">{{ icon(s.icon or "shield-check") }}</span><span class="wc-copy"><b>{{ s.title }}</b>{% if s.text %}<span>{{ s.text }}</span>{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

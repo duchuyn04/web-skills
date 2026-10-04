@@ -1,0 +1,13 @@
+/* Section 'gallery': shared tile look, then the default 'masonry' mosaic (CSS columns, so any number of pictures fills without holes). */
+.gl-pic{position:relative;display:block;overflow:hidden;background:var(--c-surface-2);border-radius:var(--radius-lg);width:100%;aspect-ratio:1}
+.gl-pic img{position:absolute;inset:8%;width:84%;height:84%;object-fit:contain}
+.gl-cap{margin:0;font-size:13px;color:var(--c-muted)}
+.gl-mosaic{columns:4;column-gap:12px}
+.gl-tile{display:block;break-inside:avoid;margin:0 0 12px}
+.gl-tile .gl-pic{margin-bottom:6px}
+.gl-tile:nth-child(odd) .gl-pic{background:var(--c-accent-soft)}
+.gl-tile:nth-child(4n+1) .gl-pic{aspect-ratio:4/5}
+.gl-tile:nth-child(4n+3) .gl-pic{aspect-ratio:5/4}
+a.gl-pic:hover{outline:2px solid var(--c-accent);outline-offset:-2px}
+@media (max-width:1023px){.gl-mosaic{columns:3}}
+@media (max-width:767px){.gl-mosaic{columns:2;column-gap:10px}.gl-tile{margin-bottom:10px}}

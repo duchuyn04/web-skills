@@ -1,0 +1,16 @@
+/* Section 'video': shared poster, play button and embedded player; default player layout. */
+.vd-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);overflow:hidden}
+.vd-media{position:relative;aspect-ratio:16/9;display:grid;place-items:center;background:var(--c-surface-2)}
+.vd-media img{width:46%;max-height:86%;object-fit:contain}
+.vd-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vd-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:var(--c-btn);color:var(--c-btn-fg);border:0;cursor:pointer}
+.vd-play:hover{background:var(--c-btn-hover)}
+.vd-play .i{width:28px;height:28px;margin-left:3px}
+.vd-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:20px 24px 20px 0}
+.vd-copy h3{font-family:var(--font-head);font-size:22px}
+.vd-copy p{color:var(--c-muted);line-height:1.6}
+@media (max-width:860px){
+  .vd-card{grid-template-columns:1fr;gap:0}
+  .vd-copy{padding:16px}
+  .vd-play{width:60px;height:60px}
+}

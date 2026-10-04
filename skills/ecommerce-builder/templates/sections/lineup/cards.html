@@ -1,0 +1,26 @@
+{# Lineup 'cards': each model as a boxed card with the picture, name, price and the listed spec rows as small labelled lines. Pick it for 2-3 close models where the differences are short phrases. #}
+{% set items = sec.products|map("extract", pid)|list %}
+<section class="sec ctn" aria-labelledby="h-lineup-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-lineup-{{ sec._i }}">{{ sec.title or "Chọn mẫu phù hợp với bạn" }}</h2>
+    <a class="sec-more" href="{{ root }}compare.html" data-lineup-compare="{{ sec.products|join(',') }}">So sánh chi tiết{{ arrow }}</a></div>
+  <div class="lc-grid lc-{{ items|length }}" role="list">
+    {% for p in items %}
+    <article class="lc-card" role="listitem">
+      <a class="lc-art" href="{{ root }}p/{{ p.id }}.html"><img src="{{ root }}{{ p.image }}" alt="{{ p.name }}" width="400" height="400" loading="lazy"></a>
+      <div class="lc-body">
+        <h3><a href="{{ root }}p/{{ p.id }}.html">{{ p.name }}</a></h3>
+        <p class="lc-price">Từ {{ p.price|vnd }}</p>
+        <ul class="lc-specs">
+          {% for row in sec.rows or [] %}
+          {% set ns = namespace(v="") %}
+          {% for g in p.specs %}{% for k, v in g.rows %}{% if k == row and not ns.v %}{% set ns.v = v %}{% endif %}{% endfor %}{% endfor %}
+          {% if not ns.v and p.facets.get(row) %}{% set fv = p.facets.get(row) %}{% set ns.v = fv|join(", ") if fv is not string else fv %}{% endif %}
+          <li><span>{{ row }}</span><b>{{ ns.v or "Không có" }}</b></li>
+          {% endfor %}
+        </ul>
+        <a class="btn btn-outline btn-sm" href="{{ root }}p/{{ p.id }}.html">Xem sản phẩm</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

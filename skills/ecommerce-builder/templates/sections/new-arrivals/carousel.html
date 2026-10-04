@@ -1,0 +1,12 @@
+{# New arrivals 'carousel': a single wide rail with three large cards in view, newest first, no tabs. Pick it when the shop has one main family or a hand-picked list. Data: {"type": "new-arrivals", "variant": "carousel", "title"?, "category"?, "products"?: [ids], "limit"?: 9}. #}
+{% set rid = "na-" ~ sec._i %}
+{% set src = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
+{% set dated = src|selectattr("released")|sort(attribute="released", reverse=true)|list %}
+{% set items = ((dated + (src|rejectattr("released")|list))[:(sec.limit or 9)]) if not sec.products else src %}
+<section class="sec ctn na-wide" aria-labelledby="h-{{ rid }}">
+  <div class="sec-head">
+    <h2 id="h-{{ rid }}">{{ sec.title or "Mới về" }}</h2>
+    {% if sec.category %}<a class="sec-more" href="{{ root }}c/{{ sec.category }}.html">Xem tất cả{{ arrow }}</a>{% endif %}
+  </div>
+  {{ m.rail(items, rid) }}
+</section>

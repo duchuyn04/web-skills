@@ -1,0 +1,22 @@
+.cex .cex-grid{grid-template-columns:minmax(0,1fr);max-width:640px;margin:0 auto;gap:16px}
+.cex .cex-sum{position:static;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.cex .cex-sum>summary{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;list-style:none;font-weight:700;min-height:52px}
+.cex .cex-sum>summary::-webkit-details-marker{display:none}
+.cex .cex-sum>summary span{flex:1}
+.cex .cex-sum>summary span small{font-weight:400;color:var(--c-muted)}
+.cex .cex-sum>summary b{color:var(--c-price);font-variant-numeric:tabular-nums}
+.cex .cex-sum[open]>summary>.i{transform:rotate(180deg)}
+.cex .cex-sum .summary-box{border:0;border-top:1px solid var(--c-border);border-radius:0;padding:14px 18px 18px}
+.cex .co-block{padding:20px}
+.cex .cex-more>summary{display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;color:var(--c-link);font-weight:500;min-height:36px}
+.cex .cex-more>summary::-webkit-details-marker{display:none}
+.cex .cex-more-body{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+.cex [data-pay-methods]{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cex [data-pay-methods] legend{grid-column:1/-1}
+.cex [data-pay-methods] .card-radio{flex-direction:column;align-items:flex-start;gap:8px;padding:16px;min-height:104px}
+.cex [data-pay-methods] .card-radio-ic{width:44px;height:44px}
+.cex [data-pay-methods] .card-radio input{position:absolute;top:12px;right:12px}
+@media (max-width:480px){
+  .cex [data-pay-methods]{grid-template-columns:minmax(0,1fr)}
+  .cex [data-pay-methods] .card-radio{flex-direction:row;align-items:center;min-height:64px}
+}

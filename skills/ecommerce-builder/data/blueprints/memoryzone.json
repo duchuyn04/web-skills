@@ -1,0 +1,57 @@
+{
+ "id": "memoryzone",
+ "site": "memoryzone.com.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "gaming",
+ "header": "Header xanh lá: logo, ô tìm kiếm có từ khóa gợi ý bên dưới, nút giỏ hàng và đăng nhập; hàng menu xám (Thanh toán, Trả góp, Hệ thống cửa hàng, Hỗ trợ khách hàng, Tin tức, Tuyển dụng). Không thấy hotline ở header trong ảnh.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái (khoảng 17 nhóm) + carousel + 2 banner dọc 2 bên + 3 banner nhỏ dưới (Ổ cứng di động, thẻ nhớ, RAM)",
+   "note": "Carousel có tab chú thích 5 ô phía dưới"
+  },
+  {
+   "role": "category-icons",
+   "form": "hàng 11 icon tròn",
+   "note": "Tự build PC, PC-Mini PC, màn hình, laptop, chuột-phím, ổ cứng SSD, thẻ nhớ, RAM, NAS"
+  },
+  {
+   "role": "collections",
+   "form": "bento 5 ô: Gear, PC Siêu Tốc (lớn), Mini PC, Laptop chính hãng, Màn hình chính hãng",
+   "note": "Mỗi ô ghi giá chỉ từ"
+  },
+  {
+   "role": "banner-row",
+   "form": "3 banner ngang (Kioxia, SanDisk, Acasis)",
+   "note": "Banner thương hiệu"
+  },
+  {
+   "role": "product-rail",
+   "form": "LAPTOP BÁN CHẠY: chip hãng + lưới 4 x 2 + 2 banner dọc bên phải",
+   "note": "Chip Lenovo, Asus, Acer, MSI, HP, LG, Dell"
+  },
+  {
+   "role": "product-rail",
+   "form": "MINI PC - MÁY BỘ: banner ngang + chip + lưới 5 x 2",
+   "note": "Chip PC văn phòng, PC gaming, PC đồ họa, PC ITX"
+  },
+  {
+   "role": "product-rail",
+   "form": "Ổ cứng SSD gắn trong: banner + chip dung lượng + lưới 5 x 2",
+   "note": "Chip 120GB đến 8TB"
+  },
+  {
+   "role": "product-rail",
+   "form": "RAM PC - LAPTOP: banner + chip + lưới 5 x 2",
+   "note": "Chip loại RAM, dung lượng, bus"
+  },
+  {
+   "role": "product-rail",
+   "form": "Ổ cứng SSD di động: banner + chip + lưới 5 (theo DOM)",
+   "note": "Khoảng 5545 px"
+  }
+ ],
+ "footer": "Không quan sát: ảnh cắt ở 8000 px trên trang cao 9812 px.",
+ "observations": "Mỗi nhóm hàng bắt đầu bằng 1 banner ngang minh họa dòng sản phẩm, rồi chip lọc, rồi lưới. Nhãn Chỉ bán Build PC trên một số thẻ. Nhóm linh kiện nhiều hơn nhóm thiết bị hoàn chỉnh."
+}

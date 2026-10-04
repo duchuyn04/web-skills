@@ -252,7 +252,14 @@
     // preselect from the URL (mega menu links)
     params.forEach(function (v, k) {
       var name = k === 'brand' ? 'brand' : k === 'price' ? 'price' : 'f:' + k;
-      $$('input[name="' + name + '"]', filters).forEach(function (i) { if (i.value === v) i.checked = true; });
+      var hit = false;
+      $$('input[name="' + name + '"]', filters).forEach(function (i) { if (i.value === v) { i.checked = true; hit = true; } });
+      // a price band that is not one of the listed ranges fills the min and max boxes
+      if (k === 'price' && !hit) {
+        var a = v.split('-'), lo = $('[data-price-min]', filters), hi = $('[data-price-max]', filters);
+        if (lo && +a[0]) lo.value = +a[0];
+        if (hi && +a[1]) hi.value = +a[1];
+      }
     });
     function state() {
       var st = { brand: [], price: [], f: {}, instock: false, sale: false, min: +($('[data-price-min]', filters).value || 0), max: +($('[data-price-max]', filters).value || 0) };

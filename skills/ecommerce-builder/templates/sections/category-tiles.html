@@ -1,0 +1,15 @@
+{# Category showcase 'mosaic' (default): one large tile and smaller tiles around it for the chosen categories, each with a product picture, the name and the product count. Data: {"type": "category-tiles", "title"?, "categories"?: [ids, up to 5]}; all categories when left out. #}
+{% set ids = sec.categories or (cats|map(attribute="id")|list) %}
+{% set picked = [] %}
+{% for cid in ids %}{% set c = cats|selectattr("id", "equalto", cid)|first %}{% if c %}{% set _ = picked.append(c) %}{% endif %}{% endfor %}
+<section class="sec ctn cs" aria-labelledby="h-cs-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-cs-{{ sec._i }}">{{ sec.title or "Mua sắm theo danh mục" }}</h2></div>
+  <ul class="cs-mosaic cs-n{{ [picked|length, 5]|min }}">
+    {% for c in picked[:5] %}
+    <li class="cs-t{% if loop.first %} cs-t-lead{% endif %}"><a href="{{ root }}c/{{ c.id }}.html">
+      <img src="{{ root }}{{ by_cat[c.id][0].image }}" alt="" width="400" height="400" loading="lazy">
+      <span class="cs-name">{{ c.name }}</span><small>{{ c.count }} sản phẩm</small>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

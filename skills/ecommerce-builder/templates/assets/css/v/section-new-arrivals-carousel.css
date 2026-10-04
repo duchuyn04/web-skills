@@ -1,0 +1,6 @@
+/* Section 'new-arrivals' (carousel): one wide rail, three large cards in view. */
+.na-wide .rail-track{grid-auto-columns:calc((100% - 32px) / 3);gap:16px}
+.na-wide .pc-name{font-size:15px}
+.na-wide .pc-media img{width:92%;height:92%}
+@media (max-width:1023px){.na-wide .rail-track{grid-auto-columns:calc((100% - 16px) / 2)}}
+@media (max-width:767px){.na-wide .rail-track{grid-auto-columns:78%;gap:10px}}

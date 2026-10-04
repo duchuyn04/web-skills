@@ -1,0 +1,9 @@
+{# Payment methods 'list': the payment methods as a single wrapped line of names with their notes underneath, for a quiet reminder near the end of the page. #}
+<section class="sec ctn" aria-labelledby="h-pm-{{ sec._i }}">
+  <div class="pm pm-list">
+    <h2 id="h-pm-{{ sec._i }}">{{ sec.title or "Hình thức thanh toán" }}</h2>
+    <ul>
+      {% for p in payments %}<li>{{ icon(p.icon or "credit-card", "i-sm") }}<b>{{ p.name }}</b>{% if p.note %}<span>{{ p.note }}</span>{% endif %}</li>{% endfor %}
+    </ul>
+  </div>
+</section>

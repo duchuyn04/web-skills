@@ -1,0 +1,10 @@
+{# Section 'stats' (default design 'counters'): big numbers with a label under each; the numbers count up once when they scroll into view (not with reduced motion). The final text is in the page without JavaScript.
+   Data: {"type": "stats", "title"?, "items": [{"value": "12 cửa hàng", "label"?}]}. Values are written by the shop and checked against the brief. #}
+<section class="sec ctn" aria-labelledby="h-st-{{ sec._i }}">
+  {% if sec.title %}<div class="sec-head"><h2 id="h-st-{{ sec._i }}">{{ sec.title }}</h2></div>{% endif %}
+  <ul class="st-counters st-n{{ sec["items"]|length }}"{% if not sec.title %} aria-label="Số liệu của cửa hàng"{% endif %} data-stats>
+    {% for s in sec["items"] %}
+    <li><b class="st-v" data-stat>{{ s.value }}</b>{% if s.label %}<span class="st-l">{{ s.label }}</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>

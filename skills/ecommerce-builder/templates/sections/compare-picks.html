@@ -1,0 +1,36 @@
+{# Compare picks 'table' (default): two or three products side by side in a table with picture, name, price and the spec rows named in sec.rows. Values come from each product's specs or facets; a missing value reads "Không ghi". Pick it to help a buyer choose between close models. #}
+{% macro specval(p, row) -%}
+{%- set ns = namespace(v="") -%}
+{%- for g in p.specs %}{% for r in g.rows %}{% if r[0] == row and not ns.v %}{% set ns.v = r[1] %}{% endif %}{% endfor %}{% endfor -%}
+{%- if not ns.v and p.facets and p.facets.get(row) %}{% set f = p.facets.get(row) %}{% set ns.v = f|join(", ") if f is not string else f %}{% endif -%}
+{{ ns.v }}
+{%- endmacro %}
+{% set picks = (sec.products|map("extract", pid)|list)[:3] %}
+{% if picks|length >= 2 %}
+<section class="sec ctn cp" aria-labelledby="h-cp-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-cp-{{ sec._i }}">{{ sec.title or "So sánh nhanh" }}</h2>{% if sec.text %}<p class="muted">{{ sec.text }}</p>{% endif %}</div>
+  <div class="cp-scroll" tabindex="0" role="region" aria-label="Bảng so sánh, cuộn ngang trên màn hình nhỏ">
+    <table class="cp-table">
+      <thead>
+        <tr><td></td>
+        {% for p in picks %}
+          <th scope="col">
+            <a class="cp-prod" href="{{ root }}p/{{ p.id }}.html">
+              <img src="{{ root }}{{ p.image }}" alt="" width="400" height="400" loading="lazy">
+              <b>{{ p.name }}</b>
+            </a>
+            <span class="cp-price"><strong>{{ p.price|vnd }}</strong>{% if p.old_price %}<s>{{ p.old_price|vnd }}</s>{% endif %}</span>
+          </th>
+        {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in sec.rows or [] %}
+        <tr><th scope="row">{{ row }}</th>{% for p in picks %}{% set v = specval(p, row)|trim %}<td>{% if v %}{{ v }}{% else %}<span class="muted">Không ghi</span>{% endif %}</td>{% endfor %}</tr>
+        {% endfor %}
+        <tr><td></td>{% for p in picks %}<td><a class="btn btn-outline" href="{{ root }}p/{{ p.id }}.html">Xem chi tiết</a></td>{% endfor %}</tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}

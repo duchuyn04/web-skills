@@ -1,0 +1,62 @@
+{
+ "id": "clickbuy",
+ "site": "clickbuy.com.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Header đỏ với logo, 3 icon (hotline miền Bắc, chi tiết giỏ hàng, đăng nhập), ô tìm kiếm và chọn khu vực. Nội dung trang chủ nằm trong một cột hẹp khoảng 560 px ở giữa (layout kiểu mobile trên màn 1440 px). Popup mở bán iPhone 18 Pro che đầu trang ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "hero-single",
+   "form": "banner và khối ưu đãi dưới popup, chỉ thấy một phần",
+   "note": "Không đọc được nội dung do popup che"
+  },
+  {
+   "role": "product-rail",
+   "form": "Điện Thoại: chip hãng + rail 3 sản phẩm",
+   "note": "Chip iPhone, Samsung, Xiaomi, Vivo, TECNO, Realme, Nokia, Oppo"
+  },
+  {
+   "role": "product-rail",
+   "form": "iPhone: chip dòng + rail 3",
+   "note": "iPhone 18 Pro Series, 17, 16, 15, 14"
+  },
+  {
+   "role": "product-rail",
+   "form": "Samsung: chip dòng + rail 3",
+   "note": "Galaxy Z, S, A, M"
+  },
+  {
+   "role": "product-rail",
+   "form": "Máy Tính Bảng: chip + rail 3",
+   "note": "iPad, Samsung Tab, MASSTEL"
+  },
+  {
+   "role": "product-rail",
+   "form": "Macbook: chip + rail 3",
+   "note": "MacBook Air, Pro"
+  },
+  {
+   "role": "product-rail",
+   "form": "Apple Watch: chip + rail 3",
+   "note": "Series 8, 9, Ultra 2"
+  },
+  {
+   "role": "product-rail",
+   "form": "Phụ Kiện: chip + rail 3",
+   "note": "Ốp lưng, bao da, sạc"
+  },
+  {
+   "role": "accessories",
+   "form": "Danh Mục Phụ Kiện: hàng icon cuộn ngang",
+   "note": "Phụ kiện Apple, pin dự phòng, tai nghe, cáp sạc, ốp lưng"
+  },
+  {
+   "role": "category-tiles",
+   "form": "Danh Mục Hàng Cũ: hàng icon cuộn ngang",
+   "note": "iPhone 15 series cũ, 14 cũ, 13 cũ, 12 cũ, 11 cũ"
+  }
+ ],
+ "footer": "Dòng khẩu hiệu Website bán hàng công nghệ uy tín hàng đầu Việt Nam, rất ngắn; ảnh không thấy chi tiết footer.",
+ "observations": "Trang cao khoảng 4590 px. Không thấy hero rõ do popup. Mỗi nhóm hàng là một khối đen tiêu đề + chip + 3 sản phẩm. Không có deal đếm ngược, đánh giá hay tin tức trong phần quan sát được."
+}

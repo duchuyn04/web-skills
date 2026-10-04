@@ -26,7 +26,11 @@
   .hdr-min .logo{justify-self:start}
 }
 @media (max-width:767px){
-  .hdr-min .hdr-in{flex-wrap:nowrap;padding-top:6px;padding-bottom:6px}
+  .hdr-min .hdr-in{display:flex;flex-wrap:nowrap;padding-top:6px;padding-bottom:6px}
+  .hdr-min .logo{flex:1;min-width:0}
+  .hdr-min .logo-name{overflow:hidden;text-overflow:ellipsis}
+  .hm-actions{flex:none}
+  .hm-actions .icon-btn{width:40px;height:40px}
   .hdr-min .logo{margin-right:0}
   .hm-search .search input{font-size:16px}
 }

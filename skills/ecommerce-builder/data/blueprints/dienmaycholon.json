@@ -1,0 +1,67 @@
+{
+ "id": "dienmaycholon",
+ "site": "dienmaycholon.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "appliance",
+ "header": "Dải vàng trên cùng (Sale hàng hiệu 50%, gọi ngay 1900.2628), hàng xanh: logo, nút Danh mục, tìm kiếm, Chi nhánh, tài khoản, giỏ hàng. Widget chat nổi.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "1 carousel lớn (Hisense) có chấm điều hướng",
+   "note": "Không có sidebar"
+  },
+  {
+   "role": "category-icons",
+   "form": "hàng 8 icon danh mục",
+   "note": "Máy lạnh, Tivi, Tủ lạnh, Máy giặt, Gia dụng, Di động, Máy sấy, Tủ đông"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner ngang",
+   "note": "Panasonic, Sale hàng hiệu 50%"
+  },
+  {
+   "role": "deals",
+   "form": "FLASH SALE GIÁ SỐC: khung hồng, đếm ngược, rail 5",
+   "note": "Nút Mua Ngay, Xem tất cả"
+  },
+  {
+   "role": "product-rail",
+   "form": "Khuyến mãi Online: 7 tab ngành (điện máy giá tốt, điều hòa, tivi, tủ lạnh, giặt sấy, gia dụng, điện thoại) + rail 5",
+   "note": "Mỗi tab có tiêu đề màu"
+  },
+  {
+   "role": "product-rail",
+   "form": "Sản phẩm đề xuất dành cho bạn: rail 5",
+   "note": "Cá nhân hóa"
+  },
+  {
+   "role": "product-rail",
+   "form": "Sản phẩm cao cấp: 10 tab + rail 5",
+   "note": "Tab Sản phẩm HOT, máy lạnh, tivi, tủ lạnh, gia dụng, điện thoại, máy giặt, máy sấy, âm thanh, nội thất"
+  },
+  {
+   "role": "product-rail",
+   "form": "Giá sốc sản phẩm Gia dụng: tab + rail 5",
+   "note": "Tab Sale hàng hiệu, máy lọc nước, máy nước nóng, nồi cơm điện, bếp từ, máy lọc không khí"
+  },
+  {
+   "role": "product-rail",
+   "form": "Giá hot sản phẩm Nội Thất: tab + rail 5",
+   "note": "Sofa, bàn, ghế, kệ tủ, hàng trang trí"
+  },
+  {
+   "role": "product-rail",
+   "form": "Sản phẩm Điện tử: tab + rail 5",
+   "note": "Tivi, loa cao cấp, loa thanh, loa kéo, amply, loa Bluetooth"
+  },
+  {
+   "role": "product-rail",
+   "form": "Sản phẩm Điện lạnh: rail (theo DOM)",
+   "note": "Cuối vùng quan sát"
+  }
+ ],
+ "footer": "Không quan sát: ảnh cắt ở 8000 px trên trang cao 9100 px.",
+ "observations": "Bán cả điện máy lẫn nội thất. Khối cao cấp và nội thất là ngành hàng đặc thù ít gặp ở TGDD hay Điện máy Xanh. Hotline 1900.2628 đặt ở dải trên cùng."
+}

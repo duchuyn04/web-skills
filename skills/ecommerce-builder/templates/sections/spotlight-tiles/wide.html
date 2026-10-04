@@ -1,0 +1,19 @@
+{# Spotlight tiles 'wide': one tile per row, full width, the text on one side and the product on the other, alternating sides. Pick it for two or three products that each deserve a full band. #}
+<section class="sec ctn" aria-label="{{ sec.title or 'Sản phẩm nổi bật' }}">
+  {% if sec.title %}<div class="sec-head"><h2>{{ sec.title }}</h2></div>{% endif %}
+  <div class="sw">
+    {% for t in sec["items"] %}
+    {% set prod = pid[t.product] if t.product else None %}
+    {% set dark = t.tone == "dark" %}
+    <a class="sw-tile{% if dark %} is-dark{% endif %}{% if loop.index is even %} sw-flip{% endif %}" href="{{ t.href or (root ~ 'p/' ~ t.product ~ '.html' if t.product else root ~ 'deals.html') }}" style="--tile-bg: {{ t.bg or ('var(--c-text)' if dark else 'var(--c-surface-2)') }}">
+      <span class="sw-copy">
+        <b class="sw-title">{{ t.title }}</b>
+        {% if t.text %}<span class="sw-text">{{ t.text }}</span>{% endif %}
+        {% if prod %}<span class="sw-price">Giá từ {{ prod.price|vnd }}</span>{% endif %}
+        <em class="sw-cta">{{ t.cta or "Xem sản phẩm" }}{{ arrow }}</em>
+      </span>
+      {% if prod %}<img class="sw-art" src="{{ root }}{{ prod.image }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>

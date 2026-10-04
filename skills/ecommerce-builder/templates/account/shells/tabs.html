@@ -1,0 +1,21 @@
+{# Account shell 'tabs': a user strip on top (avatar, name, phone, logout), horizontal tabs under it, the page content full width below. Pick it when account pages are wide tables or card grids. #}
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Tài khoản", root ~ "account/index.html" if acc != "index" else None)] + ([(title.split(" | ")[0], None)] if acc != "index" else [])) }}
+<div class="ctn page acc-tabs" data-account="{{ acc }}">
+  <header class="acc-tabs-head">
+    <span class="avatar avatar-lg" aria-hidden="true" data-user-initial>K</span>
+    <div class="acc-tabs-who"><b data-user-name>Khách</b><small data-user-phone></small></div>
+    <button type="button" class="btn btn-ghost" data-logout>{{ icon("log-out", "i-sm") }}Đăng xuất</button>
+  </header>
+  <nav class="acc-tabnav" aria-label="Tài khoản">
+    {% for key, label, ic in [("index", "Tổng quan", "dashboard"), ("orders", "Đơn hàng", "package"), ("wishlist", "Yêu thích", "heart"), ("addresses", "Địa chỉ", "map-pin")] %}
+    <a href="{{ root }}account/{{ key }}.html" {% if acc == key or (acc == "order" and key == "orders") %}aria-current="page"{% endif %}>{{ icon(ic, "i-sm") }}<span>{{ label }}</span></a>
+    {% endfor %}
+  </nav>
+  <div class="acc-main">
+    {% block account %}{% endblock %}
+  </div>
+</div>
+{% endblock %}

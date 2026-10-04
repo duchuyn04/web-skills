@@ -1,0 +1,27 @@
+{# Thanks 'compact': one small centered card with the order code, payment instructions and two buttons; items, totals and delivery fold into details. Pick it for shops with simple orders and a clean look. #}
+{% import "partials/macros.html" as m with context %}
+<div class="ctn page thx-cp" data-order-page>
+  <div data-order-missing hidden>{{ m.empty("package", "Không tìm thấy đơn hàng", "Đơn hàng không có trên trình duyệt này. Tra cứu bằng mã đơn và số điện thoại.", "Tra cứu đơn hàng", root ~ "track.html") }}</div>
+  <div class="box thx-cp-card" data-order-body hidden>
+    <span class="thx-cp-ok" aria-hidden="true">{{ icon("check") }}</span>
+    <h1>Cảm ơn <span data-o-name></span></h1>
+    <p class="thx-cp-code">Mã đơn <b class="code" data-o-code></b></p>
+    <section class="thx-cp-pay" data-o-pay-box aria-labelledby="h-o-pay">
+      <h2 id="h-o-pay">Thanh toán</h2>
+      <div data-o-pay></div>
+    </section>
+    <details class="thx-cp-more">
+      <summary>Sản phẩm và tổng tiền{{ icon("chevron-down", "i-sm") }}</summary>
+      <ul class="co-items" data-o-items></ul>
+      <dl class="totals" data-o-totals></dl>
+    </details>
+    <details class="thx-cp-more">
+      <summary>Nhận hàng{{ icon("chevron-down", "i-sm") }}</summary>
+      <div data-o-ship></div>
+    </details>
+    <div class="thx-cp-act">
+      <a class="btn btn-primary btn-block" data-o-track href="track.html">Theo dõi đơn hàng</a>
+      <a class="btn btn-outline btn-block" href="index.html">Tiếp tục mua sắm</a>
+    </div>
+  </div>
+</div>

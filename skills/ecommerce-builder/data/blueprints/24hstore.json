@@ -1,0 +1,72 @@
+{
+ "id": "24hstore",
+ "site": "24hstore.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Dải xanh lá trên cùng (hệ thống ủy quyền chính hãng Apple, có nút chuyển), hàng logo + tìm kiếm + giỏ + hotline 1900 0351 (đặt mua hàng) + 24h VIP + hệ thống showroom + tra cứu đơn, hàng menu chữ có icon (điện thoại, máy tính bảng, đồng hồ, laptop, máy cũ giá rẻ, phụ kiện, khuyến mãi, thu đổi, tin tức). Widget liên hệ nổi bên phải (hotline, Zalo, Messenger).",
+ "sections": [
+  {
+   "role": "hero-bento",
+   "form": "1 banner lớn iPhone 18 Pro rộng toàn khung",
+   "note": "Sẵn hàng đúng giá không mua kèm"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "carousel Galaxy A37/A57 + 2 banner xếp dọc bên phải (AirPods Pro 3, thu mua máy tận nhà)",
+   "note": "Dưới carousel là dải chú thích 5 slide"
+  },
+  {
+   "role": "category-icons",
+   "form": "lưới 6 x 2 icon sản phẩm nổi bật",
+   "note": "iPhone Duo, iPhone 18, iPhone 17 Pro Max, Galaxy A, Xiaomi Redmi, MacBook Neo, iPad Air M4, Watch Series 12, AirPods 5, iPad Pro"
+  },
+  {
+   "role": "installment",
+   "form": "banner ngang trả góp 0%",
+   "note": "iPhone 17 Pro góp 12 tháng 2.582.000đ"
+  },
+  {
+   "role": "deals",
+   "form": "tab Deal sốc mỗi ngày / Máy cũ rẻ chấp hết + banner Deal chống Deal + rail 5",
+   "note": "Thẻ có nhãn giảm giá đỏ góc thẻ, ngân hàng ưu đãi"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner xanh (Miễn phí dùng thử 46 ngày, Thu cũ lên đời)",
+   "note": "Banner nhỏ"
+  },
+  {
+   "role": "deals",
+   "form": "Top deal xịn tặng nàng xinh: 3 thẻ + banner dọc tặng quà",
+   "note": "Banner dọc voucher 4.999.000đ"
+  },
+  {
+   "role": "bundle",
+   "form": "Xin chào thế hệ iPhone mới nhất: banner dọc đen + 3 thẻ iPhone",
+   "note": "iPhone 18 Pro Max, 18 Pro 1TB, Duo"
+  },
+  {
+   "role": "product-grid",
+   "form": "ĐIỆN THOẠI: chip hãng + lưới 5 cột nhiều hàng",
+   "note": "Chip iPhone, Xiaomi, Samsung; nhãn trả góp, giảm giá, voucher ngân hàng"
+  },
+  {
+   "role": "banner-row",
+   "form": "banner ngang trả góp 0% iPad Air",
+   "note": "1.532.000đ trả góp 12 tháng"
+  },
+  {
+   "role": "product-grid",
+   "form": "TABLET, LAPTOP, PHỤ KIỆN: ba khối lưới tiếp theo",
+   "note": "Xác nhận qua DOM, chi tiết hình ảnh không xem được"
+  },
+  {
+   "role": "stores",
+   "form": "ảnh các showroom và nhân viên",
+   "note": "Dải ảnh cửa hàng trước footer"
+  }
+ ],
+ "footer": "Chỉ thấy phần đầu; footer không quan sát chi tiết (ảnh cắt ở 8000 px trên trang cao 9325 px).",
+ "observations": "Màu chủ đạo xanh lá. Thẻ sản phẩm chứa nhiều dòng ưu đãi (HSSV giảm, thu cũ đổi mới, voucher ngân hàng) nên thẻ cao hơn đa số shop. Có dải ảnh showroom."
+}

@@ -1,0 +1,67 @@
+{
+ "id": "gearvn",
+ "site": "gearvn.com",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "gaming",
+ "header": "Thanh đỏ: logo, nút Danh mục, tìm kiếm, giỏ hàng, đăng nhập; hàng chữ phụ (tất cả khuyến mãi, tin tức-review, tra cứu bảo hành, dịch vụ tận nhà, thu cũ đổi mới, hệ thống showroom). Banner cookie và widget chat ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái (13 nhóm) + carousel + 4 banner dọc phải",
+   "note": "Banner Tuần lễ khai trường, Build PC, Bàn phím cơ, PC i5/5060, Laptop Gaming; 1 banner phụ bên dưới carousel"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner ngang",
+   "note": "Build PC tặng màn hình, Pack Laptop tặng gear"
+  },
+  {
+   "role": "product-rail",
+   "form": "PC bán chạy: tab model + rail 5",
+   "note": "Tab PC i3, i5, i7, i9, R3, R5, R7, R9; nhãn quà tặng; link Xem tất cả"
+  },
+  {
+   "role": "product-rail",
+   "form": "Laptop gaming bán chạy: tab hãng + rail 5",
+   "note": "Tab ACER, MSI, LENOVO, GIGABYTE"
+  },
+  {
+   "role": "product-rail",
+   "form": "Laptop văn phòng bán chạy: tab hãng + rail 5",
+   "note": "Tab Laptop AI, ASUS, MSI, Lenovo, ACER"
+  },
+  {
+   "role": "product-rail",
+   "form": "Chuột bán chạy: tab hãng + rail 5",
+   "note": "Logitech, Razer, Asus, Corsair"
+  },
+  {
+   "role": "product-rail",
+   "form": "Bàn phím bán chạy: tab hãng + rail 5",
+   "note": "Akko, Asus, Razer, Logitech"
+  },
+  {
+   "role": "banner-row",
+   "form": "bento 1 lớn + 2 nhỏ",
+   "note": "Màn hình Gearvn, Combo ăn ý, Deal ghế"
+  },
+  {
+   "role": "product-rail",
+   "form": "Màn hình chính hãng: tab hãng + lưới 5 x 2",
+   "note": "10 sản phẩm, bảo hành 1 đổi 1"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng tối",
+   "note": "Cập nhật Tin Tức Công Nghệ, nút Xem tất cả"
+  },
+  {
+   "role": "news",
+   "form": "Tin Tức Nổi Bật: 1 bài lớn + cột Bài Viết Mới 2 bài",
+   "note": "3 bài"
+  }
+ ],
+ "footer": "Footer tối: logo, mạng xã hội (4 icon), tổng đài 1900.5301 (mua hàng), 1900.5325 (kỹ thuật), 1800.6173 (góp ý), email; cột Về GearVN, Chính sách, Thông tin (hệ thống cửa hàng, hướng dẫn), hỗ trợ thanh toán và đơn vị vận chuyển (logo), dòng pháp lý.",
+ "observations": "Trang cao khoảng 6800 px. Mỗi hàng bán chạy có nhãn quà tặng đỏ cạnh tiêu đề. Không có đếm ngược, flash sale riêng, khối thương hiệu hay đánh giá."
+}

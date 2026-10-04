@@ -1,0 +1,11 @@
+.rc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.rc-grid .pc-link{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:12px;align-content:start;padding:10px}
+.rc-grid .pc-media{grid-row:1/span 6;aspect-ratio:1;align-self:start}
+.rc-grid .pc-name{min-height:0;font-size:13.5px}
+.rc-grid .pc-specs,.rc-grid .pc-promo,.rc-grid .pc-badge,.rc-grid .pc-meta{display:none}
+.rc-grid .pc-price strong{font-size:15px}
+.rc-grid .pc-off{display:none}
+.rc-grid .pc-media img{width:100%;height:100%}
+@media (max-width:1180px){.rc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.rc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.rc-grid{grid-template-columns:1fr 1fr;gap:8px}.rc-grid .pc-link{grid-template-columns:64px minmax(0,1fr);column-gap:8px;padding:8px}}

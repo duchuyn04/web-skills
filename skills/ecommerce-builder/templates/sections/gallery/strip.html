@@ -1,0 +1,16 @@
+{# Section 'gallery', variant 'strip': a single horizontal strip of equal tiles that snaps while scrolling, caption under each picture. Pick it for 4 to 8 pictures or on a narrow home page. #}
+<section class="sec ctn" aria-labelledby="h-gl-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-gl-{{ sec._i }}">{{ sec.title or "Bộ sưu tập hình ảnh" }}</h2></div>
+  <ul class="gl-strip" tabindex="0" aria-label="{{ sec.title or 'Bộ sưu tập hình ảnh' }}, cuộn ngang">
+    {% for it in sec["items"] %}
+    {% set prod = pid[it.product] if it.product else None %}
+    {% set img = prod.image if prod else it.art %}
+    <li class="gl-slide">
+      {% if prod %}<a class="gl-link" href="{{ root }}p/{{ prod.id }}.html">{% else %}<span class="gl-link">{% endif %}
+        <span class="gl-pic">{% if img %}<img src="{{ root }}{{ img }}" alt="{{ prod.name if prod else (it.caption or '') }}" width="400" height="400" loading="lazy">{% endif %}</span>
+        {% if it.caption or prod %}<span class="gl-cap">{{ it.caption or prod.name }}</span>{% endif %}
+      {% if prod %}</a>{% else %}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

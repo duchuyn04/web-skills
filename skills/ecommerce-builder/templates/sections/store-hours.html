@@ -1,0 +1,19 @@
+{# Store hours 'cards' (default): one card per store with address, opening hours, an open-now badge worked out in the browser, phone and a directions link. Data comes from the shop's stores list. #}
+{% if stores %}
+<section class="sec ctn" aria-labelledby="h-sh-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-sh-{{ sec._i }}">{{ sec.title or "Cửa hàng và giờ mở cửa" }}</h2><a class="sec-more" href="{{ root }}stores.html">Tất cả cửa hàng{{ arrow }}</a></div>
+  <ul class="sh sh-cards">
+    {% for st in stores %}
+    <li class="sh-card" data-sh data-sh-hours="{{ st.hours }}">
+      <b>{{ st.name }}</b>
+      <span class="sh-line">{{ icon("map-pin", "i-sm") }}{{ st.address }}</span>
+      <span class="sh-line">{{ icon("clock", "i-sm") }}{{ st.hours }} <em class="open-state" data-sh-state></em></span>
+      <div class="sh-act">
+        {% if st.phone %}<a href="tel:{{ st.phone|replace(' ', '') }}">{{ icon("phone", "i-sm") }}{{ st.phone }}</a>{% endif %}
+        <a href="https://www.google.com/maps/search/?api=1&query={{ (st.map or (st.name ~ ', ' ~ st.address))|urlencode }}" target="_blank" rel="noopener">Chỉ đường{{ icon("external", "i-xs") }}</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

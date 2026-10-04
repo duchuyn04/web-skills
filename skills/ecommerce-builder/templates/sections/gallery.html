@@ -1,0 +1,17 @@
+{# Section 'gallery' (default design 'masonry'): a lookbook mosaic of product pictures on tinted tiles, a few tiles taller or wider; captions sit in a bar under each picture.
+   Data: {"type": "gallery", "title"?, "items": [{"product"?: "<id>", "device"?: "<kind>", "device_color"?, "caption"?}]} (5-9 items) #}
+<section class="sec ctn" aria-labelledby="h-gl-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-gl-{{ sec._i }}">{{ sec.title or "Bộ sưu tập hình ảnh" }}</h2></div>
+  <ul class="gl-mosaic">
+    {% for it in sec["items"] %}
+    {% set prod = pid[it.product] if it.product else None %}
+    {% set img = prod.image if prod else it.art %}
+    <li class="gl-tile gl-t{{ loop.index }}">
+      {% if prod %}<a class="gl-pic" href="{{ root }}p/{{ prod.id }}.html">{% else %}<span class="gl-pic">{% endif %}
+        {% if img %}<img src="{{ root }}{{ img }}" alt="{{ prod.name if prod else (it.caption or '') }}" width="400" height="400" loading="lazy">{% endif %}
+      {% if prod %}</a>{% else %}</span>{% endif %}
+      {% if it.caption %}<p class="gl-cap">{{ it.caption }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

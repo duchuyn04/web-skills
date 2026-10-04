@@ -1,0 +1,14 @@
+{# FAQ 'accordion' (default): shop questions as a list of expandable answers (details and summary, no script). The questions and answers are the shop's own text and are checked against the brief. Pick it for delivery, warranty and payment questions near the footer. #}
+{% if sec["items"] %}
+<section class="sec ctn fq" aria-labelledby="h-fq-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-fq-{{ sec._i }}">{{ sec.title or "Câu hỏi thường gặp" }}</h2></div>
+  <div class="fq-list">
+    {% for it in sec["items"] %}
+    <details class="fq-item"{% if loop.first and sec.open_first %} open{% endif %}>
+      <summary>{{ it.q }}{{ icon("chevron-down", "i-sm") }}</summary>
+      <p>{{ it.a }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

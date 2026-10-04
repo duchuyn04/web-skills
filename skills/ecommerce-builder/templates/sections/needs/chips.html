@@ -1,0 +1,12 @@
+{# Needs 'chips': shop by need as a wrapped row of pill links with an icon, no pictures. Pick it when there are many needs or the page is already image-heavy. #}
+<section class="sec ctn" aria-labelledby="h-needs-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-needs-{{ sec._i }}">{{ sec.title or "Mua theo nhu cầu" }}</h2></div>
+  <ul class="nc-row">
+    {% for it in sec["items"] %}
+    {% set q = it.get("query") or {} %}
+    <li><a class="nc-chip" href="{{ it.href or (root ~ 'c/' ~ it.category ~ '.html' ~ ('?' ~ q|urlencode if q else '')) }}">
+      {{ icon(it.icon or "grid", "nc-ic") }}<span><b>{{ it.title }}</b>{% if it.text %}<small>{{ it.text }}</small>{% endif %}</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

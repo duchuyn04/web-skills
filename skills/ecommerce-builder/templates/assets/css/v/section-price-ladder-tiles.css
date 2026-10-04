@@ -1,0 +1,11 @@
+/* Section 'price-ladder' (tiles): large tiles with the cheapest and the dearest picture of the band. */
+.pl-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.pl-tile{display:flex;flex-direction:column;gap:4px;height:100%;padding:16px;border:1px solid var(--c-border);border-radius:var(--radius-lg);background:var(--c-surface)}
+.pl-tile:hover{border-color:var(--c-btn)}
+.pl-art{position:relative;display:block;height:120px;margin-bottom:6px;border-radius:var(--radius);background:var(--c-surface-2)}
+.pl-art img{position:absolute;left:12%;bottom:6px;width:46%;height:auto;max-height:104px;object-fit:contain}
+.pl-art .pl-art-2{left:auto;right:12%;width:42%}
+.pl-tile b{font-family:var(--font-head);font-size:18px}
+.pl-span{font-size:13.5px;color:var(--c-price);font-weight:600}
+.pl-tile small{font-size:13px;color:var(--c-muted)}
+@media (max-width:767px){.pl-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.pl-tile{padding:12px}.pl-art{height:96px}}

@@ -1,0 +1,27 @@
+{
+ "id": "vivo-vn",
+ "site": "vivo.com/vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "premium-brand",
+ "header": "Thanh nav trắng mảnh một hàng: logo vivo, Trang chủ, Sản phẩm, E-store, Hệ Thống Phân Phối, Hỗ trợ, OriginOS, Giới thiệu về vivo; icon tìm kiếm và tài khoản. Banner cookie nằm giữa trang ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "hero-single",
+   "form": "khối toàn chiều rộng: tên sản phẩm, 2 dòng khẩu hiệu, nút Mua Ngay",
+   "note": "vivo X300 Ultra, đồng chế tác ZEISS"
+  },
+  {
+   "role": "collections",
+   "form": "Sản Phẩm Mới: các thẻ lớn xếp dọc, mỗi thẻ một dòng điện thoại",
+   "note": "V80 Lite 5G (pin 10000 mAh), Y31d (7200 mAh), và thẻ tiếp theo; nút Mua ngay hoặc Tìm hiểu ngay"
+  },
+  {
+   "role": "editorial",
+   "form": "Khám Phá vivo: lưới masonry 4 ô",
+   "note": "Y11d, OriginOS, V60 5G, V60 Lite 5G, Vision+ (khoảng 5 thẻ)"
+  }
+ ],
+ "footer": "Footer tối nền navy: cột Sản phẩm (danh sách model), Hỗ trợ, Giới thiệu về vivo, E-store; hotline 18006101 (Thứ Hai đến Thứ Bảy 8:30-20:30), email cskh@vn.vivo.com, mạng xã hội (Facebook, Instagram, TikTok), dòng bản quyền, chọn quốc gia.",
+ "observations": "Trang cao khoảng 3840 px, ngắn nhất nhóm hãng. Không có giá, newsletter hay đánh giá. vivo.com không có robots.txt."
+}

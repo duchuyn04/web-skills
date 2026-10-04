@@ -1,0 +1,62 @@
+{
+ "id": "mediamart",
+ "site": "mediamart.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "appliance",
+ "header": "Banner mỏng trên cùng (mở bán iPhone 18 Pro, ưu đãi), hàng đỏ: logo, hotline 1900 6788, tìm siêu thị, giỏ hàng, tìm kiếm; hàng thứ hai có nút Danh mục sản phẩm và menu chữ (iPhone 18 Pro, tivi, tủ lạnh, máy giặt, máy sấy, laptop, máy lọc nước, điều hòa, máy hút ẩm). Banner mở rộng bên trái và widget Zalo nổi.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "banner ngang mỏng trên đầu trang",
+   "note": "Ưu đãi khủng 6 triệu, trả góp 0%"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "1 carousel lớn + 2 thẻ deal bên phải trong cùng khung",
+   "note": "Banner bình nóng lạnh với 2 thẻ sản phẩm giá sốc"
+  },
+  {
+   "role": "deals",
+   "form": "FLASH SALE: dải icon ngành + khối HOT DEAL hôm nay + đếm ngược + lưới 6 x 2",
+   "note": "Dòng chữ Giá rẻ mỗi ngày, nút Săn deal ngay; mỗi thẻ có Đã bán x/y suất"
+  },
+  {
+   "role": "banner-row",
+   "form": "DEAL THEO THỜI TIẾT, giải pháp nhu cầu: 4 banner",
+   "note": "Máy giặt, Combo tiện nghi, Combo học tập, nhà khó thoáng"
+  },
+  {
+   "role": "product-grid",
+   "form": "6 khối ngành hàng màu khác nhau trong lưới 3 cột x 2 hàng: Điều hòa, Xả TV, Tủ lạnh-Máy giặt, Gia dụng, Mobile, Laptop",
+   "note": "Mỗi khối có tiêu đề màu riêng, link Xem tất cả và 2 cột x 3 sản phẩm"
+  },
+  {
+   "role": "services",
+   "form": "VÌ SAO MUA TẠI MEDIAMART: dải 6 cam kết",
+   "note": "Giao và lắp 4 giờ, tặng vệ sinh miễn phí, đổi trả 1 đổi 1, trả góp 0%, 350+ siêu thị"
+  },
+  {
+   "role": "stats",
+   "form": "NHỮNG CON SỐ BIẾT NÓI: 5 chỉ số",
+   "note": "350+ siêu thị, 20 năm, 2 triệu+ khách, 5 triệu+ đơn, 4.8/5 đánh giá"
+  },
+  {
+   "role": "banner-row",
+   "form": "Tháng vàng thương hiệu COEX: 1 banner rộng",
+   "note": "Sale thần tốc giảm đến 50%"
+  },
+  {
+   "role": "news",
+   "form": "TIN KHUYẾN MẠI (1 bài lớn + 4 bài nhỏ) cạnh VIDEO REVIEW (1 video dọc)",
+   "note": "Link Xem thêm cho cả hai"
+  },
+  {
+   "role": "seo-text",
+   "form": "Tìm kiếm nhiều: đám chip từ khóa",
+   "note": "Khoảng 30 chip"
+  }
+ ],
+ "footer": "Footer sáng 4 cột: thông tin MediaMart, tổng đài (mua hàng 1900 6788, khiếu nại 1900 6741, bảo hành 1900 6743), chính sách, mạng xã hội (Facebook, YouTube, Zalo, TikTok), chứng nhận, dòng pháp lý.",
+ "observations": "Trang cao khoảng 5230 px. Có khối stats số liệu công ty, hiếm trong các shop VN quan sát được. Lưới 6 khối ngành màu khác nhau thay cho rail riêng lẻ."
+}

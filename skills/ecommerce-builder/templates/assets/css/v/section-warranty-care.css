@@ -1,0 +1,21 @@
+/* Section 'warranty-care': shared icon, then the default 'columns' design. */
+.wc-ic{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:50%;background:var(--c-accent-soft);color:var(--c-accent-ink)}
+.wc-ic .i{width:24px;height:24px}
+.wc-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.wc-n2{grid-template-columns:repeat(2,minmax(0,1fr))}.wc-n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.wc-cols li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:22px 18px;border-left:1px solid var(--c-border)}
+.wc-cols li:first-child{border-left:0}
+.wc-cols b{font-size:15px}
+.wc-cols li>span:last-child:not(.wc-ic){font-size:13.5px;color:var(--c-muted)}
+@media (max-width:1023px){
+  .wc-cols,.wc-n3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wc-cols li{border-left:0;border-top:1px solid var(--c-border)}
+  .wc-cols li:nth-child(-n+2){border-top:0}
+  .wc-cols li:nth-child(even){border-left:1px solid var(--c-border)}
+}
+@media (max-width:767px){
+  .wc-cols,.wc-n2,.wc-n3{grid-template-columns:1fr}
+  .wc-cols li,.wc-cols li:nth-child(even){flex-direction:row;text-align:left;border-left:0;border-top:1px solid var(--c-border);padding:14px;align-items:flex-start}
+  .wc-cols li:first-child{border-top:0}
+  .wc-cols li b,.wc-cols li>span:last-child:not(.wc-ic){display:block}
+}

@@ -1,0 +1,7 @@
+/* Section 'gallery', variant 'strip': snapping horizontal strip. */
+.gl-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(210px,24%);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:6px}
+.gl-slide{scroll-snap-align:start;min-width:0}
+.gl-link{display:flex;flex-direction:column;gap:8px;min-height:44px}
+.gl-strip .gl-pic{aspect-ratio:1;height:auto}
+.gl-strip .gl-cap{color:var(--c-text);font-weight:600}
+@media (max-width:767px){.gl-strip{grid-auto-columns:minmax(150px,62%)}}

@@ -1,0 +1,9 @@
+.rf{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:12px;align-items:stretch}
+.rf-lead>.pc{height:100%}
+.rf-lead .pc-media{flex:1;aspect-ratio:auto;min-height:260px}
+.rf-lead .pc-media img{width:80%;height:auto;max-height:100%}
+.rf-lead .pc-name{font-size:17px}
+.rf-lead .pc-price strong{font-size:22px}
+.rf-rest{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:1023px){.rf{grid-template-columns:1fr}.rf-rest{grid-template-columns:repeat(2,minmax(0,1fr))}.rf-lead .pc-media{min-height:0;aspect-ratio:4/3;flex:none}}
+@media (max-width:767px){.rf,.rf-rest{gap:8px}}

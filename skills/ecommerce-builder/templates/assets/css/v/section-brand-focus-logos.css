@@ -1,0 +1,7 @@
+/* Section 'brand-focus' (logos): a wall of brand name tiles. */
+.bf-logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.bf-logos a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:84px;padding:12px;border:1px solid var(--c-border);border-radius:var(--radius-lg);background:var(--c-surface);text-align:center}
+.bf-logos a:hover{border-color:var(--c-btn)}
+.bf-logos b{font-family:var(--font-head);font-size:20px;font-weight:800;letter-spacing:.02em}
+.bf-logos small{color:var(--c-muted);font-size:12.5px}
+@media (max-width:767px){.bf-logos{grid-template-columns:repeat(2,minmax(0,1fr))}}

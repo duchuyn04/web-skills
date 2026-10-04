@@ -1,0 +1,27 @@
+{# Account shell 'hub': a greeting card on top and a compact side menu; on phones the menu opens as a bottom sheet from a button in the card. Pick it for shops with few account pages and a calm look. #}
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Tài khoản", root ~ "account/index.html" if acc != "index" else None)] + ([(title.split(" | ")[0], None)] if acc != "index" else [])) }}
+<div class="ctn page acc-hub" data-account="{{ acc }}">
+  <header class="acc-hub-card">
+    <span class="avatar avatar-lg" aria-hidden="true" data-user-initial>K</span>
+    <div class="acc-hub-who"><span class="acc-hub-hi">Xin chào</span><b data-user-name>Khách</b><small data-user-phone></small></div>
+    <button type="button" class="btn btn-outline acc-hub-open" data-acc-menu-open aria-expanded="false" aria-controls="acc-sheet">{{ icon("menu", "i-sm") }}Menu tài khoản</button>
+  </header>
+  <div class="acc-hub-body">
+    <div class="acc-hub-scrim" data-acc-scrim hidden></div>
+    <nav class="acc-hub-menu" id="acc-sheet" aria-label="Tài khoản" data-acc-sheet>
+      <ul>
+        {% for key, label, ic in [("index", "Tổng quan", "dashboard"), ("orders", "Đơn hàng", "package"), ("wishlist", "Yêu thích", "heart"), ("addresses", "Địa chỉ", "map-pin")] %}
+        <li><a href="{{ root }}account/{{ key }}.html" {% if acc == key or (acc == "order" and key == "orders") %}aria-current="page"{% endif %}>{{ icon(ic, "i-sm") }}{{ label }}</a></li>
+        {% endfor %}
+        <li><button type="button" class="acc-hub-out" data-logout>{{ icon("log-out", "i-sm") }}Đăng xuất</button></li>
+      </ul>
+    </nav>
+    <div class="acc-main">
+      {% block account %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

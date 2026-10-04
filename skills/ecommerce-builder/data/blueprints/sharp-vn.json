@@ -1,0 +1,27 @@
+{
+ "id": "sharp-vn",
+ "site": "sharp.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "appliance",
+ "header": "Thanh nav trắng: logo SHARP đỏ bên trái, chọn ngôn ngữ (Vietnamese) và tìm kiếm bên phải; hàng menu thứ hai chữ hoa (Thiết bị nghe nhìn, Điều hòa và máy lọc khí, Thiết bị gia dụng, Thiết bị nhà bếp, Thiết bị văn phòng, Gallery, Nấu cùng bếp Sharp). Banner cookie ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "slider toàn chiều rộng có mũi tên và 9 chấm",
+   "note": "Banner Maidaki, nồi cơm Tinh hoa công nghệ Nhật"
+  },
+  {
+   "role": "category-tiles",
+   "form": "dải 4 nút xám (Tài liệu sản phẩm, Xem trải nghiệm, Danh sách cửa hàng, Mua Sharp chính hãng)",
+   "note": "Nút liên kết dịch vụ"
+  },
+  {
+   "role": "collections",
+   "form": "lưới ảnh lớn không chữ giá: 2 cột, ô lớn bên trái, 4-5 ô phải",
+   "note": "Máy lọc không khí, máy hút bụi, máy giặt, điều hòa diệt khuẩn, tủ lạnh khử mùi, Nấu cùng Bếp Sharp"
+  }
+ ],
+ "footer": "Footer xám: Sharp World, Sơ đồ website, Tin tức và sự kiện, Danh sách cửa hàng, Chính sách bảo hành, Chính sách bảo mật thông tin, Liên hệ; mạng xã hội (Facebook, Tiktok, YouTube, Nấu cùng bếp Sharp); hotline 1-800-1599; dòng pháp lý công ty Sharp Việt Nam.",
+ "observations": "Trang cao khoảng 2190 px. Trang giới thiệu thương hiệu, không có giá, không có giỏ hàng trong header."
+}

@@ -1,0 +1,77 @@
+{
+ "id": "dienmayxanh",
+ "site": "dienmayxanh.com",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "appliance",
+ "header": "Cùng nền tảng với thegioididong: dải voucher trên cùng, hàng logo + nút Danh mục + tìm kiếm + đăng nhập + voucher + giỏ + khu vực, hàng menu chữ (máy giặt, tủ lạnh, máy lạnh, tivi...). Popup voucher che hero khi tải lần đầu.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "dải voucher trên cùng",
+   "note": "Hot sale kèm 4 mã giảm giá có nút nhận"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "banner lớn theo mùa kèm lưới sản phẩm nhỏ, skin hai bên",
+   "note": "Banner tủ lạnh có 4 sản phẩm gắn trên banner"
+  },
+  {
+   "role": "installment",
+   "form": "dải chữ ngắn",
+   "note": "MWG Paylater, thẻ VPBank MWG"
+  },
+  {
+   "role": "category-icons",
+   "form": "2 hàng icon trong khung xanh",
+   "note": "11 icon danh mục (máy giặt, máy nước nóng, tivi, quạt, loa, bếp điện...) cộng ô Tất cả danh mục"
+  },
+  {
+   "role": "deals",
+   "form": "Khuyến mãi online: tab danh mục + khung giờ + đếm ngược, lưới 6 cột x 2 hàng",
+   "note": "Tab Nồi cơm, Tủ lạnh, Máy sấy, Nồi chiên, Tivi, Gia dụng; Sắp diễn ra 15:00 và 18:00"
+  },
+  {
+   "role": "product-grid",
+   "form": "Deal Đẹp Có Hạn: khối nền đỏ, tab danh mục, lưới 6 x 2",
+   "note": "10 tab (nổi bật, máy giặt, máy lạnh, tủ lạnh, tivi, lọc nước...), nút Xem thêm 12 sản phẩm"
+  },
+  {
+   "role": "category-tiles",
+   "form": "Mua Online - Hàng chuẩn, giá mê: 8 ô thương hiệu",
+   "note": "Fujihome, Kocher, Sunhouse, Unie, LocknLock, Pavedan, Elmich"
+  },
+  {
+   "role": "product-grid",
+   "form": "Gợi ý cho bạn: tab + lưới 6 cột x 2 hàng",
+   "note": "Nhãn trả chậm 0%, đã bán"
+  },
+  {
+   "role": "product-rail",
+   "form": "Thách thức mùa mưa: banner dọc bên trái + rail 4 sản phẩm",
+   "note": "Máy giặt, máy sấy"
+  },
+  {
+   "role": "editorial",
+   "form": "banner chiến dịch rộng Tủ nhỏ cho mình",
+   "note": "Ba nhãn dịch vụ bên dưới: trả chậm 0%, lỗi đổi 30 ngày, tặng quà"
+  },
+  {
+   "role": "banner-row",
+   "form": "Gian hàng ưu đãi: 4 banner dọc",
+   "note": "Panasonic, tivi loa, tủ lạnh đông mát, Panasonic tháng 10"
+  },
+  {
+   "role": "news",
+   "form": "#CHỦ ĐỀ: 2 tab (Khuyến mãi, Mạng xã hội) với 4 thẻ bài",
+   "note": "4 bài khuyến mãi và tư vấn"
+  },
+  {
+   "role": "seo-text",
+   "form": "Mọi người cũng tìm kiếm: đám tag từ khóa",
+   "note": "khoảng 60 từ khóa dạng chip"
+  }
+ ],
+ "footer": "Footer sáng 3 cột (tổng đài mua hàng, khiếu nại, bảo hành; về công ty; thông tin khác), logo các website tập đoàn, chứng nhận, dòng pháp lý. Link tìm siêu thị 2987.",
+ "observations": "Trang cao 7284 px. Bố cục gần giống thegioididong nhưng danh mục là icon đầu trang và thay hàng điện thoại bằng gia dụng. Không có khối đánh giá, newsletter, thương hiệu riêng."
+}

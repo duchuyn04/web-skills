@@ -1,0 +1,12 @@
+.ftr-ct{margin-top:56px;background:var(--c-surface);border-top:1px solid var(--c-border)}
+.ftr-ct-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding-top:36px;padding-bottom:30px}
+.ftr-ct-tag{color:var(--c-muted);font-size:14px;max-width:56ch}
+.ftr-ct-links ul{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 20px}
+.ftr-ct-links a{display:inline-flex;align-items:center;min-height:32px;font-size:14px;font-weight:500}
+.ftr-ct-links a:hover{color:var(--c-link);text-decoration:underline}
+.ftr-ct-pay{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:13px;color:var(--c-muted)}
+.ftr-ct-pay li{display:flex;align-items:center;gap:6px}
+.ftr-ct-contact{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 12px;font-size:14px;color:var(--c-muted)}
+.ftr-ct-contact a{display:inline-flex;align-items:center;min-height:28px;color:var(--c-link);font-weight:600}
+.ftr-ct-social{justify-content:center}
+.ftr-ct-bottom{justify-content:center;text-align:center}

@@ -1,0 +1,9 @@
+/* Section 'contact-band', variant 'card'. */
+.cb-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:26px;border-radius:var(--radius-lg);background:var(--c-accent-soft);border:1px solid var(--c-border)}
+.cb-copy h2{font-family:var(--font-head);font-size:clamp(20px,2.4vw,28px)}
+.cb-copy p{margin-top:6px;color:var(--c-muted)}
+.cb-facts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:14px}
+.cb-facts li{display:flex;align-items:center;gap:6px}
+.cb-facts .i{color:var(--c-accent-ink)}
+.cb-actions{display:flex;flex-direction:column;gap:8px;min-width:240px}
+@media (max-width:767px){.cb-card{grid-template-columns:1fr;padding:18px}.cb-actions{min-width:0}}

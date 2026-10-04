@@ -1,0 +1,50 @@
+{# Header 'split': a dark thin row (announcement, stores, track order, hotline), then a white row with the logo, a wide search, account and cart, and a category row with a mega-menu button, the main categories as links and the hotline. Pick it for a general electronics shop that wants a calm white header. #}
+{% if announcement %}
+<div class="topbar">
+  <div class="ctn topbar-in">
+    <ul class="topbar-msgs" data-ticker>
+      {% for a in announcement %}<li>{{ icon(["truck","badge-check","refresh","credit-card","gift"][loop.index0 % 5]) }}<span>{{ a }}</span></li>{% endfor %}
+    </ul>
+    <nav class="topbar-links" aria-label="Liên kết nhanh">
+      {% if stores %}<a href="{{ root }}stores.html">{{ icon("store") }}Hệ thống cửa hàng</a>{% endif %}
+      <a href="{{ root }}track.html">{{ icon("package") }}Tra cứu đơn hàng</a>
+      <a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("phone") }}{{ shop.hotline }}</a>
+    </nav>
+  </div>
+</div>
+{% endif %}
+<header class="hdr hdr-split" data-header>
+  <div class="ctn hds-main">
+    <button class="hdr-burger icon-btn" type="button" data-open="catdrawer" aria-label="Mở danh mục">{{ icon("menu") }}</button>
+    <a class="logo" href="{{ root }}index.html" aria-label="{{ shop.name }}, trang chủ">
+      <span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span>
+    </a>
+    <form class="search" action="{{ root }}search.html" role="search" data-search>
+      <label class="sr" for="q">Tìm sản phẩm</label>
+      <input id="q" name="q" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-search-input>
+      <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+      <div class="suggest" data-suggest hidden></div>
+    </form>
+    <nav class="hdr-actions" aria-label="Tài khoản và giỏ hàng">
+      <a class="hdr-act" href="{{ root }}account/index.html" data-account-link>{{ icon("user") }}<span data-account-label>Đăng nhập</span></a>
+      <a class="hdr-act hdr-cart" href="{{ root }}cart.html">{{ icon("shopping-cart") }}<span>Giỏ hàng</span><b class="count" data-cart-count hidden>0</b></a>
+    </nav>
+  </div>
+  <div class="hds-cats">
+    <div class="ctn hds-cats-in">
+      <div class="hdr-cat">
+        <button class="hdr-btn" type="button" data-mega-toggle aria-expanded="false" aria-controls="mega">{{ icon("grid") }}<span>Danh mục</span>{{ icon("chevron-down", "i-sm") }}</button>
+        <div class="mega" id="mega" hidden>
+          {{ m.catmenu() }}
+        </div>
+      </div>
+      <nav aria-label="Danh mục chính">
+        <ul>
+          {% for c in cats[:6] %}<li><a href="{{ root }}c/{{ c.id }}.html" {% if cat is defined and cat and cat.id == c.id %}aria-current="page"{% endif %}>{{ c.name }}</a></li>{% endfor %}
+          <li><a href="{{ root }}deals.html">Khuyến mãi</a></li>
+        </ul>
+      </nav>
+      <a class="hds-hot" href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("headset", "i-sm") }}<span>{{ shop.hotline }}</span></a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+{# Flash sale 'compact': one coloured row with the title, the h:m:s countdown and four small deal items with the sale price. Pick it when the deal should not take over the page. #}
+{% set fmap = {} %}
+{% for it in sec["items"] %}{% set _ = fmap.update({it.product: it}) %}{% endfor %}
+<section class="flash ctn fc" aria-labelledby="h-flash-{{ sec._i }}" data-flash data-ends="{{ sec.ends or '23:59' }}">
+  <div class="fc-bar">
+    <h2 id="h-flash-{{ sec._i }}">{{ icon("flame") }}{{ sec.title or "Giá sốc hôm nay" }}</h2>
+    <div class="flash-timer fc-timer" aria-label="Thời gian còn lại">
+      <b data-t="h">00</b><i>:</i><b data-t="m">00</b><i>:</i><b data-t="s">00</b>
+    </div>
+    <ul class="fc-items">
+      {% for it in sec["items"][:4] %}
+      {% set p = pid[it.product] %}
+      {% set sale = it.sale_price or p.price %}
+      <li><a class="fc-item" href="{{ root }}p/{{ p.id }}.html">
+        <img src="{{ root }}{{ p.image }}" alt="" width="400" height="400" loading="lazy">
+        <span class="fc-name">{{ p.name }}</span>
+        <b class="fc-price">{{ sale|vnd }}</b>
+        {% if sale < p.price %}<s>{{ p.price|vnd }}</s>{% endif %}
+      </a></li>
+      {% endfor %}
+    </ul>
+    <a class="fc-more" href="{{ root }}deals.html">Xem tất cả{{ arrow }}</a>
+  </div>
+</section>

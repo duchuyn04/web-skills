@@ -1,0 +1,37 @@
+{
+ "id": "bestbuy",
+ "site": "bestbuy.com",
+ "market": "us",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Header xanh: logo Best Buy, ô tìm kiếm, Your store/Find a store, Account/Sign in, Cart; hàng pill (Shop, Deals, Support & Services, Discover) và hàng liên kết (Fall Football, Top Deals, Deal of the Day, Gift Ideas, My Best Buy Memberships, Credit Cards, More). Trang tải qua bestbuy.com/?intl=nosplash vì bestbuy.com hiện trang chọn quốc gia.",
+ "sections": [
+  {
+   "role": "hero-single",
+   "form": "1 banner rộng NFL Football: This is the season to go all in",
+   "note": "Nút Shop gameday tech"
+  },
+  {
+   "role": "other",
+   "form": "thanh Sign in/Create an account: nhắc đăng nhập để free shipping",
+   "note": "Hàng ngang một dòng"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner (Latest Kindle e-readers, Save up to 40% on select major appliances)",
+   "note": "Banner không đều, trái rộng hơn"
+  },
+  {
+   "role": "category-icons",
+   "form": "Outlet: Top quality. Even better prices: khối Open-box + 5 icon (Computers & Tablets, TV & Home Theater, Appliances, Cell Phones, Wearable Tech)",
+   "note": "Link Shop all Outlet items"
+  },
+  {
+   "role": "other",
+   "form": "khoảng 10 module tải lỗi, hiện thông báo Oops! Something went wrong",
+   "note": "Không xác định được nội dung; ảnh chụp đầy ô lỗi từ khoảng 700 px đến cuối trang"
+  }
+ ],
+ "footer": "Footer theo DOM: các cột Order & Purchases, Payment Options, Support & Services, Rewards & Membership, Partnerships, About Best Buy, khối đăng ký email Get the latest deals and more (khoảng 9315-9388 px); chưa xem bằng ảnh.",
+ "observations": "Trang cao khoảng 9880 px nhưng phần lớn module không tải được trong trình duyệt tự động (có thể do môi trường chụp), nên chỉ 4 khối đầu được xác nhận. Không dùng làm mẫu thứ tự đầy đủ."
+}

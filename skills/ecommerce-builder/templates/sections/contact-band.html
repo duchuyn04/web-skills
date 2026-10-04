@@ -1,0 +1,10 @@
+{# Section 'contact-band' (default design 'bar'): a thin band with the hotline, email, opening hours and address from the shop data, plus a link to the store locator when the shop has stores. Needs no data besides an optional "title". #}
+<section class="sec ctn" aria-label="{{ sec.title or 'Liên hệ' }}">
+  <ul class="cb-bar">
+    <li>{{ icon("phone", "i-sm") }}<a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ shop.hotline }}</a></li>
+    <li>{{ icon("mail", "i-sm") }}<a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+    {% if shop.hours %}<li>{{ icon("clock", "i-sm") }}<span>{{ shop.hours }}</span></li>{% endif %}
+    {% if shop.address %}<li>{{ icon("map-pin", "i-sm") }}<span>{{ shop.address }}</span></li>{% endif %}
+    {% if stores %}<li class="cb-end"><a class="link-sm" href="{{ root }}stores.html">Hệ thống cửa hàng{{ arrow }}</a></li>{% endif %}
+  </ul>
+</section>

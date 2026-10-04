@@ -1,0 +1,28 @@
+{# Footer 'centered': centered logo and tagline, one wrapped row of links, payment names, contact line and the legal line. Pick it for small shops that want a quiet footer. #}
+<footer class="ftr ftr-ct">
+  <div class="ctn ftr-ct-in">
+    <a class="logo logo-ftr" href="{{ root }}index.html"><span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span></a>
+    <p class="ftr-ct-tag">{{ shop.tagline }}</p>
+    <nav class="ftr-ct-links" aria-label="Liên kết cuối trang">
+      <ul>
+        {% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html">{{ c.name }}</a></li>{% endfor %}
+        {% for p in policies %}<li><a href="{{ root }}policy/{{ p.id }}.html">{{ p.title }}</a></li>{% endfor %}
+        <li><a href="{{ root }}track.html">Tra cứu đơn hàng</a></li>
+        {% if stores %}<li><a href="{{ root }}stores.html">Cửa hàng</a></li>{% endif %}
+      </ul>
+    </nav>
+    <ul class="ftr-ct-pay" aria-label="Phương thức thanh toán">{% for p in payments %}<li>{{ icon(p.icon or "credit-card", "i-sm") }}<span>{{ p.name }}</span></li>{% endfor %}</ul>
+    <p class="ftr-ct-contact">
+      <a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ shop.hotline }}</a>{% if shop.hours %} ({{ shop.hours }}){% endif %}
+      <span aria-hidden="true">/</span><a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+      {% if shop.address %}<span aria-hidden="true">/</span><span>{{ shop.address }}</span>{% endif %}
+    </p>
+    {% if socials %}<ul class="ftr-social ftr-ct-social">{% for s in socials %}<li><a href="{{ s.url }}" aria-label="{{ s.type|capitalize }}">{{ icon(s.type) }}</a></li>{% endfor %}</ul>{% endif %}
+  </div>
+  <div class="ftr-bottom">
+    <div class="ctn ftr-bottom-in ftr-ct-bottom">
+      <span>{% if shop.legal %}{{ shop.legal }}{% else %}{{ year }} {{ shop.name }}{% endif %}</span>
+      {% if demo %}<span class="demo-note">{{ icon("info", "i-sm") }}Cửa hàng mẫu: sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa. <a href="{{ root }}admin/index.html">Xem trang quản trị</a></span>{% endif %}
+    </div>
+  </div>
+</footer>

@@ -39,6 +39,7 @@ sys.path.insert(0, str(HERE))
 import rules  # noqa: E402
 import devices  # noqa: E402
 import variants as V  # noqa: E402
+import blueprints as BP  # noqa: E402
 
 ARROW_SVG = ('<svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" '
              'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line>'
@@ -51,7 +52,7 @@ VARIANTS = V.all_variants()       # part -> variant names, found from the templa
 ICONS = json.loads((DATA / "icons.json").read_text(encoding="utf-8"))
 PROVINCES = json.loads((DATA / "provinces.json").read_text(encoding="utf-8"))["provinces"]
 
-TOP_KEYS = {"_note", "demo", "sample_content", "style", "layout", "lang", "brief", "shop", "theme", "announcement", "categories", "brands", "products", "home",
+TOP_KEYS = {"_note", "demo", "sample_content", "style", "layout", "blueprint", "lang", "brief", "shop", "theme", "announcement", "categories", "brands", "products", "home",
             "promotions", "shipping", "payments", "benefits", "stores", "policies", "staff"}
 PRODUCT_KEYS = {"id", "name", "brand", "category", "device", "price", "old_price", "options", "stock", "sku", "color", "facets",
                 "card_specs", "highlights", "description", "specs", "promos", "badges", "installment", "warranty", "in_box",
@@ -188,7 +189,7 @@ def walk_strings(node, path=""):
         yield path, node
     elif isinstance(node, dict):
         for k, v in node.items():
-            if k in ("brief", "_note", "id", "href", "url", "hex", "map", "image", "images", "sku", "icon", "device", "layout", "style", "variant", "blueprint", "bg", "device_color"):
+            if k in ("brief", "_note", "id", "href", "url", "hex", "map", "image", "images", "sku", "icon", "device", "layout", "style", "variant", "blueprint", "bg", "device_color", "type"):
                 continue
             yield from walk_strings(v, "%s.%s" % (path, k) if path else k)
     elif isinstance(node, list):
@@ -213,6 +214,21 @@ FACT_FIELDS = re.compile(r"(\.specs\[\d+\]\.rows\[\d+\]\[1\]|\.highlights|\.desc
 # Claims a shop has to be able to back up; each must appear in the brief.
 CLAIMS = ["chính hãng", "hoàn tiền", "1 đổi 1", "một đổi một", "miễn phí", "trong ngày", "2 giờ", "tuyệt đối", "vat", "hóa đơn",
           "lắp đặt", "tại nhà", "trọn đời", "thu cũ", "trả góp", "tặng", "quà", "rẻ nhất", "giá tốt nhất", "cam kết", "bảo hành"]
+
+
+HOME_SKIP = {"youtube", "type", "variant", "bg", "ink", "query", "category", "href", "icon", "cta", "device", "device_color", "product", "products", "ends", "id", "tone", "align", "sold", "limit", "sale_price"}
+
+
+def is_fact_path(path):
+    """Product texts and every text inside a home section (item texts, quotes, numbers), but not a section's own title or its wiring keys."""
+    if FACT_FIELDS.search(path):
+        return True
+    m = re.match(r"^home\[\d+\]\.(.+)$", path)
+    if not m:
+        return False
+    rest = m.group(1)
+    last = re.sub(r"\[\d+\]", "", rest.split(".")[-1])
+    return rest != "title" and last not in HOME_SKIP
 
 
 def _tokens_with_digits(text):
@@ -244,7 +260,7 @@ def check_facts(ctx, shop, example_strings):
     names = {_norm_num(t) for p in shop.get("products") or [] for t in _tokens_with_digits(p.get("name", ""))}
     reported = set()
     for path, text in walk_strings(shop):
-        if not FACT_FIELDS.search(path):
+        if not is_fact_path(path):
             continue
         low = text.lower()
         copyable = re.search(r"(\.description|\.highlights|\.promos|\.faq|\.qa|\.specs|^home)", path) and len(text.split()) >= 6
@@ -747,12 +763,16 @@ def build(shop_path, out_dir, ctx):
         if t == "hero":
             if not 1 <= len(sec.get("slides") or []) <= 5:
                 ctx.err(path + ".slides", "give 1-5 slides, each with title, text, cta and product (or device)")
-            side_max = 4 if (sec.get("variant") or layout["hero"]) in ("wide", "bento") else 3
+            side_max = 4 if (sec.get("variant") or layout["hero"]) in ("wide", "bento", "split") else 3
             if len(sec.get("side") or []) > side_max:
                 ctx.err(path + ".side", "at most %d side banners for this hero" % side_max)
             for j, sl in enumerate((sec.get("slides") or []) + (sec.get("side") or [])):
                 if sl.get("product") and sl["product"] not in pid:
                     ctx.err("%s.slides[%d].product" % (path, j), "unknown product id '%s'" % sl["product"])
+        if t == "deal-of-day":
+            for it in (sec.get("items") or ([{"product": sec.get("product"), "sale_price": sec.get("sale_price")}] if sec.get("product") else [])):
+                if it.get("product") in pid and it.get("sale_price") and it["sale_price"] >= pid[it["product"]]["price"]:
+                    ctx.err(path + ".sale_price", "the deal price must be lower than the normal price %s" % pid[it["product"]]["price"])
         if t == "flash-sale":
             for j, it in enumerate(sec.get("items") or []):
                 if it.get("product") not in pid:
@@ -810,6 +830,20 @@ def build(shop_path, out_dir, ctx):
             for j, x in enumerate(sec.get("products") or []):
                 if x not in pid:
                     ctx.err("%s.products[%d]" % (path, j), "unknown product id '%s'" % x)
+    # home order follows the layout of a real shop (data/blueprints); only the order is enforced, slots may be left out
+    bps = BP.load_all()
+    bp_id = shop.get("blueprint")
+    usable = [k for k, b in bps.items() if BP.fits_style(b, style) and b["usable"]]
+    if not bp_id:
+        if not shop.get("sample_content"):
+            ctx.err("blueprint", "choose the real shop whose homepage order this shop follows: python scripts/blueprints.py --style %s lists them (%s). Set \"blueprint\": \"<id>\" and order the home sections as it does." % (style, ", ".join(usable[:8])))
+    elif bp_id not in bps:
+        ctx.err("blueprint", "unknown blueprint '%s'. Use one of: %s" % (bp_id, ", ".join(usable)))
+    elif not BP.fits_style(bps[bp_id], style) or not bps[bp_id]["usable"]:
+        ctx.err("blueprint", "'%s' (%s) does not fit style %s. Use one of: %s" % (bp_id, bps[bp_id]["kind"], style, ", ".join(usable)))
+    else:
+        for e in BP.check(bps[bp_id], [x.get("type") for x in home]):
+            ctx.err("home", e)
     for k in ("shipping", "payments", "policies", "benefits"):
         if not shop.get(k):
             ctx.err(k, "required for checkout and footer pages; copy the shape from examples/demo-electronics.shop.json")
@@ -878,6 +912,11 @@ def build(shop_path, out_dir, ctx):
         vf = TPL / "assets/css/v" / ("%s-%s.css" % (k, val))
         if vf.exists():
             parts.append("/* %s %s */\n" % (k, val) + vf.read_text(encoding="utf-8"))
+    for sec in home:
+        if sec.get("type") == "hero" and sec.get("variant") and sec["variant"] != layout["hero"]:
+            hv = TPL / "assets/css/v" / ("hero-%s.css" % sec["variant"])
+            if hv.exists() and ("/* hero %s */" % sec["variant"]) not in "".join(parts):
+                parts.append("/* hero %s */\n" % sec["variant"] + hv.read_text(encoding="utf-8"))
     used = sorted({(sec.get("type"), sec.get("variant") or "") for sec in home})
     for typ, var in used:
         for name in ([typ, "%s-%s" % (typ, var)] if var else [typ]):
@@ -899,6 +938,12 @@ def build(shop_path, out_dir, ctx):
         if jf.exists():
             js_parts.append(jf.read_text(encoding="utf-8"))
     seen_js = set()
+    for sec in home:
+        if sec.get("type") == "hero" and sec.get("variant") and sec["variant"] != layout["hero"]:
+            hj = TPL / "assets/js/v" / ("hero-%s.js" % sec["variant"])
+            if hj.exists() and ("hero-" + sec["variant"]) not in seen_js:
+                seen_js.add("hero-" + sec["variant"])
+                js_parts.append(hj.read_text(encoding="utf-8"))
     for typ, var in used:
         for name in ([typ, "%s-%s" % (typ, var)] if var else [typ]):
             jf = TPL / "assets/js/v" / ("section-%s.js" % name)
@@ -932,7 +977,10 @@ def build(shop_path, out_dir, ctx):
         "stores": shop.get("stores") or [], "provinces": PROVINCES, "statuses": ORDER_STATUSES,
         "store_stock": seeded["store_stock"],
         "staff": shop.get("staff") or [],
-        "flash": {it["product"]: {"sale_price": it.get("sale_price"), "limit": it.get("limit")} for sec in home if sec.get("type") == "flash-sale" for it in sec.get("items") or []},
+        "flash": {it["product"]: {"sale_price": it.get("sale_price"), "limit": it.get("limit")}
+                  for sec in home if sec.get("type") in ("flash-sale", "deal-of-day")
+                  for it in (sec.get("items") or ([{"product": sec.get("product"), "sale_price": sec.get("sale_price")}] if sec.get("product") else []))
+                  if it.get("product") in pid},
     }
     js = out / "assets" / "js"
     (js / "catalog.js").write_text("window.SHOP=" + json.dumps(catalog, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")

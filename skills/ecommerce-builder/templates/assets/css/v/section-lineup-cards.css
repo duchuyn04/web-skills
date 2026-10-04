@@ -1,0 +1,14 @@
+.lc-grid{display:grid;gap:14px;grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}
+.lc-2{--n:2}.lc-3{--n:3}.lc-4{--n:4}
+.lc-card{display:flex;flex-direction:column;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);overflow:hidden}
+.lc-art{display:grid;place-items:center;aspect-ratio:4/3;background:var(--c-surface-2)}
+.lc-art img{width:56%;height:auto;max-height:86%;object-fit:contain}
+.lc-body{display:flex;flex-direction:column;gap:8px;padding:14px 16px 16px;flex:1}
+.lc-body h3{font-size:16px}
+.lc-price{font-weight:700;color:var(--c-price)}
+.lc-specs{display:flex;flex-direction:column;gap:6px;margin:4px 0 8px;flex:1}
+.lc-specs li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding-bottom:6px;border-bottom:1px solid var(--c-border)}
+.lc-specs span{color:var(--c-muted)}
+.lc-specs b{text-align:right;font-weight:600}
+.lc-body .btn{align-self:flex-start}
+@media (max-width:900px){.lc-grid{grid-template-columns:1fr}.lc-card{display:grid;grid-template-columns:120px minmax(0,1fr)}.lc-art{aspect-ratio:1}}

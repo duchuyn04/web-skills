@@ -1,0 +1,17 @@
+/* Section 'reviews', variant quotes: three pull quotes with rules between them. */
+.rvq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.rvq{display:flex;flex-direction:column;gap:12px;padding:8px 28px}
+.rvq+.rvq{border-left:1px solid var(--c-border)}
+.rvq:first-child{padding-left:0}
+.rvq:last-child{padding-right:0}
+.rvq blockquote{margin:0}
+.rvq blockquote p{font-family:var(--font-head);font-size:19px;line-height:1.5;font-weight:600;color:var(--c-text)}
+.rvq-who{font-size:13.5px;color:var(--c-muted)}
+.rvq-who b{color:var(--c-text)}
+.rvq-who a{color:var(--c-link);display:inline-flex;align-items:center;min-height:24px}
+.rvq-who a:hover{text-decoration:underline}
+@media (max-width:860px){
+  .rvq-grid{grid-template-columns:1fr;gap:20px}
+  .rvq,.rvq:first-child,.rvq:last-child{padding:0 0 20px}
+  .rvq+.rvq{border-left:0;border-top:1px solid var(--c-border);padding-top:20px}
+}

@@ -1,0 +1,51 @@
+{# Footer 'newsletter': an email signup band on top (the address is kept in this browser and a toast confirms it), then four link columns and the legal line. Pick it for shops that send offers by email. #}
+<footer class="ftr ftr-nl">
+  <div class="ftr-nl-band">
+    <div class="ctn ftr-nl-in">
+      <div>
+        <h2>Nhận tin khuyến mãi qua email</h2>
+        <p>{% if demo %}Cửa hàng mẫu: địa chỉ email chỉ được lưu trên trình duyệt này.{% else %}Để lại email, {{ shop.name }} gửi thông tin khuyến mãi mới.{% endif %}</p>
+      </div>
+      <form class="ftr-nl-form" data-newsletter>
+        <label class="sr" for="nl-email">Email của bạn</label>
+        <input id="nl-email" name="email" type="email" required autocomplete="email" placeholder="ban@example.com">
+        <button class="btn btn-primary" type="submit">Đăng ký</button>
+      </form>
+    </div>
+  </div>
+  <div class="ctn ftr-nl-grid">
+    <nav class="ftr-col" aria-label="Chính sách">
+      <h2>Chính sách</h2>
+      <ul>{% for p in policies %}<li><a href="{{ root }}policy/{{ p.id }}.html">{{ p.title }}</a></li>{% endfor %}</ul>
+    </nav>
+    <nav class="ftr-col" aria-label="Danh mục">
+      <h2>Danh mục</h2>
+      <ul>{% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html">{{ c.name }}</a></li>{% endfor %}</ul>
+    </nav>
+    <nav class="ftr-col" aria-label="Hỗ trợ">
+      <h2>Hỗ trợ</h2>
+      <ul>
+        <li><a href="{{ root }}track.html">Tra cứu đơn hàng</a></li>
+        <li><a href="{{ root }}account/orders.html">Đơn hàng của tôi</a></li>
+        {% if stores %}<li><a href="{{ root }}stores.html">Hệ thống cửa hàng</a></li>{% endif %}
+        <li><a href="{{ root }}deals.html">Khuyến mãi</a></li>
+      </ul>
+    </nav>
+    <div class="ftr-col">
+      <h2>Liên hệ</h2>
+      <ul class="ftr-contact">
+        <li>{{ icon("phone", "i-sm") }}<span><a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ shop.hotline }}</a>{% if shop.hours %} ({{ shop.hours }}){% endif %}</span></li>
+        <li>{{ icon("mail", "i-sm") }}<a href="mailto:{{ shop.email }}">{{ shop.email }}</a></li>
+        {% if shop.address %}<li>{{ icon("map-pin", "i-sm") }}<span>{{ shop.address }}</span></li>{% endif %}
+      </ul>
+      <h2 class="ftr-nl-pay-h">Thanh toán</h2>
+      <ul class="ftr-pay">{% for p in payments %}<li>{{ icon(p.icon or "credit-card", "i-sm") }}<span>{{ p.name }}</span></li>{% endfor %}</ul>
+    </div>
+  </div>
+  <div class="ftr-bottom">
+    <div class="ctn ftr-bottom-in">
+      <span>{% if shop.legal %}{{ shop.legal }}{% else %}{{ year }} {{ shop.name }}{% endif %}</span>
+      {% if demo %}<span class="demo-note">{{ icon("info", "i-sm") }}Cửa hàng mẫu: sản phẩm, giá, đánh giá và đơn hàng là dữ liệu minh họa. <a href="{{ root }}admin/index.html">Xem trang quản trị</a></span>{% endif %}
+    </div>
+  </div>
+</footer>

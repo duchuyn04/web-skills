@@ -1,0 +1,42 @@
+{
+ "id": "apple-vn",
+ "site": "apple.com/vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "premium-brand",
+ "header": "Thanh điều hướng đen mảnh một hàng: logo Apple, Cửa Hàng, Mac, iPad, iPhone, Watch, AirPods, TV & Nhà, Giải Trí, Phụ Kiện, Hỗ Trợ, tìm kiếm, giỏ. Dưới đó là dải thông báo xám (thanh toán hàng tháng, trả góp lãi suất 0%). Không có hotline, không có mega menu ở trạng thái đóng.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "dải thông báo xám dưới thanh nav",
+   "note": "Thanh toán hàng tháng, bảo gồm lựa chọn lãi suất 0%, link Tìm hiểu thêm"
+  },
+  {
+   "role": "hero-single",
+   "form": "khối toàn chiều rộng nền đen: tên sản phẩm, 1 dòng mô tả, 2 nút (Tìm hiểu thêm, Mua), ảnh lớn",
+   "note": "iPhone 18 Pro"
+  },
+  {
+   "role": "hero-single",
+   "form": "khối toàn chiều rộng nền sáng, cùng cấu trúc",
+   "note": "iPhone Duo (đặt trước)"
+  },
+  {
+   "role": "hero-single",
+   "form": "khối toàn chiều rộng nền đen",
+   "note": "Apple Watch Series 12"
+  },
+  {
+   "role": "collections",
+   "form": "lưới 2 cột x 4 ô vuông sát nhau, mỗi ô tên + dòng mô tả + 2 nút + ảnh",
+   "note": "Watch Ultra 4, Mac mini, MacBook Air, iPad Air, Mac Studio, AirPods 5 và một ô nữa (khoảng 8 ô)"
+  },
+  {
+   "role": "video",
+   "form": "carousel Apple TV nền sáng, có chấm điều hướng",
+   "note": "Poster phim và chương trình, nút Xem ngay"
+  }
+ ],
+ "footer": "Footer xám sáng nhiều cột (Mua sắm và tìm hiểu, Tài khoản, Apple Store, Dành cho doanh nghiệp, Giá trị cốt lõi của Apple, Về Apple), dòng Mua hàng: Tìm cửa hàng bán lẻ gần bạn hoặc gọi 1800 1192, dòng pháp lý công ty Apple Việt Nam.",
+ "observations": "Trang cao khoảng 5260 px, chỉ có 5 khối nội dung, không có lưới sản phẩm có giá. Mỗi khối chiếm gần một màn hình (khoảng 700 px)."
+}

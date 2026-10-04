@@ -1,0 +1,52 @@
+{
+ "id": "tiki",
+ "site": "tiki.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "marketplace",
+ "header": "Header trắng: logo Tiki, ô tìm kiếm có từ khóa gợi ý bên dưới, Trang chủ, Tài khoản, giỏ hàng, chọn địa chỉ giao hàng; dải cam kết (100% hàng thật, freeship mọi đơn, hoàn 200% nếu hàng giả, 30 ngày đổi trả, giao nhanh 2h, giá siêu rẻ); dải banner mỏng trên cùng về freeship.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "dải xanh nhạt mỏng về freeship",
+   "note": "Freeship đơn từ 45k"
+  },
+  {
+   "role": "services",
+   "form": "dải 6 cam kết dưới header",
+   "note": "100% hàng thật, freeship mọi đơn, hoàn 200% nếu giả, 30 ngày đổi trả, giao nhanh 2h, giá siêu rẻ"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái (khoảng 20 nhóm) + carousel 2 banner song song",
+   "note": "Mỗi slide chứa 2 banner cạnh nhau"
+  },
+  {
+   "role": "deals",
+   "form": "Flash Sale: hàng 6 ô chưa tải sản phẩm, thanh tiến độ hồng",
+   "note": "Chỉ thấy khung và thanh, ảnh sản phẩm trống tại thời điểm chụp"
+  },
+  {
+   "role": "brands",
+   "form": "Thương hiệu nổi bật: rail 6 thẻ thương hiệu có ưu đãi",
+   "note": "Elmich, LocknLock, TikiVIP"
+  },
+  {
+   "role": "category-tiles",
+   "form": "lưới 6 x 2 thẻ ưu đãi trong khung vàng",
+   "note": "Mỗi thẻ có tiêu đề chiến dịch và 3-4 ảnh sản phẩm"
+  },
+  {
+   "role": "product-grid",
+   "form": "Gợi ý hôm nay: lưới 6 cột rất dài, nút Xem Thêm cuối",
+   "note": "Chủ yếu sách, mỹ phẩm, điện tử; nhãn AD, NEW, Giao siêu tốc 2h"
+  },
+  {
+   "role": "seo-text",
+   "form": "Tiki - Thật nhanh, thật chất lượng, thật rẻ: đoạn mô tả + thương hiệu nổi bật + danh mục sản phẩm",
+   "note": "Khối chữ nhiều liên kết ngay trên footer"
+  }
+ ],
+ "footer": "Footer sáng nhiều cột: hỗ trợ khách hàng (hotline 1900-6035), Về Tiki, Hợp tác và liên kết, phương thức thanh toán (logo), chính sách, dịch vụ giao hàng TIKINOW, mạng xã hội, mã QR tải ứng dụng (App Store, Google Play), chứng nhận, dòng công ty TNHH TI KI.",
+ "observations": "Marketplace tổng hợp (sách, mẹ và bé, điện gia dụng, điện thoại), không chỉ điện tử. Phần lớn chiều cao trang là lưới Gợi ý hôm nay."
+}

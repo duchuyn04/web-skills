@@ -1,0 +1,23 @@
+{# Deal of the day 'single' (default): one large product with a title strip, an h:m:s countdown to sec.ends, the price with its old price and a link to the product. Shows the product's own price; use it for one real time-limited offer. #}
+{% set p = pid[sec.product] if sec.product else None %}
+{% if p %}
+{% set sale = sec.sale_price if sec.sale_price and sec.sale_price < p.price else None %}
+{% set now = sale or p.price %}
+{% set old = p.price if sale else p.old_price %}
+<section class="sec ctn dd" aria-labelledby="h-dd-{{ sec._i }}" data-flash data-ends="{{ sec.ends or '23:59' }}">
+  <div class="dd-card">
+    <div class="dd-media"><img src="{{ root }}{{ p.image }}" alt="{{ p.name }}" width="400" height="400" loading="lazy"></div>
+    <div class="dd-copy">
+      <span class="dd-tag">{{ icon("flame", "i-sm") }}{{ sec.title or "Ưu đãi trong ngày" }}</span>
+      <h2 id="h-dd-{{ sec._i }}">{{ p.name }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% elif p.card_specs %}<p>{{ p.card_specs[:3]|join(", ") }}</p>{% endif %}
+      <div class="dd-timer" role="timer" aria-label="Thời gian còn lại">
+        <span>Kết thúc sau</span>
+        <b data-t="h">00</b><i>:</i><b data-t="m">00</b><i>:</i><b data-t="s">00</b>
+      </div>
+      <div class="dd-price"><strong>{{ now|vnd }}</strong>{% if old and old > now %}<s>{{ old|vnd }}</s><em>Giảm {{ ((old - now) * 100 / old)|round|int }}%</em>{% endif %}</div>
+      <a class="btn btn-primary" href="{{ root }}p/{{ p.id }}.html">Xem sản phẩm{{ arrow }}</a>
+    </div>
+  </div>
+</section>
+{% endif %}

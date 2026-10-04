@@ -1,0 +1,18 @@
+{# Section 'contact-band', variant 'card': a large card with the title, the hotline as the primary call button, email and store locator as secondary buttons, and hours and address underneath. Pick it near the end of the home page as a last step. #}
+<section class="sec ctn" aria-labelledby="h-cb-{{ sec._i }}">
+  <div class="cb-card">
+    <div class="cb-copy">
+      <h2 id="h-cb-{{ sec._i }}">{{ sec.title or "Liên hệ" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+      <ul class="cb-facts">
+        {% if shop.hours %}<li>{{ icon("clock", "i-sm") }}<span>{{ shop.hours }}</span></li>{% endif %}
+        {% if shop.address %}<li>{{ icon("map-pin", "i-sm") }}<span>{{ shop.address }}</span></li>{% endif %}
+      </ul>
+    </div>
+    <div class="cb-actions">
+      <a class="btn btn-primary btn-lg" href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("phone") }}Gọi {{ shop.hotline }}</a>
+      <a class="btn btn-outline" href="mailto:{{ shop.email }}">{{ icon("mail", "i-sm") }}{{ shop.email }}</a>
+      {% if stores %}<a class="btn btn-outline" href="{{ root }}stores.html">{{ icon("store", "i-sm") }}Hệ thống cửa hàng</a>{% endif %}
+    </div>
+  </div>
+</section>

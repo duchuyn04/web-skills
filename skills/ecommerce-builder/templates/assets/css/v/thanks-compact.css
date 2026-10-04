@@ -1,0 +1,15 @@
+.thx-cp{display:flex;justify-content:center}
+.thx-cp-card{width:min(520px,100%);display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:28px 24px;text-align:center}
+.thx-cp-ok{align-self:center;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--c-accent-soft);color:var(--c-accent-ink)}
+.thx-cp-ok .i{width:28px;height:28px}
+.thx-cp-card h1{font-size:22px}
+.thx-cp-code{color:var(--c-muted)}
+.thx-cp-code b{display:inline-block;margin-left:6px;padding:4px 12px;border-radius:var(--radius);background:var(--c-surface-2);color:var(--c-text);font-size:18px}
+.thx-cp-pay{text-align:left;padding:14px;border:1px solid var(--c-border);border-radius:var(--radius)}
+.thx-cp-pay h2{font-size:15px;margin-bottom:8px}
+.thx-cp-more{text-align:left;border-top:1px solid var(--c-border)}
+.thx-cp-more summary{display:flex;justify-content:space-between;align-items:center;min-height:44px;font-weight:600;cursor:pointer;list-style:none}
+.thx-cp-more summary::-webkit-details-marker{display:none}
+.thx-cp-more[open] summary .i{transform:rotate(180deg)}
+.thx-cp-more[open]{padding-bottom:12px}
+.thx-cp-act{display:flex;flex-direction:column;gap:8px;margin-top:6px}

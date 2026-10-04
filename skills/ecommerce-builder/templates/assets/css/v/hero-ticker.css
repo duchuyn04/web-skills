@@ -1,0 +1,26 @@
+.ht{padding-top:16px}
+.ht-carousel{aspect-ratio:auto;height:clamp(240px,30vw,380px);border-radius:var(--radius-lg)}
+.ht-slide{padding:32px clamp(24px,6vw,72px)}
+.ht-strip{margin-top:14px;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);background:var(--c-surface)}
+.ht-strip-in{display:flex;align-items:center;gap:10px;min-height:48px}
+.ht-pause{flex:none;width:36px;height:36px;color:var(--c-muted)}
+.ht-pause[aria-pressed=true]{color:var(--c-link)}
+.ht-view{flex:1;min-width:0;overflow:hidden}
+.ht-track{display:flex;width:max-content;animation:ht-run 55s linear infinite}
+.ht-list{display:flex;flex:none;margin:0;padding:0;list-style:none}
+.ht-list li{flex:none}
+.ht-list a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 22px;font-size:14px;white-space:nowrap;border-right:1px solid var(--c-border)}
+.ht-list a b{color:var(--c-price);font-weight:700}
+.ht-list a:hover span{text-decoration:underline}
+.ht-strip:hover .ht-track,.ht-strip:focus-within .ht-track,.ht-strip.is-paused .ht-track{animation-play-state:paused}
+@keyframes ht-run{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .ht-track{animation:none;width:auto}
+  .ht-view{overflow-x:auto}
+  .ht-dup,.ht-pause{display:none}
+}
+@media (max-width:767px){
+  .ht-carousel{height:auto;min-height:250px}
+  .ht-slide{grid-template-columns:1fr 38%;padding:18px}
+  .ht-slide .slide-text{display:none}
+}

@@ -1,0 +1,23 @@
+/* Card 'poster'. Cards drawn by store.js (search, wishlist, recent) are pre-rendered in this style by the build. */
+.cd-poster .pc-poster{position:relative;border:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--c-surface-2)}
+.cd-poster .pc-poster:hover{border:0}
+.cd-poster .pc-poster .pc-link{position:relative;display:block;padding:0}
+.cd-poster .pc-poster .pc-media{position:relative;aspect-ratio:1;display:grid;place-items:center;padding-bottom:28%}
+.cd-poster .pc-poster .pc-media img{width:70%;height:70%;object-fit:contain}
+.cd-poster .pc-tags{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.cd-poster .pc-tags .pc-off,.cd-poster .pc-tags .pc-badge{position:static}
+.cd-poster .pc-cap{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:2px;padding:48px 14px 14px;background:linear-gradient(to bottom,transparent,var(--c-surface-2) 58%)}
+.cd-poster .pc-poster .pc-name{font-size:14.5px;font-weight:600;min-height:0;color:var(--c-text);-webkit-line-clamp:2}
+.cd-poster .pc-poster .pc-price strong{font-size:15px;color:var(--c-text)}
+.cd-poster .pc-poster .pc-price s{color:var(--c-muted)}
+.cd-poster .pc-poster .pc-progress span{color:var(--c-accent-ink)}
+.cd-poster .pc-poster .pc-actions{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:4px;padding:0}
+.cd-poster .pc-poster .pc-cmp,.cd-poster .pc-poster .pc-fav{width:36px;height:36px;min-height:0;justify-content:center;border-radius:50%;background:var(--c-surface);color:var(--c-muted);border:1px solid var(--c-border)}
+.cd-poster .pc-poster .pc-cmp[aria-pressed=true]{color:var(--c-link);border-color:var(--c-link)}
+.cd-poster .pc-poster .pc-fav[aria-pressed=true]{color:var(--c-price)}
+.cd-poster .pc-poster .pc-fav[aria-pressed=true] svg{fill:currentColor}
+@media (max-width:767px){
+  .cd-poster .pc-poster .pc-media{padding-bottom:40%}
+  .cd-poster .pc-poster .pc-media img{width:62%;height:62%}
+  .cd-poster .pc-cap{padding:36px 10px 10px}
+}

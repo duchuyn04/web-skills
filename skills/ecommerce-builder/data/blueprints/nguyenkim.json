@@ -1,0 +1,47 @@
+{
+ "id": "nguyenkim",
+ "site": "nguyenkim.com",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "appliance",
+ "header": "Banner hotline 1900 6699 trên cùng, hàng logo + nút Danh mục + tìm kiếm + tra cứu đơn + giỏ + đăng nhập + chọn miền, hàng menu chữ (Khuyến mãi hot, máy lạnh, tivi, tủ lạnh, máy giặt...). Popup chọn miền (Trung, Nam, Bắc) che trang ở lần tải đầu. Lưu ý: nguyenkimvn.vn lỗi chứng chỉ, dùng nguyenkim.com.",
+ "sections": [
+  {
+   "role": "hero-single",
+   "form": "1 banner lớn một slide (Deal nữ sành điệu) có điều hướng",
+   "note": "Không có banner phụ cạnh bên"
+  },
+  {
+   "role": "category-icons",
+   "form": "lưới 2 hàng x 7 icon danh mục",
+   "note": "14 icon: tủ lạnh, máy giặt, máy lạnh, tivi, quạt, màn hình, laptop, nồi cơm điện..."
+  },
+  {
+   "role": "deals",
+   "form": "SĂN SALE: đếm ngược Chỉ còn + khung giờ 18:00 + tab + rail 6 x 2",
+   "note": "Tab Tất cả, điện thoại, loa karaoke, tai nghe, tivi, hút bụi, tủ lạnh, điều hòa; nút Mua deal hời"
+  },
+  {
+   "role": "product-grid",
+   "form": "Ưu đãi dành cho bạn: 7 tab ngành hàng + lưới 6 x 2",
+   "note": "Tab Tủ lạnh, Máy lạnh, Máy giặt-sấy, Tivi, Điện thoại, Quạt-Nồi cơm, Gia dụng khác; có lượt bán và sao"
+  },
+  {
+   "role": "hero-bento",
+   "form": "Deal nữ sành điệu: 1 banner trung tâm lớn + 2 cột 3 banner nhỏ",
+   "note": "Máy giặt giá sốc 3.890K, tủ lạnh 2 cánh 4.690K, máy lạnh 5.890K, tivi 499K/tháng, nồi cơm 699K"
+  },
+  {
+   "role": "news",
+   "form": "Tin tức & sự kiện: 4 thẻ bài",
+   "note": "Link Xem tất cả"
+  },
+  {
+   "role": "seo-text",
+   "form": "Tìm kiếm nhiều nhất: đám chip từ khóa",
+   "note": "Khoảng 21 chip"
+  }
+ ],
+ "footer": "Footer sáng: cột thông tin công ty, chính sách, hỗ trợ khách hàng; tổng đài 1900 6699 (mua hàng 8:00-21:00) và 1800 6800 (chăm sóc khách hàng), website, email, icon mạng xã hội, nút Hệ thống cửa hàng, dòng pháp lý.",
+ "observations": "Trang ngắn nhất nhóm bán lẻ lớn, cao khoảng 4700 px. Một banner lớn duy nhất làm hero, không có dải dịch vụ, thương hiệu hay đánh giá."
+}

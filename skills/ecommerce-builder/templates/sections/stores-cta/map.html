@@ -1,0 +1,17 @@
+{# Stores call to action 'map': a band that lists up to four stores with city and opening hours as plain text and links to the store locator. No map is embedded. Pick it when the stores themselves are the point. #}
+{% if stores %}
+<section class="sec ctn" aria-labelledby="h-sm-{{ sec._i }}">
+  <div class="sm">
+    <div class="sm-head">
+      <h2 id="h-sm-{{ sec._i }}">{{ sec.title or "Hệ thống cửa hàng" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+      <a class="btn btn-primary" href="{{ root }}stores.html">{{ icon("map-pin") }}Tìm cửa hàng</a>
+    </div>
+    <ul class="sm-list">
+      {% for s in stores[:4] %}
+      <li><b>{{ s.name }}</b><span>{{ icon("map-pin", "i-sm") }}{{ s.city }}</span>{% if s.hours %}<span>{{ icon("clock", "i-sm") }}{{ s.hours }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,6 @@
+/* Section 'brand-focus' (featured): brand heading above a rail of its products. */
+.bf-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.bf-head h2{font-family:var(--font-head);font-size:24px}
+.bf-head small{display:block;color:var(--c-muted);font-size:13px}
+.bf-mark{display:grid;place-items:center;width:48px;height:48px;border-radius:var(--radius);background:var(--c-btn);color:var(--c-btn-fg);font-family:var(--font-head);font-weight:800;font-size:22px}
+.bf-head .sec-more{margin-left:auto}

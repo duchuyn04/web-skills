@@ -1,0 +1,102 @@
+{
+ "id": "fptshop",
+ "site": "fptshop.com.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Thanh đỏ một hàng: logo, nút Danh mục, ô tìm kiếm có gợi ý từ khóa bên dưới, tài khoản, giỏ hàng; hàng chữ chạy ưu đãi và chọn khu vực. Banner cookie và widget Zalo nổi ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "category-icons",
+   "form": "5 thẻ lối tắt ưu đãi có ảnh (Tải app nhận voucher 10%, HSSV giảm 10%, đồng hồ định vị, PC E-Power, thu cũ)",
+   "note": "Hàng thẻ nhỏ ngay dưới header, không phải carousel"
+  },
+  {
+   "role": "hero-bento",
+   "form": "2 banner ngang lớn bằng nhau",
+   "note": "Chiến dịch Sắm To giá khỏi lo và điện máy giá gốc"
+  },
+  {
+   "role": "category-icons",
+   "form": "lưới 8 x 2 icon tròn danh mục",
+   "note": "16 danh mục (điện thoại, tablet, laptop, màn hình, PC, phụ kiện, SIM, đồng hồ, tivi, máy giặt, lọc nước, robot hút bụi, tủ lạnh, lọc không khí, máy lạnh, phần mềm)"
+  },
+  {
+   "role": "deals",
+   "form": "Sắm Online Deal To Mỗi Ngày: khung đỏ, 5 tab, rail 5 sản phẩm",
+   "note": "Giá đỏ lớn kèm phần trăm giảm, nhãn Còn x/y suất"
+  },
+  {
+   "role": "category-icons",
+   "form": "Gợi ý cho bạn: hàng 7 icon sản phẩm",
+   "note": "Camera an ninh, máy sấy, gia dụng, quạt, thiết bị bếp, nồi cơm..."
+  },
+  {
+   "role": "banner-row",
+   "form": "3 banner ngang",
+   "note": "Loa, nghe nhạc, ưu đãi nhỏ"
+  },
+  {
+   "role": "deals",
+   "form": "Giờ Vàng Deal To: đếm ngược + rail 5 sản phẩm nút Mua giá sốc",
+   "note": "Đang diễn ra theo ngày, kết thúc sau hh:mm:ss"
+  },
+  {
+   "role": "shop-by-need",
+   "form": "Sắm Đủ Tiện Nghi - Trọn Nhu Cầu: 1 banner trái + 3 cột nhu cầu (nhà thông minh, nhà nhỏ, thiết bị lớn)",
+   "note": "Mỗi cột 4 ô sản phẩm nhỏ theo nhu cầu"
+  },
+  {
+   "role": "hero-bento",
+   "form": "Sắm To Deal Hời: bento banner 1 lớn + 5 nhỏ",
+   "note": "Có banner tải app giảm 10%"
+  },
+  {
+   "role": "bundle",
+   "form": "Sắm Trọn Bộ - Nâng Tầm Hiệu Suất: rail 5 sản phẩm laptop và PC",
+   "note": "Laptop Acer, Dell, HP và PC E-Power"
+  },
+  {
+   "role": "services",
+   "form": "An Tâm Mua Sắm - Hỗ Trợ Hết Ý: 2 banner lớn",
+   "note": "Sửa chữa miễn phí tận nhà, thời tiết hay thay đổi"
+  },
+  {
+   "role": "product-rail",
+   "form": "Sắm Công Nghệ - Giá Khỏi Lo: rail 5 điện thoại",
+   "note": "Nhãn trả góp 0%, giảm giá"
+  },
+  {
+   "role": "product-rail",
+   "form": "banner SIM FPT (Vi Vu Hết Cỡ) + 3 tab + 4 gói SIM",
+   "note": "Gói SIM 179k, 189k, 199k"
+  },
+  {
+   "role": "services",
+   "form": "hàng 6 icon dịch vụ (SIM, SIM du lịch, nạp tiền, đóng phí Internet, điện thoại trả sau)",
+   "note": "Dịch vụ không phải hàng hóa"
+  },
+  {
+   "role": "installment",
+   "form": "Ưu đãi thanh toán: 3 banner",
+   "note": "Trả góp qua Techcombank, HOME PayLater, giảm 5% tối đa 50k"
+  },
+  {
+   "role": "other",
+   "form": "khảo sát hài lòng: Bạn có hài lòng với trang chủ không",
+   "note": "Hai nút Hài lòng, Không hài lòng"
+  },
+  {
+   "role": "services",
+   "form": "4 cam kết (thương hiệu đảm bảo, đổi trả dễ, giao hàng tận nơi, chất lượng)",
+   "note": "Hàng icon tròn có dòng mô tả"
+  },
+  {
+   "role": "stores",
+   "form": "Hệ thống FPT Shop trên toàn quốc: nút Xem danh sách cửa hàng",
+   "note": "Nằm ngay trước footer"
+  }
+ ],
+ "footer": "Footer tối nền navy: cột tải ứng dụng (mã QR, App Store, Google Play), kết nối mạng xã hội, tổng đài miễn phí 1800.6601 (nhánh 1) và 1800.6601 (nhánh 2), 1800.6616 góp ý; 3 cột liên kết (về chúng tôi, chính sách), hỗ trợ thanh toán (logo ví và thẻ), chứng nhận, các website cùng FPT Retail (F.Studio, F.Care, Long Châu), dòng pháp lý.",
+ "observations": "Trang cao khoảng 7955 px. Có role mới nhỏ: khảo sát hài lòng, ghi là other. Trang chủ dùng banner chiến dịch có linh vật làm chủ đề xuyên suốt, phần lớn tiêu đề khối có dạng Sắm ... Không thấy khối thương hiệu hay đánh giá khách."
+}

@@ -1,0 +1,13 @@
+{# Brand focus 'featured' (default): the brand's name as a heading with its product count, a link to everything from the brand, and a rail of its products. Data: {"type": "brand-focus", "brand": "<brand id>", "title"?, "limit"?: 10}. #}
+{% set b = brands|selectattr("id", "equalto", sec.brand)|first %}
+{% if b %}
+{% set items = products|selectattr("brand", "equalto", b.id)|list %}
+<section class="sec ctn bf" aria-labelledby="h-bf-{{ sec._i }}">
+  <div class="bf-head">
+    <span class="bf-mark" aria-hidden="true">{{ b.name[:1] }}</span>
+    <div><h2 id="h-bf-{{ sec._i }}">{{ sec.title or b.name }}</h2><small>{{ items|length }} sản phẩm</small></div>
+    <a class="sec-more" href="{{ root }}search.html?brand={{ b.id }}">Xem tất cả {{ b.name }}{{ arrow }}</a>
+  </div>
+  {{ m.rail(items[:(sec.limit or 10)], "bf-" ~ sec._i) }}
+</section>
+{% endif %}

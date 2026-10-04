@@ -1,0 +1,34 @@
+{# Reviews 'score': the average rating and a five-row histogram on the left, three recent reviews on the right. The numbers are computed from the product reviews in shop.json. Use for shops with many reviews. #}
+{% set prods = (sec.products|map("extract", pid)|list) if sec.products else products %}
+{% set ns = namespace(all=[], seen=[], sum=0, c1=0, c2=0, c3=0, c4=0, c5=0) %}
+{% for p in prods %}{% for r in p.reviews %}{% if r.text and r.text not in ns.seen %}
+{% set ns.seen = ns.seen + [r.text] %}{% set ns.all = ns.all + [{"r": r, "p": p}] %}{% set ns.sum = ns.sum + r.stars %}
+{% if r.stars == 5 %}{% set ns.c5 = ns.c5 + 1 %}{% elif r.stars == 4 %}{% set ns.c4 = ns.c4 + 1 %}{% elif r.stars == 3 %}{% set ns.c3 = ns.c3 + 1 %}{% elif r.stars == 2 %}{% set ns.c2 = ns.c2 + 1 %}{% else %}{% set ns.c1 = ns.c1 + 1 %}{% endif %}
+{% endif %}{% endfor %}{% endfor %}
+{% set total = ns.all|length %}
+{% if total %}
+{% set avg = (ns.sum / total)|round(1) %}
+{% set bars = [[5, ns.c5], [4, ns.c4], [3, ns.c3], [2, ns.c2], [1, ns.c1]] %}
+<section class="sec ctn rv rv-score" aria-labelledby="h-rv-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-rv-{{ sec._i }}">{{ sec.title or "Điểm đánh giá của khách" }}</h2></div>
+  <div class="rvs">
+    <div class="rvs-sum">
+      <b class="rvs-avg">{{ avg|string|replace(".", ",") }}</b><span class="rvs-of">trên 5</span>
+      {{ {"avg": avg}|stars }}
+      <small>{{ total }} đánh giá</small>
+      <ul class="rvs-bars" aria-label="Phân bố số sao">
+        {% for s, n in bars %}<li><span>{{ s }} sao</span><i style="--w: {{ (n * 100 / total)|round|int }}%"></i><small>{{ n }}</small></li>{% endfor %}
+      </ul>
+    </div>
+    <ul class="rvs-list">
+      {% for x in ns.all[:3] %}
+      <li>
+        <div class="rv-top">{{ {"avg": x.r.stars}|stars }}<b>{{ x.r.name }}</b>{% if x.r.date %}<small>{{ x.r.date }}</small>{% endif %}</div>
+        <p class="rv-text">{{ x.r.text }}</p>
+        <a class="rv-prod rv-prod-line" href="{{ root }}p/{{ x.p.id }}.html">{{ x.p.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

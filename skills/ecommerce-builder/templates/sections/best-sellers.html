@@ -1,0 +1,12 @@
+{# Best sellers, design 'ranked' (default): the top five as cards with large rank numbers 1 to 5. Order comes from the products' sold counts when the shop has them (demo shops), otherwise from the order of "products" or of the catalogue. Data: {"type": "best-sellers", "title"?, "products"?: [ids], "category"?, "limit"?: 5}. #}
+{% set pool = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
+{% set sold = pool|selectattr("sold")|sort(attribute="sold", reverse=true)|list %}
+{% set items = (pool if sec.products else (sold + (pool|rejectattr("sold")|list)))[:(sec.limit or 5)] %}
+<section class="sec ctn bs" aria-labelledby="h-bs-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-bs-{{ sec._i }}">{{ sec.title or "Bán chạy nhất" }}</h2>{% if sec.category %}<a class="sec-more" href="{{ root }}c/{{ sec.category }}.html">Xem tất cả{{ arrow }}</a>{% endif %}</div>
+  <ol class="bs-ranked">
+    {% for p in items %}
+    <li class="bs-item"><span class="bs-num" aria-label="Hạng {{ loop.index }}">{{ loop.index }}</span>{{ m.card(p) }}</li>
+    {% endfor %}
+  </ol>
+</section>

@@ -1,0 +1,11 @@
+{# Brands 'marquee': the brand names in a slow auto-scrolling band that pauses on hover, on keyboard focus and with the pause button; static and scrollable when the visitor prefers reduced motion. #}
+<section class="sec ctn" aria-labelledby="h-brands-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-brands-{{ sec._i }}">{{ sec.title or "Thương hiệu" }}</h2>
+    <button class="bm-pause" type="button" data-marquee-pause aria-pressed="false">{{ icon("pause", "i-sm") }}<span>Tạm dừng</span></button></div>
+  <div class="bm" data-marquee>
+    <ul class="bm-track">
+      {% for b in brands %}<li><a href="{{ root }}search.html?brand={{ b.id }}">{{ b.name }}</a></li>{% endfor %}
+      {% for b in brands %}<li aria-hidden="true"><a href="{{ root }}search.html?brand={{ b.id }}" tabindex="-1">{{ b.name }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>

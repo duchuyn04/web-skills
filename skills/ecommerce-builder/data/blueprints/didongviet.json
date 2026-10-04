@@ -1,0 +1,107 @@
+{
+ "id": "didongviet",
+ "site": "didongviet.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Dải đỏ mỏng (iPhone 18 Pro sẵn hàng, cửa hàng, tra cứu đơn), hàng logo + nút Danh mục + tìm kiếm + hotline 1800.6018 + giỏ + đăng nhập, hàng menu chữ có icon (điện thoại, tablet, MacBook, hệ sinh thái Apple, máy cũ, gia dụng Bear, thiết bị công nghệ, đồng hồ, âm thanh, phụ kiện, thu cũ đổi mới). Banner cookie ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "hero-bento",
+   "form": "1 banner lớn (iPhone 18 Pro) + 1 banner dọc phải (AirPods)",
+   "note": "Có nút mua ngay, ưu đãi trả góp"
+  },
+  {
+   "role": "banner-row",
+   "form": "carousel 3 banner ngang",
+   "note": "Redmi 17, Galaxy A08, iPad"
+  },
+  {
+   "role": "deals",
+   "form": "Ưu Đãi Tháng 10: banner chiến dịch lớn + tab ngành + rail 5",
+   "note": "Tab Điện thoại, Tablet, MacBook, Đồng hồ, Tai nghe, Phụ kiện, Gia dụng Bear; thẻ có trả góp, voucher ngân hàng, nút So sánh"
+  },
+  {
+   "role": "product-rail",
+   "form": "Gợi Ý Cho Bạn: chip sản phẩm + rail 5",
+   "note": "Chip iPhone 18 Pro Max, Duo, iPad Air M4, MacBook Neo, Redmi Note 15..."
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Thật dễ sở hữu trọn vẹn hệ sinh thái Apple"
+  },
+  {
+   "role": "product-rail",
+   "form": "Apple chính hãng: chip dòng + rail 5",
+   "note": "iPhone 18, Duo, 17, Air, 16, 15, 13"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Galaxy Tab S12, ưu đãi 20 suất"
+  },
+  {
+   "role": "product-rail",
+   "form": "Samsung Galaxy Mới: chip dòng + rail 5",
+   "note": "Z Flip8, Z Fold8, S26, S25, Z, A"
+  },
+  {
+   "role": "trade-in",
+   "form": "banner rộng Thu cũ đổi mới",
+   "note": "Trợ giá thêm đến 5.5 triệu, Trade-in AI, giá thu lên tới 97%"
+  },
+  {
+   "role": "product-rail",
+   "form": "Máy Cũ: chip + rail 5",
+   "note": "iPhone cũ, Samsung cũ, Xiaomi cũ, OPPO cũ, MacBook cũ, tablet cũ"
+  },
+  {
+   "role": "product-rail",
+   "form": "Điện thoại Xiaomi, OPPO: rail 5",
+   "note": "Một nhóm hãng"
+  },
+  {
+   "role": "product-rail",
+   "form": "Tablet & MacBook: rail 5",
+   "note": "Một nhóm"
+  },
+  {
+   "role": "product-rail",
+   "form": "Đồng hồ thông minh: rail 5",
+   "note": "Một nhóm"
+  },
+  {
+   "role": "product-rail",
+   "form": "Loa, tai nghe: rail 5",
+   "note": "Một nhóm"
+  },
+  {
+   "role": "product-rail",
+   "form": "Phụ kiện: rail 5",
+   "note": "Một nhóm"
+  },
+  {
+   "role": "product-rail",
+   "form": "Gia dụng Bear: rail 5",
+   "note": "Thương hiệu gia dụng riêng"
+  },
+  {
+   "role": "news",
+   "form": "Mạng thông tin Dchannel: thẻ bài",
+   "note": "Tin tức công nghệ của hệ thống"
+  },
+  {
+   "role": "stats",
+   "form": "Triệu niềm tin, một hành trình: số liệu hệ thống",
+   "note": "Khối thương hiệu cuối trang"
+  },
+  {
+   "role": "seo-text",
+   "form": "Thông tin và liên kết: khối liên kết cuối trang",
+   "note": "Liên kết chuyên mục và từ khóa"
+  }
+ ],
+ "footer": "Không quan sát chi tiết: ảnh cắt ở 8000 px trên trang cao 12741 px; DOM cho thấy khối Thông tin và liên kết ở cuối.",
+ "observations": "Trang dài khoảng 12700 px với 10 rail sản phẩm lặp lại (mỗi rail cao khoảng 1000 px). Các section cuối (Dchannel, Triệu niềm tin) chỉ biết qua DOM, hình thức chưa xem."
+}

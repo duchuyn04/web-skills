@@ -1,0 +1,21 @@
+{# Price ladder 'tiles': large tiles, one per price band, showing the cheapest and the dearest product picture found in the band, the real price span and the product count. Pick it when the range is wide (phones, laptops). Data as for chips, with "variant": "tiles". #}
+<section class="sec ctn pl" aria-labelledby="h-pl-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-pl-{{ sec._i }}">{{ sec.title or "Mua theo tầm giá" }}</h2></div>
+  <ul class="pl-tiles">
+    {% for it in sec["items"] %}
+    {% set cid = it.category or cats[0].id %}
+    {% set band = by_cat[cid]|selectattr("price", "ge", it.min or 0)|selectattr("price", "lt", it.max or 1000000000000)|sort(attribute="price")|list %}
+    {% if band %}
+    <li><a class="pl-tile" href="{{ root }}c/{{ cid }}.html?price={{ it.min or 0 }}-{{ it.max or '' }}">
+      <span class="pl-art">
+        <img src="{{ root }}{{ (band|first).image }}" alt="" width="400" height="400" loading="lazy">
+        {% if band|length > 1 %}<img class="pl-art-2" src="{{ root }}{{ (band|last).image }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+      </span>
+      <b>{{ it.title or m.price_range(it.min or 0, it.max) }}</b>
+      <span class="pl-span">{{ (band|first).price|vnd }}{% if band|length > 1 %} đến {{ (band|last).price|vnd }}{% endif %}</span>
+      <small>{{ band|length }} sản phẩm</small>
+    </a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>

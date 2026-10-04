@@ -1,0 +1,46 @@
+{# Thanks 'timeline': a confirmation strip with the order code, then a vertical "what happens next" timeline built only from shop hours and shipping data, with the order summary beside it. Pick it when buyers ask what comes after paying. #}
+{% import "partials/macros.html" as m with context %}
+<div class="ctn page thx-tl" data-order-page>
+  <div data-order-missing hidden>{{ m.empty("package", "Không tìm thấy đơn hàng", "Đơn hàng không có trên trình duyệt này. Tra cứu bằng mã đơn và số điện thoại.", "Tra cứu đơn hàng", root ~ "track.html") }}</div>
+  <div data-order-body hidden>
+    <header class="thx-tl-head">
+      <span class="thx-tl-ok" aria-hidden="true">{{ icon("check") }}</span>
+      <div>
+        <h1>Đã nhận đơn hàng của bạn</h1>
+        <p>Cảm ơn <b data-o-name></b>. Mã đơn: <b class="code" data-o-code></b>. Giữ mã này để tra cứu đơn.</p>
+      </div>
+    </header>
+    <div class="thx-tl-grid">
+      <section class="box thx-tl-steps" aria-labelledby="h-next">
+        <h2 id="h-next">Các bước tiếp theo</h2>
+        <ol class="thx-steps">
+          <li class="is-done"><b>Đã nhận đơn</b><span>Đơn hàng đã được ghi nhận trên website.</span></li>
+          <li><b>Cửa hàng xác nhận</b><span>{{ shop.name }} liên hệ xác nhận đơn{% if shop.hours %} trong giờ làm việc ({{ shop.hours }}){% endif %}.</span></li>
+          <li><b>Chuẩn bị hàng</b><span>Cửa hàng chuẩn bị sản phẩm theo đơn sau khi xác nhận.</span></li>
+          <li><b>Giao hoặc nhận hàng</b>
+            <span>{% for s in shipping %}{{ s.name }}: {{ s.eta }}{% if not loop.last %}. {% endif %}{% endfor %}{% if stores %}. Hoặc nhận tại cửa hàng đã chọn.{% endif %}</span></li>
+          <li><b>Thanh toán</b><span>Theo phương thức bạn đã chọn, xem ô Thanh toán bên phải.</span></li>
+        </ol>
+        <div class="order-actions">
+          <a class="btn btn-primary" data-o-track href="track.html">{{ icon("package", "i-sm") }}Theo dõi đơn hàng</a>
+          <a class="btn btn-outline" href="index.html">Tiếp tục mua sắm</a>
+        </div>
+      </section>
+      <div class="thx-tl-side">
+        <section class="box" aria-labelledby="h-o-items">
+          <h2 id="h-o-items">Đơn hàng</h2>
+          <ul class="co-items" data-o-items></ul>
+          <dl class="totals" data-o-totals></dl>
+        </section>
+        <section class="box" data-o-pay-box aria-labelledby="h-o-pay">
+          <h2 id="h-o-pay">Thanh toán</h2>
+          <div data-o-pay></div>
+        </section>
+        <section class="box" aria-labelledby="h-o-ship">
+          <h2 id="h-o-ship">Nhận hàng</h2>
+          <div data-o-ship></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

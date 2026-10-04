@@ -1,0 +1,10 @@
+/* Section 'faq': default accordion. */
+.fq-list{display:flex;flex-direction:column;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);overflow:hidden}
+.fq-item{border-bottom:1px solid var(--c-border)}
+.fq-item:last-child{border-bottom:0}
+.fq-item summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;padding:12px 18px;font-weight:600;cursor:pointer;list-style:none}
+.fq-item summary::-webkit-details-marker{display:none}
+.fq-item summary:hover{background:var(--c-surface-2)}
+.fq-item summary .i{flex:none;color:var(--c-muted);transition:transform .15s}
+.fq-item[open] summary .i{transform:rotate(180deg)}
+.fq-item p{padding:0 18px 16px;line-height:1.65;color:var(--c-muted);max-width:75ch}

@@ -1,0 +1,56 @@
+/* PDP 'compact': one narrow column, swipe gallery, collapsible sections, buy bar fixed at the bottom at every width. */
+.pdc{max-width:720px;padding-top:6px;padding-bottom:110px}
+.pdc-back a{display:inline-flex;align-items:center;gap:4px;min-height:40px;font-size:14px;color:var(--c-link)}
+.pdc-back a:hover{text-decoration:underline}
+.pdc-gallery{padding:0;border:0;background:none;margin:0 -16px}
+.pdc-swipe{position:relative;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:1;background:var(--c-surface);border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border)}
+.pdc-swipe::-webkit-scrollbar{display:none}
+.pdc-swipe img,.pdc-swipe img[hidden]{display:block!important;flex:0 0 100%;max-width:100%;max-height:none;width:100%;height:100%;object-fit:contain;padding:8%;scroll-snap-align:center}
+.pdc-swipe .gallery-btn{position:absolute}
+.pdc-dots{display:flex;justify-content:center;gap:2px;margin-top:4px}
+.pdc-dots button{position:relative;width:28px;height:28px}
+.pdc-dots button::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--c-border)}
+.pdc-dots button[aria-selected=true]::after{background:var(--c-text);width:10px;height:10px;margin:-5px 0 0 -5px}
+.pdc-main{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+.pdc-main h1{font-family:var(--font-head);font-size:clamp(20px,5vw,26px)}
+.pdc-main .buybox{padding:14px;border:1px solid var(--c-border);border-radius:var(--radius-lg);background:var(--c-surface)}
+.pdc-main .opt-list{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+.pdc-hl{display:flex;flex-direction:column;gap:8px;font-size:14px}
+.pdc-hl li{display:flex;gap:8px;align-items:flex-start}
+.pdc-hl .i{color:var(--c-ok);margin-top:2px}
+.pdc-sec{border:1px solid var(--c-border);border-radius:var(--radius-lg);background:var(--c-surface);padding:0 16px}
+.pdc-sec>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;font-weight:700;font-size:15px;cursor:pointer;list-style:none}
+.pdc-sec>summary::-webkit-details-marker{display:none}
+.pdc-sec>summary>.i{flex:none;transition:transform .15s}
+.pdc-sec[open]>summary>.i{transform:rotate(180deg)}
+.pdc-sec[open]>summary{border-bottom:1px solid var(--c-border);margin-bottom:12px}
+.pdc-sec>:last-child{margin-bottom:16px}
+.pdc-sum{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pdc-sum small{font-size:12.5px;font-weight:500;color:var(--c-muted)}
+.pdc-sec .faq details:first-child{border-top:0}
+.pdc-promos{counter-reset:p;display:flex;flex-direction:column;gap:8px}
+.pdc-promos li{counter-increment:p;display:flex;gap:10px;font-size:14px}
+.pdc-promos li::before{content:counter(p);flex:none;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--c-accent-ink);color:var(--c-surface);font-size:12px;font-weight:700}
+.pdc-sec .spec-table{margin-bottom:0}
+.pdc-sec .reviews{border:0;padding:0}
+.pdc-addons{border:1px solid var(--c-border);border-radius:var(--radius-lg);background:var(--c-surface);padding:14px 16px}
+.pdc-addons h2{font-size:15px;margin-bottom:10px}
+.pdc-addons ul{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.pdc-addons label{align-items:center}
+.pdc-addons img{width:48px;height:48px}
+.pdc-addons label span{display:flex;flex-direction:column;font-size:14px}
+.pdc-addons label b{color:var(--c-price)}
+.pdc-bar{position:fixed;left:0;right:0;bottom:0;z-index:46;background:var(--c-surface);border-top:1px solid var(--c-border);box-shadow:0 -6px 20px rgba(15,20,30,.12)}
+.pdc-bar-in{display:flex;align-items:center;gap:10px;min-height:68px;max-width:720px}
+.pdc-bar img{width:44px;height:44px;border-radius:8px;background:var(--c-surface-2)}
+.pdc-bar .buybar-info{flex:1;display:flex;flex-direction:column;min-width:0;font-size:13px;line-height:1.3}
+.pdc-bar .buybar-info b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pdc-bar .buybar-info span{color:var(--c-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pdc-bar .buybar-info strong{color:var(--c-price);font-size:15px}
+.pdc-bar .icon-only{width:48px;padding:0}
+body.pdp-compact .ftr{padding-bottom:84px}
+@media (min-width:768px){.pdc-gallery{margin:0}}
+@media (max-width:767px){
+  .pdc-bar{bottom:64px}
+  body.pdp-compact .ftr{padding-bottom:150px}
+}

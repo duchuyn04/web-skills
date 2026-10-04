@@ -1,0 +1,15 @@
+{# Trade-in 'banner': a wide tinted band with the title and call to action on the left and the steps in one row on the right. Pick it for a short, prominent offer between product rows. #}
+<section class="sec ctn" aria-labelledby="h-ti-{{ sec._i }}">
+  <div class="ti ti-banner">
+    <div class="ti-head">
+      <h2 id="h-ti-{{ sec._i }}">{{ sec.title or "Thu cũ đổi mới" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+      <a class="btn btn-primary" href="{{ sec.href or (root ~ ('stores.html' if stores else 'deals.html')) }}">{{ sec.cta or ("Tìm cửa hàng" if stores else "Xem khuyến mãi") }}{{ arrow }}</a>
+    </div>
+    <ol class="ti-row">
+      {% for st in sec.steps %}
+      <li><span class="ti-n" aria-hidden="true">{{ loop.index }}</span><b>{{ st.title }}</b>{% if st.text %}<span>{{ st.text }}</span>{% endif %}</li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

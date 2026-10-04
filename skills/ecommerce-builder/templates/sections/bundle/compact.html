@@ -1,0 +1,22 @@
+{# Bundle 'compact': the whole combo in one short row: small thumbnails joined by plus signs, the total, the combo price and the add-all button. Pick it for two or three items or a band between rails. #}
+{% set items = sec.products|map("extract", pid)|list %}
+{% set total = items|sum(attribute="price") %}
+<section class="sec ctn" aria-labelledby="h-bundle-{{ sec._i }}">
+  <div class="bk" data-bundle>
+    <div class="bk-title"><h2 id="h-bundle-{{ sec._i }}">{{ sec.title or "Combo gợi ý" }}</h2>{% if sec.text %}<p>{{ sec.text }}</p>{% endif %}</div>
+    <ol class="bk-items">
+      {% for p in items %}
+      {% set v = (p.variants|selectattr("stock")|first) or p.variants[0] %}
+      <li class="bk-item" data-bundle-sku="{{ v.sku }}">
+        {% if not loop.first %}<span class="bk-plus" aria-hidden="true">{{ icon("plus", "i-sm") }}</span>{% endif %}
+        <a href="{{ root }}p/{{ p.id }}.html" title="{{ p.name }}"><img src="{{ root }}{{ v.image or p.image }}" alt="{{ p.name }}" width="400" height="400" loading="lazy"></a>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="bk-sum">
+      <p class="bk-price">{% if sec.price %}<s>{{ total|vnd }}</s> <b>{{ sec.price|vnd }}</b>{% else %}<b>{{ total|vnd }}</b>{% endif %}</p>
+      {% if sec.price %}<p class="bk-note">Giá combo áp dụng khi nhân viên xác nhận đơn; giỏ hàng hiện giá lẻ.</p>{% endif %}
+    </div>
+    <button class="btn btn-primary" type="button" data-bundle-add>{{ icon("shopping-cart") }}Thêm cả combo</button>
+  </div>
+</section>

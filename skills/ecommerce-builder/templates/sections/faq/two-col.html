@@ -1,0 +1,21 @@
+{# FAQ 'two-col': the questions as a list on the left, the chosen answer in a panel on the right, switched with buttons (a script shows one answer at a time; without script every answer is visible). Use when there are six or more questions. #}
+{% if sec["items"] %}
+<section class="sec ctn fq fq-two" aria-labelledby="h-fq-{{ sec._i }}" data-fq2>
+  <div class="sec-head"><h2 id="h-fq-{{ sec._i }}">{{ sec.title or "Hỏi đáp nhanh" }}</h2></div>
+  <div class="fq2">
+    <ul class="fq2-q" role="tablist" aria-label="Danh sách câu hỏi">
+      {% for it in sec["items"] %}
+      <li><button type="button" role="tab" id="fq2-t-{{ sec._i }}-{{ loop.index0 }}" aria-controls="fq2-p-{{ sec._i }}-{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}" data-fq2-tab="{{ loop.index0 }}">{{ it.q }}{{ icon("chevron-right", "i-sm") }}</button></li>
+      {% endfor %}
+    </ul>
+    <div class="fq2-a">
+      {% for it in sec["items"] %}
+      <div class="fq2-panel" role="tabpanel" id="fq2-p-{{ sec._i }}-{{ loop.index0 }}" aria-labelledby="fq2-t-{{ sec._i }}-{{ loop.index0 }}" data-fq2-panel="{{ loop.index0 }}">
+        <h3>{{ it.q }}</h3>
+        <p>{{ it.a }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

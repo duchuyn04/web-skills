@@ -1,0 +1,31 @@
+{# New arrivals, design 'tabs' (default): one rail of the newest products per category (newest by the products' released date), switched by category tabs. Pick it for a homepage with several families. Data: {"type": "new-arrivals", "title"?, "categories"?: [ids], "products"?: [ids], "limit"?: 8}. #}
+{% set rid = "na-" ~ sec._i %}
+{% set tabs = [] %}
+{% if sec.products %}
+  {% set _ = tabs.append({"title": "Mới về", "id": "all", "items": sec.products|map("extract", pid)|list}) %}
+{% else %}
+  {% for cid in (sec.categories or (cats|map(attribute="id")|list)) %}
+    {% set c = cats|selectattr("id", "equalto", cid)|first %}
+    {% if c %}
+      {% set dated = by_cat[c.id]|selectattr("released")|sort(attribute="released", reverse=true)|list %}
+      {% set undated = by_cat[c.id]|rejectattr("released")|list %}
+      {% set _ = tabs.append({"title": c.name, "id": c.id, "items": (dated + undated)[:(sec.limit or 8)]}) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+<section class="sec ctn na" data-na aria-labelledby="h-{{ rid }}">
+  <div class="sec-head">
+    <h2 id="h-{{ rid }}">{{ sec.title or "Sản phẩm mới về" }}</h2>
+    {% if tabs|length > 1 %}
+    <div class="chips" role="tablist" aria-label="Chọn danh mục">
+      {% for t in tabs %}<button type="button" class="chip{% if loop.first %} is-on{% endif %}" role="tab" id="{{ rid }}-t{{ loop.index0 }}" aria-controls="{{ rid }}-p{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}" data-na-tab="{{ loop.index0 }}">{{ t.title }}</button>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% for t in tabs %}
+  <div class="na-panel" role="tabpanel" id="{{ rid }}-p{{ loop.index0 }}" aria-labelledby="{{ rid }}-t{{ loop.index0 }}" data-na-panel="{{ loop.index0 }}"{% if not loop.first %} hidden{% endif %}>
+    {{ m.rail(t["items"], rid ~ "-" ~ loop.index0) }}
+    {% if t.id != "all" %}<p class="na-more"><a class="sec-more" href="{{ root }}c/{{ t.id }}.html">Xem tất cả {{ t.title|lower }}{{ arrow }}</a></p>{% endif %}
+  </div>
+  {% endfor %}
+</section>

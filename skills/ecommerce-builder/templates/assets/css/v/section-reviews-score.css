@@ -1,0 +1,16 @@
+/* Section 'reviews', variant score: average with histogram, three reviews beside it. */
+.rvs{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:24px;align-items:start}
+.rvs-sum{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:20px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.rvs-avg{font-family:var(--font-head);font-size:48px;line-height:1;font-weight:700}
+.rvs-of{color:var(--c-muted);font-size:13px}
+.rvs-sum small{color:var(--c-muted);font-size:13px}
+.rvs-bars{display:flex;flex-direction:column;gap:6px;width:100%;margin-top:10px}
+.rvs-bars li{display:grid;grid-template-columns:44px 1fr 24px;gap:8px;align-items:center;font-size:12.5px}
+.rvs-bars i{position:relative;height:8px;border-radius:999px;background:var(--c-surface-2);overflow:hidden}
+.rvs-bars i::before{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--c-accent);border-radius:999px}
+.rvs-bars small{text-align:right}
+.rvs-list{display:flex;flex-direction:column}
+.rvs-list>li{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid var(--c-border)}
+.rvs-list>li:first-child{padding-top:0}
+.rvs-list>li:last-child{border-bottom:0}
+@media (max-width:860px){.rvs{grid-template-columns:1fr}}

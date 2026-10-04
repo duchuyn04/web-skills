@@ -1,0 +1,7 @@
+.gl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gl-grid .pc{height:100%}
+.gl-grid .pc-link{display:grid;grid-template-columns:150px minmax(0,1fr);column-gap:16px;align-content:start;padding:14px}
+.gl-grid .pc-media{grid-row:1/span 7;aspect-ratio:1;align-self:start}
+.gl-grid .pc-name{min-height:0;font-size:15px}
+@media (max-width:900px){.gl-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.gl-grid .pc-link{grid-template-columns:104px minmax(0,1fr);column-gap:10px;padding:10px}}

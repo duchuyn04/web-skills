@@ -1,0 +1,9 @@
+{# Payment methods 'tiles' (default): one tile per payment method of the shop with its icon, name and note. Pure display of the payments list. #}
+<section class="sec ctn" aria-labelledby="h-pm-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-pm-{{ sec._i }}">{{ sec.title or "Hình thức thanh toán" }}</h2></div>
+  <ul class="pm pm-tiles">
+    {% for p in payments %}
+    <li><span class="pm-ic">{{ icon(p.icon or "credit-card") }}</span><div><b>{{ p.name }}</b>{% if p.note %}<span>{{ p.note }}</span>{% endif %}</div></li>
+    {% endfor %}
+  </ul>
+</section>

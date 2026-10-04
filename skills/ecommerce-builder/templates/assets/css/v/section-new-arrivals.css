@@ -1,0 +1,5 @@
+/* Section 'new-arrivals' (tabs): category tabs above one rail per tab. */
+.na .chips{flex:1;min-width:0}
+.na-panel[hidden]{display:none}
+.na-more{margin:12px 0 0;text-align:right}
+@media (max-width:767px){.na .sec-head .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.na .chip{flex:none}}

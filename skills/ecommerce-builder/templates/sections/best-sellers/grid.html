@@ -1,0 +1,12 @@
+{# Best sellers 'grid': up to ten products in a two-row grid, each with a small rank badge. Pick it when the shop has many products and wants a denser block. Data: {"type": "best-sellers", "variant": "grid", "title"?, "products"?: [ids], "category"?, "limit"?: 10}. #}
+{% set pool = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
+{% set sold = pool|selectattr("sold")|sort(attribute="sold", reverse=true)|list %}
+{% set items = (pool if sec.products else (sold + (pool|rejectattr("sold")|list)))[:(sec.limit or 10)] %}
+<section class="sec ctn bs" aria-labelledby="h-bs-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-bs-{{ sec._i }}">{{ sec.title or "Bán chạy nhất" }}</h2>{% if sec.category %}<a class="sec-more" href="{{ root }}c/{{ sec.category }}.html">Xem tất cả{{ arrow }}</a>{% endif %}</div>
+  <div class="bs-grid">
+    {% for p in items %}
+    <div class="bs-cell"><span class="bs-badge" aria-label="Hạng {{ loop.index }}">{{ loop.index }}</span>{{ m.card(p) }}</div>
+    {% endfor %}
+  </div>
+</section>

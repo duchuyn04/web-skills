@@ -1,0 +1,12 @@
+.sw{display:flex;flex-direction:column;gap:14px}
+.sw-tile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:16px;padding:30px 44px;min-height:280px;border-radius:var(--radius-lg);background:var(--tile-bg);color:var(--c-text);overflow:hidden}
+.sw-tile.is-dark{color:var(--c-bg)}
+.sw-flip .sw-art{order:-1}
+.sw-copy{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.sw-title{font-family:var(--font-head);font-size:clamp(24px,2.6vw,36px);font-weight:700;line-height:1.15}
+.sw-text{font-size:16px;opacity:.85;max-width:44ch}
+.sw-price{font-size:15px;font-weight:600}
+.sw-cta{display:inline-flex;align-items:center;font-style:normal;font-weight:700;margin-top:6px;font-size:15px;color:var(--c-link)}
+.sw-tile.is-dark .sw-cta{color:var(--c-bg);text-decoration:underline}
+.sw-art{width:100%;max-width:300px;max-height:240px;object-fit:contain;justify-self:center}
+@media (max-width:767px){.sw-tile{grid-template-columns:1fr;padding:22px 20px;min-height:0;gap:8px}.sw-flip .sw-art{order:0}.sw-art{max-height:180px}}

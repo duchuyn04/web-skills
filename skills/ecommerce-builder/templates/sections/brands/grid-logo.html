@@ -1,0 +1,10 @@
+{# Brands 'grid-logo': a wider grid of brand tiles, each with the brand name and how many products the shop has from it. Pick it when brands are a reason to buy here. #}
+<section class="sec ctn" aria-labelledby="h-brands-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-brands-{{ sec._i }}">{{ sec.title or "Thương hiệu" }}</h2></div>
+  <ul class="bg-grid">
+    {% for b in brands %}
+    {% set n = products|selectattr("brand", "equalto", b.id)|list|length %}
+    <li><a class="bg-tile" href="{{ root }}search.html?brand={{ b.id }}"><b>{{ b.name }}</b><small>{{ n }} sản phẩm</small></a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,23 @@
+{# Section 'bundle-offers', variant 'compare': combos side by side as columns; what each includes is a tick list under the price. Pick it to let buyers weigh a basic, a standard and a full combo. #}
+<section class="sec ctn" aria-labelledby="h-bo-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-bo-{{ sec._i }}">{{ sec.title or "So sánh combo" }}</h2></div>
+  <div class="bo-cols bo-cols-{{ sec["items"]|length }}">
+    {% for c in sec["items"] %}
+    {% set ps = c.products|map("extract", pid)|list %}
+    {% set total = namespace(v=0) %}
+    {% for p in ps %}{% set total.v = total.v + ((p.variants|selectattr("stock")|first) or p.variants[0]).price %}{% endfor %}
+    <article class="bo-col" data-bo>
+      <h3>{{ c.title }}</h3>
+      <p class="bo-colprice"><b>{{ (c.price or total.v)|vnd }}</b>{% if c.price %}<s>{{ total.v|vnd }}</s>{% endif %}</p>
+      <ul class="bo-ticks">
+        {% for p in ps %}
+        {% set v = (p.variants|selectattr("stock")|first) or p.variants[0] %}
+        <li data-bo-sku="{{ v.sku }}">{{ icon("check", "i-sm") }}<a href="{{ root }}p/{{ p.id }}.html">{{ p.name }}</a></li>
+        {% endfor %}
+      </ul>
+      <button class="btn btn-primary btn-block" type="button" data-bo-add>{{ icon("shopping-cart") }}Thêm vào giỏ</button>
+      {% if c.price %}<p class="bo-note">Giỏ hàng tính giá lẻ từng sản phẩm.</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

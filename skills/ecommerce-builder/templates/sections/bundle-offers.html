@@ -1,0 +1,31 @@
+{# Section 'bundle-offers' (default design 'cards'): several combos, each a card with product thumbnails joined by plus icons, the retail sum, the combo price when given and an add-all button.
+   Data: {"type": "bundle-offers", "title"?, "items": [{"title", "products": ["<id>", ...], "price"?: combo price in VND}]}
+   The cart charges each item's normal price, so a combo price is shown for staff to confirm. #}
+<section class="sec ctn" aria-labelledby="h-bo-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-bo-{{ sec._i }}">{{ sec.title or "Combo mua cùng" }}</h2></div>
+  <div class="bo-list">
+    {% for c in sec["items"] %}
+    {% set ps = c.products|map("extract", pid)|list %}
+    {% set total = namespace(v=0) %}
+    {% for p in ps %}{% set total.v = total.v + ((p.variants|selectattr("stock")|first) or p.variants[0]).price %}{% endfor %}
+    <article class="bo-card" data-bo>
+      <h3>{{ c.title }}</h3>
+      <ol class="bo-items">
+        {% for p in ps %}
+        {% set v = (p.variants|selectattr("stock")|first) or p.variants[0] %}
+        <li data-bo-sku="{{ v.sku }}">
+          {% if not loop.first %}<span class="bo-plus" aria-hidden="true">{{ icon("plus") }}</span>{% endif %}
+          <a href="{{ root }}p/{{ p.id }}.html"><img src="{{ root }}{{ v.image or p.image }}" alt="" width="400" height="400" loading="lazy"><span>{{ p.name }}</span></a>
+        </li>
+        {% endfor %}
+      </ol>
+      <dl class="bo-sum">
+        <dt>Mua lẻ {{ ps|length }} sản phẩm</dt><dd{% if c.price %} class="bo-was"{% endif %}>{{ total.v|vnd }}</dd>
+        {% if c.price %}<dt>Giá combo</dt><dd class="bo-price">{{ c.price|vnd }}</dd><dt>Chênh lệch</dt><dd class="bo-save">{{ (total.v - c.price)|vnd }}</dd>{% endif %}
+      </dl>
+      <button class="btn btn-primary" type="button" data-bo-add>{{ icon("shopping-cart") }}Thêm cả combo vào giỏ</button>
+      {% if c.price %}<p class="bo-note">Giỏ hàng tính giá lẻ từng sản phẩm.</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

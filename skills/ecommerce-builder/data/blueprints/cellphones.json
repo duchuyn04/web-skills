@@ -1,0 +1,72 @@
+{
+ "id": "cellphones",
+ "site": "cellphones.com.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Thanh đỏ trên cùng, ô tìm kiếm rộng, nút danh mục (mega menu dạng sidebar trái hiện luôn ở trang chủ), đăng nhập, giỏ hàng, hotline và tra cứu đơn. Lần tải đầu hiện popup đăng ký nhận voucher 10% và banner cookie.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục bên trái + carousel lớn + 2-3 banner dọc bên phải",
+   "note": "Sidebar liệt kê khoảng 12 nhóm hàng; dải banner nhỏ ở dưới carousel"
+  },
+  {
+   "role": "deals",
+   "form": "khung đỏ flash sale: đếm ngược + rail 5 sản phẩm",
+   "note": "Có tab khung giờ, đếm ngược Kết thúc sau, ghi chú thanh toán online S-Student"
+  },
+  {
+   "role": "product-rail",
+   "form": "3 tab (Deal sốc mỗi ngày, Sản phẩm hot trend, Hàng mới về) + chip danh mục + rail 5 sản phẩm",
+   "note": "Chip Phụ kiện, Đồng hồ-âm thanh, Điện thoại, Máy tính bảng, Laptop, Màn hình"
+  },
+  {
+   "role": "product-rail",
+   "form": "ĐIỆN THOẠI / MÁY TÍNH BẢNG: banner dọc bên trái + chip hãng + lưới 4 cột x 2 hàng",
+   "note": "Chip hãng Apple, Samsung, Xiaomi, OPPO, TECNO, HONOR, Nubia, Sony..., link Xem tất cả"
+  },
+  {
+   "role": "accessories",
+   "form": "SẮM THÊM PHỤ KIỆN CHẤT LƯỢNG: lưới icon 6 x 3",
+   "note": "18 ô phụ kiện (cáp sạc, pin dự phòng, ốp lưng, router, camera, gimbal, flycam...)"
+  },
+  {
+   "role": "product-rail",
+   "form": "LAPTOP / MÀN HÌNH / PC / PHỤ KIỆN: banner dọc + tab + chip hãng + lưới 4 cột x 2",
+   "note": "Chip hãng ASUS, MSI, Lenovo, Acer, HP, Dell, LG, Gigabyte"
+  },
+  {
+   "role": "product-rail",
+   "form": "ĐỒNG HỒ / ÂM THANH: banner dọc + tab + chip hãng + lưới 4 cột",
+   "note": "Chip Apple Watch, Samsung, Xiaomi, Huawei, Garmin, Amazfit"
+  },
+  {
+   "role": "product-rail",
+   "form": "TIVI: banner dọc + chip kích cỡ + chip hãng + rail 4",
+   "note": "Chip 32, 43, 55, 60, 65, 75 inch"
+  },
+  {
+   "role": "category-tiles",
+   "form": "ĐỒ GIA DỤNG: 2 khối ô icon 4 x 3 mỗi khối",
+   "note": "Chăm nhà hiện đại (robot hút bụi, máy lọc không khí...), Chăm sóc chuyên gia (massage, sấy tóc...)"
+  },
+  {
+   "role": "product-rail",
+   "form": "TỦ LẠNH / MÁY GIẶT / MÁY SẤY / ĐIỀU HÒA: banner dọc + 4 tab + chip hãng + rail 4",
+   "note": "Mỗi tab có chip loại sản phẩm và chip hãng"
+  },
+  {
+   "role": "category-tiles",
+   "form": "HÀNG CŨ: 12 ô danh mục máy cũ",
+   "note": "iPhone cũ, iPad cũ, MacBook cũ, laptop cũ, tai nghe cũ, loa cũ, đồng hồ cũ..."
+  },
+  {
+   "role": "video",
+   "form": "REVIEW SẢN PHẨM: 4 thẻ video từ YouTube",
+   "note": "Thẻ chưa tải ảnh tại thời điểm chụp, có link Xem YouTube"
+  }
+ ],
+ "footer": "Không thấy trong ảnh (ảnh cắt ở 8000 px trên trang cao 10474 px). Các khối sau review video (tin tức, footer) không được quan sát.",
+ "observations": "Trang trích dẫn khoảng 10474 px. Cấu trúc lặp: mỗi nhóm hàng có banner dọc bên trái cộng tab và chip hãng. Không có khối thương hiệu, newsletter hay đánh giá khách nào trong phần quan sát được."
+}

@@ -1,0 +1,11 @@
+/* Section 'best-sellers' (ranked): five cards, each under a large rank number. */
+.bs-ranked{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.bs-item{display:flex;flex-direction:column;min-width:0}
+.bs-num{display:block;margin:0 0 4px 2px;font-family:var(--font-head);font-weight:800;font-size:44px;line-height:1;color:var(--c-accent-ink)}
+.bs-item:first-child .bs-num{color:var(--c-price)}
+.bs-item>.pc{flex:1}
+@media (max-width:1180px){.bs-ranked{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:767px){
+  .bs-ranked{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:58%;overflow-x:auto;scrollbar-width:none;gap:10px}
+  .bs-num{font-size:36px}
+}

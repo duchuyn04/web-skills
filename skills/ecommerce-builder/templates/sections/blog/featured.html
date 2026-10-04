@@ -1,0 +1,26 @@
+{# Blog 'featured': the first story large on the left with its picture, the next stories as a short list on the right. Pick it when one story matters most. #}
+{% set all = sec["items"] %}
+<section class="sec ctn" aria-labelledby="h-blog-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-blog-{{ sec._i }}">{{ sec.title or "Tin công nghệ" }}</h2></div>
+  <div class="blog blog-featured">
+    {% set it = all[0] %}
+    {% set img = pid[it.product].image if (it.product and it.product in pid) else it.art %}
+    <article class="blog-lead">
+      {% if img %}<div class="blog-img"><img src="{{ root }}{{ img }}" alt="" width="400" height="400" loading="lazy"></div>{% endif %}
+      <div class="blog-body">
+        {% if it.tag %}<span class="blog-tag">{{ it.tag }}</span>{% endif %}
+        <h3>{% if it.href %}<a href="{{ it.href }}">{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</h3>
+        {% if it.text %}<p>{{ it.text }}</p>{% endif %}
+      </div>
+    </article>
+    <ul class="blog-side">
+      {% for it in all[1:] %}
+      <li><article>
+        {% if it.tag %}<span class="blog-tag">{{ it.tag }}</span>{% endif %}
+        <h3>{% if it.href %}<a href="{{ it.href }}">{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</h3>
+        {% if it.text %}<p>{{ it.text }}</p>{% endif %}
+      </article></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

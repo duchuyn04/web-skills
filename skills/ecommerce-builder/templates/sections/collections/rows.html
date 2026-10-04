@@ -1,0 +1,13 @@
+{# Collections 'rows': each collection as a header (title, line, product count) above a sideways rail of its products. Pick it when collections have 4-6 products and the page should read as a catalogue. #}
+<section class="sec ctn" aria-labelledby="h-col-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-col-{{ sec._i }}">{{ sec.title or "Bộ sưu tập" }}</h2></div>
+  {% for c in sec["items"] %}
+  <div class="cr" style="--col-bg: {{ c.bg or 'var(--c-surface-2)' }}">
+    <div class="cr-head">
+      <div><h3>{{ c.title }}</h3>{% if c.text %}<p>{{ c.text }}</p>{% endif %}</div>
+      <span class="cr-n">{{ c.products|length }} sản phẩm</span>
+    </div>
+    {{ m.rail(c.products|map("extract", pid)|list, "rail-col-" ~ sec._i ~ "-" ~ loop.index) }}
+  </div>
+  {% endfor %}
+</section>

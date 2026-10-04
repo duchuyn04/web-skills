@@ -1,0 +1,8 @@
+{# Benefits 'icons-row': centred icons with a short title and line under each, no boxes, separated by thin rules. Pick it for a calm promise bar under the hero. #}
+<section class="sec ctn" aria-label="Cam kết">
+  <ul class="bi-row">
+    {% for b in benefits %}
+    <li class="bi-item">{{ icon(b.icon, "bi-ic") }}<b>{{ b.title }}</b><span>{{ b.text }}</span></li>
+    {% endfor %}
+  </ul>
+</section>

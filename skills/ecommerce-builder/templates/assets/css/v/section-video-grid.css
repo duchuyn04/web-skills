@@ -1,0 +1,7 @@
+/* Section 'video', variant grid: three thumbnails. */
+.vdg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.vdg-item{display:flex;flex-direction:column;gap:8px}
+.vdg-item .vd-media{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--c-border)}
+.vdg-item h3{font-size:16px;line-height:1.35}
+.vdg-item p{color:var(--c-muted);font-size:13.5px;line-height:1.5}
+@media (max-width:860px){.vdg{grid-template-columns:1fr}}

@@ -1,0 +1,20 @@
+{# Reviews 'cards' (default): a grid of customer review cards with stars, the review text, the reviewer and the product reviewed. The text comes only from the product reviews already in shop.json; nothing is shown when no product has reviews. Pick it for a calm proof strip under the product rails. #}
+{% set prods = (sec.products|map("extract", pid)|list) if sec.products else products %}
+{% set ns = namespace(all=[], seen=[]) %}
+{% for p in prods %}{% for r in p.reviews %}{% if r.text and r.text not in ns.seen %}{% set ns.seen = ns.seen + [r.text] %}{% set ns.all = ns.all + [{"r": r, "p": p}] %}{% endif %}{% endfor %}{% endfor %}
+{% set shown = (ns.all|sort(attribute="r.stars", reverse=true))[:(sec.limit or 6)] %}
+{% if shown %}
+<section class="sec ctn rv" aria-labelledby="h-rv-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-rv-{{ sec._i }}">{{ sec.title or "Khách hàng đánh giá" }}</h2></div>
+  <ul class="rv-grid">
+    {% for x in shown %}
+    <li class="rv-card">
+      <div class="rv-top">{{ {"avg": x.r.stars}|stars }}{% if x.r.verified %}<span class="rv-ok">{{ icon("check-circle", "i-xs") }}Đã mua hàng</span>{% endif %}</div>
+      <p class="rv-text">{{ x.r.text }}</p>
+      <div class="rv-who"><span class="avatar" aria-hidden="true">{{ x.r.name[:1] }}</span><span><b>{{ x.r.name }}</b>{% if x.r.date %}<small>{{ x.r.date }}</small>{% endif %}</span></div>
+      <a class="rv-prod" href="{{ root }}p/{{ x.p.id }}.html"><img src="{{ root }}{{ x.p.image }}" alt="" width="40" height="40" loading="lazy"><span>{{ x.p.name }}{% if x.r.variant %}<small>{{ x.r.variant }}</small>{% endif %}</span></a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

@@ -1,0 +1,23 @@
+{# Installment 'table': a table of products with the amount per period for each term, readable at a glance and without any script. #}
+{% set months = sec.months or [3, 6, 12] %}
+{% set list = (sec.products|map("extract", pid)|list) if sec.products else ((products|sort(attribute="price", reverse=true))[:6]) %}
+<section class="sec ctn" aria-labelledby="h-inst-{{ sec._i }}">
+  <div class="inst inst-tbl">
+    <div class="inst-head">
+      <h2 id="h-inst-{{ sec._i }}">{{ sec.title or "Bảng tiền trả góp" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+      {% if sec.rate_text %}<p class="inst-rate">{{ sec.rate_text }}</p>{% endif %}
+    </div>
+    <div class="table-wrap-s" tabindex="0" role="region" aria-label="Bảng tiền trả góp, cuộn ngang để xem hết">
+      <table class="inst-table">
+        <thead><tr><th scope="col">Sản phẩm</th><th scope="col" class="inst-n">Giá</th>{% for n in months %}<th scope="col" class="inst-n">{{ n }} kỳ</th>{% endfor %}</tr></thead>
+        <tbody>
+          {% for p in list %}
+          <tr><th scope="row"><a href="{{ root }}p/{{ p.id }}.html">{{ p.name }}</a></th><td class="inst-n">{{ p.price|vnd }}</td>{% for n in months %}<td class="inst-n">{{ (((p.price / n) / 1000)|round|int * 1000)|vnd }}</td>{% endfor %}</tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="inst-note">Số tiền mỗi kỳ chia đều, chưa gồm phí của ngân hàng hoặc công ty tài chính.</p>
+  </div>
+</section>

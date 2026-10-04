@@ -1,0 +1,7 @@
+/* Section 'stats': shared list reset, then the default 'counters' design. */
+.st-counters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st-n2{grid-template-columns:repeat(2,minmax(0,1fr))}.st-n3{grid-template-columns:repeat(3,minmax(0,1fr))}.st-n5,.st-n6{grid-template-columns:repeat(3,minmax(0,1fr))}
+.st-counters li{display:flex;flex-direction:column;gap:4px;padding:20px 18px;border-radius:var(--radius-lg);background:var(--c-surface);border:1px solid var(--c-border)}
+.st-v{font-family:var(--font-head);font-size:clamp(26px,3.2vw,40px);line-height:1.1;color:var(--c-accent-ink);font-variant-numeric:proportional-nums}
+.st-l{font-size:14px;color:var(--c-muted)}
+@media (max-width:767px){.st-counters,.st-n3,.st-n5,.st-n6{grid-template-columns:repeat(2,minmax(0,1fr))}.st-counters li{padding:14px}}

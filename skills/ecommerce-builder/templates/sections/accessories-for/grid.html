@@ -1,0 +1,17 @@
+{# Section 'accessories-for', variant 'grid': a slim header row with the main product, then every accessory as a product card in a grid. Pick it when there are 6 or more accessories to show at once. #}
+{% set main = pid[sec.product] if sec.product else None %}
+{% set acc = sec.products|map("extract", pid)|list %}
+<section class="sec ctn" aria-labelledby="h-acf-{{ sec._i }}">
+  <div class="acf acf-grid">
+    <div class="acf-head">
+      {% if main %}
+      <a class="acf-headprod" href="{{ root }}p/{{ main.id }}.html">
+        <img src="{{ root }}{{ main.image }}" alt="" width="400" height="400" loading="lazy">
+        <span><small>Dùng cho</small><b>{{ main.name }}</b></span>
+      </a>
+      {% endif %}
+      <h2 id="h-acf-{{ sec._i }}">{{ sec.title or ("Phụ kiện cho " ~ main.name if main else "Phụ kiện đi kèm") }}</h2>
+    </div>
+    <div class="grid">{% for p in acc %}{{ m.card(p) }}{% endfor %}</div>
+  </div>
+</section>

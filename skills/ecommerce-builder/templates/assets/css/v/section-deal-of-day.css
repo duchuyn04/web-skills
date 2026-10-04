@@ -1,0 +1,21 @@
+/* Section 'deal-of-day': default single deal card; also holds the shared timer and price styles used by the list variant. */
+.dd-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:center;padding:24px;background:var(--c-accent-soft);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.dd-media{display:grid;place-items:center}
+.dd-media img{width:min(320px,100%);aspect-ratio:1;object-fit:contain}
+.dd-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.dd-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:var(--c-btn);color:var(--c-btn-fg);font-size:13px;font-weight:700}
+.dd-copy h2{font-family:var(--font-head);font-size:clamp(22px,2.6vw,32px);line-height:1.2}
+.dd-copy p{color:var(--c-muted)}
+.dd-timer{display:flex;align-items:center;gap:6px;font-size:14px}
+.dd-timer span{margin-right:4px;color:var(--c-muted)}
+.dd-timer b{display:grid;place-items:center;min-width:36px;height:34px;padding:0 6px;border-radius:var(--radius);background:var(--c-btn);color:var(--c-btn-fg);font-size:17px;font-variant-numeric:tabular-nums}
+.dd-timer i{font-style:normal;font-weight:700}
+.dd-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.dd-price strong{font-size:28px;color:var(--c-price)}
+.dd-price s{color:var(--c-muted);font-size:15px}
+.dd-price em{font-style:normal;font-size:13px;font-weight:700;color:var(--c-accent-ink)}
+@media (max-width:767px){
+  .dd-card{grid-template-columns:1fr;padding:16px;gap:12px}
+  .dd-media img{width:min(220px,70%)}
+  .dd-price strong{font-size:24px}
+}

@@ -1,0 +1,8 @@
+.ec{display:flex;flex-direction:column;align-items:center;gap:18px;padding:40px 24px 28px;background:var(--ed-bg);border-radius:var(--radius-lg);text-align:center}
+.ec-copy{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:60ch}
+.ec-copy h2{font-family:var(--font-head);font-size:clamp(26px,3vw,38px);line-height:1.15}
+.ec-copy p{color:var(--c-muted);line-height:1.6}
+.ec-price{font-weight:600;color:var(--c-text)!important}
+.ec-copy .ed-link{display:inline-flex;align-items:center;font-weight:700;color:var(--c-link);margin-top:4px}
+.ec-art img{width:100%;max-width:420px;max-height:320px;object-fit:contain}
+@media (max-width:640px){.ec{padding:26px 16px 20px}.ec-art img{max-height:220px}}

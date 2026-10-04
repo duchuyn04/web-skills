@@ -1,0 +1,37 @@
+{
+ "id": "hoanghamobile",
+ "site": "hoanghamobile.com",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Dải xanh trên cùng 3 cam kết (hotline 1900 2091, miễn phí vận chuyển toàn quốc), hàng logo + tìm kiếm + tra cứu + tài khoản + giỏ, dòng từ khóa gợi ý. Popup khuyến mãi lớn (vòng quay giải thưởng) che trang ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "dải 3 cam kết xanh",
+   "note": "Cam kết lỗi 1 đổi 1, hotline 1900 2091, miễn phí vận chuyển toàn quốc"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái (Danh mục, Hàng cũ, Tin tức) + carousel lớn + 2 banner phải",
+   "note": "Sidebar khoảng 12 mục, có mục hàng cũ và tin tức"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 dải banner ngang",
+   "note": "Care Future, Back to School"
+  },
+  {
+   "role": "deals",
+   "form": "Sắm công nghệ giá hời: khung xanh, đếm ngược, 4 tab, rail 5 sản phẩm",
+   "note": "Tab Tất cả, điện thoại/máy tính bảng, laptop/màn hình/tivi, âm thanh/phụ kiện"
+  },
+  {
+   "role": "product-grid",
+   "form": "Dành cho bạn: lưới 4 cột rất dài xen banner chiến dịch",
+   "note": "Chiếm khoảng 16000 px, có banner Samsung, Thuê trước sở hữu sau, Máy cũ giá rẻ, Bao da ốp lưng chen vào lưới; mỗi thẻ có trả góp, giá thành viên, ưu đãi ngân hàng"
+  }
+ ],
+ "footer": "Không quan sát được: ảnh cắt ở 8000 px trên trang cao 22115 px nên phần cuối trang và footer không được xem.",
+ "observations": "Trang chủ chủ yếu là một lưới sản phẩm vô hạn, chỉ có 1 khối deal đếm ngược. Thẻ sản phẩm mật độ thông tin cao (spec, giá trả góp, giá thành viên, ngân hàng ưu đãi, nút Mua ngay)."
+}

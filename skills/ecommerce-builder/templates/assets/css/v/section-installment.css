@@ -1,0 +1,26 @@
+/* Section 'installment': calculator and table. */
+.inst{padding:24px;border-radius:var(--radius-lg);border:1px solid var(--c-border);background:var(--c-surface)}
+.inst-head h2{font-family:var(--font-head);font-size:22px}
+.inst-head p{color:var(--c-muted);margin-top:6px}
+.inst-body{display:grid;grid-template-columns:minmax(0,1.2fr) auto minmax(0,1fr) auto;gap:16px;align-items:end;margin-top:16px}
+.inst-field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.inst-field select{min-height:44px;padding:8px 10px;border:1px solid var(--c-border);border-radius:var(--radius);background:var(--c-surface);color:var(--c-text);font-weight:400}
+.inst-months{border:0;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.inst-months legend{font-size:14px;font-weight:600;margin-bottom:6px;float:left;width:100%}
+.inst-chip{position:relative;cursor:pointer}
+.inst-chip:has(input:checked){border-color:var(--c-btn);background:var(--c-accent-soft);color:var(--c-accent-ink);font-weight:600}
+.inst-chip:has(input:focus-visible){outline:2px solid var(--c-link);outline-offset:2px}
+.inst-out{display:flex;flex-direction:column;gap:2px}
+.inst-sub{font-size:13px;color:var(--c-muted)}
+.inst-amount{font-family:var(--font-head);font-size:26px;color:var(--c-price);line-height:1.2}
+.inst-rate{font-size:13px;font-weight:600;color:var(--c-ok)}
+.inst-note{margin-top:14px;font-size:13px;color:var(--c-muted)}
+.table-wrap-s{position:relative;overflow-x:auto;margin-top:14px}
+.inst-table{width:100%;border-collapse:collapse;font-size:14px}
+.inst-table th,.inst-table td{padding:10px 12px;border-bottom:1px solid var(--c-border);text-align:left;white-space:nowrap}
+.inst-table thead th{color:var(--c-muted);font-weight:600;background:var(--c-surface-2)}
+.inst-table .inst-n{text-align:right;font-variant-numeric:tabular-nums}
+.inst-table tbody th{font-weight:600}
+.inst-table tbody th a{display:inline-flex;align-items:center;min-height:32px}
+.inst-table tbody th a:hover{color:var(--c-link);text-decoration:underline}
+@media (max-width:900px){.inst-body{grid-template-columns:1fr;align-items:stretch}}

@@ -1,0 +1,31 @@
+{# Installment 'calc' (default): choose a product and a term, see the amount per period. Amount = price divided by the number of periods, rounded to thousands. A rate line shows only when the section has rate_text. #}
+{% set months = sec.months or [3, 6, 12] %}
+{% set list = (sec.products|map("extract", pid)|list) if sec.products else ((products|sort(attribute="price", reverse=true))[:4]) %}
+{% set first = list[0] %}
+<section class="sec ctn" aria-labelledby="h-inst-{{ sec._i }}">
+  <div class="inst" data-inst data-root="{{ root }}">
+    <div class="inst-head">
+      <h2 id="h-inst-{{ sec._i }}">{{ sec.title or "Tính tiền trả góp" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+    </div>
+    <div class="inst-body">
+      <label class="inst-field"><span>Sản phẩm</span>
+        <select data-inst-product>
+          {% for p in list %}<option value="{{ p.price }}" data-href="{{ root }}p/{{ p.id }}.html">{{ p.name }}, {{ p.price|vnd }}</option>{% endfor %}
+        </select>
+      </label>
+      <fieldset class="inst-months">
+        <legend>Số kỳ</legend>
+        {% for n in months %}<label class="chip inst-chip"><input class="sr" type="radio" name="inst-m-{{ sec._i }}" value="{{ n }}" data-inst-months {% if loop.first %}checked{% endif %}><span>{{ n }} kỳ</span></label>{% endfor %}
+      </fieldset>
+      <output class="inst-out" data-inst-out aria-live="polite">
+        <span class="inst-sub" data-inst-sub>{{ first.price|vnd }} chia {{ months[0] }} kỳ</span>
+        <b class="inst-amount" data-inst-amount>{{ (((first.price / months[0]) / 1000)|round|int * 1000)|vnd }}</b>
+        <span class="inst-sub">mỗi kỳ</span>
+        {% if sec.rate_text %}<span class="inst-rate">{{ sec.rate_text }}</span>{% endif %}
+      </output>
+      <a class="btn btn-primary" data-inst-link href="{{ root }}p/{{ first.id }}.html">Xem sản phẩm{{ arrow }}</a>
+    </div>
+    <p class="inst-note">Số tiền mỗi kỳ chia đều, chưa gồm phí của ngân hàng hoặc công ty tài chính.</p>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+.gf-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.gf-grid>.pc:first-child{grid-column:span 2;grid-row:span 2}
+.gf-grid>.pc:first-child .pc-media{flex:1;aspect-ratio:auto;min-height:260px}
+.gf-grid>.pc:first-child .pc-media img{width:80%;height:auto;max-height:100%}
+.gf-grid>.pc:first-child .pc-name{font-size:18px}
+.gf-grid>.pc:first-child .pc-price strong{font-size:24px}
+@media (max-width:1023px){.gf-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.gf-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gf-grid>.pc:first-child{grid-row:auto}.gf-grid>.pc:first-child .pc-media{flex:none;min-height:0;aspect-ratio:1}}

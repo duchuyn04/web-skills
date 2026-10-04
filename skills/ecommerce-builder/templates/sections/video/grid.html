@@ -1,0 +1,20 @@
+{# Video 'grid': up to three video thumbnails in a row, each opening its YouTube player in place after a click. Use when the shop has several short videos, for example one per product line. #}
+{% set vids = sec["items"][:3] %}
+{% if vids %}
+<section class="sec ctn vd vd-grid" aria-labelledby="h-vd-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-vd-{{ sec._i }}">{{ sec.title or "Video hướng dẫn và đánh giá" }}</h2></div>
+  <ul class="vdg">
+    {% for it in vids %}
+    {% set prod = pid[it.product] if it.product else None %}
+    <li class="vdg-item">
+      <div class="vd-media" data-yt-box>
+        {% if prod %}<img src="{{ root }}{{ prod.image }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+        {% if it.youtube %}<button type="button" class="vd-play" data-yt="{{ it.youtube }}" data-yt-title="{{ it.title }}" aria-label="Phát video: {{ it.title }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4" fill="currentColor"/></svg></button>{% endif %}
+      </div>
+      <h3>{{ it.title }}</h3>
+      {% if it.text %}<p>{{ it.text }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

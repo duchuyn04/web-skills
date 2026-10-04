@@ -1,0 +1,30 @@
+.ct .ct-wrap{display:flex;flex-direction:column;gap:12px}
+.ct .ct-head{display:grid;grid-template-columns:32px 64px minmax(0,1fr) 128px 148px;gap:14px;padding:0 16px;color:var(--c-muted);font-size:13px;font-weight:600}
+.ct .ct-head span:nth-child(4){text-align:center}
+.ct .ct-head span:nth-child(5){text-align:right}
+.ct .ct-list{gap:0;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);overflow:hidden}
+.ct .ct-list .cart-row{grid-template-columns:32px 64px minmax(0,1fr) 128px 148px;align-items:center;gap:14px;padding:12px 16px;border:0;border-bottom:1px solid var(--c-border);border-radius:0}
+.ct .ct-list .cart-row:last-child{border-bottom:0}
+.ct .ct-list .cart-row input[type=checkbox]{margin-top:0}
+.ct .ct-list .cart-row img{width:64px;height:64px}
+.ct .ct-list .cart-side{display:contents}
+.ct .ct-list .cart-side .price{grid-column:5;grid-row:1;align-items:flex-end}
+.ct .ct-list .cart-side .price strong{color:var(--c-price)}
+.ct .ct-list .cart-side .qty{grid-column:4;grid-row:1;justify-self:center}
+.ct .ct-foot{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start}
+.ct .ct-voucher,.ct .ct-total{background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);padding:18px;display:flex;flex-direction:column;gap:12px}
+.ct .ct-voucher h2{font-size:17px}
+.ct .ct-codes{display:flex;flex-direction:column;gap:6px}
+.ct .ct-codes li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;border:1px dashed var(--c-border);border-radius:var(--radius);font-size:13.5px}
+@media (max-width:900px){
+  .ct .ct-foot{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  .ct .ct-head{display:none}
+  .ct .ct-list .cart-row{grid-template-columns:auto 56px minmax(0,1fr);align-items:start;gap:8px 12px;padding:12px}
+  .ct .ct-list .cart-row img{width:56px;height:56px}
+  .ct .ct-list .cart-row input[type=checkbox]{margin-top:18px}
+  .ct .ct-list .cart-side{display:flex;grid-column:2/-1;flex-direction:row;justify-content:space-between;align-items:center}
+  .ct .ct-list .cart-side .price{grid-column:auto;grid-row:auto;align-items:flex-start}
+  .ct .ct-list .cart-side .qty{grid-column:auto;grid-row:auto}
+}

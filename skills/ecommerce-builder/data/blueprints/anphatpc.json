@@ -1,0 +1,87 @@
+{
+ "id": "anphatpc",
+ "site": "anphatpc.com.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "gaming",
+ "header": "Dải banner ROG Luxury Gaming Store trên cùng, dải liên kết nhỏ (hệ thống showroom, video, khuyến mãi, trung tâm dịch vụ), hàng logo + ô tìm kiếm có chọn danh mục + hotline (1900 0323, 0918 557 006, 0917 948 081) + xây dựng cấu hình PC + tài khoản + giỏ; hàng thứ ba có nút Danh mục sản phẩm và menu chữ. Popup Back to School che trang lần đầu, kèm widget Zalo, Facebook, hỗ trợ online.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái (khoảng 25 nhóm) + carousel + banner phải",
+   "note": "Khối dưới popup, chỉ thấy một phần"
+  },
+  {
+   "role": "deals",
+   "form": "DEAL HOT CUỐI TUẦN: khối cam, đếm ngược, rail 4 laptop",
+   "note": "Nút MUA GIÁ SỐC, kết thúc sau hh:mm:ss, nút Xem thêm"
+  },
+  {
+   "role": "product-rail",
+   "form": "TOP SẢN PHẨM BÁN CHẠY: 5 tab + rail 5",
+   "note": "Tab PC Gaming, Laptop Gaming, MacBook Apple, Máy in Canon, Màn hình máy tính, Màn hình gaming"
+  },
+  {
+   "role": "product-rail",
+   "form": "LAPTOP: chip hãng + rail 5 x 2",
+   "note": "Chip ASUS, Lenovo, HP, MSI, Dell, Acer, Laptop gaming, Laptop văn phòng"
+  },
+  {
+   "role": "product-rail",
+   "form": "PC GAMING, HỌC TẬP: rail 5",
+   "note": "Link Xem tất cả"
+  },
+  {
+   "role": "product-rail",
+   "form": "PC VĂN PHÒNG - LÀM VIỆC: rail 5",
+   "note": "Chip máy tính đồng bộ, văn phòng, ASUS NUC"
+  },
+  {
+   "role": "product-rail",
+   "form": "APPLE: rail 5",
+   "note": "MacBook Neo, MacBook Pro M5"
+  },
+  {
+   "role": "product-rail",
+   "form": "BÀN PHÍM, CHUỘT - GAMING GEAR: rail 5",
+   "note": ""
+  },
+  {
+   "role": "product-rail",
+   "form": "LINH KIỆN MÁY TÍNH: chip + rail 5",
+   "note": "CPU, mainboard, VGA, RAM, SSD, vỏ case, nguồn"
+  },
+  {
+   "role": "product-rail",
+   "form": "MÀN HÌNH MÁY TÍNH: rail 5",
+   "note": ""
+  },
+  {
+   "role": "product-rail",
+   "form": "PC ĐỒNG BỘ - MÁY CHỦ - MÁY TRẠM: rail 5",
+   "note": ""
+  },
+  {
+   "role": "product-rail",
+   "form": "THIẾT BỊ VĂN PHÒNG: rail 5",
+   "note": ""
+  },
+  {
+   "role": "product-rail",
+   "form": "THIẾT BỊ LƯU TRỮ, USB, THẺ NHỚ: rail 5",
+   "note": ""
+  },
+  {
+   "role": "product-rail",
+   "form": "COOLING, TẢN NHIỆT: rail 5",
+   "note": ""
+  },
+  {
+   "role": "product-rail",
+   "form": "THIẾT BỊ MẠNG, CAMERA: rail 5",
+   "note": "Khối cuối trong phần quan sát"
+  }
+ ],
+ "footer": "Không quan sát: ảnh cắt ở 8000 px trên trang cao 11338 px.",
+ "observations": "Trang gồm 13 rail sản phẩm xếp liên tục, mỗi rail cao khoảng 520 px, ảnh sản phẩm nhiều ô chưa tải trong ảnh chụp (lazy load). Phong cách bảng thông số dày, nút So sánh và Đặt hàng."
+}

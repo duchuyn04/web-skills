@@ -18,7 +18,7 @@
 .hw-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);opacity:0;transition:opacity .2s}
 .hw-car:hover .hw-btn,.hw-btn:focus-visible{opacity:1}
 .hw-prev{left:14px}.hw-next{right:14px}
-.hw-dots{display:flex;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.hw-dots{position:relative;display:flex;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
 .hw-dots button{display:inline-flex;align-items:center;min-height:32px;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--c-muted);background:var(--c-surface);border:1px solid var(--c-border)}
 .hw-dots button[aria-selected=true]{color:var(--c-btn-fg);background:var(--c-btn);border-color:var(--c-btn)}
 .hw-tiles{display:grid;gap:12px;margin-top:14px}
@@ -44,6 +44,7 @@
   .hw-cta{min-height:40px;padding:8px 14px;font-size:14px}
   .hw-btn{display:none}
   .hw-dots{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .hw-tiles{position:relative}
   .hw-dots button{flex:none}
   .hw-tiles{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}
   .hw-tiles::-webkit-scrollbar{display:none}

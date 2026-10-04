@@ -1,0 +1,48 @@
+/* Listing 'tiles': category banner, sibling-category column, large two-column tiles, filters in a drawer at every width. */
+.plt{padding-top:10px;padding-bottom:40px}
+.plt-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:24px;align-items:center;padding:28px 32px;margin-bottom:22px;background:var(--c-surface-2);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.plt-banner h1{font-family:var(--font-head);font-size:clamp(26px,3vw,38px);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.plt-banner h1 small{font-size:15px;font-weight:500;color:var(--c-muted)}
+.plt-banner p{margin-top:10px;max-width:60ch;color:var(--c-muted)}
+.plt-banner .brand-chips{margin-top:16px}
+.plt-banner-art{width:100%;max-width:240px;justify-self:center}
+.plt-body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:start}
+.plt-cats{position:sticky;top:84px}
+.plt-cats h2{font-size:13px;color:var(--c-muted);font-weight:700;margin-bottom:8px}
+.plt-cats ul{display:flex;flex-direction:column;gap:2px}
+.plt-cats a{display:flex;align-items:center;gap:10px;min-height:42px;padding:0 10px;border-radius:var(--radius);font-weight:500;font-size:14px}
+.plt-cats a:hover{background:var(--c-surface-2)}
+.plt-cats a[aria-current=page]{background:var(--c-accent-soft);color:var(--c-accent-ink);font-weight:700}
+.plt-cats a span{flex:1}
+.plt-cats small{color:var(--c-muted)}
+.plt-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.plt-bar .toolbar-filter{display:inline-flex}
+.plt-bar .sort{display:flex;margin-left:auto}
+.plt-bar .sort-label{display:none}
+.plt-sort{display:none}
+.plt-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.plt-grid .pc-media{aspect-ratio:4/3}
+.plt-grid .pc-name{font-size:16px}
+/* the drawer: base store.css only makes .filters a sheet below 1024px, here it is a side drawer always */
+.plt-drawer{position:fixed;top:0;right:0;bottom:0;left:auto;z-index:70;width:min(400px,100vw);max-height:none;border-radius:0;border-width:0 0 0 1px;transform:translateX(105%);visibility:hidden;transition:transform .22s ease}
+.plt-drawer.is-open{transform:none;visibility:visible}
+.plt-drawer .filters-close,.plt-drawer .filters-foot{display:block}
+.plt-drawer .filters-foot{padding:12px 14px;border-top:1px solid var(--c-border)}
+.plt-drawer .filters-scroll{flex:1}
+@media (max-width:1023px){
+  .plt-body{grid-template-columns:minmax(0,1fr)}
+  .plt-cats{position:static}
+  .plt-cats ul{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:4px}
+  .plt-cats a{white-space:nowrap;border:1px solid var(--c-border);border-radius:999px;min-height:40px}
+  .plt-cats small{display:none}
+  .plt-cats h2{display:none}
+  .plt-bar .sort{display:none}
+  .plt-sort{display:flex;margin-left:auto}
+  .plt-banner{grid-template-columns:minmax(0,1fr);padding:22px 20px}
+  .plt-banner-art{display:none}
+}
+@media (max-width:767px){
+  .plt-drawer{width:100vw}
+  .plt-grid{gap:10px}
+}
+@media (prefers-reduced-motion:reduce){.plt-drawer{transition:none}}

@@ -1,0 +1,52 @@
+{# Header 'rail': one slim bar with a Danh mục button, the logo, a wide search, account and cart. The button opens a wide slide-in panel that lists every category with its brands, price ranges and top products. Pick it when the shop has many categories and wants the page itself kept quiet. #}
+{% if announcement %}
+<p class="hr-note"><span class="ctn">{{ announcement[0] }}</span></p>
+{% endif %}
+<header class="hdr hdr-rail" data-header>
+  <div class="ctn hr-in">
+    <button class="hr-menu" type="button" data-open="railpanel" aria-haspopup="dialog" aria-controls="railpanel">{{ icon("menu") }}<span>Danh mục</span></button>
+    <a class="logo" href="{{ root }}index.html" aria-label="{{ shop.name }}, trang chủ">
+      <span class="logo-mark" aria-hidden="true">{{ shop.name[:1] }}</span><span class="logo-name">{{ shop.name }}</span>
+    </a>
+    <form class="search" action="{{ root }}search.html" role="search" data-search>
+      <label class="sr" for="q">Tìm sản phẩm</label>
+      <input id="q" name="q" type="search" placeholder="{{ search_ph }}" autocomplete="off" data-search-input>
+      <button type="submit" aria-label="Tìm kiếm">{{ icon("search") }}</button>
+      <div class="suggest" data-suggest hidden></div>
+    </form>
+    <nav class="hdr-actions" aria-label="Tài khoản và giỏ hàng">
+      <a class="hdr-act" href="{{ root }}account/index.html" data-account-link>{{ icon("user") }}<span data-account-label>Đăng nhập</span></a>
+      <a class="hdr-act hdr-cart" href="{{ root }}cart.html" aria-label="Giỏ hàng">{{ icon("shopping-cart") }}<span>Giỏ hàng</span><b class="count" data-cart-count hidden>0</b></a>
+    </nav>
+  </div>
+</header>
+<div class="drawer drawer-rail" id="railpanel" data-drawer hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Danh mục sản phẩm">
+    <div class="drawer-head"><b>Danh mục sản phẩm</b><button class="icon-btn" type="button" data-close aria-label="Đóng">{{ icon("x") }}</button></div>
+    <div class="hr-panel">
+      {% for c in cats %}
+      <details class="hr-cat" {% if loop.first %}open{% endif %}>
+        <summary>{{ icon(c.icon) }}<span>{{ c.name }}</span><small>{{ c.count }}</small>{{ icon("chevron-down", "i-sm") }}</summary>
+        <div class="hr-cat-body">
+          <ul class="hr-links">
+            <li><a href="{{ root }}c/{{ c.id }}.html">Tất cả {{ c.name|lower }}</a></li>
+            {% for br in c.brands %}<li><a href="{{ root }}c/{{ c.id }}.html?brand={{ br.id }}">{{ br.name }}</a></li>{% endfor %}
+          </ul>
+          <ul class="hr-links hr-prices">
+            {% for lo, hi in c.price_ranges %}<li><a href="{{ root }}c/{{ c.id }}.html?price={{ lo }}-{{ hi or '' }}">{{ m.price_range(lo, hi) }}</a></li>{% endfor %}
+          </ul>
+          <ul class="hr-top">
+            {% for p in by_cat[c.id][:3] %}<li><a href="{{ root }}p/{{ p.id }}.html"><img src="{{ root }}{{ p.image }}" alt="" width="48" height="48" loading="lazy"><span>{{ p.name }}<b>{{ p.price|vnd }}</b></span></a></li>{% endfor %}
+          </ul>
+        </div>
+      </details>
+      {% endfor %}
+      <ul class="hr-extra">
+        <li><a href="{{ root }}deals.html">{{ icon("percent") }}<span>Khuyến mãi</span></a></li>
+        {% if stores %}<li><a href="{{ root }}stores.html">{{ icon("store") }}<span>Hệ thống cửa hàng</span></a></li>{% endif %}
+        <li><a href="{{ root }}track.html">{{ icon("package") }}<span>Tra cứu đơn hàng</span></a></li>
+        <li><a href="tel:{{ shop.hotline|replace(' ', '') }}">{{ icon("phone") }}<span>{{ shop.hotline }}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

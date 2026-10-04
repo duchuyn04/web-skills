@@ -1,0 +1,14 @@
+{# Category showcase 'rows': each chosen category is a row with its name, a link, and its first three products as cards. Pick it when each family deserves its own look at the products. Data: {"type": "category-tiles", "variant": "rows", "title"?, "categories"?: [ids, up to 4]}. #}
+{% set ids = sec.categories or (cats|map(attribute="id")|list) %}
+<section class="sec ctn cs-rows" aria-labelledby="h-cs-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-cs-{{ sec._i }}">{{ sec.title or "Mua sắm theo danh mục" }}</h2></div>
+  {% for cid in ids[:4] %}
+  {% set c = cats|selectattr("id", "equalto", cid)|first %}
+  {% if c %}
+  <div class="cs-row">
+    <div class="cs-row-head">{{ icon(c.icon) }}<h3>{{ c.name }}</h3><small>{{ c.count }} sản phẩm</small><a class="sec-more" href="{{ root }}c/{{ c.id }}.html">Xem tất cả{{ arrow }}</a></div>
+    <div class="cs-row-items">{% for p in by_cat[c.id][:3] %}{{ m.card(p) }}{% endfor %}</div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</section>

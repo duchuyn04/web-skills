@@ -1,0 +1,6 @@
+.ss{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);align-items:stretch;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--c-border);background:var(--c-surface)}
+.ss-copy{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:28px 30px}
+.ss-copy h2{font-size:24px;line-height:1.25}
+.ss-copy p{color:var(--c-muted);max-width:56ch}
+.ss-act{display:grid;place-items:center;padding:24px 34px;background:var(--c-accent-soft)}
+@media (max-width:767px){.ss{grid-template-columns:1fr}.ss-copy{padding:20px}.ss-act{padding:18px 20px}.ss-act .btn{width:100%}}

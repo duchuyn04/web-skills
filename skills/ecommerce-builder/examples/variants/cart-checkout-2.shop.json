@@ -1,0 +1,3611 @@
+{
+ "_note": "Ví dụ cho biến thể cart 'table' và checkout 'split-pay'. Cửa hàng và dữ liệu là mẫu.",
+ "demo": true,
+ "sample_content": true,
+ "style": "retail",
+ "lang": "vi",
+ "brief": "Cửa hàng mẫu Mẫu Giỏ Hàng Dạng Bảng. Mọi thương hiệu, giá và đơn hàng là dữ liệu minh họa.",
+ "shop": {
+  "name": "Mẫu Giỏ Hàng Dạng Bảng",
+  "tagline": "Điện thoại, laptop, tivi chính hãng, trả góp 0%",
+  "hotline": "1800 0000",
+  "email": "cskh@example.com",
+  "address": "[Địa chỉ trụ sở]",
+  "hours": "8:00 - 21:30",
+  "legal": "Cửa hàng mẫu do ecommerce-builder tạo. Thông tin pháp lý (tên công ty, mã số thuế) điền khi chạy thật.",
+  "socials": [
+   {
+    "type": "facebook",
+    "url": "#"
+   },
+   {
+    "type": "youtube",
+    "url": "#"
+   }
+  ],
+  "slug": "mau-gio-hang-dang-bang"
+ },
+ "theme": {
+  "preset": "red-retail"
+ },
+ "announcement": [
+  "Giao nhanh 2 giờ nội thành Hà Nội và TP. Hồ Chí Minh",
+  "Trả góp 0% qua thẻ tín dụng",
+  "Đổi trả trong 30 ngày nếu lỗi do nhà sản xuất"
+ ],
+ "categories": [
+  {
+   "id": "dien-thoai",
+   "name": "Điện thoại",
+   "icon": "smartphone",
+   "device": "phone",
+   "facets": [
+    {
+     "key": "ram",
+     "label": "RAM"
+    },
+    {
+     "key": "storage",
+     "label": "Bộ nhớ trong"
+    },
+    {
+     "key": "screen",
+     "label": "Màn hình"
+    }
+   ],
+   "intro": [
+    "Hải Đăng Digital bán điện thoại chính hãng của Lumen, Orbit và Kite, có hóa đơn VAT và bảo hành tại trung tâm của hãng.",
+    "Máy dưới 8 triệu hợp với nhu cầu nghe gọi, mạng xã hội và học online. Từ 12 triệu trở lên, máy có màn hình AMOLED 120 Hz, camera chống rung quang học và sạc nhanh trên 60W.",
+    "Trả góp 0% qua thẻ tín dụng áp dụng cho đơn từ 3 triệu, kỳ hạn 6 hoặc 12 tháng. Khách ở Hà Nội và TP. Hồ Chí Minh có thể chọn giao nhanh 2 giờ."
+   ]
+  },
+  {
+   "id": "laptop",
+   "name": "Laptop",
+   "icon": "laptop",
+   "device": "laptop",
+   "facets": [
+    {
+     "key": "cpu",
+     "label": "CPU"
+    },
+    {
+     "key": "ram",
+     "label": "RAM"
+    },
+    {
+     "key": "storage",
+     "label": "Ổ cứng"
+    },
+    {
+     "key": "screen",
+     "label": "Màn hình"
+    }
+   ]
+  },
+  {
+   "id": "may-tinh-bang",
+   "name": "Máy tính bảng",
+   "icon": "tablet",
+   "device": "tablet",
+   "facets": [
+    {
+     "key": "storage",
+     "label": "Bộ nhớ"
+    },
+    {
+     "key": "screen",
+     "label": "Màn hình"
+    }
+   ]
+  },
+  {
+   "id": "dong-ho",
+   "name": "Đồng hồ thông minh",
+   "icon": "watch",
+   "device": "watch",
+   "facets": [
+    {
+     "key": "size",
+     "label": "Kích thước mặt"
+    },
+    {
+     "key": "feature",
+     "label": "Tính năng"
+    }
+   ]
+  },
+  {
+   "id": "am-thanh",
+   "name": "Tai nghe, loa",
+   "icon": "headphones",
+   "device": "headphones",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại"
+    },
+    {
+     "key": "anc",
+     "label": "Chống ồn"
+    }
+   ]
+  },
+  {
+   "id": "tivi",
+   "name": "Tivi",
+   "icon": "tv",
+   "device": "tv",
+   "facets": [
+    {
+     "key": "size",
+     "label": "Kích thước"
+    },
+    {
+     "key": "panel",
+     "label": "Công nghệ màn hình"
+    }
+   ]
+  },
+  {
+   "id": "phu-kien",
+   "name": "Phụ kiện",
+   "icon": "plug",
+   "device": "charger",
+   "facets": [
+    {
+     "key": "type",
+     "label": "Loại phụ kiện"
+    }
+   ]
+  }
+ ],
+ "brands": [
+  {
+   "id": "lumen",
+   "name": "Lumen"
+  },
+  {
+   "id": "orbit",
+   "name": "Orbit"
+  },
+  {
+   "id": "kite",
+   "name": "Kite"
+  },
+  {
+   "id": "kaze",
+   "name": "Kaze"
+  },
+  {
+   "id": "norda",
+   "name": "Norda"
+  },
+  {
+   "id": "vexa",
+   "name": "Vexa"
+  }
+ ],
+ "products": [
+  {
+   "id": "lumen-x9-pro",
+   "name": "Lumen X9 Pro 5G",
+   "brand": "lumen",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "12 GB/256GB",
+       "price": 22990000,
+       "old_price": 24990000
+      },
+      {
+       "name": "12 GB/512GB",
+       "price": 26490000,
+       "old_price": 28490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Titan đen",
+       "hex": "#2a2c31"
+      },
+      {
+       "name": "Titan bạc",
+       "hex": "#d8dadf"
+      },
+      {
+       "name": "Xanh biển",
+       "hex": "#2f4f6f"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "ram": "12 GB",
+    "storage": [
+     "256GB",
+     "512GB"
+    ],
+    "screen": "6,7 inch"
+   },
+   "card_specs": [
+    "6,7 inch",
+    "12 GB",
+    "256GB"
+   ],
+   "highlights": [
+    "Khung titan, nặng 199 g",
+    "Camera tele 5x, chụp chân dung xa",
+    "Sạc đầy 50% trong 15 phút"
+   ],
+   "promos": [
+    "Giảm thêm 300.000 đ khi thanh toán bằng thẻ tín dụng qua cổng thanh toán",
+    "Thu cũ đổi mới: trợ giá thêm 500.000 đ",
+    "Mua kèm sạc nhanh 33W giảm 50%"
+   ],
+   "badges": [
+    "new",
+    "hot"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành của hãng",
+   "in_box": [
+    "Thân máy",
+    "Cáp USB-C",
+    "Que lấy SIM",
+    "Sách hướng dẫn"
+   ],
+   "released": "2026-09",
+   "rating": {
+    "avg": 4.8,
+    "count": 214
+   },
+   "sold": 1830,
+   "description": [
+    "Lumen X9 Pro 5G dùng màn hình 6,7 inch, AMOLED, hiển thị rõ ngoài trời và cuộn mượt khi lướt mạng xã hội.",
+    "Chip Lumen Core A7 xử lý tốt các tựa game phổ biến ở mức cấu hình trung bình đến cao. Camera chính 50 MP, chống rung quang học chụp ban đêm ít nhiễu hơn đời trước.",
+    "Pin 5.000 mAh dùng trọn một ngày với nhu cầu thông thường, sạc nhanh 67W."
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, công nghệ",
+       "6,7 inch, AMOLED"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "1.800 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Lumen Core A7"
+      ],
+      [
+       "RAM",
+       "12 GB"
+      ],
+      [
+       "Bộ nhớ trong",
+       "256GB, 512GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "50 MP, chống rung quang học"
+      ],
+      [
+       "Camera trước",
+       "32 MP"
+      ],
+      [
+       "Quay video",
+       "4K 30fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Dung lượng pin",
+       "5.000 mAh"
+      ],
+      [
+       "Sạc nhanh",
+       "67W"
+      ],
+      [
+       "Cổng sạc",
+       "USB-C"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Mạng di động",
+       "5G"
+      ],
+      [
+       "SIM",
+       "2 Nano SIM hoặc 1 Nano SIM và 1 eSIM"
+      ],
+      [
+       "Wi-Fi",
+       "Wi-Fi 6"
+      ],
+      [
+       "Bluetooth",
+       "5.3"
+      ],
+      [
+       "NFC",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung nhôm, mặt lưng kính"
+      ],
+      [
+       "Kháng nước, bụi",
+       "IP67"
+      ],
+      [
+       "Trọng lượng",
+       "195 g"
+      ]
+     ]
+    }
+   ],
+   "addons": [
+    "sac-nhanh-67w",
+    "op-lung-x9",
+    "tai-nghe-vexa-buds-2"
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ eSIM không?",
+     "a": "Có. Máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "q": "Có được kiểm tra máy trước khi thanh toán không?",
+     "a": "Có. Với đơn COD, khách mở hộp kiểm tra ngoại hình và máy lên nguồn trước khi trả tiền."
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ],
+   "stock": 12
+  },
+  {
+   "id": "lumen-x9",
+   "name": "Lumen X9 5G",
+   "brand": "lumen",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "8 GB/128GB",
+       "price": 16990000,
+       "old_price": 18490000
+      },
+      {
+       "name": "8 GB/256GB",
+       "price": 18990000,
+       "old_price": 20490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#25272c"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eceef1"
+      },
+      {
+       "name": "Hồng",
+       "hex": "#e9c4c9"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "ram": "8 GB",
+    "storage": [
+     "128GB",
+     "256GB"
+    ],
+    "screen": "6,4 inch"
+   },
+   "card_specs": [
+    "6,4 inch",
+    "8 GB",
+    "128GB"
+   ],
+   "highlights": [
+    "Màn hình 6,4 inch dễ cầm một tay",
+    "Kháng nước IP67"
+   ],
+   "promos": [
+    "Giảm thêm 300.000 đ khi thanh toán bằng thẻ tín dụng qua cổng thanh toán",
+    "Thu cũ đổi mới: trợ giá thêm 500.000 đ"
+   ],
+   "badges": [
+    "hot"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành của hãng",
+   "in_box": [
+    "Thân máy",
+    "Cáp USB-C",
+    "Que lấy SIM",
+    "Sách hướng dẫn"
+   ],
+   "released": "2026-09",
+   "rating": {
+    "avg": 4.7,
+    "count": 388
+   },
+   "sold": 3120,
+   "description": [
+    "Lumen X9 5G dùng màn hình 6,4 inch, AMOLED, hiển thị rõ ngoài trời và cuộn mượt khi lướt mạng xã hội.",
+    "Chip Lumen Core A7 xử lý tốt các tựa game phổ biến ở mức cấu hình trung bình đến cao. Camera chính 50 MP chụp ban đêm ít nhiễu hơn đời trước.",
+    "Pin 4.700 mAh dùng trọn một ngày với nhu cầu thông thường, sạc nhanh 45W."
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, công nghệ",
+       "6,4 inch, AMOLED"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "1.800 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Lumen Core A7"
+      ],
+      [
+       "RAM",
+       "8 GB"
+      ],
+      [
+       "Bộ nhớ trong",
+       "128GB, 256GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "50 MP"
+      ],
+      [
+       "Camera trước",
+       "32 MP"
+      ],
+      [
+       "Quay video",
+       "4K 30fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Dung lượng pin",
+       "4.700 mAh"
+      ],
+      [
+       "Sạc nhanh",
+       "45W"
+      ],
+      [
+       "Cổng sạc",
+       "USB-C"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Mạng di động",
+       "5G"
+      ],
+      [
+       "SIM",
+       "2 Nano SIM hoặc 1 Nano SIM và 1 eSIM"
+      ],
+      [
+       "Wi-Fi",
+       "Wi-Fi 6"
+      ],
+      [
+       "Bluetooth",
+       "5.3"
+      ],
+      [
+       "NFC",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung nhôm, mặt lưng kính"
+      ],
+      [
+       "Kháng nước, bụi",
+       "IP67"
+      ],
+      [
+       "Trọng lượng",
+       "195 g"
+      ]
+     ]
+    }
+   ],
+   "addons": [
+    "op-lung-x9",
+    "sac-nhanh-67w"
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ eSIM không?",
+     "a": "Có. Máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "q": "Có được kiểm tra máy trước khi thanh toán không?",
+     "a": "Có. Với đơn COD, khách mở hộp kiểm tra ngoại hình và máy lên nguồn trước khi trả tiền."
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "lumen-a55",
+   "name": "Lumen A55",
+   "brand": "lumen",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "8 GB/128GB",
+       "price": 7490000,
+       "old_price": 7990000
+      },
+      {
+       "name": "8 GB/256GB",
+       "price": 8290000,
+       "old_price": 8990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xanh lá",
+       "hex": "#3f6b55"
+      },
+      {
+       "name": "Đen",
+       "hex": "#26282c"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "ram": "8 GB",
+    "storage": [
+     "128GB",
+     "256GB"
+    ],
+    "screen": "6,6 inch"
+   },
+   "card_specs": [
+    "6,6 inch",
+    "8 GB",
+    "128GB"
+   ],
+   "highlights": [],
+   "promos": [
+    "Thu cũ đổi mới: trợ giá thêm 500.000 đ",
+    "Mua kèm sạc nhanh 33W giảm 50%"
+   ],
+   "badges": [
+    "installment"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành của hãng",
+   "in_box": [
+    "Thân máy",
+    "Cáp USB-C",
+    "Que lấy SIM",
+    "Sách hướng dẫn"
+   ],
+   "released": "2026-03",
+   "rating": {
+    "avg": 4.6,
+    "count": 512
+   },
+   "sold": 5410,
+   "description": [
+    "Lumen A55 dùng màn hình 6,6 inch, AMOLED, hiển thị rõ ngoài trời và cuộn mượt khi lướt mạng xã hội.",
+    "Chip Lumen Core M3 xử lý tốt các tựa game phổ biến ở mức cấu hình trung bình đến cao. Camera chính 50 MP chụp ban đêm ít nhiễu hơn đời trước.",
+    "Pin 5.000 mAh dùng trọn một ngày với nhu cầu thông thường, sạc nhanh 33W."
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, công nghệ",
+       "6,6 inch, AMOLED"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "1.800 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Lumen Core M3"
+      ],
+      [
+       "RAM",
+       "8 GB"
+      ],
+      [
+       "Bộ nhớ trong",
+       "128GB, 256GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "50 MP"
+      ],
+      [
+       "Camera trước",
+       "32 MP"
+      ],
+      [
+       "Quay video",
+       "4K 30fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Dung lượng pin",
+       "5.000 mAh"
+      ],
+      [
+       "Sạc nhanh",
+       "33W"
+      ],
+      [
+       "Cổng sạc",
+       "USB-C"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Mạng di động",
+       "5G"
+      ],
+      [
+       "SIM",
+       "2 Nano SIM hoặc 1 Nano SIM và 1 eSIM"
+      ],
+      [
+       "Wi-Fi",
+       "Wi-Fi 6"
+      ],
+      [
+       "Bluetooth",
+       "5.3"
+      ],
+      [
+       "NFC",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung nhôm, mặt lưng kính"
+      ],
+      [
+       "Kháng nước, bụi",
+       "IP67"
+      ],
+      [
+       "Trọng lượng",
+       "195 g"
+      ]
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ eSIM không?",
+     "a": "Có. Máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "q": "Có được kiểm tra máy trước khi thanh toán không?",
+     "a": "Có. Với đơn COD, khách mở hộp kiểm tra ngoại hình và máy lên nguồn trước khi trả tiền."
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "orbit-nova-12",
+   "name": "Orbit Nova 12",
+   "brand": "orbit",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "12 GB/256GB",
+       "price": 12990000,
+       "old_price": 14490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xanh đêm",
+       "hex": "#1f3350"
+      },
+      {
+       "name": "Cam",
+       "hex": "#d9762f"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#cfd3d8"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "ram": "12 GB",
+    "storage": [
+     "256GB"
+    ],
+    "screen": "6,7 inch"
+   },
+   "card_specs": [
+    "6,7 inch",
+    "12 GB",
+    "256GB"
+   ],
+   "highlights": [
+    "Sạc 90W, đầy pin trong 30 phút"
+   ],
+   "promos": [
+    "Giảm thêm 300.000 đ khi thanh toán bằng thẻ tín dụng qua cổng thanh toán"
+   ],
+   "badges": [
+    "new"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành của hãng",
+   "in_box": [
+    "Thân máy",
+    "Cáp USB-C",
+    "Que lấy SIM",
+    "Sách hướng dẫn"
+   ],
+   "released": "2026-07",
+   "rating": {
+    "avg": 4.5,
+    "count": 167
+   },
+   "sold": 980,
+   "description": [
+    "Orbit Nova 12 dùng màn hình 6,7 inch, AMOLED, hiển thị rõ ngoài trời và cuộn mượt khi lướt mạng xã hội.",
+    "Chip Orbit Helix 8 xử lý tốt các tựa game phổ biến ở mức cấu hình trung bình đến cao. Camera chính 108 MP chụp ban đêm ít nhiễu hơn đời trước.",
+    "Pin 5.500 mAh dùng trọn một ngày với nhu cầu thông thường, sạc nhanh 90W."
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, công nghệ",
+       "6,7 inch, AMOLED"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "1.800 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Orbit Helix 8"
+      ],
+      [
+       "RAM",
+       "12 GB"
+      ],
+      [
+       "Bộ nhớ trong",
+       "256GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "108 MP"
+      ],
+      [
+       "Camera trước",
+       "32 MP"
+      ],
+      [
+       "Quay video",
+       "4K 30fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Dung lượng pin",
+       "5.500 mAh"
+      ],
+      [
+       "Sạc nhanh",
+       "90W"
+      ],
+      [
+       "Cổng sạc",
+       "USB-C"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Mạng di động",
+       "5G"
+      ],
+      [
+       "SIM",
+       "2 Nano SIM hoặc 1 Nano SIM và 1 eSIM"
+      ],
+      [
+       "Wi-Fi",
+       "Wi-Fi 6"
+      ],
+      [
+       "Bluetooth",
+       "5.3"
+      ],
+      [
+       "NFC",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung nhôm, mặt lưng kính"
+      ],
+      [
+       "Kháng nước, bụi",
+       "IP67"
+      ],
+      [
+       "Trọng lượng",
+       "195 g"
+      ]
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ eSIM không?",
+     "a": "Có. Máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "q": "Có được kiểm tra máy trước khi thanh toán không?",
+     "a": "Có. Với đơn COD, khách mở hộp kiểm tra ngoại hình và máy lên nguồn trước khi trả tiền."
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "orbit-c3",
+   "name": "Orbit C3",
+   "brand": "orbit",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "4 GB/64GB",
+       "price": 2990000,
+       "old_price": 3390000
+      },
+      {
+       "name": "4 GB/128GB",
+       "price": 3490000,
+       "old_price": 3790000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#202226"
+      },
+      {
+       "name": "Xanh",
+       "hex": "#5a86b8"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "ram": "4 GB",
+    "storage": [
+     "64GB",
+     "128GB"
+    ],
+    "screen": "6,5 inch"
+   },
+   "card_specs": [
+    "6,5 inch",
+    "4 GB",
+    "64GB"
+   ],
+   "highlights": [],
+   "promos": [
+    "Tặng sim 4G 30 ngày"
+   ],
+   "badges": [],
+   "installment": false,
+   "warranty": "12 tháng tại trung tâm bảo hành của hãng",
+   "in_box": [
+    "Thân máy",
+    "Cáp USB-C",
+    "Que lấy SIM",
+    "Sách hướng dẫn"
+   ],
+   "released": "2025-11",
+   "rating": {
+    "avg": 4.3,
+    "count": 1204
+   },
+   "sold": 9870,
+   "description": [
+    "Orbit C3 dùng màn hình 6,5 inch, LCD, hiển thị rõ ngoài trời và cuộn mượt khi lướt mạng xã hội.",
+    "Chip Orbit Helix 2 xử lý tốt các tựa game phổ biến ở mức cấu hình trung bình đến cao. Camera chính 13 MP chụp ban đêm ít nhiễu hơn đời trước.",
+    "Pin 5.000 mAh dùng trọn một ngày với nhu cầu thông thường, sạc nhanh 18W."
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, công nghệ",
+       "6,5 inch, LCD"
+      ],
+      [
+       "Tần số quét",
+       "90 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "800 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Orbit Helix 2"
+      ],
+      [
+       "RAM",
+       "4 GB"
+      ],
+      [
+       "Bộ nhớ trong",
+       "64GB, 128GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "13 MP"
+      ],
+      [
+       "Camera trước",
+       "32 MP"
+      ],
+      [
+       "Quay video",
+       "4K 30fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Dung lượng pin",
+       "5.000 mAh"
+      ],
+      [
+       "Sạc nhanh",
+       "18W"
+      ],
+      [
+       "Cổng sạc",
+       "USB-C"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Mạng di động",
+       "5G"
+      ],
+      [
+       "SIM",
+       "2 Nano SIM hoặc 1 Nano SIM và 1 eSIM"
+      ],
+      [
+       "Wi-Fi",
+       "Wi-Fi 6"
+      ],
+      [
+       "Bluetooth",
+       "5.3"
+      ],
+      [
+       "NFC",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung nhôm, mặt lưng kính"
+      ],
+      [
+       "Kháng nước, bụi",
+       "IP67"
+      ],
+      [
+       "Trọng lượng",
+       "195 g"
+      ]
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ eSIM không?",
+     "a": "Có. Máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "q": "Có được kiểm tra máy trước khi thanh toán không?",
+     "a": "Có. Với đơn COD, khách mở hộp kiểm tra ngoại hình và máy lên nguồn trước khi trả tiền."
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "kite-f2-flip",
+   "name": "Kite F2 Flip",
+   "brand": "kite",
+   "category": "dien-thoai",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "12 GB/256GB",
+       "price": 19990000,
+       "old_price": 23990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Tím nhạt",
+       "hex": "#b9a7d6"
+      },
+      {
+       "name": "Đen",
+       "hex": "#1f2024"
+      }
+     ]
+    }
+   ],
+   "facets": {
+    "ram": "12 GB",
+    "storage": [
+     "256GB"
+    ],
+    "screen": "6,9 inch"
+   },
+   "card_specs": [
+    "6,9 inch",
+    "12 GB",
+    "256GB"
+   ],
+   "highlights": [
+    "Màn hình phụ 3,4 inch xem thông báo không cần mở máy"
+   ],
+   "promos": [
+    "Giảm thêm 300.000 đ khi thanh toán bằng thẻ tín dụng qua cổng thanh toán",
+    "Thu cũ đổi mới: trợ giá thêm 500.000 đ"
+   ],
+   "badges": [
+    "exclusive"
+   ],
+   "installment": true,
+   "warranty": "12 tháng tại trung tâm bảo hành của hãng",
+   "in_box": [
+    "Thân máy",
+    "Cáp USB-C",
+    "Que lấy SIM",
+    "Sách hướng dẫn"
+   ],
+   "released": "2026-06",
+   "rating": {
+    "avg": 4.4,
+    "count": 96
+   },
+   "sold": 410,
+   "description": [
+    "Kite F2 Flip dùng màn hình 6,9 inch, AMOLED gập, hiển thị rõ ngoài trời và cuộn mượt khi lướt mạng xã hội.",
+    "Chip Kite Arc 9 xử lý tốt các tựa game phổ biến ở mức cấu hình trung bình đến cao. Camera chính 50 MP chụp ban đêm ít nhiễu hơn đời trước.",
+    "Pin 4.000 mAh dùng trọn một ngày với nhu cầu thông thường, sạc nhanh 33W."
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, công nghệ",
+       "6,9 inch, AMOLED gập"
+      ],
+      [
+       "Tần số quét",
+       "120 Hz"
+      ],
+      [
+       "Độ sáng tối đa",
+       "1.800 nit"
+      ]
+     ]
+    },
+    {
+     "group": "Hiệu năng",
+     "rows": [
+      [
+       "Chip xử lý",
+       "Kite Arc 9"
+      ],
+      [
+       "RAM",
+       "12 GB"
+      ],
+      [
+       "Bộ nhớ trong",
+       "256GB"
+      ]
+     ]
+    },
+    {
+     "group": "Camera",
+     "rows": [
+      [
+       "Camera sau",
+       "50 MP"
+      ],
+      [
+       "Camera trước",
+       "32 MP"
+      ],
+      [
+       "Quay video",
+       "4K 30fps"
+      ]
+     ]
+    },
+    {
+     "group": "Pin và sạc",
+     "rows": [
+      [
+       "Dung lượng pin",
+       "4.000 mAh"
+      ],
+      [
+       "Sạc nhanh",
+       "33W"
+      ],
+      [
+       "Cổng sạc",
+       "USB-C"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Mạng di động",
+       "5G"
+      ],
+      [
+       "SIM",
+       "2 Nano SIM hoặc 1 Nano SIM và 1 eSIM"
+      ],
+      [
+       "Wi-Fi",
+       "Wi-Fi 6"
+      ],
+      [
+       "Bluetooth",
+       "5.3"
+      ],
+      [
+       "NFC",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Thiết kế",
+     "rows": [
+      [
+       "Chất liệu",
+       "Khung nhôm, mặt lưng kính"
+      ],
+      [
+       "Kháng nước, bụi",
+       "IP67"
+      ],
+      [
+       "Trọng lượng",
+       "195 g"
+      ]
+     ]
+    }
+   ],
+   "faq": [
+    {
+     "q": "Máy có hỗ trợ eSIM không?",
+     "a": "Có. Máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "q": "Có được kiểm tra máy trước khi thanh toán không?",
+     "a": "Có. Với đơn COD, khách mở hộp kiểm tra ngoại hình và máy lên nguồn trước khi trả tiền."
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "kaze-air-14",
+   "name": "Kaze Air 14 (2026)",
+   "brand": "kaze",
+   "category": "laptop",
+   "facets": {
+    "cpu": "Intel Core Ultra 5",
+    "ram": "16 GB",
+    "storage": "512 GB",
+    "screen": "14 inch"
+   },
+   "card_specs": [
+    "Core Ultra 5",
+    "16 GB",
+    "512 GB"
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "CPU",
+       "Intel Core Ultra 5 225H"
+      ],
+      [
+       "Card đồ họa",
+       "Intel Arc tích hợp"
+      ]
+     ]
+    },
+    {
+     "group": "Bộ nhớ",
+     "rows": [
+      [
+       "RAM",
+       "16 GB LPDDR5X"
+      ],
+      [
+       "Ổ cứng",
+       "SSD 512 GB NVMe"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, độ phân giải",
+       "14 inch, 2.8K (2880 x 1800)"
+      ],
+      [
+       "Tấm nền",
+       "IPS, 100% sRGB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "2 x USB-C (Thunderbolt 4), 1 x USB-A, HDMI 2.1, jack 3,5 mm"
+      ],
+      [
+       "Không dây",
+       "Wi-Fi 6E, Bluetooth 5.3"
+      ]
+     ]
+    },
+    {
+     "group": "Pin, trọng lượng",
+     "rows": [
+      [
+       "Pin",
+       "72 Wh, khoảng 12 giờ làm văn phòng"
+      ],
+      [
+       "Trọng lượng",
+       "1,2 kg"
+      ],
+      [
+       "Hệ điều hành",
+       "Windows 11 Home bản quyền"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 142
+   },
+   "sold": 760,
+   "description": [
+    "Kaze Air 14 nặng 1,2 kg, vỏ nhôm nguyên khối, phù hợp người đi lại nhiều.",
+    "Màn hình 2.8K hiển thị chữ sắc nét khi làm việc với bảng tính và tài liệu dài."
+   ],
+   "highlights": [
+    "Nặng 1,2 kg, mỏng 14,9 mm",
+    "Pin khoảng 12 giờ làm văn phòng"
+   ],
+   "badges": [
+    "new"
+   ],
+   "promos": [
+    "Tặng balo chống sốc",
+    "Giảm 500.000 đ khi mua kèm chuột Vexa"
+   ],
+   "installment": true,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "options": [
+    {
+     "name": "Cấu hình",
+     "values": [
+      {
+       "name": "16 GB / 512 GB",
+       "price": 21490000,
+       "old_price": 22990000
+      },
+      {
+       "name": "32 GB / 1 TB",
+       "price": 26990000,
+       "old_price": 28490000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Bạc",
+       "hex": "#cfd3d9"
+      },
+      {
+       "name": "Xám",
+       "hex": "#5d6168"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "kaze-forge-16",
+   "name": "Kaze Forge 16 Gaming",
+   "brand": "kaze",
+   "category": "laptop",
+   "facets": {
+    "cpu": "Intel Core i7",
+    "ram": "32 GB",
+    "storage": "1 TB",
+    "screen": "16 inch",
+    "gpu": "RTX 5070"
+   },
+   "card_specs": [
+    "Core i7",
+    "RTX 5070",
+    "16 inch 240Hz"
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "CPU",
+       "Intel Core i7-14650HX"
+      ],
+      [
+       "Card đồ họa",
+       "NVIDIA GeForce RTX 5070 8 GB"
+      ]
+     ]
+    },
+    {
+     "group": "Bộ nhớ",
+     "rows": [
+      [
+       "RAM",
+       "32 GB DDR5 5600"
+      ],
+      [
+       "Ổ cứng",
+       "SSD 1 TB NVMe Gen4"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, độ phân giải",
+       "16 inch, QHD+ 240 Hz"
+      ],
+      [
+       "Tấm nền",
+       "IPS, 100% sRGB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "2 x USB-C (Thunderbolt 4), 1 x USB-A, HDMI 2.1, jack 3,5 mm"
+      ],
+      [
+       "Không dây",
+       "Wi-Fi 6E, Bluetooth 5.3"
+      ]
+     ]
+    },
+    {
+     "group": "Pin, trọng lượng",
+     "rows": [
+      [
+       "Pin",
+       "90 Wh"
+      ],
+      [
+       "Trọng lượng",
+       "2,4 kg"
+      ],
+      [
+       "Hệ điều hành",
+       "Windows 11 Home bản quyền"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 88
+   },
+   "sold": 320,
+   "description": [
+    "Kaze Forge 16 dùng RTX 5070 và màn hình 240 Hz cho game bắn súng cần khung hình cao.",
+    "Hệ thống tản nhiệt hai quạt, bàn phím RGB từng phím."
+   ],
+   "highlights": [
+    "RTX 5070 8 GB",
+    "Màn hình QHD+ 240 Hz"
+   ],
+   "badges": [
+    "hot"
+   ],
+   "promos": [
+    "Tặng chuột gaming Vexa G5"
+   ],
+   "installment": true,
+   "warranty": "24 tháng",
+   "released": "2026-05",
+   "price": 34990000,
+   "old_price": 38990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1b1d22"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "kaze-book-15",
+   "name": "Kaze Book 15",
+   "brand": "kaze",
+   "category": "laptop",
+   "facets": {
+    "cpu": "Intel Core i5",
+    "ram": "8 GB",
+    "storage": "512 GB",
+    "screen": "15,6 inch"
+   },
+   "card_specs": [
+    "Core i5",
+    "8 GB",
+    "512 GB"
+   ],
+   "specs": [
+    {
+     "group": "Bộ xử lý",
+     "rows": [
+      [
+       "CPU",
+       "Intel Core i5-1335U"
+      ],
+      [
+       "Card đồ họa",
+       "Intel Iris Xe"
+      ]
+     ]
+    },
+    {
+     "group": "Bộ nhớ",
+     "rows": [
+      [
+       "RAM",
+       "8 GB DDR4 (nâng cấp tối đa 32 GB)"
+      ],
+      [
+       "Ổ cứng",
+       "SSD 512 GB NVMe"
+      ]
+     ]
+    },
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước, độ phân giải",
+       "15,6 inch, Full HD"
+      ],
+      [
+       "Tấm nền",
+       "IPS, 100% sRGB"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "Cổng",
+       "2 x USB-C (Thunderbolt 4), 1 x USB-A, HDMI 2.1, jack 3,5 mm"
+      ],
+      [
+       "Không dây",
+       "Wi-Fi 6E, Bluetooth 5.3"
+      ]
+     ]
+    },
+    {
+     "group": "Pin, trọng lượng",
+     "rows": [
+      [
+       "Pin",
+       "54 Wh"
+      ],
+      [
+       "Trọng lượng",
+       "1,7 kg"
+      ],
+      [
+       "Hệ điều hành",
+       "Windows 11 Home bản quyền"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 301
+   },
+   "sold": 2140,
+   "description": [
+    "Kaze Book 15 có bàn phím số riêng, hợp với kế toán và sinh viên khối kinh tế.",
+    "Còn một khe RAM trống để nâng cấp sau."
+   ],
+   "highlights": [
+    "Bàn phím số riêng",
+    "Còn khe RAM trống"
+   ],
+   "badges": [],
+   "promos": [
+    "Tặng chuột không dây"
+   ],
+   "installment": true,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "price": 13990000,
+   "old_price": 15490000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xám",
+       "hex": "#6b7078"
+      }
+     ]
+    }
+   ],
+   "reviews": [
+    {
+     "name": "Minh Tuấn",
+     "stars": 5,
+     "text": "Máy chạy mượt, pin dùng hết ngày vẫn còn khoảng 30%. Nhân viên giao hàng gọi trước, đóng gói kỹ.",
+     "verified": true,
+     "date": "12/09/2026",
+     "variant": "256GB, Titan đen"
+    },
+    {
+     "name": "Thu Hà",
+     "stars": 5,
+     "text": "Camera chụp tối tốt hơn máy cũ của mình nhiều. Được trợ giá thu cũ đúng như trang ghi.",
+     "verified": true,
+     "date": "08/09/2026",
+     "variant": "512GB, Xanh biển"
+    },
+    {
+     "name": "Quốc Bảo",
+     "stars": 4,
+     "text": "Màn đẹp, loa to. Máy hơi nặng tay khi cầm lâu.",
+     "verified": true,
+     "date": "02/09/2026"
+    },
+    {
+     "name": "Lan Anh",
+     "stars": 3,
+     "text": "Sạc nhanh ổn nhưng máy ấm khi chơi game lâu.",
+     "verified": false,
+     "date": "28/08/2026",
+     "reply": "Cảm ơn chị. Máy ấm lên khi chơi game nặng là bình thường; nếu nóng bất thường, chị mang máy tới cửa hàng để kiểm tra miễn phí."
+    }
+   ],
+   "qa": [
+    {
+     "name": "Hoàng",
+     "q": "Máy có hỗ trợ eSIM không shop?",
+     "a": "Dạ có, máy dùng một Nano SIM và một eSIM, hoặc hai Nano SIM."
+    },
+    {
+     "name": "Ngọc",
+     "q": "Mua trả góp cần giấy tờ gì?",
+     "a": "Trả góp 0% qua thẻ tín dụng chỉ cần thẻ còn hạn mức, không cần giấy tờ khác."
+    }
+   ]
+  },
+  {
+   "id": "norda-tab-11",
+   "name": "Norda Tab 11",
+   "brand": "norda",
+   "category": "may-tinh-bang",
+   "facets": {
+    "storage": [
+     "128 GB",
+     "256 GB"
+    ],
+    "screen": "11 inch"
+   },
+   "card_specs": [
+    "11 inch 2K",
+    "8 GB",
+    "128 GB"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "11 inch, 2K, 120 Hz"
+      ],
+      [
+       "Bút cảm ứng",
+       "Hỗ trợ Norda Pen (bán riêng)"
+      ]
+     ]
+    },
+    {
+     "group": "Cấu hình",
+     "rows": [
+      [
+       "Chip",
+       "Norda N6"
+      ],
+      [
+       "RAM",
+       "8 GB"
+      ],
+      [
+       "Bộ nhớ",
+       "128 GB hoặc 256 GB, thẻ nhớ đến 1 TB"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Dung lượng",
+       "8.000 mAh"
+      ],
+      [
+       "Sạc",
+       "33W"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 120
+   },
+   "sold": 640,
+   "description": [
+    "Norda Tab 11 có màn hình 2K 120 Hz, bốn loa, hợp xem phim và học trực tuyến."
+   ],
+   "highlights": [
+    "Bốn loa",
+    "Màn hình 2K 120 Hz"
+   ],
+   "badges": [],
+   "promos": [
+    "Giảm 30% khi mua kèm bàn phím"
+   ],
+   "installment": true,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "tablet",
+   "options": [
+    {
+     "name": "Phiên bản",
+     "values": [
+      {
+       "name": "8 GB / 128 GB",
+       "price": 6490000,
+       "old_price": 6990000
+      },
+      {
+       "name": "8 GB / 256 GB",
+       "price": 7290000,
+       "old_price": 7790000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xám",
+       "hex": "#5e636b"
+      },
+      {
+       "name": "Xanh mint",
+       "hex": "#a9d4c4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "norda-tab-mini",
+   "name": "Norda Tab Mini 8.7",
+   "brand": "norda",
+   "category": "may-tinh-bang",
+   "facets": {
+    "storage": "64 GB",
+    "screen": "8,7 inch"
+   },
+   "card_specs": [
+    "8,7 inch",
+    "4 GB",
+    "64 GB"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "8,7 inch, HD+"
+      ]
+     ]
+    },
+    {
+     "group": "Cấu hình",
+     "rows": [
+      [
+       "RAM",
+       "4 GB"
+      ],
+      [
+       "Bộ nhớ",
+       "64 GB"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Dung lượng",
+       "5.100 mAh"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.3,
+    "count": 210
+   },
+   "sold": 1500,
+   "description": [
+    "Máy tính bảng nhỏ gọn cho trẻ em học bài và xem video."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "tablet",
+   "price": 3290000,
+   "old_price": 3690000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xám",
+       "hex": "#5e636b"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vexa-watch-5",
+   "name": "Vexa Watch 5",
+   "brand": "vexa",
+   "category": "dong-ho",
+   "facets": {
+    "size": [
+     "41 mm",
+     "45 mm"
+    ],
+    "feature": "GPS"
+   },
+   "card_specs": [
+    "AMOLED",
+    "GPS",
+    "Pin 3 ngày"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "41 mm hoặc 45 mm, AMOLED"
+      ],
+      [
+       "Kính",
+       "Sapphire"
+      ]
+     ]
+    },
+    {
+     "group": "Sức khỏe",
+     "rows": [
+      [
+       "Cảm biến",
+       "Nhịp tim, SpO2, điện tâm đồ"
+      ],
+      [
+       "Theo dõi giấc ngủ",
+       "Có"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "Khoảng 3 ngày"
+      ],
+      [
+       "Kháng nước",
+       "5 ATM"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 156
+   },
+   "sold": 870,
+   "description": [
+    "Vexa Watch 5 có GPS riêng, đo nhịp tim và điện tâm đồ, pin khoảng 3 ngày."
+   ],
+   "highlights": [
+    "GPS độc lập",
+    "Kính sapphire"
+   ],
+   "badges": [
+    "new"
+   ],
+   "promos": [],
+   "installment": true,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "watch",
+   "options": [
+    {
+     "name": "Kích thước",
+     "values": [
+      {
+       "name": "41 mm",
+       "price": 6990000,
+       "old_price": 7490000
+      },
+      {
+       "name": "45 mm",
+       "price": 7490000,
+       "old_price": 7990000
+      }
+     ]
+    },
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#202226"
+      },
+      {
+       "name": "Bạc",
+       "hex": "#d4d7dc"
+      },
+      {
+       "name": "Xanh rêu",
+       "hex": "#5b6b4f"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vexa-band-3",
+   "name": "Vexa Band 3",
+   "brand": "vexa",
+   "category": "dong-ho",
+   "facets": {
+    "size": "Một cỡ",
+    "feature": "Theo dõi sức khỏe"
+   },
+   "card_specs": [
+    "AMOLED 1,6 inch",
+    "Pin 14 ngày"
+   ],
+   "specs": [
+    {
+     "group": "Màn hình",
+     "rows": [
+      [
+       "Kích thước",
+       "1,6 inch AMOLED"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "Khoảng 14 ngày"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.4,
+    "count": 640
+   },
+   "sold": 4300,
+   "description": [
+    "Vòng đeo tay đếm bước, đo nhịp tim, báo cuộc gọi, pin khoảng 14 ngày."
+   ],
+   "highlights": [],
+   "badges": [
+    "hot"
+   ],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "watch",
+   "price": 890000,
+   "old_price": 1090000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#202226"
+      },
+      {
+       "name": "Hồng",
+       "hex": "#e3b6bf"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tai-nghe-vexa-buds-2",
+   "name": "Vexa Buds 2 Pro",
+   "brand": "vexa",
+   "category": "am-thanh",
+   "facets": {
+    "type": "True wireless",
+    "anc": "Có"
+   },
+   "card_specs": [
+    "Chống ồn ANC",
+    "Pin 30 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Chống ồn",
+       "Chủ động (ANC)"
+      ],
+      [
+       "Codec",
+       "AAC, LDAC"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Tai nghe",
+       "8 giờ"
+      ],
+      [
+       "Kèm hộp sạc",
+       "30 giờ"
+      ]
+     ]
+    },
+    {
+     "group": "Khác",
+     "rows": [
+      [
+       "Kháng nước",
+       "IPX5"
+      ],
+      [
+       "Bluetooth",
+       "5.3, kết nối hai thiết bị"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 402
+   },
+   "sold": 3900,
+   "description": [
+    "Vexa Buds 2 Pro chống ồn chủ động, kết nối cùng lúc điện thoại và laptop."
+   ],
+   "highlights": [
+    "Kết nối hai thiết bị cùng lúc"
+   ],
+   "badges": [
+    "hot"
+   ],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "earbuds",
+   "price": 2490000,
+   "old_price": 2990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#f2f3f5"
+      },
+      {
+       "name": "Đen",
+       "hex": "#25272b"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "norda-sound-h7",
+   "name": "Norda Sound H7",
+   "brand": "norda",
+   "category": "am-thanh",
+   "facets": {
+    "type": "Chụp tai",
+    "anc": "Có"
+   },
+   "card_specs": [
+    "Chụp tai",
+    "ANC",
+    "Pin 40 giờ"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Driver",
+       "40 mm"
+      ],
+      [
+       "Chống ồn",
+       "Chủ động (ANC)"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "40 giờ (tắt ANC 60 giờ)"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 133
+   },
+   "sold": 720,
+   "description": [
+    "Tai nghe chụp tai, đệm da mềm, gập gọn cho vào túi."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [
+    "Tặng túi đựng"
+   ],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "headphones",
+   "price": 3990000,
+   "old_price": 4590000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1f2125"
+      },
+      {
+       "name": "Be",
+       "hex": "#d8c8b0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "norda-boom-mini",
+   "name": "Norda Boom Mini",
+   "brand": "norda",
+   "category": "am-thanh",
+   "facets": {
+    "type": "Loa bluetooth",
+    "anc": "Không"
+   },
+   "card_specs": [
+    "Loa 20W",
+    "IP67"
+   ],
+   "specs": [
+    {
+     "group": "Âm thanh",
+     "rows": [
+      [
+       "Công suất",
+       "20W"
+      ]
+     ]
+    },
+    {
+     "group": "Pin",
+     "rows": [
+      [
+       "Thời lượng",
+       "12 giờ"
+      ],
+      [
+       "Kháng nước",
+       "IP67"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 280
+   },
+   "sold": 2100,
+   "description": [
+    "Loa bluetooth chống nước IP67, nghe ngoài trời 12 giờ."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "speaker",
+   "price": 1290000,
+   "old_price": 1490000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Xanh",
+       "hex": "#3c5a7a"
+      },
+      {
+       "name": "Đỏ",
+       "hex": "#a33a3a"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "norda-tv-55-qled",
+   "name": "Norda QLED 4K 55 inch",
+   "brand": "norda",
+   "category": "tivi",
+   "facets": {
+    "size": "55 inch",
+    "res": "4K",
+    "panel": "QLED"
+   },
+   "card_specs": [
+    "55 inch",
+    "4K QLED",
+    "Google TV"
+   ],
+   "specs": [
+    {
+     "group": "Hình ảnh",
+     "rows": [
+      [
+       "Kích thước",
+       "55 inch"
+      ],
+      [
+       "Độ phân giải",
+       "4K (3840 x 2160)"
+      ],
+      [
+       "Công nghệ",
+       "QLED, HDR10+"
+      ]
+     ]
+    },
+    {
+     "group": "Hệ điều hành",
+     "rows": [
+      [
+       "Nền tảng",
+       "Google TV"
+      ],
+      [
+       "Điều khiển giọng nói",
+       "Có, tiếng Việt"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "HDMI",
+       "3 cổng (1 cổng eARC)"
+      ],
+      [
+       "USB",
+       "2 cổng"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 95
+   },
+   "sold": 430,
+   "description": [
+    "Tivi QLED 55 inch, Google TV có kho ứng dụng, tìm kiếm bằng giọng nói tiếng Việt."
+   ],
+   "highlights": [
+    "Miễn phí lắp đặt treo tường nội thành"
+   ],
+   "badges": [
+    "hot"
+   ],
+   "promos": [
+    "Miễn phí giao và lắp đặt",
+    "Trả góp 0% 12 tháng"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-05",
+   "device": "tv",
+   "price": 12490000,
+   "old_price": 15990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#15171b"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "norda-tv-65-oled",
+   "name": "Norda OLED 4K 65 inch",
+   "brand": "norda",
+   "category": "tivi",
+   "facets": {
+    "size": "65 inch",
+    "res": "4K",
+    "panel": "OLED"
+   },
+   "card_specs": [
+    "65 inch",
+    "4K OLED",
+    "120 Hz"
+   ],
+   "specs": [
+    {
+     "group": "Hình ảnh",
+     "rows": [
+      [
+       "Kích thước",
+       "65 inch"
+      ],
+      [
+       "Độ phân giải",
+       "4K"
+      ],
+      [
+       "Công nghệ",
+       "OLED, 120 Hz, Dolby Vision"
+      ]
+     ]
+    },
+    {
+     "group": "Kết nối",
+     "rows": [
+      [
+       "HDMI",
+       "4 cổng HDMI 2.1"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.8,
+    "count": 41
+   },
+   "sold": 120,
+   "description": [
+    "Tivi OLED 65 inch, màu đen sâu, 120 Hz cho máy chơi game."
+   ],
+   "highlights": [],
+   "badges": [
+    "exclusive"
+   ],
+   "promos": [
+    "Miễn phí giao và lắp đặt"
+   ],
+   "installment": true,
+   "warranty": "24 tháng tại nhà",
+   "released": "2026-05",
+   "device": "tv",
+   "price": 32990000,
+   "old_price": 37990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#0f1114"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sac-nhanh-67w",
+   "name": "Sạc nhanh Vexa 67W GaN",
+   "brand": "vexa",
+   "category": "phu-kien",
+   "facets": {
+    "type": "Củ sạc"
+   },
+   "card_specs": [
+    "67W",
+    "2 cổng USB-C"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Công suất",
+       "67W"
+      ],
+      [
+       "Cổng",
+       "2 x USB-C, 1 x USB-A"
+      ],
+      [
+       "Công nghệ",
+       "GaN"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 520
+   },
+   "sold": 6100,
+   "description": [
+    "Củ sạc GaN 67W sạc được cả laptop và điện thoại."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "installment": false,
+   "warranty": "18 tháng 1 đổi 1",
+   "released": "2026-05",
+   "device": "charger",
+   "price": 590000,
+   "old_price": 790000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trắng",
+       "hex": "#f4f5f7"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pin-du-phong-20k",
+   "name": "Pin dự phòng Vexa 20.000 mAh",
+   "brand": "vexa",
+   "category": "phu-kien",
+   "facets": {
+    "type": "Pin dự phòng"
+   },
+   "card_specs": [
+    "20.000 mAh",
+    "Sạc nhanh 22,5W"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Dung lượng",
+       "20.000 mAh"
+      ],
+      [
+       "Công suất",
+       "22,5W"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.5,
+    "count": 860
+   },
+   "sold": 7800,
+   "description": [
+    "Pin dự phòng 20.000 mAh sạc điện thoại khoảng 4 lần."
+   ],
+   "highlights": [],
+   "badges": [
+    "hot"
+   ],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng 1 đổi 1",
+   "released": "2026-05",
+   "device": "powerbank",
+   "price": 690000,
+   "old_price": 850000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#26282c"
+      },
+      {
+       "name": "Xanh",
+       "hex": "#4a6fa5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "op-lung-x9",
+   "name": "Ốp lưng trong suốt Lumen X9",
+   "brand": "lumen",
+   "category": "phu-kien",
+   "facets": {
+    "type": "Ốp lưng"
+   },
+   "card_specs": [
+    "Chống sốc 4 góc"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Chất liệu",
+       "TPU và PC"
+      ],
+      [
+       "Tương thích",
+       "Lumen X9, Lumen X9 Pro"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.4,
+    "count": 230
+   },
+   "sold": 2600,
+   "description": [
+    "Ốp lưng trong suốt, chống ố vàng, đệm khí 4 góc."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "installment": false,
+   "warranty": "Đổi mới trong 30 ngày nếu lỗi",
+   "released": "2026-05",
+   "device": "phone",
+   "price": 290000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Trong suốt",
+       "hex": "#e6e9ee"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chuot-vexa-g5",
+   "name": "Chuột gaming Vexa G5",
+   "brand": "vexa",
+   "category": "phu-kien",
+   "facets": {
+    "type": "Chuột"
+   },
+   "card_specs": [
+    "26.000 DPI",
+    "Không dây"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Cảm biến",
+       "26.000 DPI"
+      ],
+      [
+       "Kết nối",
+       "2,4 GHz, Bluetooth, có dây"
+      ],
+      [
+       "Trọng lượng",
+       "63 g"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.6,
+    "count": 190
+   },
+   "sold": 1400,
+   "description": [
+    "Chuột không dây 63 g cho game bắn súng."
+   ],
+   "highlights": [],
+   "badges": [],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "mouse",
+   "price": 790000,
+   "old_price": 990000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#1d1f23"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ban-phim-vexa-k7",
+   "name": "Bàn phím cơ Vexa K7",
+   "brand": "vexa",
+   "category": "phu-kien",
+   "facets": {
+    "type": "Bàn phím"
+   },
+   "card_specs": [
+    "Switch Red",
+    "Bluetooth"
+   ],
+   "specs": [
+    {
+     "group": "Thông số",
+     "rows": [
+      [
+       "Layout",
+       "75%"
+      ],
+      [
+       "Switch",
+       "Red, thay nóng được"
+      ],
+      [
+       "Kết nối",
+       "Bluetooth, 2,4 GHz, USB-C"
+      ]
+     ]
+    }
+   ],
+   "rating": {
+    "avg": 4.7,
+    "count": 150
+   },
+   "sold": 980,
+   "description": [
+    "Bàn phím cơ 75%, thay switch không cần hàn."
+   ],
+   "highlights": [],
+   "badges": [
+    "new"
+   ],
+   "promos": [],
+   "installment": false,
+   "warranty": "12 tháng",
+   "released": "2026-05",
+   "device": "keyboard",
+   "price": 1490000,
+   "old_price": 1790000,
+   "options": [
+    {
+     "name": "Màu sắc",
+     "values": [
+      {
+       "name": "Đen",
+       "hex": "#202226"
+      },
+      {
+       "name": "Trắng",
+       "hex": "#eef0f3"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "slides": [
+    {
+     "tab": "Lumen X9 Pro",
+     "label": "Mở bán",
+     "title": "Lumen X9 Pro 5G",
+     "text": "Khung titan, camera tele 5x. Thu cũ trợ giá thêm 500.000 đ.",
+     "product": "lumen-x9-pro",
+     "bg": "accent-dark",
+     "cta": "Mua ngay"
+    },
+    {
+     "tab": "Laptop văn phòng",
+     "label": "Laptop",
+     "title": "Kaze Air 14 nặng 1,2 kg",
+     "text": "Tặng balo chống sốc, trả góp 0% 12 tháng.",
+     "product": "kaze-air-14",
+     "bg": "dark",
+     "cta": "Xem cấu hình"
+    },
+    {
+     "tab": "Tivi QLED",
+     "label": "Tivi",
+     "title": "Tivi QLED 55 inch",
+     "text": "Miễn phí giao và lắp đặt nội thành.",
+     "product": "norda-tv-55-qled",
+     "bg": "accent-dark",
+     "cta": "Xem ưu đãi"
+    },
+    {
+     "tab": "Tai nghe chống ồn",
+     "label": "Âm thanh",
+     "title": "Vexa Buds 2 Pro",
+     "text": "Chống ồn chủ động, kết nối hai thiết bị.",
+     "product": "tai-nghe-vexa-buds-2",
+     "bg": "dark",
+     "cta": "Mua ngay"
+    }
+   ],
+   "side": [
+    {
+     "title": "Orbit Nova 12",
+     "text": "Sạc 90W, giảm 1.500.000 đ",
+     "product": "orbit-nova-12",
+     "bg": "dark"
+    },
+    {
+     "title": "Phụ kiện từ 290.000 đ",
+     "text": "Sạc, pin dự phòng, ốp lưng",
+     "product": "sac-nhanh-67w",
+     "bg": "dark",
+     "href": "c/phu-kien.html"
+    }
+   ]
+  },
+  {
+   "type": "categories"
+  },
+  {
+   "type": "flash-sale",
+   "title": "Giờ vàng giá sốc",
+   "ends": "23:59",
+   "items": [
+    {
+     "product": "lumen-a55",
+     "sale_price": 6990000,
+     "limit": 50,
+     "sold": 34
+    },
+    {
+     "product": "orbit-c3",
+     "sale_price": 2690000,
+     "limit": 80,
+     "sold": 71
+    },
+    {
+     "product": "vexa-band-3",
+     "sale_price": 690000,
+     "limit": 100,
+     "sold": 58
+    },
+    {
+     "product": "pin-du-phong-20k",
+     "sale_price": 590000,
+     "limit": 120,
+     "sold": 96
+    },
+    {
+     "product": "norda-boom-mini",
+     "sale_price": 990000,
+     "limit": 40,
+     "sold": 12
+    },
+    {
+     "product": "kaze-book-15",
+     "sale_price": 12990000,
+     "limit": 20,
+     "sold": 9
+    }
+   ]
+  },
+  {
+   "type": "rail",
+   "category": "dien-thoai",
+   "title": "Điện thoại nổi bật"
+  },
+  {
+   "type": "banners",
+   "items": [
+    {
+     "title": "Laptop gaming RTX 5070",
+     "text": "Tặng chuột Vexa G5",
+     "product": "kaze-forge-16",
+     "bg": "dark"
+    },
+    {
+     "title": "Đồng hồ Vexa Watch 5",
+     "text": "GPS riêng, pin 3 ngày",
+     "product": "vexa-watch-5",
+     "bg": "dark"
+    },
+    {
+     "title": "Máy tính bảng học online",
+     "text": "Từ 3.290.000 đ",
+     "product": "norda-tab-11",
+     "bg": "dark"
+    }
+   ]
+  },
+  {
+   "type": "rail",
+   "category": "laptop",
+   "title": "Laptop"
+  },
+  {
+   "type": "rail",
+   "category": "tivi",
+   "title": "Tivi, màn hình lớn"
+  },
+  {
+   "type": "brands"
+  },
+  {
+   "type": "grid",
+   "title": "Phụ kiện bán chạy",
+   "category": "phu-kien"
+  },
+  {
+   "type": "stores-cta"
+  }
+ ],
+ "promotions": [
+  {
+   "code": "HDD200K",
+   "type": "fixed",
+   "value": 200000,
+   "min": 5000000,
+   "label": "Giảm 200.000 đ cho đơn từ 5 triệu",
+   "ends": "31/12/2026",
+   "limit": 500,
+   "used": 212
+  },
+  {
+   "code": "PHUKIEN10",
+   "type": "percent",
+   "value": 10,
+   "max": 150000,
+   "min": 500000,
+   "label": "Giảm 10% phụ kiện, tối đa 150.000 đ",
+   "ends": "31/12/2026",
+   "limit": 1000,
+   "used": 433
+  },
+  {
+   "code": "FREESHIP",
+   "type": "shipping",
+   "value": 0,
+   "min": 300000,
+   "label": "Miễn phí giao hàng cho đơn từ 300.000 đ",
+   "ends": "31/12/2026",
+   "limit": 2000,
+   "used": 1240
+  }
+ ],
+ "shipping": [
+  {
+   "id": "standard",
+   "name": "Giao tiêu chuẩn",
+   "fee": 30000,
+   "free_over": 500000,
+   "eta": "2-4 ngày"
+  },
+  {
+   "id": "express",
+   "name": "Giao nhanh 2 giờ",
+   "fee": 50000,
+   "eta": "Trong 2 giờ nếu đặt trước 19:00",
+   "cities": [
+    "Hà Nội",
+    "TP. Hồ Chí Minh"
+   ]
+  }
+ ],
+ "payments": [
+  {
+   "id": "cod",
+   "name": "Thanh toán khi nhận hàng (COD)",
+   "icon": "banknote"
+  },
+  {
+   "id": "bank",
+   "name": "Chuyển khoản ngân hàng",
+   "icon": "landmark",
+   "note": "Hiện thông tin chuyển khoản sau khi đặt",
+   "bank": {
+    "name": "[Tên ngân hàng]",
+    "account": "[Số tài khoản]",
+    "holder": "[Tên chủ tài khoản]"
+   }
+  },
+  {
+   "id": "card",
+   "name": "Thẻ ATM, Visa, Mastercard",
+   "icon": "credit-card",
+   "note": "Cần kết nối cổng thanh toán khi chạy thật"
+  },
+  {
+   "id": "installment",
+   "name": "Trả góp 0% qua thẻ tín dụng",
+   "icon": "calendar",
+   "note": "Kỳ hạn 6 hoặc 12 tháng, nhân viên gọi xác nhận"
+  }
+ ],
+ "benefits": [
+  {
+   "icon": "badge-check",
+   "title": "Hàng chính hãng",
+   "text": "Có hóa đơn VAT, tem bảo hành"
+  },
+  {
+   "icon": "truck",
+   "title": "Giao nhanh 2 giờ",
+   "text": "Nội thành Hà Nội, TP. Hồ Chí Minh"
+  },
+  {
+   "icon": "refresh",
+   "title": "Đổi trả 30 ngày",
+   "text": "Nếu lỗi do nhà sản xuất"
+  },
+  {
+   "icon": "credit-card",
+   "title": "Trả góp 0%",
+   "text": "Qua thẻ tín dụng, 6 hoặc 12 tháng"
+  }
+ ],
+ "stores": [
+  {
+   "id": "hn-cau-giay",
+   "name": "Hải Đăng Cầu Giấy",
+   "city": "Hà Nội",
+   "address": "[Số nhà], Phường Cầu Giấy, Hà Nội",
+   "hours": "8:00 - 21:30",
+   "phone": "1800 0000"
+  },
+  {
+   "id": "hn-hoan-kiem",
+   "name": "Hải Đăng Hoàn Kiếm",
+   "city": "Hà Nội",
+   "address": "[Số nhà], Phường Hoàn Kiếm, Hà Nội",
+   "hours": "8:00 - 21:30",
+   "phone": "1800 0000"
+  },
+  {
+   "id": "hcm-ben-thanh",
+   "name": "Hải Đăng Bến Thành",
+   "city": "TP. Hồ Chí Minh",
+   "address": "[Số nhà], Phường Bến Thành, TP. Hồ Chí Minh",
+   "hours": "8:00 - 22:00",
+   "phone": "1800 0000"
+  },
+  {
+   "id": "dn-hai-chau",
+   "name": "Hải Đăng Hải Châu",
+   "city": "Đà Nẵng",
+   "address": "[Số nhà], Phường Hải Châu, Đà Nẵng",
+   "hours": "8:00 - 21:00",
+   "phone": "1800 0000"
+  }
+ ],
+ "policies": [
+  {
+   "id": "bao-hanh",
+   "title": "Chính sách bảo hành",
+   "body": [
+    "Sản phẩm được bảo hành theo thời hạn ghi trên trang sản phẩm, tại trung tâm bảo hành của hãng hoặc tại cửa hàng.",
+    {
+     "heading": "Điều kiện bảo hành",
+     "items": [
+      "Còn thời hạn bảo hành, tem và số serial còn nguyên",
+      "Lỗi do nhà sản xuất, không do rơi vỡ, vào nước"
+     ]
+    },
+    {
+     "heading": "Thời gian xử lý",
+     "text": "Cửa hàng báo thời gian xử lý khi nhận máy, thường từ 7 đến 15 ngày làm việc."
+    }
+   ]
+  },
+  {
+   "id": "doi-tra",
+   "title": "Chính sách đổi trả",
+   "body": [
+    "Đổi máy mới cùng loại trong 30 ngày nếu lỗi do nhà sản xuất.",
+    {
+     "heading": "Không áp dụng đổi trả",
+     "items": [
+      "Sản phẩm rơi vỡ, vào nước, đã sửa ngoài",
+      "Thiếu hộp, phụ kiện hoặc quà tặng kèm"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "giao-hang",
+   "title": "Chính sách giao hàng",
+   "body": [
+    "Giao tiêu chuẩn 2-4 ngày trên toàn quốc, miễn phí cho đơn từ 500.000 đ.",
+    "Giao nhanh 2 giờ tại Hà Nội và TP. Hồ Chí Minh cho đơn đặt trước 19:00."
+   ]
+  },
+  {
+   "id": "bao-mat",
+   "title": "Chính sách bảo mật",
+   "body": [
+    "Thông tin khách hàng chỉ dùng để xác nhận, giao đơn và bảo hành, không cung cấp cho bên thứ ba ngoài đơn vị vận chuyển."
+   ]
+  }
+ ],
+ "layout": {
+  "cart": "table",
+  "checkout": "split-pay"
+ }
+}

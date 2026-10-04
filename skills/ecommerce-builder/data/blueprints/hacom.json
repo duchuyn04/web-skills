@@ -1,0 +1,32 @@
+{
+ "id": "hacom",
+ "site": "hacom.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "gaming",
+ "header": "Dải đỏ trên cùng: gọi mua hàng 1900.1903, nút mua hàng online theo miền (Bắc, Trung, Nam), Feedback, tìm cửa hàng gần nhất; dải liên kết phụ; hàng logo + tìm kiếm + icon mạng xã hội (Facebook, YouTube, Instagram, TikTok) + Xây dựng cấu hình PC + tra cứu đơn + đơn hàng + tài khoản. Widget chat Facebook, Zalo, hotline nổi bên phải.",
+ "sections": [
+  {
+   "role": "hero-bento",
+   "form": "sidebar danh mục trái (khoảng 18 nhóm) + carousel + 2 banner phải + hàng 3 banner Laptop + hàng 4 banner (Build PC, PC văn phòng, PC gaming, màn hình)",
+   "note": "Một khối bento gồm 4 lớp banner"
+  },
+  {
+   "role": "deals",
+   "form": "Cuối tuần rồi Flash Sale thôi: khung cam, rail 6 sản phẩm có đếm ngược",
+   "note": "Nhãn Còn x sản phẩm, Kết thúc sau, nút Xem tất cả sản phẩm"
+  },
+  {
+   "role": "stats",
+   "form": "Cảm ơn 10.000.000+ khách hàng đã và đang ứng hộ: dải ảnh khách hàng",
+   "note": "Ảnh khách nhận hàng tại cửa hàng"
+  },
+  {
+   "role": "stores",
+   "form": "HỆ THỐNG CÁC SHOWROOM CỦA HACOM (theo DOM)",
+   "note": "Khối cuối trang; các khối giữa (rail theo ngành hàng) không tải được trong ảnh chụp"
+  }
+ ],
+ "footer": "Không quan sát được: ảnh chụp trống từ khoảng 1500 px đến 8000 px trên trang cao 12968 px (nội dung lazy load không hiện), nên các rail giữa trang và footer chưa xác nhận.",
+ "observations": "Chỉ phần đầu trang xác nhận bằng ảnh. Header nhiều tầng nhất nhóm VN (hotline, cửa hàng theo miền, mạng xã hội, build PC)."
+}

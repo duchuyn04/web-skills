@@ -1,0 +1,27 @@
+/* Section 'blog': cards, list, featured. */
+.blog{margin:0}
+.blog-tag{display:inline-block;padding:2px 8px;border-radius:var(--radius);background:var(--c-accent-soft);color:var(--c-accent-ink);font-size:12px;font-weight:600}
+.blog h3{font-family:var(--font-head);font-size:16px;line-height:1.35;margin:6px 0}
+.blog h3 a:hover{color:var(--c-link);text-decoration:underline}
+.blog p{color:var(--c-muted);font-size:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-img{background:var(--c-surface-2);border-radius:var(--radius);aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden}
+.blog-img img{width:62%;height:auto;max-height:90%;object-fit:contain}
+.blog-more{display:inline-flex;align-items:center;min-height:32px;margin-top:6px;color:var(--c-link);font-weight:600;font-size:14px}
+.blog-more:hover{text-decoration:underline}
+.blog-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.blog-card{height:100%;display:flex;flex-direction:column;gap:12px;padding:12px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.blog-list{display:flex;flex-direction:column;gap:12px}
+.blog-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:16px;align-items:center;padding:12px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.blog-featured{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.blog-lead{display:flex;flex-direction:column;gap:12px;padding:14px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.blog-lead .blog-img{aspect-ratio:16/9}
+.blog-lead h3{font-size:20px}
+.blog-side{display:flex;flex-direction:column;gap:0;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.blog-side li{padding:14px 16px;border-bottom:1px solid var(--c-border)}
+.blog-side li:last-child{border-bottom:0}
+@media (max-width:1023px){.blog-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.blog-featured{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .blog-cards{grid-template-columns:1fr}
+  .blog-card .blog-img,.blog-lead .blog-img{aspect-ratio:16/9}
+  .blog-row{grid-template-columns:96px minmax(0,1fr);gap:12px}
+}

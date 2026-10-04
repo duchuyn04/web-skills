@@ -1,0 +1,23 @@
+{# Trade-in 'steps' (default): a heading, a short text and numbered steps for trading in an old device, with a call to action and the models accepted. Wording comes from the section data only; the build checks figures against the brief. #}
+<section class="sec ctn" aria-labelledby="h-ti-{{ sec._i }}">
+  <div class="ti ti-steps">
+    <div class="ti-head">
+      <h2 id="h-ti-{{ sec._i }}">{{ sec.title or "Thu cũ đổi mới" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+      <a class="btn btn-primary" href="{{ sec.href or (root ~ ('stores.html' if stores else 'deals.html')) }}">{{ sec.cta or ("Tìm cửa hàng" if stores else "Xem khuyến mãi") }}{{ arrow }}</a>
+    </div>
+    <ol class="ti-list">
+      {% for st in sec.steps %}
+      <li><span class="ti-n" aria-hidden="true">{{ loop.index }}</span><div><b>{{ st.title }}</b>{% if st.text %}<span>{{ st.text }}</span>{% endif %}</div></li>
+      {% endfor %}
+    </ol>
+    {% if sec["items"] %}
+    <ul class="ti-models" aria-label="Dòng máy nhận thu">
+      {% for it in sec["items"] %}
+      {% set prod = pid[it.product] if (it.product and it.product in pid) else None %}
+      <li>{% if prod %}<img src="{{ root }}{{ prod.image }}" alt="" width="400" height="400" loading="lazy">{% endif %}<div><b>{{ it.title }}</b>{% if it.text %}<span>{{ it.text }}</span>{% endif %}</div></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>

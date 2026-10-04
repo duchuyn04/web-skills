@@ -1,0 +1,77 @@
+{
+ "id": "thegioididong",
+ "site": "thegioididong.com",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Dải voucher mỏng trên cùng (Hot sale, mã giảm 500k/1tr/..), hàng logo + ô tìm kiếm + đăng nhập, voucher, giỏ hàng, chọn khu vực; hàng thứ ba là menu danh mục chữ (điện thoại, laptop, phụ kiện, smartwatch, đồng hồ, tablet, máy cũ, màn hình/máy in...). Không thấy hotline ở header (hotline nằm ở footer). Khi tải lần đầu có popup voucher che hero.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "dải voucher trên cùng",
+   "note": "Hot sale kèm 4 mã giảm giá có nút nhận"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "carousel lớn với 2 banner nhỏ bên dưới + banner skin hai bên",
+   "note": "Banner chính cùng 2 khối ưu đãi nhỏ, nền trang có skin quảng cáo hai cánh"
+  },
+  {
+   "role": "installment",
+   "form": "dải chữ ngắn",
+   "note": "MWG Paylater hạn mức đến 60 triệu, thẻ tín dụng VPBank MWG đến 100 triệu"
+  },
+  {
+   "role": "deals",
+   "form": "Khuyến mãi online: tab danh mục + khung giờ + đồng hồ đếm ngược, lưới 6 cột x 2 hàng",
+   "note": "Tab Điện thoại, Apple, Laptop, Phụ kiện, Đồng hồ, PC/Máy in; có Chỉ còn hh:mm:ss, Sắp diễn ra 12:00/15:00/18:00; nút Xem thêm"
+  },
+  {
+   "role": "product-grid",
+   "form": "Online siêu sốc: khối nền đỏ, tab nổi bật + danh mục, lưới 6 cột nhiều hàng",
+   "note": "Tab Nổi bật, Điện thoại, Apple, Laptop, Phụ kiện, Tablet, Màn hình/PC/Máy in; khoảng 30 sản phẩm hiển thị, nút Xem thêm 10 sản phẩm"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner ngang",
+   "note": "2 banner quảng cáo thương hiệu (Deal thơm, Sale Up 50%)"
+  },
+  {
+   "role": "category-tiles",
+   "form": "Mua Online - Hàng chuẩn, giá mê: 8 ô vuông nhỏ có ảnh",
+   "note": "8 ô chủ đề (ghế gaming, ốp lưng, tai nghe, router...) chia theo thương hiệu hoặc nhu cầu"
+  },
+  {
+   "role": "product-grid",
+   "form": "Gợi ý cho bạn: tab danh mục, lưới 6 cột x 3 hàng",
+   "note": "Tab Điện thoại, Apple, Laptop, Phụ kiện, Tablet...; nút Xem thêm"
+  },
+  {
+   "role": "deals",
+   "form": "Deal Đúng Ý: banner dọc bên trái + rail 5 sản phẩm",
+   "note": "Nhãn trả chậm 0%, đã bán; banner dọc là chiến dịch tháng"
+  },
+  {
+   "role": "trade-in",
+   "form": "banner ngang lớn",
+   "note": "Lên đời điện thoại gập, thu cũ trợ giá 50% đến 10 triệu"
+  },
+  {
+   "role": "banner-row",
+   "form": "Gian hàng ưu đãi: 4 banner dọc",
+   "note": "4 banner dọc theo thương hiệu (Galaxy S26 FE, Deal đúng ý...)"
+  },
+  {
+   "role": "news",
+   "form": "Mạng xã hội thegioididong.com: 4 thẻ bài có ảnh",
+   "note": "4 bài tin/review, có link Xem thêm"
+  },
+  {
+   "role": "seo-text",
+   "form": "Mọi người cũng tìm kiếm: đám tag từ khóa",
+   "note": "Khoảng 20 liên kết từ khóa tìm kiếm phổ biến"
+  }
+ ],
+ "footer": "Footer sáng gồm 3 cột hỗ trợ (Tổng đài hỗ trợ 3 số, Về công ty, Thông tin khác), cột website tập đoàn (logo các chuỗi con) và biểu tượng chứng nhận, dòng pháp lý công ty. Link Tìm siêu thị (số lượng cửa hàng ghi trong link).",
+ "observations": "Trang cao khoảng 6770 px ở 1440 px. Không có khối thương hiệu, đánh giá khách hàng, newsletter hay khối cửa hàng riêng trên trang chủ. Giá trị ưu đãi chính đi qua đồng hồ đếm ngược và nhãn trả chậm 0%. Phần lớn nội dung là lưới sản phẩm có tab. Popup voucher xuất hiện ở lần tải đầu."
+}

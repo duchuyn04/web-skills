@@ -1,0 +1,17 @@
+{# Blog 'list': stories as full-width rows with a small picture on the left, for a longer reading list (guides, comparisons). #}
+<section class="sec ctn" aria-labelledby="h-blog-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-blog-{{ sec._i }}">{{ sec.title or "Tin công nghệ" }}</h2></div>
+  <ul class="blog blog-list">
+    {% for it in sec["items"] %}
+    {% set img = pid[it.product].image if (it.product and it.product in pid) else it.art %}
+    <li><article class="blog-row">
+      {% if img %}<div class="blog-img"><img src="{{ root }}{{ img }}" alt="" width="400" height="400" loading="lazy"></div>{% endif %}
+      <div class="blog-body">
+        {% if it.tag %}<span class="blog-tag">{{ it.tag }}</span>{% endif %}
+        <h3>{% if it.href %}<a href="{{ it.href }}">{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</h3>
+        {% if it.text %}<p>{{ it.text }}</p>{% endif %}
+      </div>
+    </article></li>
+    {% endfor %}
+  </ul>
+</section>

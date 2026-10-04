@@ -1,0 +1,15 @@
+{# Price ladder 'chips' (default): wide chips, one per price band, with the number of products in the band; each opens the category already filtered when the band matches one of the category's price filters. Data: {"type": "price-ladder", "title"?, "items": [{"min": 0, "max": 5000000, "category"?, "title"?}]}. The label is written from min and max when title is left out. #}
+<section class="sec ctn pl" aria-labelledby="h-pl-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-pl-{{ sec._i }}">{{ sec.title or "Mua theo tầm giá" }}</h2></div>
+  <ul class="pl-chips">
+    {% for it in sec["items"] %}
+    {% set cid = it.category or cats[0].id %}
+    {% set band = by_cat[cid]|selectattr("price", "ge", it.min or 0)|selectattr("price", "lt", it.max or 1000000000000)|list %}
+    {% if band %}
+    <li><a class="pl-chip" href="{{ root }}c/{{ cid }}.html?price={{ it.min or 0 }}-{{ it.max or '' }}">
+      <b>{{ it.title or m.price_range(it.min or 0, it.max) }}</b><small>{{ band|length }} sản phẩm</small>{{ icon("chevron-right", "i-sm") }}
+    </a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>

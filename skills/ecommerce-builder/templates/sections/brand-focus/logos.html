@@ -1,0 +1,11 @@
+{# Brand focus 'logos': a wall of brand name tiles with their product counts, each linking to a search by brand. Pick it for a shop that stocks many brands. Data: {"type": "brand-focus", "variant": "logos", "title"?, "brands"?: [ids]}; all brands when left out. #}
+{% set ids = sec.brands or (brands|map(attribute="id")|list) %}
+<section class="sec ctn bf-wall" aria-labelledby="h-bf-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-bf-{{ sec._i }}">{{ sec.title or "Thương hiệu chính hãng" }}</h2></div>
+  <ul class="bf-logos">
+    {% for bid in ids %}
+    {% set b = brands|selectattr("id", "equalto", bid)|first %}
+    {% if b %}<li><a href="{{ root }}search.html?brand={{ b.id }}"><b>{{ b.name }}</b><small>{{ products|selectattr("brand", "equalto", b.id)|list|length }} sản phẩm</small></a></li>{% endif %}
+    {% endfor %}
+  </ul>
+</section>

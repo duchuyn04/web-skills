@@ -1,0 +1,29 @@
+.hsp{padding-top:16px}
+.hsp-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;align-items:stretch}
+.hsp-main{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:12px;padding:32px 36px;min-height:360px;border-radius:var(--radius-lg);background:var(--slide-bg);color:var(--slide-ink);overflow:hidden}
+.hsp-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.hsp-label{display:inline-block;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--slide-ink) 16%,transparent);font-size:13px;font-weight:600}
+.hsp-title{font-size:clamp(24px,2.8vw,38px);font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.hsp-text{font-size:15px;opacity:.92;max-width:34ch}
+.hsp-price{font-size:15px}
+.hsp-price strong{font-size:22px}
+.hsp-cta{display:inline-flex;align-items:center;gap:6px;margin-top:6px;min-height:44px;padding:0 20px;border-radius:var(--radius);background:var(--slide-ink);color:var(--slide-bg);font-weight:700}
+.hsp-main:hover .hsp-cta{filter:brightness(.94)}
+.hsp-art{width:100%;max-width:300px;justify-self:center}
+.hsp-tiles{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:14px;margin:0;padding:0;list-style:none}
+.hsp-tile{display:flex;flex-direction:column;justify-content:space-between;gap:6px;height:100%;min-height:172px;padding:14px;border-radius:var(--radius-lg);background:var(--slide-bg);color:var(--slide-ink);border:1px solid var(--c-border);overflow:hidden}
+.hsp-tile:hover{border-color:var(--c-btn)}
+.hsp-tile img{align-self:center;width:62%;max-width:130px;margin-top:auto}
+.hsp-tile-copy{display:flex;flex-direction:column;gap:2px;font-size:13.5px;line-height:1.35}
+.hsp-tile-copy b{font-size:15px}
+.hsp-tile-copy span{opacity:.88}
+@media (max-width:1023px){
+  .hsp-grid{grid-template-columns:1fr}
+  .hsp-main{min-height:0}
+}
+@media (max-width:767px){
+  .hsp-main{grid-template-columns:1fr 38%;padding:20px 18px}
+  .hsp-text{display:none}
+  .hsp-tile{min-height:150px;padding:10px}
+  .hsp-tiles{gap:8px}
+}

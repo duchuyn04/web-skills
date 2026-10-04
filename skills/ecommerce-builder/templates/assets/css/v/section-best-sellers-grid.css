@@ -1,0 +1,7 @@
+/* Section 'best-sellers' (grid): two rows of cards, each with a small rank badge above it. */
+.bs-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.bs-cell{display:flex;flex-direction:column;gap:6px;min-width:0}
+.bs-cell>.pc{flex:1}
+.bs-badge{display:inline-grid;place-items:center;align-self:flex-start;min-width:28px;height:28px;padding:0 8px;border-radius:var(--radius);background:var(--c-text);color:var(--c-surface);font-size:13px;font-weight:800}
+@media (max-width:1180px){.bs-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:767px){.bs-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}

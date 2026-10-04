@@ -1,0 +1,10 @@
+{# Section 'warranty-care' (default design 'columns'): warranty and service promises as icon columns separated by thin rules. Every promise is written by the shop and checked against the brief.
+   Data: {"type": "warranty-care", "title"?, "items": [{"icon", "title", "text"?}]} #}
+<section class="sec ctn" aria-labelledby="h-wc-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-wc-{{ sec._i }}">{{ sec.title or "Bảo hành và dịch vụ" }}</h2></div>
+  <ul class="wc-cols wc-n{{ sec["items"]|length }}">
+    {% for s in sec["items"] %}
+    <li><span class="wc-ic">{{ icon(s.icon or "shield-check") }}</span><b>{{ s.title }}</b>{% if s.text %}<span>{{ s.text }}</span>{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>

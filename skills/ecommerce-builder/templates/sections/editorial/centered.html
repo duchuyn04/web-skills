@@ -1,0 +1,17 @@
+{# Editorial 'centered': a centred heading and short text above one large picture. Same data as the default editorial block. Pick it for a calm statement piece between product rows. #}
+{% set prod = pid[sec.product] if sec.product else None %}
+{% set href = sec.href or (root ~ 'p/' ~ sec.product ~ '.html' if sec.product else None) %}
+<section class="sec ctn" aria-labelledby="h-ed-{{ sec._i }}">
+  <div class="ec" style="--ed-bg: {{ sec.bg or 'var(--c-surface-2)' }}">
+    <div class="ec-copy">
+      <h2 id="h-ed-{{ sec._i }}">{{ sec.title }}</h2>
+      {% for para in (sec.text if sec.text is not string else [sec.text]) %}<p>{{ para }}</p>{% endfor %}
+      {% if prod %}<p class="ec-price">{{ prod.name }}, {{ prod.price|vnd }}</p>{% endif %}
+      {% if href %}<a class="ed-link" href="{{ href }}">{{ sec.cta or "Xem sản phẩm" }}{{ arrow }}</a>{% endif %}
+    </div>
+    <div class="ec-art">
+      {% if prod %}<img src="{{ root }}{{ prod.image }}" alt="{{ prod.name }}" width="400" height="400" loading="lazy">
+      {% elif sec.art %}<img src="{{ root }}{{ sec.art }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+    </div>
+  </div>
+</section>

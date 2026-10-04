@@ -1,0 +1,27 @@
+{# Deal of the day 'list': up to three deals as rows, each with a picture, the price, a link and its own countdown (each row ends at its own "ends", default 23:59). Use when several offers end on the same day. #}
+{% set deals = sec["items"][:3] %}
+{% if deals %}
+<section class="sec ctn dd dd-list" aria-labelledby="h-dd-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-dd-{{ sec._i }}">{{ sec.title or "Ưu đãi trong ngày" }}</h2></div>
+  <ul class="ddl">
+    {% for it in deals %}
+    {% set p = pid[it.product] %}
+    {% set sale = it.sale_price if it.sale_price and it.sale_price < p.price else None %}
+    {% set now = sale or p.price %}
+    {% set old = p.price if sale else p.old_price %}
+    <li class="ddl-row" data-flash data-ends="{{ it.ends or sec.ends or '23:59' }}">
+      <a class="ddl-media" href="{{ root }}p/{{ p.id }}.html" tabindex="-1" aria-hidden="true"><img src="{{ root }}{{ p.image }}" alt="" width="400" height="400" loading="lazy"></a>
+      <div class="ddl-main">
+        <a class="ddl-name" href="{{ root }}p/{{ p.id }}.html">{{ p.name }}</a>
+        {% if p.card_specs %}<small>{{ p.card_specs[:3]|join(", ") }}</small>{% endif %}
+        <div class="dd-price"><strong>{{ now|vnd }}</strong>{% if old and old > now %}<s>{{ old|vnd }}</s>{% endif %}</div>
+      </div>
+      <div class="dd-timer" role="timer" aria-label="Thời gian còn lại">
+        <span>Còn</span>
+        <b data-t="h">00</b><i>:</i><b data-t="m">00</b><i>:</i><b data-t="s">00</b>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

@@ -1,0 +1,122 @@
+{
+ "id": "phongvu",
+ "site": "phongvu.vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Dải banner khuyến mãi trên cùng (Đổi điểm thi THPT, voucher, trả góp), dải liên kết nhỏ (hệ thống showroom, doanh nghiệp, Apple Education, hotline 18006867, tin công nghệ), hàng logo + tìm kiếm + tài khoản + thông báo + giỏ, dòng từ khóa. Popup khuyến mãi và banner cookie ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "promo-strip",
+   "form": "dải banner khuyến mãi mỏng + dải liên kết tiện ích",
+   "note": "Đổi điểm thi THPT, trả góp, voucher; liên kết showroom, doanh nghiệp, Apple Education"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái + carousel + 3 banner dọc phải",
+   "note": "Sidebar 13 nhóm; banner phải Phong Vũ EDU, khuyến mãi tháng"
+  },
+  {
+   "role": "category-icons",
+   "form": "hàng icon tròn lối tắt ưu đãi",
+   "note": "Trả góp 0%, Apple Education, tải app, xả kho, đồ gia dụng"
+  },
+  {
+   "role": "banner-row",
+   "form": "banner ngang dài chiến dịch",
+   "note": "Show điểm giảm sâu, voucher đến 5 triệu, trả góp 0%"
+  },
+  {
+   "role": "deals",
+   "form": "FLASH SALE ONLINE: khung cam, banner đếm ngược trái + 5 tab + rail 5 sản phẩm",
+   "note": "Tab Laptop, Gear, Màn hình, Phụ kiện, Điện gia dụng, Logi G Day; mỗi tab ghi mức giảm tối đa"
+  },
+  {
+   "role": "category-icons",
+   "form": "Danh mục nổi bật: hàng 10 icon",
+   "note": "Laptop, Apple, PC, Linh kiện, Màn hình, Phụ kiện, thiết bị mạng, an ninh..."
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Hướng tới tương lai, chinh phục AI giảm thêm 9.5 triệu"
+  },
+  {
+   "role": "product-rail",
+   "form": "LAPTOP AI: khung xanh tiêu đề + rail 5 sản phẩm",
+   "note": "Có link Xem tất cả"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Laptop văn phòng tặng phiếu 1 triệu"
+  },
+  {
+   "role": "product-rail",
+   "form": "LAPTOP VĂN PHÒNG: rail 5",
+   "note": "Giống khối trên"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Laptop gaming tặng bộ quà 3 triệu"
+  },
+  {
+   "role": "product-rail",
+   "form": "LAPTOP GAMING: rail 5",
+   "note": "ASUS TUF, MSI, Acer Nitro"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner ngang",
+   "note": "Build PC giảm đến 3 triệu, PC Phong Vũ Gaming"
+  },
+  {
+   "role": "product-rail",
+   "form": "PC: rail 5 PC gaming",
+   "note": "Dòng Hera TH023, TH024"
+  },
+  {
+   "role": "product-rail",
+   "form": "LINH KIỆN: rail 5",
+   "note": "CPU, SSD, VGA, mainboard, RAM"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Sắm iPhone trả góp 3 không"
+  },
+  {
+   "role": "product-rail",
+   "form": "APPLE: rail 5",
+   "note": "iPhone 18 Pro, iPad"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner rộng",
+   "note": "Màn hình tặng quà 400k, màn hình OLED"
+  },
+  {
+   "role": "product-rail",
+   "form": "MÀN HÌNH: rail 5",
+   "note": "Acer, Samsung, LG"
+  },
+  {
+   "role": "product-rail",
+   "form": "GAMING GEAR: rail 5",
+   "note": "Chuột, bàn phím"
+  },
+  {
+   "role": "product-rail",
+   "form": "ĐIỆN THOẠI, MÁY TÍNH BẢNG, ĐỒNG HỒ THÔNG MINH: rail 5",
+   "note": "Honor, Lenovo, Samsung"
+  },
+  {
+   "role": "news",
+   "form": "TIN CÔNG NGHỆ: hàng thẻ bài có ảnh",
+   "note": "Thấy tiêu đề và ảnh bài, nội dung bị cắt ở 8000 px"
+  }
+ ],
+ "footer": "Không quan sát được: ảnh cắt ở 8000 px trên trang cao 8761 px.",
+ "observations": "Nhịp lặp ổn định: banner rộng rồi rail 5 sản phẩm trong khung xanh, mỗi nhóm hàng một banner. Giá tiết kiệm hiện bằng nhãn tím trên ảnh sản phẩm. Không thấy khối thương hiệu hay đánh giá."
+}

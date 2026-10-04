@@ -1,0 +1,16 @@
+{# Store hours 'strip': one compact line per store (name, address, hours, open-now badge, phone), for shops with many stores or little room. #}
+{% if stores %}
+<section class="sec ctn" aria-labelledby="h-sh-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-sh-{{ sec._i }}">{{ sec.title or "Cửa hàng và giờ mở cửa" }}</h2><a class="sec-more" href="{{ root }}stores.html">Tất cả cửa hàng{{ arrow }}</a></div>
+  <ul class="sh sh-strip">
+    {% for st in stores %}
+    <li data-sh data-sh-hours="{{ st.hours }}">
+      <b>{{ st.name }}</b>
+      <span class="sh-addr">{{ st.address }}</span>
+      <span class="sh-hrs">{{ st.hours }} <em class="open-state" data-sh-state></em></span>
+      {% if st.phone %}<a class="sh-tel" href="tel:{{ st.phone|replace(' ', '') }}">{{ st.phone }}</a>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

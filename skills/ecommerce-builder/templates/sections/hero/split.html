@@ -1,0 +1,29 @@
+{# Hero 'split': a message column on the left (the first slide: label, title, text, price and button) and a 2x2 grid of product tiles on the right, taken from side banners first and then the other slides (4 tiles at most). Pick it when the home page should show four products at once next to one offer. #}
+{% set main = sec.slides[0] %}
+{% set tiles = ((sec.side or []) + (sec.slides[1:] or []))[:4] %}
+{% set mprod = pid.get(main.product) if main.product else None %}
+<section class="hsp" aria-label="Khuyến mãi nổi bật">
+  <div class="ctn hsp-grid">
+    <a class="hsp-main" href="{{ main.href or (root ~ 'p/' ~ main.product ~ '.html' if main.product else root ~ 'deals.html') }}" style="--slide-bg: {{ main.bg or 'var(--c-dark)' }}; --slide-ink: {{ main.ink or '#ffffff' }}">
+      <span class="hsp-copy">
+        {% if main.label %}<span class="hsp-label">{{ main.label }}</span>{% endif %}
+        <h2 class="hsp-title">{{ main.title }}</h2>
+        {% if main.text %}<span class="hsp-text">{{ main.text }}</span>{% endif %}
+        {% if mprod %}<span class="hsp-price">Giá chỉ từ <strong>{{ mprod.price|vnd }}</strong></span>{% endif %}
+        <span class="hsp-cta">{{ main.cta or "Mua ngay" }}{{ arrow }}</span>
+      </span>
+      {% if main.art %}<img class="hsp-art" src="{{ root }}{{ main.art }}" alt="" width="400" height="400">{% endif %}
+    </a>
+    <ul class="hsp-tiles">
+      {% for t in tiles %}
+      {% set tp = pid.get(t.product) if t.product else None %}
+      <li>
+        <a class="hsp-tile" href="{{ t.href or (root ~ 'p/' ~ t.product ~ '.html' if t.product else root ~ 'deals.html') }}" style="--slide-bg: {{ t.bg or 'var(--c-surface-2)' }}; --slide-ink: {{ t.ink or 'var(--c-text)' }}">
+          {% if t.art %}<img src="{{ root }}{{ t.art }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+          <span class="hsp-tile-copy"><b>{{ t.title }}</b>{% if tp %}<span>Từ {{ tp.price|vnd }}</span>{% elif t.text %}<span>{{ t.text }}</span>{% endif %}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

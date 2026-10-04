@@ -1,0 +1,67 @@
+{
+ "id": "jbhifi",
+ "site": "jbhifi.com.au",
+ "market": "au",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Dải xanh trên cùng (iPhone 18 Pro, trade-in, link Learn more, nút đóng); header vàng một hàng: logo, ô tìm kiếm, Track order, Stores, Log in, Cart; hàng nav đen (New, Products, Brands, Deals & Catalogues, Clearance, Services, Gift Cards, Join JB Perks, News & Reviews). Nút chat nổi.",
+ "sections": [
+  {
+   "role": "category-icons",
+   "form": "hàng icon tròn cuộn ngang",
+   "note": "New at JB, Hottest Deals, Mobile Phones, TVs & Home Theatre, Computers & Tablets, IT Accessories, Headphones/Speakers, Home Appliances, Smart Home"
+  },
+  {
+   "role": "hero-carousel",
+   "form": "1 banner lớn toàn chiều rộng trên nền vàng, nhiều slide có chấm và mũi tên",
+   "note": "Sony ULT Tower Series"
+  },
+  {
+   "role": "product-rail",
+   "form": "WHAT'S HOT: tab + rail 5 sản phẩm",
+   "note": "Tab Hottest Deals, Catalogues, Audio Bonanza, Home Appliances, Computers, Mega Gaming Sale, TVs, Mobile Phones, iPhone 18; giá trong nhãn vàng, nút Add to cart; nút View all"
+  },
+  {
+   "role": "banner-row",
+   "form": "dải banner vàng Seen it cheaper? Ask for a JB Deal + hotline 13 52 44",
+   "note": "Cam kết giá"
+  },
+  {
+   "role": "banner-row",
+   "form": "WHAT'S TRENDING: carousel 5 thẻ tờ rơi khuyến mãi",
+   "note": "20% off TVs, 20% off TCL, Footy finals frenzy, 40% off deals, Camera bonanza"
+  },
+  {
+   "role": "product-rail",
+   "form": "JUST FOR YOU: 2 tab (We Think You'll Like, Recently Viewed) + rail 5",
+   "note": "Cá nhân hóa"
+  },
+  {
+   "role": "services",
+   "form": "banner Get it fast: 90 minute delivery with Uber",
+   "note": "Banner giao nhanh"
+  },
+  {
+   "role": "video",
+   "form": "NEW AT JB!: khối nền xanh dương, carousel thẻ video dọc + cột Latest news & reviews 3 bài",
+   "note": "Video có logo thương hiệu, nút Shop now, link Explore New"
+  },
+  {
+   "role": "product-rail",
+   "form": "CHECK OUT THE LATEST TECH!: rail 5 nền xanh",
+   "note": "Bose, Meta Glasses, KitchenAid"
+  },
+  {
+   "role": "services",
+   "form": "At JB we're more than just products: dải 7 icon dịch vụ",
+   "note": "Dải đen cuối khối sản phẩm (cài đặt, sửa chữa, trade-in...)"
+  },
+  {
+   "role": "editorial",
+   "form": "Check out the latest STACK mag!: khối tạp chí (theo DOM)",
+   "note": "Khoảng 6684 px"
+  }
+ ],
+ "footer": "Phần cuối không quan sát bằng ảnh chi tiết; footer chưa đọc.",
+ "observations": "Trang cao khoảng 7690 px. Giá in trong nhãn vàng lớn, phong cách tờ rơi. Có tab Recently Viewed trong khối Just for you. Có hotline 13 52 44 trên trang."
+}

@@ -1,0 +1,8 @@
+{# Benefits 'cards': boxed cards, each with an icon well, the promise title and its line. Pick it when the promises are a selling point and need weight. #}
+<section class="sec ctn" aria-label="Cam kết">
+  <ul class="bc-grid">
+    {% for b in benefits %}
+    <li class="bc-card"><span class="bc-well">{{ icon(b.icon, "bc-ic") }}</span><div><b>{{ b.title }}</b><span>{{ b.text }}</span></div></li>
+    {% endfor %}
+  </ul>
+</section>

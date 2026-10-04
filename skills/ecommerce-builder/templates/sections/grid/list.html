@@ -1,0 +1,9 @@
+{# Grid 'list': the products as wide rows (picture left, details right), one or two per line, with the Xem them button. Pick it for products that need their spec chips and promo line read. #}
+{% set items = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
+<section class="sec ctn" aria-labelledby="h-grid-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-grid-{{ sec._i }}">{{ sec.title or "Gợi ý cho bạn" }}</h2></div>
+  <div class="gl-grid" data-more-grid data-step="{{ sec.step or 6 }}">
+    {% for p in items[:sec.limit or 30] %}{{ m.card(p) }}{% endfor %}
+  </div>
+  <div class="more"><button class="btn btn-outline" type="button" data-more>Xem thêm sản phẩm{{ icon("chevron-down", "i-sm") }}</button></div>
+</section>

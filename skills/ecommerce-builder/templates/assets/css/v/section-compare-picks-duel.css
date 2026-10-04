@@ -1,0 +1,21 @@
+/* Section 'compare-picks', variant duel: two products face to face. */
+.cpd-head{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cpd-prod{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:18px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.cpd-prod:hover{border-color:var(--c-accent)}
+.cpd-prod img{width:min(200px,60%);aspect-ratio:1;object-fit:contain}
+.cpd-prod b{font-family:var(--font-head);font-size:18px}
+.cpd .cp-price{justify-content:center;margin-top:0}
+.cpd-rows{margin:16px 0 0;border:1px solid var(--c-border);border-radius:var(--radius-lg);overflow:hidden;background:var(--c-surface)}
+.cpd-row{display:grid;grid-template-columns:1fr minmax(120px,200px) 1fr;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--c-border);text-align:center;font-size:14px}
+.cpd-row:last-child{border-bottom:0}
+.cpd-row:nth-child(even){background:var(--c-surface-2)}
+.cpd-row dt{font-size:12.5px;font-weight:600;color:var(--c-muted)}
+.cpd-row dd{margin:0}
+.cpd-act{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media (max-width:640px){
+  .cpd-head,.cpd-act{gap:8px}
+  .cpd-prod{padding:12px}
+  .cpd-prod b{font-size:15px}
+  .cpd-row{grid-template-columns:1fr 1fr;padding:10px 12px;gap:4px 12px}
+  .cpd-row dt{grid-column:1/-1;grid-row:1}
+}

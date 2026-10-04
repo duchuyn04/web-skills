@@ -1,0 +1,13 @@
+{# Categories 'icons': one row of round icon wells with the category name and product count; scrolls sideways on phones. Pick it when the shop has many categories and the home page should stay light. #}
+<section class="sec ctn" aria-labelledby="h-cats-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-cats-{{ sec._i }}">{{ sec.title or "Danh mục nổi bật" }}</h2></div>
+  <ul class="ci-row">
+    {% for c in cats %}
+    <li><a class="ci-item" href="{{ root }}c/{{ c.id }}.html">
+      <span class="ci-well">{{ icon(c.icon or "package", "ci-ic") }}</span>
+      <span class="ci-name">{{ c.name }}</span>
+      <small>{{ c.count }} sản phẩm</small>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,104 @@
+{# Listing 'tiles': a category banner with the intro on top, a column of links to the other categories, large two-column tiles, and filters inside a drawer that opens from a button at every screen width. Pick it for small catalogues where the picture sells the product. #}
+{{ m.crumbs([(cat.name, None)]) }}
+<div class="ctn plp plt" data-plp data-cat="{{ cat.id }}">
+  <header class="plt-banner">
+    <div class="plt-banner-copy">
+      <h1>{{ cat.name }} <small data-plp-count>{{ cat.count }} sản phẩm</small></h1>
+      {% if cat.intro %}<p>{{ cat.intro[0] }}</p>{% endif %}
+      {% if cat.brands|length > 1 %}
+      <ul class="brand-chips" aria-label="Chọn nhanh thương hiệu">
+        {% for b in cat.brands %}<li><button type="button" class="brand-chip" data-quick-brand="{{ b.id }}" aria-pressed="false">{{ b.name }}</button></li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% if items %}<img class="plt-banner-art" src="{{ root }}{{ items[0].image }}" alt="" width="400" height="400">{% endif %}
+  </header>
+
+  <div class="plt-body">
+    <nav class="plt-cats" aria-label="Danh mục khác">
+      <h2>Danh mục</h2>
+      <ul>
+        {% for c in cats %}<li><a href="{{ root }}c/{{ c.id }}.html" {% if c.id == cat.id %}aria-current="page"{% endif %}>{{ icon(c.icon, "i-sm") }}<span>{{ c.name }}</span><small>{{ c.count }}</small></a></li>{% endfor %}
+      </ul>
+    </nav>
+
+    <section class="plt-main" aria-label="Danh sách {{ cat.name }}">
+      <div class="plt-bar">
+        <button class="btn btn-outline toolbar-filter" type="button" data-filters-open aria-controls="filters">{{ icon("sliders", "i-sm") }}Bộ lọc<b class="count" data-filter-count hidden>0</b></button>
+        <div class="sort" role="group" aria-label="Sắp xếp">
+          <button type="button" class="chip is-on" data-sort="popular" aria-pressed="true">Nổi bật</button>
+          <button type="button" class="chip" data-sort="price-asc" aria-pressed="false">Giá thấp đến cao</button>
+          <button type="button" class="chip" data-sort="price-desc" aria-pressed="false">Giá cao đến thấp</button>
+          <button type="button" class="chip" data-sort="new" aria-pressed="false">Mới về</button>
+        </div>
+        <label class="sort-select plt-sort"><span class="sr">Sắp xếp</span>
+          <select data-sort-select>
+            <option value="popular">Nổi bật</option><option value="price-asc">Giá thấp đến cao</option><option value="price-desc">Giá cao đến thấp</option><option value="discount">Giảm nhiều</option><option value="new">Mới về</option>
+          </select>
+        </label>
+      </div>
+      <ul class="active-filters" data-active-filters aria-label="Bộ lọc đang chọn"></ul>
+      <div class="grid grid-plp plt-grid" data-plp-grid data-step="12">
+        {% for p in items %}{{ m.card(p, lazy=loop.index > 4) }}{% endfor %}
+      </div>
+      <div class="plp-empty" data-plp-empty hidden>
+        {{ m.empty("search", "Không có sản phẩm phù hợp", "Thử bỏ bớt một vài bộ lọc hoặc chọn mức giá khác.") }}
+        <div class="more"><button class="btn btn-outline" type="button" data-filter-reset>Xóa bộ lọc</button></div>
+      </div>
+      <div class="more"><button class="btn btn-outline" type="button" data-more>Xem thêm <span data-more-n></span> sản phẩm{{ icon("chevron-down", "i-sm") }}</button></div>
+      {% if cat.intro and cat.intro|length > 1 %}
+      <section class="box prose cat-intro" aria-labelledby="h-intro" data-clamp>
+        <h2 id="h-intro">{{ cat.intro_title or ("Chọn mua " ~ cat.name|lower ~ " tại " ~ shop.name) }}</h2>
+        {% for para in cat.intro[1:] %}<p>{{ para }}</p>{% endfor %}
+        <button class="link-btn clamp-btn" type="button" data-clamp-toggle hidden>Xem thêm{{ icon("chevron-down", "i-sm") }}</button>
+      </section>
+      {% endif %}
+    </section>
+  </div>
+
+  <aside class="filters plt-drawer" id="filters" data-filters aria-label="Bộ lọc">
+    <div class="filters-head">
+      <b>{{ icon("filter", "i-sm") }}Bộ lọc</b>
+      <button type="button" class="link-btn" data-filter-reset>Xóa bộ lọc</button>
+      <button type="button" class="icon-btn filters-close" data-filters-close aria-label="Đóng bộ lọc">{{ icon("x") }}</button>
+    </div>
+    <div class="filters-scroll">
+      {% if cat.brands|length > 1 %}
+      <fieldset class="fgroup">
+        <legend>Thương hiệu</legend>
+        {% for b in cat.brands %}
+        <label class="check"><input type="checkbox" name="brand" value="{{ b.id }}"><span>{{ b.name }}</span></label>
+        {% endfor %}
+      </fieldset>
+      {% endif %}
+      <fieldset class="fgroup">
+        <legend>Mức giá</legend>
+        {% for lo, hi in cat.price_ranges %}
+        <label class="check"><input type="checkbox" name="price" value="{{ lo }}-{{ hi or '' }}"><span>{{ m.price_range(lo, hi) }}</span></label>
+        {% endfor %}
+        <div class="price-custom">
+          <label><span class="sr">Giá từ</span><input type="number" inputmode="numeric" min="0" step="100000" placeholder="Từ" data-price-min></label>
+          <span aria-hidden="true">-</span>
+          <label><span class="sr">Giá đến</span><input type="number" inputmode="numeric" min="0" step="100000" placeholder="Đến" data-price-max></label>
+        </div>
+      </fieldset>
+      {% for f in cat.facets %}
+      {% if f["values"] %}
+      <fieldset class="fgroup">
+        <legend>{{ f.label }}</legend>
+        {% for v in f["values"] %}
+        <label class="check"><input type="checkbox" name="f:{{ f.key }}" value="{{ v }}"><span>{{ v }}</span></label>
+        {% endfor %}
+      </fieldset>
+      {% endif %}
+      {% endfor %}
+      <fieldset class="fgroup">
+        <legend>Khác</legend>
+        <label class="check"><input type="checkbox" name="instock" value="1"><span>Chỉ hiện hàng còn</span></label>
+        <label class="check"><input type="checkbox" name="sale" value="1"><span>Đang giảm giá</span></label>
+      </fieldset>
+    </div>
+    <div class="filters-foot"><button class="btn btn-primary btn-block" type="button" data-filters-close>Xem <span data-plp-count-n>{{ cat.count }}</span> kết quả</button></div>
+  </aside>
+</div>
+<div class="scrim" data-scrim hidden></div>

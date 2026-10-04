@@ -1,0 +1,8 @@
+/* Section 'price-ladder' (chips): wide chips, one per price band. */
+.pl-chips{display:flex;flex-wrap:wrap;gap:10px}
+.pl-chips li{flex:1 1 220px}
+.pl-chip{display:flex;align-items:center;gap:10px;min-height:52px;padding:8px 16px;border:1px solid var(--c-border);border-radius:999px;background:var(--c-surface)}
+.pl-chip:hover{border-color:var(--c-btn)}
+.pl-chip b{font-size:15px;font-weight:700}
+.pl-chip small{margin-left:auto;font-size:13px;color:var(--c-muted)}
+.pl-chip .i{color:var(--c-muted)}

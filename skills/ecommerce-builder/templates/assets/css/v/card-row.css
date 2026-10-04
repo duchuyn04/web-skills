@@ -1,0 +1,22 @@
+/* Card 'row': two cards per column in rails, a two-up or three-up list in grids. */
+.cd-row .pc-row{position:relative;flex-direction:row;align-items:stretch}
+.cd-row .pc-row .pc-link{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:center;padding:10px 40px 10px 10px;width:100%}
+.cd-row .pc-row .pc-media{aspect-ratio:1;display:grid;place-items:center;border-radius:var(--radius);background:var(--c-surface-2)}
+.cd-row .pc-row .pc-media img{width:86%;height:86%}
+.cd-row .pc-body{display:flex;flex-direction:column;gap:3px;min-width:0}
+.cd-row .pc-row .pc-name{font-size:14px;min-height:0;-webkit-line-clamp:2}
+.cd-row .pc-line{margin:0;font-size:12.5px;color:var(--c-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cd-row .pc-row .pc-price{gap:2px 8px}
+.cd-row .pc-row .pc-price strong{font-size:15px}
+.cd-row .pc-row .pc-off{position:static;padding:1px 6px;font-size:11.5px}
+.cd-row .pc-row .pc-badge{position:static;align-self:flex-start}
+.cd-row .pc-row .pc-actions{position:absolute;right:2px;top:2px;bottom:2px;flex-direction:column;justify-content:space-between;align-items:center;padding:0}
+.cd-row .pc-row .pc-cmp,.cd-row .pc-row .pc-fav{min-width:36px;min-height:36px;justify-content:center;color:var(--c-muted)}
+.cd-row .pc-row .pc-cmp[aria-pressed=true]{color:var(--c-link)}
+.cd-row .grid,.cd-row .grid-plp,.cd-row .grid-acc{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.cd-row .rail-track{grid-template-rows:repeat(2,auto);grid-auto-columns:min(340px,86%)}
+.cd-row .flash .rail-track{grid-template-rows:auto}
+@media (max-width:767px){
+  .cd-row .grid,.cd-row .grid-plp,.cd-row .grid-acc{grid-template-columns:1fr}
+  .cd-row .pc-row .pc-link{grid-template-columns:84px minmax(0,1fr)}
+}

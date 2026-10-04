@@ -1,0 +1,62 @@
+{
+ "id": "newegg",
+ "site": "newegg.com",
+ "market": "us",
+ "date": "2026-10-04",
+ "kind": "mass-retail",
+ "header": "Header xanh navy: logo, chọn địa chỉ giao, ô tìm kiếm lớn có giọng nói, thông báo, cờ quốc gia, nút chế độ, Sign In/Register, Returns & Orders, Cart; hàng chữ phụ (AI Mode, Menu, Price Protection Deals, Shell Shocker, PC Builder, Shopping Tools, Newegg Outlet, Best Sellers, Newegg Card, Games, Newegg Business, Feedback, Help Center). Banner cookie nổi.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "sidebar danh mục trái (13 nhóm) + banner lớn + 3 thẻ combo bên dưới (AMD combo, Desktop, Shell Shocker)",
+   "note": "Banner Techtember; thẻ combo có giá và nút Add to cart"
+  },
+  {
+   "role": "banner-row",
+   "form": "2 banner ngang (AMD Ryzen AI, Finder)",
+   "note": "Nằm dưới sidebar và thẻ combo"
+  },
+  {
+   "role": "deals",
+   "form": "Today's Best Deals: rail 5 sản phẩm với nhãn phần trăm giảm tròn đỏ",
+   "note": "Nút See all deals"
+  },
+  {
+   "role": "category-tiles",
+   "form": "4 khối ô nhóm: Components & Storage, Desktop PC, Lifestyle Essentials, Gear & Gadgets",
+   "note": "Mỗi khối 4-6 ô nhỏ (SSD, HDD, CPU, GPU, Home Audio, Console Gaming...)"
+  },
+  {
+   "role": "banner-row",
+   "form": "1 banner ngang Anker / Soundcore / eufy",
+   "note": "Plug into excellence"
+  },
+  {
+   "role": "shop-by-need",
+   "form": "Shopping Tools: lưới 5 x 2 thẻ công cụ",
+   "note": "PC Builder, NAS Builder, PC Upgrader, Gaming PC Finder, Server Configurator, PSU Wattage Calculator, ASUS NUC Configurator, Laptop Finder, Memory Finder, Network Builder"
+  },
+  {
+   "role": "hero-bento",
+   "form": "bento 1 ô lớn AI PC Store + 4 ô nhỏ",
+   "note": "Lowest price, Best sellers, Student Store, Newegg Select, Refurbished"
+  },
+  {
+   "role": "brands",
+   "form": "Featured Brands: hàng logo cuộn ngang",
+   "note": "ABS, AMD, ASUS, ASRock, GIGABYTE, Intel, MSI, Meta"
+  },
+  {
+   "role": "seo-text",
+   "form": "đoạn mô tả dài về Newegg (3 đoạn văn)",
+   "note": "Nhiều liên kết nội bộ trong văn bản"
+  },
+  {
+   "role": "newsletter",
+   "form": "Deals Just For You: ô nhập email + khối Download Our APP",
+   "note": "Có mã QR tải app và ô số điện thoại"
+  }
+ ],
+ "footer": "Footer navy: 5 cột (Customer Service, My Account, Company Information, Tools & Resources, Shop Our Brands), dòng bản quyền, icon mạng xã hội (khoảng 12).",
+ "observations": "Trang cao khoảng 5270 px. Có công cụ cấu hình (PC Builder) làm khối riêng, đặc trưng cửa hàng linh kiện. Có cả khối mô tả SEO dài dạng đoạn văn."
+}

@@ -1,0 +1,30 @@
+{# Compare picks 'duel': two products face to face, picture and price on each side, the spec names in a centred column between the values. Uses the first two products of sec.products. Pick it for a head-to-head of two flagship models. #}
+{% macro specval(p, row) -%}
+{%- set ns = namespace(v="") -%}
+{%- for g in p.specs %}{% for r in g.rows %}{% if r[0] == row and not ns.v %}{% set ns.v = r[1] %}{% endif %}{% endfor %}{% endfor -%}
+{%- if not ns.v and p.facets and p.facets.get(row) %}{% set f = p.facets.get(row) %}{% set ns.v = f|join(", ") if f is not string else f %}{% endif -%}
+{{ ns.v }}
+{%- endmacro %}
+{% set picks = (sec.products|map("extract", pid)|list)[:2] %}
+{% if picks|length == 2 %}
+{% set a = picks[0] %}{% set b = picks[1] %}
+<section class="sec ctn cpd" aria-labelledby="h-cp-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-cp-{{ sec._i }}">{{ sec.title or "Chọn máy nào" }}</h2>{% if sec.text %}<p class="muted">{{ sec.text }}</p>{% endif %}</div>
+  <div class="cpd-head">
+    {% for p in picks %}
+    <a class="cpd-prod" href="{{ root }}p/{{ p.id }}.html">
+      <img src="{{ root }}{{ p.image }}" alt="" width="400" height="400" loading="lazy">
+      <b>{{ p.name }}</b>
+      <span class="cp-price"><strong>{{ p.price|vnd }}</strong>{% if p.old_price %}<s>{{ p.old_price|vnd }}</s>{% endif %}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <dl class="cpd-rows">
+    {% for row in sec.rows or [] %}
+    {% set va = specval(a, row)|trim %}{% set vb = specval(b, row)|trim %}
+    <div class="cpd-row"><dd>{% if va %}{{ va }}{% else %}<span class="muted">Không ghi</span>{% endif %}</dd><dt>{{ row }}</dt><dd>{% if vb %}{{ vb }}{% else %}<span class="muted">Không ghi</span>{% endif %}</dd></div>
+    {% endfor %}
+  </dl>
+  <div class="cpd-act">{% for p in picks %}<a class="btn btn-primary" href="{{ root }}p/{{ p.id }}.html">Xem {{ p.name }}</a>{% endfor %}</div>
+</section>
+{% endif %}

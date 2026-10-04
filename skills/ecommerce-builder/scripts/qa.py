@@ -148,7 +148,7 @@ def main():
         step = "open product"
         try:
             errors.clear()
-            prod = page.evaluate("window.SHOP.products.find(p => p.variants.some(v => v.stock > 0) && p.options.length).id")
+            prod = page.evaluate("window.SHOP.products.find(p => p.variants[0].stock > 0 && p.options.length).id")
             page.goto(base + "/p/%s.html" % prod)
             step = "choose variant"
             btns = page.locator("[data-opt] [data-opt-btn]:not(.is-out)")

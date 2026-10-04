@@ -1,0 +1,21 @@
+/* Section 'bundle-offers': combos. Shared price styles, then the default 'cards' design. */
+.bo-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.bo-card,.bo-col{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:var(--radius-lg);background:var(--c-surface);border:1px solid var(--c-border)}
+.bo-card h3,.bo-col h3{font-family:var(--font-head);font-size:17px}
+.bo-items{display:flex;align-items:stretch;gap:0}
+.bo-items li{display:flex;align-items:center;flex:1 1 0;min-width:0}
+.bo-items a{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;min-width:0;padding:8px;border-radius:var(--radius);background:var(--c-surface-2);text-align:center;height:100%}
+.bo-items a:hover{outline:1px solid var(--c-accent)}
+.bo-items img{width:100%;max-width:90px;aspect-ratio:1;object-fit:contain}
+.bo-items span{font-size:12.5px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bo-plus{display:grid;place-items:center;flex:none;width:24px;color:var(--c-muted)}
+.bo-plus .i{width:16px;height:16px}
+.bo-sum{display:grid;grid-template-columns:1fr auto;gap:6px 10px;margin:0;font-size:14px}
+.bo-sum dt{color:var(--c-muted)}
+.bo-sum dd{margin:0;text-align:right;font-weight:700}
+.bo-was{text-decoration:line-through;color:var(--c-muted);font-weight:500}
+.bo-price{color:var(--c-price);font-size:19px;font-family:var(--font-head)}
+.bo-save{color:var(--c-ok)}
+.bo-note{font-size:12px;color:var(--c-muted)}
+.bo-card .btn{margin-top:auto}
+@media (max-width:767px){.bo-list{grid-template-columns:1fr}.bo-card,.bo-col{padding:14px}}

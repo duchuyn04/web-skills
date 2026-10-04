@@ -1,0 +1,10 @@
+/* Section 'accessories-for', variant 'grid'. */
+.acf-grid .acf-head{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+.acf-grid .acf-head h2{font-size:21px;order:0}
+.acf-headprod{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border-radius:999px;background:var(--c-surface);border:1px solid var(--c-border);min-height:48px;order:1;margin-left:auto}
+.acf-headprod:hover{border-color:var(--c-accent)}
+.acf-headprod img{width:36px;height:36px;object-fit:contain}
+.acf-headprod span{display:flex;flex-direction:column;line-height:1.25}
+.acf-headprod small{font-size:12px;color:var(--c-muted)}
+.acf-headprod b{font-size:14px}
+@media (max-width:767px){.acf-headprod{margin-left:0;order:0;width:100%}}

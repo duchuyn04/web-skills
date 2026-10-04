@@ -1,0 +1,16 @@
+{# Rail 'featured': the first product large on the left and the next four in a 2x2 grid on the right. Pick it to push one hero product of a category. #}
+{% set items = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
+{% set cat = (cats|selectattr("id", "equalto", sec.category)|first) if sec.category else None %}
+{% set list = items[:5] %}
+<section class="sec ctn" aria-labelledby="h-rf-{{ sec._i }}">
+  <div class="sec-head">
+    <h2 id="h-rf-{{ sec._i }}">{{ sec.title or (cat.name if cat else "Sản phẩm nổi bật") }}</h2>
+    {% if cat %}<a class="sec-more" href="{{ root }}c/{{ cat.id }}.html">Xem tất cả{{ arrow }}</a>{% endif %}
+  </div>
+  <div class="rf" id="rail-{{ sec._i }}">
+    <div class="rf-lead">{{ m.card(list[0], None, False) }}</div>
+    <div class="rf-rest">
+      {% for p in list[1:] %}{{ m.card(p) }}{% endfor %}
+    </div>
+  </div>
+</section>

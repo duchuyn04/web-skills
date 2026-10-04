@@ -1,0 +1,47 @@
+{
+ "id": "samsung-vn",
+ "site": "samsung.com/vn",
+ "market": "vn",
+ "date": "2026-10-04",
+ "kind": "premium-brand",
+ "header": "Thanh nav trắng một hàng: logo Samsung, Cửa Hàng, Di động, TV & AV, Gia Dụng, Màn hình và Thiết bị lưu trữ, Thiết bị đeo, Phụ kiện; phía trên bên phải Hỗ Trợ và For Business; icon tìm kiếm, giỏ, tài khoản. Banner cookie nổi ở lần tải đầu.",
+ "sections": [
+  {
+   "role": "hero-carousel",
+   "form": "khối toàn chiều rộng: ảnh lớn, tên sản phẩm, nút Tìm hiểu thêm và Mua, chấm điều hướng",
+   "note": "Galaxy Z Fold8 Ultra, Fold8, Flip8; slide tiếp theo Galaxy S26 Series"
+  },
+  {
+   "role": "hero-single",
+   "form": "khối nền xanh nhạt toàn chiều rộng + hàng 4 thẻ sản phẩm bên dưới",
+   "note": "Galaxy S26 Series; thẻ Galaxy Z Fold8, Z Flip8, Tab S12 Ultra, S26 FE"
+  },
+  {
+   "role": "collections",
+   "form": "các khối gồm thẻ sản phẩm nhỏ ở mức nhóm hàng",
+   "note": "Phần giữa chưa tải trong ảnh chụp (vùng trống khoảng 800 px do lazy load)"
+  },
+  {
+   "role": "hero-single",
+   "form": "Samsung Vision AI: khối nền xám + hàng 4 thẻ (Micro RGB, The Frame, Loa nghệ thuật, Màn hình 2026)",
+   "note": "Có nút Tìm hiểu thêm, Xem tất cả"
+  },
+  {
+   "role": "hero-single",
+   "form": "Được yêu thích nhất: khối nền xanh đậm, tủ lạnh và máy giặt Bespoke",
+   "note": "Nút Tìm hiểu thêm"
+  },
+  {
+   "role": "product-rail",
+   "form": "Được đề xuất cho bạn: rail thẻ sản phẩm (theo DOM)",
+   "note": "Rail ở khoảng 4756 px"
+  },
+  {
+   "role": "editorial",
+   "form": "Khám phá những câu chuyện: thẻ bài",
+   "note": "Khoảng 5542 px"
+  }
+ ],
+ "footer": "Footer Navigation nhiều cột (theo DOM, khoảng 6416 px).",
+ "observations": "Trang cao khoảng 7200 px. Cấu trúc là chuỗi khối toàn chiều rộng, mỗi khối một chủ đề. Giá sản phẩm không xuất hiện ở các khối hero."
+}

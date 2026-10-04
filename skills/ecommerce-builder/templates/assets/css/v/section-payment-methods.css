@@ -1,0 +1,14 @@
+/* Section 'payment-methods': tiles and list. */
+.pm{margin:0}
+.pm-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pm-tiles li{display:flex;gap:12px;align-items:center;padding:14px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.pm-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:var(--radius);background:var(--c-accent-soft);color:var(--c-accent-ink);flex:none}
+.pm-tiles b{display:block;font-size:14px}
+.pm-tiles span:not(.pm-ic){display:block;font-size:13px;color:var(--c-muted)}
+.pm-list{display:flex;flex-direction:column;gap:10px;padding:16px 20px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.pm-list h2{font-size:16px;font-family:var(--font-head)}
+.pm-list ul{display:flex;flex-wrap:wrap;gap:8px 24px}
+.pm-list li{display:flex;gap:8px;align-items:center;font-size:14px}
+.pm-list li .i{color:var(--c-muted)}
+.pm-list li span{color:var(--c-muted);font-size:13px}
+@media (max-width:600px){.pm-list li{flex-wrap:wrap}}

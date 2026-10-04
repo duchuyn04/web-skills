@@ -1,0 +1,8 @@
+/* Section 'category-tiles' (rows): a heading line and three cards per category. */
+.cs-row{margin-bottom:22px}
+.cs-row-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.cs-row-head .i{width:24px;height:24px;color:var(--c-accent-ink)}
+.cs-row-head h3{font-family:var(--font-head);font-size:19px}
+.cs-row-head small{color:var(--c-muted);font-size:13px}
+.cs-row-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:767px){.cs-row-items{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scrollbar-width:none;gap:8px}}

@@ -1,0 +1,13 @@
+{# Services 'cards': each service promise in its own boxed card with an icon well, title and line. Every promise must come from the brief. Pick it when there are 3-6 services worth a closer look. #}
+<section class="sec ctn" aria-labelledby="h-svc-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-svc-{{ sec._i }}">{{ sec.title or "Dịch vụ tại " ~ shop.name }}</h2></div>
+  <ul class="sc-grid">
+    {% for s in sec["items"] %}
+    <li class="sc-card">
+      <span class="sc-well">{{ icon(s.icon or "badge-check", "sc-ic") }}</span>
+      <b>{{ s.title }}</b>
+      {% if s.text %}<span class="sc-text">{{ s.text }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

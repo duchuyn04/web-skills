@@ -1,0 +1,19 @@
+{# Reviews 'quotes': three large pull quotes in columns with a thin rule between them, reviewer and product underneath. Use when a few strong reviews should read like testimonials. Text comes only from product reviews. #}
+{% set prods = (sec.products|map("extract", pid)|list) if sec.products else products %}
+{% set ns = namespace(all=[], seen=[]) %}
+{% for p in prods %}{% for r in p.reviews %}{% if r.text and r.text not in ns.seen and r.stars >= 4 %}{% set ns.seen = ns.seen + [r.text] %}{% set ns.all = ns.all + [{"r": r, "p": p}] %}{% endif %}{% endfor %}{% endfor %}
+{% set shown = (ns.all|sort(attribute="r.stars", reverse=true))[:3] %}
+{% if shown %}
+<section class="sec ctn rv rv-quotes" aria-labelledby="h-rv-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-rv-{{ sec._i }}">{{ sec.title or "Khách hàng nói về chúng tôi" }}</h2></div>
+  <ul class="rvq-grid">
+    {% for x in shown %}
+    <li class="rvq">
+      {{ {"avg": x.r.stars}|stars }}
+      <blockquote><p>{{ x.r.text }}</p></blockquote>
+      <p class="rvq-who"><b>{{ x.r.name }}</b>, mua <a href="{{ root }}p/{{ x.p.id }}.html">{{ x.p.name }}</a></p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

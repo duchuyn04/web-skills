@@ -1,0 +1,94 @@
+{# Listing 'rows': products as wide rows (picture, name, spec lines, price, buttons) with a list and grid switch, filters as collapsible groups with counts in a side column. Pick it for categories where buyers compare specs, such as laptops, TVs and appliances. #}
+{{ m.crumbs([(cat.name, None)]) }}
+<div class="ctn plp plr" data-plp data-cat="{{ cat.id }}">
+  <div class="plp-head">
+    <h1>{{ cat.name }} <small data-plp-count>{{ cat.count }} sản phẩm</small></h1>
+  </div>
+
+  <div class="plr-body">
+    <aside class="filters plr-filters" id="filters" data-filters aria-label="Bộ lọc">
+      <div class="filters-head">
+        <b>{{ icon("filter", "i-sm") }}Bộ lọc</b>
+        <button type="button" class="link-btn" data-filter-reset>Xóa bộ lọc</button>
+        <button type="button" class="icon-btn filters-close" data-filters-close aria-label="Đóng bộ lọc">{{ icon("x") }}</button>
+      </div>
+      <div class="filters-scroll">
+        {% if cat.brands|length > 1 %}
+        <details class="plr-grp" open>
+          <summary>Thương hiệu{{ icon("chevron-down", "i-sm") }}</summary>
+          <div class="plr-opts">
+            {% for b in cat.brands %}
+            <label class="check" data-count="{{ items|selectattr("brand", "equalto", b.id)|list|length }}"><input type="checkbox" name="brand" value="{{ b.id }}"><span>{{ b.name }}</span></label>
+            {% endfor %}
+          </div>
+        </details>
+        {% endif %}
+        <details class="plr-grp" open>
+          <summary>Mức giá{{ icon("chevron-down", "i-sm") }}</summary>
+          <div class="plr-opts">
+            {% for lo, hi in cat.price_ranges %}
+            <label class="check"><input type="checkbox" name="price" value="{{ lo }}-{{ hi or '' }}"><span>{{ m.price_range(lo, hi) }}</span></label>
+            {% endfor %}
+            <div class="price-custom">
+              <label><span class="sr">Giá từ</span><input type="number" inputmode="numeric" min="0" step="100000" placeholder="Từ" data-price-min></label>
+              <span aria-hidden="true">-</span>
+              <label><span class="sr">Giá đến</span><input type="number" inputmode="numeric" min="0" step="100000" placeholder="Đến" data-price-max></label>
+            </div>
+          </div>
+        </details>
+        {% for f in cat.facets %}
+        {% if f["values"] %}
+        <details class="plr-grp"{% if loop.index <= 2 %} open{% endif %}>
+          <summary>{{ f.label }}{{ icon("chevron-down", "i-sm") }}</summary>
+          <div class="plr-opts">
+            {% for v in f["values"] %}
+            <label class="check"><input type="checkbox" name="f:{{ f.key }}" value="{{ v }}"><span>{{ v }}</span></label>
+            {% endfor %}
+          </div>
+        </details>
+        {% endif %}
+        {% endfor %}
+        <details class="plr-grp" open>
+          <summary>Khác{{ icon("chevron-down", "i-sm") }}</summary>
+          <div class="plr-opts">
+            <label class="check"><input type="checkbox" name="instock" value="1"><span>Chỉ hiện hàng còn</span></label>
+            <label class="check"><input type="checkbox" name="sale" value="1"><span>Đang giảm giá</span></label>
+          </div>
+        </details>
+      </div>
+      <div class="filters-foot"><button class="btn btn-primary btn-block" type="button" data-filters-close>Xem <span data-plp-count-n>{{ cat.count }}</span> kết quả</button></div>
+    </aside>
+
+    <section class="plr-main" aria-label="Danh sách {{ cat.name }}">
+      <div class="plr-bar">
+        <button class="btn btn-outline toolbar-filter" type="button" data-filters-open aria-controls="filters">{{ icon("sliders", "i-sm") }}Lọc<b class="count" data-filter-count hidden>0</b></button>
+        <div class="plr-view" role="group" aria-label="Kiểu hiển thị">
+          <button type="button" data-view="rows" aria-pressed="true" aria-label="Xem dạng danh sách">{{ icon("list", "i-sm") }}<span>Danh sách</span></button>
+          <button type="button" data-view="grid" aria-pressed="false" aria-label="Xem dạng lưới">{{ icon("grid", "i-sm") }}<span>Lưới</span></button>
+        </div>
+        <label class="plr-sort"><span>Sắp xếp</span>
+          <select data-sort-select>
+            <option value="popular">Nổi bật</option><option value="price-asc">Giá thấp đến cao</option><option value="price-desc">Giá cao đến thấp</option><option value="discount">Giảm nhiều</option><option value="new">Mới về</option>
+          </select>
+        </label>
+      </div>
+      <ul class="active-filters" data-active-filters aria-label="Bộ lọc đang chọn"></ul>
+      <div class="grid grid-plp plr-list" data-plp-grid data-step="12">
+        {% for p in items %}{{ m.card(p, lazy=loop.index > 6) }}{% endfor %}
+      </div>
+      <div class="plp-empty" data-plp-empty hidden>
+        {{ m.empty("search", "Không có sản phẩm phù hợp", "Thử bỏ bớt một vài bộ lọc hoặc chọn mức giá khác.") }}
+        <div class="more"><button class="btn btn-outline" type="button" data-filter-reset>Xóa bộ lọc</button></div>
+      </div>
+      <div class="more"><button class="btn btn-outline" type="button" data-more>Xem thêm <span data-more-n></span> sản phẩm{{ icon("chevron-down", "i-sm") }}</button></div>
+      {% if cat.intro %}
+      <section class="box prose cat-intro" aria-labelledby="h-intro" data-clamp>
+        <h2 id="h-intro">{{ cat.intro_title or ("Chọn mua " ~ cat.name|lower ~ " tại " ~ shop.name) }}</h2>
+        {% for para in cat.intro %}<p>{{ para }}</p>{% endfor %}
+        <button class="link-btn clamp-btn" type="button" data-clamp-toggle hidden>Xem thêm{{ icon("chevron-down", "i-sm") }}</button>
+      </section>
+      {% endif %}
+    </section>
+  </div>
+</div>
+<div class="scrim" data-scrim hidden></div>

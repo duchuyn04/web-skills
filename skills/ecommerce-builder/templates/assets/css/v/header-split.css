@@ -1,0 +1,33 @@
+.hdr-split{background:var(--c-surface);color:var(--c-text);border-bottom:1px solid var(--c-border)}
+.hds-main{display:flex;align-items:center;gap:18px;min-height:68px}
+.hdr-split .hdr-burger{color:var(--c-text)}
+.hdr-split .logo{color:var(--c-text)}
+.hdr-split .logo-mark{background:var(--c-btn);color:var(--c-btn-fg)}
+.hdr-split .search{flex:1;max-width:none}
+.hdr-split .search input{min-height:46px;background:var(--c-surface-2);color:var(--c-text);border:1px solid var(--c-border);padding-left:18px;font-size:15px}
+.hdr-split .search input::placeholder{color:var(--c-muted)}
+.hdr-split .search input:focus{border-color:var(--c-link);background:var(--c-surface)}
+.hdr-split .search>button{color:var(--c-muted)}
+.hdr-split .hdr-act{color:var(--c-text)}
+.hdr-split .hdr-act:hover{background:var(--c-surface-2)}
+.hdr-split .hdr-cart .count{background:var(--c-price);color:var(--c-surface)}
+.hds-cats{border-top:1px solid var(--c-border);background:var(--c-surface)}
+.hds-cats-in{display:flex;align-items:center;gap:18px;min-height:46px}
+.hdr-split .hdr-btn{background:var(--c-btn);color:var(--c-btn-fg);min-height:36px;padding:6px 14px}
+.hdr-split .hdr-btn:hover{background:var(--c-btn-hover);filter:none}
+.hds-cats nav{flex:1;min-width:0}
+.hds-cats ul{display:flex;gap:2px 6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.hds-cats ul a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border-radius:var(--radius);font-size:14px;font-weight:500;white-space:nowrap;color:var(--c-text)}
+.hds-cats ul a:hover,.hds-cats ul a[aria-current=page]{background:var(--c-accent-soft);color:var(--c-accent-ink)}
+.hds-hot{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;white-space:nowrap;color:var(--c-accent-ink)}
+@media (max-width:1023px){
+  .hds-cats{display:none}
+  .hds-main{gap:10px}
+  .hdr-split .hdr-act span:not([data-account-label]){display:none}
+}
+@media (max-width:767px){
+  .hds-main{flex-wrap:wrap;gap:6px 8px;padding-top:8px;padding-bottom:10px;min-height:0}
+  .hdr-split .logo{margin-right:auto}
+  .hdr-split .search{order:5;flex-basis:100%}
+  .hdr-split .hdr-act span{display:none}
+}

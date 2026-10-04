@@ -1,0 +1,45 @@
+{# Hero 'ticker': a calm full-width banner (one slide, or a carousel with arrows when there are several) followed by a slim strip that scrolls product names with their prices. The strip pauses on hover and focus, has a pause button and stands still under reduced motion. Pick it for shops with many products and one main message. Data: slides, optional products (ids for the strip, default the first 12). #}
+{% set strip = [] %}
+{% for x in (sec.products or products[:12]|map(attribute="id")|list) %}{% set p0 = pid.get(x) %}{% if p0 %}{% set _ = strip.append(p0) %}{% endif %}{% endfor %}
+<section class="ht" aria-label="Khuyến mãi nổi bật">
+  <div class="ctn">
+    <div class="carousel ht-carousel" data-carousel data-interval="{{ sec.interval or 6000 }}">
+      <div class="carousel-track">
+        {% for s in sec.slides %}
+        {% set prod = pid.get(s.product) if s.product else None %}
+        <a class="slide ht-slide{% if loop.first %} is-active{% endif %}" href="{{ s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') }}" style="--slide-bg: {{ s.bg or 'var(--c-dark)' }}; --slide-ink: {{ s.ink or '#ffffff' }}" {% if not loop.first %}aria-hidden="true" tabindex="-1"{% endif %} data-slide>
+          <div class="slide-copy">
+            {% if s.label %}<span class="slide-label">{{ s.label }}</span>{% endif %}
+            <h2 class="slide-title">{{ s.title }}</h2>
+            {% if s.text %}<p class="slide-text">{{ s.text }}</p>{% endif %}
+            {% if prod %}<p class="slide-price">Giá chỉ từ <strong>{{ prod.price|vnd }}</strong></p>{% endif %}
+            <span class="btn btn-light">{{ s.cta or "Mua ngay" }}{{ arrow }}</span>
+          </div>
+          {% if s.art %}<img class="slide-art" src="{{ root }}{{ s.art }}" alt="" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+        </a>
+        {% endfor %}
+      </div>
+      {% if sec.slides|length > 1 %}
+      <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Banner trước">{{ icon("chevron-left") }}</button>
+      <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Banner tiếp theo">{{ icon("chevron-right") }}</button>
+      {% endif %}
+    </div>
+  </div>
+  {% if strip %}
+  <div class="ht-strip" data-ht-strip>
+    <div class="ctn ht-strip-in">
+      <button class="ht-pause icon-btn" type="button" data-ht-pause aria-pressed="false" aria-label="Dừng cuộn danh sách sản phẩm"><svg class="i i-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button>
+      <div class="ht-view">
+        <div class="ht-track">
+          <ul class="ht-list" aria-label="Sản phẩm nổi bật">
+            {% for p in strip %}<li><a href="{{ root }}p/{{ p.id }}.html"><span>{{ p.name }}</span><b>{{ p.price|vnd }}</b></a></li>{% endfor %}
+          </ul>
+          <ul class="ht-list ht-dup" aria-hidden="true">
+            {% for p in strip %}<li><a href="{{ root }}p/{{ p.id }}.html" tabindex="-1"><span>{{ p.name }}</span><b>{{ p.price|vnd }}</b></a></li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>

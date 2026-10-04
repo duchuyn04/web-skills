@@ -1,0 +1,19 @@
+{# Video 'player' (default): one large video card. The poster is a product picture; the YouTube player loads only after a click, so the page makes no third-party request until then. An item without a youtube id shows the poster and text without a play button. Pick it for one hands-on or review video. #}
+{% set it = sec["items"][0] if sec["items"] else None %}
+{% if it %}
+{% set prod = pid[it.product] if it.product else None %}
+<section class="sec ctn vd" aria-labelledby="h-vd-{{ sec._i }}">
+  <div class="sec-head"><h2 id="h-vd-{{ sec._i }}">{{ sec.title or "Video sản phẩm" }}</h2></div>
+  <div class="vd-card">
+    <div class="vd-media" data-yt-box>
+      {% if prod %}<img src="{{ root }}{{ prod.image }}" alt="" width="400" height="400" loading="lazy">{% endif %}
+      {% if it.youtube %}<button type="button" class="vd-play" data-yt="{{ it.youtube }}" data-yt-title="{{ it.title }}" aria-label="Phát video: {{ it.title }}"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20 7 4" fill="currentColor"/></svg></button>{% endif %}
+    </div>
+    <div class="vd-copy">
+      <h3>{{ it.title }}</h3>
+      {% if it.text %}<p>{{ it.text }}</p>{% endif %}
+      {% if prod %}<a class="btn btn-outline" href="{{ root }}p/{{ prod.id }}.html">Xem {{ prod.name }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}

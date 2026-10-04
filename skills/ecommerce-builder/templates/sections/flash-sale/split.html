@@ -1,0 +1,18 @@
+{# Flash sale 'split': a solid panel on the left with the title, countdown and link, the discounted products in a rail on the right. Pick it for a deal that is the main reason to visit. #}
+{% set fmap = {} %}
+{% for it in sec["items"] %}{% set _ = fmap.update({it.product: it}) %}{% endfor %}
+<section class="flash ctn fs" aria-labelledby="h-flash-{{ sec._i }}" data-flash data-ends="{{ sec.ends or '23:59' }}">
+  <div class="fs-grid">
+    <div class="fs-panel">
+      <h2 id="h-flash-{{ sec._i }}">{{ icon("flame") }}{{ sec.title or "Giá sốc hôm nay" }}</h2>
+      <p class="fs-label">Kết thúc sau</p>
+      <div class="flash-timer fs-timer" aria-label="Thời gian còn lại">
+        <b data-t="h">00</b><i>:</i><b data-t="m">00</b><i>:</i><b data-t="s">00</b>
+      </div>
+      <a class="fs-more" href="{{ root }}deals.html">Xem tất cả{{ arrow }}</a>
+    </div>
+    <div class="fs-rail">
+      {{ m.rail(sec["items"]|map(attribute="product")|map("extract", pid)|list, "rail-flash-" ~ sec._i, fmap) }}
+    </div>
+  </div>
+</section>

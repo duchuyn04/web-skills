@@ -1,0 +1,12 @@
+{# Rail 'compact': small row cards (thumbnail left, text right) in a grid that is two columns on phones and four on desktop. Pick it for accessories and cheaper products where the picture can be small. #}
+{% set items = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
+{% set cat = (cats|selectattr("id", "equalto", sec.category)|first) if sec.category else None %}
+<section class="sec ctn" aria-labelledby="h-rc-{{ sec._i }}">
+  <div class="sec-head">
+    <h2 id="h-rc-{{ sec._i }}">{{ sec.title or (cat.name if cat else "Sản phẩm nổi bật") }}</h2>
+    {% if cat %}<a class="sec-more" href="{{ root }}c/{{ cat.id }}.html">Xem tất cả{{ arrow }}</a>{% endif %}
+  </div>
+  <div class="rc-grid" id="rail-{{ sec._i }}">
+    {% for p in items[:sec.limit or 8] %}{{ m.card(p) }}{% endfor %}
+  </div>
+</section>

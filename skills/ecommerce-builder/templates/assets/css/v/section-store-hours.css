@@ -1,0 +1,16 @@
+/* Section 'store-hours': cards and strip. */
+.sh{margin:0}
+.sh-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.sh-card{display:flex;flex-direction:column;gap:6px;padding:16px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);font-size:14px}
+.sh-card>b{font-family:var(--font-head);font-size:16px}
+.sh-line{display:flex;gap:8px;align-items:flex-start;color:var(--c-muted)}
+.sh-line .i{margin-top:2px;flex:none}
+.sh-act{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
+.sh-act a{display:inline-flex;align-items:center;gap:6px;min-height:32px;color:var(--c-link);font-weight:600}
+.sh-act a:hover{text-decoration:underline}
+.sh-strip{background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
+.sh-strip li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) minmax(0,1.2fr) auto;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--c-border);font-size:14px}
+.sh-strip li:last-child{border-bottom:0}
+.sh-addr{color:var(--c-muted)}
+.sh-tel{display:inline-flex;align-items:center;min-height:32px;color:var(--c-link);font-weight:600}
+@media (max-width:767px){.sh-strip li{grid-template-columns:1fr;gap:2px}}
