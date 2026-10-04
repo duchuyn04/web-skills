@@ -16,14 +16,14 @@ Examples of requests and the skill they trigger:
 In Claude Code:
 
 ```
-/plugin marketplace add duchuyn04/bpo-landing-builder
+/plugin marketplace add duchuyn04/web-skills
 /plugin install web-skills@web-skills
 ```
 
 Other agents (Codex, Cursor and others) read plain skill folders. Copy or link the folders in `skills/` into the agent's skills directory (for example `.agents/skills/` or `.claude/skills/`), or use the `skills` CLI:
 
 ```
-npx skills@latest add duchuyn04/bpo-landing-builder
+npx skills@latest add duchuyn04/web-skills
 ```
 
 ## Requirements
