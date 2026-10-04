@@ -38,6 +38,7 @@ EXAMPLE = SKILL / "examples" / "demo-electronics.shop.json"
 sys.path.insert(0, str(HERE))
 import rules  # noqa: E402
 import devices  # noqa: E402
+import variants as V  # noqa: E402
 
 ARROW_SVG = ('<svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" '
              'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line>'
@@ -45,7 +46,8 @@ ARROW_SVG = ('<svg class="i i-arrow" viewBox="0 0 24 24" fill="none" stroke="cur
 
 PRESETS = json.loads((DATA / "presets.json").read_text(encoding="utf-8"))
 STYLES = json.loads((DATA / "styles.json").read_text(encoding="utf-8"))
-VARIANTS = STYLES.pop("_variants")
+STYLES.pop("_variants", None)
+VARIANTS = V.all_variants()       # part -> variant names, found from the template folders
 ICONS = json.loads((DATA / "icons.json").read_text(encoding="utf-8"))
 PROVINCES = json.loads((DATA / "provinces.json").read_text(encoding="utf-8"))["provinces"]
 
@@ -54,8 +56,7 @@ TOP_KEYS = {"_note", "demo", "sample_content", "style", "layout", "lang", "brief
 PRODUCT_KEYS = {"id", "name", "brand", "category", "device", "price", "old_price", "options", "stock", "sku", "color", "facets",
                 "card_specs", "highlights", "description", "specs", "promos", "badges", "installment", "warranty", "in_box",
                 "rating", "reviews", "qa", "faq", "sold", "released", "addons", "keywords", "images"}
-HOME_TYPES = ["hero", "categories", "flash-sale", "rail", "banners", "brands", "grid", "benefits", "stores-cta",
-              "spotlight-tiles", "lineup", "needs", "bundle", "rooms", "services", "collections", "editorial", "newsletter"]
+HOME_TYPES = V.section_types()
 BADGES = {"new": "Mới", "hot": "Bán chạy", "installment": "Trả góp 0%", "exclusive": "Độc quyền", "preorder": "Đặt trước"}
 ORDER_STATUSES = [
     ["pending", "Chờ xác nhận"], ["confirmed", "Đã xác nhận"], ["packing", "Đang chuẩn bị"],
@@ -187,7 +188,7 @@ def walk_strings(node, path=""):
         yield path, node
     elif isinstance(node, dict):
         for k, v in node.items():
-            if k in ("brief", "_note", "id", "href", "url", "hex", "map", "image", "images", "sku", "icon", "device"):
+            if k in ("brief", "_note", "id", "href", "url", "hex", "map", "image", "images", "sku", "icon", "device", "layout", "style", "variant", "blueprint", "bg", "device_color"):
                 continue
             yield from walk_strings(v, "%s.%s" % (path, k) if path else k)
     elif isinstance(node, list):
@@ -625,10 +626,14 @@ def seed_data(shop, norm, rng, days=400):
             "traffic": traffic, "store_stock": store_stock, "demo": True}
 
 
+def style_layout(style):
+    return {k: STYLES[style].get(k, V.PART_DEFAULT.get(k)) for k in VARIANTS}
+
+
 def look_of(shop):
-    """What a visitor notices first: style, the six layout parts and the colour preset."""
+    """What a visitor notices first: style, the layout parts and the colour preset."""
     style = shop.get("style", "retail") if shop.get("style") in STYLES else "retail"
-    layout = {k: STYLES[style][k] for k in VARIANTS}
+    layout = style_layout(style)
     layout.update({k: v for k, v in (shop.get("layout") or {}).items() if k in VARIANTS and v in VARIANTS[k]})
     preset = (shop.get("theme") or {}).get("preset", STYLES[style]["preset"])
     return style, layout, preset
@@ -649,11 +654,13 @@ def check_variety(ctx, shop, shop_path):
             continue
         ostyle, olayout, opreset = look_of(o)
         same = [k for k in VARIANTS if layout[k] == olayout[k]]
-        if style == ostyle and len(same) >= 5 and preset == opreset:
+        total = sum(V.PART_WEIGHT.get(k, 1) for k in VARIANTS) + 4          # +4: style 2, preset 2
+        score = sum(V.PART_WEIGHT.get(k, 1) for k in same) + (2 if style == ostyle else 0) + (2 if preset == opreset else 0)
+        if score / total >= 0.8:
             free = {k: [v for v in VARIANTS[k] if v != layout[k]] for k in ("header", "hero", "card")}
-            ctx.err("layout", "this shop looks like %s (style %s, same %s and preset %s). Change at least two parts in \"layout\" "
+            ctx.err("layout", "this shop looks like %s (%d%% the same: style %s, preset %s, same %s). Change the header, hero or card in \"layout\" "
                     "(header: %s; hero: %s; card: %s), pick another preset, or choose another style." % (
-                        other.parent.name, style, ", ".join(same), preset, ", ".join(free["header"]), ", ".join(free["hero"]), ", ".join(free["card"])))
+                        other.parent.name, round(score * 100 / total), style, preset, ", ".join(same), ", ".join(free["header"]), ", ".join(free["hero"]), ", ".join(free["card"])))
 
 
 # --------------------------------------------------------------------------- render helpers
@@ -690,7 +697,7 @@ def build(shop_path, out_dir, ctx):
     if style not in STYLES:
         ctx.err("style", "unknown style '%s'. Use one of: %s" % (style, ", ".join("%s (%s)" % (k, v["pick"]) for k, v in STYLES.items())))
         style = "retail"
-    layout = {k: STYLES[style][k] for k in VARIANTS}
+    layout = style_layout(style)
     for k, val in (shop.get("layout") or {}).items():
         if k not in VARIANTS:
             ctx.err("layout." + k, "unknown layout part. Use: %s" % ", ".join(VARIANTS))
@@ -699,9 +706,11 @@ def build(shop_path, out_dir, ctx):
         else:
             layout[k] = val
     for k, val in layout.items():
-        folder = {"header": "layout/headers", "footer": "layout/footers", "hero": "sections/hero", "card": "partials/cards", "pdp": "pdp", "plp": "plp"}[k]
-        if not (TPL / folder / (val + ".html")).exists():
-            ctx.err("layout." + k, "the %s variant '%s' is not built yet; choose another one: %s" % (k, val, ", ".join(x for x in VARIANTS[k] if (TPL / folder / (x + ".html")).exists())))
+        if val not in VARIANTS[k]:
+            ctx.err("layout." + k, "the %s variant '%s' is not built; choose one of: %s" % (k, val, ", ".join(VARIANTS[k])))
+        else:
+            for e in V.check_variant(k, val):
+                ctx.err("layout." + k, e)
     tvars, preset, preset_name, admin_vars = theme_vars(shop.get("theme") or {}, ctx, STYLES[style]["preset"])
 
     home = shop.get("home") or []
@@ -730,11 +739,11 @@ def build(shop_path, out_dir, ctx):
         if t not in HOME_TYPES:
             ctx.err(path + ".type", "unknown section '%s'. Use one of: %s" % (t, ", ".join(HOME_TYPES)))
             continue
-        if not (TPL / "sections" / (t + ".html")).exists():
-            ctx.err(path + ".type", "section '%s' is not built yet" % t)
-            continue
-        if t == "hero" and sec.get("variant") and sec["variant"] not in VARIANTS["hero"]:
-            ctx.err(path + ".variant", "unknown hero '%s'. Use one of: %s" % (sec["variant"], ", ".join(VARIANTS["hero"])))
+        have = V.section_variants(t)
+        if sec.get("variant") and sec["variant"] not in have:
+            ctx.err(path + ".variant", "section '%s' has no variant '%s'%s" % (t, sec["variant"], ("; use one of: " + ", ".join(have)) if have else " (it has a single design)"))
+        for e in V.check_section(t, sec.get("variant") if sec.get("variant") in have else None):
+            ctx.err(path, e)
         if t == "hero":
             if not 1 <= len(sec.get("slides") or []) <= 5:
                 ctx.err(path + ".slides", "give 1-5 slides, each with title, text, cta and product (or device)")
@@ -869,10 +878,12 @@ def build(shop_path, out_dir, ctx):
         vf = TPL / "assets/css/v" / ("%s-%s.css" % (k, val))
         if vf.exists():
             parts.append("/* %s %s */\n" % (k, val) + vf.read_text(encoding="utf-8"))
-    for name in sorted({sec.get("type") for sec in home}):
-        sf = TPL / "assets/css/v" / ("section-%s.css" % name)
-        if sf.exists():
-            parts.append("/* section %s */\n" % name + sf.read_text(encoding="utf-8"))
+    used = sorted({(sec.get("type"), sec.get("variant") or "") for sec in home})
+    for typ, var in used:
+        for name in ([typ, "%s-%s" % (typ, var)] if var else [typ]):
+            sf = TPL / "assets/css/v" / ("section-%s.css" % name)
+            if sf.exists() and ("/* section %s */" % name) not in "".join(parts):
+                parts.append("/* section %s */\n" % name + sf.read_text(encoding="utf-8"))
     stf = TPL / "assets/css/styles" / (style + ".css")
     if stf.exists():
         parts.append("/* style %s */\n" % style + stf.read_text(encoding="utf-8"))
@@ -887,10 +898,13 @@ def build(shop_path, out_dir, ctx):
         jf = TPL / "assets/js/v" / ("%s-%s.js" % (k, val))
         if jf.exists():
             js_parts.append(jf.read_text(encoding="utf-8"))
-    for name in sorted({sec.get("type") for sec in home}):
-        jf = TPL / "assets/js/v" / ("section-%s.js" % name)
-        if jf.exists():
-            js_parts.append(jf.read_text(encoding="utf-8"))
+    seen_js = set()
+    for typ, var in used:
+        for name in ([typ, "%s-%s" % (typ, var)] if var else [typ]):
+            jf = TPL / "assets/js/v" / ("section-%s.js" % name)
+            if jf.exists() and name not in seen_js:
+                seen_js.add(name)
+                js_parts.append(jf.read_text(encoding="utf-8"))
     sj = TPL / "assets/js/styles" / (style + ".js")
     if sj.exists():
         js_parts.append(sj.read_text(encoding="utf-8"))
@@ -1014,7 +1028,11 @@ def main():
         print("presets:", ", ".join("%s (%s)" % (k, v.get("pick", "")) for k, v in PRESETS.items()))
         print("home sections:", ", ".join(HOME_TYPES))
         print("styles:", "; ".join("%s (%s)" % (k, v["pick"]) for k, v in STYLES.items()))
-        print("layout parts:", "; ".join("%s: %s" % (k, ", ".join(v)) for k, v in VARIANTS.items()))
+        for k, vs in VARIANTS.items():
+            print("layout %s:" % k)
+            for v in vs:
+                print("   %s: %s" % (v, V.describe(V.part_file(k, v)) or ""))
+        print("section variants:", "; ".join("%s: %s" % (t, ", ".join(V.section_variants(t))) for t in HOME_TYPES if V.section_variants(t)))
         print("badges:", ", ".join(BADGES))
         return
     if not a.shop or not a.out:

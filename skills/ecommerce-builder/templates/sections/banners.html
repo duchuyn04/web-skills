@@ -1,3 +1,4 @@
+{# Banners: 2-4 colour tiles with a title, a line of text, a call to action and the product or device art. Pick it for current offers under the main banner. #}
 <section class="sec ctn" aria-label="{{ sec.title or 'Ưu đãi' }}">
   {% if sec.title %}<div class="sec-head"><h2>{{ sec.title }}</h2></div>{% endif %}
   <div class="banners banners-{{ sec["items"]|length }}">

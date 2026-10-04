@@ -50,10 +50,32 @@ CHECK_JS = r"""
 """
 
 
+def reveal(page, selector):
+    """Multi-step checkouts keep every field in one form but show them step by step. Advance with [data-step-next]
+    (validating the visible fields) until the element can be used."""
+    for _ in range(6):
+        if page.locator(selector).first.is_visible():
+            return
+        nxt = page.locator("[data-step-next]:visible")
+        if not nxt.count():
+            return
+        nxt.first.click()
+        page.wait_for_timeout(120)
+
+
+def press_place_or_next(page):
+    po = page.locator("[data-place-order]")
+    if po.first.is_visible():
+        po.first.click()
+    else:
+        page.locator("[data-step-next]:visible").first.click()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("dist")
     ap.add_argument("--shots", action="store_true")
+    ap.add_argument("--quick", action="store_true", help="check a sample of pages (home, a category, a product, search, compare, cart, checkout, tracking, account) instead of all")
     a = ap.parse_args()
     dist = Path(a.dist).resolve()
     rep = json.loads((dist / "build-report.json").read_text(encoding="utf-8"))
@@ -87,7 +109,12 @@ def main():
         # 1. every page, two widths
         for w, h in ((1440, 900), (390, 844)):
             page.set_viewport_size({"width": w, "height": h})
-            for rel in rep["pages"]:
+            pages_to_check = rep["pages"]
+            if a.quick:
+                keep = ["index.html", "search.html", "compare.html", "cart.html", "checkout.html", "order.html", "track.html", "account/index.html", "account/login.html", "admin/index.html"]
+                firsts = [next((p for p in rep["pages"] if p.startswith(pre)), None) for pre in ("c/", "p/", "policy/")]
+                pages_to_check = [p for p in rep["pages"] if p in keep or p in firsts]
+            for rel in pages_to_check:
                 errors.clear()
                 url = base + "/" + rel
                 if rel == "admin/order.html":
@@ -113,7 +140,7 @@ def main():
                     warns.append("%s: %d tap targets under 24px (%s)" % (where, len(r["small"]), ", ".join(r["small"][:3])))
                 if a.shots or rel in ("index.html", "admin/index.html"):
                     page.screenshot(path=str(qa / ("%s-%d.png" % (rel.replace("/", "_").replace(".html", ""), w))), full_page=True)
-            print("OK   %d pages checked at %dpx" % (len(rep["pages"]), w))
+            print("OK   %d pages checked at %dpx" % (len(pages_to_check), w))
 
         # 2. buying flow
         page.set_viewport_size({"width": 1440, "height": 900})
@@ -143,15 +170,20 @@ def main():
                 page.wait_for_timeout(100)
             step = "checkout validation"
             page.goto(base + "/checkout.html")
-            page.locator("[data-place-order]").click()
+            press_place_or_next(page)
             assert page.locator("[aria-invalid=true]").count() >= 2, "empty checkout form was not stopped"
             step = "checkout fill"
+            reveal(page, "input[name=name]")
             page.fill("input[name=name]", "Nguyễn Văn Kiểm")
             page.fill("input[name=phone]", "0912345678")
+            reveal(page, "select[name=province]")
             page.select_option("select[name=province]", index=1)
+            reveal(page, "input[name=ward]")
             page.fill("input[name=ward]", "Phường Bến Thành")
+            reveal(page, "input[name=street]")
             page.fill("input[name=street]", "12 Lê Lợi")
-            page.locator("[data-place-order]").click()
+            reveal(page, "[data-place-order]")
+            page.locator("[data-place-order]").first.click()
             page.wait_for_url("**/order.html?code=*", timeout=5000)
             code = page.locator("[data-o-code]").inner_text().strip()
             assert code, "order page shows no code"

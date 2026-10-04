@@ -1,42 +1,4 @@
 {% extends "layout/base.html" %}
-{% import "partials/macros.html" as m with context %}
 {% block main %}
-{{ m.crumbs([("Giỏ hàng", None)]) }}
-<div class="ctn page" data-cart-page>
-  <div class="page-head"><h1>Giỏ hàng <small data-cart-n></small></h1></div>
-  <div class="cart-grid" data-cart-full hidden>
-    <section class="cart-items" aria-label="Sản phẩm trong giỏ">
-      <div class="ship-progress" data-free-ship hidden><p data-free-ship-text></p><i style="--w: 0%"></i></div>
-      <ul class="cart-list" data-cart-list></ul>
-    </section>
-    <aside class="summary" aria-label="Tóm tắt đơn hàng">
-      <div class="summary-box">
-        <h2>Tóm tắt đơn hàng</h2>
-        <form class="voucher" data-voucher-form>
-          <label class="sr" for="vc">Mã giảm giá</label>
-          <input id="vc" name="code" placeholder="Nhập mã giảm giá" autocomplete="off" data-voucher-input>
-          <button class="btn btn-outline" type="submit">Áp dụng</button>
-        </form>
-        <p class="voucher-msg" data-voucher-msg></p>
-        {% if promotions %}
-        <details class="voucher-list">
-          <summary>{{ icon("ticket", "i-sm") }}Xem mã đang có ({{ promotions|length }})</summary>
-          <ul>{% for pr in promotions %}<li><b>{{ pr.code }}</b><span>{{ pr.label }}</span><button class="link-btn" type="button" data-voucher-use="{{ pr.code }}">Dùng</button></li>{% endfor %}</ul>
-        </details>
-        {% endif %}
-        <dl class="totals" data-totals></dl>
-        <a class="btn btn-primary btn-block btn-lg" href="checkout.html" data-checkout-link>Tiến hành đặt hàng</a>
-        <a class="btn btn-ghost btn-block" href="index.html">Tiếp tục mua sắm</a>
-        <p class="secure">{{ icon("lock", "i-sm") }}Thông tin đơn hàng được mã hóa khi gửi.</p>
-      </div>
-    </aside>
-  </div>
-  <div data-cart-empty hidden>
-    {{ m.empty("shopping-cart", "Giỏ hàng đang trống", "Thêm sản phẩm vào giỏ để đặt hàng. Giỏ hàng được giữ trên trình duyệt này.", "Tiếp tục mua sắm", root ~ "index.html") }}
-  </div>
-  <section class="sec" aria-labelledby="h-cart-sug">
-    <div class="sec-head"><h2 id="h-cart-sug">Gợi ý mua kèm</h2></div>
-    {{ m.rail((products|sort(attribute="price"))[:10], "rail-cart") }}
-  </section>
-</div>
+{% include "cart/" ~ layout.cart ~ ".html" %}
 {% endblock %}

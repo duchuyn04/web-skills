@@ -1,0 +1,22 @@
+{# Account shell 'sidebar': user card and side menu on the left, the page content on the right. #}
+{% extends "layout/base.html" %}
+{% import "partials/macros.html" as m with context %}
+{% block main %}
+{{ m.crumbs([("Tài khoản", root ~ "account/index.html" if acc != "index" else None)] + ([(title.split(" | ")[0], None)] if acc != "index" else [])) }}
+<div class="ctn page acc-grid" data-account="{{ acc }}">
+  <aside class="acc-side">
+    <div class="acc-user"><span class="avatar avatar-lg" aria-hidden="true" data-user-initial>K</span><div><b data-user-name>Khách</b><small data-user-phone></small></div></div>
+    <nav class="side-nav" aria-label="Tài khoản">
+      <ul>
+        {% for key, label, ic in [("index", "Tổng quan", "dashboard"), ("orders", "Đơn hàng của tôi", "package"), ("wishlist", "Sản phẩm yêu thích", "heart"), ("addresses", "Sổ địa chỉ", "map-pin")] %}
+        <li><a href="{{ root }}account/{{ key }}.html" {% if acc == key or (acc == "order" and key == "orders") %}aria-current="page"{% endif %}>{{ icon(ic, "i-sm") }}{{ label }}</a></li>
+        {% endfor %}
+        <li><button type="button" class="side-nav-btn" data-logout>{{ icon("log-out", "i-sm") }}Đăng xuất</button></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="acc-main">
+    {% block account %}{% endblock %}
+  </div>
+</div>
+{% endblock %}

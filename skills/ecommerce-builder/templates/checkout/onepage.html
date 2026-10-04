@@ -1,0 +1,104 @@
+{# Checkout 'onepage': buyer, delivery and payment as numbered blocks on one page, order summary on the right. Fields live in form#co-form and stay visible at all times. #}
+{% import "partials/macros.html" as m with context %}
+<div class="ctn page" data-checkout>
+  <ol class="steps" aria-label="Các bước đặt hàng">
+    <li class="is-done"><a href="cart.html">{{ icon("check", "i-sm") }}<span>Giỏ hàng</span></a></li>
+    <li class="is-on" aria-current="step"><span>{{ icon("clipboard", "i-sm") }}Thông tin đặt hàng</span></li>
+    <li><span>{{ icon("check-circle", "i-sm") }}Hoàn tất</span></li>
+  </ol>
+  <div data-co-empty hidden>{{ m.empty("shopping-cart", "Giỏ hàng đang trống", "Chọn sản phẩm trước khi đặt hàng.", "Về trang chủ", root ~ "index.html") }}</div>
+  <div class="co-grid" data-co-wrap hidden>
+    <form class="co-main" id="co-form" data-co-form novalidate>
+      <section class="co-block" aria-labelledby="h-co1">
+        <h2 id="h-co1"><span class="num">1</span>Thông tin người mua</h2>
+        <p class="co-login" data-co-login>Đã có tài khoản? <a href="account/login.html?next=checkout">Đăng nhập</a> để dùng địa chỉ đã lưu, hoặc tiếp tục đặt hàng không cần tài khoản.</p>
+        <div class="form-grid">
+          <div class="field-row">
+            <label class="field"><span>Giới tính</span>
+              <select name="title"><option>Anh</option><option>Chị</option></select></label>
+            <label class="field field-grow"><span>Họ và tên <b aria-hidden="true">*</b></span><input name="name" required autocomplete="name" placeholder="Nguyễn Văn A"></label>
+          </div>
+          <label class="field"><span>Số điện thoại <b aria-hidden="true">*</b></span><input name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="0912 345 678" pattern="^(0|\+84)(3|5|7|8|9)[0-9]{8}$"></label>
+          <label class="field"><span>Email (nhận hóa đơn và cập nhật đơn)</span><input name="email" type="email" autocomplete="email" placeholder="ban@example.com"></label>
+        </div>
+      </section>
+
+      <section class="co-block" aria-labelledby="h-co2">
+        <h2 id="h-co2"><span class="num">2</span>Cách nhận hàng</h2>
+        <div class="seg" role="radiogroup" aria-label="Cách nhận hàng">
+          <label class="seg-opt"><input type="radio" name="receive" value="ship" checked>{{ icon("truck") }}<span><b>Giao tận nơi</b><small>Giao trên toàn quốc</small></span></label>
+          {% if stores %}<label class="seg-opt"><input type="radio" name="receive" value="pickup">{{ icon("store") }}<span><b>Nhận tại cửa hàng</b><small>Miễn phí, giữ hàng 3 ngày</small></span></label>{% endif %}
+        </div>
+        <div class="co-ship" data-co-ship>
+          <div class="form-grid form-grid-2">
+            <label class="field"><span>Tỉnh, thành phố <b aria-hidden="true">*</b></span>
+              <select name="province" required data-province><option value="">Chọn tỉnh, thành</option></select></label>
+            <label class="field"><span>Phường, xã <b aria-hidden="true">*</b></span><input name="ward" required placeholder="Ví dụ: Phường Bến Thành"></label>
+            <label class="field field-full"><span>Số nhà, tên đường <b aria-hidden="true">*</b></span><input name="street" required autocomplete="street-address" placeholder="Ví dụ: 12 Lê Lợi"></label>
+          </div>
+          <fieldset class="cards-radio" data-ship-methods>
+            <legend>Phương thức giao hàng</legend>
+            {% for s in shipping %}
+            <label class="card-radio" data-ship-method="{{ s.id }}" {% if s.cities %}data-cities="{{ s.cities|join('|') }}"{% endif %}>
+              <input type="radio" name="shipping" value="{{ s.id }}" {% if loop.first %}checked{% endif %}>
+              <span class="card-radio-body"><b>{{ s.name }}</b><small>{{ s.eta }}{% if s.cities %}, chỉ tại {{ s.cities|join(", ") }}{% endif %}</small></span>
+              <span class="card-radio-price" data-ship-fee="{{ s.fee }}" data-free-over="{{ s.free_over or '' }}">{{ s.fee|vnd if s.fee else "Miễn phí" }}</span>
+            </label>
+            {% endfor %}
+          </fieldset>
+        </div>
+        {% if stores %}
+        <div class="co-pickup" data-co-pickup hidden>
+          <fieldset class="cards-radio">
+            <legend>Chọn cửa hàng</legend>
+            {% for st in stores %}
+            <label class="card-radio">
+              <input type="radio" name="store" value="{{ st.id }}" {% if loop.first %}checked{% endif %}>
+              <span class="card-radio-body"><b>{{ st.name }}</b><small>{{ st.address }}</small><small>{{ st.hours }}</small></span>
+            </label>
+            {% endfor %}
+          </fieldset>
+        </div>
+        {% endif %}
+        <label class="field"><span>Ghi chú cho đơn hàng</span><textarea name="note" rows="2" placeholder="Ví dụ: gọi trước khi giao"></textarea></label>
+        <label class="check"><input type="checkbox" name="invoice" data-invoice-toggle><span>Xuất hóa đơn công ty</span></label>
+        <div class="form-grid form-grid-2" data-invoice hidden>
+          <label class="field"><span>Tên công ty</span><input name="company"></label>
+          <label class="field"><span>Mã số thuế</span><input name="tax_code" inputmode="numeric" pattern="^[0-9]{10}([0-9]{3})?$"></label>
+          <label class="field field-full"><span>Địa chỉ công ty</span><input name="company_address"></label>
+        </div>
+      </section>
+
+      <section class="co-block" aria-labelledby="h-co3">
+        <h2 id="h-co3"><span class="num">3</span>Phương thức thanh toán</h2>
+        <fieldset class="cards-radio" data-pay-methods>
+          <legend class="sr">Phương thức thanh toán</legend>
+          {% for p in payments %}
+          <label class="card-radio">
+            <input type="radio" name="payment" value="{{ p.id }}" {% if loop.first %}checked{% endif %}>
+            <span class="card-radio-ic">{{ icon(p.icon or "credit-card") }}</span>
+            <span class="card-radio-body"><b>{{ p.name }}</b>{% if p.note %}<small>{{ p.note }}</small>{% endif %}</span>
+          </label>
+          {% endfor %}
+        </fieldset>
+      </section>
+    </form>
+
+    <aside class="summary co-summary" aria-label="Đơn hàng">
+      <div class="summary-box">
+        <h2>Đơn hàng <small data-co-count></small> <a class="link-sm" href="cart.html">Sửa</a></h2>
+        <ul class="co-items" data-co-items></ul>
+        <form class="voucher" data-voucher-form>
+          <label class="sr" for="vc2">Mã giảm giá</label>
+          <input id="vc2" name="code" placeholder="Mã giảm giá" autocomplete="off" data-voucher-input>
+          <button class="btn btn-outline" type="submit">Áp dụng</button>
+        </form>
+        <p class="voucher-msg" data-voucher-msg></p>
+        <dl class="totals" data-totals></dl>
+        <button class="btn btn-primary btn-block btn-lg" type="submit" form="co-form" data-place-order>Đặt hàng</button>
+        <p class="fine">Bấm Đặt hàng nghĩa là bạn đồng ý với <a href="policy/{{ policies[0].id }}.html">{{ policies[0].title|lower }}</a>{% if policies|length > 1 %} và <a href="policy/{{ policies[-1].id }}.html">{{ policies[-1].title|lower }}</a>{% endif %} của {{ shop.name }}.</p>
+        <p class="secure">{{ icon("lock", "i-sm") }}Thông tin của bạn chỉ dùng để giao hàng và bảo hành.</p>
+      </div>
+    </aside>
+  </div>
+</div>

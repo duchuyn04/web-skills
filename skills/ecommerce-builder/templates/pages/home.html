@@ -2,6 +2,6 @@
 {% import "partials/macros.html" as m with context %}
 {% block main %}
 {% for sec in sections %}
-{% include "sections/" ~ sec.type ~ ".html" %}
+{% include ["sections/" ~ sec.type ~ "/" ~ (sec.variant or "default") ~ ".html", "sections/" ~ sec.type ~ ".html"] %}
 {% endfor %}
 {% endblock %}

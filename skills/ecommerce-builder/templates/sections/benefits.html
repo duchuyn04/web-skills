@@ -1,3 +1,4 @@
+{# Benefits: a row of 3-4 promises with icons (delivery, returns, installment) taken from the shop's benefits list. #}
 <section class="sec ctn" aria-label="Cam kết">
   <ul class="benefits">
     {% for b in benefits %}<li>{{ icon(b.icon) }}<div><b>{{ b.title }}</b><span>{{ b.text }}</span></div></li>{% endfor %}

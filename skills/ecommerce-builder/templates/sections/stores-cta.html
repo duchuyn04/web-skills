@@ -1,3 +1,4 @@
+{# Stores call to action: a band that says how many stores the shop has and where, with a link to the store locator. #}
 {% if stores %}
 {% set cities = stores|map(attribute="city")|unique|list %}
 <section class="sec ctn">

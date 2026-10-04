@@ -1,37 +1,4 @@
 {% extends "layout/base.html" %}
-{% import "partials/macros.html" as m with context %}
 {% block main %}
-<div class="ctn page" data-order-page>
-  <div data-order-missing hidden>{{ m.empty("package", "Không tìm thấy đơn hàng", "Đơn hàng không có trên trình duyệt này. Tra cứu bằng mã đơn và số điện thoại.", "Tra cứu đơn hàng", root ~ "track.html") }}</div>
-  <div class="order-done" data-order-body hidden>
-    <div class="order-hero">
-      <span class="order-ok">{{ icon("check") }}</span>
-      <div>
-        <h1>Đặt hàng thành công</h1>
-        <p>Cảm ơn <b data-o-name></b>. Mã đơn của bạn là <b class="code" data-o-code></b>. {{ shop.name }} sẽ gọi xác nhận trong giờ làm việc ({{ shop.hours }}).</p>
-      </div>
-    </div>
-    <div class="order-grid">
-      <section class="box" aria-labelledby="h-o-items">
-        <h2 id="h-o-items">Sản phẩm</h2>
-        <ul class="co-items" data-o-items></ul>
-        <dl class="totals" data-o-totals></dl>
-      </section>
-      <div class="order-side">
-        <section class="box" data-o-pay-box aria-labelledby="h-o-pay">
-          <h2 id="h-o-pay">Thanh toán</h2>
-          <div data-o-pay></div>
-        </section>
-        <section class="box" aria-labelledby="h-o-ship">
-          <h2 id="h-o-ship">Nhận hàng</h2>
-          <div data-o-ship></div>
-        </section>
-        <div class="order-actions">
-          <a class="btn btn-primary" data-o-track href="track.html">{{ icon("package", "i-sm") }}Theo dõi đơn hàng</a>
-          <a class="btn btn-outline" href="index.html">Tiếp tục mua sắm</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+{% include "thanks/" ~ layout.thanks ~ ".html" %}
 {% endblock %}

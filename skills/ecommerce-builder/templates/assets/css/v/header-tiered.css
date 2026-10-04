@@ -1,5 +1,5 @@
 /* Header 'tiered': top row with search and actions, category bar below. Colours from header tokens. */
-.tbar{background:var(--c-dark);color:#d9dde3;font-size:12.5px}
+.tbar{background:var(--c-dark);color:color-mix(in srgb,var(--c-dark-ink,var(--c-header-fg)) 88%,transparent);font-size:12.5px}
 .tbar-in{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:30px}
 .tbar-msg{display:flex;gap:22px;margin:0;overflow:hidden;white-space:nowrap}
 .tbar-msg span{display:flex;align-items:center}

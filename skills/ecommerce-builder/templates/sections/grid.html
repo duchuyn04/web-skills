@@ -1,3 +1,4 @@
+{# Grid: a product grid with a Xem them button, for a category or a hand-picked list. #}
 {% set items = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
 <section class="sec ctn" aria-labelledby="h-grid-{{ sec._i }}">
   <div class="sec-head"><h2 id="h-grid-{{ sec._i }}">{{ sec.title or "Gợi ý cho bạn" }}</h2></div>

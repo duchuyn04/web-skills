@@ -7,7 +7,7 @@
 .cd-clean .pc-media img{width:76%;height:76%}
 .cd-clean .pc-off,.cd-clean .pc-badge,.cd-clean .pc-specs,.cd-clean .pc-promo,.cd-clean .pc-sold,.cd-clean .pc-progress{display:none}
 .pc-top{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;min-height:36px}
-.pc-new{font-size:13px;font-weight:600;color:#b64400;margin:0}
+.pc-new{font-size:13px;font-weight:600;color:var(--c-warn);margin:0}
 .pc-dots{display:flex;justify-content:center;gap:6px;margin:2px 0}
 .pc-dots li{width:11px;height:11px;border-radius:50%;background:var(--sw);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
 .cd-clean .pc-name{font-size:16px;font-weight:600;min-height:0;-webkit-line-clamp:2}

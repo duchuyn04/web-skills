@@ -1,3 +1,4 @@
+{# Rail: a horizontal row of products with brand filter chips and an all-products link, for one category. #}
 {% set items = (sec.products|map("extract", pid)|list) if sec.products else (by_cat[sec.category] if sec.category else products) %}
 {% set cat = (cats|selectattr("id", "equalto", sec.category)|first) if sec.category else None %}
 {% set rid = "rail-" ~ sec._i %}

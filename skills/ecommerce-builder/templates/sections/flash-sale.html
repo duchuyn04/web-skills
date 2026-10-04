@@ -1,3 +1,4 @@
+{# Flash sale: a coloured strip with an h:m:s countdown and a rail of discounted products with a sold bar. Use only with a real time-limited deal. #}
 {% set fmap = {} %}
 {% for it in sec["items"] %}{% set _ = fmap.update({it.product: it}) %}{% endfor %}
 <section class="flash ctn" aria-labelledby="h-flash" data-flash data-ends="{{ sec.ends or '23:59' }}">
