@@ -4,5 +4,6 @@
   "version": "1.0.0",
   "author": { "name": "duchuyn04" },
   "repository": "https://github.com/duchuyn04/web-skills",
+  "license": "MIT",
   "keywords": ["landing-page", "bpo", "ecommerce", "website-generator", "vietnamese"]
 }

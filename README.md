@@ -40,3 +40,19 @@ skills/
 ```
 
 Each skill keeps its own README or SKILL.md with the full workflow.
+
+## Use with your own LLM
+
+A skill is a folder with a `SKILL.md` (frontmatter `name` and `description`, then instructions) plus scripts and assets. To use them outside Claude Code:
+
+1. Read `name` and `description` from every `skills/*/SKILL.md` and list them in the system prompt.
+2. When the model picks a skill, load that `SKILL.md` into context.
+3. Give the model a shell tool in a sandbox so it can run the skill's scripts.
+
+With the Claude Agent SDK you can load the folder directly as a local plugin instead.
+
+## License
+
+Released under the [MIT License](LICENSE). You may use, modify and redistribute this plugin, including for commercial work, as long as the copyright and license notice stay with it. The software is provided without warranty.
+
+Websites generated with these skills belong to you. Check the licenses of any third-party fonts, images or libraries a generated site loads.
