@@ -1,0 +1,20 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-tl">
+      <div class="bl-tl__copy" data-reveal>
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2 bl-tl__title">{{title}}</h2>
+        {{#lead}}<p class="bl-lead">{{lead}}</p>{{/lead}}
+        <div class="bl-btn-row">
+          <a class="bl-btn bl-btn--primary" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+      </div>
+      <div class="bl-tl__track">
+        <ol class="bl-tl__steps" data-seq>
+        {{#steps}}<li><span class="bl-tl__num" aria-hidden="true">{{@n}}</span><div><h3 class="bl-tl__step">{{title}}</h3><p>{{text}}</p></div></li>{{/steps}}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

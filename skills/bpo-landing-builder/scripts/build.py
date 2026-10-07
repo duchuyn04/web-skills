@@ -1379,9 +1379,10 @@ def _photo_fields(fields, prefix=""):
     return [x for x in out if not x.endswith(("avatar", "logo", "src"))]
 
 
-def check_photos(ctx, sections):
+def check_photos(ctx, sections, override=None):
     """A page built only from text blocks and icon cards reads as generated. Real BPO homepages show people, offices
-    and the work: at least PHOTO_SHARE of the content sections carry a photo."""
+    and the work: at least PHOTO_SHARE of the content sections carry a photo.
+    override (page "override_photos"): the client chose sections without photos; the shortfall prints as a warning."""
     body = [s for s in sections if s["variant"].get("group") not in ("header", "footer", "floating", "exit", None)]
     if len(body) < PHOTO_MIN_SECTIONS:
         return
@@ -1396,11 +1397,15 @@ def check_photos(ctx, sections):
         fields = _photo_fields(s["variant"].get("fields"))
         if fields:
             tips.append("%s (%s): add %s" % (s["path"], s["type"], " or ".join(fields)))
-    ctx.err("sections", "%d of %d content sections carry a photo; a page this long needs at least %d. Real BPO homepages show the team, the offices and the work (median 33%%, top quarter 44%% of sections). %s. Client photos first, then library photos from references/assets.md that fit the section (never a photo of a different industry)."
+    report = ctx.warn if override else ctx.err
+    if override:
+        ctx.warn("page.override_photos", "fewer photos than real BPO homepages show, on purpose: %s" % override["reason"])
+        return
+    report("sections", "%d of %d content sections carry a photo; a page this long needs at least %d. Real BPO homepages show the team, the offices and the work (median 33%%, top quarter 44%% of sections). %s. Client photos first, then library photos from references/assets.md that fit the section (never a photo of a different industry)."
             % (len(with_photo), len(body), need, ("Sections that take a photo: " + "; ".join(tips)) if tips else "Swap a text-only section for a photo variant (feature-rows, image-cards, services-tabs, banner-image, case-slider)"))
 
 
-def check_design(ctx, sections, site, preset, theme):
+def check_design(ctx, sections, site, preset, theme, photos_override=None):
     heads, accented, icon_sections = [], [], []
     for s in sections:
         d = s["data"] if isinstance(s["data"], dict) else {}
@@ -1437,7 +1442,7 @@ def check_design(ctx, sections, site, preset, theme):
         ctx.warn("sections", "%d section titles below the hero have *accent* words (%s). Accent the hero title only; one coloured word in every heading reads as generated." % (len(accented), ", ".join(accented[:4])))
     if len(icon_sections) > 2:
         ctx.err("sections", "%d sections put an icon on every item (%s). Rows of icon cards make a page read as text and templates; keep icons in at most two sections and give the others photos (see the photo rule below) or plain lists." % (len(icon_sections), ", ".join(icon_sections)))
-    check_photos(ctx, sections)
+    check_photos(ctx, sections, photos_override)
     pinned = [s["path"] for s in sections if s["type"] in PINNED_VARIANTS]
     if len(pinned) > 1:
         ctx.warn("sections", "%d pinned scroll sections (%s). Scrolling that holds the page still is tiring after the first one; keep one." % (len(pinned), ", ".join(pinned)))
@@ -1760,8 +1765,10 @@ def fitting_variants(slot, lib):
     return [k for k, v in lib["variants"].items() if slot_accepts(slot, v)]
 
 
-def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm"):
-    """Match the page's content sections to the blueprint's slots, in order. Optional slots may be left out."""
+def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override=None):
+    """Match the page's content sections to the blueprint's slots, in order. Optional slots may be left out.
+    hero_override (page "override_hero"): the client picked a hero from another real site, so any hero variant fills
+    the blueprint's hero slot; the rest of the page still follows the blueprint."""
     slots = bp["sections"]
     body = [s for s in sections if s["variant"].get("group") not in CHROME_GROUPS]
     j = 0
@@ -1769,7 +1776,8 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm"):
     roles_seen, forms_seen = set(), set()
     for s in body:
         k = j
-        while k < len(slots) and not slot_accepts(slots[k], s["variant"]):
+        hero_free = bool(hero_override) and s["variant"].get("group") == "hero"
+        while k < len(slots) and not (slot_accepts(slots[k], s["variant"]) or (hero_free and slots[k].get("role") == "hero")):
             k += 1
         if k == len(slots):
             nxt = slots[j] if j < len(slots) else None
@@ -1784,6 +1792,9 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm"):
         s["bp_blueprint"] = bp
         # the real site's hero composition ("compose" in the blueprint): a generic text-and-photo hero loses it
         compose = slots[k].get("compose")
+        if hero_free:
+            ctx.warn(s["path"] + ".type", "hero taken from %s instead of blueprint %r (%s): %s" % (hero_override["reference"], bp_key, slots[k]["form"], hero_override["reason"]))
+            compose = None
         if compose and slots[k].get("role") == "hero" and s["type"] not in compose and s["type"] not in BUSINESS_HEROES and not s["type"].startswith("custom:") and not (motion in ("expressive", "signature") and s["variant"].get("tier") == "expressive"):
             ctx.err(s["path"] + ".type", "blueprint %r opens with this hero: %s. Build it with %s. A business hero (%s) may replace it when it fits the client and the form. A generic text-and-photo hero is what makes generated sites look alike." % (bp_key, slots[k].get("note", ""), " or ".join(compose), ", ".join(sorted(BUSINESS_HEROES))))
         roles_seen.add(slots[k]["role"])
@@ -1919,6 +1930,13 @@ PAGE_SPEC = {
         "motion": {"type": "enum", "values": ["calm", "expressive", "signature"], "default": "calm"},
         "rules": {"type": "enum", "values": [str(v) for v in range(1, RULES_VERSION)], "required": False},
         "override_order": {"type": "object", "required": False, "fields": {
+            "reason": {"type": "text", "min": 20, "max": 300},
+        }},
+        "override_photos": {"type": "object", "required": False, "fields": {
+            "reason": {"type": "text", "min": 20, "max": 300},
+        }},
+        "override_hero": {"type": "object", "required": False, "fields": {
+            "reference": {"type": "href"},
             "reason": {"type": "text", "min": 20, "max": 300},
         }},
         "sections": {"type": "list", "min": 4, "max": 24, "item": {"type": "object", "fields": {}}},
@@ -2077,7 +2095,7 @@ def main():
     if bp_key and not bp:
         ctx.err("page.blueprint", "unknown blueprint %r. Choose one of: %s" % (bp_key, ", ".join(lib["blueprints"])))
     if bp:
-        check_blueprint(ctx, bp, bp_key, sections, lib, top.get("motion", "calm"))
+        check_blueprint(ctx, bp, bp_key, sections, lib, top.get("motion", "calm"), top.get("override_hero"))
     elif archetype and not top.get("override_order"):
         check_order(ctx, archetype, raw_sections if isinstance(raw_sections, list) else [], lib)
     elif top.get("override_order"):
@@ -2085,7 +2103,7 @@ def main():
 
     check_brand_colors(ctx, top, page_path.parent, brief, page.get("site"))
     check_voice(ctx, sections, top.get("lang", "en"), bp)
-    check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {})
+    check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {}, top.get("override_photos"))
     check_figures(ctx, sections)
     check_images(ctx, sections)
     check_stock_photos(ctx, raw_sections, (top.get("site") or {}).get("brand"))

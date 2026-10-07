@@ -1,0 +1,18 @@
+/* steps-timeline: copy left, numbered steps right on a vertical line, inside one card; timeline-line-draw, timeline-steps-in */
+.bl-tl { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(1.75rem, 4vw, 3.5rem); border-radius: calc(var(--radius-lg) + 4px); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+.bl-tl__title { font-size: clamp(1.8rem, 1.8vw + 1rem, 2.6rem); line-height: 1.15; margin-bottom: 1rem; text-wrap: balance; }
+.bl-tl__copy .bl-lead { margin-bottom: 1.75rem; }
+.bl-tl__track { position: relative; }
+.bl-tl__steps { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: var(--tl-gap); }
+/* one connector per step, from its number down to the next number, so the line stops at the last step */
+.bl-tl__steps { --tl-gap: clamp(1.5rem, 3vw, 2.25rem); }
+.bl-tl__steps li:not(:last-child)::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: calc(var(--tl-gap) * -1); width: 2px; background: color-mix(in srgb, var(--c-accent) 28%, var(--border)); transform-origin: top; transition: transform .7s var(--ease-out); transition-delay: calc(var(--seq-i, 0) * 140ms + 450ms); }
+.js .bl-tl__steps[data-seq]:not(.is-seen) li::before { transform: scaleY(0); }
+.bl-tl__steps li { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 1.1rem; align-items: start; }
+.bl-tl__num { position: relative; z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--c-accent); color: var(--c-on-accent); font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; box-shadow: 0 0 0 6px var(--surface); }
+.bl-tl__step { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.15rem; line-height: 1.35; color: var(--text-strong); margin: .55rem 0 .35rem; }
+.bl-tl__steps p { color: var(--text); line-height: 1.6; }
+.js .bl-tl__steps[data-seq] > li { transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(var(--seq-i, 0) * 140ms + 200ms); }
+.js .bl-tl__steps[data-seq]:not(.is-seen) > li { opacity: 0; transform: translateY(14px); }
+@media (prefers-reduced-motion: reduce) { .js .bl-tl__steps[data-seq] > li, .js .bl-tl__steps[data-seq] li::before { opacity: 1 !important; transform: none !important; } }
+@media (max-width: 900px) { .bl-tl { grid-template-columns: 1fr; } }

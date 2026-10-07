@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "5.1.0"
+  version: "5.4.0"
 ---
 
 # BPO landing builder
@@ -12,10 +12,21 @@ You do not write HTML, CSS or JavaScript. You write one JSON file (`page.json`) 
 
 `SKILL` below means the folder that contains this file. In this project the real folder is `.agents/skills/bpo-landing-builder`; agent-specific folders such as `.claude/skills/bpo-landing-builder` or `.qwen/skills/bpo-landing-builder` are links to it. Use whichever path you loaded this file from. If you cannot run shell commands, stop and tell the user: the build scripts are required.
 
+## Which path
+
+Read the request and take the first row that matches.
+
+| The user | Path |
+|:---|:---|
+| asks to look at a page this skill already built ("xem giúp", "review", "chỗ nào chưa ổn", sends its link or a screenshot) | Review. Run lint and QA with `--sweep` on its `dist`, open the screenshots, then send one table: each problem with its kind (Broken: fails for any brand, such as overflow, low contrast, clipped text; Off-system: differs from the rest of the page; Taste: a preference) and the fix in page.json. Change nothing until the user picks the rows |
+| asks to change a page already built (`sites/<slug>/page.json` exists): a colour, a section, some copy, a photo | Edit. Change only what was asked in that page.json, keep the archetype, blueprint and variants as they are, rebuild, lint, QA, and report what changed. Pick another archetype, blueprint or variant only when the user asks |
+| gives a site this skill did not build (their own code, WordPress, another builder) | Say in one line that this skill builds from page.json and does not edit other code; offer to build a new page from their content (Step 1) |
+| anything else | Build a new page: Step 1 onwards |
+
 ## Rules that are never negotiable
 
 1. Never edit files in `dist/`. Change `page.json` (or a template, if the user asked you to change the library) and rebuild.
-2. Never invent facts: no made-up client names, quotes, agent names, CSAT, headcount, prices, salary rates, certifications or promises (such as "same-day onboarding"). A missing single figure becomes `"[KPI]"` (number fields) or `"[figure]"` (text). A missing whole block of proof (logos, testimonials, case studies, call recordings, salary rates) means you leave that section out; its slot is "recommended", so the build only warns. If a section's minimum item count is higher than the facts you have, drop the section or pick another variant; never pad a list to reach the minimum. List everything missing in your report. build.py enforces this against the brief: client names, quotes (word for word), certifications, tools, guarantees, languages, recordings and figures with a unit that the brief does not give are build errors (see "What build.py checks against the brief" in `references/content-rules.md`). Never extend a quote, never add a placeholder testimonial or logo, and never add facts to the brief to make the build pass. The reverse also holds: when the brief gives figures (headcount, years in business, savings, retention, certifications), put them on the page in `metrics-counter` or `metrics-panel` and `compliance-badges`. Real BPO homepages lead with this proof, and a page without it reads as generic.
+2. Never invent facts: no made-up client names, quotes, agent names, CSAT, headcount, prices, salary rates, certifications or promises (such as "same-day onboarding"). A missing single figure becomes `"[KPI]"` (number fields) or `"[figure]"` (text). A missing whole block of proof (logos, testimonials, case studies, call recordings, salary rates) means you leave that section out; its slot is "recommended", so the build only warns. If a section's minimum item count is higher than the facts you have, drop the section or pick another variant; never pad a list to reach the minimum. List everything missing in your report. build.py enforces this against the brief: client names, quotes (word for word), certifications, tools, guarantees, languages, recordings and figures with a unit that the brief does not give are build errors (see "What build.py checks against the brief" in `references/content-rules.md`). Never extend a quote, never add a placeholder testimonial or logo, and never add facts to the brief to make the build pass. The reverse also holds: when the brief gives figures that are proof the business stands behind (headcount, years in business, delivered work, savings, retention, certifications), put them on the page in `metrics-counter` or `metrics-panel` and `compliance-badges`. Real BPO homepages lead with this proof, and a page without it reads as generic. Product limits, quotas and maximum times ("5 lần mỗi ngày", "tối đa 20 phút", "10 mẫu") are never proof: they go in no figure tile, badge or hero chip. When the brief has only such limits, leave metrics out and pick a blueprint without a required metrics slot.
 3. Copy follows `references/content-rules.md` and `references/industry-voice.md`. Write the way real BPO vendors write: hero titles name the company's category ("Software outsourcing in Vietnam"), about a third of section headings are plain labels ("Our services", "Case studies"), the lead starts with the company name, and buttons use standard labels ("Contact us", "Get a quote"). The build fails on emoji, arrows, em or en dashes, curly quotes, banned AI words and phrases that mark copy as AI-written ("while you scale", "peace of mind", "hãy để chúng tôi"), so fix the wording, do not work around the checker. Treat its voice warnings as things to fix.
 4. Keep the archetype's section order. Do not add keys that the schema does not list.
 
@@ -61,6 +72,8 @@ python SKILL/scripts/variety.py --blueprint <key>
 The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Layouts marked `*` are preferred: clients named those sites (IRIS, Intelligent Outsourcing, Innovature, Bestarion) as the standard for a professional page, so they come first. Take the first unused `*` layout whose sections the brief can fill, and go further down only when none fits; otherwise pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2c). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
 
 The hero follows the real site too. About two thirds of the blueprints name the hero composition of their source site in `"compose"` (a white card over a wide photo, a tilted photo mosaic, a round portrait beside a card of service chips, a row of photo cards under a centered headline, a photo stage with thumbnail tabs, a column of news cards, tall sector panels). build.py fails a page on such a blueprint whose hero is not one of those variants, or a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`) when it fits the client. This is what keeps ten sites from opening with the same text-left, photo-right hero.
+
+When the client picks a hero from another real site (a Mobbin section, a site they name), keep the blueprint for the rest of the page and add `"override_hero": {"reference": "<url of that hero>", "reason": "<what the client asked for>"}` to page.json. Any hero variant then fills the blueprint's hero slot, and the build prints the swap as a warning. Never set it on your own choice. The same goes for `"override_photos": {"reason": "..."}`: when the client asks for sections without photos (they have no real pictures and stock or screenshots do not fit), use `about-statement` and `steps-timeline` and record the reason; the photo-share check then prints a warning instead of failing. For a full-screen photo or video in a rounded inset frame with a very large headline (IntegratedBio), use `hero-fullbleed` with `"layout": "frame"`.
 
 ## Step 2b: Do not repeat a look
 
@@ -172,15 +185,16 @@ It must print `LINT PASSED`. Copy errors are fixed in page.json; structural erro
 ## Step 6: Visual QA
 
 ```
-python SKILL/scripts/qa_screenshot.py sites/<slug>/dist --sections
+python SKILL/scripts/qa_screenshot.py sites/<slug>/dist --sections --sweep
 ```
 
-Needs Python Playwright and Edge or Chrome. If `python` cannot import playwright, try `py -3.11` or `python3`. The script checks sideways overflow, clipped text, broken images and JS errors at 1440, 768 and 390 px, then measures the frame rate of the hero and every moving section at 1440 px on a 2x screen (minimum 30 fps; 1x screens hide canvas lag that laptops with scaled displays show). It also checks that every WebGL scene draws, that the page reads fully with reduced motion (nothing left hidden, no pins), that Pause animations stops every loop and scene, and that a browser without WebGL gets no JS errors. At the first width it also checks the contrast of every visible text run against the color behind it, the focus outline of every Tab stop and the underline or contrast of links in running text (see `references/color-system.md`). Add `--cvd` to save color-blindness screenshots for review. It must print `QA PASSED`. A page whose QA fails is not finished: never call it ready or deliverable. Fix what page.json can fix and run QA again. If a failure sits in a library section or in build.py's colors (for example low contrast in the footer with correct theme values), stop, quote the failing lines and tell the user it is a library bug. Then open `dist/qa/page-1440.png` and a few files in `dist/qa/sections-390/` and look at them. Typical fixes: shorter titles, fewer items, a better photo.
+Needs Python Playwright and Edge or Chrome. If `python` cannot import playwright, try `py -3.11` or `python3`. The script checks sideways overflow, clipped text, broken images and JS errors at 1440, 768 and 390 px, then measures the frame rate of the hero and every moving section at 1440 px on a 2x screen (minimum 30 fps; 1x screens hide canvas lag that laptops with scaled displays show). It also checks that every WebGL scene draws, that the page reads fully with reduced motion (nothing left hidden, no pins), that Pause animations stops every loop and scene, and that a browser without WebGL gets no JS errors. At the first width it also checks the contrast of every visible text run against the color behind it, the focus outline of every Tab stop and the underline or contrast of links in running text (see `references/color-system.md`). `--sweep` then narrows the page from 1440 to 360 px in 20 px steps and fails anything that sticks out sideways or header items that overlap at any width in between (a nav that collides at 1100 px passes the three fixed widths). Add `--cvd` to save color-blindness screenshots for review. It must print `QA PASSED`. A page whose QA fails is not finished: never call it ready or deliverable. Fix what page.json can fix and run QA again. If a failure sits in a library section or in build.py's colors (for example low contrast in the footer with correct theme values), stop, quote the failing lines and tell the user it is a library bug. Then open `dist/qa/page-1440.png` and a few files in `dist/qa/sections-390/` and look at them. Typical fixes: shorter titles, fewer items, a better photo.
 
 ## Step 7: Report
 
-Tell the user, briefly:
+Tell the user, briefly, in the language they wrote in:
 
+- first, every choice you made for them, one line each with the reason and an offer to change it: archetype, blueprint, preset, hero variant, motion. This is the only place where you may have guessed wrong, so it goes on top
 - where the page is (`sites/<slug>/dist/index.html`) and how to view it (open the file, or `python -m http.server` in `dist`)
 - archetype, preset and the sections used
 - every placeholder and warning still open (fake KPIs, missing audio, form endpoint, stock photos or the sample video to replace)
@@ -207,6 +221,17 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/custom-section-spec.md`: fallback for blocks outside the library
 - `references/seo.md`: the search and share tags build.py writes, the fields that feed them, what 85 real BPO homepages do, and the launch steps outside the page
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
+
+## Adding a rule
+
+Rules added to cure one symptom tend to cause another on the next build. When a check, a SKILL.md rule or a reference rule is added:
+
+- at most five new rules per change, each with the case it applies to ("on a demo shop", "in the hero"), never "always"
+- say which rule it replaces or contradicts; when it reverses an old rule, leave a line "Old rule dropped: <rule>, because <reason>" so it is not brought back
+- one rule lives in one file; SKILL.md points to it instead of copying it
+- a rule that catches nothing in three rounds of building comes out
+- after adding a rule, check the templates and examples against it: they are copied as they are, so a mistake in them spreads to every site
+- write the rule and its reason, not its history: no dates or client names in the skill; those go in the commit message and `CHANGELOG.md`
 
 ## Maintaining the library
 

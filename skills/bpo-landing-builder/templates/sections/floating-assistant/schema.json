@@ -1,0 +1,39 @@
+{
+  "variant": "floating-assistant",
+  "group": "floating",
+  "forms": ["floating"],
+  "summary": "Chat assistant in the bottom-right corner (after GoDaddy Conversations, Resend Help, Podia, Klook support). A round button opens a panel: a greeting, suggested questions as buttons, answers written in page.json (never generated, so the build checks them against the brief like any section), and a hand-off form for a call back. Typed questions are matched to the topics by their words without accents; anything it cannot answer offers the hand-off instead of guessing. A short teaser bubble shows once per visit after a delay. Works with the keyboard, Esc closes, reduced motion turns off the slide and the typing dots.",
+  "tone": "none",
+  "anchor": "assistant",
+  "animations": ["assistant-panel-open"],
+  "fields": {
+    "name": {"type": "text", "min": 3, "max": 40},
+    "status": {"type": "text", "min": 3, "max": 40, "required": false},
+    "teaser": {"type": "text", "min": 10, "max": 90, "required": false},
+    "greeting": {"type": "text", "min": 20, "max": 220},
+    "topics": {"type": "list", "min": 3, "max": 8, "item": {"type": "object", "fields": {
+      "q": {"type": "text", "min": 5, "max": 60},
+      "a": {"type": "text", "min": 20, "max": 420},
+      "keys": {"type": "text", "min": 3, "max": 160, "required": false},
+      "link": {"$ref": "cta", "required": false},
+      "handoff": {"type": "bool", "default": false}
+    }}},
+    "fallback": {"type": "text", "min": 20, "max": 220},
+    "handoff": {"type": "object", "fields": {
+      "button": {"type": "text", "min": 3, "max": 32},
+      "intro": {"type": "text", "min": 10, "max": 160},
+      "name_label": {"type": "text", "min": 2, "max": 24},
+      "phone_label": {"type": "text", "min": 2, "max": 32},
+      "submit_label": {"type": "text", "min": 2, "max": 24},
+      "phone_error": {"type": "text", "min": 10, "max": 120},
+      "success": {"type": "text", "min": 10, "max": 200},
+      "action": {"type": "href", "required": false}
+    }},
+    "note": {"type": "text", "min": 10, "max": 140, "required": false},
+    "open_label": {"type": "text", "min": 3, "max": 32, "default": "Open chat"},
+    "close_label": {"type": "text", "min": 3, "max": 32, "default": "Close chat"},
+    "input_label": {"type": "text", "min": 3, "max": 48, "default": "Type a question"},
+    "send_label": {"type": "text", "min": 2, "max": 16, "default": "Send"},
+    "more_label": {"type": "text", "min": 3, "max": 32, "default": "Other questions"}
+  }
+}

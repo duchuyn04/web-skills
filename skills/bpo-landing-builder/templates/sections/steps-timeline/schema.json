@@ -1,0 +1,20 @@
+{
+  "variant": "steps-timeline",
+  "group": "features",
+  "forms": ["feature-split"],
+  "summary": "Steps without photos (after Railway and Givingli on Mobbin): one rounded card, heading, lead and up to two buttons left, two to five numbered steps right joined by a vertical line. Use for a short how-it-works next to a section that already shows steps in a row, or when the client has no real pictures of each step.",
+  "tone": "auto",
+  "anchor": "how-it-works",
+  "animations": ["reveal", "timeline-line-draw", "timeline-steps-in"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 6, "max": 80},
+    "lead": {"type": "text", "min": 30, "max": 240, "required": false},
+    "steps": {"type": "list", "min": 2, "max": 5, "item": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 4, "max": 60},
+      "text": {"type": "text", "min": 20, "max": 220}
+    }}},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variant": "about-statement",
+  "group": "about",
+  "forms": ["feature-split"],
+  "summary": "Company introduction without photos (after Airtasker, United Carriers and Analogue on Mobbin): a large statement left, one or two paragraphs with **bold** key terms right, and two to four short points in a row under a rule. Use when the client has no real photos of the team or the place, so the section does not lean on stock images.",
+  "tone": "auto",
+  "anchor": "about",
+  "animations": ["reveal", "statement-rule-draw"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 6, "max": 80},
+    "paragraphs": {"type": "list", "min": 1, "max": 2, "item": {"type": "markup", "min": 60, "max": 420}},
+    "points": {"type": "list", "min": 2, "max": 4, "item": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 3, "max": 40},
+      "text": {"type": "text", "min": 10, "max": 120}
+    }}},
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

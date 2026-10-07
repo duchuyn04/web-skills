@@ -1,0 +1,14 @@
+/* about-statement: statement left, paragraphs right, points in a row under a rule; statement-rule-draw */
+.bl-stmt { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.bl-stmt__title { font-size: clamp(2rem, 2.6vw + 1rem, 3.2rem); line-height: 1.12; text-wrap: balance; }
+.bl-stmt__p { color: var(--text); font-size: var(--fs-lead); line-height: 1.7; margin-bottom: 1.1rem; text-wrap: pretty; }
+.bl-stmt__p strong { color: var(--text-strong); font-weight: 700; }
+.bl-stmt__body .bl-link { margin-top: .5rem; }
+.bl-stmt__rule { display: block; height: 1px; margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(1.75rem, 3vw, 2.5rem); background: var(--border-strong); }
+.bl-stmt__points { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem clamp(1.5rem, 3vw, 3rem); list-style: none; margin: 0; padding: 0; }
+.bl-stmt__points li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .25rem .75rem; align-content: start; }
+.bl-stmt__icon { grid-row: span 2; display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--c-accent) 12%, var(--surface)); color: var(--accent-ink); }
+.bl-stmt__icon .bl-icon { width: 20px; height: 20px; }
+.bl-stmt__points strong { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: 1.05rem; line-height: 1.35; color: var(--text-strong); }
+.bl-stmt__points li > span:last-child { font-size: var(--fs-sm); line-height: 1.55; color: var(--text); }
+@media (max-width: 900px) { .bl-stmt { grid-template-columns: 1fr; gap: 1.25rem; } }

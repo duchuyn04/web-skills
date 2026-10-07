@@ -1,0 +1,20 @@
+<aside id="{{section.id}}" class="bl-assist bl-tone-light" data-assist data-topics="{{json:topics}}" data-fallback="{{fallback}}" data-handoff="{{json:handoff}}" data-more="{{more_label}}" aria-label="{{name}}">
+  {{#teaser}}<div class="bl-assist__teaser" data-assist-teaser hidden><button class="bl-assist__teaser-text" type="button" data-assist-open>{{teaser}}</button><button class="bl-assist__teaser-x" type="button" data-assist-dismiss aria-label="{{close_label}}">{{icon:x}}</button></div>{{/teaser}}
+  <button class="bl-assist__fab" type="button" data-assist-open aria-expanded="false" aria-controls="{{section.id}}-panel" aria-label="{{open_label}}">{{icon:message-circle}}<span class="bl-assist__dot" aria-hidden="true"></span></button>
+  <section class="bl-assist__panel" id="{{section.id}}-panel" role="dialog" aria-modal="false" aria-labelledby="{{section.id}}-title" hidden>
+    <header class="bl-assist__head">
+      <span class="bl-assist__mark" aria-hidden="true">{{site.brand_mark}}</span>
+      <div class="bl-assist__who"><strong id="{{section.id}}-title">{{name}}</strong>{{#status}}<small>{{status}}</small>{{/status}}</div>
+      <button class="bl-assist__close" type="button" data-assist-close aria-label="{{close_label}}">{{icon:x}}</button>
+    </header>
+    <ol class="bl-assist__log" data-assist-log aria-live="polite">
+      <li class="bl-assist__msg is-bot">{{greeting}}</li>
+    </ol>
+    <form class="bl-assist__ask" data-assist-ask>
+      <label class="bl-sr-only" for="{{section.id}}-q">{{input_label}}</label>
+      <input id="{{section.id}}-q" type="text" autocomplete="off" placeholder="{{input_label}}" data-assist-q>
+      <button type="submit" aria-label="{{send_label}}">{{icon:send}}</button>
+    </form>
+    {{#note}}<p class="bl-assist__note">{{note}}</p>{{/note}}
+  </section>
+</aside>

@@ -1,4 +1,26 @@
-<section id="{{section.id}}" class="bl-section bl-hero bl-hero--full bl-hero--full-{{align}} bl-tone-{{section.tone}}" data-hero-full>
+{{#layout_is_frame}}<section id="{{section.id}}" class="bl-section bl-hero bl-hero--frame bl-tone-{{section.tone}}" data-hero-full data-hero-frame>
+  <div class="bl-hero-frame__box" aria-hidden="true">
+    <div class="bl-hero-frame__media">
+      {{#video}}<video class="bl-hero-frame__still" src="{{video}}" poster="{{image}}" autoplay muted loop playsinline preload="metadata"></video>{{/video}}
+      {{^video}}<img class="bl-hero-frame__still" src="{{image}}" alt="" width="1600" height="900" fetchpriority="high">{{/video}}
+    </div>
+    <span class="bl-hero-frame__shade"></span>
+  </div>
+  <div class="bl-container bl-hero-frame__inner">
+    <div class="bl-hero-frame__top">
+      {{#eyebrow}}<p class="bl-eyebrow" data-frame-lines>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hero-frame__title" data-frame-lines>{{title}}</h1>
+    </div>
+    <div class="bl-hero-frame__foot">
+      <p class="bl-hero-frame__lead" data-frame-lines>{{lead}}</p>
+      <div class="bl-hero-frame__actions">
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        <a class="bl-hero-frame__go" href="{{primary_cta.href}}"><span class="bl-btn bl-btn--primary bl-btn--lg">{{primary_cta.label}}</span><span class="bl-hero-frame__chip" aria-hidden="true">{{arrow}}</span></a>
+      </div>
+    </div>
+  </div>
+  {{#video}}<button class="bl-hero-full__toggle bl-hero-frame__toggle" type="button" aria-pressed="false" data-video-toggle data-label-pause="{{pause_label}}" data-label-play="{{play_label}}" aria-label="{{pause_label}}"><span class="bl-hero-full__i-pause">{{icon:pause}}</span><span class="bl-hero-full__i-play">{{icon:play}}</span></button>{{/video}}
+</section>{{/layout_is_frame}}{{^layout_is_frame}}<section id="{{section.id}}" class="bl-section bl-hero bl-hero--full bl-hero--full-{{align}} bl-tone-{{section.tone}}" data-hero-full>
   <div class="bl-hero-full__media" aria-hidden="true">
     {{#video}}<video class="bl-hero-full__video" src="{{video}}" poster="{{image}}" autoplay muted loop playsinline preload="metadata"></video>{{/video}}
     {{^video}}<img class="bl-hero-full__img" src="{{image}}" alt="" width="1600" height="900" fetchpriority="high">{{/video}}
@@ -18,4 +40,4 @@
     {{#stats.0}}<dl class="bl-hero-full__stats bl-glass" data-reveal>{{#stats}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/stats}}</dl>{{/stats.0}}
   </div>
   {{#video}}<button class="bl-hero-full__toggle" type="button" aria-pressed="false" data-video-toggle data-label-pause="{{pause_label}}" data-label-play="{{play_label}}" aria-label="{{pause_label}}"><span class="bl-hero-full__i-pause">{{icon:pause}}</span><span class="bl-hero-full__i-play">{{icon:play}}</span></button>{{/video}}
-</section>
+</section>{{/layout_is_frame}}

@@ -39,3 +39,67 @@
   .bl-hero-full__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1rem; }
   .bl-hero-full__stats > div:nth-child(odd) { border-left: 0; }
 }
+
+/* layout "frame" (after IntegratedBio): the media fills a rounded frame inset from the page edge, the copy sits on its
+   corners. hero-frame-intro: the frame opens from a pill in the middle (2s expo.inOut after 0.3s) while the media
+   settles from 125%; from 1.6s the headline and lead rise line by line out of masks (section.js, 0.8s power2.out,
+   50ms apart), the header fades in and the buttons pop up (0.6s back.out at 2s). Reduced motion shows the end state. */
+.bl-hero--frame { --frame-gap: 12px; --frame-r: 20px; display: flex; min-height: max(600px, 100svh); padding: 0; }
+.bl-hero--frame.bl-hero { background-color: transparent; }
+:is(.bl-edges-angle, .bl-edges-curve) main > .bl-hero--frame.bl-hero.bl-hero { clip-path: none; border-radius: 0; padding-bottom: 0; }
+:is(.bl-edges-angle, .bl-edges-curve) main > .bl-hero--frame.bl-hero.bl-hero + * { margin-top: 0; border-top: 0; }
+.bl-hero-frame__box { position: absolute; inset: var(--frame-gap); z-index: -1; overflow: hidden; border-radius: var(--frame-r); background: var(--c-primary); }
+.bl-hero-frame__media { position: absolute; inset: 0; transform-origin: 50% 40%; }
+.bl-hero-frame__still { width: 100%; height: 100%; object-fit: cover; }
+.bl-hero-frame__shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--c-primary) 72%, transparent) 0%, color-mix(in srgb, var(--c-primary) 28%, transparent) 46%, color-mix(in srgb, var(--c-primary) 82%, transparent) 100%),
+    linear-gradient(90deg, color-mix(in srgb, var(--c-primary) 40%, transparent) 0%, transparent 70%);
+}
+.bl-hero-frame__inner {
+  display: flex; flex-direction: column; justify-content: space-between; gap: clamp(2.5rem, 6vw, 4rem);
+  padding-top: calc(var(--header-h) + var(--frame-gap) + clamp(1.5rem, 4.5vw, 4rem));
+  padding-bottom: calc(var(--frame-gap) + clamp(1.75rem, 3.5vw, 3rem));
+}
+.bl-hero--frame .bl-hero-frame__title { max-width: 10.5em; margin: 0; font-size: clamp(2.7rem, 6.2vw + .4rem, 7rem); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
+.bl-hero--frame .bl-hero-frame__title .bl-hl { color: color-mix(in srgb, var(--text-strong) 62%, transparent); }
+.bl-hero--frame .bl-eyebrow { margin-bottom: 1.25rem; }
+.bl-hero-frame__foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem 3rem; flex-wrap: wrap; }
+.bl-hero-frame__lead { max-width: 33rem; margin: 0; font-size: clamp(1.05rem, .55vw + .9rem, 1.35rem); line-height: 1.45; font-weight: 500; color: var(--text-strong); text-wrap: pretty; }
+.bl-hero-frame__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.bl-hero-frame__go { display: inline-flex; gap: 4px; border-radius: var(--radius-btn); }
+.bl-hero-frame__chip {
+  display: grid; place-items: center; width: 54px; min-height: 54px; flex-shrink: 0; border-radius: var(--radius-btn);
+  background: var(--text-strong); color: var(--c-accent); transition: background-color var(--dur-fast) var(--ease-std);
+}
+.bl-hero-frame__chip .bl-icon, .bl-hero-frame__chip svg { width: 20px; height: 20px; transition: transform var(--dur) var(--ease-out); }
+.bl-hero-frame__go:hover .bl-btn--primary { background: var(--c-accent-hover); }
+.bl-hero-frame__go:hover .bl-hero-frame__chip svg { transform: translateX(3px); }
+.bl-hero-frame__go:focus-visible { outline-offset: 4px; }
+.bl-hero-frame__toggle { top: calc(var(--header-h) + var(--frame-gap) + 1rem); bottom: auto; right: calc(var(--frame-gap) + 1.25rem); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .bl-hero-frame__box { animation: bl-frame-open 2s cubic-bezier(.87, 0, .13, 1) .3s both; }
+  .js .bl-hero-frame__still { animation: bl-frame-settle 2.6s var(--ease-out) .3s both; }
+  .js .bl-hero--frame [data-frame-lines] { opacity: 0; animation: bl-frame-show 0s 4s forwards; }
+  .js .bl-hero-frame__actions { animation: bl-frame-pop .6s cubic-bezier(.34, 1.56, .64, 1) 2s both; }
+  .js body:has(.bl-hero--frame) .bl-header { animation: bl-frame-fade .8s ease-out 1.6s both; }
+}
+@keyframes bl-frame-open { from { clip-path: inset(50% 50% 50% 50% round 200px); } to { clip-path: inset(0 0 0 0 round 20px); } }
+@keyframes bl-frame-settle { from { transform: scale(1.25); } }
+@keyframes bl-frame-show { to { opacity: 1; } }
+@keyframes bl-frame-pop { from { opacity: 0; transform: translateY(20px) scale(.9); } }
+@keyframes bl-frame-fade { from { opacity: 0; } }
+@media (max-width: 1024px) {
+  .bl-hero--frame { --frame-gap: 8px; --frame-r: 16px; }
+  @keyframes bl-frame-open { from { clip-path: inset(50% 50% 50% 50% round 100px); } to { clip-path: inset(0 0 0 0 round 16px); } }
+}
+@media (max-width: 640px) {
+  .bl-hero--frame { min-height: max(560px, 92svh); }
+  .bl-hero-frame__foot { flex-direction: column; align-items: flex-start; }
+  .bl-hero-frame__actions { width: 100%; }
+  .bl-hero-frame__actions > .bl-btn { flex: 1 1 100%; }
+  .bl-hero-frame__go { flex: 1 1 100%; }
+  .bl-hero-frame__go .bl-btn { flex: 1; }
+}

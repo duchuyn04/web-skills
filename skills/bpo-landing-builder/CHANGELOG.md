@@ -2,6 +2,31 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.4.0 (2026-10-07)
+
+- New `about-statement` (statement left, paragraphs right, points in a row under a rule) and `steps-timeline` (one card: copy and buttons left, numbered steps on a line right), both without photos, after Airtasker, United Carriers, Railway and Givingli on Mobbin. They fill the same feature-split slots as `about-mosaic` and `feature-rows`.
+- page.json `"override_photos": {"reason"}`: the client chose sections without photos; the photo-share check prints a warning instead of failing.
+- `roles-carousel`: when every card fits the track they are centred and the scroll bar and arrows are hidden (a left-aligned row looked off-centre).
+- New `floating-assistant` (group floating, after GoDaddy Conversations, Resend Help, Podia and Klook support on Mobbin): a chat panel in the corner with a greeting, suggested questions, answers written in page.json and a call-back form. Answers are never generated, so the build checks them against the brief like any section; a typed question is matched to the topics by its words without accents and with common words left out, and one it cannot answer offers the call-back instead of guessing. A teaser shows once per visit after 8 s. Keyboard and screen reader friendly, no motion with reduced motion, a bottom sheet on phones that does not open the keyboard. Rules stay at 5.
+
+## 5.3.0 (2026-10-07)
+
+A hero the client picks from another site, and a framed hero after IntegratedBio. Rules stay at 5: both are opt-in fields.
+
+- `hero-fullbleed` gets `"layout": "frame"`: the photo or video fills a rounded frame inset 12px from the page edge and the first screen, with a very large headline top left, the lead bottom left and the buttons bottom right (the main one with a square arrow chip). Its intro (`hero-frame-intro`): the frame opens from a small pill in the middle (clip 2s expo.inOut), the headline and lead rise line by line out of masks from 1.6s, then the header fades in and the buttons pop up; the media grows a little as the hero scrolls away. Reduced motion shows the end state, and CSS shows the copy after 4s if the script never runs. The frame turns off the page's angled or curved hero edge.
+- page.json `"override_hero": {"reference", "reason"}`: when the client chose a hero from another real site, any hero variant fills the blueprint's hero slot (and its `compose` list no longer applies); the rest of the page still follows the blueprint, and the build prints the swap as a warning.
+
+## 5.2.1 (2026-10-07)
+
+- SKILL.md rule 2: figures put in metrics are proof the business stands behind; product limits, quotas and maximum times never go in a figure tile, badge or hero chip, and a brief with only such limits leaves metrics out and picks a blueprint without a required metrics slot. Rules stay at 5.
+
+## 5.2.0 (2026-10-07)
+
+Width sweep in QA, and a clearer workflow around a build. Rules stay at 5: the sweep runs only with `--sweep`, and on a site pinned to an older rules version its findings print as warnings.
+
+- `qa_screenshot.py --sweep` narrows the page from 1440 to 360 px in 20 px steps (`--sweep FROM,TO,STEP` to change) and reports the width ranges where an element sticks out sideways or header and nav items overlap (fail), and where a short button or nav label wraps onto two lines (warning). The three fixed widths miss a nav that collides at 1100 px or a block that overflows at 880 px. Step 6 now runs it.
+- SKILL.md: a "Which path" table (review a built page, change a built page, a site this skill did not build, a new page); the report starts with the choices made for the user; an "Adding a rule" section on keeping the rule set small.
+
 ## 5.1.0 (2026-10-01)
 
 Search and share tags. Rules stay at 5: every new finding on existing fields is a warning, and only the new `seo` fields fail when malformed.

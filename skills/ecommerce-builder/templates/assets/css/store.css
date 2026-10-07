@@ -100,8 +100,10 @@ dialog{color:inherit}
 .hdr-light .hdr{border-bottom:1px solid var(--c-border)}
 .hdr-in{display:flex;align-items:center;gap:14px;min-height:68px}
 .hdr-burger{display:none;color:inherit}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;white-space:nowrap;letter-spacing:-.01em}
-.logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--c-header-fg);color:var(--c-header);font-size:19px}
+.logo{display:flex;align-items:center;gap:10px;min-width:0;max-width:320px;font-weight:800;font-size:19px;white-space:nowrap;letter-spacing:-.01em}
+.logo-name{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.logo-ftr{max-width:none;white-space:normal}
+.logo-mark{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--c-header-fg);color:var(--c-header);font-size:19px}
 .hdr-light .logo-mark{background:var(--c-btn);color:var(--c-btn-fg)}
 .hdr-cat{position:relative}
 .hdr-btn{display:flex;align-items:center;gap:8px;min-height:42px;padding:8px 12px;border-radius:var(--radius);background:var(--c-header-soft);font-weight:600;font-size:14px}
@@ -762,7 +764,7 @@ main{min-height:50vh}
   .topbar-links{display:none}
   .topbar-msgs li:not(:first-child){display:none}
   .hdr-in{flex-wrap:wrap;gap:6px 8px;min-height:0;padding-top:8px;padding-bottom:10px}
-  .logo{font-size:17px;margin-right:auto}
+  .logo{flex:1 1 0;font-size:17px;margin-right:auto}
   .logo-mark{width:32px;height:32px;font-size:17px}
   .search{order:5;flex-basis:100%;max-width:none}
   .hdr-act span{display:none}

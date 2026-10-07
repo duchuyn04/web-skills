@@ -31,10 +31,10 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
-| 6 | about | no | `pillars-numbered`, `about-mosaic`, `about-helix` |
+| 6 | about | no | `pillars-numbered`, `about-mosaic`, `about-statement`, `about-helix` |
 | 7 | services | yes | `services-tabs`, `solutions-vtabs`, `roles-carousel`, `services-bento`, `service-links`, `services-stack`, `services-cylinder`, `services-cube` |
 | 8 | tools | no | `tool-stack` |
-| 9 | features | no | `feature-rows`, `solution-panels` |
+| 9 | features | no | `feature-rows`, `steps-timeline`, `solution-panels` |
 | 10 | banner | no | `banner-image` |
 | 11 | compare | no | `comparison-table`, `models-board` |
 | 12 | process | no | `steps-row`, `process-sticky`, `process-layers`, `process-pipeline` |
@@ -53,7 +53,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 25 | faq | no | `faq-accordion`, `faq-grid`, `faq-fold` |
 | 26 | cta | yes | `cta-multistep`, `cta-band`, `contact-split`, `contact-photo`, `cta-letter` |
 | 27 | footer | yes | `footer-columns` |
-| 28 | floating | no | `floating-chat` |
+| 28 | floating | no | `floating-chat`, `floating-assistant` |
 | 29 | exit | no | `exit-intent-modal` |
 
 ### offshore-staffing
@@ -68,7 +68,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 6 | calculator | recommended | `cost-calculator` |
 | 7 | services | yes | `services-bento`, `services-tabs`, `solutions-vtabs`, `roles-carousel`, `service-links`, `services-stack`, `services-cylinder`, `services-cube` |
 | 8 | tools | no | `tool-stack` |
-| 9 | features | no | `feature-rows`, `solution-panels` |
+| 9 | features | no | `feature-rows`, `steps-timeline`, `solution-panels` |
 | 10 | banner | no | `banner-image` |
 | 11 | compare | no | `comparison-table`, `models-board` |
 | 12 | process | yes | `process-sticky`, `steps-row`, `process-layers`, `process-pipeline` |
@@ -86,7 +86,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 24 | faq | yes | `faq-accordion`, `faq-grid`, `faq-fold` |
 | 25 | cta | yes | `cta-multistep`, `cta-band`, `contact-split`, `contact-photo`, `cta-letter` |
 | 26 | footer | yes | `footer-columns` |
-| 27 | floating | no | `floating-chat` |
+| 27 | floating | no | `floating-chat`, `floating-assistant` |
 | 28 | exit | no | `exit-intent-modal` |
 
 ### ai-data-ops
@@ -100,7 +100,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 5 | intro | no | `statement-band` |
 | 6 | services | yes | `services-bento`, `service-links`, `solutions-vtabs`, `roles-carousel`, `services-stack`, `services-cylinder`, `services-cube` |
 | 7 | tools | no | `tool-stack` |
-| 8 | features | no | `feature-rows`, `solution-panels` |
+| 8 | features | no | `feature-rows`, `steps-timeline`, `solution-panels` |
 | 9 | banner | no | `banner-image` |
 | 10 | compare | no | `comparison-table`, `models-board` |
 | 11 | process | yes | `process-sticky`, `steps-row`, `process-layers`, `process-pipeline` |
@@ -117,7 +117,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 22 | faq | no | `faq-accordion`, `faq-grid`, `faq-fold` |
 | 23 | cta | yes | `cta-multistep`, `cta-band`, `contact-split`, `contact-photo`, `cta-letter` |
 | 24 | footer | yes | `footer-columns` |
-| 25 | floating | no | `floating-chat` |
+| 25 | floating | no | `floating-chat`, `floating-assistant` |
 | 26 | exit | no | `exit-intent-modal` |
 
 ### cx-voice-sales
@@ -132,7 +132,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 6 | voice | recommended | `voice-sample` |
 | 7 | services | yes | `services-bento`, `services-tabs`, `solutions-vtabs`, `roles-carousel`, `service-links`, `services-stack`, `services-cylinder`, `services-cube` |
 | 8 | tools | no | `tool-stack` |
-| 9 | features | no | `feature-rows`, `solution-panels` |
+| 9 | features | no | `feature-rows`, `steps-timeline`, `solution-panels` |
 | 10 | banner | no | `banner-image` |
 | 11 | compare | no | `comparison-table`, `models-board` |
 | 12 | video | no | `video-block` |
@@ -149,7 +149,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 23 | faq | yes | `faq-accordion`, `faq-grid`, `faq-fold` |
 | 24 | cta | yes | `cta-multistep`, `cta-band`, `contact-split`, `contact-photo`, `cta-letter` |
 | 25 | footer | yes | `footer-columns` |
-| 26 | floating | no | `floating-chat` |
+| 26 | floating | no | `floating-chat`, `floating-assistant` |
 | 27 | exit | no | `exit-intent-modal` |
 
 ### it-bpo-partner
@@ -159,13 +159,13 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 1 | header | yes | `header-mega`, `header-simple` |
 | 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
-| 4 | about | no | `about-mosaic`, `pillars-numbered`, `about-helix` |
+| 4 | about | no | `about-mosaic`, `about-statement`, `pillars-numbered`, `about-helix` |
 | 5 | trust | recommended | `metrics-panel`, `metrics-tiles`, `metrics-counter`, `metrics-rings`, `metrics-bars3d` |
 | 6 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 7 | intro | no | `statement-band` |
 | 8 | services | yes | `service-links`, `services-bento`, `services-tabs`, `solutions-vtabs`, `roles-carousel`, `services-stack`, `services-cylinder`, `services-cube` |
 | 9 | tools | no | `tool-stack` |
-| 10 | solutions | no | `solution-panels`, `feature-rows` |
+| 10 | solutions | no | `solution-panels`, `feature-rows`, `steps-timeline` |
 | 11 | banner | no | `banner-image` |
 | 12 | compare | no | `comparison-table`, `models-board` |
 | 13 | process | no | `steps-row`, `process-sticky`, `process-layers`, `process-pipeline` |
@@ -181,5 +181,5 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 23 | faq | no | `faq-accordion`, `faq-grid`, `faq-fold` |
 | 24 | cta | yes | `contact-split`, `contact-photo`, `cta-multistep`, `cta-band`, `cta-letter` |
 | 25 | footer | yes | `footer-columns` |
-| 26 | floating | no | `floating-chat` |
+| 26 | floating | no | `floating-chat`, `floating-assistant` |
 | 27 | exit | no | `exit-intent-modal` |

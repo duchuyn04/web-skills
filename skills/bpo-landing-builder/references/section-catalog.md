@@ -48,6 +48,11 @@ These sit at the top of page.json, next to `sections`.
 - `rules`: one of 1, 2, 3, 4 (optional)
 - `override_order`: object (optional)
   - `reason`: text 20-300 chars
+- `override_photos`: object (optional)
+  - `reason`: text 20-300 chars
+- `override_hero`: object (optional)
+  - `reference`: link
+  - `reason`: text 20-300 chars
 
 ## about-helix
 
@@ -90,6 +95,26 @@ Fields:
 - `photos`: list of 3 or 4 or 6 or 9, each item:
   - `src`: image key or path
   - `alt`: text 5-140 chars
+
+## about-statement
+
+Company introduction without photos (after Airtasker, United Carriers and Analogue on Mobbin): a large statement left, one or two paragraphs with **bold** key terms right, and two to four short points in a row under a rule. Use when the client has no real photos of the team or the place, so the section does not lean on stock images.
+
+- Group: `about`. Default anchor: `#about`. Tone: auto.
+- Built-in motion: reveal, statement-rule-draw.
+- Allowed in: enterprise-cx/about?, it-bpo-partner/about?.
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 6-80 chars
+- `paragraphs`: list of 1-2 (each markup 60-420 chars)
+- `points`: list of 2-4, each item:
+  - `title`: text 3-40 chars
+  - `text`: text 10-120 chars
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
 
 ## audience-cards
 
@@ -675,6 +700,45 @@ Fields:
     - `label`: text 2-30 chars
     - `href`: link
 
+## floating-assistant
+
+Chat assistant in the bottom-right corner (after GoDaddy Conversations, Resend Help, Podia, Klook support). A round button opens a panel: a greeting, suggested questions as buttons, answers written in page.json (never generated, so the build checks them against the brief like any section), and a hand-off form for a call back. Typed questions are matched to the topics by their words without accents; anything it cannot answer offers the hand-off instead of guessing. A short teaser bubble shows once per visit after a delay. Works with the keyboard, Esc closes, reduced motion turns off the slide and the typing dots.
+
+- Group: `floating`. Default anchor: `#assistant`. Tone: none.
+- Built-in motion: assistant-panel-open.
+- Allowed in: enterprise-cx/floating?, offshore-staffing/floating?, ai-data-ops/floating?, cx-voice-sales/floating?, it-bpo-partner/floating?.
+
+Fields:
+
+- `name`: text 3-40 chars
+- `status`: text 3-40 chars (optional)
+- `teaser`: text 10-90 chars (optional)
+- `greeting`: text 20-220 chars
+- `topics`: list of 3-8, each item:
+  - `q`: text 5-60 chars
+  - `a`: text 20-420 chars
+  - `keys`: text 3-160 chars (optional)
+  - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+  - `handoff`: true/false (optional, default false)
+- `fallback`: text 20-220 chars
+- `handoff`: object
+  - `button`: text 3-32 chars
+  - `intro`: text 10-160 chars
+  - `name_label`: text 2-24 chars
+  - `phone_label`: text 2-32 chars
+  - `submit_label`: text 2-24 chars
+  - `phone_error`: text 10-120 chars
+  - `success`: text 10-200 chars
+  - `action`: link (optional)
+- `note`: text 10-140 chars (optional)
+- `open_label`: text 3-32 chars (optional, default "Open chat")
+- `close_label`: text 3-32 chars (optional, default "Close chat")
+- `input_label`: text 3-48 chars (optional, default "Type a question")
+- `send_label`: text 2-16 chars (optional, default "Send")
+- `more_label`: text 3-32 chars (optional, default "Other questions")
+
 ## floating-chat
 
 Round contact button fixed bottom-right with a pulsing online dot and a label bubble. Appears after the hero scrolls away.
@@ -1044,10 +1108,10 @@ Fields:
 
 ## hero-fullbleed
 
-Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button.
+Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button. Layout "frame" (after IntegratedBio): the photo or video fills a rounded frame inset 12px from the page edge and the first screen; a very large headline top left, the lead bottom left, the buttons bottom right (the main one with a square arrow chip). Intro: the frame opens from a small pill in the middle, the headline and lead rise line by line out of masks, then the header and buttons arrive. Frame ignores align, proof and stats; keep the headline to 2-3 lines and the lead under 140 characters.
 
 - Group: `hero`. Default anchor: `#top`. Tone: dark.
-- Built-in motion: hero-ambient-video-mask, reveal.
+- Built-in motion: hero-ambient-video-mask, hero-frame-intro (layout frame), reveal.
 - Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
 - Preview: `previews/hero-fullbleed.jpg`
 
@@ -1064,6 +1128,7 @@ Fields:
   - `href`: link
 - `image`: image key or path
 - `video`: video (optional)
+- `layout`: one of overlay, frame (optional, default "overlay")
 - `align`: one of left, center (optional, default "left")
 - `proof`: list of 0-3 (optional) (each text 3-36 chars)
 - `stats`: list of 0-4 (optional), each item:
@@ -2714,6 +2779,29 @@ Fields:
     - `src`: image key or path
     - `alt`: text 5-140 chars
 - `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
+## steps-timeline
+
+Steps without photos (after Railway and Givingli on Mobbin): one rounded card, heading, lead and up to two buttons left, two to five numbered steps right joined by a vertical line. Use for a short how-it-works next to a section that already shows steps in a row, or when the client has no real pictures of each step.
+
+- Group: `features`. Default anchor: `#how-it-works`. Tone: auto.
+- Built-in motion: reveal, timeline-line-draw, timeline-steps-in.
+- Allowed in: enterprise-cx/features?, offshore-staffing/features?, ai-data-ops/features?, cx-voice-sales/features?, it-bpo-partner/solutions?.
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 6-80 chars
+- `lead`: text 30-240 chars (optional)
+- `steps`: list of 2-5, each item:
+  - `title`: text 4-60 chars
+  - `text`: text 20-220 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
   - `label`: text 2-30 chars
   - `href`: link
 

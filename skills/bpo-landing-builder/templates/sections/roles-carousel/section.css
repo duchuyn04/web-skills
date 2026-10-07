@@ -44,3 +44,7 @@
   .bl-roles__card { flex-basis: min(260px, 74vw); }
   .bl-roles__foot { gap: 1rem; }
 }
+
+/* cards that all fit the track sit in the middle; no scroll bar or arrows then (section.js adds .is-fit) */
+.bl-roles-sec.is-fit .bl-roles { justify-content: center; }
+.bl-roles-sec.is-fit .bl-roles__foot { display: none; }

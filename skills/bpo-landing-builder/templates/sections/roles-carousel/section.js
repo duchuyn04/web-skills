@@ -5,6 +5,11 @@
     var thumb = sec.querySelector('.bl-roles__thumb');
     if (!track) return;
     BL.motion.trackIn(track);
+    /* all cards fit: centre them and drop the scroll bar and arrows; otherwise the track slides as before */
+    function fit() { sec.classList.toggle('is-fit', track.scrollWidth <= track.clientWidth + 1); }
+    fit();
+    window.addEventListener('resize', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     if (!thumb) return;
     var queued = false;
     function sync() {

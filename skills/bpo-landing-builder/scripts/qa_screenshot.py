@@ -8,6 +8,7 @@ Usage:
     python qa_screenshot.py dist --widths 1280,390
     python qa_screenshot.py dist --no-motion      skip the frame-rate check
     python qa_screenshot.py dist --cvd            also save colour-vision screenshots (qa/cvd-*.png) to review
+    python qa_screenshot.py dist --sweep          also narrow the page from 1440 to 360 px in 20 px steps
 
 Checks (exit code 1 if any fail):
     - elements sticking out of the viewport sideways (horizontal overflow)
@@ -22,6 +23,8 @@ Checks (exit code 1 if any fail):
     - frame rate: at 1440 px on a 2x (Retina-class) screen, the hero and every section with a canvas
       must keep at least 30 frames per second. Canvas and paint cost grow with the square of the pixel
       ratio, so a 1x run hides slow animation that desktop users with scaled screens see as lag.
+    - with --sweep: the width ranges between 1440 and 360 px where something sticks out sideways or header
+      items overlap (fail), and where a short button or nav label wraps onto two lines (warning)
 Look at every screenshot yourself after the script passes.
 """
 import argparse
@@ -78,6 +81,75 @@ CHECK_JS = r"""
   return { overflow: overflow.slice(0, 12), overflowCount: overflow.length, clipped: clipped.slice(0, 12), broken, h1: document.querySelectorAll('h1').length, height: document.documentElement.scrollHeight };
 }
 """
+
+# Run at every step of --sweep: header and nav items drawn over each other, and short button or link labels
+# broken over two lines. The fixed widths miss a nav that collides at 1100 px or a button that wraps at 900.
+SWEEP_JS = r"""
+() => {
+  const wrapsText = (el) => {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (!node.textContent.trim()) continue;
+      range.selectNodeContents(node);
+      const tops = [...range.getClientRects()].filter(r => r.width > 1).map(r => r.top);
+      if (tops.length > 1 && Math.max(...tops) - Math.min(...tops) > 4) return true;
+    }
+    return false;
+  };
+  const shown = (el) => {
+    for (let p = el; p; p = p.parentElement) {
+      const s = getComputedStyle(p);
+      if (s.display === 'none' || s.visibility === 'hidden' || s.opacity === '0') return false;
+    }
+    return true;
+  };
+  const leaves = [];
+  for (const el of document.querySelectorAll('header *, nav *')) {
+    if (el.closest('[hidden],[aria-hidden="true"],.bl-sr-only,[inert]')) continue;
+    const own = [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim()) || ['svg', 'IMG', 'INPUT'].includes(el.tagName);
+    if (!own || !shown(el)) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2 || r.right < 0 || r.left > innerWidth || r.bottom < 0) continue;
+    leaves.push([el, r]);
+  }
+  const label = e => ((e.textContent || '').trim().slice(0, 24) || e.getAttribute('aria-label') || e.getAttribute('alt') || e.tagName.toLowerCase());
+  const overlap = [];
+  for (let i = 0; i < leaves.length; i++) {
+    for (let j = i + 1; j < leaves.length; j++) {
+      const [a, ra] = leaves[i], [b, rb] = leaves[j];
+      if (a.contains(b) || b.contains(a)) continue;
+      const w = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left);
+      const h = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
+      if (w > 3 && h > 3) overlap.push(label(a) + ' / ' + label(b));
+    }
+  }
+  const wrapped = [];
+  for (const el of document.querySelectorAll('.bl-btn, .bl-nav__link, .bl-chip, .bl-tabs__tab, header a, header button')) {
+    const text = (el.textContent || '').trim().replace(/\s+/g, ' ');
+    if (!text || text.length > 32 || !shown(el) || !el.getClientRects().length) continue;
+    if (wrapsText(el)) wrapped.push(text.slice(0, 30));
+  }
+  return { overlap: [...new Set(overlap)], wrapped: [...new Set(wrapped)] };
+}
+"""
+
+
+def width_ranges(widths):
+    """[1000, 980, 960, 700] with step 20 -> '960-1000, 700'."""
+    if not widths:
+        return ""
+    ws = sorted(set(widths), reverse=True)
+    step = min((a - b for a, b in zip(ws, ws[1:])), default=0) or 1
+    out, start, prev = [], ws[0], ws[0]
+    for w in ws[1:]:
+        if prev - w > step:
+            out.append(str(prev) if prev == start else "%d-%d" % (prev, start))
+            start = w
+        prev = w
+    out.append(str(prev) if prev == start else "%d-%d" % (prev, start))
+    return ", ".join(out)
+
 
 FREEZE_JS = r"""
 () => {
@@ -587,6 +659,34 @@ SIZE_LIMIT = 18    # distinct font sizes: base tokens are seven, the library pag
 SHADOW_LIMIT = 12  # resting shadows on non-controls
 
 
+def sweep_check(browser, index, widths):
+    """Narrow the page step by step. Returns (problems, warnings) with the width ranges where each one shows."""
+    ctx = browser.new_context(viewport={"width": widths[0], "height": 900}, device_scale_factor=1)
+    page = ctx.new_page()
+    page.goto(index.as_uri(), wait_until="load")
+    page.evaluate("document.fonts.ready.then(() => true)")
+    page.evaluate(SCROLL_JS)
+    page.evaluate(FREEZE_JS)
+    page.add_style_tag(content="*,*::before,*::after{transition:none!important;animation:none!important}")
+    over, overlap, wrapped = {}, {}, {}
+    for w in widths:
+        page.set_viewport_size({"width": w, "height": 900})
+        page.wait_for_timeout(60)
+        res = page.evaluate(CHECK_JS)
+        for line in res["overflow"][:3]:
+            over.setdefault(line.split(" spans ")[0], []).append(w)
+        r = page.evaluate(SWEEP_JS)
+        for o in r["overlap"]:
+            overlap.setdefault(o, []).append(w)
+        for t in r["wrapped"]:
+            wrapped.setdefault(t, []).append(w)
+    ctx.close()
+    problems = ["sticks out sideways at %s px: %s" % (width_ranges(ws), el) for el, ws in list(over.items())[:6]]
+    problems += ["header items overlap at %s px: %s" % (width_ranges(ws), o) for o, ws in list(overlap.items())[:6]]
+    warnings = ["label wraps onto two lines at %s px: \"%s\"" % (width_ranges(ws), t) for t, ws in list(wrapped.items())[:6]]
+    return problems, warnings
+
+
 def launch(p):
     for kind, opts in (("chromium", {"channel": "msedge"}), ("chromium", {"channel": "chrome"}), ("chromium", {}), ("webkit", {})):
         try:
@@ -604,7 +704,17 @@ def main():
     ap.add_argument("--out", default=None, help="screenshot folder (default: <dist>/qa)")
     ap.add_argument("--no-motion", action="store_true", help="skip the frame-rate check")
     ap.add_argument("--cvd", action="store_true", help="also save deuteranopia, protanopia and achromatopsia screenshots (qa/cvd-*.png) to review")
+    ap.add_argument("--sweep", nargs="?", const="1440,360,20", metavar="FROM,TO,STEP",
+                    help="also narrow the page from 1440 to 360 px in 20 px steps and report the width ranges where "
+                         "something sticks out sideways, header items overlap or a button label wraps")
     args = ap.parse_args()
+    sweep = None
+    if args.sweep:
+        try:
+            hi, lo, step = (list(map(int, args.sweep.split(","))) + [20])[:3]
+            sweep = list(range(max(hi, lo), min(hi, lo) - 1, -abs(step)))
+        except ValueError:
+            ap.error("--sweep takes FROM,TO,STEP, for example 1440,360,20")
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
@@ -701,6 +811,17 @@ def main():
                     el.screenshot(path=str(sdir / ("%02d-%s.jpg" % (i + 1, sid))), type="jpeg", quality=72)
                 print("     section shots in %s" % sdir)
             ctx.close()
+        if sweep:
+            problems, warnings = sweep_check(browser, index, sweep)
+            if pinned < 5:  # a site pinned to an older rules version gets the sweep as warnings
+                warnings = ["[rules %d, not enforced] %s" % (pinned, x) for x in problems] + warnings
+                problems = []
+            print("%s sweep %d to %dpx in %dpx steps" % ("OK  " if not problems else "FAIL", sweep[0], sweep[-1], sweep[0] - sweep[1] if len(sweep) > 1 else 0))
+            for pr in problems:
+                print("       " + pr)
+            for wr in warnings:
+                print("  WARN " + wr)
+            failed = failed or bool(problems)
         if not args.no_motion:
             lines, problems = motion_check(browser, index)
             print("%s motion 1440px at 2x: %s" % ("OK  " if not problems else "FAIL", ", ".join(lines) or "nothing moves"))

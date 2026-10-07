@@ -2,11 +2,11 @@
 .hc-note{background:var(--c-surface-2);color:var(--c-muted);font-size:12.5px;text-align:center;border-bottom:1px solid var(--c-border)}
 .hc-note p{padding:7px 0}
 .hc{background:var(--c-header);color:var(--c-header-fg);border-bottom:1px solid var(--c-border)}
-.hc-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;min-height:76px}
+.hc-top{display:grid;grid-template-columns:minmax(max-content,1fr) minmax(0,auto) minmax(max-content,1fr);align-items:center;gap:12px;min-height:76px}
 .hc-left{display:flex;align-items:center;gap:18px;min-width:0}
 .hc-link{display:inline-flex;align-items:center;gap:6px;min-height:36px;font-size:13px;color:var(--c-muted);white-space:nowrap}
 .hc-link:hover{color:var(--c-text)}
-.hc-logo{font-family:var(--font-head);font-size:28px;font-weight:600;letter-spacing:.01em;text-align:center;white-space:nowrap;color:var(--c-text)}
+.hc-logo{font-family:var(--font-head);font-size:28px;font-weight:600;letter-spacing:.01em;text-align:center;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--c-text)}
 .hc-right{display:flex;justify-content:flex-end;align-items:center;gap:2px}
 .hc-right .icon-btn{position:relative;color:var(--c-text)}
 .hc-right .icon-btn:hover{background:var(--c-surface-2)}

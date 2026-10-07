@@ -1,0 +1,18 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-stmt">
+      <div class="bl-stmt__head" data-reveal>
+        {{#eyebrow}}<p class="bl-eyebrow">{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2 bl-stmt__title">{{title}}</h2>
+      </div>
+      <div class="bl-stmt__body" data-reveal-group>
+        {{#paragraphs}}<p class="bl-stmt__p" data-reveal>{{.}}</p>{{/paragraphs}}
+        {{#cta}}<a class="bl-link" href="{{href}}" data-reveal>{{label}}{{arrow}}</a>{{/cta}}
+      </div>
+    </div>
+    <span class="bl-stmt__rule" aria-hidden="true" data-draw></span>
+    <ul class="bl-stmt__points" data-reveal-group>
+      {{#points}}<li data-reveal><span class="bl-stmt__icon">{{icon:check-circle}}</span><strong>{{title}}</strong><span>{{text}}</span></li>{{/points}}
+    </ul>
+  </div>
+</section>
