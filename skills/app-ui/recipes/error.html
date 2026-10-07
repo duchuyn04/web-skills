@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- recipe: error | Trang lỗi nằm trong khung sidebar để người dùng vẫn đi tiếp được: mã lỗi nhỏ, tiêu đề nói chuyện gì xảy ra, một câu nói vì sao và làm gì tiếp, nút viền quay lại | states: not-found forbidden server-error maintenance | use for: 404, 403, 500 và bảo trì của một trang trong app; chỉ khi cả app sập hoặc chưa đăng nhập mới bỏ khung -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Không tìm thấy trang · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="error" data-states="not-found forbidden server-error maintenance">
+<div class="app-side">
+  <nav class="sidebar" aria-label="Điều hướng chính">
+    <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    <a class="side-link" href="dashboard.html"><svg class="ico" aria-hidden="true"><use href="#i-dashboard"/></svg><span>Tổng quan</span></a>
+    <p class="side-group">Bán hàng</p>
+    <a class="side-link" href="table.html"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><span>Đơn hàng</span><span class="count new">6</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span>Khách hàng</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg><span>Sản phẩm</span></a>
+    <p class="side-group">Cửa hàng</p>
+    <a class="side-link" href="settings.html"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg><span>Cài đặt</span></a>
+    <div class="bottom">
+      <div class="who"><span class="avatar">GH</span><div><div class="strong small clip">Phạm Gia Huy</div><div class="muted small">Nhân viên bán hàng</div></div></div>
+    </div>
+  </nav>
+
+  <div class="side-main">
+    <header class="side-top">
+      <button class="btn icon quiet" type="button" data-side-toggle aria-label="Mở menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    </header>
+
+    <main class="side-page">
+      <div class="error-page" data-state="not-found">
+        <p class="code">404</p>
+        <h1>Không tìm thấy trang</h1>
+        <p>Đường dẫn có thể đã đổi, hoặc trang đã bị xoá. Kiểm tra lại địa chỉ, hoặc quay về trang tổng quan để tìm tiếp.</p>
+        <div class="row"><a class="btn" href="dashboard.html">Về trang tổng quan</a></div>
+      </div>
+
+      <div class="error-page" data-state="forbidden">
+        <p class="code">403</p>
+        <h1>Bạn không có quyền xem trang này</h1>
+        <p>Trang Thanh toán và hoá đơn chỉ dành cho chủ cửa hàng. Nhờ chị Trần Thu Hà, chủ cửa hàng, cấp quyền cho tài khoản của bạn trong Cài đặt, mục Nhân viên.</p>
+        <div class="row wrap">
+          <a class="btn" href="dashboard.html">Về trang tổng quan</a>
+          <button class="btn primary" type="button" data-toast="Đã gửi yêu cầu cho chị Trần Thu Hà">Xin quyền truy cập</button>
+        </div>
+      </div>
+
+      <div class="error-page" data-state="server-error">
+        <p class="code">500</p>
+        <h1>Lumen đang gặp sự cố</h1>
+        <p>Dữ liệu cửa hàng của bạn vẫn an toàn. Thử tải lại trang sau ít phút. Nếu vẫn lỗi, gọi 1900 6868 và đọc mã lỗi bên dưới cho nhân viên hỗ trợ.</p>
+        <div class="row"><button class="btn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg>Thử lại</button></div>
+        <p class="small muted">Mã lỗi <span class="num">7F3A-21C9</span></p>
+      </div>
+
+      <div class="error-page" data-state="maintenance">
+        <p class="code">Bảo trì</p>
+        <h1>Lumen đang bảo trì đến 22:00</h1>
+        <p>Trong lúc này bạn chưa xem hay sửa được đơn hàng. Website bán hàng của bạn vẫn mở và vẫn nhận đơn; đơn mới sẽ hiện ở đây sau 22:00.</p>
+        <div class="row"><button class="btn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg>Thử lại</button></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<!-- recipe: auth | Đăng nhập, tạo tài khoản, quên mật khẩu đứng riêng giữa trang, không khung app: logo, một câu hỏi, một form, một nút chính | states: login login-error register forgot sent | use for: mọi màn trước khi vào app; lỗi đăng nhập không nói ô nào sai -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng nhập · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="auth" data-states="login login-error register forgot sent">
+<main class="auth">
+  <div class="auth-box">
+    <a class="logo" href="list.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+
+    <section data-state="login login-error">
+      <h1>Đăng nhập</h1>
+      <p class="intro">Quản lý đơn hàng và website cửa hàng của bạn.</p>
+      <div class="stack">
+      <div class="notice bad" role="alert" data-state="login-error">
+        <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+        <div class="grow">Email hoặc mật khẩu chưa đúng. Kiểm tra lại, hoặc đặt mật khẩu mới.</div>
+      </div>
+      <form class="auth-form" action="list.html" novalidate>
+        <div class="field" data-state="login-error">
+          <label class="label" for="email-le">Email</label>
+          <input class="input" id="email-le" type="email" autocomplete="email" value="ha.tran@lumen.vn" aria-invalid="true">
+        </div>
+        <div class="field" data-state="login">
+          <label class="label" for="email-l">Email</label>
+          <input class="input" id="email-l" type="email" autocomplete="email" placeholder="ten@congty.vn">
+        </div>
+        <div class="field">
+          <div class="row between"><label class="label" for="pw-l">Mật khẩu</label><a class="small" href="?state=forgot">Quên mật khẩu?</a></div>
+          <input class="input" id="pw-l" type="password" autocomplete="current-password">
+        </div>
+        <button class="btn primary block" type="submit">Đăng nhập</button>
+        <p class="or">hoặc</p>
+        <div class="stack"><button class="btn" type="button"><img class="logo-img" src="../kit/img/google.svg" alt="">Đăng nhập bằng Google</button></div>
+      </form>
+      </div>
+      <p class="auth-switch">Chưa có tài khoản? <a href="?state=register">Tạo tài khoản</a></p>
+    </section>
+
+    <section data-state="register">
+      <h1>Tạo tài khoản</h1>
+      <p class="intro">Miễn phí, mỗi ngày tạo được 5 website mẫu.</p>
+      <form class="auth-form" action="list.html" novalidate>
+        <div class="field">
+          <label class="label" for="name-r">Họ tên</label>
+          <input class="input" id="name-r" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label class="label" for="email-r">Email</label>
+          <input class="input" id="email-r" type="email" autocomplete="email" placeholder="ten@congty.vn">
+        </div>
+        <div class="field">
+          <label class="label" for="pw-r">Mật khẩu</label>
+          <span class="hint" id="pw-r-hint">Ít nhất 8 ký tự.</span>
+          <input class="input" id="pw-r" type="password" autocomplete="new-password" aria-describedby="pw-r-hint">
+        </div>
+        <div class="field"><label class="check"><input type="checkbox"><span>Tôi đồng ý với <a href="#">điều khoản sử dụng</a></span></label></div>
+        <button class="btn primary block" type="submit">Tạo tài khoản</button>
+      </form>
+      <p class="auth-switch">Đã có tài khoản? <a href="?state=login">Đăng nhập</a></p>
+    </section>
+
+    <section data-state="forgot">
+      <h1>Đặt lại mật khẩu</h1>
+      <p class="intro">Nhập email bạn dùng để đăng nhập. Lumen gửi một đường link đặt mật khẩu mới, link dùng được trong 30 phút.</p>
+      <form class="auth-form" action="?state=sent" novalidate>
+        <div class="field">
+          <label class="label" for="email-f">Email</label>
+          <input class="input" id="email-f" type="email" autocomplete="email" value="ha.tran@lumen.vn">
+        </div>
+        <button class="btn primary block" type="submit">Gửi link đặt lại</button>
+      </form>
+      <p class="auth-switch"><a href="?state=login">Quay lại đăng nhập</a></p>
+    </section>
+
+    <section data-state="sent">
+      <h1>Kiểm tra hộp thư của bạn</h1>
+      <p class="intro">Lumen đã gửi link đặt mật khẩu mới tới <strong class="break">ha.tran@lumen.vn</strong>.</p>
+      <div class="auth-form">
+        <div class="row top">
+          <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+          <p class="grow soft small">Không thấy thư thì xem mục Thư rác hoặc Quảng cáo. Link hết hạn sau 30 phút.</p>
+        </div>
+        <button class="btn block" type="button" disabled>Gửi lại sau 60 giây</button>
+      </div>
+      <p class="auth-switch"><a href="?state=login">Quay lại đăng nhập</a></p>
+    </section>
+  </div>
+</main>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

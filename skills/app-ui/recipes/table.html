@@ -1,0 +1,184 @@
+<!doctype html>
+<!-- recipe: table | Bảng dữ liệu trong khung sidebar: tab trạng thái có số đếm, ô tìm, bộ lọc, chọn nhiều dòng với thanh thao tác, phân trang; dưới 640px mỗi dòng thành một khối | states: default empty no-results loading | use for: danh sách bản ghi nhiều cột để so sánh và xử lý hàng loạt (đơn hàng, khách hàng, yêu cầu, người dùng) -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đơn hàng · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="table" data-states="default empty no-results loading">
+<div class="app-side">
+  <nav class="sidebar" aria-label="Điều hướng chính">
+    <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    <a class="side-link" href="dashboard.html"><svg class="ico" aria-hidden="true"><use href="#i-dashboard"/></svg><span>Tổng quan</span></a>
+    <p class="side-group">Bán hàng</p>
+    <a class="side-link" href="table.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><span>Đơn hàng</span><span class="count new">6</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span>Khách hàng</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg><span>Sản phẩm</span></a>
+    <p class="side-group">Cửa hàng</p>
+    <a class="side-link" href="settings.html"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg><span>Cài đặt</span></a>
+    <div class="bottom">
+      <div class="who"><span class="avatar">TH</span><div><div class="strong small clip">Trần Thu Hà</div><div class="muted small">Chủ cửa hàng</div></div></div>
+    </div>
+  </nav>
+
+  <div class="side-main">
+    <header class="side-top">
+      <button class="btn icon quiet" type="button" data-side-toggle aria-label="Mở menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    </header>
+
+    <main class="side-page">
+      <div class="page-head">
+        <div>
+          <h1>Đơn hàng</h1>
+          <p class="sub">128 đơn trong 30 ngày qua. 6 đơn đang chờ bạn xác nhận.</p>
+        </div>
+        <div class="actions">
+          <button class="btn" type="button" data-toast="Đã tải file don-hang.csv"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Xuất CSV</button>
+          <a class="btn primary" href="wizard.html"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>Tạo đơn</a>
+        </div>
+      </div>
+
+      <div data-state="default no-results loading">
+        <div class="tabs" role="tablist" aria-label="Trạng thái đơn">
+          <button role="tab" aria-selected="true" type="button">Tất cả <span class="count">128</span></button>
+          <button role="tab" aria-selected="false" tabindex="-1" type="button">Chờ xác nhận <span class="count new">6</span></button>
+          <button role="tab" aria-selected="false" tabindex="-1" type="button">Đang giao <span class="count">12</span></button>
+          <button role="tab" aria-selected="false" tabindex="-1" type="button">Đã giao <span class="count">104</span></button>
+          <button role="tab" aria-selected="false" tabindex="-1" type="button">Đã huỷ <span class="count">6</span></button>
+        </div>
+
+        <div class="toolbar">
+          <label class="search"><span class="sr-only">Tìm đơn</span><svg class="ico sm" aria-hidden="true"><use href="#i-search"/></svg>
+            <input class="input" type="search" placeholder="Mã đơn, tên hoặc số điện thoại" value="" data-state="default loading">
+            <input class="input" type="search" value="Nguyễn Văn Aaaa" data-state="no-results">
+          </label>
+          <div class="filters">
+            <button class="filter" type="button" aria-pressed="false">Hôm nay</button>
+            <button class="filter" type="button" aria-pressed="true">30 ngày</button>
+            <div class="menu-wrap">
+              <button class="filter" type="button" data-menu aria-controls="menu-channel" aria-expanded="false">Kênh bán<svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+              <div class="menu left" id="menu-channel" hidden>
+                <label class="check"><input type="checkbox" checked>Website</label>
+                <label class="check"><input type="checkbox" checked>Zalo</label>
+                <label class="check"><input type="checkbox">Cửa hàng</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-box" data-state="default">
+        <div class="bulk" id="bulk-orders" hidden>
+          <strong><span data-bulk-count>0</span> đơn đã chọn</strong>
+          <button class="btn sm" type="button" data-toast="Đã xác nhận các đơn đã chọn" data-toast-action="Hoàn tác">Xác nhận</button>
+          <button class="btn sm" type="button">In phiếu giao</button>
+          <span class="spacer"></span>
+          <button class="btn sm quiet" type="button" data-bulk-clear>Bỏ chọn</button>
+        </div>
+        <table class="data cards" data-bulk="bulk-orders">
+          <thead>
+            <tr>
+              <th class="pick"><input type="checkbox" data-select-all aria-label="Chọn tất cả đơn trên trang"></th>
+              <th>Đơn</th>
+              <th>Trạng thái</th>
+              <th class="num"><button class="sort" type="button" data-sort="total">Tổng tiền<svg class="ico" aria-hidden="true"><use href="#i-arrow-up-down"/></svg></button></th>
+              <th aria-sort="descending"><button class="sort" type="button" data-sort="date">Ngày đặt<svg class="ico" aria-hidden="true"><use href="#i-chevron-down"/></svg></button></th>
+              <th class="end"><span class="sr-only">Thao tác</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pick"><input type="checkbox" aria-label="Chọn đơn DH1042"></td>
+              <td class="main"><a href="detail.html">DH1042</a><span class="sub">Lê Minh Châu · 0912 345 678</span></td>
+              <td data-label="Trạng thái"><span class="status run"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>Đang giao</span></td>
+              <td class="num" data-label="Tổng tiền">2.490.000 đ</td>
+              <td data-label="Ngày đặt"><span class="nowrap">07/10, 09:12</span></td>
+              <td class="end"><a class="btn sm" href="detail.html">Xem</a></td>
+            </tr>
+            <tr>
+              <td class="pick"><input type="checkbox" aria-label="Chọn đơn DH1041"></td>
+              <td class="main"><a href="detail.html">DH1041</a><span class="sub">Công ty TNHH Thương mại và Dịch vụ Kỹ thuật Phương Nam Toàn Cầu · chưa có số điện thoại</span></td>
+              <td data-label="Trạng thái"><span class="status warn"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Chờ xác nhận</span></td>
+              <td class="num" data-label="Tổng tiền">1.284.500.000 đ</td>
+              <td data-label="Ngày đặt"><span class="nowrap">06/10, 16:40</span></td>
+              <td class="end"><a class="btn sm" href="detail.html">Xem</a></td>
+            </tr>
+            <tr>
+              <td class="pick"><input type="checkbox" aria-label="Chọn đơn DH1040"></td>
+              <td class="main"><a href="detail.html">DH1040</a><span class="sub">Phạm Gia Huy · 0987 654 321</span></td>
+              <td data-label="Trạng thái"><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã giao</span></td>
+              <td class="num" data-label="Tổng tiền">0 đ</td>
+              <td data-label="Ngày đặt"><span class="nowrap">05/10, 08:05</span></td>
+              <td class="end"><a class="btn sm" href="detail.html">Xem</a></td>
+            </tr>
+            <tr>
+              <td class="pick"><input type="checkbox" aria-label="Chọn đơn DH1039"></td>
+              <td class="main"><a href="detail.html">DH1039</a><span class="sub">Võ Anh Khoa · 0903 111 222</span></td>
+              <td data-label="Trạng thái"><span class="status bad"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg>Đã huỷ</span></td>
+              <td class="num" data-label="Tổng tiền">590.000 đ</td>
+              <td data-label="Ngày đặt"><span class="nowrap">04/10, 21:47</span></td>
+              <td class="end"><a class="btn sm" href="detail.html">Xem</a></td>
+            </tr>
+            <tr>
+              <td class="pick"><input type="checkbox" aria-label="Chọn đơn DH1038"></td>
+              <td class="main"><a href="detail.html">DH1038</a><span class="sub">Đỗ Thị Lan · 0938 222 333</span></td>
+              <td data-label="Trạng thái"><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã giao</span></td>
+              <td class="num" data-label="Tổng tiền">12.990.000 đ</td>
+              <td data-label="Ngày đặt"><span class="nowrap">04/10, 10:30</span></td>
+              <td class="end"><a class="btn sm" href="detail.html">Xem</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="pager" aria-label="Phân trang">
+          <span>1-5 trong 128 đơn</span>
+          <span class="spacer"></span>
+          <button class="btn sm icon" type="button" disabled aria-label="Trang trước"><svg class="ico sm" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+          <span class="p-pages row tight">
+            <button class="btn sm" type="button" aria-current="page">1</button>
+            <button class="btn sm" type="button">2</button>
+            <button class="btn sm" type="button">3</button>
+            <span>…</span>
+            <button class="btn sm" type="button">26</button>
+          </span>
+          <button class="btn sm icon" type="button" aria-label="Trang sau"><svg class="ico sm" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        </nav>
+      </div>
+
+      <div class="table-box" data-state="loading">
+        <div class="empty">
+          <svg class="ico lg spin" aria-hidden="true"><use href="#i-loader"/></svg>
+          <p>Đang tải đơn hàng…</p>
+        </div>
+      </div>
+
+      <div class="table-box" data-state="no-results">
+        <div class="empty">
+          <svg class="ico lg" aria-hidden="true"><use href="#i-search"/></svg>
+          <h2>Không có đơn nào khớp "Nguyễn Văn Aaaa"</h2>
+          <p>Thử tìm bằng mã đơn hoặc số điện thoại, hoặc bỏ bộ lọc 30 ngày.</p>
+          <div class="row"><button class="btn" type="button">Xoá tìm kiếm</button></div>
+        </div>
+      </div>
+
+      <div class="panel" data-state="empty">
+        <div class="empty">
+          <svg class="ico lg" aria-hidden="true"><use href="#i-inbox"/></svg>
+          <h2>Chưa có đơn hàng nào</h2>
+          <p>Đơn khách đặt trên website và Zalo sẽ hiện ở đây. Bạn cũng có thể tạo đơn cho khách đặt qua điện thoại.</p>
+          <div class="row"><a class="btn" href="settings.html">Kết nối Zalo</a></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

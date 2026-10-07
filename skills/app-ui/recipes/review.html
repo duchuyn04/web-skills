@@ -1,0 +1,127 @@
+<!doctype html>
+<!-- recipe: review | Bàn duyệt bản dựng trong khung thanh trên: trang xem trước vẽ ở bề rộng thật rồi thu vào khung máy tính hoặc điện thoại, cột phải có việc tiếp theo, việc nên bổ sung và các lần tạo | states: desktop mobile expired published | use for: màn người dùng xem kết quả máy làm ra (website, mẫu, báo cáo) rồi quyết định dùng, sửa hay làm lại -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hải Đăng Digital · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="review" data-states="desktop mobile expired published">
+<header class="topbar"><a class="logo" href="list.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+<nav class="topnav" aria-label="Điều hướng chính"><a href="list.html" aria-current="page">Website của bạn</a><a href="table.html">Đơn hàng</a></nav>
+<div class="top-right"><span class="top-note"><span class="lbl">Hôm nay còn </span><strong>3</strong> lần tạo</span>
+<div class="menu-wrap"><button class="avatar" type="button" data-menu aria-controls="menu-account" aria-expanded="false" aria-label="Tài khoản">TH</button>
+<div class="menu" id="menu-account" hidden><div class="menu-head"><div class="strong">Trần Thu Hà</div><div class="muted small">ha.tran@lumen.vn</div></div><a href="dashboard.html">Trang quản trị</a><a href="settings.html">Cài đặt</a><hr><a href="auth.html">Đăng xuất</a></div></div></div></header>
+
+<main class="ws">
+  <section class="ws-main" aria-label="Xem trước website">
+    <div class="ws-bar">
+      <a class="btn icon quiet" href="list.html" aria-label="Về danh sách website"><svg class="ico" aria-hidden="true"><use href="#i-arrow-left"/></svg></a>
+      <div class="ws-title">
+        <h1>Hải Đăng Digital</h1>
+        <p>Bản 3 · tạo 07/10 lúc 01:16</p>
+      </div>
+      <div class="seg hide-sm" role="group" aria-label="Khổ xem trước" data-state="desktop published">
+        <button type="button" aria-pressed="true" data-to-state="desktop"><svg class="ico sm" aria-hidden="true"><use href="#i-monitor"/></svg>Máy tính</button>
+        <button type="button" aria-pressed="false" data-to-state="mobile"><svg class="ico sm" aria-hidden="true"><use href="#i-smartphone"/></svg>Điện thoại</button>
+      </div>
+      <div class="seg hide-sm" role="group" aria-label="Khổ xem trước" data-state="mobile">
+        <button type="button" aria-pressed="false" data-to-state="desktop"><svg class="ico sm" aria-hidden="true"><use href="#i-monitor"/></svg>Máy tính</button>
+        <button type="button" aria-pressed="true" data-to-state="mobile"><svg class="ico sm" aria-hidden="true"><use href="#i-smartphone"/></svg>Điện thoại</button>
+      </div>
+      <a class="btn icon" href="table.html" target="_blank" rel="noopener" aria-label="Mở trong tab mới" data-state="desktop mobile published"><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+      <span class="status ok" data-state="published"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã xuất bản</span>
+      <button class="btn primary" type="button" data-open="publish-dialog" data-state="desktop mobile">Xuất bản</button>
+    </div>
+
+    <div class="ws-stage" data-state="desktop published">
+      <div class="dev-desktop">
+        <div class="dev-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="dev-url">hai-dang.lumen.vn</span></div>
+        <div class="vp" data-w="1440"><iframe src="table.html" title="Xem trước website trên máy tính" loading="lazy"></iframe></div>
+      </div>
+    </div>
+
+    <div class="ws-stage mobile" data-state="mobile">
+      <div class="dev-phone" data-screen="light">
+        <div class="dev-screen">
+          <div class="dev-status" aria-hidden="true"><span>9:41</span><span class="dev-island"></span><span class="dev-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 2.4c2.4 0 4.6.9 6.3 2.5l1.2-1.3A10.4 10.4 0 0 0 8 .6 10.4 10.4 0 0 0 .5 3.6l1.2 1.3A8.6 8.6 0 0 1 8 2.4z"/><path d="M8 5.8c1.5 0 2.8.5 3.9 1.5l1.2-1.3A7.4 7.4 0 0 0 8 4a7.4 7.4 0 0 0-5.1 2l1.2 1.3c1-1 2.4-1.5 3.9-1.5z"/><path d="M8 9.2c.7 0 1.3.3 1.8.7L8 11.8 6.2 9.9c.5-.4 1.1-.7 1.8-.7z"/></svg><svg viewBox="0 0 27 12"><rect x=".6" y=".6" width="22.4" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".4"/><rect x="2.3" y="2.3" width="19" height="7.4" rx="1.8"/><path d="M24.4 4.2v3.6a2 2 0 0 0 0-3.6z" opacity=".45"/></svg></span></div>
+          <div class="vp" data-w="390"><iframe src="table.html" title="Xem trước website trên điện thoại" loading="lazy"></iframe></div>
+          <span class="dev-home" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ws-stage" data-state="expired">
+      <div class="expired">
+        <div>
+          <svg class="ico lg muted" aria-hidden="true"><use href="#i-history"/></svg>
+          <h2>Bản xem thử đã hết hạn</h2>
+          <p>Bản xem thử giữ 7 ngày kể từ lần mở cuối. Thông tin bạn nhập vẫn còn, dựng lại mất khoảng 5 phút và không tính vào lượt tạo hôm nay.</p>
+          <button class="btn" type="button" data-toast="Đã bắt đầu dựng lại bản 3"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg>Dựng lại bản này</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="ws-side" aria-label="Việc tiếp theo">
+    <section class="stack tight" data-state="desktop mobile">
+      <h3>Xuất bản</h3>
+      <p class="small soft">Khách vào được tại <span class="nowrap">hai-dang.lumen.vn</span> ngay sau khi bạn bấm Xuất bản ở góc trên. Bạn vẫn sửa được sau đó; tên miền riêng gắn trong Cài đặt.</p>
+    </section>
+
+    <div class="notice ok" data-state="published">
+      <svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>
+      <div class="grow">
+        <strong>Đã xuất bản lúc 10:12</strong>
+        Khách vào được tại <a href="table.html" target="_blank" rel="noopener">hai-dang.lumen.vn</a>.
+      </div>
+    </div>
+
+    <p class="soft small" data-state="expired">Bản 2 vẫn xem được trong danh sách bên dưới nếu bạn không muốn chờ dựng lại.</p>
+
+    <section aria-labelledby="h-todo">
+      <h3 id="h-todo">Việc nên bổ sung</h3>
+      <ul class="plain-list">
+        <li>Số điện thoại ở cuối trang đang để trống.</li>
+        <li>3 sản phẩm chưa có ảnh, website đang dùng ảnh giữ chỗ.</li>
+        <li>Trang Giới thiệu mới có một câu, nên thêm năm thành lập và địa chỉ.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="h-versions">
+      <h3 id="h-versions">Các lần tạo</h3>
+      <ul class="ver-list">
+        <li class="current">
+          <div class="ver-row"><span class="ver-name">Bản 3 <span class="badge">Đang xem</span></span><span class="ver-date">07/10, 01:16</span></div>
+          <div class="ver-note">Đổi màu nhấn sang xanh, thêm mục Bảng giá</div>
+        </li>
+        <li>
+          <div class="ver-row"><a class="ver-name" href="review.html">Bản 2</a><span class="ver-date">06/10, 22:05</span></div>
+          <div class="ver-note">Thêm 4 sản phẩm gốm men lam</div>
+        </li>
+        <li>
+          <div class="ver-row"><span class="strong small muted">Bản 1</span><span class="ver-date">29/09, 14:30</span></div>
+          <div class="ver-note">Không còn để xem, bản xem thử giữ 7 ngày</div>
+        </li>
+      </ul>
+    </section>
+  </aside>
+</main>
+
+<dialog class="dialog" id="publish-dialog" aria-labelledby="publish-title">
+  <h2 id="publish-title">Xuất bản bản 3?</h2>
+  <div class="body">Khách sẽ thấy bản này tại <span class="nowrap">hai-dang.lumen.vn</span>. Bản đang chạy hiện tại (bản 2) được giữ lại để quay về khi cần.</div>
+  <div class="actions">
+    <button class="btn quiet" type="button" data-close>Huỷ</button>
+    <button class="btn primary" type="button" data-close="ok" data-toast="Đã xuất bản bản 3">Xuất bản</button>
+  </div>
+</dialog>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

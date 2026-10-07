@@ -1,0 +1,180 @@
+<!doctype html>
+<!-- recipe: settings | Cài đặt trong khung sidebar: menu mục bên trái, mỗi mục một khối hàng cài đặt (tên và mô tả bên trái, ô nhập bên phải), vùng nguy hiểm cuối trang có hộp xác nhận, thanh lưu dính đáy khi có thay đổi | states: default dirty error saved | use for: trang cài đặt cửa hàng, tài khoản hay dự án, nơi người dùng đổi vài giá trị rồi lưu một lần -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cài đặt · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="settings" data-states="default dirty error saved">
+<div class="app-side">
+  <nav class="sidebar" aria-label="Điều hướng chính">
+    <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    <a class="side-link" href="dashboard.html"><svg class="ico" aria-hidden="true"><use href="#i-dashboard"/></svg><span>Tổng quan</span></a>
+    <p class="side-group">Bán hàng</p>
+    <a class="side-link" href="table.html"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><span>Đơn hàng</span><span class="count new">6</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span>Khách hàng</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg><span>Sản phẩm</span></a>
+    <p class="side-group">Cửa hàng</p>
+    <a class="side-link" href="settings.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg><span>Cài đặt</span></a>
+    <div class="bottom">
+      <div class="who"><span class="avatar">TH</span><div><div class="strong small clip">Trần Thu Hà</div><div class="muted small">Chủ cửa hàng</div></div></div>
+    </div>
+  </nav>
+
+  <div class="side-main">
+    <header class="side-top">
+      <button class="btn icon quiet" type="button" data-side-toggle aria-label="Mở menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    </header>
+
+    <main class="side-page">
+      <div class="page-head">
+        <div>
+          <h1>Cài đặt cửa hàng</h1>
+          <p class="sub">Thông tin ở đây hiện trên website, hoá đơn và tin nhắn gửi khách.</p>
+        </div>
+      </div>
+
+      <div class="stack loose">
+        <div class="notice ok" role="status" data-state="saved">
+          <svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>
+          <div class="grow"><strong>Đã lưu lúc 10:42</strong>Website và hoá đơn mới dùng thông tin này ngay.</div>
+        </div>
+
+        <div class="settings">
+          <nav class="settings-nav" aria-label="Mục cài đặt">
+            <a href="#chung" aria-current="true">Thông tin chung</a>
+            <a href="#thanh-toan">Thanh toán</a>
+            <a href="#giao-hang">Giao hàng</a>
+            <a href="#thong-bao">Thông báo</a>
+            <a href="#nhan-vien">Nhân viên</a>
+          </nav>
+
+          <div class="stack loose">
+            <section class="panel" id="chung" aria-labelledby="h-chung">
+              <div class="card-head"><h2 id="h-chung">Thông tin chung</h2></div>
+              <div class="setting">
+                <div><label class="s-title" for="shop-name">Tên cửa hàng</label><div class="s-desc">Hiện ở đầu website và trên hoá đơn.</div></div>
+                <input class="input" id="shop-name" value="Tiệm Gốm Nhà Hà">
+              </div>
+              <div class="setting">
+                <div><label class="s-title" for="shop-phone">Số điện thoại nhận đơn</label><div class="s-desc">Khách gọi số này khi cần đổi đơn. Lumen gửi tin báo đơn mới về đây.</div></div>
+                <input class="input" id="shop-phone" type="tel" value="0912 345 678">
+              </div>
+              <div class="setting">
+                <div><label class="s-title" for="shop-address">Địa chỉ lấy hàng</label><div class="s-desc">Bên giao hàng đến đây lấy đơn.</div></div>
+                <textarea class="textarea" id="shop-address">Số 128/14 đường Nguyễn Thị Minh Khai, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</textarea>
+              </div>
+              <div class="setting">
+                <div><label class="s-title" for="shop-currency">Đơn vị tiền</label><div class="s-desc">Giá trên website và hoá đơn.</div></div>
+                <div class="select-wrap">
+                  <select class="select" id="shop-currency"><option selected>Việt Nam đồng (đ)</option><option>Đô la Mỹ (USD)</option></select>
+                  <svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel" id="thanh-toan" aria-labelledby="h-thanh-toan">
+              <div class="card-head"><h2 id="h-thanh-toan">Thanh toán</h2></div>
+              <div class="setting">
+                <div><div class="s-title">Nhận chuyển khoản</div><div class="s-desc">Khách thấy số tài khoản và mã QR ở bước thanh toán.</div></div>
+                <label class="switch"><input type="checkbox" checked>Đang bật</label>
+              </div>
+              <div class="setting">
+                <div><label class="s-title" for="bank">Tài khoản nhận tiền</label><div class="s-desc">Tên chủ tài khoản phải trùng tên trên giấy phép kinh doanh.</div></div>
+                <input class="input" id="bank" value="Vietcombank · 0071 0012 34567 · TRAN THU HA">
+              </div>
+            </section>
+
+            <section class="panel" id="giao-hang" aria-labelledby="h-giao-hang">
+              <div class="card-head"><h2 id="h-giao-hang">Giao hàng</h2></div>
+              <div class="setting">
+                <div><label class="s-title" for="ship-fee">Phí giao hàng</label><div class="s-desc">Áp dụng cho mọi đơn dưới mức miễn phí.</div></div>
+                <div>
+                  <div class="input-unit" data-state="default dirty saved"><input class="input num" id="ship-fee" inputmode="numeric" value="30.000"><span class="muted">đ</span></div>
+                  <div data-state="error">
+                    <div class="input-unit"><input class="input num" id="ship-fee-error" inputmode="numeric" value="750.000" aria-invalid="true" aria-describedby="ship-fee-msg" aria-label="Phí giao hàng"><span class="muted">đ</span></div>
+                    <p class="error-text" id="ship-fee-msg"><svg class="ico sm" aria-hidden="true"><use href="#i-alert"/></svg>Phí giao hàng phải từ 0 đến 500.000 đ</p>
+                  </div>
+                </div>
+              </div>
+              <div class="setting">
+                <div><label class="s-title" for="free-from">Miễn phí giao từ</label><div class="s-desc">Để 0 nếu không miễn phí đơn nào.</div></div>
+                <div class="input-unit"><input class="input num" id="free-from" inputmode="numeric" value="500.000"><span class="muted">đ</span></div>
+              </div>
+              <div class="setting">
+                <div><label class="s-title" for="hold-days">Giữ đơn chưa thanh toán</label><div class="s-desc">Quá hạn này đơn tự huỷ và trả hàng về kho.</div></div>
+                <div class="input-unit"><input class="input num" id="hold-days" inputmode="numeric" value="3"><span class="muted">ngày</span></div>
+              </div>
+            </section>
+
+            <section class="panel" id="thong-bao" aria-labelledby="h-thong-bao">
+              <div class="card-head"><h2 id="h-thong-bao">Thông báo</h2></div>
+              <div class="setting">
+                <div><div class="s-title">Báo đơn mới qua Zalo</div><div class="s-desc">Gửi về số 0912 345 678 ngay khi có đơn.</div></div>
+                <label class="switch"><input type="checkbox" checked>Đang bật</label>
+              </div>
+              <div class="setting">
+                <div><div class="s-title">Email tổng kết cuối ngày</div><div class="s-desc">Doanh thu, số đơn và đơn còn chờ, gửi lúc 21:00.</div></div>
+                <label class="switch"><input type="checkbox">Đang tắt</label>
+              </div>
+            </section>
+
+            <section class="panel" id="nhan-vien" aria-labelledby="h-nhan-vien">
+              <div class="card-head"><h2 id="h-nhan-vien">Nhân viên</h2><button class="btn sm" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-plus"/></svg>Mời nhân viên</button></div>
+              <div class="setting">
+                <div class="who"><span class="avatar">TH</span><div><div class="strong clip">Trần Thu Hà</div><div class="muted small clip">ha.tran@lumen.vn</div></div></div>
+                <div class="soft small">Chủ cửa hàng, không đổi được</div>
+              </div>
+              <div class="setting">
+                <div class="who"><span class="avatar">NV</span><div><div class="strong clip">Nguyễn Văn Bảo Ngọc Phương</div><div class="muted small clip">ngoc.phuong.nguyen.van.bao@gmail.com</div></div></div>
+                <div class="select-wrap">
+                  <select class="select" aria-label="Quyền của Nguyễn Văn Bảo Ngọc Phương"><option selected>Bán hàng</option><option>Kho</option><option>Quản lý</option></select>
+                  <svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel" aria-labelledby="h-danger">
+              <div class="card-head"><h2 id="h-danger">Vùng nguy hiểm</h2></div>
+              <div class="setting">
+                <div><div class="s-title">Tạm đóng cửa hàng</div><div class="s-desc">Khách vẫn xem được website nhưng không đặt được hàng. Đơn đang giao không bị ảnh hưởng.</div></div>
+                <div><button class="btn danger" type="button" data-open="close-dialog">Tạm đóng cửa hàng</button></div>
+              </div>
+            </section>
+
+            <div class="savebar" data-state="dirty">
+              <span class="grow">Bạn có 2 thay đổi chưa lưu</span>
+              <button class="btn quiet" type="button">Huỷ</button>
+              <button class="btn primary" type="button">Lưu thay đổi</button>
+            </div>
+            <div class="savebar" data-state="error">
+              <span class="grow"><span class="status bad sm"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg>Sửa 1 mục trước khi lưu</span></span>
+              <button class="btn quiet" type="button">Huỷ</button>
+              <button class="btn primary" type="button">Lưu thay đổi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<dialog class="dialog" id="close-dialog" aria-labelledby="close-title">
+  <h2 id="close-title">Tạm đóng cửa hàng?</h2>
+  <div class="body">Khách sẽ thấy dòng "Cửa hàng tạm nghỉ" và không đặt được hàng cho tới khi bạn mở lại. 6 đơn chờ xác nhận vẫn ở trong danh sách đơn.</div>
+  <div class="actions">
+    <button class="btn quiet" type="button" data-close>Huỷ</button>
+    <button class="btn danger solid" type="button" data-close="ok" data-toast="Đã tạm đóng cửa hàng" data-toast-action="Mở lại">Tạm đóng</button>
+  </div>
+</dialog>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

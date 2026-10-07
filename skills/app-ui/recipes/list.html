@@ -1,0 +1,197 @@
+<!doctype html>
+<!-- recipe: list | Danh sách bản ghi dạng hàng trong khung thanh trên: ảnh nhỏ, tên, dòng phụ, trạng thái có icon, một nút viền và menu thao tác cho mỗi hàng; nút chính duy nhất ở đầu trang | states: default empty loading quota-out | use for: danh sách ít cột mà mỗi mục có ảnh hoặc trạng thái riêng (website, dự án, tài liệu, chiến dịch) -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website của bạn · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="list" data-states="default empty loading quota-out">
+<header class="topbar">
+  <a class="logo" href="list.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+  <nav class="topnav" aria-label="Điều hướng chính"><a href="list.html" aria-current="page">Website của bạn</a><a href="table.html">Đơn hàng</a></nav>
+  <div class="top-right">
+    <span class="top-note" data-state="default empty loading"><span class="lbl">Hôm nay còn </span><strong>3</strong> lần tạo</span>
+    <span class="top-note" data-state="quota-out"><span class="lbl">Hôm nay còn </span><strong>0</strong> lần tạo</span>
+    <div class="menu-wrap">
+      <button class="avatar" type="button" data-menu aria-controls="menu-account" aria-expanded="false" aria-label="Tài khoản">TH</button>
+      <div class="menu" id="menu-account" hidden>
+        <div class="menu-head"><div class="strong">Trần Thu Hà</div><div class="muted small">ha.tran@lumen.vn</div></div>
+        <a href="dashboard.html">Trang quản trị</a>
+        <a href="settings.html">Cài đặt</a>
+        <hr>
+        <a href="auth.html">Đăng xuất</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page-head">
+    <div>
+      <h1>Website của bạn</h1>
+      <p class="sub" data-state="default loading quota-out">6 website. Lần tạo không thành công được hoàn lại.</p>
+      <p class="sub" data-state="empty">Bạn chưa tạo website nào.</p>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="wizard.html" data-state="default empty loading"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>Tạo website mới</a>
+      <button class="btn primary" type="button" disabled data-state="quota-out"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>Tạo website mới</button>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="notice warn" data-state="quota-out">
+      <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+      <div class="grow"><strong>Hôm nay bạn đã dùng hết 5 lần tạo</strong>Bạn tạo tiếp được từ 0:00 ngày mai. Các website đã tạo vẫn xem và tải về bình thường.</div>
+    </div>
+  <ul class="list" data-state="default quota-out">
+    <li class="list-item">
+      <a class="thumb" href="review.html" tabindex="-1"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&q=70&auto=format&fit=crop" alt="Ảnh trang chủ website Tiệm gốm Mộc An" loading="lazy"></a>
+      <div>
+        <a class="item-title" href="review.html">Tiệm gốm Mộc An</a>
+        <div class="item-meta">Cửa hàng gốm sứ · bản 3, tạo 07/10 lúc 09:12</div>
+      </div>
+      <div><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã tạo xong</span></div>
+      <div class="item-actions">
+        <a class="btn sm" href="review.html">Xem website</a>
+        <div class="menu-wrap">
+          <button class="btn icon sm quiet" type="button" data-menu aria-controls="menu-row-1" aria-expanded="false" aria-label="Thao tác khác cho Tiệm gốm Mộc An"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="menu-row-1" hidden>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Đổi tên</button>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg>Nhân bản</button>
+            <hr>
+            <button class="danger" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-trash"/></svg>Xoá</button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="list-item">
+      <div class="thumb">Đang tạo</div>
+      <div>
+        <a class="item-title" href="progress.html">Phụ kiện điện thoại Minh Phát</a>
+        <div class="item-meta">Cửa hàng phụ kiện · bắt đầu 07/10 lúc 10:31</div>
+      </div>
+      <div class="stack tight">
+        <span class="status run"><svg class="ico spin" aria-hidden="true"><use href="#i-loader"/></svg>Đang tạo, 40%</span>
+        <div class="bar"><i style="width:40%"></i></div>
+      </div>
+      <div class="item-actions">
+        <a class="btn sm" href="progress.html">Xem tiến độ</a>
+        <div class="menu-wrap">
+          <button class="btn icon sm quiet" type="button" data-menu aria-controls="menu-row-2" aria-expanded="false" aria-label="Thao tác khác cho Phụ kiện điện thoại Minh Phát"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="menu-row-2" hidden>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Đổi tên</button>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg>Nhân bản</button>
+            <hr>
+            <button class="danger" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-trash"/></svg>Xoá</button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="list-item">
+      <a class="thumb" href="review.html" tabindex="-1"><img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=70&auto=format&fit=crop" alt="Ảnh trang chủ website thời trang công sở Phương Nam" loading="lazy"></a>
+      <div>
+        <a class="item-title" href="review.html">Công ty TNHH Thương mại và Dịch vụ Thời trang Công sở Phương Nam Toàn Quốc, chi nhánh Thủ Đức</a>
+        <div class="item-meta">Cửa hàng thời trang · bản 11, tạo 05/10 lúc 22:21</div>
+      </div>
+      <div><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã tạo xong</span></div>
+      <div class="item-actions">
+        <a class="btn sm" href="review.html">Xem website</a>
+        <div class="menu-wrap">
+          <button class="btn icon sm quiet" type="button" data-menu aria-controls="menu-row-3" aria-expanded="false" aria-label="Thao tác khác cho Thời trang Công sở Phương Nam"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="menu-row-3" hidden>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Đổi tên</button>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg>Nhân bản</button>
+            <hr>
+            <button class="danger" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-trash"/></svg>Xoá</button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="list-item">
+      <div class="thumb">Chưa có website</div>
+      <div>
+        <a class="item-title" href="progress.html">Nhà thuốc An Khang quận 7</a>
+        <div class="item-meta">Nhà thuốc · bắt đầu 06/10 lúc 00:21</div>
+      </div>
+      <div><span class="status bad"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg>Chưa tạo được</span></div>
+      <div class="item-actions">
+        <a class="btn sm" href="progress.html">Xem lý do</a>
+        <div class="menu-wrap">
+          <button class="btn icon sm quiet" type="button" data-menu aria-controls="menu-row-4" aria-expanded="false" aria-label="Thao tác khác cho Nhà thuốc An Khang quận 7"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="menu-row-4" hidden>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Đổi tên</button>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg>Nhân bản</button>
+            <hr>
+            <button class="danger" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-trash"/></svg>Xoá</button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="list-item">
+      <div class="thumb">Chưa tạo</div>
+      <div>
+        <a class="item-title" href="wizard.html">Website chưa đặt tên</a>
+        <div class="item-meta">Đã điền 3 trên 7 bước · sửa lần cuối 07/10 lúc 02:21</div>
+      </div>
+      <div><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg>Bản nháp</span></div>
+      <div class="item-actions">
+        <a class="btn sm" href="wizard.html">Điền tiếp</a>
+        <div class="menu-wrap">
+          <button class="btn icon sm quiet" type="button" data-menu aria-controls="menu-row-5" aria-expanded="false" aria-label="Thao tác khác cho Website chưa đặt tên"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="menu-row-5" hidden>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Đổi tên</button>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg>Nhân bản</button>
+            <hr>
+            <button class="danger" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-trash"/></svg>Xoá</button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="list-item">
+      <a class="thumb" href="review.html" tabindex="-1"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=70&auto=format&fit=crop" alt="Ảnh trang chủ website Đồng hồ Lê Gia" loading="lazy"></a>
+      <div>
+        <a class="item-title" href="review.html">Đồng hồ Lê Gia</a>
+        <div class="item-meta">Cửa hàng đồng hồ · bản 1, tạo 03/10 lúc 14:05</div>
+      </div>
+      <div><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã tạo xong</span></div>
+      <div class="item-actions">
+        <a class="btn sm" href="review.html">Xem website</a>
+        <div class="menu-wrap">
+          <button class="btn icon sm quiet" type="button" data-menu aria-controls="menu-row-6" aria-expanded="false" aria-label="Thao tác khác cho Đồng hồ Lê Gia"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="menu-row-6" hidden>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Đổi tên</button>
+            <button type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-copy"/></svg>Nhân bản</button>
+            <hr>
+            <button class="danger" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-trash"/></svg>Xoá</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="panel" data-state="loading">
+    <div class="empty">
+      <svg class="ico lg spin" aria-hidden="true"><use href="#i-loader"/></svg>
+      <p>Đang tải danh sách website…</p>
+    </div>
+  </div>
+
+  <div class="panel" data-state="empty">
+    <div class="empty">
+      <svg class="ico lg" aria-hidden="true"><use href="#i-globe"/></svg>
+      <h2>Chưa có website nào</h2>
+      <p>Trả lời vài câu về cửa hàng, Lumen dựng website mẫu trong khoảng 10 phút để bạn xem trước.</p>
+    </div>
+  </div>
+  </div>
+</main>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

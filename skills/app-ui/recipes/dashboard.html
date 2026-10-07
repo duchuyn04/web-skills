@@ -1,0 +1,220 @@
+<!doctype html>
+<!-- recipe: dashboard | Tổng quan trong khung sidebar: hàng bốn con số có so sánh với hôm qua, danh sách việc cần xử lý xếp theo mức gấp, biểu đồ cột 14 ngày vẽ tay bằng SVG, bảng đơn mới nhất | states: default first-day alert | use for: trang đầu của khu quản trị, nơi người dùng vào mỗi sáng để biết hôm nay có gì phải làm -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tổng quan · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="dashboard" data-states="default first-day alert">
+<div class="app-side">
+  <nav class="sidebar" aria-label="Điều hướng chính">
+    <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    <a class="side-link" href="dashboard.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="#i-dashboard"/></svg><span>Tổng quan</span></a>
+    <p class="side-group">Bán hàng</p>
+    <a class="side-link" href="table.html"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><span>Đơn hàng</span><span class="count new" data-state="default alert">6</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span>Khách hàng</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg><span>Sản phẩm</span></a>
+    <p class="side-group">Cửa hàng</p>
+    <a class="side-link" href="settings.html"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg><span>Cài đặt</span></a>
+    <div class="bottom">
+      <div class="who"><span class="avatar">TH</span><div><div class="strong small clip">Trần Thu Hà</div><div class="muted small">Chủ cửa hàng</div></div></div>
+    </div>
+  </nav>
+
+  <div class="side-main">
+    <header class="side-top">
+      <button class="btn icon quiet" type="button" data-side-toggle aria-label="Mở menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    </header>
+
+    <main class="side-page">
+      <div class="page-head">
+        <div>
+          <h1>Tổng quan hôm nay</h1>
+          <p class="sub" data-state="default alert">So với hôm qua, tính đến 10:40</p>
+          <p class="sub" data-state="first-day">Cửa hàng mở hôm nay. Số liệu bắt đầu có từ đơn đầu tiên.</p>
+        </div>
+        <div class="actions">
+          <div class="seg" role="group" aria-label="Khoảng thời gian">
+            <button type="button" aria-pressed="true">Hôm nay</button>
+            <button type="button" aria-pressed="false">7 ngày</button>
+            <button type="button" aria-pressed="false">30 ngày</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack loose">
+        <div class="notice bad" role="alert" data-state="alert">
+          <svg class="ico" aria-hidden="true"><use href="#i-credit-card"/></svg>
+          <div class="grow stack tight">
+            <div><strong>Cổng thanh toán đang lỗi từ 09:15</strong>Khách trả bằng thẻ và ví điện tử không đặt được đơn. Đơn trả tiền khi nhận hàng vẫn chạy bình thường.</div>
+            <div><a class="btn sm" href="settings.html">Kiểm tra cài đặt thanh toán</a></div>
+          </div>
+        </div>
+
+        <section class="figures" aria-label="Con số chính" data-state="default alert">
+          <div class="figure">
+            <div class="f-label">Doanh thu</div>
+            <div class="f-value">18.450.000 đ</div>
+            <div class="f-delta"><span class="up">+12%</span><span>Hôm qua: 16.470.000 đ</span></div>
+          </div>
+          <div class="figure">
+            <div class="f-label">Đơn hàng</div>
+            <div class="f-value">23</div>
+            <div class="f-delta"><span class="down">-4%</span><span>Hôm qua: 24</span></div>
+          </div>
+          <div class="figure">
+            <div class="f-label">Giá trị đơn trung bình</div>
+            <div class="f-value">802.000 đ</div>
+            <div class="f-delta"><span class="up">+17%</span><span>Hôm qua: 686.000 đ</span></div>
+          </div>
+          <div class="figure">
+            <div class="f-label">Khách mới</div>
+            <div class="f-value">0</div>
+            <div class="f-delta"><span class="down">-3</span><span>Hôm qua: 3</span></div>
+          </div>
+        </section>
+
+        <section class="figures" aria-label="Con số chính" data-state="first-day">
+          <div class="figure">
+            <div class="f-label">Doanh thu</div>
+            <div class="f-value">0 đ</div>
+            <div class="f-delta">Chưa có số liệu để so</div>
+          </div>
+          <div class="figure">
+            <div class="f-label">Đơn hàng</div>
+            <div class="f-value">0</div>
+            <div class="f-delta">Chưa có số liệu để so</div>
+          </div>
+          <div class="figure">
+            <div class="f-label">Giá trị đơn trung bình</div>
+            <div class="f-value">0 đ</div>
+            <div class="f-delta">Chưa có số liệu để so</div>
+          </div>
+          <div class="figure">
+            <div class="f-label">Khách mới</div>
+            <div class="f-value">0</div>
+            <div class="f-delta">Chưa có số liệu để so</div>
+          </div>
+        </section>
+
+        <div class="grid-2">
+          <section class="card" aria-labelledby="h-todo">
+            <div class="card-head"><h2 id="h-todo">Cần xử lý</h2><span class="muted small" data-state="default alert">9 việc</span></div>
+            <ul class="attention" data-state="default alert">
+              <li>
+                <svg class="ico a-bad" aria-hidden="true"><use href="#i-x-circle"/></svg>
+                <div class="grow"><div class="a-title">1 đơn thanh toán lỗi</div><div class="a-sub">DH1037 của Công ty TNHH Phương Nam, 4.990.000 đ, khách đã bị trừ tiền</div></div>
+                <a class="btn sm" href="detail.html">Xem đơn</a>
+              </li>
+              <li>
+                <svg class="ico a-warn" aria-hidden="true"><use href="#i-truck"/></svg>
+                <div class="grow"><div class="a-title">2 đơn giao chậm hơn hẹn</div><div class="a-sub">Quá ngày giao 1 ngày, chưa có cập nhật từ bên giao hàng</div></div>
+                <a class="btn sm" href="table.html">Xem 2 đơn</a>
+              </li>
+              <li>
+                <svg class="ico a-info" aria-hidden="true"><use href="#i-clock"/></svg>
+                <div class="grow"><div class="a-title">6 đơn chờ xác nhận</div><div class="a-sub">Đơn cũ nhất đặt lúc 07:52, khách đang chờ gọi lại</div></div>
+                <a class="btn sm" href="table.html">Xác nhận đơn</a>
+              </li>
+            </ul>
+            <div class="empty" data-state="first-day">
+              <svg class="ico lg" aria-hidden="true"><use href="#i-inbox"/></svg>
+              <h3>Chưa có việc cần xử lý</h3>
+              <p>Đơn chờ xác nhận, đơn giao chậm và lỗi thanh toán sẽ hiện ở đây. Gửi link cửa hàng cho khách quen để có đơn đầu tiên.</p>
+              <div class="row"><button class="btn" type="button" data-toast="Đã sao chép tiemgomnhaha.lumen.vn"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Sao chép link cửa hàng</button></div>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="h-revenue">
+            <div class="card-head"><h2 id="h-revenue">Doanh thu 14 ngày</h2><span class="muted small" data-state="default alert">Tổng 239,9 triệu đ</span></div>
+            <div class="card-body stack" data-state="default alert">
+              <svg class="chart" viewBox="0 0 400 198" role="img" aria-label="Doanh thu theo ngày từ 24/9 đến hôm nay, cao nhất 24,1 triệu đ ngày 5/10, hôm nay 18,45 triệu đ tính đến 10:40">
+                <line class="grid-line" x1="40" x2="396" y1="170.0" y2="170.0"/>
+                <text x="34" y="174.0" text-anchor="end">0</text>
+                <line class="grid-line" x1="40" x2="396" y1="117.3" y2="117.3"/>
+                <text x="34" y="121.3" text-anchor="end">10 tr</text>
+                <line class="grid-line" x1="40" x2="396" y1="64.7" y2="64.7"/>
+                <text x="34" y="68.7" text-anchor="end">20 tr</text>
+                <line class="grid-line" x1="40" x2="396" y1="12.0" y2="12.0"/>
+                <text x="34" y="16.0" text-anchor="end">30 tr</text>
+                <rect class="c1" x="44.7" y="106.3" width="16" height="63.7" rx="2"/>
+                <rect class="c1" x="70.1" y="94.7" width="16" height="75.3" rx="2"/>
+                <rect class="c1" x="95.6" y="118.4" width="16" height="51.6" rx="2"/>
+                <rect class="c1" x="121.0" y="84.7" width="16" height="85.3" rx="2"/>
+                <rect class="c1" x="146.4" y="70.5" width="16" height="99.5" rx="2"/>
+                <rect class="c1" x="171.9" y="57.3" width="16" height="112.7" rx="2"/>
+                <rect class="c1" x="197.3" y="91.0" width="16" height="79.0" rx="2"/>
+                <rect class="c1" x="222.7" y="100.5" width="16" height="69.5" rx="2"/>
+                <rect class="c1" x="248.1" y="77.3" width="16" height="92.7" rx="2"/>
+                <rect class="c1" x="273.6" y="65.7" width="16" height="104.3" rx="2"/>
+                <rect class="c1" x="299.0" y="51.5" width="16" height="118.5" rx="2"/>
+                <rect class="c1" x="324.4" y="43.1" width="16" height="126.9" rx="2"/>
+                <rect class="c1" x="349.9" y="83.1" width="16" height="86.9" rx="2"/>
+                <rect class="c2" x="375.3" y="72.8" width="16" height="97.2" rx="2"/>
+                <text x="52.7" y="190" text-anchor="middle">24/9</text>
+                <text x="154.4" y="190" text-anchor="middle">28/9</text>
+                <text x="256.1" y="190" text-anchor="middle">2/10</text>
+                <text x="396.0" y="190" text-anchor="end">Hôm nay</text>
+              </svg>
+              <div class="legend"><span><i></i>Cả ngày</span><span><i class="c2"></i>Hôm nay, tính đến 10:40</span></div>
+            </div>
+            <div class="empty" data-state="first-day">
+              <svg class="ico lg" aria-hidden="true"><use href="#i-bar-chart"/></svg>
+              <h3>Chưa có doanh thu</h3>
+              <p>Biểu đồ có cột đầu tiên khi cửa hàng nhận đơn đầu tiên.</p>
+            </div>
+          </section>
+        </div>
+
+        <section aria-labelledby="h-latest">
+          <div class="section-head"><h2 id="h-latest">Đơn mới nhất</h2><a class="link quiet" href="table.html" data-state="default alert">Xem tất cả đơn</a></div>
+          <div class="table-box" data-state="default alert">
+            <table class="data cards">
+              <thead>
+                <tr><th>Đơn</th><th>Trạng thái</th><th class="num">Tổng tiền</th><th>Lúc</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="main"><a href="detail.html">DH1042</a><span class="sub">Lê Minh Châu</span></td>
+                  <td data-label="Trạng thái"><span class="status warn"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Chờ xác nhận</span></td>
+                  <td class="num" data-label="Tổng tiền">2.490.000 đ</td>
+                  <td data-label="Lúc"><span class="nowrap">09:12</span></td>
+                </tr>
+                <tr>
+                  <td class="main"><a href="detail.html">DH1041</a><span class="sub">Công ty TNHH Thương mại và Dịch vụ Kỹ thuật Phương Nam Toàn Cầu</span></td>
+                  <td data-label="Trạng thái"><span class="status run"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>Đang giao</span></td>
+                  <td class="num" data-label="Tổng tiền">1.284.500.000 đ</td>
+                  <td data-label="Lúc"><span class="nowrap">08:47</span></td>
+                </tr>
+                <tr>
+                  <td class="main"><a href="detail.html">DH1040</a><span class="sub">Phạm Gia Huy</span></td>
+                  <td data-label="Trạng thái"><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã giao</span></td>
+                  <td class="num" data-label="Tổng tiền">0 đ</td>
+                  <td data-label="Lúc"><span class="nowrap">08:05</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel" data-state="first-day">
+            <div class="empty">
+              <svg class="ico lg" aria-hidden="true"><use href="#i-receipt"/></svg>
+              <h3>Chưa có đơn nào</h3>
+              <p>Đơn khách đặt trên website và Zalo sẽ hiện ở đây theo thứ tự mới nhất.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

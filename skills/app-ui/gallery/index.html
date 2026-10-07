@@ -1,0 +1,243 @@
+<!doctype html>
+<!-- gallery: every kit component in its states, to review the kit by eye. Lint and QA run on it like any page. -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bộ giao diện · app-ui</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-states="default">
+<header class="topbar">
+  <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">app-ui</span></a>
+  <nav class="topnav" aria-label="Các phần"><a href="#nut" aria-current="page">Thành phần</a><a href="../recipes/table.html">Công thức màn</a></nav>
+</header>
+
+<main class="page">
+  <div class="page-head">
+    <div>
+      <h1>Bộ giao diện app-ui</h1>
+      <p class="sub">Mọi thành phần của kit ở các trạng thái của nó. Màu, cỡ và khoảng cách lấy từ kit/tokens.css.</p>
+    </div>
+  </div>
+
+  <section class="section" id="nut">
+    <div class="section-head"><h2>Nút</h2><span class="muted small">Một nút chính cho mỗi màn và mỗi hộp thoại</span></div>
+    <div class="panel pad stack">
+      <div class="row wrap">
+        <button class="btn primary" type="button"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>Tạo đơn</button>
+        <button class="btn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Xuất CSV</button>
+        <button class="btn quiet" type="button">Bỏ qua</button>
+        <button class="btn danger" type="button" data-open="g-confirm">Huỷ đơn</button>
+        <button class="btn" type="button" disabled>Đang khoá</button>
+        <button class="btn icon quiet" type="button" aria-label="Thêm thao tác"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+      </div>
+      <div class="row wrap">
+        <button class="btn sm" type="button">Nút nhỏ</button>
+        <button class="btn lg" type="button">Nút lớn</button>
+        <button class="link" type="button">Liên kết dạng nút</button>
+        <a class="back" href="#nut"><svg class="ico sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Quay lại danh sách</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Trạng thái, số đếm, nhãn</h2></div>
+    <div class="panel pad row wrap">
+      <span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã giao</span>
+      <span class="status warn"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Chờ xác nhận</span>
+      <span class="status bad"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg>Đã huỷ</span>
+      <span class="status run"><svg class="ico spin" aria-hidden="true"><use href="#i-loader"/></svg>Đang tạo</span>
+      <span class="status"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg>Bản nháp</span>
+      <span class="count">128</span><span class="count new">6</span><span class="count bad">2</span>
+      <span class="badge">Mặc định</span><span class="badge accent">Mới</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Thông báo</h2></div>
+    <div class="stack">
+      <div class="notice"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><div class="grow"><strong>Cửa hàng đang ở chế độ thử</strong>Đơn đặt lúc này không trừ kho thật.</div></div>
+      <div class="notice ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div class="grow"><strong>Đã lưu lúc 10:42</strong>Khách thấy thay đổi ngay.</div></div>
+      <div class="notice warn"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg><div class="grow"><strong>Hôm nay đã dùng hết 5 lần tạo</strong>Lượt mới có lúc 00:00.</div></div>
+      <div class="notice bad"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg><div class="grow"><strong>Cổng thanh toán lỗi từ 09:15</strong>Khách vẫn đặt được đơn trả tiền khi nhận hàng.</div><button class="btn sm" type="button">Xem chi tiết</button></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Form</h2></div>
+    <div class="form-panel">
+      <div class="grid-2">
+        <div class="field">
+          <label class="label" for="g-name">Tên cửa hàng<span class="req" aria-hidden="true">*</span></label>
+          <span class="hint" id="g-name-hint">Hiện trên đầu website và trong email gửi khách.</span>
+          <input class="input" id="g-name" value="Hải Đăng Digital" aria-describedby="g-name-hint">
+        </div>
+        <div class="field">
+          <label class="label" for="g-phone">Số điện thoại</label>
+          <span class="hint">Khách gọi số này khi cần đổi đơn.</span>
+          <input class="input" id="g-phone" value="0912 345" aria-invalid="true" aria-describedby="g-phone-err">
+          <p class="error-text" id="g-phone-err"><svg class="ico sm" aria-hidden="true"><use href="#i-alert"/></svg>Số điện thoại cần 10 chữ số.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <label class="label" for="g-cat">Ngành hàng</label>
+          <div class="select-wrap"><select class="select" id="g-cat"><option>Điện thoại, máy tính bảng</option><option>Gia dụng</option></select><svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></div>
+        </div>
+        <div class="field">
+          <label class="label" for="g-days">Thời gian đổi trả</label>
+          <div class="input-unit"><input class="input" id="g-days" value="30" inputmode="numeric"><span class="muted">ngày</span></div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="g-desc">Giới thiệu ngắn<span class="opt">không bắt buộc</span></label>
+        <textarea class="textarea" id="g-desc" placeholder="Ví dụ: Điện thoại chính hãng, giao trong 2 giờ ở nội thành Đà Nẵng."></textarea>
+      </div>
+      <div class="field">
+        <span class="label" id="g-tags-label">Từ khoá</span>
+        <div class="tags" aria-labelledby="g-tags-label">
+          <span class="tag-item"><span>điện thoại cũ</span><button type="button" aria-label="Bỏ từ khoá điện thoại cũ"><svg class="ico sm" aria-hidden="true"><use href="#i-x"/></svg></button></span>
+          <span class="tag-item"><span>trả góp</span><button type="button" aria-label="Bỏ từ khoá trả góp"><svg class="ico sm" aria-hidden="true"><use href="#i-x"/></svg></button></span>
+          <input aria-label="Thêm từ khoá" placeholder="Gõ rồi bấm Enter">
+        </div>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" checked><span>Gửi email khi có đơn mới<span class="sub">Mỗi đơn một email, gửi tới ha.tran@lumen.vn</span></span></label>
+        <label class="check"><input type="radio" name="g-r" checked>Giao tiêu chuẩn</label>
+        <label class="check"><input type="radio" name="g-r">Giao nhanh trong 2 giờ</label>
+        <label class="switch"><input type="checkbox" checked aria-label="Nhận đơn ngoài giờ">Nhận đơn ngoài giờ</label>
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="button">Quay lại</button>
+        <span class="spacer"></span>
+        <span class="autosave"><svg class="ico sm" aria-hidden="true"><use href="#i-check"/></svg>Đã lưu nháp lúc 09:42</span>
+        <button class="btn" type="button">Tiếp tục</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Lựa chọn, tab, bộ lọc</h2></div>
+    <div class="stack">
+      <div class="options">
+        <label class="option"><input type="radio" name="g-opt" checked><div><div class="o-title">Cửa hàng bán lẻ</div><div class="o-desc">Nhiều sản phẩm, có lọc theo hãng và giá.</div><div class="o-note">Hợp với shop có trên 50 sản phẩm</div></div></label>
+        <label class="option"><input type="radio" name="g-opt"><div><div class="o-title">Cửa hàng nhỏ</div><div class="o-desc">Ít sản phẩm, ảnh lớn, kể chuyện thương hiệu.</div></div></label>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Ví dụ tab">
+        <button role="tab" aria-selected="true" type="button">Tất cả <span class="count">128</span></button>
+        <button role="tab" aria-selected="false" tabindex="-1" type="button">Chờ xác nhận <span class="count new">6</span></button>
+        <button role="tab" aria-selected="false" tabindex="-1" type="button">Đã huỷ <span class="count">6</span></button>
+      </div>
+      <div class="toolbar">
+        <label class="search"><span class="sr-only">Tìm</span><svg class="ico sm" aria-hidden="true"><use href="#i-search"/></svg><input class="input" type="search" placeholder="Mã đơn, tên hoặc số điện thoại"></label>
+        <div class="filters">
+          <button class="filter" type="button" aria-pressed="true">30 ngày</button>
+          <button class="filter" type="button" aria-pressed="false">Có ghi chú</button>
+        </div>
+        <span class="spacer"></span>
+        <div class="seg"><button type="button" aria-pressed="true"><svg class="ico sm" aria-hidden="true"><use href="#i-monitor"/></svg>Máy tính</button><button type="button" aria-pressed="false"><svg class="ico sm" aria-hidden="true"><use href="#i-smartphone"/></svg>Điện thoại</button></div>
+        <div class="menu-wrap">
+          <button class="btn icon" type="button" data-menu aria-controls="g-menu" aria-expanded="false" aria-label="Thêm thao tác"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu" id="g-menu" hidden>
+            <button type="button">Đổi tên</button>
+            <button type="button" data-toast="Đã nhân bản website" data-toast-action="Hoàn tác">Nhân bản</button>
+            <hr>
+            <button class="danger" type="button" data-open="g-confirm">Xoá</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Bảng và danh sách</h2></div>
+    <div class="stack">
+      <div class="table-box">
+        <table class="data cards">
+          <thead><tr><th>Khách hàng</th><th>Trạng thái</th><th class="num">Đã mua</th><th class="end"><span class="sr-only">Thao tác</span></th></tr></thead>
+          <tbody>
+            <tr><td class="main"><div class="who"><span class="avatar sm">LC</span><div>Lê Minh Châu<span class="sub">0912 345 678</span></div></div></td><td data-label="Trạng thái"><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đang hoạt động</span></td><td class="num" data-label="Đã mua">12.990.000 đ</td><td class="end"><a class="btn sm" href="#nut">Xem</a></td></tr>
+            <tr class="current"><td class="main"><div class="who"><span class="avatar sm">PN</span><div>Công ty TNHH Thương mại và Dịch vụ Kỹ thuật Phương Nam Toàn Cầu<span class="sub">chưa có số điện thoại</span></div></div></td><td data-label="Trạng thái"><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Đã khoá</span></td><td class="num" data-label="Đã mua">1.284.500.000 đ</td><td class="end"><a class="btn sm" href="#nut">Xem</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="list">
+        <li class="list-item no-thumb"><div><a class="item-title" href="#nut">Hải Đăng Digital</a><div class="item-meta">Cửa hàng điện tử · bản 3, tạo 07/10 lúc 01:16</div></div><span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã tạo xong</span><div class="item-actions"><a class="btn sm" href="#nut">Xem website</a></div></li>
+        <li class="list-item no-thumb"><div><a class="item-title" href="#nut">Tensorline</a><div class="item-meta">Giới thiệu công ty · bắt đầu 07/10 lúc 04:18</div></div><div class="stack tight"><span class="status run"><svg class="ico spin" aria-hidden="true"><use href="#i-loader"/></svg>Đang tạo</span><div class="bar"><i style="width:40%"></i></div></div><div class="item-actions"><a class="btn sm" href="#nut">Xem tiến độ</a></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Một bản ghi</h2></div>
+    <div class="split">
+      <div class="card">
+        <div class="card-head"><h2>Tiến trình đơn</h2></div>
+        <div class="card-body stack loose">
+          <ol class="stepper">
+            <li class="done"><span>Đặt hàng</span></li>
+            <li class="done"><span>Xác nhận</span></li>
+            <li class="now"><span>Đóng gói</span></li>
+            <li><span>Đang giao</span></li>
+            <li><span>Đã giao</span></li>
+          </ol>
+          <ol class="timeline">
+            <li><svg class="ico sm ok" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Khách đặt đơn trên website<div class="who-line">Thanh toán khi nhận hàng</div></div><time>06/10, 16:40</time></li>
+            <li><svg class="ico sm ok" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Trần Thu Hà xác nhận đơn</div><time>07/10, 08:30</time></li>
+          </ol>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Khách hàng</h2></div>
+        <dl class="card-body kv stacked">
+          <dt>Người nhận</dt><dd>Ông Nguyễn Hoàng Long</dd>
+          <dt>Điện thoại</dt><dd class="unset">Chưa có</dd>
+          <dt>Email</dt><dd class="break">mua.hang@phuongnamtoancau.com.vn</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Số liệu và việc cần làm</h2></div>
+    <div class="stack">
+      <div class="figures">
+        <div class="figure"><div class="f-label">Doanh thu</div><div class="f-value">18.450.000 đ</div><div class="f-delta"><span class="up">+12%</span><span>Hôm qua: 16.470.000 đ</span></div></div>
+        <div class="figure"><div class="f-label">Đơn hàng</div><div class="f-value">27</div><div class="f-delta"><span class="down">-4%</span><span>Hôm qua: 28</span></div></div>
+        <div class="figure"><div class="f-label">Giá trị đơn trung bình</div><div class="f-value">683.000 đ</div><div class="f-delta">Hôm qua: 588.000 đ</div></div>
+        <div class="figure"><div class="f-label">Khách mới</div><div class="f-value">0</div><div class="f-delta">Chưa có khách mới hôm nay</div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Cần xử lý</h2><span class="muted small">3 việc</span></div>
+        <ul class="attention">
+          <li><svg class="ico a-warn" aria-hidden="true"><use href="#i-clock"/></svg><div class="grow"><div class="a-title">6 đơn chờ xác nhận</div><div class="a-sub">Đơn cũ nhất đã chờ 3 giờ</div></div><a class="btn sm" href="#nut">Xem</a></li>
+          <li><svg class="ico a-bad" aria-hidden="true"><use href="#i-x-circle"/></svg><div class="grow"><div class="a-title">1 thanh toán lỗi</div><div class="a-sub">Khách đã bị trừ tiền nhưng đơn chưa ghi nhận</div></div><a class="btn sm" href="#nut">Xem</a></li>
+          <li><svg class="ico a-info" aria-hidden="true"><use href="#i-package"/></svg><div class="grow"><div class="a-title">3 sản phẩm sắp hết hàng</div><div class="a-sub">Còn dưới 5 chiếc</div></div><a class="btn sm" href="#nut">Xem</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Rỗng và lỗi</h2></div>
+    <div class="grid-2">
+      <div class="panel"><div class="empty"><svg class="ico lg" aria-hidden="true"><use href="#i-inbox"/></svg><h2>Chưa có đơn hàng nào</h2><p>Đơn khách đặt trên website sẽ hiện ở đây.</p><div class="row"><button class="btn" type="button">Kết nối Zalo</button></div></div></div>
+      <div class="panel"><div class="error-page"><p class="code">404</p><h2>Không tìm thấy trang</h2><p>Đường dẫn có thể đã đổi. Về trang tổng quan để tìm tiếp.</p><div class="row"><a class="btn" href="#nut">Về tổng quan</a></div></div></div>
+    </div>
+  </section>
+</main>
+
+<dialog class="dialog" id="g-confirm" aria-labelledby="g-confirm-title">
+  <h2 id="g-confirm-title">Huỷ đơn DH1041?</h2>
+  <p class="body">Khách nhận tin nhắn báo huỷ. Không mở lại được đơn sau khi huỷ.</p>
+  <div class="actions"><button class="btn" type="button" data-close>Giữ đơn</button><button class="btn danger solid" type="button" data-close="ok">Huỷ đơn</button></div>
+</dialog>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

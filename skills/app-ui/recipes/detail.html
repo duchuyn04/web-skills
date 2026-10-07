@@ -1,0 +1,215 @@
+<!doctype html>
+<!-- recipe: detail | Trang chi tiết một bản ghi trong khung sidebar: đường quay lại, đầu trang có trạng thái và nút, thanh các bước, cột chính (bảng dòng hàng, tổng tiền, lịch sử) và cột phụ (khách, giao hàng, ghi chú nội bộ), hộp xác nhận việc không lấy lại được | states: default confirmed cancelled not-found | use for: xem và xử lý một bản ghi có nhiều phần (đơn hàng, hợp đồng, yêu cầu, hồ sơ) -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đơn DH1041 · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="detail" data-states="default confirmed cancelled not-found">
+<div class="app-side">
+  <nav class="sidebar" aria-label="Điều hướng chính">
+    <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    <a class="side-link" href="dashboard.html"><svg class="ico" aria-hidden="true"><use href="#i-dashboard"/></svg><span>Tổng quan</span></a>
+    <p class="side-group">Bán hàng</p>
+    <a class="side-link" href="table.html" aria-current="page"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><span>Đơn hàng</span><span class="count new">6</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span>Khách hàng</span></a>
+    <a class="side-link" href="#"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg><span>Sản phẩm</span></a>
+    <p class="side-group">Cửa hàng</p>
+    <a class="side-link" href="settings.html"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg><span>Cài đặt</span></a>
+    <div class="bottom">
+      <div class="who"><span class="avatar">TH</span><div><div class="strong small clip">Trần Thu Hà</div><div class="muted small">Chủ cửa hàng</div></div></div>
+    </div>
+  </nav>
+
+  <div class="side-main">
+    <header class="side-top">
+      <button class="btn icon quiet" type="button" data-side-toggle aria-label="Mở menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <a class="logo" href="dashboard.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+    </header>
+
+    <main class="side-page">
+      <div data-state="default confirmed cancelled">
+        <a class="back" href="table.html"><svg class="ico sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Đơn hàng</a>
+
+        <div class="record-head">
+          <div>
+            <h1>Đơn DH1041</h1>
+            <div class="meta">
+              <span class="status warn" data-state="default"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Chờ xác nhận</span>
+              <span class="status run" data-state="confirmed"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg>Chờ đóng gói</span>
+              <span class="status bad" data-state="cancelled"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg>Đã huỷ</span>
+              <span>Đặt lúc 06/10, 16:40 qua website</span>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="button" data-state="default confirmed"><svg class="ico" aria-hidden="true"><use href="#i-printer"/></svg>In phiếu giao</button>
+            <button class="btn danger" type="button" data-open="dlg-cancel" data-state="default confirmed">Huỷ đơn</button>
+            <button class="btn primary" type="button" data-state="default" data-toast="Đã xác nhận đơn DH1041" data-toast-action="Hoàn tác">Xác nhận đơn</button>
+            <button class="btn primary" type="button" data-state="confirmed" data-toast="Đơn DH1041 chuyển sang Chờ giao">Đóng gói xong</button>
+            <button class="btn" type="button" data-state="cancelled"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Tạo lại đơn này</button>
+          </div>
+        </div>
+
+        <div class="stack loose">
+          <div class="notice bad" data-state="cancelled">
+            <svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg>
+            <div class="grow"><strong>Đơn đã huỷ lúc 07/10, 10:02</strong>Lý do: khách đặt nhầm số lượng. Đơn chưa thu tiền nên không cần hoàn tiền cho khách.</div>
+          </div>
+        <div class="panel pad" data-state="default">
+          <ol class="stepper" aria-label="Các bước của đơn">
+            <li class="done"><span>Đặt hàng</span></li>
+            <li class="now" aria-current="step"><span>Xác nhận</span></li>
+            <li><span>Đóng gói</span></li>
+            <li><span>Đang giao</span></li>
+            <li><span>Đã giao</span></li>
+          </ol>
+        </div>
+        <div class="panel pad" data-state="confirmed">
+          <ol class="stepper" aria-label="Các bước của đơn">
+            <li class="done"><span>Đặt hàng</span></li>
+            <li class="done"><span>Xác nhận</span></li>
+            <li class="now" aria-current="step"><span>Đóng gói</span></li>
+            <li><span>Đang giao</span></li>
+            <li><span>Đã giao</span></li>
+          </ol>
+        </div>
+        <div class="panel pad" data-state="cancelled">
+          <ol class="stepper" aria-label="Các bước của đơn">
+            <li class="done"><span>Đặt hàng</span></li>
+            <li class="fail" aria-current="step"><span>Đã huỷ</span></li>
+            <li><span>Đóng gói</span></li>
+            <li><span>Đang giao</span></li>
+            <li><span>Đã giao</span></li>
+          </ol>
+        </div>
+
+        <div class="split">
+          <div class="stack loose">
+            <section>
+              <div class="section-head"><h2>Sản phẩm</h2><span class="muted small">3 sản phẩm, 120 món</span></div>
+              <div class="table-box">
+                <table class="data cards">
+                  <thead>
+                    <tr><th>Sản phẩm</th><th class="num">Số lượng</th><th class="num">Đơn giá</th><th class="num">Thành tiền</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="main">Máy chiếu laser 4K LS800, độ sáng 4.000 lumen, kèm điều khiển<span class="sub">Mã MC-LS800</span></td>
+                      <td class="num" data-label="Số lượng">40</td>
+                      <td class="num" data-label="Đơn giá">28.500.000 đ</td>
+                      <td class="num" data-label="Thành tiền">1.140.000.000 đ</td>
+                    </tr>
+                    <tr>
+                      <td class="main">Màn chiếu điện 150 inch<span class="sub">Mã MCD-150</span></td>
+                      <td class="num" data-label="Số lượng">40</td>
+                      <td class="num" data-label="Đơn giá">3.500.000 đ</td>
+                      <td class="num" data-label="Thành tiền">140.000.000 đ</td>
+                    </tr>
+                    <tr>
+                      <td class="main">Cáp HDMI 2.1 dài 15 m<span class="sub">Mã CAP-H15 · tặng kèm</span></td>
+                      <td class="num" data-label="Số lượng">40</td>
+                      <td class="num" data-label="Đơn giá">0 đ</td>
+                      <td class="num" data-label="Thành tiền">0 đ</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="data">
+                  <tbody>
+                    <tr><td>Tạm tính</td><td class="num">1.280.000.000 đ</td></tr>
+                    <tr><td>Phí giao hàng</td><td class="num">4.500.000 đ</td></tr>
+                    <tr><td>Giảm giá</td><td class="num muted">Không có</td></tr>
+                    <tr><td class="strong">Tổng cộng</td><td class="num strong">1.284.500.000 đ</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section>
+              <div class="section-head"><h2>Lịch sử</h2></div>
+              <div class="panel pad">
+                <ol class="timeline">
+                  <li><svg class="ico sm" aria-hidden="true"><use href="#i-receipt"/></svg><div>Khách đặt hàng qua website</div><time>06/10, 16:40</time></li>
+                  <li><svg class="ico sm" aria-hidden="true"><use href="#i-mail"/></svg><div>Lumen gửi email xác nhận cho khách<div class="who-line">mua.hang@phuongnamtoancau.com.vn</div></div><time>06/10, 16:40</time></li>
+                  <li><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg><div>Trần Thu Hà thêm ghi chú nội bộ<div class="who-line">Khách cần xuất hoá đơn VAT</div></div><time>06/10, 17:05</time></li>
+                  <li data-state="confirmed"><svg class="ico sm ok" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Trần Thu Hà xác nhận đơn<div class="who-line">Đã gọi cho ông Nguyễn Hoàng Long qua số tổng đài công ty</div></div><time>07/10, 08:30</time></li>
+                  <li data-state="cancelled"><svg class="ico sm bad" aria-hidden="true"><use href="#i-x-circle"/></svg><div>Trần Thu Hà huỷ đơn<div class="who-line">Lý do: khách đặt nhầm số lượng</div></div><time>07/10, 10:02</time></li>
+                </ol>
+              </div>
+            </section>
+          </div>
+
+          <div class="stack">
+            <div class="card">
+              <div class="card-head"><h2>Khách hàng</h2></div>
+              <dl class="card-body kv stacked">
+                <dt>Công ty</dt><dd class="break">Công ty TNHH Thương mại và Dịch vụ Kỹ thuật Phương Nam Toàn Cầu</dd>
+                <dt>Người nhận</dt><dd>Ông Nguyễn Hoàng Long</dd>
+                <dt>Điện thoại</dt><dd class="unset">Chưa có</dd>
+                <dt>Email</dt><dd class="break">mua.hang@phuongnamtoancau.com.vn</dd>
+                <dt>Mã số thuế</dt><dd class="num">0312 845 671</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <div class="card-head"><h2>Giao hàng</h2></div>
+              <dl class="card-body kv stacked">
+                <dt>Địa chỉ</dt><dd>Tầng 9, 128 Nguyễn Thị Minh Khai, phường Bến Thành, TP Hồ Chí Minh</dd>
+                <dt>Cách giao</dt><dd>Giao tiêu chuẩn, 2 đến 3 ngày</dd>
+                <dt>Mã vận đơn</dt><dd class="unset">Có sau khi đóng gói</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <div class="card-head"><h2>Ghi chú nội bộ</h2></div>
+              <div class="card-body stack tight">
+                <label class="sr-only" for="note">Ghi chú nội bộ</label>
+                <span class="hint">Khách không thấy ghi chú này.</span>
+                <textarea class="textarea" id="note">Khách cần xuất hoá đơn VAT. Gọi số tổng đài công ty, xin gặp anh Long phòng mua hàng.</textarea>
+                <div class="row end"><button class="btn sm" type="button" data-toast="Đã lưu ghi chú">Lưu ghi chú</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="error-page" data-state="not-found">
+        <p class="code">404</p>
+        <h1>Không tìm thấy đơn DH9999</h1>
+        <p>Đơn có thể đã bị xoá, hoặc mã đơn trong đường dẫn bị gõ sai. Tìm lại trong danh sách đơn bằng mã, tên hoặc số điện thoại của khách.</p>
+        <div class="row"><a class="btn" href="table.html"><svg class="ico" aria-hidden="true"><use href="#i-arrow-left"/></svg>Về danh sách đơn</a></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<dialog class="dialog" id="dlg-cancel" aria-labelledby="dlg-cancel-title">
+  <h2 id="dlg-cancel-title">Huỷ đơn DH1041?</h2>
+  <div class="stack">
+  <p class="body">Khách nhận email báo đơn đã huỷ. Đơn đã huỷ không mở lại được; muốn bán tiếp, bạn phải tạo đơn mới.</p>
+  <div class="field">
+    <label class="label" for="cancel-reason">Lý do huỷ</label>
+    <div class="select-wrap">
+      <select class="select" id="cancel-reason">
+        <option>Khách đặt nhầm số lượng</option>
+        <option>Khách đổi ý</option>
+        <option>Hết hàng</option>
+        <option>Không liên lạc được với khách</option>
+      </select>
+      <svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+    </div>
+  </div>
+  </div>
+  <div class="actions">
+    <button class="btn" type="button" data-close>Giữ đơn</button>
+    <button class="btn danger solid" type="button" data-close="cancel" data-toast="Đã huỷ đơn DH1041">Huỷ đơn</button>
+  </div>
+</dialog>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

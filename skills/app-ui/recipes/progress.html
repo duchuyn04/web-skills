@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- recipe: progress | Việc chạy lâu trong khung thanh trên: danh sách từng phần với trạng thái, cột bên có câu trạng thái lớn, thanh tiến độ, thời gian còn lại, nút Dừng có hộp xác nhận, nhật ký thu gọn | states: running failed done stopped | use for: việc mất từ vài chục giây tới vài phút mà người dùng muốn theo dõi (dựng website, nhập file lớn, xuất báo cáo) -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đang dựng website · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="progress" data-states="running failed done stopped">
+<header class="topbar"><a class="logo" href="list.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+<nav class="topnav" aria-label="Điều hướng chính"><a href="list.html" aria-current="page">Website của bạn</a><a href="table.html">Đơn hàng</a></nav>
+<div class="top-right"><span class="top-note"><span class="lbl">Hôm nay còn </span><strong>3</strong> lần tạo</span>
+<div class="menu-wrap"><button class="avatar" type="button" data-menu aria-controls="menu-account" aria-expanded="false" aria-label="Tài khoản">TH</button>
+<div class="menu" id="menu-account" hidden><div class="menu-head"><div class="strong">Trần Thu Hà</div><div class="muted small">ha.tran@lumen.vn</div></div><a href="dashboard.html">Trang quản trị</a><a href="settings.html">Cài đặt</a><hr><a href="auth.html">Đăng xuất</a></div></div></div></header>
+
+<main class="page">
+  <a class="back" href="list.html"><svg class="ico sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Website của bạn</a>
+  <div class="page-head">
+    <div>
+      <h1 data-state="running">Đang dựng website Hải Đăng Digital</h1>
+      <h1 data-state="failed">Chưa dựng xong website Hải Đăng Digital</h1>
+      <h1 data-state="done">Website Hải Đăng Digital đã dựng xong</h1>
+      <h1 data-state="stopped">Đã dừng dựng website Hải Đăng Digital</h1>
+      <p class="sub">Bán lẻ nhiều sản phẩm · bắt đầu lúc 09:54</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <section class="panel pad" aria-label="Các phần của website">
+      <ol class="steps" data-state="running">
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Đầu trang<span class="sub">Logo, thanh tìm kiếm, số điện thoại 0912 345 678</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Ảnh lớn đầu trang<span class="sub">3 ảnh chạy lần lượt, ảnh đầu là Lumen X9 Pro 5G</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Danh mục nổi bật<span class="sub">Điện thoại, tai nghe, phụ kiện</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Sản phẩm bán chạy<span class="sub">3 sản phẩm, 1 sản phẩm hết hàng hiện nhãn Tạm hết</span></div></li>
+        <li class="now"><svg class="ico spin" aria-hidden="true"><use href="#i-loader"/></svg><div>Khuyến mãi<span class="sub">Đang viết chữ cho ảnh khuyến mãi</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Cửa hàng gần bạn<span class="sub">Chờ</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Cuối trang<span class="sub">Chờ</span></div></li>
+      </ol>
+      <ol class="steps" data-state="failed">
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Đầu trang<span class="sub">Logo, thanh tìm kiếm, số điện thoại 0912 345 678</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Ảnh lớn đầu trang<span class="sub">3 ảnh chạy lần lượt, ảnh đầu là Lumen X9 Pro 5G</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Danh mục nổi bật<span class="sub">Điện thoại, tai nghe, phụ kiện</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Sản phẩm bán chạy<span class="sub">3 sản phẩm, 1 sản phẩm hết hàng hiện nhãn Tạm hết</span></div></li>
+        <li class="fail"><svg class="ico" aria-hidden="true"><use href="#i-x-circle"/></svg><div>Khuyến mãi<span class="sub">Ảnh khuyen-mai-thang-10.png không mở được</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Cửa hàng gần bạn<span class="sub">Chưa dựng</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Cuối trang<span class="sub">Chưa dựng</span></div></li>
+      </ol>
+      <ol class="steps" data-state="done">
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Đầu trang<span class="sub">Logo, thanh tìm kiếm, số điện thoại 0912 345 678</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Ảnh lớn đầu trang<span class="sub">3 ảnh chạy lần lượt, ảnh đầu là Lumen X9 Pro 5G</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Danh mục nổi bật<span class="sub">Điện thoại, tai nghe, phụ kiện</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Sản phẩm bán chạy<span class="sub">3 sản phẩm, 1 sản phẩm hết hàng hiện nhãn Tạm hết</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Khuyến mãi<span class="sub">2 ảnh khuyến mãi tháng 10</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Cửa hàng gần bạn<span class="sub">Chưa có địa chỉ cửa hàng, phần này chỉ hiện số điện thoại</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Cuối trang<span class="sub">Chính sách giao hàng, đổi trả, liên hệ</span></div></li>
+      </ol>
+      <ol class="steps" data-state="stopped">
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Đầu trang<span class="sub">Đã dựng, sẽ bỏ khi dựng lại</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Ảnh lớn đầu trang<span class="sub">Đã dựng, sẽ bỏ khi dựng lại</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Danh mục nổi bật<span class="sub">Đã dựng, sẽ bỏ khi dựng lại</span></div></li>
+        <li class="done"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg><div>Sản phẩm bán chạy<span class="sub">Đã dựng, sẽ bỏ khi dựng lại</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Khuyến mãi<span class="sub">Chưa dựng</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Cửa hàng gần bạn<span class="sub">Chưa dựng</span></div></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-circle"/></svg><div>Cuối trang<span class="sub">Chưa dựng</span></div></li>
+      </ol>
+    </section>
+
+    <aside class="panel pad sticky stack">
+      <div class="stack tight" data-state="running">
+        <h2>Đang dựng phần 5 trên 7</h2>
+        <div class="bar"><i style="width:62%"></i></div>
+        <p class="soft small">Còn khoảng 3 phút. Bạn có thể đóng trang, website vẫn được dựng tiếp và Lumen gửi email khi xong.</p>
+        <div class="row"><button class="btn danger" type="button" data-open="stop-dialog">Dừng</button></div>
+      </div>
+
+      <div class="stack tight" data-state="failed">
+        <div class="notice bad">
+          <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+          <div class="grow"><strong>Dừng ở phần Khuyến mãi</strong>Ảnh khuyen-mai-thang-10.png bị lỗi nên chưa dựng tiếp được. Lần tạo này đã được hoàn lại, hôm nay bạn vẫn còn 3 lần.</div>
+        </div>
+        <div class="row wrap">
+          <a class="btn primary" href="?state=running">Thử lại</a>
+          <a class="btn" href="wizard.html?state=details">Sửa thông tin</a>
+        </div>
+      </div>
+
+      <div class="stack tight" data-state="done">
+        <span class="status ok"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Đã dựng xong</span>
+        <p class="soft small">Dựng trong 4 phút 12 giây. Website xem thử được trong 7 ngày, tới hết 14/10.</p>
+        <div class="row"><a class="btn primary" href="review.html">Xem website</a></div>
+      </div>
+
+      <div class="stack tight" data-state="stopped">
+        <h2>Bạn đã dừng lúc 09:58</h2>
+        <p class="soft small">Đã dựng 4 trên 7 phần. Lần tạo này đã được hoàn lại, hôm nay bạn vẫn còn 3 lần.</p>
+        <div class="row"><a class="btn" href="?state=running"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg>Dựng lại</a></div>
+      </div>
+
+      <details class="more">
+        <summary>Nhật ký</summary>
+        <ol class="log">
+          <li><time>09:54:02</time><span>Nhận thông tin cửa hàng và 3 sản phẩm</span></li>
+          <li><time>09:54:40</time><span>Chọn bố cục bán lẻ, 7 phần</span></li>
+          <li><time>09:55:31</time><span>Xong đầu trang và ảnh lớn đầu trang</span></li>
+          <li><time>09:56:48</time><span>Xong danh mục nổi bật</span></li>
+          <li><time>09:57:20</time><span>Sạc nhanh 67W chưa có ảnh, dùng hình vẽ thay ảnh</span></li>
+          <li><time>09:57:59</time><span>Xong sản phẩm bán chạy</span></li>
+        </ol>
+      </details>
+    </aside>
+  </div>
+</main>
+
+<dialog class="dialog" id="stop-dialog" aria-labelledby="stop-title">
+  <h2 id="stop-title">Dừng dựng website?</h2>
+  <p class="body">4 phần đã dựng sẽ bị bỏ. Lần tạo này được hoàn lại, bạn dựng lại được ngay.</p>
+  <div class="actions">
+    <button class="btn" type="button" data-close>Dựng tiếp</button>
+    <a class="btn danger solid" href="?state=stopped">Dừng dựng</a>
+  </div>
+</dialog>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>

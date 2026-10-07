@@ -1,0 +1,272 @@
+<!doctype html>
+<!-- recipe: wizard | Form nhiều bước ngắn trong khung thanh trên: đếm bước, thanh tiến độ, mỗi bước một câu hỏi, tự lưu nháp, bước cuối kiểm tra lại trước khi tạo | states: choose details products review error | use for: việc tạo mới cần nhiều nhóm thông tin (tạo website, mở cửa hàng, đăng ký dịch vụ), khi một form dài làm người dùng nản -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tạo website · Lumen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../kit/tokens.css">
+<link rel="stylesheet" href="../kit/app.css">
+</head>
+<body data-recipe="wizard" data-states="choose details products review error">
+<header class="topbar"><a class="logo" href="list.html"><span class="logo-mark" aria-hidden="true">L</span><span class="logo-name">Lumen</span></a>
+<nav class="topnav" aria-label="Điều hướng chính"><a href="list.html" aria-current="page">Website của bạn</a><a href="table.html">Đơn hàng</a></nav>
+<div class="top-right"><span class="top-note"><span class="lbl">Hôm nay còn </span><strong>3</strong> lần tạo</span>
+<div class="menu-wrap"><button class="avatar" type="button" data-menu aria-controls="menu-account" aria-expanded="false" aria-label="Tài khoản">TH</button>
+<div class="menu" id="menu-account" hidden><div class="menu-head"><div class="strong">Trần Thu Hà</div><div class="muted small">ha.tran@lumen.vn</div></div><a href="dashboard.html">Trang quản trị</a><a href="settings.html">Cài đặt</a><hr><a href="auth.html">Đăng xuất</a></div></div></div></header>
+
+<main class="page narrow">
+  <a class="back" href="list.html"><svg class="ico sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Website của bạn</a>
+
+  <!-- Bước 1: chọn kiểu website -->
+  <section data-state="choose">
+    <div class="wizard-top">
+      <p class="w-count">Bước 1 trên 4</p>
+      <div class="bar"><i style="width:25%"></i></div>
+    </div>
+    <div class="page-head"><div>
+      <h1>Cửa hàng của bạn bán theo kiểu nào?</h1>
+      <p class="sub">Chọn kiểu gần nhất. Bạn đổi được ở bước kiểm tra lại.</p>
+    </div></div>
+    <fieldset class="options">
+      <legend class="sr-only">Kiểu website</legend>
+      <label class="option pic">
+        <input type="radio" name="kind" value="retail" checked>
+        <img src="img/shop-retail.jpg" alt="Trang chủ cửa hàng bán lẻ: thanh danh mục, ảnh khuyến mãi lớn và nhiều sản phẩm">
+        <div><div class="o-title">Bán lẻ nhiều sản phẩm</div><div class="o-desc">Nhiều danh mục, khuyến mãi theo đợt, bộ lọc theo giá và hãng.</div><div class="o-note">Hợp với shop có từ 50 sản phẩm.</div></div>
+      </label>
+      <label class="option pic">
+        <input type="radio" name="kind" value="premium">
+        <img src="img/shop-premium.jpg" alt="Trang chủ cửa hàng cao cấp: nền trắng, một sản phẩm lớn giữa trang">
+        <div><div class="o-title">Ít sản phẩm, hàng cao cấp</div><div class="o-desc">Ảnh sản phẩm lớn, ít chữ, mỗi mẫu một trang riêng.</div></div>
+      </label>
+      <label class="option pic">
+        <input type="radio" name="kind" value="boutique">
+        <img src="img/shop-boutique.jpg" alt="Trang chủ cửa hàng nhỏ: nền kem, ảnh bộ sưu tập">
+        <div><div class="o-title">Cửa hàng nhỏ, có phong cách riêng</div><div class="o-desc">Bán theo bộ sưu tập, màu ấm, chữ có chân.</div></div>
+      </label>
+    </fieldset>
+    <div class="form-actions">
+      <a class="btn" href="list.html">Huỷ</a>
+      <span class="spacer"></span>
+      <a class="btn primary" href="?state=details">Tiếp tục</a>
+    </div>
+  </section>
+
+  <!-- Bước 2: thông tin cửa hàng -->
+  <section data-state="details">
+    <div class="wizard-top">
+      <p class="w-count">Bước 2 trên 4</p>
+      <div class="bar"><i style="width:50%"></i></div>
+    </div>
+    <div class="page-head"><div>
+      <h1>Thông tin cửa hàng</h1>
+      <p class="sub">Những thông tin này hiện ở đầu và cuối mỗi trang của website.</p>
+    </div></div>
+    <form class="form-panel" action="#" novalidate>
+      <div class="field">
+        <label class="label" for="name-d">Tên cửa hàng<span class="req" aria-hidden="true">*</span></label>
+        <input class="input" id="name-d" type="text" value="Hải Đăng Digital" required>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <label class="label" for="trade-d">Ngành hàng</label>
+          <div class="select-wrap">
+            <select class="select" id="trade-d">
+              <option>Điện thoại và phụ kiện</option>
+              <option>Laptop và máy tính</option>
+              <option>Điện gia dụng</option>
+            </select>
+            <svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="phone-d">Số điện thoại<span class="req" aria-hidden="true">*</span></label>
+          <span class="hint" id="phone-d-hint">Khách bấm vào số này để gọi.</span>
+          <input class="input" id="phone-d" type="tel" value="0912 345 678" aria-describedby="phone-d-hint" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="area-d">Khu vực giao hàng</label>
+        <div class="tags">
+          <span class="tag-item"><span>Hà Nội</span><button type="button" aria-label="Bỏ Hà Nội"><svg class="ico sm" aria-hidden="true"><use href="#i-x"/></svg></button></span>
+          <span class="tag-item"><span>TP. Hồ Chí Minh</span><button type="button" aria-label="Bỏ TP. Hồ Chí Minh"><svg class="ico sm" aria-hidden="true"><use href="#i-x"/></svg></button></span>
+          <input id="area-d" type="text" placeholder="Gõ tên tỉnh rồi bấm Enter">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="about-d">Giới thiệu ngắn<span class="opt">không bắt buộc</span></label>
+        <textarea class="textarea" id="about-d" placeholder="Ví dụ: Bán điện thoại chính hãng từ 2016, bảo hành tại cửa hàng."></textarea>
+      </div>
+    </form>
+    <div class="form-actions">
+      <a class="btn" href="?state=choose">Quay lại</a>
+      <span class="spacer"></span>
+      <span class="autosave"><svg class="ico sm" aria-hidden="true"><use href="#i-check"/></svg>Đã lưu nháp lúc 09:42</span>
+      <a class="btn primary" href="?state=products">Tiếp tục</a>
+    </div>
+  </section>
+
+  <!-- Bước 2 khi bấm Tiếp tục mà còn ô sai -->
+  <section data-state="error">
+    <div class="wizard-top">
+      <p class="w-count">Bước 2 trên 4</p>
+      <div class="bar"><i style="width:50%"></i></div>
+    </div>
+    <div class="page-head"><div>
+      <h1>Thông tin cửa hàng</h1>
+      <p class="sub">Những thông tin này hiện ở đầu và cuối mỗi trang của website.</p>
+    </div></div>
+    <div class="stack">
+    <div class="notice bad" role="alert">
+      <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+      <div class="grow">
+        <strong>Còn 2 chỗ cần sửa trước khi sang bước sau</strong>
+        <a href="#name-e">Tên cửa hàng</a>, <a href="#phone-e">Số điện thoại</a>
+      </div>
+    </div>
+    <form class="form-panel" action="#" novalidate>
+      <div class="field">
+        <label class="label" for="name-e">Tên cửa hàng<span class="req" aria-hidden="true">*</span></label>
+        <input class="input" id="name-e" type="text" value="" aria-invalid="true" aria-describedby="name-e-err" required>
+        <p class="error-text" id="name-e-err"><svg class="ico sm" aria-hidden="true"><use href="#i-alert"/></svg>Nhập tên cửa hàng, khách sẽ thấy tên này ở đầu mỗi trang.</p>
+      </div>
+      <div class="grid-2">
+        <div class="field">
+          <label class="label" for="trade-e">Ngành hàng</label>
+          <div class="select-wrap">
+            <select class="select" id="trade-e">
+              <option>Điện thoại và phụ kiện</option>
+              <option>Laptop và máy tính</option>
+              <option>Điện gia dụng</option>
+            </select>
+            <svg class="ico sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="phone-e">Số điện thoại<span class="req" aria-hidden="true">*</span></label>
+          <span class="hint">Khách bấm vào số này để gọi.</span>
+          <input class="input" id="phone-e" type="tel" value="0912 345" aria-invalid="true" aria-describedby="phone-e-err" required>
+          <p class="error-text" id="phone-e-err"><svg class="ico sm" aria-hidden="true"><use href="#i-alert"/></svg>Số điện thoại có 10 chữ số, bạn mới nhập 7.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="about-e">Giới thiệu ngắn<span class="opt">không bắt buộc</span></label>
+        <textarea class="textarea" id="about-e"></textarea>
+      </div>
+    </form>
+    </div>
+    <div class="form-actions">
+      <a class="btn" href="?state=choose">Quay lại</a>
+      <span class="spacer"></span>
+      <span class="autosave"><svg class="ico sm" aria-hidden="true"><use href="#i-check"/></svg>Đã lưu nháp lúc 09:44</span>
+      <a class="btn primary" href="?state=error">Tiếp tục</a>
+    </div>
+  </section>
+
+  <!-- Bước 3: sản phẩm -->
+  <section data-state="products">
+    <div class="wizard-top">
+      <p class="w-count">Bước 3 trên 4</p>
+      <div class="bar"><i style="width:75%"></i></div>
+    </div>
+    <div class="page-head">
+      <div>
+        <h1>Sản phẩm đầu tiên</h1>
+        <p class="sub">Thêm vài sản phẩm bán chạy. Phần còn lại bạn thêm sau trong trang quản trị.</p>
+      </div>
+    </div>
+    <div class="table-box">
+      <table class="data cards">
+        <thead>
+          <tr><th>Sản phẩm</th><th class="num">Giá bán</th><th class="num">Tồn kho</th><th class="end"><span class="sr-only">Thao tác</span></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="main">Lumen X9 Pro 5G<span class="sub">Điện thoại · 2 phiên bản, 3 màu</span></td>
+            <td class="num" data-label="Giá bán">22.990.000 đ</td>
+            <td class="num" data-label="Tồn kho">14</td>
+            <td class="end"><button class="btn sm quiet" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Sửa</button></td>
+          </tr>
+          <tr>
+            <td class="main">Tai nghe chống ồn Vexa Buds 2 Pro bản giới hạn kỷ niệm 10 năm kèm hộp sạc không dây<span class="sub">Âm thanh · 1 phiên bản</span></td>
+            <td class="num" data-label="Giá bán">3.490.000 đ</td>
+            <td class="num" data-label="Tồn kho">0</td>
+            <td class="end"><button class="btn sm quiet" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Sửa</button></td>
+          </tr>
+          <tr>
+            <td class="main">Sạc nhanh 67W<span class="sub">Phụ kiện · chưa có ảnh</span></td>
+            <td class="num" data-label="Giá bán">
+              <label class="sr-only" for="price-p3">Giá bán Sạc nhanh 67W</label>
+              <input class="input" id="price-p3" type="text" inputmode="numeric" placeholder="Giá bán" aria-invalid="true" aria-describedby="price-p3-err">
+              <p class="error-text" id="price-p3-err"><svg class="ico sm" aria-hidden="true"><use href="#i-alert"/></svg>Thiếu giá bán</p>
+            </td>
+            <td class="num" data-label="Tồn kho">120</td>
+            <td class="end"><button class="btn sm quiet" type="button"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Sửa</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row wrap section">
+      <button class="btn" type="button"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>Thêm sản phẩm</button>
+      <span class="muted small">3 sản phẩm, 1 sản phẩm còn thiếu giá bán.</span>
+    </div>
+    <div class="form-actions">
+      <a class="btn" href="?state=details">Quay lại</a>
+      <span class="spacer"></span>
+      <span class="autosave"><svg class="ico sm" aria-hidden="true"><use href="#i-check"/></svg>Đã lưu nháp lúc 09:51</span>
+      <a class="btn primary" href="?state=review">Tiếp tục</a>
+    </div>
+  </section>
+
+  <!-- Bước 4: kiểm tra lại -->
+  <section data-state="review">
+    <div class="wizard-top">
+      <p class="w-count">Bước 4 trên 4</p>
+      <div class="bar"><i style="width:100%"></i></div>
+    </div>
+    <div class="page-head"><div>
+      <h1>Kiểm tra lại trước khi tạo</h1>
+      <p class="sub">Bấm Sửa ở nhóm nào để quay về bước đó. Nháp được giữ nguyên.</p>
+    </div></div>
+    <div class="form-panel">
+      <div class="review-group">
+        <header><h2>Kiểu website</h2><a class="btn sm quiet" href="?state=choose"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Sửa</a></header>
+        <dl class="kv"><dt>Kiểu</dt><dd>Bán lẻ nhiều sản phẩm</dd></dl>
+      </div>
+      <div class="review-group">
+        <header><h2>Thông tin cửa hàng</h2><a class="btn sm quiet" href="?state=details"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Sửa</a></header>
+        <dl class="kv">
+          <dt>Tên cửa hàng</dt><dd>Hải Đăng Digital</dd>
+          <dt>Ngành hàng</dt><dd>Điện thoại và phụ kiện</dd>
+          <dt>Số điện thoại</dt><dd>0912 345 678</dd>
+          <dt>Khu vực giao hàng</dt><dd>Hà Nội, TP. Hồ Chí Minh</dd>
+          <dt>Giới thiệu ngắn</dt><dd class="unset">Chưa nhập. Website dùng câu giới thiệu theo ngành hàng.</dd>
+        </dl>
+      </div>
+      <div class="review-group">
+        <header><h2>Sản phẩm</h2><a class="btn sm quiet" href="?state=products"><svg class="ico sm" aria-hidden="true"><use href="#i-pencil"/></svg>Sửa</a></header>
+        <dl class="kv">
+          <dt>Số sản phẩm</dt><dd>3</dd>
+          <dt>Tên</dt><dd>Lumen X9 Pro 5G, Tai nghe chống ồn Vexa Buds 2 Pro bản giới hạn kỷ niệm 10 năm kèm hộp sạc không dây, Sạc nhanh 67W</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="notice section">
+      <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>
+      <div class="grow">Dựng website mất khoảng 5 phút và dùng 1 trong 3 lần tạo còn lại hôm nay. Bạn có thể đóng trang, website vẫn được dựng tiếp.</div>
+    </div>
+    <div class="form-actions">
+      <a class="btn" href="?state=products">Quay lại</a>
+      <span class="spacer"></span>
+      <a class="btn primary" href="progress.html">Tạo website</a>
+    </div>
+  </section>
+</main>
+<script src="../kit/icons.js"></script>
+<script src="../kit/app.js"></script>
+</body>
+</html>
