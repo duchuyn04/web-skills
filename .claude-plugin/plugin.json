@@ -1,9 +1,9 @@
 {
   "name": "web-skills",
-  "description": "Skills that build finished websites from one JSON file: BPO and outsourcing landing pages, and electronics e-commerce shops with an admin dashboard.",
-  "version": "1.0.0",
+  "description": "Skills that build finished websites and prototypes: BPO and outsourcing landing pages and electronics e-commerce shops from one JSON file, app screens (dashboard, tables, forms, wizards) from a fixed HTML/CSS kit, and a Scrum plan with a Jira-ready backlog to build them.",
+  "version": "1.2.0",
   "author": { "name": "duchuyn04" },
   "repository": "https://github.com/duchuyn04/web-skills",
   "license": "MIT",
-  "keywords": ["landing-page", "bpo", "ecommerce", "website-generator", "vietnamese"]
+  "keywords": ["landing-page", "bpo", "ecommerce", "website-generator", "app-ui", "prototype", "dashboard", "vietnamese", "scrum", "jira", "project-plan"]
 }

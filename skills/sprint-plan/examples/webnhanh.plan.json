@@ -1,0 +1,1208 @@
+{
+ "project": "Webnhanh",
+ "key": "WEB",
+ "file": "Ke-hoach-Webnhanh",
+ "lang": "vi",
+ "start": "2026-10-12",
+ "sprint_weeks": 1,
+ "release": "2026-11-24",
+ "capacity": 30,
+ "version": "v1.0",
+ "later_version": "v1.1",
+ "epic_naming": [
+  "Quản lý",
+  "Danh sách"
+ ],
+ "deploy_every_sprint": true,
+ "epics": [
+  {
+   "code": "SETUP",
+   "name": "Quản lý hạ tầng và CI/CD",
+   "color": "6554C0"
+  },
+  {
+   "code": "HOME",
+   "name": "Quản lý trang chủ và chatbot",
+   "color": "0065FF"
+  },
+  {
+   "code": "LEAD",
+   "name": "Quản lý tiếp nhận yêu cầu",
+   "color": "00A3BF"
+  },
+  {
+   "code": "AUTH",
+   "name": "Quản lý tài khoản và đăng nhập",
+   "color": "36B37E"
+  },
+  {
+   "code": "CRM",
+   "name": "Danh sách yêu cầu làm web",
+   "color": "FF8B00"
+  },
+  {
+   "code": "SEC",
+   "name": "Quản lý bảo mật và phân quyền",
+   "color": "DE350B"
+  },
+  {
+   "code": "GEN",
+   "name": "Quản lý tạo website mẫu",
+   "color": "5243AA"
+  },
+  {
+   "code": "LIVE",
+   "name": "Quản lý tiến độ tạo website",
+   "color": "0747A6"
+  },
+  {
+   "code": "RESULT",
+   "name": "Quản lý kết quả và bản mẫu",
+   "color": "008DA6"
+  },
+  {
+   "code": "USER",
+   "name": "Danh sách website của người dùng",
+   "color": "00875A"
+  },
+  {
+   "code": "ADMIN",
+   "name": "Quản lý công cụ mockup",
+   "color": "FF991F"
+  },
+  {
+   "code": "QA",
+   "name": "Quản lý kiểm thử",
+   "color": "BF2600"
+  },
+  {
+   "code": "REL",
+   "name": "Quản lý release và deploy production",
+   "color": "006644"
+  },
+  {
+   "code": "LATER",
+   "name": "Danh sách tính năng sau v1",
+   "color": "97A0AF"
+  }
+ ],
+ "sprints": [
+  {
+   "name": "Trang chủ, nhận yêu cầu, đăng nhập",
+   "goal": "Khách gửi được yêu cầu từ trang chủ, sales nhận email và Zalo trong 1 phút. Người dùng đăng ký, đăng nhập được. Production có HTTPS, backup và tự deploy khi test xanh."
+  },
+  {
+   "name": "Admin quản lý yêu cầu",
+   "goal": "Sales xử lý trọn một khách từ Mới đến Đã chốt trên admin. Chatbot tạo được lead. API admin có phân quyền."
+  },
+  {
+   "name": "Wizard và vòng lặp tạo website",
+   "goal": "Người dùng đi hết wizard 10 ngành và nhận website build qua. Tự sửa lỗi chạy, có hạn mức."
+  },
+  {
+   "name": "Xem trực tiếp và kết quả",
+   "goal": "Website hiện dần qua SSE, reload không mất tiến độ. Kết quả website và cửa hàng xem được, gửi yêu cầu kèm mockup tới admin."
+  },
+  {
+   "name": "Hoàn thiện và code freeze",
+   "goal": "Đủ 16 màn hình, 67 trạng thái như prototype. Cuối sprint code freeze, chỉ sửa bug."
+  },
+  {
+   "name": "Kiểm thử toàn diện",
+   "goal": "E2E, bảo mật, load, benchmark AI, UAT xong. Không còn bug Highest và High. Bản sửa lỗi đã lên production. Go/No-Go thứ Sáu."
+  },
+  {
+   "name": "Mở công khai v1.0",
+   "goal": "Mở công khai thứ Ba 24/11, smoke test qua, theo dõi 5 ngày ổn định."
+  }
+ ],
+ "milestones": [
+  {
+   "date": "2026-11-13",
+   "name": "Code freeze",
+   "note": "Hết sprint 5, chỉ nhận bug fix.",
+   "color": "FF8B00"
+  },
+  {
+   "date": "2026-11-20",
+   "name": "Go/No-Go",
+   "note": "100% test case quan trọng qua, không còn bug Highest và High, benchmark AI đạt 8 trên 10, UAT xong, restore backup thử thành công.",
+   "color": "DE350B"
+  },
+  {
+   "date": "2026-11-24",
+   "name": "Mở công khai v1.0",
+   "note": "Production đã chạy từ sprint 1, hôm nay chỉ mở công khai. Rollback trong 30 phút nếu có sự cố.",
+   "color": "00875A"
+  }
+ ],
+ "issues": [
+  {
+   "epic": "SETUP",
+   "type": "Task",
+   "summary": "Khởi tạo solution: .NET 10 modular monolith, React + Vite, PostgreSQL qua Docker Compose",
+   "description": "Dựng khung theo specs/SPEC.md: backend/src/Host + các project Modules.*, frontend/, docker/.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 1,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "infra",
+   "ac": [
+    "docker compose up --build chạy được từ máy sạch",
+    "Có health check"
+   ]
+  },
+  {
+   "epic": "SETUP",
+   "type": "Task",
+   "summary": "Dựng production: server, domain, HTTPS, backup tự động",
+   "description": "Production có từ sprint 1 để mỗi module xong là chạy thật luôn. Trước ngày mở công khai thì chặn truy cập bằng mật khẩu.",
+   "priority": "Highest",
+   "points": 3,
+   "sprint": 1,
+   "labels": [
+    "devops"
+   ],
+   "component": "infra",
+   "ac": [
+    "Domain chạy HTTPS",
+    "Backup database hằng ngày, đã restore thử thành công",
+    "Có cách rollback về bản trước"
+   ]
+  },
+  {
+   "epic": "SETUP",
+   "type": "Task",
+   "summary": "CI/CD: test xanh thì tự deploy production",
+   "description": "Pipeline build, lint, test cho backend và frontend. Merge vào main thì deploy production, migration chạy tự động.",
+   "priority": "Highest",
+   "points": 2,
+   "sprint": 1,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Pipeline đỏ thì không deploy",
+    "Deploy xong trong 10 phút",
+    "Rollback được bằng một lệnh"
+   ]
+  },
+  {
+   "epic": "HOME",
+   "type": "Story",
+   "summary": "Trang chủ: hero, giới thiệu, quy trình, ngành nghề, FAQ, CTA",
+   "description": "Là khách ghé thăm, tôi muốn hiểu ngay Webnhanh làm gì và cho ngành nào, để quyết định liên hệ. Build từ landing/page.json bằng bpo-landing-builder.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 1,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Đủ section như prototype index.html",
+    "lint_output và qa_screenshot --sweep qua"
+   ]
+  },
+  {
+   "epic": "HOME",
+   "type": "Story",
+   "summary": "Trang chủ responsive, tải nhanh trên di động",
+   "description": "Là khách dùng điện thoại, tôi muốn trang mở nhanh và dễ đọc.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 1,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Không tràn ngang ở 390px",
+    "LCP dưới 3 giây trên 4G"
+   ]
+  },
+  {
+   "epic": "LEAD",
+   "type": "Story",
+   "summary": "Form gửi yêu cầu làm web và màn Đã gửi",
+   "description": "Là khách, tôi muốn để lại tên, điện thoại, ngành, nhu cầu mà không cần tài khoản, để được tư vấn.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 1,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "leads",
+   "ac": [
+    "Validate ở client và server",
+    "Gửi xong thấy giờ gọi lại",
+    "Lỗi không mất dữ liệu đã nhập",
+    "Có chống spam"
+   ]
+  },
+  {
+   "epic": "LEAD",
+   "type": "Story",
+   "summary": "Thông báo yêu cầu mới qua email và Zalo",
+   "description": "Là sales, tôi muốn biết ngay khi có khách mới, để gọi lại sớm.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 1,
+   "labels": [
+    "backend"
+   ],
+   "component": "leads",
+   "ac": [
+    "Email và Zalo đến trong 1 phút",
+    "Một kênh lỗi thì kênh kia vẫn gửi, có retry"
+   ]
+  },
+  {
+   "epic": "AUTH",
+   "type": "Story",
+   "summary": "Đăng ký, đăng nhập bằng email",
+   "description": "Là người dùng mới, tôi muốn tạo tài khoản để lưu các website mẫu. ASP.NET Core Identity, cookie HttpOnly.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 1,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "identity",
+   "ac": [
+    "Đăng ký, đăng nhập, đăng xuất",
+    "Sai mật khẩu báo dễ hiểu",
+    "Có giới hạn số lần thử"
+   ]
+  },
+  {
+   "epic": "AUTH",
+   "type": "Story",
+   "summary": "Đăng nhập bằng Google",
+   "description": "Là người dùng, tôi muốn đăng nhập bằng Google để khỏi nhớ mật khẩu.",
+   "priority": "Medium",
+   "points": 2,
+   "sprint": 1,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "identity",
+   "ac": [
+    "External login chạy",
+    "Email đã tồn tại thì hiện trạng thái google-conflict như prototype"
+   ]
+  },
+  {
+   "epic": "AUTH",
+   "type": "Story",
+   "summary": "Xác nhận email và quên mật khẩu",
+   "description": "Là người dùng, tôi muốn lấy lại mật khẩu khi quên.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 1,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "identity",
+   "ac": [
+    "Email xác nhận và đặt lại mật khẩu gửi được",
+    "Token hết hạn sau 24 giờ, dùng một lần"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Deploy production sprint 1: trang chủ, form yêu cầu, đăng nhập",
+   "description": "Module xong là lên production luôn, chạy thử trên môi trường thật.",
+   "priority": "High",
+   "points": 1,
+   "sprint": 1,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Deploy qua CI/CD, smoke test các luồng của module trên production, không lỗi mới trong log 24 giờ"
+   ]
+  },
+  {
+   "epic": "CRM",
+   "type": "Story",
+   "summary": "Trang Tổng quan admin",
+   "description": "Là quản lý, tôi muốn mở một trang là thấy khách mới, khách chưa gọi, việc cần làm ngay.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 2,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "4 KPI, mục Cần làm ngay, chart theo giai đoạn và theo ngành, period picker có so sánh kỳ trước"
+   ]
+  },
+  {
+   "epic": "CRM",
+   "type": "Story",
+   "summary": "Danh sách yêu cầu theo giai đoạn",
+   "description": "Là sales, tôi muốn xem khách theo giai đoạn Mới, Đã liên hệ, Đã báo giá, Đã chốt, Không chốt.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 2,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Tab có số đếm, search, sort, lọc ngày, phân trang, xuất CSV",
+    "Lọc và sort chạy ở server"
+   ]
+  },
+  {
+   "epic": "CRM",
+   "type": "Story",
+   "summary": "Drawer chi tiết yêu cầu: gọi, Zalo, ghi chú, đổi giai đoạn, hẹn gọi lại",
+   "description": "Là sales, tôi muốn xử lý một khách ngay trên một ngăn bên phải.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 2,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Đủ thao tác như prototype admin-yeu-cau",
+    "Mỗi thay đổi ghi vào lịch sử"
+   ]
+  },
+  {
+   "epic": "CRM",
+   "type": "Story",
+   "summary": "Nhắc yêu cầu quá giờ chưa gọi",
+   "description": "Là quản lý, tôi muốn thấy khách chờ quá lâu để không mất khách.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 2,
+   "labels": [
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Quá số giờ cài đặt thì có nhãn đỏ và vào mục Cần làm ngay"
+   ]
+  },
+  {
+   "epic": "CRM",
+   "type": "Story",
+   "summary": "Cài đặt nhận yêu cầu",
+   "description": "Là quản lý, tôi muốn tự đổi email, Zalo nhận thông báo và giờ gọi lại.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 2,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Lưu xong áp dụng ngay cho yêu cầu tiếp theo",
+    "Có trạng thái dirty và saved"
+   ]
+  },
+  {
+   "epic": "HOME",
+   "type": "Story",
+   "summary": "Chatbot FAQ trên trang chủ, chuyển thành yêu cầu",
+   "description": "Là khách, tôi muốn hỏi nhanh về giá, thời gian, ngành phục vụ và để lại số.",
+   "priority": "Medium",
+   "points": 3,
+   "sprint": 2,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Trả lời đúng bộ câu hỏi thường gặp",
+    "Để lại số điện thoại thì tạo lead nguồn chatbot"
+   ]
+  },
+  {
+   "epic": "SEC",
+   "type": "Story",
+   "summary": "Phân quyền admin ở server",
+   "description": "Là chủ doanh nghiệp, tôi muốn chỉ admin xem được dữ liệu khách hàng.",
+   "priority": "Highest",
+   "points": 2,
+   "sprint": 2,
+   "labels": [
+    "backend"
+   ],
+   "component": "identity",
+   "ac": [
+    "Mọi endpoint admin kiểm tra role",
+    "User thường gọi vào nhận 403",
+    "Có test cho từng endpoint"
+   ]
+  },
+  {
+   "epic": "SETUP",
+   "type": "Task",
+   "summary": "Vendor web-skills có VERSION và module skill-registry",
+   "description": "Copy cố định web-skills vào vendor/, đọc SKILL.md, schema, blueprint cho generation.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 2,
+   "labels": [
+    "backend"
+   ],
+   "component": "skill-registry",
+   "ac": [
+    "Trả được danh sách section theo blueprint",
+    "Version được ghi vào mỗi lần tạo"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Deploy production sprint 2: admin quản lý yêu cầu, chatbot",
+   "description": "Module xong là lên production luôn, chạy thử trên môi trường thật.",
+   "priority": "High",
+   "points": 1,
+   "sprint": 2,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Deploy qua CI/CD, smoke test các luồng của module trên production, không lỗi mới trong log 24 giờ"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "LLM gateway: client DeepSeek có stream, JSON mode, retry, timeout, đếm token",
+   "description": "Là hệ thống, tôi cần gọi DeepSeek qua một interface để đổi provider sau này không đụng logic khác.",
+   "priority": "Highest",
+   "points": 5,
+   "sprint": 3,
+   "labels": [
+    "backend"
+   ],
+   "component": "llm-gateway",
+   "ac": [
+    "Integration test với server giả",
+    "Key chỉ ở server, không xuất hiện trong log hay response"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "Wizard 5 bước: ngành, mục đích, thông tin, dịch vụ, phong cách, xem lại",
+   "description": "Là người dùng, tôi muốn trả lời từng bước rồi xem lại trước khi tạo.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 3,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Đủ bước như tao-moi.html",
+    "Quay lại không mất dữ liệu",
+    "Lưu nháp"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "Kịch bản câu hỏi theo 10 ngành",
+   "description": "Là chủ tiệm spa, tôi muốn được hỏi về dịch vụ và đặt lịch, không phải đặt bàn hay chọn món.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 3,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "generation",
+   "ac": [
+    "10 ngành khớp js/kich-ban.js",
+    "Brief dựng từ form chứa mọi dữ kiện người dùng nhập"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "Lấy thông tin doanh nghiệp từ link Google Maps",
+   "description": "Là người dùng, tôi muốn dán link Google Maps để điền sẵn tên, địa chỉ, giờ mở cửa.",
+   "priority": "Medium",
+   "points": 3,
+   "sprint": 3,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "generation",
+   "ac": [
+    "Link hợp lệ thì tự điền",
+    "Link sai báo rõ và cho nhập tay"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "Chọn phong cách theo ngành và chọn màu bằng palette",
+   "description": "Là người dùng, tôi muốn chọn phong cách hợp ngành và chọn màu không cần gõ mã hex.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 3,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Ảnh style đổi theo ngành",
+    "Màu chọn vào đúng token của website tạo ra"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "Build runner và vòng lặp tạo: prompt, JSON, kiểm tra, build, lint, tự sửa",
+   "description": "Là người dùng, tôi muốn nhận website hoàn chỉnh mà không cần biết lỗi bên trong. Job nền, hàng đợi PostgreSQL.",
+   "priority": "Highest",
+   "points": 8,
+   "sprint": 3,
+   "labels": [
+    "backend"
+   ],
+   "component": "generation",
+   "ac": [
+    "Kiểm tra đường dẫn trong JSON trước khi build",
+    "Tự sửa tối đa 5 lượt, quá 20 phút thì dừng",
+    "Mỗi lần tạo ghi thời gian, token, số lượt sửa"
+   ]
+  },
+  {
+   "epic": "GEN",
+   "type": "Story",
+   "summary": "Hạn mức số lần tạo mỗi ngày và hoàn lượt",
+   "description": "Là chủ doanh nghiệp, tôi muốn giới hạn số lần tạo để kiểm soát chi phí AI.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 3,
+   "labels": [
+    "backend"
+   ],
+   "component": "identity",
+   "ac": [
+    "Mặc định 5 lần mỗi ngày",
+    "Hết lượt thì không gọi DeepSeek",
+    "Lần tạo lỗi được hoàn lượt"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Deploy production sprint 3: wizard và vòng lặp tạo website",
+   "description": "Module xong là lên production luôn, chạy thử trên môi trường thật.",
+   "priority": "High",
+   "points": 1,
+   "sprint": 3,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Deploy qua CI/CD, smoke test các luồng của module trên production, không lỗi mới trong log 24 giờ"
+   ]
+  },
+  {
+   "epic": "LIVE",
+   "type": "Story",
+   "summary": "Luồng sự kiện SSE và nối lại bằng Last-Event-ID",
+   "description": "Là người dùng, tôi muốn tải lại trang hay mất mạng vẫn xem tiếp, không mất lượt.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 4,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "generation",
+   "ac": [
+    "Sự kiện có thứ tự",
+    "Reload hoặc mất mạng thì về đúng trạng thái, không tạo job mới",
+    "Người khác không nhận được sự kiện"
+   ]
+  },
+  {
+   "epic": "LIVE",
+   "type": "Story",
+   "summary": "Website hiện dần trong khung máy tính và điện thoại",
+   "description": "Là người dùng, tôi muốn thấy website hình thành từng phần thay vì nhìn vòng xoay. Dùng render_draft.py, sự kiện section_rendered.",
+   "priority": "Highest",
+   "points": 8,
+   "sprint": 4,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Khung trang hiện trong 3 giây",
+    "Mỗi section hiện khi vẽ nháp xong, dưới 300 ms",
+    "Iframe sandbox, CSP chặn script",
+    "Không có nhãn AI đang viết"
+   ]
+  },
+  {
+   "epic": "LIVE",
+   "type": "Story",
+   "summary": "Trạng thái chưa tạo được, quá giờ, đã dừng và thử lại",
+   "description": "Là người dùng, tôi muốn biết vì sao chưa tạo được và nên làm gì tiếp.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 4,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Đủ các state failed, timed-out, stopped như dang-tao.html",
+    "Báo đã hoàn lượt, có nút Thử lại"
+   ]
+  },
+  {
+   "epic": "RESULT",
+   "type": "Story",
+   "summary": "Màn kết quả theo ngành, chuyển máy tính và điện thoại",
+   "description": "Là người dùng, tôi muốn xem website mẫu trên khung máy tính và điện thoại.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 4,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "preview-export",
+   "ac": [
+    "Preview phục vụ từ origin riêng, URL có chữ ký",
+    "Nội dung đổi theo ngành"
+   ]
+  },
+  {
+   "epic": "RESULT",
+   "type": "Story",
+   "summary": "Kết quả cửa hàng online bằng ecommerce-builder",
+   "description": "Là chủ cửa hàng, tôi muốn thấy cửa hàng mẫu có giỏ hàng và thanh toán.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 4,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "generation",
+   "ac": [
+    "Giỏ hàng, sửa số lượng, thanh toán mô phỏng chạy",
+    "shop.json đủ trường bắt buộc"
+   ]
+  },
+  {
+   "epic": "RESULT",
+   "type": "Story",
+   "summary": "Gửi yêu cầu làm web kèm bản mẫu",
+   "description": "Là người dùng, tôi muốn gửi bản mẫu mình chọn để được báo giá.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 4,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "leads",
+   "ac": [
+    "Lead nguồn kèm mockup",
+    "Admin mở xem được bản mẫu từ drawer"
+   ]
+  },
+  {
+   "epic": "RESULT",
+   "type": "Story",
+   "summary": "Tải bản mẫu dạng zip",
+   "description": "Là người dùng, tôi muốn tải bản mẫu về để gửi người khác xem.",
+   "priority": "Medium",
+   "points": 2,
+   "sprint": 4,
+   "labels": [
+    "backend"
+   ],
+   "component": "preview-export",
+   "ac": [
+    "Zip giải nén ra mở bằng trình duyệt là xem được"
+   ]
+  },
+  {
+   "epic": "RESULT",
+   "type": "Story",
+   "summary": "Link xem thử có thời hạn",
+   "description": "Là người dùng, tôi muốn chia sẻ link xem thử cho đối tác.",
+   "priority": "Low",
+   "points": 2,
+   "sprint": 4,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "preview-export",
+   "ac": [
+    "Hết hạn thì hiện state expired, không lỗi trắng"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Deploy production sprint 4: xem trực tiếp, kết quả, gửi kèm mockup",
+   "description": "Module xong là lên production luôn, chạy thử trên môi trường thật.",
+   "priority": "High",
+   "points": 1,
+   "sprint": 4,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Deploy qua CI/CD, smoke test các luồng của module trên production, không lỗi mới trong log 24 giờ"
+   ]
+  },
+  {
+   "epic": "USER",
+   "type": "Story",
+   "summary": "Trang Website của bạn",
+   "description": "Là người dùng, tôi muốn thấy các website mẫu đã tạo và số lần còn lại hôm nay.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 5,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "projects",
+   "ac": [
+    "Đủ state default, empty, quota-out như website-cua-ban.html"
+   ]
+  },
+  {
+   "epic": "USER",
+   "type": "Story",
+   "summary": "Trang Tài khoản",
+   "description": "Là người dùng, tôi muốn sửa hồ sơ, đổi mật khẩu, xem thiết bị, thông báo, yêu cầu đã gửi, xoá tài khoản.",
+   "priority": "High",
+   "points": 5,
+   "sprint": 5,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "identity",
+   "ac": [
+    "Đủ mục như tai-khoan.html",
+    "Xoá tài khoản xác nhận lại và xoá hẳn dữ liệu"
+   ]
+  },
+  {
+   "epic": "ADMIN",
+   "type": "Story",
+   "summary": "Admin: Website đã tạo",
+   "description": "Là admin, tôi muốn thấy mọi lần tạo, lần nào lỗi và vì sao.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 5,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Bảng search, lọc, sort",
+    "Lý do lỗi bằng lời thường, chi tiết kỹ thuật thu gọn",
+    "Nút Dừng cho job kẹt"
+   ]
+  },
+  {
+   "epic": "ADMIN",
+   "type": "Story",
+   "summary": "Admin: Người dùng, khoá tài khoản và tăng lượt",
+   "description": "Là admin, tôi muốn khoá tài khoản xấu và tăng lượt cho khách tiềm năng.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 5,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Khoá thì mọi phiên hết hiệu lực ngay và job đang chạy dừng"
+   ]
+  },
+  {
+   "epic": "ADMIN",
+   "type": "Story",
+   "summary": "Admin: Lượng AI đã dùng",
+   "description": "Là admin, tôi muốn biết token theo ngày, theo người và quy ra tiền.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 5,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Có số theo ngày, theo người dùng",
+    "Nhập đơn giá thì tính ra tiền"
+   ]
+  },
+  {
+   "epic": "ADMIN",
+   "type": "Story",
+   "summary": "Admin: Cài đặt lần tạo website",
+   "description": "Là admin, tôi muốn đổi số lần tạo mỗi ngày, thời gian chờ, số lượt tự sửa, model.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 5,
+   "labels": [
+    "frontend",
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "Áp dụng cho lần tạo tiếp theo",
+    "Mỗi ô có dòng giải thích"
+   ]
+  },
+  {
+   "epic": "SEC",
+   "type": "Story",
+   "summary": "Trang lỗi: 404, 403, 500, bảo trì, mất mạng",
+   "description": "Là người dùng, tôi muốn khi có sự cố thì thấy lời giải thích và lối đi tiếp.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 5,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Đủ state như loi.html",
+    "Không hiện lỗi kỹ thuật nguyên văn"
+   ]
+  },
+  {
+   "epic": "SEC",
+   "type": "Story",
+   "summary": "Ghi nhật ký khi admin xem nội dung người dùng",
+   "description": "Là người dùng, tôi muốn nội dung của tôi chỉ được xem khi cần và có ghi lại.",
+   "priority": "High",
+   "points": 2,
+   "sprint": 5,
+   "labels": [
+    "backend"
+   ],
+   "component": "admin",
+   "ac": [
+    "API danh sách không trả nội dung",
+    "Bấm Xem nội dung thì ghi một dòng audit"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "Test tự động quét từ cấm trên giao diện",
+   "description": "Quét file tài nguyên chữ theo bảng Chữ trên giao diện trong SPEC.md và các từ lóng như ưng.",
+   "priority": "Medium",
+   "points": 1,
+   "sprint": 5,
+   "labels": [
+    "qa"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Test chạy trong CI, có từ cấm thì đỏ"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Deploy production sprint 5: trang người dùng, admin công cụ mockup",
+   "description": "Module xong là lên production luôn, chạy thử trên môi trường thật.",
+   "priority": "High",
+   "points": 1,
+   "sprint": 5,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Deploy qua CI/CD, smoke test các luồng của module trên production, không lỗi mới trong log 24 giờ"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "E2E Playwright toàn luồng",
+   "description": "Từ gửi yêu cầu, đăng ký, tạo website, xem kết quả, gửi kèm mockup đến admin xử lý.",
+   "priority": "Highest",
+   "points": 5,
+   "sprint": 6,
+   "labels": [
+    "qa"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Các luồng chính xanh trong CI"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "Test trên thiết bị và trình duyệt",
+   "description": "iPhone Safari, Android Chrome, desktop Chrome, Edge, Safari.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 6,
+   "labels": [
+    "qa"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Không tràn ngang, không vỡ layout, nút dễ chạm"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "Test bảo mật: IDOR, phân quyền admin, lộ key",
+   "description": "User A không đọc được dự án của B. User thường không gọi được API admin. Key DeepSeek không lộ.",
+   "priority": "Highest",
+   "points": 3,
+   "sprint": 6,
+   "labels": [
+    "qa",
+    "backend"
+   ],
+   "component": "identity",
+   "ac": [
+    "Không có chỗ lọt",
+    "Có test tự động cho từng trường hợp"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "Load test 20 lần tạo cùng lúc",
+   "description": "Đo thời gian và tỷ lệ thành công khi nhiều job chạy song song.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 6,
+   "labels": [
+    "qa",
+    "backend"
+   ],
+   "component": "generation",
+   "ac": [
+    "Không sập, không mất dữ liệu",
+    "Trung vị dưới 8 phút"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "Benchmark chất lượng AI cho 10 ngành",
+   "description": "Mỗi ngành một brief mẫu, gọi DeepSeek thật.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 6,
+   "labels": [
+    "qa"
+   ],
+   "component": "generation",
+   "ac": [
+    "Ít nhất 8 trên 10 build qua trong 5 lượt sửa, không bịa số liệu"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Task",
+   "summary": "UAT với 3 đến 5 người không rành kỹ thuật",
+   "description": "Người dùng tự tạo website, quan sát và ghi lại chỗ lúng túng.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 6,
+   "labels": [
+    "qa"
+   ],
+   "component": "web-ui",
+   "ac": [
+    "Mọi người tự làm xong mà không phải hỏi nghĩa chữ nào"
+   ]
+  },
+  {
+   "epic": "QA",
+   "type": "Bug",
+   "summary": "Buffer sửa lỗi từ kiểm thử",
+   "description": "Dành chỗ cho bug tìm thấy trong sprint 6.",
+   "priority": "Highest",
+   "points": 5,
+   "sprint": 6,
+   "labels": [
+    "backend",
+    "frontend"
+   ],
+   "component": "infra",
+   "ac": [
+    "Không còn bug Highest và High"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Deploy production sprint 6: bản sửa lỗi sau kiểm thử",
+   "description": "Module xong là lên production luôn, chạy thử trên môi trường thật.",
+   "priority": "High",
+   "points": 1,
+   "sprint": 6,
+   "labels": [
+    "devops",
+    "deploy"
+   ],
+   "component": "infra",
+   "ac": [
+    "Deploy qua CI/CD, smoke test các luồng của module trên production, không lỗi mới trong log 24 giờ"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Thử restore backup và rollback trên production",
+   "description": "Kiểm tra lại đường lui trước khi mở công khai.",
+   "priority": "Highest",
+   "points": 1,
+   "sprint": 7,
+   "labels": [
+    "devops"
+   ],
+   "component": "infra",
+   "ac": [
+    "Restore backup mới nhất thành công",
+    "Rollback về bản trước trong 30 phút"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Mở công khai v1.0 và smoke test",
+   "description": "Thứ Ba 24/11: bỏ chặn truy cập, bật analytics, trỏ domain chính.",
+   "priority": "Highest",
+   "points": 2,
+   "sprint": 7,
+   "labels": [
+    "devops",
+    "qa"
+   ],
+   "component": "infra",
+   "ac": [
+    "Gửi yêu cầu, đăng nhập, tạo website, mở admin đều chạy với người dùng thật"
+   ]
+  },
+  {
+   "epic": "REL",
+   "type": "Task",
+   "summary": "Theo dõi tuần đầu: lỗi, hiệu năng, chi phí AI",
+   "description": "Theo dõi hằng ngày sau khi mở công khai.",
+   "priority": "High",
+   "points": 3,
+   "sprint": 7,
+   "labels": [
+    "devops"
+   ],
+   "component": "infra",
+   "ac": [
+    "Có cảnh báo khi lỗi tăng",
+    "Bug phát sinh xử lý trong ngày"
+   ]
+  },
+  {
+   "epic": "LATER",
+   "type": "Story",
+   "summary": "Giao diện tiếng Anh",
+   "description": "Là khách nước ngoài, tôi muốn dùng website bằng tiếng Anh.",
+   "priority": "Lowest",
+   "points": 5,
+   "sprint": null,
+   "labels": [
+    "frontend"
+   ],
+   "component": "web-ui"
+  },
+  {
+   "epic": "LATER",
+   "type": "Story",
+   "summary": "Chatbot trả lời bằng AI",
+   "description": "Là khách, tôi muốn chatbot hiểu cả câu hỏi ngoài danh sách có sẵn.",
+   "priority": "Lowest",
+   "points": 5,
+   "sprint": null,
+   "labels": [
+    "backend"
+   ],
+   "component": "llm-gateway"
+  },
+  {
+   "epic": "LATER",
+   "type": "Story",
+   "summary": "Nhiều admin và nhật ký thao tác",
+   "description": "Là chủ doanh nghiệp, tôi muốn thêm admin và xem ai đã làm gì.",
+   "priority": "Lowest",
+   "points": 5,
+   "sprint": null,
+   "labels": [
+    "backend"
+   ],
+   "component": "admin"
+  },
+  {
+   "epic": "LATER",
+   "type": "Story",
+   "summary": "Thanh toán thật trên cửa hàng",
+   "description": "Là chủ cửa hàng, tôi muốn nhận tiền thật trên website.",
+   "priority": "Lowest",
+   "points": 8,
+   "sprint": null,
+   "labels": [
+    "backend"
+   ],
+   "component": "generation"
+  }
+ ]
+}
