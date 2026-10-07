@@ -1,0 +1,84 @@
+{
+ "_note": "Test fixture: edge cases. A 48-character name, one branch, no technicians, a price on request, a very long service name, no gallery, no offers.",
+ "demo": true,
+ "sample_content": true,
+ "brief": "Website mẫu kiểm tra trường hợp biên.",
+ "style": "k-minimal",
+ "salon": {
+  "name": "Tiệm Nail Và Chăm Sóc Móng Tay Móng Chân Cô Ba Sài Gòn",
+  "hotline": "[Hotline]"
+ },
+ "locations": [
+  {
+   "id": "a",
+   "name": "Chi nhánh duy nhất",
+   "address": "[Địa chỉ]",
+   "hours": [
+    {
+     "days": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "open": "09:00",
+     "close": "18:00"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "id": "c",
+   "name": "Dịch vụ"
+  }
+ ],
+ "services": [
+  {
+   "id": "a",
+   "category": "c",
+   "name": "Sơn gel",
+   "minutes": 45,
+   "price": 150000,
+   "popular": true
+  },
+  {
+   "id": "b",
+   "category": "c",
+   "name": "Úp móng gel kèm vẽ tay theo mẫu khách gửi và đính đá toàn bộ mười ngón",
+   "minutes": 150,
+   "price": null,
+   "popular": true
+  },
+  {
+   "id": "c",
+   "category": "c",
+   "name": "Nối móng",
+   "minutes": 90,
+   "price": 350000,
+   "price_max": 600000
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "variant": "split",
+   "title": "Tiệm nail và chăm sóc móng tay móng chân ở Quận 3, Thành phố Hồ Chí Minh"
+  },
+  {
+   "type": "popular"
+  },
+  {
+   "type": "price-list"
+  },
+  {
+   "type": "locations"
+  },
+  {
+   "type": "cta",
+   "title": "Đặt lịch"
+  }
+ ]
+}

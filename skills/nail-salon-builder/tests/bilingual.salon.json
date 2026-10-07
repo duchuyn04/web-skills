@@ -1,0 +1,211 @@
+{
+ "_note": "Test fixture: bilingual menu for tourists (Korean, Japanese, Chinese, Thai next to Vietnamese) and fonts chosen in theme.",
+ "demo": true,
+ "brief": "Tiệm Nail Hoa Mai, 25 Nguyễn Trãi, Phường Tân An, Ninh Kiều, Cần Thơ. Hotline 0901 234 567, Zalo 0901234567. Mở 8h30 - 20h, nghỉ thứ 2. Bảng giá: sơn thường 50k (30 phút), sơn gel 120k (40 phút), úp móng 250k (60 phút), đắp bột 280.000đ (75 phút), tháo gel 30k (15 phút), vẽ 10k/ngón, đính đá 5k/ngón. Combo tay chân gel 220 nghìn (75 phút). Thẻ 10 lần sơn gel 1tr. Bảo hành 5 ngày. Thợ: Mai (thợ chính), Hồng.",
+ "style": "playful",
+ "salon": {
+  "name": "Nail Hoa Mai 花梅",
+  "tagline": "Sơn gel, úp móng · 젤 네일 · ジェルネイル · 美甲 · ทำเล็บ",
+  "hotline": "0901 234 567",
+  "zalo": "0901234567"
+ },
+ "theme": {
+  "accent": "#b0466a",
+  "font_head": "Lora",
+  "font_body": "Mulish",
+  "font_accent": "Dancing Script"
+ },
+ "booking": {
+  "mode": "native",
+  "cancel_hours": 2
+ },
+ "locations": [
+  {
+   "id": "nk",
+   "name": "Nail Hoa Mai",
+   "address": "25 Nguyễn Trãi, Phường Tân An, Ninh Kiều, Cần Thơ",
+   "phone": "0901 234 567",
+   "hours": [
+    {
+     "days": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "open": "08:30",
+     "close": "20:00"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "id": "son",
+   "name": "Sơn móng",
+   "art": {
+    "shape": "oval",
+    "style": "solid",
+    "colors": [
+     "#d6336c"
+    ]
+   }
+  },
+  {
+   "id": "up",
+   "name": "Úp và đắp",
+   "art": {
+    "shape": "coffin",
+    "length": "long",
+    "style": "ombre",
+    "colors": [
+     "#f8c8d4",
+     "#ffffff"
+    ]
+   }
+  },
+  {
+   "id": "khac",
+   "name": "Combo và tháo",
+   "art": {
+    "shape": "almond",
+    "style": "french",
+    "colors": [
+     "#f3d9cf",
+     "#ffffff"
+    ]
+   }
+  }
+ ],
+ "services": [
+  {
+   "id": "son-thuong",
+   "category": "son",
+   "name": "Sơn thường",
+   "minutes": 30,
+   "price": 50000
+  },
+  {
+   "id": "son-gel",
+   "category": "son",
+   "name": "Sơn gel 젤 네일",
+   "minutes": 40,
+   "price": 120000,
+   "popular": true
+  },
+  {
+   "id": "up-mong",
+   "category": "up",
+   "name": "Úp móng ジェルネイル",
+   "minutes": 60,
+   "price": 250000,
+   "popular": true
+  },
+  {
+   "id": "dap-bot",
+   "category": "up",
+   "name": "Đắp bột 美甲",
+   "minutes": 75,
+   "price": 280000
+  },
+  {
+   "id": "combo",
+   "category": "khac",
+   "name": "Combo tay chân gel ทำเล็บ",
+   "minutes": 75,
+   "price": 220000,
+   "popular": true
+  },
+  {
+   "id": "thao-gel",
+   "category": "khac",
+   "name": "Tháo gel",
+   "minutes": 15,
+   "price": 30000,
+   "addons": []
+  }
+ ],
+ "addons": [
+  {
+   "id": "ve",
+   "name": "Vẽ",
+   "price": 10000,
+   "per_nail": true,
+   "minutes": 5
+  },
+  {
+   "id": "da",
+   "name": "Đính đá",
+   "price": 5000,
+   "per_nail": true,
+   "minutes": 3
+  }
+ ],
+ "technicians": [
+  {
+   "id": "mai",
+   "name": "Mai",
+   "title": "Thợ chính"
+  },
+  {
+   "id": "hong",
+   "name": "Hồng"
+  }
+ ],
+ "packages": [
+  {
+   "name": "Thẻ 10 lần sơn gel",
+   "price": 1000000
+  }
+ ],
+ "trust": [
+  {
+   "icon": "calendar-check",
+   "title": "Bảo hành 5 ngày"
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "title": "Sơn gel, úp móng, đắp bột ở Ninh Kiều",
+   "text": "Đặt lịch online, chọn thợ và giờ trống."
+  },
+  {
+   "type": "faq",
+   "title": "Hỏi đáp 질문"
+  },
+  {
+   "type": "categories",
+   "title": "Dịch vụ"
+  },
+  {
+   "type": "popular",
+   "title": "Khách hay làm"
+  },
+  {
+   "type": "trust",
+   "title": "Cam kết"
+  },
+  {
+   "type": "offers",
+   "title": "Thẻ lần"
+  },
+  {
+   "type": "locations",
+   "title": "Địa chỉ"
+  },
+  {
+   "type": "cta",
+   "title": "Đặt lịch"
+  }
+ ],
+ "sample_content": true,
+ "faq": [
+  {
+   "q": "Có nhân viên nói tiếng Hàn không? 한국어 가능해요?",
+   "a": "Có. 네, 가능합니다."
+  }
+ ]
+}

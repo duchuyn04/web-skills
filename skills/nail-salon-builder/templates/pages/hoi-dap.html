@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+{% block main %}
+<section class="page-head"><div class="wrap"><h1>Hỏi đáp</h1></div></section>
+<div class="wrap faq-page">
+  <div class="faq">
+    {% for f in n.faq %}<details {% if loop.first %}open{% endif %}><summary><span>{{ f.q }}</span>{{ icon("chevron-down", "i-sm") }}</summary><p>{{ f.a }}</p></details>{% endfor %}
+  </div>
+  {% if n.policies %}
+  <aside class="side-links">
+    <h2>Chính sách</h2>
+    <ul>{% for p in n.policies %}<li><a href="{{ root }}chinh-sach/{{ p.id }}.html">{{ p.title }}{{ icon("chevron-right", "i-xs") }}</a></li>{% endfor %}</ul>
+  </aside>
+  {% endif %}
+</div>
+<div class="sp"></div>
+{% endblock %}

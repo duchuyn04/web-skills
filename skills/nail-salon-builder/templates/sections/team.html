@@ -1,0 +1,7 @@
+{% from "partials/macros.html" import section_head, tech_card with context %}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Thợ của tiệm", sec.text or "", root ~ "doi-ngu.html", "Xem đội ngũ") }}
+    <div class="tech-grid">{% for t in n.technicians[:6] %}{{ tech_card(root, t) }}{% endfor %}</div>
+  </div>
+</section>

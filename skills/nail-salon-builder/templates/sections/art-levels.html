@@ -1,0 +1,7 @@
+{% from "partials/macros.html" import section_head with context %}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Giá vẽ và đính đá", sec.text or "Gửi ảnh mẫu khi đặt lịch, thợ báo cấp độ và giá trước khi làm.") }}
+    {% include "partials/levels.html" %}
+  </div>
+</section>

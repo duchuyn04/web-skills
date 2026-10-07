@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+{% from "partials/macros.html" import book_btn with context %}
+{% block main %}
+<section class="nf">
+  <div class="wrap">
+    <p class="eyebrow">404</p>
+    <h1>Không tìm thấy trang</h1>
+    <p>Trang này không còn hoặc đường dẫn bị gõ sai.</p>
+    <div class="hero-btns"><a class="btn" href="{{ root }}index.html">Về trang chủ</a><a class="btn btn-ghost" href="{{ root }}bang-gia.html">Xem bảng giá</a></div>
+  </div>
+</section>
+{% endblock %}

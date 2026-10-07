@@ -1,0 +1,23 @@
+{% extends "layout/base.html" %}
+{% from "partials/macros.html" import look_card with context %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>Mẫu nail</h1>
+    <p>Bấm "Đặt mẫu này" để đặt lịch kèm mẫu. Thợ sẽ chỉnh màu và form theo tay của bạn.</p>
+  </div>
+</section>
+<div class="wrap">
+  {% if n.tags %}
+  <div class="filter-chips" role="group" aria-label="Lọc theo kiểu" data-look-filter>
+    <button type="button" class="chip" aria-pressed="true" data-tag="">Tất cả</button>
+    {% for t in n.tags %}<button type="button" class="chip" aria-pressed="false" data-tag="{{ t }}">{{ t }}</button>{% endfor %}
+  </div>
+  {% endif %}
+  <div class="look-grid look-grid-page">
+    {% for g in n.gallery %}{{ look_card(root, g) }}{% endfor %}
+  </div>
+  <p class="empty" data-look-empty hidden>Chưa có mẫu thuộc nhóm này.</p>
+</div>
+<div class="sp"></div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Cài đặt{% endblock %}
+{% block main %}
+<div class="page-top"><div><h1>Cài đặt</h1></div></div>
+<div class="grid-main">
+  <section class="card span2">
+    <header class="card-h"><h2>Thông tin tiệm</h2></header>
+    <dl class="dl">
+      <div><dt>Tên tiệm</dt><dd>{{ salon.name }}</dd></div>
+      <div><dt>Hotline</dt><dd>{{ salon.hotline }}</dd></div>
+      {% if salon.zalo %}<div><dt>Zalo</dt><dd>{{ salon.zalo }}</dd></div>{% endif %}
+      {% if salon.email %}<div><dt>Email</dt><dd>{{ salon.email }}</dd></div>{% endif %}
+      {% for l in n.locations %}<div><dt>{{ l.name }}</dt><dd>{{ l.address }}<br>{% for h in l.hours %}{{ h.label }} {{ h.open }} - {{ h.close }}{% if not loop.last %}; {% endif %}{% endfor %}</dd></div>{% endfor %}
+    </dl>
+    <p class="muted small">Thông tin này lấy từ salon.json. Sửa file đó rồi build lại.</p>
+  </section>
+  <section class="card">
+    <header class="card-h"><h2>Quy tắc đặt lịch</h2></header>
+    <dl class="dl">
+      <div><dt>Bước giờ</dt><dd>{{ booking.slot_minutes }} phút</dd></div>
+      <div><dt>Đặt trước tối thiểu</dt><dd>{{ minutes_text(booking.lead_minutes) }}</dd></div>
+      <div><dt>Mở lịch trước</dt><dd>{{ booking.days_ahead }} ngày</dd></div>
+      <div><dt>Hủy online trước</dt><dd>{{ booking.cancel_hours }} giờ</dd></div>
+      <div><dt>Khách chọn thợ</dt><dd>{{ "Có" if booking.choose_technician else "Không" }}</dd></div>
+    </dl>
+  </section>
+  <section class="card">
+    <header class="card-h"><h2>Hoa hồng thợ</h2></header>
+    <form class="stack" data-commission>
+      <label class="field"><span>Tỷ lệ trên doanh thu dịch vụ (%)</span><input name="rate" type="number" min="0" max="80" step="1"></label>
+      <button class="btn btn-sm" type="submit">Lưu</button>
+    </form>
+  </section>
+  <section class="card">
+    <header class="card-h"><h2>Mật khẩu quản trị</h2></header>
+    <form class="stack" data-password>
+      <label class="field"><span>Mật khẩu mới</span><input name="pw" type="password" minlength="4" autocomplete="new-password" required></label>
+      <button class="btn btn-sm" type="submit">Đổi mật khẩu</button>
+      <p class="muted small">Lưu trên trình duyệt này. Website thật cần đăng nhập qua máy chủ.</p>
+    </form>
+  </section>
+  <section class="card">
+    <header class="card-h"><h2>Dữ liệu trên trình duyệt</h2></header>
+    <p class="muted small">Xóa lịch đặt thử, thay đổi trạng thái, ghi chú và giá đã sửa trên trình duyệt này.</p>
+    <button class="btn btn-ghost btn-sm danger" type="button" data-reset>{{ icon("trash", "i-sm") }}<span>Xóa dữ liệu thử</span></button>
+  </section>
+</div>
+{% endblock %}

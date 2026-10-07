@@ -1,0 +1,13 @@
+{% from "partials/macros.html" import book_btn with context %}
+<section class="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>{{ sec.title or "Đặt lịch" }}</h2>
+      {% if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+    </div>
+    <div class="cta-btns">
+      {{ book_btn(root, "Đặt lịch", "btn btn-lg btn-light") }}
+      <a class="btn btn-lg btn-outline-light" href="tel:{{ salon.hotline|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>{{ salon.hotline }}</span></a>
+    </div>
+  </div>
+</section>

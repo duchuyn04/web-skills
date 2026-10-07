@@ -1,11 +1,13 @@
 {
   "name": "web-skills",
-  "owner": { "name": "duchuyn04" },
+  "owner": {
+    "name": "duchuyn04"
+  },
   "plugins": [
     {
       "name": "web-skills",
       "source": "./",
-      "description": "BPO landing page builder, electronics e-commerce builder, an app screen kit for prototypes and a sprint planner that exports Excel and Jira CSV. Each skill is chosen automatically from what the user asks for."
+      "description": "BPO landing page builder, electronics e-commerce builder, nail salon website builder with booking and admin, an app screen kit for prototypes and a sprint planner that exports Excel and Jira CSV. Each skill is chosen automatically from what the user asks for."
     }
   ]
 }

@@ -1,0 +1,129 @@
+{% extends "layout/base.html" %}
+{% from "partials/macros.html" import book_btn with context %}
+{% block main %}
+{% set skip2 = n.locations|length < 2 and not (booking.choose_technician and n.technicians) %}
+<section class="page-head page-head-sm">
+  <div class="wrap">
+    <h1>Đặt lịch</h1>
+    <p>Chọn dịch vụ{% if booking.choose_technician and n.technicians %}, thợ{% endif %} và giờ trống. Tiệm gọi{% if salon.zalo %} hoặc nhắn Zalo{% endif %} để xác nhận.</p>
+  </div>
+</section>
+{% if booking.mode != "native" %}
+<div class="wrap narrow">
+  <div class="note-box">{{ icon("info", "i-sm") }}<span>{% if booking.mode == "external" %}Tiệm nhận đặt lịch qua hệ thống đặt lịch riêng.{% else %}Tiệm nhận đặt lịch qua tin nhắn.{% endif %}</span></div>
+  <p>{{ book_btn(root, "Mở trang đặt lịch", "btn btn-lg") }}</p>
+</div>
+{% else %}
+<div class="wrap bk" data-booking>
+  <ol class="bk-steps" aria-label="Các bước">
+    <li data-step-dot="1" aria-current="step"><span>1</span>Dịch vụ</li>
+    <li data-step-dot="2" {% if skip2 %}hidden{% endif %}><span>2</span>{% if n.locations|length > 1 %}Chi nhánh, thợ{% else %}Thợ{% endif %}</li>
+    <li data-step-dot="3"><span>{{ 2 if skip2 else 3 }}</span>Ngày giờ</li>
+    <li data-step-dot="4"><span>{{ 3 if skip2 else 4 }}</span>Thông tin</li>
+  </ol>
+  <div class="bk-grid">
+    <form class="bk-form" data-bk-form novalidate>
+      <fieldset class="bk-step" data-step="1">
+        <legend>Chọn dịch vụ</legend>
+        <p class="muted small">Có thể chọn nhiều dịch vụ trong một lần hẹn.</p>
+        <div class="bk-look" data-bk-look hidden></div>
+        {% for c in n.categories %}
+        <details class="bk-cat" {% if loop.first %}open{% endif %} data-bk-cat="{{ c.id }}">
+          <summary><span>{{ c.name }}</span><small data-cat-count></small>{{ icon("chevron-down", "i-sm") }}</summary>
+          <ul class="bk-svcs">
+            {% for s in menu if s.category == c.id %}
+            <li>
+              <label class="bk-svc">
+                <input type="checkbox" name="svc" value="{{ s.id }}">
+                <span class="bk-svc-text"><b>{{ s.name }}</b>{% if s.name_en %}<small lang="en">{{ s.name_en }}</small>{% endif %}<small>{{ minutes_text(s.minutes) }}</small></span>
+                <span class="price">{{ price_text(s.price, s.price_type, s.price_max) }}{% if s.price_usd %}<small class="usd">{{ usd_text(s.price_usd) }}</small>{% endif %}</span>
+              </label>
+              {% if s.addons and n.addons %}
+              <div class="bk-addons" data-addons-for="{{ s.id }}" hidden>
+                {% for a in n.addons if a.id in s.addons %}
+                <label class="bk-addon">
+                  <input type="checkbox" name="addon" value="{{ s.id }}:{{ a.id }}">
+                  <span>{{ a.name }}</span>
+                  {% if a.per_nail %}<select name="qty" data-qty="{{ s.id }}:{{ a.id }}" aria-label="Số ngón">{% for q in [1, 2, 4, 6, 10] %}<option value="{{ q }}">{{ q }} ngón</option>{% endfor %}</select>{% endif %}
+                  <span class="price">+{{ vnd(a.price) }}{% if a.per_nail %}/ngón{% endif %}</span>
+                </label>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </details>
+        {% endfor %}
+        <p class="bk-err" data-err="1" hidden>Chọn ít nhất một dịch vụ.</p>
+        <div class="bk-nav"><span></span><button class="btn" type="button" data-next>Tiếp tục{{ icon("chevron-right", "i-sm") }}</button></div>
+      </fieldset>
+
+      <fieldset class="bk-step" data-step="2" hidden {% if skip2 %}data-skip{% endif %}>
+        <legend>{% if n.locations|length > 1 %}Chọn chi nhánh và thợ{% else %}Chọn thợ{% endif %}</legend>
+        {% if n.locations|length > 1 %}
+        <div class="bk-locs" role="radiogroup" aria-label="Chi nhánh">
+          {% for l in n.locations %}
+          <label class="bk-opt"><input type="radio" name="loc" value="{{ l.id }}" {% if loop.first %}checked{% endif %}><span><b>{{ l.name }}</b><small>{{ l.address }}</small></span></label>
+          {% endfor %}
+        </div>
+        {% else %}<input type="hidden" name="loc" value="{{ n.locations[0].id }}">{% endif %}
+        {% if booking.choose_technician and n.technicians %}
+        <h3 class="bk-sub">Thợ</h3>
+        <div class="bk-techs" role="radiogroup" aria-label="Thợ" data-bk-techs></div>
+        {% endif %}
+        <div class="bk-nav"><button class="btn btn-ghost" type="button" data-prev>{{ icon("chevron-left", "i-sm") }}Quay lại</button><button class="btn" type="button" data-next>Tiếp tục{{ icon("chevron-right", "i-sm") }}</button></div>
+      </fieldset>
+
+      <fieldset class="bk-step" data-step="3" hidden>
+        <legend>Chọn ngày và giờ</legend>
+        <div class="bk-days" data-bk-days role="radiogroup" aria-label="Ngày"></div>
+        <div class="bk-slots" data-bk-slots aria-live="polite"></div>
+        <p class="bk-err" data-err="3" hidden>Chọn một giờ còn trống.</p>
+        <div class="bk-nav"><button class="btn btn-ghost" type="button" data-prev>{{ icon("chevron-left", "i-sm") }}Quay lại</button><button class="btn" type="button" data-next>Tiếp tục{{ icon("chevron-right", "i-sm") }}</button></div>
+      </fieldset>
+
+      <fieldset class="bk-step" data-step="4" hidden>
+        <legend>Thông tin của bạn</legend>
+        <div class="fields">
+          <label class="field"><span>Họ tên</span><input name="name" autocomplete="name" required maxlength="60"></label>
+          <label class="field"><span>Số điện thoại</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="0[0-9 ]{9,11}" placeholder="09xx xxx xxx"></label>
+          <label class="field field-full"><span>Ghi chú cho thợ <small>(không bắt buộc)</small></span><textarea name="note" rows="3" maxlength="300" placeholder="Màu muốn làm, form móng, dị ứng nếu có"></textarea></label>
+          {% if booking.photo_upload %}<label class="field field-full"><span>Ảnh mẫu <small>(không bắt buộc)</small></span><input name="photo" type="file" accept="image/*"></label>{% endif %}
+          {% if n.promotions|selectattr("code")|list %}<label class="field"><span>Mã ưu đãi</span><input name="code" autocomplete="off" maxlength="16" data-code-input></label>{% endif %}
+        </div>
+        <p class="bk-err" data-err="4" hidden>Điền họ tên và số điện thoại gồm 10 chữ số.</p>
+        {% if booking.note %}<p class="muted small">{{ booking.note }}</p>{% endif %}
+        <div class="bk-nav"><button class="btn btn-ghost" type="button" data-prev>{{ icon("chevron-left", "i-sm") }}Quay lại</button><button class="btn" type="submit" data-submit>{{ icon("check", "i-sm") }}Xác nhận đặt lịch</button></div>
+      </fieldset>
+    </form>
+
+    <aside class="bk-sum" aria-label="Tóm tắt lịch hẹn">
+      <h2>Lịch hẹn của bạn</h2>
+      <ul class="bk-sum-list" data-sum-list><li class="muted">Chưa chọn dịch vụ</li></ul>
+      <dl class="bk-sum-meta">
+        <div><dt>Chi nhánh</dt><dd data-sum-loc>{{ n.locations[0].name }}</dd></div>
+        {% if n.technicians %}<div><dt>Thợ</dt><dd data-sum-tech>Tiệm xếp thợ</dd></div>{% endif %}
+        <div><dt>Thời gian</dt><dd data-sum-time>Chưa chọn</dd></div>
+        <div><dt>Thời lượng</dt><dd data-sum-dur>0 phút</dd></div>
+      </dl>
+      <p class="bk-total"><span>Tạm tính</span><b data-sum-total>0 đ</b></p>
+      {% if booking.deposit %}<p class="note-box small">{{ icon("info", "i-sm") }}<span>Đặt cọc {% if booking.deposit.percent %}{{ booking.deposit.percent }}%{% else %}{{ vnd(booking.deposit.amount) }}{% endif %}{% if booking.deposit.over %} cho lịch hẹn từ {{ vnd(booking.deposit.over) }}{% endif %}. Tiệm báo cách đặt cọc khi xác nhận lịch.</span></p>{% endif %}
+      <p class="muted small" data-sum-hint>Giá cuối cùng theo mẫu bạn chọn tại tiệm.</p>
+    </aside>
+  </div>
+
+  <div class="bk-bar" data-bk-bar aria-hidden="true"><span data-bar-text>Chưa chọn dịch vụ</span><b data-bar-total>0 đ</b></div>
+  <section class="bk-done" data-bk-done hidden tabindex="-1">
+    <span class="done-ic">{{ icon("check-circle") }}</span>
+    <h2>Đã gửi lịch hẹn</h2>
+    <p>Mã lịch hẹn <b data-done-code></b>. Tiệm sẽ gọi{% if salon.zalo %} hoặc nhắn Zalo{% endif %} để xác nhận.</p>
+    <div class="done-card" data-done-card></div>
+    {% if booking.send_to %}<p class="done-send"><button class="btn btn-lg" type="button" data-send="{{ booking.send_to }}">{{ icon("send", "i-sm") }}<span>Gửi lịch hẹn qua {{ {"zalo": "Zalo", "whatsapp": "WhatsApp", "messenger": "Messenger"}[booking.send_to] }}</span></button><small>Tiệm xác nhận nhanh hơn khi nhận tin nhắn.</small></p>{% endif %}
+    <div class="hero-btns"><a class="btn btn-ghost" data-done-link href="lich-hen.html">Xem lịch hẹn</a><a class="btn btn-ghost" href="{{ root }}index.html">Về trang chủ</a></div>
+  </section>
+</div>
+{% endif %}
+<div class="sp"></div>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/js/seed-busy.js"></script><script src="{{ root }}assets/js/booking.js"></script>{% endblock %}

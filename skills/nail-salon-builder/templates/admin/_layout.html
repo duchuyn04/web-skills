@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{% block title %}Quản trị{% endblock %} | {{ salon.name }}</title>
+<link rel="icon" href="{{ root }}{{ pics.favicon }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;subset=vietnamese&amp;display=swap">
+<link rel="stylesheet" href="{{ root }}assets/css/admin.css">
+<style>:root{ {% for k, v in admin_vars.items() %}{{ k }}:{{ v|safe }};{% endfor %} }</style>
+<script>window.ROOT='{{ root }}';</script>
+</head>
+<body data-admin="{{ adm }}">
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+{% macro item(key, label, ic, badge="") -%}
+<a class="nav-item" href="{{ key }}.html" {% if active == key %}aria-current="page"{% endif %}>{{ icon(ic) }}<span>{{ label }}</span>{% if badge %}<b class="nav-badge" data-badge="{{ badge }}" hidden></b>{% endif %}</a>
+{%- endmacro %}
+{% set active = {"appointment": "appointments", "customer": "customers"}.get(adm, adm) %}
+<div class="shell">
+  <aside class="side" id="side" data-side aria-label="Menu quản trị">
+    <a class="side-brand" href="index.html"><span class="mark" aria-hidden="true">{{ salon.name[:1] }}</span><span><b>{{ salon.name }}</b><small>{% if demo %}Dữ liệu mẫu{% else %}Quản trị tiệm{% endif %}</small></span></a>
+    <nav class="side-nav" aria-label="Quản trị">
+      {{ item("index", "Tổng quan", "dashboard") }}
+      <p class="side-label">Lịch hẹn</p>
+      {{ item("calendar", "Lịch theo ngày", "calendar") }}
+      {{ item("appointments", "Danh sách lịch hẹn", "list", "pending") }}
+      <p class="side-label">Tiệm</p>
+      {{ item("customers", "Khách hàng", "users") }}
+      {{ item("services", "Dịch vụ và giá", "tag") }}
+      {{ item("staff", "Thợ", "user-check") }}
+      {{ item("reports", "Báo cáo", "bar-chart") }}
+      {{ item("settings", "Cài đặt", "settings") }}
+    </nav>
+    <div class="side-foot">
+      <a class="nav-item" href="{{ root }}index.html" target="_blank" rel="noopener">{{ icon("external") }}<span>Xem website</span></a>
+      <div class="side-user"><span class="avatar" data-staff-initial>C</span><span><b data-staff-name>Chủ tiệm</b><small data-staff-role></small></span><button class="icon-btn" type="button" data-logout aria-label="Đăng xuất">{{ icon("log-out", "i-sm") }}</button></div>
+    </div>
+  </aside>
+  <div class="scrim" data-side-close hidden></div>
+  <div class="body">
+    <header class="top">
+      <button class="icon-btn burger" type="button" data-side-open aria-label="Mở menu" aria-controls="side">{{ icon("menu") }}</button>
+      <form class="top-search" action="appointments.html" role="search">
+        {{ icon("search", "i-sm") }}<label class="sr" for="q">Tìm lịch hẹn</label><input id="q" name="q" type="search" placeholder="Tìm mã lịch hẹn, tên hoặc số điện thoại khách" autocomplete="off">
+      </form>
+      <div class="top-right">
+        <span class="pill" title="{% if demo %}Lịch hẹn và khách hàng là dữ liệu minh họa{% else %}Dữ liệu lưu trên trình duyệt này, mật khẩu kiểm tra phía trình duyệt{% endif %}">{{ icon("info", "i-xs") }}{% if demo %}Dữ liệu mẫu{% else %}Chưa bảo mật{% endif %}</span>
+        <button class="btn btn-sm" type="button" data-new-appt>{{ icon("plus", "i-sm") }}<span>Thêm lịch hẹn</span></button>
+      </div>
+    </header>
+    <main id="main" class="main">
+      {% block main %}{% endblock %}
+    </main>
+  </div>
+</div>
+
+<dialog class="modal" data-new-modal aria-labelledby="new-title">
+  <form method="dialog" class="modal-in" data-new-form novalidate>
+    <header><h2 id="new-title">Thêm lịch hẹn</h2><button class="icon-btn" type="button" data-modal-close aria-label="Đóng">{{ icon("x") }}</button></header>
+    <div class="grid2">
+      <label class="field"><span>Tên khách</span><input name="name" required maxlength="60"></label>
+      <label class="field"><span>Số điện thoại</span><input name="phone" type="tel" required></label>
+      <label class="field"><span>Chi nhánh</span><select name="loc">{% for l in n.locations %}<option value="{{ l.id }}">{{ l.name }}</option>{% endfor %}</select></label>
+      <label class="field"><span>Nguồn</span><select name="source"><option value="walkin">Khách vãng lai</option><option value="phone">Điện thoại</option><option value="zalo">Zalo</option><option value="facebook">Facebook</option></select></label>
+      <label class="field"><span>Ngày</span><input name="date" type="date" required></label>
+      <label class="field"><span>Giờ</span><input name="time" type="time" step="900" required></label>
+      <label class="field field-full"><span>Dịch vụ</span><select name="svc" multiple size="6" required>{% for c in n.categories %}<optgroup label="{{ c.name }}">{% for s in menu if s.category == c.id %}<option value="{{ s.id }}">{{ s.name }} ({{ minutes_text(s.minutes) }})</option>{% endfor %}</optgroup>{% endfor %}</select><small class="hint">Giữ Ctrl để chọn nhiều dịch vụ</small></label>
+      <label class="field"><span>Thợ</span><select name="tech" data-new-tech><option value="">Chưa xếp thợ</option></select></label>
+      <label class="field"><span>Ghi chú</span><input name="note" maxlength="200"></label>
+    </div>
+    <p class="err" data-new-err hidden></p>
+    <footer><button class="btn btn-ghost" type="button" data-modal-close>Hủy</button><button class="btn" type="submit">{{ icon("check", "i-sm") }}<span>Lưu lịch hẹn</span></button></footer>
+  </form>
+</dialog>
+<div class="toasts" aria-live="polite" data-toasts></div>
+<script src="{{ root }}assets/js/salon.js"></script>
+<script src="{{ root }}assets/js/seed.js"></script>
+<script src="{{ root }}assets/js/common.js"></script>
+<script src="{{ root }}assets/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Đăng nhập quản trị | {{ salon.name }}</title>
+<link rel="icon" href="{{ root }}{{ pics.favicon }}" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;subset=vietnamese&amp;display=swap">
+<link rel="stylesheet" href="{{ root }}assets/css/admin.css">
+<style>:root{ {% for k, v in admin_vars.items() %}{{ k }}:{{ v|safe }};{% endfor %} }</style>
+<script>window.ROOT='{{ root }}';</script>
+</head>
+<body data-admin="login" class="login-page">
+<main class="login">
+  <form class="login-card" data-login novalidate>
+    <span class="mark" aria-hidden="true">{{ salon.name[:1] }}</span>
+    <h1>{{ salon.name }}</h1>
+    <p class="muted">Đăng nhập trang quản trị</p>
+    <label class="field"><span>Người dùng</span><select name="staff">{% for s in n.staff %}<option value="{{ loop.index0 }}">{{ s.name }} ({{ s.role }})</option>{% endfor %}</select></label>
+    <label class="field"><span>Mật khẩu</span><input name="pw" type="password" autocomplete="current-password" required></label>
+    <p class="err" data-login-err hidden>Mật khẩu chưa đúng.</p>
+    <button class="btn btn-block" type="submit">{{ icon("log-in", "i-sm") }}<span>Đăng nhập</span></button>
+    {% if demo %}<p class="muted small">Bản mẫu: mật khẩu là <b>demo</b>.</p>{% else %}<p class="muted small">Mật khẩu kiểm tra trên trình duyệt, chưa phải bảo mật thật. Cần máy chủ trước khi đưa lên mạng.</p>{% endif %}
+  </form>
+</main>
+<div class="toasts" aria-live="polite" data-toasts></div>
+<script src="{{ root }}assets/js/salon.js"></script>
+<script src="{{ root }}assets/js/common.js"></script>
+<script src="{{ root }}assets/js/admin.js"></script>
+</body>
+</html>

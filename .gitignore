@@ -6,3 +6,12 @@ sites/
 node_modules/
 .DS_Store
 Thumbs.db
+# local tooling: skills installed into this checkout and one-off runners
+.agents/
+.claude/skills/
+skills-lock.json
+run_all.sh
+.playwright-mcp/
+tmp/
+# screenshots of third-party salon websites, kept locally for reference only
+research/nail-shops/screens-vn/

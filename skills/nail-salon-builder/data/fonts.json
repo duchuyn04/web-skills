@@ -1,0 +1,1063 @@
+{
+ "_note": "Fonts checked for Vietnamese on 2026-10-07 (research/fonts in the project). lh_mixed and lh_caps are the smallest heading line-heights before stacked marks touch the line above.",
+ "fonts": {
+  "Cormorant Garamond": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.2
+  },
+  "Cormorant": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.25
+  },
+  "EB Garamond": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Newsreader": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Fraunces": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.35
+  },
+  "Lora": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.35
+  },
+  "Libre Bodoni": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.5
+  },
+  "Noto Serif Display": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.35
+  },
+  "Playfair Display": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.4
+  },
+  "Prata": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.3,
+   "lh_caps": 1.5
+  },
+  "Yeseva One": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.35
+  },
+  "Spectral": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.35
+  },
+  "Literata": {
+   "roles": [
+    "head"
+   ],
+   "category": "Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.4
+  },
+  "Be Vietnam Pro": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.45
+  },
+  "Inter": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.4
+  },
+  "Manrope": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.4
+  },
+  "Plus Jakarta Sans": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.45
+  },
+  "Lexend": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.35
+  },
+  "Montserrat": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.25
+  },
+  "Quicksand": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.25
+  },
+  "Josefin Sans": {
+   "roles": [
+    "head"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.45
+  },
+  "Raleway": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Bricolage Grotesque": {
+   "roles": [
+    "head"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.35,
+   "lh_caps": 1.5
+  },
+  "Epilogue": {
+   "roles": [
+    "head"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.3
+  },
+  "Archivo": {
+   "roles": [
+    "head"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.3
+  },
+  "Kanit": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.2
+  },
+  "Prompt": {
+   "roles": [
+    "head",
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Baloo 2": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.2
+  },
+  "Itim": {
+   "roles": [
+    "head"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.25
+  },
+  "Mali": {
+   "roles": [
+    "head"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.4
+  },
+  "Calistoga": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.4
+  },
+  "Grandstander": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.3,
+   "lh_caps": 1.45
+  },
+  "Rowdies": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    300,
+    400,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.45
+  },
+  "Chonburi": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    400
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.35
+  },
+  "Fuzzy Bubbles": {
+   "roles": [
+    "head"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.3,
+   "lh_caps": 1.45
+  },
+  "Comfortaa": {
+   "roles": [
+    "head"
+   ],
+   "category": "Display",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.25,
+   "lh_caps": 1.5
+  },
+  "Mulish": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.35
+  },
+  "Nunito Sans": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Nunito": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Open Sans": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.35
+  },
+  "Roboto": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Source Sans 3": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.25
+  },
+  "Work Sans": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.35
+  },
+  "Sarabun": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Noto Sans": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.35
+  },
+  "Geist": {
+   "roles": [
+    "body"
+   ],
+   "category": "Sans Serif",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Dancing Script": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400,
+    500,
+    600,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.35
+  },
+  "Birthstone": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.2
+  },
+  "Moon Dance": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Oooh Baby": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Allura": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3
+  },
+  "Charm": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400,
+    700
+   ],
+   "scripts": [
+    "thai"
+   ],
+   "lh_mixed": 1.5,
+   "lh_caps": 1.75
+  },
+  "Great Vibes": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.45,
+   "lowercase_only": true
+  },
+  "Alex Brush": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.15,
+   "lowercase_only": true
+  },
+  "Pinyon Script": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.45,
+   "lowercase_only": true
+  },
+  "Ms Madi": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.4,
+   "lowercase_only": true
+  },
+  "Style Script": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.2,
+   "lh_caps": 1.5,
+   "lowercase_only": true
+  },
+  "Italianno": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.25,
+   "lowercase_only": true
+  },
+  "Corinthia": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400,
+    700
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3,
+   "lowercase_only": true
+  },
+  "Meow Script": {
+   "roles": [
+    "accent"
+   ],
+   "category": "Handwriting",
+   "weights": [
+    400
+   ],
+   "scripts": [],
+   "lh_mixed": 1.15,
+   "lh_caps": 1.3,
+   "lowercase_only": true
+  }
+ },
+ "no_vietnamese": [
+  "Poppins",
+  "DM Sans",
+  "Jost",
+  "Outfit",
+  "Figtree",
+  "Urbanist",
+  "Sora",
+  "Albert Sans",
+  "Red Hat Display",
+  "Fredoka",
+  "Lato",
+  "Libre Baskerville",
+  "Italiana",
+  "Cinzel",
+  "Marcellus",
+  "Bodoni Moda",
+  "Gilda Display",
+  "DM Serif Display",
+  "Instrument Serif",
+  "Young Serif",
+  "Tenor Sans",
+  "Forum",
+  "Bellefair",
+  "Lustria",
+  "Lilita One",
+  "Chewy",
+  "Sniglet",
+  "Caveat",
+  "Parisienne",
+  "Sacramento",
+  "Cookie",
+  "Schibsted Grotesk"
+ ],
+ "avoid": {
+  "Ephesis": "uppercase letters with stacked marks break",
+  "Pacifico": "capitals and marks run together, needs line-height 1,45",
+  "Bad Script": "marks hit the line above",
+  "Lemonada": "marks need line-height 1,55",
+  "Playpen Sans": "marks need line-height 1,35 and more",
+  "Shantell Sans": "descenders need line-height 1,45",
+  "Coiny": "descenders need line-height 1,35",
+  "Paytone One": "marks need line-height 1,35"
+ }
+}

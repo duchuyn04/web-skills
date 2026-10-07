@@ -1,0 +1,18 @@
+{% from "partials/macros.html" import section_head with context %}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Dịch vụ", sec.text or "", root ~ "bang-gia.html", "Bảng giá đầy đủ") }}
+    <div class="cat-grid">
+      {% for c in n.categories %}
+      <a class="cat" href="{{ root }}bang-gia.html#nhom-{{ c.id }}">
+        <img src="{{ root }}{{ pics['cat-' ~ c.id] }}" alt="" loading="lazy" width="400" height="400">
+        <span class="cat-body">
+          <b>{{ c.name }}</b>
+          {% if c.intro %}<small>{{ c.intro }}</small>{% endif %}
+          {% if c.min_price %}<span class="cat-price">từ {{ vnd(c.min_price) }}</span>{% endif %}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

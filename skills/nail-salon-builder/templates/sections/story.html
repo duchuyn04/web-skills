@@ -1,0 +1,9 @@
+<section class="sec story">
+  <div class="wrap story-in">
+    <h2>{{ sec.title or ("Về " ~ salon.name) }}</h2>
+    <div>
+      <p class="lead">{{ sec.text or salon.intro }}</p>
+      {% if sec.get("items") %}<ul class="story-facts">{% for x in sec.get("items") %}<li>{{ icon("check", "i-sm") }}<span>{{ x }}</span></li>{% endfor %}</ul>{% endif %}
+    </div>
+  </div>
+</section>

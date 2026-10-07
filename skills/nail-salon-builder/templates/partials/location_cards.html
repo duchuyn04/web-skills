@@ -1,0 +1,19 @@
+{% from "partials/macros.html" import book_btn, hours_list with context %}
+<div class="loc-grid">
+  {% for l in n.locations %}
+  <article class="loc" id="cn-{{ l.id }}">
+    <h3>{{ l.name }}</h3>
+    <p class="loc-addr">{{ icon("map-pin", "i-sm") }}<span>{{ l.address }}</span></p>
+    {{ hours_list(l) }}
+    {% if l.parking %}<p class="loc-line">{{ icon("car", "i-sm") }}<span>{{ l.parking }}</span></p>{% endif %}
+    {% if l.note %}<p class="loc-line">{{ icon("info", "i-sm") }}<span>{{ l.note }}</span></p>{% endif %}
+    <div class="loc-btns">
+      {% if l.booking_url %}<a class="btn btn-sm" href="{{ l.booking_url }}" target="_blank" rel="noopener">{{ icon("calendar-check", "i-sm") }}<span>Đặt lịch</span></a>
+      {% elif booking.mode == "native" %}<a class="btn btn-sm" href="{{ root }}dat-lich.html?loc={{ l.id }}">{{ icon("calendar-check", "i-sm") }}<span>Đặt lịch</span></a>
+      {% else %}{{ book_btn(root, "Đặt lịch", "btn btn-sm") }}{% endif %}
+      {% if l.phone %}<a class="btn btn-sm btn-ghost" href="tel:{{ l.phone|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>{{ l.phone }}</span></a>{% endif %}
+      {% if l.map %}<a class="btn btn-sm btn-ghost" href="{{ l.map }}" target="_blank" rel="noopener">{{ icon("map-pin", "i-sm") }}<span>Chỉ đường</span></a>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

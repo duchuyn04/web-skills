@@ -1,0 +1,949 @@
+{
+  "_note": "Sample salon. Every name, price, address and review here is invented; never copy them into a client's salon.json.",
+  "demo": true,
+  "sample_content": true,
+  "lang": "vi",
+  "brief": "Tạo website mẫu cho một tiệm nail ở TP.HCM, có đặt lịch online và trang quản trị.",
+  "style": "warm-luxury",
+  "salon": {
+    "name": "Mây Nail Studio",
+    "tagline": "Móng gọn, màu bền, làm đúng giờ hẹn",
+    "intro": "Tiệm nail nhỏ ở Quận 1 và Thảo Điền. Mỗi khách một bộ dụng cụ đã hấp, một thợ làm từ đầu đến cuối và một bảng giá ghi rõ trước khi làm.",
+    "hotline": "0900 000 000",
+    "zalo": "0900000000",
+    "email": "hello@maynail.example",
+    "socials": {
+      "facebook": "https://facebook.com/",
+      "instagram": "https://instagram.com/"
+    },
+    "legal": "Hộ kinh doanh Mây Nail Studio (dữ liệu mẫu)",
+    "whatsapp": "+84 900 000 000"
+  },
+  "theme": {
+    "accent": "#a8606f"
+  },
+  "announcement": "Khách mới giảm 10% lần đầu với mã MAYMOI",
+  "booking": {
+    "mode": "native",
+    "slot_minutes": 15,
+    "lead_minutes": 60,
+    "days_ahead": 21,
+    "choose_technician": true,
+    "photo_upload": true,
+    "cancel_hours": 4,
+    "note": "Tiệm giữ lịch 15 phút. Đến trễ hơn, tiệm xếp lại giờ trống gần nhất."
+  },
+  "locations": [
+    {
+      "id": "q1",
+      "name": "Mây Nail Lê Thánh Tôn",
+      "address": "12 Lê Thánh Tôn, Phường Bến Nghé, Quận 1, TP.HCM",
+      "phone": "0900 000 001",
+      "hours": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "open": "09:00",
+          "close": "21:00"
+        }
+      ],
+      "parking": "Gửi xe máy trước tiệm, ô tô gửi ở bãi đối diện",
+      "map": "https://maps.google.com/?q=Le+Thanh+Ton+Quan+1",
+      "last_order": "20:30"
+    },
+    {
+      "id": "td",
+      "name": "Mây Nail Thảo Điền",
+      "address": "45 Quốc Hương, Phường Thảo Điền, TP. Thủ Đức",
+      "phone": "0900 000 002",
+      "hours": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "10:00",
+          "close": "20:00"
+        },
+        {
+          "days": [
+            6,
+            7
+          ],
+          "open": "09:00",
+          "close": "21:00"
+        }
+      ],
+      "parking": "Có chỗ để xe máy trong sân",
+      "map": "https://maps.google.com/?q=Quoc+Huong+Thao+Dien"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cham-soc",
+      "name": "Chăm sóc tay chân",
+      "intro": "Cắt da, sửa form, ngâm và massage",
+      "art": {
+        "shape": "squoval",
+        "length": "short",
+        "style": "solid",
+        "colors": [
+          "#f1d3c9"
+        ]
+      },
+      "image": "lib:pedicure-03",
+      "name_en": "Manicure and pedicure"
+    },
+    {
+      "id": "son-gel",
+      "name": "Sơn gel",
+      "intro": "Gel trơn, mắt mèo, tráng gương, ombre",
+      "art": {
+        "shape": "almond",
+        "length": "medium",
+        "style": "cat-eye",
+        "colors": [
+          "#5b2333",
+          "#e7a1b0"
+        ]
+      },
+      "image": "lib:polish-07",
+      "name_en": "Gel polish"
+    },
+    {
+      "id": "noi-mong",
+      "name": "Úp và nối móng",
+      "intro": "Móng úp, gel builder, đắp bột, nối dài",
+      "art": {
+        "shape": "coffin",
+        "length": "long",
+        "style": "ombre",
+        "colors": [
+          "#f6d6d6",
+          "#ffffff"
+        ]
+      },
+      "image": "lib:nails-02",
+      "name_en": "Extensions"
+    },
+    {
+      "id": "nail-art",
+      "name": "Vẽ và đính đá",
+      "intro": "Tính theo cấp độ mẫu",
+      "art": {
+        "shape": "almond",
+        "length": "medium",
+        "style": "floral",
+        "colors": [
+          "#fbeff0",
+          "#d9798b",
+          "#e9c46a"
+        ]
+      },
+      "image": "lib:tools-09",
+      "name_en": "Nail art"
+    },
+    {
+      "id": "combo",
+      "name": "Combo",
+      "intro": "Tay chân trong một lần hẹn",
+      "art": {
+        "shape": "oval",
+        "length": "medium",
+        "style": "french",
+        "colors": [
+          "#f3d9cf",
+          "#ffffff"
+        ]
+      },
+      "image": "lib:nails-26",
+      "name_en": "Combos"
+    },
+    {
+      "id": "thao-sua",
+      "name": "Tháo và sửa",
+      "intro": "Tháo gel, tháo bột, sửa móng gãy",
+      "art": {
+        "shape": "oval",
+        "length": "short",
+        "style": "solid",
+        "colors": [
+          "#e9dcd3"
+        ]
+      },
+      "image": "lib:tools-22",
+      "name_en": "Removal and repair"
+    }
+  ],
+  "services": [
+    {
+      "id": "cat-da",
+      "category": "cham-soc",
+      "name": "Cắt da, sửa form tay",
+      "minutes": 20,
+      "price": 60000
+    },
+    {
+      "id": "spa-tay",
+      "category": "cham-soc",
+      "name": "Chăm sóc tay spa",
+      "minutes": 40,
+      "price": 150000,
+      "includes": [
+        "Ngâm tay",
+        "Tẩy da chết",
+        "Massage tay 10 phút"
+      ]
+    },
+    {
+      "id": "spa-chan",
+      "category": "cham-soc",
+      "name": "Chăm sóc chân spa",
+      "minutes": 50,
+      "price": 220000,
+      "includes": [
+        "Ngâm chân thảo mộc",
+        "Chà gót",
+        "Massage chân 15 phút"
+      ],
+      "popular": true,
+      "name_en": "Spa pedicure",
+      "price_usd": 9
+    },
+    {
+      "id": "pedi-collagen",
+      "category": "cham-soc",
+      "name": "Pedicure collagen",
+      "minutes": 60,
+      "price": 350000,
+      "includes": [
+        "Ủ collagen",
+        "Chà gót",
+        "Massage đá nóng"
+      ]
+    },
+    {
+      "id": "gel-tron",
+      "category": "son-gel",
+      "name": "Sơn gel trơn tay",
+      "minutes": 40,
+      "price": 150000,
+      "includes": [
+        "Cắt da",
+        "Sửa form",
+        "Sơn gel một màu"
+      ],
+      "popular": true,
+      "name_en": "Gel polish, hands",
+      "price_usd": 6
+    },
+    {
+      "id": "gel-mat-meo",
+      "category": "son-gel",
+      "name": "Sơn gel mắt mèo",
+      "minutes": 50,
+      "price": 220000,
+      "includes": [
+        "Cắt da",
+        "Sửa form",
+        "Gel mắt mèo"
+      ],
+      "name_en": "Cat eye gel",
+      "price_usd": 9
+    },
+    {
+      "id": "gel-trang-guong",
+      "category": "son-gel",
+      "name": "Tráng gương",
+      "minutes": 50,
+      "price": 250000
+    },
+    {
+      "id": "gel-ombre",
+      "category": "son-gel",
+      "name": "Sơn ombre",
+      "minutes": 50,
+      "price": 230000
+    },
+    {
+      "id": "gel-chan",
+      "category": "son-gel",
+      "name": "Sơn gel chân",
+      "minutes": 40,
+      "price": 150000
+    },
+    {
+      "id": "up-mong",
+      "category": "noi-mong",
+      "name": "Úp móng gel",
+      "minutes": 60,
+      "price": 300000,
+      "includes": [
+        "Móng úp mềm",
+        "Sơn gel một màu"
+      ],
+      "popular": true,
+      "name_en": "Soft gel extensions",
+      "price_usd": 12
+    },
+    {
+      "id": "biab",
+      "category": "noi-mong",
+      "name": "Gel builder (BIAB)",
+      "minutes": 70,
+      "price": 350000,
+      "note": "Giúp móng yếu cứng hơn, giữ độ dài tự nhiên"
+    },
+    {
+      "id": "dap-bot",
+      "category": "noi-mong",
+      "name": "Đắp bột",
+      "minutes": 75,
+      "price": 350000
+    },
+    {
+      "id": "noi-dai",
+      "category": "noi-mong",
+      "name": "Nối móng dài",
+      "minutes": 90,
+      "price": 450000,
+      "price_type": "from"
+    },
+    {
+      "id": "ve-mau",
+      "category": "nail-art",
+      "name": "Vẽ theo mẫu khách gửi",
+      "minutes": 30,
+      "price": 120000,
+      "price_type": "from",
+      "note": "Báo giá theo cấp độ mẫu khi xem ảnh"
+    },
+    {
+      "id": "dinh-da",
+      "category": "nail-art",
+      "name": "Đính đá, charm cả bộ",
+      "minutes": 30,
+      "price": 150000,
+      "price_type": "from"
+    },
+    {
+      "id": "combo-gel",
+      "category": "combo",
+      "name": "Combo sơn gel tay chân",
+      "minutes": 80,
+      "price": 280000,
+      "popular": true,
+      "name_en": "Gel hands and feet",
+      "price_usd": 11
+    },
+    {
+      "id": "combo-co-dau",
+      "category": "combo",
+      "name": "Combo cô dâu",
+      "minutes": 150,
+      "price": 900000,
+      "includes": [
+        "Chăm sóc tay chân spa",
+        "Úp móng gel",
+        "Vẽ và đính đá cấp 3"
+      ]
+    },
+    {
+      "id": "thao-gel",
+      "category": "thao-sua",
+      "name": "Tháo gel",
+      "minutes": 20,
+      "price": 50000
+    },
+    {
+      "id": "thao-bot",
+      "category": "thao-sua",
+      "name": "Tháo bột",
+      "minutes": 30,
+      "price": 80000
+    },
+    {
+      "id": "sua-mong",
+      "category": "thao-sua",
+      "name": "Sửa móng gãy",
+      "minutes": 15,
+      "price": 30000,
+      "price_type": "from",
+      "note": "Tính theo ngón"
+    }
+  ],
+  "addons": [
+    {
+      "id": "french",
+      "name": "Thêm đầu French",
+      "price": 50000,
+      "minutes": 10
+    },
+    {
+      "id": "ve-don",
+      "name": "Vẽ đơn giản",
+      "price": 20000,
+      "per_nail": true,
+      "minutes": 5
+    },
+    {
+      "id": "da-ngon",
+      "name": "Đính đá",
+      "price": 10000,
+      "per_nail": true,
+      "minutes": 3
+    },
+    {
+      "id": "dai-them",
+      "name": "Thêm độ dài",
+      "price": 50000,
+      "minutes": 10
+    },
+    {
+      "id": "paraffin",
+      "name": "Ủ paraffin",
+      "price": 80000,
+      "minutes": 15
+    },
+    {
+      "id": "thao-cu",
+      "name": "Tháo móng cũ",
+      "price": 50000,
+      "minutes": 20
+    }
+  ],
+  "art_levels": [
+    {
+      "name": "Cấp 1",
+      "text": "Điểm nhấn 1 đến 2 ngón: chấm bi, nhũ, sticker",
+      "price": 50000
+    },
+    {
+      "name": "Cấp 2",
+      "text": "Họa tiết đơn giản cả bộ: French, kẻ line, ombre",
+      "price": 120000
+    },
+    {
+      "name": "Cấp 3",
+      "text": "Vẽ tay chi tiết: hoa, nhân vật nhỏ, marble",
+      "price": 250000
+    },
+    {
+      "name": "Cấp 4",
+      "text": "Mẫu 3D, charm, đá cả bộ",
+      "price": 400000,
+      "price_type": "from"
+    }
+  ],
+  "technicians": [
+    {
+      "id": "thao",
+      "name": "Thảo",
+      "title": "Thợ chính",
+      "specialties": [
+        "Vẽ tay",
+        "Nail cô dâu"
+      ],
+      "locations": [
+        "q1"
+      ],
+      "level": "master"
+    },
+    {
+      "id": "vy",
+      "name": "Vy",
+      "title": "Thợ úp móng",
+      "specialties": [
+        "Úp móng gel",
+        "BIAB"
+      ],
+      "locations": [
+        "q1"
+      ]
+    },
+    {
+      "id": "kim",
+      "name": "Kim",
+      "title": "Thợ sơn gel",
+      "specialties": [
+        "Mắt mèo",
+        "Tráng gương"
+      ],
+      "locations": [
+        "q1"
+      ]
+    },
+    {
+      "id": "ngan",
+      "name": "Ngân",
+      "title": "Thợ chăm sóc",
+      "specialties": [
+        "Chăm sóc chân",
+        "Pedicure collagen"
+      ],
+      "locations": [
+        "td"
+      ]
+    },
+    {
+      "id": "linh",
+      "name": "Linh",
+      "title": "Thợ chính",
+      "specialties": [
+        "Đắp bột",
+        "Nối móng dài"
+      ],
+      "locations": [
+        "td"
+      ],
+      "level": "master"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "nude-french",
+      "title": "French nude",
+      "tags": [
+        "French",
+        "Tối giản"
+      ],
+      "service": "gel-tron",
+      "art": {
+        "shape": "almond",
+        "length": "medium",
+        "style": "french",
+        "colors": [
+          "#f3d9cf",
+          "#ffffff"
+        ]
+      }
+    },
+    {
+      "id": "mat-meo-ruou",
+      "title": "Mắt mèo đỏ rượu",
+      "tags": [
+        "Mắt mèo"
+      ],
+      "service": "gel-mat-meo",
+      "art": {
+        "shape": "oval",
+        "length": "medium",
+        "style": "cat-eye",
+        "colors": [
+          "#4a1424",
+          "#e58aa0"
+        ]
+      }
+    },
+    {
+      "id": "chrome-bac",
+      "title": "Tráng gương bạc",
+      "tags": [
+        "Tráng gương"
+      ],
+      "service": "gel-trang-guong",
+      "art": {
+        "shape": "coffin",
+        "length": "long",
+        "style": "chrome",
+        "colors": [
+          "#b9bcc6"
+        ]
+      }
+    },
+    {
+      "id": "hoa-nhi",
+      "title": "Hoa nhí mùa hè",
+      "tags": [
+        "Vẽ tay"
+      ],
+      "service": "ve-mau",
+      "art": {
+        "shape": "almond",
+        "length": "medium",
+        "style": "floral",
+        "colors": [
+          "#fff4f1",
+          "#f28ba8",
+          "#f2c14e"
+        ]
+      }
+    },
+    {
+      "id": "ombre-hong",
+      "title": "Ombre hồng sữa",
+      "tags": [
+        "Ombre",
+        "Tối giản"
+      ],
+      "service": "gel-ombre",
+      "art": {
+        "shape": "square",
+        "length": "short",
+        "style": "ombre",
+        "colors": [
+          "#f6c9cf",
+          "#ffffff"
+        ]
+      }
+    },
+    {
+      "id": "da-co-dau",
+      "title": "Đính đá cô dâu",
+      "tags": [
+        "Cô dâu",
+        "Đính đá"
+      ],
+      "service": "combo-co-dau",
+      "art": {
+        "shape": "almond",
+        "length": "long",
+        "style": "gem",
+        "colors": [
+          "#f5ece6",
+          "#ffffff",
+          "#e3c58f"
+        ]
+      }
+    },
+    {
+      "id": "nhu-vang",
+      "title": "Nhũ vàng champagne",
+      "tags": [
+        "Tối giản"
+      ],
+      "service": "gel-tron",
+      "art": {
+        "shape": "oval",
+        "length": "medium",
+        "style": "glitter",
+        "colors": [
+          "#efe2d2",
+          "#c9a227",
+          "#ffffff"
+        ]
+      }
+    },
+    {
+      "id": "marble-trang",
+      "title": "Đá marble trắng",
+      "tags": [
+        "Vẽ tay"
+      ],
+      "service": "ve-mau",
+      "art": {
+        "shape": "coffin",
+        "length": "medium",
+        "style": "marble",
+        "colors": [
+          "#fbfbfb",
+          "#a7a7b0",
+          "#d1b06b"
+        ]
+      }
+    },
+    {
+      "id": "tim-do",
+      "title": "Tim đỏ Valentine",
+      "tags": [
+        "Vẽ tay"
+      ],
+      "service": "ve-mau",
+      "art": {
+        "shape": "squoval",
+        "length": "short",
+        "style": "heart",
+        "colors": [
+          "#fbe3e6",
+          "#c81d3a"
+        ]
+      }
+    },
+    {
+      "id": "aura-tim",
+      "title": "Aura tím khói",
+      "tags": [
+        "Ombre"
+      ],
+      "service": "gel-ombre",
+      "art": {
+        "shape": "almond",
+        "length": "medium",
+        "style": "aura",
+        "colors": [
+          "#efd9f2",
+          "#9b6bd1"
+        ]
+      }
+    },
+    {
+      "id": "cham-bi",
+      "title": "Chấm bi đen trắng",
+      "tags": [
+        "Vẽ tay",
+        "Tối giản"
+      ],
+      "service": "ve-mau",
+      "art": {
+        "shape": "squoval",
+        "length": "short",
+        "style": "dots",
+        "colors": [
+          "#25222a",
+          "#ffffff"
+        ]
+      }
+    },
+    {
+      "id": "do-tron",
+      "title": "Đỏ cổ điển",
+      "tags": [
+        "Tối giản"
+      ],
+      "service": "gel-tron",
+      "art": {
+        "shape": "oval",
+        "length": "medium",
+        "style": "solid",
+        "colors": [
+          "#a3132c"
+        ]
+      }
+    }
+  ],
+  "packages": [
+    {
+      "name": "Thẻ 5 lần sơn gel",
+      "items": [
+        "5 lần sơn gel trơn tay",
+        "Dùng trong 6 tháng",
+        "Dùng ở cả hai chi nhánh"
+      ],
+      "price": 650000,
+      "old_price": 750000
+    },
+    {
+      "name": "Thẻ 10 lần chăm sóc chân",
+      "items": [
+        "10 lần chăm sóc chân spa",
+        "Dùng trong 12 tháng"
+      ],
+      "price": 1900000,
+      "old_price": 2200000
+    }
+  ],
+  "membership": [
+    {
+      "name": "Thành viên Mây",
+      "price": 299000,
+      "period": "tháng",
+      "perks": [
+        "1 lần sơn gel trơn mỗi tháng",
+        "Giảm 10% các dịch vụ khác",
+        "Ưu tiên giờ đẹp cuối tuần"
+      ]
+    }
+  ],
+  "gift_cards": {
+    "amounts": [
+      200000,
+      500000,
+      1000000
+    ],
+    "note": "Thẻ quà tặng dùng trong 6 tháng, mua tại tiệm hoặc nhắn Zalo."
+  },
+  "promotions": [
+    {
+      "title": "Khách mới",
+      "text": "Giảm 10% lần đầu",
+      "code": "MAYMOI",
+      "percent": 10
+    },
+    {
+      "title": "Giờ vắng",
+      "text": "Thứ 2 đến Thứ 5 trước 12:00 giảm 15% sơn gel"
+    }
+  ],
+  "reviews": {
+    "rating": 4.9,
+    "count": 312,
+    "source": "Google",
+    "quotes": [
+      {
+        "name": "Ngọc A.",
+        "text": "Làm mắt mèo đẹp, giữ được gần 4 tuần. Đặt lịch online xong tới là làm luôn.",
+        "service": "gel-mat-meo"
+      },
+      {
+        "name": "Thu H.",
+        "text": "Thợ tư vấn form móng hợp tay, không ép làm thêm. Giá đúng bảng.",
+        "service": "up-mong"
+      },
+      {
+        "name": "Minh T.",
+        "text": "Chăm sóc chân kỹ, chỗ ngồi sạch, có trà nóng.",
+        "service": "spa-chan"
+      }
+    ]
+  },
+  "trust": [
+    {
+      "icon": "shield-check",
+      "title": "Dụng cụ hấp tiệt trùng",
+      "text": "Mỗi khách một bộ dụng cụ đã hấp, dũa và buffer dùng một lần"
+    },
+    {
+      "icon": "leaf",
+      "title": "Gel thuần chay",
+      "text": "Gel không HEMA cho móng nhạy cảm"
+    },
+    {
+      "icon": "calendar-check",
+      "title": "Bảo hành 7 ngày",
+      "text": "Bong, tróc trong 7 ngày được làm lại miễn phí"
+    },
+    {
+      "icon": "clock",
+      "title": "Đúng giờ hẹn",
+      "text": "Mỗi lịch hẹn có thợ và ghế riêng"
+    }
+  ],
+  "policies": [
+    {
+      "id": "dat-lich",
+      "title": "Đặt lịch và hủy lịch",
+      "body": [
+        "Khách có thể đặt lịch trên website, qua Zalo hoặc gọi hotline.",
+        "Hủy hoặc đổi giờ trước 4 tiếng không mất phí. Tiệm giữ lịch 15 phút sau giờ hẹn.",
+        "Khách không đến hai lần liên tiếp cần đặt cọc cho lần sau."
+      ]
+    },
+    {
+      "id": "bao-hanh",
+      "title": "Bảo hành",
+      "body": [
+        "Sơn gel và móng úp bị bong, tróc trong 7 ngày được làm lại miễn phí.",
+        "Không bảo hành khi móng gãy do va đập hoặc tự tháo ở nhà."
+      ]
+    },
+    {
+      "id": "ve-sinh",
+      "title": "Vệ sinh dụng cụ",
+      "body": [
+        "Dụng cụ kim loại được rửa, ngâm dung dịch và hấp tiệt trùng sau mỗi khách.",
+        "Dũa, buffer và khăn dùng một lần."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Sơn gel giữ được bao lâu?",
+      "a": "Thường từ 3 đến 4 tuần, tùy độ dài móng và công việc hằng ngày."
+    },
+    {
+      "q": "Có cần đặt lịch trước không?",
+      "a": "Nên đặt trước để có thợ và giờ mong muốn. Khách đến trực tiếp được xếp vào giờ trống."
+    },
+    {
+      "q": "Tôi muốn làm mẫu trên mạng thì sao?",
+      "a": "Gửi ảnh mẫu khi đặt lịch hoặc qua Zalo. Thợ báo giá theo cấp độ mẫu trước khi làm."
+    },
+    {
+      "q": "Móng yếu có úp được không?",
+      "a": "Có. Thợ sẽ tư vấn gel builder để móng cứng hơn trước khi úp hoặc nối."
+    },
+    {
+      "q": "Tiệm nhận thanh toán bằng gì?",
+      "a": "Tiền mặt, chuyển khoản và thẻ."
+    }
+  ],
+  "home": [
+    {
+      "type": "hero",
+      "title": "Móng gọn, màu bền, làm đúng giờ hẹn",
+      "text": "Sơn gel, úp móng, vẽ tay và chăm sóc tay chân ở Quận 1 và Thảo Điền. Đặt lịch online, chọn thợ và giờ trống.",
+      "art": {
+        "shape": "almond",
+        "length": "long",
+        "style": "solid",
+        "colors": [
+          "#c97b84",
+          "#f3d9cf",
+          "#8a6a4f"
+        ]
+      },
+      "image": "lib:interior-02"
+    },
+    {
+      "type": "categories",
+      "title": "Dịch vụ"
+    },
+    {
+      "type": "popular",
+      "title": "Khách hay đặt"
+    },
+    {
+      "type": "gallery",
+      "title": "Mẫu mới làm",
+      "limit": 8
+    },
+    {
+      "type": "art-levels",
+      "title": "Giá vẽ và đính đá"
+    },
+    {
+      "type": "trust",
+      "title": "Làm móng sạch và đúng hẹn"
+    },
+    {
+      "type": "team",
+      "title": "Thợ của tiệm"
+    },
+    {
+      "type": "reviews",
+      "title": "Khách nói gì"
+    },
+    {
+      "type": "offers",
+      "title": "Thẻ lần, thành viên và quà tặng"
+    },
+    {
+      "type": "locations",
+      "title": "Hai chi nhánh"
+    },
+    {
+      "type": "faq",
+      "title": "Câu hỏi thường gặp"
+    },
+    {
+      "type": "cta",
+      "title": "Đặt lịch trong một phút",
+      "text": "Chọn dịch vụ, thợ và giờ trống. Tiệm xác nhận qua điện thoại hoặc Zalo."
+    }
+  ],
+  "staff": [
+    {
+      "name": "Chủ tiệm",
+      "role": "Chủ tiệm"
+    },
+    {
+      "name": "Lễ tân",
+      "role": "Lễ tân"
+    }
+  ],
+  "price_notes": [
+    "Sơn gel, úp móng và nail art bảo hành 7 ngày khi bong, tróc.",
+    "Tháo gel miễn phí khi làm lại tại tiệm.",
+    "Khách du lịch: giá USD để tham khảo, thanh toán bằng VND."
+  ]
+}

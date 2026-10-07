@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+{% block main %}
+<section class="page-head"><div class="wrap"><p class="crumbs"><a href="{{ root }}index.html">Trang chủ</a> / Chính sách</p><h1>{{ policy.title }}</h1></div></section>
+<div class="wrap prose">
+  {% for para in policy.body %}<p>{{ para }}</p>{% endfor %}
+  <nav class="other-pol" aria-label="Chính sách khác">
+    {% for p in n.policies if p.id != policy.id %}<a href="{{ root }}chinh-sach/{{ p.id }}.html">{{ p.title }}</a>{% endfor %}
+  </nav>
+</div>
+<div class="sp"></div>
+{% endblock %}

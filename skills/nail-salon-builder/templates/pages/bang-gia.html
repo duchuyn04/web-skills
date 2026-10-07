@@ -1,0 +1,45 @@
+{% extends "layout/base.html" %}
+{% from "partials/macros.html" import service_row, book_btn, price_notes_box with context %}
+{% block main %}
+<section class="page-head">
+  <div class="wrap">
+    <h1>Bảng giá</h1>
+    <p>Giá và thời gian của từng dịch vụ.{% if n.art_levels %} Mẫu vẽ và đính đá tính theo cấp độ, thợ báo giá trước khi làm.{% endif %}</p>
+    <nav class="jump" aria-label="Nhóm dịch vụ">
+      {% for c in n.categories %}<a href="#nhom-{{ c.id }}">{{ c.name }}</a>{% endfor %}
+      {% if n.addons %}<a href="#lam-them">Làm thêm</a>{% endif %}
+      {% if n.art_levels %}<a href="#cap-do">Cấp độ vẽ</a>{% endif %}
+    </nav>
+  </div>
+</section>
+<div class="wrap menu">
+  {% for c in n.categories %}
+  <section class="menu-cat" id="nhom-{{ c.id }}">
+    <div class="menu-cat-head">
+      <img src="{{ root }}{{ pics['cat-' ~ c.id] }}" alt="" width="120" height="120" loading="lazy">
+      <div><h2>{{ c.name }}{% if c.name_en %} <small class="svc-en" lang="en">{{ c.name_en }}</small>{% endif %}</h2>{% if c.intro %}<p>{{ c.intro }}</p>{% endif %}</div>
+    </div>
+    <ul class="svc-list">{% for s in menu if s.category == c.id %}{{ service_row(root, s) }}{% endfor %}</ul>
+  </section>
+  {% endfor %}
+  {{ price_notes_box() }}
+  {% if n.addons %}
+  <section class="menu-cat" id="lam-them">
+    <h2>Làm thêm</h2>
+    <p class="muted">Chọn khi đặt lịch hoặc báo thợ tại tiệm.</p>
+    <ul class="addon-list">
+      {% for a in n.addons %}<li><span>{{ a.name }}{% if a.name_en %} <small class="svc-en" lang="en">{{ a.name_en }}</small>{% endif %}</span><b>{{ vnd(a.price) }}{% if a.per_nail %} / ngón{% endif %}{% if a.price_usd %} <small class="usd">{{ usd_text(a.price_usd) }}</small>{% endif %}</b></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  {% if n.art_levels %}
+  <section class="menu-cat" id="cap-do">
+    <h2>Cấp độ vẽ và đính đá</h2>
+    {% include "partials/levels.html" %}
+  </section>
+  {% endif %}
+  {% if booking.note %}<p class="note-box">{{ icon("info", "i-sm") }}<span>{{ booking.note }}</span></p>{% endif %}
+</div>
+{% set sec = {"title": "Chọn xong dịch vụ?", "text": "Đặt lịch online, chọn thợ và giờ trống."} %}
+{% include "sections/cta.html" %}
+{% endblock %}

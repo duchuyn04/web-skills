@@ -1,0 +1,16 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Tổng quan{% endblock %}
+{% block main %}
+<div class="page-top"><div><h1>Tổng quan</h1><p class="muted" data-today-label></p></div><div class="period" data-period></div></div>
+<section class="kpis" data-kpis aria-label="Chỉ số chính"></section>
+<div class="grid-main">
+  <section class="card span2"><header class="card-h"><h2 data-chart-title>Doanh thu theo ngày</h2><div class="legend" data-legend></div></header><div class="chart" data-chart></div></section>
+  <section class="card"><header class="card-h"><h2>Cần xử lý</h2><a class="link" href="appointments.html?status=pending">Xem tất cả</a></header><ul class="todo" data-todo></ul></section>
+  <section class="card span2"><header class="card-h"><h2>Lịch hôm nay</h2><a class="link" href="calendar.html">Mở lịch theo ngày</a></header><div data-today-list></div></section>
+  <section class="card"><header class="card-h"><h2>Nguồn đặt lịch</h2></header><div data-sources></div></section>
+  <section class="card"><header class="card-h"><h2>Dịch vụ mang doanh thu</h2></header><div data-top-services></div></section>
+  <section class="card"><header class="card-h"><h2>Thợ</h2><a class="link" href="staff.html">Chi tiết</a></header><div data-tech-perf></div></section>
+  <section class="card"><header class="card-h"><h2>Khách mới và khách quay lại</h2></header><div data-returning></div></section>
+  <section class="card span3"><header class="card-h"><h2>Giờ đông khách</h2><p class="muted small">Số lượt hẹn theo thứ và giờ bắt đầu trong kỳ</p></header><div class="heat" data-heat></div></section>
+</div>
+{% endblock %}

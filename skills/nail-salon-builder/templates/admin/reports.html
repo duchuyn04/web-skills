@@ -1,0 +1,11 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Báo cáo{% endblock %}
+{% block main %}
+<div class="page-top"><div><h1>Báo cáo</h1><p class="muted">Doanh thu tính trên lịch hẹn đã hoàn thành, sau mã ưu đãi.</p></div><div class="period" data-period></div></div>
+<div class="grid-main">
+  <section class="card span2"><header class="card-h"><h2>Doanh thu theo nhóm dịch vụ</h2></header><div data-by-cat></div></section>
+  <section class="card"><header class="card-h"><h2>Thanh toán</h2></header><div data-by-pay></div></section>
+  <section class="card span3"><header class="card-h"><h2>Theo thợ</h2></header><div class="table-wrap" data-by-tech></div></section>
+  <section class="card span3"><header class="card-h"><h2>Theo ngày</h2><button class="btn btn-ghost btn-sm" type="button" data-csv>{{ icon("download", "i-sm") }}<span>Xuất CSV</span></button></header><div class="table-wrap" data-by-day></div></section>
+</div>
+{% endblock %}

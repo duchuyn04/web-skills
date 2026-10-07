@@ -1,0 +1,19 @@
+{% from "partials/macros.html" import stars with context %}
+{% set r = n.reviews %}
+<section class="sec sec-tint">
+  <div class="wrap reviews">
+    <div class="rv-sum">
+      <h2>{{ sec.title or "Khách nói gì" }}</h2>
+      {% if r.rating %}<p class="rv-score"><b>{{ r.rating|string|replace(".", ",") }}</b>{{ stars(r.rating) }}</p>{% endif %}
+      {% if r.count %}<p class="muted">{{ r.count }} đánh giá{% if r.source %} trên {{ r.source }}{% endif %}</p>{% endif %}
+    </div>
+    <div class="rv-list">
+      {% for q in r.quotes or [] %}
+      <blockquote class="rv">
+        <p>{{ q.text }}</p>
+        <footer><b>{{ q.name }}</b>{% if q.service and q.service in svc_by_id %}<span>{{ svc_by_id[q.service].name }}</span>{% endif %}</footer>
+      </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>

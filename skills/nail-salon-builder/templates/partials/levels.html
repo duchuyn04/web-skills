@@ -1,0 +1,9 @@
+<ol class="levels">
+  {% for a in n.art_levels %}
+  <li class="level">
+    <span class="level-n">{{ a.name }}</span>
+    {% if a.text %}<p>{{ a.text }}</p>{% endif %}
+    <b class="price">{{ price_text(a.price, a.price_type, a.price_max) }}{% if a.price_usd %}<small class="usd">{{ usd_text(a.price_usd) }}</small>{% endif %}</b>
+  </li>
+  {% endfor %}
+</ol>

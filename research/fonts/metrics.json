@@ -1,0 +1,650 @@
+[
+{
+"group": "serif",
+"family": "Cormorant Garamond",
+"stack_cap": 87,
+"stack_low": 67,
+"desc": 28,
+"lh_mixed": 1.15,
+"lh_caps": 1.2
+},
+{
+"group": "serif",
+"family": "Cormorant",
+"stack_cap": 87,
+"stack_low": 68,
+"desc": 29,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "serif",
+"family": "Playfair Display",
+"stack_cap": 113,
+"stack_low": 101,
+"desc": 19,
+"lh_mixed": 1.25,
+"lh_caps": 1.4
+},
+{
+"group": "serif",
+"family": "Prata",
+"stack_cap": 115,
+"stack_low": 92,
+"desc": 29,
+"lh_mixed": 1.3,
+"lh_caps": 1.5
+},
+{
+"group": "serif",
+"family": "Fraunces",
+"stack_cap": 101,
+"stack_low": 81,
+"desc": 25,
+"lh_mixed": 1.15,
+"lh_caps": 1.35
+},
+{
+"group": "serif",
+"family": "EB Garamond",
+"stack_cap": 95,
+"stack_low": 75,
+"desc": 29,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "serif",
+"family": "Lora",
+"stack_cap": 102,
+"stack_low": 85,
+"desc": 27,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "serif",
+"family": "Libre Bodoni",
+"stack_cap": 111,
+"stack_low": 81,
+"desc": 33,
+"lh_mixed": 1.2,
+"lh_caps": 1.5
+},
+{
+"group": "serif",
+"family": "Yeseva One",
+"stack_cap": 106,
+"stack_low": 86,
+"desc": 21,
+"lh_mixed": 1.15,
+"lh_caps": 1.35
+},
+{
+"group": "serif",
+"family": "Noto Serif Display",
+"stack_cap": 105,
+"stack_low": 89,
+"desc": 24,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "serif",
+"family": "Newsreader",
+"stack_cap": 94,
+"stack_low": 76,
+"desc": 27,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "serif",
+"family": "Spectral",
+"stack_cap": 102,
+"stack_low": 84,
+"desc": 24,
+"lh_mixed": 1.15,
+"lh_caps": 1.35
+},
+{
+"group": "serif",
+"family": "Literata",
+"stack_cap": 109,
+"stack_low": 94,
+"desc": 23,
+"lh_mixed": 1.25,
+"lh_caps": 1.4
+},
+{
+"group": "serif",
+"family": "Petrona",
+"stack_cap": 105,
+"stack_low": 87,
+"desc": 27,
+"lh_mixed": 1.2,
+"lh_caps": 1.4
+},
+{
+"group": "serif",
+"family": "Bona Nova",
+"stack_cap": 102,
+"stack_low": 90,
+"desc": 24,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "serif",
+"family": "Old Standard TT",
+"stack_cap": 106,
+"stack_low": 81,
+"desc": 24,
+"lh_mixed": 1.15,
+"lh_caps": 1.35
+},
+{
+"group": "sans",
+"family": "Be Vietnam Pro",
+"stack_cap": 114,
+"stack_low": 93,
+"desc": 22,
+"lh_mixed": 1.2,
+"lh_caps": 1.45
+},
+{
+"group": "sans",
+"family": "Inter",
+"stack_cap": 109,
+"stack_low": 91,
+"desc": 22,
+"lh_mixed": 1.2,
+"lh_caps": 1.4
+},
+{
+"group": "sans",
+"family": "Manrope",
+"stack_cap": 108,
+"stack_low": 90,
+"desc": 26,
+"lh_mixed": 1.25,
+"lh_caps": 1.4
+},
+{
+"group": "sans",
+"family": "Plus Jakarta Sans",
+"stack_cap": 118,
+"stack_low": 97,
+"desc": 22,
+"lh_mixed": 1.25,
+"lh_caps": 1.45
+},
+{
+"group": "sans",
+"family": "Lexend",
+"stack_cap": 105,
+"stack_low": 93,
+"desc": 23,
+"lh_mixed": 1.25,
+"lh_caps": 1.35
+},
+{
+"group": "sans",
+"family": "Nunito Sans",
+"stack_cap": 103,
+"stack_low": 82,
+"desc": 19,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Mulish",
+"stack_cap": 103,
+"stack_low": 82,
+"desc": 23,
+"lh_mixed": 1.15,
+"lh_caps": 1.35
+},
+{
+"group": "sans",
+"family": "Montserrat",
+"stack_cap": 98,
+"stack_low": 83,
+"desc": 20,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "sans",
+"family": "Work Sans",
+"stack_cap": 106,
+"stack_low": 90,
+"desc": 22,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "sans",
+"family": "Quicksand",
+"stack_cap": 99,
+"stack_low": 82,
+"desc": 21,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "sans",
+"family": "Josefin Sans",
+"stack_cap": 114,
+"stack_low": 82,
+"desc": 21,
+"lh_mixed": 1.15,
+"lh_caps": 1.45
+},
+{
+"group": "sans",
+"family": "Raleway",
+"stack_cap": 101,
+"stack_low": 82,
+"desc": 23,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Open Sans",
+"stack_cap": 105,
+"stack_low": 90,
+"desc": 24,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "sans",
+"family": "Roboto",
+"stack_cap": 99,
+"stack_low": 84,
+"desc": 24,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Source Sans 3",
+"stack_cap": 95,
+"stack_low": 82,
+"desc": 23,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "sans",
+"family": "Bricolage Grotesque",
+"stack_cap": 109,
+"stack_low": 94,
+"desc": 35,
+"lh_mixed": 1.35,
+"lh_caps": 1.5
+},
+{
+"group": "sans",
+"family": "Geist",
+"stack_cap": 104,
+"stack_low": 86,
+"desc": 17,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Nunito",
+"stack_cap": 103,
+"stack_low": 82,
+"desc": 19,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Epilogue",
+"stack_cap": 100,
+"stack_low": 87,
+"desc": 23,
+"lh_mixed": 1.2,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Kanit",
+"stack_cap": 94,
+"stack_low": 77,
+"desc": 18,
+"lh_mixed": 1.15,
+"lh_caps": 1.2
+},
+{
+"group": "sans",
+"family": "Prompt",
+"stack_cap": 102,
+"stack_low": 81,
+"desc": 23,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Sarabun",
+"stack_cap": 102,
+"stack_low": 82,
+"desc": 23,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "sans",
+"family": "Noto Sans",
+"stack_cap": 105,
+"stack_low": 89,
+"desc": 24,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "sans",
+"family": "Archivo",
+"stack_cap": 103,
+"stack_low": 91,
+"desc": 19,
+"lh_mixed": 1.2,
+"lh_caps": 1.3
+},
+{
+"group": "playful",
+"family": "Baloo 2",
+"stack_cap": 94,
+"stack_low": 81,
+"desc": 21,
+"lh_mixed": 1.15,
+"lh_caps": 1.2
+},
+{
+"group": "playful",
+"family": "Lemonada",
+"stack_cap": 128,
+"stack_low": 114,
+"desc": 36,
+"lh_mixed": 1.55,
+"lh_caps": 1.7
+},
+{
+"group": "playful",
+"family": "Grandstander",
+"stack_cap": 107,
+"stack_low": 91,
+"desc": 30,
+"lh_mixed": 1.3,
+"lh_caps": 1.45
+},
+{
+"group": "playful",
+"family": "Comfortaa",
+"stack_cap": 117,
+"stack_low": 94,
+"desc": 24,
+"lh_mixed": 1.25,
+"lh_caps": 1.5
+},
+{
+"group": "playful",
+"family": "Calistoga",
+"stack_cap": 108,
+"stack_low": 97,
+"desc": 23,
+"lh_mixed": 1.25,
+"lh_caps": 1.4
+},
+{
+"group": "playful",
+"family": "Shantell Sans",
+"stack_cap": 110,
+"stack_low": 89,
+"desc": 51,
+"lh_mixed": 1.45,
+"lh_caps": 1.7
+},
+{
+"group": "playful",
+"family": "Fuzzy Bubbles",
+"stack_cap": 108,
+"stack_low": 93,
+"desc": 28,
+"lh_mixed": 1.3,
+"lh_caps": 1.45
+},
+{
+"group": "playful",
+"family": "Mali",
+"stack_cap": 107,
+"stack_low": 87,
+"desc": 26,
+"lh_mixed": 1.2,
+"lh_caps": 1.4
+},
+{
+"group": "playful",
+"family": "Itim",
+"stack_cap": 95,
+"stack_low": 75,
+"desc": 22,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "playful",
+"family": "Pangolin",
+"stack_cap": 102,
+"stack_low": 94,
+"desc": 22,
+"lh_mixed": 1.25,
+"lh_caps": 1.3
+},
+{
+"group": "playful",
+"family": "Playpen Sans",
+"stack_cap": 121,
+"stack_low": 102,
+"desc": 28,
+"lh_mixed": 1.35,
+"lh_caps": 1.55
+},
+{
+"group": "playful",
+"family": "Rowdies",
+"stack_cap": 113,
+"stack_low": 90,
+"desc": 25,
+"lh_mixed": 1.2,
+"lh_caps": 1.45
+},
+{
+"group": "playful",
+"family": "Coiny",
+"stack_cap": 107,
+"stack_low": 89,
+"desc": 40,
+"lh_mixed": 1.35,
+"lh_caps": 1.55
+},
+{
+"group": "playful",
+"family": "Chonburi",
+"stack_cap": 104,
+"stack_low": 85,
+"desc": 25,
+"lh_mixed": 1.2,
+"lh_caps": 1.35
+},
+{
+"group": "playful",
+"family": "Paytone One",
+"stack_cap": 117,
+"stack_low": 100,
+"desc": 26,
+"lh_mixed": 1.35,
+"lh_caps": 1.5
+},
+{
+"group": "script",
+"family": "Dancing Script",
+"stack_cap": 98,
+"stack_low": 61,
+"desc": 28,
+"lh_mixed": 1.15,
+"lh_caps": 1.35
+},
+{
+"group": "script",
+"family": "Great Vibes",
+"stack_cap": 103,
+"stack_low": 62,
+"desc": 32,
+"lh_mixed": 1.15,
+"lh_caps": 1.45
+},
+{
+"group": "script",
+"family": "Allura",
+"stack_cap": 88,
+"stack_low": 57,
+"desc": 37,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "script",
+"family": "Pinyon Script",
+"stack_cap": 100,
+"stack_low": 68,
+"desc": 39,
+"lh_mixed": 1.15,
+"lh_caps": 1.45
+},
+{
+"group": "script",
+"family": "Alex Brush",
+"stack_cap": 87,
+"stack_low": 55,
+"desc": 21,
+"lh_mixed": 1.15,
+"lh_caps": 1.15
+},
+{
+"group": "script",
+"family": "Italianno",
+"stack_cap": 82,
+"stack_low": 52,
+"desc": 35,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "script",
+"family": "Ms Madi",
+"stack_cap": 95,
+"stack_low": 63,
+"desc": 38,
+"lh_mixed": 1.15,
+"lh_caps": 1.4
+},
+{
+"group": "script",
+"family": "Charm",
+"stack_cap": 108,
+"stack_low": 85,
+"desc": 60,
+"lh_mixed": 1.5,
+"lh_caps": 1.75
+},
+{
+"group": "script",
+"family": "Corinthia",
+"stack_cap": 83,
+"stack_low": 46,
+"desc": 41,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "script",
+"family": "Style Script",
+"stack_cap": 104,
+"stack_low": 78,
+"desc": 37,
+"lh_mixed": 1.2,
+"lh_caps": 1.5
+},
+{
+"group": "script",
+"family": "Birthstone",
+"stack_cap": 76,
+"stack_low": 58,
+"desc": 34,
+"lh_mixed": 1.15,
+"lh_caps": 1.2
+},
+{
+"group": "script",
+"family": "Meow Script",
+"stack_cap": 84,
+"stack_low": 59,
+"desc": 39,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "script",
+"family": "Moon Dance",
+"stack_cap": 90,
+"stack_low": 62,
+"desc": 33,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+},
+{
+"group": "script",
+"family": "Ephesis",
+"stack_cap": 87,
+"stack_low": 54,
+"desc": 31,
+"lh_mixed": 1.15,
+"lh_caps": 1.25
+},
+{
+"group": "script",
+"family": "Bad Script",
+"stack_cap": 138,
+"stack_low": 92,
+"desc": 41,
+"lh_mixed": 1.4,
+"lh_caps": 1.85
+},
+{
+"group": "script",
+"family": "Pacifico",
+"stack_cap": 144,
+"stack_low": 91,
+"desc": 46,
+"lh_mixed": 1.45,
+"lh_caps": 1.95
+},
+{
+"group": "script",
+"family": "Oooh Baby",
+"stack_cap": 88,
+"stack_low": 61,
+"desc": 33,
+"lh_mixed": 1.15,
+"lh_caps": 1.3
+}
+]

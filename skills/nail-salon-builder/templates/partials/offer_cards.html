@@ -1,0 +1,28 @@
+<div class="offer-grid">
+  {% for p in n.packages %}
+  <article class="offer">
+    <span class="offer-kind">{{ icon("ticket", "i-sm") }}Thẻ lần</span>
+    <h3>{{ p.name }}</h3>
+    <p class="offer-price"><b>{{ vnd(p.price) }}</b>{% if p.old_price %}<s>{{ vnd(p.old_price) }}</s>{% endif %}</p>
+    {% if p.get("items") %}<ul class="ticks">{% for x in p.get("items") %}<li>{{ icon("check", "i-xs") }}<span>{{ x }}</span></li>{% endfor %}</ul>{% endif %}
+    {% if p.note %}<p class="muted small">{{ p.note }}</p>{% endif %}
+  </article>
+  {% endfor %}
+  {% for m in n.membership %}
+  <article class="offer offer-hl">
+    <span class="offer-kind">{{ icon("crown", "i-sm") }}Thành viên</span>
+    <h3>{{ m.name }}</h3>
+    <p class="offer-price"><b>{{ vnd(m.price) }}</b>{% if m.period %}<span>/ {{ m.period }}</span>{% endif %}</p>
+    {% if m.perks %}<ul class="ticks">{% for x in m.perks %}<li>{{ icon("check", "i-xs") }}<span>{{ x }}</span></li>{% endfor %}</ul>{% endif %}
+    {% if m.note %}<p class="muted small">{{ m.note }}</p>{% endif %}
+  </article>
+  {% endfor %}
+  {% if n.gift_cards %}
+  <article class="offer">
+    <span class="offer-kind">{{ icon("gift", "i-sm") }}Thẻ quà tặng</span>
+    <h3>Thẻ quà tặng</h3>
+    {% if n.gift_cards.amounts %}<ul class="gift-amounts">{% for a in n.gift_cards.amounts %}<li>{{ vnd(a) }}</li>{% endfor %}</ul>{% endif %}
+    {% if n.gift_cards.note %}<p class="muted small">{{ n.gift_cards.note }}</p>{% endif %}
+  </article>
+  {% endif %}
+</div>

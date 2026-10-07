@@ -1,0 +1,9 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Khách hàng{% endblock %}
+{% block main %}
+<div class="page-top"><div><h1>Khách hàng</h1><p class="muted" data-cust-sum></p></div><button class="btn btn-ghost btn-sm" type="button" data-csv>{{ icon("download", "i-sm") }}<span>Xuất CSV</span></button></div>
+<div class="tabs" role="tablist" data-seg-tabs></div>
+<div class="filters"><label class="sr" for="c-q">Tìm khách</label><input id="c-q" type="search" placeholder="Tên hoặc số điện thoại" data-c-q></div>
+<div class="card flush"><div class="table-wrap" data-table></div></div>
+<div class="pager" data-pager></div>
+{% endblock %}

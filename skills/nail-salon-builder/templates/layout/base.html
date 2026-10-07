@@ -1,0 +1,135 @@
+{% from "partials/macros.html" import book_href, book_attrs, book_btn, hours_list, chat_links with context %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page == "index.html" %}{{ salon.name }}{% if salon.tagline %} | {{ salon.tagline }}{% endif %}{% else %}{{ title }} | {{ salon.name }}{% endif %}</title>
+<meta name="description" content="{{ (salon.intro or salon.tagline or salon.name)[:155] }}">
+{% if demo %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<link rel="icon" href="{{ root }}{{ pics.favicon }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ fonts }}&amp;display=swap">
+<!--LANGFONTS-->
+<link rel="stylesheet" href="{{ root }}assets/css/site.css">
+<style>:root{ {% for k, v in css_vars.items() %}{{ k }}:{{ v|safe }};{% endfor %} }</style>
+<script>window.ROOT='{{ root }}';</script>
+</head>
+<body class="st-{{ style }} hdr-{{ layout.header }} card-{{ layout.card }}{% if dark %} is-dark{% endif %}{% if preset.accent_font %} has-accent{% endif %}" data-page="{{ page }}">
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+{% if n.announcement %}<div class="announce"><div class="wrap">{{ icon("sparkles", "i-xs") }}<span>{{ n.announcement }}</span></div></div>{% endif %}
+{% set nav = [("bang-gia.html", "Bảng giá"), ("mau-nail.html", "Mẫu nail"), ("uu-dai.html", "Ưu đãi"), ("doi-ngu.html", "Thợ"), ("chi-nhanh.html", "Chi nhánh")] %}
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="hdr-phone hdr-phone-l" href="tel:{{ salon.hotline|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>{{ salon.hotline }}</span></a>
+    <button class="icon-btn burger" type="button" data-drawer-open aria-label="Mở menu" aria-controls="drawer">{{ icon("menu") }}</button>
+    <a class="logo" href="{{ root }}index.html">
+      {% if salon.logo %}<img src="{{ root }}assets/media/{{ salon.logo.split('/')[-1] }}" alt="{{ salon.name }}" height="40">
+      {% else %}<span class="logo-mark" aria-hidden="true"></span><span class="logo-name">{{ salon.name }}</span>{% endif %}
+    </a>
+    <nav class="nav" aria-label="Menu chính">
+      <ul>
+        {% for href, label in nav if href in n.pages_built %}<li><a href="{{ root }}{{ href }}" {% if page == href %}aria-current="page"{% endif %}>{{ label }}</a></li>{% endfor %}
+      </ul>
+    </nav>
+    <div class="hdr-act">
+      <a class="hdr-phone" href="tel:{{ salon.hotline|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>{{ salon.hotline }}</span></a>
+      {{ book_btn(root, "Đặt lịch", "btn hdr-book") }}
+    </div>
+  </div>
+</header>
+
+<dialog class="drawer" id="drawer" data-drawer aria-label="Menu">
+  <div class="drawer-in">
+    <div class="drawer-top"><b>{{ salon.name }}</b><button class="icon-btn" type="button" data-drawer-close aria-label="Đóng menu">{{ icon("x") }}</button></div>
+    <ul class="drawer-nav">
+      <li><a href="{{ root }}index.html">Trang chủ</a></li>
+      {% for href, label in nav if href in n.pages_built %}<li><a href="{{ root }}{{ href }}">{{ label }}</a></li>{% endfor %}
+      {% if "hoi-dap.html" in n.pages_built %}<li><a href="{{ root }}hoi-dap.html">Hỏi đáp</a></li>{% endif %}
+      {% if booking.mode == "native" %}<li><a href="{{ root }}lich-hen.html">Tra cứu lịch hẹn</a></li>{% endif %}
+    </ul>
+    {{ book_btn(root, "Đặt lịch", "btn btn-block") }}
+    <a class="btn btn-ghost btn-block" href="tel:{{ salon.hotline|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>Gọi {{ salon.hotline }}</span></a>
+  </div>
+</dialog>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-grid">
+    <div class="ftr-brand">
+      <a class="logo" href="{{ root }}index.html"><span class="logo-mark" aria-hidden="true"></span><span class="logo-name">{{ salon.name }}</span></a>
+      {% if salon.tagline %}<p>{{ salon.tagline }}</p>{% endif %}
+      <ul class="ftr-contact">
+        <li>{{ icon("phone", "i-sm") }}<a href="tel:{{ salon.hotline|replace(' ', '') }}">{{ salon.hotline }}</a></li>
+        {% if salon.zalo %}<li>{{ icon("message-circle", "i-sm") }}<a href="https://zalo.me/{{ salon.zalo|replace(' ', '') }}" target="_blank" rel="noopener">Zalo {{ salon.zalo }}</a></li>{% endif %}
+        {% if salon.whatsapp %}<li>{{ icon("message-circle", "i-sm") }}<a href="https://wa.me/{{ salon.whatsapp|replace(' ', '')|replace('+', '') }}" target="_blank" rel="noopener">WhatsApp {{ salon.whatsapp }}</a></li>{% endif %}
+        {% if salon.kakao %}<li>{{ icon("message-circle", "i-sm") }}<a href="{{ salon.kakao }}" target="_blank" rel="noopener">KakaoTalk</a></li>{% endif %}
+        {% if salon.line %}<li>{{ icon("message-circle", "i-sm") }}<a href="{{ salon.line }}" target="_blank" rel="noopener">LINE</a></li>{% endif %}
+        {% if salon.email %}<li>{{ icon("mail", "i-sm") }}<a href="mailto:{{ salon.email }}">{{ salon.email }}</a></li>{% endif %}
+      </ul>
+      {% if salon.socials %}<ul class="socials">
+        {% for k, v in salon.socials.items() %}<li><a href="{{ v }}" target="_blank" rel="noopener" aria-label="{{ k|capitalize }}">{{ icon({"facebook": "facebook", "instagram": "instagram", "tiktok": "music", "youtube": "youtube"}[k]) }}</a></li>{% endfor %}
+      </ul>{% endif %}
+    </div>
+    {% for l in n.locations %}
+    <div class="ftr-loc">
+      <h3>{{ l.name }}</h3>
+      <p>{{ l.address }}</p>
+      {{ hours_list(l) }}
+    </div>
+    {% endfor %}
+    <div class="ftr-links">
+      <h3>Thông tin</h3>
+      <ul>
+        {% for href, label in nav if href in n.pages_built %}<li><a href="{{ root }}{{ href }}">{{ label }}</a></li>{% endfor %}
+        {% if "hoi-dap.html" in n.pages_built %}<li><a href="{{ root }}hoi-dap.html">Hỏi đáp</a></li>{% endif %}
+        {% if booking.mode == "native" %}<li><a href="{{ root }}lich-hen.html">Tra cứu lịch hẹn</a></li>{% endif %}
+        {% for p in n.policies %}<li><a href="{{ root }}chinh-sach/{{ p.id }}.html">{{ p.title }}</a></li>{% endfor %}
+        {% if n.credits %}<li><a href="{{ root }}nguon-anh.html">Nguồn ảnh</a></li>{% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ftr-bottom">
+    <span>{% if salon.legal %}{{ salon.legal }}{% else %}{{ salon.name }}{% endif %}</span>
+    {% if demo %}<span class="demo-note">{{ icon("info", "i-xs") }}Website mẫu, giá và thông tin chỉ để minh họa</span>{% endif %}
+  </div>
+</footer>
+
+{# Phone bar: one tap to call, chat, find the way or book. With several branches, Gọi and Chỉ đường open a list of branches. #}
+{% set phones = n.locations|selectattr("phone")|list %}
+{% set maps = n.locations|selectattr("map")|list %}
+{% set chat = "zalo" if salon.zalo else "whatsapp" if salon.whatsapp else "messenger" if salon.messenger else "" %}
+<nav class="mbar" aria-label="Liên hệ nhanh">
+  {% if phones|length > 1 %}<button type="button" data-sheet-open="call" aria-expanded="false" aria-controls="sheet-call">{{ icon("phone", "i-sm") }}<span>Gọi</span></button>
+  {% else %}<a href="tel:{{ (phones[0].phone if phones else salon.hotline)|replace(' ', '') }}">{{ icon("phone", "i-sm") }}<span>Gọi</span></a>{% endif %}
+  {% if chat == "zalo" %}<a href="https://zalo.me/{{ salon.zalo|replace(' ', '') }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>Zalo</span></a>
+  {% elif chat == "whatsapp" %}<a href="https://wa.me/{{ salon.whatsapp|replace(' ', '')|replace('+', '') }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>WhatsApp</span></a>
+  {% elif chat == "messenger" %}<a href="{{ salon.messenger }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>Messenger</span></a>{% endif %}
+  {% if maps|length > 1 %}<button type="button" data-sheet-open="map" aria-expanded="false" aria-controls="sheet-map">{{ icon("map-pin", "i-sm") }}<span>Chỉ đường</span></button>
+  {% elif maps %}<a href="{{ maps[0].map }}" target="_blank" rel="noopener">{{ icon("map-pin", "i-sm") }}<span>Chỉ đường</span></a>{% endif %}
+  <a class="mbar-book" href="{{ book_href(root) }}" {{ book_attrs() }}>{{ icon("calendar-check", "i-sm") }}<span>Đặt lịch</span></a>
+</nav>
+{% if phones|length > 1 %}
+<div class="sheet" id="sheet-call" data-sheet="call" hidden>
+  <p class="sheet-title">Gọi chi nhánh</p>
+  <ul>{% for l in phones %}<li><a href="tel:{{ l.phone|replace(' ', '') }}"><b>{{ l.name }}</b><span>{{ l.phone }}</span></a></li>{% endfor %}
+    {% if salon.hotline not in phones|map(attribute="phone")|list %}<li><a href="tel:{{ salon.hotline|replace(' ', '') }}"><b>Hotline</b><span>{{ salon.hotline }}</span></a></li>{% endif %}</ul>
+</div>
+{% endif %}
+{% if maps|length > 1 %}
+<div class="sheet" id="sheet-map" data-sheet="map" hidden>
+  <p class="sheet-title">Chỉ đường đến chi nhánh</p>
+  <ul>{% for l in maps %}<li><a href="{{ l.map }}" target="_blank" rel="noopener"><b>{{ l.name }}</b><span>{{ l.address }}</span></a></li>{% endfor %}</ul>
+</div>
+{% endif %}
+<div class="toasts" aria-live="polite" data-toasts></div>
+<script src="{{ root }}assets/js/salon.js"></script>
+<script src="{{ root }}assets/js/common.js"></script>
+<script src="{{ root }}assets/js/site.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,6 @@
+{% extends "layout/base.html" %}
+{% block main %}
+{% for sec in n.home %}
+{% include "sections/" ~ sec.type ~ ".html" %}
+{% endfor %}
+{% endblock %}

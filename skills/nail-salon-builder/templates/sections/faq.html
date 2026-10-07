@@ -1,0 +1,9 @@
+{% from "partials/macros.html" import section_head with context %}
+<section class="sec">
+  <div class="wrap faq-wrap">
+    {{ section_head(sec.title or "Câu hỏi thường gặp", "", (root ~ "hoi-dap.html") if n.faq|length > 6 else "", "Xem tất cả") }}
+    <div class="faq">
+      {% for f in n.faq[:6] %}<details><summary><span>{{ f.q }}</span>{{ icon("chevron-down", "i-sm") }}</summary><p>{{ f.a }}</p></details>{% endfor %}
+    </div>
+  </div>
+</section>

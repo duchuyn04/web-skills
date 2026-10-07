@@ -1,0 +1,47 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install "jinja2>=3.0" "openpyxl>=3.0"
+
+      - name: bpo-landing-builder regression cases and examples
+        run: python skills/bpo-landing-builder/tests/run.py
+
+      - name: ecommerce-builder examples build and lint
+        run: |
+          cd skills/ecommerce-builder
+          for f in examples/demo-electronics.shop.json examples/styles/*.shop.json examples/variants/*.shop.json; do
+            n=$(basename "$f" .shop.json)
+            python scripts/build.py "$f" --out "$RUNNER_TEMP/shop/$n" | tail -1
+            python scripts/lint_output.py "$RUNNER_TEMP/shop/$n" | tail -1
+          done
+
+      - name: nail-salon-builder examples, fixtures and expected failures
+        run: python skills/nail-salon-builder/tests/run.py
+
+      - name: app-ui recipes and gallery lint
+        run: |
+          cd skills/app-ui
+          python scripts/lint_ui.py recipes
+          python scripts/lint_ui.py gallery
+
+      - name: sprint-plan example
+        run: python skills/sprint-plan/scripts/make_plan.py skills/sprint-plan/examples/webnhanh.plan.json --out "$RUNNER_TEMP/plan"
+
+      - name: copy rules shared by every skill
+        run: python tools/check_rules_sync.py

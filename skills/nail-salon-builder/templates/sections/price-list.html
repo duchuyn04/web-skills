@@ -1,0 +1,8 @@
+{% from "partials/macros.html" import section_head with context %}
+{% set cats = n.categories if not sec.categories else n.categories|selectattr("id", "in", sec.categories)|list %}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Bảng giá", sec.text or "", root ~ "bang-gia.html", "Xem trang bảng giá") }}
+    {% include "partials/price_tabs.html" %}
+  </div>
+</section>

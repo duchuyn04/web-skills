@@ -1,0 +1,6 @@
+{
+  "warm-luxury": {"preset": "warm-luxury", "header": "centered", "hero": "split", "card": "line", "for": "boutique and spa salons: cream and taupe, serif headings, white space (Townhouse, Nailology, The Art of Nails)"},
+  "k-minimal": {"preset": "k-minimal", "header": "classic", "hero": "stack", "card": "soft", "for": "Korean and Japanese style studios and chains: white, soft pink, dense gallery (Nailroom, Nail Quick, tricia)"},
+  "dark-glam": {"preset": "dark-glam", "header": "classic", "hero": "full", "card": "line", "for": "nail art and late-night studios: near-black, raspberry accent, glam serif (Dunass Nails, D'Limo)"},
+  "playful": {"preset": "playful", "header": "classic", "hero": "collage", "card": "soft", "for": "colourful nail bars for students and young customers: bright colours, rounded type, bold copy (Shoreditch Nails, Tropical Popical, Cute Nail Studio)"}
+}

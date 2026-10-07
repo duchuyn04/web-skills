@@ -1,0 +1,34 @@
+{% from "partials/macros.html" import book_btn, stars with context %}
+{% set v = sec.variant or layout.hero %}
+{% set first = n.locations[0] %}
+{% set looks = n.gallery[4:8] if n.gallery|length >= 8 else n.gallery[:4] %}
+<section class="hero hero-{{ v }}">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow">{% for l in n.locations %}{{ l.name }}{% if not loop.last %} · {% endif %}{% endfor %}</p>
+      <h1>{{ sec.title or salon.tagline or salon.name }}</h1>
+      {% if sec.text %}<p class="hero-text">{{ sec.text }}</p>{% endif %}
+      <div class="hero-btns">
+        {{ book_btn(root, "Đặt lịch ngay", "btn btn-lg") }}
+        <a class="btn btn-lg btn-ghost" href="{{ root }}bang-gia.html">{{ icon("list", "i-sm") }}<span>Xem bảng giá</span></a>
+      </div>
+      <ul class="hero-meta">
+        {% if n.reviews and n.reviews.rating %}<li>{{ stars(n.reviews.rating) }}<b>{{ n.reviews.rating|string|replace(".", ",") }}</b>{% if n.reviews.count %}<span>{{ n.reviews.count }} đánh giá{% if n.reviews.source %} trên {{ n.reviews.source }}{% endif %}</span>{% endif %}</li>{% endif %}
+        <li>{{ icon("clock", "i-sm") }}<span>{{ first.hours[0].label }}: {{ first.hours[0].open }} - {{ first.hours[0].close }}</span></li>
+      </ul>
+    </div>
+    {% if v == "collage" and looks|length >= 3 %}
+    <div class="collage" aria-hidden="true">
+      {% for g in looks[:3] %}<img class="tile tile-{{ loop.index }}" src="{{ root }}{{ pics['look-' ~ g.id] }}" alt="" width="400" height="400">{% endfor %}
+      <span class="blob"></span>
+    </div>
+    {% elif v == "stack" %}
+    <div class="hero-strip">
+      {% if looks|length >= 4 %}{% for g in looks %}<img src="{{ root }}{{ pics['look-' ~ g.id] }}" alt="{{ g.title }}" width="400" height="400">{% endfor %}
+      {% else %}<img class="hero-wide" src="{{ root }}{{ pics.hero }}" alt="" width="640" height="520">{% endif %}
+    </div>
+    {% else %}
+    <div class="hero-art"><img src="{{ root }}{{ pics.hero }}" alt="" {% if v == "full" %}width="1440" height="720"{% else %}width="640" height="520"{% endif %} fetchpriority="high"></div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,14 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Danh sách lịch hẹn{% endblock %}
+{% block main %}
+<div class="page-top"><div><h1>Danh sách lịch hẹn</h1><p class="muted" data-list-sum></p></div><button class="btn btn-ghost btn-sm" type="button" data-csv>{{ icon("download", "i-sm") }}<span>Xuất CSV</span></button></div>
+<div class="tabs" role="tablist" data-status-tabs></div>
+<div class="filters" data-filters>
+  <label class="sr" for="f-q">Tìm</label><input id="f-q" type="search" placeholder="Mã, tên, số điện thoại" data-f="q">
+  <label class="sr" for="f-range">Thời gian</label><select id="f-range" data-f="range"><option value="upcoming">Từ hôm nay</option><option value="today">Hôm nay</option><option value="week">7 ngày tới</option><option value="past30">30 ngày qua</option><option value="all">Tất cả</option></select>
+  {% if n.locations|length > 1 %}<label class="sr" for="f-loc">Chi nhánh</label><select id="f-loc" data-f="loc"><option value="">Mọi chi nhánh</option>{% for l in n.locations %}<option value="{{ l.id }}">{{ l.name }}</option>{% endfor %}</select>{% endif %}
+  {% if n.technicians %}<label class="sr" for="f-tech">Thợ</label><select id="f-tech" data-f="tech"><option value="">Mọi thợ</option>{% for t in n.technicians %}<option value="{{ t.id }}">{{ t.name }}</option>{% endfor %}</select>{% endif %}
+</div>
+<div class="card flush"><div class="table-wrap" data-table></div></div>
+<div class="pager" data-pager></div>
+{% endblock %}

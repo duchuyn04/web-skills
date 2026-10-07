@@ -1,0 +1,102 @@
+{# Shared pieces. Every macro reads only normalised data from build.py. #}
+
+{% macro book_href(root, service="", look="") -%}
+{%- if booking.mode == "external" -%}{{ booking.external_url }}
+{%- elif booking.mode == "chat" -%}{% if salon.zalo %}https://zalo.me/{{ salon.zalo|replace(" ", "") }}{% else %}{{ salon.messenger }}{% endif %}
+{%- else -%}{{ root }}dat-lich.html{% if service or look %}?{% if service %}service={{ service }}{% endif %}{% if service and look %}&amp;{% endif %}{% if look %}look={{ look }}{% endif %}{% endif %}
+{%- endif -%}
+{%- endmacro %}
+
+{% macro book_attrs() -%}
+{% if booking.mode != "native" %}target="_blank" rel="noopener"{% endif %}
+{%- endmacro %}
+
+{% macro book_btn(root, label="Đặt lịch", cls="btn", service="", look="") -%}
+<a class="{{ cls }}" href="{{ book_href(root, service, look) }}" {{ book_attrs() }} data-book>{{ icon("calendar-check", "i-sm") }}<span>{{ label }}</span></a>
+{%- endmacro %}
+
+{% macro price(s) -%}
+<span class="price">{{ price_text(s.price, s.price_type|default("fixed"), s.price_max|default(None)) }}{% if s.price_usd %}<small class="usd">{{ usd_text(s.price_usd) }}</small>{% endif %}</span>
+{%- endmacro %}
+
+{% macro service_row(root, s) -%}
+<li class="svc-row" id="dv-{{ s.id }}">
+  <div class="svc-main">
+    <h3 class="svc-name">{{ s.name }}{% if s.popular %} <span class="tag-pop">Hay đặt</span>{% endif %}</h3>
+    {% if s.name_en %}<p class="svc-en" lang="en">{{ s.name_en }}</p>{% endif %}
+    <p class="svc-meta">{{ icon("clock", "i-xs") }}{{ minutes_text(s.minutes) }}{% if s.includes %}<span class="dot-sep"></span>{{ s.includes|join(", ") }}{% endif %}</p>
+    {% if s.note %}<p class="svc-note">{{ s.note }}</p>{% endif %}
+  </div>
+  <div class="svc-side">
+    {{ price(s) }}
+    {% if booking.mode == "native" %}<a class="btn btn-sm btn-ghost" href="{{ book_href(root, s.id) }}" aria-label="Đặt {{ s.name }}">Đặt</a>{% endif %}
+  </div>
+</li>
+{%- endmacro %}
+
+{% macro service_card(root, s) -%}
+<article class="svc-card">
+  <a class="svc-card-art" href="{{ root }}bang-gia.html#dv-{{ s.id }}" tabindex="-1" aria-hidden="true"><img src="{{ root }}{{ pics['cat-' ~ s.category] }}" alt="" loading="lazy" width="400" height="400"></a>
+  <div class="svc-card-body">
+    <p class="eyebrow">{{ cat_by_id[s.category].name }}</p>
+    <h3><a href="{{ root }}bang-gia.html#dv-{{ s.id }}">{{ s.name }}</a></h3>
+    <p class="svc-meta">{{ icon("clock", "i-xs") }}{{ minutes_text(s.minutes) }}</p>
+    <div class="svc-card-foot">{{ price(s) }}{% if booking.mode == "native" %}<a class="btn btn-sm" href="{{ book_href(root, s.id) }}">Đặt</a>{% endif %}</div>
+  </div>
+</article>
+{%- endmacro %}
+
+{% macro look_card(root, g) -%}
+<figure class="look" data-look data-tags="{{ g.tags|join('|') }}">
+  <img src="{{ root }}{{ pics['look-' ~ g.id] }}" alt="{{ g.title }}" loading="lazy" width="400" height="400">
+  <figcaption>
+    <b>{{ g.title }}</b>
+    {% if g.service and g.service in svc_by_id %}<span class="look-svc">{{ svc_by_id[g.service].name }} · {{ price_text(svc_by_id[g.service].price, svc_by_id[g.service].price_type, svc_by_id[g.service].price_max) }}</span>{% endif %}
+    {% if booking.mode == "native" %}<a class="look-book" href="{{ book_href(root, g.service or '', g.id) }}">Đặt mẫu này</a>{% endif %}
+  </figcaption>
+</figure>
+{%- endmacro %}
+
+{% macro tech_card(root, t) -%}
+<article class="tech">
+  {% if pics.get('tech-' ~ t.id) %}<img class="tech-photo" src="{{ root }}{{ pics['tech-' ~ t.id] }}" alt="{{ t.name }}" loading="lazy">
+  {% else %}<span class="tech-mono" aria-hidden="true">{{ t.name[:1] }}</span>{% endif %}
+  <div>
+    <h3>{{ t.name }}</h3>
+    {% if t.title %}<p class="tech-title">{{ t.title }}</p>{% endif %}
+    {% if t.specialties %}<ul class="chips">{% for x in t.specialties %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+    {% if n.locations|length > 1 %}<p class="tech-loc">{{ icon("map-pin", "i-xs") }}{% for l in t.locations %}{{ loc_by_id[l].name }}{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+  </div>
+</article>
+{%- endmacro %}
+
+{% macro stars(r) -%}
+<span class="stars" aria-label="{{ r }} trên 5 sao">{% for i in range(5) %}{{ icon("star", "i-xs" ~ (" on" if r >= i + 0.75 else "")) }}{% endfor %}</span>
+{%- endmacro %}
+
+{% macro hours_list(l) -%}
+<ul class="hours">
+  {% for h in l.hours %}<li><span>{{ h.label }}</span><b>{{ h.open }} - {{ h.close }}</b></li>{% endfor %}
+  {% if l.closed %}<li><span>{{ l.closed }}</span><b>Nghỉ</b></li>{% endif %}
+  {% if l.last_order %}<li class="hours-last"><span>Nhận khách cuối</span><b>{{ l.last_order }}</b></li>{% endif %}
+</ul>
+{%- endmacro %}
+
+{% macro section_head(title, text="", link="", link_label="") -%}
+<div class="sec-head">
+  <div><h2>{{ title }}</h2>{% if text %}<p>{{ text }}</p>{% endif %}</div>
+  {% if link %}<a class="more" href="{{ link }}">{{ link_label }}{{ icon("chevron-right", "i-xs") }}</a>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro price_notes_box() -%}
+{% if n.price_notes %}<ul class="price-notes">{% for x in n.price_notes %}<li>{{ icon("check-circle", "i-sm") }}<span>{{ x }}</span></li>{% endfor %}</ul>{% endif %}
+{%- endmacro %}
+
+{% macro chat_links(cls="") -%}
+{% if salon.zalo %}<a class="{{ cls }}" href="https://zalo.me/{{ salon.zalo|replace(' ', '') }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>Zalo</span></a>{% endif %}
+{% if salon.whatsapp %}<a class="{{ cls }}" href="https://wa.me/{{ salon.whatsapp|replace(' ', '')|replace('+', '') }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>WhatsApp</span></a>{% endif %}
+{% if salon.messenger %}<a class="{{ cls }}" href="{{ salon.messenger }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>Messenger</span></a>{% endif %}
+{% if salon.kakao %}<a class="{{ cls }}" href="{{ salon.kakao }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>KakaoTalk</span></a>{% endif %}
+{% if salon.line %}<a class="{{ cls }}" href="{{ salon.line }}" target="_blank" rel="noopener">{{ icon("message-circle", "i-sm") }}<span>LINE</span></a>{% endif %}
+{%- endmacro %}

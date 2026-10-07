@@ -1,0 +1,7 @@
+{% from "partials/macros.html" import section_head with context %}
+<section class="sec sec-tint">
+  <div class="wrap">
+    {{ section_head(sec.title or "Chi nhánh") }}
+    {% include "partials/location_cards.html" %}
+  </div>
+</section>

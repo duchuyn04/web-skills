@@ -1,0 +1,8 @@
+<section class="sec sec-tint">
+  <div class="wrap">
+    <h2 class="sec-title">{{ sec.title or "Cam kết của tiệm" }}</h2>
+    <ul class="trust">
+      {% for t in n.trust %}<li><span class="trust-ic">{{ icon(t.icon or "check-circle") }}</span><div><b>{{ t.title }}</b>{% if t.text %}<p>{{ t.text }}</p>{% endif %}</div></li>{% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+{% block main %}
+<section class="page-head"><div class="wrap"><h1>Nguồn ảnh</h1><p>Một số ảnh minh họa trên trang là ảnh có giấy phép mở. Tác giả và giấy phép của từng ảnh:</p></div></section>
+<div class="wrap">
+  <ul class="credits">
+    {% for c in n.credits %}
+    <li>
+      <img src="{{ root }}{{ c.src }}" alt="" width="120" height="90" loading="lazy">
+      <div>
+        <b>{{ c.title or "Ảnh" }}</b>
+        <span>{% if c.creator %}Tác giả: {% if c.creator_url %}<a href="{{ c.creator_url }}" target="_blank" rel="noopener nofollow">{{ c.creator }}</a>{% else %}{{ c.creator }}{% endif %}. {% endif %}Giấy phép: {% if c.license_url %}<a href="{{ c.license_url }}" target="_blank" rel="noopener nofollow">{{ c.license_name }}</a>{% else %}{{ c.license_name }}{% endif %}.{% if c.landing %} <a href="{{ c.landing }}" target="_blank" rel="noopener nofollow">Ảnh gốc</a>{% endif %}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="sp"></div>
+{% endblock %}

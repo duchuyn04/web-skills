@@ -1,0 +1,19 @@
+{% extends "layout/base.html" %}
+{% block main %}
+<section class="page-head page-head-sm"><div class="wrap"><h1>Tra cứu lịch hẹn</h1><p>Nhập mã lịch hẹn và số điện thoại đã dùng khi đặt.</p></div></section>
+<div class="wrap narrow" data-lookup>
+  <form class="lookup" data-lookup-form novalidate>
+    <label class="field"><span>Mã lịch hẹn</span><input name="code" required placeholder="LH123456" autocomplete="off"></label>
+    <label class="field"><span>Số điện thoại</span><input name="phone" type="tel" inputmode="tel" required></label>
+    <button class="btn" type="submit">{{ icon("search", "i-sm") }}Tra cứu</button>
+  </form>
+  <p class="bk-err" data-lookup-err hidden>Không tìm thấy lịch hẹn với mã và số điện thoại này.</p>
+  <div data-lookup-result></div>
+  <section class="mine" data-mine hidden>
+    <h2>Lịch đã đặt trên máy này</h2>
+    <ul class="mine-list" data-mine-list></ul>
+  </section>
+</div>
+<div class="sp"></div>
+{% endblock %}
+{% block scripts %}<script src="{{ root }}assets/js/seed-busy.js"></script><script src="{{ root }}assets/js/booking.js"></script>{% endblock %}

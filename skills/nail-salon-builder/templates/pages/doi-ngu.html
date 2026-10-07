@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+{% from "partials/macros.html" import tech_card with context %}
+{% block main %}
+<section class="page-head"><div class="wrap"><h1>Thợ của tiệm</h1><p>Khi đặt lịch, bạn có thể chọn thợ quen hoặc để tiệm xếp thợ còn trống.</p></div></section>
+<div class="wrap">
+  {% for l in n.locations %}
+  {% set ts = n.technicians|selectattr("locations", "contains", l.id)|list %}
+  {% if ts %}
+  <section class="team-loc">
+    {% if n.locations|length > 1 %}<h2>{{ l.name }}</h2>{% endif %}
+    <div class="tech-grid">{% for t in ts %}{{ tech_card(root, t) }}{% endfor %}</div>
+  </section>
+  {% endif %}
+  {% endfor %}
+</div>
+<div class="sp"></div>
+{% endblock %}

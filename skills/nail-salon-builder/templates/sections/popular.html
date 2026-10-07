@@ -1,0 +1,13 @@
+{% from "partials/macros.html" import section_head, service_card with context %}
+{% set items = [] %}
+{% if sec.services %}{% for i in sec.services if i in svc_by_id %}{% set _ = items.append(svc_by_id[i]) %}{% endfor %}{% else %}{% for s in popular %}{% set _ = items.append(s) %}{% endfor %}{% endif %}
+{% if items %}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Khách hay đặt", sec.text or "", root ~ "bang-gia.html", "Xem tất cả") }}
+    <div class="svc-grid">
+      {% for s in items[:8] %}{{ service_card(root, s) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

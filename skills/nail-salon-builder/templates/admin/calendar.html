@@ -1,0 +1,15 @@
+{% extends "admin/_layout.html" %}
+{% block title %}Lịch theo ngày{% endblock %}
+{% block main %}
+<div class="page-top">
+  <div><h1>Lịch theo ngày</h1><p class="muted" data-cal-sum></p></div>
+  <div class="cal-ctrl">
+    {% if n.locations|length > 1 %}<label class="sr" for="cal-loc">Chi nhánh</label><select id="cal-loc" data-cal-loc>{% for l in n.locations %}<option value="{{ l.id }}">{{ l.name }}</option>{% endfor %}</select>{% endif %}
+    <div class="seg"><button class="icon-btn" type="button" data-cal-prev aria-label="Ngày trước">{{ icon("chevron-left", "i-sm") }}</button><button class="btn btn-ghost btn-sm" type="button" data-cal-today>Hôm nay</button><button class="icon-btn" type="button" data-cal-next aria-label="Ngày sau">{{ icon("chevron-right", "i-sm") }}</button></div>
+    <label class="sr" for="cal-date">Ngày</label><input id="cal-date" type="date" data-cal-date>
+  </div>
+</div>
+<div class="cal-legend" data-cal-legend></div>
+<div class="cal-wrap"><div class="cal" data-cal></div></div>
+<aside class="panel" data-panel hidden aria-label="Chi tiết lịch hẹn"><div data-panel-body></div></aside>
+{% endblock %}

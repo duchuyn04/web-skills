@@ -1,0 +1,11 @@
+{% from "partials/macros.html" import section_head, look_card with context %}
+{% set looks = [] %}
+{% for g in n.gallery %}{% if not sec.tags or (g.tags|select("in", sec.tags)|list) %}{% set _ = looks.append(g) %}{% endif %}{% endfor %}
+<section class="sec sec-tint">
+  <div class="wrap">
+    {{ section_head(sec.title or "Mẫu mới làm", sec.text or "", root ~ "mau-nail.html", "Xem tất cả mẫu") }}
+    <div class="look-grid">
+      {% for g in looks[:sec.limit or 8] %}{{ look_card(root, g) }}{% endfor %}
+    </div>
+  </div>
+</section>
