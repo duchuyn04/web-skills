@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "5.5.3"
+  version: "5.6.0"
 ---
 
 # BPO landing builder
@@ -212,6 +212,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/style-presets.md`: presets, design options, brand color overrides, tones
 - `references/layout-blueprints.md`: the real-site layouts every page follows, how sections map to variants, and where the 3D visuals go on expressive pages
 - `references/anti-slop.md`: design tells of generated pages (labels on every heading, 01/02 on everything, icon squares, arrows on every button, hover lift on cards, glows) and which build, lint and QA checks catch them. Read it before writing page.json.
+- `references/flat-style.md`: the tells of generated sites and the flat colour, shadow and gradient rules (shared by all skills; `scripts/flat_css.py` checks them in lint)
 - `references/color-system.md`: how brand colors become tokens (OKLCH, contrast, harmony rules), the gradient policy (flat surfaces; gradients only for photo scrims, edge fades, shading and hard-stop patterns, enforced by lint) and the contrast, focus and link checks in QA
 - `references/content-rules.md`: copy rules and how to handle missing facts
 - `references/mobbin-references.md`: where the tool, compare, awards, team, careers, steps, country and the form, stage and scatter hero sections come from, and how to research new sections on Mobbin

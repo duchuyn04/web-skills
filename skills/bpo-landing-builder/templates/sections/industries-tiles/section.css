@@ -7,7 +7,7 @@
   transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   transition: transform 400ms var(--ease-out), box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-std);
 }
-.bl-tile.is-tilting { transition-duration: 80ms, var(--dur), var(--dur); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+.bl-tile.is-tilting { transition-duration: 80ms, var(--dur), var(--dur); border-color: var(--border-strong); }
 .bl-tile p { font-size: var(--fs-sm); }
 @media (max-width: 1024px) { .bl-tiles, .bl-tiles:has(> :nth-child(6):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .bl-tiles, .bl-tiles:has(> :nth-child(6):last-child) { grid-template-columns: 1fr; } }

@@ -4,7 +4,7 @@
   border: 1px solid var(--border-strong); color: var(--text-strong); background: var(--surface);
   transition: background-color var(--dur-fast) var(--ease-std), transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast);
 }
-.bl-round-btn:hover { background: var(--surface-2); transform: translateY(-2px); }
+.bl-round-btn:hover { background: var(--surface-2); }
 .bl-round-btn:disabled { opacity: .35; cursor: default; transform: none; }
 .bl-round-btn .bl-icon { width: 20px; height: 20px; }
 .bl-slider-track {

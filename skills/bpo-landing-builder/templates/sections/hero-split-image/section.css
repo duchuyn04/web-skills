@@ -2,7 +2,7 @@
 .bl-hero-split .bl-h1 { font-size: clamp(2.2rem, 2.6vw + 1rem, 3.5rem); }
 .bl-hero-split { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
 .bl-hero-split__visual { position: relative; padding: 1.5rem 1.75rem; }
-.bl-hero-split__frame { aspect-ratio: 4 / 4.4; border-radius: calc(var(--radius-lg) + 8px); box-shadow: var(--shadow-lg); }
+.bl-hero-split__frame { aspect-ratio: 4 / 4.4; border-radius: calc(var(--radius-lg) + 8px); }
 .bl-hero-split .bl-float-badge--1 { top: 10%; left: -.5rem; }
 .bl-hero-split .bl-float-badge--2 { top: 46%; right: -.75rem; }
 .bl-hero-split .bl-float-badge--3 { bottom: 0; left: 12%; }

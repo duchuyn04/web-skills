@@ -4,7 +4,7 @@
 .bl-mosaic-wrap__p { color: var(--text); margin-bottom: 1rem; line-height: 1.75; }
 .bl-mosaic-wrap__p strong { color: var(--text-strong); font-weight: 700; }
 .bl-mosaic-wrap .bl-checks { margin: 1.25rem 0 1.75rem; }
-.bl-mosaic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; padding: .55rem; border-radius: calc(var(--radius-lg) + 4px); background: color-mix(in srgb, var(--c-accent-2) 16%, var(--surface-2)); box-shadow: var(--shadow-lg); }
+.bl-mosaic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; padding: .55rem; border-radius: calc(var(--radius-lg) + 4px); background: color-mix(in srgb, var(--c-accent-2) 16%, var(--surface-2)); }
 .bl-mosaic:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .bl-mosaic__tile { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-sm); background: var(--surface-2); }
 .bl-mosaic:has(> :nth-child(3):last-child) .bl-mosaic__tile { aspect-ratio: 3 / 4; }

@@ -1,7 +1,7 @@
 /* cost-calculator: reactive-cost-calculator, bars follow instantly, numbers lerp over 400ms */
 .bl-calc-wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 5.5rem); align-items: center; }
 .bl-calc-wrap .bl-head { margin-bottom: 2rem; }
-.bl-calc { display: grid; gap: 1.5rem; padding: clamp(1.4rem, 3vw, 2.25rem); border-radius: calc(var(--radius-lg) + 4px); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+.bl-calc { display: grid; gap: 1.5rem; padding: clamp(1.4rem, 3vw, 2.25rem); border-radius: calc(var(--radius-lg) + 4px); background: var(--surface); border: 1px solid var(--border); }
 .bl-calc__head { display: flex; align-items: center; gap: .85rem; }
 .bl-calc__roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: .5rem; }
 .bl-calc__role { min-height: 46px; padding: .6rem .75rem; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--border); font-size: .88rem; font-weight: 600; color: var(--text); transition: background-color var(--dur-fast) var(--ease-std), color var(--dur-fast), border-color var(--dur-fast); }

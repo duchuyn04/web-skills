@@ -12,7 +12,7 @@
 .spot-btn:hover{background:var(--c-btn-hover)}
 .spot-more{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:15px;color:inherit}
 .spot-more:hover{text-decoration:underline}
-.spot-art{flex:1 1 0;min-height:0;width:auto;max-width:min(460px,72%);object-fit:contain;margin-top:auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.18))}
+.spot-art{flex:1 1 0;min-height:0;width:auto;max-width:min(460px,72%);object-fit:contain;margin-top:auto}
 .spot .carousel-btn{background:color-mix(in srgb,var(--c-surface) 82%,transparent);border-radius:50%;width:44px;height:44px}
 .spot .carousel-prev{left:20px}.spot .carousel-next{right:20px}
 .spot-dots{display:flex;justify-content:center;gap:10px;padding:16px 0 4px}

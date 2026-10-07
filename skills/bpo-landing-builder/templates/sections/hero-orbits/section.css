@@ -1,7 +1,7 @@
 /* hero-orbits: orbit-gyroscope-3d. Layers: back ring halves (canvas), core, front ring halves (canvas), chips (depth-sorted). */
 .bl-horb__stage { isolation: isolate; }
 .bl-horb__front { z-index: 60; pointer-events: none; }
-.bl-horb__core {
+.bl-horb__core { /* flat-ok: drawn 3D object (expressive tier) */ 
   position: absolute; left: 50%; top: 50%; width: 26%; aspect-ratio: 1; margin: -13% 0 0 -13%; z-index: 50; border-radius: 50%;
   display: grid; place-items: center; color: var(--c-on-accent); font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.4rem, 3.4vw, 2.6rem); letter-spacing: -0.03em;
   background: var(--c-accent); box-shadow: inset -8px -10px 18px rgba(0, 0, 0, .18);
@@ -10,7 +10,7 @@
 }
 @keyframes bl-horb-breathe { from { transform: scale(.97); } to { transform: scale(1.03); } }
 .bl-horb__chips { position: absolute; inset: 0; z-index: 40; }
-.bl-horb__chip {
+.bl-horb__chip { /* flat-ok: drawn 3D object (expressive tier) */ 
   position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: .45rem; padding: .45rem .8rem .45rem .5rem;
   border-radius: 999px; background: var(--surface); color: var(--text-strong); border: 1px solid var(--border);
   font-size: var(--fs-sm); font-weight: 600; white-space: nowrap; box-shadow: 0 12px 24px -16px rgba(15, 23, 42, .45);

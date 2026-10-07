@@ -20,7 +20,7 @@
   "colors": {"primary": "#1b1e23", "accent": "#c94f08", "accent_2": "#f7931e"},
   "shape": {"radius_sm": "8px", "radius": "12px", "radius_lg": "16px", "radius_btn": "999px"},
   "hero_tone": "light",
-  "eyebrow": "pill",
+  "eyebrow": "plain",
   "tone_cycle": ["light", "muted"],
   "tones": {
     "light": {"bg": "#ffffff", "surface": "#ffffff", "surface_2": "#f3f6fb", "text": "#434a55", "text_strong": "$primary", "text_muted": "#646b77", "border": "#e4e8ef", "is_dark": false},

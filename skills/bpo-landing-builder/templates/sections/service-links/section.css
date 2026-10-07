@@ -11,7 +11,7 @@
 }
 .bl-slink__label { flex: 1; transition: transform var(--dur) var(--ease-out); }
 .bl-slink .arrow-icon { color: var(--accent-ink); }
-.bl-slink:hover { border-color: var(--border); box-shadow: 0 12px 28px -18px rgba(15, 23, 42, .35); transform: translateY(-2px); }
+.bl-slink:hover { border-color: var(--border); }
 .bl-slink:hover .arrow-icon { transform: translateX(4px); }
 .bl-slink:hover .bl-slink__label { transform: translateX(3px); }
 .bl-slink__icon { width: 36px; height: 36px; flex-shrink: 0; display: grid; place-items: center; border-radius: 10px; background: var(--c-accent-soft); color: var(--accent-ink); }

@@ -53,7 +53,7 @@
 }
 .bl-helix.is-3d .bl-helix__spine--b { transform: rotateY(90deg); }
 .bl-helix.is-3d .bl-helix__list { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
-.bl-helix.is-3d .bl-helix__card {
+.bl-helix.is-3d .bl-helix__card { /* flat-ok: drawn 3D object (expressive tier) */ 
   position: absolute; left: calc(var(--cardw) / -2); top: -96px; width: var(--cardw); min-height: 192px; margin: 0;
   padding: 1.35rem 1.5rem 1.4rem; border: 1px solid var(--border); border-top: 3px solid var(--border-strong); border-radius: var(--radius, 12px);
   background: var(--surface); box-shadow: 0 24px 40px -28px rgba(15, 23, 42, .35);

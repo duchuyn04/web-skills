@@ -42,7 +42,7 @@
 .bl-hdeck__card.is-out { transform: translate3d(calc(var(--dir, 1) * -46%), -4%, 40px) rotateZ(calc(var(--dir, 1) * -7deg)); opacity: 0; }
 .bl-hdeck__card.is-jump { transition: none; opacity: 0; }
 
-.bl-hdeck__face {
+.bl-hdeck__face { /* flat-ok: drawn 3D object (expressive tier) */ 
   height: 100%; display: flex; flex-direction: column; padding: 1.3rem 1.3rem 1.1rem; border-radius: var(--radius-lg); overflow: clip;
   background: var(--surface); color: var(--text); border: 1px solid var(--border-strong);
   box-shadow: 0 26px 40px -30px rgba(15, 23, 42, .55);

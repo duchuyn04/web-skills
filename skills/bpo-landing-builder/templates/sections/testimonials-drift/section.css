@@ -9,7 +9,7 @@
 .bl-drift.is-paused .bl-drift__i-play { display: inline; }
 
 .bl-drift__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-.bl-drift__card { padding: 1.25rem 1.3rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); box-shadow: 0 12px 28px -22px rgba(15, 23, 42, .35); }
+.bl-drift__card { padding: 1.25rem 1.3rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
 .bl-drift__quote { color: var(--text-strong); line-height: 1.55; margin-bottom: 1rem; }
 .bl-drift__who { display: flex; align-items: center; gap: .7rem; }
 .bl-drift__who strong { display: block; font-size: var(--fs-sm); color: var(--text-strong); }

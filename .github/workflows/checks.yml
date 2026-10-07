@@ -43,3 +43,6 @@ jobs:
 
       - name: copy rules shared by every skill
         run: python tools/check_rules_sync.py
+
+      - name: flat style shared by every skill (no gradient text, glows or shadows on what does not float)
+        run: python tools/check_flat_css.py

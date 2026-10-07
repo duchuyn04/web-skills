@@ -12,7 +12,7 @@
 .bl-ccard__name a { color: inherit; }
 .bl-ccard__tags { position: absolute; left: 1rem; bottom: 1rem; right: 4.8rem; z-index: 1; display: flex; flex-wrap: wrap; gap: .35rem; }
 .bl-ccard__tags span { padding: .22rem .6rem; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .55); background: rgba(0, 0, 0, .45); color: #fff; font-size: var(--fs-xs); font-weight: 600; }
-.bl-ccard__flag { position: absolute; z-index: 1; right: .9rem; bottom: -26px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); box-shadow: var(--shadow-lg); }
+.bl-ccard__flag { position: absolute; z-index: 1; right: .9rem; bottom: -26px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--border); }
 .bl-ccard__flag .bl-flag { width: 30px; height: 21px; }
 .bl-ccard__text { margin-top: 1.4rem; padding-right: 3.5rem; font-size: var(--fs-sm); color: var(--text); line-height: 1.55; }
 /* country-cards-slide-in (section.js adds .is-in to the track) and flag-pop: the flag badge pops after its card lands */

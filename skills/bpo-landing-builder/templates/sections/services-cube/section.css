@@ -11,7 +11,7 @@
 .bl-fxcube__block.is-peek .bl-fxcube__rig { transition-duration: .45s; transition-timing-function: cubic-bezier(.16, 1, .3, 1); }
 .bl-fxcube.is-still .bl-fxcube__rig { transition: none; }
 
-.bl-fxcube__face {
+.bl-fxcube__face { /* flat-ok: drawn 3D object (expressive tier) */ 
   grid-area: 1 / 1; display: flex; flex-direction: column; gap: .8rem; min-height: 250px;
   padding: 1.6rem 1.6rem 1.5rem; border-radius: var(--radius-lg);
   background: var(--surface); border: 1px solid var(--border); color: var(--text);

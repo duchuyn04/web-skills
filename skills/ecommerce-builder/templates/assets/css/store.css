@@ -198,7 +198,7 @@ main{min-height:50vh}
 .slide-text{font-size:15px;opacity:.9;margin-bottom:12px;max-width:40ch}
 .slide-price{font-size:15px;margin-bottom:16px}
 .slide-price strong{font-size:20px;color:#ffd84d}
-.slide-art{width:100%;max-width:300px;justify-self:center;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
+.slide-art{width:100%;max-width:300px;justify-self:center}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:56px;display:grid;place-items:center;background:rgba(255,255,255,.88);color:#1b1f24;z-index:2;opacity:0;transition:opacity .2s}
 .carousel:hover .carousel-btn,.carousel-btn:focus-visible{opacity:1}
 .carousel-prev{left:0;border-radius:0 10px 10px 0}
@@ -211,7 +211,7 @@ main{min-height:50vh}
 .side-copy{flex:1;display:flex;flex-direction:column;gap:4px}
 .side-copy b{font-size:17px;line-height:1.25}
 .side-copy span{font-size:13px;opacity:.88}
-.side-banner img{width:46%;max-width:150px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25))}
+.side-banner img{width:46%;max-width:150px}
 
 /* category tiles */
 .cat-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
@@ -238,7 +238,7 @@ main{min-height:50vh}
 .rail-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 4 * 12px) / 5);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px}
 .rail-track::-webkit-scrollbar{display:none}
 .rail-track>*{scroll-snap-align:start}
-.rail-btn{position:absolute;top:40%;z-index:3;width:40px;height:40px;border-radius:50%;background:var(--c-surface);box-shadow:0 4px 14px rgba(15,20,30,.18);display:grid;place-items:center}
+.rail-btn{position:absolute;top:40%;z-index:3;width:40px;height:40px;border-radius:50%;background:var(--c-surface);border:1px solid var(--c-border);display:grid;place-items:center}
 .rail-btn[disabled]{opacity:0;pointer-events:none}
 .rail-prev{left:-14px}.rail-next{right:-14px}
 
@@ -289,7 +289,7 @@ main{min-height:50vh}
 .banner-copy b{font-size:18px;line-height:1.25}
 .banner-copy span{font-size:14px;opacity:.88}
 .banner-copy em{display:inline-flex;align-items:center;font-style:normal;font-weight:600;font-size:14px;margin-top:4px}
-.banner img{width:44%;max-width:170px;filter:drop-shadow(0 12px 20px rgba(0,0,0,.25))}
+.banner img{width:44%;max-width:170px}
 .brand-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .brand-strip a{display:grid;place-items:center;min-height:64px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg);font-weight:800;font-size:19px;letter-spacing:.02em;color:#2b313a}
 .brand-strip a:hover{border-color:var(--c-btn);color:var(--c-accent-ink)}
@@ -365,7 +365,7 @@ main{min-height:50vh}
 .gallery{background:var(--c-surface);border-radius:var(--radius-lg);border:1px solid var(--c-border);padding:16px}
 .gallery-main{position:relative;aspect-ratio:4/3;display:grid;place-items:center}
 .gallery-main img{max-height:100%;width:auto;max-width:72%}
-.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--c-surface);box-shadow:0 4px 14px rgba(15,20,30,.15);display:grid;place-items:center}
+.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--c-surface);border:1px solid var(--c-border);display:grid;place-items:center}
 .gallery-prev{left:4px}.gallery-next{right:4px}
 .gallery-thumbs{display:flex;gap:8px;margin-top:12px;overflow-x:auto}
 .gallery-thumbs button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px;border:1px solid var(--c-border);border-radius:var(--radius);font-size:12px;min-width:76px}
@@ -674,7 +674,7 @@ main{min-height:50vh}
 /* deals, stores, policy */
 .vouchers{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 .voucher-card{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:14px;background:var(--c-surface);border:1px solid var(--c-border);border-left:4px solid var(--c-btn);border-radius:var(--radius-lg)}
-.voucher-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c-accent-soft);color:var(--c-accent-ink)}
+.voucher-ic{display:grid;place-items:center start;width:44px;height:44px;border-radius:50%;color:var(--c-accent-ink)}
 .voucher-card div{display:flex;flex-direction:column;gap:2px;font-size:14px}
 .voucher-card small{color:var(--c-muted)}
 .voucher-card code{font-weight:700;font-size:15px;letter-spacing:.04em}

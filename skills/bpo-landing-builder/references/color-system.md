@@ -51,7 +51,7 @@ Surfaces are flat. A gradient is allowed only when it does a job a flat color ca
 
 Never use gradient text, glow blobs (blurred color circles), color-to-color backgrounds on sections, cards, panels or buttons, light sweeps on buttons, or hover spotlights and glare. The `highlight: gradient` preset value is kept for old pages and renders like `color`.
 
-lint_output.py fails the page when a soft gradient mixes two color families (accent, second accent, primary or a raw colored value), when a soft gradient fades the accent or second accent out (a glow), when gradient text is used (`background-clip: text`), and when an element is blurred by 24px or more (a glow blob). Neutral fades (transparent, black, white, background and surface tokens), shading in the primary color and hard-stop patterns pass.
+These checks live in `scripts/flat_css.py`, shared with the other skills (`flat-style.md`). lint_output.py fails the page when a soft gradient mixes two color families (accent, second accent, primary or a raw colored value), when a soft gradient fades the accent or second accent out (a glow), when gradient text is used (`background-clip: text`), and when an element is blurred by 24px or more (a glow blob). Neutral fades (transparent, black, white, background and surface tokens), shading in the primary color and hard-stop patterns pass.
 
 ## Render-time checks (qa_screenshot.py)
 

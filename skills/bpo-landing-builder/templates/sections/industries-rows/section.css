@@ -40,7 +40,6 @@
   position: absolute; left: 0; top: 0; z-index: 5; width: 280px; padding: 1.25rem; pointer-events: none;
   display: flex; flex-direction: column; gap: .5rem; border-radius: var(--radius-lg);
   background: var(--c-primary); color: color-mix(in srgb, white 80%, var(--c-primary));
-  box-shadow: 0 30px 60px -28px color-mix(in srgb, var(--c-primary) 90%, transparent);
   opacity: 0; transform: translate3d(var(--x, 0), var(--y, 0), 0) rotate(var(--r, 0deg));
   transition: opacity .25s var(--ease-std);
 }

@@ -4,7 +4,7 @@
 .bl-tabs__list { position: relative; display: inline-flex; gap: .25rem; padding: .35rem; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
 .bl-tabs__pill {
   position: absolute; top: .35rem; bottom: .35rem; left: 0; width: var(--pill-w, 0px); border-radius: 999px;
-  background: var(--surface); box-shadow: 0 6px 18px -8px rgba(15, 23, 42, .35), inset 0 0 0 1px var(--border);
+  background: var(--surface); box-shadow: inset 0 0 0 1px var(--border-strong);
   transform: translateX(var(--pill-x, 0px));
   transition: transform 300ms var(--ease-std), width 300ms var(--ease-std);
 }

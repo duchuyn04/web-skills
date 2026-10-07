@@ -37,7 +37,7 @@
 .bl-hsun__pin.is-on > .bl-hsun__mark { background: var(--c-accent); border-color: var(--surface); box-shadow: 0 0 0 2px var(--c-accent); }
 .bl-hsun__pin.is-on > .bl-hsun__mark::after { content: ""; position: absolute; inset: -10px; border-radius: 50%; border: 2px solid var(--hsun-glow); opacity: 0; animation: bl-hsun-halo 3.2s ease-out infinite; }
 @keyframes bl-hsun-halo { from { transform: scale(.45); opacity: .9; } to { transform: scale(1.35); opacity: 0; } }
-.bl-hsun__chip {
+.bl-hsun__chip { /* flat-ok: drawn 3D object (expressive tier) */ 
   position: absolute; left: 50%; top: 89.64%; transform-origin: 0 0; backface-visibility: hidden;
   transform: rotateZ(calc(-1 * (var(--a, 0deg) + var(--spin)))) rotateX(calc(-1 * var(--tilt))) translate(-50%, calc(-100% - var(--lift)));
   display: grid; gap: .15rem; padding: .45rem .7rem .5rem; border-radius: 10px; white-space: nowrap;

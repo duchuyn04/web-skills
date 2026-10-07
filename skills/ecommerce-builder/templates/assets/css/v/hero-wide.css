@@ -14,7 +14,7 @@
 .hw-price s{opacity:.75;font-size:14px}
 .hw-cta{margin-top:6px;background:var(--slide-ink);color:var(--slide-bg);min-height:46px;padding:10px 22px}
 .hw-cta:hover{filter:brightness(.95)}
-.hw-art{justify-self:center;width:100%;max-width:330px;filter:drop-shadow(0 16px 24px rgba(0,0,0,.22))}
+.hw-art{justify-self:center;width:100%;max-width:330px}
 .hw-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c-surface);color:var(--c-text);border:1px solid var(--c-border);opacity:0;transition:opacity .2s}
 .hw-car:hover .hw-btn,.hw-btn:focus-visible{opacity:1}
 .hw-prev{left:14px}.hw-next{right:14px}

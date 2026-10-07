@@ -1,7 +1,7 @@
 /* contact-split: form card with a brand-colour office panel */
 .bl-csplit {
   display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); overflow: hidden; max-width: 1120px; margin-inline: auto;
-  border-radius: calc(var(--radius-lg) + 4px); background: var(--surface-2); border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  border-radius: calc(var(--radius-lg) + 4px); background: var(--surface-2); border: 1px solid var(--border);
 }
 .bl-csplit__form { padding: clamp(1.75rem, 4vw, 3rem); }
 .bl-cform__fields { display: grid; gap: 1rem; }

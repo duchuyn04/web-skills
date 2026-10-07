@@ -11,7 +11,7 @@
 .bl-hero--gradient .bl-h1 { color: var(--text-strong); }
 .bl-hero--gradient .bl-hl { color: var(--text-strong); text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .14em; text-decoration-color: color-mix(in srgb, var(--text-strong) 45%, transparent); }
 .bl-hero-grad__visual { display: grid; place-items: center; }
-.bl-hero-grad__photo { width: min(100%, 520px); aspect-ratio: 1; border-radius: calc(var(--radius-lg) + 10px); box-shadow: var(--shadow-lg); }
+.bl-hero-grad__photo { width: min(100%, 520px); aspect-ratio: 1; border-radius: calc(var(--radius-lg) + 10px); }
 
 .bl-globe { position: relative; width: min(100%, 440px); aspect-ratio: 1; color: var(--text-strong); }
 .bl-globe__sphere {

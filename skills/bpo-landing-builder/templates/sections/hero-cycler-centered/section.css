@@ -9,7 +9,7 @@
 .bl-cycler__word.is-active { opacity: 1; transform: none; }
 .bl-cycler__word.is-leaving { opacity: 0; transform: translateY(-75%); transition-timing-function: var(--ease-out), var(--ease-std); }
 .bl-hero-stage { position: relative; margin-top: clamp(3rem, 6vw, 4.5rem); padding-inline: clamp(0rem, 2vw, 1.5rem); }
-.bl-hero-stage__frame { aspect-ratio: 21 / 9; border-radius: calc(var(--radius-lg) + 8px); box-shadow: var(--shadow-lg); }
+.bl-hero-stage__frame { aspect-ratio: 21 / 9; border-radius: calc(var(--radius-lg) + 8px); }
 .bl-hero-stage .bl-float-badge--1 { top: 12%; left: -.25rem; }
 .bl-hero-stage .bl-float-badge--2 { bottom: 14%; right: -.25rem; }
 .bl-hero-stage .bl-float-badge--3 { bottom: -1.25rem; left: 38%; }

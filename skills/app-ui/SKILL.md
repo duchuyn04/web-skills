@@ -3,7 +3,7 @@ name: app-ui
 description: Build the screens inside a web app or admin area as a clickable prototype (dashboard, table, list, record detail, multi-step form, long-job progress, preview to approve, settings, sign in, error pages) from a fixed HTML/CSS kit and screen recipes that follow real SaaS apps on Mobbin, so the look does not depend on the model. Use when the user asks for app screens, an admin dashboard, a prototype with many screens, màn hình app, giao diện quản trị, trang admin, form nhiều bước, dựng prototype, or to redo app screens that look AI-made. Not for landing pages (bpo-landing-builder) or online shops, their storefront or their store admin (ecommerce-builder).
 compatibility: Needs Python 3.9+ for the scripts. Browser QA needs Python Playwright plus Edge or Chrome, run with a Python that can import it.
 metadata:
-  version: "1.1.1"
+  version: "1.2.0"
 ---
 
 # App UI
@@ -139,6 +139,7 @@ In the language the user wrote in:
 - `references/rules.md`: what makes a screen look machine-made and the rule against each, twelve principles with tests, five questions for screenshots, how to add a rule
 - `references/copy.md`: labels, messages, numbers and dates, sample data
 - `references/sources.md`: the real screens (Mobbin) behind every kit choice and every recipe
+- `references/flat-style.md`: the look of generated sites and the flat colour, shadow and gradient rules the kit follows (shared by all skills)
 - `references/credits.md`: sources of the kit, the MIT notice of the ui-ux skill whose ideas are adapted, Lucide icons
 - `gallery/index.html`: every component in its states, built from the kit
 
@@ -155,7 +156,7 @@ python scripts/qa.py recipes --sweep
 
 and look at the screenshots. A recipe starts with `<!doctype html>` and the one-line comment
 `<!-- recipe: <name> | <what it is> | states: <list> | use for: <when> -->` that `new.py --list` reads.
-A new component goes in `app.css`, `references/components.md` and the gallery together.
+A new component goes in `app.css`, `references/components.md` and the gallery together. The kit stays flat: `python tools/check_flat_css.py` in the plugin repository checks `kit/` against `references/flat-style.md`.
 `kit/proto-nav.js` is a template: keep its `/*__DATA__*/ null` marker, its own CSS (it also runs on pages
 without the kit) and its first-visit hint switched off under `navigator.webdriver`, so QA screenshots stay clean. New rules follow
 "Adding a rule" in `references/rules.md`.

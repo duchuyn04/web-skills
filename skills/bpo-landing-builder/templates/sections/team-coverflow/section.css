@@ -13,7 +13,7 @@
   background: radial-gradient(closest-side, rgba(15, 23, 42, .16), rgba(15, 23, 42, 0));
 }
 .bl-tcov__rig { position: absolute; left: 50%; top: 14px; width: 0; height: var(--ch); z-index: 1; }
-.bl-tcov__card {
+.bl-tcov__card { /* flat-ok: drawn 3D object (expressive tier) */ 
   position: absolute; top: 0; left: calc(var(--cw) / -2); width: var(--cw); height: var(--ch);
   border-radius: var(--cr); overflow: clip; background: var(--surface-2); cursor: pointer;
   box-shadow: 0 30px 50px -30px rgba(15, 23, 42, .45), 0 0 0 1px var(--border);
@@ -33,7 +33,7 @@ html:not(.js) .bl-tcov__stage, html:not(.js) .bl-tcov__controls { display: none;
   border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-strong);
   transition: background-color var(--dur-fast) var(--ease-std), transform var(--dur-fast) var(--ease-out);
 }
-.bl-tcov__btn:hover { background: var(--surface-2); transform: translateY(-2px); }
+.bl-tcov__btn:hover { background: var(--surface-2); }
 .bl-tcov__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
 .bl-tcov__btn .bl-icon { width: 20px; height: 20px; }
 .bl-tcov__count { display: inline-flex; align-items: center; gap: .6rem; min-width: 7rem; justify-content: center; font-size: var(--fs-sm); color: var(--text-muted); }

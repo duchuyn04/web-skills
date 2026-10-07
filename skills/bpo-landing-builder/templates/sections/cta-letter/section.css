@@ -4,7 +4,7 @@
    (0.75s), then the inner one (from 0.5s), and every panel ends at transform none: a flat card. */
 .bl-fxletter { --tint: 0; --paper: color-mix(in srgb, var(--c-accent) calc(var(--tint) * 5%), var(--surface)); }
 .bl-fxletter__stage { --fx-persp: 2200px; perspective-origin: 50% 50%; position: relative; max-width: 960px; margin-inline: auto; }
-.bl-fxletter__stage::before {
+.bl-fxletter__stage::before { /* flat-ok: drawn 3D object (expressive tier) */ 
   content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); pointer-events: none;
   box-shadow: 0 40px 70px -40px rgba(15, 23, 42, .45); transition: opacity .6s var(--ease-std) .9s;
 }

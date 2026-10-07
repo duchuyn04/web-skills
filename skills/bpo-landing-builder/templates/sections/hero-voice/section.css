@@ -18,7 +18,7 @@
 
 .bl-hvoice__call {
   position: absolute; left: 0; bottom: 0; width: min(340px, 78%); padding: 1rem 1.15rem 1.1rem;
-  border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border);
 }
 .bl-hvoice__call-top { display: flex; align-items: center; gap: .55rem; font-size: var(--fs-xs); color: var(--text-muted); font-weight: 600; }
 .bl-hvoice__live { width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); flex: none; animation: bl-hvoice-live 1.6s var(--ease-std) infinite; }

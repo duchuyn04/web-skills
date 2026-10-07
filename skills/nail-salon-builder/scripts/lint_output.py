@@ -1,8 +1,10 @@
 """Check a built shop (dist/) against the house copy rules: no emoji, text arrows, em or en dashes, curly
-quotes, banned AI words or chatbot phrases in any shipped file or visible text.
+quotes, banned AI words or chatbot phrases in any shipped file or visible text. Stylesheets are held to the flat
+style (references/flat-style.md): no gradient text, no colour-to-colour gradients or glows, shadows only on what floats.
 
     python scripts/lint_output.py sites/<slug>/dist
 """
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -14,7 +16,16 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import flat_css  # noqa: E402
 import rules  # noqa: E402
+
+# Colour families of the --c-* tokens build.py writes; dark and header fills may shade on their own.
+FLAT_FAMILIES = flat_css.families([
+    ("accent", r"--c-(?:accent|accent-ink|accent-soft|accent-text|btn|btn-hover|link|price|sale|soft|soft-ink|header-soft)\b"),
+    ("second accent", r"--c-accent-2\b"),
+    ("status", r"--c-(?:bad|ok|warn)\b"),
+    ("dark", r"--c-(?:dark|header)\b", True),
+])
 
 
 class Text(HTMLParser):
@@ -43,6 +54,20 @@ def main():
         raise SystemExit("usage: lint_output.py <dist>")
     dist = Path(sys.argv[1])
     errors, warns = [], []
+    sheets = []
+    for f in sorted(dist.rglob("*")):
+        if f.suffix == ".css" and "qa" not in f.parts:
+            sheets.append((f.relative_to(dist).as_posix(), f.read_text(encoding="utf-8")))
+        elif f.suffix == ".html" and "qa" not in f.parts:
+            inline = "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", f.read_text(encoding="utf-8"), re.S))
+            if inline.strip():
+                sheets.append((f.relative_to(dist).as_posix() + " <style>", inline))
+    tokens = {}
+    for _, css in sheets:
+        tokens.update(flat_css.tokens_in(css))
+    for where, css in sheets:
+        for fd in flat_css.check(css, FLAT_FAMILIES, tokens):
+            (errors if fd.level == "error" else warns).append("%s %s: %s %s" % (where, fd.selector[:60], fd.code, fd.message))
     for f in sorted(dist.rglob("*")):
         if f.suffix not in (".html", ".css", ".js") or "qa" in f.parts:
             continue

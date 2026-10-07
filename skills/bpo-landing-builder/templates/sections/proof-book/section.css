@@ -40,11 +40,11 @@
 }
 .js .bl-pbook__page { visibility: hidden; }
 .js .bl-pbook__page.is-on { visibility: visible; }
-.bl-pbook__page--l {
+.bl-pbook__page--l { /* flat-ok: drawn 3D object (expressive tier) */ 
   border-radius: var(--pb-r) 0 0 var(--pb-r); padding-right: calc(var(--pb-pad) + .75rem);
   box-shadow: -1px 1px 0 var(--pb-edge), -3px 3px 0 var(--pb-paper), -4px 4px 0 var(--pb-edge), -6px 6px 0 var(--pb-paper), -7px 7px 0 var(--pb-edge), -18px 30px 50px -28px rgba(15, 23, 42, .32);
 }
-.bl-pbook__page--r {
+.bl-pbook__page--r { /* flat-ok: drawn 3D object (expressive tier) */ 
   border-radius: 0 var(--pb-r) var(--pb-r) 0; padding-left: calc(var(--pb-pad) + .75rem); padding-bottom: calc(var(--pb-pad) + 1.75rem);
   box-shadow: 1px 1px 0 var(--pb-edge), 3px 3px 0 var(--pb-paper), 4px 4px 0 var(--pb-edge), 6px 6px 0 var(--pb-paper), 7px 7px 0 var(--pb-edge), 18px 30px 50px -28px rgba(15, 23, 42, .32);
 }
@@ -72,7 +72,7 @@
 
 /* Turn shading on the pages under the leaf, and the page corner that also turns */
 .bl-pbook__cast { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(42% 70% at 50% 50%, rgba(15, 20, 30, .16), rgba(15, 20, 30, 0) 70%); }
-.bl-pbook__corner {
+.bl-pbook__corner { /* flat-ok: drawn 3D object (expressive tier) */ 
   position: absolute; right: 0; bottom: 0; width: 46px; height: 46px; cursor: pointer; transform-origin: 100% 100%;
   border-bottom-right-radius: var(--pb-r);
   background: linear-gradient(to top left, var(--pb-edge) 0 48%, rgba(15, 20, 30, .12) 49%, color-mix(in oklab, var(--pb-paper) 90%, var(--text-muted)) 51%, var(--pb-paper) 100%);
@@ -104,7 +104,7 @@ html:not(.js) .bl-pbook__corner, html:not(.js) .bl-pbook__controls { display: no
   .bl-pbook__page::before, .bl-pbook__run { display: none; }
   .bl-pbook__case { grid-template-rows: auto 1fr; }
   .bl-pbook__results { margin-top: 0; padding-top: 1.4rem; }
-  .bl-pbook__spread { border-radius: var(--pb-r); box-shadow: 1px 1px 0 var(--pb-edge), 3px 3px 0 var(--pb-paper), 4px 4px 0 var(--pb-edge), 6px 6px 0 var(--pb-paper), 7px 7px 0 var(--pb-edge), 0 24px 40px -24px rgba(15, 23, 42, .3); }
+  .bl-pbook__spread { /* flat-ok: drawn 3D object (expressive tier) */ border-radius: var(--pb-r); box-shadow: 1px 1px 0 var(--pb-edge), 3px 3px 0 var(--pb-paper), 4px 4px 0 var(--pb-edge), 6px 6px 0 var(--pb-paper), 7px 7px 0 var(--pb-edge), 0 24px 40px -24px rgba(15, 23, 42, .3); }
   .bl-pbook__leaf { left: 0; width: 100%; }
   .bl-pbook__controls { gap: .5rem; }
   .bl-pbook__btn { padding: .5rem .8rem; font-size: .85rem; }

@@ -14,6 +14,7 @@ The library templates already follow these rules. What you control in `page.json
 
 ## Labels, numbers, accents (you)
 
+- No pill badge above the hero title: an outlined, rounded label over the headline is one of the most named tells of generated pages. Presets draw labels as plain text; `"theme": {"eyebrow": "pill"}` stays for a client whose own site uses pills.
 - A label (eyebrow) above a title only when it adds something the title does not say: a service line, a region, a date. At most a third of the section titles; build.py fails above that and when a label repeats a word of its title ("Security" above "Security and compliance"). Labels are plain small text: the short rule drawn before them read as an em dash and is gone, and lint fails any short line drawn before or after text (`dash-rule`). Vietnamese pages never set labels in tracked capitals.
 - "01, 02" numbers only on real sequences: process steps, timelines. Templates number only those sections (`data-sequence`); lint fails a numbered marker anywhere else.
 - `*accent*` words on the hero title. build.py warns when more than one title below the hero has them.
@@ -22,10 +23,11 @@ The library templates already follow these rules. What you control in `page.json
 
 - Icons take the colour of their label and sit beside it, not in a tinted square. At most two sections with an icon on every item (build.py warns).
 - Cards only where the card is a link or holds one. Rows of three or more look-alike boxes that lead nowhere read as a template; QA warns when three sections have them. Plain columns under a rule, a list or a table carry the same content.
-- Hover movement and hover shadows only on links and buttons. QA fails any element that moves or grows a shadow on hover and cannot be clicked.
-- Shadows are neutral. A shadow in the brand colour with a blur of 16px or more is a glow; lint fails it. QA warns when more than 12 elements that are not controls carry a resting shadow.
-- Frosted glass (`backdrop-filter`) only on the header, menus, dialogs and floating controls. lint warns elsewhere.
-- Surfaces are flat; see `color-system.md`, Gradients.
+- Nothing rises or grows a shadow on hover, cards that are links included: a hover changes the border, the background or the underline. QA fails any element that moves or grows a shadow on hover and cannot be clicked; lint warns on a rise (`hover-lift`) or a hover shadow (`hover-shadow`) anywhere.
+- Shadows only on what floats: the header once scrolled, menus, the mega menu, popovers, dialogs, the floating chat and assistant, map tooltips, and drawn 3D objects on expressive pages (marked `/* flat-ok: ... */` in the CSS). Photo frames, panels, forms, pricing plans, testimonial cards and buttons are flat: a 1px border or a surface tone separates them. lint warns on any other shadow larger than a hairline (`resting-shadow`); `tools/check_flat_css.py` keeps the library at zero. QA warns when more than 12 elements that are not controls carry a resting shadow.
+- Shadows are neutral. A shadow in the brand colour with a blur of 16px or more is a glow; lint fails it.
+- Frosted glass (`backdrop-filter`) only on the header, menus, dialogs and floating controls. lint warns elsewhere. The glass badges over photos are opaque surfaces.
+- Surfaces are flat; see `flat-style.md` (shared by every skill: the tells of generated sites, flat colour, shadows, gradients) and `color-system.md`, Gradients.
 
 ## Buttons and links (you)
 

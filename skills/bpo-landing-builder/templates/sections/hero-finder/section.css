@@ -26,8 +26,7 @@
 .bl-hfind__cards { position: absolute; inset: 0; pointer-events: none; }
 .bl-hfind__card {
   position: absolute; z-index: 2; display: flex; flex-direction: column; gap: .6rem; width: 11.5rem; padding: .8rem .9rem .9rem;
-  border-radius: var(--radius); background: var(--surface); color: var(--text-strong); border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg); pointer-events: auto;
+  border-radius: var(--radius); background: var(--surface); color: var(--text-strong); border: 1px solid var(--border); pointer-events: auto;
 }
 .bl-hfind__card--1 { top: 13%; left: 0; }
 .bl-hfind__card--2 { top: -3%; right: 0; }
@@ -47,8 +46,7 @@
 .bl-hfind__base { position: relative; display: flow-root; padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
 .bl-hfind__finder {
   position: relative; z-index: 3; display: grid; grid-template-columns: repeat(var(--hfind-cols, 3), minmax(0, 1fr)) auto; align-items: stretch;
-  margin: -44px auto 0; max-width: 64rem; border-radius: var(--radius-lg); background: var(--surface-2); border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg); overflow: hidden;
+  margin: -44px auto 0; max-width: 64rem; border-radius: var(--radius-lg); background: var(--surface-2); border: 1px solid var(--border); overflow: hidden;
 }
 .bl-hfind__finder:has(.bl-hfind__field:nth-of-type(2):last-of-type) { --hfind-cols: 2; }
 .bl-hfind__field { display: flex; align-items: center; gap: .75rem; min-width: 0; padding: 1rem 1.1rem; }

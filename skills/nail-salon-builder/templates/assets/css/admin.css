@@ -170,7 +170,7 @@ h1 .badge{font-size:13px}
 .cal-col{position:relative;border-left:1px solid var(--border);background:repeating-linear-gradient(180deg,var(--border) 0 1px,transparent 1px 39px)}
 .cal-col.off{background-color:var(--surface-2)}
 .blk{position:absolute;left:4px;right:4px;border:0;border-left:4px solid var(--b);background:var(--bb);border-radius:6px;padding:4px 8px;text-align:left;cursor:pointer;overflow:hidden;display:flex;flex-direction:column;gap:1px;font-size:12px;line-height:1.35}
-.blk:hover{filter:brightness(.97);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.blk:hover{filter:brightness(.94)}
 .blk b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
 .blk span{color:#4a4650;overflow:hidden;text-overflow:ellipsis}
 .st-pending{--b:#d99a14;--bb:#fff6e0}

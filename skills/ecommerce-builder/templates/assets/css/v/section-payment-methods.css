@@ -2,7 +2,7 @@
 .pm{margin:0}
 .pm-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .pm-tiles li{display:flex;gap:12px;align-items:center;padding:14px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
-.pm-ic{display:grid;place-items:center;width:44px;height:44px;border-radius:var(--radius);background:var(--c-accent-soft);color:var(--c-accent-ink);flex:none}
+.pm-ic{display:grid;place-items:center start;width:28px;height:44px;color:var(--c-accent-ink);flex:none}
 .pm-tiles b{display:block;font-size:14px}
 .pm-tiles span:not(.pm-ic){display:block;font-size:13px;color:var(--c-muted)}
 .pm-list{display:flex;flex-direction:column;gap:10px;padding:16px 20px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}

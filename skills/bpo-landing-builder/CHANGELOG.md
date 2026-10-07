@@ -2,6 +2,15 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.6.0 (2026-10-07)
+
+From a review of what makes generated sites look machine-made (sources in `references/flat-style.md`). Rules stay at 5: the new shadow and hover findings are warnings on pages, and the library itself is held to zero by `tools/check_flat_css.py`.
+
+- Flat style shared by every skill: `references/flat-style.md` (the tells of generated sites, flat colour, when a shadow or a gradient is allowed) and `scripts/flat_css.py`, which now runs the gradient, glow and glass checks that lived in lint_output.py, plus three new ones: `resting-shadow` (a shadow larger than a hairline on anything that does not float), `hover-shadow` and `hover-lift` (warnings). A rule for a drawn 3D object carries `/* flat-ok: reason */`.
+- Library made flat: shadows gone from photo frames (feature-rows, hero-split-image, hero-cycler-centered, hero-collage, hero-gradient, careers-band), panels and forms (contact-split, cta-band, cta-multistep, hero-form, hero-voice, hero-finder, metrics-panel, models-board, cost-calculator, steps-timeline, solution-panels, solutions-vtabs, video-block, about-mosaic, industries-rows), pricing-toggle's featured plan, testimonials, buttons, and from every hover (case-slider, image-cards, service-links, locations-relief, voice-sample, industries-tiles). Cards and round buttons no longer rise on hover. Expressive 3D sections keep their shading, marked `flat-ok`. The glass badges over photos are opaque surfaces; the video toggle drops its blur.
+- `orange-charcoal` and `teal-fresh` set section labels as plain text instead of outlined pills (a pill over the headline is one of the most named tells); `"theme": {"eyebrow": "pill"}` still draws one.
+- Preview images were made before this change and still show the old shadows.
+
 ## 5.5.3 (2026-10-07)
 
 From a font study for Vietnamese pages (`research/fonts/` in the job repository, not shipped with this skill). Rules stay at 5: nothing here fails a page that built before.

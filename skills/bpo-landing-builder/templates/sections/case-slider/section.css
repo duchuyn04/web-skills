@@ -14,7 +14,7 @@
   border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); border: 1px solid var(--border);
   transition: opacity var(--dur) var(--ease-std), box-shadow var(--dur) var(--ease-out);
 }
-.bl-case:hover { box-shadow: var(--shadow-lg); }
+.bl-case:hover { border-color: var(--border-strong); }
 .bl-case.is-dim { opacity: .55; }
 .bl-case__media { aspect-ratio: 16 / 10; border-radius: 0; }
 .bl-case__media img { transition: transform 600ms var(--ease-out); }

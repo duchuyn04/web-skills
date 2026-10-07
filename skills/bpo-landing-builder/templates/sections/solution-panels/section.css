@@ -7,7 +7,7 @@
 .bl-spanels__head .bl-lead { margin-bottom: 1.5rem; }
 .bl-spanels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); align-items: start; }
 .bl-spanels:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.bl-spanel { padding: 1rem; border-radius: var(--radius-lg); background: color-mix(in srgb, var(--c-accent-2) 7%, var(--surface)); box-shadow: var(--shadow-lg); }
+.bl-spanel { padding: 1rem; border-radius: var(--radius-lg); background: color-mix(in srgb, var(--c-accent-2) 7%, var(--surface)); }
 .bl-spanel__bar {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .95rem 1.25rem; margin-bottom: 1.25rem;
   border-radius: var(--radius); background: var(--c-primary); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 1.2rem;

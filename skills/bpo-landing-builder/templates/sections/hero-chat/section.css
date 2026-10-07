@@ -3,7 +3,7 @@
 .bl-hero-chat__visual { display: grid; justify-items: end; }
 .bl-chatwin {
   width: min(100%, 460px); border-radius: calc(var(--radius-lg) + 6px); overflow: hidden;
-  background: #fff; color: #1f2937; box-shadow: 0 40px 80px -36px rgba(15, 23, 42, .45), 0 0 0 1px rgba(15, 23, 42, .06);
+  background: #fff; color: #1f2937; box-shadow: 0 0 0 1px rgba(15, 23, 42, .12);
 }
 .bl-chatwin__bar { display: flex; align-items: center; gap: .75rem; padding: .9rem 1rem; background: var(--c-primary); color: #fff; }
 .bl-chatwin__avatar { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--c-accent); color: var(--c-on-accent); flex-shrink: 0; }

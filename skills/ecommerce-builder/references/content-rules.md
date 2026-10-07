@@ -26,4 +26,5 @@
 - Banned stock AI words (delve, crucial, robust, seamless and the rest of the list in `scripts/rules.py`) and Vietnamese translated-from-English phrases ("hãy để chúng tôi", "nâng tầm", "trong bối cảnh", "không chỉ ... mà còn")
 - "Not X but Y" framing and chatbot phrases
 - Banner backgrounds too light for white text
+- In the stylesheets (`references/flat-style.md`): gradient text, colour-to-colour gradients and glows, a shadow on anything that does not float or that appears on hover; a card that rises on hover and frosted glass on content print warnings
 - Unknown keys, unknown ids (brand, category, product, icon, device, badge), old prices not above the selling price, prices that are not VND numbers

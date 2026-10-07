@@ -2,7 +2,7 @@
 .bl-ctaband {
   position: relative; isolation: isolate; overflow: hidden; display: grid; align-items: center;
   padding: clamp(2.25rem, 5vw, 4rem); border-radius: calc(var(--radius-lg) + 8px);
-  background: var(--c-primary); color: var(--text); box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+  background: var(--c-primary); color: var(--text); border: 1px solid var(--border);
 }
 .bl-ctaband__copy { position: relative; max-width: 720px; }
 .bl-ctaband .bl-h2 { margin-bottom: 1rem; }

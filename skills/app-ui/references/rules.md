@@ -30,7 +30,7 @@ If so, the screen breaks a convention there.
 | Every block is a card in a grid of cards | Rows and tables for records; a card only when it is a container of one thing or is clickable as a whole |
 | An icon in a coloured square on every item | Icons stand beside the word they belong to, in the text colour. No icon squares (**checked**: the kit has no class for them and project CSS cannot set colours) |
 | Arrows on buttons ("Tiếp tục →") | The label names the action; no arrows (**checked**) |
-| Gradients, glows, coloured shadows | Flat surfaces; a shadow only on what floats: menus, dialogs, device frames (**checked**) |
+| Gradients, glows, coloured shadows | Flat surfaces; a shadow only on what floats: menus, dialogs, toasts, the bulk bar, device frames (**checked**: project CSS cannot set one, and `scripts/flat_css.py` checks the project's copy of the kit, see `references/flat-style.md`) |
 | A thick coloured stripe down one side of a rounded box (notices, cards, quotes) | A notice is a soft flat fill with its icon in the status colour; no side stripe on any box (**checked** in project CSS) |
 | Three solid buttons competing in one view | One primary per view and one per dialog; the rest outline or quiet (**checked** per state) |
 | Status shown as a coloured dot alone | A status is a soft pill with its word (`.status`); an icon in it is optional |

@@ -2,7 +2,7 @@
 .bl-voice .bl-head { margin-bottom: 2rem; }
 .bl-voice__list { display: grid; gap: .85rem; }
 .bl-sample { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem 1rem 1rem; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); transition: border-color var(--dur) var(--ease-std), box-shadow var(--dur) var(--ease-out); }
-.bl-sample.is-playing { border-color: var(--accent-ink); box-shadow: var(--shadow-lg); }
+.bl-sample.is-playing { border-color: var(--accent-ink); }
 .bl-sample__play { width: 52px; height: 52px; flex-shrink: 0; display: grid; place-items: center; border-radius: 50%; background: var(--c-accent); color: var(--c-on-accent); transition: transform var(--dur-fast) var(--ease-out); }
 .bl-sample__play:hover { transform: scale(1.06); }
 .bl-sample__play:active { transform: scale(.95); }

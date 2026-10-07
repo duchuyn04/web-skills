@@ -10,7 +10,7 @@
 .spt-cta{display:inline-flex;align-items:center;margin-top:8px;font-style:normal;font-weight:600;color:var(--c-link)}
 .spt-tile.is-dark .spt-cta{color:var(--c-accent-soft)}
 .spt-tile:hover .spt-cta{text-decoration:underline}
-.spt-art{width:min(360px,62%);margin-top:auto;filter:drop-shadow(0 22px 36px rgba(0,0,0,.2))}
+.spt-art{width:min(360px,62%);margin-top:auto}
 @media (max-width:767px){
   .spt-grid{grid-template-columns:1fr}
   .spt-tile{min-height:440px;padding-top:36px}

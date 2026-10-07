@@ -10,7 +10,7 @@
 .bento-price{font-size:14px}
 .bento-price strong{font-size:17px}
 .bento-cta{display:inline-flex;align-items:center;font-weight:700;font-size:14px;margin-top:2px}
-.bento-art{position:absolute;right:-4%;bottom:50%;transform:translateY(50%);width:48%;max-width:240px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.35))}
+.bento-art{position:absolute;right:-4%;bottom:50%;transform:translateY(50%);width:48%;max-width:240px}
 .bento-big{grid-row:span 2;align-items:center;padding:32px}
 .bento-big .bento-copy{max-width:52%;gap:10px}
 .bento-big .bento-title{font-size:clamp(26px,3vw,40px)}

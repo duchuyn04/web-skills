@@ -1,7 +1,7 @@
 /* testimonials */
 .bl-quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); align-items: start; }
 .bl-quote { display: flex; flex-direction: column; gap: 1.25rem; height: 100%; padding: clamp(1.5rem, 2.4vw, 2.1rem); border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
-.bl-quote:nth-child(2) { margin-top: -1.5rem; box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+.bl-quote:nth-child(2) { margin-top: -1.5rem; border-color: var(--border-strong); }
 .bl-quote__mark { color: var(--accent-ink); display: inline-flex; transform-origin: left bottom; }
 .bl-quote__mark .bl-icon { width: 30px; height: 30px; }
 .bl-quote blockquote p { font-size: 1.04rem; line-height: 1.7; color: var(--text-strong); }

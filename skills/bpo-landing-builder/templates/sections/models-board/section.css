@@ -33,7 +33,7 @@
 /* responsibility board */
 .bl-models-board__board {
   position: relative; padding: clamp(1.1rem, 2.4vw, 2rem); border-radius: calc(var(--radius-lg) + 6px);
-  background-color: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  background-color: var(--surface); border: 1px solid var(--border);
   background-image: radial-gradient(var(--border) 1px, transparent 1.4px); background-size: 18px 18px;
 }
 .bl-models-board__rows { list-style: none; }

@@ -5,6 +5,8 @@
 
 What it holds a page to:
 - colours, shadows and gradients live in kit/tokens.css only; project CSS reads var(--...)
+- the project's kit/tokens.css and kit/app.css stay flat (scripts/flat_css.py, references/flat-style.md): shadows
+  only on what floats, no gradient text, glows or colour-to-colour gradients
 - every class on a page exists in the kit or in the project's own CSS; no <style> blocks, no inline style
   except a custom property or a width or height in percent (a progress bar)
 - per state (body data-states): one <h1>, at most one primary button in the page and one in each dialog
@@ -22,6 +24,14 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import flat_css  # noqa: E402
+
+# colour families of the kit tokens (kit/tokens.css), for the flat checks on the project's copy of the kit
+FLAT_FAMILIES = flat_css.families([
+    ("accent", r"--(?:accent|accent-hover|accent-soft|accent-line|primary|primary-hover)\b"),
+    ("status", r"--(?:ok|ok-soft|warn|warn-soft|bad|bad-hover|bad-soft)\b"),
+])
 COLOR = re.compile(r"#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?|oklch|oklab|lab|lch|color)\(", re.I)
 GRADIENT = re.compile(r"\b(?:linear|radial|conic)-gradient\(", re.I)
 SIDE_STRIPE = re.compile(r"(?<![\w-])border-(?:left|right|inline-start|inline-end)\s*:\s*(?:[2-9]|\d{2,})px", re.I)
@@ -228,6 +238,14 @@ def main():
     errs, warns = [], []
     for p in css_files:
         lint_css(p, errs, warns, p.relative_to(root).as_posix())
+    # the project's copy of the kit stays flat as well (references/flat-style.md); theme.py and hand edits change it
+    kit_css = [(kit / n, (kit / n).read_text(encoding="utf-8")) for n in ("tokens.css", "app.css") if (kit / n).is_file()]
+    tokens = {}
+    for _, css in kit_css:
+        tokens.update(flat_css.tokens_in(css))
+    for p, css in kit_css:
+        for f in flat_css.check(css, FLAT_FAMILIES, tokens):
+            (errs if f.level == "error" else warns).append("kit/%s %s: %s %s" % (p.name, f.selector[:60], f.code, f.message))
     # only pages built with the kit: built sites, mockups and other HTML in the folder are not ours to judge
     pages = [p for p in sorted(root.rglob("*.html")) if kit not in p.parents and "app.css" in p.read_text(encoding="utf-8", errors="replace")]
     for p in pages:

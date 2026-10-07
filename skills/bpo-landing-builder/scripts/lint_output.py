@@ -18,6 +18,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import flat_css  # noqa: E402
 import rules  # noqa: E402
 
 TEXT_ATTRS = {"alt", "title", "aria-label", "placeholder", "content", "value"}
@@ -209,11 +210,10 @@ def main():
             add("error", where, "external-css", "external stylesheet %s; only Google Fonts is allowed" % a["href"])
     _check_buttons(src, add)
     _check_headings(tags, add)
-    for f in sorted((dist / "assets").rglob("*.css")):
-        _check_gradients(f.read_text(encoding="utf-8"), str(f.relative_to(dist)), add)
-    _check_gradients("\n".join(re.findall(r"<style[^>]*>(.*?)</style>", src, re.S)), "index.html <style>", add)
-    css_all = "\n".join(f.read_text(encoding="utf-8") for f in sorted((dist / "assets").rglob("*.css")))
-    css_all += "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", src, re.S))
+    sheets = [(str(f.relative_to(dist)), f.read_text(encoding="utf-8")) for f in sorted((dist / "assets").rglob("*.css"))]
+    sheets.append(("index.html <style>", "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", src, re.S))))
+    _check_flat(sheets, add)
+    css_all = "\n".join(css for _, css in sheets)
     _check_design_css(css_all, add)
     _check_design_html(src, add)
 
@@ -229,117 +229,34 @@ def main():
     return 0
 
 
-# Gradient policy (references/color-system.md, "Gradients"): flat surfaces; gradients only for scrims, edge fades,
-# one-hue shading and hard-stop patterns.
-GRADIENT_RE = re.compile(r"(?:repeating-)?(?:linear|radial|conic)-gradient\(")
-COLOR_FAMILIES = (
-    ("second accent", re.compile(r"var\(--(?:c-accent-2|accent-2-ink|c-accent-blend(?:-deep)?)\b")),
-    ("accent", re.compile(r"var\(--(?:c-accent(?:-on-dark|-soft)?|accent-ink)\)")),
-    ("primary", re.compile(r"var\(--c-primary\)")),
-)
-RAW_COLOR_RE = re.compile(r"#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)")
+# Flat style (references/flat-style.md; the checks live in scripts/flat_css.py, the same file in every skill):
+# gradients only for scrims, edge fades, one-hue shading and hard-stop patterns; neutral shadows, and only on what
+# floats or on a drawn 3D object.
+FLAT_FAMILIES = flat_css.families([
+    ("second accent", r"--(?:c-accent-2|accent-2-ink|c-accent-blend(?:-deep)?)\b"),
+    ("accent", r"--(?:c-accent(?:-on-dark|-soft)?|accent-ink)\)"),
+    ("primary", r"--c-primary\)", True),
+])
+# flat_css codes as this skill reports them, and a level that overrides flat_css's. The shadow and hover checks came
+# after rules 5 and stay warnings, so a custom section that built before still builds; the library itself passes
+# tools/check_flat_css.py with none of them.
+FLAT_CODES = {"gradient-text": ("gradient", None), "gradient": ("gradient", None), "blur-blob": ("gradient", None),
+              "glow": ("glow", None), "glass": ("glass", "warn"), "resting-shadow": ("resting-shadow", "warn"),
+              "hover-shadow": ("hover-shadow", "warn"), "hover-lift": ("hover-lift", "warn")}
 
 
-def _balanced(css, start):
-    """Index just past the parenthesis that closes the one opened right before start."""
-    depth = 1
-    i = start
-    while i < len(css) and depth:
-        depth += {"(": 1, ")": -1}.get(css[i], 0)
-        i += 1
-    return i
-
-
-def _split_top(s):
-    parts, depth, cur = [], 0, ""
-    for ch in s:
-        if ch == "," and depth == 0:
-            parts.append(cur.strip())
-            cur = ""
-            continue
-        depth += {"(": 1, ")": -1}.get(ch, 0)
-        cur += ch
-    parts.append(cur.strip())
-    return parts
-
-
-def _raw_chromatic(value):
-    v = value.lower()
-    if v.startswith("#"):
-        h = v[1:]
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h[:3])
-        r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
-    else:
-        nums = re.findall(r"[\d.]+", v)
-        if len(nums) < 3:
-            return None
-        r, g, b = (float(n) for n in nums[:3])
-    # greys and very dark tones (slate shadows) count as neutral
-    return None if max(r, g, b) - min(r, g, b) < 24 or max(r, g, b) < 72 else "#%02x%02x%02x" % (int(r), int(g), int(b))
-
-
-def _families(text):
-    found = set()
-    for name, rx in COLOR_FAMILIES:
-        if rx.search(text):
-            found.add(name)
-    for m in RAW_COLOR_RE.finditer(text):
-        c = _raw_chromatic(m.group())
-        if c:
-            found.add("colour " + c)
-    return found
-
-
-def _hard_stops(args):
-    """True when every stop ends where the next begins (split fills, stripes), so no colors blend."""
-    stops = []
-    for a in args:
-        # drop the leading colour; what is left are the stop positions (numbers, calc() or var())
-        rest = re.sub(r"^(?:var\([^()]*\)|color-mix\((?:[^()]|\([^()]*\))*\)|rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}|[a-zA-Z]+)\s*", "", a.strip())
-        pos = re.findall(r"calc\((?:[^()]|\([^()]*\))*\)|var\([^()]*\)|\S+", rest)
-        if not pos:
-            return False
-        stops.append(pos)
-    def same(a, b):
-        if a == b:
-            return True
-        pa, pb = re.match(r"(-?[\d.]+)%$", a), re.match(r"(-?[\d.]+)%$", b)
-        return bool(pa and pb and abs(float(pa.group(1)) - float(pb.group(1))) <= 2)
-    return len(stops) > 1 and all(same(stops[i][-1], stops[i + 1][0]) for i in range(len(stops) - 1))
-
-
-def _check_gradients(css, where, add):
-    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
-    for block in re.finditer(r"([^{}]+)\{([^{}]*)\}", css):
-        selector, body = block.group(1).strip(), block.group(2)
-        at = "%s %s" % (where, selector[:60])
-        if re.search(r"background-clip\s*:\s*text", body) and GRADIENT_RE.search(body):
-            add("error", at, "gradient", "gradient text; headings and highlights use one flat colour (references/color-system.md, Gradients)")
-        m = re.search(r"(?<![-\w])filter\s*:[^;]*blur\((\d+(?:\.\d+)?)px", body)
-        if m and float(m.group(1)) >= 24:
-            add("error", at, "gradient", "blur(%spx) makes a glow blob; drop the decoration (references/color-system.md, Gradients)" % m.group(1))
-        for g in GRADIENT_RE.finditer(body):
-            end = _balanced(body, g.end())
-            inner = body[g.end():end - 1]
-            if re.search(r"(?:mask|mask-image)\s*:[^;]*$", body[:g.start()].rsplit(";", 1)[-1]):
-                continue  # masks fade shapes, they paint no colour
-            fams = _families(inner)
-            brand = fams - {"primary"}
-            if not (len(fams) >= 2 or brand):
-                continue  # neutral or primary-only: scrims, shadows, shading
-            args = _split_top(inner)
-            if args and re.match(r"(?:to |in |from |at |circle|ellipse|closest|farthest|-?[\d.]+(?:deg|turn|rad|px|%)?\b)", args[0]):
-                args = args[1:]  # direction, shape or colour space, not a stop
-            if _hard_stops(args):
-                continue  # stripes, dots, split fills
-            what = ("blends %s" % " and ".join(sorted(fams))) if len(fams) >= 2 else ("fades the %s colour out, which reads as a glow" % sorted(brand)[0].replace("colour ", ""))
-            add("error", at, "gradient", "gradient %s; use one flat colour. Gradients are only for photo scrims, edge fades, neutral or primary shading and hard-stop patterns (references/color-system.md, Gradients)" % what)
+def _check_flat(sheets, add):
+    tokens = {}
+    for _, css in sheets:
+        tokens.update(flat_css.tokens_in(css))
+    for where, css in sheets:
+        for f in flat_css.check(css, FLAT_FAMILIES, tokens):
+            code, level = FLAT_CODES.get(f.code, (f.code, None))
+            add(level or f.level, "%s %s" % (where, f.selector[:60]), code, f.message)
 
 
 # Design tells of generated pages (references/anti-slop.md).
 DURATION_RE = re.compile(r"(?<![\w-])(\d*\.?\d+)(ms|s)\b")
-CHROME_SELECTORS = re.compile(r"header|nav|menu|mega|drawer|dialog|modal|backdrop|fab|exit|toast|sticky|toggle|bl-glass")
 VAGUE_LABELS = {"submit", "learn more", "read more", "click here", "more", "details"}
 
 
@@ -383,18 +300,6 @@ def _check_design_css(css, add):
                 if longest > limit:
                     once("slow-motion", "%.2fs on a %s; %s" % (longest, "hover" if limit == 0.5 else "scroll reveal",
                          "hover motion stays within 0.1-0.5s" if limit == 0.5 else "entrances stay within 1.2s"))
-        for sh in re.findall(r"box-shadow\s*:\s*([^;]+)", body):
-            for layer in _split_top(sh):
-                if "inset" in layer:
-                    continue
-                if not (_families(layer) - {"primary"}):
-                    continue
-                lengths = re.findall(r"(-?[\d.]+)(?:px|rem|em)", re.sub(r"color-mix\((?:[^()]|\([^()]*\))*\)|var\([^()]*\)", " ", layer))
-                blur = float(lengths[2]) if len(lengths) >= 3 else 0
-                if blur >= 16:
-                    once("glow", "shadow in the brand colour with a %gpx blur reads as a glow; use a neutral shadow" % blur)
-        if re.search(r"(?<!-)backdrop-filter\s*:", body) and not CHROME_SELECTORS.search(selector):
-            once("glass", "frosted glass on content; keep backdrop-filter to the header, menus, dialogs and floating controls", "warn")
 
 
 def _check_design_html(src, add):

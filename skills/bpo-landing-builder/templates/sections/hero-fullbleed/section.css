@@ -27,8 +27,7 @@
 .bl-hero-full__stats dt { font-size: var(--fs-sm); color: var(--text); }
 .bl-hero-full__toggle {
   position: absolute; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); width: 44px; height: 44px; display: grid; place-items: center;
-  border-radius: 50%; color: #fff; background: rgba(0, 0, 0, .35); border: 1px solid rgba(255, 255, 255, .35);
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background-color var(--dur-fast) var(--ease-std);
+  border-radius: 50%; color: #fff; background: rgba(0, 0, 0, .35); border: 1px solid rgba(255, 255, 255, .35); transition: background-color var(--dur-fast) var(--ease-std);
 }
 .bl-hero-full__toggle:hover { background: rgba(0, 0, 0, .55); }
 .bl-hero-full__toggle .bl-icon { width: 18px; height: 18px; fill: currentColor; }

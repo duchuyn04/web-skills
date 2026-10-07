@@ -6,7 +6,7 @@
   background: var(--surface); border: 1px solid var(--border);
   transition: border-color var(--dur) var(--ease-std), transform var(--dur) var(--ease-out);
 }
-.bl-bento__card:has(a):hover { transform: translateY(-3px); border-color: var(--c-accent); }
+.bl-bento__card:has(a):hover { border-color: var(--c-accent); }
 .bl-bento__card p { font-size: var(--fs-sm); }
 .bl-bento__card .bl-checks { font-size: var(--fs-sm); margin-top: .25rem; }
 .bl-bento__card .bl-link { margin-top: auto; padding-top: .5rem; font-size: var(--fs-sm); }

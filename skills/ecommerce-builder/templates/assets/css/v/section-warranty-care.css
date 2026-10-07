@@ -1,5 +1,5 @@
 /* Section 'warranty-care': shared icon, then the default 'columns' design. */
-.wc-ic{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:50%;background:var(--c-accent-soft);color:var(--c-accent-ink)}
+.wc-ic{display:grid;place-items:center;width:48px;height:48px;flex:none;color:var(--c-accent-ink)}
 .wc-ic .i{width:24px;height:24px}
 .wc-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius-lg)}
 .wc-n2{grid-template-columns:repeat(2,minmax(0,1fr))}.wc-n3{grid-template-columns:repeat(3,minmax(0,1fr))}
