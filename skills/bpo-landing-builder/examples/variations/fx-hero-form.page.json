@@ -1,0 +1,97 @@
+{
+  "_note": "Shows hero-form (copy and ticked points beside an enquiry form card over a photo panel). Northpine Staffing is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "teal-fresh",
+  "lang": "en",
+  "site": {
+    "brand": "Northpine Staffing",
+    "brand_mark": "NP",
+    "title": "Offshore bookkeeping and admin teams | Northpine Staffing",
+    "description": "Northpine Staffing hires and manages dedicated bookkeeping, admin and customer support staff in Da Nang for small firms in Australia and New Zealand."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Roles", "href": "#services"},
+          {"label": "Get a quote", "href": "#top"},
+          {"label": "Contact", "href": "#get-started"}
+        ],
+        "cta": {"label": "Get a quote", "href": "#top"}
+      }
+    },
+    {
+      "type": "hero-form",
+      "data": {
+        "eyebrow": "Dedicated staff in Da Nang",
+        "title": "Offshore bookkeeping and admin teams for *small firms*",
+        "lead": "Northpine Staffing hires, trains and manages full-time staff in Da Nang who work your hours, in your software, for accounting firms and trades businesses.",
+        "points": [
+          "Shortlist of three candidates for each role",
+          "Staff work Australian business hours",
+          "A local team lead checks the work every day"
+        ],
+        "secondary_cta": {"label": "See the roles we fill", "href": "#services"},
+        "photo": {"src": "meeting-room-empty", "alt": "Long empty meeting room with a glass wall and a view over the city"},
+        "form": {
+          "title": "Get a quote for your first hire",
+          "text": "Tell us the role and we reply with a cost and a hiring plan.",
+          "name_label": "Full name",
+          "email_label": "Work email",
+          "company_label": "Company",
+          "phone_label": "Phone",
+          "topic_label": "Role you need",
+          "topic_options": ["Bookkeeper", "Admin assistant", "Customer support", "Not sure yet"],
+          "submit_label": "Get a quote",
+          "success_title": "Thanks, we have your request",
+          "success_text": "A Northpine consultant will email you a cost and a hiring plan for the role.",
+          "note": "We use your details only to reply to this request."
+        }
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Bookkeeping, admin and support", "title": "Roles we fill"},
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Bookkeepers",
+            "text": "Accounts payable and receivable, bank reconciliations and month-end in Xero or MYOB.",
+            "bullets": ["Xero and MYOB", "Month-end checklists", "Reviewed by a senior"]
+          },
+          {"icon": "clipboard-check", "title": "Admin assistants", "text": "Job scheduling, quotes, invoices and inbox work for trades and service businesses."},
+          {"icon": "headset", "title": "Customer support", "text": "Phone, email and chat support in your tone, during your opening hours."},
+          {"icon": "users", "title": "Team leads", "text": "A local lead who trains new staff and checks their work each day."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Start with *one dedicated hire*",
+        "text": "We shortlist three candidates for the role and you interview them.",
+        "primary_cta": {"label": "Get a quote", "href": "#top"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Northpine Staffing hires and manages dedicated staff in Da Nang for small firms in Australia and New Zealand.",
+        "columns": [
+          {"heading": "Roles", "links": [
+            {"label": "Bookkeepers", "href": "#services"},
+            {"label": "Admin assistants", "href": "#services"},
+            {"label": "Customer support", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Get a quote", "href": "#top"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "_note": "Shows about-statement and steps-timeline, the two sections for a client without real photos. Harbourline Payroll is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Harbourline Payroll",
+    "brand_mark": "HP",
+    "title": "Outsourced payroll for multi-site employers | Harbourline",
+    "description": "Harbourline Payroll runs weekly and monthly payroll, leave records and payslips from Ho Chi Minh City for employers with staff across several sites."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "About",
+            "href": "#about"
+          },
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "How it works",
+            "href": "#how-it-works"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          }
+        ],
+        "cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-fullbleed",
+      "data": {
+        "align": "center",
+        "eyebrow": "Payroll operations",
+        "title": "Payroll for employers with *staff on many sites*",
+        "lead": "Harbourline Payroll runs weekly and monthly pay runs, leave records and payslips from Ho Chi Minh City, with a named payroll lead for every client.",
+        "primary_cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "How it works",
+          "href": "#how-it-works"
+        },
+        "image": "paperwork-review-desk"
+      }
+    },
+    {
+      "type": "about-statement",
+      "data": {
+        "title": "One payroll record across *every site*",
+        "paragraphs": [
+          "Harbourline Payroll works for employers whose staff clock in at several sites: clinics, warehouses and retail stores. We keep **one record per employee** across all of them, so transfers and shared shifts are paid once and paid right.",
+          "Each client has a **named payroll lead** and a second checker. The lead answers your questions; the checker reviews every pay run before it is released."
+        ],
+        "points": [
+          {
+            "title": "Weekly or monthly",
+            "text": "Pay runs on the cycle your staff are used to."
+          },
+          {
+            "title": "Second check",
+            "text": "A second person reviews every run before payment."
+          },
+          {
+            "title": "Leave records",
+            "text": "Annual and sick leave kept up to date each pay run."
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "title": "Payroll work we take on"
+        },
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Pay runs",
+            "text": "Weekly, fortnightly or monthly pay runs with overtime, allowances and deductions.",
+            "bullets": [
+              "Rates from your awards",
+              "Overtime and allowances",
+              "Second-person review"
+            ]
+          },
+          {
+            "icon": "calendar",
+            "title": "Leave records",
+            "text": "Annual, sick and unpaid leave updated with every pay run."
+          },
+          {
+            "icon": "file-text",
+            "title": "Payslips and reports",
+            "text": "Payslips by email and a cost report for each site after every run."
+          },
+          {
+            "icon": "users",
+            "title": "Starters and leavers",
+            "text": "New staff set up before their first shift and final pay worked out on time."
+          }
+        ]
+      }
+    },
+    {
+      "type": "steps-timeline",
+      "data": {
+        "title": "From timesheets to payslips in *four steps*",
+        "lead": "The same four steps run every pay cycle, so your site managers always know what is due and when.",
+        "steps": [
+          {
+            "title": "Sites send timesheets",
+            "text": "Each site manager uploads hours or exports them from your rostering tool."
+          },
+          {
+            "title": "We check the hours",
+            "text": "Your payroll lead matches hours to rosters and asks about anything unusual."
+          },
+          {
+            "title": "A second person reviews",
+            "text": "A checker reviews rates, overtime and deductions before the run is released."
+          },
+          {
+            "title": "Staff get payslips",
+            "text": "Payments go out on the agreed day and every employee receives a payslip by email."
+          }
+        ],
+        "primary_cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Move your next pay run to *Harbourline*",
+        "text": "We run one cycle alongside your current process so you can compare the results.",
+        "primary_cta": {
+          "label": "Book a call",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Harbourline Payroll runs payroll from Ho Chi Minh City for employers with staff on several sites.",
+        "columns": [
+          {
+            "heading": "Payroll",
+            "links": [
+              {
+                "label": "About",
+                "href": "#about"
+              },
+              {
+                "label": "How it works",
+                "href": "#how-it-works"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Style: gaming
 
-For shops that sell gaming laptops, PC parts and gear (monitors, keyboards, mice, headsets, chairs, gamepads). Dark storefront, red accent, headings in Chakra Petch, specs shown before anything else on the card, compact corners. Reference: GearVN (docs/research/ecommerce/gear-*), with a dark theme.
+For shops that sell gaming laptops, PC parts and gear (monitors, keyboards, mice, headsets, chairs, gamepads). Dark storefront, red accent, headings in Chakra Petch, specs shown before anything else on the card, compact corners. Reference: GearVN (screenshots `docs/research/ecommerce/gear-*` in the job repository, not shipped with this skill), with a dark theme.
 
 Set `"style": "gaming"` in shop.json. Defaults (from data/styles.json): preset `gaming-dark`, header `tiered`, hero `bento`, card `spec`, pdp `retail`, plp `sidebar`, footer `full`. Override single parts with `"layout"`.
 

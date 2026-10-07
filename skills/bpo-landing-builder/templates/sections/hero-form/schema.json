@@ -1,0 +1,34 @@
+{
+  "variant": "hero-form",
+  "group": "hero",
+  "forms": ["hero-split", "hero-left-text"],
+  "summary": "Lead-capture hero after beehiiv, Circle, Parker and HBO Max advertising: the headline, lead and up to five ticked points (none, or two to five) on the left; on the right a short enquiry form on a white card in the first screen (name, work email, company, optional phone, an optional service select, an optional message), set over a rounded panel that is either a real photo of the office or team, or a flat brand-colour panel. The card overhangs the panel's left edge. The panel opens sideways, the card rises, the fields arrive in order and the points tick in; no loops. Suits companies that sell on a quick quote or a call back (staffing, outbound sales, back office) and have a form endpoint or will add one.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["reveal", "form-panel-open", "point-tick-sequence", "form-field-cascade", "photo-scroll-drift"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "points": {"type": "list", "min": 0, "max": 5, "default": [], "item": {"type": "text", "min": 6, "max": 90}},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "photo": {"$ref": "photo", "required": false},
+    "form": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 5, "max": 60},
+      "text": {"type": "text", "min": 20, "max": 140, "required": false},
+      "name_label": {"type": "text", "min": 2, "max": 28, "default": "Full name"},
+      "email_label": {"type": "text", "min": 2, "max": 28, "default": "Work email"},
+      "company_label": {"type": "text", "min": 2, "max": 28, "default": "Company"},
+      "phone_label": {"type": "text", "min": 2, "max": 28, "required": false},
+      "topic_label": {"type": "text", "min": 2, "max": 36, "required": false},
+      "topic_options": {"type": "list", "min": 2, "max": 8, "required": false, "item": {"type": "text", "min": 2, "max": 40}},
+      "message_label": {"type": "text", "min": 2, "max": 40, "required": false},
+      "submit_label": {"type": "text", "min": 3, "max": 30},
+      "success_title": {"type": "text", "min": 5, "max": 60},
+      "success_text": {"type": "text", "min": 20, "max": 200},
+      "note": {"type": "text", "min": 20, "max": 160, "required": false},
+      "action": {"type": "href", "required": false}
+    }}
+  }
+}

@@ -18,7 +18,7 @@ holds what was read or said; do not invent personas, interviews or research figu
 
 | Màn | Đến để làm gì | Quyết định dựa vào gì | Hành động cuối | Công thức |
 |:---|:---|:---|:---|:---|
-| Website của bạn | Xem các bản đã tạo, mở bản ưng | Ảnh, trạng thái, ngày tạo | Xem website | `list` |
+| Website của bạn | Xem các bản đã tạo, mở bản đã chọn | Ảnh, trạng thái, ngày tạo | Xem website | `list` |
 
 - "Quyết định dựa vào gì" decides what each row or card shows first and largest; what does not help decide moves down or to the detail page.
 - "Hành động cuối" is the one primary button of that screen.

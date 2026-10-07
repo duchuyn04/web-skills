@@ -344,6 +344,9 @@ def normalise(shop, ctx, rng):
     seen = set()
     for i, p0 in enumerate(shop.get("products") or []):
         path = "products[%d]" % i
+        if not isinstance(p0, dict):
+            ctx.err(path, "each product is an object {\"id\": ..., \"name\": ..., \"price\": ...}")
+            continue
         p = json.loads(json.dumps(p0))
         for k in ("id", "name", "brand", "category"):
             need(ctx, p, k, path)
@@ -366,8 +369,14 @@ def normalise(shop, ctx, rng):
             ctx.err(path + ".device", "unknown device '%s'" % p["device"])
             p["device"] = cat["device"]
         options = []
+        if not isinstance(p.get("options") or [], list):
+            ctx.err(path + ".options", "a list of options such as [{\"name\": \"Dung lượng\", \"values\": [...]}]")
+            continue
         for j, o in enumerate(p.get("options") or []):
             op = "%s.options[%d]" % (path, j)
+            if not isinstance(o, dict) or not isinstance(o.get("values") or [], list):
+                ctx.err(op, "an option is {\"name\": ..., \"values\": [...]}")
+                continue
             need(ctx, o, "name", op)
             vals = [norm_value(v) for v in (o.get("values") or [])]
             if not vals:
@@ -413,11 +422,18 @@ def normalise(shop, ctx, rng):
             continue
         if demo and not isinstance(p.get("stock"), (int, dict)) and all(not v["stock"] for v in variants):
             variants[0]["stock"] = rng.choice([4, 8, 12])   # a demo product always has something to sell
+        bad_price = False
         for v in variants:
             if not isinstance(v["price"], (int, float)) or v["price"] < 1000:
-                ctx.err(path, "price must be a VND number such as 8990000, got %r" % v["price"])
-            if v["old_price"] is not None and v["old_price"] <= v["price"]:
+                bad_price = True
+                ctx.err(path, "price must be a VND number such as 8990000 (no dots or quotes), got %r" % v["price"])
+            elif v["old_price"] is not None and not isinstance(v["old_price"], (int, float)):
+                bad_price = True
+                ctx.err(path, "old_price must be a VND number such as 9990000 (no dots or quotes), got %r" % v["old_price"])
+            elif v["old_price"] is not None and v["old_price"] <= v["price"]:
                 ctx.err(path, "old_price (%s) must be higher than price (%s), or leave it out" % (v["old_price"], v["price"]))
+        if bad_price:
+            continue
         if not demo and any(v["stock"] is None for v in variants):
             ctx.warn(path + ".stock", "no stock given; the page shows every variant as in stock. Give stock as a number or a map of variant label to number.")
             for v in variants:
@@ -665,7 +681,7 @@ def check_variety(ctx, shop, shop_path):
         if other.resolve() == me:
             continue
         try:
-            o = json.loads(other.read_text(encoding="utf-8"))
+            o = json.loads(other.read_text(encoding="utf-8-sig"))
         except Exception:
             continue
         ostyle, olayout, opreset = look_of(o)
@@ -689,7 +705,10 @@ def icon(name, cls=""):
 
 
 def build(shop_path, out_dir, ctx):
-    shop = json.loads(Path(shop_path).read_text(encoding="utf-8"))
+    shop = json.loads(Path(shop_path).read_text(encoding="utf-8-sig"))  # -sig: Notepad and PowerShell 5.1 write a byte order mark
+    if not isinstance(shop, dict):
+        ctx.err("shop.json", "must be one object: {\"brief\": ..., \"shop\": {...}, \"products\": [...]}")
+        return None
     src_dir = Path(shop_path).parent
     seed = int(hashlib.md5(json.dumps(shop.get("shop", {}).get("name", "")).encode()).hexdigest()[:8], 16)
     rng = random.Random(seed)
@@ -699,7 +718,7 @@ def build(shop_path, out_dir, ctx):
         if k not in TOP_KEYS:
             ctx.err(k, "unknown top-level key. Allowed: %s" % ", ".join(sorted(TOP_KEYS)))
     for i, p in enumerate(shop.get("products") or []):
-        for k in p:
+        for k in (p if isinstance(p, dict) else []):
             if k not in PRODUCT_KEYS:
                 ctx.err("products[%d].%s" % (i, k), "unknown product key. Allowed: %s (see references/shop-schema.md)" % ", ".join(sorted(PRODUCT_KEYS)))
     check_copy(ctx, shop)
@@ -858,6 +877,7 @@ def build(shop_path, out_dir, ctx):
         if pm.get("id") == "bank" and not (pm.get("bank") or {}).get("account"):
             ctx.warn("payments[%d].bank" % i, "bank transfer without account details; the order page shows a placeholder")
     if not norm["demo"]:
+        ctx.warn("admin", "admin/ is a browser-only preview with the password demo and no security; do not publish admin/ until references/going-live.md is done")
         for k in ("hotline", "email"):
             if re.search(r"\[|example\.com", str(norm["shop"].get(k, ""))):
                 ctx.warn("shop." + k, "placeholder contact; replace before launch")
@@ -1064,6 +1084,18 @@ def stars_svg(r):
     return "".join(out)
 
 
+def unsafe_out(shop_path, out):
+    """The build wipes --out, so refuse folders that hold the input or files the build did not make."""
+    shop_dir, out = shop_path.resolve().parent, out.resolve()
+    if out == shop_dir or out in shop_dir.parents:
+        return "%s holds shop.json and would be wiped; use a subfolder such as %s" % (out, shop_dir / "dist")
+    if out.is_file():
+        return "%s is a file, not a folder" % out
+    if out.is_dir() and any(out.iterdir()) and not (out / "build-report.json").exists():
+        return "%s has files this build did not make; pick an empty folder or a previous build" % out
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("shop", nargs="?")
@@ -1085,11 +1117,28 @@ def main():
         return
     if not a.shop or not a.out:
         ap.error("give shop.json and --out")
+    problem = unsafe_out(Path(a.shop), Path(a.out))
+    if problem:
+        print("ERROR --out: " + problem)
+        sys.exit(1)
+    if not Path(a.shop).is_file():
+        print("ERROR %s: file not found" % a.shop)
+        sys.exit(1)
     ctx = Ctx()
     try:
         rep = build(a.shop, a.out, ctx)
     except json.JSONDecodeError as e:
         print("ERROR shop.json is not valid JSON: %s" % e)
+        sys.exit(1)
+    except UnicodeDecodeError:
+        print("ERROR shop.json is not UTF-8 text. Save it as UTF-8 and run again.")
+        sys.exit(1)
+    except Exception as e:  # a value of the wrong type that validation did not catch
+        import traceback
+        where = traceback.extract_tb(e.__traceback__)[-1]
+        print("ERROR build.py stopped on shop.json: %s: %s (%s line %d)." % (type(e).__name__, e, Path(where.filename).name, where.lineno))
+        print("A value probably has the wrong type, such as text where a list, an object or a number is expected. "
+              "Compare that part of shop.json with examples/demo-electronics.shop.json. If it matches, this is a library bug: quote this message to the user.")
         sys.exit(1)
     for w in ctx.warnings:
         print("WARN  " + w)

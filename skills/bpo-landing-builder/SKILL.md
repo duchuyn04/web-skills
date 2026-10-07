@@ -3,14 +3,14 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "5.4.0"
+  version: "5.5.3"
 ---
 
 # BPO landing builder
 
 You do not write HTML, CSS or JavaScript. You write one JSON file (`page.json`) with the page content. `scripts/build.py` turns it into a finished page using fixed section templates that already contain the layout, spacing, colors, responsive rules and the animations researched from 120 BPO websites. Your job is to choose well and write good copy.
 
-`SKILL` below means the folder that contains this file. In this project the real folder is `.agents/skills/bpo-landing-builder`; agent-specific folders such as `.claude/skills/bpo-landing-builder` or `.qwen/skills/bpo-landing-builder` are links to it. Use whichever path you loaded this file from. If you cannot run shell commands, stop and tell the user: the build scripts are required.
+`SKILL` below means the folder that contains this file. Use whichever path you loaded this file from. If you cannot run shell commands, stop and tell the user: the build scripts are required.
 
 ## Which path
 
@@ -71,7 +71,7 @@ python SKILL/scripts/variety.py --blueprint <key>
 
 The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Layouts marked `*` are preferred: clients named those sites (IRIS, Intelligent Outsourcing, Innovature, Bestarion) as the standard for a professional page, so they come first. Take the first unused `*` layout whose sections the brief can fill, and go further down only when none fits; otherwise pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2c). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
 
-The hero follows the real site too. About two thirds of the blueprints name the hero composition of their source site in `"compose"` (a white card over a wide photo, a tilted photo mosaic, a round portrait beside a card of service chips, a row of photo cards under a centered headline, a photo stage with thumbnail tabs, a column of news cards, tall sector panels). build.py fails a page on such a blueprint whose hero is not one of those variants, or a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`) when it fits the client. This is what keeps ten sites from opening with the same text-left, photo-right hero.
+The hero follows the real site too. About two thirds of the blueprints name the hero composition of their source site in `"compose"` (a white card over a wide photo, a tilted photo mosaic, a round portrait beside a card of service chips, a row of photo cards under a centered headline, a photo stage with thumbnail tabs, a column of news cards, tall sector panels). build.py fails a page on such a blueprint whose hero is not one of those variants, or a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`, `hero-form`) when it fits the client. This is what keeps ten sites from opening with the same text-left, photo-right hero.
 
 When the client picks a hero from another real site (a Mobbin section, a site they name), keep the blueprint for the rest of the page and add `"override_hero": {"reference": "<url of that hero>", "reason": "<what the client asked for>"}` to page.json. Any hero variant then fills the blueprint's hero slot, and the build prints the swap as a warning. Never set it on your own choice. The same goes for `"override_photos": {"reason": "..."}`: when the client asks for sections without photos (they have no real pictures and stock or screenshots do not fit), use `about-statement` and `steps-timeline` and record the reason; the photo-share check then prints a warning instead of failing. For a full-screen photo or video in a rounded inset frame with a very large headline (IntegratedBio), use `hero-fullbleed` with `"layout": "frame"`.
 
@@ -115,7 +115,8 @@ Business heroes, when the client's work fits:
 | Contact center, multilingual support | `hero-voice` (team photo with a call card that answers in each language the brief names), `hero-chat` (sample support chat; label it as a sample) |
 | Accounting, payroll, back office | `hero-ledger` (paperwork photo with report sheets that fan in and get ticked) |
 | Several service lines with reporting | `hero-dashboard` (panels built from the real services and stats) |
-| Anything else | `hero-fullbleed` with `"align": "center"` first (the hero clients rated most professional), `hero-slides` when the client wants several slides, then `hero-split-image`, `hero-collage`, `hero-qualifier`, `hero-cycler-centered`, `hero-gradient` |
+| Sells on a quick quote or call back, and has (or will add) a form endpoint | `hero-form` (enquiry form card in the first screen over a photo or brand-colour panel) |
+| Anything else | `hero-fullbleed` with `"align": "center"` first (the hero clients rated most professional), `hero-slides` when the client wants several slides, then `hero-stage` (one wide office or work photo, or a video, under the copy), `hero-scatter` (4-6 real photos of the office, city and work), `hero-split-image`, `hero-collage`, `hero-qualifier`, `hero-cycler-centered`, `hero-gradient` |
 
 Photos: a page with 6 or more content sections needs a photo in at least 40% of them (real BPO homepages: median 33%, top quarter 44%), and at most two sections may put an icon on every item; build.py fails otherwise and names the sections that take a photo. Text-only sections now take photos: `metrics-counter` "image" (the figures over a photo), `services-bento` first card "photo", `process-sticky` and `steps-row` a photo on every step (process-sticky swaps the pinned photo as the reader moves through the steps), `industries-rows` a photo on every row (shown in the card that follows the hovered row), `faq-accordion` "photo", `contact-split` "aside.photo". Use the client's photos first, then library photos from `references/assets.md` that match the section. Library photos are strangers: each one appears once on a page, and its alt says what the picture shows ("Two people checking invoices at a desk"), never the company name, "our team" or "our office". A stock face never stands for a named person: no library `avatar` on reviews and no library portraits in `team-grid` or `team-coverflow`. build.py fails all of these.
 
@@ -188,7 +189,7 @@ It must print `LINT PASSED`. Copy errors are fixed in page.json; structural erro
 python SKILL/scripts/qa_screenshot.py sites/<slug>/dist --sections --sweep
 ```
 
-Needs Python Playwright and Edge or Chrome. If `python` cannot import playwright, try `py -3.11` or `python3`. The script checks sideways overflow, clipped text, broken images and JS errors at 1440, 768 and 390 px, then measures the frame rate of the hero and every moving section at 1440 px on a 2x screen (minimum 30 fps; 1x screens hide canvas lag that laptops with scaled displays show). It also checks that every WebGL scene draws, that the page reads fully with reduced motion (nothing left hidden, no pins), that Pause animations stops every loop and scene, and that a browser without WebGL gets no JS errors. At the first width it also checks the contrast of every visible text run against the color behind it, the focus outline of every Tab stop and the underline or contrast of links in running text (see `references/color-system.md`). `--sweep` then narrows the page from 1440 to 360 px in 20 px steps and fails anything that sticks out sideways or header items that overlap at any width in between (a nav that collides at 1100 px passes the three fixed widths). Add `--cvd` to save color-blindness screenshots for review. It must print `QA PASSED`. A page whose QA fails is not finished: never call it ready or deliverable. Fix what page.json can fix and run QA again. If a failure sits in a library section or in build.py's colors (for example low contrast in the footer with correct theme values), stop, quote the failing lines and tell the user it is a library bug. Then open `dist/qa/page-1440.png` and a few files in `dist/qa/sections-390/` and look at them. Typical fixes: shorter titles, fewer items, a better photo.
+Needs Python Playwright and Edge or Chrome. If `python` cannot import Playwright, use a Python that has it (on Windows `py -0` lists the installed versions, then for example `py -3.11`). The script checks sideways overflow, clipped text, broken images and JS errors at 1440, 768 and 390 px, then measures the frame rate of the hero and every moving section at 1440 px on a 2x screen (minimum 30 fps; 1x screens hide canvas lag that laptops with scaled displays show). It also checks that every WebGL scene draws, that the page reads fully with reduced motion (nothing left hidden, no pins), that Pause animations stops every loop and scene, and that a browser without WebGL gets no JS errors. At the first width it also checks the contrast of every visible text run against the color behind it, the focus outline of every Tab stop and the underline or contrast of links in running text (see `references/color-system.md`). `--sweep` then narrows the page from 1440 to 360 px in 20 px steps and fails anything that sticks out sideways or header items that overlap at any width in between (a nav that collides at 1100 px passes the three fixed widths). It also opens every slide of a hero carousel (`hero-slides` or a custom hero with several slides) and checks it like the first one, and fails a slide heading that a photo or card covers by more than 10% (a giant word set behind pictures included); shots of the slides go to `dist/qa/slides-<width>/`. Add `--cvd` to save color-blindness screenshots for review. It must print `QA PASSED`. A page whose QA fails is not finished: never call it ready or deliverable. Fix what page.json can fix and run QA again. If a failure sits in a library section or in build.py's colors (for example low contrast in the footer with correct theme values), stop, quote the failing lines and tell the user it is a library bug. Then open `dist/qa/page-1440.png` and a few files in `dist/qa/sections-390/` and look at them. Typical fixes: shorter titles, fewer items, a better photo.
 
 ## Step 7: Report
 
@@ -213,38 +214,16 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/anti-slop.md`: design tells of generated pages (labels on every heading, 01/02 on everything, icon squares, arrows on every button, hover lift on cards, glows) and which build, lint and QA checks catch them. Read it before writing page.json.
 - `references/color-system.md`: how brand colors become tokens (OKLCH, contrast, harmony rules), the gradient policy (flat surfaces; gradients only for photo scrims, edge fades, shading and hard-stop patterns, enforced by lint) and the contrast, focus and link checks in QA
 - `references/content-rules.md`: copy rules and how to handle missing facts
-- `references/mobbin-references.md`: where the tool, compare, awards, team, careers, steps and country sections come from, and how to research new sections on Mobbin
+- `references/mobbin-references.md`: where the tool, compare, awards, team, careers, steps, country and the form, stage and scatter hero sections come from, and how to research new sections on Mobbin
 - `references/industry-voice.md`: how real BPO sites write (hero patterns, heading labels, proof, button labels, Vietnamese), measured on 120 homepages
 - `references/assets.md`: image library, icons, flags, cities
 - `references/animation-map.md`: which section carries which animation, with timings (generated)
 - `references/motion-research.md`: how 89 real BPO homepages animate (scroll entrances, hovers, carousels, sticky and scroll-linked pieces) and the four motion styles built from it
 - `references/custom-section-spec.md`: fallback for blocks outside the library
 - `references/seo.md`: the search and share tags build.py writes, the fields that feed them, what 85 real BPO homepages do, and the launch steps outside the page
+- `references/maintaining.md`: adding a rule, a variant or a check, versioning, and the regression tests to run after a change to the library
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
 
-## Adding a rule
+## Changing the library
 
-Rules added to cure one symptom tend to cause another on the next build. When a check, a SKILL.md rule or a reference rule is added:
-
-- at most five new rules per change, each with the case it applies to ("on a demo shop", "in the hero"), never "always"
-- say which rule it replaces or contradicts; when it reverses an old rule, leave a line "Old rule dropped: <rule>, because <reason>" so it is not brought back
-- one rule lives in one file; SKILL.md points to it instead of copying it
-- a rule that catches nothing in three rounds of building comes out
-- after adding a rule, check the templates and examples against it: they are copied as they are, so a mistake in them spreads to every site
-- write the rule and its reason, not its history: no dates or client names in the skill; those go in the commit message and `CHANGELOG.md`
-
-## Maintaining the library
-
-Run the regression tests after any change to `build.py`, `lint_output.py`, `rules.py`, a schema or an example:
-
-```
-py -3.11 SKILL/tests/run.py --qa --sites sites
-```
-
-It builds the clean fixture `tests/fixtures/quayside.page.json` and each must-fail case in `tests/cases.json` (invented logos, extended quotes, figures and claims missing from the brief, copied example text, emoji, dashes, arrows, banned words, expressive motion without a request, the rules pin), then builds and lints every example and every site in `sites/` without touching their `dist/`. It must print `ALL TESTS PASSED`. A rule that the build learns from a new failure gets a case in `tests/cases.json`.
-
-When a new check can fail a page that built before, raise `RULES_VERSION` in `build.py` and the version at the top of this file, and add an entry to `CHANGELOG.md`. A site built under an older version keeps building with `"rules": "<that version>"` ("1", "2", "3" or "4") in its page.json. For example, a site built under rules 1 keeps building with `"rules": "1"`: build.py then prints the content checks added in rules 2 as warnings and lint does the same for the design checks, while the schema, copy (AGENTS.md) and accessibility checks stay errors. build.py accepts the pin only when the site's output folder holds a build made under rules 1, so a new page cannot use it. Never add `"rules"` to a new page.
-
-After changing a template or schema, rebuild every page in `examples/` and `examples/variations/`, run lint and QA on each, then run `python SKILL/scripts/make_catalog.py` to regenerate the catalog, anatomy and animation map (add `--previews <dist> ...` to refresh preview images).
-
-New variants widen the library only if agents can reach them: add each one to the matching slots in `templates/archetypes.json`, give every new animation id a timing line in `TIMING` in `make_catalog.py`, and put the variant in at least one page under `examples/variations/` so it is built and checked with the rest. Motion runs on vendored GSAP (`templates/vendor/gsap.js`, loaded on every page before `base.js`) and 3D on vendored Three.js (`templates/sections/_shared/three.js`, loaded only by sections that draw a WebGL scene); `references/motion-libraries.md` covers both, the `BL.motion` and `BLGL` helpers and how to update the vendored files. Canvas and WebGL motion share one render loop and one pause state in `templates/sections/_shared/ribbons.js` (`window.BLRibbons`); new 3D goes in a `BLGL.register` scene, never a second loop. Any new moving section follows "Motion and performance" in `references/custom-section-spec.md` and must pass the QA frame-rate check at 2x. `qa_screenshot.py` adds the class `bl-shot` to the page before element screenshots, so scroll-linked layouts can lay out flat for previews.
+Adding a rule, a variant, a section or a check, and the regression tests to run afterwards, are in `references/maintaining.md`. Read it before editing build.py, a template, a schema or this file; building a page for a client does not need it.

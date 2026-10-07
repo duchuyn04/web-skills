@@ -1,0 +1,25 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--stage bl-hstage--{{align}} bl-tone-{{section.tone}}" data-hstage>
+  <div class="bl-container bl-hstage__copy" data-reveal-group>
+    <div class="bl-hstage__head">
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hstage__title" data-reveal>{{title}}</h1>
+    </div>
+    <div class="bl-hstage__body">
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      <div class="bl-btn-row" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{primary_cta.href}}">{{primary_cta.label}}</a>
+        {{#secondary_cta}}<a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+      </div>
+      {{#proof.0}}<ul class="bl-hero__proof bl-hstage__proof" data-reveal>{{#proof}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/proof}}</ul>{{/proof.0}}
+    </div>
+  </div>
+  <div class="bl-hstage__wrap" data-reveal="fade">
+    <div class="bl-hstage__frame" data-hstage-frame>
+      <div class="bl-hstage__media" data-hstage-media>
+        {{#video}}<video class="bl-hstage__img bl-hstage__img--{{focus}}" src="{{video}}" poster="{{photo.src}}" autoplay muted loop playsinline preload="metadata" aria-label="{{photo.alt}}"></video>{{/video}}
+        {{^video}}<img class="bl-hstage__img bl-hstage__img--{{focus}}" src="{{photo.src}}" alt="{{photo.alt}}" width="1800" height="900" fetchpriority="high">{{/video}}
+      </div>
+      {{#video}}<button class="bl-hstage__toggle" type="button" aria-pressed="false" data-video-toggle data-label-pause="{{pause_label}}" data-label-play="{{play_label}}" aria-label="{{pause_label}}"><span class="bl-hstage__i-pause">{{icon:pause}}</span><span class="bl-hstage__i-play">{{icon:play}}</span></button>{{/video}}
+    </div>
+  </div>
+</section>

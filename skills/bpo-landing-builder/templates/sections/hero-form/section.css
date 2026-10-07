@@ -1,0 +1,72 @@
+/* hero-form: form-panel-open, point-tick-sequence, form-field-cascade, photo-scroll-drift.
+   Copy and ticked points on the left; an enquiry form card over a rounded photo or brand-colour panel on the right. */
+.bl-hform { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.bl-hform__title { max-width: 15ch; }
+.bl-hform__points { margin-top: -.6rem; max-width: 34rem; color: var(--text-strong); }
+.bl-hform__alt { margin-top: 2rem; }
+
+/* the panel fills the column from 12% in; the card sits over its left edge */
+.bl-hform__side { position: relative; isolation: isolate; padding-block: clamp(2rem, 4vw, 3.5rem); }
+.bl-hform__panel {
+  position: absolute; inset: 0 0 0 14%; z-index: -1; overflow: hidden;
+  border-radius: calc(var(--radius-lg) + 6px); background: var(--c-accent);
+}
+.bl-hform__panel img { width: 100%; height: 100%; object-fit: cover; }
+.bl-hform__card {
+  position: relative; width: min(100%, 33rem); margin-right: clamp(1.5rem, 4vw, 3.5rem);
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 2.6vw, 2.1rem); box-shadow: var(--shadow-lg);
+}
+.bl-hform__fields { display: grid; gap: 1rem; }
+.bl-hform__ftitle { font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: clamp(1.2rem, .6vw + 1rem, 1.45rem); line-height: 1.3; letter-spacing: -0.01em; color: var(--text-strong); }
+.bl-hform__ftext { margin-top: -.45rem; font-size: var(--fs-sm); color: var(--text); }
+.bl-hform__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 1rem; }
+.bl-hform__wide { grid-column: 1 / -1; }
+.bl-hform__grid > .bl-field:nth-child(3):last-child { grid-column: 1 / -1; }
+.bl-hform__select { position: relative; display: block; }
+.bl-hform__select select { appearance: none; padding-right: 2.6rem; cursor: pointer; }
+.bl-hform__select .bl-icon { position: absolute; right: .9rem; top: 50%; width: 1rem; height: 1rem; translate: 0 -50%; pointer-events: none; color: var(--text-muted); }
+.bl-hform__card textarea.bl-input { min-height: 84px; }
+.bl-hform__submit { width: 100%; justify-content: center; }
+.bl-hform__note { display: flex; gap: .5rem; align-items: flex-start; font-size: var(--fs-xs); color: var(--text-muted); }
+.bl-hform__note .bl-icon { width: 14px; height: 14px; margin-top: .15rem; flex: none; }
+.bl-hform__done { display: grid; justify-items: start; gap: .75rem; padding: 1.5rem 0; animation: bl-hform-in 350ms var(--ease-out); }
+.bl-hform__done-icon { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; background: var(--c-accent-soft); color: var(--accent-ink); }
+.bl-hform__done-icon .bl-icon { width: 30px; height: 30px; }
+.bl-hform__done strong { font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-strong); }
+@keyframes bl-hform-in { from { opacity: 0; transform: translateY(10px); } }
+
+/* form-panel-open: the panel opens from its right edge (data-wipe), then the card rises and its fields arrive in order.
+   point-tick-sequence: the copy's ticks pop in one by one. */
+.js .bl-hform__panel[data-wipe] { transition-duration: 1.1s; }
+.js .bl-hform__card[data-reveal] { transition-delay: .35s; }
+.js .bl-hform__fields > * { transition: opacity .6s var(--ease-out), translate .6s var(--ease-out); }
+.js .bl-hform__card:not(.is-in) .bl-hform__fields > * { opacity: 0; translate: 0 12px; }
+.bl-hform__fields > :nth-child(1) { transition-delay: .45s; }
+.bl-hform__fields > :nth-child(2) { transition-delay: .53s; }
+.bl-hform__fields > :nth-child(3) { transition-delay: .61s; }
+.bl-hform__fields > :nth-child(4) { transition-delay: .69s; }
+.bl-hform__fields > :nth-child(5) { transition-delay: .77s; }
+.js .bl-hform__points[data-seq] > * { transition-delay: calc(var(--seq-i, 0) * 110ms + 450ms); }
+.js .bl-hform__points[data-seq] .bl-icon { transition: transform .45s var(--ease-back); transition-delay: calc(var(--seq-i, 0) * 110ms + 550ms); }
+.js .bl-hform__points[data-seq]:not(.is-seen) .bl-icon { transform: scale(0); }
+
+@media (max-width: 1024px) {
+  .bl-hform { grid-template-columns: minmax(0, 1fr); }
+  .bl-hform__title { max-width: 20ch; }
+  .bl-hform__side { max-width: 40rem; }
+}
+@media (max-width: 640px) {
+  .bl-hform__side { padding-block: 0; }
+  .bl-hform__side--photo { padding-top: clamp(10rem, 48vw, 14rem); }
+  .bl-hform__panel { inset: 0; }
+  .bl-hform__side--photo .bl-hform__panel { inset: 0 0 auto 0; height: clamp(12rem, 56vw, 16rem); }
+  .bl-hform__side:not(.bl-hform__side--photo) { padding: .75rem; }
+  .bl-hform__side--photo .bl-hform__card { margin-inline: .75rem; width: auto; }
+  .bl-hform__card { margin-right: 0; }
+  .bl-hform__grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-hform__fields > * { opacity: 1 !important; translate: none !important; }
+  .js .bl-hform__points[data-seq] .bl-icon { transform: none !important; }
+}

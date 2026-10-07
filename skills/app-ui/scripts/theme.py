@@ -6,7 +6,7 @@
 
 Every colour, radius, shadow, space and type size of the kit lives in this one file; app.css and the pages only
 read the variables. The accent is the logo colour. The script keeps it when white text on it reaches 4.5:1 and
-darkens it until it does otherwise, then derives the hover shade, the soft fill for selected rows and the line
+darkens it until it does otherwise (and until accent text reaches 4.5:1 on the grey, status and soft fills too), then derives the hover shade, the soft fill for selected rows and the line
 around that fill. Status colours (ok, warn, bad) stay fixed: they carry meaning, not brand.
 
 --primary picks the colour of the main button (Tạo, Lưu, Xuất bản). Real apps split about evenly: `brand` (Supabase,
@@ -53,16 +53,21 @@ def mix(a, b, t):
     return hexs(tuple(ca[i] * (1 - t) + cb[i] * t for i in range(3)))
 
 
-def darken_until(color, against, target):
+# Every fill that accent text (links, the active tab, a link inside an alert) can sit on; keep in step with TEMPLATE.
+TEXT_GROUNDS = (WHITE, "#fafafa", "#f4f4f5", "#f1f2f4", "#e8f5ee", "#fdf3e2", "#fdeeec")
+
+
+def readable_accent(color, target=4.5):
+    """Darken until accent text passes on every ground, its own soft fill included."""
     c, steps = color, 0
-    while contrast(c, against) < target and steps < 60:
+    while steps < 60 and min(contrast(c, g) for g in TEXT_GROUNDS + (mix(c, WHITE, 0.92),)) < target:
         c = mix(c, "#000000", 0.04)
         steps += 1
     return c
 
 
 def tokens(accent, primary="brand"):
-    acc = darken_until(accent, WHITE, 4.5)
+    acc = readable_accent(accent)
     if primary == "ink":
         prim, prim_hover = INK, "#3f3f46"
     else:
@@ -187,7 +192,7 @@ def main():
         sys.exit("--accent takes a 6-digit hex colour such as #1f4aa8")
     t = tokens(a.accent.lower(), a.primary)
     Path(a.out).write_text(TEMPLATE.format(source=a.accent.lower(), **t), encoding="utf-8")
-    note = "" if t["accent"] == a.accent.lower() else " (darkened from %s so white text on it reaches 4.5:1)" % a.accent.lower()
+    note = "" if t["accent"] == a.accent.lower() else " (darkened from %s so white text on it and links on every fill reach 4.5:1)" % a.accent.lower()
     print("wrote %s: accent %s%s, white on accent %.2f:1, accent on white %.2f:1"
           % (a.out, t["accent"], note, contrast(t["accent"], WHITE), contrast(t["accent"], SURFACE)))
 

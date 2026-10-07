@@ -106,7 +106,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--qa", action="store_true", help="run qa.py --quick --sweep on the stressed build")
     a = ap.parse_args()
-    shop = json.loads(Path(a.shop).read_text(encoding="utf-8"))
+    shop = json.loads(Path(a.shop).read_text(encoding="utf-8-sig"))
     stressed, notes = stress(shop)
     out = Path(a.out).resolve()
     src = out.parent / (out.name + ".stress.shop.json")

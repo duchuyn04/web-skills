@@ -80,7 +80,8 @@
         {{ icon("search", "i-sm") }}<span>Tìm mã đơn, sản phẩm, khách hàng</span><kbd>Ctrl K</kbd>
       </button>
       <div class="adm-top-right">
-        {% if demo %}<span class="demo-pill" title="Dữ liệu minh họa">{{ icon("info", "i-xs") }}Dữ liệu mẫu</span>{% endif %}
+        {% if demo %}<span class="demo-pill" title="Dữ liệu minh họa">{{ icon("info", "i-xs") }}Dữ liệu mẫu</span>
+        {% else %}<span class="demo-pill" title="Dữ liệu chỉ lưu trên trình duyệt này, mật khẩu kiểm tra phía trình duyệt">{{ icon("info", "i-xs") }}Chưa bảo mật</span>{% endif %}
         <div class="notif">
           <button class="icon-btn" type="button" data-notif-toggle aria-expanded="false" aria-controls="notif-panel" aria-label="Thông báo">{{ icon("bell") }}<b class="dot" data-notif-dot hidden></b></button>
           <div class="notif-panel" id="notif-panel" data-notif-panel hidden>

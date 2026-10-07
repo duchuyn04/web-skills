@@ -1,0 +1,52 @@
+/* hero-stage: stage-scroll-open, hero-ambient-video-mask.
+   Copy at the top, then a wide photo or video stage that opens from the text column to the screen edges on scroll. */
+.bl-hero--stage { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.bl-hstage__title { max-width: 16ch; }
+.bl-hstage__body .bl-hero__lead { margin-bottom: 2rem; }
+.bl-hstage__proof { margin-top: 1.6rem; }
+
+.bl-hstage--center .bl-hstage__copy { text-align: center; }
+.bl-hstage--center .bl-hstage__title { margin-inline: auto; max-width: 18ch; }
+.bl-hstage--center .bl-hero__lead { margin-inline: auto; }
+.bl-hstage--center .bl-btn-row, .bl-hstage--center .bl-hstage__proof { justify-content: center; }
+
+.bl-hstage--split .bl-hstage__copy { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: end; }
+.bl-hstage--split .bl-hstage__title { margin-bottom: 0; max-width: 14ch; }
+.bl-hstage--split .bl-hstage__body .bl-hero__lead { margin-bottom: 1.6rem; }
+
+/* The frame spans the screen less 12px on each side. Its clip starts at the text column (--hst-in from each side)
+   and opens to nothing as --hst-p runs 0 to 1; the picture settles from 108% at the same time. */
+.bl-hstage__wrap { container-type: inline-size; margin-top: clamp(2.5rem, 5vw, 4rem); padding-inline: 12px; }
+.bl-hstage__frame {
+  --hst-p: 0;
+  --hst-in: max(0px, calc((100cqw + 24px - min(var(--container), 100cqw + 24px)) / 2 + var(--gutter) - 12px));
+  position: relative; height: clamp(320px, 44vw, 760px); max-height: 80vh;
+  clip-path: inset(0 calc(var(--hst-in) * (1 - var(--hst-p))) round calc(28px - 14px * var(--hst-p)));
+  background: var(--surface-2);
+}
+.bl-hstage__media { position: absolute; inset: 0; overflow: hidden; }
+.bl-hstage__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(calc(1.08 - .08 * var(--hst-p))); }
+.bl-hstage__img--top { object-position: 50% 22%; }
+.bl-hstage__img--bottom { object-position: 50% 78%; }
+
+.bl-hstage__toggle {
+  position: absolute; bottom: 1rem; right: calc(var(--hst-in) * (1 - var(--hst-p)) + 1rem); z-index: 2;
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(15, 18, 24, .62); color: #fff; border: 1px solid rgba(255, 255, 255, .35); cursor: pointer;
+}
+.bl-hstage__toggle:hover { background: rgba(15, 18, 24, .82); }
+.bl-hstage__toggle .bl-icon { width: 18px; height: 18px; fill: currentColor; }
+.bl-hstage__i-play { display: none; }
+.bl-hero--stage.is-paused .bl-hstage__i-play { display: contents; }
+.bl-hero--stage.is-paused .bl-hstage__i-pause { display: none; }
+
+@media (max-width: 900px) {
+  .bl-hstage--split .bl-hstage__copy { grid-template-columns: minmax(0, 1fr); }
+  .bl-hstage--split .bl-hstage__title { margin-bottom: .4rem; }
+}
+/* Phones and small tablets: the stage stays at the column width, nothing opens */
+@media (max-width: 768px) {
+  .bl-hstage__wrap { padding-inline: var(--gutter); }
+  .bl-hstage__frame { --hst-in: 0px; --hst-p: 1 !important; height: auto; aspect-ratio: 4 / 3; clip-path: none; border-radius: var(--radius-lg); overflow: hidden; }
+  .bl-hstage--center .bl-hstage__title { max-width: none; }
+}

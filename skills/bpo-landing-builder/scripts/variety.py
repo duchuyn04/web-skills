@@ -29,7 +29,7 @@ HEAVY = {"hero": 2, "services": 2}
 
 
 def load_json(path):
-    with open(path, encoding="utf-8") as f:
+    with open(path, encoding="utf-8-sig") as f:
         return json.load(f)
 
 
@@ -194,7 +194,11 @@ def blueprint_report(args, pages, count):
         print("")
         for i, s in enumerate(b["sections"]):
             compose = s.get("compose") or []
-            opts = sorted(build.fitting_variants(s, lib), key=lambda v: (v not in compose, v in sig, v not in FAVOURITE_HEROES, count.get(v, 0), v))
+            fits = build.fitting_variants(s, lib)
+            if compose and s.get("role") == "hero":
+                # build.py accepts only the composition, a business hero or (on an expressive page) an expressive hero here
+                fits = [v for v in fits if v in compose or v in build.BUSINESS_HEROES or v in sig]
+            opts = sorted(fits, key=lambda v: (v not in compose, v in sig, v not in FAVOURITE_HEROES, count.get(v, 0), v))
             grid = ("cols %s, items %s" % (s.get("cols"), s.get("count"))) if s.get("count") else ""
             print("%2d %-11s %-15s %-6s %s%s" % (i + 1, s["role"], s["form"], s.get("tone", ""), "optional " if build.slot_optional(s) else "", grid))
             print("     " + s.get("note", ""))

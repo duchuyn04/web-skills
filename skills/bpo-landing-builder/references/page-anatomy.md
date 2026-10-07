@@ -27,7 +27,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-form`, `hero-stage`, `hero-scatter`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -61,7 +61,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-cycler-centered`, `hero-split-image`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-form`, `hero-stage`, `hero-scatter`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -94,7 +94,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-dark-network`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-form`, `hero-stage`, `hero-scatter`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -125,7 +125,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-simple`, `header-mega` |
-| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-split-image`, `hero-cycler-centered`, `hero-fullbleed`, `hero-gradient`, `hero-qualifier`, `hero-collage`, `hero-form`, `hero-stage`, `hero-scatter`, `hero-ribbons`, `hero-chat`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | logos | recommended | `logo-marquee`, `logo-wall` |
 | 5 | intro | no | `statement-band` |
@@ -157,7 +157,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | # | Slot | Required | Allowed types |
 |:---|:---|:---|:---|
 | 1 | header | yes | `header-mega`, `header-simple` |
-| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
+| 2 | hero | yes | `hero-overlap`, `hero-mosaic`, `hero-portrait`, `hero-promo`, `hero-tabs`, `hero-news`, `hero-panels`, `hero-finder`, `hero-slides`, `hero-gradient`, `hero-split-image`, `hero-fullbleed`, `hero-qualifier`, `hero-collage`, `hero-form`, `hero-stage`, `hero-scatter`, `hero-ribbons`, `hero-particles`, `hero-terrain`, `hero-orbits`, `hero-isometric`, `hero-dashboard`, `hero-deck`, `hero-prism`, `hero-monolith`, `hero-shatter`, `hero-sundial`, `hero-magnetic`, `hero-wavefield`, `hero-flow`, `hero-globe`, `hero-voice`, `hero-ledger`, `hero-liquid` |
 | 3 | ticker | no | `ticker-band` |
 | 4 | about | no | `about-mosaic`, `about-statement`, `pillars-numbered`, `about-helix` |
 | 5 | trust | recommended | `metrics-panel`, `metrics-tiles`, `metrics-counter`, `metrics-rings`, `metrics-bars3d` |

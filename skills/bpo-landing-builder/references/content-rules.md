@@ -62,3 +62,4 @@ These are errors, not warnings: fix the copy, never the brief. The brief is the 
 
 - Set `"lang"` to the page language (`en`, `vi`, `ja`, ...). All copy, including form labels (`name_label`, `next_label`, ...) and screen reader labels (`menu_label`, `close_label`), must be in that language.
 - Vietnamese copy keeps its diacritics. The dash and quote rules still apply.
+- Vietnamese copy stays in a business register: no spoken or slang words such as "ưng", "ưng ý", "xịn", "chất lừ". Write "hài lòng", "phù hợp", "chọn" or "tốt". build.py and lint warn on them (`colloquial-vi`).

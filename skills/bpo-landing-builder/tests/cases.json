@@ -120,6 +120,8 @@
      "errors": ["seo.alternates[1].lang"]},
     {"name": "seo-subfolder-no-robots", "ok": true, "why": "robots.txt only counts at the root of the host, so a page in a folder gets a warning instead",
      "set": {"seo": {"url": "https://www.quayside.example/cebu/"}}, "warnings": ["seo.url"]},
+    {"name": "colloquial-vi", "ok": true, "why": "a Vietnamese spoken word such as 'ưng' reads as unprofessional; the build warns and names a neutral word",
+     "set": {"sections.4.data.cards.2.text": "A monthly report covers the work your offshore staff completed. Ưng ý thì ký tiếp."}, "warnings": ["Ưng ý", "hài lòng"]},
     {"name": "seo-url-http", "ok": false, "why": "the canonical address must be https",
      "set": {"seo": {"url": "http://www.quayside.example/"}}, "errors": ["seo.url"]},
     {"name": "seo-url-folder", "ok": false, "why": "an address without / or .html makes relative image paths resolve one folder up",
@@ -147,6 +149,7 @@
      "warnings": ["page.rules", "[rules 1, not enforced]"]},
     {"name": "rules-pin-keeps-copy-rules", "ok": false, "why": "the pin never relaxes the AGENTS.md copy rules",
      "set": {"rules": "1", "sections.3.data.head.title": "Our services \u2728"}, "prior_report": {"archetype": "offshore-staffing"},
-     "errors": ["sections[3].data.head.title"]}
+     "errors": ["sections[3].data.head.title"]},
+    {"name": "hero-form-select-without-options", "ok": true, "why": "a topic select with no options is left out with a warning, and a single ticked point is flagged as a leftover", "set": {"sections.1": {"type": "hero-form", "data": {"title": "Offshore staff for *Australian and New Zealand businesses*", "lead": "Quayside Staffing hires customer support agents, bookkeepers and virtual assistants in Cebu for ecommerce and property management businesses.", "points": ["You approve every hire"], "photo": {"src": "team-coworking-laptops", "alt": "Four people at a wooden table on laptops, one with headphones"}, "form": {"title": "Tell us the role you need", "topic_label": "Role you need", "submit_label": "Send", "success_title": "Thanks, we have your request", "success_text": "Quayside Staffing will reply by email about the role you need."}}}, "override_hero": {"reference": "https://www.beehiiv.com/", "reason": "test: the client asked for an enquiry form in the first screen"}}, "warnings": ["sections[1].data.form.topic_options", "sections[1].data.points"]}
   ]
 }

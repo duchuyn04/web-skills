@@ -1,9 +1,9 @@
 ---
 name: app-ui
-description: Build the screens inside a web app or admin area as a clickable prototype (dashboard, table, list, record detail, multi-step form, long-job progress, preview to approve, settings, sign in, error pages) from a fixed HTML/CSS kit and screen recipes that follow real SaaS apps on Mobbin, so the look does not depend on the model. Use when the user asks for app screens, an admin dashboard, a prototype with many screens, màn hình app, giao diện quản trị, trang admin, form nhiều bước, dựng prototype, or to redo app screens that look AI-made. Not for landing pages (bpo-landing-builder) or online shop storefronts (ecommerce-builder).
-compatibility: Needs Python 3.9+ for the scripts. Browser QA needs Python Playwright plus Edge or Chrome (on Windows run it with py -3.11 where python has no Playwright).
+description: Build the screens inside a web app or admin area as a clickable prototype (dashboard, table, list, record detail, multi-step form, long-job progress, preview to approve, settings, sign in, error pages) from a fixed HTML/CSS kit and screen recipes that follow real SaaS apps on Mobbin, so the look does not depend on the model. Use when the user asks for app screens, an admin dashboard, a prototype with many screens, màn hình app, giao diện quản trị, trang admin, form nhiều bước, dựng prototype, or to redo app screens that look AI-made. Not for landing pages (bpo-landing-builder) or online shops, their storefront or their store admin (ecommerce-builder).
+compatibility: Needs Python 3.9+ for the scripts. Browser QA needs Python Playwright plus Edge or Chrome, run with a Python that can import it.
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
 ---
 
 # App UI
@@ -109,8 +109,10 @@ use a kit class, two primaries means decide which action matters.
 ## Step 6: Browser QA
 
 ```
-py -3.11 SKILL/scripts/qa.py <out> --sweep
+python SKILL/scripts/qa.py <out> --sweep
 ```
+
+If `python` cannot import Playwright, use a Python that has it (on Windows `py -0` lists the installed versions, then for example `py -3.11`).
 
 It opens every page in every state at 1440 and 390 px, then narrows each page from 1440 to 360 px. It fails JS
 errors, sideways scrolling, broken images, missing icons, low contrast and header items that overlap; it warns on
@@ -148,7 +150,7 @@ In the language the user wrote in:
 ```
 python scripts/lint_ui.py recipes
 python scripts/lint_ui.py gallery
-py -3.11 scripts/qa.py recipes --sweep
+python scripts/qa.py recipes --sweep
 ```
 
 and look at the screenshots. A recipe starts with `<!doctype html>` and the one-line comment

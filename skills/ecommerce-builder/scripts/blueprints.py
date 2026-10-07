@@ -81,7 +81,7 @@ def main():
         for s in bp["sections"]:
             print("  %-16s %-34s fits: %s" % (s["role"], s["form"][:34], ", ".join(types_for(s["role"])) or "(not built)"))
     elif a[:1] == ["--check"]:
-        shop = json.loads(Path(a[1]).read_text(encoding="utf-8"))
+        shop = json.loads(Path(a[1]).read_text(encoding="utf-8-sig"))
         bp = bps.get(shop.get("blueprint"))
         if not bp:
             print("no valid blueprint set")

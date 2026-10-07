@@ -103,6 +103,7 @@ Company introduction without photos (after Airtasker, United Carriers and Analog
 - Group: `about`. Default anchor: `#about`. Tone: auto.
 - Built-in motion: reveal, statement-rule-draw.
 - Allowed in: enterprise-cx/about?, it-bpo-partner/about?.
+- Preview: `previews/about-statement.jpg`
 
 Fields:
 
@@ -946,7 +947,7 @@ Fields:
 
 ## hero-dark-network
 
-Dark hero over an animated canvas node network that tilts with the mouse; copy on the left, a live operations panel on the right, optional KPI chips.
+Dark hero over an animated canvas node network that tilts with the mouse; copy on the left, a panel of real operating figures from the brief on the right (title, status, 3-5 label and value rows; no drawn charts), optional KPI chips.
 
 - Group: `hero`. Default anchor: `#top`. Tone: dark. Expressive tier: only on pages with `"motion": "expressive"` (a brief that asks for a 3D or animation-led page).
 - Built-in motion: hero-3d-point-cloud-nodes, reveal.
@@ -1105,6 +1106,43 @@ Fields:
   - `label`: text 3-32 chars
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
+
+## hero-form
+
+Lead-capture hero after beehiiv, Circle, Parker and HBO Max advertising: the headline, lead and 2-5 ticked points on the left; on the right a short enquiry form on a white card in the first screen (name, work email, company, optional phone, an optional service select, an optional message), set over a rounded panel that is either a real photo of the office or team, or a flat brand-colour panel. The card overhangs the panel's left edge. The panel opens sideways, the card rises, the fields arrive in order and the points tick in; no loops. Suits companies that sell on a quick quote or a call back (staffing, outbound sales, back office) and have a form endpoint or will add one.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: reveal, form-panel-open, point-tick-sequence, form-field-cascade, photo-scroll-drift.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-form.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `points`: list of 0-5 (optional) (each text 6-90 chars)
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photo`: object (optional)
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `form`: object
+  - `title`: text 5-60 chars
+  - `text`: text 20-140 chars (optional)
+  - `name_label`: text 2-28 chars (optional, default "Full name")
+  - `email_label`: text 2-28 chars (optional, default "Work email")
+  - `company_label`: text 2-28 chars (optional, default "Company")
+  - `phone_label`: text 2-28 chars (optional)
+  - `topic_label`: text 2-36 chars (optional)
+  - `topic_options`: list of 2-8 (optional) (each text 2-40 chars)
+  - `message_label`: text 2-40 chars (optional)
+  - `submit_label`: text 3-30 chars
+  - `success_title`: text 5-60 chars
+  - `success_text`: text 20-200 chars
+  - `note`: text 20-160 chars (optional)
+  - `action`: link (optional)
 
 ## hero-fullbleed
 
@@ -1679,6 +1717,31 @@ Fields:
 - `play_label`: text 3-32 chars (optional, default "Play animation")
 - `slide_label`: text 3-24 chars (optional, default "Show slide")
 
+## hero-scatter
+
+Hero on a large rounded panel after Maze, MasterClass at Work and T1 Energy: the headline, lead, buttons and up to three proof ticks on the left; on the right 4-6 photos of different sizes set loosely at fixed places, some running past the panel's edges. Each photo sits at its own depth: on arrival they grow in one after another, while the page scrolls they drift at different speeds, and on desktop they lean a few pixels toward the pointer. On phones the photos become one row of mixed sizes under the copy. Needs 4-6 real photos of the office, the work, the city or the team (client photos first; library photos each once), with the subject in the middle of the frame since small photos crop hard.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: reveal, scatter-grow-in, scatter-depth-drift.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-scatter.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `photos`: list of 4-6, each item:
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+
 ## hero-shatter
 
 Photo-led hero: the wide team photo on the right arrives in pieces. 24 tiles (12 on phones) fly in from different depths and angles and lock together into the full picture in about 1.4 s, then the tiles are swapped for the single photo. On fine pointers the tiles near the cursor lift a few pixels toward the viewer. Assembly order (diagonal sweep, centre-out, column wave or scattered), scatter depth, rotation mix and lift height are seeded from the brand name. Needs a real team or office photo (the client's own or a library key) and its alt text; fits staffing brands and CX centers with good photography.
@@ -1781,6 +1844,36 @@ Fields:
   - `icon`: icon name
   - `value`: text 1-14 chars
   - `label`: text 3-30 chars
+
+## hero-stage
+
+Copy above a wide photo or video stage, after Customer.io, Figma, Vizcom, FLORA, Sana and Clay. The headline, lead, buttons and up to three proof ticks sit at the top: left-aligned ("align": "left"), centered ("center"), or with the headline on the left and the lead and buttons on the right ("split"). Below them a rounded stage holds one wide photo of the office, the floor or the work, or a looping video with a pause button. The stage starts at the width of the text column and opens out to the edges of the screen as the page scrolls, its corners tightening while the picture inside settles from a slight zoom; on phones it stays at the column width. Needs one wide landscape photo (or a video and a poster photo) whose subject sits in the middle third, since the sides are hidden until the stage opens.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: reveal, stage-scroll-open, hero-ambient-video-mask.
+- Allowed in: enterprise-cx/hero, offshore-staffing/hero, ai-data-ops/hero, cx-voice-sales/hero, it-bpo-partner/hero.
+- Preview: `previews/hero-stage.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 12-90 chars
+- `lead`: text 60-230 chars
+- `primary_cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `align`: one of left, center, split (optional, default "left")
+- `photo`: object
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `video`: video (optional)
+- `focus`: one of top, center, bottom (optional, default "center")
+- `pause_label`: text 3-32 chars (optional, default "Pause background video")
+- `play_label`: text 3-32 chars (optional, default "Play background video")
 
 ## hero-sundial
 
@@ -2789,6 +2882,7 @@ Steps without photos (after Railway and Givingli on Mobbin): one rounded card, h
 - Group: `features`. Default anchor: `#how-it-works`. Tone: auto.
 - Built-in motion: reveal, timeline-line-draw, timeline-steps-in.
 - Allowed in: enterprise-cx/features?, offshore-staffing/features?, ai-data-ops/features?, cx-voice-sales/features?, it-bpo-partner/solutions?.
+- Preview: `previews/steps-timeline.jpg`
 
 Fields:
 

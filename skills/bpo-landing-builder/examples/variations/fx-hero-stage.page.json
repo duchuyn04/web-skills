@@ -1,0 +1,82 @@
+{
+  "_note": "Shows hero-stage with \"align\": \"split\" (headline left, lead and buttons right, a wide photo stage below that opens to the screen edges on scroll). Quayline Services is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "orange-charcoal",
+  "lang": "en",
+  "site": {
+    "brand": "Quayline Services",
+    "brand_mark": "QS",
+    "title": "Customer care and back office in Manila | Quayline Services",
+    "description": "Quayline Services runs customer care, claims and back office teams in Manila and Cebu for insurers, utilities and travel companies."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Get started", "href": "#get-started"},
+          {"label": "Contact", "href": "#site-footer"}
+        ],
+        "cta": {"label": "Contact us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-stage",
+      "data": {
+        "eyebrow": "Manila and Cebu",
+        "title": "Customer care and back office *for insurers*",
+        "lead": "Quayline Services runs customer care, claims and policy administration teams in Manila and Cebu for insurers, utilities and travel companies.",
+        "primary_cta": {"label": "Contact us", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "proof": ["Two delivery centers", "Voice, email and chat"],
+        "align": "split",
+        "photo": {"src": "office-building-entrance", "alt": "Glass office building entrance at dusk with people walking in"},
+        "focus": "center"
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What our teams handle"},
+        "cards": [
+          {
+            "icon": "headset",
+            "title": "Customer care",
+            "text": "Policy questions, billing and changes by phone, email and chat.",
+            "bullets": ["Your scripts", "Weekly call reviews", "Daily volume report"]
+          },
+          {"icon": "file-text", "title": "Claims intake", "text": "First notice of loss taken by phone and entered in your claims system."},
+          {"icon": "clipboard-check", "title": "Policy administration", "text": "Renewals, endorsements and cancellations processed and checked by a second agent."},
+          {"icon": "mail", "title": "Correspondence", "text": "Letters and emails sorted, answered or routed to the right team each morning."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Talk to our *Manila team*",
+        "text": "Tell us the queue you want to move and we send a staffing plan.",
+        "primary_cta": {"label": "Contact us", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Quayline Services runs customer care and back office teams in Manila and Cebu.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Customer care", "href": "#services"},
+            {"label": "Claims intake", "href": "#services"},
+            {"label": "Policy administration", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

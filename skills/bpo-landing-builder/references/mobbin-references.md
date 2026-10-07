@@ -28,12 +28,16 @@ Links point to the reference sections on Mobbin (a Mobbin account is needed to o
 | `tool-stack` | Heading beside a grid of tool chips (mark, name, category) in offset rows | [Airtable](https://mobbin.com/sites/sections/978d622a-0a04-44c2-be6f-6a91eacebcff), [Lattice](https://mobbin.com/sites/sections/2006d3b7-193b-4953-82c6-561f459bf832), [Customer.io](https://mobbin.com/sites/sections/363f8cb4-072f-4e38-94e3-24e24e5f2573) |
 | `steps-row` | Three or four step cards with large numerals | [PayPal](https://mobbin.com/sites/sections/fc3046a5-a7dc-4377-87cc-d90bc9fd1848), [ClassPass](https://mobbin.com/sites/sections/193363c3-3373-49a5-a1d0-00ff01f07b4d) |
 | `country-cards` | Tall photo cards per country at staggered heights, service tags, round flag | [Deel](https://mobbin.com/sites/sections/59bb9d63-e615-4175-8851-3019fb58f0c5) |
+| `hero-form` | Headline and ticked points beside an enquiry form card in the first screen; the card sits over a photo or a flat brand-colour panel | [beehiiv](https://mobbin.com/sites/sections/e4de9784-98e8-4f92-a5ef-ef7535f22e64), [Circle](https://mobbin.com/sites/sections/31f3c381-a9c3-4492-9ad9-4024a69e0a71), [Parker](https://mobbin.com/sites/sections/6b6ee642-ed8b-4109-9d8e-49e28a83a4a1), [HBO Max](https://mobbin.com/sites/sections/816e86f4-bc3e-4ef6-b670-73bba4490176) |
+| `hero-stage` | Copy at the top (left, centered, or headline left with lead and buttons right), a wide rounded photo or video stage below that opens out on scroll | [Customer.io](https://mobbin.com/sites/sections/c74125df-8280-4579-9289-6255600499f1), [Figma](https://mobbin.com/sites/sections/0f733de8-4249-4c51-b63f-ffda112cca7e), [Vizcom](https://mobbin.com/sites/sections/5a194a1a-1add-434f-b901-b832b3c4ba78), [FLORA](https://mobbin.com/sites/sections/3b9290af-0cd8-4d3a-a0b8-9f372d6b4ecf), [Sana](https://mobbin.com/sites/sections/024243a5-db5f-4042-be7a-40f7e87a3bee), [Clay](https://mobbin.com/sites/sections/5f21cc1b-5ed6-4e15-a51f-49b629c41c7a) |
+| `hero-scatter` | Rounded panel with the copy on the left and photos of mixed sizes set loosely on the right, some past the edges; one row of mixed sizes on phones | [Maze](https://mobbin.com/sites/sections/692025e8-77b8-45c7-9f60-3ee6d44e0688), [MasterClass at Work](https://mobbin.com/sites/sections/d4377698-e192-4e82-8330-30b0aa2a481d), [T1 Energy](https://mobbin.com/sites/sections/e65538de-469a-47f1-ab76-acfe43328bb4) |
 
 Adaptations for BPO pages:
 
 - Award badges are drawn in the brand colours with the issuer's name as text. Third-party award artwork and logos are trademarks and are not bundled; a client may add its own badge files later as a custom section.
 - Tool chips show a letter mark by default. A tool's real logo appears only when the client supplies the file (`logo` field).
 - Flags are the skill's SVG flags, never emoji.
+- Heroes on Mobbin sell software and often show the product UI, floating chips or a drawn dashboard. The three heroes above keep the layout and motion and put real photos, the client's own copy and a working form in those places; no mock UI.
 
 ## Using Mobbin for the next library update
 

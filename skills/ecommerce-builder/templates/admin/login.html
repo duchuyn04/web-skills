@@ -18,7 +18,8 @@
     <label class="field"><span>Mật khẩu</span><input name="password" type="password" required autocomplete="current-password"></label>
     <p class="form-error" data-login-error hidden role="alert">Sai mật khẩu.</p>
     <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
-    {% if demo %}<p class="hint">{{ icon("info", "i-xs") }}Trang mẫu: mật khẩu là <b>demo</b>. Khi chạy thật, trang quản trị cần máy chủ và tài khoản thật.</p>{% endif %}
+    {% if demo %}<p class="hint">{{ icon("info", "i-xs") }}Trang mẫu: mật khẩu là <b>demo</b>. Khi chạy thật, trang quản trị cần máy chủ và tài khoản thật.</p>
+    {% else %}<p class="hint">{{ icon("info", "i-xs") }}Bản xem trước, chưa có bảo mật: mật khẩu là <b>demo</b> và chỉ được kiểm tra trên trình duyệt. Trước khi đưa vào sử dụng, trang quản trị cần máy chủ và tài khoản riêng.</p>{% endif %}
   </form>
 </main>
 <script src="{{ root }}assets/js/catalog.js"></script>

@@ -1,0 +1,39 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--form bl-tone-{{section.tone}}" data-hform>
+  <div class="bl-container bl-hform">
+    <div class="bl-hform__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-hform__title" data-reveal>{{title}}</h1>
+      <p class="bl-lead bl-hero__lead" data-reveal>{{lead}}</p>
+      {{#points.0}}<ul class="bl-checks bl-hform__points" data-seq>{{#points}}<li>{{icon:check}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+      {{#secondary_cta}}<p class="bl-hform__alt" data-reveal><a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a></p>{{/secondary_cta}}
+    </div>
+    <div class="bl-hform__side{{#photo}} bl-hform__side--photo{{/photo}}">
+      <div class="bl-hform__panel" data-wipe="left"{{^photo}} aria-hidden="true"{{/photo}}>
+        {{#photo}}<img src="{{src}}" alt="{{alt}}" width="900" height="1100" fetchpriority="high" data-parallax="5">{{/photo}}
+      </div>
+      {{#form}}
+      <form class="bl-hform__card" data-hform-form{{#action}} action="{{action}}" method="post"{{/action}} novalidate data-reveal>
+        <div class="bl-hform__fields">
+          <h2 class="bl-hform__ftitle">{{title}}</h2>
+          {{#text}}<p class="bl-hform__ftext">{{text}}</p>{{/text}}
+          <div class="bl-hform__grid">
+            <div class="bl-field"><label class="bl-label" for="{{section.id}}-name">{{name_label}}</label><input class="bl-input" id="{{section.id}}-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="bl-field"><label class="bl-label" for="{{section.id}}-email">{{email_label}}</label><input class="bl-input" id="{{section.id}}-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="bl-field"><label class="bl-label" for="{{section.id}}-company">{{company_label}}</label><input class="bl-input" id="{{section.id}}-company" name="company" type="text" autocomplete="organization"></div>
+            {{#phone_label}}<div class="bl-field"><label class="bl-label" for="{{section.id}}-phone">{{phone_label}}</label><input class="bl-input" id="{{section.id}}-phone" name="phone" type="tel" autocomplete="tel"></div>{{/phone_label}}
+            {{#topic_options.0}}{{#topic_label}}<div class="bl-field bl-hform__wide"><label class="bl-label" for="{{section.id}}-topic">{{topic_label}}</label><span class="bl-hform__select"><select class="bl-input" id="{{section.id}}-topic" name="topic">{{#topic_options}}<option>{{.}}</option>{{/topic_options}}</select>{{icon:chevron-down}}</span></div>{{/topic_label}}{{/topic_options.0}}
+            {{#message_label}}<div class="bl-field bl-hform__wide"><label class="bl-label" for="{{section.id}}-msg">{{message_label}}</label><textarea class="bl-input" id="{{section.id}}-msg" name="message" rows="3"></textarea></div>{{/message_label}}
+          </div>
+          <button type="submit" class="bl-btn bl-btn--primary bl-btn--lg bl-hform__submit">{{submit_label}}</button>
+          {{#note}}<p class="bl-hform__note">{{icon:lock}}<span>{{note}}</span></p>{{/note}}
+        </div>
+        <div class="bl-hform__done" role="status" hidden>
+          <span class="bl-hform__done-icon">{{icon:check-circle}}</span>
+          <strong>{{success_title}}</strong>
+          <p>{{success_text}}</p>
+        </div>
+      </form>
+      {{/form}}
+    </div>
+  </div>
+</section>

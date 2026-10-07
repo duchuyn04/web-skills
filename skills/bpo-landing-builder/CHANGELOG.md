@@ -2,6 +2,42 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.5.3 (2026-10-07)
+
+From a font study for Vietnamese pages (`research/fonts/` in the project). Rules stay at 5: nothing here fails a page that built before.
+
+- Headings on `"lang": "vi"` pages use a line-height measured for their font (`VI_HEAD_LH` in build.py; `html:lang(vi)` rule in base.css). Vietnamese stacked marks (ẫ, ệ, ữ) at the English display line-heights of 1,06 to 1,12 touched the descenders of the line above in Plus Jakarta Sans (human-warm) and Bricolage Grotesque (dark-ai), and sat close in the others. Values: 1,15 (Montserrat, Source Sans 3, Source Serif 4, Public Sans and others) to 1,3 (Plus Jakarta Sans), 1,35 (Onest) and 1,4 (Bricolage Grotesque). English pages are unchanged.
+- build.py stops at import when a family in `VI_FONTS` has no measured value, so a new Vietnamese font cannot ship with the tight line-height.
+
+## 5.5.2 (2026-10-07)
+
+From a review of the whole plugin. Rules stay at 5: the new hero-form findings are warnings.
+
+- `hero-form` is a business hero (`BUSINESS_HEROES`): it may replace a blueprint's hero composition, like `hero-voice` and `hero-ledger`. `variety.py --blueprint` now lists on a hero slot with `"compose"` only the variants build.py accepts there (before, it offered `hero-form` on 33 blueprints and the build took it on 13).
+- `hero-form`: a `topic_label` without `topic_options` (or the reverse) leaves the select out instead of drawing an empty one, with a warning; a single ticked point warns.
+- `hero-dark-network`: the drawn bar chart in the panel is gone (QA failed it as mock UI); the panel shows only the label and value rows. Example `fx-hero-dark-network` and a new preview.
+- Examples for `about-statement` and `steps-timeline` (`fx-statement-timeline`), with previews; every variant is now built by the tests.
+- The share image falls back to a video hero's poster (`hero-stage`, `hero-fullbleed` with a video), so those pages get `og:image`.
+- build.py refuses an `--out` that holds page.json or a folder with `assets/` or `index.html` it did not build, reads page.json saved with a byte order mark (Notepad, PowerShell 5.1), and reports a missing file, a page that is not an object or a section that is not `{"type", "data"}` as one ERROR line instead of a traceback. A missing `preset` or `archetype` is reported once.
+- "Adding a rule" and "Maintaining the library" moved from SKILL.md to `references/maintaining.md`.
+
+## 5.5.1 (2026-10-07)
+
+From a review of the second slide of a web design company's hero (a giant word behind three website screenshots). Rules stay at 5: the new copy finding is a warning and the slide checks run only with `--sweep`.
+
+- `qa_screenshot.py --sweep` opens every slide of a hero carousel (the buttons in the hero whose `aria-controls` names a slide or tab panel) and checks each one for sideways overflow, clipped text and, at the first width, contrast. It also measures how much of each hero heading a photo or card covers: over 10% fails, over 3% warns (a giant word half hidden behind screenshots read as a covered heading to the user). Before, only the first slide was ever checked, so a heading hidden behind screenshots on phones passed. Shots of the slides go to `qa/slides-<width>/`.
+- Copy: Vietnamese spoken or slang words ("ưng", "ưng ý", "xịn", "xịn sò", "chất lừ", "đỉnh của chóp", "hết sảy") print a `colloquial-vi` warning in build and lint with neutral words to use instead. Test case `colloquial-vi`.
+- `references/anti-slop.md`, Mock UI: browser window dots and drawn device frames are dropped, not marked `data-mock-ok`; sample screens are real pages in the page's language, spread across the brief's industries, tagged as samples on the picture, and show no figures, certifications or client names as the company's own.
+
+## 5.5.0 (2026-10-07)
+
+Three calm heroes from trending Mobbin hero sections. Rules stay at 5: nothing here fails a page that built before.
+
+- New `hero-form` (after beehiiv, Circle, Parker and HBO Max advertising): headline, lead and 2-5 ticked points on the left, an enquiry form card in the first screen on the right (name, work email, company, optional phone, optional service select and message) over a rounded photo or flat brand-colour panel. The panel opens sideways, the card rises, the fields arrive in order. The build warns when the form has no `action`, as it does for the contact sections.
+- New `hero-stage` (after Customer.io, Figma, Vizcom, FLORA, Sana and Clay): copy at the top in three alignments (`left`, `center`, `split` with the headline left and the lead and buttons right), then a wide rounded photo or looping video stage that opens from the text column to the screen edges as the page scrolls. Video gets a pause button and follows Pause animations; phones keep the stage at the column width.
+- New `hero-scatter` (after Maze, MasterClass at Work and T1 Energy): copy on a rounded panel with 4-6 photos of mixed sizes set loosely on the right, some past its edges; they grow in one after another, drift by depth on scroll and lean toward a fine pointer. Phones get one row of mixed sizes under the copy.
+- All three are in the hero slot of every archetype, have examples in `examples/variations/` (`fx-hero-form`, `fx-hero-stage`, `fx-hero-stage-b`, `fx-hero-scatter`), previews, catalog entries and timing lines, and rows in `references/mobbin-references.md`.
+
 ## 5.4.0 (2026-10-07)
 
 - New `about-statement` (statement left, paragraphs right, points in a row under a rule) and `steps-timeline` (one card: copy and buttons left, numbered steps on a line right), both without photos, after Airtasker, United Carriers, Railway and Givingli on Mobbin. They fill the same feature-split slots as `about-mosaic` and `feature-rows`.

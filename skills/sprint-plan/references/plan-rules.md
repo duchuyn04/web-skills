@@ -69,6 +69,9 @@ The CSV is UTF-8 with a byte order mark. Steps for Jira Cloud: Settings, System,
 
 - Map `Issue Id` to Issue Id and `Parent` to Parent; Parent holds the epic's Issue Id, not its key, and epics
   come first in the file. This is how the Jira Cloud importer links children to epics.
+- Leave `Epic Name` and `Epic Link` unmapped on Jira Cloud. On Jira Server or Data Center (and older
+  company-managed projects) map `Epic Name` to Epic Name and `Epic Link` to Epic Link instead of `Parent`: each
+  child carries its epic's name there.
 - Map both `Labels` columns to Labels. `Story Points` is "Story point estimate" in team-managed projects.
 - Sprint: create the sprints with the exact names (`WEB Sprint 1` ...) before importing, or leave the column
   unmapped and drag issues into sprints after. Whether the importer creates missing sprints is not verified.

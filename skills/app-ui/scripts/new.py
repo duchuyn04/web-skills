@@ -40,6 +40,25 @@ def recipes():
     return out
 
 
+def listed_pages(out, all_recipes):
+    """Pages an earlier run put in screens.html, in that order, so adding one screen keeps the others listed."""
+    index = out / "screens.html"
+    if not index.is_file():
+        return []
+    found = []
+    for file in re.findall(r'class="item-title" href="([^"]+)"', index.read_text(encoding="utf-8")):
+        page = out / file
+        if not page.is_file():
+            continue
+        html = page.read_text(encoding="utf-8")
+        rec = re.search(r"<!-- from recipe: ([\w-]+)", html)
+        if not rec or rec.group(1) not in all_recipes:
+            continue
+        own = re.search(r'data-states="([^"]+)"', html)
+        found.append((file, all_recipes[rec.group(1)], own.group(1).split() if own else all_recipes[rec.group(1)]["states"]))
+    return found
+
+
 def screens_page(name, mark, pages):
     rows = []
     for file, rec, states in pages:
@@ -92,6 +111,17 @@ def main():
         sys.exit("--accent takes a 6-digit hex colour such as #1f4aa8")
     mark = (a.mark or a.name[:1]).upper()
     out = Path(a.out).resolve()
+    # check every screen before writing anything, so a typo leaves the folder as it was
+    wanted = []
+    for item in [s.strip() for s in (a.screens or ",".join(all_recipes)).split(",") if s.strip()]:
+        rec_name, _, file = item.partition(":")
+        if rec_name not in all_recipes:
+            sys.exit("unknown recipe '%s'. Known: %s" % (rec_name, ", ".join(all_recipes)))
+        file = file or rec_name
+        file = file if file.endswith(".html") else file + ".html"
+        if not re.fullmatch(r"[\w-]+\.html", file) or file == "screens.html":
+            sys.exit("'%s': a file name is letters, digits, - and _ only (no folders), and not screens.html" % file)
+        wanted.append((rec_name, file))
     (out / "kit").mkdir(parents=True, exist_ok=True)
 
     t = theme.tokens(a.accent.lower(), a.primary)
@@ -106,14 +136,10 @@ def main():
     shutil.copytree(SKILL / "kit" / "img", out / "kit" / "img", dirs_exist_ok=True)
     print("copy  kit/app.css, kit/app.js, kit/icons.js, kit/img/")
 
-    wanted = [s.strip() for s in (a.screens or ",".join(all_recipes)).split(",") if s.strip()]
+    earlier = listed_pages(out, all_recipes)
     pages = []
-    for item in wanted:
-        rec_name, _, file = item.partition(":")
-        if rec_name not in all_recipes:
-            sys.exit("unknown recipe '%s'. Known: %s" % (rec_name, ", ".join(all_recipes)))
+    for rec_name, file in wanted:
         rec = all_recipes[rec_name]
-        file = (file or rec_name) + ("" if (file or rec_name).endswith(".html") else ".html")
         dest = out / file
         # a page already rewritten for the product lists its own states; the index follows the page
         own = re.search(r'data-states="([^"]+)"', dest.read_text(encoding="utf-8")) if dest.exists() else None
@@ -136,6 +162,8 @@ def main():
                 to.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(src, to)
                 print("copy  %s (sample picture)" % img)
+    new = {pg[0]: pg for pg in pages}
+    pages = [new.pop(pg[0], pg) for pg in earlier] + list(new.values())
     (out / "screens.html").write_text(screens_page(a.name, mark, pages), encoding="utf-8")
     print("write screens.html")
     protonav.build(out)

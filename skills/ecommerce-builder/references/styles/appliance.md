@@ -1,6 +1,6 @@
 # Style: appliance
 
-For home appliance and TV chains that sell to families: tivi, tủ lạnh, máy giặt, máy lạnh, loa. The look follows Điện Máy Xanh (screenshots in `docs/research/ecommerce/dmx-*`): fresh blue header, a white category bar with large icons, a wide banner carousel, round category wells, shopping by room and service promises (delivery, installation, warranty at home) near the top.
+For home appliance and TV chains that sell to families: tivi, tủ lạnh, máy giặt, máy lạnh, loa. The look follows Điện Máy Xanh (screenshots in `docs/research/ecommerce/dmx-*` (in the job repository, not shipped with this skill)): fresh blue header, a white category bar with large icons, a wide banner carousel, round category wells, shopping by room and service promises (delivery, installation, warranty at home) near the top.
 
 Set `"style": "appliance"`. Defaults:
 

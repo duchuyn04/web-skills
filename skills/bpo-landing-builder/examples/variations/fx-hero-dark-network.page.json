@@ -1,0 +1,256 @@
+{
+  "_note": "Shows hero-dark-network (expressive: canvas node network behind the copy, an operations panel beside it). Relaypoint Evals is a fictional company; every figure is sample data.",
+  "archetype": "ai-data-ops",
+  "preset": "dark-ai",
+  "lang": "en",
+  "site": {
+    "brand": "Relaypoint Evals",
+    "brand_mark": "RE",
+    "title": "Model evaluation and red-teaming teams | Relaypoint",
+    "description": "Relaypoint Evals rates model answers, writes adversarial prompts and reviews safety cases for AI teams, with trained reviewers working in two shifts from Hanoi."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Pilot",
+            "href": "#get-started"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          }
+        ],
+        "cta": {
+          "label": "Request a pilot",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-dark-network",
+      "data": {
+        "eyebrow": "Model evaluation",
+        "title": "Human ratings for *every model release*",
+        "lead": "Relaypoint Evals rates model answers against your rubric, writes adversarial prompts and reviews safety cases, with trained reviewers in two shifts from Hanoi.",
+        "primary_cta": {
+          "label": "Request a pilot",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "What we rate",
+          "href": "#services"
+        },
+        "panel": {
+          "title": "Current batch",
+          "status": "In review",
+          "rows": [
+            {
+              "label": "Reviewers on shift",
+              "value": "40"
+            },
+            {
+              "label": "Second rating on",
+              "value": "20%"
+            },
+            {
+              "label": "Batch report",
+              "value": "Daily"
+            }
+          ]
+        },
+        "chips": [
+          {
+            "value": "2",
+            "label": "Shifts a day"
+          },
+          {
+            "value": "9",
+            "label": "Languages rated"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "title": "What our reviewers rate"
+        },
+        "cards": [
+          {
+            "icon": "sliders",
+            "title": "Answer ratings",
+            "text": "Side-by-side and single-answer ratings against the rubric your researchers write.",
+            "bullets": [
+              "Your rubric",
+              "Calibration rounds",
+              "Agreement scores"
+            ],
+            "photo": {
+              "src": "office-interior",
+              "alt": "Empty modern office corridor with a kitchen"
+            }
+          },
+          {
+            "icon": "shield-check",
+            "title": "Red-teaming",
+            "text": "Adversarial prompts written by reviewers trained on your safety policy."
+          },
+          {
+            "icon": "languages",
+            "title": "Multilingual checks",
+            "text": "Ratings in nine languages by reviewers who speak them every day."
+          },
+          {
+            "icon": "file-text",
+            "title": "Batch reports",
+            "text": "A daily report with agreement scores and the cases reviewers disagreed on."
+          }
+        ]
+      }
+    },
+    {
+      "type": "steps-row",
+      "data": {
+        "head": {
+          "title": "How a pilot runs",
+          "lead": "Each pilot follows the same three stages, so your researchers know when to expect the first ratings."
+        },
+        "steps": [
+          {
+            "title": "Rubric review",
+            "text": "Your researchers walk our leads through the rubric and the edge cases that matter most.",
+            "photo": {
+              "src": "meeting-room-empty",
+              "alt": "Long empty meeting room with a glass wall and a city view"
+            }
+          },
+          {
+            "title": "Calibration round",
+            "text": "Reviewers rate a shared set until their scores agree with your gold answers.",
+            "photo": {
+              "src": "desk-phone-monitors",
+              "alt": "Person at a desk with two monitors, seen from behind"
+            }
+          },
+          {
+            "title": "Rated batches",
+            "text": "Reviewers rate the full set and the daily report lists every disagreement.",
+            "photo": {
+              "src": "finance-chart-screen",
+              "alt": "Dark screen showing charts and figures"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "metrics-counter",
+      "data": {
+        "title": "Pilot figures",
+        "items": [
+          {
+            "value": 40,
+            "label": "Reviewers per shift",
+            "note": "Two shifts a day"
+          },
+          {
+            "value": 9,
+            "label": "Languages rated",
+            "note": "Native speakers only"
+          },
+          {
+            "value": 20,
+            "suffix": "%",
+            "label": "Items rated twice",
+            "note": "For agreement scores"
+          },
+          {
+            "value": 7,
+            "label": "Days to first batch",
+            "note": "Standard pilot"
+          }
+        ],
+        "image": "developer-headphones-monitors"
+      }
+    },
+    {
+      "type": "compliance-badges",
+      "data": {
+        "head": {
+          "title": "How we protect your data",
+          "lead": "Reviewers work on managed desktops in a secured office, with copying, downloads and screenshots turned off."
+        },
+        "badges": [
+          {
+            "code": "ISO 27001",
+            "label": "Information security"
+          },
+          {
+            "code": "GDPR",
+            "label": "EU data protection",
+            "icon": "globe"
+          },
+          {
+            "code": "NDA",
+            "label": "Signed by every reviewer",
+            "icon": "lock"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Send us *one evaluation set* and your rubric",
+        "text": "We rate it in a paid pilot and share the agreement report with the results.",
+        "primary_cta": {
+          "label": "Request a pilot",
+          "href": "mailto:hello@example.com"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Relaypoint Evals rates model answers and writes adversarial prompts for AI teams from Hanoi.",
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Answer ratings",
+                "href": "#services"
+              },
+              {
+                "label": "Red-teaming",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              },
+              {
+                "label": "Top",
+                "href": "#top"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

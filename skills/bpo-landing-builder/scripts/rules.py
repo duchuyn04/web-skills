@@ -59,6 +59,9 @@ LLM_TELLS_VI = [
     "trong bối cảnh", "hơn bao giờ hết", "kiến tạo tương lai", "bứt phá", "chinh phục mọi", r"không chỉ\b[^.!?]{0,60}\bmà còn",
 ]
 LLM_TELLS_VI_RE = re.compile("(" + "|".join(LLM_TELLS_VI) + ")", re.I)
+# Vietnamese spoken or slang words that read as unprofessional on a company page ("Ưng rồi mới đặt làm").
+COLLOQUIAL_VI = [r"ưng(?: ý)?", r"xịn(?: sò)?", "chất lừ", "đỉnh của chóp", "hết sảy"]
+COLLOQUIAL_VI_RE = re.compile(r"\b(" + "|".join(COLLOQUIAL_VI) + r")\b", re.I)
 
 CHATBOT_RE = re.compile(
     r"(certainly!|great question|i hope this helps|let me know if you need|would you like me to|sure, here is|sure, here's|honestly\?)",
@@ -104,6 +107,8 @@ def check_text(text, check_arrow_text=True):
         out.append(Finding("error", "llm-tell", "'%s' reads as AI-written to industry buyers (real BPO sites almost never say it). Rewrite as a plain fact; see references/industry-voice.md." % m.group().strip(), _excerpt(text, m)))
     for m in LLM_TELLS_VI_RE.finditer(text):
         out.append(Finding("error", "llm-tell", "'%s' là cách viết dịch từ tiếng Anh, trang BPO Việt Nam thật không dùng. Viết lại thành câu nêu sự việc; xem references/industry-voice.md." % m.group().strip(), _excerpt(text, m)))
+    for m in COLLOQUIAL_VI_RE.finditer(text):
+        out.append(Finding("warn", "colloquial-vi", "'%s' là khẩu ngữ, đọc thiếu chuyên nghiệp trên trang doanh nghiệp. Dùng từ trung tính: \"hài lòng\", \"phù hợp\", \"chọn\", \"tốt\"." % m.group().strip(), _excerpt(text, m)))
     for m in CHATBOT_RE.finditer(text):
         out.append(Finding("error", "chatbot", "Chatbot phrase '%s'. Delete it." % m.group(), _excerpt(text, m)))
     for rx in NOT_X_BUT_Y:

@@ -1,6 +1,6 @@
 # Style: premium
 
-For authorised resellers of premium brands and shops that sell a few flagship models. The page leads with large product art on light grey bands, uses few words and large type, shows prices in ink, and keeps promotions out of the cards. Reference: Apple and Samsung online stores (`docs/research/ecommerce-electronics-dashboards.md` section 2, screenshots `docs/research/ecommerce/apple-*`, `samsung-*`).
+For authorised resellers of premium brands and shops that sell a few flagship models. The page leads with large product art on light grey bands, uses few words and large type, shows prices in ink, and keeps promotions out of the cards. Reference: Apple and Samsung online stores (`docs/research/ecommerce-electronics-dashboards.md` section 2, screenshots `docs/research/ecommerce/apple-*` (in the job repository, not shipped with this skill), `samsung-*`).
 
 Set `"style": "premium"`. Default preset `clean-premium`; the logo colour goes in `theme.accent` as usual.
 

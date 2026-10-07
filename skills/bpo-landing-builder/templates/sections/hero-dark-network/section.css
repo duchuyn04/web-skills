@@ -8,15 +8,6 @@
 .bl-ops__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent-2); box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-accent-2) 22%, transparent); animation: bl-dot 2s ease-in-out infinite; }
 @keyframes bl-dot { 50% { opacity: .35; } }
 .bl-ops__title { flex: 1; font-weight: 700; font-size: .95rem; color: var(--text-strong); }
-.bl-ops__bars { display: flex; align-items: flex-end; gap: 5px; height: 92px; padding: 1.1rem 0 .6rem; }
-.bl-ops__bars span { flex: 1; height: 100%; border-radius: 3px 3px 1px 1px; transform-origin: bottom; background: var(--accent-ink); animation: bl-bar-in 900ms var(--ease-out) both; }
-.bl-ops__bars span:nth-child(4n+1) { transform: scaleY(.42); }
-.bl-ops__bars span:nth-child(4n+2) { transform: scaleY(.66); }
-.bl-ops__bars span:nth-child(4n+3) { transform: scaleY(.52); }
-.bl-ops__bars span:nth-child(4n) { transform: scaleY(.82); }
-.bl-ops__bars span:nth-child(n+9) { background: var(--c-accent-2); }
-.bl-ops__bars span:nth-child(16) { transform: scaleY(.95); }
-@keyframes bl-bar-in { from { transform: scaleY(.05); opacity: 0; } }
 .bl-ops__rows li { display: flex; justify-content: space-between; gap: 1rem; padding: .75rem 0; border-top: 1px solid var(--border); font-size: var(--fs-sm); }
 .bl-ops__rows strong { color: var(--text-strong); font-size: .95rem; white-space: nowrap; }
 .bl-hero-net__chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(3rem, 6vw, 4.5rem); padding-top: 2rem; border-top: 1px solid var(--border); }

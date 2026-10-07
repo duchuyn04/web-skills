@@ -2,7 +2,7 @@
   "variant": "hero-dark-network",
   "group": "hero", "signature": true, "tier": "expressive",
   "forms": ["hero-split", "hero-fullbleed"],
-  "summary": "Dark hero over an animated canvas node network that tilts with the mouse; copy on the left, a live operations panel on the right, optional KPI chips.",
+  "summary": "Dark hero over an animated canvas node network that tilts with the mouse; copy on the left, a panel of real operating figures from the brief on the right (title, status, 3-5 label and value rows; no drawn charts), optional KPI chips.",
   "tone": "dark",
   "anchor": "top",
   "shared": ["hero"],

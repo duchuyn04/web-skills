@@ -1,0 +1,80 @@
+{
+  "_note": "Shows hero-stage with \"align\": \"center\" and a looping video on the stage (pause button bottom right). Lumen Data Ops is a fictional company; every figure is sample data. Replace the sample video with the client's footage.",
+  "archetype": "it-bpo-partner",
+  "preset": "clean-minimal",
+  "lang": "en",
+  "site": {
+    "brand": "Lumen Data Ops",
+    "brand_mark": "LD",
+    "title": "Data labeling teams in Ho Chi Minh City | Lumen Data Ops",
+    "description": "Lumen Data Ops runs image, text and audio labeling teams in Ho Chi Minh City for computer vision and speech companies."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Get started", "href": "#get-started"},
+          {"label": "Contact", "href": "#site-footer"}
+        ],
+        "cta": {"label": "Talk to us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-stage",
+      "data": {
+        "title": "Data labeling teams in *Ho Chi Minh City*",
+        "lead": "Lumen Data Ops runs image, text and audio labeling teams for computer vision and speech companies, with a second reviewer on every batch.",
+        "primary_cta": {"label": "Talk to us", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "align": "center",
+        "photo": {"src": "developer-headphones-monitors", "alt": "Woman in orange headphones working at a standing desk with three screens"},
+        "video": "sample-ambient-loop"
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What we label"},
+        "cards": [
+          {
+            "icon": "eye",
+            "title": "Images and video",
+            "text": "Boxes, polygons and keypoints drawn in your tool, to your guide.",
+            "bullets": ["Your labeling guide", "Second reviewer", "Batch reports"]
+          },
+          {"icon": "file-text", "title": "Text", "text": "Classification, entity tagging and ranking of model answers."},
+          {"icon": "mic", "title": "Audio", "text": "Transcription and speaker labels for Vietnamese and English recordings."},
+          {"icon": "shield-check", "title": "Secure rooms", "text": "Work done on locked machines in a room without phones."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Send us a *pilot batch*",
+        "text": "We label a small batch to your guide and send it back with a review report.",
+        "primary_cta": {"label": "Talk to us", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Lumen Data Ops runs data labeling teams in Ho Chi Minh City.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Images and video", "href": "#services"},
+            {"label": "Text", "href": "#services"},
+            {"label": "Audio", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

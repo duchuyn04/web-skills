@@ -48,7 +48,8 @@ class Safe(str):
 
 
 def load_json(path):
-    with open(path, encoding="utf-8") as f:
+    # utf-8-sig: Notepad and PowerShell 5.1 save UTF-8 with a byte order mark
+    with open(path, encoding="utf-8-sig") as f:
         return json.load(f)
 
 
@@ -775,6 +776,7 @@ def theme_css(preset, overrides, ctx):
              "  --font-mono: '%s', ui-monospace, monospace;" % preset["fonts"]["mono"],
              "  --heading-weight: %s;" % preset["type"]["heading_weight"],
              "  --heading-tracking: %s;" % preset["type"]["heading_tracking"],
+             "  --vi-head-lh: %s;" % VI_HEAD_LH.get(preset["fonts"]["heading"], 1.25),
              "  --c-primary: %s;" % colors["primary"],
              "  --c-accent: %s;" % colors["accent"],
              "  --c-accent-2: %s;" % colors["accent_2"],
@@ -1529,10 +1531,20 @@ def check_brand_colors(ctx, top, page_dir, brief, raw_site):
 
 # Families on Google Fonts that ship a Vietnamese subset (checked 2026-09-30 against the css2 API). A preset whose
 # fonts are not all here must carry "fonts_vi", which build.py uses for "lang": "vi".
+# Smallest heading line-height (bold, mixed case) before Vietnamese stacked marks (ẫ, ệ, ữ) touch the descenders
+# of the line above: (height of "ẫ" + depth of "g") / font size + 0,05, measured in Edge on 2026-10-07. Display
+# headings at 1,06-1,12 collided in Plus Jakarta Sans and Bricolage Grotesque. base.css applies it on lang="vi" pages.
+VI_HEAD_LH = {"Archivo": 1.2, "Barlow": 1.15, "Be Vietnam Pro": 1.25, "Bricolage Grotesque": 1.4, "Encode Sans": 1.25,
+              "Epilogue": 1.2, "IBM Plex Sans": 1.2, "Inter": 1.25, "Josefin Sans": 1.15, "Lexend": 1.25, "Libre Franklin": 1.2,
+              "Lora": 1.25, "Manrope": 1.25, "Montserrat": 1.15, "Mulish": 1.15, "Noto Serif": 1.25, "Nunito Sans": 1.15,
+              "Onest": 1.35, "Plus Jakarta Sans": 1.3, "Public Sans": 1.15, "Raleway": 1.15, "Roboto": 1.2,
+              "Source Sans 3": 1.15, "Source Serif 4": 1.15, "Space Grotesk": 1.2, "Work Sans": 1.25}
 VI_FONTS = {"Archivo", "Barlow", "Be Vietnam Pro", "Bricolage Grotesque", "Encode Sans", "Epilogue", "IBM Plex Sans", "Inter",
             "JetBrains Mono", "Josefin Sans", "Lexend", "Libre Franklin", "Lora", "Manrope", "Montserrat", "Mulish",
             "Noto Serif", "Nunito Sans", "Onest", "Plus Jakarta Sans", "Public Sans", "Raleway", "Roboto",
             "Source Sans 3", "Source Serif 4", "Space Grotesk", "Work Sans"}
+# every Vietnamese heading font needs its measured line-height
+assert VI_FONTS - {"JetBrains Mono"} <= set(VI_HEAD_LH), sorted(VI_FONTS - {"JetBrains Mono"} - set(VI_HEAD_LH))
 
 
 def check_voice(ctx, sections, lang, bp=None):
@@ -1735,7 +1747,7 @@ ROLE_GROUPS = {
 }
 # Heroes built around the client's own work (a call card in its languages, its paperwork, a support chat, its real
 # service panels). They may stand in for a blueprint's hero composition when they fit the business.
-BUSINESS_HEROES = {"hero-voice", "hero-ledger", "hero-chat", "hero-dashboard"}
+BUSINESS_HEROES = {"hero-voice", "hero-ledger", "hero-chat", "hero-dashboard", "hero-form"}
 # Sections that need the client's own proof are left out when the brief has none, whatever the blueprint says
 PROOF_ROLES = {"testimonial", "cases", "clients", "awards", "news", "team", "careers", "locations"}
 
@@ -1957,12 +1969,37 @@ def main():
     if not args.page:
         ap.error("page.json path is required")
     page_path = Path(args.page).resolve()
+    if not page_path.is_file():
+        print("ERROR %s: file not found" % page_path)
+        return 1
     try:
         page = load_json(page_path)
     except json.JSONDecodeError as e:
         print("ERROR page.json is not valid JSON: line %d column %d: %s" % (e.lineno, e.colno, e.msg))
         return 1
+    except UnicodeDecodeError:
+        print("ERROR page.json is not UTF-8 text. Save it as UTF-8 and run again.")
+        return 1
+    if not isinstance(page, dict):
+        print("ERROR page.json must be one object: {\"archetype\": ..., \"preset\": ..., \"sections\": [...]}")
+        return 1
+    # Later checks walk the sections as objects, so stop here when the shape is wrong.
+    if "sections" in page and not isinstance(page["sections"], list):
+        print("ERROR page.sections: must be a list of sections, each {\"type\": ..., \"data\": {...}}")
+        return 1
+    shape = ["sections[%d]" % i for i, s in enumerate(page.get("sections") or []) if not isinstance(s, dict) or not isinstance(s.get("type"), str)]
+    if shape:
+        for p in shape:
+            print("ERROR %s: each section needs {\"type\": \"<variant>\", \"data\": {...}}" % p)
+        return 1
     out_dir = Path(args.out).resolve() if args.out else page_path.parent / "dist"
+    # The write step deletes out/assets and out/index.html, so never point it at the page's own folder or a stranger's site.
+    if out_dir == page_path.parent or out_dir in page_path.parents:
+        print("ERROR --out: %s holds page.json and its photos would be deleted; use a subfolder such as %s" % (out_dir, page_path.parent / "dist"))
+        return 1
+    if any((out_dir / n).exists() for n in ("assets", "index.html")) and not (out_dir / "build-report.json").exists():
+        print("ERROR --out: %s already has assets/ or index.html that this build did not make; pick an empty folder or a previous build" % out_dir)
+        return 1
     ctx = Ctx(page_path.parent, out_dir, lib)
 
     # Top level (sections are validated one by one below).
@@ -1976,13 +2013,14 @@ def main():
 
     arch_key = top.get("archetype")
     archetype = lib["archetypes"].get(arch_key)
-    if not archetype:
-        ctx.err("page.archetype", "unknown archetype %r. Choose one of: %s" % (arch_key, ", ".join(lib["archetypes"])))
-    else:
+    if archetype:
         archetype["_key"] = arch_key
+    elif arch_key is not None:  # a missing key is already reported as required
+        ctx.err("page.archetype", "unknown archetype %r. Choose one of: %s" % (arch_key, ", ".join(lib["archetypes"])))
     preset = lib["presets"].get(top.get("preset"))
     if not preset:
-        ctx.err("page.preset", "unknown preset %r. Choose one of: %s" % (top.get("preset"), ", ".join(lib["presets"])))
+        if top.get("preset") is not None:  # a missing key is already reported as required
+            ctx.err("page.preset", "unknown preset %r. Choose one of: %s" % (top.get("preset"), ", ".join(lib["presets"])))
     elif top.get("lang") == "vi":
         if preset.get("fonts_vi"):
             preset = dict(preset, fonts=preset["fonts_vi"])  # the preset's own faces lack Vietnamese diacritics
@@ -2017,6 +2055,14 @@ def main():
         for fk, fs in variant["fields"].items():
             if isinstance(fs, dict) and fs.get("type") == "enum" and isinstance(data.get(fk), str):
                 data["%s_is_%s" % (fk, re.sub(r"[^a-z0-9]+", "_", data[fk].lower()))] = True
+        if t == "hero-form":
+            hf = data.get("form") or {}
+            if hf.get("topic_label") and not hf.get("topic_options"):
+                ctx.warn(p + ".data.form.topic_options", "topic_label without options: the select is left out of the form. List its 2-8 options (the services from the brief), or drop topic_label")
+            if hf.get("topic_options") and not hf.get("topic_label"):
+                ctx.warn(p + ".data.form.topic_label", "topic_options without topic_label: the select is left out of the form. Add a label such as \"Service you need\"")
+            if len(data.get("points") or []) == 1:
+                ctx.warn(p + ".data.points", "give 2-5 ticked points, or none; a single point reads as a leftover")
         if t == "banner-image" and not data.get("image") and not data.get("visual"):
             ctx.err(p + ".data.image", "banner-image needs an image, or a 3D visual (\"visual\": \"dots\" or \"terrain\") in its place")
         if t == "services-bento" and data.get("cards") and len(data["cards"][0].get("bullets") or []) < 3:
@@ -2051,7 +2097,7 @@ def main():
                 ctx.err(p + ".data.video", "set exactly one of src (a video file) or embed (a YouTube or Vimeo URL)")
         if t == "voice-sample" and any(not x.get("audio") for x in data.get("samples") or []):
             ctx.warn(p + ".data.samples", "some samples have no audio file; their players animate without sound. Add real recordings before launch.")
-        if (t in ("cta-multistep", "contact-split", "contact-photo") or t == "cta-letter" and data.get("form")) and not (data.get("form") or {}).get("action"):
+        if (t in ("cta-multistep", "contact-split", "contact-photo", "hero-form") or t == "cta-letter" and data.get("form")) and not (data.get("form") or {}).get("action"):
             ctx.warn(p + ".data.form.action", "no form action set; the form shows a thank-you message but sends nothing. Add a form endpoint URL before launch.")
         if t == "cta-letter" and not data.get("form") and not data.get("primary_cta"):
             ctx.err(p + ".data", "cta-letter needs primary_cta or form, or the letter has no way to reply.")
@@ -2365,5 +2411,17 @@ def report(ctx, failed):
             print("  " + p)
 
 
+def run():
+    try:
+        return main()
+    except Exception as e:  # a value of the wrong type that validation did not catch
+        import traceback
+        where = traceback.extract_tb(e.__traceback__)[-1]
+        print("ERROR build.py stopped on page.json: %s: %s (%s line %d)." % (type(e).__name__, e, Path(where.filename).name, where.lineno))
+        print("A value probably has the wrong type, such as text where a list, an object or a number is expected. "
+              "Compare that part of page.json with an example in examples/. If it matches, this is a library bug: quote this message to the user.")
+        return 1
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(run())

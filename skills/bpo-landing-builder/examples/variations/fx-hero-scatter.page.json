@@ -1,0 +1,87 @@
+{
+  "_note": "Shows hero-scatter (copy on a rounded panel with six photos of mixed sizes set loosely on the right). Riverbend Software is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "crimson-trust",
+  "lang": "en",
+  "site": {
+    "brand": "Riverbend Software",
+    "brand_mark": "RB",
+    "title": "Software outsourcing in Da Nang | Riverbend Software",
+    "description": "Riverbend Software builds and tests web and mobile products with dedicated teams in Da Nang for companies in Japan, Australia and Europe."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Get started", "href": "#get-started"},
+          {"label": "Contact", "href": "#site-footer"}
+        ],
+        "cta": {"label": "Contact us", "href": "#get-started"}
+      }
+    },
+    {
+      "type": "hero-scatter",
+      "data": {
+        "eyebrow": "Da Nang, Vietnam",
+        "title": "Software outsourcing *in Da Nang*",
+        "lead": "Riverbend Software builds and tests web and mobile products with dedicated teams for companies in Japan, Australia and Europe.",
+        "primary_cta": {"label": "Contact us", "href": "#get-started"},
+        "secondary_cta": {"label": "Our services", "href": "#services"},
+        "proof": ["Dedicated teams", "Weekly demos"],
+        "photos": [
+          {"src": "developer-headphones-monitors", "alt": "Woman in orange headphones coding at a standing desk with three screens"},
+          {"src": "city-danang-golden-bridge", "alt": "Golden Bridge held up by two stone hands in the hills near Da Nang"},
+          {"src": "office-interior", "alt": "Empty modern office corridor with a kitchen"},
+          {"src": "code-review-pair", "alt": "Two women looking at code on a laptop"},
+          {"src": "meeting-room-empty", "alt": "Long empty meeting room with a glass wall and city view"},
+          {"src": "laptop-conference-room", "alt": "Man with glasses on a laptop at a long conference table"}
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {"eyebrow": "Services", "title": "What our teams build"},
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Web products",
+            "text": "Customer portals, booking systems and internal tools built in React and Node.",
+            "bullets": ["Weekly demos", "Your repository", "Code review on every change"]
+          },
+          {"icon": "layers", "title": "Mobile apps", "text": "iOS and Android apps in Flutter or native code."},
+          {"icon": "check-circle", "title": "Testing", "text": "Manual and automated tests written against your release plan."},
+          {"icon": "server", "title": "Maintenance", "text": "Bug fixes and small changes handled by a team that knows the code."}
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Meet the team *before you sign*",
+        "text": "We introduce the developers who would work on your product.",
+        "primary_cta": {"label": "Contact us", "href": "mailto:hello@example.com"}
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Riverbend Software builds web and mobile products with dedicated teams in Da Nang.",
+        "columns": [
+          {"heading": "Services", "links": [
+            {"label": "Web products", "href": "#services"},
+            {"label": "Mobile apps", "href": "#services"},
+            {"label": "Testing", "href": "#services"}
+          ]},
+          {"heading": "Company", "links": [
+            {"label": "Contact", "href": "#get-started"},
+            {"label": "Top", "href": "#top"}
+          ]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

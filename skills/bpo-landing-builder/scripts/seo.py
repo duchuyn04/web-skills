@@ -41,6 +41,7 @@ LOGO_MIN = 112   # Google: an Organization logo is at least 112 x 112 px
 FAVICON_PX = 192  # Google Search: a square PNG or ICO, larger than 48 px; SVG favicons are not shown in results
 SAMPLE_RE = re.compile(r"\[|\bexample\.(com|org|net)\b|\.example\b", re.I)
 IMG_SRC_RE = re.compile(r'<img\b[^>]*\bsrc="(assets/img/[^"]+)"')
+POSTER_RE = re.compile(r'<video\b[^>]*\bposter="(assets/img/[^"]+)"')  # a video hero's still frame
 BG_SRC_RE = re.compile(r"url\((?:'|&#39;|\")?(assets/img/[^'\")&]+)")
 
 
@@ -145,10 +146,10 @@ def share_image(ctx, seo, body):
         return seo["image"], seo.get("image_alt") or ""
     hero = next((m for g, m in body if g == "hero"), "")
     for markup in [hero] + [m for g, m in body if g not in ("hero", "header", "footer")]:
-        for rx in (IMG_SRC_RE, BG_SRC_RE):
+        for rx in (IMG_SRC_RE, POSTER_RE, BG_SRC_RE):
             m = rx.search(markup)
             if m and not m.group(1).lower().endswith(".svg"):
-                alt = re.search(r'alt="([^"]*)"', markup[m.start():m.start() + 400])
+                alt = re.search(r'(?:alt|aria-label)="([^"]*)"', markup[m.start():m.start() + 400])
                 return html.unescape(m.group(1)), html.unescape(alt.group(1)) if alt else ""
     return None, ""
 

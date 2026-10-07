@@ -1,0 +1,19 @@
+{
+  "variant": "hero-scatter",
+  "group": "hero",
+  "forms": ["hero-split", "hero-left-text"],
+  "summary": "Hero on a large rounded panel after Maze, MasterClass at Work and T1 Energy: the headline, lead, buttons and up to three proof ticks on the left; on the right 4-6 photos of different sizes set loosely at fixed places, some running past the panel's edges. Each photo sits at its own depth: on arrival they grow in one after another, while the page scrolls they drift at different speeds, and on desktop they lean a few pixels toward the pointer. On phones the photos become one row of mixed sizes under the copy. Needs 4-6 real photos of the office, the work, the city or the team (client photos first; library photos each once), with the subject in the middle of the frame since small photos crop hard.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["reveal", "scatter-grow-in", "scatter-depth-drift"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "photos": {"type": "list", "min": 4, "max": 6, "item": {"$ref": "photo"}}
+  }
+}

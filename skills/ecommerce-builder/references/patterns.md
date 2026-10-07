@@ -1,6 +1,6 @@
 # Patterns behind the templates
 
-Counts come from the project research: 7 Vietnamese electronics stores and 2 international ones read in full (`docs/research/ecommerce-electronics-dashboards.md`, section 5) and 434 Mobbin screens (`docs/research/ecommerce-mobbin-screens.md`). "Template" names the file that carries the pattern.
+Counts come from the project research: 7 Vietnamese electronics stores and 2 international ones read in full (`docs/research/ecommerce-electronics-dashboards.md`, section 5) and 434 Mobbin screens (`docs/research/ecommerce-mobbin-screens.md` (in the job repository, not shipped with this skill)). "Template" names the file that carries the pattern.
 
 ## Storefront
 
@@ -33,7 +33,7 @@ Addresses use the 34 provinces in force since 1 July 2025 and a ward field, with
 |:---|:---|:---|
 | Fixed left menu with settings at the bottom | 8/8 Mobbin | `admin/_layout.html` |
 | 6 KPI tiles (net revenue, orders, AOV, sessions, conversion, returning customers) with change against the comparison period, daily averages and a sparkline; clicking a tile draws that metric on the main chart | 8/8, Shopify, WooCommerce | `admin/index.html`, `admin.js` kpiTiles |
-| Date range picker: 14 presets (today to last year, including period to date), custom from-to in dd/mm/yyyy, comparison with the previous period, the same period last year or none; period-to-date presets compare the same days of the previous week, month or quarter; kept in the URL and per browser | WooCommerce, Shopify, Sapo, GA4 (`docs/research/ecommerce-overview-analytics.md`) | `admin.js` periodControl |
+| Date range picker: 14 presets (today to last year, including period to date), custom from-to in dd/mm/yyyy, comparison with the previous period, the same period last year or none; period-to-date presets compare the same days of the previous week, month or quarter; kept in the URL and per browser | WooCommerce, Shopify, Sapo, GA4 (`docs/research/ecommerce-overview-analytics.md` (in the job repository, not shipped with this skill)) | `admin.js` periodControl |
 | Main chart grouped by hour, day, week or month depending on the range length, comparison as a dashed line, table view | WooCommerce interval rules | `admin.js` pageIndex |
 | Funnel: website sessions, add to cart, checkout, orders; new versus returning customers; orders heatmap by weekday and hour; cancel, return and unreconciled COD rates; top customers, vouchers, low stock | Shopify, GA4, KiotViet, Sapo, Haravan | `admin/index.html` |
 | To-do list on the home page (orders to confirm, to ship, out of stock) | 5/8 | `admin/index.html` |

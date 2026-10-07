@@ -2,7 +2,7 @@
 
 The build produces HTML, CSS and JavaScript with no server. Everything that changes after the build lives in the visitor's browser (localStorage): cart, wishlist, account, orders placed, and every admin change. That makes a complete demo. It is not a store that can take real orders.
 
-Facts below come from `docs/research/ecommerce-electronics-dashboards.md` section 5.3, which cites the vendor documentation.
+Facts below come from `docs/research/ecommerce-electronics-dashboards.md` (in the job repository, not shipped with this skill) section 5.3, which cites the vendor documentation.
 
 ## What a real launch needs
 

@@ -293,9 +293,17 @@ def main():
     ap.add_argument("--sweep", nargs="?", const="1440,360,20", metavar="FROM,TO,STEP")
     a = ap.parse_args()
     root = Path(a.folder).resolve()
+    if not root.is_dir():
+        print("QA FAILED: %s is not a folder" % root)
+        sys.exit(1)
     pages = [root / x for x in a.pages.split(",")] if a.pages else \
         [p for p in sorted(root.rglob("*.html")) if "kit" not in p.relative_to(root).parts and "qa" not in p.relative_to(root).parts
          and "app.css" in p.read_text(encoding="utf-8", errors="replace")]
+    missing = [p for p in pages if not p.is_file()]
+    if missing or not pages:
+        print("QA FAILED: " + ("no such page: " + ", ".join(str(p) for p in missing) if missing else
+                               "no page in %s links kit/app.css, so nothing was checked" % root))
+        sys.exit(1)
     out = Path(a.out).resolve() if a.out else root / "qa"
     out.mkdir(parents=True, exist_ok=True)
     sweep = None

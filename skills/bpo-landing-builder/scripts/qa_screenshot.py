@@ -9,6 +9,7 @@ Usage:
     python qa_screenshot.py dist --no-motion      skip the frame-rate check
     python qa_screenshot.py dist --cvd            also save colour-vision screenshots (qa/cvd-*.png) to review
     python qa_screenshot.py dist --sweep          also narrow the page from 1440 to 360 px in 20 px steps
+                                                  and open every slide of a hero carousel and check it (shots in qa/slides-*)
 
 Checks (exit code 1 if any fail):
     - elements sticking out of the viewport sideways (horizontal overflow)
@@ -638,6 +639,81 @@ def focus_problems(page, limit=80):
     return out[:10]
 
 
+# Hero carousels (hero-slides, custom heroes with several slides): the buttons in the hero whose aria-controls names a
+# slide or tab panel in the hero. The page checks run with only the first slide on screen, so each slide is opened in
+# turn and checked again.
+SLIDES_JS = r"""() => {
+  const hero = document.querySelector('main > section.bl-hero, main > .bl-hero');
+  if (!hero || !hero.id) return null;
+  const ctrls = [...hero.querySelectorAll('button[aria-controls]')].filter((b) => {
+    const t = document.getElementById(b.getAttribute('aria-controls'));
+    return t && hero.contains(t) && (t.getAttribute('aria-roledescription') === 'slide' || t.getAttribute('role') === 'tabpanel');
+  });
+  return ctrls.length > 1 ? { id: hero.id, slides: ctrls.map((b) => b.getAttribute('aria-controls')) } : null;
+}"""
+
+# Share of a hero heading's text covered by something else (a photo, a card) on screen: points across the text box
+# that hit an element outside the heading.
+COVER_JS = r"""(heroId) => {
+  const hero = document.getElementById(heroId), out = [];
+  const hidden = (el) => el.closest('[inert], [aria-hidden="true"]') || (() => { for (let p = el; p; p = p.parentElement) { const s = getComputedStyle(p); if (s.visibility === 'hidden' || s.display === 'none' || s.opacity === '0') return true; } return false; })();
+  for (const h of hero.querySelectorAll('h1, h2')) {
+    if (hidden(h)) continue;
+    const range = document.createRange(); range.selectNodeContents(h);
+    const t = range.getBoundingClientRect();
+    if (!t.width || !t.height || t.bottom < 0 || t.top > innerHeight) continue;
+    let n = 0, hit = 0;
+    for (let i = 1; i <= 10; i++) for (let j = 1; j <= 4; j++) {
+      const x = t.left + t.width * i / 11, y = t.top + t.height * j / 5;
+      if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) continue;
+      n++;
+      const e = document.elementFromPoint(x, y);
+      if (e && !h.contains(e) && !e.contains(h)) hit++;
+    }
+    if (n) out.push({ text: h.textContent.trim().replace(/\s+/g, ' ').slice(0, 40), share: hit / n });
+  }
+  return out;
+}"""
+
+
+def slides_check(page, check_contrast, sdir=None):
+    """Open each slide of a hero carousel and check it: sideways overflow, clipped text, a heading covered by a photo
+    (fail over 10%, warn over 3%), contrast at the first width; save a shot of every slide after the first in sdir
+    (qa/slides-<width>/, apart from sections-<width>/ so the section shots keep their order)."""
+    info = page.evaluate(SLIDES_JS)
+    problems, warnings = [], []
+    if not info:
+        return problems, warnings
+    page.evaluate("window.scrollTo(0, 0)")
+    for i, sid in enumerate(info["slides"]):
+        if i:
+            page.evaluate("(id) => document.querySelector('[aria-controls=\"' + id + '\"]').click()", sid)
+            page.wait_for_timeout(2200)
+            page.evaluate("window.scrollTo(0, 0)")
+        tag = "slide %d of #%s" % (i + 1, info["id"])
+        if i:
+            res = page.evaluate(CHECK_JS)
+            problems += ["%s: overflow: %s" % (tag, s) for s in res["overflow"] if s.startswith(info["id"] + ":")]
+            problems += ["%s: clipped text: %s" % (tag, s) for s in res["clipped"] if s.startswith(info["id"] + ":")]
+            if check_contrast:
+                for f in page.evaluate(CONTRAST_JS)["fails"]:
+                    if f["where"] == info["id"]:
+                        problems.append("%s: low contrast %.2f:1 (needs %g:1): %s on %s, \"%s\"" % (tag, f["ratio"], f["need"], f["fg"], f["bg"], f["text"]))
+        for c in page.evaluate(COVER_JS, info["id"]):
+            msg = "%s: %d%% of the heading \"%s\" is covered by another element; keep headings readable" % (tag, round(c["share"] * 100), c["text"])
+            if c["share"] > 0.1:
+                problems.append(msg)
+            elif c["share"] > 0.03:
+                warnings.append(msg)
+        if sdir is not None and i:
+            sdir.mkdir(exist_ok=True)
+            page.query_selector("#" + info["id"]).screenshot(path=str(sdir / ("%s-slide%d.jpg" % (info["id"], i + 1))), type="jpeg", quality=72)
+    page.evaluate("(id) => document.querySelector('[aria-controls=\"' + id + '\"]').click()", info["slides"][0])
+    page.wait_for_timeout(1500)
+    page.evaluate("window.scrollTo(0, 0)")
+    return problems, warnings
+
+
 def cvd_shots(browser, index, out):
     """Full-page screenshots as seen with three colour vision deficiencies (Chrome DevTools emulation). For review only."""
     ctx = browser.new_context(viewport={"width": 1440, "height": 900}, device_scale_factor=1)
@@ -706,7 +782,8 @@ def main():
     ap.add_argument("--cvd", action="store_true", help="also save deuteranopia, protanopia and achromatopsia screenshots (qa/cvd-*.png) to review")
     ap.add_argument("--sweep", nargs="?", const="1440,360,20", metavar="FROM,TO,STEP",
                     help="also narrow the page from 1440 to 360 px in 20 px steps and report the width ranges where "
-                         "something sticks out sideways, header items overlap or a button label wraps")
+                         "something sticks out sideways, header items overlap or a button label wraps; also open every slide of a "
+                         "hero carousel and check its overflow, clipped text, covered headings and contrast")
     args = ap.parse_args()
     sweep = None
     if args.sweep:
@@ -793,6 +870,13 @@ def main():
                 problems.append("tap target smaller than 24x24px with a neighbour too close (WCAG 2.5.8): %s" % x)
             if res["h1"] != 1:
                 problems.append("expected exactly one <h1>, found %d" % res["h1"])
+            # runs with --sweep (Step 6 always passes it), so a call without it keeps its old result
+            sp, sw = slides_check(page, w == widths[0], out / ("slides-%d" % w) if args.sections else None) if sweep else ([], [])
+            if pinned < 5:  # a site pinned to an older rules version gets the slide checks as warnings
+                sw = ["[rules %d, not enforced] %s" % (pinned, x) for x in sp] + sw
+                sp = []
+            problems += sp
+            warnings += sw
             status = "OK  " if not problems else "FAIL"
             print("%s %4dpx  page height %dpx  screenshot %s" % (status, w, res["height"], shot))
             for pr in problems:

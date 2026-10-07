@@ -10,9 +10,11 @@ fields). An "overview" block in plan.json adds a first sheet in plain words for 
 Totals are Excel formulas over the Backlog sheet: change Status to Done and the sprint and roadmap totals follow.
 
 The CSV is UTF-8 with a byte order mark so Excel shows Vietnamese correctly; Jira reads it too. Epics come first
-and children point at them through Parent = the epic's Issue Id, which is what the Jira Cloud importer links on.
+and children point at them through Parent = the epic's Issue Id, which is what the Jira Cloud importer links on;
+Epic Name and Epic Link carry the same link for Jira Server and Data Center.
 
-Checks (errors stop the run, warnings are printed): epic names follow "epic_naming"; every issue has a known epic,
+Checks (errors stop the run, warnings are printed): known keys, types and YYYY-MM-DD dates; unique epic codes; a
+Jira project key; sprints with a name and a goal; statuses from Jira's default workflow; epic names follow "epic_naming"; every issue has a known epic,
 a Jira type and priority, Fibonacci points, a sprint in range; labels have no spaces; every sprint has work and
 stays under "capacity"; stories have acceptance criteria; with "deploy_every_sprint" each sprint before the last
 has an issue labelled deploy; the release date is not a Friday and falls inside the plan; testing comes before
@@ -53,8 +55,99 @@ WORDS = {
 }
 
 
+TOP_KEYS = {"project", "key", "file", "lang", "start", "sprint_weeks", "release", "capacity", "version", "later_version",
+            "epic_naming", "deploy_every_sprint", "epics", "sprints", "issues", "milestones", "overview"}
+EPIC_KEYS = {"code", "name", "color", "description", "version"}
+SPRINT_KEYS = {"name", "goal", "outcome"}
+ISSUE_KEYS = {"summary", "type", "priority", "points", "epic", "sprint", "status", "assignee", "component", "description",
+              "labels", "ac"}
+JIRA_STATUSES = ("To Do", "In Progress", "Done")
+
+
+def is_date(v):
+    try:
+        date.fromisoformat(v)
+        return True
+    except (TypeError, ValueError):
+        return False
+
+
+def shape(p):
+    """Keys, types and dates that the workbook and the CSV rely on. Runs before anything reads the plan."""
+    if not isinstance(p, dict):
+        return ["plan.json must be one object {\"project\": ..., \"epics\": [...], \"sprints\": [...], \"issues\": [...]}"], []
+    errs, warns = [], []
+    errs += ["unknown key %r (allowed: %s)" % (k, ", ".join(sorted(TOP_KEYS))) for k in p if k not in TOP_KEYS]
+    if not isinstance(p.get("project"), str) or not p.get("project"):
+        errs.append('"project" is required: the project name')
+    if not is_date(p.get("start")):
+        errs.append('"start" must be a date written YYYY-MM-DD, got %r' % p.get("start"))
+    if p.get("release") is not None and not is_date(p["release"]):
+        errs.append('"release" must be a date written YYYY-MM-DD, got %r' % p["release"])
+    if p.get("lang", "vi") not in WORDS:
+        errs.append('"lang" must be one of %s, got %r' % (", ".join(WORDS), p.get("lang")))
+    if "key" in p and not (isinstance(p["key"], str) and re.fullmatch(r"[A-Z][A-Z0-9]{1,9}", p["key"])):
+        errs.append('"key" must be a Jira project key: 2-10 capital letters or digits starting with a letter, got %r' % p.get("key"))
+    if not (isinstance(p.get("sprint_weeks", 1), int) and 1 <= p.get("sprint_weeks", 1) <= 4):
+        errs.append('"sprint_weeks" must be a whole number from 1 to 4')
+    if p.get("capacity") is not None and not (isinstance(p["capacity"], int) and p["capacity"] > 0):
+        errs.append('"capacity" must be a whole number of points')
+    for k in ("epics", "sprints", "issues"):
+        if not isinstance(p.get(k), list) or not p.get(k):
+            errs.append('"%s" must be a non-empty list' % k)
+    for n, m in enumerate(p.get("milestones") or [], 1):
+        if not isinstance(m, dict) or not m.get("name") or not is_date(m.get("date")):
+            errs.append("milestone %d needs a name and a date written YYYY-MM-DD" % n)
+    if errs:
+        return errs, warns
+    seen = set()
+    for n, e in enumerate(p["epics"], 1):
+        if not isinstance(e, dict) or not isinstance(e.get("code"), str) or not isinstance(e.get("name"), str):
+            errs.append('epic %d needs {"code": ..., "name": ...}' % n)
+            continue
+        errs += ["epic %s: unknown key %r (allowed: %s)" % (e["code"], k, ", ".join(sorted(EPIC_KEYS))) for k in e if k not in EPIC_KEYS]
+        if e["code"] in seen:
+            errs.append("epic code %s is used twice; each epic needs its own code" % e["code"])
+        seen.add(e["code"])
+    for n, s in enumerate(p["sprints"], 1):
+        if not isinstance(s, dict) or not s.get("name") or not s.get("goal"):
+            errs.append('sprint %d needs {"name": ..., "goal": ...}; the goal is one sentence on what the sprint delivers' % n)
+            continue
+        errs += ["sprint %d: unknown key %r (allowed: %s)" % (n, k, ", ".join(sorted(SPRINT_KEYS))) for k in s if k not in SPRINT_KEYS]
+    for n, i in enumerate(p["issues"], 1):
+        if not isinstance(i, dict):
+            errs.append("issue %d must be an object" % n)
+            continue
+        where = 'issue %d "%s"' % (n, str(i.get("summary", ""))[:50])
+        errs += ["%s: unknown key %r (allowed: %s)" % (where, k, ", ".join(sorted(ISSUE_KEYS))) for k in i if k not in ISSUE_KEYS]
+        if not isinstance(i.get("points"), int) or isinstance(i.get("points"), bool):
+            errs.append("%s: points must be a number, one of %s" % (where, POINTS))
+        if not isinstance(i.get("summary"), str):
+            errs.append("%s: summary must be text" % where)
+        if not isinstance(i.get("labels", []), list) or not all(isinstance(x, str) for x in i.get("labels", [])):
+            errs.append("%s: labels must be a list of words" % where)
+        if not isinstance(i.get("ac", []), list):
+            errs.append("%s: ac (acceptance criteria) must be a list of sentences" % where)
+        if i.get("status", "To Do") not in JIRA_STATUSES:
+            warns.append("%s: status %r is not in Jira's default workflow (%s); the import needs it in your project and the "
+                         "workbook counts only Done as completed" % (where, i.get("status"), ", ".join(JIRA_STATUSES)))
+    return errs, warns
+
+
 def load(path):
-    p = json.loads(Path(path).read_text(encoding="utf-8"))
+    try:
+        p = json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    except FileNotFoundError:
+        sys.exit("ERROR %s: file not found" % path)
+    except json.JSONDecodeError as e:
+        sys.exit("ERROR plan.json is not valid JSON: line %d column %d: %s" % (e.lineno, e.colno, e.msg))
+    errs, warns = shape(p)
+    for w in warns:
+        print("WARN  " + w)
+    if errs:
+        for e in errs:
+            print("ERROR " + e)
+        sys.exit("PLAN FAILED: %d error(s)" % len(errs))
     p.setdefault("key", re.sub(r"[^A-Z]", "", p["project"].upper())[:4] or "PRJ")
     p.setdefault("sprint_weeks", 1)
     p.setdefault("lang", "vi")
@@ -375,12 +468,13 @@ def write_xlsx(p, path):
 def write_csv(p, path):
     labels_max = max([len(i.get("labels", [])) for i in p["issues"]] + [1])
     rows = [["Issue Id", "Issue Type", "Summary", "Parent", "Priority", "Story Points", "Sprint", "Status"]
-            + ["Labels"] * labels_max + ["Component", "Fix Version", "Description"]]
-    ids = {}
+            + ["Labels"] * labels_max + ["Component", "Fix Version", "Description", "Epic Name", "Epic Link"]]
+    ids, names = {}, {}
     for n, e in enumerate(p["epics"], 1):
+        names[e["code"]] = e["name"]
         ids[e["code"]] = n
         rows.append([n, "Epic", e["name"], "", "", "", "", "To Do", e["code"].lower()] + [""] * (labels_max - 1)
-                    + ["", e.get("version", p.get("version", "v1.0")), e.get("description", "")])
+                    + ["", e.get("version", p.get("version", "v1.0")), e.get("description", ""), e["name"], ""])
     for n, i in enumerate(p["issues"], len(p["epics"]) + 1):
         labs = list(i.get("labels", []))
         body = i.get("description", "")
@@ -389,7 +483,8 @@ def write_csv(p, path):
         rows.append([n, i["type"], i["summary"], ids[i["epic"]], i["priority"], i["points"],
                      sprint_name(p, i["sprint"]) if i.get("sprint") else "", i.get("status", "To Do")]
                     + labs + [""] * (labels_max - len(labs))
-                    + [i.get("component", ""), p.get("version", "v1.0") if i.get("sprint") else p.get("later_version", "v1.1"), body])
+                    + [i.get("component", ""), p.get("version", "v1.0") if i.get("sprint") else p.get("later_version", "v1.1"), body,
+                       "", names[i["epic"]]])
     with open(path, "w", encoding="utf-8-sig", newline="") as fh:
         csv.writer(fh).writerows(rows)
     # read it back the way the importer will
@@ -426,6 +521,11 @@ def main():
     if a.check:
         print("PLAN OK")
         return
+    try:
+        import openpyxl  # noqa: F401
+    except ImportError:
+        sys.exit("The plan is valid, but this Python has no openpyxl to write the workbook: run  %s -m pip install openpyxl  "
+                 "(or use a Python that has it), then run again." % Path(sys.executable).name)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     xlsx, csvp = out / (p["file"] + ".xlsx"), out / (p["file"] + "-jira.csv")

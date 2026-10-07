@@ -86,7 +86,14 @@ def find_pages(out):
 def build(out, config=None, lang=None, quiet=False):
     out = Path(out).resolve()
     cfg_path = Path(config) if config else out / "proto-nav.json"
-    cfg = json.loads(cfg_path.read_text(encoding="utf-8")) if cfg_path.is_file() else {}
+    if config and not cfg_path.is_file():
+        sys.exit("protonav: --config %s does not exist" % cfg_path)
+    try:
+        cfg = json.loads(cfg_path.read_text(encoding="utf-8-sig")) if cfg_path.is_file() else {}
+    except json.JSONDecodeError as e:
+        sys.exit("protonav: %s is not valid JSON: line %d column %d: %s" % (cfg_path, e.lineno, e.colno, e.msg))
+    if not isinstance(cfg, dict) or not isinstance(cfg.get("groups") or [], list):
+        sys.exit("protonav: %s must be one object such as {\"groups\": [{\"group\": \"...\", \"pages\": [[\"list.html\", \"Danh sách\"]]}]}" % cfg_path)
     html_lang = lang
     if not html_lang:
         first = next(iter(sorted(out.glob("*.html"))), None)

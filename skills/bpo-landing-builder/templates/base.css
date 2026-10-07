@@ -80,6 +80,9 @@ h1, h2, h3, h4 { font-weight: inherit; }
 }
 .bl-h1 { font-size: var(--fs-display); line-height: 1.06; }
 .bl-h2 { font-size: var(--fs-h2); line-height: 1.12; }
+/* Vietnamese stacked marks need more room between heading lines than English; the value follows the heading font
+   (VI_HEAD_LH in build.py). The selector outranks the tight line-heights set on section titles. */
+html:lang(vi) :is(h1, h2, .bl-h1, .bl-h2, .bl-display) { line-height: var(--vi-head-lh, 1.25); }
 .bl-h3 { font-size: var(--fs-h3); line-height: 1.3; letter-spacing: -0.01em; }
 .bl-lead { font-size: var(--fs-lead); line-height: 1.65; color: var(--text); text-wrap: pretty; }
 .bl-muted { color: var(--text-muted); }

@@ -1,0 +1,24 @@
+{
+  "variant": "hero-stage",
+  "group": "hero",
+  "forms": ["hero-center", "hero-left-text", "hero-video"],
+  "summary": "Copy above a wide photo or video stage, after Customer.io, Figma, Vizcom, FLORA, Sana and Clay. The headline, lead, buttons and up to three proof ticks sit at the top: left-aligned (\"align\": \"left\"), centered (\"center\"), or with the headline on the left and the lead and buttons on the right (\"split\"). Below them a rounded stage holds one wide photo of the office, the floor or the work, or a looping video with a pause button. The stage starts at the width of the text column and opens out to the edges of the screen as the page scrolls, its corners tightening while the picture inside settles from a slight zoom; on phones it stays at the column width. Needs one wide landscape photo (or a video and a poster photo) whose subject sits in the middle third, since the sides are hidden until the stage opens.",
+  "tone": "hero",
+  "anchor": "top",
+  "shared": ["hero"],
+  "animations": ["reveal", "stage-scroll-open", "hero-ambient-video-mask"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 12, "max": 90},
+    "lead": {"type": "text", "min": 60, "max": 230},
+    "primary_cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "proof": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"type": "text", "min": 3, "max": 36}},
+    "align": {"type": "enum", "values": ["left", "center", "split"], "default": "left"},
+    "photo": {"$ref": "photo"},
+    "video": {"type": "video", "required": false},
+    "focus": {"type": "enum", "values": ["top", "center", "bottom"], "default": "center"},
+    "pause_label": {"type": "text", "min": 3, "max": 32, "default": "Pause background video"},
+    "play_label": {"type": "text", "min": 3, "max": 32, "default": "Play background video"}
+  }
+}

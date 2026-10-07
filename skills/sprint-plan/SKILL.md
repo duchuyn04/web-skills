@@ -3,7 +3,7 @@ name: sprint-plan
 description: Plan the build of a prototype or spec as Scrum sprints and export it as an Excel workbook (roadmap, sprints with goals, Jira-style backlog) plus a CSV that Jira imports with epics linked to their issues. Use when the user asks for a project plan, sprint plan, product backlog, roadmap, kế hoạch dự án, kế hoạch sprint, chia sprint, backlog chuẩn Jira, file Excel kế hoạch, import Jira, or how long building a prototype will take. Works best after app-ui, bpo-landing-builder or ecommerce-builder made the prototype, but any spec will do.
 compatibility: Needs Python 3.9+ with openpyxl. Checking the workbook in Excel (optional) needs Windows with Excel.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Sprint plan
@@ -32,7 +32,7 @@ Ask in one message, each with your guess, only what the request and the project 
 | Start date and length | Next Monday; the length the scope needs at the stated capacity, inside the user's range |
 | Team and capacity | Ask; with AI-assisted coding a developer pair often lands 25 to 30 points a week, but say it is a guess to recalibrate after sprint 1 |
 | Epic naming | Whatever the team uses; record it in `epic_naming` so the script enforces it (for example "Quản lý", "Danh sách") |
-| Release policy | Production exists from sprint 1 and every finished module deploys to it (`deploy_every_sprint`); the public launch is a later date |
+| Release policy | Production exists from sprint 1 and every finished module deploys to it (`deploy_every_sprint`); the public launch is a later date inside the plan, set in `release` (the script fails a release after the last sprint) |
 
 A user who says the plan is for themself wants no hand-over work, no training tasks, no glossary.
 

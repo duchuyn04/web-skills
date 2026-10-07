@@ -44,7 +44,8 @@ The library templates already follow these rules. What you control in `page.json
 Rules 5, from a user review of six generated sites (SoGlobal, 2026-09-30): decoration that imitates software reads as generated. Real BPO homepages show real words, real figures and photos.
 
 - No grey bars standing in for lines of text (skeleton lines), no drawn bar charts without data, no fake notifications, like counts, hearts, chat bubbles, floating chips or badges, code windows or dashboards filled with placeholder rows. A card over a photo carries a real service name, a figure from the brief or a tick, nothing else.
-- `qa_screenshot.py` fails empty filled shapes stacked like text lines and rows of empty bars on one baseline ("mock UI"). Progress bars, sliders, meters and controls are exempt; a custom section that truly needs such a shape marks it `data-mock-ok` and says why in the spec.
+- `qa_screenshot.py` fails empty filled shapes stacked like text lines and rows of empty bars on one baseline ("mock UI"). Progress bars, sliders, meters and controls are exempt; a custom section that truly needs such a shape marks it `data-mock-ok` and says why in the spec. Browser window dots and other drawn device frames are decoration, not such a case: drop them instead of marking them.
+- Sample screens (screenshots of sites or app screens shown as examples of the work, as on a web design company's page): real pages in the page's language, spread across the industries the brief names rather than the two closest to hand, each tagged on the picture as a sample ("Bản mẫu", "Sample"). A sample shows no figures, certifications or client names as if they were the company's own, and screenshots stay off sections whose sentence a photo can show.
 - 3D is for a picture of the actual work (a ledger, a desk, a device), used once on a page and only when the brief asks for it.
 - The footer wordmark (the brand name edge to edge in huge type) stays off unless the brief asks for it; build.py fails it otherwise.
 - The hero users rated most professional: a full-bleed photo under a dark scrim with centered copy (`hero-fullbleed` with `"align": "center"`, or a `"fullbleed"` slide in `hero-slides`). `variety.py` lists these heroes first.
@@ -67,4 +68,4 @@ Rules 5, from a user review of six generated sites (SoGlobal, 2026-09-30): decor
 
 ## When a rule fails in a library section
 
-Fix the template, not the page, and rebuild every example (SKILL.md, "Maintaining the library").
+Fix the template, not the page, and rebuild every example (`references/maintaining.md`, "Maintaining the library").
