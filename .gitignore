@@ -15,3 +15,5 @@ run_all.sh
 tmp/
 # research notes behind the skills, kept in the job repository, not in the plugin
 research/
+# sprint-plan is a separate tool, not part of this plugin
+skills/sprint-plan/

@@ -1,6 +1,4 @@
 # ecommerce-builder and nail-salon-builder build
 jinja2>=3.0
-# sprint-plan workbook
-openpyxl>=3.0
 # browser QA in every skill (then: python -m playwright install chromium, or use an installed Edge or Chrome)
 playwright>=1.40
