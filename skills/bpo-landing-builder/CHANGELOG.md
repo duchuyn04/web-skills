@@ -4,7 +4,7 @@ The version is the one at the top of SKILL.md. The major number is the rules ver
 
 ## 5.5.3 (2026-10-07)
 
-From a font study for Vietnamese pages (`research/fonts/` in the project). Rules stay at 5: nothing here fails a page that built before.
+From a font study for Vietnamese pages (`research/fonts/` in the job repository, not shipped with this skill). Rules stay at 5: nothing here fails a page that built before.
 
 - Headings on `"lang": "vi"` pages use a line-height measured for their font (`VI_HEAD_LH` in build.py; `html:lang(vi)` rule in base.css). Vietnamese stacked marks (ẫ, ệ, ữ) at the English display line-heights of 1,06 to 1,12 touched the descenders of the line above in Plus Jakarta Sans (human-warm) and Bricolage Grotesque (dark-ai), and sat close in the others. Values: 1,15 (Montserrat, Source Sans 3, Source Serif 4, Public Sans and others) to 1,3 (Plus Jakarta Sans), 1,35 (Onest) and 1,4 (Bricolage Grotesque). English pages are unchanged.
 - build.py stops at import when a family in `VI_FONTS` has no measured value, so a new Vietnamese font cannot ship with the tight line-height.

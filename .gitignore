@@ -13,5 +13,5 @@ skills-lock.json
 run_all.sh
 .playwright-mcp/
 tmp/
-# screenshots of third-party salon websites, kept locally for reference only
-research/nail-shops/screens-vn/
+# research notes behind the skills, kept in the job repository, not in the plugin
+research/

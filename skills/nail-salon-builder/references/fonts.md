@@ -1,6 +1,6 @@
 # Fonts
 
-Every font the build accepts is in `data/fonts.json`: it has Vietnamese letters on Google Fonts and its stacked marks (ầ ẫ ậ ể ỗ ữ) were rendered and measured. `python scripts/build.py --list` prints them by role. The research, sheets and numbers are in the project at `research/fonts/`.
+Every font the build accepts is in `data/fonts.json`: it has Vietnamese letters on Google Fonts and its stacked marks (ầ ẫ ậ ể ỗ ữ) were rendered and measured. `python scripts/build.py --list` prints them by role. The study behind it (render sheets and measurements) is `research/fonts/` in the job repository, not shipped with this skill.
 
 ## Choosing
 

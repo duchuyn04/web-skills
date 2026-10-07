@@ -1,5 +1,5 @@
 {
- "_note": "Fonts checked for Vietnamese on 2026-10-07 (research/fonts in the project). lh_mixed and lh_caps are the smallest heading line-heights before stacked marks touch the line above.",
+ "_note": "Fonts checked for Vietnamese on 2026-10-07 (font study in the job repository, not shipped with this skill). lh_mixed and lh_caps are the smallest heading line-heights before stacked marks touch the line above.",
  "fonts": {
   "Cormorant Garamond": {
    "roles": [

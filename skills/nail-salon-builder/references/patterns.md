@@ -1,6 +1,6 @@
 # What real nail salon sites do
 
-From 134 salon websites and fanpages (28 in the USA, 44 in Vietnam, 28 in the UK, Europe, Australia and Canada, 34 in Asia) and 40 booking platforms, templates and brands, read in October 2026. The full tables are in the project at `research/nail-shops/`. Where each pattern lives in the templates is in brackets.
+From 134 salon websites and fanpages (28 in the USA, 44 in Vietnam, 28 in the UK, Europe, Australia and Canada, 34 in Asia) and 40 booking platforms, templates and brands, read in October 2026. The full tables are `research/nail-shops/` in the job repository, not shipped with this skill. Where each pattern lives in the templates is in brackets.
 
 ## Navigation and home order
 
