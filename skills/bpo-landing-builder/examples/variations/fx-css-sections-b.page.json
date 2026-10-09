@@ -210,7 +210,7 @@
         "items": [
           {
             "q": "Do your staff hold accounting qualifications?",
-            "a": "Every file is prepared by a trained accountant and reviewed by a qualified accountant before it is returned to you."
+            "a": "A trained accountant prepares each file and a second, qualified accountant reviews it."
           },
           {
             "q": "Where is client data stored?",

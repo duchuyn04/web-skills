@@ -149,13 +149,11 @@
   /* header-shrink-blur */
   var header = doc.querySelector('[data-bl-header]');
   if (header) {
-    if (ST) {
-      ST.create({ start: 50, end: 'max', onToggle: function (self) { header.classList.toggle('is-scrolled', self.isActive); } });
-    } else {
-      var sync = function () { header.classList.toggle('is-scrolled', window.scrollY > 50); };
-      window.addEventListener('scroll', sync, { passive: true });
-      sync();
-    }
+    // A plain scroll check: a ScrollTrigger range ending at 'max' goes inactive at the
+    // very bottom of the page and dropped the header background over the footer.
+    var sync = function () { header.classList.toggle('is-scrolled', window.scrollY > 50); };
+    window.addEventListener('scroll', sync, { passive: true });
+    sync();
   }
 
   /* Mobile drawer */
@@ -329,4 +327,18 @@
 
   /* Recalculate scroll-linked positions once images and fonts have settled */
   if (ST) window.addEventListener('load', function () { ST.refresh(); });
+
+  /* A link to page.html#section: the browser jumps before pins, reveals and the refresh above have moved the
+     sections, so the section ended up thousands of pixels away. Go to it again once the page has loaded,
+     unless the visitor has started scrolling. */
+  var hashTarget = null;
+  try { hashTarget = location.hash.length > 1 && doc.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (x) { /* malformed hash */ }
+  if (hashTarget) {
+    var moved = false;
+    ['wheel', 'touchstart', 'keydown'].forEach(function (t) { window.addEventListener(t, function () { moved = true; }, { passive: true, once: true }); });
+    window.addEventListener('load', function () {
+      /* twice: lazy images and sections that reveal as they come into view can still shift it after the first go */
+      [80, 900].forEach(function (ms) { setTimeout(function () { if (!moved) hashTarget.scrollIntoView({ behavior: 'instant', block: 'start' }); }, ms); });
+    });
+  }
 })();

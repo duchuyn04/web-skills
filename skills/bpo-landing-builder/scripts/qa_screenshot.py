@@ -25,6 +25,8 @@ Checks (exit code 1 if any fail):
       an endless CSS loop or a registered GSAP ambient loop must keep at least 30 frames per second; sections
       with a pinned or scrubbed ScrollTrigger are measured while the page scrolls through them. Canvas and paint cost grow with the square of the pixel
       ratio, so a 1x run hides slow animation that desktop users with scaled screens see as lag.
+    - a link to a section (index.html#faq) opens at that section at 1440 and 390 px, after pins, reveals and
+      lazy images have moved the layout
     - with --sweep: the width ranges between 1440 and 360 px where something sticks out sideways or header
       items overlap (fail), and where a short button or nav label wraps onto two lines (warning)
 Look at every screenshot yourself after the script passes.
@@ -621,6 +623,41 @@ def pause_check(browser, index):
     return problems
 
 
+# The section a link such as index.html#faq would open at: the last section with an id whose top the page can scroll to.
+ANCHOR_TARGET_JS = r"""() => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const secs = [...document.querySelectorAll('main section[id]')].filter((s) => s.offsetHeight && s.getBoundingClientRect().top + scrollY < max - 40);
+  return secs.length ? secs[secs.length - 1].id : null;
+}"""
+ANCHOR_POS_JS = r"""(id) => {
+  const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+  const atEnd = scrollY >= document.documentElement.scrollHeight - innerHeight - 2;
+  return { top: Math.round(document.getElementById(id).getBoundingClientRect().top), pad: Math.round(pad), atEnd: atEnd };
+}"""
+
+
+def anchor_check(browser, index):
+    """Opening index.html#<section> lands on that section once the page has settled, at 1440 and 390. Returns problems."""
+    problems = []
+    for w, h in ((1440, 900), (390, 844)):
+        ctx = browser.new_context(viewport={"width": w, "height": h}, device_scale_factor=1)
+        page = ctx.new_page()
+        page.goto(index.as_uri(), wait_until="load")
+        target = page.evaluate(ANCHOR_TARGET_JS)
+        if not target:
+            ctx.close()
+            continue
+        page.close()
+        page = ctx.new_page()  # a fresh load: a hash change on the open page is only a same-page scroll
+        page.goto(index.as_uri() + "#" + target, wait_until="load")
+        page.wait_for_timeout(1800)
+        r = page.evaluate(ANCHOR_POS_JS, target)
+        if abs(r["top"] - r["pad"]) > 40 and not r["atEnd"]:
+            problems.append("index.html#%s at %dpx opens with the section %dpx from the top of the screen (expected about %dpx): the layout moved after the browser's jump" % (target, w, r["top"], r["pad"]))
+        ctx.close()
+    return problems
+
+
 def no_webgl_check(p, index):
     """In a browser without WebGL the page still runs: no JS errors, scenes marked data-gl-off. Returns problems."""
     try:
@@ -951,7 +988,8 @@ def main():
             for wr in warnings:
                 print("  WARN " + wr)
             failed = failed or bool(problems)
-        for name, problems in (("reduced motion", reduced_motion_check(browser, index)), ("pause", pause_check(browser, index))):
+        for name, problems in (("reduced motion", reduced_motion_check(browser, index)), ("pause", pause_check(browser, index)),
+                               ("link to a section", anchor_check(browser, index))):
             print("%s %s" % ("OK  " if not problems else "FAIL", name))
             for pr in problems:
                 print("       " + pr)

@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "5.7.0"
+  version: "5.7.1"
 ---
 
 # BPO landing builder
@@ -39,6 +39,7 @@ Get these from the user or their files. Ask one short message for anything missi
 - Proof: real KPIs, client names or logos, certifications, testimonials
 - Contact: email, phone, WhatsApp or Zalo link, form endpoint if they have one
 - Brand colors (hex, exactly as in the logo; build.py derives every shade) and page language (default English). The logo color always goes in `theme.accent`, even when it is bright: build.py darkens the button shade for contrast and keeps the original for highlights. Do not skip it and do not put it in `theme.primary`, which is the dark section and footer color. When page.json names a logo file (`site.logo`), build.py reads the logo's colours and fails a `theme.accent` that is not one of them, and a coloured logo without `theme.accent`. It also fails framework default colours (Bootstrap's `#D9534F` red, Tailwind's `#3B82F6` blue and the like) unless the brief or the logo has that exact colour. Never invent a brand colour: without a logo and without a colour in the brief, leave `theme` out and let the preset choose.
+- Logo for dark surfaces: when the logo is a dark colour and the header sits over a dark hero (or the footer is dark), set `site.logo_light` to the same logo in white. Use the client's light version when they have one; otherwise make it from `site.logo` by keeping its alpha and filling it white, never by redrawing it. It replaces the logo on dark and accent surfaces (header over a dark hero, the mobile drawer, the footer)
 - Photos of their own office or team, if any (put them next to page.json)
 
 ## Step 2: Choose archetype and preset

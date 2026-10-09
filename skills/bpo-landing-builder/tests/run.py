@@ -7,7 +7,8 @@
 
 Each case in tests/cases.json starts from tests/fixtures/<base>.page.json, applies its edits and builds the page in
 its own temporary sites folder, so no other site can change the result. A case passes when the build succeeds or
-fails as "ok" says and every text under "errors" and "warnings" appears in an ERROR or WARN line. Run this after any
+fails as "ok" says, every text under "errors" and "warnings" appears in an ERROR or WARN line, and every text under
+"html" appears in the built index.html. Run this after any
 change to build.py, lint_output.py, rules.py, a schema or an example.
 """
 import argparse
@@ -92,6 +93,11 @@ def check_case(case, tmp):
     for bad in case.get("no_errors", []):
         if any(bad in e for e in errs):
             problems.append("unexpected ERROR containing %r" % bad)
+    if code == 0:
+        page = (out / "index.html").read_text(encoding="utf-8")
+        for want in case.get("html", []):
+            if want not in page:
+                problems.append("index.html has no %r" % want)
     if case["ok"] and code == 0 and case.get("lint", True):
         lc, ltext = run([SKILL / "scripts" / "lint_output.py", out])
         if lc != 0:

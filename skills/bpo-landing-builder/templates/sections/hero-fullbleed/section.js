@@ -37,7 +37,8 @@
   if (window.BL.RM || !gsap) { show(); return; }
   var fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
   var box = sec.querySelector('.bl-hero-frame__box');
-  fonts.then(function () {
+  /* a page intro layer (window.BL.introGate) holds the CSS opening; start the lines when it lets go */
+  fonts.then(function () { return window.BL.introGate; }).then(function () {
     /* keep time with the CSS frame opening, which started when the stylesheet applied */
     var open = box && box.getAnimations ? box.getAnimations()[0] : null;
     var elapsed = open && open.currentTime != null ? open.currentTime / 1000 : performance.now() / 1000;

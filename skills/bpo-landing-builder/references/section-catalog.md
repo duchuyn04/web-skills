@@ -18,6 +18,7 @@ These sit at the top of page.json, next to `sections`.
   - `brand`: text 2-32 chars
   - `brand_mark`: text 1-3 chars (optional)
   - `logo`: image key or path (optional)
+  - `logo_light`: image key or path (optional)
   - `title`: text 20-70 chars
   - `description`: text 70-170 chars
 - `seo`: object (optional)
@@ -1520,7 +1521,7 @@ Fields:
 
 ## hero-mosaic
 
-Full-width hero over a tilted wall of 6-10 real photos (team, office, the work itself) tinted in the brand colour, with a very large bold centered heading, a short centered lead and centered buttons (Kyanon Digital's hero). The photos fade in on load and alternate rows drift sideways a little as the page scrolls. Needs 6 or more photos: the client's own team and office photos are best, library photos are allowed. Suits companies with a people or culture story, or with many service lines that one picture cannot show. Keep the title short: it is set very large and should break into two lines.
+Full-width hero over a tilted wall of 6-10 real photos (team, office, the work itself) tinted in the brand colour, with a very large bold centered heading, a short centered lead and centered buttons (Kyanon Digital's hero). The photos fade in on load and alternate rows drift sideways a little as the page scrolls. Needs 6 or more photos: the client's own team and office photos are best, library photos are allowed. Suits companies with a people or culture story, or with many service lines that one picture cannot show. Keep the title short: it is set very large and should break into two lines. "tint": "soft" keeps the photos in their own colours under a light brand cast and a dark shade, for clients who find the full brand tint too strong.
 
 - Group: `hero`. Default anchor: `#top`. Tone: dark.
 - Built-in motion: tinted-photo-mosaic, mosaic-row-drift, reveal.
@@ -1540,6 +1541,7 @@ Fields:
   - `href`: link
 - `photos`: list of 6-10 (each image 1-400 chars)
 - `proof`: list of 0-3 (optional) (each text 3-36 chars)
+- `tint`: one of brand, soft (optional, default "brand")
 
 ## hero-news
 

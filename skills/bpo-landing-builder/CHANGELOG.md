@@ -2,6 +2,21 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.7.1 (2026-10-09)
+
+Mobile, dark-surface, anchor and copy fixes found on a client page (Smart Outsourcing, three versions). Rules stay at 5: nothing new can fail a page that built before.
+
+- `site.logo_light` (optional): the logo in white, shown instead of `site.logo` inside `bl-tone-dark` and `bl-tone-accent` (header over a dark hero, the mobile drawer, a dark footer). A dark blue logo on the dark header was unreadable.
+- Header and drawer logos are 44px tall (footer 48px), capped at 168px (184px) wide with `object-fit: contain`: a stacked logo's name was about 5px tall at 32px, and wide one-line logos keep their old size.
+- `image-cards`: in one column (640px and below) the grid photos switch to 16:9, so a 4-card `tall` grid is about 1,000px shorter on phones. Slider mode and wider screens are unchanged.
+- `hero-fullbleed`: on pages with angled or curved section edges the background video's pause button sits above the cut instead of half under it.
+- `hero-fullbleed` and `hero-mosaic` keep the dark tone over a blueprint slot's light or muted tone (`PHOTO_GROUND` in build.py). With `override_hero` in place of a split hero the title came out dark on a dark video, and QA leaves text over photos to the screenshots. Test `override-hero-photo-tone`; `tests/run.py` cases can now list texts the built page must contain (`html`).
+- `hero-fullbleed` frame layout: at the top of the page the header sits 12px down (8px on tablets and phones) inside the frame, so the utility bar is not cut by the frame edge. The opening waits for `window.BL.introGate` when a custom intro layer sets it.
+- `hero-mosaic`: `"tint": "soft"` keeps the photos in their own colours under a light brand cast, for clients who find the full brand tint too blue.
+- Header at the bottom of the page: it kept its background only between 50px and the end of the page, so at the very bottom it went transparent over the footer. It now follows a plain scroll check.
+- Links to a section (`index.html#faq`) open at that section. The browser jumped before pins, reveals and the ScrollTrigger refresh moved the layout and left the section up to 4,000px away; base.js goes to it again after load unless the visitor has scrolled. QA checks it at 1440 and 390px ("link to a section").
+- Copy warnings from the same client review (`references/industry-voice.md`): a section heading that repeats the hero title, five lower-case words shared by three or more texts, and four or more button labels for the same section. Five examples were reworded to pass them; tests `repeat-hero-title`, `repeat-phrase`, `cta-labels`.
+
 ## 5.7.0 (2026-10-09)
 
 Eleven motion sections from a Mobbin study, with the motion measured on the live sites where they still run (computed transitions, Web Animations, GSAP tween log, transforms before and after hover and across scroll steps; `references/mobbin-references.md`, Motion). Rules stay at 5: no new check can fail a page that built before.

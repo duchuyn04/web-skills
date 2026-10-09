@@ -1601,6 +1601,56 @@ def check_voice(ctx, sections, lang, bp=None):
     every = [m.group() for t in [t for _, t in heads] + body for m in EVERY_RE.finditer(t)]
     if len(every) > 2:
         ctx.warn("sections", "'every/each call, contact, agent...' appears %d times (%s). AI copy leans on it; keep one." % (len(every), ", ".join(dict.fromkeys(e.lower() for e in every))))
+    check_repeats(ctx, sections, heads)
+
+
+def check_repeats(ctx, sections, heads):
+    """Repetition a client read as machine-written (Smart Outsourcing review, 2026-10-09): the hero slogan reused as a
+    section heading, one phrase in three or four sentences, and six button labels for the same action."""
+    key = lambda t: re.sub(r"[^\w ]+", "", re.sub(r"<[^>]+>", "", plain(t)).lower()).strip()
+    hero = next((s for s in sections if s["variant"].get("group") == "hero" and isinstance(s["data"], dict)), None)
+    hero_t = key(_hero_copy(hero["data"])[0] or "") if hero else ""
+    for p, t in heads:
+        if hero_t and key(t) == hero_t:
+            ctx.warn(p, "the heading \"%s\" repeats the hero title. A slogan used twice reads as filler; give the section its own heading (\"Led by UK-qualified accountants\", \"About us\")." % t)
+    # five-word runs shared by three or more sentences ("inside your systems, with your review steps")
+    grams = {}
+    def prose(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k not in ("alt", "href", "src", "image", "icon", "keys", "meta"):
+                    yield from prose(v)
+        elif isinstance(o, list):
+            for v in o:
+                yield from prose(v)
+        elif isinstance(o, str):
+            yield o
+    # the build keeps a rendered copy next to some fields (a title with its highlight markup): each text once per section
+    texts = [t for s in sections for t in {re.sub(r"<[^>]+>", "", plain(t)) for t in prose(s["data"])}]
+    for t in texts:
+        words = re.findall(r"[\w']+", t)
+        if len(words) >= 8:
+            # lower-case runs only: place and brand names ("Hanoi, Da Nang and Ho Chi Minh City") may recur
+            for g in {" ".join(words[i:i + 5]) for i in range(len(words) - 4) if all(w.islower() for w in words[i:i + 5])}:
+                grams[g] = grams.get(g, 0) + 1
+    picked = []
+    for g, n in sorted(grams.items(), key=lambda x: -x[1]):
+        if n >= 3 and not any(len(set(g.split()) & set(o.split())) >= 3 for o, _ in picked):
+            picked.append((g, n))
+    if picked:
+        ctx.warn("sections", "the same words recur in several sentences: %s. Repeated phrasing is what makes a page read as generated; keep each phrase once and say something specific in the other places." % "; ".join("\"%s...\" %d times" % (g, n) for g, n in picked[:3]))
+    # one in-page target reached by many different buttons (cta fields outside lists; nav, card and plan links name
+    # their item, and "view all" links stand in for pages the site does not have yet)
+    targets = {}
+    for s in sections:
+        d = s["data"] if isinstance(s["data"], dict) else {}
+        for o in [d, d.get("head") if isinstance(d.get("head"), dict) else {}]:
+            for k, v in o.items():
+                if (k in ("cta", "secondary") or k.endswith("_cta")) and isinstance(v, dict) and isinstance(v.get("label"), str) and str(v.get("href", "")).startswith("#") and len(v["href"]) > 1:
+                    targets.setdefault(v["href"], set()).add(v["label"].strip().lower())
+    for href, labels in sorted(targets.items()):
+        if len(labels) >= 4:
+            ctx.warn("sections", "%d different labels lead to %s (%s). Give one action one or two labels across the page, such as \"Get a quote\" for the main button." % (len(labels), href, ", ".join(sorted(labels))))
 
 
 # Sections that draw each figure (ring arc, column height): a placeholder leaves an empty shape.
@@ -1749,6 +1799,9 @@ ROLE_GROUPS = {
 # Heroes built around the client's own work (a call card in its languages, its paperwork, a support chat, its real
 # service panels). They may stand in for a blueprint's hero composition when they fit the business.
 BUSINESS_HEROES = {"hero-voice", "hero-ledger", "hero-chat", "hero-dashboard", "hero-form"}
+# Heroes whose copy sits on their own photo or video under a dark shade. They keep the dark tone whatever the
+# blueprint slot says: a light slot tone (an "override_hero" in place of a split hero) set dark text on a dark video.
+PHOTO_GROUND = {"hero-fullbleed", "hero-mosaic"}
 # Sections that need the client's own proof are left out when the brief has none, whatever the blueprint says
 PROOF_ROLES = {"testimonial", "cases", "clients", "awards", "news", "team", "careers", "locations"}
 
@@ -1922,6 +1975,9 @@ PAGE_SPEC = {
             "brand": {"type": "text", "min": 2, "max": 32},
             "brand_mark": {"type": "text", "min": 1, "max": 3, "required": False},
             "logo": {"type": "image", "required": False},
+            # the same logo in white or a light tint, shown instead of "logo" on dark and accent surfaces
+            # (a dark header over a photo or video, the mobile drawer, a dark footer)
+            "logo_light": {"type": "image", "required": False},
             "title": {"type": "text", "min": 20, "max": 70},
             "description": {"type": "text", "min": 70, "max": 170},
         }},
@@ -2194,7 +2250,7 @@ def main():
         bp_tone = (s.get("bp_slot") or {}).get("tone")
         if s["tone_override"]:
             tone = s["tone_override"]
-        elif bp_tone and mode in ("auto", "hero", "light", "muted", "dark"):
+        elif bp_tone and mode in ("auto", "hero", "light", "muted", "dark") and s["type"] not in PHOTO_GROUND:
             tone = bp_tone
         elif mode == "hero" or mode == "header":
             tone = hero_tone

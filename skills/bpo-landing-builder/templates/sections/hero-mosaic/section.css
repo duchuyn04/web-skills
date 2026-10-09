@@ -24,6 +24,16 @@
     color-mix(in srgb, var(--c-primary) 52%, transparent);
 }
 
+/* "tint": "soft": the photos keep their own colours; a light brand cast ties them together and a dark shade keeps the copy readable */
+.bl-hero--mosaic-soft .bl-hmosaic__bg { background: var(--c-primary); }
+.bl-hero--mosaic-soft .bl-hmosaic__tile img { filter: saturate(.85) contrast(1.05); }
+.bl-hero--mosaic-soft .bl-hmosaic__tint { opacity: .22; }
+.bl-hero--mosaic-soft .bl-hmosaic__shade {
+  background:
+    radial-gradient(ellipse 62% 55% at 50% 50%, color-mix(in srgb, var(--c-primary) 74%, transparent) 0%, color-mix(in srgb, var(--c-primary) 42%, transparent) 70%, transparent 100%),
+    color-mix(in srgb, var(--c-primary) 40%, transparent);
+}
+
 .bl-hmosaic__copy { max-width: 1040px; margin-inline: auto; text-align: center; }
 .bl-hmosaic__copy .bl-eyebrow { justify-content: center; color: var(--text-strong); }
 .bl-hero--mosaic .bl-hmosaic__title {
@@ -41,5 +51,5 @@
 @media (max-width: 640px) {
   .bl-hero--mosaic { min-height: clamp(600px, 92vh, 820px); }
   .bl-hmosaic__grid { --cols: 4; width: 250%; }
-  .bl-hmosaic__shade { background: color-mix(in srgb, var(--c-primary) 66%, transparent); }
+  .bl-hmosaic__shade, .bl-hero--mosaic-soft .bl-hmosaic__shade { background: color-mix(in srgb, var(--c-primary) 66%, transparent); }
 }

@@ -203,6 +203,13 @@ textarea.bl-input { min-height: 110px; resize: vertical; }
 .bl-brand { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--text-strong); }
 .bl-brand__mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--c-accent); color: var(--c-on-accent); font-size: .9rem; font-weight: 800; letter-spacing: 0; }
 .bl-brand__logo { height: 32px; width: auto; }
+/* header, drawer and footer logos: stacked logos (mark beside a two-line name) need about 44px before the name reads;
+   max-width with object-fit keeps a wide one-line logo at its old size */
+:is(.bl-header, .bl-drawer) .bl-brand__logo { height: 44px; max-width: 168px; object-fit: contain; object-position: left center; }
+.bl-footer .bl-brand__logo { height: 48px; max-width: 184px; object-fit: contain; object-position: left center; }
+/* site.logo_light replaces the logo on dark and accent surfaces */
+.bl-brand__logo--light, :is(.bl-tone-dark, .bl-tone-accent) .bl-brand__logo--base { display: none; }
+:is(.bl-tone-dark, .bl-tone-accent) .bl-brand__logo--light { display: block; }
 
 /* ---------- Design options (root classes set by build.py from theme or preset) ---------- */
 :root { --edge: clamp(28px, 4.5vw, 72px); }

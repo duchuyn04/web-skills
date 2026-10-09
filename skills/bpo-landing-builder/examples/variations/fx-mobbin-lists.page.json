@@ -214,7 +214,7 @@
           }
         ],
         "cta": {
-          "label": "Plan a team",
+          "label": "Get a quote",
           "href": "#get-started"
         }
       }
@@ -228,7 +228,7 @@
           "lead": "Most clients move goods or money; each industry has a team lead who knows its documents."
         },
         "cta": {
-          "label": "Talk to a team lead",
+          "label": "Contact us",
           "href": "#get-started"
         },
         "items": [

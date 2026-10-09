@@ -29,6 +29,8 @@
   position: absolute; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); width: 44px; height: 44px; display: grid; place-items: center;
   border-radius: 50%; color: #fff; background: rgba(0, 0, 0, .35); border: 1px solid rgba(255, 255, 255, .35); transition: background-color var(--dur-fast) var(--ease-std);
 }
+/* angled and curved section edges cut the bottom right corner away, so the button rises above the cut */
+:is(.bl-edges-angle, .bl-edges-curve) .bl-hero-full__toggle:not(.bl-hero-frame__toggle) { bottom: calc(clamp(1rem, 3vw, 2rem) + var(--edge)); }
 .bl-hero-full__toggle:hover { background: rgba(0, 0, 0, .55); }
 .bl-hero-full__toggle .bl-icon { width: 18px; height: 18px; fill: currentColor; }
 .bl-hero-full__i-play, .bl-hero--full.is-paused .bl-hero-full__i-pause { display: none; }
@@ -47,6 +49,10 @@
 .bl-hero--frame.bl-hero { background-color: transparent; }
 :is(.bl-edges-angle, .bl-edges-curve) main > .bl-hero--frame.bl-hero.bl-hero { clip-path: none; border-radius: 0; padding-bottom: 0; }
 :is(.bl-edges-angle, .bl-edges-curve) main > .bl-hero--frame.bl-hero.bl-hero + * { margin-top: 0; border-top: 0; }
+/* At the top of the page the header sits inside the frame, so the utility bar does not touch the frame edge. */
+body:has(.bl-hero--frame) { --frame-top: 12px; }
+body:has(.bl-hero--frame) .bl-header { transition: transform var(--dur) var(--ease-out); }
+body:has(.bl-hero--frame) .bl-header:not(.is-scrolled) { transform: translateY(var(--frame-top)); }
 .bl-hero-frame__box { position: absolute; inset: var(--frame-gap); z-index: -1; overflow: hidden; border-radius: var(--frame-r); background: var(--c-primary); }
 .bl-hero-frame__media { position: absolute; inset: 0; transform-origin: 50% 40%; }
 .bl-hero-frame__still { width: 100%; height: 100%; object-fit: cover; }
@@ -58,7 +64,7 @@
 }
 .bl-hero-frame__inner {
   display: flex; flex-direction: column; justify-content: space-between; gap: clamp(2.5rem, 6vw, 4rem);
-  padding-top: calc(var(--header-h) + var(--frame-gap) + clamp(1.5rem, 4.5vw, 4rem));
+  padding-top: calc(var(--header-h) + var(--header-extra, 0px) + var(--frame-gap) + clamp(1.5rem, 4.5vw, 4rem));
   padding-bottom: calc(var(--frame-gap) + clamp(1.75rem, 3.5vw, 3rem));
 }
 .bl-hero--frame .bl-hero-frame__title { max-width: 10.5em; margin: 0; font-size: clamp(2.7rem, 6.2vw + .4rem, 7rem); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
@@ -92,6 +98,7 @@
 @keyframes bl-frame-fade { from { opacity: 0; } }
 @media (max-width: 1024px) {
   .bl-hero--frame { --frame-gap: 8px; --frame-r: 16px; }
+  body:has(.bl-hero--frame) { --frame-top: 8px; }
   @keyframes bl-frame-open { from { clip-path: inset(50% 50% 50% 50% round 100px); } to { clip-path: inset(0 0 0 0 round 16px); } }
 }
 @media (max-width: 640px) {

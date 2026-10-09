@@ -1,4 +1,4 @@
-<section id="{{section.id}}" class="bl-section bl-hero bl-hero--mosaic bl-tone-{{section.tone}}" data-hero-mosaic>
+<section id="{{section.id}}" class="bl-section bl-hero bl-hero--mosaic{{#tint_is_soft}} bl-hero--mosaic-soft{{/tint_is_soft}} bl-tone-{{section.tone}}" data-hero-mosaic>
   <div class="bl-hmosaic__bg" aria-hidden="true">
     <div class="bl-hmosaic__grid" data-mosaic-grid>
       {{#photos}}<div class="bl-hmosaic__tile"><img src="{{.}}" alt="" width="480" height="360" decoding="async"{{#@first}} fetchpriority="high"{{/@first}}></div>{{/photos}}

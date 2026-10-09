@@ -36,6 +36,10 @@ Title: 3-8 words, about the company or its category, rarely about the reader. Pi
 
 Mark 1-3 words as `*accent*`. Real hero titles often end with a period (31%); that is allowed.
 
+A slogan is not a hero title. "Run by accountants, for accountants" tells a visitor skimming for three seconds nothing about what is sold; put it in the eyebrow and let the title name the service ("Outsourced accounting staff for UK firms"). Use the slogan once on the page: repeated as a section heading it reads as filler.
+
+Use the category word in the client's own name and brief. For UK accounting buyers "offshore accounting" also calls up tax havens (offshore accounts, offshore companies), so a company called Smart Outsourcing is better served by "Outsourced accounting staff"; keep "offshore" where it describes where people work ("Offshore bookkeepers in Hanoi").
+
 Lead: the first sentence has the company name as its subject and says what it does, for whom and since when. The second gives scale or place (headcount, delivery centers, languages, certifications). Example shape: "[Brand] has run [services] for [buyers] since [year]. Our [number] [people] work from [cities] in [number] languages."
 
 Proof chips and badges: founding year, headcount, certifications, languages, coverage hours, savings percentage. These are the facts real sites put near the top.
@@ -83,6 +87,8 @@ When the heading is a label, the eyebrow above it should add information ("Since
 
   All of these must come from the client. When the brief has none, leave that proof out; never make up an award, ranking or founding year.
 - Do not tack an extra benefit onto a fact with ", so ..." or ", with ...". Two short sentences read better.
+- Say each phrase once. A client read a page as machine-written because "inside your systems, with your review steps" appeared in four sections; keep it where it matters most and give the other places a concrete detail (remote login to Xero, a named review step).
+- A metric tile shows a result or scale (clients, savings, accuracy, years). A count of the company's own offices is a fact for the locations section, not a figure that persuades.
 - Testimonials sound like people talking: one concrete change, at most one number, name, role and company.
 - Industry abbreviations (AHT, CSAT, FCR, SLA, QA, KYC, RLHF) belong in cards, FAQ and case results. Real homepages rarely use them in hero titles.
 
@@ -95,6 +101,8 @@ Real sites use a small set of labels. The most common first words are explore, s
 - Vietnamese: Liên hệ, Nhận báo giá, Đặt lịch tư vấn, Xem thêm, Tìm hiểu thêm, Xem dự án
 
 Avoid invented labels ("Ask about fit", "Plan a care program", "Hear our callers").
+
+Give one action one or two labels across the page. A page whose buttons all open the same form but read "Book a call", "Get a quote", "Request a quote", "Plan a team", "Ask us a question" and "Book your free discovery call" makes the visitor wonder whether these are different things. Pick a main label ("Get a quote") and at most one softer one ("Book a call").
 
 ## Vietnamese pages
 
@@ -150,3 +158,6 @@ Avoid invented labels ("Ask about fit", "Plan a care program", "Hear our callers
 - Warning: no section heading is a short label.
 - Warning: hero title longer than 10 words, or built on the "[people] who/that [verb] your [thing]" formula.
 - Warning: "every call", "each agent" and similar phrases more than twice on a page.
+- Warning: a section heading that repeats the hero title.
+- Warning: the same five lower-case words in three or more texts (place and brand names are not counted).
+- Warning: four or more different button labels (`cta`, `*_cta`, the header's `secondary`) leading to the same section.
