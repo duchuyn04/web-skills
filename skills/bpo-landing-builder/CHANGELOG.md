@@ -2,6 +2,15 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 6.0.0 (2026-10-09)
+
+Rules 6: the hero is the client's photo or a film of their photos. A client who reviewed three versions of their page rejected every other hero (a white card over a photo, service cards, a dotted globe, a form, a 3D deck and a sundial) as template work, and replaced them with HyperFrames films of their own office photos. A site built under rules 5 keeps building with `"rules": "5"`; the new check then prints as a warning.
+
+- build.py fails a hero other than `hero-fullbleed` or `hero-mosaic` unless the client picked it (`override_hero`) or the brief asked for a 3D page and the hero is expressive. Both photo heroes fill the hero slot of every blueprint without `override_hero`. The same-hero warning between sites now compares layout, alignment, film or still and the photo. `variety.py` lists the photo heroes first and marks the rest `+` (client pick only).
+- `scripts/make_film.py`: HyperFrames films from the client's files. `loop` makes a 9 to 15 s seamless background film from 3 to 5 photos (slow push-in, a thin rule wipes to the next photo, no text) for `hero-fullbleed` `"video"`, with a 1600x900 web copy (about 1 MB) and a poster. `intro` makes a 5 s logo film from `site.logo`, tagline and cities in 16:9 and 9:16. Each writes a contact sheet to review; the projects stay in `sites/<slug>/film/` for changes by hand. Templates in `templates/film/`.
+- `site-intro` (new, slot `opening` at the end of every archetype): plays the logo film once per visit over the first screen, with Skip and Esc; the page scrolls under it, reduced motion and automated browsers skip it, and the header and frame hero openings wait for it (`window.BL.introGate`). Ported from the custom section of the same client page.
+- The test fixture and the `offshore-staffing`, `cx-voice-sales`, `it-bpo-partner` and Concentrix blueprint examples open with photo heroes. Tests `hero-without-photo-ground`, `hero-picked-by-client`, `rules-pin-5`.
+
 ## 5.7.1 (2026-10-09)
 
 Mobile, dark-surface, anchor and copy fixes found on a client page (Smart Outsourcing, three versions). Rules stay at 5: nothing new can fail a page that built before.

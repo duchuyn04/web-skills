@@ -119,12 +119,11 @@
    }
   },
   {
-   "type": "hero-news",
+   "type": "hero-fullbleed",
    "data": {
     "eyebrow": "Customer experience and back-office services",
     "title": "Customer operations for *banks, telcos and retail*",
     "lead": "Northbridge CX has run voice, chat and back-office programs since 2009. Our 2,400 agents work from Manila, Ho Chi Minh City, Bogota and Krakow in 12 languages.",
-    "image": "desk-phone-monitors",
     "primary_cta": {
      "label": "Talk to an expert",
      "href": "#contact"
@@ -133,29 +132,8 @@
      "label": "See case studies",
      "href": "#case-studies"
     },
-    "proof": [
-     "ISO 27001 and PCI DSS certified",
-     "24/7 coverage",
-     "Founded in 2009"
-    ],
-    "list_label": "Latest from Northbridge",
-    "items": [
-     {
-      "meta": "Case study",
-      "title": "Kestrel Bank moved three card-support vendors into one 180-seat program",
-      "href": "#case-studies"
-     },
-     {
-      "meta": "Delivery centers",
-      "title": "Four centers in Manila, Ho Chi Minh City, Bogota and Krakow",
-      "href": "#centers"
-     },
-     {
-      "meta": "Industries",
-      "title": "Programs for banks, telcos and retail brands",
-      "href": "#industries"
-     }
-    ]
+    "image": "desk-phone-monitors",
+    "align": "left"
    }
   },
   {

@@ -124,7 +124,7 @@ def write_anatomy(lib):
     for key, a in lib["archetypes"].items():
         out.append("| `%s` | %s | %s | %s | `%s` |" % (key, a["use_for"], ", ".join(a["categories"]), ", ".join(a["references"]), a["default_preset"]))
     out += ["", "## Slot order", "",
-            "Sections in page.json must appear in this order. Each slot is used once. Floating widgets (floating-chat, exit-intent-modal) go last.", "",
+            "Sections in page.json must appear in this order. Each slot is used once. Floating widgets (floating-chat, exit-intent-modal) and the logo film (site-intro) go last.", "",
             "- yes: must be present.",
             "- recommended: include it when the client gave you the real content (logos, testimonials or case results, salary rates, call recordings). Leave it out otherwise; never fill it with invented content.",
             "- no: optional; include it when it helps the pitch.", ""]
@@ -237,6 +237,7 @@ TIMING = {
     "assistant-panel-open": "the chat panel rises 12px and fades in from the corner (0.32s ease-out); answers wait behind typing dots for 0.65s; the teaser bubble shows once per visit after 8s; no motion with reduced motion",
     "floating-whatsapp-chat-bounce": "appears after the hero, 1.8s ping dot",
     "exit-intent-spring-modal": "520ms ease-back, after 8s, once per 7 days",
+    "site-intro-film": "5s logo film once per visit, 450ms fade, then the hero opens",
     "globe-spin": "dotted world map scrolling behind a sphere mask, 60s linear loop",
     "reveal": "GSAP, set by the page's motion style: rise (fade and rise 40px, 0.8s power3.out), slide (cards in a row slide in 56px from the right, the rest rise 24px), fade (0.7s, no movement) or mask (rise 24px, section titles rise word by word from a mask, photos open from the bottom and settle from 112%); 80-100ms stagger up to 6 steps in groups",
     "text-marquee": "60s linear loop (36s when speed is normal), pauses on hover, still and scrollable for reduced motion",

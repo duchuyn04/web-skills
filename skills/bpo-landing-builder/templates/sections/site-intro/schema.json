@@ -1,0 +1,15 @@
+{
+  "variant": "site-intro",
+  "group": "floating",
+  "forms": ["floating"],
+  "summary": "Logo film shown once per visit over the first screen: the client's logo, a tagline and their cities, made with python scripts/make_film.py <page.json> intro (HyperFrames, 5 s, 16:9 and 9:16). The layer fades when the film ends and the hero opening starts after it. The page scrolls under it, and scrolling past the first screen ends it. Skip button and Esc end it early; reduced motion, automated browsers (crawlers, speed tests, QA) and a second page view skip it. Portrait screens get the 9:16 film.",
+  "tone": "none",
+  "anchor": "site-intro",
+  "animations": ["site-intro-film"],
+  "fields": {
+    "video": {"type": "video"},
+    "video_portrait": {"type": "video", "required": false},
+    "label": {"type": "text", "min": 5, "max": 80},
+    "skip_label": {"type": "text", "min": 2, "max": 24, "default": "Skip intro"}
+  }
+}

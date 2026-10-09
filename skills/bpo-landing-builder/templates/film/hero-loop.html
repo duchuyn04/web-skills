@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: __BG__; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: __BG__; }
+      /* Background film for hero-fullbleed: the page lays its brand shade and the headline over it, so the film
+         carries no text. The client's photos, a slow push-in, and a thin rule that sweeps across to bring in the
+         next photo. The first photo comes back at the end, so the last frame matches the first and the loop has
+         no seam. */
+      .photo { position: absolute; inset: 0; overflow: hidden; }
+      .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+      #rule { position: absolute; top: 0; left: 0; width: 3px; height: 1080px; margin-left: -1px; background: rgba(255, 255, 255, 0.85); opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__DURATION__" data-width="1920" data-height="1080">
+__PHOTOS__
+      <div id="rule"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const D = __DURATION__;
+      const WIPE = 0.8; // seconds for the rule to cross the frame
+      const RATE = 0.016; // push-in, scale per second, the same for every photo so the loop joins smoothly
+      const ids = __IDS__;
+      const starts = __STARTS__;
+
+      // Every later photo waits behind a closed clip; the first one starts at its resting size.
+      gsap.set(ids.slice(1).map((id) => "#" + id), { clipPath: "inset(0% 100% 0% 0%)" });
+
+      ids.forEach((id, k) => {
+        const start = starts[k];
+        const end = k + 1 < ids.length ? starts[k + 1] + WIPE : D;
+        // the copy of photo 1 arrives already moving and lands on scale 1 at the end, where photo 1 starts
+        const from = k === ids.length - 1 ? 1 - RATE * WIPE : 1;
+        tl.fromTo("#" + id + " img", { scale: from }, { scale: from + RATE * (end - start), duration: end - start, ease: "none" }, start);
+        if (k) {
+          // the rule crosses left to right and the next photo opens behind it, edge locked to the rule
+          tl.to("#" + id, { clipPath: "inset(0% 0% 0% 0%)", duration: WIPE, ease: "power2.inOut" }, start);
+          tl.fromTo("#rule", { x: 0 }, { x: 1920, duration: WIPE, ease: "power2.inOut", immediateRender: false }, start);
+          tl.to("#rule", { opacity: 0.75, duration: 0.12, ease: "none" }, start);
+          tl.to("#rule", { opacity: 0, duration: 0.14, ease: "none" }, start + WIPE - 0.14);
+        }
+      });
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

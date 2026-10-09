@@ -37,7 +37,7 @@
    }
   },
   {
-   "type": "hero-split-image",
+   "type": "hero-fullbleed",
    "data": {
     "eyebrow": "B2B appointment setting since 2016",
     "title": "Outbound SDR teams for *B2B sales*",
@@ -50,23 +50,19 @@
      "label": "Hear call samples",
      "href": "#call-samples"
     },
+    "image": "office-interior",
+    "align": "center",
     "proof": [
      "Calls recorded and scored",
      "Native English and Spanish",
      "No long-term contract"
     ],
-    "photo": {
-     "src": "portrait-woman-office",
-     "alt": "Smiling woman in a blazer by a window"
-    },
-    "badges": [
+    "stats": [
      {
-      "icon": "calendar",
       "value": "14 / mo",
       "label": "Meetings per SDR"
      },
      {
-      "icon": "phone",
       "value": "1,200",
       "label": "Dials per week"
      }

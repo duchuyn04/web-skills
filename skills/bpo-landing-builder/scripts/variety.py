@@ -149,9 +149,9 @@ def swaps(page, shared, pages, arch):
     return out
 
 
-# Heroes users picked as the most professional in reviews (SoGlobal, 2026-09-30): a full-bleed photo under a dark scrim
-# with centered copy, and the multi-slide hero whose slides each take their own layout. Listed first wherever they fit.
-FAVOURITE_HEROES = ("hero-fullbleed", "hero-slides")
+# Heroes with the client's photo or film behind the copy: the only ones clients kept in reviews (SoGlobal, 2026-09-30;
+# Smart Outsourcing, 2026-10-09). build.py (rules 6) needs override_hero for any other hero, so they are listed first.
+FAVOURITE_HEROES = ("hero-fullbleed", "hero-mosaic")
 
 
 def blueprint_report(args, pages, count):
@@ -195,17 +195,17 @@ def blueprint_report(args, pages, count):
         for i, s in enumerate(b["sections"]):
             compose = s.get("compose") or []
             fits = build.fitting_variants(s, lib)
-            if compose and s.get("role") == "hero":
-                # build.py accepts only the composition, a business hero or (on an expressive page) an expressive hero here
-                fits = [v for v in fits if v in compose or v in build.BUSINESS_HEROES or v in sig]
-            opts = sorted(fits, key=lambda v: (v not in compose, v in sig, v not in FAVOURITE_HEROES, count.get(v, 0), v))
+            if s.get("role") == "hero":
+                # build.py accepts a photo hero in any hero slot; the rest only when the client picks it (override_hero)
+                fits = list(FAVOURITE_HEROES) + [v for v in fits if v not in FAVOURITE_HEROES and (v in compose or v in build.BUSINESS_HEROES or v in sig)]
+            opts = sorted(fits, key=lambda v: (v not in FAVOURITE_HEROES, v not in compose, v in sig, count.get(v, 0), v))
             grid = ("cols %s, items %s" % (s.get("cols"), s.get("count"))) if s.get("count") else ""
             print("%2d %-11s %-15s %-6s %s%s" % (i + 1, s["role"], s["form"], s.get("tone", ""), "optional " if build.slot_optional(s) else "", grid))
             print("     " + s.get("note", ""))
-            print("     variants: " + (", ".join(v + ("=" if v in compose else "") + ("^" if v in sig else "") for v in opts) or "NONE (use a custom section)"))
+            print("     variants: " + (", ".join(v + ("=" if v in compose else "") + ("^" if v in sig else "") + ("+" if s.get("role") == "hero" and v not in FAVOURITE_HEROES else "") for v in opts) or "NONE (use a custom section)"))
         print("")
         print("Keep the order; leave out only optional sections. Calm variants come first.")
-        print("= = the real site's hero composition. When a hero lists one, build.py requires it (or a business hero: %s)." % ", ".join(sorted(build.BUSINESS_HEROES)))
+        print("Hero: %s (the client's photo or a film of their photos, scripts/make_film.py). + = only when the client picks that hero (override_hero); = marks the real site's composition." % " or ".join(FAVOURITE_HEROES))
         print("^ = expressive tier (3D object, WebGL scene or folding effect): only on pages with \"motion\": \"expressive\", for a brief that asks for a 3D or animation-led page. Bands with a \"visual\" field take a WebGL backdrop only on those pages too.")
     if args.coverage:
         gaps = {}
@@ -244,10 +244,11 @@ def main():
         for s in a["slots"]:
             if s["slot"] in ("floating", "exit"):
                 continue
-            ordered = sorted(s["variants"], key=lambda v: (v in sig, v not in FAVOURITE_HEROES, count.get(v, 0), s["variants"].index(v)))
+            ordered = sorted(s["variants"], key=lambda v: (v not in FAVOURITE_HEROES, v in sig, count.get(v, 0), s["variants"].index(v)))
             flag = "required" if s.get("required") else ("recommended" if s.get("recommended") else "optional")
             print("%-12s %-11s %s" % (s["slot"], flag, ", ".join("%s%s (%d)" % (v, "^" if v in sig else "", count.get(v, 0)) for v in ordered)))
         print("\nPick the first variant in each line that fits the content. A count of 0 means no page uses it yet.")
+        print("hero: %s first; build.py fails any other hero unless the client picked it (override_hero)." % " or ".join(FAVOURITE_HEROES))
         print("^ = expressive tier (3D object, WebGL scene or folding effect): build.py accepts it only when page.json sets \"motion\": \"expressive\" and the brief asks for a 3D or animation-led page.")
 
     if args.check:

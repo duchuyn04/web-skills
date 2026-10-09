@@ -60,12 +60,12 @@ Rules 5, from a user review of six generated sites (SoGlobal, 2026-09-30): decor
 
 - A page with 6 or more content sections carries a photo in at least 40% of them (real BPO homepages: median 33%, top quarter 44%); build.py fails below that and lists the sections that take a photo.
 - At most two sections put an icon on every item; build.py fails a third. Rows of icon cards are what makes a page read as text and template.
-- The hero follows the source site's composition when the blueprint names one (`"compose"`), so sites do not all open with text beside one photo.
+- The hero is the client's photo or a film of their photos behind the copy (`hero-fullbleed`, `hero-mosaic`). Cards over a photo, rows of service cards, a dotted globe, a form or a 3D object in the first screen read as template work; build.py fails them unless the client picked one (`override_hero`).
 
 ## Motion
 
 - Reveals are short (0.3-0.4s, 12px, stagger capped at four items). lint fails reveal or hover transitions longer than 0.5s.
-- Pages are calm by default (SKILL.md, Step 2c): photos, reveals, counters, a logo strip, a review carousel, tabs and a map, with at most one contextual piece in the hero. Expressive variants (3D objects, WebGL scenes, particles, folding paper) and band `"visual"` backdrops fail the build unless page.json sets `"motion": "expressive"` and the brief asks for a 3D or animation-led page.
+- Pages are calm by default (SKILL.md, Step 2d): photos, reveals, counters, a logo strip, a review carousel, tabs and a map, with at most one contextual piece in the hero. Expressive variants (3D objects, WebGL scenes, particles, folding paper) and band `"visual"` backdrops fail the build unless page.json sets `"motion": "expressive"` and the brief asks for a 3D or animation-led page.
 - At most one pinned scroll section per page (build.py warns).
 
 ## When a rule fails in a library section

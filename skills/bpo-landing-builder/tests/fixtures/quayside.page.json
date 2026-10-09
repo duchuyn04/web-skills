@@ -23,14 +23,15 @@
       }
     },
     {
-      "type": "hero-overlap",
+      "type": "hero-fullbleed",
       "data": {
         "eyebrow": "Offshore staffing in Cebu",
         "title": "Offshore staff for *Australian and New Zealand businesses*",
         "lead": "Quayside Staffing hires customer support agents, bookkeepers and virtual assistants in Cebu for ecommerce and property management businesses. You approve every hire.",
         "primary_cta": {"label": "Contact us", "href": "#contact"},
         "secondary_cta": {"label": "Our services", "href": "#services"},
-        "photo": {"src": "team-coworking-laptops", "alt": "Four people at a wooden table on laptops, one with headphones"},
+        "image": "team-coworking-laptops",
+        "align": "center",
         "stats": [
           {"value": "140", "label": "Staff in Cebu"},
           {"value": "2016", "label": "Founded"}

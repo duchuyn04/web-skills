@@ -45,17 +45,10 @@
    }
   },
   {
-   "type": "hero-cycler-centered",
+   "type": "hero-fullbleed",
    "data": {
     "eyebrow": "Offshore staffing in Vietnam since 2014",
-    "title_before": "Hire full-time *offshore staff* for",
-    "words": [
-     "customer support",
-     "bookkeeping",
-     "software QA",
-     "sales support",
-     "data entry"
-    ],
+    "title": "Full-time *offshore staff* in Vietnam",
     "lead": "Lotus Staffing recruits, employs and manages full-time staff who work only on your account, in your tools and your hours. One monthly fee per person covers salary, benefits, office and equipment.",
     "primary_cta": {
      "label": "Get a quote",
@@ -65,23 +58,19 @@
      "label": "Calculate savings",
      "href": "#savings"
     },
+    "image": "team-coworking-laptops",
+    "align": "center",
     "proof": [
      "Shortlist in 10 days",
      "No setup fee",
      "Cancel with 30 days notice"
     ],
-    "photo": {
-     "src": "team-coworking-laptops",
-     "alt": "Four people at a wooden table on laptops, one with headphones"
-    },
-    "badges": [
+    "stats": [
      {
-      "icon": "trending-up",
       "value": "62%",
       "label": "Average cost saving"
      },
      {
-      "icon": "user-check",
       "value": "96%",
       "label": "12-month retention"
      }

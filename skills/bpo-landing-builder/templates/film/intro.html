@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-resolution="__RES__">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=__W__, height=__H__" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?__FONTS__&display=block" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: __W__px; height: __H__px; overflow: hidden; background: __BG__; }
+      #root { position: relative; width: 100%; height: 100%; background: __BG__; }
+      /* Logo film for site-intro: a ledger-like rule draws across the centre, the client's logo opens from the
+         middle along it, then the tagline rises out of its mask and the cities fade in. No drawing of the logo:
+         the client's own file is shown as it is. */
+      #stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; transform-origin: 50% 50%; }
+      #mark { position: relative; display: flex; justify-content: center; }
+      #rule { position: absolute; left: 50%; top: 50%; width: __RULE_W__px; height: 2px; margin-left: -__RULE_HALF__px; background: __ACCENT__; }
+      #logo { position: relative; display: block; width: __LOGO_W__px; height: auto; }
+      .line { width: __LINE_W__px; text-align: center; overflow: hidden; }
+      .line .in { display: block; }
+      #tagline { margin-top: __GAP__px; font-family: "__HEADING_FONT__", Georgia, serif; font-weight: __HEADING_WEIGHT__; font-size: __TAG_SIZE__px; line-height: 1.2; letter-spacing: -0.01em; color: __TEXT__; padding-bottom: 0.08em; }
+      #places { margin-top: 26px; font-family: "__BODY_FONT__", Arial, sans-serif; font-weight: 600; font-size: __PLACE_SIZE__px; line-height: 1.5; letter-spacing: 0.08em; text-transform: uppercase; color: __MUTED__; }
+      #places .sep { color: __ACCENT__; padding: 0 0.6em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="5" data-width="__W__" data-height="__H__">
+      <div id="stage">
+        <div id="mark" data-layout-allow-overflow>
+          <div id="rule"></div>
+          <img id="logo" src="assets/__LOGO__" alt="__BRAND__ logo" />
+        </div>
+__LINES__
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      gsap.set("#rule", { scaleX: 0 });
+      gsap.set("#logo", { clipPath: "inset(0% 50% 0% 50%)", scale: 0.94 });
+      gsap.set(".line .in", { yPercent: 110 });
+
+      // 1. A rule draws across the centre.
+      tl.to("#rule", { scaleX: 1, duration: 0.6, ease: "power3.inOut" }, 0.05);
+      // 2. The logo opens from the middle along the rule, which then closes behind it.
+      tl.to("#logo", { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: "power3.inOut" }, 0.5);
+      tl.to("#logo", { scale: 1, duration: 1.2, ease: "expo.out" }, 0.5);
+      tl.to("#rule", { scaleX: 0, transformOrigin: "100% 50%", duration: 0.45, ease: "power2.in" }, 1.05);
+      // 3. Tagline, then the cities.
+      tl.to("#tagline .in", { yPercent: 0, duration: 0.8, ease: "power3.out" }, 1.9);
+      tl.to("#places .in", { yPercent: 0, duration: 0.7, ease: "power3.out" }, 2.4);
+      // 4. A slow push-in while the end card holds.
+      tl.fromTo("#stage", { scale: 1 }, { scale: 1.025, duration: 2.8, ease: "none" }, 2.2);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

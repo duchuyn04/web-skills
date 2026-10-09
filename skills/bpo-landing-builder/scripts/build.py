@@ -32,7 +32,7 @@ import seo  # noqa: E402
 SKILL = HERE.parent
 # Version of the content rules. Bump it when a new check can fail a page that built before, and add a CHANGELOG.md
 # entry. A site built under an older version keeps building with "rules": "<that version>" (see rules_pin in main).
-RULES_VERSION = 5
+RULES_VERSION = 6
 TPL = SKILL / "templates"
 SECTIONS_DIR = TPL / "sections"
 IMAGES_DIR = TPL / "assets" / "images"
@@ -1738,12 +1738,42 @@ def check_motion(ctx, sections, archetype, lib, motion, brief=""):
                 % (s["type"], ", ".join(calm) or "drop the section"))
 
 
+def check_hero_ground(ctx, sections, top):
+    """Rules 6: the hero is a photo ground (hero-fullbleed with the client's photo or a film of their photos, or
+    hero-mosaic) unless the client picked another one (override_hero) or the brief asked for a 3D page and the hero
+    is an expressive one."""
+    hero = next((s for s in sections if s["variant"].get("group") == "hero"), None)
+    if not hero or hero["type"] in PHOTO_GROUND or hero["type"].startswith("custom:") or top.get("override_hero"):
+        return
+    if top.get("motion") in ("expressive", "signature") and hero["variant"].get("tier") == "expressive":
+        return
+    ctx.err(hero["path"] + ".type", "%s has no photo or video behind the copy. Clients rated every such hero (cards over a photo, service cards, globes, forms, 3D objects) as template work. Use hero-fullbleed with the client's photo, or a film of their photos made with python scripts/make_film.py <page.json> loop, or hero-mosaic with 6 or more of their photos. Another hero only when the client picks it: \"override_hero\": {\"reference\": ..., \"reason\": ...}." % hero["type"])
+
+
+def hero_look(sections):
+    """What makes two photo heroes look different: the variant, the layout, the alignment, a film or a still,
+    and the photo itself."""
+    h = next((s for s in sections if isinstance(s, dict) and str(s.get("type", "")).startswith("hero")), None)
+    if not h:
+        return None
+    d = h.get("data") or {}
+    return (h.get("type"), d.get("layout", "overlay"), d.get("align", "left"), bool(d.get("video")), d.get("tint", "brand"), str(d.get("image") or ""))
+
+
 def check_unique_hero(ctx, page, page_path, sections, archetype, lib, motion="calm"):
     """Warn when a sibling site already opens with the same hero. A warning, not an error: the build must not
     depend on which other sites sit next to the page."""
     import variety
     hero = next((s["type"] for s in sections if s["variant"].get("group") == "hero"), None)
     if not hero or not archetype:
+        return
+    if hero in PHOTO_GROUND:
+        # only two photo heroes, so they are told apart by layout, alignment, film or still and the photo
+        mine = hero_look(page.get("sections") or [])
+        same = [path.parent.name for path, other in variety.find_pages(page_path.parent.parent, skip=page_path)
+                if hero_look(other.get("sections") or []) and hero_look(other.get("sections") or [])[:5] == mine[:5]]
+        if same:
+            ctx.warn("sections", "the hero looks like the one on %s (%s, same layout, alignment and %s). Change one of them: \"layout\": \"frame\" or \"overlay\", \"align\", a film of the client's photos instead of a still (scripts/make_film.py), or hero-mosaic." % (", ".join(same), hero, "film" if mine[3] else "still photo"))
         return
     arch = variety.archetypes()
     taken = {}
@@ -1799,8 +1829,11 @@ ROLE_GROUPS = {
 # Heroes built around the client's own work (a call card in its languages, its paperwork, a support chat, its real
 # service panels). They may stand in for a blueprint's hero composition when they fit the business.
 BUSINESS_HEROES = {"hero-voice", "hero-ledger", "hero-chat", "hero-dashboard", "hero-form"}
-# Heroes whose copy sits on their own photo or video under a dark shade. They keep the dark tone whatever the
+# Heroes whose copy sits on the client's own photo or video under a dark shade. They keep the dark tone whatever the
 # blueprint slot says: a light slot tone (an "override_hero" in place of a split hero) set dark text on a dark video.
+# They are also the default hero (rules 6): a client reviewing three versions of a page (Smart Outsourcing,
+# 2026-10-09) rejected every other hero (white card over a photo, service cards, a dotted globe, a form, a 3D deck, a
+# sundial) as template work and kept only full photo grounds, turning them into HyperFrames films of their photos.
 PHOTO_GROUND = {"hero-fullbleed", "hero-mosaic"}
 # Sections that need the client's own proof are left out when the brief has none, whatever the blueprint says
 PROOF_ROLES = {"testimonial", "cases", "clients", "awards", "news", "team", "careers", "locations"}
@@ -1842,7 +1875,7 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override
     roles_seen, forms_seen = set(), set()
     for s in body:
         k = j
-        hero_free = bool(hero_override) and s["variant"].get("group") == "hero"
+        hero_free = (bool(hero_override) or s["type"] in PHOTO_GROUND) and s["variant"].get("group") == "hero"
         while k < len(slots) and not (slot_accepts(slots[k], s["variant"]) or (hero_free and slots[k].get("role") == "hero")):
             k += 1
         if k == len(slots):
@@ -1859,7 +1892,8 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override
         # the real site's hero composition ("compose" in the blueprint): a generic text-and-photo hero loses it
         compose = slots[k].get("compose")
         if hero_free:
-            ctx.warn(s["path"] + ".type", "hero taken from %s instead of blueprint %r (%s): %s" % (hero_override["reference"], bp_key, slots[k]["form"], hero_override["reason"]))
+            if hero_override:
+                ctx.warn(s["path"] + ".type", "hero taken from %s instead of blueprint %r (%s): %s" % (hero_override["reference"], bp_key, slots[k]["form"], hero_override["reason"]))
             compose = None
         if compose and slots[k].get("role") == "hero" and s["type"] not in compose and s["type"] not in BUSINESS_HEROES and not s["type"].startswith("custom:") and not (motion in ("expressive", "signature") and s["variant"].get("tier") == "expressive"):
             ctx.err(s["path"] + ".type", "blueprint %r opens with this hero: %s. Build it with %s. A business hero (%s) may replace it when it fits the client and the form. A generic text-and-photo hero is what makes generated sites look alike." % (bp_key, slots[k].get("note", ""), " or ".join(compose), ", ".join(sorted(BUSINESS_HEROES))))
@@ -2229,6 +2263,7 @@ def main():
             check_evidence(ctx, sections, brief)
         check_variety(ctx, page, page_path)
         check_motion(ctx, sections, archetype, lib, top.get("motion", "calm"), brief or "")
+        check_hero_ground(ctx, sections, top)
         check_unique_hero(ctx, page, page_path, sections, archetype, lib, top.get("motion", "calm"))
         check_unique_blueprint(ctx, page, page_path, arch_key, lib)
     ctx.soft = False

@@ -16,7 +16,7 @@ Match the client's main offer, not its size. If two fit, pick the one whose firs
 
 ## Slot order
 
-Sections in page.json must appear in this order. Each slot is used once. Floating widgets (floating-chat, exit-intent-modal) go last.
+Sections in page.json must appear in this order. Each slot is used once. Floating widgets (floating-chat, exit-intent-modal) and the logo film (site-intro) go last.
 
 - yes: must be present.
 - recommended: include it when the client gave you the real content (logos, testimonials or case results, salary rates, call recordings). Leave it out otherwise; never fill it with invented content.
@@ -55,6 +55,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 27 | footer | yes | `footer-columns`, `footer-matrix` |
 | 28 | floating | no | `floating-chat`, `floating-assistant` |
 | 29 | exit | no | `exit-intent-modal` |
+| 30 | opening | no | `site-intro` |
 
 ### offshore-staffing
 
@@ -88,6 +89,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 26 | footer | yes | `footer-columns`, `footer-matrix` |
 | 27 | floating | no | `floating-chat`, `floating-assistant` |
 | 28 | exit | no | `exit-intent-modal` |
+| 29 | opening | no | `site-intro` |
 
 ### ai-data-ops
 
@@ -119,6 +121,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 24 | footer | yes | `footer-columns`, `footer-matrix` |
 | 25 | floating | no | `floating-chat`, `floating-assistant` |
 | 26 | exit | no | `exit-intent-modal` |
+| 27 | opening | no | `site-intro` |
 
 ### cx-voice-sales
 
@@ -151,6 +154,7 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 25 | footer | yes | `footer-columns`, `footer-matrix` |
 | 26 | floating | no | `floating-chat`, `floating-assistant` |
 | 27 | exit | no | `exit-intent-modal` |
+| 28 | opening | no | `site-intro` |
 
 ### it-bpo-partner
 
@@ -183,3 +187,4 @@ Sections in page.json must appear in this order. Each slot is used once. Floatin
 | 25 | footer | yes | `footer-columns`, `footer-matrix` |
 | 26 | floating | no | `floating-chat`, `floating-assistant` |
 | 27 | exit | no | `exit-intent-modal` |
+| 28 | opening | no | `site-intro` |

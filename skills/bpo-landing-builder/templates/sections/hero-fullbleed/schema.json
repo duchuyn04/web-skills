@@ -2,7 +2,7 @@
   "variant": "hero-fullbleed",
   "group": "hero",
   "forms": ["hero-fullbleed", "hero-video", "hero-center"],
-  "summary": "Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button. Layout \"frame\" (after IntegratedBio): the photo or video fills a rounded frame inset 12px from the page edge and the first screen; a very large headline top left, the lead bottom left, the buttons bottom right (the main one with a square arrow chip). Intro: the frame opens from a small pill in the middle, the headline and lead rise line by line out of masks, then the header and buttons arrive. Frame ignores align, proof and stats; keep the headline to 2-3 lines and the lead under 140 characters.",
+  "summary": "Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button; a film of the client's own photos comes from python scripts/make_film.py <page.json> loop. Layout \"frame\" (after IntegratedBio): the photo or video fills a rounded frame inset 12px from the page edge and the first screen; a very large headline top left, the lead bottom left, the buttons bottom right (the main one with a square arrow chip). Intro: the frame opens from a small pill in the middle, the headline and lead rise line by line out of masks, then the header and buttons arrive. Frame ignores align, proof and stats; keep the headline to 2-3 lines and the lead under 140 characters.",
   "tone": "dark",
   "anchor": "top",
   "shared": ["hero"],

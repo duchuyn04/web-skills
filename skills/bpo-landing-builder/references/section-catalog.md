@@ -46,7 +46,7 @@ These sit at the top of page.json, next to `sections`.
 - `features`: object (optional)
   - `magnetic_cta`: true/false (optional, default false)
 - `motion`: one of calm, expressive, signature (optional, default "calm")
-- `rules`: one of 1, 2, 3, 4 (optional)
+- `rules`: one of 1, 2, 3, 4, 5 (optional)
 - `override_order`: object (optional)
   - `reason`: text 20-300 chars
 - `override_photos`: object (optional)
@@ -1289,7 +1289,7 @@ Fields:
 
 ## hero-fullbleed
 
-Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button. Layout "frame" (after IntegratedBio): the photo or video fills a rounded frame inset 12px from the page edge and the first screen; a very large headline top left, the lead bottom left, the buttons bottom right (the main one with a square arrow chip). Intro: the frame opens from a small pill in the middle, the headline and lead rise line by line out of masks, then the header and buttons arrive. Frame ignores align, proof and stats; keep the headline to 2-3 lines and the lead under 140 characters.
+Full-width hero over a background photo or looping video with a brand-colored shade; copy on the left (or centered), optional KPI strip at the bottom. Video gets a pause button; a film of the client's own photos comes from python scripts/make_film.py <page.json> loop. Layout "frame" (after IntegratedBio): the photo or video fills a rounded frame inset 12px from the page edge and the first screen; a very large headline top left, the lead bottom left, the buttons bottom right (the main one with a square arrow chip). Intro: the frame opens from a small pill in the middle, the headline and lead rise line by line out of masks, then the header and buttons arrive. Frame ignores align, proof and stats; keep the headline to 2-3 lines and the lead under 140 characters.
 
 - Group: `hero`. Default anchor: `#top`. Tone: dark.
 - Built-in motion: hero-ambient-video-mask, hero-frame-intro (layout frame), reveal.
@@ -3049,6 +3049,21 @@ Fields:
   - `link`: object (optional)
     - `label`: text 2-30 chars
     - `href`: link
+
+## site-intro
+
+Logo film shown once per visit over the first screen: the client's logo, a tagline and their cities, made with python scripts/make_film.py <page.json> intro (HyperFrames, 5 s, 16:9 and 9:16). The layer fades when the film ends and the hero opening starts after it. The page scrolls under it, and scrolling past the first screen ends it. Skip button and Esc end it early; reduced motion, automated browsers (crawlers, speed tests, QA) and a second page view skip it. Portrait screens get the 9:16 film.
+
+- Group: `floating`. Default anchor: `#site-intro`. Tone: none.
+- Built-in motion: site-intro-film.
+- Allowed in: enterprise-cx/opening?, offshore-staffing/opening?, ai-data-ops/opening?, cx-voice-sales/opening?, it-bpo-partner/opening?.
+
+Fields:
+
+- `video`: video
+- `video_portrait`: video (optional)
+- `label`: text 5-80 chars
+- `skip_label`: text 2-24 chars (optional, default "Skip intro")
 
 ## solution-panels
 

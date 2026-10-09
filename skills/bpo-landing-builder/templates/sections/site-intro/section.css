@@ -1,0 +1,22 @@
+/* site-intro-film: a layer over the first screen plays the 5 s logo film once per visit, then fades out (0.45 s) and
+   the hero opens. The layer is pinned to the top of the document, not the viewport, so the page scrolls under the
+   film: it moves up with the first screen. Hidden without JS and with reduced motion; section.js removes it when the
+   film ends, is skipped or is scrolled out of view. */
+.bl-site-intro { display: none; }
+.js .bl-site-intro {
+  position: absolute; top: 0; left: 0; right: 0; height: 100vh; height: 100svh; z-index: 1000; display: grid; place-items: center;
+  background: var(--bg); transition: opacity .45s var(--ease-out);
+}
+.bl-site-intro.is-done { opacity: 0; pointer-events: none; }
+.bl-site-intro__video { width: 100%; height: 100%; object-fit: contain; background: var(--bg); }
+.bl-site-intro__skip {
+  position: absolute; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem);
+  min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--border-input); border-radius: var(--radius-btn);
+  background: var(--bg); color: var(--text-strong); font: 600 .95rem/1 var(--font-body); cursor: pointer;
+}
+.bl-site-intro__skip:hover { border-color: var(--text-strong); }
+.bl-site-intro__skip:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .js .bl-site-intro { display: none; } }
+
+/* The header and the frame hero's CSS opening wait under the layer, then run from the start. */
+.js body:has([data-site-intro]:not(.is-done)) :is(.bl-header, .bl-hero--frame, .bl-hero--frame *) { animation-play-state: paused !important; }

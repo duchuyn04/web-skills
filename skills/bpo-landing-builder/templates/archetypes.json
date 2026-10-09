@@ -293,6 +293,12 @@
         "variants": [
           "exit-intent-modal"
         ]
+      },
+      {
+        "slot": "opening",
+        "variants": [
+          "site-intro"
+        ]
       }
     ]
   },
@@ -572,6 +578,12 @@
         "variants": [
           "exit-intent-modal"
         ]
+      },
+      {
+        "slot": "opening",
+        "variants": [
+          "site-intro"
+        ]
       }
     ]
   },
@@ -832,6 +844,12 @@
         "slot": "exit",
         "variants": [
           "exit-intent-modal"
+        ]
+      },
+      {
+        "slot": "opening",
+        "variants": [
+          "site-intro"
         ]
       }
     ]
@@ -1099,6 +1117,12 @@
         "slot": "exit",
         "variants": [
           "exit-intent-modal"
+        ]
+      },
+      {
+        "slot": "opening",
+        "variants": [
+          "site-intro"
         ]
       }
     ]
@@ -1381,6 +1405,12 @@
         "slot": "exit",
         "variants": [
           "exit-intent-modal"
+        ]
+      },
+      {
+        "slot": "opening",
+        "variants": [
+          "site-intro"
         ]
       }
     ]

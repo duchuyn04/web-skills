@@ -3,7 +3,7 @@ name: bpo-landing-builder
 description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "5.7.1"
+  version: "6.0.0"
 ---
 
 # BPO landing builder
@@ -70,13 +70,38 @@ python SKILL/scripts/variety.py --blueprints <archetype> --sites sites
 python SKILL/scripts/variety.py --blueprint <key>
 ```
 
-The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Layouts marked `*` are preferred: clients named those sites (IRIS, Intelligent Outsourcing, Innovature, Bestarion) as the standard for a professional page, so they come first. Take the first unused `*` layout whose sections the brief can fill, and go further down only when none fits; otherwise pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2c). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
+The first command lists the layouts that fit the archetype, unused ones first, with their section roles (`?` marks optional ones). Layouts marked `*` are preferred: clients named those sites (IRIS, Intelligent Outsourcing, Innovature, Bestarion) as the standard for a professional page, so they come first. Take the first unused `*` layout whose sections the brief can fill, and go further down only when none fits; otherwise pick an unused one whose sections the brief can fill. The second prints each section with the variants that fit it, calm ones first; `=` marks the real site's hero composition and `^` marks expressive variants (Step 2d). Set `"blueprint": "<key>"` in page.json and write one section per blueprint section, in order, leaving out only optional ones the brief cannot fill. build.py fails a page without a blueprint and a page that reorders or skips required sections. It warns when another site in `sites/` already follows the same blueprint and names free ones; switch when one fits the brief as well.
 
-The hero follows the real site too. About two thirds of the blueprints name the hero composition of their source site in `"compose"` (a white card over a wide photo, a tilted photo mosaic, a round portrait beside a card of service chips, a row of photo cards under a centered headline, a photo stage with thumbnail tabs, a column of news cards, tall sector panels). build.py fails a page on such a blueprint whose hero is not one of those variants, or a business hero (`hero-voice`, `hero-ledger`, `hero-chat`, `hero-dashboard`, `hero-form`) when it fits the client. This is what keeps ten sites from opening with the same text-left, photo-right hero.
+The hero is the exception: it is always the client's photo or film behind the copy (Step 2b), whatever the blueprint's source site opened with. `hero-fullbleed` and `hero-mosaic` fill the hero slot of every blueprint.
 
-When the client picks a hero from another real site (a Mobbin section, a site they name), keep the blueprint for the rest of the page and add `"override_hero": {"reference": "<url of that hero>", "reason": "<what the client asked for>"}` to page.json. Any hero variant then fills the blueprint's hero slot, and the build prints the swap as a warning. Never set it on your own choice. The same goes for `"override_photos": {"reason": "..."}`: when the client asks for sections without photos (they have no real pictures and stock or screenshots do not fit), use `about-statement` and `steps-timeline` and record the reason; the photo-share check then prints a warning instead of failing. For a full-screen photo or video in a rounded inset frame with a very large headline (IntegratedBio), use `hero-fullbleed` with `"layout": "frame"`.
+When the client picks another hero (one from a real site, a Mobbin section, a site they name, or a library hero they chose after seeing it), keep the blueprint for the rest of the page and add `"override_hero": {"reference": "<url of that hero>", "reason": "<what the client asked for>"}` to page.json. Any hero variant then fills the blueprint's hero slot, and the build prints the swap as a warning. Never set it on your own choice. The same goes for `"override_photos": {"reason": "..."}`: when the client asks for sections without photos (they have no real pictures and stock or screenshots do not fit), use `about-statement` and `steps-timeline` and record the reason; the photo-share check then prints a warning instead of failing. For a full-screen photo or video in a rounded inset frame with a very large headline (IntegratedBio), use `hero-fullbleed` with `"layout": "frame"`.
 
-## Step 2b: Do not repeat a look
+## Step 2b: The hero is the client's photo or film
+
+Clients reviewing several versions of their page rejected every hero without a photo or video behind the copy: a white card over a photo, rows of service cards, a dotted globe, an enquiry form, 3D objects. They kept only the full photo ground and asked for motion made from their own pictures. build.py (rules 6) fails any other hero unless the client picked it (`override_hero`) or the brief asked for a 3D page and the hero is an expressive one.
+
+| Hero | When |
+|:---|:---|
+| `hero-fullbleed`, `"align": "center"` | the default: one strong photo of the client's team, office or work under a dark brand shade |
+| `hero-fullbleed` with a film (`"video"`) | the client has 3 to 5 good photos: make the film with `make_film.py` below; its first frame is the still that shows while it loads |
+| `hero-fullbleed`, `"layout": "frame"` | the photo or film in a rounded frame with a very large headline (IntegratedBio); a lead under 140 characters |
+| `hero-mosaic` | 6 or more photos of the team, offices and work; `"tint": "soft"` keeps their own colours |
+
+Films are made with HyperFrames from the client's own files, never from library photos (needs Node and ffmpeg; each render takes 1 to 2 minutes):
+
+```
+python SKILL/scripts/make_film.py sites/<slug>/page.json loop
+python SKILL/scripts/make_film.py sites/<slug>/page.json loop --photos img/team.jpg,img/office.jpg,img/desks.jpg,img/work.jpg
+python SKILL/scripts/make_film.py sites/<slug>/page.json intro --tagline "<hero title>" --places "London, Hanoi, Da Nang"
+```
+
+- `loop`: 3 to 5 photos (default: the hero photo, then the page's other client photos), each pushed in slowly and wiped to the next by a thin rule; the film ends on its first frame, so it loops with no seam, and carries no text. It writes `media/hero-loop.mp4` (about 1 MB) and `media/hero-loop.jpg`; set them as the hero's `"video"` and `"image"`.
+- `intro`: a 5 s logo film from `site.logo` (the logo opens from the middle along a rule, then the tagline and cities rise in), 16:9 and 9:16, for the `site-intro` section. Use it when the client asks for an intro or a logo animation. The tagline and places come from the brief. Add `{"type": "site-intro", "data": {"video": "media/intro.mp4", "video_portrait": "media/intro-portrait.mp4", "label": "<brand> logo intro"}}` as the last section. It plays once per visit, never with reduced motion or for crawlers, and the hero's opening waits for it.
+- Open every `film/<name>/contact-sheet.jpg` before using a film: a crop can cut a face, a sign or the logo. The HyperFrames project stays in `sites/<slug>/film/<name>/` for changes by hand.
+
+Two sites with the same photo hero differ only by layout, alignment, film or still and the photo; build.py warns when a sibling site matches on all of them.
+
+## Step 2c: Do not repeat a look
 
 Every page is built from the same library, so two clients can end up with the same page in different words. Before you pick variants, run:
 
@@ -86,7 +111,7 @@ python SKILL/scripts/variety.py --archetype <archetype> --sites sites
 
 It lists every slot with its variants ordered from least to most used across `sites/*/page.json`, and the presets the same way. For each slot, take the first variant in the line that fits the client's content (a variant still has to suit the facts: do not pick `models-board` without engagement models or `industries-rows` without industries). Prefer a preset nobody has used when the client has no brand colours. `build.py` warns when the finished page shares 70% or more of its look (preset plus variant per slot, hero and services count double) with another site, and names the slots to swap; treat that warning like a copy warning and fix it.
 
-## Step 2c: Keep motion calm
+## Step 2d: Keep motion calm
 
 BPO buyers judge a vendor on trust first: people photography, certifications, client logos, figures, case studies, star-rated reviews, office addresses with a map and a contact form. Sites such as TDCX, TaskUs and Concentrix keep motion quiet (reveals, counters, a logo strip, a review carousel, tabs). Pages built here do the same: `"motion"` defaults to `"calm"`, and you normally leave the field out.
 
@@ -94,9 +119,9 @@ Calm does not mean every page moves the same way. Each section carries its own e
 
 The library has two tiers.
 
-Calm variants fit any page: everything that `variety.py` does not mark with `^`. A few of them carry one small moving piece tied to the business. Use at most one of those in the hero, and only when it fits (the archetype's hero line in `variety.py --archetype` shows which heroes it accepts):
+Calm variants fit any page: everything that `variety.py` does not mark with `^`. The hero is a photo hero (Step 2b). The heroes below stay in the library for clients who pick one after seeing it (`override_hero`, with what the client said as the reason):
 
-Hero compositions from real sites (the blueprint names the one to use; each needs real content and photos):
+Hero compositions from real sites (each needs real content and photos):
 
 | Variant | Source | Needs |
 |:---|:---|:---|
@@ -109,7 +134,7 @@ Hero compositions from real sites (the blueprint names the one to use; each need
 | `hero-panels` | ELEKS | 3-4 real sectors or service lines, each with a photo |
 | `hero-finder` | IRIS | one person photo; 2-3 real service lines for the small cards; 2-3 ways to browse (industry, size, need) whose options link to page sections |
 
-Business heroes, when the client's work fits:
+Business heroes, when the client picks one for their kind of work:
 
 | Business | Hero |
 |:---|:---|
@@ -117,17 +142,17 @@ Business heroes, when the client's work fits:
 | Accounting, payroll, back office | `hero-ledger` (paperwork photo with report sheets that fan in and get ticked) |
 | Several service lines with reporting | `hero-dashboard` (panels built from the real services and stats) |
 | Sells on a quick quote or call back, and has (or will add) a form endpoint | `hero-form` (enquiry form card in the first screen over a photo or brand-colour panel) |
-| Anything else | `hero-fullbleed` with `"align": "center"` first (the hero clients rated most professional), `hero-slides` when the client wants several slides, then `hero-stage` (one wide office or work photo, or a video, under the copy), `hero-scatter` (4-6 real photos of the office, city and work), `hero-split-image`, `hero-collage`, `hero-qualifier`, `hero-cycler-centered`, `hero-gradient` |
+| Other layouts a client may ask for | `hero-slides` (several slides), `hero-stage` (one wide photo or video under the copy), `hero-scatter` (4-6 real photos), `hero-split-image`, `hero-collage`, `hero-qualifier`, `hero-cycler-centered`, `hero-gradient` |
 
 Photos: a page with 6 or more content sections needs a photo in at least 40% of them (real BPO homepages: median 33%, top quarter 44%), and at most two sections may put an icon on every item; build.py fails otherwise and names the sections that take a photo. Text-only sections now take photos: `metrics-counter` "image" (the figures over a photo), `services-bento` first card "photo", `process-sticky` and `steps-row` a photo on every step (process-sticky swaps the pinned photo as the reader moves through the steps), `industries-rows` a photo on every row (shown in the card that follows the hovered row), `faq-accordion` "photo", `contact-split` "aside.photo". Use the client's photos first, then library photos from `references/assets.md` that match the section. Library photos are strangers: each one appears once on a page, and its alt says what the picture shows ("Two people checking invoices at a desk"), never the company name, "our team" or "our office". A stock face never stands for a named person: no library `avatar` on reviews and no library portraits in `team-grid` or `team-coverflow`. build.py fails all of these.
 
-No mock UI: no grey bars standing in for text, drawn charts without data, fake notifications, like counts, hearts, floating chips, code windows or placeholder dashboards, in library or custom sections. Clients read them as a generated page. QA fails empty shapes stacked like text lines or drawn as a chart, and build.py fails the footer wordmark unless the brief asks for it (`references/anti-slop.md`, Mock UI). When the client wants a hero with several slides, use `hero-slides` (2-4 slides switched by dots, each slide in its own layout) instead of writing a custom hero.
+No mock UI: no grey bars standing in for text, drawn charts without data, fake notifications, like counts, hearts, floating chips, code windows or placeholder dashboards, in library or custom sections. Clients read them as a generated page. QA fails empty shapes stacked like text lines or drawn as a chart, and build.py fails the footer wordmark unless the brief asks for it (`references/anti-slop.md`, Mock UI). When the client asks for a hero with several slides, use `hero-slides` (2-4 slides switched by dots, each slide in its own layout, with `override_hero`) instead of writing a custom hero.
 
 Trust sections to reach for when the brief has the content: `testimonials-rated` (3-8 real reviews with star ratings, optional overall score), `locations-gmap` (office cards beside a live Google Map; a blueprint with no locations slot can show the office through `contact-split` with `"map": {"query": "<address>"}`), `logo-wall` (8+ real client names), `metrics-rings` (real percentages), `case-filter` (4+ real cases), `voice-sample` (real call recordings) and `cost-calculator` (real salary rates). `process-sticky`, `services-stack`, `models-board` and `industries-rows` need no client figures.
 
 Expressive variants (`^` in `variety.py`) are 3D objects, WebGL scenes, particles and folding effects: `hero-globe`, `hero-particles`, `hero-terrain`, `hero-flow`, `hero-wavefield`, `hero-magnetic`, `hero-dark-network`, `hero-ribbons`, `hero-orbits`, `hero-monolith`, `hero-prism`, `hero-isometric`, `hero-deck`, `hero-shatter`, `hero-liquid`, `hero-sundial`, `services-cube`, `services-cylinder`, `process-layers`, `process-pipeline`, `industries-slats`, `metrics-bars3d`, `locations-relief`, `proof-book`, `about-helix`, `team-coverflow`, `faq-fold` and `cta-letter`, plus the `"visual"` backdrop on bands. build.py fails any of them unless page.json sets `"motion": "expressive"`, and it fails `"expressive"` unless the brief asks for a 3D or animation-led page (words such as "3D", "WebGL", "immersive", "nhiều hiệu ứng"). Never add such words to the brief yourself. `examples/variations/*.page.json` shows the expressive variants; copy their data shape only for such a client, and read "Where the 3D goes" in `references/layout-blueprints.md`.
 
-build.py warns when another site in `sites/` already opens with the same hero and names unused ones. Switch only to one that fits the business as well; a fitting repeated hero is better than an unfitting new one.
+build.py warns when another site in `sites/` already opens with the same photo hero (same variant, layout, alignment, and film or still); change one of them.
 
 Every footer carries a Pause animations button that stops all motion on the page (WCAG 2.2.2); keep `motion_toggle` on whenever the page has a loop, a carousel, a video or `testimonials-drift`.
 
@@ -225,6 +250,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/seo.md`: the search and share tags build.py writes, the fields that feed them, what 85 real BPO homepages do, and the launch steps outside the page
 - `references/maintaining.md`: adding a rule, a variant or a check, versioning, and the regression tests to run after a change to the library
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
+- `scripts/make_film.py`: HyperFrames films from the client's photos (hero loop) and logo (site intro); templates in `templates/film/`
 
 ## Changing the library
 

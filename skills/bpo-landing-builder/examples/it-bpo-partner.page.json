@@ -91,7 +91,7 @@
    }
   },
   {
-   "type": "hero-gradient",
+   "type": "hero-mosaic",
    "data": {
     "title": "IT and business process outsourcing *in Vietnam*",
     "lead": "Harbor Point builds software and runs finance and data operations for companies in the US, Japan and Australia. 180 engineers and specialists work from Ho Chi Minh City and Da Nang.",
@@ -103,14 +103,20 @@
      "label": "Our services",
      "href": "#services"
     },
+    "photos": [
+     "code-review-pair",
+     "team-engineers-screen",
+     "office-interior",
+     "developer-headphones-monitors",
+     "finance-chart-screen",
+     "team-meeting-table",
+     "city-hcmc-skyline"
+    ],
     "proof": [
      "14 years in operation",
      "ISO 27001 certified"
     ],
-    "photo": {
-     "src": "code-review-pair",
-     "alt": "Two women looking at code on a laptop, from over the shoulder"
-    }
+    "tint": "soft"
    }
   },
   {
