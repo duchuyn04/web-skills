@@ -2,6 +2,17 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 5.7.0 (2026-10-09)
+
+Eleven motion sections from a Mobbin study, with the motion measured on the live sites where they still run (computed transitions, Web Animations, GSAP tween log, transforms before and after hover and across scroll steps; `references/mobbin-references.md`, Motion). Rules stay at 5: no new check can fail a page that built before.
+
+- Scroll: `services-hscroll` (the section pins and vertical scroll moves the service row sideways, progress bar), `process-drop` (step cards drop onto a pile at seeded tilts in a pinned stage, step counter), `statement-ink` (a paragraph inked word by word with the scroll).
+- Lists and type: `services-marquee` (rows of service names drift in opposite directions; hover slows the row and pops the service photo), `features-scrollspy` (the row at the reading line lights up, a dot slides to it, a sticky panel cross-fades its photo), `industries-index` (names resolve from scrambled letters, Vietnamese marks kept whole).
+- Photos: `locations-fan` (three photos per office; side photos tuck in and the front one grows on hover, after Cosmos), `careers-canvas` (a draggable board of office photos with glide and arrow keys), `about-checker` (a checkerboard of photos and tinted tiles that turn over in a wave, then swap one square every 3 s).
+- Accents: `comparison-bars` (company and alternative bars grow out from a centre divider per criterion, sticky key, after Webflow's comparison pages), `footer-matrix` (footer-columns plus the brand mark on an LED dot panel drawn through a CSS dot mask, after Robot.com, which lays a dot mask over an animated image).
+- `footer-matrix` needs the brief to ask for a dot-matrix panel or a large brand mark, or `"motion": "expressive"`, like the footer wordmark; its `legal` line gets the same copyright check as footer-columns.
+- qa_screenshot.py: the 2x frame-rate check now also measures sections that run a registered GSAP ambient loop, and measures pinned or scrubbed sections while scrolling through them (it only saw canvas, video and CSS loops before). Element shots hide the fixed header after its own shot, so tall sections no longer show it across their middle.
+
 ## 5.6.0 (2026-10-07)
 
 From a review of what makes generated sites look machine-made (sources in `references/flat-style.md`). Rules stay at 5: the new shadow and hover findings are warnings on pages, and the library itself is held to zero by `tools/check_flat_css.py`.

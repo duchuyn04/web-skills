@@ -1,6 +1,47 @@
-{% from "partials/macros.html" import section_head, look_card with context %}
+{% from "partials/macros.html" import section_head, look_card, book_href with context %}
 {% set looks = [] %}
 {% for g in n.gallery %}{% if not sec.tags or (g.tags|select("in", sec.tags)|list) %}{% set _ = looks.append(g) %}{% endif %}{% endfor %}
+{% if sec.variant == "canvas" %}
+{# looks scattered on a board wider than the screen: drag it (it glides on), arrow keys pan, Home centres.
+   Touch screens and phones get a swipe row. Positions and tilts are seeded from the salon name. #}
+<section class="sec sec-tint">
+  <div class="wrap">
+    {{ section_head(sec.title or "Mẫu mới làm", sec.text or "", root ~ "mau-nail.html", "Xem tất cả mẫu") }}
+    <div class="board-view" data-mx-board data-seed="{{ salon.name }}" tabindex="0" role="region" aria-label="Bảng mẫu nail, kéo hoặc dùng phím mũi tên để xem thêm">
+      <ul class="board">
+        {% for g in looks[:sec.limit or 12] %}
+        <li class="board-item">
+          <img src="{{ root }}{{ pics['look-' ~ g.id] }}" alt="{{ g.title }}" loading="lazy" width="400" height="400" draggable="false">
+          <span class="board-cap"><b>{{ g.title }}</b>{% if booking.mode == "native" %}<a href="{{ book_href(root, g.service or '', g.id) }}">Đặt mẫu này</a>{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <span class="board-chip" aria-hidden="true">Kéo</span>
+    </div>
+  </div>
+</section>
+{% elif sec.variant == "checker" %}
+{# looks and flat tinted tiles in a checkerboard: they turn in as a diagonal wave, then every 3 s one look moves one
+   square while the section is on screen (the pause switch in the footer holds it) #}
+{% set pool = (looks or n.gallery)[:sec.limit or 12] %}
+<section class="sec">
+  <div class="wrap">
+    <div class="ck-split">
+    {{ section_head(sec.title or "Mẫu mới làm", sec.text or "", root ~ "mau-nail.html", "Xem tất cả mẫu") }}
+    <div class="ck" data-mx-check>
+      {% for i in range(12) %}
+      {% set r = i // 4 %}{% set c = i % 4 %}
+      {% set k = (r + c) % 2 %}
+      <div class="ck-tile {{ 'ck-photo' if k == 0 else 'ck-tint' }}" style="--d:{{ r + c }}">
+        <div class="ck-face">{% if k == 0 %}{% set g = pool[(i // 2) % (pool|length)] %}<img src="{{ root }}{{ pics['look-' ~ g.id] }}" alt="{{ g.title }}" loading="lazy" width="400" height="400">{% endif %}</div>
+      </div>
+      {% endfor %}
+      <template data-ck-pool>{% for g in pool[6:] %}<img src="{{ root }}{{ pics['look-' ~ g.id] }}" alt="{{ g.title }}" width="400" height="400">{% endfor %}</template>
+    </div>
+    </div>
+  </div>
+</section>
+{% else %}
 <section class="sec sec-tint">
   <div class="wrap">
     {{ section_head(sec.title or "Mẫu mới làm", sec.text or "", root ~ "mau-nail.html", "Xem tất cả mẫu") }}
@@ -9,3 +50,4 @@
     </div>
   </div>
 </section>
+{% endif %}

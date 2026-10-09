@@ -1,4 +1,52 @@
 {% from "partials/macros.html" import section_head with context %}
+{% set v = sec.variant or "grid" %}
+{% if v == "scroll" %}
+{# a row of tall category cards; on wide screens the section pins and the vertical scroll moves the row sideways #}
+<section class="sec mx-row" data-mx-row>
+  <div class="mx-row-pin">
+    <div class="wrap">{{ section_head(sec.title or "Dịch vụ", sec.text or "", root ~ "bang-gia.html", "Bảng giá đầy đủ") }}</div>
+    <div class="mx-row-view" data-mx-row-view>
+      <ul class="mx-row-track" data-mx-row-track>
+        {% for c in n.categories %}
+        <li><a class="mx-rcard" href="{{ root }}bang-gia.html#nhom-{{ c.id }}">
+          <img src="{{ root }}{{ pics['cat-' ~ c.id] }}" alt="" loading="{{ 'eager' if loop.index <= 4 else 'lazy' }}" width="400" height="400">
+          <span class="mx-rcard-body">
+            <b>{{ c.name }}</b>
+            {% if c.intro %}<small>{{ c.intro }}</small>{% endif %}
+            {% if c.min_price %}<span class="cat-price">từ {{ vnd(c.min_price) }}</span>{% endif %}
+          </span>
+        </a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="wrap"><div class="mx-bar" aria-hidden="true"><span data-mx-row-bar></span></div></div>
+  </div>
+</section>
+{% elif v == "fan" %}
+{# three looks per category: the two back looks slide out from behind the front one once; hover gathers them (Cosmos) #}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Dịch vụ", sec.text or "", root ~ "bang-gia.html", "Bảng giá đầy đủ") }}
+    <div class="fan-grid" data-mx-fan>
+      {% for c in n.categories %}
+      {% set f = pics['fan-' ~ c.id] %}
+      <a class="fan-card" href="{{ root }}bang-gia.html#nhom-{{ c.id }}" style="--i:{{ loop.index0 }}">
+        <span class="fan-stack" aria-hidden="true">
+          <img class="fan-l" src="{{ root }}{{ f[1] }}" alt="" loading="lazy" width="400" height="400">
+          <img class="fan-r" src="{{ root }}{{ f[2] }}" alt="" loading="lazy" width="400" height="400">
+          <img class="fan-f" src="{{ root }}{{ f[0] }}" alt="" loading="lazy" width="400" height="400">
+        </span>
+        <span class="fan-body">
+          <b>{{ c.name }}</b>
+          {% if c.intro %}<small>{{ c.intro }}</small>{% endif %}
+          {% if c.min_price %}<span class="cat-price">từ {{ vnd(c.min_price) }}</span>{% endif %}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% else %}
 <section class="sec">
   <div class="wrap">
     {{ section_head(sec.title or "Dịch vụ", sec.text or "", root ~ "bang-gia.html", "Bảng giá đầy đủ") }}
@@ -16,3 +64,4 @@
     </div>
   </div>
 </section>
+{% endif %}

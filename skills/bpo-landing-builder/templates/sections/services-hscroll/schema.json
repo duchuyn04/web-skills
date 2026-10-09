@@ -1,0 +1,23 @@
+{
+  "variant": "services-hscroll",
+  "group": "services", "signature": true,
+  "forms": ["carousel-cards", "cards-image"],
+  "reshape": true,
+  "summary": "Service lines as a row of tall photo cards that travel sideways while the visitor scrolls: on wide screens the section pins under the header and vertical scrolling moves the row from right to left, with a thin progress bar under it. Each card: photo, title, short text, optional link. Tablets, phones and reduced motion get a swipeable row that snaps to each card. Use for 3-6 service lines that each have a real photo.",
+  "tone": "auto",
+  "anchor": "services",
+  "animations": ["horizontal-scroll-pin", "track-progress-fill", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cards": {
+      "type": "list", "min": 3, "max": 6,
+      "item": {"type": "object", "fields": {
+        "title": {"type": "text", "min": 8, "max": 60},
+        "text": {"type": "text", "min": 50, "max": 200},
+        "photo": {"$ref": "photo"},
+        "link": {"$ref": "cta", "required": false}
+      }}
+    },
+    "track_label": {"type": "text", "min": 3, "max": 40, "required": false}
+  }
+}

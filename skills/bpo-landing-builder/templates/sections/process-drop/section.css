@@ -1,0 +1,57 @@
+/* process-drop: tilted-card-drop, step-counter-roll */
+.bl-process-drop { overflow-x: clip; }
+.bl-process-drop__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.bl-process-drop__side .bl-head { margin-bottom: 1.75rem; }
+.bl-process-drop__count { display: none; align-items: baseline; gap: .1em; margin-bottom: 1.75rem; font-size: clamp(2rem, 2vw + 1.2rem, 3rem); font-weight: 700; line-height: 1.2; color: var(--text-strong); }
+.bl-process-drop__roll { display: inline-block; height: 1.2em; overflow: hidden; }
+.bl-process-drop__digits { display: flex; flex-direction: column; transform: translateY(calc(var(--pd-active, 0) * -1.2em)); transition: transform .45s var(--ease-out); }
+.bl-process-drop__digits > span { display: block; height: 1.2em; color: var(--accent-ink); }
+.bl-process-drop__total { color: var(--text-muted); font-size: .5em; }
+
+/* the list: cards in a column, each at a slight seeded tilt (--pd-tilt is set by section.js, the fallback alternates) */
+.bl-process-drop__stage { list-style: none; display: grid; gap: clamp(1rem, 2.5vw, 1.5rem); justify-items: center; }
+.bl-process-drop__card {
+  --pd-tilt: 1.5deg;
+  --pd-strong: var(--text-strong);
+  --pd-text: var(--text);
+  --pd-line: var(--border);
+  --pd-ink: var(--accent-ink);
+  width: min(100%, 500px); padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--radius-lg); border: 1px solid var(--pd-line); background: var(--surface); color: var(--pd-text);
+  transform: rotate(calc(var(--pd-tilt) * .45));
+}
+.bl-process-drop__card:nth-child(even) { --pd-tilt: -1.5deg; }
+.bl-process-drop__card:nth-child(3n + 2) { background: color-mix(in oklab, var(--c-accent) 12%, var(--surface)); }
+.bl-process-drop__card:nth-child(3n + 3) {
+  --pd-strong: white;
+  --pd-text: color-mix(in srgb, white 80%, var(--c-primary));
+  --pd-line: transparent;
+  --pd-ink: var(--c-accent-on-dark, var(--c-accent));
+  background: var(--c-primary);
+}
+.bl-process-drop__top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+.bl-process-drop__label { display: inline-flex; align-items: center; gap: .5rem; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--pd-ink); }
+.bl-process-drop__label .bl-icon { width: 18px; height: 18px; }
+.bl-process-drop__num { font-size: var(--fs-sm); font-weight: 700; color: var(--pd-strong); }
+.bl-process-drop__title { font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: clamp(1.3rem, 1vw + 1rem, 1.75rem); line-height: 1.2; color: var(--pd-strong); margin-bottom: .7rem; }
+.bl-process-drop__text { max-width: 36rem; }
+
+/* wide screens with motion: section.js pins the block, stacks the cards in one grid cell and drops them in turn */
+.bl-process-drop.is-pinned .bl-process-drop__grid { align-items: center; min-height: calc(100vh - var(--header-h)); padding-block: clamp(1.5rem, 5vh, 3rem); }
+.bl-process-drop.is-pinned .bl-process-drop__count { display: flex; }
+.bl-process-drop.is-pinned .bl-process-drop__stage { gap: 0; }
+.bl-process-drop.is-pinned .bl-process-drop__card { grid-area: 1 / 1; transform: none; border-color: var(--border-strong); will-change: transform, opacity; }
+.bl-process-drop.is-pinned .bl-process-drop__card:nth-child(3n + 3) { border-color: transparent; }
+
+/* qa_screenshot.py adds .bl-shot before element shots: show the plain list */
+.bl-shot .bl-process-drop__card { opacity: 1 !important; }
+
+@media (max-width: 1023px) {
+  .bl-process-drop__grid { grid-template-columns: 1fr; }
+  .bl-process-drop__stage { justify-items: stretch; }
+  .bl-process-drop__card { width: auto; max-width: 560px; }
+  .bl-process-drop__card:nth-child(even) { justify-self: end; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-process-drop__digits { transition: none; }
+}

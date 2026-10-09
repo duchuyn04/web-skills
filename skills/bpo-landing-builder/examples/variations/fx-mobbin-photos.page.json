@@ -1,0 +1,347 @@
+{
+  "_note": "Shows the photo-led motion sections studied on Mobbin and measured on the live sites: about-checker (Contra Labs: a checkerboard of tinted and photo tiles that turn over), locations-fan (Cosmos: three-photo stacks that fan out and gather on hover) and careers-canvas (Nite Riot: a draggable photo board under a careers card). Harbourline Ops is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "orange-charcoal",
+  "lang": "en",
+  "site": {
+    "brand": "Harbourline Ops",
+    "brand_mark": "HO",
+    "title": "Harbourline Ops | Back-office and software teams in Vietnam",
+    "description": "Harbourline Ops runs finance, data and software teams from Da Nang, Ho Chi Minh City and Cebu for companies in Australia, the UK and the US."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "About",
+            "href": "#about"
+          },
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Locations",
+            "href": "#locations"
+          },
+          {
+            "label": "Careers",
+            "href": "#careers"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-gradient",
+      "data": {
+        "eyebrow": "Finance, data and software outsourcing",
+        "title": "Back-office and software teams in *Vietnam and Cebu*",
+        "lead": "Harbourline Ops runs bookkeeping, data processing and software teams for companies in Australia, the UK and the US, from three offices in Da Nang, Ho Chi Minh City and Cebu.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our locations",
+          "href": "#locations"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Founded 2015",
+          "Three delivery centres"
+        ]
+      }
+    },
+    {
+      "type": "about-checker",
+      "id": "about",
+      "data": {
+        "title": "One operations company, *three offices*",
+        "paragraphs": [
+          "Harbourline Ops started in 2015 with a **bookkeeping desk in Da Nang** for two accounting firms in Sydney. Today 380 staff run finance, data and software work for 70 clients from three offices.",
+          "Every team works inside the client's own systems and has **a named team lead and a monthly review**. All three offices run on the same security controls."
+        ],
+        "points": [
+          "ISO 27001 certified since 2019",
+          "Named team lead for every client",
+          "Monthly review with your managers"
+        ],
+        "cta": {
+          "label": "Meet the team",
+          "href": "#careers"
+        },
+        "photos": [
+          {
+            "src": "accounting-documents-calculator",
+            "alt": "Accounting documents and a calculator on a desk"
+          },
+          {
+            "src": "finance-chart-screen",
+            "alt": "Monthly finance report open on a screen"
+          },
+          {
+            "src": "calculator-pens-flatlay",
+            "alt": "Calculator, pens and notes laid out on a desk"
+          },
+          {
+            "src": "bookkeeping-calculator-laptop",
+            "alt": "Ledger on a laptop next to a calculator"
+          },
+          {
+            "src": "paperwork-signing-laptop",
+            "alt": "Contract being signed beside an open laptop"
+          },
+          {
+            "src": "paperwork-desk-hands",
+            "alt": "Hands sorting paperwork on a desk"
+          }
+        ]
+      }
+    },
+    {
+      "type": "services-bento",
+      "data": {
+        "head": {
+          "title": "Our services",
+          "lead": "Three service lines run from every office, so one contract can cover a bookkeeping desk and a software squad."
+        },
+        "cards": [
+          {
+            "icon": "calculator",
+            "title": "Bookkeeping and payroll",
+            "text": "Accountants close the month in Xero and QuickBooks, prepare payroll and send every file through a reviewer before it leaves the desk.",
+            "bullets": [
+              "Monthly close",
+              "Payroll preparation",
+              "Second-person review"
+            ]
+          },
+          {
+            "icon": "database",
+            "title": "Data processing",
+            "text": "Operators extract, check and load invoice, order and claim data into your systems, with daily counts and error rates."
+          },
+          {
+            "icon": "code",
+            "title": "Software squads",
+            "text": "Engineers build and test web products in your repositories and join your sprint planning and demos."
+          },
+          {
+            "icon": "headset",
+            "title": "Customer support",
+            "text": "Email and chat support in English during Australian, UK or US business hours, on your help desk."
+          }
+        ]
+      }
+    },
+    {
+      "type": "locations-fan",
+      "id": "locations",
+      "data": {
+        "head": {
+          "title": "Three delivery centres",
+          "lead": "Each office runs the same security controls and the same review steps, so a team can grow in one city and keep its routine."
+        },
+        "cards": [
+          {
+            "name": "Da Nang",
+            "country": "Vietnam",
+            "flag": "vn",
+            "line": "180 staff, finance and software",
+            "text": "Our first office, ten minutes from the airport, with a training room for new starters.",
+            "href": "#get-started",
+            "photos": [
+              {
+                "src": "office-interior",
+                "alt": "Open-plan office floor with rows of desks"
+              },
+              {
+                "src": "city-danang-golden-bridge",
+                "alt": "Golden Bridge in the hills above Da Nang"
+              },
+              {
+                "src": "meeting-room-empty",
+                "alt": "Meeting room with a long table"
+              }
+            ]
+          },
+          {
+            "name": "Ho Chi Minh City",
+            "country": "Vietnam",
+            "flag": "vn",
+            "line": "140 staff, data and support",
+            "text": "A floor in District 1 for data processing and customer support teams.",
+            "href": "#get-started",
+            "photos": [
+              {
+                "src": "office-building-entrance",
+                "alt": "Glass entrance of an office building"
+              },
+              {
+                "src": "city-hcmc-skyline",
+                "alt": "Ho Chi Minh City skyline by the river"
+              },
+              {
+                "src": "desk-phone-monitors",
+                "alt": "Support desk with two monitors and a desk phone"
+              }
+            ]
+          },
+          {
+            "name": "Cebu",
+            "country": "Philippines",
+            "flag": "ph",
+            "line": "60 staff, customer support",
+            "text": "Our newest office, covering Australian and US business hours.",
+            "href": "#get-started",
+            "photos": [
+              {
+                "src": "laptop-conference-room",
+                "alt": "Laptop open in a conference room"
+              },
+              {
+                "src": "coast-philippines-island",
+                "alt": "Coast and island near Cebu"
+              },
+              {
+                "src": "paperwork-review-desk",
+                "alt": "Desk with papers under review"
+              }
+            ]
+          }
+        ],
+        "link": {
+          "label": "Plan a team in our offices",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "careers-canvas",
+      "id": "careers",
+      "data": {
+        "title": "Careers at *Harbourline*",
+        "text": "We hire accountants, data operators, engineers and support agents in Da Nang, Ho Chi Minh City and Cebu. Every new starter gets paid training in the first month.",
+        "openings": "24 open roles",
+        "cta": {
+          "label": "See open roles",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Life at Harbourline",
+          "href": "#about"
+        },
+        "photos": [
+          {
+            "src": "team-coworking-laptops",
+            "alt": "Colleagues working on laptops at a shared table"
+          },
+          {
+            "src": "port-containers",
+            "alt": "Shipping containers stacked at a port"
+          },
+          {
+            "src": "training-workshop-board",
+            "alt": "Training session at a whiteboard"
+          },
+          {
+            "src": "warehouse-racks",
+            "alt": "Tall warehouse racks with pallets"
+          },
+          {
+            "src": "team-engineers-screen",
+            "alt": "Engineers reviewing a test run on a large screen"
+          },
+          {
+            "src": "ecommerce-packing",
+            "alt": "Online orders being packed in boxes"
+          },
+          {
+            "src": "warehouse-aisle-boxes",
+            "alt": "Warehouse aisle lined with boxes"
+          },
+          {
+            "src": "team-meeting-table",
+            "alt": "Team meeting around a table"
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "id": "get-started",
+      "data": {
+        "title": "Get a team plan for *your back office*",
+        "text": "Send a short brief and an operations lead replies with a team plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@harbourline.example"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Finance, data, software and support teams in Da Nang, Ho Chi Minh City and Cebu.",
+        "contacts": [
+          {
+            "icon": "mail",
+            "label": "hello@harbourline.example",
+            "href": "mailto:hello@harbourline.example"
+          },
+          {
+            "icon": "map-pin",
+            "label": "Hai Chau District, Da Nang"
+          }
+        ],
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Bookkeeping",
+                "href": "#services"
+              },
+              {
+                "label": "Data processing",
+                "href": "#services"
+              },
+              {
+                "label": "Software squads",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "#about"
+              },
+              {
+                "label": "Locations",
+                "href": "#locations"
+              },
+              {
+                "label": "Careers",
+                "href": "#careers"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

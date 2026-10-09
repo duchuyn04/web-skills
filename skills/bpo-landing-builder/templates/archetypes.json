@@ -84,7 +84,8 @@
       {
         "slot": "intro",
         "variants": [
-          "statement-band"
+          "statement-band",
+          "statement-ink"
         ]
       },
       {
@@ -93,7 +94,8 @@
           "pillars-numbered",
           "about-mosaic",
           "about-statement",
-          "about-helix"
+          "about-helix",
+          "about-checker"
         ]
       },
       {
@@ -106,7 +108,9 @@
           "service-links",
           "services-stack",
           "services-cylinder",
-          "services-cube"
+          "services-cube",
+          "services-hscroll",
+          "services-marquee"
         ],
         "required": true
       },
@@ -121,7 +125,8 @@
         "variants": [
           "feature-rows",
           "steps-timeline",
-          "solution-panels"
+          "solution-panels",
+          "features-scrollspy"
         ]
       },
       {
@@ -134,7 +139,8 @@
         "slot": "compare",
         "variants": [
           "comparison-table",
-          "models-board"
+          "models-board",
+          "comparison-bars"
         ]
       },
       {
@@ -143,7 +149,8 @@
           "steps-row",
           "process-sticky",
           "process-layers",
-          "process-pipeline"
+          "process-pipeline",
+          "process-drop"
         ]
       },
       {
@@ -171,7 +178,8 @@
           "roles-carousel",
           "audience-cards",
           "industries-rows",
-          "industries-slats"
+          "industries-slats",
+          "industries-index"
         ]
       },
       {
@@ -216,7 +224,8 @@
           "locations-map",
           "locations-gmap",
           "country-cards",
-          "locations-relief"
+          "locations-relief",
+          "locations-fan"
         ]
       },
       {
@@ -241,7 +250,8 @@
       {
         "slot": "careers",
         "variants": [
-          "careers-band"
+          "careers-band",
+          "careers-canvas"
         ]
       },
       {
@@ -266,7 +276,8 @@
       {
         "slot": "footer",
         "variants": [
-          "footer-columns"
+          "footer-columns",
+          "footer-matrix"
         ],
         "required": true
       },
@@ -371,7 +382,8 @@
       {
         "slot": "intro",
         "variants": [
-          "statement-band"
+          "statement-band",
+          "statement-ink"
         ]
       },
       {
@@ -391,7 +403,9 @@
           "service-links",
           "services-stack",
           "services-cylinder",
-          "services-cube"
+          "services-cube",
+          "services-hscroll",
+          "services-marquee"
         ],
         "required": true
       },
@@ -406,7 +420,8 @@
         "variants": [
           "feature-rows",
           "steps-timeline",
-          "solution-panels"
+          "solution-panels",
+          "features-scrollspy"
         ]
       },
       {
@@ -419,7 +434,8 @@
         "slot": "compare",
         "variants": [
           "comparison-table",
-          "models-board"
+          "models-board",
+          "comparison-bars"
         ]
       },
       {
@@ -428,7 +444,8 @@
           "process-sticky",
           "steps-row",
           "process-layers",
-          "process-pipeline"
+          "process-pipeline",
+          "process-drop"
         ],
         "required": true
       },
@@ -460,7 +477,8 @@
           "locations-map",
           "locations-gmap",
           "country-cards",
-          "locations-relief"
+          "locations-relief",
+          "locations-fan"
         ]
       },
       {
@@ -510,7 +528,8 @@
       {
         "slot": "careers",
         "variants": [
-          "careers-band"
+          "careers-band",
+          "careers-canvas"
         ]
       },
       {
@@ -536,7 +555,8 @@
       {
         "slot": "footer",
         "variants": [
-          "footer-columns"
+          "footer-columns",
+          "footer-matrix"
         ],
         "required": true
       },
@@ -636,7 +656,8 @@
       {
         "slot": "intro",
         "variants": [
-          "statement-band"
+          "statement-band",
+          "statement-ink"
         ]
       },
       {
@@ -648,7 +669,9 @@
           "roles-carousel",
           "services-stack",
           "services-cylinder",
-          "services-cube"
+          "services-cube",
+          "services-hscroll",
+          "services-marquee"
         ],
         "required": true
       },
@@ -663,7 +686,8 @@
         "variants": [
           "feature-rows",
           "steps-timeline",
-          "solution-panels"
+          "solution-panels",
+          "features-scrollspy"
         ]
       },
       {
@@ -676,7 +700,8 @@
         "slot": "compare",
         "variants": [
           "comparison-table",
-          "models-board"
+          "models-board",
+          "comparison-bars"
         ]
       },
       {
@@ -685,7 +710,8 @@
           "process-sticky",
           "steps-row",
           "process-layers",
-          "process-pipeline"
+          "process-pipeline",
+          "process-drop"
         ],
         "required": true
       },
@@ -744,7 +770,8 @@
           "locations-map",
           "locations-gmap",
           "country-cards",
-          "locations-relief"
+          "locations-relief",
+          "locations-fan"
         ]
       },
       {
@@ -763,7 +790,8 @@
       {
         "slot": "careers",
         "variants": [
-          "careers-band"
+          "careers-band",
+          "careers-canvas"
         ]
       },
       {
@@ -788,7 +816,8 @@
       {
         "slot": "footer",
         "variants": [
-          "footer-columns"
+          "footer-columns",
+          "footer-matrix"
         ],
         "required": true
       },
@@ -891,7 +920,8 @@
       {
         "slot": "intro",
         "variants": [
-          "statement-band"
+          "statement-band",
+          "statement-ink"
         ]
       },
       {
@@ -911,7 +941,9 @@
           "service-links",
           "services-stack",
           "services-cylinder",
-          "services-cube"
+          "services-cube",
+          "services-hscroll",
+          "services-marquee"
         ],
         "required": true
       },
@@ -926,7 +958,8 @@
         "variants": [
           "feature-rows",
           "steps-timeline",
-          "solution-panels"
+          "solution-panels",
+          "features-scrollspy"
         ]
       },
       {
@@ -939,7 +972,8 @@
         "slot": "compare",
         "variants": [
           "comparison-table",
-          "models-board"
+          "models-board",
+          "comparison-bars"
         ]
       },
       {
@@ -965,7 +999,8 @@
           "process-sticky",
           "steps-row",
           "process-layers",
-          "process-pipeline"
+          "process-pipeline",
+          "process-drop"
         ]
       },
       {
@@ -1021,7 +1056,8 @@
       {
         "slot": "careers",
         "variants": [
-          "careers-band"
+          "careers-band",
+          "careers-canvas"
         ]
       },
       {
@@ -1047,7 +1083,8 @@
       {
         "slot": "footer",
         "variants": [
-          "footer-columns"
+          "footer-columns",
+          "footer-matrix"
         ],
         "required": true
       },
@@ -1144,7 +1181,8 @@
           "about-mosaic",
           "about-statement",
           "pillars-numbered",
-          "about-helix"
+          "about-helix",
+          "about-checker"
         ]
       },
       {
@@ -1169,7 +1207,8 @@
       {
         "slot": "intro",
         "variants": [
-          "statement-band"
+          "statement-band",
+          "statement-ink"
         ]
       },
       {
@@ -1182,7 +1221,9 @@
           "roles-carousel",
           "services-stack",
           "services-cylinder",
-          "services-cube"
+          "services-cube",
+          "services-hscroll",
+          "services-marquee"
         ],
         "required": true
       },
@@ -1197,7 +1238,8 @@
         "variants": [
           "solution-panels",
           "feature-rows",
-          "steps-timeline"
+          "steps-timeline",
+          "features-scrollspy"
         ]
       },
       {
@@ -1210,7 +1252,8 @@
         "slot": "compare",
         "variants": [
           "comparison-table",
-          "models-board"
+          "models-board",
+          "comparison-bars"
         ]
       },
       {
@@ -1219,7 +1262,8 @@
           "steps-row",
           "process-sticky",
           "process-layers",
-          "process-pipeline"
+          "process-pipeline",
+          "process-drop"
         ]
       },
       {
@@ -1229,7 +1273,8 @@
           "roles-carousel",
           "industries-tiles",
           "industries-rows",
-          "industries-slats"
+          "industries-slats",
+          "industries-index"
         ]
       },
       {
@@ -1274,7 +1319,8 @@
           "locations-map",
           "locations-gmap",
           "country-cards",
-          "locations-relief"
+          "locations-relief",
+          "locations-fan"
         ]
       },
       {
@@ -1293,7 +1339,8 @@
       {
         "slot": "careers",
         "variants": [
-          "careers-band"
+          "careers-band",
+          "careers-canvas"
         ]
       },
       {
@@ -1318,7 +1365,8 @@
       {
         "slot": "footer",
         "variants": [
-          "footer-columns"
+          "footer-columns",
+          "footer-matrix"
         ],
         "required": true
       },

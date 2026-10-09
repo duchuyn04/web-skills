@@ -1,0 +1,22 @@
+{
+  "variant": "process-drop",
+  "group": "process", "signature": true,
+  "forms": ["list-rows", "cards-text"],
+  "summary": "How we work as a pile of step cards (after the Opennote homepage on Mobbin). On wide screens the section pins: heading, a step counter (02 / 05) and an optional button stay on the left while each next step card drops onto the pile on the right as the visitor scrolls, landing at its own small tilt over the cards before it. Cards cycle plain, soft brand tint and dark. Tilts and offsets are seeded from the brand name. Phones, tablets and reduced motion show the cards as a list, each still slightly tilted. Needs 3-6 real steps.",
+  "tone": "auto",
+  "anchor": "process",
+  "animations": ["tilted-card-drop", "step-counter-roll", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cta": {"$ref": "cta", "required": false},
+    "steps": {
+      "type": "list", "min": 3, "max": 6,
+      "item": {"type": "object", "fields": {
+        "label": {"type": "text", "min": 2, "max": 24},
+        "icon": {"type": "icon", "required": false},
+        "title": {"type": "text", "min": 6, "max": 60},
+        "text": {"type": "text", "min": 50, "max": 220}
+      }}
+    }
+  }
+}

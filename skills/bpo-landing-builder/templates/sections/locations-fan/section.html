@@ -1,0 +1,22 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head-split}}
+    <ul class="bl-locfan" data-locfan>
+      {{#cards}}
+      <li class="bl-locfan__card{{#href}} bl-locfan__card--link{{/href}}" style="--i: {{@index}}" data-reveal>
+        <div class="bl-locfan__stack">
+          {{#photos}}<span class="bl-locfan__ph bl-locfan__ph--{{@n}}"><img src="{{src}}" alt="{{alt}}" width="320" height="400" loading="lazy"></span>{{/photos}}
+        </div>
+        <h3 class="bl-locfan__place">
+          {{#flag}}<span class="bl-locfan__flag">{{flag:$flag}}</span>{{/flag}}
+          {{#href}}<a class="bl-locfan__name" href="{{href}}">{{name}}</a>{{/href}}{{^href}}<span class="bl-locfan__name">{{name}}</span>{{/href}}
+        </h3>
+        {{#country}}<p class="bl-locfan__country">{{country}}</p>{{/country}}
+        {{#line}}<p class="bl-locfan__line">{{line}}</p>{{/line}}
+        {{#text}}<p class="bl-locfan__text">{{text}}</p>{{/text}}
+      </li>
+      {{/cards}}
+    </ul>
+    {{#link}}<p class="bl-locfan__more" data-reveal><a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a></p>{{/link}}
+  </div>
+</section>

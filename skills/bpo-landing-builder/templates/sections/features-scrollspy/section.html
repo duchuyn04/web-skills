@@ -1,0 +1,30 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-features-scrollspy" data-sspy>
+  <div class="bl-container">
+    {{> head}}
+    <div class="bl-features-scrollspy__grid">
+      <div class="bl-features-scrollspy__side">
+        <ul class="bl-features-scrollspy__list" data-reveal-group>
+          <li class="bl-features-scrollspy__dot" aria-hidden="true" data-sspy-dot></li>
+          {{#items}}
+          <li class="bl-features-scrollspy__item" data-reveal data-sspy-item>
+            <button type="button" class="bl-features-scrollspy__row" data-sspy-row>{{title}}</button>
+            <div class="bl-features-scrollspy__inline">
+              <p class="bl-features-scrollspy__text">{{text}}</p>
+              <div class="bl-features-scrollspy__thumb"><img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="480" loading="lazy" decoding="async"></div>
+            </div>
+          </li>
+          {{/items}}
+        </ul>
+        {{#cta}}<a class="bl-btn bl-btn--primary bl-features-scrollspy__cta" href="{{href}}" data-reveal>{{label}}</a>{{/cta}}
+      </div>
+      <div class="bl-features-scrollspy__panel" aria-hidden="true" data-reveal>
+        {{#items}}
+        <figure class="bl-features-scrollspy__pane{{#@first}} is-on{{/@first}}" data-sspy-pane>
+          <span class="bl-features-scrollspy__photo"><img src="{{photo.src}}" alt="" width="720" height="540" loading="lazy" decoding="async"></span>
+          <figcaption><strong>{{title}}</strong><span>{{text}}</span></figcaption>
+        </figure>
+        {{/items}}
+      </div>
+    </div>
+  </div>
+</section>

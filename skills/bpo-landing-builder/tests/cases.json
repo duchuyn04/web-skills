@@ -8,6 +8,11 @@
     {"name": "footer-wordmark-asked", "ok": true, "why": "the brief asks for the brand name in large type in the footer",
      "set": {"sections.7.data.wordmark": true},
      "replace": {"brief": ["Email hello@quayside.example.", "Email hello@quayside.example. Footer: the brand name in large type as a wordmark."]}},
+    {"name": "footer-matrix-unasked", "ok": false, "why": "the moving dot-matrix footer on a calm page without the brief asking for it",
+     "set": {"sections.7.type": "footer-matrix"}, "errors": ["footer-matrix draws the brand mark"]},
+    {"name": "footer-matrix-asked", "ok": true, "why": "the brief asks for a dot-matrix panel in the footer",
+     "set": {"sections.7.type": "footer-matrix"},
+     "replace": {"brief": ["Email hello@quayside.example.", "Email hello@quayside.example. Footer: our monogram on a dot-matrix LED panel."]}},
 
     {"name": "invented-logo", "ok": false, "why": "a client name the brief does not give",
      "append": {"sections.2.data.logos": {"name": "Pacific Mart"}}, "errors": ["Pacific Mart"]},

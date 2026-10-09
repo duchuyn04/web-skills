@@ -1,0 +1,18 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-industries-index" data-iindex>
+  <div class="bl-container">
+    {{> head-split}}
+    <ul class="bl-industries-index__list" data-reveal-group>
+      {{#items}}
+      <li class="bl-industries-index__item" data-reveal>
+        <a class="bl-industries-index__row" href="{{#href}}{{href}}{{/href}}{{^href}}{{cta.href}}{{/href}}" data-iindex-row>
+          <span class="bl-industries-index__icon" aria-hidden="true">{{icon:$icon}}</span>
+          <span class="bl-industries-index__title" data-iindex-title>{{title}}</span>
+          <span class="bl-industries-index__text">{{text}}</span>
+          <span class="bl-industries-index__go" aria-hidden="true">{{arrow}}</span>
+        </a>
+      </li>
+      {{/items}}
+    </ul>
+    <div class="bl-industries-index__foot" data-reveal><a class="bl-btn bl-btn--primary" href="{{cta.href}}">{{cta.label}}</a></div>
+  </div>
+</section>

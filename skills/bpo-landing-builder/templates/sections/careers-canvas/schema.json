@@ -1,0 +1,21 @@
+{
+  "variant": "careers-canvas",
+  "group": "careers",
+  "forms": ["image-band", "statement"],
+  "summary": "Careers invitation on a card that floats over a large board of 8-14 office and place photos set at small angles (after Nite Riot on Mobbin). Visitors drag the board in any direction and it glides on and settles at the edges; a small Drag label follows the pointer, and the arrow keys pan the board when it has focus. The photos drift in from above once when the board is first seen. Phones and touch screens get the card first and a swipeable row of photos. Needs at least 8 real photos of the client's offices, desks and city.",
+  "tone": "auto",
+  "anchor": "careers",
+  "animations": ["reveal", "photo-board-drift-in", "photo-board-drag-glide", "drag-chip-follow"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 8, "max": 80},
+    "text": {"type": "text", "min": 30, "max": 240},
+    "openings": {"type": "text", "min": 3, "max": 40, "required": false},
+    "cta": {"$ref": "cta"},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "photos": {"type": "list", "min": 8, "max": 14, "item": {"$ref": "photo"}},
+    "board_label": {"type": "text", "min": 4, "max": 60, "default": "Photos of our offices"},
+    "hint": {"type": "text", "min": 10, "max": 120, "default": "Drag the board or use the arrow keys to see more photos."},
+    "drag_label": {"type": "text", "min": 2, "max": 12, "default": "Drag"}
+  }
+}

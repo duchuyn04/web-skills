@@ -54,6 +54,28 @@ These sit at the top of page.json, next to `sections`.
   - `reference`: link
   - `reason`: text 20-300 chars
 
+## about-checker
+
+Company introduction: heading, one or two paragraphs (with **bold** key terms), optional ticks and a button on the left; on the right a 4 x 3 checkerboard of flat brand-tinted tiles and photo tiles (after Contra Labs on Mobbin). The tiles turn in as a diagonal wave when the grid is seen; then every few seconds one photo trades places with a tinted tile next to it by turning over, until the visitor scrolls away or presses Pause animations. Needs 6-9 real photos of the client's offices, desks and city; extra photos rotate in.
+
+- Group: `about`. Default anchor: `#about`. Tone: auto.
+- Built-in motion: reveal, checker-wave-flip, checker-tile-swap, check-sequence.
+- Allowed in: enterprise-cx/about?, it-bpo-partner/about?.
+- Preview: `previews/about-checker.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 6-80 chars
+- `paragraphs`: list of 1-2 (each markup 60-420 chars)
+- `points`: list of 0-4 (optional) (each text 6-80 chars)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photos`: list of 6-9, each item:
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+
 ## about-helix
 
 Company history as cards wound around a vertical helix with a thin central spine. The section pins while the visitor scrolls; each step of scroll turns and lifts the helix so the next milestone faces the reader, earlier and later years curving away behind. A year rail beside the heading shows where the reader is. Phones and reduced motion get a plain vertical timeline. Handedness, step angle, rise and spine style are seeded from the brand name. Needs 4-10 real milestones (year, what happened, one line) from the brief; company history is never invented, so leave the section out without them.
@@ -216,6 +238,34 @@ Fields:
   - `src`: image key or path
   - `alt`: text 5-140 chars
 
+## careers-canvas
+
+Careers invitation on a card that floats over a large board of 8-14 office and place photos set at small angles (after Nite Riot on Mobbin). Visitors drag the board in any direction and it glides on and settles at the edges; a small Drag label follows the pointer, and the arrow keys pan the board when it has focus. The photos drift in from above once when the board is first seen. Phones and touch screens get the card first and a swipeable row of photos. Needs at least 8 real photos of the client's offices, desks and city.
+
+- Group: `careers`. Default anchor: `#careers`. Tone: auto.
+- Built-in motion: reveal, photo-board-drift-in, photo-board-drag-glide, drag-chip-follow.
+- Allowed in: enterprise-cx/careers?, offshore-staffing/careers?, ai-data-ops/careers?, cx-voice-sales/careers?, it-bpo-partner/careers?.
+- Preview: `previews/careers-canvas.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `title`: text with *accent* 8-80 chars
+- `text`: text 30-240 chars
+- `openings`: text 3-40 chars (optional)
+- `cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `photos`: list of 8-14, each item:
+  - `src`: image key or path
+  - `alt`: text 5-140 chars
+- `board_label`: text 4-60 chars (optional, default "Photos of our offices")
+- `hint`: text 10-120 chars (optional, default "Drag the board or use the arrow keys to see more photos.")
+- `drag_label`: text 2-12 chars (optional, default "Drag")
+
 ## case-filter
 
 Case-study grid with filter pills built from each case's industry (All plus one pill per industry). Choosing a pill moves the cards that stay to their new places with a View Transition, fades the others out and announces the count. Browsers without View Transitions switch instantly. Needs 4 or more real cases in at least two industries.
@@ -278,6 +328,38 @@ Fields:
   - `link`: object (optional)
     - `label`: text 2-30 chars
     - `href`: link
+
+## comparison-bars
+
+Head-to-head bars after Webflow's comparison pages: the company against one alternative (hiring in-house, freelancers, another vendor), one row per buying criterion. Two bars meet at a centre divider, the company's in the brand colour growing left and the alternative's in grey growing right; their lengths show a 1-5 score and a short note sits under each side. The bars grow out from the divider as each row enters, and a key with both names stays under the header on wide screens. Phones stack the two bars under the criterion. Only compare on facts the client can back up, and score both sides honestly.
+
+- Group: `compare`. Default anchor: `#compare`. Tone: auto.
+- Built-in motion: reveal, versus-bar-grow, versus-key-sticky.
+- Allowed in: enterprise-cx/compare?, offshore-staffing/compare?, ai-data-ops/compare?, cx-voice-sales/compare?, it-bpo-partner/compare?.
+- Preview: `previews/comparison-bars.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `us`: text 2-28 chars
+- `them`: text 2-28 chars
+- `rows`: list of 3-7, each item:
+  - `label`: text 3-60 chars
+  - `ours`: object
+    - `score`: number 1-5
+    - `text`: text 3-110 chars
+  - `theirs`: object
+    - `score`: number 1-5
+    - `text`: text 3-110 chars
+- `score_label`: text 2-20 chars (optional, default "out of 5")
+- `versus_label`: text 2-8 chars (optional, default "vs")
+- `note`: text 10-160 chars (optional)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
 
 ## comparison-table
 
@@ -701,6 +783,31 @@ Fields:
     - `label`: text 2-30 chars
     - `href`: link
 
+## features-scrollspy
+
+A long list of capabilities on the left, one name per row; a sticky panel on the right shows the photo and one or two lines about the row being read (after Intercom on Mobbin). As the reader scrolls, the row crossing the middle of the screen lights up, a dot slides to it and the panel cross-fades to its photo; clicking a row brings it to that line. Phones show each row's text and photo under its name. Use for 6-14 services, tools or capabilities that each have a real photo.
+
+- Group: `features`. Default anchor: `#capabilities`. Tone: auto.
+- Built-in motion: scrollspy-row-light, spy-dot-slide, spy-panel-crossfade, reveal.
+- Allowed in: enterprise-cx/features?, offshore-staffing/features?, ai-data-ops/features?, cx-voice-sales/features?, it-bpo-partner/solutions?.
+- Preview: `previews/features-scrollspy.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `items`: list of 6-14, each item:
+  - `title`: text 3-44 chars
+  - `text`: text 40-200 chars
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
 ## floating-assistant
 
 Chat assistant in the bottom-right corner (after GoDaddy Conversations, Resend Help, Podia, Klook support). A round button opens a panel: a greeting, suggested questions as buttons, answers written in page.json (never generated, so the build checks them against the brief like any section), and a hand-off form for a call back. Typed questions are matched to the topics by their words without accents; anything it cannot answer offers the hand-off instead of guessing. A short teaser bubble shows once per visit after a delay. Works with the keyboard, Esc closes, reduced motion turns off the slide and the typing dots.
@@ -789,6 +896,41 @@ Fields:
 - `pause_label`: text 3-30 chars (optional, default "Pause animations")
 - `play_label`: text 3-30 chars (optional, default "Play animations")
 - `wordmark`: true/false (optional, default false)
+
+## footer-matrix
+
+Dark footer with the footer-columns content (brand blurb, contacts, socials, 2-4 link columns, legal bar with the page-wide Pause animations button) and, under the columns, a dot-matrix panel after Robot.com: the brand monogram (or the brand name) lit in a grid of round dots over a field of unlit ones. A lit band sweeps across every few seconds, the monogram blinks now and then, and on a mouse the dots under the pointer light up. Reduced motion shows the lit monogram still. Suits tech-leaning BPO and AI data brands; calm brands keep footer-columns.
+
+- Group: `footer`. Default anchor: `#site-footer`. Tone: dark.
+- Built-in motion: dot-matrix-sweep, dot-matrix-blink, dot-matrix-pointer, page-motion-switch.
+- Allowed in: enterprise-cx/footer, offshore-staffing/footer, ai-data-ops/footer, cx-voice-sales/footer, it-bpo-partner/footer.
+- Preview: `previews/footer-matrix.jpg`
+
+Fields:
+
+- `blurb`: text 40-200 chars
+- `contacts`: list of 0-3 (optional), each item:
+  - `icon`: icon name
+  - `label`: text 3-60 chars
+  - `href`: link (optional)
+- `socials`: list of 0-4 (optional), each item:
+  - `icon`: one of linkedin, facebook, youtube, twitter
+  - `label`: text 3-24 chars
+  - `href`: link
+- `columns`: list of 2-4, each item:
+  - `heading`: text 3-24 chars
+  - `links`: list of 2-6, each item:
+    - `label`: text 2-30 chars
+    - `href`: link
+- `legal`: text 5-90 chars
+- `legal_links`: list of 0-3 (optional), each item:
+  - `label`: text 2-30 chars
+  - `href`: link
+- `certifications`: text 5-90 chars (optional)
+- `motion_toggle`: true/false (optional, default true)
+- `pause_label`: text 3-30 chars (optional, default "Pause animations")
+- `play_label`: text 3-30 chars (optional, default "Play animations")
+- `matrix`: one of mark, name (optional, default "mark")
 
 ## header-mega
 
@@ -1109,7 +1251,7 @@ Fields:
 
 ## hero-form
 
-Lead-capture hero after beehiiv, Circle, Parker and HBO Max advertising: the headline, lead and 2-5 ticked points on the left; on the right a short enquiry form on a white card in the first screen (name, work email, company, optional phone, an optional service select, an optional message), set over a rounded panel that is either a real photo of the office or team, or a flat brand-colour panel. The card overhangs the panel's left edge. The panel opens sideways, the card rises, the fields arrive in order and the points tick in; no loops. Suits companies that sell on a quick quote or a call back (staffing, outbound sales, back office) and have a form endpoint or will add one.
+Lead-capture hero after beehiiv, Circle, Parker and HBO Max advertising: the headline, lead and up to five ticked points (none, or two to five) on the left; on the right a short enquiry form on a white card in the first screen (name, work email, company, optional phone, an optional service select, an optional message), set over a rounded panel that is either a real photo of the office or team, or a flat brand-colour panel. The card overhangs the panel's left edge. The panel opens sideways, the card rises, the fields arrive in order and the points tick in; no loops. Suits companies that sell on a quick quote or a call back (staffing, outbound sales, back office) and have a form endpoint or will add one.
 
 - Group: `hero`. Default anchor: `#top`. Tone: hero.
 - Built-in motion: reveal, form-panel-open, point-tick-sequence, form-field-cascade, photo-scroll-drift.
@@ -2072,6 +2214,30 @@ Fields:
   - `href`: link
   - `link_label`: text 2-24 chars (optional, default "Read more")
 
+## industries-index
+
+Industry index set in large type, one industry per full-width row between hairlines (after Anima on Mobbin). As each row scrolls in, its name resolves from scrambled letters into the real word, left to right. Hovering or focusing a row scrambles the name briefly, slides its icon in and shows one line on what you do for that industry. Touch screens and reduced motion show the icon and the line at rest, without scrambling. Each row links to its own href, or to the section cta.
+
+- Group: `industries`. Default anchor: `#industries`. Tone: auto.
+- Built-in motion: text-scramble-resolve, row-icon-slide, reveal.
+- Allowed in: enterprise-cx/industries?, it-bpo-partner/audience?.
+- Preview: `previews/industries-index.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cta`: object
+  - `label`: text 2-30 chars
+  - `href`: link
+- `items`: list of 4-8, each item:
+  - `icon`: icon name
+  - `title`: text 3-28 chars
+  - `text`: text 30-120 chars
+  - `href`: link (optional)
+
 ## industries-rows
 
 Editorial industry list: sticky heading on the left, large numbered rows on the right. Hovering a row sweeps it in brand color and a detail card follows the cursor with a velocity tilt. Touch screens show the detail inline. Each row links to its own href, or to the section cta when it has none. Optional photo per row (give one to every row or to none): the card then shows the photo of the row being hovered or focused and cross-fades as the reader moves down the list, so the picture follows the industry; touch screens and reduced motion show a small thumbnail in each row instead.
@@ -2142,6 +2308,35 @@ Fields:
   - `icon`: icon name
   - `title`: text 3-32 chars
   - `text`: text 30-140 chars
+
+## locations-fan
+
+Delivery centres as 2-4 flat cards, each topped by three photos of the place stacked like a small fan (after Cosmos on Mobbin): the main photo in front, two smaller ones peeking out behind it. On first view the back photos slide out from behind the front one; on hover or focus the front photo grows and the back ones tuck in. Under the photos: flag, city and country, a headcount or services line and an optional note. Needs three real photos per centre (the office, the street or city, a desk or room); for one photo per hub use country-cards.
+
+- Group: `locations`. Default anchor: `#locations`. Tone: auto.
+- Built-in motion: reveal, photo-stack-fan-in, photo-stack-gather.
+- Allowed in: enterprise-cx/locations?, offshore-staffing/locations?, ai-data-ops/locations?, it-bpo-partner/locations?.
+- Preview: `previews/locations-fan.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cards`: list of 2-4, each item:
+  - `name`: text 2-28 chars
+  - `country`: text 2-28 chars (optional)
+  - `flag`: country code (optional)
+  - `line`: text 3-60 chars (optional)
+  - `text`: text 20-140 chars (optional)
+  - `href`: link (optional)
+  - `photos`: list of 3-3, each item:
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
 
 ## locations-gmap
 
@@ -2456,6 +2651,30 @@ Fields:
     - `badge`: text 3-20 chars (optional)
 - `note`: text 20-180 chars (optional)
 
+## process-drop
+
+How we work as a pile of step cards (after the Opennote homepage on Mobbin). On wide screens the section pins: heading, a step counter (02 / 05) and an optional button stay on the left while each next step card drops onto the pile on the right as the visitor scrolls, landing at its own small tilt over the cards before it. Cards cycle plain, soft brand tint and dark. Tilts and offsets are seeded from the brand name. Phones, tablets and reduced motion show the cards as a list, each still slightly tilted. Needs 3-6 real steps.
+
+- Group: `process`. Default anchor: `#process`. Tone: auto.
+- Built-in motion: tilted-card-drop, step-counter-roll, reveal.
+- Allowed in: enterprise-cx/process?, offshore-staffing/process, ai-data-ops/process, cx-voice-sales/process?, it-bpo-partner/process?.
+- Preview: `previews/process-drop.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `steps`: list of 3-6, each item:
+  - `label`: text 2-24 chars
+  - `icon`: icon name (optional)
+  - `title`: text 6-60 chars
+  - `text`: text 50-220 chars
+
 ## process-layers
 
 The process as a stack of thin isometric plates, one per step, beside the step list. As the visitor scrolls, the plates lift apart one after another and the plate for the step in view slides out toward its text, lit in the brand colour, with a short leader line to the step. Scroll-driven CSS where the browser supports it, an IntersectionObserver fallback elsewhere. Phones and reduced motion show the stack already open and still. Iso angle, plate spacing, corner radius and the side the stack sits on are seeded from the brand name. Needs 3-6 real steps of how the company takes work over; with fewer use steps-row.
@@ -2722,6 +2941,57 @@ Fields:
     - `label`: text 2-30 chars
     - `href`: link
 
+## services-hscroll
+
+Service lines as a row of tall photo cards that travel sideways while the visitor scrolls: on wide screens the section pins under the header and vertical scrolling moves the row from right to left, with a thin progress bar under it. Each card: photo, title, short text, optional link. Tablets, phones and reduced motion get a swipeable row that snaps to each card. Use for 3-6 service lines that each have a real photo.
+
+- Group: `services`. Default anchor: `#services`. Tone: auto.
+- Built-in motion: horizontal-scroll-pin, track-progress-fill, reveal.
+- Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
+- Preview: `previews/services-hscroll.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `cards`: list of 3-6, each item:
+  - `title`: text 8-60 chars
+  - `text`: text 50-200 chars
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+  - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+- `track_label`: text 3-40 chars (optional)
+
+## services-marquee
+
+Service names set large in two or three rows that drift sideways in opposite directions (after Fiverr on Mobbin). Hovering or focusing a name turns it full ink, dims the others, slows its row and pops a photo of that service over it; every name links to its service page. Nine or more services make three rows. Reduced motion shows a still, wrapped list of names. Use when the client offers many services with their own pages and wants the range seen at a glance; each service needs a real photo.
+
+- Group: `services`. Default anchor: `#services`. Tone: auto.
+- Built-in motion: word-row-drift, word-hover-photo, reveal.
+- Allowed in: enterprise-cx/services, offshore-staffing/services, ai-data-ops/services, cx-voice-sales/services, it-bpo-partner/services.
+- Preview: `previews/services-marquee.jpg`
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `items`: list of 6-12, each item:
+  - `name`: text 3-32 chars
+  - `href`: link
+  - `photo`: object
+    - `src`: image key or path
+    - `alt`: text 5-140 chars
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
 ## services-stack
 
 Service cards that pin under the header and stack on top of each other while scrolling; earlier cards scale back and dim. Cards cycle light, navy and brand color, the brand card carries the hero line ribbons. Mobile shows a plain list.
@@ -2846,6 +3116,24 @@ Fields:
 - `title`: text with *accent* 20-140 chars
 - `text`: text 40-320 chars (optional)
 - `points`: list of 0-3 (optional) (each text 3-40 chars)
+- `link`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
+## statement-ink
+
+One large paragraph of two to four sentences that the reader inks in by scrolling: every word starts pale and turns to full colour, word by word, as the section passes up the screen. Optional small label above, a short attribution line under it (who says this, for example the founder and their role) and a link. Use right after the hero or the logos for a mission or point-of-view statement; reduced motion shows it in full at once.
+
+- Group: `intro`. Default anchor: `#who-we-are`. Tone: auto.
+- Built-in motion: scroll-ink-paragraph, reveal.
+- Allowed in: enterprise-cx/intro?, offshore-staffing/intro?, ai-data-ops/intro?, cx-voice-sales/intro?, it-bpo-partner/intro?.
+- Preview: `previews/statement-ink.jpg`
+
+Fields:
+
+- `eyebrow`: text 3-40 chars (optional)
+- `text`: text with *accent* 120-420 chars
+- `attribution`: text 3-80 chars (optional)
 - `link`: object (optional)
   - `label`: text 2-30 chars
   - `href`: link

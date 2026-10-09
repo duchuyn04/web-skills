@@ -1,0 +1,23 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    <div class="bl-ccanvas" data-ccanvas data-seed="{{site.brand}}">
+      <div class="bl-ccanvas__view" tabindex="0" role="group" aria-label="{{board_label}}" aria-describedby="{{section.id}}-hint" data-ccanvas-view>
+        <ul class="bl-ccanvas__board" data-ccanvas-board>
+          {{#photos}}<li class="bl-ccanvas__ph"><img src="{{src}}" alt="{{alt}}" width="360" height="270" loading="lazy" draggable="false"></li>{{/photos}}
+        </ul>
+        <span class="bl-ccanvas__chip" aria-hidden="true" data-ccanvas-chip>{{drag_label}}</span>
+      </div>
+      <p id="{{section.id}}-hint" class="bl-sr-only">{{hint}}</p>
+      <div class="bl-ccanvas__card" data-reveal-group>
+        {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+        <h2 class="bl-h2" data-reveal>{{title}}</h2>
+        <p class="bl-lead" data-reveal>{{text}}</p>
+        {{#openings}}<p class="bl-ccanvas__openings" data-reveal>{{icon:briefcase}}<span>{{openings}}</span></p>{{/openings}}
+        <div class="bl-btn-row bl-ccanvas__btns" data-reveal>
+          <a class="bl-btn bl-btn--primary" href="{{cta.href}}">{{cta.label}}</a>
+          {{#secondary_cta}}<a class="bl-btn bl-btn--ghost" href="{{href}}">{{label}}</a>{{/secondary_cta}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

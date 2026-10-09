@@ -1,0 +1,257 @@
+{
+  "_note": "Shows the scroll-linked variants built from Mobbin references: statement-ink (intro), services-hscroll (services) and process-drop (process). Harbourline Ops is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "corporate-blue",
+  "lang": "en",
+  "site": {
+    "brand": "Harbourline Ops",
+    "brand_mark": "HO",
+    "title": "Harbourline Ops | Back-office teams in Ho Chi Minh City",
+    "description": "Harbourline Ops runs order, bookkeeping, support and data desks in Ho Chi Minh City for retailers and freight firms in Australia and the UK."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "How we work",
+            "href": "#process"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "eyebrow": "Back-office outsourcing",
+        "title": "Back-office desks in *Ho Chi Minh City*",
+        "lead": "Harbourline Ops staffs the desks behind online retailers and freight companies in Australia and the UK, from order entry to month-end close, with 210 staff in one city office.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Founded 2015",
+          "AU and UK hours covered"
+        ],
+        "photo": {
+          "src": "office-interior",
+          "alt": "Open-plan office floor with rows of desks"
+        }
+      }
+    },
+    {
+      "type": "statement-ink",
+      "data": {
+        "eyebrow": "Why we exist",
+        "text": "Retailers should spend their evenings on the next season, not on order backlogs. We take over the *repetitive desks* behind a growing store, run them on your tools and your rules, and send you the numbers every morning so nothing is out of sight.",
+        "attribution": "Linh Tran, founder and managing director",
+        "link": {
+          "label": "How we work",
+          "href": "#process"
+        }
+      }
+    },
+    {
+      "type": "services-hscroll",
+      "data": {
+        "head": {
+          "title": "Five desks we run for you",
+          "lead": "Each desk is a dedicated team with a lead, working in your own systems during your business hours."
+        },
+        "track_label": "Harbourline Ops services",
+        "cards": [
+          {
+            "title": "Order entry and fulfilment support",
+            "text": "Orders from your store, marketplaces and email are keyed, checked and released to the warehouse the same shift.",
+            "photo": {
+              "src": "ecommerce-packing",
+              "alt": "Packed parcels waiting on a dispatch table"
+            },
+            "link": {
+              "label": "Order desk",
+              "href": "#get-started"
+            }
+          },
+          {
+            "title": "Bookkeeping and month-end close",
+            "text": "Accountants reconcile bank feeds, post supplier bills and close the month in Xero with a second-person review.",
+            "photo": {
+              "src": "accounting-documents-calculator",
+              "alt": "Invoices and a calculator on an accountant's desk"
+            },
+            "link": {
+              "label": "Finance desk",
+              "href": "#get-started"
+            }
+          },
+          {
+            "title": "Customer support by email and chat",
+            "text": "Agents answer order and delivery questions in your help desk, with replies checked against your tone guide.",
+            "photo": {
+              "src": "desk-phone-monitors",
+              "alt": "Support desk with a phone and two monitors"
+            },
+            "link": {
+              "label": "Support desk",
+              "href": "#get-started"
+            }
+          },
+          {
+            "title": "Freight documents and tracking",
+            "text": "Coordinators prepare shipping documents, chase carriers and update every consignment in your tracking sheet.",
+            "photo": {
+              "src": "port-containers",
+              "alt": "Stacked shipping containers at a port"
+            },
+            "link": {
+              "label": "Logistics desk",
+              "href": "#get-started"
+            }
+          },
+          {
+            "title": "Catalogue and data upkeep",
+            "text": "Operators load new products, fix listings and clean customer records, with daily counts in a shared report.",
+            "photo": {
+              "src": "warehouse-racks",
+              "alt": "Warehouse racks filled with labelled boxes"
+            },
+            "link": {
+              "label": "Data desk",
+              "href": "#get-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "process-drop",
+      "data": {
+        "head": {
+          "title": "From first call to a running desk",
+          "lead": "Most desks go live within five weeks. You approve every step before the next one starts."
+        },
+        "cta": {
+          "label": "Book a call",
+          "href": "#get-started"
+        },
+        "steps": [
+          {
+            "label": "Week 1",
+            "icon": "phone",
+            "title": "Scope call and process walk-through",
+            "text": "We sit with the person who does the work today, record each step and agree what the desk will and will not handle."
+          },
+          {
+            "label": "Week 2",
+            "icon": "users",
+            "title": "Hire and assign the team",
+            "text": "We shortlist people with the right tools experience, you interview the lead, and the team signs your confidentiality terms."
+          },
+          {
+            "label": "Week 3",
+            "icon": "graduation-cap",
+            "title": "Train on your tools and rules",
+            "text": "The team works through recorded examples in a test copy of your systems until error rates meet the agreed target."
+          },
+          {
+            "label": "Week 4",
+            "icon": "play",
+            "title": "Shadow run beside your staff",
+            "text": "Your people and ours work the same queue for a week; every difference is logged and fixed in the process notes."
+          },
+          {
+            "label": "Week 5",
+            "icon": "check-circle",
+            "title": "Go live with daily reporting",
+            "text": "The desk takes over the queue and you receive output, turnaround and error counts every morning in a shared sheet."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "id": "get-started",
+      "data": {
+        "title": "Tell us which desk to *take off your hands*",
+        "text": "Send a short note about the work and a team lead replies with a staffing plan and a monthly price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@harbourline.example"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Order, finance, support, logistics and data desks in Ho Chi Minh City for retailers and freight firms in Australia and the UK.",
+        "contacts": [
+          {
+            "icon": "mail",
+            "label": "hello@harbourline.example",
+            "href": "mailto:hello@harbourline.example"
+          },
+          {
+            "icon": "map-pin",
+            "label": "District 1, Ho Chi Minh City"
+          }
+        ],
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Order desk",
+                "href": "#services"
+              },
+              {
+                "label": "Finance desk",
+                "href": "#services"
+              },
+              {
+                "label": "Support desk",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "How we work",
+                "href": "#process"
+              },
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

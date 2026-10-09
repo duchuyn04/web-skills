@@ -1313,7 +1313,7 @@ def check_named_faces(ctx, raw_sections):
 
 def check_legal(ctx, sections, brand):
     for s in sections:
-        legal = s["data"].get("legal") if s["type"] == "footer-columns" else None
+        legal = s["data"].get("legal") if s["type"] in ("footer-columns", "footer-matrix") else None
         if isinstance(legal, str) and (re.match(r"\s*(?:\u00a9|\(c\)|copyright)", legal, re.I)):
             ctx.err(s["path"] + ".data.legal", "the footer already prints \"\u00a9 <year> %s.\" before this text. Write only what follows, for example \"All rights reserved.\"" % (brand or "<brand>"))
 
@@ -1613,6 +1613,7 @@ PLACEHOLDER_RE = re.compile(r"\[[^\]]{1,24}\]")
 # The footer wordmark (the brand name set edge to edge in huge type) is off unless the brief asks for it: users read it
 # as a template flourish (SoGlobal review, 2026-09-30).
 WORDMARK_RE = re.compile(r"wordmark|(large|big|giant|huge) (brand name|logo type)|brand name in (large|big|huge) (type|letters)|chữ thương hiệu (lớn|cỡ lớn)", re.I)
+MATRIX_RE = re.compile(r"dot[- ]matrix|led (dots|panel|sign|display)|pixel (logo|monogram|display)|ma trận (chấm|điểm)|bảng (đèn )?led|chấm (led|sáng)", re.I)
 EXPRESSIVE_RE = re.compile(r"\b(3d|webgl|immersive|expressive|animation[- ]led|(rich|heavy|bold|lots of) (animation|animations|motion|effects))\b|nhiều hiệu ứng|hiệu ứng mạnh|sinh động|chuyển động mạnh", re.I)
 
 
@@ -2157,6 +2158,8 @@ def main():
     for s in sections:
         if s["type"] == "footer-columns" and s["data"].get("wordmark") and not WORDMARK_RE.search(brief or ""):
             ctx.err(s["path"] + ".data.wordmark", "the footer wordmark (the brand name in huge type) is on, but the brief does not ask for it. Clients read it as a template flourish; leave it off unless the brief asks for a large brand name in the footer.")
+        if s["type"] == "footer-matrix" and not (MATRIX_RE.search(brief or "") or WORDMARK_RE.search(brief or "") or top.get("motion") in ("expressive", "signature")):
+            ctx.err(s["path"], "footer-matrix draws the brand mark in a moving LED dot panel, and the brief does not ask for it. Like the footer wordmark, clients read it as a flourish; use footer-columns unless the brief asks for a dot-matrix or large brand mark, or the page is \"motion\": \"expressive\".")
     if SKILL / "examples" not in page_path.parents:
         check_copied(ctx, sections, brief)
         check_named_faces(ctx, raw_sections)

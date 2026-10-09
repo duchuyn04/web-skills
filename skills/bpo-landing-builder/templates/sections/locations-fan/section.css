@@ -1,0 +1,50 @@
+/* locations-fan: a three-photo stack per delivery centre (after Cosmos, measured on the live site).
+   photo-stack-fan-in: section.js slides the back photos out from behind the front one once (0.9s, 120ms per card).
+   photo-stack-gather: on hover or focus of a linked card the front photo grows to 1.08 and the back photos tuck 8px in. */
+.bl-locfan { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
+.bl-locfan:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 920px; margin-inline: auto; }
+.bl-locfan:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bl-locfan:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bl-locfan__card {
+  position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 1.6vw, 1.25rem) clamp(1.25rem, 2vw, 1.75rem);
+  border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface);
+  transition: border-color var(--dur) var(--ease-std);
+}
+.bl-locfan__stack { position: relative; width: 100%; aspect-ratio: 4 / 3; margin-bottom: 1.25rem; }
+.bl-locfan__ph {
+  position: absolute; top: 50%; left: 50%; width: 46%; aspect-ratio: 4 / 5; overflow: hidden;
+  border-radius: var(--radius); background: var(--surface-2);
+  translate: -50% -50%;
+  transition: translate .5s cubic-bezier(0.4, 0, 0.2, 1), scale .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bl-locfan__ph img { width: 100%; height: 100%; object-fit: cover; }
+.bl-locfan__ph--1 { z-index: 2; }
+.bl-locfan__ph--2 { z-index: 1; scale: .85; translate: calc(-50% - 54%) -50%; }
+.bl-locfan__ph--3 { z-index: 1; scale: .85; translate: calc(-50% + 54%) -50%; }
+.bl-locfan__card--link:hover .bl-locfan__ph--1, .bl-locfan__card--link:focus-within .bl-locfan__ph--1 { scale: 1.08; }
+.bl-locfan__card--link:hover .bl-locfan__ph--2, .bl-locfan__card--link:focus-within .bl-locfan__ph--2 { translate: calc(-50% - 54% + 8px) -50%; }
+.bl-locfan__card--link:hover .bl-locfan__ph--3, .bl-locfan__card--link:focus-within .bl-locfan__ph--3 { translate: calc(-50% + 54% - 8px) -50%; }
+.bl-locfan__card--link:hover { border-color: var(--border-strong); }
+
+.bl-locfan__place { display: flex; align-items: center; justify-content: center; gap: .55rem; font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); font-size: 1.25rem; line-height: 1.25; color: var(--text-strong); }
+.bl-locfan__flag { display: inline-flex; }
+.bl-locfan__flag .bl-flag { width: 24px; height: 17px; }
+.bl-locfan__name { color: inherit; }
+a.bl-locfan__name::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+a.bl-locfan__name:focus-visible { outline: 2px solid var(--focus-ring, var(--accent-ink)); outline-offset: 3px; border-radius: 2px; }
+.bl-locfan__country { margin-top: .2rem; font-size: var(--fs-sm); color: var(--text-muted); }
+.bl-locfan__line { margin-top: .65rem; font-size: var(--fs-sm); font-weight: 600; color: var(--accent-ink); }
+.bl-locfan__text { margin-top: .5rem; font-size: var(--fs-sm); line-height: 1.55; color: var(--text); max-width: 30ch; }
+.bl-locfan__more { margin-top: clamp(1.5rem, 3vw, 2.25rem); text-align: center; }
+
+@media (max-width: 1100px) {
+  .bl-locfan:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 920px; margin-inline: auto; }
+}
+@media (max-width: 760px) {
+  .bl-locfan, .bl-locfan:has(> :nth-child(2):last-child), .bl-locfan:has(> :nth-child(3):last-child), .bl-locfan:has(> :nth-child(4):last-child) { grid-template-columns: 1fr; }
+  .bl-locfan__stack { max-width: 360px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-locfan__ph { transition: none; }
+}

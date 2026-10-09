@@ -1,0 +1,17 @@
+{
+  "variant": "about-checker",
+  "group": "about",
+  "forms": ["feature-split"],
+  "summary": "Company introduction: heading, one or two paragraphs (with **bold** key terms), optional ticks and a button on the left; on the right a 4 x 3 checkerboard of flat brand-tinted tiles and photo tiles (after Contra Labs on Mobbin). The tiles turn in as a diagonal wave when the grid is seen; then every few seconds one photo trades places with a tinted tile next to it by turning over, until the visitor scrolls away or presses Pause animations. Needs 6-9 real photos of the client's offices, desks and city; extra photos rotate in.",
+  "tone": "auto",
+  "anchor": "about",
+  "animations": ["reveal", "checker-wave-flip", "checker-tile-swap", "check-sequence"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "title": {"type": "markup", "min": 6, "max": 80},
+    "paragraphs": {"type": "list", "min": 1, "max": 2, "item": {"type": "markup", "min": 60, "max": 420}},
+    "points": {"type": "list", "min": 0, "max": 4, "default": [], "item": {"type": "text", "min": 6, "max": 80}},
+    "cta": {"$ref": "cta", "required": false},
+    "photos": {"type": "list", "min": 6, "max": 9, "item": {"$ref": "photo"}}
+  }
+}

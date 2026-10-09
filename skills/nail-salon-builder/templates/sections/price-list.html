@@ -1,8 +1,45 @@
-{% from "partials/macros.html" import section_head with context %}
+{% from "partials/macros.html" import section_head, price, price_notes_box, book_href, book_attrs with context %}
 {% set cats = n.categories if not sec.categories else n.categories|selectattr("id", "in", sec.categories)|list %}
+{% if sec.variant == "spy" %}
+{# one long list by category; the row at the reading line lights up, a dot slides to it and the sticky panel shows its
+   look, price and time. The panel repeats the row, so it is hidden from screen readers. Phones show each look inline. #}
+<section class="sec">
+  <div class="wrap">
+    {{ section_head(sec.title or "Bảng giá", sec.text or "", root ~ "bang-gia.html", "Xem trang bảng giá") }}
+    <div class="spy" data-mx-spy>
+      <div class="spy-list">
+        <span class="spy-dot" aria-hidden="true" data-spy-dot></span>
+        {% for c in cats %}
+        <h3 class="spy-cat">{{ c.name }}</h3>
+        <ul>
+          {% for s in menu if s.category == c.id %}
+          {% set g = n.gallery|selectattr("service", "equalto", s.id)|first %}
+          {% set img = pics['look-' ~ g.id] if g else pics['cat-' ~ s.category] %}
+          <li class="spy-row" data-spy-row data-img="{{ root }}{{ img }}" data-name="{{ s.name }}" data-price="{{ price_text(s.price, s.price_type|default('fixed'), s.price_max|default(None)) }}" data-min="{{ minutes_text(s.minutes) }}" data-href="{{ book_href(root, s.id) }}">
+            <img class="spy-thumb" src="{{ root }}{{ img }}" alt="" loading="lazy" width="400" height="400">
+            <span class="spy-main"><a class="spy-name" href="{{ book_href(root, s.id) }}" {{ book_attrs() }}>{{ s.name }}</a><small>{{ minutes_text(s.minutes) }}</small></span>
+            {{ price(s) }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+      <div class="spy-side" aria-hidden="true">
+        <div class="spy-panel" data-spy-panel>
+          <div class="spy-face"><img src="" alt="" width="400" height="400"><div class="spy-info"><b></b><span class="spy-p"></span><small></small></div></div>
+          <div class="spy-face"><img src="" alt="" width="400" height="400"><div class="spy-info"><b></b><span class="spy-p"></span><small></small></div></div>
+          <a class="btn spy-book" href="{{ book_href(root) }}" {{ book_attrs() }} tabindex="-1">{{ icon("calendar-check", "i-sm") }}<span>Đặt lịch</span></a>
+        </div>
+      </div>
+    </div>
+    {{ price_notes_box() }}
+  </div>
+</section>
+{% else %}
 <section class="sec">
   <div class="wrap">
     {{ section_head(sec.title or "Bảng giá", sec.text or "", root ~ "bang-gia.html", "Xem trang bảng giá") }}
     {% include "partials/price_tabs.html" %}
   </div>
 </section>
+{% endif %}

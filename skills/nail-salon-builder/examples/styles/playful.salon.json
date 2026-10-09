@@ -852,19 +852,24 @@
     },
     {
       "type": "categories",
+      "variant": "scroll",
       "title": "Làm gì hôm nay?"
     },
     {
       "type": "popular",
-      "title": "Được đặt nhiều"
+      "variant": "marquee",
+      "title": "Làm gì ở tiệm",
+      "services": ["gel-tron", "gel-mat-meo", "gel-trang-guong", "up-mong", "biab", "ve-mau", "spa-chan", "combo-gel"]
     },
     {
       "type": "gallery",
+      "variant": "checker",
       "title": "Mẫu mới",
-      "limit": 8
+      "limit": 12
     },
     {
       "type": "trust",
+      "variant": "drop",
       "title": "Yên tâm khi làm"
     },
     {

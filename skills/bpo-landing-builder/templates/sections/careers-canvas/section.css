@@ -1,0 +1,52 @@
+/* careers-canvas: careers card over a draggable photo board (after Nite Riot).
+   Board mode needs a wide screen and a mouse; touch screens and phones get the card and a swipeable photo row. */
+.bl-ccanvas { position: relative; }
+.bl-ccanvas__view {
+  position: relative; overflow: hidden; height: clamp(540px, 52vw, 700px);
+  border-radius: var(--radius-lg); background: var(--surface-2);
+}
+.bl-ccanvas__view:focus-visible { outline: 2px solid var(--focus-ring, var(--accent-ink)); outline-offset: -2px; }
+/* without JS (or before layout) the photos sit in a loose wrapped grid */
+.bl-ccanvas__board { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; }
+.bl-ccanvas__ph { flex: 0 0 calc(25% - .75rem); aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); background: var(--surface); }
+.bl-ccanvas__ph img { width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; user-select: none; pointer-events: none; }
+.bl-ccanvas__card {
+  position: absolute; z-index: 2; top: 50%; left: 50%; translate: -50% -50%;
+  width: min(540px, calc(100% - 3rem)); padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface);
+}
+.bl-ccanvas__card .bl-eyebrow { justify-content: center; }
+.bl-ccanvas__card .bl-lead { margin-top: 1rem; }
+.bl-ccanvas__openings { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.1rem; padding: .4rem .85rem; border-radius: 999px; background: var(--c-accent-soft); color: var(--accent-ink); font-weight: 700; font-size: var(--fs-sm); }
+.bl-ccanvas__openings .bl-icon { width: 1rem; height: 1rem; }
+.bl-ccanvas__btns { justify-content: center; margin-top: 1.5rem; }
+.bl-ccanvas__chip {
+  position: absolute; z-index: 3; top: 0; left: 0; display: grid; place-items: center;
+  width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%;
+  background: var(--c-accent); color: var(--c-on-accent); font-size: var(--fs-xs); font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  pointer-events: none; opacity: 0; scale: .6; transition: opacity var(--dur-fast) var(--ease-std), scale var(--dur-fast) var(--ease-out);
+}
+.bl-ccanvas__view.is-chip .bl-ccanvas__chip { opacity: 1; scale: 1; }
+.bl-ccanvas__view.is-dragging .bl-ccanvas__chip { scale: .85; }
+
+/* board mode: section.js sizes the board and places every photo; it moves with transform only */
+@media (min-width: 761px) and (hover: hover) {
+  .bl-ccanvas__view.is-board { cursor: grab; touch-action: none; }
+  .bl-ccanvas__view.is-board.is-chip { cursor: none; }
+  .bl-ccanvas__view.is-dragging { cursor: grabbing; }
+  .is-board .bl-ccanvas__board { display: block; position: absolute; top: 0; left: 0; padding: 0; will-change: transform; }
+  .is-board .bl-ccanvas__ph { position: absolute; rotate: var(--r, 0deg); aspect-ratio: auto; }
+}
+/* phones and touch screens: card first, then a row of photos to swipe */
+@media (max-width: 760px), (hover: none) {
+  .bl-ccanvas { display: flex; flex-direction: column-reverse; gap: 1.25rem; }
+  .bl-ccanvas__view { height: auto; background: none; border-radius: 0; overflow: visible; }
+  .bl-ccanvas__board { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 .5rem; gap: .75rem; scrollbar-width: thin; }
+  .bl-ccanvas__ph { flex: 0 0 min(72vw, 300px); scroll-snap-align: start; }
+  .bl-ccanvas__card { position: static; translate: none; width: auto; }
+  .bl-ccanvas__chip { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-ccanvas__chip { transition: none; }
+}

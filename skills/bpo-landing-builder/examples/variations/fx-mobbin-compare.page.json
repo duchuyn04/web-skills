@@ -1,0 +1,121 @@
+{
+  "_note": "Shows comparison-bars (company against hiring in-house, bars growing out from a centre divider, after Webflow's comparison pages) and footer-matrix (footer-columns content plus a dot-matrix monogram with a sweeping lit band, after Robot.com). Larkspur Ledger is a fictional company; every figure and every score is sample data.",
+  "brief": "Sample brief: bookkeeping and accounting outsourcing firm. Show how we compare with hiring in-house, and put our monogram in a dot-matrix LED panel in the footer.",
+  "archetype": "it-bpo-partner",
+  "preset": "clean-minimal",
+  "lang": "en",
+  "site": {
+    "brand": "Larkspur Ledger",
+    "brand_mark": "LL",
+    "title": "Bookkeeping teams in Ho Chi Minh City | Larkspur Ledger",
+    "description": "Larkspur Ledger runs bookkeeping, payroll and accounts payable teams in Ho Chi Minh City for accounting firms in Australia and the United Kingdom."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {"label": "Services", "href": "#services"},
+          {"label": "Compare", "href": "#compare"},
+          {"label": "Contact", "href": "#contact"}
+        ],
+        "cta": {"label": "Contact us", "href": "#contact"}
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "title": "Bookkeeping and payroll teams *for accounting firms*",
+        "lead": "Larkspur Ledger staffs and runs month-end teams in Ho Chi Minh City for accounting firms in Australia and the United Kingdom, so your partners keep the client work.",
+        "primary_cta": {"label": "Contact us", "href": "#contact"},
+        "secondary_cta": {"label": "Compare the options", "href": "#compare"},
+        "proof": ["Founded in 2015", "One office in Ho Chi Minh City"],
+        "photo": {"src": "accounting-documents-calculator", "alt": "Accounting documents and a calculator on a desk"}
+      }
+    },
+    {
+      "type": "service-links",
+      "id": "services",
+      "data": {
+        "groups": [
+          {
+            "eyebrow": "Services",
+            "title": "Month-end work we run for firms",
+            "text": "Each team works in the firm's own software and sends every file through a second reviewer before it goes back.",
+            "links": [
+              {"label": "Bookkeeping", "href": "#contact", "icon": "calculator"},
+              {"label": "Payroll", "href": "#contact", "icon": "wallet"},
+              {"label": "Accounts payable", "href": "#contact", "icon": "receipt"},
+              {"label": "Year-end files", "href": "#contact", "icon": "clipboard-check"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "comparison-bars",
+      "data": {
+        "head": {
+          "eyebrow": "Compare",
+          "title": "Larkspur Ledger against hiring in-house",
+          "lead": "How a dedicated offshore team compares with adding a local hire, criterion by criterion, for a firm that needs two more bookkeepers."
+        },
+        "us": "Larkspur Ledger",
+        "them": "Hiring in-house",
+        "rows": [
+          {
+            "label": "Cost per bookkeeper",
+            "ours": {"score": 5, "text": "One monthly fee per person that covers salary, office, software seats and the team lead."},
+            "theirs": {"score": 2, "text": "Salary plus super or pension, recruiting fees, desk space and software seats."}
+          },
+          {
+            "label": "Time to a working team",
+            "ours": {"score": 4, "text": "Shortlist in two weeks, first live files after a two-week training on your checklists."},
+            "theirs": {"score": 2, "text": "Advertising, interviews and notice periods before the first day."}
+          },
+          {
+            "label": "Cover in busy season",
+            "ours": {"score": 5, "text": "Extra reviewers from the same office join for the peak months and leave after it."},
+            "theirs": {"score": 2, "text": "Overtime for the people you have, or temporary staff who need training first."}
+          },
+          {
+            "label": "Same-day questions from partners",
+            "ours": {"score": 3, "text": "Four overlapping hours a day with Sydney and the morning with London."},
+            "theirs": {"score": 5, "text": "Staff sit in your office for the whole working day."}
+          },
+          {
+            "label": "Control over the work",
+            "ours": {"score": 4, "text": "Your software, your checklists and your reviewer sign-off on every file."},
+            "theirs": {"score": 5, "text": "Your own staff under your direct management."}
+          }
+        ],
+        "note": "Sample scores for a two-bookkeeper team. We share the figures behind each row on a call.",
+        "cta": {"label": "Get a team plan", "href": "#contact"}
+      }
+    },
+    {
+      "type": "cta-band",
+      "id": "contact",
+      "data": {
+        "title": "Tell us about your *month-end*",
+        "text": "Send the roles, the software and the hours you need, and a team lead replies with a plan and a price range.",
+        "primary_cta": {"label": "Email us", "href": "mailto:hello@larkspur.example"}
+      }
+    },
+    {
+      "type": "footer-matrix",
+      "data": {
+        "blurb": "Bookkeeping, payroll and accounts payable teams in Ho Chi Minh City for accounting firms in Australia and the United Kingdom.",
+        "contacts": [
+          {"icon": "mail", "label": "hello@larkspur.example", "href": "mailto:hello@larkspur.example"},
+          {"icon": "map-pin", "label": "District 1, Ho Chi Minh City"}
+        ],
+        "columns": [
+          {"heading": "Services", "links": [{"label": "Bookkeeping", "href": "#services"}, {"label": "Payroll", "href": "#services"}, {"label": "Accounts payable", "href": "#services"}]},
+          {"heading": "Company", "links": [{"label": "Compare", "href": "#compare"}, {"label": "Contact", "href": "#contact"}]}
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

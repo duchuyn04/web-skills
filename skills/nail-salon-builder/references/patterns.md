@@ -39,6 +39,14 @@ From 134 salon websites and fanpages (28 in the USA, 44 in Vietnam, 28 in the UK
 
 Four looks cover the field, so the four styles follow them: warm luxury (cream, taupe, serif: Townhouse, Nailology), Korean and Japanese minimal (white, soft pink, dense gallery: Nailroom, Nail Quick), dark glam (near-black, raspberry: Dunass Nails, D'Limo), playful bright (Shoreditch Nails, Tropical Popical, Cute Nail Studio).
 
+## Motion
+
+Salon sites that move do it around the looks: galleries that slide or can be dragged, service names in a running band, a price list that follows the reader. The variants come from a study of product sites on Mobbin, measured on the live sites where they still run (a stack of three photos that gathers on hover, after Cosmos; an LED dot panel drawn through a dot mask, after Robot.com) [`variant` in home[], `layout.footer`; table in `salon-schema.md`].
+
+- Keep one or two moving sections per home page and the rest plain; the demo salon has none. A good pairing follows the style: `k-minimal` with `fan`, `spy` and `ink`; `dark-glam` with `canvas` and the matrix footer; `playful` with `scroll`, `marquee`, `checker` and `drop`.
+- Everything moves with transform and opacity only, stops under "reduce motion", and loops rest off screen, in a hidden tab and on the footer pause switch. `assets/js/motion.js` is loaded only on pages that use it.
+- There is no comparison bar against other salons: a brief rarely backs such a claim, and the copy rules forbid unbacked ones.
+
 ## Admin
 
 Platforms agree on: a day calendar with one column per technician, statuses (booked, confirmed, arrived, completed, cancelled, no-show), a client profile with notes on allergies and preferences and visit history, service menu with duration and price, staff performance and commission, revenue reports [admin pages].

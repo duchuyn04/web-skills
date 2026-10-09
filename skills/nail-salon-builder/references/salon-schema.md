@@ -11,7 +11,7 @@ Every key the build accepts. Unknown keys are errors. Money is a whole number of
 | `sample_content` | no | `true` only when the user asked you to invent the whole salon. Needs `demo` |
 | `lang` | no | `"vi"` |
 | `style` | yes | `warm-luxury`, `k-minimal`, `dark-glam`, `playful` |
-| `layout` | no | `{"header": "classic" or "centered", "hero": "split", "stack", "full" or "collage", "card": "line" or "soft"}` |
+| `layout` | no | `{"header": "classic" or "centered", "hero": "split", "stack", "full" or "collage", "card": "line" or "soft", "footer": "plain" or "matrix"}`. `matrix` puts the salon's initials on a moving LED dot panel in the footer of every page; the build refuses it unless the brief asks for an LED or dot-matrix panel or a large logo |
 | `theme` | no | `accent` (logo colour; the build darkens it where text must stay readable), `preset` (borrow another style's colours), `font_head`, `font_body`, `font_accent` (a script font for the hero line only), `head_weight`, `han` (`zh`, `zh-Hant` or `ja`: how Chinese characters without kana are read). Fonts come from `data/fonts.json`; see `references/fonts.md` |
 | `salon` | yes | see below |
 | `announcement` | no | One line above the header: an offer or notice from the brief |
@@ -103,13 +103,13 @@ Pick drawn looks that match the salon's real services and colours when they have
 | type | Data | Options |
 |:---|:---|:---|
 | `hero` | title, text | `variant`, `art`, `image` |
-| `story` | salon.intro or `text` | `items` (up to three facts from the brief) |
-| `categories` | categories | |
-| `popular` | services with `popular` | `services` (ids) |
-| `price-list` | menu in tabs | `categories` (ids) |
-| `gallery` | gallery | `limit`, `tags` |
+| `story` | salon.intro or `text` | `items` (up to three facts from the brief); `variant`: `plain`, `ink` |
+| `categories` | categories | `variant`: `grid`, `scroll`, `fan` |
+| `popular` | services with `popular` | `services` (ids); `variant`: `grid`, `marquee` |
+| `price-list` | menu in tabs | `categories` (ids); `variant`: `tabs`, `spy` |
+| `gallery` | gallery | `limit`, `tags`; `variant`: `grid`, `canvas`, `checker` |
 | `art-levels` | art_levels | |
-| `trust` | trust | |
+| `trust` | trust | `variant`: `grid`, `drop` |
 | `team` | technicians | |
 | `reviews` | reviews | |
 | `offers` | packages, membership, gift_cards | |
@@ -118,3 +118,18 @@ Pick drawn looks that match the salon's real services and colours when they have
 | `cta` | title, text | |
 
 Every section takes `title` and `text`. A section whose data is empty is a build error: leave it out instead.
+
+`variant` picks a motion layout; leave it out for the plain one (the first value). What each does and when it suits a salon is in `references/patterns.md`, Motion. Only the sections above take a variant; any other value is a build error.
+
+| variant | What moves |
+|:---|:---|
+| story `ink` | the intro paragraph turns from pale to full ink word by word as it scrolls up the screen |
+| categories `scroll` | tall category cards in one row; on wide screens the section pins and the page scroll moves the row sideways, a bar shows how far; phones swipe |
+| categories `fan` | three looks per category card (looks of its services, drawn ones when there are fewer); the back looks slide out once, hover gathers them |
+| popular `marquee` | service names drift in two rows in opposite directions; hover or focus slows the row and shows the look with its price; each name books that service |
+| price-list `spy` | the whole menu as one list by category; the row being read lights up and a panel beside it shows the look, price, time and Đặt lịch; phones show the look in the row |
+| gallery `canvas` | looks scattered on a board to drag (it glides on), arrow keys pan; phones swipe a row |
+| gallery `checker` | looks and flat tinted tiles in a checkerboard that turn over; one look moves a square every 3 s |
+| trust `drop` | the promise cards drop one by one onto a tilted pile while the section is pinned; a list on phones |
+
+Marquee, checker and the matrix footer move on their own, so the footer gets a "Tạm dừng chuyển động" switch on the pages that have them. Promo codes on Ưu đãi resolve from scrambled letters once when seen; this needs no option.

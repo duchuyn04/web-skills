@@ -1,0 +1,49 @@
+/* features-scrollspy: scrollspy-row-light, spy-dot-slide, spy-panel-crossfade */
+.bl-features-scrollspy__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.bl-features-scrollspy__list { position: relative; list-style: none; padding-left: 1.75rem; }
+.bl-features-scrollspy__item { border-top: 1px solid var(--border); }
+.bl-features-scrollspy__item:last-of-type { border-bottom: 1px solid var(--border); }
+.js .bl-features-scrollspy__item[data-reveal] { translate: none; }
+.bl-features-scrollspy__row {
+  display: block; width: 100%; padding: clamp(.8rem, 1.4vw, 1.15rem) 0; text-align: left; cursor: pointer;
+  font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking);
+  font-size: clamp(1.25rem, .9rem + 1.3vw, 1.9rem); line-height: 1.2;
+  color: var(--text-strong); opacity: .42; transition: opacity .3s var(--ease-std), transform .4s var(--ease-out);
+}
+.bl-features-scrollspy__item.is-on .bl-features-scrollspy__row { opacity: 1; transform: translateX(6px); }
+.bl-features-scrollspy__row:hover { opacity: .8; }
+.bl-features-scrollspy__row:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; opacity: 1; }
+.bl-features-scrollspy__dot {
+  position: absolute; left: 0; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-ink);
+  transform: translateY(var(--dot-y, 0px)); opacity: var(--dot-o, 0); transition: transform .45s var(--ease-out), opacity .3s var(--ease-std);
+}
+/* desktop: the text sits in the sticky panel; it stays in the list for screen readers */
+.bl-features-scrollspy__inline { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.bl-features-scrollspy__thumb { display: none; }
+.bl-features-scrollspy__cta { margin-top: 2rem; }
+
+.bl-features-scrollspy__panel { position: sticky; top: calc(var(--header-h) + 2rem); display: grid; }
+.bl-features-scrollspy__pane { grid-area: 1 / 1; margin: 0; opacity: 0; visibility: hidden; transition: opacity .45s var(--ease-std), visibility 0s linear .45s; }
+.bl-features-scrollspy__pane.is-on { opacity: 1; visibility: visible; transition: opacity .45s var(--ease-std), visibility 0s; }
+.bl-features-scrollspy__photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-lg); background: var(--surface-2); }
+.bl-features-scrollspy__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform .9s var(--ease-out); }
+.bl-features-scrollspy__pane.is-on .bl-features-scrollspy__photo img { transform: none; }
+.bl-features-scrollspy__pane figcaption { display: grid; gap: .35rem; margin-top: 1.1rem; max-width: 34rem; }
+.bl-features-scrollspy__pane figcaption strong { font-family: var(--font-heading); font-size: var(--fs-h3); color: var(--text-strong); }
+.bl-features-scrollspy__pane figcaption span { color: var(--text); }
+
+@media (max-width: 860px) {
+  .bl-features-scrollspy__grid { grid-template-columns: 1fr; }
+  .bl-features-scrollspy__panel, .bl-features-scrollspy__dot { display: none; }
+  .bl-features-scrollspy__list { padding-left: 0; }
+  .bl-features-scrollspy__row { opacity: 1; cursor: default; pointer-events: none; padding-bottom: .4rem; }
+  .bl-features-scrollspy__item.is-on .bl-features-scrollspy__row { transform: none; }
+  .bl-features-scrollspy__inline { position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; padding-bottom: 1.25rem; }
+  .bl-features-scrollspy__text { margin-bottom: .9rem; }
+  .bl-features-scrollspy__thumb { display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius); background: var(--surface-2); }
+  .bl-features-scrollspy__thumb img { width: 100%; height: 100%; object-fit: cover; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-features-scrollspy__row, .bl-features-scrollspy__dot, .bl-features-scrollspy__pane, .bl-features-scrollspy__photo img { transition: none; }
+  .bl-features-scrollspy__photo img { transform: none; }
+}

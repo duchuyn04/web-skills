@@ -1,0 +1,29 @@
+{
+  "variant": "comparison-bars",
+  "group": "compare",
+  "forms": ["list-rows"],
+  "summary": "Head-to-head bars after Webflow's comparison pages: the company against one alternative (hiring in-house, freelancers, another vendor), one row per buying criterion. Two bars meet at a centre divider, the company's in the brand colour growing left and the alternative's in grey growing right; their lengths show a 1-5 score and a short note sits under each side. The bars grow out from the divider as each row enters, and a key with both names stays under the header on wide screens. Phones stack the two bars under the criterion. Only compare on facts the client can back up, and score both sides honestly.",
+  "tone": "auto",
+  "anchor": "compare",
+  "animations": ["reveal", "versus-bar-grow", "versus-key-sticky"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "us": {"type": "text", "min": 2, "max": 28},
+    "them": {"type": "text", "min": 2, "max": 28},
+    "rows": {"type": "list", "min": 3, "max": 7, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 3, "max": 60},
+      "ours": {"type": "object", "fields": {
+        "score": {"type": "number", "min": 1, "max": 5},
+        "text": {"type": "text", "min": 3, "max": 110}
+      }},
+      "theirs": {"type": "object", "fields": {
+        "score": {"type": "number", "min": 1, "max": 5},
+        "text": {"type": "text", "min": 3, "max": 110}
+      }}
+    }}},
+    "score_label": {"type": "text", "min": 2, "max": 20, "default": "out of 5"},
+    "versus_label": {"type": "text", "min": 2, "max": 8, "default": "vs"},
+    "note": {"type": "text", "min": 10, "max": 160, "required": false},
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "variant": "footer-matrix",
+  "group": "footer",
+  "forms": ["footer"],
+  "summary": "Dark footer with the footer-columns content (brand blurb, contacts, socials, 2-4 link columns, legal bar with the page-wide Pause animations button) and, under the columns, a dot-matrix panel after Robot.com: the brand monogram (or the brand name) lit in a grid of round dots over a field of unlit ones. A lit band sweeps across every few seconds, the monogram blinks now and then, and on a mouse the dots under the pointer light up. Reduced motion shows the lit monogram still. Suits tech-leaning BPO and AI data brands; calm brands keep footer-columns.",
+  "tone": "dark",
+  "anchor": "site-footer",
+  "animations": ["dot-matrix-sweep", "dot-matrix-blink", "dot-matrix-pointer", "page-motion-switch"],
+  "fields": {
+    "blurb": {"type": "text", "min": 40, "max": 200},
+    "contacts": {
+      "type": "list", "min": 0, "max": 3, "default": [],
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "label": {"type": "text", "min": 3, "max": 60},
+        "href": {"type": "href", "required": false}
+      }}
+    },
+    "socials": {
+      "type": "list", "min": 0, "max": 4, "default": [],
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "enum", "values": ["linkedin", "facebook", "youtube", "twitter"]},
+        "label": {"type": "text", "min": 3, "max": 24},
+        "href": {"type": "href"}
+      }}
+    },
+    "columns": {
+      "type": "list", "min": 2, "max": 4,
+      "item": {"type": "object", "fields": {
+        "heading": {"type": "text", "min": 3, "max": 24},
+        "links": {"type": "list", "min": 2, "max": 6, "item": {"$ref": "cta"}}
+      }}
+    },
+    "legal": {"type": "text", "min": 5, "max": 90},
+    "legal_links": {"type": "list", "min": 0, "max": 3, "default": [], "item": {"$ref": "cta"}},
+    "certifications": {"type": "text", "min": 5, "max": 90, "required": false},
+    "motion_toggle": {"type": "bool", "default": true},
+    "pause_label": {"type": "text", "min": 3, "max": 30, "default": "Pause animations"},
+    "play_label": {"type": "text", "min": 3, "max": 30, "default": "Play animations"},
+    "matrix": {"type": "enum", "values": ["mark", "name"], "default": "mark"}
+  }
+}

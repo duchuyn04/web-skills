@@ -1,0 +1,47 @@
+/* services-marquee: word-row-drift, word-hover-photo */
+.bl-services-marquee__stage { position: relative; overflow-x: clip; padding-block: .5rem; }
+.bl-services-marquee__list, .bl-services-marquee__set { list-style: none; }
+/* still list: before the script runs and for reduced motion */
+.bl-services-marquee__list {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .1em .2em;
+  max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter);
+}
+.bl-services-marquee__item { position: relative; display: flex; align-items: center; flex-shrink: 0; }
+.bl-services-marquee__item::after {
+  content: ""; width: .16em; height: .16em; margin-inline: .45em; border-radius: 50%;
+  background: var(--accent-2-ink, var(--accent-ink)); font-size: clamp(2rem, 1.4rem + 3.4vw, 4.6rem); opacity: .7;
+}
+.bl-services-marquee__link {
+  position: relative; z-index: 2; display: block; padding-block: .06em;
+  font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking);
+  font-size: clamp(2rem, 1.4rem + 3.4vw, 4.6rem); line-height: 1.12; white-space: nowrap;
+  color: var(--text); transition: color .3s var(--ease-std), opacity .3s var(--ease-std);
+}
+.bl-services-marquee__link:hover, .bl-services-marquee__link:focus-visible, .bl-services-marquee__link.is-hot { color: var(--text-strong); }
+.bl-services-marquee__link:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 4px; border-radius: 4px; }
+.bl-services-marquee__stage.has-hot .bl-services-marquee__link:not(.is-hot) { opacity: .38; }
+
+/* drifting rows, built by section.js */
+.bl-services-marquee__rows { display: grid; gap: clamp(.1rem, .6vw, .5rem); }
+.bl-services-marquee__row { position: relative; }
+.bl-services-marquee__row.is-hot { z-index: 3; }
+.bl-services-marquee__track { display: flex; width: max-content; will-change: transform; }
+.bl-services-marquee__set { display: flex; align-items: center; flex-shrink: 0; }
+
+/* the photo that pops beside the hovered name, over the dimmed neighbour */
+.bl-services-marquee__card {
+  position: absolute; left: calc(100% - .6em); top: 50%; z-index: 1; width: clamp(150px, 16vw, 240px); aspect-ratio: 4 / 3;
+  border-radius: var(--radius); overflow: hidden; background: var(--surface-2); pointer-events: none;
+  opacity: 0; transform: translate(-28%, -50%) scale(.9) rotate(-7deg);
+  transition: opacity .25s var(--ease-std), transform .35s var(--ease-out);
+}
+.bl-services-marquee__card.is-on { opacity: 1; transform: translate(-28%, -50%) scale(1) rotate(-3deg); }
+.bl-services-marquee__card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.bl-services-marquee__card img.is-on { opacity: 1; }
+.bl-services-marquee__list > .bl-services-marquee__card, .bl-services-marquee__stage > .bl-services-marquee__card { display: none; }
+
+.bl-services-marquee__foot { margin-top: clamp(1.5rem, 3vw, 2.5rem); display: flex; justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-services-marquee__link, .bl-services-marquee__card { transition: none; }
+}

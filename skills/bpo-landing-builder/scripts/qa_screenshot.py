@@ -21,8 +21,9 @@ Checks (exit code 1 if any fail):
       for large text (24px, or 18.66px bold); text over photos and gradients is left to the screenshots
     - focus (SC 2.4.7, 1.4.11): every Tab stop shows a solid outline of 2px or more at 3:1 on its background
     - links inside running text are underlined or differ from the text around them by 3:1 (SC 1.4.1)
-    - frame rate: at 1440 px on a 2x (Retina-class) screen, the hero and every section with a canvas
-      must keep at least 30 frames per second. Canvas and paint cost grow with the square of the pixel
+    - frame rate: at 1440 px on a 2x (Retina-class) screen, the hero and every section with a canvas, a video,
+      an endless CSS loop or a registered GSAP ambient loop must keep at least 30 frames per second; sections
+      with a pinned or scrubbed ScrollTrigger are measured while the page scrolls through them. Canvas and paint cost grow with the square of the pixel
       ratio, so a 1x run hides slow animation that desktop users with scaled screens see as lag.
     - with --sweep: the width ranges between 1440 and 360 px where something sticks out sideways or header
       items overlap (fail), and where a short button or nav label wraps onto two lines (warning)
@@ -335,12 +336,29 @@ FPS_JS = """async (ms) => {
   return { fps: Math.round(1000 * f.length / f.reduce((a, b) => a + b, 0)), p95: Math.round(f[Math.floor(f.length * .95)]) };
 }"""
 
-# The hero, plus every section that owns a canvas (ribbons, globe, echo), a video or an endless CSS loop.
+# Frame rate while the page scrolls by itself (for pinned and scrubbed sections), one step per frame.
+FPS_SCROLL_JS = """async ([ms, dist]) => {
+  const f = []; let last = 0; const t0 = performance.now(), y0 = scrollY;
+  await new Promise(res => { const tick = ts => { if (last) f.push(ts - last); last = ts; const p = (performance.now() - t0) / ms; window.scrollTo(0, y0 + dist * Math.min(1, p)); if (p < 1) requestAnimationFrame(tick); else res(); }; requestAnimationFrame(tick); });
+  if (!f.length) return { fps: 0, p95: 0 };
+  f.sort((a, b) => a - b);
+  return { fps: Math.round(1000 * f.length / f.reduce((a, b) => a + b, 0)), p95: Math.round(f[Math.floor(f.length * .95)]) };
+}"""
+
+# The hero, plus every section that owns a canvas (ribbons, globe, echo), a video, an endless CSS loop or a registered
+# GSAP ambient loop; sections with a pinned or scrubbed ScrollTrigger are measured while scrolling through them.
 MOTION_TARGETS_JS = """() => {
   const out = [];
+  const sectionOf = el => el && el.nodeType === 1 ? el.closest('main > *') : null;
+  const ambient = new Set(), scroll = new Set();
+  const targetsOf = a => a.getChildren ? a.getChildren(true, true, false).flatMap(t => t.targets()) : (a.targets ? a.targets() : []);
+  ((window.BL && BL.motion && BL.motion.ambientList && BL.motion.ambientList()) || []).forEach(a => targetsOf(a).forEach(t => { const s = sectionOf(t); if (s) ambient.add(s); }));
+  ((window.ScrollTrigger && ScrollTrigger.getAll()) || []).forEach(st => { if (st.pin || st.vars.scrub) { const s = sectionOf(st.trigger); if (s) scroll.add(s); } });
   document.querySelectorAll('main > *').forEach((s, i) => {
-    const moving = i === 0 || s.matches('[data-fx="3d"]') || s.querySelector('canvas, video, [data-fx="3d"]') || [...s.querySelectorAll('*')].some(e => getComputedStyle(e).animationIterationCount === 'infinite');
-    if (moving) out.push(s.id || ('section-' + (i + 1)));
+    const moving = i === 0 || ambient.has(s) || s.matches('[data-fx="3d"]') || s.querySelector('canvas, video, [data-fx="3d"]') || [...s.querySelectorAll('*')].some(e => getComputedStyle(e).animationIterationCount === 'infinite');
+    if (!s.id) s.id = 'section-' + (i + 1);
+    if (moving) out.push({ id: s.id, scroll: false });
+    if (scroll.has(s)) out.push({ id: s.id, scroll: true });
   });
   return out;
 }"""
@@ -499,10 +517,18 @@ def motion_check(browser, index):
     page.goto(index.as_uri(), wait_until="load")
     page.wait_for_timeout(2500)
     lines, problems = [], []
-    for sid in page.evaluate(MOTION_TARGETS_JS):
-        page.evaluate("id => { const el = document.getElementById(id); if (el) window.scrollTo(0, el.getBoundingClientRect().top + scrollY); }", sid)
-        page.wait_for_timeout(1200)
-        r = page.evaluate(FPS_JS, 1500)
+    for t in page.evaluate(MOTION_TARGETS_JS):
+        sid = t["id"]
+        if t["scroll"]:
+            # start a screen above the section and scroll through it while counting frames
+            dist = page.evaluate("id => { const el = document.getElementById(id); window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + scrollY - innerHeight)); return el.offsetHeight + innerHeight; }", sid)
+            page.wait_for_timeout(600)
+            r = page.evaluate(FPS_SCROLL_JS, [2500, dist])
+            sid += " (scrolling)"
+        else:
+            page.evaluate("id => { const el = document.getElementById(id); if (el) window.scrollTo(0, el.getBoundingClientRect().top + scrollY); }", sid)
+            page.wait_for_timeout(1200)
+            r = page.evaluate(FPS_JS, 1500)
         lines.append("%s %d fps" % (sid, r["fps"]))
         if r["fps"] < MIN_FPS:
             problems.append("slow animation: #%s runs at %d fps (slowest frames %d ms) on a 2x screen, minimum %d. "
@@ -892,7 +918,11 @@ def main():
                 els = page.query_selector_all("body > header, main > *, body > footer")
                 for i, el in enumerate(els):
                     sid = el.get_attribute("id") or "section"
+                    # the fixed header would sit across the middle of a tall section's shot: hide it after its own shot
+                    page.evaluate("on => document.querySelectorAll('body > header').forEach(h => h.style.visibility = on ? '' : 'hidden')",
+                                  el.evaluate("e => e.matches('body > header')"))
                     el.screenshot(path=str(sdir / ("%02d-%s.jpg" % (i + 1, sid))), type="jpeg", quality=72)
+                page.evaluate("document.querySelectorAll('body > header').forEach(h => h.style.visibility = '')")
                 print("     section shots in %s" % sdir)
             ctx.close()
         if sweep:

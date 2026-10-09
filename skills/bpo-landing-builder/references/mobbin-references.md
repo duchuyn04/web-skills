@@ -39,6 +39,24 @@ Adaptations for BPO pages:
 - Flags are the skill's SVG flags, never emoji.
 - Heroes on Mobbin sell software and often show the product UI, floating chips or a drawn dashboard. The three heroes above keep the layout and motion and put real photos, the client's own copy and a working form in those places; no mock UI.
 
+## Motion sections
+
+Mobbin holds still images, so a reference shows where things sit, not how they move. For motion, open the reference's live site (the link on the Mobbin section page) and measure it in a browser: computed transitions, `document.getAnimations()`, the GSAP tweens it starts, and element transforms before and after a hover and at each scroll step. Many sections are gone from the live sites by the time they are studied; those were built from the still.
+
+| Section | Motion | Reference | Live measurement |
+|:---|:---|:---|:---|
+| `locations-fan` | three photos, side ones behind the front | [Cosmos](https://mobbin.com/sites/sections/8e070129-3de0-457a-b6a0-39ace1cc6015) | side photos at 0.85 behind the front one; hover grows the front about 1.08 and tucks the sides 8px inward (not outward), 900ms cubic-bezier(0.4, 0, 0.2, 1). The library keeps 0.5s, the house limit for hovers |
+| `footer-matrix` | LED dot panel | [Robot.com](https://mobbin.com/sites/sections/5cc26aaf-f102-42e9-984a-3c8768918494) | no canvas: an animated image under a PNG dot mask, expressions on a timer, no pointer effect. The library draws the lit layer under a CSS dot mask |
+| `comparison-bars` | bars from a centre divider | [Webflow](https://mobbin.com/sites/sections/aef9c5fd-2932-437f-a9ad-6950b0e16ee3) | two bars meet at a centre divider per criterion, widths are the score, the key with both names is sticky |
+| `services-hscroll` | pinned sideways row | [MOUTHWASH](https://mobbin.com/sites/sections/672f92e4-3ef9-49c3-b9f5-dc2b4ade1c02), [In Common With](https://mobbin.com/sites/sections/5dd32bb5-653f-4557-ad3c-9b5df0832836) | In Common With is a plain slider (hover zoom 1.05, 0.4s); the pinned row follows the GSAP pin and scrub pattern |
+| `process-drop` | cards drop onto a tilted pile | [Opennote](https://mobbin.com/sites/sections/7683757c-1c28-4c9c-aa18-5bcb10d5e716) | site replaced; built from the still |
+| `statement-ink` | words ink in with the scroll | [Raw Materials](https://mobbin.com/sites/sections/af2710b0-a6f7-4e17-996e-5c39314d5c6a) | built from the still |
+| `services-marquee` | drifting rows of names, photo on hover | [Fiverr](https://mobbin.com/sites/sections/60532ebb-2d77-42c7-960d-50b6ba257b81) | section gone; built from the still |
+| `features-scrollspy` | active row at the reading line, sticky panel | [Intercom](https://mobbin.com/sites/sections/fe15fe44-d336-4234-9780-e70800155eb1) | section gone; built from the still |
+| `industries-index` | scrambled letters resolve | [Anima](https://mobbin.com/sites/sections/883db2f4-aced-412d-8c52-de2012b6e6db) | built from the still |
+| `careers-canvas` | draggable photo board | [Nite Riot](https://mobbin.com/sites/sections/75986401-f96a-4ade-b171-fb632386a8a9) | built from the still |
+| `about-checker` | checkerboard tiles turn over | [Contra Labs](https://mobbin.com/sites/sections/62179081-15cd-41b6-b8e8-5eb30821eb29) | built from the still |
+
 ## Using Mobbin for the next library update
 
 Mobbin is a maintainer tool. Page builds do not call it, so a page looks the same whether or not the agent has Mobbin connected.

@@ -3,8 +3,11 @@
   "demo": true,
   "sample_content": true,
   "lang": "vi",
-  "brief": "Tạo website mẫu cho một studio nail art phong cách sang, tông tối ở Đà Nẵng.",
+  "brief": "Tạo website mẫu cho một studio nail art phong cách sang, tông tối ở Đà Nẵng. Chân trang có bảng đèn LED chấm hiện chữ cái đầu tên tiệm.",
   "style": "dark-glam",
+  "layout": {
+    "footer": "matrix"
+  },
   "salon": {
     "name": "Velvet Nail Art",
     "tagline": "Nail art vẽ tay, chrome và đính đá",
@@ -855,8 +858,10 @@
     },
     {
       "type": "gallery",
+      "variant": "canvas",
       "title": "Bộ sưu tập",
-      "limit": 8
+      "text": "Kéo bảng để xem thêm mẫu, bấm Đặt mẫu này để giữ giờ.",
+      "limit": 12
     },
     {
       "type": "art-levels",

@@ -1,0 +1,15 @@
+{
+  "variant": "statement-ink",
+  "group": "intro",
+  "forms": ["statement", "text-block"],
+  "summary": "One large paragraph of two to four sentences that the reader inks in by scrolling: every word starts pale and turns to full colour, word by word, as the section passes up the screen. Optional small label above, a short attribution line under it (who says this, for example the founder and their role) and a link. Use right after the hero or the logos for a mission or point-of-view statement; reduced motion shows it in full at once.",
+  "tone": "auto",
+  "anchor": "who-we-are",
+  "animations": ["scroll-ink-paragraph", "reveal"],
+  "fields": {
+    "eyebrow": {"type": "text", "min": 3, "max": 40, "required": false},
+    "text": {"type": "markup", "min": 120, "max": 420},
+    "attribution": {"type": "text", "min": 3, "max": 80, "required": false},
+    "link": {"$ref": "cta", "required": false}
+  }
+}

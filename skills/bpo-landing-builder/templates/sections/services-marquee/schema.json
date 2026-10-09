@@ -1,0 +1,21 @@
+{
+  "variant": "services-marquee",
+  "group": "services",
+  "forms": ["link-list"],
+  "summary": "Service names set large in two or three rows that drift sideways in opposite directions (after Fiverr on Mobbin). Hovering or focusing a name turns it full ink, dims the others, slows its row and pops a photo of that service over it; every name links to its service page. Nine or more services make three rows. Reduced motion shows a still, wrapped list of names. Use when the client offers many services with their own pages and wants the range seen at a glance; each service needs a real photo.",
+  "tone": "auto",
+  "anchor": "services",
+  "animations": ["word-row-drift", "word-hover-photo", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "items": {
+      "type": "list", "min": 6, "max": 12,
+      "item": {"type": "object", "fields": {
+        "name": {"type": "text", "min": 3, "max": 32},
+        "href": {"type": "href"},
+        "photo": {"$ref": "photo"}
+      }}
+    },
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

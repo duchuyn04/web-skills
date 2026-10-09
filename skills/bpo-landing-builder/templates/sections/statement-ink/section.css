@@ -1,0 +1,11 @@
+/* statement-ink: scroll-ink-paragraph */
+.bl-statement-ink__inner { max-width: 1080px; }
+.bl-statement-ink__text {
+  font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking);
+  font-size: clamp(1.6rem, 2.4vw + .9rem, 3rem); line-height: 1.22; color: var(--text-strong);
+  text-wrap: pretty; margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+/* section.js wraps each word in .bl-statement-ink__w; GSAP scrubs its opacity with the scroll (no CSS transition) */
+.bl-shot .bl-statement-ink__w { opacity: 1 !important; }
+.bl-statement-ink__by { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.25rem; font-size: var(--fs-sm); font-weight: 600; color: var(--text-strong); }
+.bl-statement-ink__rule { width: 2.5rem; height: 2px; background: var(--c-accent); flex-shrink: 0; }

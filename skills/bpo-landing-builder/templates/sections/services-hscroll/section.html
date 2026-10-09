@@ -1,0 +1,26 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-services-hscroll" data-hscroll>
+  <div class="bl-services-hscroll__pin" data-hs-pin>
+    <div class="bl-container">
+      {{> head-split}}
+    </div>
+    <div class="bl-services-hscroll__viewport" data-hs-viewport>
+      <ol class="bl-services-hscroll__track" data-hs-track tabindex="0"{{#track_label}} aria-label="{{track_label}}"{{/track_label}}>
+        {{#cards}}
+        <li class="bl-services-hscroll__card">
+          <div class="bl-services-hscroll__media">
+            <img src="{{photo.src}}" alt="{{photo.alt}}" width="640" height="720" loading="lazy" decoding="async">
+          </div>
+          <div class="bl-services-hscroll__body">
+            <h3 class="bl-services-hscroll__title">{{title}}</h3>
+            <p class="bl-services-hscroll__text">{{text}}</p>
+            {{#link}}<a class="bl-link bl-services-hscroll__link" href="{{href}}">{{label}}{{arrow}}</a>{{/link}}
+          </div>
+        </li>
+        {{/cards}}
+      </ol>
+    </div>
+    <div class="bl-container">
+      <div class="bl-services-hscroll__bar" aria-hidden="true"><span class="bl-services-hscroll__fill" data-hs-fill></span></div>
+    </div>
+  </div>
+</section>

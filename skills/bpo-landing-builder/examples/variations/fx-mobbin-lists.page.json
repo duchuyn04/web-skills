@@ -1,0 +1,333 @@
+{
+  "_note": "Shows the list and text motion taken from Mobbin references: services-marquee (services slot, after Fiverr), features-scrollspy (solutions slot, after Intercom) and industries-index (audience slot, after Anima). Harbor Ledger is a fictional company; every figure is sample data.",
+  "archetype": "it-bpo-partner",
+  "preset": "orange-charcoal",
+  "lang": "en",
+  "site": {
+    "brand": "Harbor Ledger",
+    "brand_mark": "HL",
+    "title": "Harbor Ledger | Back-office teams in Ho Chi Minh City",
+    "description": "Harbor Ledger runs accounting, data and software teams in Ho Chi Minh City for logistics, retail and finance companies in the US, the UK and Japan."
+  },
+  "sections": [
+    {
+      "type": "header-simple",
+      "data": {
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "Capabilities",
+            "href": "#capabilities"
+          },
+          {
+            "label": "Industries",
+            "href": "#industries"
+          },
+          {
+            "label": "Contact",
+            "href": "#get-started"
+          }
+        ],
+        "cta": {
+          "label": "Contact us",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "hero-split-image",
+      "data": {
+        "eyebrow": "Back-office and software outsourcing",
+        "title": "Back-office and software teams in *Ho Chi Minh City*",
+        "lead": "Harbor Ledger closes the books, cleans order data and builds internal tools for logistics, retail and finance companies, from one office with 210 staff.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "#get-started"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        },
+        "proof": [
+          "ISO 27001 certified",
+          "Founded 2011"
+        ],
+        "photo": {
+          "src": "city-hcmc-skyline",
+          "alt": "Ho Chi Minh City skyline at dusk"
+        }
+      }
+    },
+    {
+      "type": "services-marquee",
+      "data": {
+        "head": {
+          "title": "Nine service lines, one office",
+          "lead": "Each service has its own team lead and its own page. Hover a name to see where the work happens."
+        },
+        "items": [
+          {
+            "name": "Bookkeeping",
+            "href": "#get-started",
+            "photo": {
+              "src": "bookkeeping-calculator-laptop",
+              "alt": "Ledger open on a laptop beside a calculator"
+            }
+          },
+          {
+            "name": "Payroll",
+            "href": "#get-started",
+            "photo": {
+              "src": "calculator-pens-flatlay",
+              "alt": "Calculator and pens on a payroll sheet"
+            }
+          },
+          {
+            "name": "Accounts payable",
+            "href": "#get-started",
+            "photo": {
+              "src": "accounting-documents-calculator",
+              "alt": "Invoices stacked next to a calculator"
+            }
+          },
+          {
+            "name": "Order data entry",
+            "href": "#get-started",
+            "photo": {
+              "src": "ecommerce-packing",
+              "alt": "Parcels being packed for dispatch"
+            }
+          },
+          {
+            "name": "Freight documents",
+            "href": "#get-started",
+            "photo": {
+              "src": "port-containers",
+              "alt": "Shipping containers stacked at a port"
+            }
+          },
+          {
+            "name": "Inventory reports",
+            "href": "#get-started",
+            "photo": {
+              "src": "warehouse-racks",
+              "alt": "Warehouse racks loaded with pallets"
+            }
+          },
+          {
+            "name": "Web apps",
+            "href": "#get-started",
+            "photo": {
+              "src": "developer-headphones-monitors",
+              "alt": "Two monitors with code in an office"
+            }
+          },
+          {
+            "name": "QA testing",
+            "href": "#get-started",
+            "photo": {
+              "src": "desk-phone-monitors",
+              "alt": "Test desk with a phone and two monitors"
+            }
+          },
+          {
+            "name": "Financial reporting",
+            "href": "#get-started",
+            "photo": {
+              "src": "finance-chart-screen",
+              "alt": "Revenue chart on a screen"
+            }
+          }
+        ],
+        "cta": {
+          "label": "See every service",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "features-scrollspy",
+      "data": {
+        "head": {
+          "title": "What each team runs",
+          "lead": "Scroll the list to see how each piece of work is set up inside the Ho Chi Minh City office."
+        },
+        "items": [
+          {
+            "title": "Month-end close",
+            "text": "Accountants reconcile banks and cards, post accruals and send a close pack by the fifth working day.",
+            "photo": {
+              "src": "paperwork-review-desk",
+              "alt": "Month-end documents under review on a desk"
+            }
+          },
+          {
+            "title": "Invoice processing",
+            "text": "Supplier invoices are coded, matched to orders and queued for approval in your accounting system.",
+            "photo": {
+              "src": "paperwork-signing-laptop",
+              "alt": "Invoice approved next to a laptop"
+            }
+          },
+          {
+            "title": "Payroll preparation",
+            "text": "Payroll runs are prepared from your timesheets, checked by a second person and sent for sign-off.",
+            "photo": {
+              "src": "paperwork-desk-hands",
+              "alt": "Payroll sheets being checked on a desk"
+            }
+          },
+          {
+            "title": "Stock reports",
+            "text": "Daily stock counts from your warehouse system become one report with movements and exceptions.",
+            "photo": {
+              "src": "warehouse-aisle-boxes",
+              "alt": "Warehouse aisle with boxes on shelves"
+            }
+          },
+          {
+            "title": "Internal tools",
+            "text": "Engineers build the small web tools your back office needs, such as approval queues and upload portals.",
+            "photo": {
+              "src": "office-interior",
+              "alt": "Open-plan office in Ho Chi Minh City"
+            }
+          },
+          {
+            "title": "Release testing",
+            "text": "Testers run your regression suite on each release candidate and log bugs in your own tracker.",
+            "photo": {
+              "src": "laptop-conference-room",
+              "alt": "Laptop open in a meeting room for a test review"
+            }
+          },
+          {
+            "title": "Weekly client review",
+            "text": "Your account lead walks through output, error counts and open issues with you in a weekly call.",
+            "photo": {
+              "src": "meeting-room-empty",
+              "alt": "Meeting room set up for a weekly review"
+            }
+          }
+        ],
+        "cta": {
+          "label": "Plan a team",
+          "href": "#get-started"
+        }
+      }
+    },
+    {
+      "type": "industries-index",
+      "id": "industries",
+      "data": {
+        "head": {
+          "title": "Who we work for",
+          "lead": "Most clients move goods or money; each industry has a team lead who knows its documents."
+        },
+        "cta": {
+          "label": "Talk to a team lead",
+          "href": "#get-started"
+        },
+        "items": [
+          {
+            "icon": "truck",
+            "title": "Logistics",
+            "text": "Freight documents, proof of delivery and carrier invoices for forwarders."
+          },
+          {
+            "icon": "shopping-cart",
+            "title": "Retail and e-commerce",
+            "text": "Order cleanup, returns data and catalog updates for online sellers."
+          },
+          {
+            "icon": "landmark",
+            "title": "Financial services",
+            "text": "Reconciliations and reporting for lenders, brokers and payment firms."
+          },
+          {
+            "icon": "building",
+            "title": "Property",
+            "text": "Rent ledgers, service charge accounts and tenant records for managers."
+          },
+          {
+            "icon": "heart-pulse",
+            "title": "Healthcare",
+            "text": "Claims data entry and billing checks with access limited to named staff."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cta-band",
+      "data": {
+        "title": "Hand off the work that slows your *back office*",
+        "text": "Send a short brief and a team lead replies with a staffing plan and a price range.",
+        "primary_cta": {
+          "label": "Get a quote",
+          "href": "mailto:hello@harborledger.example"
+        },
+        "secondary_cta": {
+          "label": "Our services",
+          "href": "#services"
+        }
+      }
+    },
+    {
+      "type": "footer-columns",
+      "data": {
+        "blurb": "Accounting, data and software teams in Ho Chi Minh City for clients in the US, the UK and Japan.",
+        "contacts": [
+          {
+            "icon": "mail",
+            "label": "hello@harborledger.example",
+            "href": "mailto:hello@harborledger.example"
+          },
+          {
+            "icon": "map-pin",
+            "label": "District 1, Ho Chi Minh City"
+          }
+        ],
+        "columns": [
+          {
+            "heading": "Services",
+            "links": [
+              {
+                "label": "Bookkeeping",
+                "href": "#services"
+              },
+              {
+                "label": "Order data",
+                "href": "#services"
+              },
+              {
+                "label": "Web apps",
+                "href": "#services"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Capabilities",
+                "href": "#capabilities"
+              },
+              {
+                "label": "Industries",
+                "href": "#industries"
+              },
+              {
+                "label": "Contact",
+                "href": "#get-started"
+              }
+            ]
+          }
+        ],
+        "legal": "All rights reserved."
+      }
+    }
+  ]
+}

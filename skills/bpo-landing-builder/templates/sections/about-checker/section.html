@@ -1,0 +1,14 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container bl-checker-wrap">
+    <div class="bl-checker-wrap__copy" data-reveal-group>
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h2 class="bl-h2" data-reveal>{{title}}</h2>
+      {{#paragraphs}}<p class="bl-checker-wrap__p" data-reveal>{{.}}</p>{{/paragraphs}}
+      {{#points.0}}<ul class="bl-checks" data-reveal data-seq>{{#points}}<li>{{icon:check-circle}}<span>{{.}}</span></li>{{/points}}</ul>{{/points.0}}
+      {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}" data-reveal>{{label}}</a>{{/cta}}
+    </div>
+    <ul class="bl-checker" data-checker>
+      {{#photos}}<li class="bl-checker__cell"><img src="{{src}}" alt="{{alt}}" width="240" height="240" loading="lazy"></li>{{/photos}}
+    </ul>
+  </div>
+</section>

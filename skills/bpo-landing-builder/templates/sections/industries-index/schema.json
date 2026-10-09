@@ -1,0 +1,23 @@
+{
+  "variant": "industries-index",
+  "group": "industries",
+  "forms": ["list-rows"],
+  "open": true,
+  "summary": "Industry index set in large type, one industry per full-width row between hairlines (after Anima on Mobbin). As each row scrolls in, its name resolves from scrambled letters into the real word, left to right. Hovering or focusing a row scrambles the name briefly, slides its icon in and shows one line on what you do for that industry. Touch screens and reduced motion show the icon and the line at rest, without scrambling. Each row links to its own href, or to the section cta.",
+  "tone": "auto",
+  "anchor": "industries",
+  "animations": ["text-scramble-resolve", "row-icon-slide", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cta": {"$ref": "cta"},
+    "items": {
+      "type": "list", "min": 4, "max": 8,
+      "item": {"type": "object", "fields": {
+        "icon": {"type": "icon"},
+        "title": {"type": "text", "min": 3, "max": 28},
+        "text": {"type": "text", "min": 30, "max": 120},
+        "href": {"type": "href", "required": false}
+      }}
+    }
+  }
+}

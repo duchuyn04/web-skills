@@ -1,8 +1,9 @@
-<section class="sec story">
+<section class="sec story{% if sec.variant == 'ink' %} story-ink{% endif %}">
   <div class="wrap story-in">
     <h2>{{ sec.title or ("Về " ~ salon.name) }}</h2>
     <div>
-      <p class="lead">{{ sec.text or salon.intro }}</p>
+      {# ink: motion.js wraps each word and inks it in as the paragraph passes up the screen #}
+      <p class="lead"{% if sec.variant == 'ink' %} data-mx-ink{% endif %}>{{ sec.text or salon.intro }}</p>
       {% if sec.get("items") %}<ul class="story-facts">{% for x in sec.get("items") %}<li>{{ icon("check", "i-sm") }}<span>{{ x }}</span></li>{% endfor %}</ul>{% endif %}
     </div>
   </div>

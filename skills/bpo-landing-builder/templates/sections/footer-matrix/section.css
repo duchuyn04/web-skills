@@ -1,0 +1,58 @@
+/* footer-matrix: footer-columns layout, plus dot-matrix-sweep, dot-matrix-blink, dot-matrix-pointer */
+.bl-footer { background: color-mix(in srgb, var(--bg) 80%, #000); padding-top: clamp(3.5rem, 6vw, 5rem); padding-bottom: 2rem; border-top: 1px solid var(--border); font-size: var(--fs-sm); }
+.bl-footer__top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr); gap: clamp(2rem, 6vw, 6rem); padding-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.bl-footer__brand { display: grid; gap: 1.25rem; align-content: start; }
+.bl-footer__brand > p { max-width: 24rem; }
+.bl-footer__contacts { display: grid; gap: .6rem; }
+.bl-footer__contacts li { display: flex; align-items: center; gap: .6rem; color: var(--text-strong); }
+.bl-footer__contacts .bl-icon { width: 1rem; height: 1rem; color: var(--accent-ink); }
+.bl-footer__contacts a:hover { color: var(--accent-ink); }
+.bl-footer__socials { display: flex; gap: .5rem; }
+.bl-footer__socials a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border-strong); color: var(--text-strong); transition: background-color var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast); }
+.bl-footer__socials a:hover { background: var(--c-accent); border-color: transparent; color: var(--c-on-accent); }
+.bl-footer__socials .bl-icon { width: 18px; height: 18px; }
+.bl-footer__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; }
+.bl-footer__heading { font-size: var(--fs-xs); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--text-strong); margin-bottom: 1.1rem; }
+.bl-footer__col ul { display: grid; gap: .7rem; }
+.bl-footer__col a { color: var(--text); transition: color var(--dur-fast) var(--ease-std); }
+.bl-footer__col a:hover { color: var(--text-strong); }
+.bl-footer__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: var(--fs-xs); color: var(--text-muted); }
+.bl-footer__certs { display: inline-flex; align-items: center; gap: .45rem; }
+.bl-footer__certs .bl-icon { width: .95rem; height: .95rem; color: var(--accent-ink); }
+.bl-footer__legal { display: flex; gap: 1.25rem; }
+.bl-footer__legal a:hover { color: var(--text-strong); }
+
+/* dot matrix after Robot.com: two layers share one mask of round dots. The unlit layer is a flat low-contrast fill;
+   the lit layer holds the monogram, a sweeping band and the pointer spot. section.js sizes the panel to whole cells and
+   draws the monogram and the spot at one pixel per cell, shown pixelated, so only whole dots light up. Everything inside
+   moves with transform, so the masked layers are composited, not repainted. */
+.bl-fmatrix {
+  --dot: clamp(9px, 1.15vw, 16px);
+  --dot-mask: radial-gradient(circle closest-side, black 74%, transparent 78%) 0 0 / var(--dot) var(--dot) repeat;
+  position: relative; overflow: hidden; height: clamp(150px, 22vw, 320px); max-width: 100%;
+  margin: 0 auto clamp(1.75rem, 3vw, 2.5rem);
+}
+.bl-fmatrix__off, .bl-fmatrix__lit { position: absolute; inset: 0; -webkit-mask: var(--dot-mask); mask: var(--dot-mask); }
+.bl-fmatrix__off { background: color-mix(in srgb, var(--text-strong) 7%, transparent); }
+.bl-fmatrix__mark {
+  position: absolute; inset: 0; display: grid; place-items: center; white-space: nowrap; overflow: hidden;
+  font-family: var(--font-heading); font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+  font-size: clamp(120px, 20vw, 290px);
+  color: color-mix(in srgb, var(--text-strong) 80%, transparent);
+  transform-origin: 50% 55%; will-change: transform;
+}
+.bl-fmatrix__mark.is-raster {
+  font-size: 0; background-repeat: no-repeat; background-position: 0 0; background-size: 100% 100%; image-rendering: pixelated;
+}
+.bl-fmatrix__band {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 12%;
+  background: color-mix(in srgb, var(--c-accent) 80%, transparent);
+  transform: translateX(-110%); will-change: transform;
+}
+.bl-fmatrix__spot {
+  position: absolute; left: 0; top: 0; width: 7rem; height: 7rem;
+  background-repeat: no-repeat; background-size: 100% 100%; image-rendering: pixelated;
+  opacity: 0; transition: opacity var(--dur) var(--ease-std); will-change: transform; pointer-events: none;
+}
+.bl-fmatrix.is-pointer .bl-fmatrix__spot { opacity: .55; }
+@media (prefers-reduced-motion: reduce) { .bl-fmatrix__band, .bl-fmatrix__spot { display: none; } }

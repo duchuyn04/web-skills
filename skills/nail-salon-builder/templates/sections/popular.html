@@ -1,7 +1,30 @@
-{% from "partials/macros.html" import section_head, service_card with context %}
+{% from "partials/macros.html" import section_head, service_card, book_href, book_attrs with context %}
 {% set items = [] %}
 {% if sec.services %}{% for i in sec.services if i in svc_by_id %}{% set _ = items.append(svc_by_id[i]) %}{% endfor %}{% else %}{% for s in popular %}{% set _ = items.append(s) %}{% endfor %}{% endif %}
 {% if items %}
+{% if sec.variant == "marquee" %}
+{# names drift in two rows in opposite directions; hover or focus inks the name, slows its row and pops its look
+   with the price. motion.js repeats each row's group (copies are hidden from screen readers) so the loop has no seam. #}
+<section class="sec mx-mq" data-mx-mq>
+  <div class="wrap">{{ section_head(sec.title or "Khách hay đặt", sec.text or "", root ~ "bang-gia.html", "Xem tất cả") }}</div>
+  {% for row in [items[0::2], items[1::2]] if row %}
+  <div class="mq-row{% if loop.index == 2 %} mq-rev{% endif %}" data-mq-row>
+    <ul class="mq-group">
+      {% for s in row %}
+      {% set g = n.gallery|selectattr("service", "equalto", s.id)|first %}
+      <li class="mq-item">
+        <a class="mq-name" href="{{ book_href(root, s.id) }}" {{ book_attrs() }}>{{ s.name }}</a>
+        <span class="mq-pop" aria-hidden="true">
+          <img src="{{ root }}{{ pics['look-' ~ g.id] if g else pics['cat-' ~ s.category] }}" alt="" loading="lazy" width="400" height="400">
+          <b>{{ price_text(s.price, s.price_type|default("fixed"), s.price_max|default(None)) }}</b>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
+{% else %}
 <section class="sec">
   <div class="wrap">
     {{ section_head(sec.title or "Khách hay đặt", sec.text or "", root ~ "bang-gia.html", "Xem tất cả") }}
@@ -10,4 +33,5 @@
     </div>
   </div>
 </section>
+{% endif %}
 {% endif %}

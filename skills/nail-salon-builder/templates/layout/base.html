@@ -58,6 +58,11 @@
 {% block main %}{% endblock %}
 </main>
 
+{# motion.js runs only on pages with a motion variant, a promo code to resolve or the dot-matrix footer; loops that run
+   on their own (marquee, checker, dot matrix) get the footer pause switch (WCAG 2.2.2) #}
+{% set mv = (n.home|map(attribute="variant")|select|list) if page == "index.html" else [] %}
+{% set has_loop = layout.footer == "matrix" or "marquee" in mv or "checker" in mv %}
+{% set has_motion = has_loop or (mv|select("in", ["scroll", "fan", "drop", "ink", "spy", "canvas"])|list) or (page == "uu-dai.html" and n.promotions|selectattr("code")|list) %}
 <footer class="ftr">
   <div class="wrap ftr-grid">
     <div class="ftr-brand">
@@ -93,9 +98,17 @@
       </ul>
     </div>
   </div>
+  {% if layout.footer == "matrix" %}
+  {# the salon's initials on an LED dot panel (after Robot.com): a lit layer under a mask of round dots #}
+  <div class="wrap"><div class="mx-matrix" aria-hidden="true" data-mx-matrix>
+    <div class="mx-matrix-off"></div>
+    <div class="mx-matrix-lit"><span class="mx-matrix-mark" data-mx-mark>{{ salon.mark }}</span><span class="mx-matrix-band" data-mx-band></span><span class="mx-matrix-spot" data-mx-spot></span></div>
+  </div></div>
+  {% endif %}
   <div class="wrap ftr-bottom">
     <span>{% if salon.legal %}{{ salon.legal }}{% else %}{{ salon.name }}{% endif %}</span>
     {% if demo %}<span class="demo-note">{{ icon("info", "i-xs") }}Website mẫu, giá và thông tin chỉ để minh họa</span>{% endif %}
+    {% if has_loop %}<button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" data-label-pause="Tạm dừng chuyển động" data-label-play="Bật lại chuyển động"><span class="mt-pause">{{ icon("pause", "i-xs") }}</span><span class="mt-play">{{ icon("play", "i-xs") }}</span><span data-motion-label>Tạm dừng chuyển động</span></button>{% endif %}
   </div>
 </footer>
 
@@ -130,6 +143,7 @@
 <script src="{{ root }}assets/js/salon.js"></script>
 <script src="{{ root }}assets/js/common.js"></script>
 <script src="{{ root }}assets/js/site.js"></script>
+{% if has_motion %}<script src="{{ root }}assets/js/motion.js"></script>{% endif %}
 {% block scripts %}{% endblock %}
 </body>
 </html>

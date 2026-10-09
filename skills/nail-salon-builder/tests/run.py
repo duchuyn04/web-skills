@@ -21,6 +21,7 @@ BUILD = [SKILL / "examples" / "demo-nail.salon.json"] + sorted((SKILL / "example
 EXPECT = {
     "bad-photos.salon.json": ["is a stock picture, not this salon's work", "technician pictures are the owner's photos only", "unknown library photo 'lib:nope-99'"],
     "bad-fonts.salon.json": ["Poppins has no Vietnamese letters", "DM Sans has no Vietnamese letters", "Pacifico: capitals and marks run together"],
+    "bad-motion.salon.json": ["layout.footer: the dot-matrix footer", "home[2].variant: use one of: tabs, spy", "section 'locations' has one layout", "home[1].variant: the marquee needs 6 or more services"],
     "bad-facts.salon.json": ["150.000 đ is not a price in the brief", "promises \"thuần chay\"", "figures that are not in the brief (4)", "reviews.rating", "$9 is not in the brief", "promises \"miễn phí\""],
 }
 

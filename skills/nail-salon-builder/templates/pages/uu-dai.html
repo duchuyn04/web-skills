@@ -8,7 +8,7 @@
     <li class="promo">
       <span class="promo-ic">{{ icon("percent") }}</span>
       <div><b>{{ p.title }}</b>{% if p.text %}<p>{{ p.text }}</p>{% endif %}</div>
-      {% if p.code %}<button class="code" type="button" data-copy="{{ p.code }}" title="Sao chép mã">{{ p.code }}{{ icon("copy", "i-xs") }}</button>{% endif %}
+      {% if p.code %}<button class="code" type="button" data-copy="{{ p.code }}" title="Sao chép mã" aria-label="Sao chép mã {{ p.code }}"><span data-scramble>{{ p.code }}</span>{{ icon("copy", "i-xs") }}</button>{% endif %}
     </li>
     {% endfor %}
   </ul>

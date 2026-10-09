@@ -1,0 +1,31 @@
+/* about-checker: intro copy and a 4 x 3 checkerboard of tinted tiles and photo tiles (after Contra Labs).
+   section.js builds the board; without it the photos sit in a plain three-column grid. */
+.bl-checker-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.bl-checker-wrap .bl-h2 { margin-bottom: 1.25rem; }
+.bl-checker-wrap__p { color: var(--text); margin-bottom: 1rem; line-height: 1.75; }
+.bl-checker-wrap__p strong { color: var(--text-strong); font-weight: 700; }
+.bl-checker-wrap .bl-checks { margin: 1.25rem 0 1.75rem; }
+
+.bl-checker { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.4rem, 1vw, .7rem); }
+.bl-checker.is-built { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bl-checker__cell { aspect-ratio: 1; perspective: 900px; }
+.bl-checker__cell > img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-sm); }
+.bl-checker__flip { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+.bl-checker__face { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius-sm); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.bl-checker__face--back { transform: rotateY(180deg); }
+.bl-checker__face img { width: 100%; height: 100%; object-fit: cover; }
+.bl-checker__face--a { background: color-mix(in oklab, var(--c-accent) 26%, var(--surface)); }
+.bl-checker__face--b { background: color-mix(in oklab, var(--c-accent) 12%, var(--surface)); }
+.bl-checker__face--c { background: color-mix(in oklab, var(--c-primary) 16%, var(--surface)); }
+
+/* check-sequence on the points, as in about-mosaic */
+.js .bl-checker-wrap .bl-checks[data-seq] > li svg { transition: transform .45s var(--ease-back); transition-delay: calc(var(--seq-i, 0) * 90ms + 260ms); }
+.js .bl-checker-wrap .bl-checks[data-seq]:not(.is-seen) > li svg { transform: scale(0); }
+
+@media (max-width: 1024px) {
+  .bl-checker-wrap { grid-template-columns: 1fr; }
+  .bl-checker { max-width: 600px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .bl-checker-wrap .bl-checks[data-seq] > li svg { transform: none !important; }
+}

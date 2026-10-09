@@ -1,0 +1,31 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-cbars-sec">
+  <div class="bl-container">
+    {{> head-center}}
+    <div class="bl-cbars" data-cbars>
+      <div class="bl-cbars__key" aria-hidden="true">
+        <span class="bl-cbars__name bl-cbars__name--us">{{us}}</span>
+        <span class="bl-cbars__vs">{{versus_label}}</span>
+        <span class="bl-cbars__name bl-cbars__name--them">{{them}}</span>
+      </div>
+      <ol class="bl-cbars__rows">
+        {{#rows}}
+        <li class="bl-cbars__row" data-cbar-row>
+          <h3 class="bl-cbars__label">{{label}}</h3>
+          <div class="bl-cbars__side bl-cbars__side--us">
+            <p class="bl-cbars__who">{{us}}</p>
+            <div class="bl-cbars__track"><span class="bl-cbars__bar" style="--s: {{ours.score}}" data-cbar></span></div>
+            <p class="bl-cbars__text"><span class="bl-sr-only">{{us}}, {{ours.score}} {{score_label}}: </span>{{ours.text}}</p>
+          </div>
+          <div class="bl-cbars__side bl-cbars__side--them">
+            <p class="bl-cbars__who">{{them}}</p>
+            <div class="bl-cbars__track"><span class="bl-cbars__bar" style="--s: {{theirs.score}}" data-cbar></span></div>
+            <p class="bl-cbars__text"><span class="bl-sr-only">{{them}}, {{theirs.score}} {{score_label}}: </span>{{theirs.text}}</p>
+          </div>
+        </li>
+        {{/rows}}
+      </ol>
+    </div>
+    {{#note}}<p class="bl-cbars__note">{{note}}</p>{{/note}}
+    {{#cta}}<div class="bl-cbars__cta"><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}</a></div>{{/cta}}
+  </div>
+</section>

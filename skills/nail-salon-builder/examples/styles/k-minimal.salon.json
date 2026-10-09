@@ -813,12 +813,23 @@
       "text": "Sơn gel, úp móng và vẽ tay theo mẫu. Đặt giờ online, chọn thợ quen."
     },
     {
+      "type": "story",
+      "variant": "ink",
+      "title": "Về tiệm"
+    },
+    {
+      "type": "categories",
+      "variant": "fan",
+      "title": "Dịch vụ"
+    },
+    {
       "type": "gallery",
       "title": "Mẫu tháng này",
       "limit": 8
     },
     {
       "type": "price-list",
+      "variant": "spy",
       "title": "Bảng giá"
     },
     {

@@ -1,3 +1,28 @@
+{% if sec.variant == "drop" %}
+{# promise cards drop one by one onto a pile while the section is pinned (wide screens); tilts are seeded from the
+   salon name. Phones and reduced motion show the cards as a list, each slightly tilted. #}
+{% set total = n.trust|length %}
+<section class="sec sec-tint mx-drop" data-mx-drop data-seed="{{ salon.name }}">
+  <div class="mx-drop-pin">
+    <div class="wrap mx-drop-in">
+      <div class="mx-drop-copy">
+        <h2>{{ sec.title or "Cam kết của tiệm" }}</h2>
+        {% if sec.text %}<p class="muted">{{ sec.text }}</p>{% endif %}
+        <p class="mx-count" aria-hidden="true"><b data-mx-count>01</b><span> / {{ "%02d"|format(total) }}</span></p>
+      </div>
+      <ol class="mx-pile">
+        {% for t in n.trust %}
+        <li class="mx-card{% if loop.index % 3 == 2 %} mx-card-soft{% elif loop.index % 3 == 0 %} mx-card-dark{% endif %}">
+          <span class="trust-ic">{{ icon(t.icon or "check-circle") }}</span>
+          <b>{{ t.title }}</b>
+          {% if t.text %}<p>{{ t.text }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+{% else %}
 <section class="sec sec-tint">
   <div class="wrap">
     <h2 class="sec-title">{{ sec.title or "Cam kết của tiệm" }}</h2>
@@ -6,3 +31,4 @@
     </ul>
   </div>
 </section>
+{% endif %}

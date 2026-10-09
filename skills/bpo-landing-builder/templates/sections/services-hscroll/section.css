@@ -1,0 +1,57 @@
+/* services-hscroll: horizontal-scroll-pin, track-progress-fill */
+.bl-services-hscroll { overflow-x: clip; }
+.bl-services-hscroll .bl-head { margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+.bl-services-hscroll__viewport {
+  --hs-pad: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter)));
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--hs-pad);
+  scrollbar-width: none;
+}
+.bl-services-hscroll__viewport::-webkit-scrollbar { display: none; }
+.bl-services-hscroll__track {
+  list-style: none; display: flex; gap: clamp(1rem, 2vw, 1.5rem); width: max-content;
+  padding-inline: var(--hs-pad); will-change: transform;
+}
+.bl-services-hscroll__track:focus-visible { outline: 2px solid var(--focus-ring, var(--c-accent)); outline-offset: 4px; }
+.bl-services-hscroll__card {
+  flex: 0 0 clamp(272px, 29vw, 400px); scroll-snap-align: start;
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface);
+}
+.bl-services-hscroll__media { position: relative; overflow: hidden; height: clamp(200px, 32vh, 320px); background: var(--surface-2); }
+.bl-services-hscroll__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease-out); }
+.bl-services-hscroll__card:hover .bl-services-hscroll__media img { transform: scale(1.04); }
+.bl-services-hscroll__body { display: flex; flex-direction: column; flex: 1; padding: clamp(1.25rem, 2vw, 1.75rem); }
+.bl-services-hscroll__title {
+  font-family: var(--font-heading); font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking);
+  font-size: clamp(1.2rem, .7vw + 1rem, 1.5rem); line-height: 1.2; color: var(--text-strong); margin-bottom: .6rem;
+}
+.bl-services-hscroll__text { font-size: var(--fs-sm); color: var(--text); margin-bottom: 1.1rem; }
+.bl-services-hscroll__link { margin-top: auto; font-size: var(--fs-sm); }
+.bl-services-hscroll__link .arrow-icon { width: 1rem; height: 1rem; transition: transform var(--dur) var(--ease-out); }
+.bl-services-hscroll__link:hover .arrow-icon { transform: translateX(3px); }
+
+/* track-progress-fill: a hairline track under the row; the fill follows the row position */
+.bl-services-hscroll__bar { position: relative; height: 2px; margin-top: clamp(1.5rem, 3vw, 2.25rem); background: var(--border); overflow: hidden; }
+.bl-services-hscroll__fill { position: absolute; inset: 0; background: var(--c-accent); transform-origin: 0 50%; transform: scaleX(var(--hs-p, 0)); }
+
+/* wide screens with motion: section.js pins the block and moves the row with the scroll */
+.bl-services-hscroll.is-pinned .bl-services-hscroll__pin {
+  min-height: calc(100vh - var(--header-h)); display: flex; flex-direction: column; justify-content: center;
+  padding-block: clamp(1.5rem, 4vh, 3rem);
+}
+.bl-services-hscroll.is-pinned .bl-services-hscroll__viewport { overflow: hidden; scroll-snap-type: none; }
+.bl-services-hscroll.is-pinned .bl-head { margin-bottom: clamp(1.25rem, 3vh, 2.25rem); }
+
+/* qa_screenshot.py adds .bl-shot before element shots: lay the row out as a wrapping grid */
+.bl-shot .bl-services-hscroll__viewport { overflow: visible; }
+.bl-shot .bl-services-hscroll__track { width: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); transform: none !important; }
+.bl-shot .bl-services-hscroll__bar { display: none; }
+
+@media (max-width: 640px) {
+  .bl-services-hscroll__card { flex-basis: min(82vw, 320px); }
+  .bl-services-hscroll__media { height: 200px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bl-services-hscroll__media img { transition: none; }
+  .bl-services-hscroll__card:hover .bl-services-hscroll__media img { transform: none; }
+}

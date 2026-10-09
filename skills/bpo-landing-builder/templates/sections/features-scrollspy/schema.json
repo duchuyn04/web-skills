@@ -1,0 +1,21 @@
+{
+  "variant": "features-scrollspy",
+  "group": "features",
+  "forms": ["list-rows", "feature-split"],
+  "summary": "A long list of capabilities on the left, one name per row; a sticky panel on the right shows the photo and one or two lines about the row being read (after Intercom on Mobbin). As the reader scrolls, the row crossing the middle of the screen lights up, a dot slides to it and the panel cross-fades to its photo; clicking a row brings it to that line. Phones show each row's text and photo under its name. Use for 6-14 services, tools or capabilities that each have a real photo.",
+  "tone": "auto",
+  "anchor": "capabilities",
+  "animations": ["scrollspy-row-light", "spy-dot-slide", "spy-panel-crossfade", "reveal"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "items": {
+      "type": "list", "min": 6, "max": 14,
+      "item": {"type": "object", "fields": {
+        "title": {"type": "text", "min": 3, "max": 44},
+        "text": {"type": "text", "min": 40, "max": 200},
+        "photo": {"$ref": "photo"}
+      }}
+    },
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

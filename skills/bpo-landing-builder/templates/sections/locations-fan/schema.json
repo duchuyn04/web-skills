@@ -1,0 +1,22 @@
+{
+  "variant": "locations-fan",
+  "group": "locations",
+  "forms": ["cards-image"],
+  "summary": "Delivery centres as 2-4 flat cards, each topped by three photos of the place stacked like a small fan (after Cosmos on Mobbin): the main photo in front, two smaller ones peeking out behind it. On first view the back photos slide out from behind the front one; on hover or focus the front photo grows and the back ones tuck in. Under the photos: flag, city and country, a headcount or services line and an optional note. Needs three real photos per centre (the office, the street or city, a desk or room); for one photo per hub use country-cards.",
+  "tone": "auto",
+  "anchor": "locations",
+  "animations": ["reveal", "photo-stack-fan-in", "photo-stack-gather"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "cards": {"type": "list", "min": 2, "max": 4, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 2, "max": 28},
+      "country": {"type": "text", "min": 2, "max": 28, "required": false},
+      "flag": {"type": "flag", "required": false},
+      "line": {"type": "text", "min": 3, "max": 60, "required": false},
+      "text": {"type": "text", "min": 20, "max": 140, "required": false},
+      "href": {"type": "href", "required": false},
+      "photos": {"type": "list", "min": 3, "max": 3, "item": {"$ref": "photo"}}
+    }}},
+    "link": {"$ref": "cta", "required": false}
+  }
+}

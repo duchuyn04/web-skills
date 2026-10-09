@@ -1,0 +1,25 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}} bl-process-drop" data-sequence data-pdrop data-seed="{{site.brand}}">
+  <div class="bl-process-drop__pin" data-pd-pin>
+  <div class="bl-container bl-process-drop__grid">
+    <div class="bl-process-drop__side">
+      {{> head}}
+      <p class="bl-process-drop__count bl-mono" aria-hidden="true">
+        <span class="bl-process-drop__roll"><span class="bl-process-drop__digits" data-pd-digits>{{#steps}}<span>{{@num}}</span>{{/steps}}</span></span><span class="bl-process-drop__total" data-pd-total></span>
+      </p>
+      {{#cta}}<a class="bl-btn bl-btn--primary" href="{{href}}" data-reveal>{{label}}</a>{{/cta}}
+    </div>
+    <ol class="bl-process-drop__stage" data-pd-stage>
+      {{#steps}}
+      <li class="bl-process-drop__card" data-pd-card>
+        <div class="bl-process-drop__top">
+          <span class="bl-process-drop__label">{{#icon}}{{icon:$icon}}{{/icon}}{{label}}</span>
+          <span class="bl-process-drop__num bl-mono" aria-hidden="true">{{@num}}</span>
+        </div>
+        <h3 class="bl-process-drop__title">{{title}}</h3>
+        <p class="bl-process-drop__text">{{text}}</p>
+      </li>
+      {{/steps}}
+    </ol>
+  </div>
+  </div>
+</section>

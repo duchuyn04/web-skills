@@ -15,6 +15,7 @@ import random
 import re
 import shutil
 import sys
+import unicodedata
 from pathlib import Path
 
 for _s in (sys.stdout, sys.stderr):
@@ -50,13 +51,13 @@ TOP_KEYS = {"_note", "demo", "sample_content", "lang", "brief", "style", "layout
             "gift_cards", "promotions", "reviews", "trust", "policies", "faq", "home", "staff"}
 SECTION_TYPES = {
     "hero": "Opening block: title, text, booking and price buttons, nail art or a photo. Variants: split, stack, full, collage",
-    "story": "A short paragraph about the salon (salon.intro or text) with up to three facts from the brief",
-    "categories": "Service categories as cards with art, short intro and the lowest price",
-    "popular": "Services marked popular (or ids in `services`) as cards with price, time and a book button",
-    "price-list": "The full price list in tabs by category, with add-ons; `categories` limits which tabs",
-    "gallery": "Recent looks with tag filters and 'Đặt mẫu này'; `limit`, `tags`",
+    "story": "A short paragraph about the salon (salon.intro or text) with up to three facts from the brief. Variants: plain, ink (words ink in with the scroll)",
+    "categories": "Service categories as cards with art, short intro and the lowest price. Variants: grid, scroll (a row that moves sideways while the section is pinned), fan (three looks per card)",
+    "popular": "Services marked popular (or ids in `services`) as cards with price, time and a book button. Variants: grid, marquee (drifting rows of names, the look pops on hover)",
+    "price-list": "The full price list in tabs by category, with add-ons; `categories` limits which tabs. Variants: tabs, spy (one long list, the row being read shows its look in a sticky panel)",
+    "gallery": "Recent looks with tag filters and 'Đặt mẫu này'; `limit`, `tags`. Variants: grid, canvas (a board of looks to drag), checker (looks and tinted tiles that turn over)",
     "art-levels": "Nail art priced by level (art_levels)",
-    "trust": "Hygiene, products, warranty and timing promises (trust)",
+    "trust": "Hygiene, products, warranty and timing promises (trust). Variants: grid, drop (cards drop onto a pile while the section is pinned)",
     "team": "Technicians with title, specialties and branch",
     "reviews": "Rating summary and quotes (demo, or text given word for word in the brief)",
     "offers": "Packages, membership and gift cards side by side",
@@ -65,6 +66,14 @@ SECTION_TYPES = {
     "cta": "Closing band with the booking button, hotline and Zalo",
 }
 HERO_VARIANTS = ["split", "stack", "full", "collage"]
+# Motion variants of the other home sections (references/patterns.md, Motion); the first value is the plain layout.
+SECTION_VARIANTS = {"categories": ["grid", "scroll", "fan"], "popular": ["grid", "marquee"], "price-list": ["tabs", "spy"],
+                    "gallery": ["grid", "canvas", "checker"], "trust": ["grid", "drop"], "story": ["plain", "ink"]}
+FOOTER_VARIANTS = ["plain", "matrix"]
+# The LED dot panel in the footer is a brand flourish: only when the brief asks for it.
+MATRIX_RE = re.compile(r"dot[- ]?matrix|led|pixel|ma trận (chấm|điểm)|bảng (đèn )?led|chấm (led|sáng)|đèn led|"
+                       r"(logo|chữ|tên tiệm|tên thương hiệu) (thật |rất )?(lớn|to|cỡ lớn)|wordmark|large (logo|brand name)", re.I)
+NAME_STOP = {"nail", "nails", "art", "salon", "studio", "spa", "bar", "tiệm", "tiem", "house", "room", "the", "&", "và"}
 HEADER_VARIANTS = ["classic", "centered"]
 CARD_VARIANTS = ["line", "soft"]
 DAY_NAMES = {1: "Thứ 2", 2: "Thứ 3", 3: "Thứ 4", 4: "Thứ 5", 5: "Thứ 6", 6: "Thứ 7", 7: "Chủ nhật"}
@@ -477,14 +486,18 @@ def normalise(salon, ctx, base_dir):
         style = "warm-luxury"
     out["style"] = style
     lay = dict(STYLES[style])
+    lay["footer"] = "plain"
     for k, v in (salon.get("layout") or {}).items():
-        allowed = {"header": HEADER_VARIANTS, "hero": HERO_VARIANTS, "card": CARD_VARIANTS}.get(k)
+        allowed = {"header": HEADER_VARIANTS, "hero": HERO_VARIANTS, "card": CARD_VARIANTS, "footer": FOOTER_VARIANTS}.get(k)
         if not allowed:
-            ctx.err("layout." + k, "layout parts are header, hero and card")
+            ctx.err("layout." + k, "layout parts are header, hero, card and footer")
         elif v not in allowed:
             ctx.err("layout." + k, "use one of: " + ", ".join(allowed))
         else:
             lay[k] = v
+    if lay["footer"] == "matrix" and not MATRIX_RE.search(salon.get("brief") or ""):
+        ctx.err("layout.footer", "the dot-matrix footer (the salon's initials on a moving LED dot panel) is on, but the brief does not ask for it. "
+                "Owners read it as a decoration they did not order; use \"plain\" unless the brief asks for an LED or dot-matrix panel or a large logo.")
     out["layout"] = lay
 
     # salon
@@ -500,6 +513,9 @@ def normalise(salon, ctx, base_dir):
     need(ctx, s, "hotline", "salon", msg="Use \"[Hotline]\" until the client gives it.")
     info = dict(s)
     info["slug"] = slugify(name) or "salon"
+    # initials for the dot-matrix footer: the words of the name that are not the trade ("Mây Nail Studio" -> "M")
+    words = [w for w in re.split(r"[\s&,.]+", unicodedata.normalize("NFC", str(name))) if w and w.lower() not in NAME_STOP]
+    info["mark"] = "".join(w[0] for w in words[:2]).upper() or str(name)[:1].upper()
     for k in ("hotline", "zalo", "email"):
         if str(info.get(k, "")).startswith("["):
             ctx.warn("salon." + k, "placeholder left in the site: %s" % info[k])
@@ -771,6 +787,17 @@ def normalise(salon, ctx, base_dir):
             if sec.get("variant") and sec["variant"] not in HERO_VARIANTS:
                 ctx.err(p + ".variant", "use one of: " + ", ".join(HERO_VARIANTS))
             check_image(ctx, sec.get("image"), p + ".image", base_dir)
+        elif sec.get("variant") is not None:
+            allowed = SECTION_VARIANTS.get(t)
+            if not allowed:
+                ctx.err(p + ".variant", "section '%s' has one layout; remove variant. Sections with variants: %s" % (t, ", ".join(["hero"] + list(SECTION_VARIANTS))))
+            elif sec["variant"] not in allowed:
+                ctx.err(p + ".variant", "use one of: " + ", ".join(allowed))
+            elif t == "popular" and sec["variant"] == "marquee":
+                # with fewer names one row shows the same service twice on a wide screen
+                n_names = len(sec.get("services") or [s for s in salon.get("services") or [] if s.get("popular") and not s.get("hidden")])
+                if n_names < 6:
+                    ctx.err(p + ".variant", "the marquee needs 6 or more services and has %d: list 6 to 12 ids in `services` or use the grid" % n_names)
         empty = {"art-levels": not levels, "team": not techs, "reviews": not r, "offers": not (out["packages"] or out["membership"] or out["gift_cards"]),
                  "faq": not out["faq"], "trust": not out["trust"], "gallery": not gallery}
         if empty.get(t):
@@ -978,6 +1005,21 @@ def write_art(out, n, preset, salon):
             pics["look-" + g["id"]] = copy_media(out, salon["_dir"], g["image"])
         else:
             put("look-" + g["id"], nailart.tips(palette(g["art"]), seed=g["id"]))
+    # categories "fan": three looks per category card; categories with fewer looks get drawn ones in the category art
+    if any(sec["type"] == "categories" and sec.get("variant") == "fan" for sec in n["home"]):
+        svc_cat = {s["id"]: s["category"] for s in n["services"]}
+        for c in n["categories"]:
+            looks = ["look-" + g["id"] for g in n["gallery"] if svc_cat.get(g.get("service")) == c["id"]][:3]
+            art = c.get("art") or dict(nailart.DEFAULT_CATEGORY_ART["gel"])
+            if len(looks) < 3:
+                looks.append("cat-" + c["id"])
+            k = 0
+            while len(looks) < 3:
+                key = "fan-%s-%d" % (c["id"], k)
+                put(key, nailart.tips(palette(art), seed=key, count=3 + k))
+                looks.append(key)
+                k += 1
+            pics["fan-" + c["id"]] = [pics[x] for x in looks]
     for i, sec in enumerate(n["home"]):
         if sec["type"] == "hero":
             if sec.get("image"):
