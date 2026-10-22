@@ -54,6 +54,11 @@ These sit at the top of page.json, next to `sections`.
 - `override_hero`: object (optional)
   - `reference`: link
   - `reason`: text 20-300 chars
+- `pages`: list of 1-60 (optional), each item:
+  - `id`: text 2-40 chars
+  - `src`: text 6-120 chars
+  - `label`: text 2-40 chars
+  - `parent`: text 2-40 chars (optional)
 
 ## about-checker
 
@@ -958,9 +963,9 @@ Fields:
   - `label`: text 2-18 chars
   - `href`: link
   - `mega`: object (optional)
-    - `columns`: list of 2-3, each item:
+    - `columns`: list of 1-3, each item:
       - `heading`: text 3-28 chars
-      - `links`: list of 3-6, each item:
+      - `links`: list of 2-6, each item:
         - `label`: text 2-30 chars
         - `href`: link
     - `featured`: object (optional)
@@ -2311,6 +2316,30 @@ Fields:
   - `title`: text 3-32 chars
   - `text`: text 30-140 chars
 
+## list-columns
+
+Two to four columns of titled lists under a rule: what is included, what is not, what the client sends, what they receive. Each column picks its marker: a tick for what is in, a cross for what is out, a dot for neutral lists. Optional line under each column title and an optional note under the columns. Use on service pages for scope, inputs and outputs; plain text, no cards, no icons on every item.
+
+- Group: `features`. Default anchor: `#scope`. Tone: auto.
+- Built-in motion: reveal, pillar-rule-draw.
+- Allowed in: custom order only.
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `columns`: list of 2-4, each item:
+  - `title`: text 3-50 chars
+  - `text`: text 20-200 chars (optional)
+  - `marker`: one of check, cross, dot (optional, default "dot")
+  - `items`: list of 2-10 (each text 3-160 chars)
+- `note`: rich (optional)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+
 ## locations-fan
 
 Delivery centres as 2-4 flat cards, each topped by three photos of the place stacked like a small fan (after Cosmos on Mobbin): the main photo in front, two smaller ones peeking out behind it. On first view the back photos slide out from behind the front one; on hover or focus the front photo grows and the back ones tuck in. Under the photos: flag, city and country, a headcount or services line and an optional note. Needs three real photos per centre (the office, the street or city, a desk or room); for one photo per hub use country-cards.
@@ -2444,6 +2473,32 @@ Fields:
 - `logos`: list of 8-36, each item:
   - `name`: text 2-28 chars
   - `src`: image key or path (optional)
+
+## matrix-table
+
+A table of short text cells: a responsibility matrix (who prepares, reviews, approves and submits), a software and task matrix, a cost comparison laid out line by line, or a working-hours example. Heading above, the row names in the first column, 1-5 named columns, an optional note under the table (for example "Illustrative example, not a service promise"). On phones every row becomes a card with each cell under its column name. Use only for facts the brief gives; a cell that is not known yet is left out of the table, not filled with a guess.
+
+- Group: `compare`. Default anchor: `#matrix`. Tone: auto.
+- Built-in motion: reveal, row-stagger.
+- Allowed in: custom order only.
+
+Fields:
+
+- `head`: object
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `row_label`: text 2-40 chars
+- `columns`: list of 1-5, each item:
+  - `name`: text 2-40 chars
+- `rows`: list of 2-14, each item:
+  - `label`: text 2-80 chars
+  - `detail`: text 3-140 chars (optional)
+  - `cells`: list of 1-5 (each text 1-220 chars)
+- `note`: rich (optional)
+- `cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
 
 ## metrics-bars3d
 
@@ -2603,6 +2658,33 @@ Fields:
   - `label`: text 2-30 chars
   - `href`: link
 - `note`: text 20-160 chars (optional)
+
+## page-head
+
+Opening of an inner page of a site: breadcrumb trail, title, one lead paragraph, an optional line such as an effective date, and up to two buttons. With a photo it is a short full-width photo band under a brand shade (layout ground, the inner-page form of the photo hero) or a split with the photo in a rounded frame beside the copy (layout side); without a photo it is a plain tinted band. The breadcrumb is filled in from the site's page list. Use only on inner pages of a site.
+
+- Group: `hero`. Default anchor: `#top`. Tone: hero.
+- Built-in motion: reveal, page-head-settle.
+- Allowed in: custom order only.
+
+Fields:
+
+- `crumbs`: list of 2-5 (optional), each item:
+  - `label`: text 2-40 chars
+  - `href`: link (optional)
+- `eyebrow`: text 3-44 chars (optional)
+- `title`: text with *accent* 6-90 chars
+- `lead`: text 40-260 chars (optional)
+- `meta`: text 6-80 chars (optional)
+- `primary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `secondary_cta`: object (optional)
+  - `label`: text 2-30 chars
+  - `href`: link
+- `image`: image key or path (optional)
+- `image_alt`: text 5-140 chars (optional)
+- `layout`: one of ground, side (optional, default "ground")
 
 ## pillars-numbered
 
@@ -2785,6 +2867,36 @@ Fields:
     - `value`: text 1-10 chars
     - `label`: text 3-28 chars
   - `link`: object (optional)
+    - `label`: text 2-30 chars
+    - `href`: link
+
+## prose
+
+Long text for legal notices, policies, guides and articles: numbered blocks, each with a heading, paragraphs (with **bold** and [links](page.html)) and an optional list. With three or more blocks a table of contents sits in a sticky column on the left and marks the block being read; on phones it becomes a list above the text. An optional card under the contents gives a contact route. Use for text that is read, not scanned: keep marketing sections for marketing.
+
+- Group: `prose`. Default anchor: `#content`. Tone: auto.
+- Built-in motion: reveal, toc-spy.
+- Allowed in: custom order only.
+
+Fields:
+
+- `head`: object (optional)
+  - `eyebrow`: text 3-40 chars (optional)
+  - `title`: text with *accent* 6-80 chars
+  - `lead`: text 40-240 chars (optional)
+- `updated`: text 6-80 chars (optional)
+- `toc`: true/false (optional, default true)
+- `toc_label`: text 3-30 chars (optional, default "On this page")
+- `numbered`: true/false (optional, default false)
+- `blocks`: list of 1-16, each item:
+  - `id`: text 2-40 chars (optional)
+  - `title`: text 3-90 chars
+  - `paragraphs`: list of 0-8 (optional) (each rich 20-1200 chars)
+  - `bullets`: list of 2-12 (optional) (each rich 3-400 chars)
+- `aside`: object (optional)
+  - `title`: text 5-60 chars
+  - `text`: text 20-240 chars
+  - `cta`: object
     - `label`: text 2-30 chars
     - `href`: link
 

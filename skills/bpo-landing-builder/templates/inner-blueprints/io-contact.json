@@ -1,0 +1,47 @@
+{
+ "id": "io-contact",
+ "page_type": "contact",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/contact",
+  "collected": "2026-10-18"
+ },
+ "summary": "Split hero with a review card under the heading and a five-field form beside it, a red band with three review cards, a two-column FAQ of tinted boxes and an offices block. Needs three short reviews and four questions.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "pale tint: H1 and lead and a star-rated review left; right a white rounded form card with full name, work email, phone, company name, message, a red button and a consent line"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "deep red band: centered heading, three white cards (stars, quote, round portrait, name, firm) and an outline link"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "heading and four tinted boxes in two columns with plus icons"
+  },
+  {
+   "form": "locations-map",
+   "role": "locations",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "optional": true,
+   "note": "Find our locations: a block with office addresses"
+  }
+ ]
+}

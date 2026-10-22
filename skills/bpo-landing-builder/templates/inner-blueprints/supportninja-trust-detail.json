@@ -1,0 +1,29 @@
+{
+ "id": "supportninja-trust-detail",
+ "page_type": "trust-detail",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/security",
+  "collected": "2026-10-18"
+ },
+ "summary": "Plain security overview set as a single document: very large serif title, a strapline and fourteen numbered sections of short paragraphs and bullet lists in a narrow column. Needs numbered topics and a security contact email.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: huge serif H1 and a strapline directly on the ivory ground"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 14,
+   "media": "none",
+   "note": "single column about 800 px; numbered h3 headings (Overview, team, infrastructure, encryption, retention, continuity, monitoring, disclosure and others) each followed by a paragraph or bullets; a version line near the end; no contents list, no sidebar"
+  }
+ ]
+}

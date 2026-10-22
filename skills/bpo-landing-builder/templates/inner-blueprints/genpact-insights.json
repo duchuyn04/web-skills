@@ -1,0 +1,29 @@
+{
+ "id": "genpact-insights",
+ "page_type": "insights",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/insight",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark insight library: split head with a featured item, Filter and Sort controls and a four-column grid of 16 tagged cards with a numbered pager. Suits large content libraries.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; dark; breadcrumb, H1 and a lead left; rounded featured card right with a caption and link"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "dark",
+   "cols": 4,
+   "count": 16,
+   "media": "top",
+   "note": "(measured as filter-grid) Filter and Sort pills right aligned; four columns of 16 cards with a photo or illustration, a white tag (Point of view, Report) and a title; pager with ten pages"
+  }
+ ]
+}

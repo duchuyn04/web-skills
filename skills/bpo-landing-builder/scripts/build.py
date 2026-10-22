@@ -327,23 +327,28 @@ class Ctx:
         self.lib = lib
         self.images = {}
         self.anchors = []
+        self.page_links = []  # (path, "page.html#id") links to other pages of a site
         self.placeholders = []
         self.soft = False
+        self.prefix = ""  # "pages/payroll.json: " while a site's inner page builds
 
     def err(self, path, msg):
         if self.soft:
-            self.warnings.append("%s: [rules %s, not enforced] %s" % (path, self.soft, msg))
+            self.warnings.append("%s%s: [rules %s, not enforced] %s" % (self.prefix, path, self.soft, msg))
         else:
-            self.errors.append("%s: %s" % (path, msg))
+            self.errors.append("%s%s: %s" % (self.prefix, path, msg))
 
     def warn(self, path, msg):
-        self.warnings.append("%s: %s" % (path, msg))
+        self.warnings.append("%s%s: %s" % (self.prefix, path, msg))
 
 
 PLACEHOLDER_RE = re.compile(r"^\[[^\]]{1,40}\]$")
 MARKUP_RE = re.compile(r"\*([^*]+)\*")
 BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
-HREF_RE = re.compile(r"^(#[A-Za-z][\w-]*|#|https?://\S+|mailto:\S+|tel:[+\d][\d\s-]*|[\w./-]+\.(html|pdf))$")
+HREF_RE = re.compile(r"^(#[A-Za-z][\w-]*|#|https?://\S+|mailto:\S+|tel:[+\d][\d\s-]*|[\w./-]+\.(html|pdf)|[\w./-]+\.html#[A-Za-z][\w-]*)$")
+PAGE_LINK_RE = re.compile(r"^([\w-]+\.html)(?:#([A-Za-z][\w-]*))?$")
+# "rich" text: a paragraph that may carry **bold** and links written as [label](href) (prose sections, legal pages)
+RICH_LINK_RE = re.compile(r"\[([^\[\]]{1,80})\]\(([^()\s]+)\)")
 HEX_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
 
 
@@ -386,6 +391,26 @@ def validate(ctx, value, spec, path):
             esc = BOLD_RE.sub(r"<strong>\1</strong>", html.escape(value, quote=False))
             return Safe(MARKUP_RE.sub(r'<span class="bl-hl">\1</span>', esc))
         return value
+    if t == "rich":
+        if not isinstance(value, str):
+            ctx.err(path, "must be a string, got %s" % type(value).__name__)
+            return ""
+        value = value.strip()
+        words = RICH_LINK_RE.sub(r"\1", value)
+        n = text_len(words)
+        lo, hi = spec.get("min", 1), spec.get("max", 1200)
+        if n < lo:
+            ctx.err(path, "too short (%d chars, minimum %d). Write a fuller paragraph." % (n, lo))
+        if n > hi:
+            ctx.err(path, "too long (%d chars, maximum %d). Split it into two paragraphs." % (n, hi))
+        if BOLD_RE.sub("", words).count("*"):
+            ctx.err(path, "only **bold** markup is allowed in a paragraph; remove the single '*'.")
+        check_copy(ctx, path, words)
+        for label, href in RICH_LINK_RE.findall(value):
+            validate(ctx, href, {"type": "href"}, path + " link " + repr(label))
+        out = BOLD_RE.sub(r"<strong>\1</strong>", html.escape(value, quote=False))
+        out = RICH_LINK_RE.sub(lambda m: '<a class="bl-inline-link" href="%s">%s</a>' % (html.escape(html.unescape(m.group(2)), quote=True), m.group(1)), out)
+        return Safe(out)
     if t == "number":
         if isinstance(value, bool) or not isinstance(value, (int, float)):
             ctx.err(path, "must be a number (no quotes, no units). Put units in prefix/suffix fields.")
@@ -432,9 +457,12 @@ def validate(ctx, value, spec, path):
         if not isinstance(value, str) or not HREF_RE.match(value.strip()):
             ctx.err(path, "invalid link %r. Use \"#section-id\", \"https://...\", \"mailto:...\" or \"tel:...\"." % value)
             return "#"
+        value = value.strip()
         if value.startswith("#") and len(value) > 1:
             ctx.anchors.append((path, value[1:]))
-        return value.strip()
+        elif PAGE_LINK_RE.match(value):
+            ctx.page_links.append((path, value))  # checked against the site's pages when page.json lists "pages"
+        return value
     if t == "image":
         return resolve_image(ctx, value, path)
     if t == "video":
@@ -627,9 +655,12 @@ def load_library():
     images = {p.stem: p for p in sorted(IMAGES_DIR.glob("*")) if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp", ".svg")}
     videos = {p.stem: p for p in sorted((TPL / "assets" / "video").glob("*")) if p.suffix.lower() in (".mp4", ".webm")}
     blueprints = {p.stem: load_json(p) for p in sorted((TPL / "blueprints").glob("*.json"))} if (TPL / "blueprints").is_dir() else {}
+    inner = TPL / "inner-blueprints"
+    inner_blueprints = {p.stem: load_json(p) for p in sorted(inner.glob("*.json"))} if inner.is_dir() else {}
     return {"icons": icons, "flags": flags, "cities": cities, "presets": presets,
             "archetypes": {k: v for k, v in archetypes.items() if not k.startswith("_")},
-            "variants": variants, "images": images, "videos": videos, "blueprints": blueprints}
+            "variants": variants, "images": images, "videos": videos, "blueprints": blueprints,
+            "inner_blueprints": inner_blueprints}
 
 
 def resolve_refs(node, defs):
@@ -815,7 +846,7 @@ def theme_css(preset, overrides, ctx):
         accent2_ink = ensure_contrast(a2, grounds, 3.0)
         border_strong = to_hex(mix(bg, strong, 0.22 if not dark else 0.28))
         border_input = ensure_contrast(parse_hex(border_strong), [bg, surf], 3.0)
-        focus = ensure_contrast(accent, [bg, surf], 3.0)
+        focus = ensure_contrast(accent, grounds, 3.0)
         lines += [".bl-tone-%s {" % tone,
                   "  color-scheme: %s;" % ("dark" if dark else "light"),
                   "  --bg: %s;" % vals["bg"],
@@ -1407,7 +1438,7 @@ def check_photos(ctx, sections, override=None):
             % (len(with_photo), len(body), need, ("Sections that take a photo: " + "; ".join(tips)) if tips else "Swap a text-only section for a photo variant (feature-rows, image-cards, services-tabs, banner-image, case-slider)"))
 
 
-def check_design(ctx, sections, site, preset, theme, photos_override=None):
+def check_design(ctx, sections, site, preset, theme, photos_override=None, home=True):
     heads, accented, icon_sections = [], [], []
     for s in sections:
         d = s["data"] if isinstance(s["data"], dict) else {}
@@ -1416,7 +1447,8 @@ def check_design(ctx, sections, site, preset, theme, photos_override=None):
         if g == "hero":
             title_h, lead = _hero_copy(d)
             text = plain(lead or title_h or title or "")
-            if site.get("brand") and site["brand"].lower() not in text.lower():
+            # the brand opens the first screen of the site; an inner page names its subject instead
+            if home and site.get("brand") and site["brand"].lower() not in text.lower():
                 ctx.err(s["path"] + ".data.lead", "the hero lead does not name the company. Start it with \"%s\" so the first screen could not belong to another brand (references/anti-slop.md)." % site["brand"])
             if s["type"] in TIMER_VARIANTS:
                 ctx.warn(s["path"], "%s advances on a timer, so %s is hidden most of the time. Put anything a buyer must read in the lead as well." % (s["type"], TIMER_VARIANTS[s["type"]]))
@@ -1592,7 +1624,8 @@ def check_voice(ctx, sections, lang, bp=None):
             ctx.warn("sections", "no section heading is a short label. A third of real BPO headings are 1-4 word labels (\"Our services\", \"Case studies\", \"Awards and certifications\"); a page where every heading is a crafted sentence reads as AI-written.")
     types = {s["type"] for s in sections}
     # a blueprint without a metrics or awards slot (IRIS) cannot take one, so the warning would only nag
-    bp_room = bp is None or any(x.get("role") in ("metrics", "awards") for x in bp.get("sections", []))
+    # (an inner page of a site, with "page_type", is not a homepage: it shows figures only where its layout has room)
+    bp_room = bp is None or (not bp.get("page_type") and any(x.get("role") in ("metrics", "awards") for x in bp.get("sections", [])))
     if bp_room and not types & {"metrics-counter", "metrics-panel", "metrics-rings", "metrics-bars3d", "metrics-tiles", "compliance-badges"}:
         ctx.warn("sections", "the page has no metrics or certification section. 58% of real BPO homepages show big numbers (staff, clients, years) and many show certifications; if the brief has such figures, add metrics-counter or compliance-badges.")
     riders = sum(t.count(", with ") for t in all_strings(sections))
@@ -1750,6 +1783,20 @@ def check_hero_ground(ctx, sections, top):
     ctx.err(hero["path"] + ".type", "%s has no photo or video behind the copy. Clients rated every such hero (cards over a photo, service cards, globes, forms, 3D objects) as template work. Use hero-fullbleed with the client's photo, or a film of their photos made with python scripts/make_film.py <page.json> loop, or hero-mosaic with 6 or more of their photos. Another hero only when the client picks it: \"override_hero\": {\"reference\": ..., \"reason\": ...}." % hero["type"])
 
 
+def check_page_head(ctx, sections):
+    """An inner page of a site opens with page-head (breadcrumb, title, lead) or a photo hero, the way inner pages of
+    real BPO sites open with a short header band under the menu."""
+    body = [s for s in sections if s["variant"].get("group") not in CHROME_GROUPS]
+    if not body:
+        return
+    first = body[0]
+    if first["type"] != "page-head" and first["type"] not in PHOTO_GROUND and not first["type"].startswith("custom:"):
+        ctx.err(first["path"] + ".type", "an inner page opens with page-head (breadcrumb, title, lead, optional photo) or a photo hero, not %s. Visitors arriving from search land here first, so the page says where they are before anything else." % first["type"])
+    for s in body[1:]:
+        if s["variant"].get("group") == "hero":
+            ctx.err(s["path"] + ".type", "%s is a page opening; a page has one, at the top." % s["type"])
+
+
 def hero_look(sections):
     """What makes two photo heroes look different: the variant, the layout, the alignment, a film or a still,
     and the photo itself."""
@@ -1825,6 +1872,25 @@ ROLE_GROUPS = {
     "pricing": {"pricing", "compare", "calculator"},
     "compare": {"compare", "pricing"},
     "tools": {"tools", "logos"},
+    # inner pages of a site (templates/inner-blueprints/)
+    "scope": {"features", "services", "compare"},
+    "related": {"services", "cards", "features"},
+    "legal-text": {"prose"},
+    "toc": {"prose"},
+    "article": {"prose"},
+    "policies": {"prose", "features", "cards"},
+    "overview": {"about", "intro", "features", "prose"},
+    "guide-contents": {"features", "about", "prose", "cards"},
+    "controls": {"features", "compliance", "faq", "compare"},
+    "trust-topics": {"features", "compliance", "services", "cards", "solutions"},
+    "certifications": {"compliance", "awards"},
+    "resources": {"cards", "proof"},
+    "contact-details": {"cta", "locations"},
+    "page-head": {"hero"},
+    "reasons": {"about", "features", "services", "cards"},
+    "values": {"about", "features", "intro"},
+    "history": {"about", "intro", "features"},
+    "jobs": {"careers", "cards", "compare"},
 }
 # Heroes built around the client's own work (a call card in its languages, its paperwork, a support chat, its real
 # service panels). They may stand in for a blueprint's hero composition when they fit the business.
@@ -1836,7 +1902,9 @@ BUSINESS_HEROES = {"hero-voice", "hero-ledger", "hero-chat", "hero-dashboard", "
 # sundial) as template work and kept only full photo grounds, turning them into HyperFrames films of their photos.
 PHOTO_GROUND = {"hero-fullbleed", "hero-mosaic"}
 # Sections that need the client's own proof are left out when the brief has none, whatever the blueprint says
-PROOF_ROLES = {"testimonial", "cases", "clients", "awards", "news", "team", "careers", "locations"}
+PROOF_ROLES = {"testimonial", "cases", "clients", "awards", "news", "team", "careers", "locations",
+               # named tools and certificates are the client's facts too: a page without them leaves the slot out
+               "tools", "certifications"}
 
 
 def slot_optional(slot):
@@ -1844,7 +1912,8 @@ def slot_optional(slot):
 
 
 # Forms whose shape already says what they hold: any variant of the form fits, whatever the slot's role
-FORM_LED = {"metrics", "logo-strip", "faq-accordion", "testimonial-block", "form", "locations-map", "video-block", "icon-strip", "cta-band"}
+FORM_LED = {"metrics", "logo-strip", "faq-accordion", "testimonial-block", "form", "locations-map", "video-block", "icon-strip", "cta-band",
+            "page-head", "prose", "table", "list-columns"}
 
 
 def slot_accepts(slot, variant):
@@ -1864,10 +1933,12 @@ def fitting_variants(slot, lib):
     return [k for k, v in lib["variants"].items() if slot_accepts(slot, v)]
 
 
-def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override=None):
+def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override=None, inner=False):
     """Match the page's content sections to the blueprint's slots, in order. Optional slots may be left out.
     hero_override (page "override_hero"): the client picked a hero from another real site, so any hero variant fills
-    the blueprint's hero slot; the rest of the page still follows the blueprint."""
+    the blueprint's hero slot; the rest of the page still follows the blueprint.
+    inner: an inner page of a site follows an inner blueprint; the homepage counts (5 sections, a services section)
+    do not apply, since a legal notice or a contact page is short on real sites too."""
     slots = bp["sections"]
     body = [s for s in sections if s["variant"].get("group") not in CHROME_GROUPS]
     j = 0
@@ -1901,7 +1972,7 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override
         forms_seen.add(slots[k]["form"])
         want = slots[k].get("count")
         lists = [(n, f) for n, f in s["variant"].get("fields", {}).items() if isinstance(f, dict) and f.get("type") == "list" and isinstance(f.get("item"), dict) and f["item"].get("type") == "object"]
-        if want and lists:
+        if want and lists and slots[k]["form"] != "prose":  # the length of a text depends on the facts, not the layout
             name, spec = max(lists, key=lambda x: x[1].get("max", 0))
             have = len(s["data"].get(name) or [])
             target = max(spec.get("min", 0), min(want, spec.get("max", want)))
@@ -1915,6 +1986,8 @@ def check_blueprint(ctx, bp, bp_key, sections, lib, motion="calm", hero_override
     for m in range(j, len(slots)):
         if not slot_optional(slots[m]) and slots[m]["role"] not in roles_seen and slots[m]["form"] not in forms_seen:
             ctx.err("sections", "blueprint %r ends with a %s section (%s) that the page does not have. Use one of: %s." % (bp_key, slots[m]["role"], slots[m]["form"], ", ".join(fitting_variants(slots[m], lib)) or "a custom section"))
+    if inner:
+        return
     if len(body) < 5:
         ctx.err("sections", "the page has %d content sections; real BPO homepages have 5-14. Pick a blueprint whose sections the brief can fill, not the shortest one." % len(body))
     if not any((s.get("bp_slot") or {}).get("role") == "services" for s in body):
@@ -2043,6 +2116,32 @@ PAGE_SPEC = {
             "reason": {"type": "text", "min": 20, "max": 300},
         }},
         "sections": {"type": "list", "min": 4, "max": 24, "item": {"type": "object", "fields": {}}},
+        # A website: this page.json is the home page (index.html) and each entry adds an inner page built from its own
+        # file (references/site-builds.md). The header and footer of this page appear on every page.
+        "pages": {"type": "list", "min": 1, "max": 60, "required": False, "item": {"type": "object", "fields": {
+            "id": {"type": "text", "min": 2, "max": 40},
+            "src": {"type": "text", "min": 6, "max": 120},
+            "label": {"type": "text", "min": 2, "max": 40},
+            "parent": {"type": "text", "min": 2, "max": 40, "required": False},
+        }}},
+    }
+}
+
+# The fields of an inner page file (pages/<id>.json); everything else comes from the site's page.json.
+INNER_SPEC = {
+    "fields": {
+        "blueprint": {"type": "text", "min": 2, "max": 60, "required": False},
+        "title": {"type": "text", "min": 20, "max": 70},
+        "description": {"type": "text", "min": 70, "max": 170},
+        "seo": {"type": "object", "required": False, "fields": {
+            "image": {"type": "image", "required": False},
+            "image_alt": {"type": "text", "min": 10, "max": 120, "required": False},
+            "index": {"type": "bool", "required": False},
+        }},
+        "override_photos": {"type": "object", "required": False, "fields": {
+            "reason": {"type": "text", "min": 20, "max": 300},
+        }},
+        "sections": {"type": "list", "min": 1, "max": 20, "item": {"type": "object", "fields": {}}},
     }
 }
 
@@ -2091,7 +2190,21 @@ def main():
     if any((out_dir / n).exists() for n in ("assets", "index.html")) and not (out_dir / "build-report.json").exists():
         print("ERROR --out: %s already has assets/ or index.html that this build did not make; pick an empty folder or a previous build" % out_dir)
         return 1
-    ctx = Ctx(page_path.parent, out_dir, lib)
+    if "pages" in page:
+        import site_build
+        return site_build.build_site(sys.modules[__name__], page, page_path, out_dir, lib)
+    ok, _ = build_page(page, page_path, out_dir, lib)
+    return 0 if ok else 1
+
+
+def build_page(page, page_path, out_dir, lib, spage=None):
+    """Check and render one page. spage is None for a single page; for a page of a website (page.json lists "pages")
+    scripts/site_build.py passes a dict: kind ("home" or "inner"), id, file (output name), home (href of the home
+    page), prefix (for messages), page_dir (where image paths resolve), prev_seo, crumbs. Returns (ok, info)."""
+    inner = bool(spage) and spage["kind"] == "inner"
+    ctx = Ctx(spage["page_dir"] if spage else page_path.parent, out_dir, lib)
+    if spage:
+        ctx.prefix = spage["prefix"]
 
     # Top level (sections are validated one by one below).
     raw_sections = page.get("sections", [])
@@ -2122,8 +2235,13 @@ def main():
     # Sections.
     sections = []
     ids = {}
+    block_ids = set()  # link targets inside sections (prose blocks)
     for i, sec in enumerate(raw_sections):
         p = "sections[%d]" % i
+        if spage and spage.get("chrome"):
+            # an inner page: the shared header and footer come from page.json, the rest from the page's own file
+            top_n, total = spage["chrome"]
+            p = ("page.json %s" % sec.get("type")) if i < top_n or i >= len(raw_sections) - total + top_n else "sections[%d]" % (i - top_n)
         if not isinstance(sec, dict) or "type" not in sec:
             ctx.err(p, "each section needs {\"type\": ..., \"data\": {...}}")
             continue
@@ -2170,6 +2288,25 @@ def main():
                     v["first"] = ci == 0
                     v["mark_icon"] = icons.get(v.get("mark"), "minus")
                     v["mark_label"] = data.get("%s_label" % v.get("mark"), "")
+        if t in ("header-mega", "header-simple"):
+            data["nav_long"] = len(data.get("links") or []) >= 6
+        if t == "matrix-table":
+            cols = data.get("columns") or []
+            data["col_count"] = len(cols)
+            for ri, row in enumerate(data.get("rows") or []):
+                cells = row.get("cells") or []
+                if len(cells) != len(cols):
+                    ctx.err("%s.data.rows[%d].cells" % (p, ri), "has %d cells but the table has %d columns. Give one cell per column, in column order; leave a row out rather than guess a cell." % (len(cells), len(cols)))
+                row["cell_list"] = [{"text": c, "col": cols[ci]["name"] if ci < len(cols) else ""} for ci, c in enumerate(cells)]
+        if t == "list-columns":
+            data["col_count"] = len(data.get("columns") or [])
+            for col in data.get("columns") or []:
+                col["marker_is_%s" % col.get("marker", "dot")] = True
+        if t == "page-head":
+            if data.get("secondary_cta") and not data.get("primary_cta"):
+                ctx.err(p + ".data.secondary_cta", "a second button needs a first one; move it to primary_cta")
+            if data.get("image") and data.get("layout") == "side" and not data.get("image_alt"):
+                ctx.err(p + ".data.image_alt", "the side photo is content: say what it shows (\"Two accountants checking a ledger at a desk\")")
         if t == "tool-stack":
             for tool in data.get("tools") or []:
                 m = re.search(r"\w", tool.get("name", ""))
@@ -2219,6 +2356,19 @@ def main():
             sid = "%s-%d" % (sid, ids[sid])
         else:
             ids[sid] = 1
+        if t == "prose":
+            # each block is a link target (privacy.html#cookies) and a contents entry
+            for bi, block in enumerate(data.get("blocks") or []):
+                anchor = block.get("id") or "%s-%d" % (sid, bi + 1)
+                if not re.fullmatch(r"[a-z][a-z0-9-]*", anchor):
+                    ctx.err("%s.data.blocks[%d].id" % (p, bi), "lowercase letters, digits and hyphens, starting with a letter")
+                if anchor in ids or anchor in block_ids:
+                    ctx.err("%s.data.blocks[%d].id" % (p, bi), "%r is already the id of another section or block" % anchor)
+                block_ids.add(anchor)
+                block["anchor"] = anchor
+                if not block.get("paragraphs") and not block.get("bullets"):
+                    ctx.err("%s.data.blocks[%d]" % (p, bi), "give the block paragraphs, bullets or both")
+            data["show_toc"] = bool(data.get("toc")) and len(data.get("blocks") or []) >= 3
         tone_override = sec.get("tone")
         if tone_override is not None and tone_override not in ("light", "muted", "dark"):
             ctx.err(p + ".tone", "must be light, muted or dark")
@@ -2228,19 +2378,21 @@ def main():
     legacy = rules_pin(ctx, top, out_dir)
     ctx.soft = legacy
     bp_key = top.get("blueprint")
-    bp = lib["blueprints"].get(bp_key) if bp_key else None
+    # an inner page of a site follows a measured inner page (templates/inner-blueprints/), the home page a homepage
+    bps = lib["inner_blueprints"] if inner else lib["blueprints"]
+    bp = bps.get(bp_key) if bp_key else None
     if bp_key and not bp:
-        ctx.err("page.blueprint", "unknown blueprint %r. Choose one of: %s" % (bp_key, ", ".join(lib["blueprints"])))
+        ctx.err("page.blueprint", "unknown %sblueprint %r. Choose one of: %s" % ("inner page " if inner else "", bp_key, ", ".join(bps)))
     if bp:
-        check_blueprint(ctx, bp, bp_key, sections, lib, top.get("motion", "calm"), top.get("override_hero"))
-    elif archetype and not top.get("override_order"):
+        check_blueprint(ctx, bp, bp_key, sections, lib, top.get("motion", "calm"), top.get("override_hero"), inner=inner)
+    elif archetype and not top.get("override_order") and not inner:
         check_order(ctx, archetype, raw_sections if isinstance(raw_sections, list) else [], lib)
     elif top.get("override_order"):
         ctx.warn("page.override_order", "archetype order check skipped: %s" % top["override_order"]["reason"])
 
-    check_brand_colors(ctx, top, page_path.parent, brief, page.get("site"))
+    check_brand_colors(ctx, top, ctx.page_dir, brief, page.get("site"))
     check_voice(ctx, sections, top.get("lang", "en"), bp)
-    check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {}, top.get("override_photos"))
+    check_design(ctx, sections, top.get("site") or {}, preset or {}, top.get("theme") or {}, top.get("override_photos"), home=not inner)
     check_figures(ctx, sections)
     check_images(ctx, sections)
     check_stock_photos(ctx, raw_sections, (top.get("site") or {}).get("brand"))
@@ -2255,27 +2407,35 @@ def main():
         check_named_faces(ctx, raw_sections)
         if brief:
             check_numbers(ctx, sections, brief)
-        if not top.get("blueprint") and lib["blueprints"]:
-            ctx.err("page.blueprint", "add \"blueprint\": \"<key>\": every page follows the layout of one real site. List the ones that fit with: python scripts/variety.py --blueprints %s --sites sites" % (arch_key or "<archetype>"))
+        if not top.get("blueprint") and bps:
+            if inner:
+                ctx.err("page.blueprint", "add \"blueprint\": \"<key>\": every inner page follows the layout of a real inner page of the same kind. List them with: python scripts/variety.py --inner-blueprints")
+            else:
+                ctx.err("page.blueprint", "add \"blueprint\": \"<key>\": every page follows the layout of one real site. List the ones that fit with: python scripts/variety.py --blueprints %s --sites sites" % (arch_key or "<archetype>"))
         if not brief:
             ctx.err("page.brief", "add the client's brief, word for word as they gave it, as \"brief\": \"...\" at the top of page.json. The build checks every client name, quote, certification, tool, guarantee and figure on the page against it.")
         else:
             check_evidence(ctx, sections, brief)
-        check_variety(ctx, page, page_path)
         check_motion(ctx, sections, archetype, lib, top.get("motion", "calm"), brief or "")
-        check_hero_ground(ctx, sections, top)
-        check_unique_hero(ctx, page, page_path, sections, archetype, lib, top.get("motion", "calm"))
-        check_unique_blueprint(ctx, page, page_path, arch_key, lib)
+        if inner:
+            check_page_head(ctx, sections)
+        else:
+            check_variety(ctx, page, page_path)
+            check_hero_ground(ctx, sections, top)
+            check_unique_hero(ctx, page, page_path, sections, archetype, lib, top.get("motion", "calm"))
+            check_unique_blueprint(ctx, page, page_path, arch_key, lib)
     ctx.soft = False
     seo.check(ctx, top, sections, SKILL / "examples" in page_path.parents)
 
     for path, anchor in ctx.anchors:
-        if anchor not in ids and anchor != "top":
+        if anchor not in ids and anchor not in block_ids and anchor != "top":
             ctx.err(path, "link points to #%s but no section has that id. Section ids on this page: %s" % (anchor, ", ".join(ids)))
 
+    info = {"ids": list(ids) + sorted(block_ids), "page_links": ctx.page_links, "errors": ctx.errors, "warnings": ctx.warnings,
+            "placeholders": ctx.placeholders, "types": [s["type"] for s in sections if s["variant"].get("group") not in CHROME_GROUPS]}
     if ctx.errors:
         report(ctx, failed=True)
-        return 1
+        return False, info
 
     # Tones.
     hero_tone = preset["hero_tone"]
@@ -2285,6 +2445,8 @@ def main():
         bp_tone = (s.get("bp_slot") or {}).get("tone")
         if s["tone_override"]:
             tone = s["tone_override"]
+        elif s["type"] == "page-head" and s["data"].get("image") and s["data"].get("layout") == "ground":
+            tone = "dark"  # copy over the client's photo under the brand shade, whatever the blueprint slot says
         elif bp_tone and mode in ("auto", "hero", "light", "muted", "dark") and s["type"] not in PHOTO_GROUND:
             tone = bp_tone
         elif mode == "hero" or mode == "header":
@@ -2323,10 +2485,14 @@ def main():
         if v["_dir"] not in [u["_dir"] for u in used_variants]:
             used_variants.append(v)
         section_ctx = {"section": {"id": s["id"], "tone": s["tone"], "type": s["type"], "hero_tone": hero_tone},
-                       "site": site, "features": features, "page": {"lang": top["lang"]}}
+                       "site": site, "features": features,
+                       "page": {"lang": top["lang"], "home": spage["home"] if spage else "#top"}}
         markup = renderer.render_file(v["_dir"] / "section.html", [section_ctx, s["data"]]).strip()
         if not re.match(r'<(section|header|footer|div|aside|dialog)\b[^>]*\bid="%s"' % re.escape(s["id"]), markup):
             ctx.err(s["path"], "template bug: the root element of %s must carry id=\"{{section.id}}\"" % s["type"])
+        if spage and v.get("group") in ("header", "footer"):
+            # the menu marks the page being read, so a visitor sees where they are in the site
+            markup = re.sub(r'(<a\b[^>]*\bhref="%s")' % re.escape(spage["file"]), r'\1 aria-current="page"', markup)
         body.append((v.get("group", "content"), markup))
 
     css = [theme_css(preset, top.get("theme") or {}, ctx), (TPL / "base.css").read_text(encoding="utf-8")]
@@ -2365,13 +2531,25 @@ def main():
     root_class = " ".join(["bl-eyebrow-%s" % eyebrow, "bl-edges-%s" % design["edges"], "bl-mask-%s" % design["image_mask"],
                            "bl-hl-%s" % design["highlight"], "bl-media-%s" % design["media_reveal"],
                            "bl-motion-%s" % motion_style(theme, preset, site["seed"])])
-    try:
-        prev_report = json.loads((out_dir / "build-report.json").read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        prev_report = None
-    seo_head, seo_files, seo_record = seo.build(ctx, top, site, sections, body, preset, ctx.placeholders, prev_report)
+    if spage:
+        prev_report = {"seo": spage.get("prev_seo") or {}}
+    else:
+        try:
+            prev_report = json.loads((out_dir / "build-report.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            prev_report = None
+    share_fallback = None
+    if spage and spage.get("share_image"):
+        # a page of a site without a photo of its own shares the home page's picture
+        share_fallback = (resolve_image(ctx, spage["share_image"][0], "page.json seo.image"), spage["share_image"][1])
+    seo_head, seo_files, seo_record = seo.build(ctx, top, site, sections, body, preset, ctx.placeholders, prev_report,
+                                                crumbs=(spage or {}).get("crumbs"), in_site=bool(spage),
+                                                share_fallback=share_fallback)
+    slug = spage["id"] if spage else None
+    assets = {"css": "assets/css/%s.css" % slug if slug else "assets/css/style.css",
+              "js": "assets/js/%s.js" % slug if slug else "assets/js/main.js"}
     shell = {"root_class": root_class, "lang": top["lang"], "site": site, "preset": preset, "fonts_query": preset["fonts"]["google"],
-             "body": Safe(assemble_body(body)), "hero_tone": hero_tone, "seo_head": Safe(seo_head)}
+             "body": Safe(assemble_body(body)), "hero_tone": hero_tone, "seo_head": Safe(seo_head), "assets": assets}
     page_html = renderer.render_file(TPL / "page.html", [shell])
     page_html = re.sub(r"<!--.*?-->", "", page_html, flags=re.S)
     page_html = re.sub(r"\n\s*\n+", "\n", page_html)
@@ -2385,9 +2563,30 @@ def main():
         ctx.err("sections", "the page's own JavaScript is %d KB (limit %d KB, vendor files not counted). Use fewer script-heavy sections."
                 % (own_js // 1024, OWN_JS_LIMIT // 1024))
 
+    info["errors"] = ctx.errors
     if ctx.errors:
         report(ctx, failed=True)
-        return 1
+        return False, info
+
+    if spage:
+        # A page of a site: site_build.py cleared the folder once and writes sitemap.xml, robots.txt and the report.
+        for sub in ("css", "js", "img"):
+            (out_dir / "assets" / sub).mkdir(parents=True, exist_ok=True)
+        (out_dir / spage["file"]).write_text(page_html, encoding="utf-8")
+        css_text = re.sub(r"/\*.*?\*/", "", "\n".join(css), flags=re.S)
+        (out_dir / assets["css"]).write_text(re.sub(r"\n\s*\n+", "\n", css_text), encoding="utf-8")
+        (out_dir / assets["js"]).write_text("\n".join(js), encoding="utf-8")
+        for rel, src in ctx.images.items():
+            (out_dir / rel).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src, out_dir / rel)
+        for rel, text in seo_files.items():
+            if rel not in ("robots.txt", "sitemap.xml"):
+                (out_dir / rel).write_bytes(text if isinstance(text, bytes) else text.encode("utf-8"))
+        info.update({"seo": seo_record, "legacy": legacy, "archetype": arch_key, "preset": top["preset"],
+                     "motion_style": re.search(r"bl-motion-(\w+)", root_class).group(1),
+                     "sections": [{"type": s["type"], "id": s["id"], "tone": s["tone"], "group": s["variant"].get("group")} for s in sections]})
+        report(ctx, failed=False)
+        return True, info
 
     # Write.
     if out_dir.exists():
@@ -2414,7 +2613,7 @@ def main():
     (out_dir / "build-report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
     report(ctx, failed=False)
     print("OK built %d sections into %s" % (len(sections), out_dir / "index.html"))
-    return 0
+    return True, info
 
 
 def shared_for_data(v, datas):

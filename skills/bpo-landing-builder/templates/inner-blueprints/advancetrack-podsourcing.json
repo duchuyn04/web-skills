@@ -1,0 +1,101 @@
+{
+ "id": "advancetrack-podsourcing",
+ "page_type": "engagement-models",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/podsourcing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A named delivery model explained in ten blocks: a photo head, what it is (text and a tick list), benefits as a text and accordion, partner benefits as a six-card grid, a knowledge accordion, getting started with a photo, a link card, five lime-star columns, FAQs and a closing card. Needs a model name, a tick list of covered tasks, 5 benefits, 6 partner benefits and 3 onboarding steps.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "event photo with the title in a translucent lime label, no buttons; dark navy header"
+  },
+  {
+   "form": "feature-split",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "two columns: paragraphs left, a lime tick list of covered work right"
+  },
+  {
+   "form": "feature-split",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "text left; right five mauve accordion pills with an icon and a chevron (scalability, disruption, and so on)"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; six lime rounded cards in two rows of three, each a dark line icon, title and one line"
+  },
+  {
+   "form": "feature-split",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "text left; four slate accordion rows right"
+  },
+  {
+   "form": "feature-split",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "left",
+   "note": "heading and two paragraphs centered, then a rounded photo left and three step accordions right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "rounded pale card with a line-art mark: Making the right choice, one line and a lime button"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "note": "mauve-grey band: heading and five lime-star columns"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "text left (heading and sentence), right a column of white accordion rows"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "lime card with heading and a black button"
+  }
+ ]
+}

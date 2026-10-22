@@ -1,0 +1,29 @@
+{
+ "id": "io-insight-article",
+ "page_type": "article",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/io-blogs/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Article inside a rounded card with the same sidebar as the index: branded cover, red title, lead, h2 sections divided by thin rules, one process diagram and bullet lists. Needs a cover image and one diagram.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: the card starts with a cover image, then the red H1"
+  },
+  {
+   "form": "prose",
+   "role": "article",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "top",
+   "note": "(measured as sidebar) left card about 810 px with cover image, H1, paragraphs, h2 headings with rules, an inline diagram, bullet lists; right the blog sidebar (search, categories, archive by year)"
+  }
+ ]
+}

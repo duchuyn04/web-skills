@@ -1,0 +1,38 @@
+{
+ "id": "toa-guide-landing",
+ "page_type": "guide-landing",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/resource/free-guide-post-tax-season-recovery/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Three blocks: a head with a coral download button, a cover with summary and a four-item contents list beside a photo, and a centered form. Needs a cover image, three short paragraphs, four contents and a short form.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "light blurred ground; serif H1, one subtitle and one coral Download Free Copy button left; cut-out photo right"
+  },
+  {
+   "form": "feature-split",
+   "role": "guide-contents",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "cover mockup (tablet frame) left; right heading, three paragraphs, a serif sub-heading (In this guide you'll discover) and four stacked tinted rows (the first purple) beside a photo"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "count": 6,
+   "media": "none",
+   "note": "(measured as download-form) centered white panel on a blurred ground; serif heading with the guide name; first and last name, business email, phone, company, country select, one consent tick and a Download Now button"
+  }
+ ]
+}

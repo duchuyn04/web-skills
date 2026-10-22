@@ -1,0 +1,38 @@
+{
+ "id": "qx-guide-landing",
+ "page_type": "guide-landing",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/guide/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Split page: title, summary and an eight-item ticked contents list on the left, a tinted form card on the right, then more guides below. No cover image on the page.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: small caps GUIDE label, H1, two paragraphs and a ticked list left; a pink card with the form right"
+  },
+  {
+   "form": "form",
+   "role": "guide-contents",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "(measured as download-form) right pink rounded card with heading Download Guide Here; first and last name, email, phone, a how-did-you-hear select, company, a consent line, a captcha and a Download Now pill"
+  },
+  {
+   "form": "cards-image",
+   "role": "resources",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "note": "Explore other guides: three-column grid of cover cards"
+  }
+ ]
+}

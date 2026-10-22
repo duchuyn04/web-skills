@@ -2,7 +2,7 @@
   <div class="bl-container">
     <div class="bl-footer__top">
       <div class="bl-footer__brand">
-        <a class="bl-brand" href="#top" aria-label="{{site.brand}} home">{{> brand}}</a>
+        <a class="bl-brand" href="{{page.home}}" aria-label="{{site.brand}} home">{{> brand}}</a>
         <p>{{blurb}}</p>
         {{#contacts.0}}<ul class="bl-footer__contacts">{{#contacts}}<li>{{icon:$icon}}{{#href}}<a href="{{href}}">{{label}}</a>{{/href}}{{^href}}<span>{{label}}</span>{{/href}}</li>{{/contacts}}</ul>{{/contacts.0}}
         {{#socials.0}}<ul class="bl-footer__socials">{{#socials}}<li><a href="{{href}}" aria-label="{{label}}">{{icon:$icon}}</a></li>{{/socials}}</ul>{{/socials.0}}

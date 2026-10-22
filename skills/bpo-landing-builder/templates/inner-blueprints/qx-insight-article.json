@@ -1,0 +1,64 @@
+{
+ "id": "qx-insight-article",
+ "page_type": "article",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/blog/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Long article with a contents box, a comparison table, FAQ and a sticky enquiry form in the right column, then three latest insights and a form band. Needs title, date, hero photo, contents of 9 headings and a table.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark purple category bar (7 links) under the header; then title, date and three share icons, then a wide photo"
+  },
+  {
+   "form": "prose",
+   "role": "article",
+   "tone": "light",
+   "cols": 2,
+   "count": 9,
+   "media": "top",
+   "note": "(measured as sidebar) left column about 740 px: lead paragraphs, collapsible Table of contents card with nine links, h2 sections, links in text; right a sticky dark purple Enquire now card with six fields and a button"
+  },
+  {
+   "form": "table",
+   "role": "compare",
+   "tone": "light",
+   "cols": 3,
+   "media": "none",
+   "note": "comparison table with a tinted header row inside the article column"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "FAQ block inside the article"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "Our latest insights: three photo cards"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "band with heading and two meeting buttons left and a form right"
+  }
+ ]
+}

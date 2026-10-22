@@ -1,0 +1,37 @@
+{
+ "id": "boldr-ai-automation",
+ "page_type": "ai-automation",
+ "source": {
+  "name": "Boldr",
+  "url": "https://boldrimpact.com/boldrs-ai-manifesto",
+  "collected": "2026-10-18"
+ },
+ "summary": "Policy-style AI page of three blocks: a gradient head, seven principle cards in two staggered columns and a closing note. Needs seven principles of 40 to 55 words each and a closing line.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "peach to white gradient; navy title with an orange key word and a paragraph left; a rounded gradient AI visual right; orange header button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "values",
+   "tone": "muted",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "navy label heading across the width; seven bordered white cards in two columns (4 left, 3 right shifted down), each an orange duotone icon left and a bold title with a paragraph right"
+  },
+  {
+   "form": "text-block",
+   "role": "about",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "wide closing paragraph and one bold line"
+  }
+ ]
+}

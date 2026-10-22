@@ -1,0 +1,73 @@
+{
+ "id": "qx-case-study-detail",
+ "page_type": "case-study",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/case-study/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Fixed template: a purple head with a long title, a white overview card with a photo and a highlights box, a dark how-we-helped list, a ticked services list, a recommendation, a consultation band and three more stories. Needs overview, challenge, three highlights, about seven activities and five services.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "purple band: small caps CASE STUDY label and a two-line H1; the white content card overlaps its lower edge"
+  },
+  {
+   "form": "prose",
+   "role": "overview",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "right",
+   "note": "(measured as sidebar) white card with rounded top; left client overview and challenge as two headed paragraphs; right a photo and a tinted Highlights box with a headline result and three ticks"
+  },
+  {
+   "form": "list-columns",
+   "role": "process",
+   "tone": "dark",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "heading How we helped, a lead paragraph, then two columns of arrow-led lines (seven)"
+  },
+  {
+   "form": "list-columns",
+   "role": "services",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "heading Services delivered; two columns of ticked lines (five)"
+  },
+  {
+   "form": "text-block",
+   "role": "testimonial",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "Recommendation: one wide paragraph with a quote line"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 1,
+   "media": "none",
+   "note": "centered heading to schedule a no-obligation consultation and a button"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "heading More case studies; three photo cards with titles"
+  }
+ ]
+}

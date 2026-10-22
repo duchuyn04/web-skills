@@ -1,0 +1,38 @@
+{
+ "id": "genpact-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/privacy",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark notice with a split head (title and photo), a large introduction, a numbered list of red anchor links as the contents and long text with 13 sub-headings at 24 px.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; dark; breadcrumb, two-line H1 left, rounded photo right"
+  },
+  {
+   "form": "prose",
+   "role": "toc",
+   "tone": "dark",
+   "cols": 1,
+   "count": 10,
+   "media": "none",
+   "note": "Introduction heading and two paragraphs, then a numbered list of ten red links (the table of contents)"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "dark",
+   "cols": 1,
+   "count": 13,
+   "media": "none",
+   "note": "numbered sections with h3 sub-headings, wide column about 1084 px, large text"
+  }
+ ]
+}

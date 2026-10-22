@@ -1,4 +1,4 @@
-<header id="{{section.id}}" class="bl-header bl-header--mega bl-tone-{{section.tone}}" data-bl-header>
+<header id="{{section.id}}" class="bl-header bl-header--mega {{#nav_long}}bl-header--long {{/nav_long}}bl-tone-{{section.tone}}" data-bl-header>
   {{#topbar}}
   <div class="bl-topbar">
     <div class="bl-topbar__clip">
@@ -22,7 +22,7 @@
   </div>
   {{/topbar}}
   <div class="bl-container bl-header__bar">
-    <a class="bl-brand" href="#top" aria-label="{{site.brand}} home">{{> brand}}</a>
+    <a class="bl-brand" href="{{page.home}}" aria-label="{{site.brand}} home">{{> brand}}</a>
     <nav class="bl-nav" aria-label="Main">
       <ul class="bl-nav__list">
         {{#links}}
@@ -60,7 +60,7 @@
   </div>
   <div class="bl-drawer bl-tone-{{section.tone}}" id="bl-drawer" data-nav-drawer>
     <div class="bl-drawer__head">
-      <a class="bl-brand" href="#top" aria-label="{{site.brand}} home">{{> brand}}</a>
+      <a class="bl-brand" href="{{page.home}}" aria-label="{{site.brand}} home">{{> brand}}</a>
       <button class="bl-drawer__close" type="button" data-nav-close>{{icon:x}}<span class="bl-sr-only">{{close_label}}</span></button>
     </div>
     <ul class="bl-drawer__nav">

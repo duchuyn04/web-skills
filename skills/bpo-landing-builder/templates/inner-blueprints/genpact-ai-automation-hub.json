@@ -1,0 +1,105 @@
+{
+ "id": "genpact-ai-automation-hub",
+ "page_type": "ai-automation",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/services/finance-and-accounting",
+  "collected": "2026-10-18"
+ },
+ "summary": "Service-hub page where AI leads a finance and accounting offer (10 blocks): breadcrumb head with a video carousel, five service link cards, a featured agentic product, case studies, analyst ranks, a quote, insights, a forum band, partners and a call-to-action. Needs five service lines, one flagship AI product, three cases and two analyst badges.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; near-black; red breadcrumb; large title, a lead and a row of anchor buttons left; right a rounded video player with a three-item video playlist underneath"
+  },
+  {
+   "form": "link-list",
+   "role": "services",
+   "tone": "dark",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "centered heading and lead; five dark rounded link cards in a 2-column grid (the fifth alone), each a bold title, a one-line description and an arrow"
+  },
+  {
+   "form": "feature-split",
+   "role": "tools",
+   "tone": "dark",
+   "cols": 2,
+   "count": 1,
+   "media": "left",
+   "note": "featured product: a screenshot in a window frame left; orange kicker, title, paragraph and an outlined red button right"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "dark",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "heading, paragraph and a View all pill; three tall photo cards, each a tag chip, a photo and a title with a Read more link"
+  },
+  {
+   "form": "logo-strip",
+   "role": "awards",
+   "tone": "dark",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "How analysts rank us: two logos with a badge line and a Read more link"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "one large quote in white with a big quote mark and a client name in orange"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "dark",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "optional": true,
+   "note": "heading and a View all pill; a row of three tall insight cards with tag chips and a carousel of more"
+  },
+  {
+   "form": "feature-split",
+   "role": "news",
+   "tone": "dark",
+   "cols": 2,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "forum band: text left, image right"
+  },
+  {
+   "form": "logo-strip",
+   "role": "clients",
+   "tone": "dark",
+   "cols": 6,
+   "count": 6,
+   "media": "none",
+   "optional": true,
+   "note": "partner logos in a row of six"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "heading and a red pill button over a faint photo (an expert is a click away)"
+  }
+ ]
+}

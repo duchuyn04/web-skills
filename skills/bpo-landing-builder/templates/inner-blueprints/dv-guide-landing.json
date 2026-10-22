@@ -1,0 +1,38 @@
+{
+ "id": "dv-guide-landing",
+ "page_type": "guide-landing",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/outsourcing-due-diligence-handbook",
+  "collected": "2026-10-18"
+ },
+ "summary": "One tall split: navy panel on the left with the title, a subtitle, a lead and four contents bullets, and a white column on the right with the form; a diagonal orange edge divides them. A three-card related row follows.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "no separate band: the split is the page head; left navy with H1, subtitle, lead paragraphs and four bullets; right white column with the form"
+  },
+  {
+   "form": "form",
+   "role": "guide-contents",
+   "tone": "dark",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "(measured as download-form) left navy panel (about 60 percent) with a diagonal orange edge; right a form with first name, last name, a role select, email with a privacy link, country select, company website, one consent tick, small print, a captcha and a full-width orange GET MY COPY button"
+  },
+  {
+   "form": "cards-image",
+   "role": "resources",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "three cards of related content, each a photo top, an uppercase label and a title"
+  }
+ ]
+}

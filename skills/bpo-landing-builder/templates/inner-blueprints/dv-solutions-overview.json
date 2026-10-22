@@ -1,0 +1,55 @@
+{
+ "id": "dv-solutions-overview",
+ "page_type": "solutions-overview",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/our-solutions",
+  "collected": "2026-10-18"
+ },
+ "summary": "Four-block 4,700px index split by audience: a split head, then two groups of four icon link cards (CFO support, professional services firms), a single testimonial carousel and a download call to action. The index doubles as the audience entry point.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "white ground; left: orange small-caps tag, navy title, two-line lead, one orange rectangular button; right: a photo of a staff member cropped with a diagonal left edge."
+  },
+  {
+   "form": "link-list",
+   "role": "services",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "orange tag, uppercase navy heading and a paragraph; four white raised link cards in 2 by 2, each a line icon, a title and a chevron"
+  },
+  {
+   "form": "link-list",
+   "role": "services",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "same pattern for the second audience group (accounting firms, audit firms, part-time CFO firms, wealth planners)"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "light grey band: big orange quote mark left, tag, uppercase heading, one quote with name and firm, round arrow button and four pagination dots"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "left-aligned: uppercase heading, one line naming a downloadable guide and one orange download button"
+  }
+ ]
+}

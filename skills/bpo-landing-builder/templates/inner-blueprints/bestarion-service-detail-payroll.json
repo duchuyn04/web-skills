@@ -1,0 +1,106 @@
+{
+ "id": "bestarion-service-detail-payroll",
+ "page_type": "service-detail",
+ "source": {
+  "name": "Bestarion",
+  "url": "https://bestarion.com/payroll-outsourcing-service/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Long 9,500px page for a US-facing BPO: tall photo head with a request form inside it, a market-size chart split, pain split, three feature cards, an included-services list, an orange band, a photo split, a dark quality band with badges, six reasons, FAQ and a dark contact block with offices.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "dark photo ground (a person at a desk) covering the head; left: small tag, title, two-line lead and one outlined button; right: a white request-a-consultation form card (name, email, company, service dropdown, message, consent ticks, orange submit)."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "muted",
+   "cols": 2,
+   "media": "right",
+   "note": "pale blue band: heading and short paragraph left, a two-bar chart graphic right with a caption"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "optional": true,
+   "note": "heading and a paragraph, four bullet pains and a closing line left; right half is a pale panel (image or accordion rows, mostly empty when measured)"
+  },
+  {
+   "form": "cards-text",
+   "role": "services",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "centered heading, three white cards in one row with a bold title and short paragraph (automation, implementation, support)"
+  },
+  {
+   "form": "feature-split",
+   "role": "scope",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "left",
+   "note": "left a grey panel with a big white line (image placeholder); right a heading, a paragraph and a six-item bullet list of what is included, then a pill button"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 2,
+   "media": "none",
+   "note": "orange band about 240px: one statement and one white button"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "text with an orange link-button left, a rounded team photo right (square 530px)"
+  },
+  {
+   "form": "metrics",
+   "role": "awards",
+   "tone": "dark",
+   "cols": 3,
+   "count": 4,
+   "media": "none",
+   "note": "dark band: heading, paragraph and four certification/ISO badges in a row, plus two small text blocks"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and a line, six cards (3 by 2) with a small icon; revealed on scroll, blank until then"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "pale blue band: heading, six question rows in two columns"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "orange-accented block: left a heading with two accent words and a contact form, right a column of advantage ticks and two office cards (Vietnam, United States) with phone and email"
+  }
+ ]
+}

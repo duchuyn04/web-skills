@@ -1,0 +1,47 @@
+{
+ "id": "qx-accounting-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/life-at-qx/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Culture page rather than a jobs page (3 blocks): a slim purple head, a family-day photo carousel, a virtual-office-tour video and a cream \"join us\" call-to-action. Needs event photos, one tour video and an apply link.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "deep purple ground with a graphic, title only"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "careers",
+   "tone": "light",
+   "cols": 4,
+   "count": 8,
+   "media": "top",
+   "note": "event gallery: heading and a row of four square photos with arrows"
+  },
+  {
+   "form": "video-block",
+   "role": "careers",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "heading and one large video thumbnail with a play button"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "right",
+   "note": "cream band: heading and a button left, a rounded photo right"
+  }
+ ]
+}

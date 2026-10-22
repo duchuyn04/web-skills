@@ -1,0 +1,47 @@
+{
+ "id": "supportninja-ai-automation",
+ "page_type": "ai-automation",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/solutions/ai-enabled-outsourcing-ninjaai",
+  "collected": "2026-10-18"
+ },
+ "summary": "Toolkit page for four named AI tools: each tool is a pair of rows (an intro with a demo video, then an Improves row with an illustration and three bold-lead outcomes). Needs four tools, one demo video each and three proven outcomes per tool.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "peach ground; large serif title, a lead and one coral pill button left; a flat illustration of a person with a robot icon and a scribble line right"
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "accent",
+   "cols": 1,
+   "media": "none",
+   "note": "large centered heading and one line, then a sub-heading The toolkit"
+  },
+  {
+   "form": "feature-split",
+   "role": "tools",
+   "tone": "accent",
+   "cols": 2,
+   "count": 8,
+   "media": "right",
+   "note": "eight rows in pairs alternating sides: tool name and short paragraph left with a yellow demo video poster (player) right; then an illustration left and an Improves heading with three bold-lead paragraphs right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "closing call-to-action as on other pages"
+  }
+ ]
+}

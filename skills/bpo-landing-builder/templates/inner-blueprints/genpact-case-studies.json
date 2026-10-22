@@ -1,0 +1,29 @@
+{
+ "id": "genpact-case-studies",
+ "page_type": "case-studies",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/case-studies",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark story library: a split head with a featured story, then a filtered grid of 16 tag-labelled cards and a numbered pager. Needs a tag set for filtering and many stories, so it suits a large catalogue.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; dark ground with breadcrumb; H1 and a lead paragraph left; right a rounded featured card: wide image with a white tag, and a caption with a Read more link"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "dark",
+   "cols": 4,
+   "count": 16,
+   "media": "top",
+   "note": "(measured as filter-grid) right-aligned Filter and Sort pill buttons over a four-column grid of 16 cards: illustration or photo top with a white tag chip in the corner, a title in a dark panel below; a pager 1 to 10 with arrows"
+  }
+ ]
+}

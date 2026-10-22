@@ -1,0 +1,74 @@
+{
+ "id": "supportninja-how-we-work",
+ "page_type": "how-we-work",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/how-it-works",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark and light alternating page: a huge-title head, a two-model comparison (TaaS vs MaaS), a dark AI and security block, a tool tile mosaic, a five-step tabbed process, a solution tile grid beside an FAQ and a closing call-to-action. Needs two engagement models, an AI tool list of six, five security features and five setup steps.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "peach ground; enormous serif title centered with a one-line lead, directly followed by the comparison card (head and card share the first screen)"
+  },
+  {
+   "form": "cards-text",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "ground",
+   "note": "one big cream card split in two halves with a thin divider: each has a serif model name, a one-line description, a label How it is different, four ticks, and a full-height flat illustration of a person at the outer edge"
+  },
+  {
+   "form": "icon-strip",
+   "role": "tools",
+   "tone": "dark",
+   "cols": 2,
+   "count": 11,
+   "media": "none",
+   "note": "charcoal band after a wavy edge: huge white heading, lead, sub-heading, six items in two columns each with a round icon, a bold name and one line; then a security sub-heading with five items in two columns"
+  },
+  {
+   "form": "image-band",
+   "role": "services",
+   "tone": "dark",
+   "cols": 6,
+   "count": 12,
+   "media": "top",
+   "note": "heading and a tile mosaic: grey rounded tiles with a capability name mixed with four coloured portrait tiles"
+  },
+  {
+   "form": "tabs",
+   "role": "process",
+   "tone": "accent",
+   "cols": 3,
+   "count": 5,
+   "media": "none",
+   "note": "peach band: heading Get set up in five easy steps; two folder tabs (TaaS, MaaS); five numbered white pills in a grid of three plus two; a pill button below"
+  },
+  {
+   "form": "link-list",
+   "role": "services",
+   "tone": "accent",
+   "cols": 3,
+   "count": 10,
+   "media": "top",
+   "note": "heading left; ten flat illustration tiles in a grid of three with a name and arrow; FAQ column right (three accordion rows and a dark pill link)"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "right",
+   "note": "heading, paragraph and a coral pill button left, three-person illustration right"
+  }
+ ]
+}

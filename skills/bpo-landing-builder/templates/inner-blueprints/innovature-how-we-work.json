@@ -1,0 +1,73 @@
+{
+ "id": "innovature-how-we-work",
+ "page_type": "how-we-work",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/how-it-works/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Seven-block page: split head with a photo card, a six-step onboarding stepper (kickoff to go-live in 14 days), a case quote, control cards, an office-vs-remote model comparison, a consultation form and an FAQ. Needs six step cards, a time promise, two models and 5 FAQs.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale ground; tiny two-ended breadcrumb-style label (Kickoff to Go-live in 14 days) above a large title, lead and two buttons left; rounded office photo with a white frame right"
+  },
+  {
+   "form": "tabs",
+   "role": "process",
+   "tone": "muted",
+   "cols": 6,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; one white rounded panel with a horizontal stepper of six icon steps with a progress bar and a day target, and below it the active step as a large card with a big pale number, title and paragraph"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "cases",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "heading left; raised card right with a quote, round name badge and a link to the full case study"
+  },
+  {
+   "form": "feature-split",
+   "role": "tools",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "left",
+   "note": "centered heading and lead; a dark photo card with a caption left; two stacked white cards right (performance view, set the standards)"
+  },
+  {
+   "form": "cards-icon",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "centered heading and lead; two bordered cards side by side (office-based with a Recommended badge, remote), each with an icon, a short paragraph and four ticks"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 2,
+   "media": "none",
+   "note": "heading and line with three small tags and a button left; a consultation form card right (name, company, email, phone, three selects, message, consent, submit)"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 5,
+   "media": "none",
+   "note": "centered heading; five full-width rows, the first open with a blue header"
+  }
+ ]
+}

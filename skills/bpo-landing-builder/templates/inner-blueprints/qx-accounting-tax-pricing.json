@@ -1,0 +1,91 @@
+{
+ "id": "qx-accounting-tax-pricing",
+ "page_type": "engagement-models",
+ "source": {
+  "name": "QX Accounting Services UK",
+  "url": "https://qxaccounting.com/uk/tax-prep-pricing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Same template as the audit pricing page with an extra in-house vs outsourcing comparison table first. Ten blocks. Needs a four-row cost comparison, two engagement models and 4 FAQs.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "deep purple, centered title, two buttons and three benefit chips"
+  },
+  {
+   "form": "table",
+   "role": "compare",
+   "tone": "light",
+   "cols": 3,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading; a three-column table (cost factor, in-house, outsourced) with a purple header and four rows, a View more toggle under it"
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "dark strip: heading and two short paragraphs on the capacity problem"
+  },
+  {
+   "form": "cards-text",
+   "role": "pricing",
+   "tone": "muted",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "two white cards side by side (full-time employee model, per-return model) each with four red ticks; one coral button below"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "slim dark strip with heading, line and two links"
+  },
+  {
+   "form": "icon-strip",
+   "role": "process",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "pink band with a three-step line"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 1,
+   "count": 3,
+   "media": "none",
+   "optional": true,
+   "note": "client quote carousel"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "four outlined rows"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "request-a-quote form at the foot"
+  }
+ ]
+}

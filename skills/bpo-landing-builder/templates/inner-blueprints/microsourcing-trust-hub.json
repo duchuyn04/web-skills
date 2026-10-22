@@ -1,0 +1,64 @@
+{
+ "id": "microsourcing-trust-hub",
+ "page_type": "trust-hub",
+ "source": {
+  "name": "MicroSourcing",
+  "url": "https://www.microsourcing.com/data-security-compliance",
+  "collected": "2026-10-18"
+ },
+ "summary": "Image-led trust page on a mix of light and dark grounds: split hero with an arch photo and one floating figure, two certification cards, a dark block of ten control tiles and a dark continuity split, ending on a full enquiry form. Needs two or three certifications, ten to twelve one-line controls and a continuity statement.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "small caps label, two-line heading and paragraph left; arch-cropped photo right with a dashed outline and a white card holding one figure and its label"
+  },
+  {
+   "form": "cards-text",
+   "role": "certifications",
+   "tone": "muted",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "centered label, heading and two lines; two large white cards side by side, each with a certificate badge top-left, a small pill with the standard name top-right, a title and three ticked statements separated by thin rules"
+  },
+  {
+   "form": "feature-split",
+   "role": "trust-topics",
+   "tone": "dark",
+   "cols": 2,
+   "media": "right",
+   "note": "label, heading and two paragraphs left; round photo right with a dashed ring and a white icon card over its edge"
+  },
+  {
+   "form": "cards-icon",
+   "role": "trust-topics",
+   "tone": "dark",
+   "cols": 3,
+   "count": 10,
+   "media": "none",
+   "note": "same dark ground continues: ten tiles in three columns (last row short), each a small tick icon, a two-line title and one sentence"
+  },
+  {
+   "form": "feature-split",
+   "role": "trust-topics",
+   "tone": "dark",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "round photo left with a small figure card; right a label, heading, two paragraphs, a bold lead-in and four ticked statements in dark boxes"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 12,
+   "media": "none",
+   "note": "centered label, heading and line with a thin dashed arc above; one white card with a twelve-field enquiry form (two columns, selects, message) and one orange button"
+  }
+ ]
+}

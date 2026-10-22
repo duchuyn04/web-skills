@@ -1,0 +1,143 @@
+{
+ "id": "dv-audience-cfos",
+ "page_type": "audience",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/our-solutions/for-cfos",
+  "collected": "2026-10-18"
+ },
+ "summary": "Same template as the professional-services page (15,100px) with CFO copy: diagonal-photo head, statement, four CFO service cards, eight reasons, testimonial, cases, a statement, two groups of tool logos (accounting tools, BI and analytics), CTA, resources, newsletter, contact, FAQ and banner.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "photo on the LEFT (a portrait cropped on a diagonal, 640px wide); right: orange small-caps tag, navy title, a two-line lead and one orange rectangular button."
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "dark",
+   "media": "none",
+   "note": "navy band with a big statement and a short paragraph"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "two paragraphs"
+  },
+  {
+   "form": "cards-icon",
+   "role": "services",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "four cards with icon, title, lines and orange button"
+  },
+  {
+   "form": "cards-text",
+   "role": "about",
+   "tone": "muted",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "eight reason tiles"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "tag, uppercase heading, one quote with name and firm, arrow button, dots"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "uppercase heading; three case-study cards with a wide image, a title and a link"
+  },
+  {
+   "form": "statement",
+   "role": "about",
+   "tone": "light",
+   "media": "none",
+   "note": "heading and one paragraph on finance transformation"
+  },
+  {
+   "form": "logo-strip",
+   "role": "tools",
+   "tone": "light",
+   "count": 8,
+   "media": "none",
+   "note": "two labelled groups: accounting tools (3 logos) and BI and data analytics (5 logos)"
+  },
+  {
+   "form": "statement",
+   "role": "about",
+   "tone": "light",
+   "media": "none",
+   "note": "adapting to your business: heading and two lines"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "heading and orange button"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "three white papers"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "newsletter sign-up"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "contact block with photo right"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 2,
+   "count": 10,
+   "media": "none",
+   "note": "uppercase heading; about ten questions with visible answers"
+  },
+  {
+   "form": "image-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "closing banner with a button"
+  }
+ ]
+}

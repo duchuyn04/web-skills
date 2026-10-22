@@ -1,0 +1,62 @@
+{
+ "id": "bestarion-audience-cpa-tax",
+ "page_type": "audience",
+ "source": {
+  "name": "Bestarion",
+  "url": "https://bestarion.com/tax-preparation-outsourcing-services-for-cpa-firms/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Seasonal landing page for CPA firms (6,000px): an oversized head with a portrait and an overlapping offer form, four staggered benefit cards, a staff-profile card with a task list, a hire block with a monthly rate, reasons with an ISO badge and a dark contact block.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "peach ground; left: small tag, huge title with orange words, a lead and one button; right: cutout portrait on an orange blob; an orange offer strip with an inline form (name, email, button) overlaps the bottom edge."
+  },
+  {
+   "form": "cards-text",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading with an orange word and a line; four white raised cards with a numbered orange circle, a bold title and a line, staggered up and down in two columns"
+  },
+  {
+   "form": "feature-split",
+   "role": "scope",
+   "tone": "light",
+   "cols": 2,
+   "count": 11,
+   "media": "left",
+   "note": "portrait photo left; right a white raised card with heading, a note, an 11-item bullet list of forms and tasks, and an orange pill button"
+  },
+  {
+   "form": "feature-split",
+   "role": "pricing",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "left: a line of text, a very large monthly rate, a small saving note, a black button and a text link for hourly start; right: a second portrait on an orange blob"
+  },
+  {
+   "form": "cards-text",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "heading, four reasons in 2 by 2 and an ISO badge right"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark rounded block with an orange swirl: heading with an accent word and a line left; white form card right with a request / schedule switch"
+  }
+ ]
+}

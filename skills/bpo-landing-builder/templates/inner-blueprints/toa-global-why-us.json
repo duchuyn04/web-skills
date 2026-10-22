@@ -1,0 +1,118 @@
+{
+ "id": "toa-global-why-us",
+ "page_type": "why-us",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/company/the-toa-difference/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Long (11,600 px, 19 blocks) page built as one band per reason: experience, learning, security, systems, staff selection, infrastructure, support and team connection, then a founder message, candidates, team videos, client video and a form. Needs 8 to 10 reason bands with a photo or icons each, a founder message and videos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "light blurred photo band; serif title and one purple pill button left"
+  },
+  {
+   "form": "feature-split",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 2,
+   "media": "ground",
+   "note": "band with a wide photo ground, heading and one line right"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "large centered heading; four columns each a purple line icon and two lines; one coral pill button"
+  },
+  {
+   "form": "statement",
+   "role": "reasons",
+   "tone": "accent",
+   "cols": 1,
+   "media": "none",
+   "note": "pale teal strip with a right-aligned heading and one line (alternates with plain bands)"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "heading, intro paragraph and four columns of big purple icons with a title and two lines; two buttons"
+  },
+  {
+   "form": "feature-split",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 2,
+   "count": 3,
+   "media": "ground",
+   "note": "security, systems and staff selection as three thin bands: one centered line, then text over teal, then text over a soft photo; two white-on-purple icon cards below"
+  },
+  {
+   "form": "feature-split",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "left",
+   "note": "infrastructure with a small photo mosaic (six photos) and a text link; support band with a rounded photo left and text right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "dark",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "deep purple band: one line then two columns of text, left a black video, right a product screenshot"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "accent",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "founder message on a pale teal tint with a short text and button"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "team",
+   "tone": "light",
+   "cols": 10,
+   "count": 10,
+   "media": "top",
+   "optional": true,
+   "note": "ten small portraits in a sliding row with a button"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 2,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "video testimonials: two or three black video slots with a name caption, and one single video band"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "ground",
+   "note": "blurred office ground with a centered white form card"
+  }
+ ]
+}

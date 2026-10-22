@@ -138,6 +138,8 @@ def write_anatomy(lib):
 
 
 TIMING = {
+    "page-head-settle": "the page-head photo settles from 106% to 100% (1.6s ease-out) while the breadcrumb, title, lead and buttons rise in with the page reveal; no motion under reduced motion",
+    "toc-spy": "the contents link of the block crossing the upper fifth of the screen turns bold with a 2px accent rule on its left (150ms colour change); no scroll-linked movement",
     "slides-crossfade": "the active slide fades in over the last one (0.6s ease-out); its photo settles from 105% (1.4s)",
     "slides-dot-timer": "the active dot widens to a pill and fills left to right over 6 s, then the next slide shows; holds on hover, focus, off screen and Pause animations, and stops for good when a dot is picked",
     "slides-copy-rise": "the incoming slide's eyebrow, title, lead, ticks, buttons and cards rise 18px and fade in (0.6-0.7s, 70ms apart after 150ms); fade style keeps them in place",

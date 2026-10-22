@@ -1,0 +1,19 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head}}
+    <div class="bl-lcols bl-lcols--{{col_count}}" data-reveal-group>
+      {{#columns}}
+      <div class="bl-lcols__col bl-lcols__col--{{marker}}" data-reveal>
+        <span class="bl-lcols__rule" aria-hidden="true" data-draw></span>
+        <h3 class="bl-h3 bl-lcols__title">{{title}}</h3>
+        {{#text}}<p class="bl-lcols__text">{{text}}</p>{{/text}}
+        <ul class="bl-lcols__list">
+          {{#items}}<li>{{#marker_is_check}}<span class="bl-lcols__mark">{{icon:check}}</span>{{/marker_is_check}}{{#marker_is_cross}}<span class="bl-lcols__mark">{{icon:x}}</span>{{/marker_is_cross}}{{#marker_is_dot}}<span class="bl-lcols__mark bl-lcols__mark--dot"></span>{{/marker_is_dot}}<span>{{.}}</span></li>{{/items}}
+        </ul>
+      </div>
+      {{/columns}}
+    </div>
+    {{#note}}<p class="bl-lcols__note">{{note}}</p>{{/note}}
+    {{#cta}}<div class="bl-lcols__cta"><a class="bl-link" href="{{href}}">{{label}}{{arrow}}</a></div>{{/cta}}
+  </div>
+</section>

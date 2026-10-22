@@ -1,0 +1,24 @@
+{
+  "variant": "page-head",
+  "group": "hero",
+  "forms": ["page-head"],
+  "summary": "Opening of an inner page of a site: breadcrumb trail, title, one lead paragraph, an optional line such as an effective date, and up to two buttons. With a photo it is a short full-width photo band under a brand shade (layout ground, the inner-page form of the photo hero) or a split with the photo in a rounded frame beside the copy (layout side); without a photo it is a plain tinted band. The breadcrumb is filled in from the site's page list. Use only on inner pages of a site.",
+  "tone": "hero",
+  "anchor": "top",
+  "animations": ["reveal", "page-head-settle"],
+  "fields": {
+    "crumbs": {"type": "list", "min": 2, "max": 5, "required": false, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 2, "max": 40},
+      "href": {"type": "href", "required": false}
+    }}},
+    "eyebrow": {"type": "text", "min": 3, "max": 44, "required": false},
+    "title": {"type": "markup", "min": 6, "max": 90},
+    "lead": {"type": "text", "min": 40, "max": 260, "required": false},
+    "meta": {"type": "text", "min": 6, "max": 80, "required": false},
+    "primary_cta": {"$ref": "cta", "required": false},
+    "secondary_cta": {"$ref": "cta", "required": false},
+    "image": {"type": "image", "required": false},
+    "image_alt": {"type": "text", "min": 5, "max": 140, "required": false},
+    "layout": {"type": "enum", "values": ["ground", "side"], "default": "ground"}
+  }
+}

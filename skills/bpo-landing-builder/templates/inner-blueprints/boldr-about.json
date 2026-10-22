@@ -1,0 +1,142 @@
+{
+ "id": "boldr-about",
+ "page_type": "about",
+ "source": {
+  "name": "Boldr",
+  "url": "https://boldrimpact.com/about",
+  "collected": "2026-10-18"
+ },
+ "summary": "Very full about page (14 sections, 12,000 px): a photo card with an overlaid navy panel, an orange metrics band, mission and \"old model vs our way\" blocks, a 18-person leadership grid, a founder message and values. Needs 18 leader names with titles (about 13 photos), five figures, a founder portrait and a values list.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "rounded team photo on the left with a navy panel overlapping its lower right; orange eyebrow, white two-line title and a short lead inside the panel; no buttons; transparent header over a cream ground"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "accent",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "note": "full-width orange band, one heading line and five rounded cream tiles each with a big number and a label"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "media": "right",
+   "note": "cream ground, dark panel with white heading and paragraph left that overlaps a rounded photo right"
+  },
+  {
+   "form": "locations-map",
+   "role": "locations",
+   "tone": "muted",
+   "cols": 5,
+   "count": 5,
+   "media": "ground",
+   "note": "heading and a row of five country name tiles under a world area (the map layer loads lazily); the section is mostly empty space"
+  },
+  {
+   "form": "logo-strip",
+   "role": "awards",
+   "tone": "dark",
+   "cols": 8,
+   "count": 8,
+   "media": "none",
+   "note": "navy band with line-art waves; one white rounded card holding a label and a scrolling row of eight badge logos"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "media": "left",
+   "note": "rounded team photo left, cream panel right with heading and two paragraphs"
+  },
+  {
+   "form": "list-columns",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "navy label tag as heading; white card with two columns, left the old model as grey bullet list, right the company way as orange ticks; orange line art in the corner"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "media": "left",
+   "note": "circular orbit graphic of three icons left; grey-green card right with heading, paragraph and a text link"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "founder message: heading and long text left, rounded portrait right"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "muted",
+   "cols": 3,
+   "count": 18,
+   "media": "left",
+   "note": "navy label heading and one-line intro, then a loose grid of 18 leaders, three per row, each a small rounded photo beside a bold condensed name and a grey title; a few have no photo"
+  },
+  {
+   "form": "feature-split",
+   "role": "history",
+   "tone": "accent",
+   "cols": 2,
+   "media": "left",
+   "note": "orange line-art ground; rounded founder photo left, white card right with heading, short text and an outlined button"
+  },
+  {
+   "form": "list-rows",
+   "role": "values",
+   "tone": "muted",
+   "cols": 1,
+   "count": 5,
+   "media": "none",
+   "note": "left a cream block with eyebrow and large heading; right five stacked rows, each with an icon on a coloured square and one line with one underlined key word"
+  },
+  {
+   "form": "link-list",
+   "role": "intro",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "navy band with one centered white card: a small heading, a paragraph and an outlined button"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "top",
+   "optional": true,
+   "note": "small caps heading; two article cards with illustration, title, excerpt and a Read more link"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "navy band with one white card: line, sentence and an orange button"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "innovature-about",
+ "page_type": "about",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/about-us/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Eight-section soft-blue page: a split head with a team photo, a vision block with four numbered value cards, an \"our people\" block with country chips, a founder quote card, a ten-year journey with two video cards and a year-by-year slider, certification grid, partner marquee and a closing call-to-action card. Needs a team photo, a founder portrait, 8 to 10 milestones and about 10 certificates.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "soft pale-blue ground; eyebrow, large title, short lead and two buttons (one filled, one outlined) left; four team members cut out on the right edge"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "rounded photo left (a compass), heading with bold lead and two paragraphs right; below it four numbered value cards (01 to 04) with a small icon, title and paragraph"
+  },
+  {
+   "form": "feature-split",
+   "role": "values",
+   "tone": "muted",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "heading and paragraph with two flag chips left; a two by two grid of numbered cards with one sentence each right"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "about",
+   "tone": "muted",
+   "cols": 1,
+   "count": 1,
+   "media": "left",
+   "note": "one wide rounded card: round portrait with a white ring left, heading, quote mark, one quote and the founder name and title right"
+  },
+  {
+   "form": "list-rows",
+   "role": "history",
+   "tone": "light",
+   "cols": 1,
+   "count": 8,
+   "media": "top",
+   "note": "(measured as timeline) centered heading and lead; two video cards (poster, caption); then a rounded panel titled milestones with a stepper of year ranges on top and a sliding row of cards each with photo, year, title and text, arrows at both ends"
+  },
+  {
+   "form": "logo-strip",
+   "role": "awards",
+   "tone": "light",
+   "cols": 5,
+   "count": 10,
+   "media": "none",
+   "note": "centered heading and paragraph; grid of ten badges in two rows of five with a caption under each"
+  },
+  {
+   "form": "logo-strip",
+   "role": "clients",
+   "tone": "light",
+   "cols": 8,
+   "count": 12,
+   "media": "none",
+   "optional": true,
+   "note": "heading and a scrolling row of partner and chamber logos"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "right",
+   "note": "rounded light card: heading, one sentence and a white pill button left; a smiling headset photo fading in from the right"
+  }
+ ]
+}

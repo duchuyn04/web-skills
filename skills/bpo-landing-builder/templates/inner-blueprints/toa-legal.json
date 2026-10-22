@@ -1,0 +1,29 @@
+{
+ "id": "toa-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/privacy-policy/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Plain policy page: H1 at 48 px and a wide column with 17 h2 sections. No date, no contents, no sidebar.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: H1 at the top of a white page"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 17,
+   "media": "none",
+   "note": "single column 1140 px with 17 h2 headings"
+  }
+ ]
+}

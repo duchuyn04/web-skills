@@ -1,0 +1,24 @@
+/* list-columns: titled lists under a rule that draws in (pillar-rule-draw); tick, cross or dot markers */
+.bl-lcols { display: grid; gap: clamp(2rem, 4vw, 3.5rem); }
+.bl-lcols--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bl-lcols--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bl-lcols--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.bl-lcols__rule { display: block; height: 2px; margin-bottom: 1.25rem; background: var(--border-strong); }
+.bl-lcols__col--check .bl-lcols__rule { background: var(--accent-ink); }
+.bl-lcols__title { color: var(--text-strong); }
+.bl-lcols__text { margin-top: .5rem; font-size: var(--fs-sm); line-height: 1.6; color: var(--text); }
+.bl-lcols__list { list-style: none; display: grid; gap: .7rem; margin-top: 1.1rem; }
+.bl-lcols__list li { display: grid; grid-template-columns: 1.25rem minmax(0, 1fr); gap: .65rem; align-items: start; line-height: 1.55; color: var(--text); }
+.bl-lcols__mark { display: grid; place-items: center; width: 1.25rem; height: 1.25rem; margin-top: .12rem; }
+.bl-lcols__mark .bl-icon { width: 1.05rem; height: 1.05rem; stroke-width: 2.5; }
+.bl-lcols__col--check .bl-lcols__mark { color: var(--accent-ink); }
+.bl-lcols__col--cross .bl-lcols__mark { color: var(--text-muted); }
+.bl-lcols__mark--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); }
+.bl-lcols__note { margin-top: 2rem; max-width: 66ch; font-size: var(--fs-sm); line-height: 1.6; color: var(--text-muted); }
+.bl-lcols__note strong { color: var(--text-strong); }
+.bl-lcols__cta { margin-top: 1.5rem; }
+.js .bl-lcols__rule[data-draw] { transform: scaleX(0); transform-origin: left; transition: transform .8s var(--ease-out); }
+.js .is-in > .bl-lcols__rule[data-draw], .js .bl-lcols__col.is-in .bl-lcols__rule { transform: none; }
+@media (max-width: 1024px) { .bl-lcols--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .bl-lcols--2, .bl-lcols--3, .bl-lcols--4 { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .js .bl-lcols__rule[data-draw] { transform: none; transition: none; } }

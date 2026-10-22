@@ -2,6 +2,18 @@
 
 The version is the one at the top of SKILL.md. The major number is the rules version (`RULES_VERSION` in `scripts/build.py`): it goes up when a new check can fail a page that built before.
 
+## 6.1.0 (2026-10-19)
+
+Websites with several pages. A client sent a 31-page website blueprint, and the skill could only build the home page: every page had to follow a homepage layout, open with a full-screen photo hero and carry a services section, so a cookie policy or a contact page could not build. Rules stay at 6: a single page builds exactly as before, and the new checks apply only to a page.json that lists `"pages"`.
+
+- `"pages"` in page.json turns it into the home page of a site; each entry builds `pages/<id>.json` into `<id>.html`. Inner page files hold only the layout, title, description and content; the brand, theme, brief, header and footer come from page.json. `scripts/site_build.py` writes one CSS and JS file per page, shared images, one sitemap.xml and robots.txt, and fills each page-head breadcrumb from the page list (`references/site-builds.md`).
+- Inner blueprints: 121 inner pages of 12 BPO and accounting outsourcing sites and three accounting software trust centres, measured at 1440 px (`templates/inner-blueprints/`, made by `scripts/research/inner_blueprints.py`). An inner page names one; `variety.py --inner-blueprints [type]` lists them.
+- New checks for sites: an inner page opens with `page-head` or a photo hero; a link to another page names a page of the site and a section it has; every inner page is linked from another page; no two pages share a title or a description. Homepage counts (five sections, a services section, the brand in the hero lead, the metrics hint) do not apply to inner pages. Tool names and certificates join the proof slots that are left out when the brief has none.
+- New sections for inner pages: `page-head` (breadcrumb, title, lead, a photo band or a framed photo, or a tinted band), `prose` (long text with a sticky contents column that marks the block being read, links written `[label](page.html)` in a new `rich` field type), `matrix-table` (text table that becomes cards on phones, always a light card on any band), `list-columns` (titled lists with tick, cross or dot markers).
+- Shared header and footer: links to home page sections lead to `index.html#...` from inner pages, the logo leads home (`{{page.home}}`), and the menu marks the page being read. A menu of six or more items opens from the burger below 1280 px, and menu labels no longer wrap. Mega menu columns may hold one column and two links.
+- `lint_output.py` checks every page in dist and the links between them; `qa_screenshot.py --page <file>` and `--all-pages` check the pages of a site, with screenshots in `qa/<id>/`. `seo.py` adds `BreadcrumbList` structured data, and an inner page without a photo shares the home page's picture.
+- `examples/site/` (the Quayside fixture with three inner pages) is built with the examples. Tests `site-clean`, `site-link-to-missing-page`, `site-link-to-missing-section`, `site-orphan-page`, `site-duplicate-title`, `site-inner-without-page-head`, `site-unknown-inner-blueprint`, `site-inner-invented-figure`.
+
 ## 6.0.0 (2026-10-09)
 
 Rules 6: the hero is the client's photo or a film of their photos. A client who reviewed three versions of their page rejected every other hero (a white card over a photo, service cards, a dotted globe, a form, a 3D deck and a sundial) as template work, and replaced them with HyperFrames films of their own office photos. A site built under rules 5 keeps building with `"rules": "5"`; the new check then prints as a warning.

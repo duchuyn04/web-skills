@@ -1,0 +1,111 @@
+{
+ "id": "qx-dedicated-team-onshore",
+ "page_type": "dedicated-team",
+ "source": {
+  "name": "QX Accounting",
+  "url": "https://qxaccounting.com/uk/service/outsource-onshore-roles/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A role-staffing page built on the standard QX service template (6,900px); only the copy changes from the service pages.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band with title, lead, one coral button and a framed photo right."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "two-column tailored approach"
+  },
+  {
+   "form": "list-columns",
+   "role": "scope",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "none",
+   "note": "labelled scope rows with pink bullet panels"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band with photo right"
+  },
+  {
+   "form": "logo-strip",
+   "role": "clients",
+   "tone": "light",
+   "count": 6,
+   "media": "none",
+   "note": "client logo row"
+  },
+  {
+   "form": "video-block",
+   "role": "testimonial",
+   "tone": "light",
+   "media": "none",
+   "optional": true,
+   "note": "embedded video"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "none",
+   "note": "coral band with centered text and button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "four-column difference grid"
+  },
+  {
+   "form": "logo-strip",
+   "role": "tools",
+   "tone": "light",
+   "count": 6,
+   "media": "none",
+   "note": "software logos"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "short FAQ"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "three articles"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "text left, form right"
+  }
+ ]
+}

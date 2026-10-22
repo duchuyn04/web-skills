@@ -1,0 +1,48 @@
+{
+ "id": "toa-case-studies",
+ "page_type": "case-studies",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/client-stories/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Light page with a photo head, one featured story card, a purple quote slider and a grid of six spotlight cards with a page switch. Needs one hero story, a client quote and six shorter stories.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "light blurred ground: H1, serif strapline and one paragraph left; cut-out photo of three people right"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "top",
+   "note": "centered heading, strapline and paragraph; one centered card with a photo, a serif title and a Read more button"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "purple blurred ground; centered heading and line; one outlined slide with a quote, a round portrait, name and firm; arrows at both sides"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "note": "centered heading and line; three by two cards with a photo, serif title, short excerpt and a Read more link; page numbers 1 and 2 under the grid"
+  }
+ ]
+}

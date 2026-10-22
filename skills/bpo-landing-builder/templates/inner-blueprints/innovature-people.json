@@ -1,0 +1,38 @@
+{
+ "id": "innovature-people",
+ "page_type": "people",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/meet-our-leadership-team/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Three blocks: an illustrated head, a leader grid in a featured 2 + 3 + 3 rhythm with long bios, and a closing call-to-action card. Needs eight leaders with portraits, titles, LinkedIn links and a 40-word bio.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale-blue ground; very large title with a two-line lead and one filled button left; a flat illustration of people climbing a blue arrow right"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "muted",
+   "cols": 3,
+   "count": 8,
+   "media": "top",
+   "note": "centered heading and lead; first row two larger cards (the CEO and growth officer), then two rows of three: portrait top, a white name plate overlapping its lower edge with a LinkedIn icon, bold title in blue, and a six to eight line bio"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "rounded light card: question heading left, one filled pill button right"
+  }
+ ]
+}

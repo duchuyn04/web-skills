@@ -1,0 +1,29 @@
+{
+ "id": "qx-accounting-people",
+ "page_type": "people",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/about/leadership-team/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Two blocks: a purple head with graphic art, and a tabbed leader grid (management, sales, operations) with round portraits and an outlined Know more button. Needs 7 to 20 leaders in three groups with a LinkedIn link each.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "deep purple ground, small caps label, large title and lead left, a half-circle graphic in coral and print texture right"
+  },
+  {
+   "form": "tabs",
+   "role": "team",
+   "tone": "muted",
+   "cols": 3,
+   "count": 7,
+   "media": "top",
+   "note": "three wide tab pills on top (management, sales, operations); under it a lilac band with white rounded cards three per row, each a round portrait with a small blue LinkedIn badge, name, title and an outlined Know more pill (opens a profile)"
+  }
+ ]
+}

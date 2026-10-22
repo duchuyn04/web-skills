@@ -1,0 +1,29 @@
+{
+ "id": "microsourcing-guide-landing",
+ "page_type": "guide-landing",
+ "source": {
+  "name": "MicroSourcing",
+  "url": "https://www.microsourcing.com/resources-hub/eagleview-technologies",
+  "collected": "2026-10-18"
+ },
+ "summary": "Case study used as a lead magnet: the dark head carries the form so the download sits above the fold. See the case-study-detail file for the sections below it.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark band; two-tone H1 and a lead left; white Download Now card right with first and last name, email, job title, company, company size, country, a consent paragraph and an orange button"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "(measured as download-form) the form card overhangs into the next section; eight fields in two columns"
+  }
+ ]
+}

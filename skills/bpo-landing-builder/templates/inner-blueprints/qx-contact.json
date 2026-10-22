@@ -1,0 +1,55 @@
+{
+ "id": "qx-contact",
+ "page_type": "contact",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/contact/",
+  "collected": "2026-10-18"
+ },
+ "summary": "White page with a utility row of email, phone and social icons, a two-column block with the form on the right, a purple named-contact band, a country list and client feedback. Needs a named contact and a list of countries.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: a row with General inquiry email, phone and social icons; then the H1 block"
+  },
+  {
+   "form": "form",
+   "role": "contact-details",
+   "tone": "light",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "left H1, strapline and one sentence; right seven underlined fields (first and last name, business email, phone, company, how did you hear, message), consent tick, captcha and a coral Submit pill"
+  },
+  {
+   "form": "feature-split",
+   "role": "contact-details",
+   "tone": "dark",
+   "cols": 2,
+   "media": "right",
+   "note": "purple band: Let's talk title left; right a portrait photo, the name and role, email, phone and a Book a free consultation button"
+  },
+  {
+   "form": "link-list",
+   "role": "locations",
+   "tone": "light",
+   "cols": 2,
+   "count": 12,
+   "media": "none",
+   "note": "Our global presence: twelve countries as arrow rows in two columns, a map link under the heading"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "Client feedback: one quote with portrait"
+  }
+ ]
+}

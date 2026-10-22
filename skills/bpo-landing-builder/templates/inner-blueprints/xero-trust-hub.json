@@ -1,0 +1,52 @@
+{
+ "id": "xero-trust-hub",
+ "page_type": "trust-hub",
+ "source": {
+  "name": "Xero",
+  "url": "https://www.xero.com/uk/security/",
+  "collected": "2026-10-18"
+ },
+ "summary": "White, airy page of one repeated row: a centered title over a wide rounded photo, then nine alternating text and badge rows (certifications first, then controls), a three-card tips row and a small closing offer. Needs a badge or document cover per row and one short paragraph with a link per control.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "centered heading, two-line lead and one pill button; the page head ends in a wide rounded photo band about 440 px tall"
+  },
+  {
+   "form": "image-band",
+   "role": "page-head",
+   "tone": "light",
+   "media": "ground",
+   "note": "full-width rounded photo under the head, no text on it"
+  },
+  {
+   "form": "feature-split",
+   "role": "certifications",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "each row about 715 px: a two-line heading, one or two sentences and one underlined link on one side; a certificate badge, graphic or report cover on the other; sides alternate. Four rows are certificates and reports (the third offers a request form), five are controls (layers, sign-in, network, uptime, disclosure program)"
+  },
+  {
+   "form": "cards-text",
+   "role": "trust-topics",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "heading Your online safety, then three text cards (account safety, phishing, notice board) each with a link"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "small closing offer: heading with a line and two buttons"
+  }
+ ]
+}

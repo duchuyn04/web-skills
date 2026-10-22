@@ -1,0 +1,47 @@
+{
+ "id": "innovature-why-us",
+ "page_type": "why-us",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/reasons-to-work-with-us/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A numbered list of 25 reasons grouped into six themed blocks, each with a heading, a big image and cards, plus a sticky chip bar and an FAQ. Needs 20 to 25 short reasons (title plus one sentence) and one image per group.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale ground; title with lead and one filled button left, team photo in a rounded frame right; below it a pill-chip bar to jump to the six groups (trust, security, performance, technology, talent, location)"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 2,
+   "count": 25,
+   "media": "left",
+   "note": "six group blocks of 600 to 930px: heading with a round icon, then one large rounded image next to a two by two grid of numbered cards (big pale 01.., title, one sentence, small Learn more link); the image alternates left and right; two groups use a wide banner image over a row of three or six cards"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 1,
+   "count": 5,
+   "media": "none",
+   "note": "centered heading; five full-width rows, the first open with a blue gradient header"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "consultation form band in the footer area"
+  }
+ ]
+}

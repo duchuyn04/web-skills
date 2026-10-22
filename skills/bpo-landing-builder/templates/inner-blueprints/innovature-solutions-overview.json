@@ -1,0 +1,63 @@
+{
+ "id": "innovature-solutions-overview",
+ "page_type": "solutions-overview",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/outsourcing-solutions/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short 5,800px hub: split head with a photo, four numbered service cards in a 2 by 2 grid, a resources pair, a savings calculator teaser, a consultation form and a FAQ. Each service card links down to its own detail page.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "pale blue ground; left: three-line title, one-line lead, one filled pill button; right: a rounded dark photo (a lit bulb in a hand), no breadcrumb."
+  },
+  {
+   "form": "cards-icon",
+   "role": "services",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and a line; four large white cards (2 by 2) each with a big grey number, a corner icon tile, a title, two lines, a row of small tag chips and an arrow link"
+  },
+  {
+   "form": "media-list",
+   "role": "news",
+   "tone": "muted",
+   "cols": 2,
+   "count": 2,
+   "media": "top",
+   "note": "pale band: heading and line, two items side by side (e-guides, case studies) each a fan of stacked cover images over an underlined link"
+  },
+  {
+   "form": "calculator",
+   "role": "pricing",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "left: heading, text, two stat chips and a button; right: large screenshot of a price comparison table"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "left: heading and three short value chips; right: white card form"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading, one column of 8 rows, the first open with a blue header"
+  }
+ ]
+}

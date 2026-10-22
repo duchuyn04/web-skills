@@ -1,0 +1,24 @@
+<section id="{{section.id}}" class="bl-section bl-hero bl-phead bl-phead--{{layout}}{{#image}} bl-phead--photo{{/image}} bl-tone-{{section.tone}}">
+  {{#image}}{{#layout_is_ground}}<div class="bl-phead__media" aria-hidden="true">
+    <img class="bl-phead__img" src="{{image}}" alt="" width="1600" height="900" fetchpriority="high">
+    <span class="bl-phead__shade"></span>
+  </div>{{/layout_is_ground}}{{/image}}
+  <div class="bl-container bl-phead__inner">
+    <div class="bl-phead__copy" data-reveal-group>
+      {{#crumbs.0}}<nav class="bl-crumbs" aria-label="Breadcrumb" data-reveal>
+        <ol>{{#crumbs}}<li>{{#href}}<a href="{{href}}">{{label}}</a>{{/href}}{{^href}}<span aria-current="page">{{label}}</span>{{/href}}</li>{{/crumbs}}</ol>
+      </nav>{{/crumbs.0}}
+      {{#eyebrow}}<p class="bl-eyebrow" data-reveal>{{eyebrow}}</p>{{/eyebrow}}
+      <h1 class="bl-h1 bl-phead__title" data-reveal>{{title}}</h1>
+      {{#lead}}<p class="bl-lead bl-phead__lead" data-reveal>{{lead}}</p>{{/lead}}
+      {{#meta}}<p class="bl-phead__meta" data-reveal>{{meta}}</p>{{/meta}}
+      {{#primary_cta}}<div class="bl-btn-row bl-phead__actions" data-reveal>
+        <a class="bl-btn bl-btn--primary bl-btn--lg" href="{{href}}">{{label}}</a>{{/primary_cta}}{{#secondary_cta}}
+        <a class="bl-btn bl-btn--ghost bl-btn--lg" href="{{href}}">{{label}}</a>{{/secondary_cta}}{{#primary_cta}}
+      </div>{{/primary_cta}}
+    </div>
+    {{#image}}{{#layout_is_side}}<div class="bl-phead__frame bl-frame" data-reveal="right">
+      <img class="bl-phead__photo" src="{{image}}" alt="{{image_alt}}" width="1200" height="900" fetchpriority="high">
+    </div>{{/layout_is_side}}{{/image}}
+  </div>
+</section>

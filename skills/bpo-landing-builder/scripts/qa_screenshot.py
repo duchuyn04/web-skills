@@ -838,6 +838,8 @@ def launch(p):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("dist", help="folder that contains index.html")
+    ap.add_argument("--page", default="index.html", help="page of a site to check, such as payroll.html (default index.html)")
+    ap.add_argument("--all-pages", action="store_true", help="check every page of a site (every .html file in dist), one after another")
     ap.add_argument("--widths", default="1440,768,390")
     ap.add_argument("--sections", action="store_true", help="save one JPEG per section for every width")
     ap.add_argument("--out", default=None, help="screenshot folder (default: <dist>/qa)")
@@ -861,17 +863,40 @@ def main():
         print("Python Playwright is missing. Run: pip install playwright")
         return 2
     dist = Path(args.dist).resolve()
-    index = dist / "index.html"
-    if not index.is_file():
+    if not (dist / "index.html").is_file():
         print("No index.html in %s. Run build.py first." % dist)
         return 2
-    out = Path(args.out).resolve() if args.out else dist / "qa"
-    out.mkdir(parents=True, exist_ok=True)
+    names = (["index.html"] + sorted(f.name for f in dist.glob("*.html") if f.name != "index.html")) if args.all_pages else [args.page]
     try:
         # a site that pins an older rules version ("rules" in page.json) gets the newer checks as warnings
         pinned = int(json.loads((dist / "build-report.json").read_text(encoding="utf-8")).get("rules", 99))
     except (OSError, ValueError, TypeError):
         pinned = 99
+    failed_pages = []
+    for name in names:
+        index = dist / name
+        if not index.is_file():
+            print("No %s in %s." % (name, dist))
+            return 2
+        root = Path(args.out).resolve() if args.out else dist / "qa"
+        # a site's other pages get their own screenshot folder: qa/payroll/
+        out = root if name == "index.html" else root / index.stem
+        out.mkdir(parents=True, exist_ok=True)
+        if len(names) > 1:
+            print("\n== %s" % name)
+        if qa_page(args, dist, index, out, sweep, pinned, sync_playwright):
+            failed_pages.append(name)
+    if failed_pages:
+        if len(names) > 1:
+            print("\nPages that failed: %s" % ", ".join(failed_pages))
+        print("\nQA FAILED. Fix the cause in page.json (shorter copy, fewer items) or in the section template, rebuild, run QA again.")
+        return 1
+    print("\nQA PASSED. Now open the screenshots and look at them.")
+    return 0
+
+
+def qa_page(args, dist, index, out, sweep, pinned, sync_playwright):
+    """Every QA check on one page; returns True when something failed."""
     failed = False
     with sync_playwright() as p:
         browser, label = launch(p)
@@ -1006,11 +1031,7 @@ def main():
             for pr in problems:
                 print("       " + pr)
             failed = failed or bool(problems)
-    if failed:
-        print("\nQA FAILED. Fix the cause in page.json (shorter copy, fewer items) or in the section template, rebuild, run QA again.")
-        return 1
-    print("\nQA PASSED. Now open the screenshots and look at them.")
-    return 0
+    return failed
 
 
 if __name__ == "__main__":

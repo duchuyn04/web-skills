@@ -1,0 +1,55 @@
+{
+ "id": "genpact-about",
+ "page_type": "about",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/about-us/purpose",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark corporate about page (purpose) of 6 blocks: breadcrumb, a wide rounded photo, a statement with orange italic line, six photo cards, an impact carousel and a closing call-to-action. Needs one wide photo, six initiatives with photos and an impact slider.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "breadcrumb; near-black ground; red breadcrumb trail under the header; one wide rounded photo as the page head, then the title below it"
+  },
+  {
+   "form": "statement",
+   "role": "about",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "left-aligned 64px title, an orange italic strapline and two paragraphs"
+  },
+  {
+   "form": "cards-image",
+   "role": "values",
+   "tone": "dark",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "note": "large heading; six cards in two rows of three, each a photo, a bold title and a short paragraph (no borders)"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "about",
+   "tone": "dark",
+   "cols": 1,
+   "count": 4,
+   "media": "right",
+   "note": "heading and line; one slide at a time: heading, paragraph and outlined button left, rounded photo right; thin progress bar and a round next arrow"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "heading and one red pill button over a faint photo with an orange chevron mark"
+  }
+ ]
+}

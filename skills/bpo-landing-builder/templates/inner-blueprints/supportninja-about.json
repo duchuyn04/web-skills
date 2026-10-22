@@ -1,0 +1,83 @@
+{
+ "id": "supportninja-about",
+ "page_type": "about",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/company",
+  "collected": "2026-10-18"
+ },
+ "summary": "Warm illustrated page of 7 sections: a head with spot illustration, a pink wavy band with a follow-the-sun world map, a people-first block with three stats, six values, a community video, six leaders and awards, a news carousel and a closing illustration call-to-action. Needs a world map or location hubs, three culture figures, six leader photos and awards.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "cream ground; large serif title with a two-line lead and a paragraph that opens with a red drop cap left; a flat illustration of two people with a plant right; no photo, no buttons"
+  },
+  {
+   "form": "locations-map",
+   "role": "locations",
+   "tone": "accent",
+   "cols": 1,
+   "count": 5,
+   "media": "ground",
+   "note": "peach band with wavy top and bottom edges; faint world map with five grey hub circles, small kicker and a large centered serif heading"
+  },
+  {
+   "form": "metrics",
+   "role": "about",
+   "tone": "accent",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "same peach band: large heading and paragraph left with a small watering-can illustration; three stat columns divided by thin vertical lines, each a big numeral, bold label and a note"
+  },
+  {
+   "form": "list-rows",
+   "role": "values",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "large heading with a round icon badge; six values in two columns of three, each a small icon, a bold title and one line, divided by thin rules"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "left",
+   "note": "video player left, big serif heading and paragraph right"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "note": "centered heading; six leaders in two rows of three, each a portrait on a peach tile with a name and a grey title; below a rule, a line of text left and four award badges right"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "news",
+   "tone": "accent",
+   "cols": 6,
+   "count": 8,
+   "media": "top",
+   "optional": true,
+   "note": "peach band, heading and line; a sliding row of small news tiles with a logo or graphic, title and date"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "right",
+   "note": "heading and paragraph with a pill button left, three-person illustration right"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "blueprint": "supportninja-pricing",
+ "title": "Pricing for offshore staff in Cebu | Quayside Staffing",
+ "description": "What a Quayside Staffing role includes and what each client provides: one account manager, a monthly report and an interview before every hire.",
+ "sections": [
+  {
+   "type": "page-head",
+   "data": {
+    "title": "Pricing",
+    "lead": "Each role is priced on its own. This table shows what comes with every Quayside Staffing role and what stays with the client.",
+    "image": "desk-phone-monitors",
+    "image_alt": "An office worker at a desk phone with two screens, back to the camera",
+    "layout": "side"
+   }
+  },
+  {
+   "type": "matrix-table",
+   "id": "included",
+   "data": {
+    "head": {
+     "title": "What a role includes"
+    },
+    "row_label": "Item",
+    "columns": [
+     {
+      "name": "Quayside Staffing"
+     },
+     {
+      "name": "The client"
+     }
+    ],
+    "rows": [
+     {
+      "label": "Hiring",
+      "cells": [
+       "Shortlists candidates in Cebu",
+       "Interviews and approves every hire"
+      ]
+     },
+     {
+      "label": "Management",
+      "detail": "Day to day",
+      "cells": [
+       "One account manager",
+       "Sets the tasks"
+      ]
+     },
+     {
+      "label": "Reporting",
+      "cells": [
+       "A monthly report",
+       "Reads and replies"
+      ]
+     }
+    ],
+    "note": "Prices depend on the role. [Contact us](index.html#contact) for a quote, or read [how we hire](how-we-hire.html#steps)."
+   }
+  },
+  {
+   "type": "cta-band",
+   "id": "quote",
+   "data": {
+    "title": "Ask Quayside for a quote",
+    "text": "Send us the role you have in mind and we will reply with a price for that role.",
+    "primary_cta": {
+     "label": "Contact us",
+     "href": "index.html#contact"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "outbooks-software-xero",
+ "page_type": "software",
+ "source": {
+  "name": "Outbooks",
+  "url": "https://outbooks.co.uk/xero-bookkeeping/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Closest real 'software page' found: a landing page for one accounting package (5,900px): a hero with a call-back form, a navy problem list, a what-is block with 11 ticks, a navy reasons list, trust figures, two video testimonials, 14 FAQs and a callback form. No logo grid or integration list. Software is the subject, not a section.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "tall hero image ground with a white call-back form card at the right (the card is empty until a script loads); the blue lead line sits below the image, not over it."
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "one blue 28px line about the package and the audience, centered-left"
+  },
+  {
+   "form": "list-columns",
+   "role": "scope",
+   "tone": "dark",
+   "cols": 1,
+   "count": 6,
+   "media": "none",
+   "note": "navy band: a lead, one bold line and six bullets with white arrow icons"
+  },
+  {
+   "form": "list-rows",
+   "role": "about",
+   "tone": "light",
+   "cols": 1,
+   "count": 11,
+   "media": "none",
+   "note": "heading, a paragraph and eleven tick bullets in one column"
+  },
+  {
+   "form": "list-rows",
+   "role": "about",
+   "tone": "dark",
+   "cols": 1,
+   "count": 5,
+   "media": "none",
+   "note": "navy band: heading, a line and five ticked points"
+  },
+  {
+   "form": "text-block",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "heading, one line and a link to book a consultation"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "heading and two inline icon figures (years, firms trusting)"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "grey band: heading, two rounded video embeds, a navy button"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 14,
+   "media": "none",
+   "note": "heading, one column of 14 rows with a plus sign"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "centered heading and a callback form"
+  }
+ ]
+}

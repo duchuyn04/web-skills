@@ -1,0 +1,70 @@
+{# Hero 'showroom': a retail product banner per slide on the product's own colour (brand name printed large and faint behind the product, model name, tagline, four spec icons from the first spec groups, colour dots, price and button) with a tab strip of thumbnails and a progress bar under it; the product pictures follow the pointer and spread on hover. Pick it when every slide sells one product with real specs (Thegioididong, Sieu Thi Smartphone). #}
+{% set spec_icons = [("màn hình", "monitor"), ("camera", "camera"), ("pin", "battery"), ("sạc", "zap"), ("xử lý", "cpu"), ("cpu", "cpu"), ("cấu hình", "cpu"), ("hiệu năng", "cpu"), ("chip", "cpu"), ("ram", "memory"), ("bộ nhớ", "hard-drive"), ("lưu trữ", "hard-drive"), ("âm thanh", "speaker"), ("kết nối", "zap"), ("thiết kế", "smartphone")] %}
+<section class="hero hs" aria-label="Sản phẩm nổi bật">
+  <div class="ctn">
+    <div class="hs-box">
+      <div class="carousel hs-car" data-carousel data-interval="{{ sec.interval or 7000 }}" data-hs-stage>
+        <div class="hs-track">
+          {% for s in sec.slides %}
+          {% set prod = pid[s.product] if s.product else None %}
+          {% set href = s.href or (root ~ 'p/' ~ s.product ~ '.html' if s.product else root ~ 'deals.html') %}
+          {% set colors = (prod.options|selectattr("color")|first) if prod and prod.options else None %}
+          {% set first_slide = loop.first %}
+          <div class="hs-slide{% if loop.first %} is-active{% endif %}" style="--slide-bg: {{ s.bg or 'var(--c-dark)' }}; --slide-ink: {{ s.ink or '#ffffff' }}" {% if not loop.first %}aria-hidden="true"{% endif %} data-slide>
+            {% if prod %}<span class="hs-mark" aria-hidden="true">{{ prod.brand_name }}</span>{% endif %}
+            <span class="hs-rings" aria-hidden="true"><span></span><span></span><span></span></span>
+            <div class="hs-copy">
+              {% if s.label %}<p class="hs-label">{{ s.label }}</p>{% endif %}
+              {% if prod %}<p class="hs-brand">{{ prod.brand_name }}</p>{% endif %}
+              <h2 class="hs-title">{{ s.title }}</h2>
+              {% if s.text %}<p class="hs-text">{{ s.text }}</p>{% endif %}
+              {% if prod and prod.specs %}
+              <ul class="hs-specs">
+                {% for g in prod.specs[:4] if g.rows %}
+                {% set gl = g.group|lower %}
+                {% set ic = (spec_icons|selectattr(0, "in", gl)|map(attribute=1)|first) or "check-circle" %}
+                <li>{{ icon(ic) }}<span><small>{{ g.group }}</small><b>{{ g.rows[0][1] }}</b></span></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if colors %}
+              <p class="hs-colors">
+                {% for v in colors['values'][:6] %}<i style="--sw: {{ v.hex }}"></i>{% endfor %}
+                {{ colors['values']|map(attribute="name")|join(", ") if colors['values']|length <= 4 else (colors['values']|length ~ " màu") }}
+              </p>
+              {% endif %}
+              <div class="hs-buy">
+                <a class="hs-cta" href="{{ href }}" {% if not loop.first %}tabindex="-1"{% endif %}>{{ s.cta or "Xem sản phẩm" }}{{ arrow }}</a>
+                {% if prod %}<p class="hs-price"><small>Giá từ</small><b>{{ prod.price|vnd }}</b></p>{% endif %}
+              </div>
+            </div>
+            <div class="hs-art" aria-hidden="true">
+              {% if prod and prod.gallery|length > 1 %}
+              {% for g in prod.gallery[:3] %}<img src="{{ root }}{{ g.src }}" alt="" width="400" height="400" {% if not first_slide %}loading="lazy"{% endif %}>{% endfor %}
+              {% elif s.art %}<img src="{{ root }}{{ s.art }}" alt="" width="400" height="400" {% if not loop.first %}loading="lazy"{% endif %}>{% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% if sec.slides|length > 1 %}
+        <div class="hs-arrows">
+          <button class="hs-btn" type="button" data-carousel-prev aria-label="Banner trước">{{ icon("chevron-left") }}</button>
+          <button class="hs-btn" type="button" data-carousel-next aria-label="Banner tiếp theo">{{ icon("chevron-right") }}</button>
+        </div>
+        {% endif %}
+      </div>
+      {% if sec.slides|length > 1 %}
+      <div class="hs-tabs" role="tablist" aria-label="Chọn banner" style="--hs-interval: {{ (sec.interval or 7000) / 1000 }}s">
+        {% for s in sec.slides %}
+        {% set prod = pid[s.product] if s.product else None %}
+        <button type="button" role="tab" data-carousel-tab="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}">
+          <span class="hs-bar" aria-hidden="true"></span>
+          {% if s.art %}<img src="{{ root }}{{ s.art }}" alt="" width="42" height="42" loading="lazy">{% endif %}
+          <span class="hs-tab-text"><b>{{ s.tab or s.title }}</b>{% if prod %}<small>{{ prod.category_name }}{% if "new" in prod.badges %}<em>Mới</em>{% endif %}</small>{% endif %}</span>
+        </button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

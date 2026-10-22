@@ -1,0 +1,23 @@
+{
+  "variant": "matrix-table",
+  "group": "compare",
+  "forms": ["table"],
+  "summary": "A table of short text cells: a responsibility matrix (who prepares, reviews, approves and submits), a software and task matrix, a cost comparison laid out line by line, or a working-hours example. Heading above, the row names in the first column, 1-5 named columns, an optional note under the table (for example \"Illustrative example, not a service promise\"). On phones every row becomes a card with each cell under its column name. Use only for facts the brief gives; a cell that is not known yet is left out of the table, not filled with a guess.",
+  "tone": "auto",
+  "anchor": "matrix",
+  "animations": ["reveal", "row-stagger"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "row_label": {"type": "text", "min": 2, "max": 40},
+    "columns": {"type": "list", "min": 1, "max": 5, "item": {"type": "object", "fields": {
+      "name": {"type": "text", "min": 2, "max": 40}
+    }}},
+    "rows": {"type": "list", "min": 2, "max": 14, "item": {"type": "object", "fields": {
+      "label": {"type": "text", "min": 2, "max": 80},
+      "detail": {"type": "text", "min": 3, "max": 140, "required": false},
+      "cells": {"type": "list", "min": 1, "max": 5, "item": {"type": "text", "min": 1, "max": 220}}
+    }}},
+    "note": {"type": "rich", "min": 10, "max": 400, "required": false},
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

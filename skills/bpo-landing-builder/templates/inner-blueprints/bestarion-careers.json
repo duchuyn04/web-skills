@@ -1,0 +1,100 @@
+{
+ "id": "bestarion-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "Bestarion",
+  "url": "https://bestarion.com/careers/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Eleven blocks: a peach head, two cards for employers and candidates, a four-step process, a job listing of cards, a \"no matching role\" split with action cards, benefit lists, project cards, team photos, a testimonials block and a dark application form. Needs open roles with count, type and place (one real role is enough), four process steps and benefits.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "peach ground; small script tag, large black title with a short line and one orange pill button left; an illustration at the right edge"
+  },
+  {
+   "form": "cards-text",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "two grey rounded cards side by side (employers, candidates), each a heading, one sentence and an orange pill button"
+  },
+  {
+   "form": "icon-strip",
+   "role": "process",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "tag and centered heading with an orange word; four steps, each an orange round icon, a number and title and one line"
+  },
+  {
+   "form": "list-rows",
+   "role": "jobs",
+   "tone": "muted",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "(measured as job-list) heading; role cards of about 400px in a row: round red icon, title, number of positions, a small level tag, then job type, place and an orange View JD pill"
+  },
+  {
+   "form": "feature-split",
+   "role": "jobs",
+   "tone": "muted",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "no-match block: left light half with heading and text, right dark half holding two white action cards (leave details, refer a friend) with an accordion line and orange button"
+  },
+  {
+   "form": "cards-text",
+   "role": "values",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "tag and centered heading; three grey cards, each with a round orange icon, a title and a bullet list (perks, health, fun)"
+  },
+  {
+   "form": "feature-split",
+   "role": "values",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "heading and paragraph, then three white cards with an orange icon"
+  },
+  {
+   "form": "image-band",
+   "role": "careers",
+   "tone": "light",
+   "media": "top",
+   "optional": true,
+   "note": "team photo mosaic with a heading"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "heading and three cards with portrait, quote and name"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "media": "none",
+   "note": "dark band: heading, a short line and a list of three contact rows left; form right (name, email, role, message, CV upload)"
+  }
+ ]
+}

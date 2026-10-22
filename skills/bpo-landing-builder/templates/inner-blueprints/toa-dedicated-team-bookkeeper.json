@@ -1,0 +1,95 @@
+{
+ "id": "toa-dedicated-team-bookkeeper",
+ "page_type": "dedicated-team",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/solutions/bookkeepers/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Same TOA role template as the accountant page, with three task rows instead of eight, qualifications in rows of three, and a founder video; 7,100px.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "pale blurred ground with faint line icons (calculator, plus signs) and no portrait; left: serif title with two bold words, one lead line, one purple pill button. The header above has a thin purple top bar."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "a heading and a paragraph left, a card right"
+  },
+  {
+   "form": "list-rows",
+   "role": "scope",
+   "tone": "muted",
+   "cols": 2,
+   "count": 3,
+   "media": "none",
+   "note": "grey band: three tasks with a line icon, serif title and line"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "none",
+   "note": "pale teal strip, one line and button"
+  },
+  {
+   "form": "list-columns",
+   "role": "scope",
+   "tone": "light",
+   "cols": 3,
+   "count": 9,
+   "media": "none",
+   "note": "three rows of three qualification blocks (experience, software, data entry)"
+  },
+  {
+   "form": "image-band",
+   "role": "about",
+   "tone": "light",
+   "count": 4,
+   "media": "ground",
+   "note": "four alternating text-over-photo rows"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "four big figures"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "light",
+   "count": 1,
+   "media": "none",
+   "note": "one quote with a round portrait"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "two columns: text left, form right"
+  },
+  {
+   "form": "cards-text",
+   "role": "related",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "four role cards"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "id": "advancetrack-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/privacy-policy/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Plain white page: small title, a key-facts table (controller, registration, address, contact, version) and long numbered sections with many data tables. 22 tables and 36 sections, so it needs table styling more than layout.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: small H1 then a line with the company name, trading name and Last updated date"
+  },
+  {
+   "form": "table",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "key-facts table: two columns, eight rows (controller, ICO number, address, company number, contact, lead, version, applies to)"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 36,
+   "media": "none",
+   "note": "about notice paragraph, then h2 sections divided by thin rules, part headings in capitals, many two-column data tables"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "id": "bestarion-service-detail-accounting",
+ "page_type": "service-detail",
+ "source": {
+  "name": "Bestarion",
+  "url": "https://bestarion.com/outsourced-accounting-services/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short 7,500px service hub: pale centered head with two buttons and three chips, an intro split with three figure tiles, four service cards, a numbered case study, a dark pricing band with two plan cards, four reasons with ISO badges, two office cards and a dark contact form block.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "pale blue ground, centered two-line title, one-sentence lead, one orange filled and one outlined button, then a row of three small tick chips. No photo."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "left: heading with one orange word, a paragraph, four tick bullets and a button; right: a rounded team photo with a row of three big figure tiles over its lower edge"
+  },
+  {
+   "form": "cards-icon",
+   "role": "services",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and a line; four white cards in a row, each with a small line icon, a title, two lines and a 'learn more' link"
+  },
+  {
+   "form": "feature-split",
+   "role": "cases",
+   "tone": "light",
+   "cols": 2,
+   "media": "left",
+   "note": "case study: a photo left with an orange quote panel and two big figures beneath; right a numbered list of four blocks (client profile, challenges, needs, solutions) with bullets"
+  },
+  {
+   "form": "cards-text",
+   "role": "pricing",
+   "tone": "dark",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "dark band: heading, paragraph and a button left; two white plan cards right, each with a icon, plan name, a from-price and an orange quote button; no table"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "heading with two ISO badges to the right, four cards (quality, security, scalability, pricing) with an icon and a paragraph"
+  },
+  {
+   "form": "locations-map",
+   "role": "locations",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "centered heading and line, two office cards (city, phone, email, address); no map"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "rounded dark block with an orange swirl: heading with an accent word left; a white form card right with a two-tab switch (send request / schedule a call)"
+  }
+ ]
+}

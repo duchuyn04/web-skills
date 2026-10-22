@@ -1,0 +1,55 @@
+{
+ "id": "intelligent-outsourcing-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/careers",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short careers page (5 blocks): a slim photo head, a plain job list (title, place, Apply now), six reasons to join, a team photo call-to-action and a grid of six employee voice cards. Needs 3 or more open roles with places, six benefits and six staff names with tenure.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "dark-faded team photo, left-aligned white title and one subtitle line; no buttons"
+  },
+  {
+   "form": "list-rows",
+   "role": "jobs",
+   "tone": "light",
+   "cols": 1,
+   "count": 3,
+   "media": "none",
+   "note": "(measured as job-list) centered red heading and line; three rows with bold title, grey place and a red pill Apply now at the right, thin rules between; narrow 640px column"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; three by two white cards with a red line icon, title and one or two lines"
+  },
+  {
+   "form": "image-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "ground",
+   "note": "full team photo with dark overlay, white heading and one red pill button"
+  },
+  {
+   "form": "cards-text",
+   "role": "testimonial",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "optional": true,
+   "note": "centered heading and line; six bordered cards in two rows, each a photo or video slot, red first name, role and years at the firm"
+  }
+ ]
+}

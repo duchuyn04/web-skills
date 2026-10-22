@@ -1,0 +1,54 @@
+{
+ "id": "io-software-tools-resources",
+ "page_type": "software",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/resources/tools-for-your-business",
+  "collected": "2026-10-18"
+ },
+ "summary": "A downloads page (4,000px): a faded photo head, six numbered downloadable PDFs, a seven-point best-practice list, three icon link cards (events, webinars, blogs) and a closing booking button. A text-heavy resource page; no software logos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "faded photo ground (a headset); red title, a grey subtitle, two grey lines; no button."
+  },
+  {
+   "form": "list-rows",
+   "role": "tools",
+   "tone": "light",
+   "cols": 1,
+   "count": 6,
+   "media": "none",
+   "note": "red heading and a lead; six numbered items, each a bold title, a paragraph and a red 'download the file' pill"
+  },
+  {
+   "form": "list-rows",
+   "role": "about",
+   "tone": "light",
+   "cols": 1,
+   "count": 7,
+   "media": "none",
+   "note": "red heading and seven numbered best practices with a bold lead-in and a line each"
+  },
+  {
+   "form": "cards-icon",
+   "role": "related",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "three outlined cards each with a big red icon, a title and a line (events, webinars, blogs)"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "media": "none",
+   "note": "one centered red pill button over a faded ground"
+  }
+ ]
+}

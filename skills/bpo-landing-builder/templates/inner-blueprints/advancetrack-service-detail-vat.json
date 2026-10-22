@@ -1,0 +1,96 @@
+{
+ "id": "advancetrack-service-detail-vat",
+ "page_type": "service-detail",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/vat-outsourcing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Calm 5,700px page under a short photo band: intro line, a 'why outsource' split with three accordion tiles, six benefit cards, a three-step journey with photo, a green quote card, a partner-choice split, five reasons, FAQ and a green closing block. Same skeleton for payroll, bookkeeping and year-end.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "a wide dark photo band (a conference crowd) with a darkened overlay; the title sits centered in a small green label box with dark text. No lead, no button, no breadcrumb. The page body starts right under the band."
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "centered heading and a grey paragraph, about 160px tall"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "none",
+   "note": "heading, a paragraph and a bullet list left; three lilac accordion tiles right (each with an icon and a closed chevron) that expand to a short paragraph"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and a grey line, then six pale green cards (3 by 2) each with a line icon, a green title and two lines"
+  },
+  {
+   "form": "feature-split",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "left",
+   "note": "centered heading and one line; below, a photo left and three stacked pale lilac accordion tiles right (step 1 discovery call, step 2 recommendation, next steps), each with a line icon and chevron"
+  },
+  {
+   "form": "statement",
+   "role": "testimonial",
+   "tone": "accent",
+   "media": "none",
+   "optional": true,
+   "note": "a pale green rounded quote card, centered, with a big quote mark and one sentence (no name)"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "short heading, paragraphs and a text link left; a rounded photo (people at an event) right"
+  },
+  {
+   "form": "icon-strip",
+   "role": "about",
+   "tone": "muted",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "note": "grey band: centered heading, five columns each with a small green star mark, a bold title and a short paragraph"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "grey band: heading and one line at the left, five or six white question rows at the right with a chevron"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "none",
+   "note": "a big rounded green block (not full width) with a heading at the left and one black button"
+  }
+ ]
+}

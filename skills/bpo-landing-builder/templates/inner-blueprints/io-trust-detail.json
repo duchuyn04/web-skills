@@ -1,0 +1,29 @@
+{
+ "id": "io-trust-detail",
+ "page_type": "trust-detail",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/data-protection",
+  "collected": "2026-10-18"
+ },
+ "summary": "Very short data protection page: a red H1, a lead and about seven short blocks of text with red sub-heads, no images and no call band. Needs a statement of the law followed, a controller name and a contact email.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: red H1 at the top of a white page, one lead paragraph"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 7,
+   "media": "none",
+   "note": "one wide column; one h2, two red h3 sub-heads, paragraphs and one short bullet list"
+  }
+ ]
+}

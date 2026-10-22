@@ -1,0 +1,56 @@
+{
+ "id": "karbon-trust-hub",
+ "page_type": "trust-hub",
+ "source": {
+  "name": "Karbon",
+  "url": "https://karbonhq.com/security/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark, text-heavy security page: a hero with four round badges and an email field, a short intro, a long accordion of control groups on black and a logo band before a demo form. Needs four badge-style claims, grouped control texts (14 accordion items) and client logos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "dark textured ground: small caps label, big two-line heading, one line and an inline email field with a button; right four round icon badges with labels under them (certification, regulation, backup, privacy)"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "centered heading, then two columns of paragraphs"
+  },
+  {
+   "form": "list-rows",
+   "role": "controls",
+   "tone": "dark",
+   "cols": 1,
+   "count": 14,
+   "media": "none",
+   "note": "four group headings centered (compliance, cloud, product, people); under each a stack of full-width rows with a plus icon, 14 rows in all; the first row is open with a text block"
+  },
+  {
+   "form": "logo-strip",
+   "role": "clients",
+   "tone": "light",
+   "cols": 6,
+   "count": 24,
+   "media": "none",
+   "optional": true,
+   "note": "heading with one figure and a sentence; 24 client logos in rows of six"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "heading and a one-field email demo form with a button and a line of small print"
+  }
+ ]
+}

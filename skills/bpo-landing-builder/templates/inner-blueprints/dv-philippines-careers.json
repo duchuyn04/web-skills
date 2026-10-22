@@ -1,0 +1,65 @@
+{
+ "id": "dv-philippines-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/about-us/careers",
+  "collected": "2026-10-18"
+ },
+ "summary": "Seven blocks with no job list: slanted-photo head, navy tagline band, three alternating text and slanted-photo rows, a ten-item benefits checklist, an alumni quote carousel and a how-to-apply row. Needs ten benefit lines, three to four alumni stories and an apply route.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "cream ground; orange label, navy title and a lead left; staff photo right with diagonal stripes"
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "navy band, one tagline"
+  },
+  {
+   "form": "feature-split",
+   "role": "careers",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "right",
+   "note": "two rows alternating: navy uppercase heading and two paragraphs; slanted photo on the opposite side"
+  },
+  {
+   "form": "list-rows",
+   "role": "values",
+   "tone": "light",
+   "cols": 1,
+   "count": 10,
+   "media": "right",
+   "note": "heading and one line; ten rows each an orange round arrow icon and one line; slanted team photo right"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "optional": true,
+   "note": "blush ground with a giant orange quote mark, heading, intro and one long alumni story at a time with name in caps; round arrow and four dots"
+  },
+  {
+   "form": "feature-split",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "right",
+   "note": "how to join: heading, short steps and an orange button left; photo right"
+  }
+ ]
+}

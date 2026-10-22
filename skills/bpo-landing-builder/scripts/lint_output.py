@@ -66,6 +66,9 @@ class Page(HTMLParser):
             self.texts.append((self.getpos()[0], data.strip()))
 
 
+_PAGE = ["index.html"]  # the page being linted, for the file name in messages
+
+
 def check_seo_head(src, tags, dist, add):
     """The head tags build.py writes (see references/seo.md). A page linted from an old dist fails until rebuilt."""
     head = src.split("</head>", 1)[0]
@@ -75,54 +78,134 @@ def check_seo_head(src, tags, dist, add):
         return [a.get("content", "") for a in metas if a.get(attr, "").lower() == key]
     html_tag = next((a for _, t, a in tags if t == "html"), {})
     if not html_tag.get("lang"):
-        add("error", "index.html", "seo-lang", "<html> has no lang attribute; search engines and screen readers read the language from it.")
+        add("error", _PAGE[0], "seo-lang", "<html> has no lang attribute; search engines and screen readers read the language from it.")
     titles = re.findall(r"<title>(.*?)</title>", head, re.S)
     if len(titles) != 1 or not titles[0].strip():
-        add("error", "index.html", "seo-title", "expected one non-empty <title> in the head, found %d" % len(titles))
+        add("error", _PAGE[0], "seo-title", "expected one non-empty <title> in the head, found %d" % len(titles))
     if len([d for d in meta("name", "description") if d.strip()]) != 1:
-        add("error", "index.html", "seo-description", "expected one non-empty <meta name=\"description\">")
+        add("error", _PAGE[0], "seo-description", "expected one non-empty <meta name=\"description\">")
     for key in ("og:title", "og:description", "og:type"):
         if not meta("property", key):
-            add("error", "index.html", "seo-og", "missing <meta property=\"%s\">; shared links fall back to guesses without it" % key)
+            add("error", _PAGE[0], "seo-og", "missing <meta property=\"%s\">; shared links fall back to guesses without it" % key)
     if not meta("property", "og:image"):
-        add("warn", "index.html", "seo-og", "no og:image, so links shared on social sites show no picture")
+        add("warn", _PAGE[0], "seo-og", "no og:image, so links shared on social sites show no picture")
     canon = [a.get("href", "") for _, t, a in tags if t == "link" and a.get("rel", "").lower() == "canonical"]
     if len(canon) > 1:
-        add("error", "index.html", "seo-canonical", "%d canonical links; a page carries at most one" % len(canon))
+        add("error", _PAGE[0], "seo-canonical", "%d canonical links; a page carries at most one" % len(canon))
     if canon and not re.match(r"^https://[^/\s]+", canon[0]):
-        add("error", "index.html", "seo-canonical", "canonical %r must be an absolute https URL" % canon[0])
+        add("error", _PAGE[0], "seo-canonical", "canonical %r must be an absolute https URL" % canon[0])
     icons = [a for _, t, a in tags if t == "link" and "icon" in a.get("rel", "").lower().split()]
     if not icons:
-        add("error", "index.html", "seo-favicon", "no <link rel=\"icon\">")
+        add("error", _PAGE[0], "seo-favicon", "no <link rel=\"icon\">")
     elif all(a.get("href", "").lower().endswith(".svg") for a in icons):
-        add("warn", "index.html", "seo-favicon", "only an SVG favicon; Google Search shows BMP, GIF, ICO, PNG, JPEG, PPM or TIFF favicons only")
+        add("warn", _PAGE[0], "seo-favicon", "only an SVG favicon; Google Search shows BMP, GIF, ICO, PNG, JPEG, PPM or TIFF favicons only")
     for _, t, a in tags:
         if t == "link" and a.get("hreflang") and not re.match(r"^https://", a.get("href", "")):
-            add("error", "index.html", "seo-hreflang", "hreflang %s points to %r; alternates need full https addresses" % (a["hreflang"], a.get("href")))
+            add("error", _PAGE[0], "seo-hreflang", "hreflang %s points to %r; alternates need full https addresses" % (a["hreflang"], a.get("href")))
     for blob in re.findall(r'<script type="application/ld\+json">(.*?)</script>', src, re.S):
         try:
             data = json.loads(blob)
         except ValueError as e:
-            add("error", "index.html", "json-ld", "structured data is not valid JSON: %s" % e)
+            add("error", _PAGE[0], "json-ld", "structured data is not valid JSON: %s" % e)
             continue
         if not isinstance(data, dict) or "@context" not in data:
-            add("error", "index.html", "json-ld", "structured data has no @context")
+            add("error", _PAGE[0], "json-ld", "structured data has no @context")
     robots = " ".join(meta("name", "robots")).lower()
     sitemap = dist / "sitemap.xml"
     if sitemap.is_file():
-        if "noindex" in robots:
-            add("error", "sitemap.xml", "seo-sitemap", "the page is noindex but a sitemap lists it; search consoles report the conflict")
         locs = re.findall(r"<loc>(.*?)</loc>", sitemap.read_text(encoding="utf-8"))
-        if canon and locs and locs[0] != canon[0]:
-            add("error", "sitemap.xml", "seo-sitemap", "lists %s but the canonical link is %s" % (locs[0], canon[0]))
+        listed = bool(canon) and canon[0] in locs if len(locs) > 1 else bool(locs)
+        if "noindex" in robots and listed:
+            add("error", "sitemap.xml", "seo-sitemap", "%s is noindex but the sitemap lists it; search consoles report the conflict" % _PAGE[0])
+        if canon and locs and "noindex" not in robots and canon[0] not in locs:
+            add("error", "sitemap.xml", "seo-sitemap", "does not list %s (the canonical link of %s)" % (canon[0], _PAGE[0]))
     # Headings that skip a level (h2 then h4) break the outline search engines and screen readers read.
     last = 0
     for line, t, _ in tags:
         if re.match(r"^h[1-6]$", t):
             level = int(t[1])
             if last and level > last + 1:
-                add("warn", "index.html:%d" % line, "heading-skip", "<%s> follows <h%d>; use <h%d> or restyle it with CSS" % (t, last, last + 1))
+                add("warn", "%s:%d" % (_PAGE[0], line), "heading-skip", "<%s> follows <h%d>; use <h%d> or restyle it with CSS" % (t, last, last + 1))
             last = level
+
+
+
+def lint_page(dist, path, add, files):
+    """Every check on one built page. dist/index.html and, for a site, every other page next to it."""
+    _PAGE[0] = path.name
+    src = path.read_text(encoding="utf-8")
+    page = Page()
+    page.feed(src)
+
+    # 1. Copy rules on visible text and text attributes.
+    for line, text in page.texts:
+        for f in rules.check_text(text):
+            add(f.level, "%s:%d" % (_PAGE[0], line), f.code, "%s (near: \"%s\")" % (f.message, f.excerpt))
+    for line, tag, name, value in page.attrs:
+        if name == "content" and tag != "meta":
+            continue
+        for f in rules.check_text(value):
+            add(f.level, "%s:%d <%s %s>" % (_PAGE[0], line, tag, name), f.code, "%s (near: \"%s\")" % (f.message, f.excerpt))
+
+    # 1b. CSS or JS that slipped out of its file into the markup shows on the page as text (solution-panels in 4.1.0)
+    for line, text in page.texts:
+        if STRAY_CODE.search(text):
+            add("error", "%s:%d" % (_PAGE[0], line), "stray-code", "visible text looks like CSS or a code comment (near: \"%s\"). A section template holds code outside <style> and <script>; move it into section.css or section.js." % text[:70])
+
+    # 2. Characters that must not appear anywhere, code and comments included.
+    for f in files:
+        for line, fnd in rules.check_raw_file(f.read_text(encoding="utf-8")):
+            add("error", "%s:%d" % (f.relative_to(dist), line), fnd.code, "%s (near: \"%s\")" % (fnd.message, fnd.excerpt))
+    if "<!--" in src:
+        add("error", _PAGE[0], "comment", "HTML comments left in output (their '-->' reads as a text arrow). Rebuild with build.py.")
+
+    # 2b. Search and share metadata (scripts/seo.py writes it; references/seo.md).
+    check_seo_head(src, page.tags, dist, add)
+
+    # 3. Structure.
+    tags = page.tags
+    h1 = [t for t in tags if t[1] == "h1"]
+    if len(h1) != 1:
+        add("error", _PAGE[0], "h1", "expected exactly one <h1>, found %d" % len(h1))
+    ids = {}
+    for line, tag, a in tags:
+        if "id" in a:
+            if a["id"] in ids:
+                add("error", "%s:%d" % (_PAGE[0], line), "dup-id", "id \"%s\" also used on line %d" % (a["id"], ids[a["id"]]))
+            ids.setdefault(a["id"], line)
+    for line, tag, a in tags:
+        where = "%s:%d" % (_PAGE[0], line)
+        if tag == "section" and not a.get("id"):
+            add("error", where, "section-id", "<section> without id")
+        if tag == "img":
+            if "alt" not in a:
+                add("error", where, "img-alt", "<img> without alt (use alt=\"\" only for decorative copies)")
+        if tag == "svg" and a.get("aria-hidden") != "true" and a.get("role") != "img":
+            add("error", where, "svg-a11y", "<svg> needs aria-hidden=\"true\" (decorative) or role=\"img\" with a label")
+        if "style" in a and not CUSTOM_PROP_STYLE.match(a["style"]):
+            add("error", where, "inline-style", "inline style \"%s\"; only CSS custom properties (--x: ...) are allowed inline" % a["style"][:60])
+        if tag == "a":
+            href = a.get("href", "")
+            if href.startswith("#") and len(href) > 1 and href[1:] not in ids and href != "#top":
+                add("error", where, "anchor", "link to %s but no element has that id" % href)
+            if not href:
+                add("error", where, "anchor", "<a> without href")
+        if tag == "script" and a.get("src") and re.match(r"https?://", a["src"]):
+            add("error", where, "external-script", "external script %s; all JS must be local" % a["src"])
+        if tag == "link" and a.get("rel") == "stylesheet" and re.match(r"https?://", a.get("href", "")) and "fonts.googleapis.com" not in a["href"]:
+            add("error", where, "external-css", "external stylesheet %s; only Google Fonts is allowed" % a["href"])
+    _check_buttons(src, add)
+    _check_headings(tags, add)
+    # the stylesheets this page loads (a site writes one per page)
+    own = [dist / h for _, t, a in page.tags if t == "link" and a.get("rel") == "stylesheet" for h in [a.get("href", "")] if h.startswith("assets/")]
+    sheets = [(str(f.relative_to(dist)), f.read_text(encoding="utf-8")) for f in (own or sorted((dist / "assets").rglob("*.css"))) if f.is_file()]
+    sheets.append((_PAGE[0] + " <style>", "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", src, re.S))))
+    _check_flat(sheets, add)
+    css_all = "\n".join(css for _, css in sheets)
+    _check_design_css(css_all, add)
+    _check_design_html(src, add)
+
+    return page, ids
 
 
 def main():
@@ -146,82 +229,36 @@ def main():
             level, msg = "warn", "[rules %d, not enforced] %s" % (pinned, msg)
         (errors if level == "error" else warns).append("%s [%s] %s" % (where, code, msg))
 
-    src = index.read_text(encoding="utf-8")
-    page = Page()
-    page.feed(src)
-
-    # 1. Copy rules on visible text and text attributes.
-    for line, text in page.texts:
-        for f in rules.check_text(text):
-            add(f.level, "index.html:%d" % line, f.code, "%s (near: \"%s\")" % (f.message, f.excerpt))
-    for line, tag, name, value in page.attrs:
-        if name == "content" and tag != "meta":
+    pages = [index] + sorted(f for f in dist.glob("*.html") if f.name != "index.html")
+    shared = sorted((dist / "assets").rglob("*.css")) + sorted((dist / "assets").rglob("*.js"))
+    files = pages + shared
+    texts = attrs = 0
+    page_ids, links = {}, []
+    for i, path in enumerate(pages):
+        # assets are checked once, with the first page
+        page, ids = lint_page(dist, path, add, [path] + (shared if i == 0 else []))
+        texts, attrs = texts + len(page.texts), attrs + len(page.attrs)
+        page_ids[path.name] = ids
+        links += [(path.name, line, a.get("href", "")) for line, t, a in page.tags if t == "a"]
+    # links between the pages of a site (about.html, contact.html#form); a single page may link to pages hosted elsewhere
+    try:
+        is_site = bool(json.loads((dist / "build-report.json").read_text(encoding="utf-8")).get("site"))
+    except (OSError, ValueError, AttributeError):
+        is_site = False
+    for name, line, href in (links if is_site else []):
+        m = re.match(r"^([\w-]+\.html)(?:#([A-Za-z][\w-]*))?$", href)
+        if not m:
             continue
-        for f in rules.check_text(value):
-            add(f.level, "index.html:%d <%s %s>" % (line, tag, name), f.code, "%s (near: \"%s\")" % (f.message, f.excerpt))
-
-    # 1b. CSS or JS that slipped out of its file into the markup shows on the page as text (solution-panels in 4.1.0)
-    for line, text in page.texts:
-        if STRAY_CODE.search(text):
-            add("error", "index.html:%d" % line, "stray-code", "visible text looks like CSS or a code comment (near: \"%s\"). A section template holds code outside <style> and <script>; move it into section.css or section.js." % text[:70])
-
-    # 2. Characters that must not appear anywhere, code and comments included.
-    files = [index] + sorted((dist / "assets").rglob("*.css")) + sorted((dist / "assets").rglob("*.js"))
-    for f in files:
-        for line, fnd in rules.check_raw_file(f.read_text(encoding="utf-8")):
-            add("error", "%s:%d" % (f.relative_to(dist), line), fnd.code, "%s (near: \"%s\")" % (fnd.message, fnd.excerpt))
-    if "<!--" in src:
-        add("error", "index.html", "comment", "HTML comments left in output (their '-->' reads as a text arrow). Rebuild with build.py.")
-
-    # 2b. Search and share metadata (scripts/seo.py writes it; references/seo.md).
-    check_seo_head(src, page.tags, dist, add)
-
-    # 3. Structure.
-    tags = page.tags
-    h1 = [t for t in tags if t[1] == "h1"]
-    if len(h1) != 1:
-        add("error", "index.html", "h1", "expected exactly one <h1>, found %d" % len(h1))
-    ids = {}
-    for line, tag, a in tags:
-        if "id" in a:
-            if a["id"] in ids:
-                add("error", "index.html:%d" % line, "dup-id", "id \"%s\" also used on line %d" % (a["id"], ids[a["id"]]))
-            ids.setdefault(a["id"], line)
-    for line, tag, a in tags:
-        where = "index.html:%d" % line
-        if tag == "section" and not a.get("id"):
-            add("error", where, "section-id", "<section> without id")
-        if tag == "img":
-            if "alt" not in a:
-                add("error", where, "img-alt", "<img> without alt (use alt=\"\" only for decorative copies)")
-        if tag == "svg" and a.get("aria-hidden") != "true" and a.get("role") != "img":
-            add("error", where, "svg-a11y", "<svg> needs aria-hidden=\"true\" (decorative) or role=\"img\" with a label")
-        if "style" in a and not CUSTOM_PROP_STYLE.match(a["style"]):
-            add("error", where, "inline-style", "inline style \"%s\"; only CSS custom properties (--x: ...) are allowed inline" % a["style"][:60])
-        if tag == "a":
-            href = a.get("href", "")
-            if href.startswith("#") and len(href) > 1 and href[1:] not in ids and href != "#top":
-                add("error", where, "anchor", "link to %s but no element has that id" % href)
-            if not href:
-                add("error", where, "anchor", "<a> without href")
-        if tag == "script" and a.get("src") and re.match(r"https?://", a["src"]):
-            add("error", where, "external-script", "external script %s; all JS must be local" % a["src"])
-        if tag == "link" and a.get("rel") == "stylesheet" and re.match(r"https?://", a.get("href", "")) and "fonts.googleapis.com" not in a["href"]:
-            add("error", where, "external-css", "external stylesheet %s; only Google Fonts is allowed" % a["href"])
-    _check_buttons(src, add)
-    _check_headings(tags, add)
-    sheets = [(str(f.relative_to(dist)), f.read_text(encoding="utf-8")) for f in sorted((dist / "assets").rglob("*.css"))]
-    sheets.append(("index.html <style>", "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", src, re.S))))
-    _check_flat(sheets, add)
-    css_all = "\n".join(css for _, css in sheets)
-    _check_design_css(css_all, add)
-    _check_design_html(src, add)
+        if m.group(1) not in page_ids:
+            add("error", "%s:%d" % (name, line), "page-link", "link to %s, which is not in %s" % (href, dist.name))
+        elif m.group(2) and m.group(2) not in page_ids[m.group(1)] and m.group(2) != "top":
+            add("error", "%s:%d" % (name, line), "page-link", "link to %s but %s has no element with that id" % (href, m.group(1)))
 
     for w in warns:
         print("WARN  " + w)
     for e in errors:
         print("ERROR " + e)
-    print("\nChecked %d text nodes, %d attributes, %d files." % (len(page.texts), len(page.attrs), len(files)))
+    print("\nChecked %d page(s): %d text nodes, %d attributes, %d files." % (len(pages), texts, attrs, len(files)))
     if errors:
         print("LINT FAILED with %d error(s). Fix page.json (or the template for structural errors), rebuild, lint again." % len(errors))
         return 1
@@ -333,7 +370,7 @@ def _check_design_html(src, add):
         if len(hrefs) > 1 and label in VAGUE_LABELS:
             add("warn", "links \"%s\"" % label, "cta-label", "the same link text points to %d places; give each its own label" % len(hrefs))
     if ctas >= 6 and arrows > ctas / 2:
-        add("warn", "index.html", "cta-arrows", "%d of %d buttons and links carry an arrow; keep arrows for text links that go somewhere" % (arrows, ctas))
+        add("warn", _PAGE[0], "cta-arrows", "%d of %d buttons and links carry an arrow; keep arrows for text links that go somewhere" % (arrows, ctas))
 
 
 def _check_buttons(src, add):
@@ -343,7 +380,7 @@ def _check_buttons(src, add):
         text = re.sub(r"<[^>]+>", "", text).strip()
         if not text and "aria-label" not in attrs:
             line = src.count("\n", 0, m.start()) + 1
-            add("error", "index.html:%d" % line, "button-name", "button has no text and no aria-label")
+            add("error", "%s:%d" % (_PAGE[0], line), "button-name", "button has no text and no aria-label")
 
 
 def _check_headings(tags, add):
@@ -352,7 +389,7 @@ def _check_headings(tags, add):
         if re.fullmatch(r"h[1-6]", tag):
             lvl = int(tag[1])
             if last and lvl > last + 1:
-                add("warn", "index.html:%d" % line, "heading-order", "<%s> follows <h%d>; a level is skipped" % (tag, last))
+                add("warn", "%s:%d" % (_PAGE[0], line), "heading-order", "<%s> follows <h%d>; a level is skipped" % (tag, last))
             last = lvl
 
 

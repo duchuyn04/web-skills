@@ -1,0 +1,47 @@
+{
+ "id": "dv-resources",
+ "page_type": "resources",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/resources",
+  "collected": "2026-10-18"
+ },
+ "summary": "Mixed library with an angled photo head, a feed of blog, infographic and whitepaper rows beside a Related contents list, and two horizontal rows of cover cards. Needs several content types, each with a label.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "white ground: orange small caps label, big H1 and a paragraph left; photo right cut with a diagonal edge"
+  },
+  {
+   "form": "media-list",
+   "role": "resources",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "rows with a thumbnail left, an orange type label (Blog, Infographic, Whitepaper), an uppercase title cut to two lines, an excerpt and Read more or Download Now; right column Related contents with four titles with author and read time; a numbered pager (1, 2, 3, ..., 16 and an arrow) under the feed"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "resources",
+   "tone": "accent",
+   "cols": 4,
+   "count": 4,
+   "media": "top",
+   "note": "sand ground: centered label and one line; a carousel of four visible video cards (thumbnail slot, uppercase title, small watch time) with four dots under it"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "resources",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "top",
+   "note": "grey ground: centered label and one line; a carousel of four visible infographic cards (cover image, white title box) with four dots"
+  }
+ ]
+}

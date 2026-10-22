@@ -196,9 +196,12 @@ def plain(text):
     return re.sub(r"\*{1,2}([^*]+)\*{1,2}", r"\1", text)
 
 
-def build(ctx, top, site, sections, body, preset, placeholders, prev_report=None):
+def build(ctx, top, site, sections, body, preset, placeholders, prev_report=None, crumbs=None, in_site=False, share_fallback=None):
     """Returns (head_html, files, record). files maps output names to text (robots.txt, sitemap.xml, favicon);
-    record goes into build-report.json so the next build keeps the sitemap lastmod while the content is unchanged."""
+    record goes into build-report.json so the next build keeps the sitemap lastmod while the content is unchanged.
+    crumbs: the breadcrumb trail of an inner page of a site, [{"label", "href"}], for BreadcrumbList. in_site: the
+    page is one of a site's pages; site_build.py writes one sitemap.xml and robots.txt for all of them.
+    share_fallback: (image, alt) for a page of a site with no photo of its own: the home page's share image."""
     seo = top.get("seo") or {}
     lang = top.get("lang", "en")
     url = seo.get("url")
@@ -221,6 +224,8 @@ def build(ctx, top, site, sections, body, preset, placeholders, prev_report=None
     for a in seo.get("alternates") or []:
         tags.append('<link rel="alternate" hreflang="%s" href="%s">' % (html.escape(a["lang"], quote=True), html.escape(a["url"], quote=True)))
     img, img_alt = share_image(ctx, seo, body)
+    if not img and share_fallback and share_fallback[0]:
+        img, img_alt = share_fallback
     size = None
     if img:
         src = ctx.images.get(img)
@@ -268,12 +273,12 @@ def build(ctx, top, site, sections, body, preset, placeholders, prev_report=None
         if lsize and min(lsize) < LOGO_MIN:
             ctx.warn("site.logo", "is %d x %d; Google uses an Organization logo only when it is at least %d x %d px." % (lsize[0], lsize[1], LOGO_MIN, LOGO_MIN))
 
-    tags.append('<script type="application/ld+json">%s</script>' % json_ld(site, top, sections, url, absolute, img, lang))
+    tags.append('<script type="application/ld+json">%s</script>' % json_ld(site, top, sections, url, absolute, img, lang, crumbs))
     digest = hashlib.sha256("\n".join([site.get("title") or "", site.get("description") or ""] + [m for _, m in body]).encode("utf-8")).hexdigest()[:16]
     prev = (prev_report or {}).get("seo") or {}
     lastmod = prev.get("lastmod") if prev.get("content") == digest and prev.get("lastmod") else date.today().isoformat()
     record = {"content": digest, "lastmod": lastmod, "index": bool(index), "url": url}
-    if url and index:
+    if url and index and not in_site:
         folder = urlsplit(url).path.rsplit("/", 1)[0] + "/"
         sitemap_url = urljoin(url, folder + "sitemap.xml")
         if folder == "/":
@@ -286,7 +291,7 @@ def build(ctx, top, site, sections, body, preset, placeholders, prev_report=None
     return "\n".join(tags), files, record
 
 
-def json_ld(site, top, sections, url, absolute, img, lang):
+def json_ld(site, top, sections, url, absolute, img, lang, crumbs=None):
     base = ("%s://%s/" % (urlsplit(url).scheme, urlsplit(url).netloc)) if url else ""
     page = url or ""
     facts = gather(sections)
@@ -313,6 +318,16 @@ def json_ld(site, top, sections, url, absolute, img, lang):
         graph[2]["url"] = page
     if img:
         graph[2]["primaryImageOfPage"] = {"@type": "ImageObject", "url": absolute(img)}
+    if crumbs and url:
+        # Google shows the trail under the result instead of the bare address
+        items = []
+        for i, c in enumerate(crumbs):
+            item = {"@type": "ListItem", "position": i + 1, "name": c["label"]}
+            if c.get("href"):  # the last crumb is the page itself and carries no link
+                item["item"] = urljoin(url, c["href"])
+            items.append(item)
+        graph[2]["breadcrumb"] = {"@id": page + "#breadcrumb"}
+        graph.append({"@type": "BreadcrumbList", "@id": page + "#breadcrumb", "itemListElement": items})
     if facts["faq"]:
         graph.append({"@type": "FAQPage", "@id": page + "#faq", "isPartOf": {"@id": page + "#webpage"}, "mainEntity": [
             {"@type": "Question", "name": plain(q), "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in facts["faq"]]})

@@ -1,0 +1,74 @@
+{
+ "id": "boldr-global-employment",
+ "page_type": "engagement-models",
+ "source": {
+  "name": "Boldr",
+  "url": "https://boldrimpact.com/global-employment",
+  "collected": "2026-10-18"
+ },
+ "summary": "One of two product pages (global employment, managed outsourcing) that share a template of about nine blocks: a photo head on orange line-art, a six-item fit list, a services card, a how-it-works panel with a responsibility meter, a call-to-action and case studies. Needs a six-item fit list, a split of who handles what (recruitment, HR, management) and key benefit tags.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "cream ground with an orange line-art band on the right; orange label, navy condensed title and a lead left; a photo of four smiling staff in a white frame right"
+  },
+  {
+   "form": "icon-strip",
+   "role": "compare",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "heading Perfect for clients looking to on the left; six items in two rows of three, each an orange duotone icon and one line"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "media": "left",
+   "note": "rounded team photo left overlapped by an orange panel right with heading, two paragraphs and a Learn more link"
+  },
+  {
+   "form": "table",
+   "role": "pricing",
+   "tone": "muted",
+   "cols": 1,
+   "count": 2,
+   "media": "none",
+   "note": "How it works: one narrow white column card on a cream band holding a check list (what the provider takes care of), a level meter bar labelled High for provider management, a second list for what you own, a second meter and key-benefit tags; this is the model comparison in the page and is sized for one model"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "short band: one line, a sentence and an orange button"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 1,
+   "count": 2,
+   "media": "left",
+   "optional": true,
+   "note": "case studies: label heading, one wide card with logo poster left and title, excerpt and Read more right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "closing navy band with a white card and an orange button"
+  }
+ ]
+}

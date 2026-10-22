@@ -1,0 +1,87 @@
+{
+ "id": "io-solutions-overview",
+ "page_type": "solutions-overview",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/offshore-accounting-team",
+  "collected": "2026-10-18"
+ },
+ "summary": "The team-hub page: breadcrumb, split head with a team photo and two buttons, a 'what makes this different' split, four role cards, a brand-colour CTA band, six how-it-works step cards, an accountability split, three reviews, five FAQs and a closing band.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "breadcrumb; breadcrumb row (59px) above a pale pink ground; left: small caps tag in the accent, three-line title with one accent word, a lead, a filled and an outlined pill button; right: a rounded team photo."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "right",
+   "note": "heading, a paragraph and four tick pills left; rounded photo right"
+  },
+  {
+   "form": "cards-image",
+   "role": "services",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "top",
+   "note": "centered heading and line; four role cards with portrait on a tinted tile, role name, two lines and an underlined link; the fourth card is text only"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "brand-colour band about 280px: centered heading, one line, white pill button"
+  },
+  {
+   "form": "cards-text",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; six step cards in two columns of three (small step label, title, paragraph); the sixth cell is a brand-colour card with a button"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "heading, two paragraphs, an italic quote line and a button left; photo or empty tile right"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "dark",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "brand-colour band: centered heading and three white review cards with stars, quote, rule, name and firm"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 5,
+   "media": "none",
+   "note": "centered heading, one column of 5 pale rounded rows with a plus sign"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "full-width brand-colour band: heading, two lines, one accent line, white pill button, line with two text links"
+  }
+ ]
+}

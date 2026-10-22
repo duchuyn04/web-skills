@@ -1,0 +1,53 @@
+{
+ "id": "io-resources",
+ "page_type": "resources",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/resources",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short hub: a photo head, three content-type cards, two feature rows (one promoting a book with a sample download) and a discovery-call band. Needs three content types and one gated guide.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "breadcrumb; photo ground (blurred headset on a desk) under a breadcrumb; red H1 and one grey line at the lower left"
+  },
+  {
+   "form": "cards-icon",
+   "role": "resources",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "three bordered cards in a row (events, webinars, blogs), each a large red icon, a title and two lines of text; they overlap the lower edge of the head"
+  },
+  {
+   "form": "feature-split",
+   "role": "resources",
+   "tone": "muted",
+   "cols": 2,
+   "media": "right",
+   "note": "pale blue ground: heading and several short paragraphs about a book with a red download button left; the book cover right"
+  },
+  {
+   "form": "feature-split",
+   "role": "resources",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "second feature row with heading, text and a link"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "discovery call band with heading and button"
+  }
+ ]
+}

@@ -8,6 +8,8 @@
 - `highlights` and `description` state specs and what they mean for use: "Pin 5.000 mAh dùng trọn một ngày với nhu cầu thông thường". Avoid "trải nghiệm đỉnh cao", "hiệu năng vượt trội", "thiết kế sang trọng" with nothing behind them.
 - Section titles are labels: "Điện thoại nổi bật", "Laptop", "Phụ kiện bán chạy", "Giờ vàng giá sốc". Banner titles name the product or the offer.
 - Buttons use the standard words the templates already carry: "Mua ngay", "Thêm vào giỏ", "Trả góp 0%", "Xem tất cả".
+- In the hero and banners: a model the shop does not stock yet gets the `preorder` badge or the label "Sắp có" with the date from the brief, and its button opens the product page ("Xem sản phẩm"), not "Mua ngay".
+- Section titles say what the block holds. "Gợi ý cho bạn" only when the picks depend on the visitor, "Mọi người cũng tìm kiếm" only with search data, "Deal" or "Giá sốc" only with a discount in the brief; otherwise "Tất cả sản phẩm", "Tìm nhanh theo danh mục", "Mua theo thương hiệu".
 
 ## Facts and the brief
 

@@ -1,0 +1,71 @@
+{
+ "id": "genpact-case-study-detail",
+ "page_type": "case-study",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/case-studies/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark long-read: a split head with tag and photo, a two-by-two fact grid (who, needed, how we helped, got), then challenge, solution and impact as labelled text blocks and a call band. Needs four-fact summary and three narrative sections with bullets.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; dark; breadcrumb with the story title; white tag chip, a four-line H1, strapline and two small labels (related industries and services) left; rounded photo right"
+  },
+  {
+   "form": "list-columns",
+   "role": "overview",
+   "tone": "dark",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "two columns by two rows: Who we worked with, What the company needed, How we helped, What the company got; each a heading with a small gold chevron motif and a short text or bullets"
+  },
+  {
+   "form": "prose",
+   "role": "process",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "gold label (Challenge), 40 px heading, paragraphs and a bullet list with bold lead-ins; column about 1000 px"
+  },
+  {
+   "form": "prose",
+   "role": "process",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "label Solution, heading, paragraphs and a bullet list"
+  },
+  {
+   "form": "prose",
+   "role": "metrics",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "label Impact, heading, a bullet list with bold figures and a closing paragraph with a link"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "big question heading (Like what you see) and a coral Contact us button"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "dark",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "Related case studies row"
+  }
+ ]
+}

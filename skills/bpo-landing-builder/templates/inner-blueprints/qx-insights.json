@@ -1,0 +1,47 @@
+{
+ "id": "qx-insights",
+ "page_type": "insights",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/blog/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Magazine layout: banner, a category chip strip, one featured article with three latest items beside it, then one row per category of three cards. Needs six to seven categories and about 20 articles.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "purple banner with H1 and strapline left and two flat circles right"
+  },
+  {
+   "form": "link-list",
+   "role": "controls",
+   "tone": "muted",
+   "cols": 7,
+   "count": 7,
+   "media": "none",
+   "note": "pale pink strip of seven uppercase category links, centered, wrapping to a second line"
+  },
+  {
+   "form": "media-list",
+   "role": "news",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "left two thirds: large photo, big title and excerpt; right a list of three titles with dates divided by rules"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 18,
+   "media": "top",
+   "note": "per category a row: outline pill with the category name and a View all link, then three cards (photo, title, date); repeated for six categories"
+  }
+ ]
+}

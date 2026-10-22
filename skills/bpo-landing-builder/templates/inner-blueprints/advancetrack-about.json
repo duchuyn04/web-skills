@@ -1,0 +1,72 @@
+{
+ "id": "advancetrack-about",
+ "page_type": "about",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/about/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short six-section about page: a 300px team photo with a green label title, a centered intro, a founder portrait block, three value cards, a text and photo split, one quote and a lime call-to-action card. Needs one team photo, a founder portrait and three values.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "wide team photo; the title sits in a translucent lime label centered over it; no lead, no buttons; header is dark navy with a thin social strip above"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "three centered paragraphs under the head, no heading"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "left",
+   "note": "tall rounded founder portrait on a blue ground left, heading with name and four paragraphs right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "values",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "centered heading and two-line lead; three mauve rounded cards, each a line icon, a title and two lines"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "heading, four paragraphs and a text link left; rounded event photo right"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "one wide pale-lime rounded card with a quote mark and a two-line client quote"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "lime rounded card with a two-line heading and a black button left, a white line-art logo mark right"
+  }
+ ]
+}

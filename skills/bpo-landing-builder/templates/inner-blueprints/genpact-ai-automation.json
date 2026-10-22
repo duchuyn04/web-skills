@@ -1,0 +1,84 @@
+{
+ "id": "genpact-ai-automation",
+ "page_type": "ai-automation",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/agentic/products/ap-suite",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark product page for an agentic AI suite in 10 blocks: breadcrumb, a head with a video grid, a sticky jump bar, four big stat tiles, a feature slider, a three-column how-it-works, a module tab set with screenshots, a case feature, six FAQs and a closing banner. Needs four projected-outcome figures with a footnote, 3 to 6 features with screenshots, 3 steps, 4 modules, one case and 6 FAQs.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; near-black; red breadcrumb; title, a short lead and one red pill button left; a rounded video poster collage with a play button right; then a grey jump bar sticks to the top while scrolling (Benefits, Features, How it works, Modules, Featured content, FAQ, Product tour)"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "dark",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading; four dark rounded tiles with a small label, a huge numeral with percent and a unit line; a small footnote about projected estimates"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "tools",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "right",
+   "note": "Features: grey-black band; one slide at a time with the feature name and one line left, a dashboard screenshot right; thin pager; a one-line summary below"
+  },
+  {
+   "form": "cards-icon",
+   "role": "process",
+   "tone": "dark",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "How it works: three columns, each a bold title, a small orange chevron line and a paragraph"
+  },
+  {
+   "form": "tabs",
+   "role": "tools",
+   "tone": "dark",
+   "cols": 4,
+   "count": 4,
+   "media": "right",
+   "note": "modules: pill tabs for four modules; a dark rounded panel with text and a ticks list left and a screenshot right"
+  },
+  {
+   "form": "feature-split",
+   "role": "cases",
+   "tone": "dark",
+   "cols": 2,
+   "count": 1,
+   "media": "right",
+   "optional": true,
+   "note": "featured case: orange kicker, big title, paragraph and an outlined red button left; a glossy 3D visual with a small tag right"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "dark",
+   "cols": 1,
+   "count": 6,
+   "media": "none",
+   "note": "heading; six dark rows with a plus icon (one question per row)"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "heading and a red button over a faint photo"
+  }
+ ]
+}

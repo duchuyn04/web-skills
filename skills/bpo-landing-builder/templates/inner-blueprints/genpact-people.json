@@ -1,0 +1,29 @@
+{
+ "id": "genpact-people",
+ "page_type": "people",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/about-us/leadership",
+  "collected": "2026-10-18"
+ },
+ "summary": "Two blocks: a plain head with breadcrumb, then a 4-column grid of 18 executives with grayscale portraits, name, role and a Read more link. Needs 12 to 18 portraits in one style.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "breadcrumb; near-black ground, red breadcrumb, 64px title and a four-line lead, no photo"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "dark",
+   "cols": 4,
+   "count": 18,
+   "media": "top",
+   "note": "four portraits per row, 4:3 grayscale studio photos with a soft vignette, bold name, grey role (up to three lines) and a red Read more link that opens a bio overlay; the last row holds two"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "id": "qx-trust-hub",
+ "page_type": "trust-hub",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/qx-security-quality-trust/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Compliance story told top to bottom on white, with a purple page head, a video split, an accordion, a coloured call band, four certification tabs and an enquiry form. Needs a regulation statement (for example data protection), a short video or photo, four to five accordion items and a list of certificates.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band: small caps label, two-line heading and paragraph left; photo cut into a house outline with a coral key shape and a lilac shield, right"
+  },
+  {
+   "form": "feature-split",
+   "role": "trust-topics",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "heading and strapline centered above; paragraph and two ticked statements left with a pill download button; video poster right"
+  },
+  {
+   "form": "text-block",
+   "role": "trust-topics",
+   "tone": "light",
+   "cols": 2,
+   "media": "left",
+   "optional": true,
+   "note": "heading, paragraph and one download pill, set in the right half of the row; the left half is an empty photo slot"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading; two paragraphs left, four tinted accordion items right (first open)"
+  },
+  {
+   "form": "feature-split",
+   "role": "trust-topics",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "left",
+   "note": "heading; photo and paragraph left, five ticked statements right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 2,
+   "media": "right",
+   "note": "coral band: one-line heading and white pill button left; round photo right over a large faint logo shape"
+  },
+  {
+   "form": "tabs",
+   "role": "certifications",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and strapline; four tabs (standard names with a one-line descriptor) over one tinted panel of text with a short list and a Read more button"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "left: heading, two lines and two stacked white buttons (virtual meeting, in-person meeting); right: seven-field form with a consent tick and one button"
+  }
+ ]
+}

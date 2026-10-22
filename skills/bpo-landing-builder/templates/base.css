@@ -152,6 +152,9 @@ html:lang(vi) :is(h1, h2, .bl-h1, .bl-h2, .bl-display) { line-height: var(--vi-h
 .bl-btn-row { display: flex; flex-wrap: wrap; gap: .85rem; align-items: center; }
 .bl-link { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; color: var(--accent-ink); }
 .bl-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+/* links inside running text ("rich" fields: prose, table and list notes) */
+.bl-inline-link { color: var(--accent-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.bl-inline-link:hover { text-decoration-thickness: 2px; }
 
 /* Cards, chips, lists */
 .bl-card {

@@ -1,0 +1,101 @@
+{
+ "id": "innovature-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/career/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Ten blocks in the soft-blue style: employer-brand head with an award badge, a podcast video, four growth cards, a jobs link band (jobs open on an external board), rewards in three cards, referral, a four-step hiring process, stories, moments gallery and a closing call. Needs an employer award, 4 to 7 reward items, 4 hiring steps and event photos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale-blue ground; title and lead with a filled and an outlined button left; a tilted award certificate badge on a faded team photo right"
+  },
+  {
+   "form": "video-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "right",
+   "optional": true,
+   "note": "rounded card: heading, paragraph and a pill button left; a video player with a two-item playlist right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "values",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and lead; four white cards, each a small icon, bold blue title and two lines"
+  },
+  {
+   "form": "cta-band",
+   "role": "jobs",
+   "tone": "muted",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "rounded band with an illustration on each side, one heading and a Browse all jobs button (the roles live on an external board)"
+  },
+  {
+   "form": "cards-text",
+   "role": "values",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "three cards: a tick list of pay and benefits, leave days with an illustration, and an accordion of awards"
+  },
+  {
+   "form": "cta-band",
+   "role": "careers",
+   "tone": "muted",
+   "cols": 1,
+   "count": 1,
+   "media": "right",
+   "note": "referral band: heading, line and button left, people illustration right"
+  },
+  {
+   "form": "icon-strip",
+   "role": "process",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "four numbered step cards with an illustration, title and one line, then a button"
+  },
+  {
+   "form": "cards-image",
+   "role": "careers",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "culture stories: three cards with a photo, round tag, date and title"
+  },
+  {
+   "form": "image-band",
+   "role": "careers",
+   "tone": "muted",
+   "media": "top",
+   "optional": true,
+   "note": "moments gallery with two or three photos and a heading"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "closing panel with heading and a button"
+  }
+ ]
+}

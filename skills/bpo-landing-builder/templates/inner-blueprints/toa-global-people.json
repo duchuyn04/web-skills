@@ -1,0 +1,63 @@
+{
+ "id": "toa-global-people",
+ "page_type": "people",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/company/meet-our-talent/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Page about the offshore staff rather than leaders (7 blocks): a photo head, a script-heading intro band, four cut-out staff cards, a client video, a recruiting invitation and a form. Needs four staff portraits cut out on coloured shapes and one video.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "very light blurred office photo; title, two paragraphs and a purple pill button left"
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "accent",
+   "cols": 2,
+   "media": "none",
+   "note": "pale teal band: a very large serif heading left, two paragraphs right"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "bottom",
+   "note": "centered heading; four tall white cards in a row, each with a serif title, a paragraph and a staff portrait cut out on a purple arc at the bottom"
+  },
+  {
+   "form": "video-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "teal band, heading and one large black video slot"
+  },
+  {
+   "form": "text-block",
+   "role": "careers",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "centered heading and two paragraphs inviting recruits, one pill button"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "ground",
+   "note": "blurred ground with a centered white form card"
+  }
+ ]
+}

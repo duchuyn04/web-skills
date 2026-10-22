@@ -1,0 +1,37 @@
+{
+ "id": "toa-insight-article",
+ "page_type": "article",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/blog/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Three-column reading page: a sticky contents box and call card on the left, a narrow centered article with a takeaways box, and a right rail with a report cover, a related link and a newsletter link. Needs key takeaways (3 bullets) and a report cover.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: serif title, a tag line (Leadership) and a photo inside the center column"
+  },
+  {
+   "form": "prose",
+   "role": "article",
+   "tone": "light",
+   "cols": 3,
+   "count": 10,
+   "media": "top",
+   "note": "(measured as sidebar) left rail: collapsible Table of contents and a purple card (line plus coral button); center about 540 px: Key takeaways box with an outline and plus bullets, paragraphs, h2 headings in purple, icon-led sub-sections; right rail: report cover with a Get Report link, Related and Newsletter links"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "dark band under the article with a short call"
+  }
+ ]
+}

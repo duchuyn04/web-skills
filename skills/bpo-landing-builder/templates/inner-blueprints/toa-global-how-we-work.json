@@ -1,0 +1,87 @@
+{
+ "id": "toa-global-how-we-work",
+ "page_type": "how-we-work",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/recruitment/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Recruitment-process page (14 blocks, 7,600 px) in the TOA style: photo head, a five-point teal strip, a video band, four service tiles, a dark purple six-item feature block, founder message, team videos, client quotes, resources and a closing strip. Needs five commitments, four role types, six features and videos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "very light office photo, left serif title and two short paragraphs"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "accent",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "note": "pale teal strip: heading and five columns each with a bold title and two lines; one pill button"
+  },
+  {
+   "form": "video-block",
+   "role": "process",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "ground",
+   "optional": true,
+   "note": "heading and a line, then one large black video slot on a blurred photo ground with a coral button"
+  },
+  {
+   "form": "cards-text",
+   "role": "services",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and line; four columns each a purple title, a short paragraph and an Explore link"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "dark",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "deep purple band: heading and six items in two columns each with a white icon, a title, a paragraph and a >>More link; a coral button below"
+  },
+  {
+   "form": "video-block",
+   "role": "team",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "optional": true,
+   "note": "meet some of the team: two black video slots with name captions"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "teal band with a video quote slot and button"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "top",
+   "optional": true,
+   "note": "industry insights: four small cards; then a download-guide band and a teal closing strip with a button"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "id": "innovature-ai-automation",
+ "page_type": "ai-automation",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/data-analytics/data-document-processing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Service page for AI document processing in seven blocks: head with photo card, five capability cards, seven document-type cards, a workflow video, one case study, two certificates and a consultation form. Needs five capabilities, seven document types, a short video, one case with 3 to 4 results and two certificates.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale ground; title, lead and two buttons (Book a demo, See how it works) left; a rounded photo of a person with a floating document icon right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "services",
+   "tone": "light",
+   "cols": 3,
+   "count": 5,
+   "media": "none",
+   "note": "centered heading and line; five cards (three on top, two below), each a small blue icon, a bold title and one line"
+  },
+  {
+   "form": "cards-icon",
+   "role": "industries",
+   "tone": "muted",
+   "cols": 4,
+   "count": 7,
+   "media": "none",
+   "note": "centered heading; seven cards in rows of four and three, each a small icon, a title and one line"
+  },
+  {
+   "form": "video-block",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "right",
+   "note": "rounded panel: heading and paragraph left, a dark video player right"
+  },
+  {
+   "form": "feature-split",
+   "role": "cases",
+   "tone": "muted",
+   "cols": 2,
+   "count": 1,
+   "media": "right",
+   "optional": true,
+   "note": "one case card: tag, bold title and a tick list of four results with a button left, a poster image right"
+  },
+  {
+   "form": "cards-text",
+   "role": "awards",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "two cards each with a round red or blue badge left, standard name, text and a link right"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 2,
+   "media": "none",
+   "note": "heading and line with three small tags left; consultation form card right"
+  }
+ ]
+}

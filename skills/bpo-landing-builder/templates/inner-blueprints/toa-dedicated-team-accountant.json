@@ -1,0 +1,103 @@
+{
+ "id": "toa-dedicated-team-accountant",
+ "page_type": "dedicated-team",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/solution/accountant/",
+  "collected": "2026-10-18"
+ },
+ "summary": "8,100px role page: a pale head, a video split, a grey 'what they can do' list, a teal CTA strip, an eight-item qualifications grid, four wide photo rows, a figures strip, a testimonial, a teal CTA with a portrait, a booking form and role cross-links.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "pale blurred ground with faint line icons (calculator, plus signs) and no portrait; left: serif title with two bold words, one lead line, one purple pill button. The header above has a thin purple top bar."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "heading and two paragraphs left; right a pale teal card with a large play button and a caption (video)"
+  },
+  {
+   "form": "list-rows",
+   "role": "scope",
+   "tone": "muted",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "grey band: centered serif heading and line; eight tasks in two columns, each a line icon, a purple serif title and one line"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "none",
+   "note": "pale teal strip about 250px: one line and one purple button, centered"
+  },
+  {
+   "form": "list-columns",
+   "role": "scope",
+   "tone": "light",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading and paragraph; eight qualification blocks in two rows of four, each with a plus sign, a serif label and two lines (degree, experience, certification, knowledge, software, functions, excel, accuracy)"
+  },
+  {
+   "form": "image-band",
+   "role": "about",
+   "tone": "light",
+   "count": 4,
+   "media": "ground",
+   "note": "four wide rows each with a photo ground and a short text block (title and two lines) offset left or right in turn: training, data security, support, expertise"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "big purple figures in four columns (firms, professionals, local staff, security hours) over a wide photo strip"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "serif heading, one grey boxed quote with name and firm"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "right",
+   "note": "pale teal band with a portrait right: a line, one purple button"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "centered heading and a line; a form (names, email, phone, company, country, consent, submit)"
+  },
+  {
+   "form": "cards-text",
+   "role": "related",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading; four role cards (text and an Explore link) for the other roles"
+  }
+ ]
+}

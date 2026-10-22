@@ -1,6 +1,6 @@
 # bpo-landing-builder
 
-Skill giúp coding agent dựng landing page cho công ty BPO, outsourcing, contact center, offshore staffing, xử lý dữ liệu AI hoặc bán hàng outbound.
+Skill giúp coding agent dựng landing page, hoặc cả website nhiều trang, cho công ty BPO, outsourcing, contact center, offshore staffing, xử lý dữ liệu AI hoặc bán hàng outbound.
 
 Nếu bạn từng nhờ AI làm giao diện kiểu này, chắc bạn biết vấn đề: model mạnh làm ra trang đẹp, model yếu làm ra trang xấu, còn bố cục thì mỗi lần một kiểu. Skill này giải quyết bằng cách lấy quyết định thiết kế ra khỏi tay model. Agent chỉ điền một file `page.json` với nội dung công ty. Một script Python ghép file đó thành trang hoàn chỉnh từ 49 section đã làm sẵn, đã chỉnh spacing, responsive và animation. Mình đã thử với Haiku và Opus trên cùng một brief: hai trang ra cùng bố cục và cùng độ chỉn chu, khác nhau ở phần chữ.
 
@@ -79,6 +79,16 @@ Agent sẽ chọn một trong 5 kiểu trang, chọn bộ màu, copy file `page.
 Thiếu thông tin thì skill không bịa. Một con số thiếu sẽ thành `[KPI]`. Cả một khối bằng chứng thiếu (logo khách hàng, lời chứng thực, file ghi âm cuộc gọi, bảng lương để tính tiết kiệm) thì section đó bị bỏ, và agent báo lại cho bạn những gì còn thiếu.
 
 Nên dán nguyên brief của khách vào trường `"brief"` trong `page.json`. Build dựa vào đó để phân biệt số liệu thật với số liệu mẫu: một câu chép gần nguyên văn từ trang mẫu, hoặc mang con số của công ty mẫu (kiểu "báo trước 30 ngày", "phản hồi trong 48 giờ") mà brief không có, sẽ làm build dừng.
+
+### Làm cả website nhiều trang
+
+Khi khách cần nhiều trang (dịch vụ, giới thiệu, Trust Centre, liên hệ, chính sách bảo mật...), cứ đưa sitemap hoặc tài liệu của khách cho agent, ví dụ:
+
+> Dùng bpo-landing-builder làm website cho Smart Outsourcing theo file blueprint này, đủ các trang trong sitemap.
+
+Agent làm trang chủ như một landing page bình thường, rồi thêm danh sách trang con vào `page.json` (trường `"pages"`). Mỗi trang con là một file trong thư mục `pages/`, ví dụ `pages/bookkeeping.json` sẽ thành `bookkeeping.html`. Header, footer, màu và brief chỉ viết một lần ở trang chủ, mọi trang dùng chung.
+
+Trang con cũng theo bố cục thật: skill có 121 trang con đã đo từ các site BPO và kế toán thuê ngoài (trang dịch vụ, trang giới thiệu, trang tuyển dụng, trang pháp lý...). Build tự kiểm tra thêm những lỗi chỉ website mới có: link tới trang không tồn tại, trang không có link nào dẫn tới, hai trang trùng tiêu đề. Kết quả là một thư mục `dist/` chứa `index.html` và các trang con nằm cạnh nhau, mở thẳng bằng trình duyệt là xem được, không cần server. Chi tiết trong `references/site-builds.md`.
 
 ## Giọng văn ngành
 

@@ -1,0 +1,27 @@
+{
+  "variant": "prose",
+  "group": "prose",
+  "forms": ["prose"],
+  "summary": "Long text for legal notices, policies, guides and articles: numbered blocks, each with a heading, paragraphs (with **bold** and [links](page.html)) and an optional list. With three or more blocks a table of contents sits in a sticky column on the left and marks the block being read; on phones it becomes a list above the text. An optional card under the contents gives a contact route. Use for text that is read, not scanned: keep marketing sections for marketing.",
+  "tone": "auto",
+  "anchor": "content",
+  "animations": ["reveal", "toc-spy"],
+  "fields": {
+    "head": {"$ref": "head", "required": false},
+    "updated": {"type": "text", "min": 6, "max": 80, "required": false},
+    "toc": {"type": "bool", "default": true},
+    "toc_label": {"type": "text", "min": 3, "max": 30, "default": "On this page"},
+    "numbered": {"type": "bool", "default": false},
+    "blocks": {"type": "list", "min": 1, "max": 16, "item": {"type": "object", "fields": {
+      "id": {"type": "text", "min": 2, "max": 40, "required": false},
+      "title": {"type": "text", "min": 3, "max": 90},
+      "paragraphs": {"type": "list", "min": 0, "max": 8, "required": false, "item": {"type": "rich", "min": 20, "max": 1200}},
+      "bullets": {"type": "list", "min": 2, "max": 12, "required": false, "item": {"type": "rich", "min": 3, "max": 400}}
+    }}},
+    "aside": {"type": "object", "required": false, "fields": {
+      "title": {"type": "text", "min": 5, "max": 60},
+      "text": {"type": "text", "min": 20, "max": 240},
+      "cta": {"$ref": "cta"}
+    }}
+  }
+}

@@ -1,0 +1,46 @@
+{
+ "id": "genpact-contact",
+ "page_type": "contact",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/contact-us",
+  "collected": "2026-10-18"
+ },
+ "summary": "No form on the page: a dark page that routes visitors to the right place with one request button, a job-seeker split and two grids of cards by topic. Needs routes for clients, candidates and staff.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "breadcrumb; dark; breadcrumb, H1, a question line and one coral Submit a request button"
+  },
+  {
+   "form": "feature-split",
+   "role": "contact-details",
+   "tone": "dark",
+   "cols": 2,
+   "media": "right",
+   "note": "Job seekers: heading and short text left, rounded photo right"
+  },
+  {
+   "form": "cards-text",
+   "role": "contact-details",
+   "tone": "dark",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "How can we help: centered heading and line; four cards in two columns, each a topic and a link"
+  },
+  {
+   "form": "cards-text",
+   "role": "contact-details",
+   "tone": "dark",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "audience for employees past and current: three text cards"
+  }
+ ]
+}

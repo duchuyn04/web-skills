@@ -1,0 +1,64 @@
+{
+ "id": "qx-accounting-ai-automation",
+ "page_type": "ai-automation",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/dashboards/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Product page for an automation dashboard in seven blocks: a head with a video, a pain-point wheel, a 10-feature grid, a two-tab audience block, a why-choose list with a screenshot and a contact band with a named expert. Needs a demo video, six pain points, ten features and two audience tabs.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "light ground; centered title and subtitle, a large rounded video player with a thumbnail, and a coral Book a demo button"
+  },
+  {
+   "form": "icon-strip",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; a ring of six coloured round icons around a purple gear, each with a bold label and two lines on both sides"
+  },
+  {
+   "form": "cards-icon",
+   "role": "services",
+   "tone": "muted",
+   "cols": 2,
+   "count": 10,
+   "media": "none",
+   "note": "centered heading; ten white rounded cards in two columns, each a coral line icon, bold title and one line"
+  },
+  {
+   "form": "tabs",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "heading and two wide tab buttons (for firms, for firm clients); a lilac panel with an intro line and four ticked items in two columns"
+  },
+  {
+   "form": "feature-split",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "screenshot photo left; four coral-icon items right (heading, line each)"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "media": "left",
+   "note": "dark purple band: big heading, a named expert card with photo, email and phone left; right a white form card with a callback button"
+  }
+ ]
+}

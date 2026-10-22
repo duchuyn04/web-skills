@@ -1,0 +1,29 @@
+{
+ "id": "qx-case-studies",
+ "page_type": "case-studies",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/case-studies/",
+  "collected": "2026-10-18"
+ },
+ "summary": "The shortest index: a purple banner and a three-column grid of six photo cards with titles only. Needs six case-study titles and photos; no filters.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark purple banner with H1 and a one-line strapline left and a flat coral house-and-bulb graphic right"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "note": "three columns by two rows of cards: wide photo with rounded corners, title in dark text, no excerpt, no tag"
+  }
+ ]
+}

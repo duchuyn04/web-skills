@@ -1,0 +1,57 @@
+{
+ "id": "supportninja-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/careers",
+  "collected": "2026-10-18"
+ },
+ "summary": "Illustrated page: a head with country pills that lead to job boards (no list on the page), a \"people people\" intro, three alternating culture rows with icon badges, six values, a quote slider and three office cards. Needs country list, three culture rows with photos, six values and offices.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "cream ground; very large serif title with a line left, a company video right; below it a row of five dark green pills each with a round flag and an arrow (jobs by country), then an illustration with a heading and drop-cap text"
+  },
+  {
+   "form": "feature-split",
+   "role": "values",
+   "tone": "accent",
+   "cols": 2,
+   "count": 3,
+   "media": "right",
+   "note": "peach band after a wavy edge: three rows, each photo (rounded) with a dark green badge icon on its corner, serif heading and paragraph; sides alternate"
+  },
+  {
+   "form": "list-rows",
+   "role": "values",
+   "tone": "accent",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "heading with a round icon; six values in two columns of three (icon, bold title, line)"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "optional": true,
+   "note": "one wide grey-green card with a line-art frame, a quote mark, quote, round photo, name and two small arrows"
+  },
+  {
+   "form": "cards-image",
+   "role": "locations",
+   "tone": "accent",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "heading; three white cards (two offices and remote) each a photo, bold name and a paragraph; a wide strip beneath says remote across the world"
+  }
+ ]
+}

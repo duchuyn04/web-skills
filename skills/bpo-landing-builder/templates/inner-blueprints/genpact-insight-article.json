@@ -1,0 +1,38 @@
+{
+ "id": "genpact-insight-article",
+ "page_type": "article",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/insight/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark report-promotion article: page head with tag, title, a Read the report button and a photo, a meta row, then a narrow text column with a download card, a what's-inside list and numbered questions. Needs one report to promote.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; dark; breadcrumb, white tag chip (Report), H1, outline button, rounded photo right; under it a meta row with related services links and a published date"
+  },
+  {
+   "form": "prose",
+   "role": "article",
+   "tone": "dark",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "column about 1000 px: heading, paragraph, a dark rounded card with a title and a coral button, a What's inside bullet list, h2 and four numbered h3 questions with paragraphs and embeds"
+  },
+  {
+   "form": "cards-text",
+   "role": "news",
+   "tone": "dark",
+   "cols": 3,
+   "media": "none",
+   "optional": true,
+   "note": "related items near the foot"
+  }
+ ]
+}

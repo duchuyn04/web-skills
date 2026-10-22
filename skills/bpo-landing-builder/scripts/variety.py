@@ -154,6 +154,30 @@ def swaps(page, shared, pages, arch):
 FAVOURITE_HEROES = ("hero-fullbleed", "hero-mosaic")
 
 
+def inner_report(page_type):
+    """The measured inner pages, grouped by page type, with their sections (? = optional or client proof)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import build
+    lib = build.load_library()
+    groups = {}
+    for k, b in lib["inner_blueprints"].items():
+        groups.setdefault(b.get("page_type", "other"), []).append(k)
+    if page_type and page_type not in groups:
+        print("no inner blueprint of type %r. Types: %s" % (page_type, ", ".join(sorted(groups))))
+        return
+    for t in sorted(groups):
+        if page_type and t != page_type:
+            continue
+        print("\n%s (%d)" % (t, len(groups[t])))
+        for k in sorted(groups[t], key=lambda k: len(lib["inner_blueprints"][k]["sections"])):
+            b = lib["inner_blueprints"][k]
+            body = b["sections"][1:]
+            need = sum(1 for x in body if not build.slot_optional(x))
+            print("  %s  (%s; %d sections after the head, %d always needed)" % (k, b["source"]["name"], len(body), need))
+            print("    " + " | ".join("%s:%s%s" % (x["role"], x["form"], "?" if build.slot_optional(x) else "") for x in body))
+    print("\nAn inner page names one of these as \"blueprint\" and opens with page-head (the first slot). Run --blueprint KEY for the variants that fit each section.")
+
+
 def blueprint_report(args, pages, count):
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import build
@@ -185,7 +209,7 @@ def blueprint_report(args, pages, count):
         print("* = preferred: a layout clients named as the standard for a professional page. Take the first unused * blueprint the brief can fill; go down the list only when none fits.")
         print("Pick an unused blueprint whose sections the brief can fill (? = optional; proof sections are left out when the brief has no proof). The page needs a services section and at least 5 content sections. Then run --blueprint KEY.")
     if args.blueprint:
-        b = bps.get(args.blueprint)
+        b = bps.get(args.blueprint) or lib["inner_blueprints"].get(args.blueprint)
         if not b:
             print("unknown blueprint %r" % args.blueprint)
             return
@@ -195,14 +219,17 @@ def blueprint_report(args, pages, count):
         for i, s in enumerate(b["sections"]):
             compose = s.get("compose") or []
             fits = build.fitting_variants(s, lib)
-            if s.get("role") == "hero":
+            if s.get("form") == "page-head":
+                # an inner page of a site opens with page-head, or a photo hero
+                fits = ["page-head"] + list(FAVOURITE_HEROES)
+            elif s.get("role") == "hero":
                 # build.py accepts a photo hero in any hero slot; the rest only when the client picks it (override_hero)
                 fits = list(FAVOURITE_HEROES) + [v for v in fits if v not in FAVOURITE_HEROES and (v in compose or v in build.BUSINESS_HEROES or v in sig)]
-            opts = sorted(fits, key=lambda v: (v not in FAVOURITE_HEROES, v not in compose, v in sig, count.get(v, 0), v))
+            opts = sorted(fits, key=lambda v: (v != "page-head", v not in FAVOURITE_HEROES, v not in compose, v in sig, count.get(v, 0), v))
             grid = ("cols %s, items %s" % (s.get("cols"), s.get("count"))) if s.get("count") else ""
             print("%2d %-11s %-15s %-6s %s%s" % (i + 1, s["role"], s["form"], s.get("tone", ""), "optional " if build.slot_optional(s) else "", grid))
             print("     " + s.get("note", ""))
-            print("     variants: " + (", ".join(v + ("=" if v in compose else "") + ("^" if v in sig else "") + ("+" if s.get("role") == "hero" and v not in FAVOURITE_HEROES else "") for v in opts) or "NONE (use a custom section)"))
+            print("     variants: " + (", ".join(v + ("=" if v in compose else "") + ("^" if v in sig else "") + ("+" if s.get("role") == "hero" and v not in FAVOURITE_HEROES and v != "page-head" else "") for v in opts) or "NONE (use a custom section)"))
         print("")
         print("Keep the order; leave out only optional sections. Calm variants come first.")
         print("Hero: %s (the client's photo or a film of their photos, scripts/make_film.py). + = only when the client picks that hero (override_hero); = marks the real site's composition." % " or ".join(FAVOURITE_HEROES))
@@ -227,6 +254,7 @@ def main():
     ap.add_argument("--blueprints", metavar="ARCHETYPE", help="list the real-site layouts that fit this archetype, unused first")
     ap.add_argument("--blueprint", metavar="KEY", help="print each section of one layout with the variants that fit it")
     ap.add_argument("--coverage", action="store_true", help="list blueprint sections that no variant fits")
+    ap.add_argument("--inner-blueprints", nargs="?", const="", metavar="TYPE", help="list the measured inner page layouts for the pages of a site, by page type (service-detail, legal, contact...)")
     args = ap.parse_args()
     arch = archetypes()
     pages = find_pages(args.sites, skip=args.check)
@@ -263,6 +291,9 @@ def main():
                     print("  swap %s for one of: %s" % (slot, ", ".join(options)))
             if "preset" in shared:
                 print("  or pick another preset (python variety.py --archetype %s lists them by use)" % page.get("archetype"))
+
+    if args.inner_blueprints is not None:
+        inner_report(args.inner_blueprints)
 
     if args.blueprints or args.blueprint or args.coverage:
         blueprint_report(args, pages, count)

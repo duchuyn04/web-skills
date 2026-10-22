@@ -1,0 +1,90 @@
+{
+ "id": "toa-global-about",
+ "page_type": "about",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/our-story/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Long storytelling page (about 15,000 px, 13 sections): short light head, an intro with four counters, a founder portrait band, six story chapters as text over soft photo, a tall vertical timeline with round photos, a difference icon row, a lead form and three blog cards. Needs a founder portrait, 8 to 12 timeline entries with photos, and four counters.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "soft blurred office photo behind left-aligned title, a short italic vision line and one coral button; breadcrumb absent"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered paragraph then four counters with big serif numerals and a two-line label"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "media": "right",
+   "note": "founder portrait cut out on a purple arc at the right edge; heading with name and role, paragraph and a text link left"
+  },
+  {
+   "form": "feature-split",
+   "role": "history",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "ground",
+   "note": "six chapter bands of about 540px: centered intro then five bands, each a serif heading and one or two paragraphs over a blurred photo, text alternating right and left, some with a coral pill button"
+  },
+  {
+   "form": "list-rows",
+   "role": "history",
+   "tone": "light",
+   "cols": 1,
+   "count": 17,
+   "media": "left",
+   "note": "(measured as timeline) tall vertical line down the left third; each year has a huge serif numeral, month labels with one-line events, and round photo thumbnails with a purple ring; about 17 years from first office to the latest award; the right two thirds stay empty"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "media": "ground",
+   "note": "tech photo ground left, heading and two paragraphs right"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "big pale circle behind: italic kicker, heading, one paragraph, four columns each with a purple icon and two lines, one text link below"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 1,
+   "media": "ground",
+   "note": "blurred office photo ground with a white rounded form card (first and last name, email, phone, company, country, consent, submit)"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "centered heading, three blog cards with photo on top, serif title, two-line excerpt and a pill button"
+  }
+ ]
+}

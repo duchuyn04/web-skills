@@ -1,0 +1,38 @@
+{
+ "id": "toa-insights",
+ "page_type": "insights",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/blog/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Light blog index: a head with faint pattern ground, one featured horizontal post, category tabs and a three-column card grid. Needs a featured post and seven categories.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "very light blurred ground with faint plus and equals shapes; serif H1 and a line, left aligned"
+  },
+  {
+   "form": "media-list",
+   "role": "news",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "left",
+   "note": "featured post: photo left, serif title, date, a four-line excerpt and Read More link right"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 9,
+   "media": "top",
+   "note": "(measured as filter-grid) centered text tabs (All and six topics) with an underline on the active tab; grid three by three of cards with photo, serif title, excerpt and a Read more link"
+  }
+ ]
+}

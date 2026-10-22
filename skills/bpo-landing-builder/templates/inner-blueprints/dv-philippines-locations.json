@@ -1,0 +1,46 @@
+{
+ "id": "dv-philippines-locations",
+ "page_type": "locations",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/about-us/our-facilities",
+  "collected": "2026-10-18"
+ },
+ "summary": "Four blocks: a slanted-photo head, a facilities photo slider, a cream \"Our offices\" heading and one long office profile (tower photo, address in orange, long description of the site and area). Needs 4 to 6 facility photos and an office profile with address.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "cream ground with orange label, title and two-line lead left; office photo right with diagonal stripes"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "locations",
+   "tone": "light",
+   "cols": 1,
+   "count": 6,
+   "media": "top",
+   "note": "one wide photo carousel with two photos visible, a centered caption (heading and two paragraphs) beneath and a round arrow, six dots"
+  },
+  {
+   "form": "statement",
+   "role": "locations",
+   "tone": "accent",
+   "cols": 1,
+   "media": "none",
+   "note": "cream band, one large heading"
+  },
+  {
+   "form": "feature-split",
+   "role": "locations",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "left",
+   "note": "slanted building photo left; navy name, orange address and long paragraphs right; dot pager below for more offices"
+  }
+ ]
+}

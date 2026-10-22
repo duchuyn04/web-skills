@@ -1,0 +1,64 @@
+{
+ "id": "toa-global-locations",
+ "page_type": "locations",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/company/where-we-work/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Six blocks: a photo head of the office, headquarters cards for two countries, four city cards with virtual-tour buttons, a dark security band and a chat form. Needs a workspace photo, 2 to 6 addresses and optionally a virtual tour link per site.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "full-width office reception photo, a white fade at the left carrying the serif title and one line"
+  },
+  {
+   "form": "cards-text",
+   "role": "locations",
+   "tone": "muted",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "serif heading and lead; two white cards (country, a short paragraph, address)"
+  },
+  {
+   "form": "cards-text",
+   "role": "locations",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "second heading for the main country; four columns of city cards each with address lines and one or three purple virtual-tour pill buttons at the bottom"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "dark",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "deep purple band: heading, two columns each a white icon, a title and a paragraph, one coral button"
+  },
+  {
+   "form": "text-block",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "slim people-centric line with a small heading"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "ground",
+   "note": "blurred ground with a white form card titled Book a chat"
+  }
+ ]
+}

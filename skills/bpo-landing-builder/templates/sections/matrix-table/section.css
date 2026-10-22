@@ -1,0 +1,24 @@
+/* matrix-table: text table with a tinted header row; rows reveal in sequence; one card per row on phones */
+.bl-matrix { border: 1px solid var(--border); border-radius: calc(var(--radius-lg) + 2px); background: var(--surface); overflow: hidden; }
+.bl-matrix__table { width: 100%; border-collapse: collapse; }
+.bl-matrix__table th, .bl-matrix__table td { padding: 1rem 1.25rem; text-align: left; vertical-align: top; font-size: var(--fs-sm); line-height: 1.55; }
+.bl-matrix__table thead th { background: var(--surface-2); color: var(--text-strong); font-family: var(--font-heading); font-weight: var(--heading-weight); font-size: .98rem; line-height: 1.35; border-bottom: 1px solid var(--border); }
+.bl-matrix__corner { width: 28%; }
+.bl-matrix__table--1 .bl-matrix__corner { width: 36%; }
+.bl-matrix__row + .bl-matrix__row > * { border-top: 1px solid var(--border); }
+.bl-matrix__label { font-weight: 700; color: var(--text-strong); }
+.bl-matrix__detail { display: block; margin-top: .2rem; font-weight: 400; color: var(--text-muted); font-size: var(--fs-xs); line-height: 1.5; }
+.bl-matrix__cell { color: var(--text); }
+.bl-matrix__note { margin-top: 1rem; max-width: 760px; font-size: var(--fs-sm); line-height: 1.6; color: var(--text-muted); }
+.bl-matrix__note strong { color: var(--text-strong); }
+.bl-matrix__cta { margin-top: 2rem; }
+@media (max-width: 760px) {
+  .bl-matrix { border: 0; border-radius: 0; background: none; overflow: visible; }
+  .bl-matrix__table, .bl-matrix__table tbody, .bl-matrix__row { display: block; width: 100%; }
+  .bl-matrix__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .bl-matrix__row { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: .75rem; overflow: hidden; }
+  .bl-matrix__row + .bl-matrix__row > * { border-top: 0; }
+  .bl-matrix__label { display: block; padding: 1rem 1.1rem .6rem !important; font-size: 1rem; }
+  .bl-matrix__cell { display: block; padding: .7rem 1.1rem !important; border-top: 1px solid var(--border) !important; }
+  .bl-matrix__cell::before { content: attr(data-col); display: block; margin-bottom: .15rem; font-size: var(--fs-xs); font-weight: 700; color: var(--text-strong); }
+}

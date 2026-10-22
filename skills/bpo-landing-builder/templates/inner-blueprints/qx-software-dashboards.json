@@ -1,0 +1,64 @@
+{
+ "id": "qx-software-dashboards",
+ "page_type": "software",
+ "source": {
+  "name": "QX Accounting",
+  "url": "https://qxaccounting.com/dashboards/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A product page for the firm's own dashboards (5,500px): a head with an animated visual, a radial pain-point diagram, ten benefit cards, a two-tab 'for firms / for clients' block, a split with a screenshot and four points, and a purple closing band with a demo form.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "pale beige ground with stepped corner shapes; centered title, one-line lead, one coral button and a large animated visual (lazy, blank in a still shot) below it."
+  },
+  {
+   "form": "cards-icon",
+   "role": "scope",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; a ring diagram: six round icon badges (cog in the centre) with a bold title and a line each, around a centre mark"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "muted",
+   "cols": 2,
+   "count": 10,
+   "media": "none",
+   "note": "pale blue: centered heading; ten white cards in two columns, each a coral line icon, a bold title and one line"
+  },
+  {
+   "form": "tabs",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "heading; two tab buttons (for firms, for firm clients) over a lilac panel with a bold line and five ticked points in two columns"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "heading; a rounded screenshot of a dashboard left, four icon bullets (title and line) right"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "media": "none",
+   "note": "purple band: heading and portrait with contact lines left, a white demo form card right"
+  }
+ ]
+}

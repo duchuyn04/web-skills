@@ -1,0 +1,38 @@
+{
+ "id": "microsourcing-contact",
+ "page_type": "contact",
+ "source": {
+  "name": "MicroSourcing",
+  "url": "https://www.microsourcing.com/contact-us",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark page: a head with two small side cards (call now, careers), a white form card of twelve fields and a grid of corporate locations. Needs office list and a long qualifying form.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark teal: H1 and a line left; right two bordered boxes with a call link and a careers link"
+  },
+  {
+   "form": "form",
+   "role": "contact-details",
+   "tone": "dark",
+   "cols": 2,
+   "count": 12,
+   "media": "none",
+   "note": "white card, centered title and one line; fields: first name, last name, email, phone, job title, industry, company, company size, number of staff, country, team location, how can we help; one orange Send message button"
+  },
+  {
+   "form": "locations-map",
+   "role": "locations",
+   "tone": "dark",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "Corporate Locations: six country blocks in three columns, each with a name and an address; no map"
+  }
+ ]
+}

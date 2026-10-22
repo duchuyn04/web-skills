@@ -1,0 +1,29 @@
+{
+ "id": "dext-trust-detail",
+ "page_type": "trust-detail",
+ "source": {
+  "name": "Dext",
+  "url": "https://dext.com/uk/information-security",
+  "collected": "2026-10-18"
+ },
+ "summary": "Information security page for a finance software firm: no band, one big title, a sticky contents card on the left and long text on the right with a last-updated line. Needs eight topic headings with plain paragraphs.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: H1 in the content column at the top of a white page, left aligned over the text column"
+  },
+  {
+   "form": "prose",
+   "role": "toc",
+   "tone": "light",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "(measured as sidebar) sticky left card (about 280 px) with eight anchor links and a red bar on the active one; right column about 780 px with a Last updated line, eight h2 sections, orange h3 sub-heads inside one section, links in text"
+  }
+ ]
+}

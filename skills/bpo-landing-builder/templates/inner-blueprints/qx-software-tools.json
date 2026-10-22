@@ -1,0 +1,36 @@
+{
+ "id": "qx-software-tools",
+ "page_type": "software",
+ "source": {
+  "name": "QX Accounting",
+  "url": "https://qxaccounting.com/uk/tools-for-accountants/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A tools index (2,600px): a purple head with a circular photo, a muted grid of eight calculator cards and one closing contact strip. It is a utility page for lead generation, not a list of software.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band; left: title and a four-line paragraph; right: a circular photo cropped with a pink arch behind and a coral dot."
+  },
+  {
+   "form": "cards-icon",
+   "role": "tools",
+   "tone": "muted",
+   "cols": 3,
+   "count": 8,
+   "media": "none",
+   "note": "pale blue ground; eight white cards in a 3-column grid, each with a pale icon tile, a bold two-line title and an outlined purple pill 'Calculate now'"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "right",
+   "note": "purple strip about 190px: heading and a paragraph left, a round portrait with name, role and a coral 'book my time' button right"
+  }
+ ]
+}

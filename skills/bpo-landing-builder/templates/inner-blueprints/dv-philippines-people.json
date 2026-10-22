@@ -1,0 +1,46 @@
+{
+ "id": "dv-philippines-people",
+ "page_type": "people",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/about-us/meet-the-team",
+  "collected": "2026-10-18"
+ },
+ "summary": "Four blocks: a slanted-photo head, a navy tagline band, twelve leaders in a plain 3 by 4 grid (photo, small orange role, bold name, no bio), and a contact call-to-action. Needs 12 leader photos with names and titles.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "cream ground with an orange label, navy title and two-line lead left; team photo right with diagonal stripes"
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "accent",
+   "cols": 1,
+   "media": "none",
+   "note": "orange full-width tagline band, 272px"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "light",
+   "cols": 3,
+   "count": 12,
+   "media": "top",
+   "note": "twelve leaders, three per row, edge to edge cells with no gaps: studio photo 4:3, tiny orange role line, bold navy name; no bio, no links"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "right",
+   "note": "heading, one sentence and two orange buttons left; two staff photographed over diagonal shapes right"
+  }
+ ]
+}

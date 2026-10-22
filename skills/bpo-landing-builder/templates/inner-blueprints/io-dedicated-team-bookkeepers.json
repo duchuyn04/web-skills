@@ -1,0 +1,96 @@
+{
+ "id": "io-dedicated-team-bookkeepers",
+ "page_type": "dedicated-team",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/offshore-accounting-team/bookkeepers",
+  "collected": "2026-10-18"
+ },
+ "summary": "Same template as the accountants page (8,500px): split head, problem split, nine capability cards, CTA, cost block, comparison table, reviews, FAQ, related roles and CTA.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "breadcrumb; breadcrumb row above a pale pink ground; left: small caps tag, large title with an accent word, a lead and one filled pill button; right: a rounded team photo (about 636 by 469). The title names the role being hired."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "heading naming the problem with a bullet list left, photo right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "scope",
+   "tone": "muted",
+   "cols": 3,
+   "count": 9,
+   "media": "none",
+   "note": "nine capability cards in a 3 by 3 grid"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "brand-colour band, centered heading and button"
+  },
+  {
+   "form": "table",
+   "role": "pricing",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "cost table left, 'what you get' panel right"
+  },
+  {
+   "form": "table",
+   "role": "compare",
+   "tone": "muted",
+   "cols": 3,
+   "count": 7,
+   "media": "none",
+   "note": "three-column comparison table"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "centered heading and two white review cards with stars, quote, name and firm"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 5,
+   "media": "none",
+   "note": "centered heading, one column of 4-5 pale rounded rows with a plus sign"
+  },
+  {
+   "form": "cards-image",
+   "role": "related",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "centered heading and line; three role cards with portraits (the other roles, plus the finance-team bundle) and an underlined link each"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "pale ground: centered heading, a line, one button and a small line offering a white paper download"
+  }
+ ]
+}

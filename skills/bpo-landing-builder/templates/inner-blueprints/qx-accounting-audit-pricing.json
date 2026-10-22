@@ -1,0 +1,73 @@
+{
+ "id": "qx-accounting-audit-pricing",
+ "page_type": "engagement-models",
+ "source": {
+  "name": "QX Accounting Services UK",
+  "url": "https://qxaccounting.com/uk/audit-support-pricing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Ten blocks that sell without prices: a purple head with two anchor buttons and three benefit chips, a three-step process line, a dark statement, three engagement-model cards with an all-plans row, client quotes, four FAQs and a request-a-quote form. Needs three models with four ticks each, six common features, a 3-step process and 4 FAQs.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "deep purple with stepped shapes; centered white title and two buttons (Our engagement models, Request a quote) and, below, three white chips each with an icon and a one-line benefit"
+  },
+  {
+   "form": "icon-strip",
+   "role": "process",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "pink band: centered heading and line, a horizontal line with three red nodes and a step label and sentence under each"
+  },
+  {
+   "form": "statement",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "slim dark purple strip: heading, line and two text links"
+  },
+  {
+   "form": "cards-text",
+   "role": "pricing",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "centered heading and line; three white rounded cards in a row with a red tick list and a thin rule under the title; the middle one is raised and marked Managed full-time employee (the recommended model); below, a row of six small icon items titled All plans include, and one coral button"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 1,
+   "count": 3,
+   "media": "none",
+   "optional": true,
+   "note": "heading and a client quote carousel, then a coral button"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and line; four outlined accordion rows"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "left heading, line and three small icons; right a request-a-quote form (name pair, email, phone, company, how did you hear select, message, consent, submit)"
+  }
+ ]
+}

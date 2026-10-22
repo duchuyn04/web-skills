@@ -1,0 +1,83 @@
+{
+ "id": "advancetrack-why-us",
+ "page_type": "why-us",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/how-to-choose/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A buyer-guide shaped \"how to choose\" page of 9 blocks: a photo head, a lead, six criteria cards, two accordions with a photo, a quote, five lime-star columns and a closing card. Needs six selection criteria and a few partner badges.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "wide team photo with the title in a translucent lime label centered over it"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "centered lead paragraph and one line"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "six tall white rounded cards in two rows of three, each with a lime line icon, a title, a paragraph and a badge or logo row at the bottom (certification, accreditations, software partners)"
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "none",
+   "note": "text left; right three mauve accordion pills with icon and chevron (outsourcing, offshoring, podsourcing)"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "optional": true,
+   "note": "one wide pale-lime card with a quote mark and a long quote"
+  },
+  {
+   "form": "feature-split",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "left",
+   "note": "centered heading and lead; rounded photo left and three slate accordion rows right (step one to three) with icons"
+  },
+  {
+   "form": "icon-strip",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "note": "mauve-grey band, heading and five columns each with a lime star, a short title and a paragraph"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "rounded lime card with heading and a black button over a line-art logo mark"
+  }
+ ]
+}

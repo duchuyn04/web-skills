@@ -1,0 +1,110 @@
+{
+ "id": "qx-service-detail-vat",
+ "page_type": "service-detail",
+ "source": {
+  "name": "QX Accounting",
+  "url": "https://qxaccounting.com/uk/service/vat-outsourcing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Same QX service template as bookkeeping: the intro is titled as a benefits block with one subheading, the scope panel is shorter (3 bullets in each row) and the FAQ has 5 rows. Payroll uses the same shape with a longer scope panel (9 FAQs).",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band: small caps tag, big white title, two-line lead, one coral pill button, three tick chips (saving, turnaround, accuracy) below; a photo right inside a rounded frame with a pink shape. The header above is white and sticky."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "heading and paragraphs left, a short subheading and one bullet right; no photo"
+  },
+  {
+   "form": "list-columns",
+   "role": "scope",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "none",
+   "note": "three labelled rows (scope, needs, deliverables) with pale pink panels of bullets"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band, about 350px tall: heading with one line of text and one coral pill button on the left, a photo with a big pale number shape on the right"
+  },
+  {
+   "form": "logo-strip",
+   "role": "clients",
+   "tone": "light",
+   "count": 6,
+   "media": "none",
+   "note": "centered heading, one line, a looping row of grey client logos and a centered coral button below"
+  },
+  {
+   "form": "video-block",
+   "role": "testimonial",
+   "tone": "light",
+   "media": "none",
+   "optional": true,
+   "note": "centered heading and one line, then an embedded video player (blank until it loads); about 780px tall"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "none",
+   "note": "full-width coral band about 315px: centered white heading on two lines and one white button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading and line, eight small icon cards with a short title only, in a 4 by 2 grid"
+  },
+  {
+   "form": "logo-strip",
+   "role": "tools",
+   "tone": "light",
+   "count": 6,
+   "media": "none",
+   "note": "centered heading in the accent colour, one line, a row of six colour logos of accounting software (cloud ledgers and payroll tools)"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading and line, one column of 5 to 10 question rows with a chevron, first row closed"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "centered heading, three article cards with a wide photo and a two-line title"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "media": "none",
+   "note": "two columns: heading with a line and two icon links (book a virtual meeting, book an in-person meeting) left, a short contact form (names, email, phone, company, source dropdown, message) right"
+  }
+ ]
+}

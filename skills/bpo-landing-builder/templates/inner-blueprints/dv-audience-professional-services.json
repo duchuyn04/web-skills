@@ -1,0 +1,136 @@
+{
+ "id": "dv-audience-professional-services",
+ "page_type": "audience",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/our-solutions/for-professional-services",
+  "collected": "2026-10-18"
+ },
+ "summary": "A very long 16,500px audience page for accounting, audit and part-time CFO firms: a diagonal-photo head, a navy statement band, four audience cards, eight reasons, testimonial, three case cards, a software logo block in five labelled groups, a statement, CTA, resource cards, newsletter, contact, FAQ and a final banner.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "photo on the LEFT (a portrait cropped on a diagonal, 640px wide); right: orange small-caps tag, navy title, a two-line lead and one orange rectangular button."
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "dark",
+   "media": "none",
+   "note": "navy band with a very large two-line statement (48px) and a short paragraph"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "three paragraphs of copy about the team's experience and sector knowledge"
+  },
+  {
+   "form": "cards-icon",
+   "role": "services",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "uppercase heading with paragraph; four tall cards (icon, title, a few lines, orange button) for each firm type"
+  },
+  {
+   "form": "cards-text",
+   "role": "about",
+   "tone": "muted",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "pale pink band: heading, a paragraph and eight reason tiles in two rows of four, each a small icon and a bold line"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "tag, uppercase heading, one quote with name and firm, arrow button, dots"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "uppercase heading; three case-study cards with a wide image, a title and a link"
+  },
+  {
+   "form": "logo-strip",
+   "role": "tools",
+   "tone": "light",
+   "count": 18,
+   "media": "none",
+   "note": "heading and a paragraph; five labelled groups of tool logos (accounting tools, management reports, audit tools, SMSF set-up, data collection), each label in orange with 3-6 colour logos"
+  },
+  {
+   "form": "statement",
+   "role": "about",
+   "tone": "light",
+   "media": "none",
+   "note": "two paragraphs under a bold heading about adapting to the client's way of working"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "heading and one orange button (start engagement)"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "three white paper cards (cover image, title) with download links"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "newsletter sign-up: heading, one line and an email field"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "left: uppercase heading, a line and two buttons; right: a photo"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 2,
+   "count": 10,
+   "media": "none",
+   "note": "uppercase heading; about ten questions in two columns, answers fully visible as plain text"
+  },
+  {
+   "form": "image-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "full-width banner (1400 by 600) with a bold line and a button"
+  }
+ ]
+}

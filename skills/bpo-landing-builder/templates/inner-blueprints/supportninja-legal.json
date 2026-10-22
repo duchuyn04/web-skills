@@ -1,0 +1,29 @@
+{
+ "id": "supportninja-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/privacy",
+  "collected": "2026-10-18"
+ },
+ "summary": "Terms and privacy as long documents: huge serif title and a narrow 800 px column with numbered headings (h2 and h3). A version line exists, no contents list, no sidebar.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: huge serif H1 on ivory"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 21,
+   "media": "none",
+   "note": "single column 800 px, 20 px text, h2 and h3 headings, one table in the privacy page"
+  }
+ ]
+}

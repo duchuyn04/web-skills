@@ -1,0 +1,56 @@
+{
+ "id": "microsourcing-case-study-detail",
+ "page_type": "case-study",
+ "source": {
+  "name": "MicroSourcing",
+  "url": "https://www.microsourcing.com/resources-hub/eagleview-technologies",
+  "collected": "2026-10-18"
+ },
+ "summary": "Case study behind a download form: dark head with title and a white form card over its edge, a photo split with five headed one-liners, four dark icon tiles, an FAQ and a full enquiry form. Needs a title with an orange first line, five themes, four takeaways and four questions.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark teal band: first line of the H1 in orange, rest white, a lead paragraph; right a white card Download Now with eight fields and an orange button, overhanging the band"
+  },
+  {
+   "form": "feature-split",
+   "role": "overview",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "left",
+   "note": "heading What this case study covers; arch-cropped photo left with a dashed outline; right an intro paragraph and five headed one-liners separated by thin rules"
+  },
+  {
+   "form": "cards-icon",
+   "role": "trust-topics",
+   "tone": "dark",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and two paragraphs; four tiles in two columns, each an outline icon, a title and one sentence"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "heading and four white single-column accordion rows (first open)"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 12,
+   "media": "none",
+   "note": "heading with dashed arc ornament and a twelve-field enquiry form on a white card"
+  }
+ ]
+}

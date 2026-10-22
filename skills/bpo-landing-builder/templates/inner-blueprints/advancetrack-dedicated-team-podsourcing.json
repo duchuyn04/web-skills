@@ -1,0 +1,97 @@
+{
+ "id": "advancetrack-dedicated-team-podsourcing",
+ "page_type": "dedicated-team",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/podsourcing/",
+  "collected": "2026-10-18"
+ },
+ "summary": "6,000px 'pod' (named team) page under a photo band: a definition split with a tick list, benefits as accordion tiles, six benefit cards, a knowledge split, a three-step start with photo, a 'making the right choice' card, five reasons, FAQ and green closing block.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "dark photo band with a green label box holding a two-line title; no lead, no buttons."
+  },
+  {
+   "form": "feature-split",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "left a heading and three paragraphs; right a short list of five green-tick service names (year-end, VAT, bookkeeping, tax, auto-enrolment)"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "heading and paragraphs left; five lilac accordion tiles right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading and line; six pale green cards (3 by 2)"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "heading and paragraph left, four slate accordion tiles right"
+  },
+  {
+   "form": "feature-split",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "left",
+   "note": "heading and two paragraphs on top; photo left, three accordion step tiles right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "media": "none",
+   "note": "pale rounded card: heading, one line and a small green button 'learn more' (links to a how-to-choose guide)"
+  },
+  {
+   "form": "icon-strip",
+   "role": "about",
+   "tone": "muted",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "note": "grey band: heading, five columns with a star mark, title and paragraph"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "grey band: heading and line left, four question rows right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "media": "none",
+   "note": "rounded green block, heading and one black button"
+  }
+ ]
+}

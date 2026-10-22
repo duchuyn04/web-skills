@@ -1,0 +1,82 @@
+{
+ "id": "qx-accounting-about",
+ "page_type": "about",
+ "source": {
+  "name": "QX Accounting Services UK",
+  "url": "https://qxaccounting.com/uk/about-us/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Purple-branded page of 9 sections: a head with a 3 by 3 leader portrait mosaic, an overview with video, a story carousel, four link tiles, a success-story block, a podcast strip, client quotes and a dark enquiry form. Needs nine portrait photos, a story of 4 to 5 cards and client quotes.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "deep purple ground; small label, large white title and lead left; a 3 by 3 mosaic of square leader portraits on coloured tiles right"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "left",
+   "note": "centered heading with a bold one-line strapline; rounded video thumbnail with play button left, paragraph with firm figures right"
+  },
+  {
+   "form": "carousel-cards",
+   "role": "history",
+   "tone": "accent",
+   "cols": 4,
+   "count": 5,
+   "media": "none",
+   "note": "brighter purple band with a diagonal light panel; left a very large stacked heading and a short line plus two round arrow buttons; right a sliding row of white cards each with icon, bold title and a paragraph, the fourth card cut off"
+  },
+  {
+   "form": "cards-image",
+   "role": "about",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "ground",
+   "note": "centered heading and line; four tall photo tiles with a large dark title in the top-left and a round arrow in the bottom-left (links to leadership, culture, insights, giving)"
+  },
+  {
+   "form": "feature-split",
+   "role": "cases",
+   "tone": "muted",
+   "cols": 2,
+   "media": "right",
+   "optional": true,
+   "note": "success stories: text with a link left, a person photo with a purple play badge right"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "slim 300px dark purple podcast strip: one heading and a button"
+  },
+  {
+   "form": "testimonial-block",
+   "role": "testimonial",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "centered heading; three client quote cards with a round photo, quote, name and firm, five links below"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "media": "none",
+   "note": "dark purple band: heading and line left, short enquiry form right (name, email, phone, company, message, submit) with two buttons"
+  }
+ ]
+}

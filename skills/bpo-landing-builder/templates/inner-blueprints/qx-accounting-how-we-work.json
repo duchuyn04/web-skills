@@ -1,0 +1,66 @@
+{
+ "id": "qx-accounting-how-we-work",
+ "page_type": "how-we-work",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/how-we-work",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short six-block page: purple head with a photo and coral shapes, four principle cards, a communication rhythm list with a quote card, three photo tiles, three virtual-tour videos and a cream call-to-action. Needs four principles, a four-line meeting rhythm, three tiles and optional office videos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "deep purple; label, large title and a two-line lead left; a presenter photo in a rounded frame with coral and purple shapes right"
+  },
+  {
+   "form": "cards-icon",
+   "role": "process",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading; four lilac rounded cards, each a small icon, bold title and two lines"
+  },
+  {
+   "form": "feature-split",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading with bold line; left a list of four meeting rhythms (kickoff, weekly, monthly, quarterly) each with a circle icon, right a purple-to-coral gradient quote card"
+  },
+  {
+   "form": "cards-image",
+   "role": "values",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "top",
+   "note": "centered heading; three photo tiles each with a colour label on top (people, process, platform)"
+  },
+  {
+   "form": "video-block",
+   "role": "locations",
+   "tone": "light",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "optional": true,
+   "note": "centered heading and line; three rounded video thumbnails with a play badge and a city label"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "accent",
+   "cols": 1,
+   "count": 2,
+   "media": "right",
+   "note": "cream band: heading, line and two coral buttons (UK, USA) left; round photo of two people right"
+  }
+ ]
+}

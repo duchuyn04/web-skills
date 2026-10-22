@@ -1,0 +1,38 @@
+{
+ "id": "microsourcing-resources",
+ "page_type": "resources",
+ "source": {
+  "name": "MicroSourcing",
+  "url": "https://www.microsourcing.com/resources-hub",
+  "collected": "2026-10-18"
+ },
+ "summary": "Resource hub with a dark head and featured slider, a bar of pill dropdown filters with a search field, a grid of nine tinted cards and a newsletter band. Needs resource types, topics and industries to filter by.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark teal: H1 and a line left, slider counter with two arrow buttons right; a featured slide below with an arch photo, a pill tag and a large title"
+  },
+  {
+   "form": "cards-image",
+   "role": "resources",
+   "tone": "light",
+   "cols": 3,
+   "count": 9,
+   "media": "top",
+   "note": "(measured as filter-grid) three pill dropdowns (type, topic, industry) and a keyword search above a thin rule; three-column grid of tinted cards with a photo top, a pill tag and a title"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "muted",
+   "cols": 2,
+   "count": 1,
+   "media": "none",
+   "note": "newsletter band: one line of text and an email field"
+  }
+ ]
+}

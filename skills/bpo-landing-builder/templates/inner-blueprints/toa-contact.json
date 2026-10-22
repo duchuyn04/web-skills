@@ -1,0 +1,38 @@
+{
+ "id": "toa-contact",
+ "page_type": "contact",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/contact-us/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Form left and hotline numbers right on a blurred office ground, then office cards by region. No head band. Needs four phone numbers and two to four office addresses.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: the H1 and the form start straight under the header"
+  },
+  {
+   "form": "form",
+   "role": "contact-details",
+   "tone": "light",
+   "cols": 2,
+   "count": 7,
+   "media": "none",
+   "note": "left a serif H1, first and last name, business email, phone, company, country select, message, a privacy line, a captcha and a Book Now button; right a serif Hotlines heading and four country names each with a large number"
+  },
+  {
+   "form": "cards-text",
+   "role": "locations",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "none",
+   "note": "Corporate office contact information: serif heading and white cards with a region name and an address, over a faint ground"
+  }
+ ]
+}

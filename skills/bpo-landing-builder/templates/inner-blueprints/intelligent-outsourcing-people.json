@@ -1,0 +1,39 @@
+{
+ "id": "intelligent-outsourcing-people",
+ "page_type": "people",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/the-team",
+  "collected": "2026-10-18"
+ },
+ "summary": "Two-block team page with no hero: two CEO interview videos, then four leaders as tall cards (portrait on a brand-colour shape, name in red, role, a four-line bio). Needs two videos (optional), four leaders with portraits and a bio of about 30 words.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no head band: a centered red H1 sits straight under the header on white"
+  },
+  {
+   "form": "video-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "optional": true,
+   "note": "two video cards side by side, each with poster, play button and a one-line caption"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "light",
+   "cols": 3,
+   "count": 4,
+   "media": "top",
+   "note": "centered red sub-heading; leader cards three per row (the fourth wraps alone): portrait 4:3 on a pink brand shape, red first name, bold role, short paragraph; bordered white cards of unequal height"
+  }
+ ]
+}

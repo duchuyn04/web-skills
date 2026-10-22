@@ -1,0 +1,79 @@
+{
+ "id": "toa-audience-cpa",
+ "page_type": "audience",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/solutions/cpa/",
+  "collected": "2026-10-18"
+ },
+ "summary": "5,800px page for CPA firms told through one named staff profile: head with a portrait, a story block, a portrait split, a grey task list, a qualification grid, a CTA split, role cross-links and a form. It reads like a team-member page more than a sales page.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "pale blurred ground; left: a serif title naming a team member, a lead and one purple pill button; right: a cutout portrait of a smiling woman."
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "centered serif heading, three paragraphs and a button"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "left",
+   "note": "tall portrait photo left; heading, two paragraphs and a button right"
+  },
+  {
+   "form": "list-rows",
+   "role": "scope",
+   "tone": "muted",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "grey band: centered serif heading and paragraph; eight tasks in two columns, a few with a small line icon, each a serif title and one line"
+  },
+  {
+   "form": "list-columns",
+   "role": "scope",
+   "tone": "light",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading; eight blocks in two rows of four, each with a plus sign, a serif label and a line"
+  },
+  {
+   "form": "feature-split",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "text and a purple button left, a rounded photo right"
+  },
+  {
+   "form": "cards-text",
+   "role": "related",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading; four role cards and one 'explore all' button"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "text left, form card right"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "id": "boldr-careers",
+ "page_type": "careers",
+ "source": {
+  "name": "Boldr",
+  "url": "https://boldrimpact.com/careers",
+  "collected": "2026-10-18"
+ },
+ "summary": "Large careers page (11 blocks) that puts jobs first: photo-card head, a values intro, a job table grouped by country with Show more, benefits tabs by country, a country tile row, culture blocks, a community story and a call-to-action. Needs 15 or more roles in 3 to 4 countries, benefits per country and culture photos.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "cream ground; rounded team photo left with a white panel overlapping at the right: orange label, navy title, short lead and one navy button (View open roles)"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "none",
+   "note": "heading left, two paragraphs right"
+  },
+  {
+   "form": "list-rows",
+   "role": "jobs",
+   "tone": "light",
+   "cols": 1,
+   "count": 20,
+   "media": "none",
+   "note": "(measured as job-list) navy tag heading Open roles; four country groups of five rows each: role in orange bold, department, city; thin rules; one Show more button"
+  },
+  {
+   "form": "image-band",
+   "role": "careers",
+   "tone": "accent",
+   "media": "top",
+   "note": "slim orange line-art band with a small label (what you can expect) over a photo mosaic of four to five photos"
+  },
+  {
+   "form": "tabs",
+   "role": "values",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "navy heading tag Your benefits; four tab buttons (global, three countries) then long benefit lists"
+  },
+  {
+   "form": "locations-map",
+   "role": "locations",
+   "tone": "light",
+   "cols": 5,
+   "count": 5,
+   "media": "none",
+   "optional": true,
+   "note": "heading and a row of country tiles (also on the about page)"
+  },
+  {
+   "form": "feature-split",
+   "role": "values",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "left",
+   "note": "how we work together: two or three stacked photo and text rows"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 2,
+   "count": 3,
+   "media": "top",
+   "optional": true,
+   "note": "nurture careers and community: heading, photo cards and two links"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "navy band with one white card and an orange button"
+  }
+ ]
+}

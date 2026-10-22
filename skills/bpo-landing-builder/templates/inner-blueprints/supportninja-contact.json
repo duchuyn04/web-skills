@@ -1,0 +1,29 @@
+{
+ "id": "supportninja-contact",
+ "page_type": "contact",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/contact",
+  "collected": "2026-10-18"
+ },
+ "summary": "A two-step enquiry in the hero (email, then topic) beside an illustration, followed by a peach band that explains a five-step onboarding with two toggle tabs. Needs a five-step onboarding story.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "ivory; huge italic serif H1, a short paragraph and a spot illustration left; right a form with a progress bar, email, one select and a dark Next button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "process",
+   "tone": "accent",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "(measured as steps) peach band with a wavy top edge: heading and line left; right two toggle tabs and five numbered steps in white circles"
+  }
+ ]
+}

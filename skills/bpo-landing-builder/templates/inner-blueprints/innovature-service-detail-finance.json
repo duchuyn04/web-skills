@@ -1,0 +1,99 @@
+{
+ "id": "innovature-service-detail-finance",
+ "page_type": "service-detail",
+ "source": {
+  "name": "Innovature BPO",
+  "url": "https://innovatureinc.com/outsourcing-solutions/finance-accounting-services/",
+  "collected": "2026-10-18"
+ },
+ "summary": "9,000px template shared by the Innovature service pages: a pale split head with stat chips, a numbered operations list, role cards, certification cards, why split, a logo grid of finance systems, a savings calculator teaser, one case study, a consultation form and a 10-row FAQ. Many blocks fade in on scroll.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale blue ground; left: title, lead, one filled and one outlined pill button, a row of three small stat chips; right: a glass-framed card holding four portrait cutouts of staff."
+  },
+  {
+   "form": "cards-text",
+   "role": "services",
+   "tone": "light",
+   "cols": 2,
+   "count": 6,
+   "media": "none",
+   "note": "centered heading; one white raised card holding six numbered items (01-06) in two columns, each with a bold title and one line"
+  },
+  {
+   "form": "cards-text",
+   "role": "services",
+   "tone": "light",
+   "cols": 3,
+   "count": 9,
+   "media": "none",
+   "note": "centered heading; a grid of nine role cards with a role title and short list, and a text link at the end"
+  },
+  {
+   "form": "cards-text",
+   "role": "awards",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "pale band: heading and three cards with tick lists of certifications and standards"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "left",
+   "note": "heading with five short reason rows in two columns, a tall photo left"
+  },
+  {
+   "form": "logo-strip",
+   "role": "tools",
+   "tone": "muted",
+   "cols": 8,
+   "count": 16,
+   "media": "none",
+   "note": "centered heading; a grid of 16 square white tiles with software logos, two rows of eight"
+  },
+  {
+   "form": "calculator",
+   "role": "pricing",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "left: heading, a short paragraph, two small stat chips and a button; right: a large screenshot of a role-by-role price comparison table"
+  },
+  {
+   "form": "feature-split",
+   "role": "cases",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "optional": true,
+   "note": "case study: heading, bullet results left, a photo right with two buttons"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "left: heading, a line and three small value chips; right: a white form card (name, title, company, email, phone, source, date, message, consent)"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "light",
+   "cols": 1,
+   "count": 10,
+   "media": "none",
+   "note": "centered heading, one column of 10 rows, first row open"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "qx-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/privacy-policy/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Privacy notice then numbered policy in a full-width column (1276 px), under a purple head that carries a sentence as its title. Cookie policy and terms of use share the same template without the date.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "purple band with a sentence as H1 (for example, a promise to respect privacy)"
+  },
+  {
+   "form": "text-block",
+   "role": "legal-text",
+   "tone": "muted",
+   "cols": 1,
+   "media": "none",
+   "note": "grey box: Privacy notice heading, a bracketed last-updated date and four paragraphs"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 16,
+   "media": "none",
+   "note": "Privacy policy heading and numbered clauses (1, 1.1, (a)) with h3 headings, about 16; text spans the full container width"
+  }
+ ]
+}

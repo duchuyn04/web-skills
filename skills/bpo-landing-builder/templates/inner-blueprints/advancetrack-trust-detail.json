@@ -1,0 +1,29 @@
+{
+ "id": "advancetrack-trust-detail",
+ "page_type": "trust-detail",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/icaew-guidelines/",
+  "collected": "2026-10-18"
+ },
+ "summary": "One-screen compliance explainer: a small title and four sub-headed paragraphs on how the firm meets a professional body's outsourcing guidance. Needs a body name and four short answers.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: small H1 on white"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "four h3 headings each followed by one or two paragraphs; no list, no table, no call band"
+  }
+ ]
+}

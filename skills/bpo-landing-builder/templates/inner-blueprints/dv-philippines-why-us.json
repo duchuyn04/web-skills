@@ -1,0 +1,46 @@
+{
+ "id": "dv-philippines-why-us",
+ "page_type": "why-us",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/about-us/why-dv",
+  "collected": "2026-10-18"
+ },
+ "summary": "Ten blocks of one repeated rhythm: a slanted-photo head, a navy tagline band, then eight alternating text and slanted-photo rows, one per reason, and a closing call to action. Needs eight reasons of 2 to 3 short paragraphs each and about nine photos of staff at work.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "cream ground; orange label, navy title and a lead left; team photo right cut by two diagonal stripes (orange and navy); no buttons"
+  },
+  {
+   "form": "statement",
+   "role": "intro",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "full-width navy band 272px with one large white tagline, repeated on every About page"
+  },
+  {
+   "form": "feature-split",
+   "role": "reasons",
+   "tone": "light",
+   "cols": 2,
+   "count": 8,
+   "media": "right",
+   "note": "eight rows of 450 to 800px alternating image side: navy uppercase heading, two or three paragraphs, and a photo with one slanted edge; the photo bleeds to the page edge"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "right",
+   "note": "heading and a button left, photo of two staff over a diagonal orange shape right"
+  }
+ ]
+}

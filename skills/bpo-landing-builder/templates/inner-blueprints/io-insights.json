@@ -1,0 +1,29 @@
+{
+ "id": "io-insights",
+ "page_type": "insights",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/io-blogs",
+  "collected": "2026-10-18"
+ },
+ "summary": "Blog with a sticky-style right sidebar: big title and lead, a single column of tall post cards (cover, category, title, excerpt, date, author) and a side column with search, categories and a year archive. Needs 10 to 15 posts and category names.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: red H1 and a two-line lead over the post column"
+  },
+  {
+   "form": "prose",
+   "role": "news",
+   "tone": "light",
+   "cols": 2,
+   "count": 15,
+   "media": "top",
+   "note": "(measured as sidebar) left column (about 810 px): stacked post cards with a branded cover image, red category, grey title, two-line excerpt and a footer line with date and author; right column (about 390 px): search field, blog title and blurb, three social icons, a Categories list, then Posts by year as accordion rows"
+  }
+ ]
+}

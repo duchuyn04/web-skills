@@ -1,0 +1,100 @@
+{
+ "id": "bestarion-about",
+ "page_type": "about",
+ "source": {
+  "name": "Bestarion",
+  "url": "https://bestarion.com/about-us/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark-to-light page of 11 sections: a black gradient head with a curved base, an overlapping white intro card, a video photo, a zig-zag milestone timeline, vision and mission halves, a values accordion, a dark quality block, counters and five leader cards. Needs milestone years, four values, three commitments and five leaders.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "black ground with an orange and yellow glow; centered white title and two-line lead; the lower edge is cut in a curve and a white card overlaps it"
+  },
+  {
+   "form": "text-block",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "none",
+   "note": "white rounded card over the head: small tag and heading with an orange key word and one line left, two paragraphs right"
+  },
+  {
+   "form": "video-block",
+   "role": "about",
+   "tone": "light",
+   "cols": 1,
+   "media": "ground",
+   "note": "wide rounded crowd photo with a centered white play button"
+  },
+  {
+   "form": "list-rows",
+   "role": "history",
+   "tone": "muted",
+   "cols": 1,
+   "count": 9,
+   "media": "none",
+   "note": "(measured as timeline) pale-blue ground; tag, centered heading and line; vertical centre line with round orange nodes, year and milestone label on one side and a white card with an orange icon, title and paragraph on the other, alternating; about nine entries"
+  },
+  {
+   "form": "statement",
+   "role": "about",
+   "tone": "dark",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "two halves of equal width: vision on dark, mission on orange, each a heading, an italic line and a paragraph; outer margins left empty"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "values",
+   "tone": "muted",
+   "cols": 1,
+   "count": 4,
+   "media": "none",
+   "note": "heading right, four numbered accordion rows (one open) with chevrons; the left half is empty"
+  },
+  {
+   "form": "list-columns",
+   "role": "values",
+   "tone": "dark",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "dark band: centered heading with an orange word and a one-line paragraph, then a sub-heading and three outlined-icon columns with a title and paragraph"
+  },
+  {
+   "form": "metrics",
+   "role": "metrics",
+   "tone": "light",
+   "cols": 3,
+   "count": 4,
+   "media": "none",
+   "note": "centered heading and line; three counters as boxed tiles in dark, none and orange scattered across the width (loaded by scroll)"
+  },
+  {
+   "form": "cards-image",
+   "role": "team",
+   "tone": "muted",
+   "cols": 3,
+   "count": 5,
+   "media": "top",
+   "note": "tag, centered heading and line; five white cards (three then two centered), each with photo slot, name, role and a small LinkedIn icon"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "black glow ground, small tag, heading with an orange word, one line and a white pill button"
+  }
+ ]
+}

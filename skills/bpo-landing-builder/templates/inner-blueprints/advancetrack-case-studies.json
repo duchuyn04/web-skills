@@ -1,0 +1,54 @@
+{
+ "id": "advancetrack-case-studies",
+ "page_type": "case-studies",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/case-studies/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Photo head with a coloured wave, a centered heading and a grey field of 14 white cards (photo, title, excerpt, link), then a short proof paragraph and a call band. Needs about a dozen short stories.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "photo ground with a green wave overlay; the H1 sits on a green label"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "one centered line (results from outsourcing)"
+  },
+  {
+   "form": "cards-image",
+   "role": "cases",
+   "tone": "muted",
+   "cols": 3,
+   "count": 14,
+   "media": "top",
+   "note": "grey ground; three-column grid of white rounded cards, each with a photo (some empty), a title, a four-line excerpt and an Explore Case Study link pinned to the bottom"
+  },
+  {
+   "form": "feature-split",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "optional": true,
+   "note": "heading and paragraph with a photo; short proof text"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "heading and one button"
+  }
+ ]
+}

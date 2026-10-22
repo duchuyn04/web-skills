@@ -1,0 +1,50 @@
+{
+ "blueprint": "dv-legal",
+ "title": "Privacy notice | Quayside Staffing offshore teams",
+ "description": "How Quayside Staffing handles the details you send through this website, who to contact about them and the rights you have over them.",
+ "sections": [
+  {
+   "type": "page-head",
+   "data": {
+    "title": "Privacy notice",
+    "meta": "Example notice for a demo site"
+   }
+  },
+  {
+   "type": "prose",
+   "id": "notice",
+   "data": {
+    "blocks": [
+     {
+      "id": "what-we-collect",
+      "title": "What we collect",
+      "paragraphs": [
+       "When you write to us we keep your name, your work email and your message so we can reply. Write to [hello@quayside.example](mailto:hello@quayside.example) with any question."
+      ]
+     },
+     {
+      "title": "How long we keep it",
+      "paragraphs": [
+       "We keep an enquiry for as long as we need it to answer you and to run the account that follows."
+      ]
+     },
+     {
+      "title": "Your rights",
+      "bullets": [
+       "Ask for a copy of what we hold",
+       "Ask us to correct or delete it"
+      ]
+     }
+    ],
+    "aside": {
+     "title": "Questions about data?",
+     "text": "Write to us and the account team will answer.",
+     "cta": {
+      "label": "Contact us",
+      "href": "index.html#contact"
+     }
+    }
+   }
+  }
+ ]
+}

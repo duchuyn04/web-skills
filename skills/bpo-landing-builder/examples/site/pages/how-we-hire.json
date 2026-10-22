@@ -1,0 +1,97 @@
+{
+ "blueprint": "genpact-case-study-detail",
+ "title": "How Quayside Staffing hires offshore staff in Cebu",
+ "description": "How Quayside Staffing finds, interviews and places dedicated support agents, bookkeepers and virtual assistants in Cebu, and what each client approves.",
+ "sections": [
+  {
+   "type": "page-head",
+   "data": {
+    "title": "How we hire",
+    "lead": "Quayside Staffing hires dedicated staff in one Cebu office. Every client interviews and approves each hire before they start.",
+    "primary_cta": {
+     "label": "Contact us",
+     "href": "index.html#contact"
+    },
+    "image": "team-coworking-laptops",
+    "layout": "ground"
+   }
+  },
+  {
+   "type": "list-columns",
+   "id": "roles",
+   "data": {
+    "head": {
+     "title": "Who does what"
+    },
+    "columns": [
+     {
+      "title": "Quayside Staffing",
+      "marker": "check",
+      "items": [
+       "Writes the role with the client",
+       "Shortlists candidates in Cebu",
+       "Gives each client one account manager"
+      ]
+     },
+     {
+      "title": "The client",
+      "marker": "dot",
+      "items": [
+       "Interviews the shortlist",
+       "Approves every hire",
+       "Reads the monthly report"
+      ]
+     },
+     {
+      "title": "Not part of the service",
+      "marker": "cross",
+      "items": [
+       "Staff outside the Cebu office",
+       "Hiring without the client approving"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "prose",
+   "id": "steps",
+   "data": {
+    "numbered": true,
+    "blocks": [
+     {
+      "title": "Agree the role",
+      "paragraphs": [
+       "The account manager writes the role with you: the tasks, the hours and the tools. See our [pricing](pricing.html) for how a role is costed."
+      ]
+     },
+     {
+      "title": "Interview and approve",
+      "paragraphs": [
+       "We shortlist candidates from Cebu. You interview them and **you approve every hire** before the start date."
+      ]
+     },
+     {
+      "title": "Report every month",
+      "bullets": [
+       "One account manager for each client",
+       "A monthly report on the work and the team"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "type": "cta-band",
+   "id": "get-started",
+   "data": {
+    "title": "Talk to Quayside about a role",
+    "text": "Tell us what the role covers and we will explain how hiring in Cebu would work for your business.",
+    "primary_cta": {
+     "label": "Contact us",
+     "href": "index.html#contact"
+    }
+   }
+  }
+ ]
+}

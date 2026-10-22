@@ -1,0 +1,20 @@
+{
+  "variant": "list-columns",
+  "group": "features",
+  "forms": ["list-columns"],
+  "summary": "Two to four columns of titled lists under a rule: what is included, what is not, what the client sends, what they receive. Each column picks its marker: a tick for what is in, a cross for what is out, a dot for neutral lists. Optional line under each column title and an optional note under the columns. Use on service pages for scope, inputs and outputs; plain text, no cards, no icons on every item.",
+  "tone": "auto",
+  "anchor": "scope",
+  "animations": ["reveal", "pillar-rule-draw"],
+  "fields": {
+    "head": {"$ref": "head"},
+    "columns": {"type": "list", "min": 2, "max": 4, "item": {"type": "object", "fields": {
+      "title": {"type": "text", "min": 3, "max": 50},
+      "text": {"type": "text", "min": 20, "max": 200, "required": false},
+      "marker": {"type": "enum", "values": ["check", "cross", "dot"], "default": "dot"},
+      "items": {"type": "list", "min": 2, "max": 10, "item": {"type": "text", "min": 3, "max": 160}}
+    }}},
+    "note": {"type": "rich", "min": 10, "max": 400, "required": false},
+    "cta": {"$ref": "cta", "required": false}
+  }
+}

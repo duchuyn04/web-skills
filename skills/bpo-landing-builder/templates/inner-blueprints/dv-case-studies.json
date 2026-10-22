@@ -1,0 +1,46 @@
+{
+ "id": "dv-case-studies",
+ "page_type": "case-studies",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/case-studies",
+  "collected": "2026-10-18"
+ },
+ "summary": "Download-led index: a centered pink head, one featured story row, a list of stories with cover images and Download links beside a Related list, and a newsletter form. Needs cover images (PDF-like) and a one-line summary per story.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "pale pink band: orange small caps label, big H1 and one line, all centered"
+  },
+  {
+   "form": "media-list",
+   "role": "cases",
+   "tone": "light",
+   "cols": 2,
+   "count": 1,
+   "media": "left",
+   "note": "featured row: photo left, small caps tag, big title, excerpt and a Download Now link right"
+  },
+  {
+   "form": "media-list",
+   "role": "cases",
+   "tone": "light",
+   "cols": 2,
+   "count": 4,
+   "media": "left",
+   "note": "list rows with a cover thumbnail left, tag, uppercase title cut to two lines, excerpt and Download Now; a narrow right column Related case studies with four title and tag rows divided by rules"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "headline asking to receive resources by email and a short form"
+  }
+ ]
+}

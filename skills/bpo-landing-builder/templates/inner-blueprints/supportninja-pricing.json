@@ -1,0 +1,38 @@
+{
+ "id": "supportninja-pricing",
+ "page_type": "engagement-models",
+ "source": {
+  "name": "SupportNinja",
+  "url": "https://www.supportninja.com/pricing",
+  "collected": "2026-10-18"
+ },
+ "summary": "Quote-based pricing page with no prices: a huge centered title and a three-column comparison table (Talent-as-a-Service, Management-as-a-Service marked Most popular, CX transformation) across seven rows, a Get a quote button per column and a closing illustrated call-to-action. Needs three models and 6 to 7 comparison rows of 20 to 60 words.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "peach ground; enormous serif title with a one-line lead centered; no photo, no buttons; the table follows without a gap"
+  },
+  {
+   "form": "table",
+   "role": "pricing",
+   "tone": "accent",
+   "cols": 3,
+   "count": 7,
+   "media": "none",
+   "note": "three model columns with dark green header tabs (the middle one raised with a Most popular flag and a darker body); seven labelled rows with a small info icon: best suited for, tech and AI, team sourcing, selection, training, management, your role; the third column spans several rows as one long text; last row holds a grey Get a quote button per column"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "right",
+   "note": "after a wavy edge: a paragraph and a coral pill button left, three-person illustration right"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+<section id="{{section.id}}" class="bl-section bl-tone-{{section.tone}}">
+  <div class="bl-container">
+    {{> head}}
+    <div class="bl-matrix bl-tone-light" data-reveal>
+      <table class="bl-matrix__table bl-matrix__table--{{col_count}}" role="table">
+        <caption class="bl-sr-only">{{head.title_plain}}</caption>
+        <thead role="rowgroup">
+          <tr role="row"><th scope="col" role="columnheader" class="bl-matrix__corner">{{row_label}}</th>{{#columns}}<th scope="col" role="columnheader">{{name}}</th>{{/columns}}</tr>
+        </thead>
+        <tbody role="rowgroup" data-reveal-group>
+          {{#rows}}
+          <tr class="bl-matrix__row" role="row" data-reveal>
+            <th scope="row" role="rowheader" class="bl-matrix__label">{{label}}{{#detail}}<span class="bl-matrix__detail">{{detail}}</span>{{/detail}}</th>
+            {{#cell_list}}<td class="bl-matrix__cell" role="cell" data-col="{{col}}">{{text}}</td>{{/cell_list}}
+          </tr>
+          {{/rows}}
+        </tbody>
+      </table>
+    </div>
+    {{#note}}<p class="bl-matrix__note">{{note}}</p>{{/note}}
+    {{#cta}}<div class="bl-matrix__cta"><a class="bl-btn bl-btn--primary" href="{{href}}">{{label}}</a></div>{{/cta}}
+  </div>
+</section>

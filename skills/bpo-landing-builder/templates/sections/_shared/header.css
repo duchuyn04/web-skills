@@ -17,10 +17,13 @@
 .bl-nav__item { height: 100%; display: flex; align-items: center; }
 .bl-nav__link {
   display: inline-flex; align-items: center; gap: .3rem; padding: .5rem .55rem; border-radius: var(--radius-sm);
-  font-size: .92rem; font-weight: 600; color: var(--text-strong);
+  font-size: .92rem; font-weight: 600; color: var(--text-strong); white-space: nowrap;
   transition: color var(--dur-fast) var(--ease-std), background-color var(--dur-fast) var(--ease-std);
 }
 .bl-nav__link:hover, .bl-nav__item.is-open > .bl-nav__link { color: var(--accent-ink); }
+/* a page of a site: the menu item of the page being read (or of the dropdown that holds it) is underlined */
+.bl-nav__link[aria-current="page"], .bl-nav__item:has(a[aria-current="page"]) > .bl-nav__link { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
+.bl-mega__links a[aria-current="page"], .bl-drawer__nav a[aria-current="page"] { color: var(--accent-ink); font-weight: 700; }
 .bl-nav__link .bl-icon { width: 1rem; height: 1rem; transition: transform var(--dur) var(--ease-out); }
 .bl-nav__item.is-open > .bl-nav__link .bl-icon { transform: rotate(180deg); }
 .bl-header__actions { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
@@ -54,4 +57,10 @@ html.bl-lock, html.bl-lock body { overflow: hidden; }
   .bl-nav, .bl-header__actions .bl-btn { display: none; }
   .bl-burger { display: grid; }
   .bl-header__bar { justify-content: space-between; }
+}
+/* six menu items and a button do not fit beside the logo below this width, so a long menu opens from the burger */
+@media (max-width: 1280px) {
+  .bl-header--long .bl-nav, .bl-header--long .bl-header__actions .bl-btn { display: none; }
+  .bl-header--long .bl-burger { display: grid; }
+  .bl-header--long .bl-header__bar { justify-content: space-between; }
 }

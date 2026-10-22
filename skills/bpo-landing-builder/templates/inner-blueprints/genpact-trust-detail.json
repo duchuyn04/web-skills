@@ -1,0 +1,87 @@
+{
+ "id": "genpact-trust-detail",
+ "page_type": "trust-detail",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/about-us/governance",
+  "collected": "2026-10-18"
+ },
+ "summary": "Dark governance page: split page head with a photo and a helpline button, short text blocks for the board, risk and controls, then alternating policy rows with outline buttons and a year list of statements. Needs a helpline, three or four policy summaries and links to documents.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; dark ground with breadcrumb; H1 and one line left with an outline button; rounded photo right"
+  },
+  {
+   "form": "text-block",
+   "role": "intro",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "left aligned heading and one paragraph (board and committees)"
+  },
+  {
+   "form": "list-columns",
+   "role": "controls",
+   "tone": "dark",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "two columns, each a heading, a small gold chevron motif and two paragraphs (risk framework, internal controls)"
+  },
+  {
+   "form": "text-block",
+   "role": "legal-text",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "heading and three paragraphs (code of conduct)"
+  },
+  {
+   "form": "text-block",
+   "role": "legal-text",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "note": "heading, paragraph and a Read more text link (data rules for processors)"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 2,
+   "media": "none",
+   "note": "centered row: Report a concern title and small caption left, outline button right"
+  },
+  {
+   "form": "feature-split",
+   "role": "policies",
+   "tone": "dark",
+   "cols": 2,
+   "media": "left",
+   "note": "three rows alternating photo and text (code of conduct, third-party code, human rights policy); each a heading, a short paragraph and an outline button"
+  },
+  {
+   "form": "list-rows",
+   "role": "legal-text",
+   "tone": "dark",
+   "cols": 1,
+   "count": 10,
+   "media": "none",
+   "note": "a line of text then a bulleted list of ten red year links (annual statements)"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "media": "none",
+   "optional": true,
+   "note": "heading, short paragraph and a button (learn more about the company)"
+  }
+ ]
+}

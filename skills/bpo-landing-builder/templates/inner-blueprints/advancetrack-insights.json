@@ -1,0 +1,29 @@
+{
+ "id": "advancetrack-insights",
+ "page_type": "insights",
+ "source": {
+  "name": "Advancetrack",
+  "url": "https://www.advancetrack.com/blog/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Plain blog grid: small title and a three-column grid of nine cards with a pager. The simplest index.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: small H1 on white"
+  },
+  {
+   "form": "cards-image",
+   "role": "news",
+   "tone": "light",
+   "cols": 3,
+   "count": 9,
+   "media": "top",
+   "note": "three by three cards with a photo, title, short excerpt and a link; numbered pager under"
+  }
+ ]
+}

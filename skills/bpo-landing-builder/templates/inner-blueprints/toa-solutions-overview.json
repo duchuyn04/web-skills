@@ -1,0 +1,46 @@
+{
+ "id": "toa-solutions-overview",
+ "page_type": "solutions-overview",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/solutions/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Very short 3,700px index: a pale head with a photo of three staff, six role cards with an Explore link, a pink panel with eight further support areas and one centered form card. Almost no imagery after the head.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "right",
+   "note": "pale blurred office ground; left: serif title, a short lead, one filled pill button; right: a cutout photo of three smiling staff standing together."
+  },
+  {
+   "form": "cards-text",
+   "role": "services",
+   "tone": "light",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "centered serif heading; six text cards (3 by 2) with a small purple title, two lines and an 'Explore >' link, no icons or images"
+  },
+  {
+   "form": "list-rows",
+   "role": "services",
+   "tone": "muted",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "pink-tinted band: centered serif heading; eight further offers in two columns, each a large serif title and a short paragraph, no links"
+  },
+  {
+   "form": "form",
+   "role": "cta",
+   "tone": "light",
+   "cols": 1,
+   "media": "none",
+   "note": "a single centered white card with a heading, a line and a form (names, email, phone, company, country, consent)"
+  }
+ ]
+}

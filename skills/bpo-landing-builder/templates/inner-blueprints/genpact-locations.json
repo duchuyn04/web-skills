@@ -1,0 +1,38 @@
+{
+ "id": "genpact-locations",
+ "page_type": "locations",
+ "source": {
+  "name": "Genpact",
+  "url": "https://www.genpact.com/about-us/locations",
+  "collected": "2026-10-18"
+ },
+ "summary": "Four blocks: a breadcrumb head with photo, region tabs, a centered office list per region and a call-to-action. Needs offices grouped into 3 to 7 regions with city, address and phone.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "right",
+   "note": "breadcrumb; near-black; red breadcrumb; heading and a short lead left, rounded skyline photo right"
+  },
+  {
+   "form": "tabs",
+   "role": "locations",
+   "tone": "dark",
+   "cols": 7,
+   "count": 7,
+   "media": "none",
+   "note": "seven wide text tabs across the width with a thick underline on the active one (Africa to UK and Europe); under it a centered list: country heading, orange city name, address lines and phone"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "large heading and a red pill button, an orange chevron mark below"
+  }
+ ]
+}

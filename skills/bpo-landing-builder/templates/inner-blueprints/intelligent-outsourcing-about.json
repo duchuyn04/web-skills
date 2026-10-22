@@ -1,0 +1,79 @@
+{
+ "id": "intelligent-outsourcing-about",
+ "page_type": "about",
+ "source": {
+  "name": "Intelligent Outsourcing (MicroSourcing redirects here)",
+  "url": "https://intelligent-outsourcing.io/about-io",
+  "collected": "2026-10-18"
+ },
+ "summary": "Eight-section about page led by a tall full-team photo, then mission and vision cards, two icon-card grids of reasons, two photo call-to-action bands, a two-column founder story and a red key-points band. Needs one team photo, a mission and a vision, 12 short reasons and a founder story.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "full-width group photo with a dark fade; small top strip with address and country switch; centered white title and a one-line lead; no breadcrumb, no buttons in the head"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 2,
+   "count": 2,
+   "media": "none",
+   "note": "centered heading and one-line intro; two bordered cards side by side (mission, vision), each with a large line icon, a title, two or three bold-lead lines and a pill button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "tinted band, centered heading and paragraph; three columns by two rows of white bordered cards, each with a small line icon, a title and two or three lines"
+  },
+  {
+   "form": "image-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "ground",
+   "note": "photo band 480px with a dark overlay, centered two-line heading and one pill button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 3,
+   "count": 6,
+   "media": "none",
+   "note": "tinted band; three by two cards with grey line icons, then a last row of two wide boxes: a text box left and a video box right"
+  },
+  {
+   "form": "image-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "ground",
+   "note": "second 480px photo band, one-line heading and one pill button (contact)"
+  },
+  {
+   "form": "text-block",
+   "role": "history",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "optional": true,
+   "note": "centered heading, then two columns of body text telling the founder story with bold lead sentences"
+  },
+  {
+   "form": "list-columns",
+   "role": "values",
+   "tone": "accent",
+   "cols": 4,
+   "count": 3,
+   "media": "none",
+   "note": "brand-red band 280px: four columns, the first is a heading block, the other three are white tick lists"
+  }
+ ]
+}

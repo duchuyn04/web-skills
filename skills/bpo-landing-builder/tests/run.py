@@ -8,7 +8,8 @@
 Each case in tests/cases.json starts from tests/fixtures/<base>.page.json, applies its edits and builds the page in
 its own temporary sites folder, so no other site can change the result. A case passes when the build succeeds or
 fails as "ok" says, every text under "errors" and "warnings" appears in an ERROR or WARN line, and every text under
-"html" appears in the built index.html. Run this after any
+"html" appears in the built index.html ("html_files" checks other pages of a site). Cases with "site": true
+start from examples/site (a home page.json and pages/*.json); "pages" edits the inner page files. Run this after any
 change to build.py, lint_output.py, rules.py, a schema or an example.
 """
 import argparse
@@ -63,7 +64,11 @@ def apply(doc, case):
 
 
 def check_case(case, tmp):
-    base = json.loads((HERE / "fixtures" / (case.get("base", "quayside") + ".page.json")).read_text(encoding="utf-8"))
+    if case.get("site"):
+        # a website: examples/site (page.json plus pages/*.json), edited by "set"/"replace"/... and "pages"
+        base = json.loads((SKILL / "examples" / "site" / "page.json").read_text(encoding="utf-8"))
+    else:
+        base = json.loads((HERE / "fixtures" / (case.get("base", "quayside") + ".page.json")).read_text(encoding="utf-8"))
     sites = tmp / case["name"] / "sites"
     for i in range(case.get("siblings", 0)):
         # an identical sibling site, for the checks that compare a page with the other sites
@@ -72,7 +77,13 @@ def check_case(case, tmp):
         (d / "page.json").write_text(json.dumps(base, indent=1), encoding="utf-8")
     page_dir = sites / "site"
     page_dir.mkdir(parents=True)
+    if case.get("site"):
+        shutil.copytree(SKILL / "examples" / "site" / "pages", page_dir / "pages")
+        for rel, edits in case.get("pages", {}).items():
+            f = page_dir / rel
+            f.write_text(json.dumps(apply(json.loads(f.read_text(encoding="utf-8")), dict(edits, name=case["name"])), indent=1), encoding="utf-8")
     for name, text in case.get("files", {}).items():
+        (page_dir / name).parent.mkdir(parents=True, exist_ok=True)
         (page_dir / name).write_text(text, encoding="utf-8")
     (page_dir / "page.json").write_text(json.dumps(apply(base, case), indent=1), encoding="utf-8")
     out = page_dir / "dist"
@@ -98,6 +109,11 @@ def check_case(case, tmp):
         for want in case.get("html", []):
             if want not in page:
                 problems.append("index.html has no %r" % want)
+        for name, wants in case.get("html_files", {}).items():
+            other = (out / name).read_text(encoding="utf-8") if (out / name).is_file() else ""
+            for want in wants:
+                if want not in other:
+                    problems.append("%s has no %r" % (name, want))
     if case["ok"] and code == 0 and case.get("lint", True):
         lc, ltext = run([SKILL / "scripts" / "lint_output.py", out])
         if lc != 0:
@@ -137,7 +153,7 @@ def main():
             failed += bool(code)
 
         if not args.no_examples and not args.k:
-            pages = sorted((SKILL / "examples").rglob("*.page.json"))
+            pages = sorted((SKILL / "examples").rglob("*.page.json")) + sorted((SKILL / "examples").glob("*/page.json"))
             print("Examples (%d)" % len(pages))
             for p in pages:
                 out = tmp / "examples" / p.relative_to(SKILL / "examples").with_suffix("").as_posix().replace("/", "_")

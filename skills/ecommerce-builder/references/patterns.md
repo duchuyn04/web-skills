@@ -25,6 +25,32 @@ Counts come from the project research: 7 Vietnamese electronics stores and 2 int
 | Tracking with a step bar, estimated date, item list | 7/7 Mobbin iOS | `pages/track.html` |
 | Account: side menu, recent orders, default address, order tabs, wishlist | 7/7 Mobbin | `account/` |
 
+### Product banner hero (`layout.hero: showroom`)
+
+Built from the banners of Thegioididong and Sieu Thi Smartphone and from a hero a shop owner approved after rejecting five more decorative ones.
+
+- One product per banner, on a colour taken from that product's photo (sand for a sand phone, navy for a blue one), never on plain white. Set it with the slide's `bg`; the build picks white or dark text.
+- Left column, top to bottom: launch line when the brief gives a release or pre-order date, brand, model name as the largest text, one tagline, four specs with outline icons, colour dots, button and "Giá từ". The specs are the first row of the first four spec groups, so they come from the brief.
+- Right column: the product pictures (up to three colours, overlapped) that follow the pointer and spread apart on hover. The brand name sits huge and faint behind them.
+- Under the banner: a tab per slide with a thumbnail, the name, the category and "Mới" for products with the `new` badge; a bar on the active tab runs for one interval and pauses with the carousel.
+- What the owner rejected as machine-made: a label pill above the hero title, a ghost word behind a white product card, numbers that count up, a white stage card, colours that clash with the header. Text left and picture right is fine inside a product banner; it was rejected only as the whole-page hero layout.
+
+### Homepage system of thegioididong.com (measured on the live site)
+
+Use it for `retail` shops whose owner names this site. Values read from computed styles at 1440 px:
+
+| Element | Value |
+|:---|:---|
+| Page | grey `#f2f4f7` behind a 1200 px column; sections are white boxes, radius 8 px, padding 20 px, 20 px apart |
+| Section title | 24 px, weight 700, line height 36 px, text `#252a31` |
+| Body | Inter 14 px / 21 px |
+| Product card | white, 1 px border `#e5e7eb`, radius 6 px, padding 10 px; square picture with 8 px inset; grey chip (12 px, `#f2f4f7` on `#667085`, radius 4 px); name 14 px / 20 px in two lines; price 16 px bold red `#dd2f2c`; old price struck 14 px `#98a2b3`; rating and sold count 12 px |
+| Grid | six cards per row, about 10 px apart; "Xem thêm N sản phẩm" in blue, centred, no page numbers |
+| Tabs | equal-width category tabs over a grid ("Khuyến mãi online"); filter pills 8 px radius, 8 x 12 px padding, the chosen one blue with white text ("Deal đẹp có hạn" on a red block) |
+| Order | promo banner, payment line, tabbed deals, red deal block with pills, two wide banners, collection tiles, "Gợi ý cho bạn" grid with load more, brand stores, news, keyword chips, footer |
+
+A shop without discounts, sold counts or personal recommendations keeps the layout and renames the blocks for what they hold: "Hàng mới về" for the tabbed grid, "Mua theo thương hiệu" for the red block, "Tất cả sản phẩm" with sort chips for "Gợi ý cho bạn", "Tìm nhanh theo danh mục" for the keyword chips.
+
 Addresses use the 34 provinces in force since 1 July 2025 and a ward field, with no district level (`data/provinces.json`).
 
 ## Admin

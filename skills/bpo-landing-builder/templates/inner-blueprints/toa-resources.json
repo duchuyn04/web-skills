@@ -1,0 +1,38 @@
+{
+ "id": "toa-resources",
+ "page_type": "resources",
+ "source": {
+  "name": "TOA Global",
+  "url": "https://toaglobal.com/resources/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Hub page with four content types as icon tiles followed by a grid of 13 free guides with Download pills. Needs four content types and many gated guides.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "very light blurred ground; centered serif title and a two-line paragraph"
+  },
+  {
+   "form": "icon-strip",
+   "role": "resources",
+   "tone": "light",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "four columns: a large purple icon, a serif title, a short line and a pill button (events, announcements, blogs, podcasts)"
+  },
+  {
+   "form": "cards-text",
+   "role": "resources",
+   "tone": "light",
+   "cols": 3,
+   "count": 13,
+   "media": "top",
+   "note": "three-column grid of white cards: serif title (Free guide or Free eBook), a grey subtitle, a tablet-style cover on some, and a Download pill at the bottom; 13 cards"
+  }
+ ]
+}

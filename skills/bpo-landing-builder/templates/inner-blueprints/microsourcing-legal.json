@@ -1,0 +1,29 @@
+{
+ "id": "microsourcing-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "MicroSourcing",
+  "url": "https://www.microsourcing.com/privacy-policy",
+  "collected": "2026-10-18"
+ },
+ "summary": "Privacy policy on a dark head with a version and issue date, a collapsible contents box and a 760 px text column of about 30 headed sections. The terms of use is a PDF link, not a page.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "dark teal band; small caps label CORPORATE POLICY, H1 and a Version and Issue Date line"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 30,
+   "media": "none",
+   "note": "white page; a Table of contents bar (collapsible, 33 links) then headed sections in a 760 px column; one table; no sidebar"
+  }
+ ]
+}

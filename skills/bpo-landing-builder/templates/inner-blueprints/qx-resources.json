@@ -1,0 +1,29 @@
+{
+ "id": "qx-resources",
+ "page_type": "resources",
+ "source": {
+  "name": "QX Accounting Services",
+  "url": "https://qxaccounting.com/uk/guides-ebooks/",
+  "collected": "2026-10-18"
+ },
+ "summary": "Short download library: banner, two dropdown filters and a three-column grid of cover cards each ending in a Download Now pill. Needs six to twelve guides with cover images.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "none",
+   "note": "purple banner with H1 and strapline and a flat graphic right"
+  },
+  {
+   "form": "cards-image",
+   "role": "resources",
+   "tone": "muted",
+   "cols": 3,
+   "count": 6,
+   "media": "top",
+   "note": "(measured as filter-grid) lilac ground; Category and Resources dropdowns left; grid of white rounded cards, each a cover image or photo, a title and a blue Download Now pill"
+  }
+ ]
+}

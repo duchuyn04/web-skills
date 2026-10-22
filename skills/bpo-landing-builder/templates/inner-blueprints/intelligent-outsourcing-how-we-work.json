@@ -1,0 +1,53 @@
+{
+ "id": "intelligent-outsourcing-how-we-work",
+ "page_type": "how-we-work",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/how-it-works",
+  "collected": "2026-10-18"
+ },
+ "summary": "Plain text-led process page (6 blocks): centered intro, three benefit cards, an onboarding intro with a video, eight numbered process cards in two columns, and a photo call-to-action. Needs 8 process steps with 40 to 80 words each and 3 benefits.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: centered red H1, a lead and four short paragraphs on white"
+  },
+  {
+   "form": "cards-text",
+   "role": "reasons",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "centered heading and line; three white bordered cards, each a red title and two paragraphs with bold phrases"
+  },
+  {
+   "form": "text-block",
+   "role": "process",
+   "tone": "light",
+   "cols": 2,
+   "media": "right",
+   "note": "centered heading and lead; below, left a column of text about who runs onboarding, right a video slot"
+  },
+  {
+   "form": "cards-icon",
+   "role": "process",
+   "tone": "muted",
+   "cols": 2,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading and lead; eight numbered white cards in two columns (1 The Search .. 8 Ongoing Support), each with a red icon on top, a red numbered title, two paragraphs; the last card has a bullet list with bold leads"
+  },
+  {
+   "form": "image-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "ground",
+   "note": "photo band with white heading and a red pill button (book a discovery call)"
+  }
+ ]
+}

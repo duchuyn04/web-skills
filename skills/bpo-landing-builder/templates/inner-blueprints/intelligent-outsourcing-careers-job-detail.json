@@ -1,0 +1,37 @@
+{
+ "id": "intelligent-outsourcing-careers-job-detail",
+ "page_type": "careers",
+ "source": {
+  "name": "Intelligent Outsourcing",
+  "url": "https://intelligent-outsourcing.io/careers/senior-accountant",
+  "collected": "2026-10-18"
+ },
+ "summary": "Job-detail page: no hero, a centered title band, then a two-column body. Left a long description with red sub-headings (responsibilities, requirements, why join) and bullets; right an application form card. Needs a job title, three facts (type, place, schedule), a summary and 3 bullet lists.",
+ "header": "simple",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "centered red title and a grey lead on white, no photo"
+  },
+  {
+   "form": "prose",
+   "role": "jobs",
+   "tone": "light",
+   "cols": 2,
+   "media": "none",
+   "note": "left column about 55%: job title, three meta lines (type, place, schedule), a summary paragraph, then red sub-headings Responsibilities, Job requirements and Why join us, each with a bulleted list"
+  },
+  {
+   "form": "form",
+   "role": "jobs",
+   "tone": "light",
+   "cols": 1,
+   "count": 1,
+   "media": "none",
+   "note": "right column about 40%, not sticky: bordered white card with full name, email, phone, a message box, a dashed CV upload box and a full-width red Send my application button"
+  }
+ ]
+}

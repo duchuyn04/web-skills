@@ -1,0 +1,29 @@
+{
+ "id": "dv-legal",
+ "page_type": "legal",
+ "source": {
+  "name": "D&V Philippines",
+  "url": "https://www.dvphilippines.com/privacy-policy",
+  "collected": "2026-10-18"
+ },
+ "summary": "Plain policy page: H1 at 32 px and a full-width column of 32 h3 headings with paragraphs. No date, no contents, no sidebar.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "muted",
+   "media": "none",
+   "note": "no band: H1 on white under a sticky header"
+  },
+  {
+   "form": "prose",
+   "role": "legal-text",
+   "tone": "light",
+   "cols": 1,
+   "count": 32,
+   "media": "none",
+   "note": "single full-width column (1305 px) with 32 h3 headings"
+  }
+ ]
+}

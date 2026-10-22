@@ -1,9 +1,9 @@
 ---
 name: bpo-landing-builder
-description: Build a production-quality landing page for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
+description: Build a production-quality landing page, or a whole website with inner pages, for a BPO, outsourcing, contact center, offshore staffing, AI data annotation or outbound sales company. The page is assembled by a script from pre-built, pre-animated sections, so layout and quality do not depend on the model. Use when the user asks for a BPO or outsourcing website, landing page, homepage or giao dien outsourcing, or wants to turn a company brief into such a page.
 compatibility: Needs Python 3.9+ for build and lint. Visual QA needs Python Playwright plus Edge or Chrome. Works with any agent that can read files and run shell commands.
 metadata:
-  version: "6.0.0"
+  version: "6.1.0"
 ---
 
 # BPO landing builder
@@ -21,6 +21,7 @@ Read the request and take the first row that matches.
 | asks to look at a page this skill already built ("xem giúp", "review", "chỗ nào chưa ổn", sends its link or a screenshot) | Review. Run lint and QA with `--sweep` on its `dist`, open the screenshots, then send one table: each problem with its kind (Broken: fails for any brand, such as overflow, low contrast, clipped text; Off-system: differs from the rest of the page; Taste: a preference) and the fix in page.json. Change nothing until the user picks the rows |
 | asks to change a page already built (`sites/<slug>/page.json` exists): a colour, a section, some copy, a photo | Edit. Change only what was asked in that page.json, keep the archetype, blueprint and variants as they are, rebuild, lint, QA, and report what changed. Pick another archetype, blueprint or variant only when the user asks |
 | gives a site this skill did not build (their own code, WordPress, another builder) | Say in one line that this skill builds from page.json and does not edit other code; offer to build a new page from their content (Step 1) |
+| asks for a website with several pages (services, about, trust, contact, legal), or gives a sitemap | Build the home page with Steps 1 to 7, then add the inner pages as `references/site-builds.md` describes: `"pages"` in page.json, one file per page in `pages/`, each on a measured inner page layout |
 | anything else | Build a new page: Step 1 onwards |
 
 ## Rules that are never negotiable
@@ -248,6 +249,7 @@ If the user needs a block no variant can carry, follow `references/custom-sectio
 - `references/motion-research.md`: how 89 real BPO homepages animate (scroll entrances, hovers, carousels, sticky and scroll-linked pieces) and the four motion styles built from it
 - `references/custom-section-spec.md`: fallback for blocks outside the library
 - `references/seo.md`: the search and share tags build.py writes, the fields that feed them, what 85 real BPO homepages do, and the launch steps outside the page
+- `references/site-builds.md`: websites with several pages: the page list, inner page files, inner blueprints (121 measured inner pages), the inner-page sections (`page-head`, `prose`, `matrix-table`, `list-columns`), links between pages and checking every page
 - `references/maintaining.md`: adding a rule, a variant or a check, versioning, and the regression tests to run after a change to the library
 - `scripts/variety.py`: variant and preset usage across `sites/`, least used first; `--check page.json` compares one page with the rest
 - `scripts/make_film.py`: HyperFrames films from the client's photos (hero loop) and logo (site intro); templates in `templates/film/`

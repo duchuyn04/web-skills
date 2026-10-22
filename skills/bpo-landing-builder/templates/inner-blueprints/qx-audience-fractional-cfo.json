@@ -1,0 +1,106 @@
+{
+ "id": "qx-audience-fractional-cfo",
+ "page_type": "audience",
+ "source": {
+  "name": "QX Accounting",
+  "url": "https://qxaccounting.com/uk/service/fractional-cfo-firms/",
+  "collected": "2026-10-18"
+ },
+ "summary": "A custom QX page (8,600px) for white-label back-office support to fractional CFO firms: a photo head with a quote form, a problem list, a four-step model, two comparison tables, three engagement cards, the shared difference grid, a dark CTA and a purple impact band, then FAQ with a side image and a closing CTA.",
+ "header": "mega",
+ "sections": [
+  {
+   "form": "page-head",
+   "role": "hero",
+   "tone": "dark",
+   "media": "ground",
+   "note": "full-bleed dark photo with a purple wash; left: white title, a two-line lead; right: a white 'request a quote' form card (name, email, company, phone, source, message, submit). No button besides the form."
+  },
+  {
+   "form": "cards-icon",
+   "role": "scope",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "centered coral tag, heading and line; five problems in two columns (round icon, bold title, a line) over a pale pink wash, then one coral button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "process",
+   "tone": "muted",
+   "cols": 4,
+   "count": 4,
+   "media": "none",
+   "note": "pale blue: tag, heading; four steps in a row joined by a line, each a numbered circle, an icon, a bold title and two lines"
+  },
+  {
+   "form": "table",
+   "role": "scope",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "tag, heading and line; a two-column table with a purple header row (capability, what it means) and five rows"
+  },
+  {
+   "form": "cards-text",
+   "role": "pricing",
+   "tone": "muted",
+   "cols": 3,
+   "count": 3,
+   "media": "none",
+   "note": "heading and line; three white engagement-model cards, the middle one raised and outlined, each with a title, bullets and a button"
+  },
+  {
+   "form": "cards-icon",
+   "role": "about",
+   "tone": "light",
+   "cols": 4,
+   "count": 8,
+   "media": "none",
+   "note": "centered heading and line; eight icon cards in 4 by 2 (shared across QX pages)"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "right",
+   "note": "dark purple band with a photo and big pale number shape right and one coral button"
+  },
+  {
+   "form": "table",
+   "role": "compare",
+   "tone": "light",
+   "cols": 2,
+   "count": 5,
+   "media": "none",
+   "note": "tag, heading; a two-column table (what sets us apart / detail) with five rows"
+  },
+  {
+   "form": "cards-icon",
+   "role": "metrics",
+   "tone": "dark",
+   "cols": 3,
+   "count": 5,
+   "media": "none",
+   "note": "purple band: heading, five white cards (3 over 2), each with a round icon, a bold figure line and a caption"
+  },
+  {
+   "form": "faq-accordion",
+   "role": "faq",
+   "tone": "muted",
+   "cols": 2,
+   "count": 6,
+   "media": "left",
+   "note": "lilac band: a tall photo left, heading and six rows right, the first open"
+  },
+  {
+   "form": "cta-band",
+   "role": "cta",
+   "tone": "dark",
+   "media": "none",
+   "note": "purple band: heading, one line and a coral button"
+  }
+ ]
+}
